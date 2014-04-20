@@ -165,7 +165,10 @@ function is_title_in(titles) {
 }
 
 function generate_type_application(expression, applications) {
-  return generate_type(expression) + '<' + applications.map(generate_type).join(',') + '>';
+  if (expression.name === 'Array')
+    return generate_type(applications[0]) + '[]';
+  else
+    return generate_type(expression) + '<' + applications.map(generate_type).join(',') + '>';
 }
 
 function generate_type(t) {
@@ -174,53 +177,114 @@ function generate_type(t) {
       return t.name;
     case 'TypeApplication':
       return generate_type_application(t.expression, t.applications);
-    case 'UnionType':
-      return 'any /*' + t.elements.map(generate_type).join('|') + '*/';
-    case 'NullableLiteral':
-      return 'any';
+    case 'OptionalType':
     case 'NullableType':
     case 'NonNullableType':
-    case 'OptionalType':
       return generate_type(t.expression);
-    case 'AllLiteral':
-    case 'NullLiteral':
-    case 'UndefinedLiteral':
-    case 'VoidLiteral':
-    case 'ArrayType':
-    case 'RecordType':
-    case 'FieldType':
     case 'FunctionType':
-    case 'ParameterType':
+      return  '(' + t.params.map(generate_type).join(', ') + ') => ' + generate_type(t.result);
     case 'RestType':
+      return generate_type(t.expression) + '[]';
+    case 'UnionType':
+      return 'any /*' + t.elements.map(generate_type).join('|') + '*/';
+    case 'AllLiteral':
+    case 'NullableLiteral':
+      return 'any';
+    case 'NullLiteral':
+      return 'any /* null */';
+    case 'UndefinedLiteral':
+      return 'any /* undefined */';
+    case 'VoidLiteral':
+      return 'void';
+    case 'RecordType':
+      return '{' + t.fields.map(generate_record_field).join(', ');
+    case 'ArrayType':
+    case 'FieldType':
+    case 'ParameterType':
     default:
       throw new Error('Unknown type expression ' + t.type);
   }
 }
 
-function translate_param(annotation) {
-  return annotation.name + ': ' + generate_type(annotation.type);
+function generate_function_parameter_name(annotation) {
+  if (annotation.type.type === 'OptionalType')
+    return annotation.name + '?';
+  else if(annotation.type.type === 'RestType')
+    return '...' + annotation.name;
+  else
+    return annotation.name;
 }
 
-function generate_field(name, docs) {
+function generate_function_parameter(annotation) {
+  return generate_function_parameter_name(annotation) + ': ' + generate_type(annotation.type);
+}
+
+function generate_var(name, docs) {
   var typeTag = goog.array.find(docs.tags, is_title('type'));
-  return 'var ' + name + ': ' + generate_type(typeTag.type);
+  return 'var ' + name + ': ' + generate_type(typeTag.type) + ';';
 }
 
 var VOID_TYPE = { type: { type: 'NameExpression', name: 'void' } };
 
+function generics(docs) {
+  var templateTags = docs.tags.filter(is_title('template'));
+  var names = templateTags.map(pick('description'));
+
+  if (names.length === 0)
+    return '';
+  else
+    return '<' + names.join(', ') + '>';
+}
+
 function generate_function(name, docs) {
   var paramTags = docs.tags.filter(is_title('param'));
   var returnTag = goog.array.find(docs.tags, is_title_in(['return', 'returns'])) || VOID_TYPE;
-  return 'function ' + name + '(' + paramTags.map(translate_param).join(', ') + '): ' + generate_type(returnTag.type);
+  return 'function ' + name + generics(docs) + '(' + paramTags.map(generate_function_parameter).join(', ') + '): ' + generate_type(returnTag.type) + ';';
 }
 
 function generate_property(name, docs) {
   // Field
   if (docs.tags.some(is_title('type')))
-    return generate_field(name, docs);
+    return generate_var(name, docs);
   // Function
   else
     return generate_function(name, docs);
+}
+
+function generate_method(name, docs) {
+  var paramTags = docs.tags.filter(is_title('param'));
+  var returnTag = goog.array.find(docs.tags, is_title_in(['return', 'returns'])) || VOID_TYPE;
+
+  return name + '(' + paramTags.map(generate_function_parameter).join(', ') + '): ' + generate_type(returnTag.type);
+}
+
+function generate_field_name(name, type) {
+  if (type.type === 'OptionalType')
+    return name + '?';
+  else
+    return name;
+}
+
+function generate_field(name, docs) {
+  var typeTag = goog.array.find(docs.tags, is_title('type'));
+  var fieldName = generate_field_name(name, typeTag.type);
+
+  return fieldName + ': ' + generate_type(typeTag.type);
+}
+
+function generate_record_field(field) {
+  var fieldName = generate_field_name(field.key, field.value);
+
+  return fieldName + ': ' + generate_type(field.value);
+}
+
+function generate_member(name, docs) {
+  // Field
+  if (docs.tags.some(is_title('type')))
+    return generate_field(name, docs);
+  // Function
+  else
+    return generate_method(name, docs);
 }
 
 function generate_interface(name, constructor, prototype) {
@@ -230,7 +294,7 @@ function generate_interface(name, constructor, prototype) {
     var docs = prototype[name];
 
     if (!docs.tags.some(is_title('private')))
-      acc += '  ' + generate_property(name, docs) + ';\n'
+      acc += '  ' + generate_member(name, docs) + ';\n'
   });
 
   acc += '}';
@@ -251,7 +315,7 @@ function generate_class(name, constructor, prototype) {
     var docs = prototype[name];
 
     if (!docs.tags.some(is_title('private')))
-      acc += '  ' + generate_property(name, docs) + ';\n'
+      acc += '  ' + generate_member(name, docs) + ';\n'
   });
 
   acc += '}';
@@ -292,7 +356,7 @@ function generate_defs(parsed) {
     }
     // Property
     else if (!docs.tags.some(is_title('private'))) {
-      set_deep(modules, path, generate_property(last(path), docs));
+      modules[name] = generate_property(last(path), docs);
     }
   });
 
@@ -302,7 +366,7 @@ function generate_defs(parsed) {
     var proto = prototypes[name];
     var path = name.split('.');
 
-    set_deep(modules, path, generate_interface(last(path), docs, proto));
+    modules[name] = generate_interface(last(path), docs, proto);
   });
 
   // Combine classes with prototypes
@@ -311,37 +375,45 @@ function generate_defs(parsed) {
     var proto = prototypes[name];
     var path = name.split('.');
 
-    set_deep(modules, path, generate_class(last(path), docs, proto));
+    modules[name] = generate_class(last(path), docs, proto);
   });
 
   return modules;
 }
 
-function pretty_print(defs) {
+function by_module(defs) {
+  var acc = {};
+
+  Object.keys(defs).forEach(function(name) {
+    var split = name.lastIndexOf('.');
+    var module = name.substring(0, split);
+    var property = name.substring(split + 1);
+
+    if (!(module in acc))
+      acc[module] = {};
+
+    acc[module][property] = defs[name];
+  });
+
+  return acc;
+}
+
+function pretty_print(modules) {
   var acc = '';
-  var indent = '';
 
-  function walk(defs) {
-    Object.keys(defs).forEach(function (name) {
-      var value = defs[name];
+  Object.keys(modules).forEach(function(moduleName) {
+    var module = modules[moduleName];
+    acc += 'declare module ' + moduleName + ' {\n';
 
-      if (typeof value === 'string') {
-        value = value.replace(/\n/g, '\n' + indent);
-        acc += indent + value + ';\n';
-      }
-      else {
-        acc += indent + 'module ' + name + ' {\n';
-        indent += '  ';
+    Object.keys(module).forEach(function(propertyName) {
+      var value = module[propertyName];
 
-        walk(value);
-
-        indent = indent.substring(0, indent.length - 2);
-        acc += indent + '}\n';
-      }
+      value = value.replace(/\n/g, '\n  ');
+      acc += '  ' + value + '\n';
     });
-  }
 
-  walk(defs);
+    acc += '}\n';
+  });
 
   return acc;
 }
@@ -349,7 +421,8 @@ function pretty_print(defs) {
 var tree = esprima.parse(fs.readFileSync(process.argv[2]), { attachComment: true });
 var comments = extract_jsdoc(tree.body);
 var parsed = parse_jsdoc(comments);
-var modules = generate_defs(parsed);
+var defs = generate_defs(parsed);
+var modules = by_module(defs);
 
 console.log(pretty_print(modules));
 
