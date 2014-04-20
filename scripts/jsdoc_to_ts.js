@@ -193,7 +193,16 @@ function is_title_in(titles) {
   }
 }
 
+function generate_type_name(name) {
+  // TODO object
+  if (name === 'Array')
+    return 'any[]';
+  else
+    return name;
+}
+
 function generate_type_application(expression, applications) {
+  // TODO object
   if (expression.name === 'Array')
     return generate_type(applications[0]) + '[]';
   else
@@ -223,7 +232,7 @@ function generate_type(t) {
 
   switch (t.type) {
     case 'NameExpression':
-      return t.name;
+      return generate_type_name(t.name);
     case 'TypeApplication':
       return generate_type_application(t.expression, t.applications);
     case 'OptionalType':
