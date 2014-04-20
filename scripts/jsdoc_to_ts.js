@@ -151,6 +151,34 @@ function parse_jsdoc(docstrings) {
   return parsed;
 }
 
+function remove_private(parsed) {
+  // Identify all private names
+  var privatePrefixes = [];
+
+  Object.keys(parsed).forEach(function(name) {
+    var jsdoc = parsed[name];
+
+    if (jsdoc.tags.some(is_title('private')))
+      privatePrefixes.push(name);
+  });
+
+  // Identify all public names
+  var publicNames = Object.keys(parsed).filter(function(name) {
+    return !privatePrefixes.some(function(privateName) {
+      return name.substring(0, privateName.length) === privateName;
+    });
+  });
+
+  // Filter out just public names
+  var acc = {};
+
+  publicNames.forEach(function(name) {
+    acc[name] = parsed[name];
+  });
+
+  return acc;
+}
+
 function is_title(title) {
   return function(tag) {
     return tag.title === title;
@@ -297,8 +325,7 @@ function generate_interface(name, constructor, prototype) {
   Object.keys(prototype).forEach(function(name) {
     var docs = prototype[name];
 
-    if (!docs.tags.some(is_title('private')))
-      acc += '  ' + generate_member(name, docs) + ';\n'
+    acc += '  ' + generate_member(name, docs) + ';\n'
   });
 
   acc += '}';
@@ -307,6 +334,8 @@ function generate_interface(name, constructor, prototype) {
 }
 
 function generate_class(name, constructor, prototype) {
+  goog.asserts.assertObject(prototype);
+
   var interfaceName = goog.array.find(constructor.tags, is_title('implements'));
   var acc = 'class ' + name;
 
@@ -318,8 +347,7 @@ function generate_class(name, constructor, prototype) {
   Object.keys(prototype).forEach(function(name) {
     var docs = prototype[name];
 
-    if (!docs.tags.some(is_title('private')))
-      acc += '  ' + generate_member(name, docs) + ';\n'
+    acc += '  ' + generate_member(name, docs) + ';\n'
   });
 
   acc += '}';
@@ -359,7 +387,7 @@ function generate_defs(parsed) {
       set_deep(prototypes, where, docs);
     }
     // Property
-    else if (!docs.tags.some(is_title('private'))) {
+    else {
       modules[name] = generate_property(last(path), docs);
     }
   });
@@ -429,7 +457,8 @@ var code = fs.readFileSync(file);
 var tree = esprima.parse(code, { attachComment: true });
 var comments = extract_jsdoc(tree.body);
 var parsed = parse_jsdoc(comments);
-var defs = generate_defs(parsed);
+var exported = remove_private(parsed);
+var defs = generate_defs(exported);
 var modules = by_module(defs);
 
 console.log(pretty_print(modules));
