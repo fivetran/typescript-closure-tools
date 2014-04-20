@@ -1,0 +1,1 @@
+../../../..2../../lib/closure-library/closure/goog/proto2/objectserializer_test.js

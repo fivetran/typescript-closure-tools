@@ -1,0 +1,1 @@
+../../../../../lib/closure-library/closure/goog/useragent/picasa.js

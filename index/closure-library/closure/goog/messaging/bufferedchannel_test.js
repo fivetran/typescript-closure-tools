@@ -1,0 +1,1 @@
+../../../../../lib/closure-library/closure/goog/messaging/bufferedchannel_test.js

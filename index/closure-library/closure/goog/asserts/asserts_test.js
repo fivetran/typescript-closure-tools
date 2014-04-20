@@ -1,0 +1,1 @@
+../../../../../lib/closure-library/closure/goog/asserts/asserts_test.js

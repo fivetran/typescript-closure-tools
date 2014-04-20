@@ -1,0 +1,1 @@
+../../../../../../lib/closure-library/closure/goog/ui/equation/mathpalette.js

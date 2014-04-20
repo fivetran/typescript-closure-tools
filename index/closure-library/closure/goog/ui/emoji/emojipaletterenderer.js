@@ -1,0 +1,1 @@
+../../../../../../lib/closure-library/closure/goog/ui/emoji/emojipaletterenderer.js

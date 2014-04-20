@@ -1,0 +1,1 @@
+../../../../../../lib/closure-library/closure/goog/labs/net/image_test.js

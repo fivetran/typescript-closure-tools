@@ -1,0 +1,1 @@
+../../../../../../lib/closure-library/closure/goog/labs/classdef/classdef_test.js

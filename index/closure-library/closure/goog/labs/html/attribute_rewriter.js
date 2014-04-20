@@ -1,0 +1,1 @@
+../../../../../../lib/closure-library/closure/goog/labs/html/attribute_rewriter.js

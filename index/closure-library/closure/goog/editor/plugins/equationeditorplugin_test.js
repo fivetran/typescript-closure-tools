@@ -1,0 +1,1 @@
+../../../../../../lib/closure-library/closure/goog/editor/plugins/equationeditorplugin_test.js

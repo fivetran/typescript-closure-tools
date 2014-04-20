@@ -1,0 +1,1 @@
+../../../../../../lib/closure-library/closure/goog/messaging/testdata/portnetwork_worker1.js

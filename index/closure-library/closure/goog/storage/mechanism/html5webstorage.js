@@ -1,0 +1,1 @@
+../../../../../../lib/closure-library/closure/goog/storage/mechanism/html5webstorage.js

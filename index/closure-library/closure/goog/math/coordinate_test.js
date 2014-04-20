@@ -1,0 +1,1 @@
+../../../../../lib/closure-library/closure/goog/math/coordinate_test.js
