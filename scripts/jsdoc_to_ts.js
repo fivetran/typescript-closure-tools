@@ -99,10 +99,12 @@ function extract_jsdoc(tree) {
   }
 
   function walk(tree) {
+    // If leaf, return
     if (!(tree instanceof Object))
       return;
+
     // If tree is a global assignment, add it to docstrings
-    else if (is_global_assignment(tree)) {
+    if (is_global_assignment(tree)) {
       var name = escodegen.generate(tree.expression.left);
       var comments = tree.leadingComments || [];
 
@@ -198,6 +200,13 @@ function generate_type_application(expression, applications) {
     return generate_type(expression) + '<' + applications.map(generate_type).join(',') + '>';
 }
 
+function comment(text) {
+  text = text.replace('/*', '');
+  text = text.replace('*/', '');
+
+  return '/* ' + text + ' */';
+}
+
 function generate_type(t) {
   if(!t)
     return 'any /* missing */';
@@ -216,7 +225,7 @@ function generate_type(t) {
     case 'RestType':
       return generate_type(t.expression) + '[]';
     case 'UnionType':
-      return 'any /*' + t.elements.map(generate_type).join('|') + '*/';
+      return 'any ' + comment(t.elements.map(generate_type).join('|'));
     case 'AllLiteral':
     case 'NullableLiteral':
       return 'any';
