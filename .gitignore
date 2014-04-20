@@ -3,3 +3,6 @@ src/*.js
 src/*.map
 *.jar
 dist/
+node_modules/
+out/
+lib/closure-library/closure-library.iml
