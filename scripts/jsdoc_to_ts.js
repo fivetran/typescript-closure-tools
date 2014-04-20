@@ -98,6 +98,12 @@ function extract_jsdoc(tree) {
       is_global(tree.expression.left);
   }
 
+  function is_global_declaration(tree) {
+    return tree &&
+      tree.type === 'ExpressionStatement' &&
+      is_global(tree.expression);
+  }
+
   function walk(tree) {
     // If leaf, return
     if (!(tree instanceof Object))
@@ -107,13 +113,27 @@ function extract_jsdoc(tree) {
     if (is_global_assignment(tree)) {
       var name = escodegen.generate(tree.expression.left);
       var comments = tree.leadingComments || [];
-      docstrings[name] = {
-        value: tree.expression.right,
-        jsdoc: null
-      };
       comments.forEach(function(comment) {
-        if (comment.type === 'Block' && comment.value.charAt(0) === '*')
-          docstrings[name].jsdoc = doctrine.parse('/*' + comment.value + '*/', { unwrap: true });
+        if (comment.type === 'Block' && comment.value.charAt(0) === '*') {
+          docstrings[name] = {
+            value: tree.expression.right,
+            jsdoc: doctrine.parse('/*' + comment.value + '*/', { unwrap: true })
+          };
+        }
+      });
+    }
+
+    // If tree is a global declaration, add it to docstrings
+    if (is_global_declaration(tree)) {
+      name = escodegen.generate(tree.expression);
+      comments = tree.leadingComments || [];
+      comments.forEach(function(comment) {
+        if (comment.type === 'Block' && comment.value.charAt(0) === '*') {
+          docstrings[name] = {
+            value: tree.expression.right,
+            jsdoc: doctrine.parse('/*' + comment.value + '*/', { unwrap: true })
+          };
+        }
       });
     }
 
@@ -242,7 +262,7 @@ function generate_type(t) {
     case 'VoidLiteral':
       return 'void';
     case 'RecordType':
-      return '{' + t.fields.map(generate_record_field).join(', ');
+      return '{ ' + t.fields.map(generate_record_field).join(', ') + ' }';
     case 'ArrayType':
       return generate_type(t.elements[0]) + '[]';
     case 'FieldType':
@@ -385,6 +405,35 @@ function generate_enum(name, values) {
   return 'enum ' + name + ' { ' + keys.join(', ') + ' } ';
 }
 
+function generate_typedef(name, docs) {
+  var typedef = goog.array.find(docs.tags, is_title('typedef')).type;
+
+  switch (typedef.type) {
+    // F function(...) becomes interface F { (...): ... }
+    case 'FunctionType':
+      var argumentString = typedef.params.map(generate_type).join(', ');
+      var returnString = generate_type(typedef.result);
+      return 'interface ' + name + ' {\n    (' + argumentString + '): ' + returnString + '\n}';
+    // S { ... } becomes interface T { ... }
+    case 'RecordType':
+      var fieldsString = typedef.fields.map(function(field) {
+        return field.key + ': ' + generate_type(field.value);
+      }).join(';\n    ');
+      return 'interface ' + name + ' {\n    ' + fieldsString + '\n}';
+    // T NamedType becomes interface T extends NamedType { }
+    case 'NameExpression':
+      return 'interface ' + name + ' extends ' + typedef.name + ' { }';
+    // T NamedType<Param> becomes interface T extends NamedType<Param> { }
+    case 'TypeApplication':
+      var base = typedef.expression.name;
+      var generics = '<' + typedef.applications.map(generate_type).join(',') + '>'
+      return 'interface ' + name + ' extends ' + base + generics + ' { }';
+    // Anything else becomes interface Name { /* explanation */ }
+    default:
+      return 'interface ' + name + ' { ' + comment(generate_type(typedef)) + ' }';
+  }
+}
+
 /**
 * @param {Object} parsed
 * @return {Object}
@@ -420,6 +469,10 @@ function generate_defs(parsed) {
     // Enum
     else if (docs.tags.some(is_title('enum'))) {
       modules[name] = generate_enum(last(path), value);
+    }
+    // Typedef
+    else if (docs.tags.some(is_title('typedef'))) {
+      modules[name] = generate_typedef(last(path), docs);
     }
     // Property
     else {
