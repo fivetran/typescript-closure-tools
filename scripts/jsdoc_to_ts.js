@@ -82,11 +82,11 @@ function extract_jsdoc(tree) {
     locals[name] = false;
   }
 
-  function is_static(tree) {
+  function is_global(tree) {
     if (tree.type === "Identifier")
-      return true;
+      return !locals[tree.name];
     else if (tree.type === "MemberExpression")
-      return is_static(tree.object) && is_static(tree.property);
+      return is_global(tree.object) && is_global(tree.property);
     else
       return false;
   }
@@ -95,8 +95,7 @@ function extract_jsdoc(tree) {
     return tree &&
       tree.type === "ExpressionStatement" &&
       tree.expression.type === "AssignmentExpression" &&
-      is_static(tree.expression.left) &&
-      !locals[escodegen.generate(tree.expression.left)];
+      is_global(tree.expression.left);
   }
 
   function walk(tree) {
@@ -172,6 +171,9 @@ function generate_type_application(expression, applications) {
 }
 
 function generate_type(t) {
+  if(!t)
+    return 'any /* missing */';
+
   switch (t.type) {
     case 'NameExpression':
       return t.name;
@@ -207,7 +209,9 @@ function generate_type(t) {
 }
 
 function generate_function_parameter_name(annotation) {
-  if (annotation.type.type === 'OptionalType')
+  if (!annotation.type)
+    return annotation.name;
+  else if (annotation.type.type === 'OptionalType')
     return annotation.name + '?';
   else if(annotation.type.type === 'RestType')
     return '...' + annotation.name;
@@ -418,7 +422,11 @@ function pretty_print(modules) {
   return acc;
 }
 
-var tree = esprima.parse(fs.readFileSync(process.argv[2]), { attachComment: true });
+var file = process.argv[2];
+console.error(file);
+
+var code = fs.readFileSync(file);
+var tree = esprima.parse(code, { attachComment: true });
 var comments = extract_jsdoc(tree.body);
 var parsed = parse_jsdoc(comments);
 var defs = generate_defs(parsed);
