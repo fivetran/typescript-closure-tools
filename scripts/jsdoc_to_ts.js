@@ -28,9 +28,9 @@ function local_variables(tree) {
 
   function walk(tree) {
     if (!tree)
-      {}
+    {}
     else if (tree.type === 'FunctionDeclaration')
-      {}
+    {}
     else if (tree.type === 'VariableDeclarator')
       acc.push(tree.id.name);
     else if (tree instanceof Object) {
@@ -117,7 +117,7 @@ function extract_jsdoc(tree) {
         if (comment.type === 'Block' && comment.value.charAt(0) === '*') {
           docstrings[name] = {
             value: tree.expression.right,
-            jsdoc: doctrine.parse('/*' + comment.value + '*/', { unwrap: true })
+            jsdoc: '/*' + comment.value + '*/'
           };
         }
       });
@@ -131,7 +131,7 @@ function extract_jsdoc(tree) {
         if (comment.type === 'Block' && comment.value.charAt(0) === '*') {
           docstrings[name] = {
             value: tree.expression.right,
-            jsdoc: doctrine.parse('/*' + comment.value + '*/', { unwrap: true })
+            jsdoc: '/*' + comment.value + '*/'
           };
         }
       });
@@ -160,6 +160,22 @@ function extract_jsdoc(tree) {
   walk(tree);
 
   return docstrings;
+}
+
+function parse_comments(comments) {
+  var parsed = {};
+
+  Object.keys(comments).forEach(function(name) {
+    var jsdoc = comments[name].jsdoc;
+    var value = comments[name].value;
+
+    parsed[name] = {
+      value: value,
+      jsdoc: doctrine.parse(jsdoc, { unwrap: true })
+    }
+  });
+
+  return parsed;
 }
 
 function remove_private(parsed) {
@@ -435,9 +451,9 @@ function generate_typedef(name, docs) {
 }
 
 /**
-* @param {Object} parsed
-* @return {Object}
-*/
+ * @param {Object} parsed
+ * @return {Object}
+ */
 function generate_defs(parsed) {
   var modules = {};
   var interfaces = {};
@@ -518,7 +534,7 @@ function by_module(defs) {
   return acc;
 }
 
-function pretty_print(modules) {
+function pretty_print(modules, comments) {
   var acc = '';
 
   Object.keys(modules).forEach(function(moduleName) {
@@ -527,8 +543,11 @@ function pretty_print(modules) {
 
     Object.keys(module).forEach(function(propertyName) {
       var value = module[propertyName];
+      var comment = comments[moduleName][propertyName].jsdoc;
 
+      comment = comment.replace(/\n/g, '\n    ');
       value = value.replace(/\n/g, '\n    ');
+      acc += '    ' + comment + '\n';
       acc += '    ' + value + '\n';
     });
 
@@ -544,11 +563,11 @@ console.error(file);
 var code = fs.readFileSync(file);
 var tree = esprima.parse(code, { attachComment: true });
 var comments = extract_jsdoc(tree.body);
-var exported = remove_private(comments);
+var parsed = parse_comments(comments);
+var exported = remove_private(parsed);
 var defs = generate_defs(exported);
-var modules = by_module(defs);
 
-console.log(pretty_print(modules));
+console.log(pretty_print(by_module(defs), by_module(comments)));
 
 //console.log(JSON.stringify(tree, null, 2));
 

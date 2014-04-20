@@ -1,6 +1,10 @@
-import FooBar = require('FooBar');
+declare module Extern {
+    interface NumberFn {
+        (x: number): number
+    }
+    interface ArrayOfNumbers extends Array<number> { }
+    enum E { a, b, c }
+    function foo(e: E);
+}
 
-goog.require('goog.string');
-
-console.log(FooBar.foobar());
-console.log(goog.string.format('format-%d', 1));
+Extern.foo(Extern.E.a);
