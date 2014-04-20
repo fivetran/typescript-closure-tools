@@ -107,7 +107,7 @@ function extract_jsdoc(tree) {
       var comments = tree.leadingComments || [];
 
       comments.forEach(function(comment) {
-        if (comment.type === 'Block' && /^\*\s*\*/.test(comment.value))
+        if (comment.type === 'Block' && comment.value.charAt(0) === '*')
           docstrings[name] = '/*' + comment.value + '*/';
       });
     }
