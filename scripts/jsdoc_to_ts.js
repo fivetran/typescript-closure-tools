@@ -107,10 +107,13 @@ function extract_jsdoc(tree) {
     if (is_global_assignment(tree)) {
       var name = escodegen.generate(tree.expression.left);
       var comments = tree.leadingComments || [];
-
+      docstrings[name] = {
+        value: tree.expression.right,
+        jsdoc: null
+      };
       comments.forEach(function(comment) {
         if (comment.type === 'Block' && comment.value.charAt(0) === '*')
-          docstrings[name] = '/*' + comment.value + '*/';
+          docstrings[name].jsdoc = doctrine.parse('/*' + comment.value + '*/', { unwrap: true });
       });
     }
 
@@ -139,26 +142,12 @@ function extract_jsdoc(tree) {
   return docstrings;
 }
 
-/**
- * @param {Object} docstrings
- * @return {{}}
- */
-function parse_jsdoc(docstrings) {
-  var parsed = {};
-
-  Object.keys(docstrings).forEach(function(name) {
-    parsed[name] = doctrine.parse(docstrings[name], { unwrap: true });
-  });
-
-  return parsed;
-}
-
 function remove_private(parsed) {
   // Identify all private names
   var privatePrefixes = [];
 
   Object.keys(parsed).forEach(function(name) {
-    var jsdoc = parsed[name];
+    var jsdoc = parsed[name].jsdoc;
 
     if (jsdoc.tags.some(is_title('private')))
       privatePrefixes.push(name);
@@ -388,6 +377,14 @@ function generate_class(name, constructor, prototype) {
   return acc;
 }
 
+function generate_enum(name, values) {
+  goog.asserts.assert(values.type === 'ObjectExpression', 'Expected object expression but found ' + values.type);
+
+  var keys = values.properties.map(pick('key')).map(pick('name'));
+
+  return 'enum ' + name + ' { ' + keys.join(', ') + ' } ';
+}
+
 /**
 * @param {Object} parsed
 * @return {Object}
@@ -398,12 +395,12 @@ function generate_defs(parsed) {
   var classes = {};
   var prototypes = {};
 
-  // TODO enums
   // TODO typedef
 
   // Construct modules and accumulate classes
   Object.keys(parsed).forEach(function(name) {
-    var docs = parsed[name];
+    var docs = parsed[name].jsdoc;
+    var value = parsed[name].value;
     var path = name.split('.');
 
     // Interface
@@ -419,6 +416,10 @@ function generate_defs(parsed) {
       var where = name.split('.prototype.');
 
       set_deep(prototypes, where, docs);
+    }
+    // Enum
+    else if (docs.tags.some(is_title('enum'))) {
+      modules[name] = generate_enum(last(path), value);
     }
     // Property
     else {
@@ -474,7 +475,7 @@ function pretty_print(modules) {
     Object.keys(module).forEach(function(propertyName) {
       var value = module[propertyName];
 
-      value = value.replace(/\n/g, '\n  ');
+      value = value.replace(/\n/g, '\n    ');
       acc += '    ' + value + '\n';
     });
 
@@ -490,8 +491,7 @@ console.error(file);
 var code = fs.readFileSync(file);
 var tree = esprima.parse(code, { attachComment: true });
 var comments = extract_jsdoc(tree.body);
-var parsed = parse_jsdoc(comments);
-var exported = remove_private(parsed);
+var exported = remove_private(comments);
 var defs = generate_defs(exported);
 var modules = by_module(defs);
 
