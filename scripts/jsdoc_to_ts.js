@@ -200,6 +200,16 @@ function generate_type_application(expression, applications) {
     return generate_type(expression) + '<' + applications.map(generate_type).join(',') + '>';
 }
 
+function generate_indexed_function_parameter(type, index) {
+  return '_' + index + ': ' + generate_type(type);
+}
+
+function generate_function_type(params, result) {
+  var paramString = '(' + params.map(generate_indexed_function_parameter).join(', ') + ')';
+
+  return paramString + ' => ' + generate_type(result);
+}
+
 function comment(text) {
   text = text.replace('/*', '');
   text = text.replace('*/', '');
@@ -221,7 +231,7 @@ function generate_type(t) {
     case 'NonNullableType':
       return generate_type(t.expression);
     case 'FunctionType':
-      return  '(' + t.params.map(generate_type).join(', ') + ') => ' + generate_type(t.result);
+      return generate_function_type(t.params, t.result);
     case 'RestType':
       return generate_type(t.expression) + '[]';
     case 'UnionType':
