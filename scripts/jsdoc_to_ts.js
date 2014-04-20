@@ -83,18 +83,18 @@ function extract_jsdoc(tree) {
   }
 
   function is_global(tree) {
-    if (tree.type === "Identifier")
+    if (tree.type === 'Identifier')
       return !locals[tree.name];
-    else if (tree.type === "MemberExpression")
-      return is_global(tree.object) && is_global(tree.property);
+    else if (tree.type === 'MemberExpression' && tree.property.type === 'Identifier')
+      return is_global(tree.object);
     else
       return false;
   }
 
   function is_global_assignment(tree) {
     return tree &&
-      tree.type === "ExpressionStatement" &&
-      tree.expression.type === "AssignmentExpression" &&
+      tree.type === 'ExpressionStatement' &&
+      tree.expression.type === 'AssignmentExpression' &&
       is_global(tree.expression.left);
   }
 
