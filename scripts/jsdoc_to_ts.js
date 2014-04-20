@@ -194,7 +194,6 @@ function is_title_in(titles) {
 }
 
 function generate_type_name(name) {
-  // TODO object
   if (name === 'Array')
     return 'any[]';
   else
@@ -202,7 +201,6 @@ function generate_type_name(name) {
 }
 
 function generate_type_application(expression, applications) {
-  // TODO object
   if (expression.name === 'Array')
     return generate_type(applications[0]) + '[]';
   else
@@ -220,15 +218,15 @@ function generate_function_type(params, result) {
 }
 
 function comment(text) {
-  text = text.replace('/*', '');
-  text = text.replace('*/', '');
+  text = text.replace(/\/\*/g, '(');
+  text = text.replace(/\*\//g, ')');
 
-  return '/* ' + text + ' */';
+  return '/*' + text + '*/';
 }
 
 function generate_type(t) {
   if(!t)
-    return 'any /* missing */';
+    return 'any /*missing*/';
 
   switch (t.type) {
     case 'NameExpression':
@@ -249,9 +247,9 @@ function generate_type(t) {
     case 'NullableLiteral':
       return 'any';
     case 'NullLiteral':
-      return 'any /* null */';
+      return 'any /*null*/';
     case 'UndefinedLiteral':
-      return 'any /* undefined */';
+      return 'any /*undefined*/';
     case 'VoidLiteral':
       return 'void';
     case 'RecordType':
@@ -356,7 +354,7 @@ function generate_interface(name, constructor, prototype) {
   Object.keys(prototype).forEach(function(name) {
     var docs = prototype[name];
 
-    acc += '  ' + generate_member(name, docs) + ';\n'
+    acc += '    ' + generate_member(name, docs) + ';\n'
   });
 
   acc += '}';
@@ -382,7 +380,7 @@ function generate_class(name, constructor, prototype) {
   Object.keys(prototype).forEach(function(name) {
     var docs = prototype[name];
 
-    acc += '  ' + generate_member(name, docs) + ';\n'
+    acc += '    ' + generate_member(name, docs) + ';\n'
   });
 
   acc += '}';
@@ -401,6 +399,7 @@ function generate_defs(parsed) {
   var prototypes = {};
 
   // TODO enums
+  // TODO typedef
 
   // Construct modules and accumulate classes
   Object.keys(parsed).forEach(function(name) {
@@ -476,7 +475,7 @@ function pretty_print(modules) {
       var value = module[propertyName];
 
       value = value.replace(/\n/g, '\n  ');
-      acc += '  ' + value + '\n';
+      acc += '    ' + value + '\n';
     });
 
     acc += '}\n';
