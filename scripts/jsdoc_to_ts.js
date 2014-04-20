@@ -229,6 +229,7 @@ function generate_type(t) {
     case 'RecordType':
       return '{' + t.fields.map(generate_record_field).join(', ');
     case 'ArrayType':
+      return generate_type(t.elements[0]) + '[]';
     case 'FieldType':
     case 'ParameterType':
     default:
@@ -320,6 +321,8 @@ function generate_member(name, docs) {
 }
 
 function generate_interface(name, constructor, prototype) {
+  goog.asserts.assertObject(prototype);
+
   var acc = 'interface ' + name + ' {\n';
 
   Object.keys(prototype).forEach(function(name) {
@@ -399,7 +402,7 @@ function generate_defs(parsed) {
   // Combine interfaces with prototypes
   Object.keys(interfaces).forEach(function(name) {
     var docs = interfaces[name];
-    var proto = prototypes[name];
+    var proto = prototypes[name] || {};
     var path = name.split('.');
 
     modules[name] = generate_interface(last(path), docs, proto);
