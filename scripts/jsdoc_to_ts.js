@@ -1,7 +1,7 @@
 var fs = require('fs');
 var esprima = require('esprima');
 var escodegen = require('escodegen');
-var doctrine = require('doctrine');
+var doctrine = require('../lib/doctrine');
 require('../lib/closure-library/closure/goog/bootstrap/nodejs');
 
 goog.require('goog.asserts');
@@ -336,11 +336,15 @@ function generate_interface(name, constructor, prototype) {
 function generate_class(name, constructor, prototype) {
   goog.asserts.assertObject(prototype);
 
-  var interfaceName = goog.array.find(constructor.tags, is_title('implements'));
   var acc = 'class ' + name;
 
+  var interfaceName = goog.array.find(constructor.tags, is_title('implements'));
   if (interfaceName)
     acc += ' implements ' + generate_type(interfaceName.type);
+
+  var superName = goog.array.find(constructor.tags, is_title('extends'));
+  if (superName)
+    acc += ' extends ' + generate_type(superName.type);
 
   acc += ' {\n';
 
@@ -404,7 +408,7 @@ function generate_defs(parsed) {
   // Combine classes with prototypes
   Object.keys(classes).forEach(function(name) {
     var docs = classes[name];
-    var proto = prototypes[name];
+    var proto = prototypes[name] || {};
     var path = name.split('.');
 
     modules[name] = generate_class(last(path), docs, proto);
