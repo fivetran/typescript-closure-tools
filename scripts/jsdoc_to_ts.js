@@ -229,6 +229,15 @@ function generate_dictionary_type(applications) {
   var tKey = generate_type(applications[0]);
   var tValue = generate_type(applications[1]);
 
+  // Typescript only allows string and number in the key position
+  switch (tKey) {
+    case 'string':
+    case 'number':
+      break;
+    default:
+      tKey = 'string';
+  }
+
   return '{ [key: ' + tKey + ']: ' + tValue + ' }';
 }
 
@@ -550,13 +559,20 @@ function by_module(defs) {
   return acc;
 }
 
+function safe_module_name(moduleName) {
+  if ((/\bstring\b/).test(moduleName))
+    return "'" + moduleName + "'";
+  else
+    return moduleName;
+}
+
 function pretty_print(modules, comments) {
   var acc = '';
 
   Object.keys(modules).forEach(function(moduleName) {
     var module = modules[moduleName];
     // TODO quote module names where necessary
-    acc += 'declare module ' + moduleName + ' {\n';
+    acc += 'declare module ' + safe_module_name(moduleName) + ' {\n';
 
     Object.keys(module).forEach(function(propertyName) {
       var value = module[propertyName];
