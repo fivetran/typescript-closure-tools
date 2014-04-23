@@ -225,9 +225,18 @@ function generate_type_name(name) {
     return name;
 }
 
+function generate_dictionary_type(applications) {
+  var tKey = generate_type(applications[0]);
+  var tValue = generate_type(applications[1]);
+
+  return '{ [key: ' + tKey + ']: ' + tValue + ' }';
+}
+
 function generate_type_application(expression, applications) {
   if (expression.name === 'Array')
     return generate_type(applications[0]) + '[]';
+  else if (expression.name === 'Object')
+    return generate_dictionary_type(applications);
   else
     return generate_type(expression) + '<' + applications.map(generate_type).join(',') + '>';
 }
@@ -405,6 +414,7 @@ function generate_class(name, constructor, prototype) {
   Object.keys(prototype).forEach(function(name) {
     var docs = prototype[name];
 
+    // TODO incorporate jsdoc
     acc += '    ' + generate_member(name, docs) + ';\n'
   });
 
@@ -441,9 +451,14 @@ function generate_typedef(name, docs) {
       return 'interface ' + name + ' extends ' + typedef.name + ' { }';
     // T NamedType<Param> becomes interface T extends NamedType<Param> { }
     case 'TypeApplication':
-      var base = typedef.expression.name;
-      var generics = '<' + typedef.applications.map(generate_type).join(',') + '>'
-      return 'interface ' + name + ' extends ' + base + generics + ' { }';
+      if (typedef.expression.name === 'Object')
+        return generate_dictionary_type(typedef.applications);
+      else {
+        var base = typedef.expression.name;
+        var generics = '<' + typedef.applications.map(generate_type).join(',') + '>'
+
+        return 'interface ' + name + ' extends ' + base + generics + ' { }';
+      }
     // Anything else becomes interface Name { /* explanation */ }
     default:
       return 'interface ' + name + ' { ' + comment(generate_type(typedef)) + ' }';
@@ -460,7 +475,7 @@ function generate_defs(parsed) {
   var classes = {};
   var prototypes = {};
 
-  // TODO typedef
+  // TODO goog.promise.Promise is coming out as type
 
   // Construct modules and accumulate classes
   Object.keys(parsed).forEach(function(name) {
@@ -484,7 +499,8 @@ function generate_defs(parsed) {
     }
     // Enum
     else if (docs.tags.some(is_title('enum'))) {
-      modules[name] = generate_enum(last(path), value);
+      if (value.type === 'ObjectExpression')
+        modules[name] = generate_enum(last(path), value);
     }
     // Typedef
     else if (docs.tags.some(is_title('typedef'))) {
@@ -539,6 +555,7 @@ function pretty_print(modules, comments) {
 
   Object.keys(modules).forEach(function(moduleName) {
     var module = modules[moduleName];
+    // TODO quote module names where necessary
     acc += 'declare module ' + moduleName + ' {\n';
 
     Object.keys(module).forEach(function(propertyName) {
