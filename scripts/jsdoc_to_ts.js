@@ -9,6 +9,41 @@ goog.require('goog.array');
 goog.require('goog.object');
 goog.require('goog.string');
 
+var reserved = [
+  'break',
+  'case',
+  'catch',
+  'continue',
+  'debugger',
+  'default',
+  'delete',
+  'do',
+  'else',
+  'finally',
+  'for',
+  'function',
+  'if',
+  'in',
+  'instanceof',
+  'new',
+  'return',
+  'switch',
+  'this',
+  'throw',
+  'try',
+  'typeof',
+  'var',
+  'void',
+  'while',
+  'with',
+  'class',
+  'enum',
+  'export',
+  'extends',
+  'import',
+  'super'
+];
+
 function pick(propertyName) {
   return function(object) {
     return object[propertyName];
@@ -306,15 +341,22 @@ function generate_type(t) {
   }
 }
 
+function safe_name(name) {
+  if (reserved.indexOf(name) !== -1)
+    return '_' + name;
+  else
+    return name;
+}
+
 function generate_function_parameter_name(annotation) {
   if (!annotation.type)
-    return annotation.name;
+    return safe_name(annotation.name);
   else if (annotation.type.type === 'OptionalType')
-    return annotation.name + '?';
+    return safe_name(annotation.name) + '?';
   else if(annotation.type.type === 'RestType')
-    return '...' + annotation.name;
+    return '...' + safe_name(annotation.name);
   else
-    return annotation.name;
+    return safe_name(annotation.name);
 }
 
 function generate_function_parameter(annotation) {
@@ -410,13 +452,13 @@ function generate_class(name, constructor, prototype) {
 
   var acc = 'class ' + name;
 
-  var interfaceName = goog.array.find(constructor.tags, is_title('implements'));
-  if (interfaceName)
-    acc += ' implements ' + generate_type(interfaceName.type);
-
   var superName = goog.array.find(constructor.tags, is_title('extends'));
   if (superName)
     acc += ' extends ' + generate_type(superName.type);
+
+  var interfaceName = goog.array.find(constructor.tags, is_title('implements'));
+  if (interfaceName)
+    acc += ' implements ' + generate_type(interfaceName.type);
 
   acc += ' {\n';
 
@@ -559,8 +601,10 @@ function by_module(defs) {
   return acc;
 }
 
+var safeX = new RegExp('\\b(' + reserved.concat(['any', 'number', 'boolean', 'string', 'void']).join('|') + ')\\b');
+
 function safe_module_name(moduleName) {
-  if ((/\bstring\b/).test(moduleName))
+  if (safeX.test(moduleName))
     return "'" + moduleName + "'";
   else
     return moduleName;
