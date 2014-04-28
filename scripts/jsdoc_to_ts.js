@@ -203,11 +203,13 @@ function parse_comments(comments) {
   Object.keys(comments).forEach(function(name) {
     var jsdoc = comments[name].jsdoc;
     var value = comments[name].value;
+    var parsedDoc = doctrine.parse(jsdoc, { unwrap: true });
 
+    parsedDoc.originalText = jsdoc;
     parsed[name] = {
       value: value,
-      jsdoc: doctrine.parse(jsdoc, { unwrap: true })
-    }
+      jsdoc: parsedDoc
+    };
   });
 
   return parsed;
@@ -364,7 +366,8 @@ function generate_function_parameter(annotation) {
 }
 
 function generate_var(name, docs) {
-  var typeTag = goog.array.find(docs.tags, is_title('type'));
+  var typeTag = goog.array.find(docs.tags, is_title('type')) || { type: null };
+
   return 'var ' + name + ': ' + generate_type(typeTag.type) + ';';
 }
 
@@ -387,12 +390,12 @@ function generate_function(name, docs) {
 }
 
 function generate_property(name, docs) {
-  // Field
-  if (docs.tags.some(is_title('type')))
-    return generate_var(name, docs);
   // Function
-  else
+  if (docs.value && docs.value.type === 'FunctionExpression')
     return generate_function(name, docs);
+  // Field
+  else
+    return generate_var(name, docs);
 }
 
 function generate_method(name, docs) {
@@ -403,7 +406,7 @@ function generate_method(name, docs) {
 }
 
 function generate_field_name(name, type) {
-  if (type.type === 'OptionalType')
+  if (type && type.type === 'OptionalType')
     return name + '?';
   else
     return name;
@@ -411,9 +414,10 @@ function generate_field_name(name, type) {
 
 function generate_field(name, docs) {
   var typeTag = goog.array.find(docs.tags, is_title('type'));
-  var fieldName = generate_field_name(name, typeTag.type);
+  var type = typeTag && typeTag.type;
+  var fieldName = generate_field_name(name, type);
 
-  return fieldName + ': ' + generate_type(typeTag.type);
+  return fieldName + ': ' + generate_type(type);
 }
 
 function generate_record_field(field) {
@@ -423,12 +427,12 @@ function generate_record_field(field) {
 }
 
 function generate_member(name, docs) {
-  // Field
-  if (docs.tags.some(is_title('type')))
-    return generate_field(name, docs);
   // Function
-  else
+  if (docs.value && docs.value.type === 'FunctionExpression')
     return generate_method(name, docs);
+  // Field
+  else
+    return generate_field(name, docs);
 }
 
 function generate_interface(name, constructor, prototype) {
@@ -464,8 +468,9 @@ function generate_class(name, constructor, prototype) {
 
   Object.keys(prototype).forEach(function(name) {
     var docs = prototype[name];
+    var text = docs.originalText.replace(/\n\s+/g, '\n     ');
 
-    // TODO incorporate jsdoc
+    acc += '    ' + text + '\n';
     acc += '    ' + generate_member(name, docs) + ';\n'
   });
 
@@ -533,6 +538,8 @@ function generate_defs(parsed) {
     var docs = parsed[name].jsdoc;
     var value = parsed[name].value;
     var path = name.split('.');
+
+    docs.value = value;
 
     // Interface
     if (docs.tags.some(is_title('interface'))) {
@@ -604,10 +611,11 @@ function by_module(defs) {
 var safeX = new RegExp('\\b(' + reserved.concat(['any', 'number', 'boolean', 'string', 'void']).join('|') + ')\\b');
 
 function safe_module_name(moduleName) {
-  if (safeX.test(moduleName))
-    return "'" + moduleName + "'";
-  else
-    return moduleName;
+//  if (safeX.test(moduleName))
+//    return "'" + moduleName + "'";
+//  else
+//    return moduleName;
+  return "'" + moduleName + "'";
 }
 
 function pretty_print(modules, comments) {
