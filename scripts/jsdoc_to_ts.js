@@ -447,9 +447,8 @@ function generate_interface(name, constructor, prototype) {
 
 function generate_constructor(docs) {
   var paramTags = docs.tags.filter(is_title('param'));
-  var returnTag = goog.array.find(docs.tags, is_title_in(['return', 'returns'])) || VOID_TYPE;
 
-  return 'constructor(' + paramTags.map(generate_function_parameter).join(', ') + '): ' + generate_type(returnTag.type);
+  return 'constructor(' + paramTags.map(generate_function_parameter).join(', ') + ')';
 }
 
 function generate_class(name, constructor, prototype) {
