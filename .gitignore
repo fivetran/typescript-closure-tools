@@ -9,4 +9,5 @@ lib/closure-library/closure-library.iml
 def/
 test/*.js
 index/*.js
+src/*.js
 *.map
