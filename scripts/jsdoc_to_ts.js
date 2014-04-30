@@ -626,7 +626,7 @@ function pretty_print(modules, comments) {
   Object.keys(modules).forEach(function(moduleName) {
     var module = modules[moduleName];
     // TODO quote module names where necessary
-    acc += 'declare module ' + safe_module_name(moduleName) + ' {\n';
+    acc += '\ndeclare module ' + safe_module_name(moduleName) + ' {\n';
 
     Object.keys(module).forEach(function(propertyName) {
       var value = module[propertyName];
