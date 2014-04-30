@@ -1,33 +1,40 @@
 #!/bin/bash
-FILES=$(find lib/closure-library/closure/goog -name '*.js' | grep -v '_test.js$' | grep -v '_perf.js$')
-#FILES="lib/closure-library/closure/goog/object/object.js"
 
-for FILE in $FILES
+DIRS=$(find lib/closure-library/closure/goog -type d)
+
+#DIRS=$(echo "$DIRS" | head -1)
+
+for DIR in $DIRS
 do
-  GOOG=${FILE#lib/closure-library/closure/}
-  PARENT=$(dirname $GOOG)
-  GO_UP=$(echo $PARENT | sed -e 's/[a-z0-9\-]*/../g')
-  OUTPUT="def/${GOOG%.js}.d.ts"
+    FILES=$(ls $DIR/*.js | grep -v '_test.js$' | grep -v '_perf.js$')
+    OUTPUT="def/$DIR.d.ts"
 
-  # Create parent dir
-  mkdir --parents def/$PARENT
-  
-  # Clear file
-  echo "// Generated $(date)" > $OUTPUT
-  echo "" >> $OUTPUT
+    # Clear file
+    mkdir --parents $(dirname $OUTPUT)
+    echo "// Generated $(date)" > $OUTPUT
+    echo "" >> $OUTPUT
 
-  # Create reference tags
-  REFS=$(./scripts/calculate_deps.sh $FILE | head -n -1)
-  for REF in $REFS
-  do
-    WHERE=${REF#lib/closure-library/closure/}
-    WHERE=${WHERE%.js}
-    RELATIVE_REF=${GO_UP}/${WHERE}
-    echo "/// <reference path=\"${RELATIVE_REF}\" />" >> $OUTPUT
-  done
+    # Create reference tags
+    GOOG=${DIR#lib/closure-library/closure/}
+    GO_UP=$(dirname $GOOG | sed -e 's/[a-z0-9\-]\+/../g')
+    REFS=$(for FILE in $FILES
+           do
+             ./scripts/calculate_deps.sh $FILE
+           done)
+    REFS=$(for REF in $REFS
+           do
+             dirname $REF
+           done)
+    REFS=$(echo "$REFS" | sort -u)
+    REFS=$(echo "$REFS" | grep -v "$DIR")
 
-  echo "" >> $OUTPUT
+    for REF in $REFS
+    do
+        WHERE=${REF#lib/closure-library/closure/}
+        RELATIVE_REF=${GO_UP}/${WHERE}
+        echo "/// <reference path=\"${RELATIVE_REF}.d.ts\" />" >> $OUTPUT
+    done
 
-  # Create modules
-  node scripts/jsdoc_to_ts.js $FILE >> $OUTPUT
+    # Create modules
+    node scripts/jsdoc_to_ts.js $FILES >> $OUTPUT
 done
