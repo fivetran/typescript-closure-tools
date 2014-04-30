@@ -445,6 +445,13 @@ function generate_interface(name, constructor, prototype) {
   return acc;
 }
 
+function generate_constructor(docs) {
+  var paramTags = docs.tags.filter(is_title('param'));
+  var returnTag = goog.array.find(docs.tags, is_title_in(['return', 'returns'])) || VOID_TYPE;
+
+  return 'constructor(' + paramTags.map(generate_function_parameter).join(', ') + '): ' + generate_type(returnTag.type);
+}
+
 function generate_class(name, constructor, prototype) {
   goog.asserts.assertObject(prototype);
 
@@ -465,6 +472,7 @@ function generate_class(name, constructor, prototype) {
     var text = docs.originalText.replace(/\n\s+/g, '\n     ');
 
     acc += '\n    ' + text + '\n';
+    acc += '    ' + generate_constructor(constructor) + ';\n';
     acc += '    ' + generate_member(name, docs) + ';\n'
   });
 
