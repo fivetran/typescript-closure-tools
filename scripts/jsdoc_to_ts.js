@@ -91,13 +91,7 @@ function set_deep(object, keys, value) {
 /**
  * Walk AST and extract JSDoc comments on global variables
  */
-function extract_jsdoc(tree) {
-
-  /**
-   * Keys are global assignments, values are ASTs
-   * @type {{}}
-   */
-  var docstrings = {};
+function extract_jsdoc(tree, docstrings) {
 
   /**
    * Keys are local variables, values are true or false
@@ -306,7 +300,7 @@ function comment(text) {
 
 function generate_type(t) {
   if(!t)
-    return 'any /*missing*/';
+    return 'void /*missing*/';
 
   switch (t.type) {
     case 'NameExpression':
@@ -470,7 +464,7 @@ function generate_class(name, constructor, prototype) {
     var docs = prototype[name];
     var text = docs.originalText.replace(/\n\s+/g, '\n     ');
 
-    acc += '    ' + text + '\n';
+    acc += '\n    ' + text + '\n';
     acc += '    ' + generate_member(name, docs) + ';\n'
   });
 
@@ -632,7 +626,7 @@ function pretty_print(modules, comments) {
 
       comment = comment.replace(/\n/g, '\n    ');
       value = value.replace(/\n/g, '\n    ');
-      acc += '    ' + comment + '\n';
+      acc += '\n    ' + comment + '\n';
       acc += '    ' + value + '\n';
     });
 
@@ -642,12 +636,15 @@ function pretty_print(modules, comments) {
   return acc;
 }
 
-var file = process.argv[2];
-console.error(file);
 
-var code = fs.readFileSync(file);
-var tree = esprima.parse(code, { attachComment: true });
-var comments = extract_jsdoc(tree.body);
+var comments = {};
+process.argv.slice(2).forEach(function(file) {
+  console.error(file);
+  var code = fs.readFileSync(file);
+  var tree = esprima.parse(code, { attachComment: true });
+  extract_jsdoc(tree.body, comments);
+});
+
 var parsed = parse_comments(comments);
 var exported = remove_private(parsed);
 var defs = generate_defs(exported);
