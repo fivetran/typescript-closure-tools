@@ -4,8 +4,9 @@
   "dependencies": {
     "esprima": "*",
     "escodegen": "*",
-    "catharsis": "*",
     "doctrine": "*",
-    "jsdoc": "*"
+    "jsdoc": "*",
+    "mocha": "*",
+    "chai": "*"
   }
 }

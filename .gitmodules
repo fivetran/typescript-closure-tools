@@ -4,3 +4,6 @@
 [submodule "lib/doctrine"]
 	path = lib/doctrine
 	url = git@github.com:fivetran/doctrine.git
+[submodule "lib/definitely-typed"]
+	path = lib/definitely-typed
+	url = git@github.com:fivetran/DefinitelyTyped.git
