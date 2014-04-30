@@ -484,7 +484,16 @@ function generate_class(name, constructor, prototype) {
 function generate_enum(name, values) {
   goog.asserts.assert(values.type === 'ObjectExpression', 'Expected object expression but found ' + values.type);
 
-  var keys = values.properties.map(pick('key')).map(pick('name'));
+  function key_id(property) {
+    if ('name' in property)
+      return property.name;
+    else if ('value' in property)
+      return property.value;
+    else
+      throw new Error('Unknown enum property ' + property);
+  }
+
+  var keys = values.properties.map(pick('key')).map(key_id);
 
   return 'enum ' + name + ' { ' + keys.join(', ') + ' } ';
 }
@@ -625,7 +634,6 @@ function pretty_print(modules, comments) {
 
   Object.keys(modules).forEach(function(moduleName) {
     var module = modules[moduleName];
-    // TODO quote module names where necessary
     acc += '\ndeclare module ' + safe_module_name(moduleName) + ' {\n';
 
     Object.keys(module).forEach(function(propertyName) {
