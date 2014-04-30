@@ -11,3 +11,4 @@ test/*.js
 index/*.js
 src/*.js
 *.map
+*.pyc
