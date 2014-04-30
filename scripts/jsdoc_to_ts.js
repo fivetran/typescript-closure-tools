@@ -300,7 +300,7 @@ function comment(text) {
 
 function generate_type(t) {
   if(!t)
-    return 'void /*missing*/';
+    return 'any /*missing*/';
 
   switch (t.type) {
     case 'NameExpression':
