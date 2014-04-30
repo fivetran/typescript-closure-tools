@@ -1,13 +1,13 @@
 #!/bin/bash
 
-DIRS=$(find lib/closure-library/ -type d)
+DIRS=$(find lib/closure-library/closure/goog -type d)
 
 #DIRS=$(echo "$DIRS" | head -1)
 
 for DIR in $DIRS
 do
     FILES=$(ls $DIR/*.js | grep -v '_test.js$' | grep -v '_perf.js$')
-    OUTPUT="def/${DIR#lib/closure-library/}.d.ts"
+    OUTPUT="def/$DIR.d.ts"
 
     # Clear file
     mkdir --parents $(dirname $OUTPUT)
@@ -15,7 +15,7 @@ do
     echo "" >> $OUTPUT
 
     # Create reference tags
-    GOOG=${DIR#lib/closure-library/}
+    GOOG=${DIR#lib/closure-library/closure/}
     GO_UP=$(dirname $GOOG | sed -e 's/[a-z0-9\-]\+/../g')
     REFS=$(for FILE in $FILES
            do
@@ -30,7 +30,7 @@ do
 
     for REF in $REFS
     do
-        WHERE=${REF#lib/closure-library/}
+        WHERE=${REF#lib/closure-library/closure/}
         RELATIVE_REF=${GO_UP}/${WHERE}
         echo "/// <reference path=\"${RELATIVE_REF}.d.ts\" />" >> $OUTPUT
     done
