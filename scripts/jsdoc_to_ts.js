@@ -466,12 +466,15 @@ function generate_class(name, constructor, prototype) {
 
   acc += ' {\n';
 
+  var text = constructor.originalText.replace(/\n\s+/g, '\n     ');
+  acc += '    ' + text + '\n';
+  acc += '    ' + generate_constructor(constructor) + ';\n';
+
   Object.keys(prototype).forEach(function(name) {
     var docs = prototype[name];
     var text = docs.originalText.replace(/\n\s+/g, '\n     ');
 
     acc += '\n    ' + text + '\n';
-    acc += '    ' + generate_constructor(constructor) + ';\n';
     acc += '    ' + generate_member(name, docs) + ';\n'
   });
 
