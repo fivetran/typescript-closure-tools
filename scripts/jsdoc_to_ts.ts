@@ -1,4 +1,4 @@
-// <reference path="../index/references.ts" />
+/// <reference path="../index/references.ts" />
 
 import fs = require('fs');
 import esprima = require('esprima');
@@ -452,7 +452,7 @@ function generate_implements(docs) {
 function generate_interface(name, constructor, prototype) {
     goog.asserts.assertObject(prototype);
 
-    var acc = 'interface ' + name + generate_extends(constructor) + '{\n';
+    var acc = 'interface ' + name + ' ' + generate_extends(constructor) + '{\n';
 
     Object.keys(prototype).forEach(function (name) {
         var docs = prototype[name];
