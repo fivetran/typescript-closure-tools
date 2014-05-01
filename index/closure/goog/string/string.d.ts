@@ -1,4 +1,4 @@
-// Generated Wed Apr 30 22:44:14 PDT 2014
+// Generated Thu May  1 12:40:40 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 
@@ -8,7 +8,7 @@ declare module goog.string {
      * Common Unicode string characters.
      * @enum {string}
      */
-    enum Unicode { NBSP } 
+    enum Unicode { NBSP }
 
     /**
      * Fast prefix-checker.
