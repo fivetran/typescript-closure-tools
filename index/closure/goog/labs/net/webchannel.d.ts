@@ -1,237 +1,166 @@
-// Generated Wed Apr 30 16:38:33 PDT 2014
+// Generated Wed Apr 30 22:45:05 PDT 2014
 
-/// <reference path="../../../goog.d.ts" />
-/// <reference path="../../../goog/array.d.ts" />
-/// <reference path="../../../goog/asserts.d.ts" />
-/// <reference path="../../../goog/async.d.ts" />
-/// <reference path="../../../goog/debug.d.ts" />
-/// <reference path="../../../goog/disposable.d.ts" />
-/// <reference path="../../../goog/dom.d.ts" />
-/// <reference path="../../../goog/events.d.ts" />
-/// <reference path="../../../goog/functions.d.ts" />
-/// <reference path="../../../goog/iter.d.ts" />
-/// <reference path="../../../goog/json.d.ts" />
-/// <reference path="../../../goog/labs/net.d.ts" />
-/// <reference path="../../../goog/labs/useragent.d.ts" />
-/// <reference path="../../../goog/log.d.ts" />
-/// <reference path="../../../goog/math.d.ts" />
-/// <reference path="../../../goog/net.d.ts" />
-/// <reference path="../../../goog/object.d.ts" />
-/// <reference path="../../../goog/reflect.d.ts" />
-/// <reference path="../../../goog/string.d.ts" />
-/// <reference path="../../../goog/structs.d.ts" />
-/// <reference path="../../../goog/timer.d.ts" />
-/// <reference path="../../../goog/uri.d.ts" />
-/// <reference path="../../../goog/useragent.d.ts" />
+/// <reference path="../../../goog/base.d.ts" />
+/// <reference path="../../../goog/dom/nodetype.d.ts" />
+/// <reference path="../../../goog/debug/error.d.ts" />
+/// <reference path="../../../goog/string/string.d.ts" />
+/// <reference path="../../../goog/asserts/asserts.d.ts" />
+/// <reference path="../../../goog/events/eventid.d.ts" />
+/// <reference path="../../../goog/events/listenable.d.ts" />
+/// <reference path="../../../goog/events/listener.d.ts" />
+/// <reference path="../../../goog/object/object.d.ts" />
+/// <reference path="../../../goog/array/array.d.ts" />
+/// <reference path="../../../goog/events/listenermap.d.ts" />
+/// <reference path="../../../goog/labs/useragent/util.d.ts" />
+/// <reference path="../../../goog/labs/useragent/engine.d.ts" />
+/// <reference path="../../../goog/labs/useragent/browser.d.ts" />
+/// <reference path="../../../goog/useragent/useragent.d.ts" />
+/// <reference path="../../../goog/events/browserfeature.d.ts" />
+/// <reference path="../../../goog/debug/entrypointregistry.d.ts" />
+/// <reference path="../../../goog/events/eventtype.d.ts" />
+/// <reference path="../../../goog/disposable/idisposable.d.ts" />
+/// <reference path="../../../goog/disposable/disposable.d.ts" />
+/// <reference path="../../../goog/events/event.d.ts" />
+/// <reference path="../../../goog/reflect/reflect.d.ts" />
+/// <reference path="../../../goog/events/browserevent.d.ts" />
+/// <reference path="../../../goog/events/events.d.ts" />
 
-declare module 'goog.labs.net.webChannel' {
+declare module goog.net.WebChannel {
 
     /**
-     * Shared interface between Channel and TestChannel to support callbacks
-     * between WebChannelBase and BaseTestChannel and between Channel and
-     * ChannelRequest.
+     * Configuration spec for newly created WebChannel instances.
+     *
+     * WebChannels are configured in the context of the containing
+     * {@link WebChannelTransport}. The configuration parameters are specified
+     * when a new instance of WebChannel is created via {@link WebChannelTransport}.
+     *
+     * messageHeaders: custom headers to be added to every message sent to the
+     * server.
+     *
+     * messageUrlParams: custom url query parameters to be added to every message
+     * sent to the server.
+     *
+     * spdyRequestLimit: the maximum number of in-flight HTTP requests allowed
+     * when SPDY is enabled. Currently we only detect SPDY in Chrome.
+     * This parameter defaults to 10. When SPDY is not enabled, this parameter
+     * will have no effect.
+     *
+     * supportsCrossDomainXhr: setting this to true to allow the use of sub-domains
+     * (as configured by the server) to send XHRs with the CORS withCredentials
+     * bit set to true.
+     *
+     * testUrl: the test URL for detecting connectivity during the initial
+     * handshake. This parameter defaults to "/<channel_url>/test".
+     *
+     *
+     * @typedef {{
+     *   messageHeaders: (!Object.<string, string>|undefined),
+     *   messageUrlParams: (!Object.<string, string>|undefined),
+     *   spdyRequestLimit: (number|undefined),
+     *   supportsCrossDomainXhr: (boolean|undefined),
+     *   testUrl: (string|undefined)
+     * }}
+     */
+    var Options: any /*missing*/;
+
+    /**
+     * Types that are allowed as message data.
+     *
+     * @typedef {(ArrayBuffer|Blob|Object.<string, string>|Array)}
+     */
+    interface MessageData { /*any (ArrayBuffer|Blob|{ [key: string]: string }|any[])*/ }
+
+    /**
+     * Common events fired by WebChannels.
+     * @enum {string}
+     */
+    enum EventType { OPEN, CLOSE, ERROR, MESSAGE } 
+
+    /**
+     * WebChannel level error conditions.
+     * @enum {number}
+     */
+    enum ErrorStatus { OK, NETWORK_ERROR, SERVER_ERROR } 
+
+    /**
+     * The readonly runtime properties of the WebChannel instance.
+     *
+     * This class is defined for debugging and monitoring purposes, and for
+     * optimization functions that the application may choose to manage by itself.
      *
      * @interface
      */
-    interface Channel {
+    interface RuntimeProperties {
+        getSpdyRequestLimit: any /*missing*/;
+        setServerFlowControl: any /*missing*/;
+        getNonAckedMessageCount: any /*missing*/;
     }
 
     /**
-     * The interface class.
+     * The event interface for the MESSAGE event.
+     *
+     * @constructor
+     * @extends {goog.events.Event}
+     */
+    class MessageEvent extends goog.events.Event {
+        /**
+         * The event interface for the MESSAGE event.
+         *
+         * @constructor
+         * @extends {goog.events.Event}
+         */
+        constructor();
+    
+        /**
+         * The content of the message received from the server.
+         *
+         * @type {!goog.net.WebChannel.MessageData}
+         */
+        data: goog.net.WebChannel.MessageData;
+    }
+
+    /**
+     * The event interface for the ERROR event.
+     *
+     * @constructor
+     * @extends {goog.events.Event}
+     */
+    class ErrorEvent extends goog.events.Event {
+        /**
+         * The event interface for the ERROR event.
+         *
+         * @constructor
+         * @extends {goog.events.Event}
+         */
+        constructor();
+    
+        /**
+         * The error status.
+         *
+         * @type {!goog.net.WebChannel.ErrorStatus}
+         */
+        status: goog.net.WebChannel.ErrorStatus;
+    }
+}
+
+declare module goog.net {
+
+    /**
+     * A WebChannel represents a logical bi-directional channel over which the
+     * client communicates with a remote server that holds the other endpoint
+     * of the channel. A WebChannel is always created in the context of a shared
+     * {@link WebChannelTransport} instance. It is up to the underlying client-side
+     * and server-side implementations to decide how or when multiplexing is
+     * to be enabled.
      *
      * @interface
+     * @extends {EventTarget}
      */
-    interface Wire {
-    }
-
-    /**
-     * A TestChannel is used during the first part of channel negotiation
-     * with the server to create the channel. It helps us determine whether we're
-     * behind a buffering proxy.
-     *
-     * @constructor
-     * @struct
-     * @param {!goog.labs.net.webChannel.Channel} channel The channel
-     *     that owns this test channel.
-     * @param {!goog.labs.net.webChannel.WebChannelDebug} channelDebug A
-     *     WebChannelDebug instance to use for logging.
-     * @implements {goog.labs.net.webChannel.Channel}
-     */
-    class BaseTestChannel implements goog.labs.net.webChannel.Channel {
-        /**
-         * A TestChannel is used during the first part of channel negotiation
-         * with the server to create the channel. It helps us determine whether we're
-         * behind a buffering proxy.
-         *
-         * @constructor
-         * @struct
-         * @param {!goog.labs.net.webChannel.Channel} channel The channel
-         *     that owns this test channel.
-         * @param {!goog.labs.net.webChannel.WebChannelDebug} channelDebug A
-         *     WebChannelDebug instance to use for logging.
-         * @implements {goog.labs.net.webChannel.Channel}
-         */
-        constructor(channel: goog.labs.net.webChannel.Channel, channelDebug: goog.labs.net.webChannel.WebChannelDebug);
-    }
-
-    /**
-     * A new ChannelRequest is created for each request to the server.
-     *
-     * @param {goog.labs.net.webChannel.Channel} channel
-     *     The channel that owns this request.
-     * @param {goog.labs.net.webChannel.WebChannelDebug} channelDebug A
-     *     WebChannelDebug to use for logging.
-     * @param {string=} opt_sessionId The session id for the channel.
-     * @param {string|number=} opt_requestId The request id for this request.
-     * @param {number=} opt_retryId The retry id for this request.
-     * @constructor
-     * @struct
-     * @final
-     */
-    class ChannelRequest {
-        /**
-         * A new ChannelRequest is created for each request to the server.
-         *
-         * @param {goog.labs.net.webChannel.Channel} channel
-         *     The channel that owns this request.
-         * @param {goog.labs.net.webChannel.WebChannelDebug} channelDebug A
-         *     WebChannelDebug to use for logging.
-         * @param {string=} opt_sessionId The session id for the channel.
-         * @param {string|number=} opt_requestId The request id for this request.
-         * @param {number=} opt_retryId The retry id for this request.
-         * @constructor
-         * @struct
-         * @final
-         */
-        constructor(channel: goog.labs.net.webChannel.Channel, channelDebug: goog.labs.net.webChannel.WebChannelDebug, opt_sessionId?: string, opt_requestId?: any /*string|number*/, opt_retryId?: number);
-    }
-
-    /**
-     * The connectivity state of the channel.
-     *
-     * @constructor
-     * @struct
-     */
-    class ConnectionState {
-        /**
-         * The connectivity state of the channel.
-         *
-         * @constructor
-         * @struct
-         */
-        constructor();
-    }
-
-    /**
-     * This class represents the state of all forward channel requests.
-     *
-     * @param {number=} opt_maxPoolSize The maximum pool size.
-     *
-     * @constructor
-     * @final
-     */
-    class ForwardChannelRequestPool {
-        /**
-         * This class represents the state of all forward channel requests.
-         *
-         * @param {number=} opt_maxPoolSize The maximum pool size.
-         *
-         * @constructor
-         * @final
-         */
-        constructor(opt_maxPoolSize?: number);
-    }
-
-    /**
-     * This WebChannel implementation is branched off goog.net.BrowserChannel
-     * for now. Ongoing changes to goog.net.BrowserChannel will be back
-     * ported to this implementation as needed.
-     *
-     * @param {!goog.net.WebChannel.Options=} opt_options Configuration for the
-     *        WebChannel instance.
-     * @param {string=} opt_clientVersion An application-specific version number
-     *        that is sent to the server when connected.
-     * @param {!ConnectionState=} opt_conn Previously determined connection
-     *        conditions.
-     * @constructor
-     * @struct
-     * @implements {goog.labs.net.webChannel.Channel}
-     */
-    class WebChannelBase implements goog.labs.net.webChannel.Channel {
-        /**
-         * This WebChannel implementation is branched off goog.net.BrowserChannel
-         * for now. Ongoing changes to goog.net.BrowserChannel will be back
-         * ported to this implementation as needed.
-         *
-         * @param {!goog.net.WebChannel.Options=} opt_options Configuration for the
-         *        WebChannel instance.
-         * @param {string=} opt_clientVersion An application-specific version number
-         *        that is sent to the server when connected.
-         * @param {!ConnectionState=} opt_conn Previously determined connection
-         *        conditions.
-         * @constructor
-         * @struct
-         * @implements {goog.labs.net.webChannel.Channel}
-         */
-        constructor(opt_options?: goog.net.WebChannel.Options, opt_clientVersion?: string, opt_conn?: ConnectionState);
-    }
-
-    /**
-     * Implementation of {@link goog.net.WebChannelTransport} with
-     * {@link goog.labs.net.webChannel.WebChannelBase} as the underlying channel
-     * implementation.
-     *
-     * @constructor
-     * @struct
-     * @implements {goog.net.WebChannelTransport}
-     * @final
-     */
-    class WebChannelBaseTransport implements goog.net.WebChannelTransport {
-        /**
-         * Implementation of {@link goog.net.WebChannelTransport} with
-         * {@link goog.labs.net.webChannel.WebChannelBase} as the underlying channel
-         * implementation.
-         *
-         * @constructor
-         * @struct
-         * @implements {goog.net.WebChannelTransport}
-         * @final
-         */
-        constructor();
-    }
-
-    /**
-     * Logs and keeps a buffer of debugging info for the Channel.
-     *
-     * @constructor
-     * @struct
-     * @final
-     */
-    class WebChannelDebug {
-        /**
-         * Logs and keeps a buffer of debugging info for the Channel.
-         *
-         * @constructor
-         * @struct
-         * @final
-         */
-        constructor();
-    }
-
-    /**
-     * The v8 codec class.
-     *
-     * @constructor
-     * @struct
-     */
-    class WireV8 {
-        /**
-         * The v8 codec class.
-         *
-         * @constructor
-         * @struct
-         */
-        constructor();
+    interface WebChannel {
+        open: any /*missing*/;
+        close: any /*missing*/;
+        send: any /*missing*/;
+        getRuntimeProperties: any /*missing*/;
     }
 }
 
