@@ -463,8 +463,10 @@ function generate_class(name, constructor, prototype) {
         var docs = prototype[name];
         var text = docs.originalText.replace(/\n\s+/g, '\n     ');
 
-        acc += '\n    ' + text + '\n';
-        acc += '    ' + generate_member(name, docs) + ';\n';
+        if (!docs.tags.some(is_title('override'))) {
+            acc += '\n    ' + text + '\n';
+            acc += '    ' + generate_member(name, docs) + ';\n';
+        }
     });
 
     acc += '}';
