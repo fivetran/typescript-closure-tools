@@ -9,5 +9,6 @@ lib/closure-library/closure-library.iml
 test/*.js
 index/*.js
 src/*.js
+scripts/*.js
 *.map
 *.pyc

@@ -33,6 +33,8 @@ import logging
 import optparse
 import os
 import sys
+import pickle
+import os.path
 
 import depstree
 import jscompiler
@@ -209,8 +211,14 @@ def main():
 
     # Though deps output doesn't need to query the tree, we still build it
     # to validate dependencies.
+
     logging.info('Building dependency tree..')
-    tree = depstree.DepsTree(sources)
+    if os.path.isfile(os.path.abspath('deps-cache')):
+        logging.info('Loading dependency tree from disk')
+        tree = pickle.load(open('deps-cache', 'rb'))
+    else:
+        tree = depstree.DepsTree(sources)
+        pickle.dump(tree, open('deps-cache', 'wb'))
 
     input_namespaces = set()
     inputs = options.inputs or []
