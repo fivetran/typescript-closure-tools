@@ -632,7 +632,7 @@ function safe_module_name(moduleName) {
 //    return "'" + moduleName + "'";
 //  else
 //    return moduleName;
-  return "'" + moduleName + "'";
+  return moduleName;
 }
 
 function pretty_print(modules, comments) {

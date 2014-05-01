@@ -1,13 +1,13 @@
 #!/bin/bash
 
-DIRS=$(find lib/closure-library/closure/goog -type d)
+FILES=$(find lib/closure-library/closure/ -name '*.js' | grep -v '_test.js$' | grep -v '_perf.js$')
 
 #DIRS=$(echo "$DIRS" | head -1)
 
-for DIR in $DIRS
+for FILE in $FILES
 do
-    FILES=$(ls $DIR/*.js | grep -v '_test.js$' | grep -v '_perf.js$')
-    GOOG=${DIR#lib/closure-library/closure/}
+    GOOG=${FILE%*.js}
+    GOOG=${GOOG#lib/closure-library/closure/}
     OUTPUT="index/closure/$GOOG.d.ts"
 
     # Clear file
@@ -17,17 +17,10 @@ do
 
     # Create reference tags
     GO_UP=$(dirname $GOOG | sed -e 's/[a-z0-9\-]\+/../g')
-    REFS=$(for FILE in $FILES
-           do
-             ./scripts/calculate_deps.sh $FILE
-           done)
-    REFS=$(for REF in $REFS
-           do
-             dirname $REF
-           done)
-    REFS=$(echo $REFS | grep -v third_party)
+    REFS=$(./scripts/calculate_deps.sh $FILE)
+    REFS=$(echo "$REFS" | grep -v third_party)
     REFS=$(echo "$REFS" | sort -u)
-    REFS=$(echo "$REFS" | grep -v "$DIR")
+    REFS=$(echo "$REFS" | grep -v "$GOOG.js")
 
     for REF in $REFS
     do
