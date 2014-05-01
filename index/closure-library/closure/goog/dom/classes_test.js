@@ -1,1 +1,0 @@
-../../../../../lib/closure-library/closure/goog/dom/classes_test.js

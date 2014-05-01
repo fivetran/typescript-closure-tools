@@ -1,1 +1,0 @@
-../../../../../lib/closure-library/closure/goog/object/object_test.js

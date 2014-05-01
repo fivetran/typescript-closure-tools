@@ -1,1 +1,0 @@
-../../../../../lib/closure-library/closure/goog/fx/cssspriteanimation_test.js

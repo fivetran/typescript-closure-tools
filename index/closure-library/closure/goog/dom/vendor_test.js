@@ -1,1 +1,0 @@
-../../../../../lib/closure-library/closure/goog/dom/vendor_test.js

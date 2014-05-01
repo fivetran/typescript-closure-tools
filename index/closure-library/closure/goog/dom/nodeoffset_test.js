@@ -1,1 +1,0 @@
-../../../../../lib/closure-library/closure/goog/dom/nodeoffset_test.js

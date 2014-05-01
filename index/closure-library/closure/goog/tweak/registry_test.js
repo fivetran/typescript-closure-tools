@@ -1,1 +1,0 @@
-../../../../../lib/closure-library/closure/goog/tweak/registry_test.js

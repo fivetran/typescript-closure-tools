@@ -1,1 +1,0 @@
-../../../../../../lib/closure-library/closure/goog/graphics/ext/ellipse.js

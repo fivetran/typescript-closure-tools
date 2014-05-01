@@ -1,1 +1,0 @@
-../../../../../lib/closure-library/closure/goog/editor/browserfeature.js

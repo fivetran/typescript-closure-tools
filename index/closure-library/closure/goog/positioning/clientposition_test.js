@@ -1,1 +1,0 @@
-../../../../../lib/closure-library/closure/goog/positioning/clientposition_test.js

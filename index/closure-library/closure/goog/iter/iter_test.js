@@ -1,1 +1,0 @@
-../../../../../lib/closure-library/closure/goog/iter/iter_test.js

@@ -1,1 +1,0 @@
-../../../../../lib/closure-library/closure/goog/datasource/fastdatanode_test.js

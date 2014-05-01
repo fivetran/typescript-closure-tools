@@ -1,1 +1,0 @@
-../../../../../lib/closure-library/closure/goog/dom/selection_test.js

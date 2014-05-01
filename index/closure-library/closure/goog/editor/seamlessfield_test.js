@@ -1,1 +1,0 @@
-../../../../../lib/closure-library/closure/goog/editor/seamlessfield_test.js

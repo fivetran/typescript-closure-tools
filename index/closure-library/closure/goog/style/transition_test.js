@@ -1,1 +1,0 @@
-../../../../../lib/closure-library/closure/goog/style/transition_test.js

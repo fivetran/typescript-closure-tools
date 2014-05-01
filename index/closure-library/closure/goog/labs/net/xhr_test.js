@@ -1,1 +1,0 @@
-../../../../../../lib/closure-library/closure/goog/labs/net/xhr_test.js

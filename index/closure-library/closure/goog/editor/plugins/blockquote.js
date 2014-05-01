@@ -1,1 +1,0 @@
-../../../../../../lib/closure-library/closure/goog/editor/plugins/blockquote.js

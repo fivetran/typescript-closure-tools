@@ -1,1 +1,0 @@
-../../../../../lib/closure-library/closure/goog/dom/xml_test.js

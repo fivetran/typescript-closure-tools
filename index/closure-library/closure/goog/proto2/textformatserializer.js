@@ -1,1 +1,0 @@
-../../../..2../../lib/closure-library/closure/goog/proto2/textformatserializer.js

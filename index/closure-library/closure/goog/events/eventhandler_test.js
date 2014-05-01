@@ -1,1 +1,0 @@
-../../../../../lib/closure-library/closure/goog/events/eventhandler_test.js

@@ -1,1 +1,0 @@
-../../../../../lib/closure-library/closure/goog/events/eventtarget_via_w3cinterface_test.js

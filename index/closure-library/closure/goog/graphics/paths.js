@@ -1,1 +1,0 @@
-../../../../../lib/closure-library/closure/goog/graphics/paths.js

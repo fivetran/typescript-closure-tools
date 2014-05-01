@@ -1,1 +1,0 @@
-../../../../../lib/closure-library/closure/goog/messaging/deferredchannel_test.js

@@ -1,1 +1,0 @@
-../../../../../lib/closure-library/closure/goog/debug/fpsdisplay_test.js

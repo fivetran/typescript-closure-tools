@@ -1,1 +1,0 @@
-../../../../../lib/closure-library/closure/goog/datasource/jsxmlhttpdatasource_test.js

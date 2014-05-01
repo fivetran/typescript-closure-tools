@@ -1,1 +1,0 @@
-../../../../../lib/closure-library/closure/goog/module/moduleinfo_test.js

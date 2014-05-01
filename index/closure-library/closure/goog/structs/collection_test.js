@@ -1,1 +1,0 @@
-../../../../../lib/closure-library/closure/goog/structs/collection_test.js

@@ -1,1 +1,0 @@
-../../../../../lib/closure-library/closure/goog/string/path_test.js

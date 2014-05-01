@@ -1,1 +1,0 @@
-../../../../../lib/closure-library/closure/goog/result/result_interface.js

@@ -1,1 +1,0 @@
-../../../../..2../../lib/closure-library/closure/goog/testing/proto2/proto2_test.js

@@ -1,1 +1,0 @@
-../../../../../lib/closure-library/closure/goog/useragent/keyboard_test.js

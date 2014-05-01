@@ -1,1 +1,0 @@
-../../../../../lib/closure-library/closure/goog/debug/entrypointregistry_test.js

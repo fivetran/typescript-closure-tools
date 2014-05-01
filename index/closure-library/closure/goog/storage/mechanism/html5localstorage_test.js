@@ -1,1 +1,0 @@
-../../../../../../lib/closure-library/closure/goog/storage/mechanism/html5localstorage_test.js

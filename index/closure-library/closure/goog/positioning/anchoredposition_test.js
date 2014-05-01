@@ -1,1 +1,0 @@
-../../../../../lib/closure-library/closure/goog/positioning/anchoredposition_test.js

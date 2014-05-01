@@ -1,1 +1,0 @@
-../../../../../lib/closure-library/closure/goog/dom/annotate_test.js

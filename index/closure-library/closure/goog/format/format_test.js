@@ -1,1 +1,0 @@
-../../../../../lib/closure-library/closure/goog/format/format_test.js

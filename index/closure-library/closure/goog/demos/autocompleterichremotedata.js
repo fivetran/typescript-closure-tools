@@ -1,1 +1,0 @@
-../../../../../lib/closure-library/closure/goog/demos/autocompleterichremotedata.js

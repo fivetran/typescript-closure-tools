@@ -1,1 +1,0 @@
-../../../../../lib/closure-library/closure/goog/positioning/viewportclientposition_test.js

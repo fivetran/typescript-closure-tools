@@ -1,1 +1,0 @@
-../../../../../../lib/closure-library/closure/goog/testing/fs/file.js

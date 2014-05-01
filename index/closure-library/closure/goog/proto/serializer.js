@@ -1,1 +1,0 @@
-../../../../../lib/closure-library/closure/goog/proto/serializer.js

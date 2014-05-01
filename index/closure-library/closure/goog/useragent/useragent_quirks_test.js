@@ -1,1 +1,0 @@
-../../../../../lib/closure-library/closure/goog/useragent/useragent_quirks_test.js

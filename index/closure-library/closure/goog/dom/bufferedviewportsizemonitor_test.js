@@ -1,1 +1,0 @@
-../../../../../lib/closure-library/closure/goog/dom/bufferedviewportsizemonitor_test.js

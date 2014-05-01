@@ -1,1 +1,0 @@
-../../../../../../../lib/closure-library/closure/goog/labs/net/webchannel/webchannelbase_test.js
