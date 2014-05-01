@@ -1,8 +1,7 @@
 #!/bin/bash
 
-FILES=$(find lib/closure-library/closure/ -name '*.js' | grep -v '_test.js$' | grep -v '_perf.js$')
-
-#DIRS=$(echo "$DIRS" | head -1)
+#FILES=$(find lib/closure-library/closure/ -name '*.js' | grep -v '_test.js$' | grep -v '_perf.js$')
+FILES="lib/closure-library/closure/goog/base.js"
 
 for FILE in $FILES
 do
@@ -23,7 +22,7 @@ do
              echo ${REF%.js}
            done)
     REFS=$(echo "$REFS" | grep -v third_party)
-    REFS=$(echo "$REFS" | grep -v "$GOOG.js")
+    REFS=$(echo "$REFS" | uniq | head -n -1)
 
     for REF in $REFS
     do
@@ -37,3 +36,4 @@ do
 done
 
 rm deps-cache
+rm sources-cache

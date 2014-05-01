@@ -196,27 +196,35 @@ def main():
     else:
         out = sys.stdout
 
-    sources = set()
+    # TODO THIS IS A COMPLETE HACK THAT ONLY WORKS WHEN YOU CALL closurebuilder.py REPEATEDLY WITH THE SAME ARGUMENTS
+    if os.path.isfile(os.path.abspath('sources-cache')):
+        logging.info('Loading known sources from disk')
+        sources = pickle.load(open('sources-cache', 'rb'))
+    else:
+        sources = set()
 
-    logging.info('Scanning paths...')
-    for path in options.roots:
-        for js_path in treescan.ScanTreeForJsFiles(path):
+        logging.info('Scanning paths...')
+        for path in options.roots:
+            for js_path in treescan.ScanTreeForJsFiles(path):
+                sources.add(_PathSource(js_path))
+
+        # Add scripts specified on the command line.
+        for js_path in args:
             sources.add(_PathSource(js_path))
 
-    # Add scripts specified on the command line.
-    for js_path in args:
-        sources.add(_PathSource(js_path))
+        logging.info('%s sources scanned.', len(sources))
 
-    logging.info('%s sources scanned.', len(sources))
+        pickle.dump(sources, open('sources-cache', 'wb'))
 
     # Though deps output doesn't need to query the tree, we still build it
     # to validate dependencies.
 
-    logging.info('Building dependency tree..')
+    # TODO THIS IS A COMPLETE HACK THAT ONLY WORKS WHEN YOU CALL closurebuilder.py REPEATEDLY WITH THE SAME ARGUMENTS
     if os.path.isfile(os.path.abspath('deps-cache')):
         logging.info('Loading dependency tree from disk')
         tree = pickle.load(open('deps-cache', 'rb'))
     else:
+        logging.info('Building dependency tree..')
         tree = depstree.DepsTree(sources)
         pickle.dump(tree, open('deps-cache', 'wb'))
 
