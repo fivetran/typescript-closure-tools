@@ -398,7 +398,7 @@ function generate_method(name, docs) {
   var paramTags = docs.tags.filter(is_title('param'));
   var returnTag = goog.array.find(docs.tags, is_title_in(['return', 'returns'])) || VOID_TYPE;
 
-  return name + '(' + paramTags.map(generate_function_parameter).join(', ') + '): ' + generate_type(returnTag.type);
+  return name + generics(docs) + '(' + paramTags.map(generate_function_parameter).join(', ') + '): ' + generate_type(returnTag.type);
 }
 
 function generate_field_name(name, type) {
