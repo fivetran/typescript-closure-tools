@@ -25,6 +25,7 @@ do
            do
              dirname $REF
            done)
+    REFS=$(echo $REFS | grep -v third_party)
     REFS=$(echo "$REFS" | sort -u)
     REFS=$(echo "$REFS" | grep -v "$DIR")
 
