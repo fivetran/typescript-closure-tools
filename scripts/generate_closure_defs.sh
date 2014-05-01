@@ -8,7 +8,7 @@ for DIR in $DIRS
 do
     FILES=$(ls $DIR/*.js | grep -v '_test.js$' | grep -v '_perf.js$')
     GOOG=${DIR#lib/closure-library/closure/}
-    OUTPUT="index/$GOOG.d.ts"
+    OUTPUT="index/closure/$GOOG.d.ts"
 
     # Clear file
     mkdir --parents $(dirname $OUTPUT)
