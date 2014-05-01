@@ -418,10 +418,28 @@ function generate_member(name, docs) {
         return generate_field(name, docs);
 }
 
+function generate_extends(docs) {
+    var supers = docs.tags.filter(is_title('extends')).map(pick('type')).map(generate_type);
+
+    if (supers.length > 0)
+        return 'extends ' + supers.join(', ') + ' ';
+    else
+        return '';
+}
+
+function generate_implements(docs) {
+    var supers = docs.tags.filter(is_title('implements')).map(pick('type')).map(generate_type);
+
+    if (supers.length > 0)
+        return 'implements ' + supers.join(', ') + ' ';
+    else
+        return '';
+}
+
 function generate_interface(name, constructor, prototype) {
     goog.asserts.assertObject(prototype);
 
-    var acc = 'interface ' + name + ' {\n';
+    var acc = 'interface ' + name + generate_extends(constructor) + '{\n';
 
     Object.keys(prototype).forEach(function (name) {
         var docs = prototype[name];
@@ -443,17 +461,7 @@ function generate_constructor(docs) {
 function generate_class(name, constructor, prototype) {
     goog.asserts.assertObject(prototype);
 
-    var acc = 'class ' + name;
-
-    var superName = goog.array.find(constructor.tags, is_title('extends'));
-    if (superName)
-        acc += ' extends ' + generate_type(superName.type);
-
-    var interfaceName = goog.array.find(constructor.tags, is_title('implements'));
-    if (interfaceName)
-        acc += ' implements ' + generate_type(interfaceName.type);
-
-    acc += ' {\n';
+    var acc = 'class ' + name + ' ' + generate_extends(constructor) + generate_implements(constructor) + '{\n';
 
     var text = constructor.originalText.replace(/\n\s+/g, '\n     ');
     acc += '    ' + text + '\n';
