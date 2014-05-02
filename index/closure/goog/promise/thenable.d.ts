@@ -44,8 +44,8 @@ declare module goog {
      * @extends {IThenable.<TYPE>}
      * @template TYPE
      */
-    interface Thenable<TYPE> extends IThenable<TYPE> {
-    
+    interface Thenable<TYPE> {
+
         /**
          * Adds callbacks that will operate on the result of the Thenable, returning a
          * new child Promise.
@@ -73,7 +73,9 @@ declare module goog {
          *     of the fulfillment or rejection callback.
          * @template RESULT,THIS
          */
-        then(): void;
+        then<RESULT>(onFulfilled?: (TYPE) => RESULT, onRejected?: (any) => any): goog.Promise<RESULT>;
+
+        then<RESULT>(onFulfilled?: (TYPE) => Thenable<RESULT>, onRejected?: (any) => any): goog.Promise<RESULT>;
     }
 }
 
