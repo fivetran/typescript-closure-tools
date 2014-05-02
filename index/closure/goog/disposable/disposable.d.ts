@@ -8,7 +8,7 @@ declare module goog.Disposable {
     /**
      * @enum {number} Different monitoring modes for Disposable.
      */
-    enum MonitoringMode { OFF, PERMANENT, INTERACTIVE } 
+    enum MonitoringMode { OFF, PERMANENT, INTERACTIVE }
 
     /**
      * @return {!Array.<!goog.Disposable>} All {@code goog.Disposable} objects that
@@ -67,6 +67,10 @@ declare module goog {
          * @implements {goog.disposable.IDisposable}
          */
         constructor();
+
+        dispose(): void;
+
+        isDisposed(): boolean;
     
         /**
          * If monitoring the goog.Disposable instances is enabled, stores the creation
