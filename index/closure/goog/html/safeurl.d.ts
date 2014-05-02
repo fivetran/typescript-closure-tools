@@ -62,11 +62,11 @@ declare module goog.html.SafeUrl {
      * Compile-time constant strings are inherently program-controlled and hence
      * trusted.
      *
-     * @param {!goog.string.Const} url A compile-time-constant string from which to
+     * @param {!googstring.Const} url A compile-time-constant string from which to
      *         create a SafeUrl.
      * @return {!goog.html.SafeUrl} A SafeUrl object initialized to {@code url}.
      */
-    function fromConstant(url: goog.string.Const): goog.html.SafeUrl;
+    function fromConstant(url: googstring.Const): goog.html.SafeUrl;
 
     /**
      * Creates a SafeUrl object from {@code url}. If {@code url} is a
@@ -92,10 +92,10 @@ declare module goog.html.SafeUrl {
      * object containing an innocuous string, goog.html.SafeUrl.INNOCUOUS_STRING.
      *
      * @see http://url.spec.whatwg.org/#concept-relative-url
-     * @param {string|!goog.string.TypedString} url The URL to validate.
+     * @param {string|!googstring.TypedString} url The URL to validate.
      * @return {!goog.html.SafeUrl} The validated URL, wrapped as a SafeUrl.
      */
-    function sanitize(url: any /*string|goog.string.TypedString*/): goog.html.SafeUrl;
+    function sanitize(url: any /*string|googstring.TypedString*/): goog.html.SafeUrl;
 }
 
 declare module goog.html {
@@ -135,9 +135,9 @@ declare module goog.html {
      * @final
      * @struct
      * @implements {goog.i18n.bidi.DirectionalString}
-     * @implements {goog.string.TypedString}
+     * @implements {googstring.TypedString}
      */
-    class SafeUrl implements goog.i18n.bidi.DirectionalString, goog.string.TypedString {
+    class SafeUrl implements goog.i18n.bidi.DirectionalString, googstring.TypedString {
         /**
          * A string that is safe to use in URL context in DOM APIs and HTML documents.
          *
@@ -173,7 +173,7 @@ declare module goog.html {
          * @final
          * @struct
          * @implements {goog.i18n.bidi.DirectionalString}
-         * @implements {goog.string.TypedString}
+         * @implements {googstring.TypedString}
          */
         constructor();
     }

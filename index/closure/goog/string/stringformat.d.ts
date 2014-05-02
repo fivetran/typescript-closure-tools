@@ -3,7 +3,7 @@
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/string/string.d.ts" />
 
-declare module goog.string {
+declare module googstring {
 
     /**
      * Performs sprintf-like conversion, ie. puts the values in a template.
