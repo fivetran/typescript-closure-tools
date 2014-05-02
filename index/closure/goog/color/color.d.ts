@@ -1,4 +1,4 @@
-// Generated Thu May  1 16:43:46 PDT 2014
+// Generated Thu May  1 17:23:45 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/color/names.d.ts" />
@@ -37,11 +37,6 @@ declare module goog.color {
      */
     interface Hsl extends Array<number> { }
 
-    interface HexType {
-        hex: string;
-        type: string
-    }
-
     /**
      * Parses a color out of a string.
      * @param {string} str Color in some format.
@@ -49,7 +44,7 @@ declare module goog.color {
      *     representation of the color, 'type' is a string containing the type
      *     of color format passed in ('hex', 'rgb', 'named').
      */
-    function parse(str: string): HexType;
+    function parse(str: string): { hex: string; type: string };
 
     /**
      * Determines if the given string can be parsed as a color.

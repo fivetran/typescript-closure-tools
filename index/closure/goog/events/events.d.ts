@@ -1,4 +1,4 @@
-// Generated Thu May  1 16:43:52 PDT 2014
+// Generated Thu May  1 17:23:50 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -303,10 +303,10 @@ declare module goog.events {
      * Installs exception protection for the browser event entry point using the
      * given error handler.
      *
-     * @param {goog.debug.GoogErrorHandler} errorHandler Error handler with which to
+     * @param {goog.debug.ErrorHandler} errorHandler Error handler with which to
      *     protect the entry point.
      */
-    function protectBrowserEventEntryPoint(errorHandler: goog.debug.GoogErrorHandler): void;
+    function protectBrowserEventEntryPoint(errorHandler: goog.debug.ErrorHandler): void;
 
     /**
      * Handles an event and dispatches it to the correct listeners. This

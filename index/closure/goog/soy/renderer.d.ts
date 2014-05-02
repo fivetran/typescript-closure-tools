@@ -1,4 +1,4 @@
-// Generated Thu May  1 16:38:32 PDT 2014
+// Generated Thu May  1 17:18:27 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -33,16 +33,10 @@
 
 declare module goog.soy.Renderer {
 
-    interface SavedTemplate {
-        template: string;
-        data: Object;
-        ijData: Object
-    }
-
     /**
      * @typedef {Array.<{template: string, data: Object, ijData: Object}>}
      */
-    interface SavedTemplateRender extends Array<SavedTemplate> { }
+    interface SavedTemplateRender extends Array<{ template: string; data: Object; ijData: Object }> { }
 }
 
 declare module goog.soy {

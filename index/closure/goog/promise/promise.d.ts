@@ -1,4 +1,4 @@
-// Generated Thu May  1 16:45:58 PDT 2014
+// Generated Thu May  1 17:25:56 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/promise/resolver.d.ts" />
@@ -150,16 +150,16 @@ declare module goog.Promise {
      *
      * @param {string=} opt_message
      * @constructor
-     * @extends {goog.debug.GoogError}
+     * @extends {goog.debug.Error}
      * @final
      */
-    class CancellationError extends goog.debug.GoogError {
+    class CancellationError extends goog.debug.Error {
         /**
          * Error used as a rejection reason for canceled Promises.
          *
          * @param {string=} opt_message
          * @constructor
-         * @extends {goog.debug.GoogError}
+         * @extends {goog.debug.Error}
          * @final
          */
         constructor(opt_message?: string);

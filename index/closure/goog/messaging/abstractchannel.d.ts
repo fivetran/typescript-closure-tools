@@ -1,4 +1,4 @@
-// Generated Thu May  1 16:41:17 PDT 2014
+// Generated Thu May  1 17:21:13 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/string/string.d.ts" />
@@ -81,7 +81,7 @@ declare module goog.messaging {
          *     service object for the given service, or null if none was found.
          * @protected
          */
-        getService(serviceName: string, payload: any /*string|Object*/): { callback: (_0: any /*string|Object*/) => any /*missing*/, objectPayload: boolean };
+        getService(serviceName: string, payload: any /*string|Object*/): { callback: (_0: any /*string|Object*/) => any /*missing*/; objectPayload: boolean };
     
         /**
          * Converts the message payload into the format expected by the registered

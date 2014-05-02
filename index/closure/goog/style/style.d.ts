@@ -1,4 +1,4 @@
-// Generated Thu May  1 16:39:36 PDT 2014
+// Generated Thu May  1 17:19:31 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -399,7 +399,7 @@ declare module goog.style {
      * Converts a CSS selector in the form style-property to styleProperty.
      * @param {*} selector CSS Selector.
      * @return {string} Camel case selector.
-     * @deprecated Use googstring.toCamelCase instead.
+     * @deprecated Use goog.string.toCamelCase instead.
      */
     function toCamelCase(selector: any): string;
 
@@ -407,7 +407,7 @@ declare module goog.style {
      * Converts a CSS selector in the form styleProperty to style-property.
      * @param {string} selector Camel case selector.
      * @return {string} Selector cased.
-     * @deprecated Use googstring.toSelectorCase instead.
+     * @deprecated Use goog.string.toSelectorCase instead.
      */
     function toSelectorCase(selector: string): string;
 

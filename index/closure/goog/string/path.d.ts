@@ -1,4 +1,4 @@
-// Generated Thu May  1 16:44:48 PDT 2014
+// Generated Thu May  1 17:24:47 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/string/string.d.ts" />
@@ -7,7 +7,7 @@
 /// <reference path="../../goog/asserts/asserts.d.ts" />
 /// <reference path="../../goog/array/array.d.ts" />
 
-declare module googstring.path {
+declare module goog.string.path {
 
     /**
      * Returns the final component of a pathname.
@@ -19,10 +19,10 @@ declare module googstring.path {
     function baseName(path: string): string;
 
     /**
-     * Alias to googstring.path.baseName.
+     * Alias to goog.string.path.baseName.
      * @param {string} path A pathname.
      * @return {string} path The final component of a pathname.
-     * @deprecated Use googstring.path.baseName.
+     * @deprecated Use goog.string.path.baseName.
      */
     var basename: any /*missing*/;
 

@@ -1,8 +1,8 @@
-// Generated Thu May  1 16:44:43 PDT 2014
+// Generated Thu May  1 17:24:41 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 
-declare module googstring {
+declare module goog.string {
 
     /**
      * Wrapper for strings that conform to a data type or language.

@@ -1,4 +1,4 @@
-// Generated Thu May  1 16:41:52 PDT 2014
+// Generated Thu May  1 17:21:49 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/a11y/aria/roles.d.ts" />
@@ -126,7 +126,7 @@ declare module goog.ui.editor.ToolbarFactory {
      * @param {!Array.<{caption: string, value: string}>} fonts Array of
      *     font descriptors.
      */
-    function addFonts(button: goog.ui.Select, fonts: { caption: string, value: string }[]): void;
+    function addFonts(button: goog.ui.Select, fonts: { caption: string; value: string }[]): void;
 
     /**
      * Adds a menu item to the given font menu button.  The first font listed in
@@ -150,7 +150,7 @@ declare module goog.ui.editor.ToolbarFactory {
      * @param {!Array.<{caption: string, value:number}>} sizes Array of font
      *     size descriptors.
      */
-    function addFontSizes(button: goog.ui.Select, sizes: { caption: string, value: number }[]): void;
+    function addFontSizes(button: goog.ui.Select, sizes: { caption: string; value: number }[]): void;
 
     /**
      * Adds a menu item to the given font size menu button.  The {@code value}
@@ -193,7 +193,7 @@ declare module goog.ui.editor.ToolbarFactory {
      * @param {!Array.<{caption: string, command: goog.dom.TagName}>} formats Array
      *     of format option descriptors.
      */
-    function addFormatOptions(button: goog.ui.Select, formats: { caption: string, command: goog.dom.TagName }[]): void;
+    function addFormatOptions(button: goog.ui.Select, formats: { caption: string; command: goog.dom.TagName }[]): void;
 
     /**
      * Adds a menu item to the given "Format block" menu button.

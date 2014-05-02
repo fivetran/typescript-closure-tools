@@ -1,4 +1,4 @@
-// Generated Thu May  1 16:43:21 PDT 2014
+// Generated Thu May  1 17:23:20 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -144,7 +144,7 @@ declare module goog.ui.Dialog {
          * @return {!goog.ui.Dialog.ButtonSet} The button set, to make it easy to chain
          *     "addButton" calls and build new ButtonSets.
          */
-        addButton(button: { key: string, caption: string }, opt_isDefault?: boolean, opt_isCancel?: boolean): goog.ui.Dialog.ButtonSet;
+        addButton(button: { key: string; caption: string }, opt_isDefault?: boolean, opt_isCancel?: boolean): goog.ui.Dialog.ButtonSet;
     
         /**
          * Attaches the button set to an element, rendering it inside.
