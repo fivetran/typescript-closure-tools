@@ -1,4 +1,4 @@
-/// <reference path="../index/references.ts" />
+// <reference path="../index/references.ts" />
 
 import fs = require('fs');
 import esprima = require('esprima');
@@ -329,7 +329,7 @@ function generate_type(t) {
         case 'VoidLiteral':
             return 'void';
         case 'RecordType':
-            return '{ ' + t.fields.map(generate_record_field).join(', ') + ' }';
+            return '{ ' + t.fields.map(generate_record_field).join('; ') + ' }';
         case 'ArrayType':
             return generate_type(t.elements[0]) + '[]';
         case 'FieldType':
