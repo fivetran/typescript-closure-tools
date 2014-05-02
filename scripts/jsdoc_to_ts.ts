@@ -452,7 +452,7 @@ function generate_implements(docs) {
 function generate_interface(name, constructor, prototype) {
     goog.asserts.assertObject(prototype);
 
-    var acc = 'interface ' + name + ' ' + generate_extends(constructor) + '{\n';
+    var acc = 'interface ' + name + generics(constructor) + ' ' + generate_extends(constructor) + '{\n';
 
     Object.keys(prototype).forEach(function (name) {
         var docs = prototype[name];
@@ -474,7 +474,7 @@ function generate_constructor(docs) {
 function generate_class(name, constructor, prototype) {
     goog.asserts.assertObject(prototype);
 
-    var acc = 'class ' + name + ' ' + generate_extends(constructor) + generate_implements(constructor) + '{\n';
+    var acc = 'class ' + name + generics(constructor) + ' ' + generate_extends(constructor) + generate_implements(constructor) + '{\n';
 
     var text = constructor.originalText.replace(/\n\s+/g, '\n     ');
     acc += '    ' + text + '\n';
