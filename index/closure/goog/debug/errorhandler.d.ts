@@ -145,16 +145,16 @@ declare module goog.debug.ErrorHandler {
      * throws an error.
      * @param {*} cause The error thrown by the entry point.
      * @constructor
-     * @extends {goog.debug.Error}
+     * @extends {goog.debug.GoogError}
      * @final
      */
-    class ProtectedFunctionError extends goog.debug.Error {
+    class ProtectedFunctionError extends goog.debug.GoogError {
         /**
          * Error thrown to the caller of a protected entry point if the entry point
          * throws an error.
          * @param {*} cause The error thrown by the entry point.
          * @constructor
-         * @extends {goog.debug.Error}
+         * @extends {goog.debug.GoogError}
          * @final
          */
         constructor(cause: any);

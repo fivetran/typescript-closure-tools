@@ -23,15 +23,15 @@ declare module goog.labs.testing {
      * Error thrown when a Matcher fails to match the input value.
      * @param {string=} opt_message The error message.
      * @constructor
-     * @extends {goog.debug.Error}
+     * @extends {goog.debug.GoogError}
      * @final
      */
-    class MatcherError extends goog.debug.Error {
+    class MatcherError extends goog.debug.GoogError {
         /**
          * Error thrown when a Matcher fails to match the input value.
          * @param {string=} opt_message The error message.
          * @constructor
-         * @extends {goog.debug.Error}
+         * @extends {goog.debug.GoogError}
          * @final
          */
         constructor(opt_message?: string);
