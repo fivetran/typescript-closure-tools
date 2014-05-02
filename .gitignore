@@ -11,5 +11,6 @@ index/*.js
 src/*.js
 scripts/*.js
 index/*.js
+index/closure/*.js
 *.map
 *.pyc
