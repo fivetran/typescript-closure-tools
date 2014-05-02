@@ -7,7 +7,7 @@
 /// <reference path="../../goog/asserts/asserts.d.ts" />
 /// <reference path="../../goog/array/array.d.ts" />
 
-declare module goog.string.newlines {
+declare module googstring.newlines {
 
     /**
      * Splits a string into lines, properly handling universal newlines.
@@ -21,9 +21,9 @@ declare module goog.string.newlines {
     /**
      * Splits a string into an array of line metadata.
      * @param {string} str String to split.
-     * @return {!Array.<!goog.string.newlines.Line>} Array of line metadata.
+     * @return {!Array.<!googstring.newlines.Line>} Array of line metadata.
      */
-    function getLines(str: string): goog.string.newlines.Line[];
+    function getLines(str: string): googstring.newlines.Line[];
 
     /**
      * Line metadata class that records the start/end indicies of lines
@@ -34,7 +34,7 @@ declare module goog.string.newlines {
      * Indexes are expressed as string indicies into string.substring(), inclusive
      * at the start, exclusive at the end.
      *
-     * Create an array of these with goog.string.newlines.getLines().
+     * Create an array of these with googstring.newlines.getLines().
      * @param {string} string The original string.
      * @param {number} startLineIndex The index of the start of the line.
      * @param {number} endContentIndex The index of the end of the line, excluding
@@ -55,7 +55,7 @@ declare module goog.string.newlines {
          * Indexes are expressed as string indicies into string.substring(), inclusive
          * at the start, exclusive at the end.
          *
-         * Create an array of these with goog.string.newlines.getLines().
+         * Create an array of these with googstring.newlines.getLines().
          * @param {string} string The original string.
          * @param {number} startLineIndex The index of the start of the line.
          * @param {number} endContentIndex The index of the end of the line, excluding
