@@ -79,7 +79,7 @@ declare module goog.functions {
      * @return {function(...[?]):T} A new function.
      * @template T
      */
-    function withReturnValue(f: Function, retValue: T): void;
+    function withReturnValue<T>(f: () => T, retValue: T): void;
 
     /**
      * Creates the composition of the functions passed in.
