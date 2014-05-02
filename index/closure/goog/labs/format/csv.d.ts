@@ -45,10 +45,10 @@ declare module goog.labs.format.csv {
      *      error.
      * @param {string=} opt_message A description of the violated parse expectation.
      * @constructor
-     * @extends {goog.debug.Error}
+     * @extends {goog.debug.GoogError}
      * @final
      */
-    class ParseError extends goog.debug.Error {
+    class ParseError extends goog.debug.GoogError {
         /**
          * Error thrown when parsing fails.
          *
@@ -57,7 +57,7 @@ declare module goog.labs.format.csv {
          *      error.
          * @param {string=} opt_message A description of the violated parse expectation.
          * @constructor
-         * @extends {goog.debug.Error}
+         * @extends {goog.debug.GoogError}
          * @final
          */
         constructor(text: string, index: number, opt_message?: string);
