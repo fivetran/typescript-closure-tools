@@ -1,4 +1,4 @@
-// Generated Fri May  2 11:42:49 PDT 2014
+// Generated Fri May  2 15:03:51 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/messaging/portnetwork.d.ts" />

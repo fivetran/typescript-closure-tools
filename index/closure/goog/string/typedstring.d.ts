@@ -1,8 +1,8 @@
-// Generated Fri May  2 11:41:20 PDT 2014
+// Generated Fri May  2 15:02:24 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 
-declare module googstring {
+declare module goog.string {
 
     /**
      * Wrapper for strings that conform to a data type or language.
@@ -16,7 +16,21 @@ declare module googstring {
      * @interface
      */
     interface TypedString {
+    
+        /**
+         * Interface marker of the TypedString interface.
+         *
+         * This property can be used to determine at runtime whether or not an object
+         * implements this interface.  All implementations of this interface set this
+         * property to {@code true}.
+         * @type {boolean}
+         */
         implementsGoogStringTypedString: boolean;
+    
+        /**
+         * Retrieves this wrapped string's value.
+         * @return {!string} The wrapped string's value.
+         */
         getTypedStringValue(): string;
     }
 }

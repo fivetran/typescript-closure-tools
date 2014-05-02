@@ -1,4 +1,4 @@
-// Generated Fri May  2 11:35:08 PDT 2014
+// Generated Fri May  2 14:56:16 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -46,6 +46,14 @@ declare module goog.soy {
      * @interface
      */
     interface InjectedDataSupplier {
+    
+        /**
+         * Gets the injected data. Implementation may assume that
+         * {@code goog.soy.Renderer} will treat the returned data as
+         * immutable.  The renderer will call this every time one of its
+         * {@code render*} methods is called.
+         * @return {Object} A key-value pair representing the injected data.
+         */
         getData(): Object;
     }
 

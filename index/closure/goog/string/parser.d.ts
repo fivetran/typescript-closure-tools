@@ -1,14 +1,22 @@
-// Generated Fri May  2 11:41:20 PDT 2014
+// Generated Fri May  2 15:02:24 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 
-declare module googstring {
+declare module goog.string {
 
     /**
      * An interface for parsing strings into objects.
      * @interface
      */
     interface Parser {
+    
+        /**
+         * Parses a string into an object and returns the result.
+         * Agnostic to the format of string and object.
+         *
+         * @param {string} s The string to parse.
+         * @return {*} The object generated from the string.
+         */
         parse(s: string): any;
     }
 }

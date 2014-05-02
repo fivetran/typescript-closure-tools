@@ -1,4 +1,4 @@
-// Generated Fri May  2 11:35:14 PDT 2014
+// Generated Fri May  2 14:56:22 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/disposable/idisposable.d.ts" />
@@ -77,6 +77,12 @@ declare module goog.fx.anim {
      * @interface
      */
     interface Animated {
+    
+        /**
+         * Function called when a frame is requested for the animation.
+         *
+         * @param {number} now Current time in milliseconds.
+         */
         onAnimationFrame(now: number): void;
     }
 }

@@ -1,4 +1,4 @@
-// Generated Fri May  2 11:35:15 PDT 2014
+// Generated Fri May  2 14:56:22 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 
@@ -19,7 +19,15 @@ declare module goog.fx {
      * @interface
      */
     interface Transition {
+    
+        /**
+         * Plays the transition.
+         */
         play: any /*missing*/;
+    
+        /**
+         * Stops the transition.
+         */
         stop: any /*missing*/;
     }
 }

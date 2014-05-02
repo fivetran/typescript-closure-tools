@@ -1,4 +1,4 @@
-// Generated Fri May  2 11:37:34 PDT 2014
+// Generated Fri May  2 14:58:40 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 
@@ -22,17 +22,82 @@ declare module goog.net {
      * @see http://www.w3.org/TR/XMLHttpRequest/
      */
     interface XhrLike {
+    
+        /**
+         * @type {function()|null|undefined}
+         * @see http://www.w3.org/TR/XMLHttpRequest/#handler-xhr-onreadystatechange
+         */
         onreadystatechange: any /*() => any (missing)|any (null)|any (undefined)*/;
+    
+        /**
+         * @type {string}
+         * @see http://www.w3.org/TR/XMLHttpRequest/#the-responsetext-attribute
+         */
         responseText: string;
+    
+        /**
+         * @type {Document}
+         * @see http://www.w3.org/TR/XMLHttpRequest/#the-responsexml-attribute
+         */
         responseXML: Document;
+    
+        /**
+         * @type {number}
+         * @see http://www.w3.org/TR/XMLHttpRequest/#readystate
+         */
         readyState: number;
+    
+        /**
+         * @type {number}
+         * @see http://www.w3.org/TR/XMLHttpRequest/#status
+         */
         status: number;
+    
+        /**
+         * @type {string}
+         * @see http://www.w3.org/TR/XMLHttpRequest/#statustext
+         */
         statusText: string;
+    
+        /**
+         * @param {string} method
+         * @param {string} url
+         * @param {?boolean=} opt_async
+         * @param {?string=} opt_user
+         * @param {?string=} opt_password
+         * @see http://www.w3.org/TR/XMLHttpRequest/#the-open()-method
+         */
         open(method: string, url: string, opt_async?: boolean, opt_user?: string, opt_password?: string): void;
+    
+        /**
+         * @param {ArrayBuffer|ArrayBufferView|Blob|Document|FormData|string=} opt_data
+         * @see http://www.w3.org/TR/XMLHttpRequest/#the-send()-method
+         */
         send(opt_data?: any /*ArrayBuffer|ArrayBufferView|Blob|Document|FormData|string*/): void;
+    
+        /**
+         * @see http://www.w3.org/TR/XMLHttpRequest/#the-abort()-method
+         */
         abort(): void;
+    
+        /**
+         * @param {string} header
+         * @param {string} value
+         * @see http://www.w3.org/TR/XMLHttpRequest/#the-setrequestheader()-method
+         */
         setRequestHeader(header: string, value: string): void;
+    
+        /**
+         * @param {string} header
+         * @return {string}
+         * @see http://www.w3.org/TR/XMLHttpRequest/#the-getresponseheader()-method
+         */
         getResponseHeader(header: string): string;
+    
+        /**
+         * @return {string}
+         * @see http://www.w3.org/TR/XMLHttpRequest/#the-getallresponseheaders()-method
+         */
         getAllResponseHeaders(): string;
     }
 }

@@ -1,4 +1,4 @@
-// Generated Fri May  2 11:35:57 PDT 2014
+// Generated Fri May  2 14:57:04 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -11,7 +11,7 @@ declare module goog.array {
     /**
      * @typedef {Array|NodeList|Arguments|{length: number}}
      */
-    interface ArrayLike<VALUE> extends Array<VALUE> { /*any (any[]|NodeList|Arguments|{ length: number })*/ }
+    interface ArrayLike { /*any (any[]|NodeList|Arguments|{ length: number })*/ }
 
     /**
      * Returns the last element in an array without removing it.
@@ -216,7 +216,7 @@ declare module goog.array {
      * Counts the array elements that fulfill the predicate, i.e. for which the
      * callback function returns true. Skips holes in the array.
      *
-     * @param {!(Array.<T>|goog.array.ArrayLike<any>)} arr Array or array like object
+     * @param {!(Array.<T>|goog.array.ArrayLike)} arr Array or array like object
      *     over which to iterate.
      * @param {function(this: S, T, number, ?): boolean} f The function to call for
      *     every element. Takes 3 arguments (the element, the index and the array).
@@ -296,20 +296,20 @@ declare module goog.array {
      * @param {*} obj The object for which to test.
      * @return {boolean} true if obj is present.
      */
-    function contains(arr: goog.array.ArrayLike<any>, obj: any): boolean;
+    function contains(arr: goog.array.ArrayLike, obj: any): boolean;
 
     /**
      * Whether the array is empty.
      * @param {goog.array.ArrayLike} arr The array to test.
      * @return {boolean} true if empty.
      */
-    function isEmpty(arr: goog.array.ArrayLike<any>): boolean;
+    function isEmpty(arr: goog.array.ArrayLike): boolean;
 
     /**
      * Clears the array.
      * @param {goog.array.ArrayLike} arr Array or array like object to clear.
      */
-    function clear(arr: goog.array.ArrayLike<any>): void;
+    function clear(arr: goog.array.ArrayLike): void;
 
     /**
      * Pushes an item into an array, if it's not already in the array.
@@ -326,7 +326,7 @@ declare module goog.array {
      * @param {number=} opt_i The index at which to insert the object. If omitted,
      *      treated as 0. A negative index is counted from the end of the array.
      */
-    function insertAt(arr: goog.array.ArrayLike<any>, obj: any, opt_i?: number): void;
+    function insertAt(arr: goog.array.ArrayLike, obj: any, opt_i?: number): void;
 
     /**
      * Inserts at the given index of the array, all elements of another array.
@@ -335,7 +335,7 @@ declare module goog.array {
      * @param {number=} opt_i The index at which to insert the object. If omitted,
      *      treated as 0. A negative index is counted from the end of the array.
      */
-    function insertArrayAt(arr: goog.array.ArrayLike<any>, elementsToAdd: goog.array.ArrayLike<any>, opt_i?: number): void;
+    function insertArrayAt(arr: goog.array.ArrayLike, elementsToAdd: goog.array.ArrayLike, opt_i?: number): void;
 
     /**
      * Inserts an object into an array before a specified object.
@@ -364,7 +364,7 @@ declare module goog.array {
      * @param {number} i The index to remove.
      * @return {boolean} True if an element was removed.
      */
-    function removeAt(arr: goog.array.ArrayLike<any>, i: number): boolean;
+    function removeAt(arr: goog.array.ArrayLike, i: number): boolean;
 
     /**
      * Removes the first value that satisfies the given condition.
@@ -684,7 +684,7 @@ declare module goog.array {
      *     compares the elements using the built-in '===' operator.
      * @return {boolean} Whether the two arrays are equal.
      */
-    function equals(arr1: goog.array.ArrayLike<any>, arr2: goog.array.ArrayLike<any>, opt_equalsFn?: Function): boolean;
+    function equals(arr1: goog.array.ArrayLike, arr2: goog.array.ArrayLike, opt_equalsFn?: Function): boolean;
 
     /**
      * 3-way array compare function.
@@ -867,7 +867,7 @@ declare module goog.array {
      * @param {...!goog.array.ArrayLike} var_args Arrays to be combined.
      * @return {!Array.<!Array>} A new array of arrays created from provided arrays.
      */
-    function zip(...var_args: goog.array.ArrayLike<any>[]): any[][];
+    function zip(...var_args: goog.array.ArrayLike[]): any[][];
 
     /**
      * Shuffles the values in the specified array using the Fisher-Yates in-place

@@ -1,4 +1,4 @@
-// Generated Fri May  2 11:41:25 PDT 2014
+// Generated Fri May  2 15:02:29 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -7,18 +7,18 @@
 /// <reference path="../../goog/asserts/asserts.d.ts" />
 /// <reference path="../../goog/string/typedstring.d.ts" />
 
-declare module googstring.Const {
+declare module goog.string.Const {
 
     /**
      * Performs a runtime check that the provided object is indeed an instance
-     * of {@code googstring.Const}, and returns its value.
-     * @param {!googstring.Const} stringConst The object to extract from.
+     * of {@code goog.string.Const}, and returns its value.
+     * @param {!goog.string.Const} stringConst The object to extract from.
      * @return {string} The Const object's contained string, unless the run-time
      *     type check fails. In that case, {@code unwrap} returns an innocuous
      *     string, or, if assertions are enabled, throws
      *     {@code goog.asserts.AssertionError}.
      */
-    function unwrap(stringConst: googstring.Const): string;
+    function unwrap(stringConst: goog.string.Const): string;
 
     /**
      * Creates a Const object from a compile-time constant string.
@@ -28,33 +28,33 @@ declare module googstring.Const {
      *
      * Correct invocations include,
      * <pre>
-     *   var s = googstring.Const.from('hello');
-     *   var t = googstring.Const.from('hello' + 'world');
+     *   var s = goog.string.Const.from('hello');
+     *   var t = goog.string.Const.from('hello' + 'world');
      * </pre>
      *
      * In contrast, the following are illegal:
      * <pre>
-     *   var s = googstring.Const.from(getHello());
-     *   var t = googstring.Const.from('hello' + world);
+     *   var s = goog.string.Const.from(getHello());
+     *   var t = goog.string.Const.from('hello' + world);
      * </pre>
      *
      * TODO(user): Compile-time checks that this function is only called
      * with compile-time constant expressions.
      *
      * @param {string} s A constant string from which to create a Const.
-     * @return {!googstring.Const} A Const object initialized to stringConst.
+     * @return {!goog.string.Const} A Const object initialized to stringConst.
      */
-    function from(s: string): googstring.Const;
+    function from(s: string): goog.string.Const;
 }
 
-declare module googstring {
+declare module goog.string {
 
     /**
      * Wrapper for compile-time-constant strings.
      *
      * Const is a wrapper for strings that can only be created from program
      * constants (i.e., string literals).  This property relies on a custom Closure
-     * compiler check that {@code googstring.Const.from} is only invoked on
+     * compiler check that {@code goog.string.Const.from} is only invoked on
      * compile-time-constant expressions.
      *
      * Const is useful in APIs whose correct and secure use requires that certain
@@ -63,24 +63,24 @@ declare module googstring {
      * attackers, and hence are safe to use in such contexts.
      *
      * Instances of this type must be created via its factory method
-     * {@code googstring.Const.from} and not by invoking its constructor.  The
+     * {@code goog.string.Const.from} and not by invoking its constructor.  The
      * constructor intentionally takes no parameters and the type is immutable;
      * hence only a default instance corresponding to the empty string can be
      * obtained via constructor invocation.
      *
-     * @see googstring.Const#from
+     * @see goog.string.Const#from
      * @constructor
      * @final
      * @struct
-     * @implements {googstring.TypedString}
+     * @implements {goog.string.TypedString}
      */
-    class Const implements googstring.TypedString {
+    class Const implements goog.string.TypedString {
         /**
          * Wrapper for compile-time-constant strings.
          *
          * Const is a wrapper for strings that can only be created from program
          * constants (i.e., string literals).  This property relies on a custom Closure
-         * compiler check that {@code googstring.Const.from} is only invoked on
+         * compiler check that {@code goog.string.Const.from} is only invoked on
          * compile-time-constant expressions.
          *
          * Const is useful in APIs whose correct and secure use requires that certain
@@ -89,16 +89,16 @@ declare module googstring {
          * attackers, and hence are safe to use in such contexts.
          *
          * Instances of this type must be created via its factory method
-         * {@code googstring.Const.from} and not by invoking its constructor.  The
+         * {@code goog.string.Const.from} and not by invoking its constructor.  The
          * constructor intentionally takes no parameters and the type is immutable;
          * hence only a default instance corresponding to the empty string can be
          * obtained via constructor invocation.
          *
-         * @see googstring.Const#from
+         * @see goog.string.Const#from
          * @constructor
          * @final
          * @struct
-         * @implements {googstring.TypedString}
+         * @implements {goog.string.TypedString}
          */
         constructor();
     }

@@ -1,4 +1,4 @@
-// Generated Fri May  2 11:43:54 PDT 2014
+// Generated Fri May  2 15:04:56 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 
@@ -374,7 +374,21 @@ declare module goog.i18n.bidi {
      * @interface
      */
     interface DirectionalString {
+    
+        /**
+         * Interface marker of the DirectionalString interface.
+         *
+         * This property can be used to determine at runtime whether or not an object
+         * implements this interface.  All implementations of this interface set this
+         * property to {@code true}.
+         * @type {boolean}
+         */
         implementsGoogI18nBidiDirectionalString: boolean;
+    
+        /**
+         * Retrieves this object's known direction (if any).
+         * @return {?goog.i18n.bidi.Dir} The known direction. Null if unknown.
+         */
         getDirection(): goog.i18n.bidi.Dir;
     }
 }

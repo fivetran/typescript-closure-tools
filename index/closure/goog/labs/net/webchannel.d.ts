@@ -1,4 +1,4 @@
-// Generated Fri May  2 11:42:14 PDT 2014
+// Generated Fri May  2 15:03:17 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/dom/nodetype.d.ts" />
@@ -91,8 +91,28 @@ declare module goog.net.WebChannel {
      * @interface
      */
     interface RuntimeProperties {
+    
+        /**
+         * @return {number} The effective request limit for the channel.
+         */
         getSpdyRequestLimit(): number;
+    
+        /**
+         * This method may be used by the application to stop ack of received messages
+         * as a means of enabling or disabling flow-control on the server-side.
+         *
+         * @param {boolean} enabled If true, enable flow-control behavior on the
+         * server side. Setting it to false will cancel ay previous enabling action.
+         */
         setServerFlowControl(enabled: boolean): void;
+    
+        /**
+         * This method may be used by the application to throttle the rate of outgoing
+         * messages, as a means of sender initiated flow-control.
+         *
+         * @return {number} The total number of messages that have not received
+         * ack from the server and therefore remain in the buffer.
+         */
         getNonAckedMessageCount(): number;
     }
 
@@ -157,9 +177,29 @@ declare module goog.net {
      * @extends {EventTarget}
      */
     interface WebChannel extends EventTarget {
+    
+        /**
+         * Open the WebChannel against the URI specified in the constructor.
+         */
         open: any /*missing*/;
+    
+        /**
+         * Close the WebChannel.
+         */
         close: any /*missing*/;
+    
+        /**
+         * Sends a message to the server that maintains the other end point of
+         * the WebChannel.
+         *
+         * @param {!goog.net.WebChannel.MessageData} message The message to send.
+         */
         send(message: goog.net.WebChannel.MessageData): void;
+    
+        /**
+         * @return {!goog.net.WebChannel.RuntimeProperties} The runtime properties
+         * of the WebChannel instance.
+         */
         getRuntimeProperties(): goog.net.WebChannel.RuntimeProperties;
     }
 }

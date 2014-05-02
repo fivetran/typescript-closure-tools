@@ -1,4 +1,4 @@
-// Generated Fri May  2 11:38:18 PDT 2014
+// Generated Fri May  2 14:59:24 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -86,6 +86,15 @@ declare module goog.ui.SliderBase {
      * @interface
      */
     interface AnimationFactory {
+    
+        /**
+         * Creates an additonal animation to play when animating to a new value.
+         *
+         * @param {number} previousValue The previous value (before animation).
+         * @param {number} newValue The new value (after animation).
+         * @param {number} interval The animation interval.
+         * @return {!Array.<!goog.fx.TransitionBase>} The additional animations to play.
+         */
         createAnimations(previousValue: number, newValue: number, interval: number): goog.fx.TransitionBase[];
     }
 }

@@ -1,4 +1,4 @@
-// Generated Fri May  2 11:35:20 PDT 2014
+// Generated Fri May  2 14:56:27 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 
@@ -79,7 +79,7 @@ declare module goog.functions {
      * @return {function(...[?]):T} A new function.
      * @template T
      */
-    function withReturnValue<T>(f: () => T, retValue: T): void;
+    function withReturnValue(f: Function, retValue: T): void;
 
     /**
      * Creates the composition of the functions passed in.

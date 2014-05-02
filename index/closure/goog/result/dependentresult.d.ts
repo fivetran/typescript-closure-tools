@@ -1,4 +1,4 @@
-// Generated Fri May  2 11:43:18 PDT 2014
+// Generated Fri May  2 15:04:21 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/promise/thenable.d.ts" />
@@ -16,6 +16,14 @@ declare module goog.result {
      * @deprecated Use {@link goog.Promise} instead - http://go/promisemigration
      */
     interface DependentResult extends goog.result.Result {
+    
+        /**
+         *
+         * @return {!Array.<!goog.result.Result>} A list of Results which will affect
+         *     the eventual value of this Result. The returned Results may themselves
+         *     have parent results, which would be grandparents of this Result;
+         *     grandparents (and any other ancestors) are not included in this list.
+         */
         getParentResults(): goog.result.Result[];
     }
 }

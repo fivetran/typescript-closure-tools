@@ -1,4 +1,4 @@
-// Generated Fri May  2 11:42:33 PDT 2014
+// Generated Fri May  2 15:03:36 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 
@@ -13,8 +13,23 @@ declare module goog.promise {
      * @template TYPE
      */
     interface Resolver<TYPE> {
+    
+        /**
+         * The promise that created this resolver.
+         * @const {!goog.Promise.<TYPE>}
+         */
         promise: any /*missing*/;
+    
+        /**
+         * Resolves this resolver with the specified value.
+         * @const {function((TYPE|goog.Promise.<TYPE>|Thenable))}
+         */
         resolve: any /*missing*/;
+    
+        /**
+         * Rejects this resolver with the specified reason.
+         * @const {function(*): void}
+         */
         reject: any /*missing*/;
     }
 }

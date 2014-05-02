@@ -1,4 +1,4 @@
-// Generated Fri May  2 11:41:35 PDT 2014
+// Generated Fri May  2 15:02:39 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/debug/error.d.ts" />
@@ -45,10 +45,10 @@ declare module goog.fs {
      * @param {!DOMError} error
      * @param {string} action The action being undertaken when the error was raised.
      * @constructor
-     * @extends {goog.debug.GoogError}
+     * @extends {goog.debug.Error}
      * @final
      */
-    class Error extends goog.debug.GoogError {
+    class Error extends goog.debug.Error {
         /**
          * A filesystem error. Since the filesystem API is asynchronous, stack traces
          * are less useful for identifying where errors come from, so this includes a
@@ -57,7 +57,7 @@ declare module goog.fs {
          * @param {!DOMError} error
          * @param {string} action The action being undertaken when the error was raised.
          * @constructor
-         * @extends {goog.debug.GoogError}
+         * @extends {goog.debug.Error}
          * @final
          */
         constructor(error: DOMError, action: string);

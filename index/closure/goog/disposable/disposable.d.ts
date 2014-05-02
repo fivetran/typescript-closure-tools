@@ -1,4 +1,4 @@
-// Generated Fri May  2 11:44:13 PDT 2014
+// Generated Fri May  2 15:05:15 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/disposable/idisposable.d.ts" />
@@ -8,7 +8,7 @@ declare module goog.Disposable {
     /**
      * @enum {number} Different monitoring modes for Disposable.
      */
-    enum MonitoringMode { OFF, PERMANENT, INTERACTIVE }
+    enum MonitoringMode { OFF, PERMANENT, INTERACTIVE } 
 
     /**
      * @return {!Array.<!goog.Disposable>} All {@code goog.Disposable} objects that
@@ -42,7 +42,7 @@ declare module goog {
 
     /**
      * Calls {@code dispose} on each member of the list that supports it. (If the
-     * member is an ArrayLike<any>, then {@code goog.disposeAll()} will be called
+     * member is an ArrayLike, then {@code goog.disposeAll()} will be called
      * recursively on each of its members.) If the member is not an object with a
      * {@code dispose()} method, then it is ignored.
      * @param {...*} var_args The list.
@@ -67,10 +67,6 @@ declare module goog {
          * @implements {goog.disposable.IDisposable}
          */
         constructor();
-
-        dispose(): void;
-
-        isDisposed(): boolean;
     
         /**
          * If monitoring the goog.Disposable instances is enabled, stores the creation
