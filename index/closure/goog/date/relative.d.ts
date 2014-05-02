@@ -24,7 +24,7 @@ declare module goog.date.relative {
      * @typedef {function(number, boolean, goog.date.relative.Unit): string}
      */
     interface TimeDeltaFormatter {
-        (number, boolean, goog.date.relative.Unit): string
+        (number, boolean, Unit): string
     }
 
     /**
