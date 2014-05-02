@@ -37,6 +37,11 @@ declare module goog.color {
      */
     interface Hsl extends Array<number> { }
 
+    interface HexType {
+        hex: string;
+        type: string
+    }
+
     /**
      * Parses a color out of a string.
      * @param {string} str Color in some format.
@@ -44,7 +49,7 @@ declare module goog.color {
      *     representation of the color, 'type' is a string containing the type
      *     of color format passed in ('hex', 'rgb', 'named').
      */
-    function parse(str: string): { hex: string, type: string };
+    function parse(str: string): HexType;
 
     /**
      * Determines if the given string can be parsed as a color.
