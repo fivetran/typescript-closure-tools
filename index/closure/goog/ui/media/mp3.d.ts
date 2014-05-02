@@ -1,4 +1,4 @@
-// Generated Thu May  1 21:04:08 PDT 2014
+// Generated Fri May  2 10:39:29 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/dom/nodetype.d.ts" />
@@ -82,7 +82,7 @@ declare module goog.ui.media.Mp3 {
      * Copied from http://go/markdownlite.js.
     
      *
-     * NOTE(user): although it would be easier to use googstring.endsWith('.mp3'),
+     * NOTE(user): although it would be easier to use goog.string.endsWith('.mp3'),
      * in the future, we want to provide media inlining, which is basically getting
      * a text and replacing all mp3 references with an mp3 player, so it makes sense
      * to share the same regular expression to match everything.

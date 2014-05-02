@@ -1,4 +1,4 @@
-// Generated Thu May  1 21:02:09 PDT 2014
+// Generated Fri May  2 10:37:30 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -93,9 +93,9 @@ declare module goog.net {
          * Sets a new parser for the response payload. A custom parser may be set to
          * avoid using eval(), for example.
          * By default, the parser uses {@code goog.json.unsafeParse}.
-         * @param {!googstring.Parser} parser Parser.
+         * @param {!goog.string.Parser} parser Parser.
          */
-        setParser(parser: googstring.Parser): void;
+        setParser(parser: goog.string.Parser): void;
     
         /**
          * Starts the test channel. This initiates connections to the server.

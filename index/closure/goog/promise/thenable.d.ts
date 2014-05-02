@@ -1,4 +1,4 @@
-// Generated Thu May  1 21:07:35 PDT 2014
+// Generated Fri May  2 10:42:57 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 
@@ -44,7 +44,7 @@ declare module goog {
      * @extends {IThenable.<TYPE>}
      * @template TYPE
      */
-    interface Thenable extends IThenable<TYPE> {
+    interface Thenable<TYPE> extends IThenable<TYPE> {
         then(): void;
     }
 }

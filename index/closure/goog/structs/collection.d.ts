@@ -1,4 +1,4 @@
-// Generated Thu May  1 21:00:58 PDT 2014
+// Generated Fri May  2 10:36:18 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 
@@ -9,7 +9,7 @@ declare module goog.structs {
      * @interface
      * @template T
      */
-    interface Collection {
+    interface Collection<T> {
         add: any /*missing*/;
         remove: any /*missing*/;
         contains: any /*missing*/;

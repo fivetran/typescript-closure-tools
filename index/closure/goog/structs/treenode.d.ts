@@ -1,4 +1,4 @@
-// Generated Thu May  1 21:01:00 PDT 2014
+// Generated Fri May  2 10:36:20 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -35,7 +35,7 @@ declare module goog.structs {
      * @extends {goog.structs.Node.<KEY, VALUE>}
      * @template KEY, VALUE
      */
-    class TreeNode extends goog.structs.Node<KEY,VALUE> {
+    class TreeNode<KEY, VALUE> extends goog.structs.Node<KEY,VALUE> {
         /**
          * Generic tree node data structure with arbitrary number of child nodes.
          * It is possible to create a dynamic tree structure by overriding

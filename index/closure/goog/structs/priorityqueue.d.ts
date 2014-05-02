@@ -1,4 +1,4 @@
-// Generated Thu May  1 21:01:05 PDT 2014
+// Generated Fri May  2 10:36:25 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/structs/node.d.ts" />
@@ -20,7 +20,7 @@ declare module goog.structs {
      * @template VALUE
      * @final
      */
-    class PriorityQueue extends goog.structs.Heap<number,VALUE> {
+    class PriorityQueue<VALUE> extends goog.structs.Heap<number,VALUE> {
         /**
          * Class for Priority Queue datastructure.
          *

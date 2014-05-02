@@ -1,4 +1,4 @@
-// Generated Thu May  1 21:00:57 PDT 2014
+// Generated Fri May  2 10:36:18 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/structs/collection.d.ts" />
@@ -16,7 +16,7 @@ declare module goog.structs {
      * @final
      * @template T
      */
-    class AvlTree implements goog.structs.Collection<T> {
+    class AvlTree<T> implements goog.structs.Collection<T> {
         /**
          * Constructs an AVL-Tree, which uses the specified comparator to order its
          * values. The values can be accessed efficiently in their sorted order since
@@ -122,7 +122,7 @@ declare module goog.structs.AvlTree {
      * @final
      * @template T
      */
-    class Node {
+    class Node<T> {
         /**
          * Constructs an AVL-Tree node with the specified value. If no parent is
          * specified, the node's parent is assumed to be null. The node's height

@@ -1,4 +1,4 @@
-// Generated Thu May  1 21:05:24 PDT 2014
+// Generated Fri May  2 10:40:46 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/color/names.d.ts" />

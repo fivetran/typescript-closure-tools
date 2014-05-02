@@ -1,4 +1,4 @@
-// Generated Thu May  1 21:05:32 PDT 2014
+// Generated Fri May  2 10:40:54 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -36,7 +36,7 @@ declare module goog.events {
      * @extends {goog.Disposable}
      * @template SCOPE
      */
-    class EventHandler extends goog.Disposable {
+    class EventHandler<SCOPE> extends goog.Disposable {
         /**
          * Super class for objects that want to easily manage a number of event
          * listeners.  It allows a short cut to listen and also provides a quick way

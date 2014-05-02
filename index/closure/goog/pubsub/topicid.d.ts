@@ -1,4 +1,4 @@
-// Generated Thu May  1 20:59:45 PDT 2014
+// Generated Fri May  2 10:35:03 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 
@@ -34,7 +34,7 @@ declare module goog.pubsub {
      * @final
      * @struct
      */
-    class TopicId {
+    class TopicId<PAYLOAD> {
         /**
          * A templated class that is used to register {@code goog.pubsub.PubSub}
          * subscribers.

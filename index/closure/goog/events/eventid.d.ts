@@ -1,4 +1,4 @@
-// Generated Thu May  1 21:05:39 PDT 2014
+// Generated Fri May  2 10:41:01 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 
@@ -22,7 +22,7 @@ declare module goog.events {
      * @struct
      * @final
      */
-    class EventId {
+    class EventId<T> {
         /**
          * A templated class that is used when registering for events. Typical usage:
          * <code>

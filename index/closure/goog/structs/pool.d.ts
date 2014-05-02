@@ -1,4 +1,4 @@
-// Generated Thu May  1 21:01:01 PDT 2014
+// Generated Fri May  2 10:36:21 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -28,7 +28,7 @@ declare module goog.structs {
      * @extends {goog.Disposable}
      * @template T
      */
-    class Pool extends goog.Disposable {
+    class Pool<T> extends goog.Disposable {
         /**
          * A generic pool class. If min is greater than max, an error is thrown.
          * @param {number=} opt_minCount Min. number of objects (Default: 1).

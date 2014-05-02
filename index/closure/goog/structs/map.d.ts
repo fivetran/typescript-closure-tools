@@ -1,4 +1,4 @@
-// Generated Thu May  1 21:00:56 PDT 2014
+// Generated Fri May  2 10:36:17 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -32,7 +32,7 @@ declare module goog.structs {
      * @constructor
      * @template K, V
      */
-    class Map {
+    class Map<K, V> {
         /**
          * Class for Hash Map datastructure.
          * @param {*=} opt_map Map or Object to initialize the map with.

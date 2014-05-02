@@ -1,4 +1,4 @@
-// Generated Thu May  1 21:01:05 PDT 2014
+// Generated Fri May  2 10:36:26 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 
@@ -12,7 +12,7 @@ declare module goog.structs {
      * @constructor
      * @template K, V
      */
-    class Node {
+    class Node<K, V> {
         /**
          * A generic immutable node. This can be used in various collections that
          * require a node object for its item (such as a heap).

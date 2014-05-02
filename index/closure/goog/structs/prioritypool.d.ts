@@ -1,4 +1,4 @@
-// Generated Thu May  1 21:01:08 PDT 2014
+// Generated Fri May  2 10:36:28 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -32,7 +32,7 @@ declare module goog.structs {
      * @extends {goog.structs.Pool.<VALUE>}
      * @template VALUE
      */
-    class PriorityPool extends goog.structs.Pool<VALUE> {
+    class PriorityPool<VALUE> extends goog.structs.Pool<VALUE> {
         /**
          * A generic pool class. If max is greater than min, an error is thrown.
          * @param {number=} opt_minCount Min. number of objects (Default: 1).

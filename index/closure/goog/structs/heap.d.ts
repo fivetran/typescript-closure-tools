@@ -1,4 +1,4 @@
-// Generated Thu May  1 21:01:03 PDT 2014
+// Generated Fri May  2 10:36:24 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/structs/node.d.ts" />
@@ -19,7 +19,7 @@ declare module goog.structs {
      * @constructor
      * @template K, V
      */
-    class Heap {
+    class Heap<K, V> {
         /**
          * Class for a Heap datastructure.
          *

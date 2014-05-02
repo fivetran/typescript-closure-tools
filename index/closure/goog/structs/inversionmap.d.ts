@@ -1,4 +1,4 @@
-// Generated Thu May  1 21:01:00 PDT 2014
+// Generated Fri May  2 10:36:21 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -19,7 +19,7 @@ declare module goog.structs {
      * @constructor
      * @template T
      */
-    class InversionMap {
+    class InversionMap<T> {
         /**
          * Maps ranges to values.
          * @param {Array.<number>} rangeArray An array of monotonically

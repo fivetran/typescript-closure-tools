@@ -1,4 +1,4 @@
-// Generated Thu May  1 21:01:04 PDT 2014
+// Generated Fri May  2 10:36:25 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 
@@ -10,7 +10,7 @@ declare module goog.structs {
      * @constructor
      * @template T
      */
-    class CircularBuffer {
+    class CircularBuffer<T> {
         /**
          * Class for CircularBuffer.
          * @param {number=} opt_maxSize The maximum size of the buffer.

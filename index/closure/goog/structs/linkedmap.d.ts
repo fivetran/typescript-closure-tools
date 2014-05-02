@@ -1,4 +1,4 @@
-// Generated Thu May  1 21:01:03 PDT 2014
+// Generated Fri May  2 10:36:23 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -45,7 +45,7 @@ declare module goog.structs {
      * @constructor
      * @template KEY, VALUE
      */
-    class LinkedMap {
+    class LinkedMap<KEY, VALUE> {
         /**
          * Class for a LinkedMap datastructure, which combines O(1) map access for
          * key/value pairs with a linked list for a consistent iteration order. Sample

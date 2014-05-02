@@ -1,4 +1,4 @@
-// Generated Thu May  1 21:00:01 PDT 2014
+// Generated Fri May  2 10:35:20 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -575,7 +575,7 @@ declare module goog.iter {
      * @constructor
      * @template VALUE
      */
-    class Iterator {
+    class Iterator<VALUE> {
         /**
          * Class/interface for iterators.  An iterator needs to implement a {@code next}
          * method and it needs to throw a {@code goog.iter.StopIteration} when the

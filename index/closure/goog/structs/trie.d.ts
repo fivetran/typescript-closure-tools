@@ -1,4 +1,4 @@
-// Generated Thu May  1 21:01:02 PDT 2014
+// Generated Fri May  2 10:36:22 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/object/object.d.ts" />
@@ -20,7 +20,7 @@ declare module goog.structs {
      * @constructor
      * @template VALUE
      */
-    class Trie {
+    class Trie<VALUE> {
         /**
          * Class for a Trie datastructure.  Trie data structures are made out of trees
          * of Trie classes.

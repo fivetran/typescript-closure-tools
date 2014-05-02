@@ -1,4 +1,4 @@
-// Generated Thu May  1 21:07:22 PDT 2014
+// Generated Fri May  2 10:42:45 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/promise/resolver.d.ts" />
@@ -45,7 +45,7 @@ declare module goog.labs {
      * @interface
      * @template TYPE
      */
-    interface Resolver {
+    interface Resolver<TYPE> {
     }
 }
 

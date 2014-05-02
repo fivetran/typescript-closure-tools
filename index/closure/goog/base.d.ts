@@ -1,7 +1,12 @@
-// Generated Thu May  1 21:07:33 PDT 2014
+// Generated Fri May  2 10:42:55 PDT 2014
 
 
 declare module goog {
+
+    /**
+     * Reference to the global context.  In most cases this will be 'window'.
+     */
+    var global: any /*missing*/;
 
     /**
      * Defines a named value. In uncompiled mode, the value is retreived from
@@ -42,7 +47,7 @@ declare module goog {
      * live code in production.
      *
      * In the case of unit tests, the message may optionally be an exact namespace
-     * for the test (e.g. 'googstringTest'). The linter will then ignore the extra
+     * for the test (e.g. 'goog.stringTest'). The linter will then ignore the extra
      * provide (if not explicitly defined in the code).
      *
      * @param {string=} opt_message Optional message to add to the error that's

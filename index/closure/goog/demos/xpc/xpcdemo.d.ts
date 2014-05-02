@@ -1,4 +1,4 @@
-// Generated Thu May  1 21:06:45 PDT 2014
+// Generated Fri May  2 10:42:08 PDT 2014
 
 
 declare module goog.global {

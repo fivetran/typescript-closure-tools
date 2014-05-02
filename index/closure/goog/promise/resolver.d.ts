@@ -1,4 +1,4 @@
-// Generated Thu May  1 21:07:33 PDT 2014
+// Generated Fri May  2 10:42:56 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 
@@ -12,7 +12,7 @@ declare module goog.promise {
      * @interface
      * @template TYPE
      */
-    interface Resolver {
+    interface Resolver<TYPE> {
         promise: any /*missing*/;
         resolve: any /*missing*/;
         reject: any /*missing*/;

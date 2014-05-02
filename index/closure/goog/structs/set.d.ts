@@ -1,4 +1,4 @@
-// Generated Thu May  1 21:01:02 PDT 2014
+// Generated Fri May  2 10:36:23 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/structs/collection.d.ts" />
@@ -32,7 +32,7 @@ declare module goog.structs {
      * @final
      * @template T
      */
-    class Set implements goog.structs.Collection<T> {
+    class Set<T> implements goog.structs.Collection<T> {
         /**
          * A set that can contain both primitives and objects.  Adding and removing
          * elements is O(1).  Primitives are treated as identical if they have the same
