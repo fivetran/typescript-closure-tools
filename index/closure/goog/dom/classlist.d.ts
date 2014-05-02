@@ -14,7 +14,7 @@ declare module goog.dom.classlist {
      * @param {Element} element DOM node to get the classes of.
      * @return {!goog.array.ArrayLike} Class names on {@code element}.
      */
-    function get(element: Element): goog.array.ArrayLike;
+    function get(element: Element): goog.array.ArrayLike<any>;
 
     /**
      * Sets the entire class name of an element.
