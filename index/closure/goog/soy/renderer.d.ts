@@ -33,10 +33,16 @@
 
 declare module goog.soy.Renderer {
 
+    interface SavedTemplate {
+        template: string;
+        data: Object;
+        ijData: Object
+    }
+
     /**
      * @typedef {Array.<{template: string, data: Object, ijData: Object}>}
      */
-    interface SavedTemplateRender extends Array<{ template: string, data: Object, ijData: Object }> { }
+    interface SavedTemplateRender extends Array<SavedTemplate> { }
 }
 
 declare module goog.soy {
