@@ -137,7 +137,7 @@ declare module goog.userAgent {
      * @return {number}  1 if first argument is higher
      *                   0 if arguments are equal
      *                  -1 if second argument is higher.
-     * @deprecated Use goog.string.compareVersions.
+     * @deprecated Use googstring.compareVersions.
      */
     function compare(v1: string, v2: string): number;
 

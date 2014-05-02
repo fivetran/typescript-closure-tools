@@ -399,7 +399,7 @@ declare module goog.style {
      * Converts a CSS selector in the form style-property to styleProperty.
      * @param {*} selector CSS Selector.
      * @return {string} Camel case selector.
-     * @deprecated Use goog.string.toCamelCase instead.
+     * @deprecated Use googstring.toCamelCase instead.
      */
     function toCamelCase(selector: any): string;
 
@@ -407,7 +407,7 @@ declare module goog.style {
      * Converts a CSS selector in the form styleProperty to style-property.
      * @param {string} selector Camel case selector.
      * @return {string} Selector cased.
-     * @deprecated Use goog.string.toSelectorCase instead.
+     * @deprecated Use googstring.toSelectorCase instead.
      */
     function toSelectorCase(selector: string): string;
 
