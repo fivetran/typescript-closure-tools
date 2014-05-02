@@ -2,49 +2,6 @@
 
 /// <reference path="../../goog/base.d.ts" />
 
-declare module goog {
-
-    /**
-     * Provides a more strict interface for Thenables in terms of
-     * http://promisesaplus.com for interop with {@see goog.Promise}.
-     *
-     * @interface
-     * @extends {IThenable.<TYPE>}
-     * @template TYPE
-     */
-    interface Thenable<TYPE> extends IThenable<TYPE> {
-    
-        /**
-         * Adds callbacks that will operate on the result of the Thenable, returning a
-         * new child Promise.
-         *
-         * If the Thenable is fulfilled, the {@code onFulfilled} callback will be
-         * invoked with the fulfillment value as argument, and the child Promise will
-         * be fulfilled with the return value of the callback. If the callback throws
-         * an exception, the child Promise will be rejected with the thrown value
-         * instead.
-         *
-         * If the Thenable is rejected, the {@code onRejected} callback will be invoked
-         * with the rejection reason as argument, and the child Promise will be rejected
-         * with the return value of the callback or thrown value.
-         *
-         * @param {?(function(this:THIS, TYPE):
-         *             (RESULT|IThenable.<RESULT>|Thenable))=} opt_onFulfilled A
-         *     function that will be invoked with the fulfillment value if the Promise
-         *     is fullfilled.
-         * @param {?(function(*): *)=} opt_onRejected A function that will be invoked
-         *     with the rejection reason if the Promise is rejected.
-         * @param {THIS=} opt_context An optional context object that will be the
-         *     execution context for the callbacks. By default, functions are executed
-         *     with the default this.
-         * @return {!goog.Promise.<RESULT>} A new Promise that will receive the result
-         *     of the fulfillment or rejection callback.
-         * @template RESULT,THIS
-         */
-        then(opt_onFulfilled?: any /* jsdoc error */, opt_onRejected?: any /* jsdoc error */, opt_context?: any /* jsdoc error */): void;
-    }
-}
-
 declare module goog.Thenable {
 
     /**
@@ -75,5 +32,50 @@ declare module goog.Thenable {
      *     The class/superclass of the instance must call {@code addImplementation}.
      */
     function isImplementedBy(object: any): boolean;
+}
+
+declare module goog {
+
+    /**
+     * Provides a more strict interface for Thenables in terms of
+     * http://promisesaplus.com for interop with {@see goog.Promise}.
+     *
+     * @interface
+     * @extends {IThenable.<TYPE>}
+     * @template TYPE
+     */
+    interface Thenable<TYPE> {
+
+        /**
+         * Adds callbacks that will operate on the result of the Thenable, returning a
+         * new child Promise.
+         *
+         * If the Thenable is fulfilled, the {@code onFulfilled} callback will be
+         * invoked with the fulfillment value as argument, and the child Promise will
+         * be fulfilled with the return value of the callback. If the callback throws
+         * an exception, the child Promise will be rejected with the thrown value
+         * instead.
+         *
+         * If the Thenable is rejected, the {@code onRejected} callback will be invoked
+         * with the rejection reason as argument, and the child Promise will be rejected
+         * with the return value of the callback or thrown value.
+         *
+         * @param {?(function(this:THIS, TYPE):
+         *             (RESULT|IThenable.<RESULT>|Thenable))=} opt_onFulfilled A
+         *     function that will be invoked with the fulfillment value if the Promise
+         *     is fullfilled.
+         * @param {?(function(*): *)=} opt_onRejected A function that will be invoked
+         *     with the rejection reason if the Promise is rejected.
+         * @param {THIS=} opt_context An optional context object that will be the
+         *     execution context for the callbacks. By default, functions are executed
+         *     with the default this.
+         * @return {!goog.Promise.<RESULT>} A new Promise that will receive the result
+         *     of the fulfillment or rejection callback.
+         * @template RESULT,THIS
+         */
+        then<RESULT>(onFulfilled?: (TYPE) => RESULT, onRejected?: (any) => any): goog.Promise<RESULT>;
+
+        then<RESULT>(onFulfilled?: (TYPE) => Thenable<RESULT>, onRejected?: (any) => any): goog.Promise<RESULT>;
+    }
 }
 
