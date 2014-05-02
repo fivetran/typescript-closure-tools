@@ -7,7 +7,7 @@
 /// <reference path="../../goog/asserts/asserts.d.ts" />
 /// <reference path="../../goog/array/array.d.ts" />
 
-declare module goog.string.path {
+declare module googstring.path {
 
     /**
      * Returns the final component of a pathname.
@@ -19,10 +19,10 @@ declare module goog.string.path {
     function baseName(path: string): string;
 
     /**
-     * Alias to goog.string.path.baseName.
+     * Alias to googstring.path.baseName.
      * @param {string} path A pathname.
      * @return {string} path The final component of a pathname.
-     * @deprecated Use goog.string.path.baseName.
+     * @deprecated Use googstring.path.baseName.
      */
     function basename(path: string): string;
 

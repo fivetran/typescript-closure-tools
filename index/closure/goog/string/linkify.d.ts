@@ -3,7 +3,7 @@
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/string/string.d.ts" />
 
-declare module goog.string.linkify {
+declare module googstring.linkify {
 
     /**
      * Takes a string of plain text and linkifies URLs and email addresses. For a

@@ -24,12 +24,12 @@ declare module goog.html.SafeStyle {
      * but does not constrain the format of {@code name} and {@code value}, except
      * for disallowing tag characters.
      *
-     * @param {!goog.string.Const} style A compile-time-constant string from which
+     * @param {!googstring.Const} style A compile-time-constant string from which
      *     to create a SafeStyle.
      * @return {!goog.html.SafeStyle} A SafeStyle object initialized to
      *     {@code style}.
      */
-    function fromConstant(style: goog.string.Const): goog.html.SafeStyle;
+    function fromConstant(style: googstring.Const): goog.html.SafeStyle;
 
     /**
      * Performs a runtime check that the provided object is indeed a
@@ -133,9 +133,9 @@ declare module goog.html {
      * @constructor
      * @final
      * @struct
-     * @implements {goog.string.TypedString}
+     * @implements {googstring.TypedString}
      */
-    class SafeStyle implements goog.string.TypedString {
+    class SafeStyle implements googstring.TypedString {
         /**
          * A string-like object which represents a sequence of CSS declarations
          * ({@code propertyName1: propertyvalue1; propertyName2: propertyValue2; ...})
@@ -217,7 +217,7 @@ declare module goog.html {
          * @constructor
          * @final
          * @struct
-         * @implements {goog.string.TypedString}
+         * @implements {googstring.TypedString}
          */
         constructor();
     }
