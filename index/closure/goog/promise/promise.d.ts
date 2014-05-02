@@ -63,7 +63,11 @@ declare module goog {
      * @implements {goog.Thenable.<TYPE>}
      * @template TYPE,RESOLVER_CONTEXT
      */
-    function Promise(): void;
+    class Promise<TYPE> {
+        constructor(resolve:(value:TYPE) => any, reject:(error:any) => any);
+
+        constructor(resolve:(value:goog.Thenable<TYPE>) => any, reject:(error:any) => any);
+    }
 }
 
 declare module goog.Promise {
@@ -95,7 +99,7 @@ declare module goog.Promise {
      * @return {!goog.Promise} A new Promise that is immediately rejected with the
      *     given reason.
      */
-    function reject(opt_reason?: any): goog.Promise;
+    function reject(opt_reason?: any): goog.Promise<any>;
 
     /**
      * @param {!Array.<!(goog.Thenable.<TYPE>|Thenable)>} promises
