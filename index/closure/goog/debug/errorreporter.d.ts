@@ -52,7 +52,7 @@
 /// <reference path="../../goog/net/eventtype.d.ts" />
 /// <reference path="../../goog/net/xhrio.d.ts" />
 
-declare module goog.debug.ErrorReporter.ExceptionEvent {
+declare module goog.debug.GoogErrorReporter.ExceptionEvent {
 
     /**
      * Event type for notifying of a logged exception.
@@ -61,7 +61,7 @@ declare module goog.debug.ErrorReporter.ExceptionEvent {
     var TYPE: string;
 }
 
-declare module goog.debug.ErrorReporter {
+declare module goog.debug.GoogErrorReporter {
 
     /**
      * Installs an error reporter to catch all JavaScript errors raised.
@@ -76,9 +76,9 @@ declare module goog.debug.ErrorReporter {
      *     onerror and to protect entry points.  If apps have other error reporting
      *     facilities, it may make sense for them to set these up themselves and use
      *     the ErrorReporter just for transmission of reports.
-     * @return {!goog.debug.ErrorReporter} The error reporter.
+     * @return {!goog.debug.GoogErrorReporter} The error reporter.
      */
-    function install(loggingUrl: string, opt_contextProvider?: (_0: Error, _1: { [key: string]: string }) => any /*missing*/, opt_noAutoProtect?: boolean): goog.debug.ErrorReporter;
+    function install(loggingUrl: string, opt_contextProvider?: (_0: Error, _1: { [key: string]: string }) => any /*missing*/, opt_noAutoProtect?: boolean): goog.debug.GoogErrorReporter;
 
     /**
      * Default implementation of XHR sender interface.
@@ -157,7 +157,7 @@ declare module goog.debug {
          * Has no effect in IE because window.onerror is used for reporting
          * exceptions in that case.
          *
-         * @this {goog.debug.ErrorReporter}
+         * @this {goog.debug.GoogErrorReporter}
          * @param {Function} fn An entry point function to be protected.
          * @return {Function} A protected wrapper function that calls the entry point
          *     function or null if the entry point could not be protected.
