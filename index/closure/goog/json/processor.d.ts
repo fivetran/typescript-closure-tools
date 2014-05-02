@@ -1,4 +1,4 @@
-// Generated Thu May  1 12:33:55 PDT 2014
+// Generated Thu May  1 16:38:29 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/string/stringifier.d.ts" />
@@ -12,7 +12,7 @@ declare module goog.json {
      * @extends {goog.string.Parser}
      * @extends {goog.string.Stringifier}
      */
-    interface Processor {
+    interface Processor extends goog.string.Parser, goog.string.Stringifier {
     }
 }
 

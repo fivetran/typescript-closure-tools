@@ -1,4 +1,4 @@
-// Generated Thu May  1 12:43:16 PDT 2014
+// Generated Thu May  1 16:47:24 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -64,7 +64,7 @@ declare module goog.html {
      * @implements {goog.i18n.bidi.DirectionalString}
      * @implements {goog.string.TypedString}
      */
-    class TrustedResourceUrl implements goog.i18n.bidi.DirectionalString {
+    class TrustedResourceUrl implements goog.i18n.bidi.DirectionalString, goog.string.TypedString {
         /**
          * A URL which is under application control and from which script, CSS, and
          * other resources that represent executable code, can be fetched.

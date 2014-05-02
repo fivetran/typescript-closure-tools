@@ -1,4 +1,4 @@
-// Generated Thu May  1 12:42:35 PDT 2014
+// Generated Thu May  1 16:46:42 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/promise/thenable.d.ts" />
@@ -15,7 +15,7 @@ declare module goog.result {
      * @extends {goog.result.Result}
      * @deprecated Use {@link goog.Promise} instead - http://go/promisemigration
      */
-    interface DependentResult {
+    interface DependentResult extends goog.result.Result {
         getParentResults(): goog.result.Result[];
     }
 }

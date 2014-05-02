@@ -1,4 +1,4 @@
-// Generated Thu May  1 12:34:00 PDT 2014
+// Generated Thu May  1 16:38:34 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/disposable/idisposable.d.ts" />
@@ -66,7 +66,7 @@ declare module goog.fx {
      * @implements {goog.fx.Transition}
      * @extends {goog.fx.TransitionBase}
      */
-    class Animation extends goog.fx.TransitionBase implements goog.fx.anim.Animated {
+    class Animation extends goog.fx.TransitionBase implements goog.fx.anim.Animated, goog.fx.Transition {
         /**
          * Constructor for an animation object.
          * @param {Array.<number>} start Array for start coordinates.

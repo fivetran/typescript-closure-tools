@@ -1,4 +1,4 @@
-// Generated Thu May  1 12:40:53 PDT 2014
+// Generated Thu May  1 16:44:59 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 
@@ -40,7 +40,7 @@ declare module goog.fs {
      * @interface
      * @extends {goog.fs.Entry}
      */
-    interface DirectoryEntry {
+    interface DirectoryEntry extends goog.fs.Entry {
         getFile(path: string, opt_behavior?: goog.fs.DirectoryEntry.Behavior): goog.async.Deferred;
         getDirectory(path: string, opt_behavior?: goog.fs.DirectoryEntry.Behavior): goog.async.Deferred;
         createPath(path: string): goog.async.Deferred;
@@ -54,7 +54,7 @@ declare module goog.fs {
      * @interface
      * @extends {goog.fs.Entry}
      */
-    interface FileEntry {
+    interface FileEntry extends goog.fs.Entry {
         createWriter(): goog.async.Deferred<goog.fs.FileWriter>;
         file(): goog.async.Deferred<File>;
     }

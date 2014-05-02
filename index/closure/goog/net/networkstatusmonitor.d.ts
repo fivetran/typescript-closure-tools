@@ -1,4 +1,4 @@
-// Generated Thu May  1 12:36:18 PDT 2014
+// Generated Thu May  1 16:40:44 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/events/eventid.d.ts" />
@@ -20,7 +20,7 @@ declare module goog.net {
      * @interface
      * @extends {goog.events.Listenable}
      */
-    interface NetworkStatusMonitor {
+    interface NetworkStatusMonitor extends goog.events.Listenable {
         isOnline: any /*missing*/;
     }
 }

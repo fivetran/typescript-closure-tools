@@ -1,4 +1,4 @@
-// Generated Thu May  1 12:43:20 PDT 2014
+// Generated Thu May  1 16:47:28 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -124,7 +124,7 @@ declare module goog.html {
      * @implements {goog.i18n.bidi.DirectionalString}
      * @implements {goog.string.TypedString}
      */
-    class SafeHtml implements goog.i18n.bidi.DirectionalString {
+    class SafeHtml implements goog.i18n.bidi.DirectionalString, goog.string.TypedString {
         /**
          * A string that is safe to use in HTML context in DOM APIs and HTML documents.
          *

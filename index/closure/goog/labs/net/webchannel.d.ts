@@ -1,4 +1,4 @@
-// Generated Thu May  1 12:41:31 PDT 2014
+// Generated Thu May  1 16:45:37 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/dom/nodetype.d.ts" />
@@ -156,7 +156,7 @@ declare module goog.net {
      * @interface
      * @extends {EventTarget}
      */
-    interface WebChannel {
+    interface WebChannel extends EventTarget {
         open: any /*missing*/;
         close: any /*missing*/;
         send: any /*missing*/;
