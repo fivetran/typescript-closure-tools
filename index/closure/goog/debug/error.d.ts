@@ -10,7 +10,7 @@ declare module goog.debug {
      * @constructor
      * @extends {Error}
      */
-    class Error extends Error {
+    class GoogError implements Error {
         /**
          * Base class for custom error objects.
          * @param {*=} opt_msg The message associated with the error.
@@ -18,6 +18,9 @@ declare module goog.debug {
          * @extends {Error}
          */
         constructor(opt_msg?: any);
+
+        name: string;
+        message: string;
     }
 }
 

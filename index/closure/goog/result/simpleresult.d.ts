@@ -40,17 +40,17 @@ declare module goog.result.SimpleResult {
      * more than once.
      *
      * @constructor
-     * @extends {goog.debug.Error}
+     * @extends {goog.debug.GoogError}
      * @final
      * @deprecated Use {@link goog.Promise} instead - http://go/promisemigration
      */
-    class StateError extends goog.debug.Error {
+    class StateError extends goog.debug.GoogError {
         /**
          * Error thrown if there is an attempt to set the value or error for this result
          * more than once.
          *
          * @constructor
-         * @extends {goog.debug.Error}
+         * @extends {goog.debug.GoogError}
          * @final
          * @deprecated Use {@link goog.Promise} instead - http://go/promisemigration
          */
