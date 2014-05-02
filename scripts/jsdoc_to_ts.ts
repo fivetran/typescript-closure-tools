@@ -518,7 +518,7 @@ function generate_typedef(name, docs) {
     switch (typedef.type) {
         // F function(...) becomes interface F { (...): ... }
         case 'FunctionType':
-            var argumentString = typedef.params.map(generate_type).join(', ');
+            var argumentString = typedef.params.map(generate_indexed_function_parameter).join(', ');
             var returnString = generate_type(typedef.result);
             return 'interface ' + name + ' {\n    (' + argumentString + '): ' + returnString + '\n}';
         // S { ... } becomes interface T { ... }
