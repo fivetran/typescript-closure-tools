@@ -387,7 +387,7 @@ function generate_function(name, docs) {
 
 function generate_property(name, docs) {
     // Function
-    if (docs.value && docs.value.type === 'FunctionExpression')
+    if (is_function(docs))
         return generate_function(name, docs);
     // Field
     else
@@ -422,9 +422,15 @@ function generate_record_field(field) {
     return fieldName + ': ' + generate_type(field.value);
 }
 
+function is_function(docs) {
+    return (docs.value && docs.value.type === 'FunctionExpression')
+        || docs.tags.some(is_title('param'))
+        || docs.tags.some(is_title('return'));
+}
+
 function generate_member(name, docs) {
     // Function
-    if (docs.value && docs.value.type === 'FunctionExpression')
+    if (is_function(docs))
         return generate_method(name, docs);
     // Field
     else
