@@ -1,4 +1,4 @@
-// Generated Fri May  2 10:37:01 PDT 2014
+// Generated Fri May  2 11:36:41 PDT 2014
 
 
 declare module global {
@@ -29,6 +29,6 @@ declare module goog {
      *
      * @param {string} file The path to the file.
      */
-    var nodeGlobalRequire: any /*missing*/;
+    function nodeGlobalRequire(file: string): void;
 }
 

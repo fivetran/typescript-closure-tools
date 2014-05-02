@@ -1,4 +1,4 @@
-// Generated Fri May  2 10:42:44 PDT 2014
+// Generated Fri May  2 11:42:21 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/dom/nodetype.d.ts" />
@@ -13,32 +13,32 @@ declare module goog.labs.userAgent.browser {
     /**
      * @return {boolean} Whether the user's browser is Opera.
      */
-    var isOpera: any /*missing*/;
+    function isOpera(): boolean;
 
     /**
      * @return {boolean} Whether the user's browser is IE.
      */
-    var isIE: any /*missing*/;
+    function isIE(): boolean;
 
     /**
      * @return {boolean} Whether the user's browser is Firefox.
      */
-    var isFirefox: any /*missing*/;
+    function isFirefox(): boolean;
 
     /**
      * @return {boolean} Whether the user's browser is Safari.
      */
-    var isSafari: any /*missing*/;
+    function isSafari(): boolean;
 
     /**
      * @return {boolean} Whether the user's browser is Chrome.
      */
-    var isChrome: any /*missing*/;
+    function isChrome(): boolean;
 
     /**
      * @return {boolean} Whether the user's browser is the Android browser.
      */
-    var isAndroidBrowser: any /*missing*/;
+    function isAndroidBrowser(): boolean;
 
     /**
      * For more information, see:

@@ -1,4 +1,4 @@
-// Generated Fri May  2 10:41:15 PDT 2014
+// Generated Fri May  2 11:40:52 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -71,7 +71,7 @@ declare module goog.graphics {
          * Update the displayed text of the element.
          * @param {string} text The text to draw.
          */
-        setText: any /*missing*/;
+        setText(text: string): void;
     }
 }
 

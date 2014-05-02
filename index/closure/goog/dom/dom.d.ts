@@ -1,4 +1,4 @@
-// Generated Fri May  2 10:36:08 PDT 2014
+// Generated Fri May  2 11:35:48 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -62,7 +62,7 @@ declare module goog.dom {
      * @return {Element} The element with the given ID, or the node passed in.
      * @deprecated Use {@link goog.dom.getElement} instead.
      */
-    var $: any /*missing*/;
+    function $(element: any /*string|Element*/): Element;
 
     /**
      * Looks up elements by both tag and class name, using browser native functions
@@ -131,7 +131,7 @@ declare module goog.dom {
      *     property and numerical indices are guaranteed to exist).
      * @deprecated Use {@link goog.dom.getElementsByTagNameAndClass} instead.
      */
-    var $$: any /*missing*/;
+    function $$(opt_tag?: string, opt_class?: string, opt_el?: Element): { length: number };
 
     /**
      * Sets multiple properties on a node.
@@ -277,7 +277,7 @@ declare module goog.dom {
      * @return {!Element} Reference to a DOM node.
      * @deprecated Use {@link goog.dom.createDom} instead.
      */
-    var $dom: any /*missing*/;
+    function $dom(tagName: string, opt_attributes?: any /*string|Object*/, ...var_args: any /*Object|string|any[]|NodeList*/[]): Element;
 
     /**
      * Creates a new element.
@@ -767,7 +767,7 @@ declare module goog.dom {
      *
      * @return {number} The number of actual pixels per virtual pixel.
      */
-    var getPixelRatio: any /*missing*/;
+    function getPixelRatio(): number;
 
     /**
      * Typedef for use with goog.dom.createDom and goog.dom.append.
@@ -795,7 +795,7 @@ declare module goog.dom {
          * @param {Node=} opt_node If present, gets the DomHelper for this node.
          * @return {!goog.dom.DomHelper} The DomHelper.
          */
-        getDomHelper: any /*missing*/;
+        getDomHelper(opt_node?: Node): goog.dom.DomHelper;
     
         /**
          * Sets the document object.
@@ -834,7 +834,7 @@ declare module goog.dom {
          * @return {Element} The element with the given ID, or the node passed in.
          * @deprecated Use {@link goog.dom.DomHelper.prototype.getElement} instead.
          */
-        $: any /*missing*/;
+        $(element: any /*string|Element*/): Element;
     
         /**
          * Looks up elements by both tag and class name, using browser native functions
@@ -893,14 +893,14 @@ declare module goog.dom {
          * @return { {length: number} } Array-like list of elements (only a length
          *     property and numerical indices are guaranteed to exist).
          */
-        $$: any /*missing*/;
+        $$(opt_tag?: string, opt_class?: string, opt_el?: Element): { length: number };
     
         /**
          * Sets a number of properties on a node.
          * @param {Element} element DOM node to set properties on.
          * @param {Object} properties Hash of property:value pairs.
          */
-        setProperties: any /*missing*/;
+        setProperties(element: Element, properties: Object): void;
     
         /**
          * Gets the dimensions of the viewport.
@@ -955,7 +955,7 @@ declare module goog.dom {
          * @return {!Element} Reference to a DOM node.
          * @deprecated Use {@link goog.dom.DomHelper.prototype.createDom} instead.
          */
-        $dom: any /*missing*/;
+        $dom(tagName: string, opt_attributes?: any /*Object|string*/, ...var_args: goog.dom.Appendable[]): Element;
     
         /**
          * Creates a new element.
@@ -1028,7 +1028,7 @@ declare module goog.dom {
          * @param {Node} parent Parent.
          * @param {Node} child Child.
          */
-        appendChild: any /*missing*/;
+        appendChild(parent: Node, child: Node): void;
     
         /**
          * Appends a node with text or other nodes.
@@ -1038,7 +1038,7 @@ declare module goog.dom {
          *     If this is a string then a text node is appended.
          *     If this is an array like object then fields 0 to length - 1 are appended.
          */
-        append: any /*missing*/;
+        append(parent: Node, ...var_args: goog.dom.Appendable[]): void;
     
         /**
          * Determines if the given node can contain children, intended to be used for
@@ -1047,13 +1047,13 @@ declare module goog.dom {
          * @param {Node} node The node to check.
          * @return {boolean} Whether the node can contain children.
          */
-        canHaveChildren: any /*missing*/;
+        canHaveChildren(node: Node): boolean;
     
         /**
          * Removes all the child nodes on a DOM node.
          * @param {Node} node Node to remove children from.
          */
-        removeChildren: any /*missing*/;
+        removeChildren(node: Node): void;
     
         /**
          * Inserts a new node before an existing reference node (i.e., as the previous
@@ -1061,7 +1061,7 @@ declare module goog.dom {
          * @param {Node} newNode Node to insert.
          * @param {Node} refNode Reference node to insert before.
          */
-        insertSiblingBefore: any /*missing*/;
+        insertSiblingBefore(newNode: Node, refNode: Node): void;
     
         /**
          * Inserts a new node after an existing reference node (i.e., as the next
@@ -1069,7 +1069,7 @@ declare module goog.dom {
          * @param {Node} newNode Node to insert.
          * @param {Node} refNode Reference node to insert after.
          */
-        insertSiblingAfter: any /*missing*/;
+        insertSiblingAfter(newNode: Node, refNode: Node): void;
     
         /**
          * Insert a child at a given index. If index is larger than the number of child
@@ -1080,14 +1080,14 @@ declare module goog.dom {
          * @param {number} index The index at which to insert the new child node. Must
          *     not be negative.
          */
-        insertChildAt: any /*missing*/;
+        insertChildAt(parent: Element, child: Node, index: number): void;
     
         /**
          * Removes a node from its parent.
          * @param {Node} node The node to remove.
          * @return {Node} The node removed if removed; else, null.
          */
-        removeNode: any /*missing*/;
+        removeNode(node: Node): Node;
     
         /**
          * Replaces a node in the DOM tree. Will do nothing if {@code oldNode} has no
@@ -1095,7 +1095,7 @@ declare module goog.dom {
          * @param {Node} newNode Node to insert.
          * @param {Node} oldNode Node to replace.
          */
-        replaceNode: any /*missing*/;
+        replaceNode(newNode: Node, oldNode: Node): void;
     
         /**
          * Flattens an element. That is, removes it and replace it with its children.
@@ -1104,7 +1104,7 @@ declare module goog.dom {
          *     tree, sans children, or undefined if the element was already not in the
          *     document.
          */
-        flattenElement: any /*missing*/;
+        flattenElement(element: Element): any /*Element|any (undefined)*/;
     
         /**
          * Returns an array containing just the element children of the given element.
@@ -1112,28 +1112,28 @@ declare module goog.dom {
          * @return {!(Array|NodeList)} An array or array-like list of just the element
          *     children of the given element.
          */
-        getChildren: any /*missing*/;
+        getChildren(element: Element): any /*any[]|NodeList*/;
     
         /**
          * Returns the first child node that is an element.
          * @param {Node} node The node to get the first child element of.
          * @return {Element} The first child node of {@code node} that is an element.
          */
-        getFirstElementChild: any /*missing*/;
+        getFirstElementChild(node: Node): Element;
     
         /**
          * Returns the last child node that is an element.
          * @param {Node} node The node to get the last child element of.
          * @return {Element} The last child node of {@code node} that is an element.
          */
-        getLastElementChild: any /*missing*/;
+        getLastElementChild(node: Node): Element;
     
         /**
          * Returns the first next sibling that is an element.
          * @param {Node} node The node to get the next sibling element of.
          * @return {Element} The next sibling of {@code node} that is an element.
          */
-        getNextElementSibling: any /*missing*/;
+        getNextElementSibling(node: Node): Element;
     
         /**
          * Returns the first previous sibling that is an element.
@@ -1141,7 +1141,7 @@ declare module goog.dom {
          * @return {Element} The first previous sibling of {@code node} that is
          *     an element.
          */
-        getPreviousElementSibling: any /*missing*/;
+        getPreviousElementSibling(node: Node): Element;
     
         /**
          * Returns the next node in source order from the given node.
@@ -1149,7 +1149,7 @@ declare module goog.dom {
          * @return {Node} The next node in the DOM tree, or null if this was the last
          *     node.
          */
-        getNextNode: any /*missing*/;
+        getNextNode(node: Node): Node;
     
         /**
          * Returns the previous node in source order from the given node.
@@ -1157,21 +1157,21 @@ declare module goog.dom {
          * @return {Node} The previous node in the DOM tree, or null if this was the
          *     first node.
          */
-        getPreviousNode: any /*missing*/;
+        getPreviousNode(node: Node): Node;
     
         /**
          * Whether the object looks like a DOM node.
          * @param {?} obj The object being tested for node likeness.
          * @return {boolean} Whether the object looks like a DOM node.
          */
-        isNodeLike: any /*missing*/;
+        isNodeLike(obj: any): boolean;
     
         /**
          * Whether the object looks like an Element.
          * @param {?} obj The object being tested for Element likeness.
          * @return {boolean} Whether the object looks like an Element.
          */
-        isElement: any /*missing*/;
+        isElement(obj: any): boolean;
     
         /**
          * Returns true if the specified value is a Window object. This includes the
@@ -1179,14 +1179,14 @@ declare module goog.dom {
          * @param {?} obj Variable to test.
          * @return {boolean} Whether the variable is a window.
          */
-        isWindow: any /*missing*/;
+        isWindow(obj: any): boolean;
     
         /**
          * Returns an element's parent, if it's an Element.
          * @param {Element} element The DOM element.
          * @return {Element} The parent, or null if not an Element.
          */
-        getParentElement: any /*missing*/;
+        getParentElement(element: Element): Element;
     
         /**
          * Whether a node contains another node.
@@ -1194,7 +1194,7 @@ declare module goog.dom {
          * @param {Node} descendant The node to test presence of.
          * @return {boolean} Whether the parent node contains the descendent node.
          */
-        contains: any /*missing*/;
+        contains(parent: Node, descendant: Node): boolean;
     
         /**
          * Compares the document order of two nodes, returning 0 if they are the same
@@ -1208,7 +1208,7 @@ declare module goog.dom {
          * @return {number} 0 if the nodes are the same node, a negative number if node1
          *     is before node2, and a positive number if node2 is before node1.
          */
-        compareNodeOrder: any /*missing*/;
+        compareNodeOrder(node1: Node, node2: Node): number;
     
         /**
          * Find the deepest common ancestor of the given nodes.
@@ -1217,35 +1217,35 @@ declare module goog.dom {
          *     null will only be returned if two or more of the nodes are from different
          *     documents.
          */
-        findCommonAncestor: any /*missing*/;
+        findCommonAncestor(...var_args: Node[]): Node;
     
         /**
          * Returns the owner document for a node.
          * @param {Node} node The node to get the document for.
          * @return {!Document} The document owning the node.
          */
-        getOwnerDocument: any /*missing*/;
+        getOwnerDocument(node: Node): Document;
     
         /**
          * Cross browser function for getting the document element of an iframe.
          * @param {Element} iframe Iframe element.
          * @return {!Document} The frame content document.
          */
-        getFrameContentDocument: any /*missing*/;
+        getFrameContentDocument(iframe: Element): Document;
     
         /**
          * Cross browser function for getting the window of a frame or iframe.
          * @param {Element} frame Frame element.
          * @return {Window} The window associated with the given frame.
          */
-        getFrameContentWindow: any /*missing*/;
+        getFrameContentWindow(frame: Element): Window;
     
         /**
          * Sets the text content of a node, with cross-browser support.
          * @param {Node} node The node to change the text content of.
          * @param {string|number} text The value that should replace the node's content.
          */
-        setTextContent: any /*missing*/;
+        setTextContent(node: Node, text: any /*string|number*/): void;
     
         /**
          * Gets the outerHTML of a node, which islike innerHTML, except that it
@@ -1253,7 +1253,7 @@ declare module goog.dom {
          * @param {Element} element The element to get the HTML of.
          * @return {string} The outerHTML of the given element.
          */
-        getOuterHtml: any /*missing*/;
+        getOuterHtml(element: Element): string;
     
         /**
          * Finds the first descendant node that matches the filter function. This does
@@ -1262,7 +1262,7 @@ declare module goog.dom {
          * @param {function(Node) : boolean} p The filter function.
          * @return {Node|undefined} The found node or undefined if none is found.
          */
-        findNode: any /*missing*/;
+        findNode(root: Node, p: (_0: Node) => boolean): any /*Node|any (undefined)*/;
     
         /**
          * Finds all the descendant nodes that matches the filter function. This does a
@@ -1271,7 +1271,7 @@ declare module goog.dom {
          * @param {function(Node) : boolean} p The filter function.
          * @return {Array.<Node>} The found nodes or an empty array if none are found.
          */
-        findNodes: any /*missing*/;
+        findNodes(root: Node, p: (_0: Node) => boolean): Node[];
     
         /**
          * Returns true if the element has a tab index that allows it to receive
@@ -1281,7 +1281,7 @@ declare module goog.dom {
          * @return {boolean} Whether the element has a tab index that allows keyboard
          *     focus.
          */
-        isFocusableTabIndex: any /*missing*/;
+        isFocusableTabIndex(element: Element): boolean;
     
         /**
          * Enables or disables keyboard focus support on the element via its tab index.
@@ -1292,7 +1292,7 @@ declare module goog.dom {
          * @param {boolean} enable Whether to set or remove a tab index on the element
          *     that supports keyboard focus.
          */
-        setFocusableTabIndex: any /*missing*/;
+        setFocusableTabIndex(element: Element, enable: boolean): void;
     
         /**
          * Returns true if the element can be focused, i.e. it has a tab index that
@@ -1301,7 +1301,7 @@ declare module goog.dom {
          * @param {Element} element Element to check.
          * @return {boolean} Whether the element allows keyboard focus.
          */
-        isFocusable: any /*missing*/;
+        isFocusable(element: Element): boolean;
     
         /**
          * Returns the text contents of the current node, without markup. New lines are
@@ -1314,7 +1314,7 @@ declare module goog.dom {
          * @param {Node} node The node from which we are getting content.
          * @return {string} The text content.
          */
-        getTextContent: any /*missing*/;
+        getTextContent(node: Node): string;
     
         /**
          * Returns the text length of the text contained in a node, without markup. This
@@ -1325,7 +1325,7 @@ declare module goog.dom {
          * @param {Node} node The node whose text content length is being calculated.
          * @return {number} The length of {@code node}'s text content.
          */
-        getNodeTextLength: any /*missing*/;
+        getNodeTextLength(node: Node): number;
     
         /**
          * Returns the text offset of a node relative to one of its ancestors. The text
@@ -1336,7 +1336,7 @@ declare module goog.dom {
          * @param {Node=} opt_offsetParent Defaults to the node's owner document's body.
          * @return {number} The text offset.
          */
-        getNodeTextOffset: any /*missing*/;
+        getNodeTextOffset(node: Node, opt_offsetParent?: Node): number;
     
         /**
          * Returns the node at a given offset in a parent node.  If an object is
@@ -1349,7 +1349,7 @@ declare module goog.dom {
          *     if this object is provided.
          * @return {Node} The node at the given offset.
          */
-        getNodeAtOffset: any /*missing*/;
+        getNodeAtOffset(parent: Node, offset: number, opt_result?: Object): Node;
     
         /**
          * Returns true if the object is a {@code NodeList}.  To qualify as a NodeList,
@@ -1358,7 +1358,7 @@ declare module goog.dom {
          * @param {Object} val Object to test.
          * @return {boolean} Whether the object is a NodeList.
          */
-        isNodeList: any /*missing*/;
+        isNodeList(val: Object): boolean;
     
         /**
          * Walks up the DOM hierarchy returning the first ancestor that has the passed
@@ -1372,7 +1372,7 @@ declare module goog.dom {
          * @return {Element} The first ancestor that matches the passed criteria, or
          *     null if no match is found.
          */
-        getAncestorByTagNameAndClass: any /*missing*/;
+        getAncestorByTagNameAndClass(element: Node, opt_tag?: any /*goog.dom.TagName|string*/, opt_class?: string): Element;
     
         /**
          * Walks up the DOM hierarchy returning the first ancestor that has the passed
@@ -1383,7 +1383,7 @@ declare module goog.dom {
          * @return {Element} The first ancestor that matches the passed criteria, or
          *     null if none match.
          */
-        getAncestorByClass: any /*missing*/;
+        getAncestorByClass(element: Node, _class: string): Element;
     
         /**
          * Walks up the DOM hierarchy returning the first ancestor that passes the
@@ -1399,7 +1399,7 @@ declare module goog.dom {
          * @return {Node} DOM node that matched the matcher, or null if there was
          *     no match.
          */
-        getAncestor: any /*missing*/;
+        getAncestor(element: Node, matcher: (_0: Node) => boolean, opt_includeNode?: boolean, opt_maxSearchSteps?: number): Node;
     }
 }
 

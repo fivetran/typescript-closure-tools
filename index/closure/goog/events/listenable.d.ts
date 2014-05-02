@@ -1,4 +1,4 @@
-// Generated Fri May  2 10:40:59 PDT 2014
+// Generated Fri May  2 11:40:36 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/events/eventid.d.ts" />
@@ -74,17 +74,17 @@ declare module goog.events {
      * @see http://www.w3.org/TR/DOM-Level-2-Events/events.html
      */
     interface Listenable {
-        listen: any /*missing*/;
-        listenOnce: any /*missing*/;
-        unlisten: any /*missing*/;
-        unlistenByKey: any /*missing*/;
-        dispatchEvent: any /*missing*/;
-        removeAllListeners: any /*missing*/;
-        getParentEventTarget: any /*missing*/;
-        fireListeners: any /*missing*/;
-        getListeners: any /*missing*/;
-        getListener: any /*missing*/;
-        hasListener: any /*missing*/;
+        listen<SCOPE,EVENTOBJ>(type: any /*string|goog.events.EventId<EVENTOBJ>*/, listener: (_0: EVENTOBJ) => any /*boolean|any (undefined)*/, opt_useCapture?: boolean, opt_listenerScope?: SCOPE): goog.events.ListenableKey;
+        listenOnce<SCOPE,EVENTOBJ>(type: any /*string|goog.events.EventId<EVENTOBJ>*/, listener: (_0: EVENTOBJ) => any /*boolean|any (undefined)*/, opt_useCapture?: boolean, opt_listenerScope?: SCOPE): goog.events.ListenableKey;
+        unlisten<SCOPE,EVENTOBJ>(type: any /*string|goog.events.EventId<EVENTOBJ>*/, listener: (_0: EVENTOBJ) => any /*boolean|any (undefined)*/, opt_useCapture?: boolean, opt_listenerScope?: SCOPE): boolean;
+        unlistenByKey(key: goog.events.ListenableKey): boolean;
+        dispatchEvent(e: goog.events.EventLike): boolean;
+        removeAllListeners(opt_type?: string): number;
+        getParentEventTarget(): goog.events.Listenable;
+        fireListeners<EVENTOBJ>(type: any /*string|goog.events.EventId<EVENTOBJ>*/, capture: boolean, eventObject: EVENTOBJ): boolean;
+        getListeners<EVENTOBJ>(type: any /*string|goog.events.EventId*/, capture: boolean): goog.events.ListenableKey[];
+        getListener<SCOPE,EVENTOBJ>(type: any /*string|goog.events.EventId<EVENTOBJ>*/, listener: (_0: EVENTOBJ) => any /*boolean|any (undefined)*/, capture: boolean, opt_listenerScope?: SCOPE): goog.events.ListenableKey;
+        hasListener<EVENTOBJ>(opt_type?: any /*string|goog.events.EventId<EVENTOBJ>*/, opt_capture?: boolean): boolean;
     }
 
     /**

@@ -1,4 +1,4 @@
-// Generated Fri May  2 10:36:16 PDT 2014
+// Generated Fri May  2 11:35:57 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -11,7 +11,7 @@ declare module goog.array {
     /**
      * @typedef {Array|NodeList|Arguments|{length: number}}
      */
-    interface ArrayLike<VALUE> extends Array<VALUE> { /*any (any[]|NodeList|Arguments|{ length: number })*/ }
+    interface ArrayLike { /*any (any[]|NodeList|Arguments|{ length: number })*/ }
 
     /**
      * Returns the last element in an array without removing it.
@@ -34,7 +34,7 @@ declare module goog.array {
      * @return {number} The index of the first matching array element.
      * @template T
      */
-    var indexOf: any /*missing*/;
+    function indexOf<T>(arr: any /*T[]|goog.array.ArrayLike*/, obj: T, opt_fromIndex?: number): number;
 
     /**
      * Returns the index of the last element of an array with a specified value, or
@@ -49,7 +49,7 @@ declare module goog.array {
      * @return {number} The index of the last matching array element.
      * @template T
      */
-    var lastIndexOf: any /*missing*/;
+    function lastIndexOf<T>(arr: any /*T[]|goog.array.ArrayLike*/, obj: T, opt_fromIndex?: number): number;
 
     /**
      * Calls a function for each element in an array. Skips holes in the array.
@@ -63,7 +63,7 @@ declare module goog.array {
      * @param {S=} opt_obj The object to be used as the value of 'this' within f.
      * @template T,S
      */
-    var forEach: any /*missing*/;
+    function forEach<T,S>(arr: any /*T[]|goog.array.ArrayLike*/, f: (_0: T, _1: number, _2: any) => any, opt_obj?: S): void;
 
     /**
      * Calls a function for each element in an array, starting from the last
@@ -100,7 +100,7 @@ declare module goog.array {
      *     are present.
      * @template T,S
      */
-    var filter: any /*missing*/;
+    function filter<T,S>(arr: any /*T[]|goog.array.ArrayLike*/, f: (_0: T, _1: number, _2: any) => boolean, opt_obj?: S): T[];
 
     /**
      * Calls a function for each element in an array and inserts the result into a
@@ -118,7 +118,7 @@ declare module goog.array {
      * @return {!Array.<RESULT>} a new array with the results from f.
      * @template THIS, VALUE, RESULT
      */
-    var map: any /*missing*/;
+    function map<THIS, VALUE, RESULT>(arr: any /*VALUE[]|goog.array.ArrayLike*/, f: (_0: VALUE, _1: number, _2: any) => RESULT, opt_obj?: THIS): RESULT[];
 
     /**
      * Passes every element of an array into a function and accumulates the result.
@@ -144,7 +144,7 @@ declare module goog.array {
      * @return {R} Result of evaluating f repeatedly across the values of the array.
      * @template T,S,R
      */
-    var reduce: any /*missing*/;
+    function reduce<T,S,R>(arr: any /*T[]|goog.array.ArrayLike*/, f: (_0: R, _1: T, _2: number, _3: any) => R, val: any, opt_obj?: S): R;
 
     /**
      * Passes every element of an array into a function and accumulates the result,
@@ -172,7 +172,7 @@ declare module goog.array {
      *     values of the array.
      * @template T,S,R
      */
-    var reduceRight: any /*missing*/;
+    function reduceRight<T,S,R>(arr: any /*T[]|goog.array.ArrayLike*/, f: (_0: R, _1: T, _2: number, _3: any) => R, val: any, opt_obj?: S): R;
 
     /**
      * Calls f for each element of an array. If any call returns true, some()
@@ -191,7 +191,7 @@ declare module goog.array {
      * @return {boolean} true if any element passes the test.
      * @template T,S
      */
-    var some: any /*missing*/;
+    function some<T,S>(arr: any /*T[]|goog.array.ArrayLike*/, f: (_0: T, _1: number, _2: any) => boolean, opt_obj?: S): boolean;
 
     /**
      * Call f for each element of an array. If all calls return true, every()
@@ -210,13 +210,13 @@ declare module goog.array {
      * @return {boolean} false if any element fails the test.
      * @template T,S
      */
-    var every: any /*missing*/;
+    function every<T,S>(arr: any /*T[]|goog.array.ArrayLike*/, f: (_0: T, _1: number, _2: any) => boolean, opt_obj?: S): boolean;
 
     /**
      * Counts the array elements that fulfill the predicate, i.e. for which the
      * callback function returns true. Skips holes in the array.
      *
-     * @param {!(Array.<T>|goog.array.ArrayLike<any>)} arr Array or array like object
+     * @param {!(Array.<T>|goog.array.ArrayLike)} arr Array or array like object
      *     over which to iterate.
      * @param {function(this: S, T, number, ?): boolean} f The function to call for
      *     every element. Takes 3 arguments (the element, the index and the array).
@@ -296,20 +296,20 @@ declare module goog.array {
      * @param {*} obj The object for which to test.
      * @return {boolean} true if obj is present.
      */
-    function contains(arr: goog.array.ArrayLike<any>, obj: any): boolean;
+    function contains(arr: goog.array.ArrayLike, obj: any): boolean;
 
     /**
      * Whether the array is empty.
      * @param {goog.array.ArrayLike} arr The array to test.
      * @return {boolean} true if empty.
      */
-    function isEmpty(arr: goog.array.ArrayLike<any>): boolean;
+    function isEmpty(arr: goog.array.ArrayLike): boolean;
 
     /**
      * Clears the array.
      * @param {goog.array.ArrayLike} arr Array or array like object to clear.
      */
-    function clear(arr: goog.array.ArrayLike<any>): void;
+    function clear(arr: goog.array.ArrayLike): void;
 
     /**
      * Pushes an item into an array, if it's not already in the array.
@@ -326,7 +326,7 @@ declare module goog.array {
      * @param {number=} opt_i The index at which to insert the object. If omitted,
      *      treated as 0. A negative index is counted from the end of the array.
      */
-    function insertAt(arr: goog.array.ArrayLike<any>, obj: any, opt_i?: number): void;
+    function insertAt(arr: goog.array.ArrayLike, obj: any, opt_i?: number): void;
 
     /**
      * Inserts at the given index of the array, all elements of another array.
@@ -335,7 +335,7 @@ declare module goog.array {
      * @param {number=} opt_i The index at which to insert the object. If omitted,
      *      treated as 0. A negative index is counted from the end of the array.
      */
-    function insertArrayAt(arr: goog.array.ArrayLike<any>, elementsToAdd: goog.array.ArrayLike<any>, opt_i?: number): void;
+    function insertArrayAt(arr: goog.array.ArrayLike, elementsToAdd: goog.array.ArrayLike, opt_i?: number): void;
 
     /**
      * Inserts an object into an array before a specified object.
@@ -364,7 +364,7 @@ declare module goog.array {
      * @param {number} i The index to remove.
      * @return {boolean} True if an element was removed.
      */
-    function removeAt(arr: goog.array.ArrayLike<any>, i: number): boolean;
+    function removeAt(arr: goog.array.ArrayLike, i: number): boolean;
 
     /**
      * Removes the first value that satisfies the given condition.
@@ -436,7 +436,7 @@ declare module goog.array {
      * @return {!Array.<T>} Clone of the input array.
      * @template T
      */
-    var clone: any /*missing*/;
+    function clone<T>(arr: any /*T[]|goog.array.ArrayLike*/): T[];
 
     /**
      * Extends an array with another array, element, or "array like" object.
@@ -684,7 +684,7 @@ declare module goog.array {
      *     compares the elements using the built-in '===' operator.
      * @return {boolean} Whether the two arrays are equal.
      */
-    function equals(arr1: goog.array.ArrayLike<any>, arr2: goog.array.ArrayLike<any>, opt_equalsFn?: Function): boolean;
+    function equals(arr1: goog.array.ArrayLike, arr2: goog.array.ArrayLike, opt_equalsFn?: Function): boolean;
 
     /**
      * 3-way array compare function.
@@ -867,7 +867,7 @@ declare module goog.array {
      * @param {...!goog.array.ArrayLike} var_args Arrays to be combined.
      * @return {!Array.<!Array>} A new array of arrays created from provided arrays.
      */
-    function zip(...var_args: goog.array.ArrayLike<any>[]): any[][];
+    function zip(...var_args: goog.array.ArrayLike[]): any[][];
 
     /**
      * Shuffles the values in the specified array using the Fisher-Yates in-place

@@ -1,4 +1,4 @@
-// Generated Fri May  2 10:36:01 PDT 2014
+// Generated Fri May  2 11:35:42 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/string/string.d.ts" />
@@ -54,7 +54,7 @@ declare module goog.dom {
          * Internal method to restore the saved range.
          * @return {goog.dom.AbstractRange} The restored range.
          */
-        restoreInternal: any /*missing*/;
+        restoreInternal(): goog.dom.AbstractRange;
     }
 }
 

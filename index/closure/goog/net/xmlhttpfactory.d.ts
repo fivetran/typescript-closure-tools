@@ -1,4 +1,4 @@
-// Generated Fri May  2 10:37:27 PDT 2014
+// Generated Fri May  2 11:37:07 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/net/xhrlike.d.ts" />
@@ -19,7 +19,7 @@ declare module goog.net {
         /**
          * @return {!goog.net.XhrLike.OrNative} A new XhrLike instance.
          */
-        createInstance: any /*missing*/;
+        createInstance(): goog.net.XhrLike.OrNative;
     
         /**
          * @return {Object} Options describing how xhr objects obtained from this
@@ -34,7 +34,7 @@ declare module goog.net {
          *     factory should be used.
          * @protected
          */
-        internalGetOptions: any /*missing*/;
+        internalGetOptions(): Object;
     }
 }
 

@@ -1,4 +1,4 @@
-// Generated Fri May  2 10:42:19 PDT 2014
+// Generated Fri May  2 11:41:56 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -52,8 +52,8 @@ declare module goog.debug {
      * @interface
      */
     interface EntryPointMonitor {
-        wrap: any /*missing*/;
-        unwrap: any /*missing*/;
+        wrap(fn: Function): Function;
+        unwrap(fn: Function): Function;
     }
 }
 

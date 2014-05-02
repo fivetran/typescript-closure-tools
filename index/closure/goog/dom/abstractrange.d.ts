@@ -1,4 +1,4 @@
-// Generated Fri May  2 10:36:00 PDT 2014
+// Generated Fri May  2 11:35:41 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/string/string.d.ts" />
@@ -59,17 +59,17 @@ declare module goog.dom {
         /**
          * @return {goog.dom.AbstractRange} A clone of this range.
          */
-        clone: any /*missing*/;
+        clone(): goog.dom.AbstractRange;
     
         /**
          * @return {goog.dom.RangeType} The type of range represented by this object.
          */
-        getType: any /*missing*/;
+        getType(): goog.dom.RangeType;
     
         /**
          * @return {Range|TextRange} The native browser range object.
          */
-        getBrowserRangeObject: any /*missing*/;
+        getBrowserRangeObject(): any /*Range|TextRange*/;
     
         /**
          * Sets the native browser range object, overwriting any state this range was
@@ -84,7 +84,7 @@ declare module goog.dom {
         /**
          * @return {number} The number of text ranges in this range.
          */
-        getTextRangeCount: any /*missing*/;
+        getTextRangeCount(): number;
     
         /**
          * Get the i-th text range in this range.  The behavior is undefined if
@@ -92,7 +92,7 @@ declare module goog.dom {
          * @param {number} i The range number to retrieve.
          * @return {goog.dom.TextRange} The i-th text range.
          */
-        getTextRange: any /*missing*/;
+        getTextRange(i: number): goog.dom.TextRange;
     
         /**
          * Gets an array of all text ranges this range is comprised of.  For non-multi
@@ -104,7 +104,7 @@ declare module goog.dom {
         /**
          * @return {Node} The deepest node that contains the entire range.
          */
-        getContainer: any /*missing*/;
+        getContainer(): Node;
     
         /**
          * Returns the deepest element in the tree that contains the entire range.
@@ -118,38 +118,38 @@ declare module goog.dom {
          *     For other types of range, start and end give bounds of the range but
          *     do not imply all nodes in those bounds are selected.
          */
-        getStartNode: any /*missing*/;
+        getStartNode(): Node;
     
         /**
          * @return {number} The offset into the node the range starts in.  For text
          *     nodes, this is an offset into the node value.  For elements, this is
          *     an offset into the childNodes array.
          */
-        getStartOffset: any /*missing*/;
+        getStartOffset(): number;
     
         /**
          * @return {goog.math.Coordinate} The coordinate of the selection start node
          *     and offset.
          */
-        getStartPosition: any /*missing*/;
+        getStartPosition(): goog.math.Coordinate;
     
         /**
          * @return {Node} The element or text node the range ends in.
          */
-        getEndNode: any /*missing*/;
+        getEndNode(): Node;
     
         /**
          * @return {number} The offset into the node the range ends in.  For text
          *     nodes, this is an offset into the node value.  For elements, this is
          *     an offset into the childNodes array.
          */
-        getEndOffset: any /*missing*/;
+        getEndOffset(): number;
     
         /**
          * @return {goog.math.Coordinate} The coordinate of the selection end
          *     node and offset.
          */
-        getEndPosition: any /*missing*/;
+        getEndPosition(): goog.math.Coordinate;
     
         /**
          * @return {Node} The element or text node the range is anchored at.
@@ -199,7 +199,7 @@ declare module goog.dom {
          *     contained.
          * @return {boolean} Whether this range contains the given range.
          */
-        containsRange: any /*missing*/;
+        containsRange(range: goog.dom.AbstractRange, opt_allowPartial?: boolean): boolean;
     
         /**
          * Tests if this range contains the given node.
@@ -217,17 +217,17 @@ declare module goog.dom {
          * an invalid range can lead to runtime errors, particularly in IE.
          * @return {boolean} Whether the range is valid.
          */
-        isRangeInDocument: any /*missing*/;
+        isRangeInDocument(): boolean;
     
         /**
          * @return {boolean} Whether the range is collapsed.
          */
-        isCollapsed: any /*missing*/;
+        isCollapsed(): boolean;
     
         /**
          * @return {string} The text content of the range.
          */
-        getText: any /*missing*/;
+        getText(): string;
     
         /**
          * Returns the HTML fragment this range selects.  This is slow on all browsers.
@@ -245,7 +245,7 @@ declare module goog.dom {
          * @return {string} HTML fragment of the range, does not include context
          *     containing elements.
          */
-        getHtmlFragment: any /*missing*/;
+        getHtmlFragment(): string;
     
         /**
          * Returns valid HTML for this range.  This is fast on IE, and semi-fast on
@@ -253,7 +253,7 @@ declare module goog.dom {
          * @return {string} Valid HTML of the range, including context containing
          *     elements.
          */
-        getValidHtml: any /*missing*/;
+        getValidHtml(): string;
     
         /**
          * Returns pastable HTML for this range.  This guarantees that any child items
@@ -263,7 +263,7 @@ declare module goog.dom {
          * @return {string} Pastable HTML of the range, including context containing
          *     elements.
          */
-        getPastableHtml: any /*missing*/;
+        getPastableHtml(): string;
     
         /**
          * Returns a RangeIterator over the contents of the range.  Regardless of the
@@ -271,7 +271,7 @@ declare module goog.dom {
          * @param {boolean=} opt_keys Unused for this iterator.
          * @return {goog.dom.RangeIterator} An iterator over tags in the range.
          */
-        __iterator__: any /*missing*/;
+        __iterator__(opt_keys?: boolean): goog.dom.RangeIterator;
     
         /**
          * Sets this range as the selection in its window.
@@ -291,7 +291,7 @@ declare module goog.dom {
          * @return {Node} The node added to the document.  This may be different
          *     than the node parameter because on IE we have to clone it.
          */
-        insertNode: any /*missing*/;
+        insertNode(node: Node, before: boolean): Node;
     
         /**
          * Replaces the range contents with (possibly a copy of) the given node.  The
@@ -308,7 +308,7 @@ declare module goog.dom {
          * @param {Element} startNode The node to insert at the start.
          * @param {Element} endNode The node to insert at the end.
          */
-        surroundWithNodes: any /*missing*/;
+        surroundWithNodes(startNode: Element, endNode: Element): void;
     
         /**
          * Saves the range so that if the start and end nodes are left alone, it can
@@ -316,7 +316,7 @@ declare module goog.dom {
          * @return {goog.dom.SavedRange} A range representation that can be restored
          *     as long as the endpoint nodes of the selection are not modified.
          */
-        saveUsingDom: any /*missing*/;
+        saveUsingDom(): goog.dom.SavedRange;
     
         /**
          * Saves the range using HTML carets. As long as the carets remained in the
@@ -332,7 +332,7 @@ declare module goog.dom {
          * Collapses the range to one of its boundary points.
          * @param {boolean} toAnchor Whether to collapse to the anchor of the range.
          */
-        collapse: any /*missing*/;
+        collapse(toAnchor: boolean): void;
     }
 
     /**
@@ -360,28 +360,28 @@ declare module goog.dom {
          * @return {number} The offset into the current node, or -1 if the current node
          *     is not a text node.
          */
-        getStartTextOffset: any /*missing*/;
+        getStartTextOffset(): number;
     
         /**
          * @return {number} The end offset into the current node, or -1 if the current
          *     node is not a text node.
          */
-        getEndTextOffset: any /*missing*/;
+        getEndTextOffset(): number;
     
         /**
          * @return {Node} node The iterator's start node.
          */
-        getStartNode: any /*missing*/;
+        getStartNode(): Node;
     
         /**
          * @return {Node} The iterator's end node.
          */
-        getEndNode: any /*missing*/;
+        getEndNode(): Node;
     
         /**
          * @return {boolean} Whether a call to next will fail.
          */
-        isLast: any /*missing*/;
+        isLast(): boolean;
     }
 }
 

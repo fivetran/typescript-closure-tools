@@ -1,4 +1,4 @@
-// Generated Fri May  2 10:42:20 PDT 2014
+// Generated Fri May  2 11:41:56 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/debug/relativetimeprovider.d.ts" />
@@ -64,7 +64,7 @@ declare module goog.debug {
          * @param {goog.debug.LogRecord} logRecord the logRecord to format.
          * @return {string} The formatted string.
          */
-        formatRecord: any /*missing*/;
+        formatRecord(logRecord: goog.debug.LogRecord): string;
     
         /**
          * Sets the start time provider. By default, this is the default instance

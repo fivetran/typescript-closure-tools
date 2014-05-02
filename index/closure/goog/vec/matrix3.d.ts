@@ -1,4 +1,4 @@
-// Generated Fri May  2 10:38:01 PDT 2014
+// Generated Fri May  2 11:37:40 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 
@@ -58,7 +58,7 @@ declare module goog.vec.Matrix3 {
      * @param {goog.vec.Matrix3.Type} matrix The source 3x3 matrix.
      * @return {goog.vec.Matrix3.Type} The new 3x3 element matrix.
      */
-    var clone: any /*missing*/;
+    function clone(matrix: goog.vec.Matrix3.Type): goog.vec.Matrix3.Type;
 
     /**
      * Retrieves the element at the requested row and column.

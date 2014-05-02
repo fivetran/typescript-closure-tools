@@ -1,4 +1,4 @@
-// Generated Fri May  2 10:41:14 PDT 2014
+// Generated Fri May  2 11:40:51 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -70,7 +70,7 @@ declare module goog.graphics {
          * @param {number|string} width The width of the group element.
          * @param {number|string} height The height of the group element.
          */
-        setSize: any /*missing*/;
+        setSize(width: any /*number|string*/, height: any /*number|string*/): void;
     }
 }
 

@@ -1,4 +1,4 @@
-// Generated Fri May  2 10:44:39 PDT 2014
+// Generated Fri May  2 11:44:14 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/string/string.d.ts" />
@@ -95,13 +95,13 @@ declare module goog.ds {
          *     some subclasses require args.
          * @return {*} The value of the node, or null if no value.
          */
-        get: any /*missing*/;
+        get(...var_args: any[]): any;
     
         /**
          * Set the value of the node
          * @param {*} value The new value of the node.
          */
-        set: any /*missing*/;
+        set(value: any): void;
     
         /**
          * Gets all of the child nodes of the current node.
@@ -109,7 +109,7 @@ declare module goog.ds {
          * @param {string=} opt_selector String selector to choose child nodes.
          * @return {goog.ds.DataNodeList} The child nodes.
          */
-        getChildNodes: any /*missing*/;
+        getChildNodes(opt_selector?: string): goog.ds.DataNodeList;
     
         /**
          * Gets a named child node of the current node
@@ -119,7 +119,7 @@ declare module goog.ds {
          * @return {goog.ds.DataNode} The child node, or null
          * if no node of this name exists.
          */
-        getChildNode: any /*missing*/;
+        getChildNode(name: string, opt_canCreate?: boolean): goog.ds.DataNode;
     
         /**
          * Gets the value of a child node
@@ -127,7 +127,7 @@ declare module goog.ds {
          * @return {*} The value of the node, or null if no value or the child node
          *     doesn't exist.
          */
-        getChildNodeValue: any /*missing*/;
+        getChildNodeValue(name: string): any;
     
         /**
          * Sets a named child node of the current node.
@@ -137,25 +137,25 @@ declare module goog.ds {
          *     or null. If value is null, removes the child node.
          * @return {Object} The child node, if the node was set.
          */
-        setChildNode: any /*missing*/;
+        setChildNode(name: string, value: Object): Object;
     
         /**
          * Get the name of the node relative to the parent node
          * @return {string} The name of the node.
          */
-        getDataName: any /*missing*/;
+        getDataName(): string;
     
         /**
          * Set the name of the node relative to the parent node
          * @param {string} name The name of the node.
          */
-        setDataName: any /*missing*/;
+        setDataName(name: string): void;
     
         /**
          * Gets the a qualified data path to this node
          * @return {string} The data path.
          */
-        getDataPath: any /*missing*/;
+        getDataPath(): string;
     
         /**
          * Load or reload the backing data for this node
@@ -166,13 +166,13 @@ declare module goog.ds {
          * Gets the state of the backing data for this node
          * @return {goog.ds.LoadState} The state.
          */
-        getLoadState: any /*missing*/;
+        getLoadState(): goog.ds.LoadState;
     
         /**
          * Whether the value of this node is a homogeneous list of data
          * @return {boolean} True if a list.
          */
-        isList: any /*missing*/;
+        isList(): boolean;
     }
 
     /**
@@ -196,7 +196,7 @@ declare module goog.ds {
          * Set the value of the node
          * @param {Object} value The new value of the node.
          */
-        set: any /*missing*/;
+        set(value: Object): void;
     
         /**
          * Gets all of the child nodes of the current node.
@@ -228,7 +228,7 @@ declare module goog.ds {
          * Get the name of the node relative to the parent node
          * @return {string} The name of the node.
          */
-        getDataName: any /*missing*/;
+        getDataName(): string;
     
         /**
          * Gets the a qualified data path to this node
@@ -280,7 +280,7 @@ declare module goog.ds {
          *
          * @param {goog.ds.DataNode} node The node to add.
          */
-        add: any /*missing*/;
+        add(node: goog.ds.DataNode): void;
     
         /**
          * Get a node by index
@@ -289,28 +289,28 @@ declare module goog.ds {
          * @param {number} index The index of the node.
          * @return {goog.ds.DataNode} The node, or null if doesn't exist.
          */
-        getByIndex: any /*missing*/;
+        getByIndex(index: number): goog.ds.DataNode;
     
         /**
          * Gets the size of the node list
          *
          * @return {number} The size of the list.
          */
-        getCount: any /*missing*/;
+        getCount(): number;
     
         /**
          * Sets a node in the list of a given name
          * @param {string} name Name of the node.
          * @param {goog.ds.DataNode} node The node.
          */
-        setNode: any /*missing*/;
+        setNode(name: string, node: goog.ds.DataNode): void;
     
         /**
          * Removes a node in the list of a given name
          * @param {string} name Name of the node.
          * @return {boolean} True if node existed and was deleted.
          */
-        removeNode: any /*missing*/;
+        removeNode(name: string): boolean;
     }
 
     /**

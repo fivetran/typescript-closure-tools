@@ -1,4 +1,4 @@
-// Generated Fri May  2 10:35:19 PDT 2014
+// Generated Fri May  2 11:35:01 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -41,7 +41,7 @@ declare module goog.proto2 {
          *
          * @return {*} The deserialized data or null for no value found.
          */
-        deserializeField: any /*missing*/;
+        deserializeField(message: goog.proto2.Message, field: goog.proto2.FieldDescriptor, data: any): any;
     }
 }
 

@@ -1,4 +1,4 @@
-// Generated Fri May  2 10:43:30 PDT 2014
+// Generated Fri May  2 11:43:06 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/dom/nodetype.d.ts" />
@@ -80,7 +80,7 @@ declare module goog.testing.fs {
         /**
          * @return {!goog.testing.fs.Entry} A shallow copy of this entry object.
          */
-        clone: any /*missing*/;
+        clone(): goog.testing.fs.Entry;
     
         /**
          * Return a deferred that will call its errback if this entry has been deleted.

@@ -1,4 +1,4 @@
-// Generated Fri May  2 10:42:27 PDT 2014
+// Generated Fri May  2 11:42:04 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/functions/functions.d.ts" />
@@ -81,6 +81,6 @@ declare module goog.net {
      *
      * @return {!goog.net.WebChannelTransport} the newly created transport instance.
      */
-    var createWebChannelTransport: any /*missing*/;
+    function createWebChannelTransport(): goog.net.WebChannelTransport;
 }
 

@@ -1,4 +1,4 @@
-// Generated Fri May  2 10:42:29 PDT 2014
+// Generated Fri May  2 11:42:06 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 
@@ -23,7 +23,7 @@ declare module goog.net {
      * @interface
      */
     interface WebChannelTransport {
-        createWebChannel: any /*missing*/;
+        createWebChannel(url: string, opt_options?: goog.net.WebChannel.Options): goog.net.WebChannel;
     }
 }
 

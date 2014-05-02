@@ -1,4 +1,4 @@
-// Generated Fri May  2 10:36:13 PDT 2014
+// Generated Fri May  2 11:35:53 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/string/stringbuffer.d.ts" />
@@ -55,7 +55,7 @@ declare module goog.dom.browserrange {
         /**
          * @return {goog.dom.browserrange.AbstractRange} A clone of this range.
          */
-        clone: any /*missing*/;
+        clone(): goog.dom.browserrange.AbstractRange;
     
         /**
          * Returns the browser native implementation of the range.  Please refrain from
@@ -63,19 +63,19 @@ declare module goog.dom.browserrange {
          * the functionality you need rather than just using the native range.
          * @return {Range|TextRange} The browser native range object.
          */
-        getBrowserRange: any /*missing*/;
+        getBrowserRange(): any /*Range|TextRange*/;
     
         /**
          * Returns the deepest node in the tree that contains the entire range.
          * @return {Node} The deepest node that contains the entire range.
          */
-        getContainer: any /*missing*/;
+        getContainer(): Node;
     
         /**
          * Returns the node the range starts in.
          * @return {Node} The element or text node the range starts in.
          */
-        getStartNode: any /*missing*/;
+        getStartNode(): Node;
     
         /**
          * Returns the offset into the node the range starts in.
@@ -83,7 +83,7 @@ declare module goog.dom.browserrange {
          *     nodes, this is an offset into the node value.  For elements, this is
          *     an offset into the childNodes array.
          */
-        getStartOffset: any /*missing*/;
+        getStartOffset(): number;
     
         /**
          * @return {goog.math.Coordinate} The coordinate of the selection start node
@@ -95,7 +95,7 @@ declare module goog.dom.browserrange {
          * Returns the node the range ends in.
          * @return {Node} The element or text node the range ends in.
          */
-        getEndNode: any /*missing*/;
+        getEndNode(): Node;
     
         /**
          * Returns the offset into the node the range ends in.
@@ -103,7 +103,7 @@ declare module goog.dom.browserrange {
          *     nodes, this is an offset into the node value.  For elements, this is
          *     an offset into the childNodes array.
          */
-        getEndOffset: any /*missing*/;
+        getEndOffset(): number;
     
         /**
          * @return {goog.math.Coordinate} The coordinate of the selection end node
@@ -122,7 +122,7 @@ declare module goog.dom.browserrange {
          * @return {number} 0 if the endpoints are equal, negative if this range
          *     endpoint comes before the other range endpoint, and positive otherwise.
          */
-        compareBrowserRangeEndpoints: any /*missing*/;
+        compareBrowserRangeEndpoints(range: any /*Range|TextRange*/, thisEndpoint: goog.dom.RangeEndpoint, otherEndpoint: goog.dom.RangeEndpoint): number;
     
         /**
          * Tests if this range contains the given range.
@@ -146,12 +146,12 @@ declare module goog.dom.browserrange {
          * Tests if the selection is collapsed - i.e. is just a caret.
          * @return {boolean} Whether the range is collapsed.
          */
-        isCollapsed: any /*missing*/;
+        isCollapsed(): boolean;
     
         /**
          * @return {string} The text content of the range.
          */
-        getText: any /*missing*/;
+        getText(): string;
     
         /**
          * Returns the HTML fragment this range selects.  This is slow on all browsers.
@@ -166,7 +166,7 @@ declare module goog.dom.browserrange {
          * @return {string} Valid HTML of the range, including context containing
          *     elements.
          */
-        getValidHtml: any /*missing*/;
+        getValidHtml(): string;
     
         /**
          * Returns a RangeIterator over the contents of the range.  Regardless of the
@@ -181,7 +181,7 @@ declare module goog.dom.browserrange {
          * @param {boolean=} opt_reverse Whether to select the range in reverse,
          *     if possible.
          */
-        select: any /*missing*/;
+        select(opt_reverse?: boolean): void;
     
         /**
          * Removes the contents of the range from the document.  As a side effect, the
@@ -201,7 +201,7 @@ declare module goog.dom.browserrange {
          * @return {Element} The surrounding element (same as the argument on Mozilla,
          *    but not on IE), or null if unsuccessful.
          */
-        surroundContents: any /*missing*/;
+        surroundContents(element: Element): Element;
     
         /**
          * Inserts a node before (or after) the range.  The range may be disrupted
@@ -211,7 +211,7 @@ declare module goog.dom.browserrange {
          * @return {Node} The node added to the document.  This may be different
          *     than the node parameter because on IE we have to clone it.
          */
-        insertNode: any /*missing*/;
+        insertNode(node: Node, before: boolean): Node;
     
         /**
          * Surrounds this range with the two given nodes.  The range may be disrupted
@@ -219,13 +219,13 @@ declare module goog.dom.browserrange {
          * @param {Element} startNode The node to insert at the start.
          * @param {Element} endNode The node to insert at the end.
          */
-        surroundWithNodes: any /*missing*/;
+        surroundWithNodes(startNode: Element, endNode: Element): void;
     
         /**
          * Collapses the range to one of its boundary points.
          * @param {boolean} toStart Whether to collapse to the start of the range.
          */
-        collapse: any /*missing*/;
+        collapse(toStart: boolean): void;
     }
 }
 

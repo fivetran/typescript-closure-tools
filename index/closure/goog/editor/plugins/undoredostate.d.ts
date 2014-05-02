@@ -1,4 +1,4 @@
-// Generated Fri May  2 10:36:41 PDT 2014
+// Generated Fri May  2 11:36:21 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/dom/nodetype.d.ts" />
@@ -80,7 +80,7 @@ declare module goog.editor.plugins {
          * @param {goog.editor.plugins.UndoRedoState} state The state to compare.
          * @return {boolean} Wether the two states are equal.
          */
-        equals: any /*missing*/;
+        equals(state: goog.editor.plugins.UndoRedoState): boolean;
     }
 }
 

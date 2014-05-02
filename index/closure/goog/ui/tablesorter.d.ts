@@ -1,4 +1,4 @@
-// Generated Fri May  2 10:39:20 PDT 2014
+// Generated Fri May  2 11:38:58 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -56,7 +56,7 @@ declare module goog.ui.TableSorter {
      * @param {*} b Second sort value.
      * @return {number} Negative if a < b, 0 if a = b, and positive if a > b.
      */
-    var noSort: any /*missing*/;
+    function noSort(a: any, b: any): number;
 
     /**
      * A numeric sort function.
@@ -72,7 +72,7 @@ declare module goog.ui.TableSorter {
      * @param {*} b Second sort value.
      * @return {number} Negative if a < b, 0 if a = b, and positive if a > b.
      */
-    var alphaSort: any /*missing*/;
+    function alphaSort(a: any, b: any): number;
 
     /**
      * Returns a function that is the given sort function in reverse.

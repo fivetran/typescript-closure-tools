@@ -1,4 +1,4 @@
-// Generated Fri May  2 10:41:27 PDT 2014
+// Generated Fri May  2 11:41:04 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -70,14 +70,14 @@ declare module goog.graphics {
          * @param {number} cx  Center X coordinate.
          * @param {number} cy  Center Y coordinate.
          */
-        setCenter: any /*missing*/;
+        setCenter(cx: number, cy: number): void;
     
         /**
          * Update the radius of the ellipse.
          * @param {number} rx  Radius length for the x-axis.
          * @param {number} ry  Radius length for the y-axis.
          */
-        setRadius: any /*missing*/;
+        setRadius(rx: number, ry: number): void;
     }
 }
 

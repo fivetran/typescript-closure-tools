@@ -1,4 +1,4 @@
-// Generated Fri May  2 10:38:09 PDT 2014
+// Generated Fri May  2 11:37:48 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/vec/float64array.d.ts" />
@@ -79,7 +79,7 @@ declare module goog.vec.Vec3 {
      * @param {goog.vec.Vec3.Float32} vec The source 3 element vector.
      * @return {!goog.vec.Vec3.Float32} The new cloned vector.
      */
-    var cloneFloat32: any /*missing*/;
+    function cloneFloat32(vec: goog.vec.Vec3.Float32): goog.vec.Vec3.Float32;
 
     /**
      * Creates a new 3 element Float64 vector initialized with the value from the
@@ -106,7 +106,7 @@ declare module goog.vec.Vec3 {
      * @param {goog.vec.Vec3.Float64} vec The source 3 element vector.
      * @return {!goog.vec.Vec3.Float64} The new cloned vector.
      */
-    var cloneFloat64: any /*missing*/;
+    function cloneFloat64(vec: goog.vec.Vec3.Float64): goog.vec.Vec3.Float64;
 
     /**
      * Creates a new 3 element vector initialized with the value from the given

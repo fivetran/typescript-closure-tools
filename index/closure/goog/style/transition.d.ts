@@ -1,4 +1,4 @@
-// Generated Fri May  2 10:36:30 PDT 2014
+// Generated Fri May  2 11:36:11 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -61,6 +61,6 @@ declare module goog.style.transition {
     /**
      * @return {boolean} Whether CSS3 transition is supported.
      */
-    var isSupported: any /*missing*/;
+    function isSupported(): boolean;
 }
 

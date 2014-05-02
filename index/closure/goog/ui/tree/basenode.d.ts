@@ -1,4 +1,4 @@
-// Generated Fri May  2 10:39:02 PDT 2014
+// Generated Fri May  2 11:38:41 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/string/stringbuffer.d.ts" />
@@ -147,7 +147,7 @@ declare module goog.ui.tree {
          * @param {number} index 0-based index.
          * @return {goog.ui.tree.BaseNode} The child at the given index; null if none.
          */
-        getChildAt: any /*missing*/;
+        getChildAt(index: number): goog.ui.tree.BaseNode;
     
         /**
          * Returns the children of this node.
@@ -490,7 +490,7 @@ declare module goog.ui.tree {
          * @protected
          * @suppress {underscore|visibility}
          */
-        onClick_: any /*missing*/;
+        onClick_(e: goog.events.BrowserEvent): void;
     
         /**
          * Handles a double click event.
@@ -528,14 +528,14 @@ declare module goog.ui.tree {
          * @return {*} Data set by the client.
          * @deprecated Use {@link #getModel} instead.
          */
-        getClientData: any /*missing*/;
+        getClientData(): any;
     
         /**
          * Sets client data to associate with the node.
          * @param {*} data The client data to associate with the node.
          * @deprecated Use {@link #setModel} instead.
          */
-        setClientData: any /*missing*/;
+        setClientData(data: any): void;
     
         /**
          * @return {Object} The configuration for the tree.

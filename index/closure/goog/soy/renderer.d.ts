@@ -1,4 +1,4 @@
-// Generated Fri May  2 10:35:26 PDT 2014
+// Generated Fri May  2 11:35:08 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -184,7 +184,7 @@ declare module goog.soy {
          *     or writing into an existing one.
          * @protected
          */
-        handleRender: any /*missing*/;
+        handleRender(opt_node?: Node): void;
     }
 }
 

@@ -1,4 +1,4 @@
-// Generated Fri May  2 10:37:58 PDT 2014
+// Generated Fri May  2 11:37:38 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/vec/float64array.d.ts" />
@@ -90,7 +90,7 @@ declare module goog.vec.Vec4 {
      * @param {goog.vec.Vec4.Float32} vec The source 3 element vector.
      * @return {!goog.vec.Vec4.Float32} The new cloned vector.
      */
-    var cloneFloat32: any /*missing*/;
+    function cloneFloat32(vec: goog.vec.Vec4.Float32): goog.vec.Vec4.Float32;
 
     /**
      * Creates a new 4 element Float64 vector initialized with the value from the
@@ -118,7 +118,7 @@ declare module goog.vec.Vec4 {
      * @param {goog.vec.Vec4.Float64} vec The source 4 element vector.
      * @return {!goog.vec.Vec4.Float64} The new cloned vector.
      */
-    var cloneFloat64: any /*missing*/;
+    function cloneFloat64(vec: goog.vec.Vec4.Float64): goog.vec.Vec4.Float64;
 
     /**
      * Creates a new 4 element vector initialized with the supplied values.
@@ -139,7 +139,7 @@ declare module goog.vec.Vec4 {
      * @param {goog.vec.Vec4.Vec4Like} vec The source 4 element vector.
      * @return {!goog.vec.Vec4.Type} The new cloned vector.
      */
-    var clone: any /*missing*/;
+    function clone(vec: goog.vec.Vec4.Vec4Like): goog.vec.Vec4.Type;
 
     /**
      * Initializes the vector with the given values.

@@ -1,4 +1,4 @@
-// Generated Fri May  2 10:38:11 PDT 2014
+// Generated Fri May  2 11:37:50 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/vec/float64array.d.ts" />
@@ -26,21 +26,21 @@ declare module goog.vec.Quaternion {
      *
      * @return {!goog.vec.Quaternion.Float32} The new quaternion.
      */
-    var createFloat32: any /*missing*/;
+    function createFloat32(): goog.vec.Quaternion.Float32;
 
     /**
      * Creates a Float64 quaternion, initialized to zero.
      *
      * @return {goog.vec.Quaternion.Float64} The new quaternion.
      */
-    var createFloat64: any /*missing*/;
+    function createFloat64(): goog.vec.Quaternion.Float64;
 
     /**
      * Creates a Number quaternion, initialized to zero.
      *
      * @return {goog.vec.Quaternion.Number} The new quaternion.
      */
-    var createNumber: any /*missing*/;
+    function createNumber(): goog.vec.Quaternion.Number;
 
     /**
      * Creates a new Float32 quaternion initialized with the values from the
@@ -49,7 +49,7 @@ declare module goog.vec.Quaternion {
      * @param {goog.vec.AnyType} vec The source 4 element array.
      * @return {!goog.vec.Quaternion.Float32} The new quaternion.
      */
-    var createFloat32FromArray: any /*missing*/;
+    function createFloat32FromArray(vec: goog.vec.AnyType): goog.vec.Quaternion.Float32;
 
     /**
      * Creates a new Float64 quaternion initialized with the values from the
@@ -58,7 +58,7 @@ declare module goog.vec.Quaternion {
      * @param {goog.vec.AnyType} vec The source 4 element array.
      * @return {!goog.vec.Quaternion.Float64} The new quaternion.
      */
-    var createFloat64FromArray: any /*missing*/;
+    function createFloat64FromArray(vec: goog.vec.AnyType): goog.vec.Quaternion.Float64;
 
     /**
      * Creates a new Float32 quaternion initialized with the supplied values.
@@ -69,7 +69,7 @@ declare module goog.vec.Quaternion {
      * @param {number} v3 The value for element at index 3.
      * @return {!goog.vec.Quaternion.Float32} The new quaternion.
      */
-    var createFloat32FromValues: any /*missing*/;
+    function createFloat32FromValues(v0: number, v1: number, v2: number, v3: number): goog.vec.Quaternion.Float32;
 
     /**
      * Creates a new Float64 quaternion initialized with the supplied values.
@@ -80,7 +80,7 @@ declare module goog.vec.Quaternion {
      * @param {number} v3 The value for element at index 3.
      * @return {!goog.vec.Quaternion.Float64} The new quaternion.
      */
-    var createFloat64FromValues: any /*missing*/;
+    function createFloat64FromValues(v0: number, v1: number, v2: number, v3: number): goog.vec.Quaternion.Float64;
 
     /**
      * Creates a clone of the given Float32 quaternion.
@@ -88,7 +88,7 @@ declare module goog.vec.Quaternion {
      * @param {goog.vec.Quaternion.Float32} q The source quaternion.
      * @return {goog.vec.Quaternion.Float32} The new quaternion.
      */
-    var cloneFloat32: any /*missing*/;
+    function cloneFloat32(q: goog.vec.Quaternion.Float32): goog.vec.Quaternion.Float32;
 
     /**
      * Creates a clone of the given Float64 quaternion.
@@ -96,7 +96,7 @@ declare module goog.vec.Quaternion {
      * @param {goog.vec.Quaternion.Float64} q The source quaternion.
      * @return {goog.vec.Quaternion.Float64} The new quaternion.
      */
-    var cloneFloat64: any /*missing*/;
+    function cloneFloat64(q: goog.vec.Quaternion.Float64): goog.vec.Quaternion.Float64;
 
     /**
      * Initializes the quaternion with the given values.
@@ -110,7 +110,7 @@ declare module goog.vec.Quaternion {
      * @return {!goog.vec.Vec4.AnyType} return q so that operations can be
      *     chained together.
      */
-    var setFromValues: any /*missing*/;
+    function setFromValues(q: goog.vec.Quaternion.AnyType, v0: number, v1: number, v2: number, v3: number): goog.vec.Vec4.AnyType;
 
     /**
      * Initializes the quaternion with the given array of values.
@@ -121,7 +121,7 @@ declare module goog.vec.Quaternion {
      * @return {!goog.vec.Quaternion.AnyType} return q so that operations can be
      *     chained together.
      */
-    var setFromArray: any /*missing*/;
+    function setFromArray(q: goog.vec.Quaternion.AnyType, values: goog.vec.AnyType): goog.vec.Quaternion.AnyType;
 
     /**
      * Adds the two quaternions.
@@ -131,7 +131,7 @@ declare module goog.vec.Quaternion {
      * @param {goog.vec.Quaternion.AnyType} resultQuat The quaternion to
      *     receive the result. May be quat0 or quat1.
      */
-    var add: any /*missing*/;
+    function add(quat0: goog.vec.Quaternion.AnyType, quat1: goog.vec.Quaternion.AnyType, resultQuat: goog.vec.Quaternion.AnyType): void;
 
     /**
      * Negates a quaternion, storing the result into resultQuat.
@@ -140,7 +140,7 @@ declare module goog.vec.Quaternion {
      * @param {goog.vec.Quaternion.AnyType} resultQuat The quaternion to
      *     receive the result. May be quat0.
      */
-    var negate: any /*missing*/;
+    function negate(quat0: goog.vec.Quaternion.AnyType, resultQuat: goog.vec.Quaternion.AnyType): void;
 
     /**
      * Multiplies each component of quat0 with scalar storing the product into
@@ -151,7 +151,7 @@ declare module goog.vec.Quaternion {
      * @param {goog.vec.Quaternion.AnyType} resultQuat The quaternion to
      *     receive the result. May be quat0.
      */
-    var scale: any /*missing*/;
+    function scale(quat0: goog.vec.Quaternion.AnyType, scalar: number, resultQuat: goog.vec.Quaternion.AnyType): void;
 
     /**
      * Returns the square magnitude of the given quaternion.
@@ -159,7 +159,7 @@ declare module goog.vec.Quaternion {
      * @param {goog.vec.Quaternion.AnyType} quat0 The quaternion.
      * @return {number} The magnitude of the quaternion.
      */
-    var magnitudeSquared: any /*missing*/;
+    function magnitudeSquared(quat0: goog.vec.Quaternion.AnyType): number;
 
     /**
      * Returns the magnitude of the given quaternion.
@@ -167,7 +167,7 @@ declare module goog.vec.Quaternion {
      * @param {goog.vec.Quaternion.AnyType} quat0 The quaternion.
      * @return {number} The magnitude of the quaternion.
      */
-    var magnitude: any /*missing*/;
+    function magnitude(quat0: goog.vec.Quaternion.AnyType): number;
 
     /**
      * Normalizes the given quaternion storing the result into resultVec.
@@ -177,7 +177,7 @@ declare module goog.vec.Quaternion {
      * @param {goog.vec.Quaternion.AnyType} resultQuat The quaternion to
      *     receive the result. May be quat0.
      */
-    var normalize: any /*missing*/;
+    function normalize(quat0: goog.vec.Quaternion.AnyType, resultQuat: goog.vec.Quaternion.AnyType): void;
 
     /**
      * Computes the dot (scalar) product of two quaternions.
@@ -186,7 +186,7 @@ declare module goog.vec.Quaternion {
      * @param {goog.vec.Quaternion.AnyType} q1 The second quaternion.
      * @return {number} The scalar product.
      */
-    var dot: any /*missing*/;
+    function dot(q0: goog.vec.Quaternion.AnyType, q1: goog.vec.Quaternion.AnyType): number;
 
     /**
      * Computes the conjugate of the quaternion in quat storing the result into
@@ -289,6 +289,6 @@ declare module goog.vec.Quaternion {
      * @param {goog.vec.Quaternion.AnyType} resultQuat The quaternion to
      *     receive the results (may be q0 or q1).
      */
-    var nlerp: any /*missing*/;
+    function nlerp(q0: goog.vec.Quaternion.AnyType, q1: goog.vec.Quaternion.AnyType, t: number, resultQuat: goog.vec.Quaternion.AnyType): void;
 }
 

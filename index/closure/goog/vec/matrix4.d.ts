@@ -1,4 +1,4 @@
-// Generated Fri May  2 10:38:03 PDT 2014
+// Generated Fri May  2 11:37:42 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/vec/float64array.d.ts" />
@@ -70,7 +70,7 @@ declare module goog.vec.Matrix4 {
      * @param {goog.vec.Matrix4.Type} matrix The source 4x4 matrix.
      * @return {goog.vec.Matrix4.Type} The new, 16 element matrix.
      */
-    var clone: any /*missing*/;
+    function clone(matrix: goog.vec.Matrix4.Type): goog.vec.Matrix4.Type;
 
     /**
      * Retrieves the element at the requested row and column.

@@ -1,4 +1,4 @@
-// Generated Fri May  2 10:38:39 PDT 2014
+// Generated Fri May  2 11:38:18 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -86,7 +86,7 @@ declare module goog.ui.SliderBase {
      * @interface
      */
     interface AnimationFactory {
-        createAnimations: any /*missing*/;
+        createAnimations(previousValue: number, newValue: number, interval: number): goog.fx.TransitionBase[];
     }
 }
 
@@ -156,7 +156,7 @@ declare module goog.ui {
          * @return {string} The CSS class applied to slider elements.
          * @protected
          */
-        getCssClass: any /*missing*/;
+        getCssClass(orient: goog.ui.SliderBase.Orientation): string;
     
         /**
          * Subclasses must implement this method and set the valueThumb and

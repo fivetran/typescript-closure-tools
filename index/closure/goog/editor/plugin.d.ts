@@ -1,4 +1,4 @@
-// Generated Fri May  2 10:36:56 PDT 2014
+// Generated Fri May  2 11:36:36 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/object/object.d.ts" />
@@ -163,7 +163,7 @@ declare module goog.editor {
          * @return {boolean} If true, field will not disable the command
          *     when the field becomes uneditable.
          */
-        activeOnUneditableFields: any /*missing*/;
+        activeOnUneditableFields(): boolean;
     
         /**
          * @param {string} command The command to check.
@@ -171,13 +171,13 @@ declare module goog.editor {
          *     for commands of this type. This is useful for "seamless" plugins like
          *     dialogs and lorem ipsum.
          */
-        isSilentCommand: any /*missing*/;
+        isSilentCommand(command: string): boolean;
     
         /**
          * @return {string} The ID unique to this plugin class. Note that different
          *     instances off the plugin share the same classId.
          */
-        getTrogClassId: any /*missing*/;
+        getTrogClassId(): string;
     
         /**
          * Handles keydown. It is run before handleKeyboardShortcut and if it returns
@@ -186,7 +186,7 @@ declare module goog.editor {
          * @return {boolean} Whether the event was handled and thus should *not* be
          *     propagated to other plugins or handleKeyboardShortcut.
          */
-        handleKeyDown: any /*missing*/;
+        handleKeyDown(e: goog.events.BrowserEvent): boolean;
     
         /**
          * Handles keypress. It is run before handleKeyboardShortcut and if it returns
@@ -195,7 +195,7 @@ declare module goog.editor {
          * @return {boolean} Whether the event was handled and thus should *not* be
          *     propagated to other plugins or handleKeyboardShortcut.
          */
-        handleKeyPress: any /*missing*/;
+        handleKeyPress(e: goog.events.BrowserEvent): boolean;
     
         /**
          * Handles keyup.
@@ -203,7 +203,7 @@ declare module goog.editor {
          * @return {boolean} Whether the event was handled and thus should *not* be
          *     propagated to other plugins.
          */
-        handleKeyUp: any /*missing*/;
+        handleKeyUp(e: goog.events.BrowserEvent): boolean;
     
         /**
          * Handles selection change.
@@ -212,7 +212,7 @@ declare module goog.editor {
          * @return {boolean} Whether the event was handled and thus should *not* be
          *     propagated to other plugins.
          */
-        handleSelectionChange: any /*missing*/;
+        handleSelectionChange(opt_e?: goog.events.BrowserEvent, opt_target?: Node): boolean;
     
         /**
          * Handles keyboard shortcuts.  Preferred to using handleKey* as it will use
@@ -235,7 +235,7 @@ declare module goog.editor {
          *     propagated to other plugins. We also call preventDefault on the event if
          *     the return value is true.
          */
-        handleKeyboardShortcut: any /*missing*/;
+        handleKeyboardShortcut(e: goog.events.BrowserEvent, key: string, isModifierPressed: boolean): boolean;
     
         /**
          * Handles execCommand. This default implementation handles dispatching
@@ -267,14 +267,14 @@ declare module goog.editor {
          * @return {*} The result of the execCommand, if any.
          * @protected
          */
-        execCommandInternal: any /*missing*/;
+        execCommandInternal(command: string, ...var_args: any[]): any;
     
         /**
          * Gets the state of this command if this plugin serves that command.
          * @param {string} command The command to check.
          * @return {*} The value of the command.
          */
-        queryCommandValue: any /*missing*/;
+        queryCommandValue(command: string): any;
     
         /**
          * Prepares the given HTML for editing. Strips out content that should not
@@ -289,7 +289,7 @@ declare module goog.editor {
          *     pairs to this object.
          * @return {string} New HTML that's ok for editing.
          */
-        prepareContentsHtml: any /*missing*/;
+        prepareContentsHtml(originalHtml: string, styles: Object): string;
     
         /**
          * Cleans the contents of the node passed to it. The node contents are modified
@@ -302,7 +302,7 @@ declare module goog.editor {
          * @param {!Element} fieldCopy The copy of the editable field which
          *     needs to be cleaned up.
          */
-        cleanContentsDom: any /*missing*/;
+        cleanContentsDom(fieldCopy: Element): void;
     
         /**
          * Cleans the html contents of Trogedit. Both cleanContentsDom and
@@ -314,7 +314,7 @@ declare module goog.editor {
          * @param {string} originalHtml The trogedit HTML.
          * @return {string} Cleaned-up HTML.
          */
-        cleanContentsHtml: any /*missing*/;
+        cleanContentsHtml(originalHtml: string): string;
     
         /**
          * Whether the string corresponds to a command this plugin handles.

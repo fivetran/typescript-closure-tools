@@ -1,4 +1,4 @@
-// Generated Fri May  2 10:41:29 PDT 2014
+// Generated Fri May  2 11:41:06 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 
@@ -24,12 +24,12 @@ declare module goog.graphics {
         /**
          * @return {string} The start color of a gradient fill.
          */
-        getColor1: any /*missing*/;
+        getColor1(): string;
     
         /**
          * @return {string} The end color of a gradient fill.
          */
-        getColor2: any /*missing*/;
+        getColor2(): string;
     }
 }
 

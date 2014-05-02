@@ -1,4 +1,4 @@
-// Generated Fri May  2 10:36:29 PDT 2014
+// Generated Fri May  2 11:36:09 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/string/string.d.ts" />
@@ -33,14 +33,14 @@ declare module goog.style.transform {
      * and IE 10 supports 3D transforms. IE 8 supports neither.
      * @return {boolean} Whether the current environment supports CSS3 transforms.
      */
-    var isSupported: any /*missing*/;
+    function isSupported(): boolean;
 
     /**
      * Whether CSS3 transform translate3d() is supported. If the current browser
      * supports this transform strategy.
      * @return {boolean} Whether the current environment supports CSS3 transforms.
      */
-    var is3dSupported: any /*missing*/;
+    function is3dSupported(): boolean;
 
     /**
      * Returns the x,y translation component of any CSS transforms applied to the

@@ -1,4 +1,4 @@
-// Generated Fri May  2 10:41:13 PDT 2014
+// Generated Fri May  2 11:40:50 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/string/string.d.ts" />
@@ -137,7 +137,7 @@ declare module goog.userAgent {
      * @return {number}  1 if first argument is higher
      *                   0 if arguments are equal
      *                  -1 if second argument is higher.
-     * @deprecated Use googstring.compareVersions.
+     * @deprecated Use goog.string.compareVersions.
      */
     function compare(v1: string, v2: string): number;
 
@@ -164,7 +164,7 @@ declare module goog.userAgent {
      *     the given version.
      * @deprecated Use goog.userAgent.isVersionOrHigher().
      */
-    var isVersion: any /*missing*/;
+    function isVersion(version: any /*string|number*/): boolean;
 
     /**
      * Whether the IE effective document mode is higher or the same as the given
@@ -184,7 +184,7 @@ declare module goog.userAgent {
      *      same as the given version.
      * @deprecated Use goog.userAgent.isDocumentModeOrHigher().
      */
-    var isDocumentMode: any /*missing*/;
+    function isDocumentMode(version: number): boolean;
 
     /**
      * For IE version < 7, documentMode is undefined, so attempt to use the

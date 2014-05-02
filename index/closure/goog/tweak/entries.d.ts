@@ -1,4 +1,4 @@
-// Generated Fri May  2 10:41:37 PDT 2014
+// Generated Fri May  2 11:41:13 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/string/string.d.ts" />
@@ -115,14 +115,14 @@ declare module goog.tweak {
          *     the '='. Null if it is not present.
          * @protected
          */
-        initialize: any /*missing*/;
+        initialize(value: string): void;
     
         /**
          * Returns the value to be used in the query parameter for this tweak.
          * @return {?string} The encoded value. Null if the value is set to its
          *     default.
          */
-        getNewValueEncoded: any /*missing*/;
+        getNewValueEncoded(): string;
     
         /**
          * Asserts that this tweak has not been initialized yet.
@@ -191,7 +191,7 @@ declare module goog.tweak {
          * @return {string} The encoded value.
          * @protected
          */
-        encodeNewValue: any /*missing*/;
+        encodeNewValue(): string;
     
         /**
          * If the setting has the restartRequired option, then returns its inital

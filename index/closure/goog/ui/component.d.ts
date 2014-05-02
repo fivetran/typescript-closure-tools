@@ -1,4 +1,4 @@
-// Generated Fri May  2 10:40:00 PDT 2014
+// Generated Fri May  2 11:39:38 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -167,7 +167,7 @@ declare module goog.ui {
          * @param {string} className The name of the class to look for.
          * @return {!goog.array.ArrayLike} The items found with the class name provided.
          */
-        getElementsByClass(className: string): goog.array.ArrayLike<any>;
+        getElementsByClass(className: string): goog.array.ArrayLike;
     
         /**
          * Returns the first element in this component's DOM with the provided

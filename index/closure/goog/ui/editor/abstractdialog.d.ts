@@ -1,4 +1,4 @@
-// Generated Fri May  2 10:38:46 PDT 2014
+// Generated Fri May  2 11:38:25 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/dom/nodetype.d.ts" />
@@ -207,7 +207,7 @@ declare module goog.ui.editor {
          * @return {goog.ui.Dialog} Created Dialog control.
          * @protected
          */
-        createDialogControl: any /*missing*/;
+        createDialogControl(): goog.ui.Dialog;
     
         /**
          * Returns the HTML Button element for the OK button in this dialog.
@@ -243,7 +243,7 @@ declare module goog.ui.editor {
          *     OK event to listeners.
          * @protected
          */
-        createOkEvent: any /*missing*/;
+        createOkEvent(e: goog.events.Event): goog.events.Event;
     
         /**
          * Handles the event dispatched by the wrapped dialog control when the user

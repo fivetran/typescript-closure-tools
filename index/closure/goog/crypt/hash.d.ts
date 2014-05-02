@@ -1,4 +1,4 @@
-// Generated Fri May  2 10:37:15 PDT 2014
+// Generated Fri May  2 11:36:54 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 
@@ -39,13 +39,13 @@ declare module goog.crypt {
          * @param {Array.<number>|Uint8Array|string} bytes Data used for the update.
          * @param {number=} opt_length Number of bytes to use.
          */
-        update: any /*missing*/;
+        update(bytes: any /*number[]|Uint8Array|string*/, opt_length?: number): void;
     
         /**
          * @return {!Array.<number>} The finalized hash computed
          *     from the internal accumulator.
          */
-        digest: any /*missing*/;
+        digest(): number[];
     }
 }
 

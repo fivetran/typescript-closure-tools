@@ -1,4 +1,4 @@
-// Generated Fri May  2 10:40:08 PDT 2014
+// Generated Fri May  2 11:39:46 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 
@@ -10,8 +10,8 @@ declare module goog.ui {
      * @interface
      */
     interface DatePickerRenderer {
-        renderNavigationRow: any /*missing*/;
-        renderFooterRow: any /*missing*/;
+        renderNavigationRow(row: Element, simpleNavigation: boolean, showWeekNum: boolean, fullDateFormat: string): void;
+        renderFooterRow(row: Element, showWeekNum: boolean): void;
     }
 }
 

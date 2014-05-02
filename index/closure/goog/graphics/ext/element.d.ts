@@ -1,4 +1,4 @@
-// Generated Fri May  2 10:41:20 PDT 2014
+// Generated Fri May  2 11:40:57 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/dom/nodetype.d.ts" />
@@ -291,7 +291,7 @@ declare module goog.graphics.ext {
          * @return {boolean} Whether this shape's bounds depends on its parent's.
          * @protected
          */
-        checkParentDependent: any /*missing*/;
+        checkParentDependent(): boolean;
     
         /**
          * Set the rotation of this element.

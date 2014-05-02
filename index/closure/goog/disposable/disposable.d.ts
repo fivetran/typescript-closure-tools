@@ -1,4 +1,4 @@
-// Generated Fri May  2 10:44:38 PDT 2014
+// Generated Fri May  2 11:44:13 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/disposable/idisposable.d.ts" />
@@ -42,7 +42,7 @@ declare module goog {
 
     /**
      * Calls {@code dispose} on each member of the list that supports it. (If the
-     * member is an ArrayLike<any>, then {@code goog.disposeAll()} will be called
+     * member is an ArrayLike, then {@code goog.disposeAll()} will be called
      * recursively on each of its members.) If the member is not an object with a
      * {@code dispose()} method, then it is ignored.
      * @param {...*} var_args The list.
@@ -79,7 +79,7 @@ declare module goog {
          * @return {boolean} Whether the object has been disposed of.
          * @deprecated Use {@link #isDisposed} instead.
          */
-        getDisposed: any /*missing*/;
+        getDisposed(): boolean;
     
         /**
          * Associates a disposable object with this object so that they will be disposed

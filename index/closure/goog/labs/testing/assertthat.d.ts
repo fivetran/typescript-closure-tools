@@ -1,4 +1,4 @@
-// Generated Fri May  2 10:42:48 PDT 2014
+// Generated Fri May  2 11:42:25 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/labs/testing/matcher.d.ts" />
@@ -23,15 +23,15 @@ declare module goog.labs.testing {
      * Error thrown when a Matcher fails to match the input value.
      * @param {string=} opt_message The error message.
      * @constructor
-     * @extends {goog.debug.GoogError}
+     * @extends {goog.debug.Error}
      * @final
      */
-    class MatcherError extends goog.debug.GoogError {
+    class MatcherError extends goog.debug.Error {
         /**
          * Error thrown when a Matcher fails to match the input value.
          * @param {string=} opt_message The error message.
          * @constructor
-         * @extends {goog.debug.GoogError}
+         * @extends {goog.debug.Error}
          * @final
          */
         constructor(opt_message?: string);

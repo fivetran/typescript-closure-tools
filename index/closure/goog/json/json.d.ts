@@ -1,4 +1,4 @@
-// Generated Fri May  2 10:35:21 PDT 2014
+// Generated Fri May  2 11:35:03 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 
@@ -15,7 +15,7 @@ declare module goog.json {
      * @throws Error if s is invalid JSON.
      * @return {Object} The object generated from the JSON string, or null.
      */
-    var parse: any /*missing*/;
+    function parse(s: any): Object;
 
     /**
      * Parses a JSON string and returns the result. This uses eval so it is open
@@ -24,7 +24,7 @@ declare module goog.json {
      * @param {string} s The JSON string to parse.
      * @return {Object} The object generated from the JSON string.
      */
-    var unsafeParse: any /*missing*/;
+    function unsafeParse(s: string): Object;
 
     /**
      * JSON replacer, as defined in Section 15.12.3 of the ES5 spec.
@@ -59,7 +59,7 @@ declare module goog.json {
      * @throws Error if there are loops in the object graph.
      * @return {string} A JSON string representation of the input.
      */
-    var serialize: any /*missing*/;
+    function serialize(object: any, opt_replacer?: goog.json.Replacer): string;
 
     /**
      * Class that is used to serialize JSON objects to a string.

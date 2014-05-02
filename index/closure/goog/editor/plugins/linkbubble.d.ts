@@ -1,4 +1,4 @@
-// Generated Fri May  2 10:36:40 PDT 2014
+// Generated Fri May  2 11:36:20 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/dom/nodetype.d.ts" />
@@ -177,7 +177,7 @@ declare module goog.editor.plugins {
          * @param {string} url The url to check.
          * @return {boolean} Whether the URL should be considered invalid.
          */
-        isInvalidUrl: any /*missing*/;
+        isInvalidUrl(url: string): boolean;
     
         /**
          * Checks whether the plugin should open the given url in a new window.

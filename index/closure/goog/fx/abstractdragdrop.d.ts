@@ -1,4 +1,4 @@
-// Generated Fri May  2 10:35:35 PDT 2014
+// Generated Fri May  2 11:35:17 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -133,7 +133,7 @@ declare module goog.fx {
          *     id, to be used as drag source/drop target.
          * @throws Error Thrown if called on instance of abstract class
          */
-        addItem: any /*missing*/;
+        addItem(element: any /*Element|string*/): void;
     
         /**
          * Associate drop target with drag element.

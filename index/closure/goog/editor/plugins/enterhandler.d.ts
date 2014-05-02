@@ -1,4 +1,4 @@
-// Generated Fri May  2 10:36:44 PDT 2014
+// Generated Fri May  2 11:36:24 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/dom/nodetype.d.ts" />
@@ -142,7 +142,7 @@ declare module goog.editor.plugins {
          * @return {string} Blank html.
          * @protected
          */
-        getNonCollapsingBlankHtml: any /*missing*/;
+        getNonCollapsingBlankHtml(): string;
     
         /**
          * Internal backspace handler.
@@ -193,7 +193,7 @@ declare module goog.editor.plugins {
          * @param {goog.events.BrowserEvent} e The key press event.
          * @protected
          */
-        handleEnterWebkitInternal: any /*missing*/;
+        handleEnterWebkitInternal(e: goog.events.BrowserEvent): void;
     
         /**
          * Handle an enter key press on collapsed selection.  handleEnterGecko_ ensures
@@ -206,7 +206,7 @@ declare module goog.editor.plugins {
          * @param {goog.dom.AbstractRange} range Object representing the selection.
          * @protected
          */
-        handleEnterAtCursorGeckoInternal: any /*missing*/;
+        handleEnterAtCursorGeckoInternal(e: goog.events.BrowserEvent, wasCollapsed: boolean, range: goog.dom.AbstractRange): void;
     
         /**
          * Ensures all text in IE and Opera to be in the given tag in order to control

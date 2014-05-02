@@ -1,4 +1,4 @@
-// Generated Fri May  2 10:44:32 PDT 2014
+// Generated Fri May  2 11:44:08 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/debug/error.d.ts" />
@@ -75,17 +75,17 @@ declare module goog.db.Error {
      * thrown.
      *
      * @constructor
-     * @extends {goog.debug.GoogError}
+     * @extends {goog.debug.Error}
      * @final
      */
-    class VersionChangeBlockedError extends goog.debug.GoogError {
+    class VersionChangeBlockedError extends goog.debug.Error {
         /**
          * A specific kind of database error. If a Version Change is unable to proceed
          * due to other open database connections, it will block and this error will be
          * thrown.
          *
          * @constructor
-         * @extends {goog.debug.GoogError}
+         * @extends {goog.debug.Error}
          * @final
          */
         constructor();
@@ -103,10 +103,10 @@ declare module goog.db {
      * @param {string} context A description of where the error occured.
      * @param {string=} opt_message Additional message.
      * @constructor
-     * @extends {goog.debug.GoogError}
+     * @extends {goog.debug.Error}
      * @final
      */
-    class Error extends goog.debug.GoogError {
+    class Error extends goog.debug.Error {
         /**
          * A database error. Since the stack trace can be unhelpful in an asynchronous
          * context, the error provides a message about where it was produced.
@@ -116,7 +116,7 @@ declare module goog.db {
          * @param {string} context A description of where the error occured.
          * @param {string=} opt_message Additional message.
          * @constructor
-         * @extends {goog.debug.GoogError}
+         * @extends {goog.debug.Error}
          * @final
          */
         constructor(error: any /*number|DOMError*/, context: string, opt_message?: string);

@@ -1,4 +1,4 @@
-// Generated Fri May  2 10:36:20 PDT 2014
+// Generated Fri May  2 11:36:00 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -98,7 +98,7 @@ declare module goog.structs {
          * <li>if getCount is not called, adding and removing elements have no overhead.
          * @return {number} The number of elements in the set.
          */
-        getCount: any /*missing*/;
+        getCount(): number;
     
         /**
          * Calculates the difference of two sets.
@@ -133,7 +133,7 @@ declare module goog.structs {
         /**
          * @return {!Array.<string>} The elements of the set.
          */
-        getValues: any /*missing*/;
+        getValues(): string[];
     
         /**
          * Tells if this set and the given set are disjoint.

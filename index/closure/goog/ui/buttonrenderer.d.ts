@@ -1,4 +1,4 @@
-// Generated Fri May  2 10:40:07 PDT 2014
+// Generated Fri May  2 11:39:45 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -101,7 +101,7 @@ declare module goog.ui {
          * @param {Element} element The button's root element.
          * @return {string|undefined} The button's value (undefined if none).
          */
-        getValue: any /*missing*/;
+        getValue(element: Element): any /*string|any (undefined)*/;
     
         /**
          * Takes a button's root element and a value, and updates the element to reflect
@@ -109,7 +109,7 @@ declare module goog.ui {
          * @param {Element} element The button's root element.
          * @param {string} value New value.
          */
-        setValue: any /*missing*/;
+        setValue(element: Element, value: string): void;
     
         /**
          * Takes a button's root element, and returns its tooltip text.

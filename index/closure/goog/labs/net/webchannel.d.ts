@@ -1,4 +1,4 @@
-// Generated Fri May  2 10:42:38 PDT 2014
+// Generated Fri May  2 11:42:14 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/dom/nodetype.d.ts" />
@@ -91,9 +91,9 @@ declare module goog.net.WebChannel {
      * @interface
      */
     interface RuntimeProperties {
-        getSpdyRequestLimit: any /*missing*/;
-        setServerFlowControl: any /*missing*/;
-        getNonAckedMessageCount: any /*missing*/;
+        getSpdyRequestLimit(): number;
+        setServerFlowControl(enabled: boolean): void;
+        getNonAckedMessageCount(): number;
     }
 
     /**
@@ -159,8 +159,8 @@ declare module goog.net {
     interface WebChannel extends EventTarget {
         open: any /*missing*/;
         close: any /*missing*/;
-        send: any /*missing*/;
-        getRuntimeProperties: any /*missing*/;
+        send(message: goog.net.WebChannel.MessageData): void;
+        getRuntimeProperties(): goog.net.WebChannel.RuntimeProperties;
     }
 }
 

@@ -1,4 +1,4 @@
-// Generated Fri May  2 10:39:49 PDT 2014
+// Generated Fri May  2 11:39:27 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/dom/nodetype.d.ts" />
@@ -68,12 +68,12 @@ declare module goog.ui.equation {
          * Sets the equation to show in this tab pane.
          * @param {string} equation The equation.
          */
-        setEquation: any /*missing*/;
+        setEquation(equation: string): void;
     
         /**
          * @return {string} The equation shown in this tab pane.
          */
-        getEquation: any /*missing*/;
+        getEquation(): string;
     
         /**
          * Sets the help link URL to show in this tab pane.
@@ -92,7 +92,7 @@ declare module goog.ui.equation {
          * @return {boolean} Whether the equation was modified.
          * @protected
          */
-        isModified: any /*missing*/;
+        isModified(): boolean;
     }
 }
 

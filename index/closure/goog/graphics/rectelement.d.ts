@@ -1,4 +1,4 @@
-// Generated Fri May  2 10:41:32 PDT 2014
+// Generated Fri May  2 11:41:09 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -70,14 +70,14 @@ declare module goog.graphics {
          * @param {number} x X coordinate (left).
          * @param {number} y Y coordinate (top).
          */
-        setPosition: any /*missing*/;
+        setPosition(x: number, y: number): void;
     
         /**
          * Update the size of the rectangle.
          * @param {number} width Width of rectangle.
          * @param {number} height Height of rectangle.
          */
-        setSize: any /*missing*/;
+        setSize(width: number, height: number): void;
     }
 }
 

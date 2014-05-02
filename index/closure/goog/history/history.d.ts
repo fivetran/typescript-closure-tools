@@ -1,4 +1,4 @@
-// Generated Fri May  2 10:37:25 PDT 2014
+// Generated Fri May  2 11:37:05 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/history/eventtype.d.ts" />
@@ -48,7 +48,7 @@ declare module goog.History {
      * isn't actually fired.
      * @return {boolean} Whether onhashchange is supported.
      */
-    var isOnHashChangeSupported: any /*missing*/;
+    function isOnHashChangeSupported(): boolean;
 
     /**
      * Whether the current browser is Internet Explorer prior to version 8. Many IE

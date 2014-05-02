@@ -1,4 +1,4 @@
-// Generated Fri May  2 10:35:14 PDT 2014
+// Generated Fri May  2 11:34:56 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -37,7 +37,7 @@ declare module goog.proto2 {
          *
          * @return {*} The serialized form of the message.
          */
-        serialize: any /*missing*/;
+        serialize(message: goog.proto2.Message): any;
     
         /**
          * Returns the serialized form of the given value for the given field
@@ -73,7 +73,7 @@ declare module goog.proto2 {
          *     place the information.
          * @param {*} data The data of the message.
          */
-        deserializeTo: any /*missing*/;
+        deserializeTo(message: goog.proto2.Message, data: any): void;
     
         /**
          * Returns the deserialized form of the given value for the given field if the

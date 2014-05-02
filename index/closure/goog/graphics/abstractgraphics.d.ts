@@ -1,4 +1,4 @@
-// Generated Fri May  2 10:41:28 PDT 2014
+// Generated Fri May  2 11:41:04 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -118,7 +118,7 @@ declare module goog.graphics {
          * @param {number} left  The coordinate system left bound.
          * @param {number} top  The coordinate system top bound.
          */
-        setCoordOrigin: any /*missing*/;
+        setCoordOrigin(left: number, top: number): void;
     
         /**
          * @return {!goog.math.Coordinate} The coordinate system position.
@@ -130,7 +130,7 @@ declare module goog.graphics {
          * @param {number} pixelWidth  The width in pixels.
          * @param {number} pixelHeight  The height in pixels.
          */
-        setSize: any /*missing*/;
+        setSize(pixelWidth: number, pixelHeight: number): void;
     
         /**
          * @return {goog.math.Size} The size of canvas.
@@ -173,14 +173,14 @@ declare module goog.graphics {
          * @param {goog.graphics.StrokeAndFillElement} element The element wrapper.
          * @param {goog.graphics.Fill?} fill The fill object.
          */
-        setElementFill: any /*missing*/;
+        setElementFill(element: goog.graphics.StrokeAndFillElement, fill: goog.graphics.Fill): void;
     
         /**
          * Sets the stroke for the given element.
          * @param {goog.graphics.StrokeAndFillElement} element The element wrapper.
          * @param {goog.graphics.Stroke?} stroke The stroke object.
          */
-        setElementStroke: any /*missing*/;
+        setElementStroke(element: goog.graphics.StrokeAndFillElement, stroke: goog.graphics.Stroke): void;
     
         /**
          * Set the transformation of an element.
@@ -191,7 +191,7 @@ declare module goog.graphics {
          * @param {number} centerX The horizontal center of the rotation transform.
          * @param {number} centerY The vertical center of the rotation transform.
          */
-        setElementTransform: any /*missing*/;
+        setElementTransform(element: goog.graphics.Element, x: number, y: number, angle: number, centerX: number, centerY: number): void;
     
         /**
          * Draw a circle
@@ -224,7 +224,7 @@ declare module goog.graphics {
          *
          * @return {goog.graphics.EllipseElement} The newly created element.
          */
-        drawEllipse: any /*missing*/;
+        drawEllipse(cx: number, cy: number, rx: number, ry: number, stroke: goog.graphics.Stroke, fill: goog.graphics.Fill, opt_group?: goog.graphics.GroupElement): goog.graphics.EllipseElement;
     
         /**
          * Draw a rectangle
@@ -241,7 +241,7 @@ declare module goog.graphics {
          *
          * @return {goog.graphics.RectElement} The newly created element.
          */
-        drawRect: any /*missing*/;
+        drawRect(x: number, y: number, width: number, height: number, stroke: goog.graphics.Stroke, fill: goog.graphics.Fill, opt_group?: goog.graphics.GroupElement): goog.graphics.RectElement;
     
         /**
          * Draw a text string within a rectangle (drawing is horizontal)
@@ -282,7 +282,7 @@ declare module goog.graphics {
          *
          * @return {goog.graphics.TextElement} The newly created element.
          */
-        drawTextOnLine: any /*missing*/;
+        drawTextOnLine(text: string, x1: number, y1: number, x2: number, y2: number, align: string, font: goog.graphics.Font, stroke: goog.graphics.Stroke, fill: goog.graphics.Fill, opt_group?: goog.graphics.GroupElement): goog.graphics.TextElement;
     
         /**
          * Draw a path.
@@ -296,7 +296,7 @@ declare module goog.graphics {
          *
          * @return {goog.graphics.PathElement} The newly created element.
          */
-        drawPath: any /*missing*/;
+        drawPath(path: goog.graphics.Path, stroke: goog.graphics.Stroke, fill: goog.graphics.Fill, opt_group?: goog.graphics.GroupElement): goog.graphics.PathElement;
     
         /**
          * Create an empty group of drawing elements.
@@ -306,7 +306,7 @@ declare module goog.graphics {
          *
          * @return {goog.graphics.GroupElement} The newly created group.
          */
-        createGroup: any /*missing*/;
+        createGroup(opt_group?: goog.graphics.GroupElement): goog.graphics.GroupElement;
     
         /**
          * Create an empty path.
@@ -328,7 +328,7 @@ declare module goog.graphics {
          *
          * @return {number} The width in pixels of the text strings.
          */
-        getTextWidth: any /*missing*/;
+        getTextWidth(text: string, font: goog.graphics.Font): number;
     
         /**
          * @return {boolean} Whether the underlying element can be cloned resulting in

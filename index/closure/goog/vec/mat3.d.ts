@@ -1,4 +1,4 @@
-// Generated Fri May  2 10:38:02 PDT 2014
+// Generated Fri May  2 11:37:41 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/vec/float64array.d.ts" />
@@ -121,7 +121,7 @@ declare module goog.vec.Mat3 {
      * @param {goog.vec.Mat3.Float32} matrix The source 3x3 matrix.
      * @return {!goog.vec.Mat3.Float32} The new 3x3 element matrix.
      */
-    var cloneFloat32: any /*missing*/;
+    function cloneFloat32(matrix: goog.vec.Mat3.Float32): goog.vec.Mat3.Float32;
 
     /**
      * Creates a 3x3 matrix of Float64 initialized from the given array.
@@ -154,7 +154,7 @@ declare module goog.vec.Mat3 {
      * @param {goog.vec.Mat3.Float64} matrix The source 3x3 matrix.
      * @return {!goog.vec.Mat3.Float64} The new 3x3 element matrix.
      */
-    var cloneFloat64: any /*missing*/;
+    function cloneFloat64(matrix: goog.vec.Mat3.Float64): goog.vec.Mat3.Float64;
 
     /**
      * Creates a 3x3 matrix of Float32 initialized from the given array.
@@ -190,7 +190,7 @@ declare module goog.vec.Mat3 {
      * @param {goog.vec.Mat3.Mat3Like} matrix The source 3x3 matrix.
      * @return {!goog.vec.Mat3.Type} The new 3x3 element matrix.
      */
-    var clone: any /*missing*/;
+    function clone(matrix: goog.vec.Mat3.Mat3Like): goog.vec.Mat3.Type;
 
     /**
      * Retrieves the element at the requested row and column.

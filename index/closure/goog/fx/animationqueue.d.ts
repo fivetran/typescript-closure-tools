@@ -1,4 +1,4 @@
-// Generated Fri May  2 10:35:28 PDT 2014
+// Generated Fri May  2 11:35:10 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -63,7 +63,7 @@ declare module goog.fx {
          * @param {goog.events.Event} e The finishing event.
          * @protected
          */
-        onAnimationFinish: any /*missing*/;
+        onAnimationFinish(e: goog.events.Event): void;
     }
 
     /**

@@ -1,4 +1,4 @@
-// Generated Fri May  2 10:36:42 PDT 2014
+// Generated Fri May  2 11:36:22 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/dom/nodetype.d.ts" />
@@ -153,7 +153,7 @@ declare module goog.editor.plugins {
          * @return {goog.ui.editor.AbstractDialog} The newly created dialog.
          * @protected
          */
-        createDialog: any /*missing*/;
+        createDialog(dialogDomHelper: goog.dom.DomHelper, opt_arg?: any): goog.ui.editor.AbstractDialog;
     
         /**
          * Returns the current dialog that was created and opened by this plugin.

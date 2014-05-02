@@ -1,4 +1,4 @@
-// Generated Fri May  2 10:36:59 PDT 2014
+// Generated Fri May  2 11:36:38 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/string/string.d.ts" />
@@ -316,20 +316,20 @@ declare module goog.editor {
         /**
          * @return {boolean} Whether the field is implemented as an iframe.
          */
-        usesIframe: any /*missing*/;
+        usesIframe(): boolean;
     
         /**
          * @return {boolean} Whether the field should be rendered with a fixed
          *     height, or should expand to fit its contents.
          */
-        isFixedHeight: any /*missing*/;
+        isFixedHeight(): boolean;
     
         /**
          * @return {boolean} Whether the field should be refocused on input.
          *    This is a workaround for the iOS bug that text input doesn't work
          *    when the main window listens touch events.
          */
-        shouldRefocusOnInputMobileSafari: any /*missing*/;
+        shouldRefocusOnInputMobileSafari(): boolean;
     
         /**
          * Sets the application window.

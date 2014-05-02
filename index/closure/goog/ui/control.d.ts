@@ -1,4 +1,4 @@
-// Generated Fri May  2 10:40:18 PDT 2014
+// Generated Fri May  2 11:39:56 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -67,7 +67,7 @@ declare module goog.ui.Control {
      *     given class.
      * @deprecated Use {@link goog.ui.registry.setDecoratorByClassName} instead.
      */
-    var registerDecorator: any /*missing*/;
+    function registerDecorator(className: string, decoratorFunction: Function): void;
 
     /**
      * Takes an element and returns a new instance of {@link goog.ui.Control}
@@ -77,7 +77,7 @@ declare module goog.ui.Control {
      *     (null if none).
      * @deprecated Use {@link goog.ui.registry.getDecorator} instead.
      */
-    var getDecorator: any /*missing*/;
+    function getDecorator(element: Element): goog.ui.Control;
 
     /**
      * Takes an element, and decorates it with a {@link goog.ui.Control} instance
@@ -87,7 +87,7 @@ declare module goog.ui.Control {
      *     (null if none).
      * @deprecated Use {@link goog.ui.decorate} instead.
      */
-    var decorate: any /*missing*/;
+    function decorate(element: Element): goog.ui.Control;
 }
 
 declare module goog.ui {
@@ -584,7 +584,7 @@ declare module goog.ui {
          * Handles contextmenu events.
          * @param {goog.events.BrowserEvent} e Event to handle.
          */
-        handleContextMenu: any /*missing*/;
+        handleContextMenu(e: goog.events.BrowserEvent): void;
     
         /**
          * Handles mousedown events.  If the component is enabled, highlights and

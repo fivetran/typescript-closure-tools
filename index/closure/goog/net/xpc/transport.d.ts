@@ -1,4 +1,4 @@
-// Generated Fri May  2 10:37:46 PDT 2014
+// Generated Fri May  2 11:37:26 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/string/string.d.ts" />
@@ -80,7 +80,7 @@ declare module goog.net.xpc {
          * Handles transport service messages (internal signalling).
          * @param {string} payload The message content.
          */
-        transportServiceHandler: any /*missing*/;
+        transportServiceHandler(payload: string): void;
     
         /**
          * Connects this transport.
@@ -96,7 +96,7 @@ declare module goog.net.xpc {
          * delivered to.
          * @param {string} payload The message content.
          */
-        send: any /*missing*/;
+        send(service: string, payload: string): void;
     }
 }
 

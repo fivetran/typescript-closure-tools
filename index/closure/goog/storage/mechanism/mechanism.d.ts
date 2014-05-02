@@ -1,4 +1,4 @@
-// Generated Fri May  2 10:40:39 PDT 2014
+// Generated Fri May  2 11:40:16 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 
@@ -23,7 +23,7 @@ declare module goog.storage.mechanism {
          * @param {string} key The key to set.
          * @param {string} value The string to save.
          */
-        set: any /*missing*/;
+        set(key: string, value: string): void;
     
         /**
          * Get the value stored under a key.
@@ -31,14 +31,14 @@ declare module goog.storage.mechanism {
          * @param {string} key The key to get.
          * @return {?string} The corresponding value, null if not found.
          */
-        get: any /*missing*/;
+        get(key: string): string;
     
         /**
          * Remove a key and its value.
          *
          * @param {string} key The key to remove.
          */
-        remove: any /*missing*/;
+        remove(key: string): void;
     }
 }
 

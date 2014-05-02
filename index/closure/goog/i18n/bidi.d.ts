@@ -1,4 +1,4 @@
-// Generated Fri May  2 10:44:18 PDT 2014
+// Generated Fri May  2 11:43:54 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 
@@ -98,7 +98,7 @@ declare module goog.i18n.bidi {
      * @return {boolean} Whether the string contains RTL characters.
      * @deprecated Use hasAnyRtl.
      */
-    var hasRtlChar: any /*missing*/;
+    function hasRtlChar(str: string): boolean;
 
     /**
      * Test whether the given string has any LTR characters in it.
@@ -149,7 +149,7 @@ declare module goog.i18n.bidi {
      *     strongly-directional character method.
      * @deprecated Use startsWithRtl.
      */
-    var isRtlText: any /*missing*/;
+    function isRtlText(str: string, opt_isHtml?: boolean): boolean;
 
     /**
      * Check whether the first strongly directional character (if any) is LTR.
@@ -170,7 +170,7 @@ declare module goog.i18n.bidi {
      *     strongly-directional character method.
      * @deprecated Use startsWithLtr.
      */
-    var isLtrText: any /*missing*/;
+    function isLtrText(str: string, opt_isHtml?: boolean): boolean;
 
     /**
      * Check whether the input string either contains no strongly directional
@@ -201,7 +201,7 @@ declare module goog.i18n.bidi {
      * @return {boolean} Whether LTR exit directionality was detected.
      * @deprecated Use endsWithLtr.
      */
-    var isLtrExitText: any /*missing*/;
+    function isLtrExitText(str: string, opt_isHtml?: boolean): boolean;
 
     /**
      * Check if the exit directionality a piece of text is RTL, i.e. if the last
@@ -222,7 +222,7 @@ declare module goog.i18n.bidi {
      * @return {boolean} Whether RTL exit directionality was detected.
      * @deprecated Use endsWithRtl.
      */
-    var isRtlExitText: any /*missing*/;
+    function isRtlExitText(str: string, opt_isHtml?: boolean): boolean;
 
     /**
      * Check if a BCP 47 / III language code indicates an RTL language, i.e. either:
@@ -375,7 +375,7 @@ declare module goog.i18n.bidi {
      */
     interface DirectionalString {
         implementsGoogI18nBidiDirectionalString: boolean;
-        getDirection: any /*missing*/;
+        getDirection(): goog.i18n.bidi.Dir;
     }
 }
 

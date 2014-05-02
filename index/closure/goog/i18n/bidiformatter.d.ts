@@ -1,4 +1,4 @@
-// Generated Fri May  2 10:44:22 PDT 2014
+// Generated Fri May  2 11:43:57 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/i18n/bidi.d.ts" />
@@ -155,7 +155,7 @@ declare module goog.i18n {
          *     Default: false.
          * @return {goog.i18n.bidi.Dir} Estimated overall directionality of {@code str}.
          */
-        estimateDirection: any /*missing*/;
+        estimateDirection(str: string, opt_isHtml?: boolean): goog.i18n.bidi.Dir;
     
         /**
          * Returns "rtl" if {@code str}'s estimated directionality is RTL, and "ltr" if

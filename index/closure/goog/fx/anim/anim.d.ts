@@ -1,4 +1,4 @@
-// Generated Fri May  2 10:35:32 PDT 2014
+// Generated Fri May  2 11:35:14 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/disposable/idisposable.d.ts" />
@@ -77,7 +77,7 @@ declare module goog.fx.anim {
      * @interface
      */
     interface Animated {
-        onAnimationFrame: any /*missing*/;
+        onAnimationFrame(now: number): void;
     }
 }
 

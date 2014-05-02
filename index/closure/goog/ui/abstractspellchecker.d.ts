@@ -1,4 +1,4 @@
-// Generated Fri May  2 10:39:45 PDT 2014
+// Generated Fri May  2 11:39:23 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -334,7 +334,7 @@ declare module goog.ui {
          * @return {Object} Properties to apply to the element.
          * @protected
          */
-        getElementProperties: any /*missing*/;
+        getElementProperties(status: goog.spell.SpellCheck.WordStatus): Object;
     
         /**
          * Precharges local dictionary cache. This is optional, but greatly reduces

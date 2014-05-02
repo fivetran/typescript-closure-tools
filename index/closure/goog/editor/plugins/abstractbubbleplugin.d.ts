@@ -1,4 +1,4 @@
-// Generated Fri May  2 10:36:47 PDT 2014
+// Generated Fri May  2 11:36:27 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/dom/nodetype.d.ts" />
@@ -199,7 +199,7 @@ declare module goog.editor.plugins {
          * @return {Element?} The HTML bubble target element or null if no element of
          *     the required type is not found.
          */
-        getBubbleTargetFromSelection: any /*missing*/;
+        getBubbleTargetFromSelection(selectedElement: Element): Element;
     
         /**
          * Creates and shows the property bubble.
@@ -226,7 +226,7 @@ declare module goog.editor.plugins {
          *     target element.
          * @protected
          */
-        shouldPreferBubbleAboveElement: any /*missing*/;
+        shouldPreferBubbleAboveElement(): boolean;
     
         /**
          * Should be overriden by subclasses to add the type specific contents to the
@@ -235,7 +235,7 @@ declare module goog.editor.plugins {
          *     which the contents should be added.
          * @protected
          */
-        createBubbleContents: any /*missing*/;
+        createBubbleContents(bubbleContainer: Element): void;
     
         /**
          * Register the handler for the target's CLICK event.

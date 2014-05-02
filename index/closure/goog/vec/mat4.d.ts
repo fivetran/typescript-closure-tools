@@ -1,4 +1,4 @@
-// Generated Fri May  2 10:38:00 PDT 2014
+// Generated Fri May  2 11:37:40 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/vec/float64array.d.ts" />
@@ -130,7 +130,7 @@ declare module goog.vec.Mat4 {
      * @param {goog.vec.Mat4.Float32} matrix The source 4x4 matrix.
      * @return {!goog.vec.Mat4.Float32} The new 4x4 element matrix.
      */
-    var cloneFloat32: any /*missing*/;
+    function cloneFloat32(matrix: goog.vec.Mat4.Float32): goog.vec.Mat4.Float32;
 
     /**
      * Creates a 4x4 matrix of Float64 initialized from the given array.
@@ -170,7 +170,7 @@ declare module goog.vec.Mat4 {
      * @param {goog.vec.Mat4.Float64} matrix The source 4x4 matrix.
      * @return {!goog.vec.Mat4.Float64} The new 4x4 element matrix.
      */
-    var cloneFloat64: any /*missing*/;
+    function cloneFloat64(matrix: goog.vec.Mat4.Float64): goog.vec.Mat4.Float64;
 
     /**
      * Creates a 4x4 matrix of Float32 initialized from the given array.
@@ -213,7 +213,7 @@ declare module goog.vec.Mat4 {
      * @param {goog.vec.Mat4.Mat4Like} matrix The source 4x4 matrix.
      * @return {!goog.vec.Mat4.Type} The new 4x4 element matrix.
      */
-    var clone: any /*missing*/;
+    function clone(matrix: goog.vec.Mat4.Mat4Like): goog.vec.Mat4.Type;
 
     /**
      * Retrieves the element at the requested row and column.

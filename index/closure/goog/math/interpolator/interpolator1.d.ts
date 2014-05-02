@@ -1,4 +1,4 @@
-// Generated Fri May  2 10:43:53 PDT 2014
+// Generated Fri May  2 11:43:29 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 
@@ -9,9 +9,9 @@ declare module goog.math.interpolator {
      * @interface
      */
     interface Interpolator1 {
-        setData: any /*missing*/;
-        interpolate: any /*missing*/;
-        getInverse: any /*missing*/;
+        setData(x: number[], y: number[]): void;
+        interpolate(x: number): number;
+        getInverse(): goog.math.interpolator.Interpolator1;
     }
 }
 

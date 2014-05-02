@@ -1,4 +1,4 @@
-// Generated Fri May  2 10:43:50 PDT 2014
+// Generated Fri May  2 11:43:26 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -42,7 +42,7 @@ declare module goog.math.Vec3 {
      * @param {goog.math.Vec3} b The second vector.
      * @return {number} The distance.
      */
-    var distance: any /*missing*/;
+    function distance(a: goog.math.Vec3, b: goog.math.Vec3): number;
 
     /**
      * Returns the squared distance between two vectors.
@@ -51,7 +51,7 @@ declare module goog.math.Vec3 {
      * @param {goog.math.Vec3} b The second vector.
      * @return {number} The squared distance.
      */
-    var squaredDistance: any /*missing*/;
+    function squaredDistance(a: goog.math.Vec3, b: goog.math.Vec3): number;
 
     /**
      * Compares vectors for equality.
@@ -60,7 +60,7 @@ declare module goog.math.Vec3 {
      * @param {goog.math.Vec3} b The second vector.
      * @return {boolean} True if the vectors have equal x, y, and z coordinates.
      */
-    var equals: any /*missing*/;
+    function equals(a: goog.math.Vec3, b: goog.math.Vec3): boolean;
 
     /**
      * Returns the sum of two vectors as a new Vec3.

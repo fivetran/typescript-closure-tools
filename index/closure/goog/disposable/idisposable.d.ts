@@ -1,4 +1,4 @@
-// Generated Fri May  2 10:44:38 PDT 2014
+// Generated Fri May  2 11:44:13 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 
@@ -11,8 +11,8 @@ declare module goog.disposable {
      * @interface
      */
     interface IDisposable {
-        dispose: any /*missing*/;
-        isDisposed: any /*missing*/;
+        dispose(): void;
+        isDisposed(): boolean;
     }
 }
 
