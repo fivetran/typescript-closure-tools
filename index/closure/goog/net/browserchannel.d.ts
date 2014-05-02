@@ -730,9 +730,9 @@ declare module goog.net {
          * Sets a new parser for the response payload. A custom parser may be set to
          * avoid using eval(), for example. By default, the parser uses
          * {@code goog.json.unsafeParse}.
-         * @param {!goog.string.Parser} parser Parser.
+         * @param {!googstring.Parser} parser Parser.
          */
-        setParser(parser: goog.string.Parser): void;
+        setParser(parser: googstring.Parser): void;
     
         /**
          * Callback from BrowserTestChannel for when the channel is finished.

@@ -325,8 +325,8 @@ declare module goog {
          * quote characters. For example:
          *
          * <pre>
-         * goog.string.stripQuotes('"abc"', '"`') --> 'abc'
-         * goog.string.stripQuotes('`abc`', '"`') --> 'abc'
+         * googstring.stripQuotes('"abc"', '"`') --> 'abc'
+         * googstring.stripQuotes('`abc`', '"`') --> 'abc'
          * </pre>
          *
          * @param {string} str The string to strip.
@@ -608,21 +608,21 @@ declare module goog {
          * whitespace delimiters and instead must be explicitly included if needed.
          *
          * Default delimiter => " ":
-         *    goog.string.toTitleCase('oneTwoThree')    => 'OneTwoThree'
-         *    goog.string.toTitleCase('one two three')  => 'One Two Three'
-         *    goog.string.toTitleCase('  one   two   ') => '  One   Two   '
-         *    goog.string.toTitleCase('one_two_three')  => 'One_two_three'
-         *    goog.string.toTitleCase('one-two-three')  => 'One-two-three'
+         *    googstring.toTitleCase('oneTwoThree')    => 'OneTwoThree'
+         *    googstring.toTitleCase('one two three')  => 'One Two Three'
+         *    googstring.toTitleCase('  one   two   ') => '  One   Two   '
+         *    googstring.toTitleCase('one_two_three')  => 'One_two_three'
+         *    googstring.toTitleCase('one-two-three')  => 'One-two-three'
          *
          * Custom delimiter => "_-.":
-         *    goog.string.toTitleCase('oneTwoThree', '_-.')       => 'OneTwoThree'
-         *    goog.string.toTitleCase('one two three', '_-.')     => 'One two three'
-         *    goog.string.toTitleCase('  one   two   ', '_-.')    => '  one   two   '
-         *    goog.string.toTitleCase('one_two_three', '_-.')     => 'One_Two_Three'
-         *    goog.string.toTitleCase('one-two-three', '_-.')     => 'One-Two-Three'
-         *    goog.string.toTitleCase('one...two...three', '_-.') => 'One...Two...Three'
-         *    goog.string.toTitleCase('one. two. three', '_-.')   => 'One. two. three'
-         *    goog.string.toTitleCase('one-two.three', '_-.')     => 'One-Two.Three'
+         *    googstring.toTitleCase('oneTwoThree', '_-.')       => 'OneTwoThree'
+         *    googstring.toTitleCase('one two three', '_-.')     => 'One two three'
+         *    googstring.toTitleCase('  one   two   ', '_-.')    => '  one   two   '
+         *    googstring.toTitleCase('one_two_three', '_-.')     => 'One_Two_Three'
+         *    googstring.toTitleCase('one-two-three', '_-.')     => 'One-Two-Three'
+         *    googstring.toTitleCase('one...two...three', '_-.') => 'One...Two...Three'
+         *    googstring.toTitleCase('one. two. three', '_-.')   => 'One. two. three'
+         *    googstring.toTitleCase('one-two.three', '_-.')     => 'One-Two.Three'
          *
          * @param {string} str String value in camelCase form.
          * @param {string=} opt_delimiters Custom delimiter character set used to
