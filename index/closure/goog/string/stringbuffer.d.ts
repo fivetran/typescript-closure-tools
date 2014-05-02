@@ -1,15 +1,15 @@
-// Generated Thu May  1 17:24:45 PDT 2014
+// Generated Thu May  1 21:06:24 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 
-declare module googstring {
+declare module goog.string {
 
     /**
      * Utility class to facilitate string concatenation.
      *
      * @param {*=} opt_a1 Optional first initial item to append.
      * @param {...*} var_args Other initial items to
-     *     append, e.g., new googstring.StringBuffer('foo', 'bar').
+     *     append, e.g., new goog.string.StringBuffer('foo', 'bar').
      * @constructor
      */
     class StringBuffer {
@@ -18,7 +18,7 @@ declare module googstring {
          *
          * @param {*=} opt_a1 Optional first initial item to append.
          * @param {...*} var_args Other initial items to
-         *     append, e.g., new googstring.StringBuffer('foo', 'bar').
+         *     append, e.g., new goog.string.StringBuffer('foo', 'bar').
          * @constructor
          */
         constructor(opt_a1?: any, ...var_args: any[]);
@@ -40,10 +40,10 @@ declare module googstring {
          * @param {*=} opt_a2 Optional second string.
          * @param {...*} var_args Other items to append,
          *     e.g., sb.append('foo', 'bar', 'baz').
-         * @return {googstring.StringBuffer} This same StringBuffer object.
+         * @return {goog.string.StringBuffer} This same StringBuffer object.
          * @suppress {duplicate}
          */
-        append(a1: any, opt_a2?: any, ...var_args: any[]): googstring.StringBuffer;
+        append(a1: any, opt_a2?: any, ...var_args: any[]): goog.string.StringBuffer;
     
         /**
          * Clears the internal buffer.

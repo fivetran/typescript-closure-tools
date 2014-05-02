@@ -1,4 +1,4 @@
-// Generated Thu May  1 17:25:11 PDT 2014
+// Generated Thu May  1 21:06:50 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/string/string.d.ts" />
@@ -29,7 +29,7 @@
 /// <reference path="../../goog/debug/tracer.d.ts" />
 /// <reference path="../../goog/debug/entrypointregistry.d.ts" />
 
-declare module goog.debug.GoogErrorHandler.ProtectedFunctionError {
+declare module goog.debug.ErrorHandler.ProtectedFunctionError {
 
     /**
      * Text to prefix the message with.
@@ -123,7 +123,7 @@ declare module goog.debug {
     
         /**
          * Set whether to wrap errors that occur in protected functions in a
-         * goog.debug.GoogErrorHandler.ProtectedFunctionError.
+         * goog.debug.ErrorHandler.ProtectedFunctionError.
          * @param {boolean} wrapErrors Whether to wrap errors.
          */
         setWrapErrors(wrapErrors: boolean): void;
@@ -138,23 +138,23 @@ declare module goog.debug {
     }
 }
 
-declare module goog.debug.GoogErrorHandler {
+declare module goog.debug.ErrorHandler {
 
     /**
      * Error thrown to the caller of a protected entry point if the entry point
      * throws an error.
      * @param {*} cause The error thrown by the entry point.
      * @constructor
-     * @extends {goog.debug.GoogError}
+     * @extends {goog.debug.Error}
      * @final
      */
-    class ProtectedFunctionError extends goog.debug.GoogError {
+    class ProtectedFunctionError extends goog.debug.Error {
         /**
          * Error thrown to the caller of a protected entry point if the entry point
          * throws an error.
          * @param {*} cause The error thrown by the entry point.
          * @constructor
-         * @extends {goog.debug.GoogError}
+         * @extends {goog.debug.Error}
          * @final
          */
         constructor(cause: any);

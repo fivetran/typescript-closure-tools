@@ -1,4 +1,4 @@
-// Generated Thu May  1 17:26:39 PDT 2014
+// Generated Thu May  1 21:08:18 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/promise/resolver.d.ts" />
@@ -40,17 +40,17 @@ declare module goog.result.SimpleResult {
      * more than once.
      *
      * @constructor
-     * @extends {goog.debug.GoogError}
+     * @extends {goog.debug.Error}
      * @final
      * @deprecated Use {@link goog.Promise} instead - http://go/promisemigration
      */
-    class StateError extends goog.debug.GoogError {
+    class StateError extends goog.debug.Error {
         /**
          * Error thrown if there is an attempt to set the value or error for this result
          * more than once.
          *
          * @constructor
-         * @extends {goog.debug.GoogError}
+         * @extends {goog.debug.Error}
          * @final
          * @deprecated Use {@link goog.Promise} instead - http://go/promisemigration
          */

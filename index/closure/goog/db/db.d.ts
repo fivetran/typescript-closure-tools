@@ -1,4 +1,4 @@
-// Generated Thu May  1 17:27:25 PDT 2014
+// Generated Thu May  1 21:09:05 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -66,7 +66,7 @@ declare module goog.db {
      * @typedef {function(!goog.db.IndexedDb.VersionChangeEvent)}
      */
     interface BlockedCallback {
-        (goog.db.IndexedDb.VersionChangeEvent): any /*missing*/
+        (_0: goog.db.IndexedDb.VersionChangeEvent): any /*missing*/
     }
 
     /**

@@ -1,4 +1,4 @@
-// Generated Thu May  1 17:20:26 PDT 2014
+// Generated Thu May  1 21:02:07 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -50,14 +50,14 @@ declare module goog.net.WebSocket {
     /**
      * Installs exception protection for all entry points introduced by
      * goog.net.WebSocket instances which are not protected by
-     * {@link goog.debug.GoogErrorHandler#protectWindowSetTimeout},
-     * {@link goog.debug.GoogErrorHandler#protectWindowSetInterval}, or
+     * {@link goog.debug.ErrorHandler#protectWindowSetTimeout},
+     * {@link goog.debug.ErrorHandler#protectWindowSetInterval}, or
      * {@link goog.events.protectBrowserEventEntryPoint}.
      *
-     * @param {!goog.debug.GoogErrorHandler} errorHandler Error handler with which to
+     * @param {!goog.debug.ErrorHandler} errorHandler Error handler with which to
      *     protect the entry points.
      */
-    function protectEntryPoints(errorHandler: goog.debug.GoogErrorHandler): void;
+    function protectEntryPoints(errorHandler: goog.debug.ErrorHandler): void;
 
     /**
      * Object representing a new incoming message event.

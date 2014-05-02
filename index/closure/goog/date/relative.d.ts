@@ -1,4 +1,4 @@
-// Generated Thu May  1 17:24:48 PDT 2014
+// Generated Thu May  1 21:06:27 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/i18n/datetimesymbols.d.ts" />
@@ -24,7 +24,7 @@ declare module goog.date.relative {
      * @typedef {function(number, boolean, goog.date.relative.Unit): string}
      */
     interface TimeDeltaFormatter {
-        (number, boolean, Unit): string
+        (_0: number, _1: boolean, _2: goog.date.relative.Unit): string
     }
 
     /**

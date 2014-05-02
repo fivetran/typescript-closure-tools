@@ -1,4 +1,4 @@
-// Generated Thu May  1 17:27:20 PDT 2014
+// Generated Thu May  1 21:09:00 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -30,12 +30,12 @@ declare module goog.html.TrustedResourceUrl {
      * Compile-time constant strings are inherently program-controlled and hence
      * trusted.
      *
-     * @param {!googstring.Const} url A compile-time-constant string from which to
+     * @param {!goog.string.Const} url A compile-time-constant string from which to
      *     create a TrustedResourceUrl.
      * @return {!goog.html.TrustedResourceUrl} A TrustedResourceUrl object
      *     initialized to {@code url}.
      */
-    function fromConstant(url: googstring.Const): goog.html.TrustedResourceUrl;
+    function fromConstant(url: goog.string.Const): goog.html.TrustedResourceUrl;
 }
 
 declare module goog.html {
@@ -62,9 +62,9 @@ declare module goog.html {
      * @final
      * @struct
      * @implements {goog.i18n.bidi.DirectionalString}
-     * @implements {googstring.TypedString}
+     * @implements {goog.string.TypedString}
      */
-    class TrustedResourceUrl implements goog.i18n.bidi.DirectionalString, googstring.TypedString {
+    class TrustedResourceUrl implements goog.i18n.bidi.DirectionalString, goog.string.TypedString {
         /**
          * A URL which is under application control and from which script, CSS, and
          * other resources that represent executable code, can be fetched.
@@ -87,7 +87,7 @@ declare module goog.html {
          * @final
          * @struct
          * @implements {goog.i18n.bidi.DirectionalString}
-         * @implements {googstring.TypedString}
+         * @implements {goog.string.TypedString}
          */
         constructor();
     }

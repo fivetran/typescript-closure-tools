@@ -1,4 +1,4 @@
-// Generated Thu May  1 17:18:22 PDT 2014
+// Generated Thu May  1 21:00:03 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 
@@ -35,7 +35,7 @@ declare module goog.json {
      * @typedef {function(this:Object, string, *): *}
      */
     interface Replacer {
-        (string, any): any
+        (_0: string, _1: any): any
     }
 
     /**
@@ -45,7 +45,7 @@ declare module goog.json {
      * @typedef {function(this:Object, string, *): *}
      */
     interface Reviver {
-        (string, any): any
+        (_0: string, _1: any): any
     }
 
     /**

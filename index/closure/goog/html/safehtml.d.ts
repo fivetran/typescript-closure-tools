@@ -1,4 +1,4 @@
-// Generated Thu May  1 17:27:24 PDT 2014
+// Generated Thu May  1 21:09:03 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -65,8 +65,8 @@ declare module goog.html.SafeHtml {
      * @param {!Object.<string, goog.html.SafeHtml.AttributeValue_>=}
      *     opt_attributes Mapping from attribute names to their values. Only
      *     attribute names consisting of [a-zA-Z0-9-] are allowed. Attributes with
-     *     a special meaning (e.g. on*) require googstring.Const value, attributes
-     *     containing URL require googstring.Const or goog.html.SafeUrl. Value of
+     *     a special meaning (e.g. on*) require goog.string.Const value, attributes
+     *     containing URL require goog.string.Const or goog.html.SafeUrl. Value of
      *     null or undefined causes the attribute to be omitted. Values are
      *     HTML-escaped before usage.
      * @param {!goog.html.SafeHtml.TextOrHtml_|
@@ -122,9 +122,9 @@ declare module goog.html {
      * @final
      * @struct
      * @implements {goog.i18n.bidi.DirectionalString}
-     * @implements {googstring.TypedString}
+     * @implements {goog.string.TypedString}
      */
-    class SafeHtml implements goog.i18n.bidi.DirectionalString, googstring.TypedString {
+    class SafeHtml implements goog.i18n.bidi.DirectionalString, goog.string.TypedString {
         /**
          * A string that is safe to use in HTML context in DOM APIs and HTML documents.
          *
@@ -149,7 +149,7 @@ declare module goog.html {
          * @final
          * @struct
          * @implements {goog.i18n.bidi.DirectionalString}
-         * @implements {googstring.TypedString}
+         * @implements {goog.string.TypedString}
          */
         constructor();
     }
