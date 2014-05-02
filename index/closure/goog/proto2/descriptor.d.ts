@@ -114,9 +114,9 @@ declare module goog.proto2 {
      *            containingType: (goog.proto2.Message|undefined)}}
      */
     interface Metadata {
-        name: any /*string|any (undefined)*/;
-        fullName: any /*string|any (undefined)*/;
-        containingType: any /*goog.proto2.Message|any (undefined)*/
+        name?: string;
+        fullName?: string;
+        containingType?: goog.proto2.Message;
     }
 }
 
