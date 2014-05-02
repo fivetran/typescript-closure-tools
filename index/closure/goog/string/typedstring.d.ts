@@ -2,7 +2,7 @@
 
 /// <reference path="../../goog/base.d.ts" />
 
-declare module goog.string {
+declare module googstring {
 
     /**
      * Wrapper for strings that conform to a data type or language.

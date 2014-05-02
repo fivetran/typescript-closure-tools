@@ -42,7 +42,7 @@ declare module goog {
      * live code in production.
      *
      * In the case of unit tests, the message may optionally be an exact namespace
-     * for the test (e.g. 'goog.stringTest'). The linter will then ignore the extra
+     * for the test (e.g. 'googstringTest'). The linter will then ignore the extra
      * provide (if not explicitly defined in the code).
      *
      * @param {string=} opt_message Optional message to add to the error that's

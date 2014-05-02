@@ -2,7 +2,7 @@
 
 /// <reference path="../../goog/base.d.ts" />
 
-declare module goog.string {
+declare module googstring {
 
     /**
      * An interface for parsing strings into objects.
