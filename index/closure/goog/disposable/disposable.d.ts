@@ -42,7 +42,7 @@ declare module goog {
 
     /**
      * Calls {@code dispose} on each member of the list that supports it. (If the
-     * member is an ArrayLike, then {@code goog.disposeAll()} will be called
+     * member is an ArrayLike<any>, then {@code goog.disposeAll()} will be called
      * recursively on each of its members.) If the member is not an object with a
      * {@code dispose()} method, then it is ignored.
      * @param {...*} var_args The list.
