@@ -240,10 +240,10 @@ declare module goog.net.FileDownloader {
      *     error.
      *
      * @constructor
-     * @extends {goog.debug.Error}
+     * @extends {goog.debug.GoogError}
      * @final
      */
-    class Error extends goog.debug.Error {
+    class Error extends goog.debug.GoogError {
         /**
          * The error object for FileDownloader download errors.
          *
@@ -253,7 +253,7 @@ declare module goog.net.FileDownloader {
          *     error.
          *
          * @constructor
-         * @extends {goog.debug.Error}
+         * @extends {goog.debug.GoogError}
          * @final
          */
         constructor(download: goog.net.FileDownloader.Download_, opt_fsErr?: goog.fs.Error);

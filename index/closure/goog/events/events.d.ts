@@ -303,10 +303,10 @@ declare module goog.events {
      * Installs exception protection for the browser event entry point using the
      * given error handler.
      *
-     * @param {goog.debug.ErrorHandler} errorHandler Error handler with which to
+     * @param {goog.debug.GoogErrorHandler} errorHandler Error handler with which to
      *     protect the entry point.
      */
-    function protectBrowserEventEntryPoint(errorHandler: goog.debug.ErrorHandler): void;
+    function protectBrowserEventEntryPoint(errorHandler: goog.debug.GoogErrorHandler): void;
 
     /**
      * Handles an event and dispatches it to the correct listeners. This

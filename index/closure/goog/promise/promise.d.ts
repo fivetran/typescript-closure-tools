@@ -150,16 +150,16 @@ declare module goog.Promise {
      *
      * @param {string=} opt_message
      * @constructor
-     * @extends {goog.debug.Error}
+     * @extends {goog.debug.GoogError}
      * @final
      */
-    class CancellationError extends goog.debug.Error {
+    class CancellationError extends goog.debug.GoogError {
         /**
          * Error used as a rejection reason for canceled Promises.
          *
          * @param {string=} opt_message
          * @constructor
-         * @extends {goog.debug.Error}
+         * @extends {goog.debug.GoogError}
          * @final
          */
         constructor(opt_message?: string);

@@ -83,10 +83,10 @@ declare module goog.labs.mock {
      * @param {!string} methodName The expected method call.
      * @param {!Array} args The expected arguments.
      * @constructor
-     * @extends {goog.debug.Error}
+     * @extends {goog.debug.GoogError}
      * @final
      */
-    class VerificationError extends goog.debug.Error {
+    class VerificationError extends goog.debug.GoogError {
         /**
          * Error thrown when verification failed.
          *
@@ -95,7 +95,7 @@ declare module goog.labs.mock {
          * @param {!string} methodName The expected method call.
          * @param {!Array} args The expected arguments.
          * @constructor
-         * @extends {goog.debug.Error}
+         * @extends {goog.debug.GoogError}
          * @final
          */
         constructor(recordedCalls: any[], methodName: string, args: any[]);
