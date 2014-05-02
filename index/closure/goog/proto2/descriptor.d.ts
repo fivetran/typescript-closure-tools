@@ -15,7 +15,11 @@ declare module goog.proto2 {
      *            fullName: (string|undefined),
      *            containingType: (goog.proto2.Message|undefined)}}
      */
-    var Metadata: any /*missing*/;
+    interface Metadata {
+        name?: string;
+        fullName?: string;
+        containingType?: goog.proto2.Message;
+    }
 
     /**
      * A class which describes a Protocol Buffer 2 Message.
