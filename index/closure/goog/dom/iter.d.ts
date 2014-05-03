@@ -22,7 +22,7 @@ declare module goog.dom.iter {
      * @constructor
      * @extends {goog.iter.Iterator}
      */
-    class SiblingIterator extends goog.iter.Iterator {
+    class SiblingIterator extends goog.iter.Iterator<Node> {
         /**
          * Iterator over a Node's siblings.
          * @param {Node} node The node to start with.
@@ -69,7 +69,7 @@ declare module goog.dom.iter {
      * @extends {goog.iter.Iterator}
      * @final
      */
-    class AncestorIterator extends goog.iter.Iterator {
+    class AncestorIterator extends goog.iter.Iterator<Node> {
         /**
          * Iterator over a Node's ancestors, stopping after the document body.
          * @param {Node} node The node to start with.

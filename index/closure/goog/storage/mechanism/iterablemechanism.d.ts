@@ -46,7 +46,7 @@ declare module goog.storage.mechanism {
          *     over the values.  The default value is false.
          * @return {!goog.iter.Iterator} The iterator.
          */
-        __iterator__(opt_keys?: boolean): goog.iter.Iterator;
+        __iterator__(opt_keys?: boolean): goog.iter.Iterator<any>;
     
         /**
          * Remove all key-value pairs.
