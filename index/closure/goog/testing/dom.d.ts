@@ -51,7 +51,7 @@ declare module goog.testing.dom {
      *             after "#".
      *         other string: Match the text node's contents.
      */
-    function assertNodesMatch(it: goog.iter.Iterator, array: any /*Node|number|string*/[]): void;
+    function assertNodesMatch(it: goog.iter.Iterator<Node>, array: any /*Node|number|string*/[]): void;
 
     /**
      * Exposes a node as a string.
