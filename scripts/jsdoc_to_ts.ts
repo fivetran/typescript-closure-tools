@@ -591,10 +591,10 @@ function generate_typedef(name, docs) {
  * @return {Object}
  */
 function generate_defs(parsed) {
-    var modules = {};
     var interfaces = {};
     var classes = {};
     var prototypes = {};
+    var statics = {};
 
     // TODO goog.promise.Promise is coming out as type
 
@@ -623,17 +623,19 @@ function generate_defs(parsed) {
         // Enum
         else if (docs.tags.some(is_title('enum'))) {
             if (value.type === 'ObjectExpression')
-                modules[name] = generate_enum(last(path), value);
+                statics[name] = generate_enum(last(path), value);
         }
         // Typedef
         else if (docs.tags.some(is_title('typedef'))) {
-            modules[name] = generate_typedef(last(path), docs);
+            statics[name] = generate_typedef(last(path), docs);
         }
         // Property
         else {
-            modules[name] = generate_property(last(path), docs);
+            statics[name] = generate_property(last(path), docs);
         }
     });
+
+    var modules = {};
 
     // Combine interfaces with prototypes
     Object.keys(interfaces).forEach(function (name) {
@@ -651,6 +653,10 @@ function generate_defs(parsed) {
         var path = name.split('.');
 
         modules[name] = generate_class(last(path), docs, proto);
+    });
+
+    Object.keys(statics).forEach(function (name) {
+        modules[name] = statics[name];
     });
 
     return modules;
