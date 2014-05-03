@@ -145,7 +145,7 @@ declare module goog.date.DateRange {
      * @param {goog.date.DateRange} dateRange The date range to iterate.
      * @final
      */
-    class Iterator extends goog.iter.Iterator {
+    class Iterator extends goog.iter.Iterator<goog.date.Date> {
         /**
          * Creates an iterator over the dates in a {@link goog.date.DateRange}.
          * @constructor
@@ -197,7 +197,7 @@ declare module goog.date {
         /**
          * @return {!goog.iter.Iterator} An iterator over the date range.
          */
-        iterator(): goog.iter.Iterator;
+        iterator(): goog.iter.Iterator<goog.date.Date>;
     }
 }
 
