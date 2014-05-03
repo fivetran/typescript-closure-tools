@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:04:37 PDT 2014
+// Generated Sat May  3 12:20:29 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -10,18 +10,6 @@
 /// <reference path="../../goog/functions/functions.d.ts" />
 /// <reference path="../../goog/iter/iter.d.ts" />
 /// <reference path="../../goog/math/range.d.ts" />
-
-declare module goog.math.RangeSet {
-
-    /**
-     * Compares two sets for equality.
-     *
-     * @param {goog.math.RangeSet} a A range set.
-     * @param {goog.math.RangeSet} b A range set.
-     * @return {boolean} Whether both sets contain the same values.
-     */
-    function equals(a: goog.math.RangeSet, b: goog.math.RangeSet): boolean;
-}
 
 declare module goog.math {
 
@@ -163,7 +151,19 @@ declare module goog.math {
          * @param {boolean=} opt_keys Ignored for RangeSets.
          * @return {!goog.iter.Iterator} An iterator over the values in the set.
          */
-        __iterator__(opt_keys?: boolean): goog.iter.Iterator<goog.math.Range>;
+        __iterator__(opt_keys?: boolean): goog.iter.Iterator;
     }
+}
+
+declare module goog.math.RangeSet {
+
+    /**
+     * Compares two sets for equality.
+     *
+     * @param {goog.math.RangeSet} a A range set.
+     * @param {goog.math.RangeSet} b A range set.
+     * @return {boolean} Whether both sets contain the same values.
+     */
+    function equals(a: goog.math.RangeSet, b: goog.math.RangeSet): boolean;
 }
 

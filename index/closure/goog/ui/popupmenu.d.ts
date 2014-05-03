@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:01:07 PDT 2014
+// Generated Sat May  3 12:16:56 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -87,7 +87,7 @@ declare module goog.ui {
      * @extends {goog.ui.Menu}
      * @constructor
      */
-    class PopupMenu extends goog.ui.GoogMenu {
+    class PopupMenu extends goog.ui.Menu {
         /**
          * A basic menu class.
          * @param {goog.dom.DomHelper=} opt_domHelper Optional DOM helper.

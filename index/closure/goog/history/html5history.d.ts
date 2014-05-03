@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:58:10 PDT 2014
+// Generated Sat May  3 12:13:58 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -29,13 +29,6 @@
 /// <reference path="../../goog/events/eventtarget.d.ts" />
 
 declare module goog.history.Html5History {
-
-    /**
-     * Returns whether Html5History is supported.
-     * @param {Window=} opt_win Optional window to check.
-     * @return {boolean} Whether html5 history is supported.
-     */
-    function isSupported(opt_win?: Window): boolean;
 
     /**
      * A token transformer that can create a URL from a history
@@ -77,6 +70,13 @@ declare module goog.history.Html5History {
          */
         createUrl(token: string, pathPrefix: string, location: Location): string;
     }
+
+    /**
+     * Returns whether Html5History is supported.
+     * @param {Window=} opt_win Optional window to check.
+     * @return {boolean} Whether html5 history is supported.
+     */
+    function isSupported(opt_win?: Window): boolean;
 }
 
 declare module goog.history {

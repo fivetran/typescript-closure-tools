@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:57:41 PDT 2014
+// Generated Sat May  3 12:13:28 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/string/string.d.ts" />
@@ -29,42 +29,6 @@
 /// <reference path="../../goog/style/style.d.ts" />
 
 declare module goog.editor.icontent {
-
-    /**
-     * Sets up goog.editor.icontent to always use standards-mode iframes.
-     */
-    function forceStandardsModeIframes(): void;
-
-    /**
-     * Write the initial iframe content in normal mode.
-     * @param {goog.editor.icontent.FieldFormatInfo} info Formatting info about
-     *     the field.
-     * @param {string} bodyHtml The HTML to insert as the iframe body.
-     * @param {goog.editor.icontent.FieldStyleInfo?} style Style info about
-     *     the field, if needed.
-     * @param {HTMLIFrameElement} iframe The iframe.
-     */
-    function writeNormalInitialBlendedIframe(info: goog.editor.icontent.FieldFormatInfo, bodyHtml: string, style: goog.editor.icontent.FieldStyleInfo, iframe: HTMLIFrameElement): void;
-
-    /**
-     * Write the initial iframe content in normal mode.
-     * @param {goog.editor.icontent.FieldFormatInfo} info Formatting info about
-     *     the field.
-     * @param {string} bodyHtml The HTML to insert as the iframe body.
-     * @param {goog.editor.icontent.FieldStyleInfo?} style Style info about
-     *     the field, if needed.
-     * @param {HTMLIFrameElement} iframe The iframe.
-     */
-    function writeNormalInitialIframe(info: goog.editor.icontent.FieldFormatInfo, bodyHtml: string, style: goog.editor.icontent.FieldStyleInfo, iframe: HTMLIFrameElement): void;
-
-    /**
-     * Write the initial iframe content in IE/HTTPS mode.
-     * @param {goog.editor.icontent.FieldFormatInfo} info Formatting info about
-     *     the field.
-     * @param {Document} doc The iframe document.
-     * @param {string} bodyHtml The HTML to insert as the iframe body.
-     */
-    function writeHttpsInitialIframe(info: goog.editor.icontent.FieldFormatInfo, doc: Document, bodyHtml: string): void;
 
     /**
      * A data structure for storing simple rendering info about a field.
@@ -115,5 +79,41 @@ declare module goog.editor.icontent {
          */
         constructor(wrapper: Element, css: string);
     }
+
+    /**
+     * Sets up goog.editor.icontent to always use standards-mode iframes.
+     */
+    function forceStandardsModeIframes(): void;
+
+    /**
+     * Write the initial iframe content in normal mode.
+     * @param {goog.editor.icontent.FieldFormatInfo} info Formatting info about
+     *     the field.
+     * @param {string} bodyHtml The HTML to insert as the iframe body.
+     * @param {goog.editor.icontent.FieldStyleInfo?} style Style info about
+     *     the field, if needed.
+     * @param {HTMLIFrameElement} iframe The iframe.
+     */
+    function writeNormalInitialBlendedIframe(info: goog.editor.icontent.FieldFormatInfo, bodyHtml: string, style: goog.editor.icontent.FieldStyleInfo, iframe: HTMLIFrameElement): void;
+
+    /**
+     * Write the initial iframe content in normal mode.
+     * @param {goog.editor.icontent.FieldFormatInfo} info Formatting info about
+     *     the field.
+     * @param {string} bodyHtml The HTML to insert as the iframe body.
+     * @param {goog.editor.icontent.FieldStyleInfo?} style Style info about
+     *     the field, if needed.
+     * @param {HTMLIFrameElement} iframe The iframe.
+     */
+    function writeNormalInitialIframe(info: goog.editor.icontent.FieldFormatInfo, bodyHtml: string, style: goog.editor.icontent.FieldStyleInfo, iframe: HTMLIFrameElement): void;
+
+    /**
+     * Write the initial iframe content in IE/HTTPS mode.
+     * @param {goog.editor.icontent.FieldFormatInfo} info Formatting info about
+     *     the field.
+     * @param {Document} doc The iframe document.
+     * @param {string} bodyHtml The HTML to insert as the iframe body.
+     */
+    function writeHttpsInitialIframe(info: goog.editor.icontent.FieldFormatInfo, doc: Document, bodyHtml: string): void;
 }
 

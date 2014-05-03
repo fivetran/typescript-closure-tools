@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:57:32 PDT 2014
+// Generated Sat May  3 12:13:19 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/dom/nodetype.d.ts" />
@@ -78,12 +78,6 @@
 /// <reference path="../../../goog/events/eventtarget.d.ts" />
 /// <reference path="../../../goog/editor/plugin.d.ts" />
 
-declare module goog.editor.plugins.Emoticons {
-
-    /** The emoticon command. */
-    var COMMAND: any /*missing*/;
-}
-
 declare module goog.editor.plugins {
 
     /**
@@ -93,7 +87,7 @@ declare module goog.editor.plugins {
      * @extends {goog.editor.Plugin}
      * @final
      */
-    class Emoticons extends goog.editor.GoogPlugin {
+    class Emoticons extends goog.editor.Plugin {
         /**
          * Plugin for generating emoticons.
          *
@@ -103,5 +97,11 @@ declare module goog.editor.plugins {
          */
         constructor();
     }
+}
+
+declare module goog.editor.plugins.Emoticons {
+
+    /** The emoticon command. */
+    var COMMAND: any /*missing*/;
 }
 

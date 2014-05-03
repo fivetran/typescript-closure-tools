@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:57:46 PDT 2014
+// Generated Sat May  3 12:13:33 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/string/string.d.ts" />
@@ -104,7 +104,7 @@ declare module goog.editor {
      * @constructor
      * @extends {goog.editor.Field}
      */
-    class SeamlessField extends goog.editor.GoogField {
+    class SeamlessField extends goog.editor.Field {
         /**
          * This class encapsulates an editable field that blends in with the
          * surrounding page.

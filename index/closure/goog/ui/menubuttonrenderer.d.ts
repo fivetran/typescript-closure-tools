@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:59:50 PDT 2014
+// Generated Sat May  3 12:15:39 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -68,30 +68,6 @@
 /// <reference path="../../goog/ui/menuheader.d.ts" />
 /// <reference path="../../goog/ui/menu.d.ts" />
 
-declare module goog.ui.MenuButtonRenderer {
-
-    /**
-     * Default CSS class to be applied to the root element of components rendered
-     * by this renderer.
-     * @type {string}
-     */
-    var CSS_CLASS: string;
-
-    /**
-     * Takes a text caption or existing DOM structure, and returns it wrapped in
-     * an appropriately-styled DIV.  Creates the following DOM structure:
-     *    <div class="goog-inline-block goog-menu-button-caption">
-     *      Contents...
-     *    </div>
-     * @param {goog.ui.ControlContent} content Text caption or DOM structure
-     *     to wrap in a box.
-     * @param {string} cssClass The CSS class for the renderer.
-     * @param {goog.dom.DomHelper} dom DOM helper, used for document interaction.
-     * @return {Element} Caption element.
-     */
-    function wrapCaption(content: goog.ui.ControlContent, cssClass: string, dom: goog.dom.DomHelper): Element;
-}
-
 declare module goog.ui {
 
     /**
@@ -101,7 +77,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.CustomButtonRenderer}
      */
-    class GoogMenuButtonRenderer extends goog.ui.GoogCustomButtonRenderer {
+    class MenuButtonRenderer extends goog.ui.CustomButtonRenderer {
         /**
          * Renderer for {@link goog.ui.MenuButton}s.  This implementation overrides
          * {@link goog.ui.CustomButtonRenderer#createButton} to create a separate
@@ -135,7 +111,29 @@ declare module goog.ui {
          */
         createDropdown(dom: goog.dom.DomHelper): Element;
     }
+}
 
-    class MenuButtonRenderer extends GoogMenuButtonRenderer { }
+declare module goog.ui.MenuButtonRenderer {
+
+    /**
+     * Default CSS class to be applied to the root element of components rendered
+     * by this renderer.
+     * @type {string}
+     */
+    var CSS_CLASS: string;
+
+    /**
+     * Takes a text caption or existing DOM structure, and returns it wrapped in
+     * an appropriately-styled DIV.  Creates the following DOM structure:
+     *    <div class="goog-inline-block goog-menu-button-caption">
+     *      Contents...
+     *    </div>
+     * @param {goog.ui.ControlContent} content Text caption or DOM structure
+     *     to wrap in a box.
+     * @param {string} cssClass The CSS class for the renderer.
+     * @param {goog.dom.DomHelper} dom DOM helper, used for document interaction.
+     * @return {Element} Caption element.
+     */
+    function wrapCaption(content: goog.ui.ControlContent, cssClass: string, dom: goog.dom.DomHelper): Element;
 }
 

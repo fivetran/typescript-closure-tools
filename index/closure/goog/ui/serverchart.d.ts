@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:01:12 PDT 2014
+// Generated Sat May  3 12:17:01 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/string/string.d.ts" />
@@ -46,145 +46,6 @@
 /// <reference path="../../goog/events/eventtarget.d.ts" />
 /// <reference path="../../goog/ui/component.d.ts" />
 
-declare module goog.ui.ServerChart {
-
-    /**
-     * Base scheme-independent URI for the chart renderer.
-     * @type {string}
-     */
-    var CHART_SERVER_SCHEME_INDEPENDENT_URI: string;
-
-    /**
-     * Base HTTP URI for the chart renderer.
-     * @type {string}
-     */
-    var CHART_SERVER_HTTP_URI: string;
-
-    /**
-     * Base HTTPS URI for the chart renderer.
-     * @type {string}
-     */
-    var CHART_SERVER_HTTPS_URI: string;
-
-    /**
-     * Base URI for the chart renderer.
-     * @type {string}
-     * @deprecated Use
-     *     {@link goog.ui.ServerChart.CHART_SERVER_SCHEME_INDEPENDENT_URI},
-     *     {@link goog.ui.ServerChart.CHART_SERVER_HTTP_URI} or
-     *     {@link goog.ui.ServerChart.CHART_SERVER_HTTPS_URI} instead.
-     */
-    var CHART_SERVER_URI: string;
-
-    /**
-     * The 0 - 1.0 ("fraction of the range") value to use when getMinValue() ==
-     * getMaxValue(). This determines, for example, the vertical position
-     * of the line in a flat line-chart.
-     * @type {number}
-     */
-    var DEFAULT_NORMALIZATION: number;
-
-    /**
-     * Enum of chart data encoding types
-     *
-     * @enum {string}
-     */
-    enum EncodingType { AUTOMATIC, EXTENDED, SIMPLE, TEXT } 
-
-    /**
-     * Enum of chart types with their short names used by the chartserver.
-     *
-     * @enum {string}
-     */
-    enum ChartType { BAR, CLOCK, CONCENTRIC_PIE, FILLEDLINE, FINANCE, GOOGLEOMETER, HORIZONTAL_GROUPED_BAR, HORIZONTAL_STACKED_BAR, LINE, MAP, MAPUSA, MAPWORLD, PIE, PIE3D, RADAR, SCATTER, SPARKLINE, VENN, VERTICAL_GROUPED_BAR, VERTICAL_STACKED_BAR, XYLINE } 
-
-    /**
-     * Enum of multi-axis types.
-     *
-     * @enum {string}
-     */
-    enum MultiAxisType { X_AXIS, LEFT_Y_AXIS, RIGHT_Y_AXIS, TOP_AXIS } 
-
-    /**
-     * Enum of multi-axis alignments.
-     *
-     * @enum {number}
-     */
-    enum MultiAxisAlignment { ALIGN_LEFT, ALIGN_CENTER, ALIGN_RIGHT } 
-
-    /**
-     * Enum of legend positions.
-     *
-     * @enum {string}
-     */
-    enum LegendPosition { TOP, BOTTOM, LEFT, RIGHT } 
-
-    /**
-     * Enum of line and tick options for an axis.
-     *
-     * @enum {string}
-     */
-    enum AxisDisplayType { LINE_AND_TICKS, LINE, TICKS } 
-
-    /**
-     * Enum of chart maximum values in pixels, as listed at:
-     * http://code.google.com/apis/chart/basics.html
-     *
-     * @enum {number}
-     */
-    enum MaximumValue { WIDTH, HEIGHT, MAP_WIDTH, MAP_HEIGHT, TOTAL_AREA } 
-
-    /**
-     * Enum of ChartServer URI parameters.
-     *
-     * @enum {string}
-     */
-    enum UriParam { BACKGROUND_FILL, BAR_HEIGHT, DATA, DATA_COLORS, DATA_LABELS, DATA_SCALING, DIGITAL_SIGNATURE, GEOGRAPHICAL_REGION, GRID, LABEL_COLORS, LEFT_Y_LABELS, LEGEND, LEGEND_POSITION, LEGEND_TEXTS, LINE_STYLES, MARGINS, MARKERS, MISC_PARAMS, MULTI_AXIS_LABEL_POSITION, MULTI_AXIS_LABEL_TEXT, MULTI_AXIS_RANGE, MULTI_AXIS_STYLE, MULTI_AXIS_TYPES, RIGHT_LABELS, RIGHT_LABEL_POSITIONS, SIZE, TITLE, TITLE_FORMAT, TYPE, X_AXIS_STYLE, X_LABELS } 
-
-    /**
-     * Array of possible ChartServer data values
-     * @type {string}
-     */
-    var CHART_VALUES: string;
-
-    /**
-     * Array of extended ChartServer data values
-     * @type {string}
-     */
-    var CHART_VALUES_EXTENDED: string;
-
-    /**
-     * Upper bound for extended values
-     */
-    var EXTENDED_UPPER_BOUND: any /*missing*/;
-
-    /**
-     * Event types dispatched by the ServerChart object
-     * @enum {string}
-     */
-    enum Event { URI_TOO_LONG } 
-
-    /**
-     * Class for the event dispatched on the ServerChart when the resulting URI
-     * exceeds the URI length limit.
-     * @constructor
-     * @param {string} uri The overly-long URI string.
-     * @extends {goog.events.Event}
-     * @final
-     */
-    class UriTooLongEvent extends goog.events.Event {
-        /**
-         * Class for the event dispatched on the ServerChart when the resulting URI
-         * exceeds the URI length limit.
-         * @constructor
-         * @param {string} uri The overly-long URI string.
-         * @extends {goog.events.Event}
-         * @final
-         */
-        constructor(uri: string);
-    }
-}
-
 declare module goog.ui {
 
     /**
@@ -203,7 +64,7 @@ declare module goog.ui {
      *     https://developers.google.com/chart/image/ for details.
      * @final
      */
-    class ServerChart extends goog.ui.GoogComponent {
+    class ServerChart extends goog.ui.Component {
         /**
          * Will construct a chart using Google's chartserver.
          *
@@ -813,5 +674,144 @@ declare module goog.ui {
          */
         getData(opt_setNumber?: number): any[];
     }
+}
+
+declare module goog.ui.ServerChart {
+
+    /**
+     * Class for the event dispatched on the ServerChart when the resulting URI
+     * exceeds the URI length limit.
+     * @constructor
+     * @param {string} uri The overly-long URI string.
+     * @extends {goog.events.Event}
+     * @final
+     */
+    class UriTooLongEvent extends goog.events.Event {
+        /**
+         * Class for the event dispatched on the ServerChart when the resulting URI
+         * exceeds the URI length limit.
+         * @constructor
+         * @param {string} uri The overly-long URI string.
+         * @extends {goog.events.Event}
+         * @final
+         */
+        constructor(uri: string);
+    }
+
+    /**
+     * Base scheme-independent URI for the chart renderer.
+     * @type {string}
+     */
+    var CHART_SERVER_SCHEME_INDEPENDENT_URI: string;
+
+    /**
+     * Base HTTP URI for the chart renderer.
+     * @type {string}
+     */
+    var CHART_SERVER_HTTP_URI: string;
+
+    /**
+     * Base HTTPS URI for the chart renderer.
+     * @type {string}
+     */
+    var CHART_SERVER_HTTPS_URI: string;
+
+    /**
+     * Base URI for the chart renderer.
+     * @type {string}
+     * @deprecated Use
+     *     {@link goog.ui.ServerChart.CHART_SERVER_SCHEME_INDEPENDENT_URI},
+     *     {@link goog.ui.ServerChart.CHART_SERVER_HTTP_URI} or
+     *     {@link goog.ui.ServerChart.CHART_SERVER_HTTPS_URI} instead.
+     */
+    var CHART_SERVER_URI: string;
+
+    /**
+     * The 0 - 1.0 ("fraction of the range") value to use when getMinValue() ==
+     * getMaxValue(). This determines, for example, the vertical position
+     * of the line in a flat line-chart.
+     * @type {number}
+     */
+    var DEFAULT_NORMALIZATION: number;
+
+    /**
+     * Enum of chart data encoding types
+     *
+     * @enum {string}
+     */
+    enum EncodingType { AUTOMATIC, EXTENDED, SIMPLE, TEXT } 
+
+    /**
+     * Enum of chart types with their short names used by the chartserver.
+     *
+     * @enum {string}
+     */
+    enum ChartType { BAR, CLOCK, CONCENTRIC_PIE, FILLEDLINE, FINANCE, GOOGLEOMETER, HORIZONTAL_GROUPED_BAR, HORIZONTAL_STACKED_BAR, LINE, MAP, MAPUSA, MAPWORLD, PIE, PIE3D, RADAR, SCATTER, SPARKLINE, VENN, VERTICAL_GROUPED_BAR, VERTICAL_STACKED_BAR, XYLINE } 
+
+    /**
+     * Enum of multi-axis types.
+     *
+     * @enum {string}
+     */
+    enum MultiAxisType { X_AXIS, LEFT_Y_AXIS, RIGHT_Y_AXIS, TOP_AXIS } 
+
+    /**
+     * Enum of multi-axis alignments.
+     *
+     * @enum {number}
+     */
+    enum MultiAxisAlignment { ALIGN_LEFT, ALIGN_CENTER, ALIGN_RIGHT } 
+
+    /**
+     * Enum of legend positions.
+     *
+     * @enum {string}
+     */
+    enum LegendPosition { TOP, BOTTOM, LEFT, RIGHT } 
+
+    /**
+     * Enum of line and tick options for an axis.
+     *
+     * @enum {string}
+     */
+    enum AxisDisplayType { LINE_AND_TICKS, LINE, TICKS } 
+
+    /**
+     * Enum of chart maximum values in pixels, as listed at:
+     * http://code.google.com/apis/chart/basics.html
+     *
+     * @enum {number}
+     */
+    enum MaximumValue { WIDTH, HEIGHT, MAP_WIDTH, MAP_HEIGHT, TOTAL_AREA } 
+
+    /**
+     * Enum of ChartServer URI parameters.
+     *
+     * @enum {string}
+     */
+    enum UriParam { BACKGROUND_FILL, BAR_HEIGHT, DATA, DATA_COLORS, DATA_LABELS, DATA_SCALING, DIGITAL_SIGNATURE, GEOGRAPHICAL_REGION, GRID, LABEL_COLORS, LEFT_Y_LABELS, LEGEND, LEGEND_POSITION, LEGEND_TEXTS, LINE_STYLES, MARGINS, MARKERS, MISC_PARAMS, MULTI_AXIS_LABEL_POSITION, MULTI_AXIS_LABEL_TEXT, MULTI_AXIS_RANGE, MULTI_AXIS_STYLE, MULTI_AXIS_TYPES, RIGHT_LABELS, RIGHT_LABEL_POSITIONS, SIZE, TITLE, TITLE_FORMAT, TYPE, X_AXIS_STYLE, X_LABELS } 
+
+    /**
+     * Array of possible ChartServer data values
+     * @type {string}
+     */
+    var CHART_VALUES: string;
+
+    /**
+     * Array of extended ChartServer data values
+     * @type {string}
+     */
+    var CHART_VALUES_EXTENDED: string;
+
+    /**
+     * Upper bound for extended values
+     */
+    var EXTENDED_UPPER_BOUND: any /*missing*/;
+
+    /**
+     * Event types dispatched by the ServerChart object
+     * @enum {string}
+     */
+    enum Event { URI_TOO_LONG } 
 }
 

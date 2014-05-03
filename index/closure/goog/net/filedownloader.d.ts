@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:58:19 PDT 2014
+// Generated Sat May  3 12:14:06 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -90,7 +90,7 @@ declare module goog.net {
      * @extends {goog.Disposable}
      * @final
      */
-    class FileDownloader extends goog.GoogDisposable {
+    class FileDownloader extends goog.Disposable {
         /**
          * A class for downloading remote files and storing them locally using the
          * HTML5 filesystem API.
@@ -240,10 +240,10 @@ declare module goog.net.FileDownloader {
      *     error.
      *
      * @constructor
-     * @extends {goog.debug.GoogError}
+     * @extends {goog.debug.Error}
      * @final
      */
-    class Error extends goog.debug.GoogError {
+    class Error extends goog.debug.Error {
         /**
          * The error object for FileDownloader download errors.
          *
@@ -253,7 +253,7 @@ declare module goog.net.FileDownloader {
          *     error.
          *
          * @constructor
-         * @extends {goog.debug.GoogError}
+         * @extends {goog.debug.Error}
          * @final
          */
         constructor(download: goog.net.FileDownloader.Download_, opt_fsErr?: goog.fs.Error);

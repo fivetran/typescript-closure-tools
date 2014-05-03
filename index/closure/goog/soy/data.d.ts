@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:56:15 PDT 2014
+// Generated Sat May  3 12:12:00 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -18,15 +18,6 @@
 /// <reference path="../../goog/html/uncheckedconversions.d.ts" />
 
 declare module goog.soy.data {
-
-    /**
-     * A type of textual content.
-     *
-     * This is an enum of type Object so that these values are unforgeable.
-     *
-     * @enum {!Object}
-     */
-    enum SanitizedContentKind { HTML, JS, JS_STR_CHARS, URI, ATTRIBUTES, CSS, TEXT } 
 
     /**
      * A string-like object that carries a content-type and a content direction.
@@ -80,5 +71,14 @@ declare module goog.soy.data {
          */
         toSafeHtml(): goog.html.SafeHtml;
     }
+
+    /**
+     * A type of textual content.
+     *
+     * This is an enum of type Object so that these values are unforgeable.
+     *
+     * @enum {!Object}
+     */
+    enum SanitizedContentKind { HTML, JS, JS_STR_CHARS, URI, ATTRIBUTES, CSS, TEXT } 
 }
 

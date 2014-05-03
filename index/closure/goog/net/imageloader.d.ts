@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:58:41 PDT 2014
+// Generated Sat May  3 12:14:30 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/string/string.d.ts" />
@@ -35,30 +35,6 @@
 /// <reference path="../../goog/math/coordinate.d.ts" />
 /// <reference path="../../goog/dom/dom.d.ts" />
 /// <reference path="../../goog/net/eventtype.d.ts" />
-
-declare module goog.net.ImageLoader {
-
-    /**
-     * The type of image request to dispatch, if this is a CORS-enabled image
-     * request. CORS-enabled images can be reused in canvas elements without them
-     * being tainted. The server hosting the image should include the appropriate
-     * CORS header.
-     * @see https://developer.mozilla.org/en-US/docs/HTML/CORS_Enabled_Image
-     * @enum {string}
-     */
-    enum CorsRequestType { ANONYMOUS, USE_CREDENTIALS } 
-
-    /**
-     * Describes a request for an image. This includes its URL and its CORS-request
-     * type, if any.
-     * @typedef {{
-     *   src: string,
-     *   corsRequestType: ?goog.net.ImageLoader.CorsRequestType
-     * }}
-     * @private
-     */
-    var ImageRequest_: any /*missing*/;
-}
 
 declare module goog.net {
 
@@ -150,5 +126,29 @@ declare module goog.net {
          */
         start(): void;
     }
+}
+
+declare module goog.net.ImageLoader {
+
+    /**
+     * The type of image request to dispatch, if this is a CORS-enabled image
+     * request. CORS-enabled images can be reused in canvas elements without them
+     * being tainted. The server hosting the image should include the appropriate
+     * CORS header.
+     * @see https://developer.mozilla.org/en-US/docs/HTML/CORS_Enabled_Image
+     * @enum {string}
+     */
+    enum CorsRequestType { ANONYMOUS, USE_CREDENTIALS } 
+
+    /**
+     * Describes a request for an image. This includes its URL and its CORS-request
+     * type, if any.
+     * @typedef {{
+     *   src: string,
+     *   corsRequestType: ?goog.net.ImageLoader.CorsRequestType
+     * }}
+     * @private
+     */
+    var ImageRequest_: any /*missing*/;
 }
 

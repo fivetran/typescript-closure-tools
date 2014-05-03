@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:59:15 PDT 2014
+// Generated Sat May  3 12:15:04 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -50,16 +50,6 @@
 /// <reference path="../../goog/ui/buttonrenderer.d.ts" />
 /// <reference path="../../goog/ui/cssnames.d.ts" />
 
-declare module goog.ui.CustomButtonRenderer {
-
-    /**
-     * Default CSS class to be applied to the root element of components rendered
-     * by this renderer.
-     * @type {string}
-     */
-    var CSS_CLASS: string;
-}
-
 declare module goog.ui {
 
     /**
@@ -70,7 +60,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.ButtonRenderer}
      */
-    class GoogCustomButtonRenderer extends goog.ui.GoogButtonRenderer {
+    class CustomButtonRenderer extends goog.ui.ButtonRenderer {
         /**
          * Custom renderer for {@link goog.ui.Button}s.  Custom buttons can contain
          * almost arbitrary HTML content, will flow like inline elements, but can be
@@ -108,7 +98,15 @@ declare module goog.ui {
          */
         hasBoxStructure(button: goog.ui.Button, element: Element): boolean;
     }
+}
 
-    class CustomButtonRenderer extends GoogCustomButtonRenderer { }
+declare module goog.ui.CustomButtonRenderer {
+
+    /**
+     * Default CSS class to be applied to the root element of components rendered
+     * by this renderer.
+     * @type {string}
+     */
+    var CSS_CLASS: string;
 }
 

@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:05:27 PDT 2014
+// Generated Sat May  3 12:21:18 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -39,32 +39,6 @@
 /// <reference path="../../goog/promise/thenable.d.ts" />
 /// <reference path="../../goog/promise/promise.d.ts" />
 
-declare module goog.module.ModuleManager {
-
-    /**
-    * The type of callbacks that can be registered with the module manager,.
-    * @enum {string}
-    */
-    enum CallbackType { ERROR, IDLE, ACTIVE, USER_IDLE, USER_ACTIVE } 
-
-    /**
-     * A non-HTTP status code indicating a corruption in loaded module.
-     * This should be used by a ModuleLoader as a replacement for the HTTP code
-     * given to the error handler function to indicated that the module was
-     * corrupted.
-     * This will set the forceReload flag on the loadModules method when retrying
-     * module loading.
-     * @type {number}
-     */
-    var CORRUPT_RESPONSE_STATUS_CODE: number;
-
-    /**
-     * The possible reasons for a module load failure callback being fired.
-     * @enum {number}
-     */
-    enum FailureType { UNAUTHORIZED, CONSECUTIVE_FAILURES, TIMEOUT, OLD_CODE_GONE, INIT_ERROR } 
-}
-
 declare module goog.module {
 
     /**
@@ -73,7 +47,7 @@ declare module goog.module {
      * @constructor
      * @extends {goog.Disposable}
      */
-    class ModuleManager extends goog.GoogDisposable {
+    class ModuleManager extends goog.Disposable {
         /**
          * The ModuleManager keeps track of all modules in the environment.
          * Since modules may not have their code loaded, we must keep track of them.
@@ -310,5 +284,31 @@ declare module goog.module {
          */
         registerCallback(types: any /*goog.module.ModuleManager.CallbackType|goog.module.ModuleManager.CallbackType[]*/, fn: Function): void;
     }
+}
+
+declare module goog.module.ModuleManager {
+
+    /**
+    * The type of callbacks that can be registered with the module manager,.
+    * @enum {string}
+    */
+    enum CallbackType { ERROR, IDLE, ACTIVE, USER_IDLE, USER_ACTIVE } 
+
+    /**
+     * A non-HTTP status code indicating a corruption in loaded module.
+     * This should be used by a ModuleLoader as a replacement for the HTTP code
+     * given to the error handler function to indicated that the module was
+     * corrupted.
+     * This will set the forceReload flag on the loadModules method when retrying
+     * module loading.
+     * @type {number}
+     */
+    var CORRUPT_RESPONSE_STATUS_CODE: number;
+
+    /**
+     * The possible reasons for a module load failure callback being fired.
+     * @enum {number}
+     */
+    enum FailureType { UNAUTHORIZED, CONSECUTIVE_FAILURES, TIMEOUT, OLD_CODE_GONE, INIT_ERROR } 
 }
 

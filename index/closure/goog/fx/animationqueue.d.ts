@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:56:18 PDT 2014
+// Generated Sat May  3 12:12:03 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -37,7 +37,7 @@ declare module goog.fx {
      * @constructor
      * @extends {goog.fx.TransitionBase}
      */
-    class AnimationQueue extends goog.fx.GoogTransitionBase {
+    class AnimationQueue extends goog.fx.TransitionBase {
         /**
          * Constructor for AnimationQueue object.
          *

@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:58:57 PDT 2014
+// Generated Sat May  3 12:14:45 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/string/string.d.ts" />
@@ -61,7 +61,7 @@ declare module goog.messaging {
      * @implements {goog.messaging.MessageChannel};
      * @final
      */
-    class BufferedChannel extends goog.GoogDisposable implements goog.messaging.MessageChannel {
+    class BufferedChannel extends goog.Disposable implements goog.messaging.MessageChannel {
         /**
          * Creates a new BufferedChannel, which operates like its underlying channel
          * except that it buffers calls to send until it receives a message from its

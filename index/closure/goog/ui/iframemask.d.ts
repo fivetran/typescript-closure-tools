@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:59:26 PDT 2014
+// Generated Sat May  3 12:15:15 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -55,7 +55,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.Disposable}
      */
-    class IframeMask extends goog.GoogDisposable {
+    class IframeMask extends goog.Disposable {
         /**
          * Controller for an iframe mask. The mask is only valid in the current
          * document, or else the document of the given DOM helper.

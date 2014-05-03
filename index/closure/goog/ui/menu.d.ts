@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:59:39 PDT 2014
+// Generated Sat May  3 12:15:27 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -63,23 +63,6 @@
 /// <reference path="../../goog/ui/menuheaderrenderer.d.ts" />
 /// <reference path="../../goog/ui/menuheader.d.ts" />
 
-declare module goog.ui.Menu {
-
-    /**
-     * Event types dispatched by the menu.
-     * @enum {string}
-     * @deprecated Use goog.ui.Component.EventType.
-     */
-    enum EventType { BEFORE_SHOW, SHOW, BEFORE_HIDE, HIDE } 
-
-    /**
-     * CSS class for menus.
-     * @type {string}
-     * @deprecated Use goog.ui.MenuRenderer.CSS_CLASS.
-     */
-    var CSS_CLASS: string;
-}
-
 declare module goog.ui {
 
     /**
@@ -90,7 +73,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.Container}
      */
-    class GoogMenu extends goog.ui.GoogContainer {
+    class Menu extends goog.ui.Container {
         /**
          * A basic menu class.
          * @param {goog.dom.DomHelper=} opt_domHelper Optional DOM helper.
@@ -244,7 +227,22 @@ declare module goog.ui {
          */
         decorateContent(element: Element): void;
     }
+}
 
-    class Menu extends GoogMenu { }
+declare module goog.ui.Menu {
+
+    /**
+     * Event types dispatched by the menu.
+     * @enum {string}
+     * @deprecated Use goog.ui.Component.EventType.
+     */
+    enum EventType { BEFORE_SHOW, SHOW, BEFORE_HIDE, HIDE } 
+
+    /**
+     * CSS class for menus.
+     * @type {string}
+     * @deprecated Use goog.ui.MenuRenderer.CSS_CLASS.
+     */
+    var CSS_CLASS: string;
 }
 

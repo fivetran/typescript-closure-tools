@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:57:17 PDT 2014
+// Generated Sat May  3 12:13:04 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -50,7 +50,7 @@ declare module goog.style.transition {
      *     Array.<goog.style.transition.Css3Property>} properties A single CSS3
      *     transition property or array of properties.
      */
-    function set(element: Element): void;
+    function set(element: Element, properties: any /* jsdoc error */): void;
 
     /**
      * Removes any programmatically-added CSS3 transition in the given element.

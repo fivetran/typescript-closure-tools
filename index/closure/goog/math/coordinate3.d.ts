@@ -1,6 +1,43 @@
-// Generated Fri May  2 15:04:35 PDT 2014
+// Generated Sat May  3 12:20:27 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
+
+declare module goog.math {
+
+    /**
+     * Class for representing coordinates and positions in 3 dimensions.
+     *
+     * @param {number=} opt_x X coordinate, defaults to 0.
+     * @param {number=} opt_y Y coordinate, defaults to 0.
+     * @param {number=} opt_z Z coordinate, defaults to 0.
+     * @constructor
+     */
+    class Coordinate3 {
+        /**
+         * Class for representing coordinates and positions in 3 dimensions.
+         *
+         * @param {number=} opt_x X coordinate, defaults to 0.
+         * @param {number=} opt_y Y coordinate, defaults to 0.
+         * @param {number=} opt_z Z coordinate, defaults to 0.
+         * @constructor
+         */
+        constructor(opt_x?: number, opt_y?: number, opt_z?: number);
+    
+        /**
+         * Returns a new copy of the coordinate.
+         *
+         * @return {!goog.math.Coordinate3} A clone of this coordinate.
+         */
+        clone(): goog.math.Coordinate3;
+    
+        /**
+         * Returns the contents of this coordinate as a 3 value Array.
+         *
+         * @return {!Array.<number>} A new array.
+         */
+        toArray(): number[];
+    }
+}
 
 declare module goog.math.Coordinate3 {
 
@@ -57,44 +94,5 @@ declare module goog.math.Coordinate3 {
      * @throws {Error} When the oject passed in is not valid.
      */
     function fromArray(a: number[]): goog.math.Coordinate3;
-}
-
-declare module goog.math {
-
-    /**
-     * Class for representing coordinates and positions in 3 dimensions.
-     *
-     * @param {number=} opt_x X coordinate, defaults to 0.
-     * @param {number=} opt_y Y coordinate, defaults to 0.
-     * @param {number=} opt_z Z coordinate, defaults to 0.
-     * @constructor
-     */
-    class GoogCoordinate3 {
-        /**
-         * Class for representing coordinates and positions in 3 dimensions.
-         *
-         * @param {number=} opt_x X coordinate, defaults to 0.
-         * @param {number=} opt_y Y coordinate, defaults to 0.
-         * @param {number=} opt_z Z coordinate, defaults to 0.
-         * @constructor
-         */
-        constructor(opt_x?: number, opt_y?: number, opt_z?: number);
-    
-        /**
-         * Returns a new copy of the coordinate.
-         *
-         * @return {!goog.math.Coordinate3} A clone of this coordinate.
-         */
-        clone(): goog.math.Coordinate3;
-    
-        /**
-         * Returns the contents of this coordinate as a 3 value Array.
-         *
-         * @return {!Array.<number>} A new array.
-         */
-        toArray(): number[];
-    }
-
-    class Coordinate3 extends GoogCoordinate3 { }
 }
 

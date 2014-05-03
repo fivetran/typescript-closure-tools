@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:02:11 PDT 2014
+// Generated Sat May  3 12:18:01 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -44,18 +44,6 @@
 /// <reference path="../../goog/dom/dom.d.ts" />
 
 declare module goog.graphics {
-
-    /**
-     * Returns the VML element corresponding to this object.  This method is added
-     * to several classes below.  Note that the return value of this method may
-     * change frequently in IE8, so it should not be cached externally.
-     * @return {Element} The VML element corresponding to this object.
-     * @this {goog.graphics.VmlGroupElement|goog.graphics.VmlEllipseElement|
-     *     goog.graphics.VmlRectElement|goog.graphics.VmlPathElement|
-     *     goog.graphics.VmlTextElement|goog.graphics.VmlImageElement}
-     * @private
-     */
-    function vmlGetElement_(): Element;
 
     /**
      * Thin wrapper for VML group elements.
@@ -192,7 +180,7 @@ declare module goog.graphics {
      *     http://en.wikipedia.org/wiki/Canvas_element for details.
      * @final
      */
-    class VmlPathElement extends goog.graphics.GoogPathElement {
+    class VmlPathElement extends goog.graphics.PathElement {
         /**
          * Thin wrapper for VML path elements.
          * This is an implementation of the goog.graphics.PathElement interface.
@@ -284,5 +272,17 @@ declare module goog.graphics {
          */
         constructor(element: Element, graphics: goog.graphics.VmlGraphics);
     }
+
+    /**
+     * Returns the VML element corresponding to this object.  This method is added
+     * to several classes below.  Note that the return value of this method may
+     * change frequently in IE8, so it should not be cached externally.
+     * @return {Element} The VML element corresponding to this object.
+     * @this {goog.graphics.VmlGroupElement|goog.graphics.VmlEllipseElement|
+     *     goog.graphics.VmlRectElement|goog.graphics.VmlPathElement|
+     *     goog.graphics.VmlTextElement|goog.graphics.VmlImageElement}
+     * @private
+     */
+    function vmlGetElement_(): Element;
 }
 

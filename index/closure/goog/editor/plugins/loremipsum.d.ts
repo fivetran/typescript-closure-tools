@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:57:34 PDT 2014
+// Generated Sat May  3 12:13:21 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/dom/nodetype.d.ts" />
@@ -57,7 +57,7 @@ declare module goog.editor.plugins {
      * @extends {goog.editor.Plugin}
      * @final
      */
-    class LoremIpsum extends goog.editor.GoogPlugin {
+    class LoremIpsum extends goog.editor.Plugin {
         /**
          * A plugin that manages lorem ipsum state of editable fields.
          * @param {string} message The lorem ipsum message.

@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:00:09 PDT 2014
+// Generated Sat May  3 12:15:58 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/dom/nodetype.d.ts" />
@@ -68,7 +68,7 @@ declare module goog.ui.emoji {
      * @extends {goog.ui.emoji.EmojiPaletteRenderer}
      * @final
      */
-    class ProgressiveEmojiPaletteRenderer extends goog.ui.emoji.GoogEmojiPaletteRenderer {
+    class ProgressiveEmojiPaletteRenderer extends goog.ui.emoji.EmojiPaletteRenderer {
         /**
          * Progressively renders an emoji palette. The progressive renderer tries to
          * use img tags instead of background-image for sprited emoji, since most

@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:01:07 PDT 2014
+// Generated Sat May  3 12:16:57 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -64,16 +64,6 @@
 /// <reference path="../../goog/ui/menuheader.d.ts" />
 /// <reference path="../../goog/ui/menu.d.ts" />
 
-declare module goog.ui.SubMenuRenderer {
-
-    /**
-     * Default CSS class to be applied to the root element of components rendered
-     * by this renderer.
-     * @type {string}
-     */
-    var CSS_CLASS: string;
-}
-
 declare module goog.ui {
 
     /**
@@ -89,7 +79,7 @@ declare module goog.ui {
      * @extends {goog.ui.MenuItemRenderer}
      * @final
      */
-    class SubMenuRenderer extends goog.ui.GoogMenuItemRenderer {
+    class SubMenuRenderer extends goog.ui.MenuItemRenderer {
         /**
          * Default renderer for {@link goog.ui.SubMenu}s.  Each item has the following
          * structure:
@@ -105,5 +95,15 @@ declare module goog.ui {
          */
         constructor();
     }
+}
+
+declare module goog.ui.SubMenuRenderer {
+
+    /**
+     * Default CSS class to be applied to the root element of components rendered
+     * by this renderer.
+     * @type {string}
+     */
+    var CSS_CLASS: string;
 }
 

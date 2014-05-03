@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:01:33 PDT 2014
+// Generated Sat May  3 12:17:23 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -81,7 +81,7 @@ declare module goog.events {
      * @return {goog.events.Key} Unique key for the listener.
      * @template T,EVENTOBJ
      */
-    function listen(src: any /*EventTarget|goog.events.Listenable*/): void;
+    function listen(src: any /*EventTarget|goog.events.Listenable*/, type: any /* jsdoc error */, listener: any /* jsdoc error */, opt_capt?: any /* jsdoc error */, opt_handler?: any /* jsdoc error */): void;
 
     /**
      * Helper function for returning a proxy function.
@@ -114,7 +114,7 @@ declare module goog.events {
      * @return {goog.events.Key} Unique key for the listener.
      * @template T,EVENTOBJ
      */
-    function listenOnce(src: any /*EventTarget|goog.events.Listenable*/): void;
+    function listenOnce(src: any /*EventTarget|goog.events.Listenable*/, type: any /* jsdoc error */, listener: any /* jsdoc error */, opt_capt?: any /* jsdoc error */, opt_handler?: any /* jsdoc error */): void;
 
     /**
      * Adds an event listener with a specific event wrapper on a DOM Node or an
@@ -150,7 +150,7 @@ declare module goog.events {
      * @return {?boolean} indicating whether the listener was there to remove.
      * @template EVENTOBJ
      */
-    function unlisten(src: any /*EventTarget|goog.events.Listenable*/): void;
+    function unlisten(src: any /*EventTarget|goog.events.Listenable*/, type: any /* jsdoc error */, listener: any /* jsdoc error */, opt_capt?: any /* jsdoc error */, opt_handler?: any /* jsdoc error */): void;
 
     /**
      * Removes an event listener which was added with listen() by the key

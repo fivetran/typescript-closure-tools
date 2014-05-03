@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:59:53 PDT 2014
+// Generated Sat May  3 12:15:42 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -93,7 +93,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.Dialog}
      */
-    class Prompt extends goog.ui.GoogDialog {
+    class Prompt extends goog.ui.Dialog {
         /**
          * Creates an object that represents a prompt (used in place of javascript's
          * prompt). The html structure of the prompt is the same as the layout for

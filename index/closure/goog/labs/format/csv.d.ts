@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:03:19 PDT 2014
+// Generated Sat May  3 12:19:10 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/dom/nodetype.d.ts" />
@@ -10,6 +10,35 @@
 /// <reference path="../../../goog/string/newlines.d.ts" />
 
 declare module goog.labs.format.csv {
+
+    /**
+     * Error thrown when parsing fails.
+     *
+     * @param {string} text The CSV source text being parsed.
+     * @param {number} index The index, in the string, of the position of the
+     *      error.
+     * @param {string=} opt_message A description of the violated parse expectation.
+     * @constructor
+     * @extends {goog.debug.Error}
+     * @final
+     */
+    class ParseError extends goog.debug.Error {
+        /**
+         * Error thrown when parsing fails.
+         *
+         * @param {string} text The CSV source text being parsed.
+         * @param {number} index The index, in the string, of the position of the
+         *      error.
+         * @param {string=} opt_message A description of the violated parse expectation.
+         * @constructor
+         * @extends {goog.debug.Error}
+         * @final
+         */
+        constructor(text: string, index: number, opt_message?: string);
+    
+        /** @inheritDoc */
+        name: any /*missing*/;
+    }
 
     /**
      * @define {boolean} Enable verbose debugging. This is a flag so it can be
@@ -36,34 +65,5 @@ declare module goog.labs.format.csv {
      * @return {!Array.<!Array.<string>>} The parsed CSV.
      */
     function parse(text: string, opt_ignoreErrors?: boolean): string[][];
-
-    /**
-     * Error thrown when parsing fails.
-     *
-     * @param {string} text The CSV source text being parsed.
-     * @param {number} index The index, in the string, of the position of the
-     *      error.
-     * @param {string=} opt_message A description of the violated parse expectation.
-     * @constructor
-     * @extends {goog.debug.GoogError}
-     * @final
-     */
-    class ParseError extends goog.debug.GoogError {
-        /**
-         * Error thrown when parsing fails.
-         *
-         * @param {string} text The CSV source text being parsed.
-         * @param {number} index The index, in the string, of the position of the
-         *      error.
-         * @param {string=} opt_message A description of the violated parse expectation.
-         * @constructor
-         * @extends {goog.debug.GoogError}
-         * @final
-         */
-        constructor(text: string, index: number, opt_message?: string);
-    
-        /** @inheritDoc */
-        name: any /*missing*/;
-    }
 }
 

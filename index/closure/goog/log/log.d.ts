@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:57:47 PDT 2014
+// Generated Sat May  3 12:13:34 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/string/string.d.ts" />
@@ -24,6 +24,42 @@
 /// <reference path="../../goog/debug/logger.d.ts" />
 
 declare module goog.log {
+
+    /**
+     * @constructor
+     * @final
+     */
+    class Logger {
+        /**
+         * @constructor
+         * @final
+         */
+        constructor();
+    }
+
+    /**
+     * @constructor
+     * @final
+     */
+    class Level {
+        /**
+         * @constructor
+         * @final
+         */
+        constructor();
+    }
+
+    /**
+     * @constructor
+     * @final
+     */
+    class LogRecord {
+        /**
+         * @constructor
+         * @final
+         */
+        constructor();
+    }
 
     /**
      * Finds or creates a logger for a named subsystem. If a logger has already been
@@ -110,41 +146,5 @@ declare module goog.log {
      * @param {Error=} opt_exception An exception associated with the message.
      */
     function fine(logger: goog.log.Logger, msg: goog.debug.Loggable, opt_exception?: Error): void;
-
-    /**
-     * @constructor
-     * @final
-     */
-    class Logger {
-        /**
-         * @constructor
-         * @final
-         */
-        constructor();
-    }
-
-    /**
-     * @constructor
-     * @final
-     */
-    class Level {
-        /**
-         * @constructor
-         * @final
-         */
-        constructor();
-    }
-
-    /**
-     * @constructor
-     * @final
-     */
-    class LogRecord {
-        /**
-         * @constructor
-         * @final
-         */
-        constructor();
-    }
 }
 

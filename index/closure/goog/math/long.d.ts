@@ -1,57 +1,6 @@
-// Generated Fri May  2 15:04:33 PDT 2014
+// Generated Sat May  3 12:20:24 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
-
-declare module goog.math.Long {
-
-    /**
-     * Returns a Long representing the given (32-bit) integer value.
-     * @param {number} value The 32-bit integer in question.
-     * @return {!goog.math.Long} The corresponding Long value.
-     */
-    function fromInt(value: number): goog.math.Long;
-
-    /**
-     * Returns a Long representing the given value, provided that it is a finite
-     * number.  Otherwise, zero is returned.
-     * @param {number} value The number in question.
-     * @return {!goog.math.Long} The corresponding Long value.
-     */
-    function fromNumber(value: number): goog.math.Long;
-
-    /**
-     * Returns a Long representing the 64-bit integer that comes by concatenating
-     * the given high and low bits.  Each is assumed to use 32 bits.
-     * @param {number} lowBits The low 32-bits.
-     * @param {number} highBits The high 32-bits.
-     * @return {!goog.math.Long} The corresponding Long value.
-     */
-    function fromBits(lowBits: number, highBits: number): goog.math.Long;
-
-    /**
-     * Returns a Long representation of the given string, written using the given
-     * radix.
-     * @param {string} str The textual representation of the Long.
-     * @param {number=} opt_radix The radix in which the text is written.
-     * @return {!goog.math.Long} The corresponding Long value.
-     */
-    function fromString(str: string, opt_radix?: number): goog.math.Long;
-
-    /** @type {!goog.math.Long} */
-    var ZERO: goog.math.Long;
-
-    /** @type {!goog.math.Long} */
-    var ONE: goog.math.Long;
-
-    /** @type {!goog.math.Long} */
-    var NEG_ONE: goog.math.Long;
-
-    /** @type {!goog.math.Long} */
-    var MAX_VALUE: goog.math.Long;
-
-    /** @type {!goog.math.Long} */
-    var MIN_VALUE: goog.math.Long;
-}
 
 declare module goog.math {
 
@@ -265,5 +214,56 @@ declare module goog.math {
          */
         shiftRightUnsigned(numBits: number): goog.math.Long;
     }
+}
+
+declare module goog.math.Long {
+
+    /**
+     * Returns a Long representing the given (32-bit) integer value.
+     * @param {number} value The 32-bit integer in question.
+     * @return {!goog.math.Long} The corresponding Long value.
+     */
+    function fromInt(value: number): goog.math.Long;
+
+    /**
+     * Returns a Long representing the given value, provided that it is a finite
+     * number.  Otherwise, zero is returned.
+     * @param {number} value The number in question.
+     * @return {!goog.math.Long} The corresponding Long value.
+     */
+    function fromNumber(value: number): goog.math.Long;
+
+    /**
+     * Returns a Long representing the 64-bit integer that comes by concatenating
+     * the given high and low bits.  Each is assumed to use 32 bits.
+     * @param {number} lowBits The low 32-bits.
+     * @param {number} highBits The high 32-bits.
+     * @return {!goog.math.Long} The corresponding Long value.
+     */
+    function fromBits(lowBits: number, highBits: number): goog.math.Long;
+
+    /**
+     * Returns a Long representation of the given string, written using the given
+     * radix.
+     * @param {string} str The textual representation of the Long.
+     * @param {number=} opt_radix The radix in which the text is written.
+     * @return {!goog.math.Long} The corresponding Long value.
+     */
+    function fromString(str: string, opt_radix?: number): goog.math.Long;
+
+    /** @type {!goog.math.Long} */
+    var ZERO: goog.math.Long;
+
+    /** @type {!goog.math.Long} */
+    var ONE: goog.math.Long;
+
+    /** @type {!goog.math.Long} */
+    var NEG_ONE: goog.math.Long;
+
+    /** @type {!goog.math.Long} */
+    var MAX_VALUE: goog.math.Long;
+
+    /** @type {!goog.math.Long} */
+    var MIN_VALUE: goog.math.Long;
 }
 

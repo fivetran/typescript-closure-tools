@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:02:14 PDT 2014
+// Generated Sat May  3 12:18:04 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -7,34 +7,6 @@
 /// <reference path="../../goog/asserts/asserts.d.ts" />
 /// <reference path="../../goog/array/array.d.ts" />
 /// <reference path="../../goog/math/math.d.ts" />
-
-declare module goog.graphics.Path {
-
-    /**
-     * Path segment types.
-     * @enum {number}
-     */
-    enum Segment { MOVETO, LINETO, CURVETO, ARCTO, CLOSE } 
-
-    /**
-     * Returns the number of points for a segment type.
-     *
-     * @param {number} segment The segment type.
-     * @return {number} The number of points.
-     */
-    function getSegmentCount(segment: number): number;
-
-    /**
-     * Creates a copy of the given path, replacing {@code arcTo} with
-     * {@code arcToAsCurves}. The resulting path is simplified and can
-     * be transformed.
-     *
-     * @param {!goog.graphics.Path} src The path to simplify.
-     * @return {!goog.graphics.Path} A new simplified path.
-     * @suppress {deprecated} goog.graphics is deprecated.
-     */
-    function createSimplifiedPath(src: goog.graphics.Path): goog.graphics.Path;
-}
 
 declare module goog.graphics {
 
@@ -48,7 +20,7 @@ declare module goog.graphics {
      *
      * @constructor
      */
-    class GoogPath {
+    class Path {
         /**
          * Creates a path object. A path is a sequence of segments and may be open or
          * closed. Path uses the EVEN-ODD fill rule for determining the interior of the
@@ -227,7 +199,33 @@ declare module goog.graphics {
          */
         isEmpty(): boolean;
     }
+}
 
-    class Path extends GoogPath { }
+declare module goog.graphics.Path {
+
+    /**
+     * Path segment types.
+     * @enum {number}
+     */
+    enum Segment { MOVETO, LINETO, CURVETO, ARCTO, CLOSE } 
+
+    /**
+     * Returns the number of points for a segment type.
+     *
+     * @param {number} segment The segment type.
+     * @return {number} The number of points.
+     */
+    function getSegmentCount(segment: number): number;
+
+    /**
+     * Creates a copy of the given path, replacing {@code arcTo} with
+     * {@code arcToAsCurves}. The resulting path is simplified and can
+     * be transformed.
+     *
+     * @param {!goog.graphics.Path} src The path to simplify.
+     * @return {!goog.graphics.Path} A new simplified path.
+     * @suppress {deprecated} goog.graphics is deprecated.
+     */
+    function createSimplifiedPath(src: goog.graphics.Path): goog.graphics.Path;
 }
 

@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:57:29 PDT 2014
+// Generated Sat May  3 12:13:16 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/dom/nodetype.d.ts" />
@@ -109,15 +109,6 @@
 /// <reference path="../../../goog/ui/dialog.d.ts" />
 /// <reference path="../../../goog/ui/editor/abstractdialog.d.ts" />
 
-declare module goog.editor.plugins.AbstractDialogPlugin {
-
-    /**
-     * Event type constants for events the dialog plugins fire.
-     * @enum {string}
-     */
-    enum EventType { OPENED, CLOSED } 
-}
-
 declare module goog.editor.plugins {
 
     /**
@@ -130,7 +121,7 @@ declare module goog.editor.plugins {
      * @constructor
      * @extends {goog.editor.Plugin}
      */
-    class GoogAbstractDialogPlugin extends goog.editor.GoogPlugin {
+    class AbstractDialogPlugin extends goog.editor.Plugin {
         /**
          * An abstract superclass for a Trogedit plugin that creates exactly one
          * dialog. By default dialogs are not reused -- each time execCommand is called,
@@ -201,7 +192,14 @@ declare module goog.editor.plugins {
          */
         disposeOriginalSelection(): void;
     }
+}
 
-    class AbstractDialogPlugin extends GoogAbstractDialogPlugin { }
+declare module goog.editor.plugins.AbstractDialogPlugin {
+
+    /**
+     * Event type constants for events the dialog plugins fire.
+     * @enum {string}
+     */
+    enum EventType { OPENED, CLOSED } 
 }
 

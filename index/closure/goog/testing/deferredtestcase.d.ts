@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:03:43 PDT 2014
+// Generated Sat May  3 12:19:33 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/testing/stacktrace.d.ts" />
@@ -20,17 +20,6 @@
 /// <reference path="../../goog/promise/promise.d.ts" />
 /// <reference path="../../goog/array/array.d.ts" />
 
-declare module goog.testing.DeferredTestCase {
-
-    /**
-     * Preferred way of creating a DeferredTestCase. Creates one and initializes it
-     * with the G_testRunner.
-     * @param {string=} opt_name A descriptive name for the test case.
-     * @return {!goog.testing.DeferredTestCase} The created DeferredTestCase.
-     */
-    function createAndInstall(opt_name?: string): goog.testing.DeferredTestCase;
-}
-
 declare module goog.testing {
 
     /**
@@ -39,7 +28,7 @@ declare module goog.testing {
      * @constructor
      * @extends {goog.testing.AsyncTestCase}
      */
-    class DeferredTestCase extends goog.testing.GoogAsyncTestCase {
+    class DeferredTestCase extends goog.testing.AsyncTestCase {
         /**
          * A test case that can asynchronously wait on a Deferred object.
          * @param {string=} opt_name A descriptive name for the test case.
@@ -81,5 +70,16 @@ declare module goog.testing {
          */
         waitForDeferred(a: any /*string|goog.async.Deferred*/, opt_b?: goog.async.Deferred): void;
     }
+}
+
+declare module goog.testing.DeferredTestCase {
+
+    /**
+     * Preferred way of creating a DeferredTestCase. Creates one and initializes it
+     * with the G_testRunner.
+     * @param {string=} opt_name A descriptive name for the test case.
+     * @return {!goog.testing.DeferredTestCase} The created DeferredTestCase.
+     */
+    function createAndInstall(opt_name?: string): goog.testing.DeferredTestCase;
 }
 

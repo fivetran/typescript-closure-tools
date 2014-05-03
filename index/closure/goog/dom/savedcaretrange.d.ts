@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:56:45 PDT 2014
+// Generated Sat May  3 12:12:31 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -32,27 +32,6 @@
 /// <reference path="../../goog/disposable/idisposable.d.ts" />
 /// <reference path="../../goog/disposable/disposable.d.ts" />
 /// <reference path="../../goog/dom/savedrange.d.ts" />
-
-declare module goog.dom.SavedCaretRange {
-
-    /**
-     * A regex that will match all saved range carets in a string.
-     * @type {RegExp}
-     */
-    var CARET_REGEX: RegExp;
-
-    /**
-     * Returns whether two strings of html are equal, ignoring any saved carets.
-     * Thus two strings of html whose only difference is the id of their saved
-     * carets will be considered equal, since they represent html with the
-     * same selection.
-     * @param {string} str1 The first string.
-     * @param {string} str2 The second string.
-     * @return {boolean} Whether two strings of html are equal, ignoring any
-     *     saved carets.
-     */
-    function htmlEqual(str1: string, str2: string): boolean;
-}
 
 declare module goog.dom {
 
@@ -114,5 +93,26 @@ declare module goog.dom {
          */
         setRestorationDocument(doc: Document): void;
     }
+}
+
+declare module goog.dom.SavedCaretRange {
+
+    /**
+     * A regex that will match all saved range carets in a string.
+     * @type {RegExp}
+     */
+    var CARET_REGEX: RegExp;
+
+    /**
+     * Returns whether two strings of html are equal, ignoring any saved carets.
+     * Thus two strings of html whose only difference is the id of their saved
+     * carets will be considered equal, since they represent html with the
+     * same selection.
+     * @param {string} str1 The first string.
+     * @param {string} str2 The second string.
+     * @return {boolean} Whether two strings of html are equal, ignoring any
+     *     saved carets.
+     */
+    function htmlEqual(str1: string, str2: string): boolean;
 }
 

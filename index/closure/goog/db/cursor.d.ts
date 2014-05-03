@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:05:10 PDT 2014
+// Generated Sat May  3 12:21:02 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/string/string.d.ts" />
@@ -40,39 +40,6 @@
 /// <reference path="../../goog/events/browserevent.d.ts" />
 /// <reference path="../../goog/events/events.d.ts" />
 /// <reference path="../../goog/events/eventtarget.d.ts" />
-
-declare module goog.db.Cursor {
-
-    /**
-     * Opens a value cursor from IDBObjectStore or IDBIndex over the specified key
-     * range. Returns a cursor object which is able to iterate over the given range.
-     * @param {!(IDBObjectStore|IDBIndex)} source Data source to open cursor.
-     * @param {!goog.db.KeyRange=} opt_range The key range. If undefined iterates
-     *     over the whole data source.
-     * @param {!goog.db.Cursor.Direction=} opt_direction The direction. If undefined
-     *     moves in a forward direction with duplicates.
-     * @return {!goog.db.Cursor} The cursor.
-     * @throws {goog.db.Error} If there was a problem opening the cursor.
-     */
-    function openCursor(source: any /*IDBObjectStore|IDBIndex*/, opt_range?: goog.db.KeyRange, opt_direction?: goog.db.Cursor.Direction): goog.db.Cursor;
-
-    /**
-     * Possible cursor directions.
-     * @see http://www.w3.org/TR/IndexedDB/#idl-def-IDBCursor
-     *
-     * @enum {string}
-     */
-    enum Direction { NEXT, NEXT_NO_DUPLICATE, PREV, PREV_NO_DUPLICATE } 
-
-    /**
-     * Event types that the cursor can dispatch. COMPLETE events are dispatched when
-     * a cursor is depleted of values, a NEW_DATA event if there is new data
-     * available, and ERROR if an error occurred.
-     *
-     * @enum {string}
-     */
-    enum EventType { COMPLETE, ERROR, NEW_DATA } 
-}
 
 declare module goog.db {
 
@@ -139,5 +106,38 @@ declare module goog.db {
          */
         getKey(): IDBKeyType;
     }
+}
+
+declare module goog.db.Cursor {
+
+    /**
+     * Opens a value cursor from IDBObjectStore or IDBIndex over the specified key
+     * range. Returns a cursor object which is able to iterate over the given range.
+     * @param {!(IDBObjectStore|IDBIndex)} source Data source to open cursor.
+     * @param {!goog.db.KeyRange=} opt_range The key range. If undefined iterates
+     *     over the whole data source.
+     * @param {!goog.db.Cursor.Direction=} opt_direction The direction. If undefined
+     *     moves in a forward direction with duplicates.
+     * @return {!goog.db.Cursor} The cursor.
+     * @throws {goog.db.Error} If there was a problem opening the cursor.
+     */
+    function openCursor(source: any /*IDBObjectStore|IDBIndex*/, opt_range?: goog.db.KeyRange, opt_direction?: goog.db.Cursor.Direction): goog.db.Cursor;
+
+    /**
+     * Possible cursor directions.
+     * @see http://www.w3.org/TR/IndexedDB/#idl-def-IDBCursor
+     *
+     * @enum {string}
+     */
+    enum Direction { NEXT, NEXT_NO_DUPLICATE, PREV, PREV_NO_DUPLICATE } 
+
+    /**
+     * Event types that the cursor can dispatch. COMPLETE events are dispatched when
+     * a cursor is depleted of values, a NEW_DATA event if there is new data
+     * available, and ERROR if an error occurred.
+     *
+     * @enum {string}
+     */
+    enum EventType { COMPLETE, ERROR, NEW_DATA } 
 }
 

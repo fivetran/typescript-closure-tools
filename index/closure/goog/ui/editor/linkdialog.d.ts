@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:59:35 PDT 2014
+// Generated Sat May  3 12:15:23 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/string/string.d.ts" />
@@ -132,80 +132,6 @@
 /// <reference path="../../../goog/ui/editor/abstractdialog.d.ts" />
 /// <reference path="../../../goog/window/window.d.ts" />
 
-declare module goog.ui.editor.LinkDialog {
-
-    /**
-     * Events specific to the link dialog.
-     * @enum {string}
-     */
-    enum EventType { BEFORE_TEST_LINK } 
-
-    /**
-     * Checks if {@code str} contains {@code "nofollow"} as a separate word.
-     * @param {string} str String to be tested.  This is usually {@code rel}
-     *     attribute of an {@code HTMLAnchorElement} object.
-     * @return {boolean} {@code true} if {@code str} contains {@code nofollow}.
-     */
-    function hasNoFollow(str: string): boolean;
-
-    /**
-     * Removes {@code "nofollow"} from {@code rel} if it's present as a separate
-     * word.
-     * @param {string} rel Input string.  This is usually {@code rel} attribute of
-     *     an {@code HTMLAnchorElement} object.
-     * @return {string} {@code rel} with any {@code "nofollow"} removed.
-     */
-    function removeNoFollow(rel: string): string;
-
-    /**
-     * OK event object for the link dialog.
-     * @param {string} linkText Text the user chose to display for the link.
-     * @param {string} linkUrl Url the user chose for the link to point to.
-     * @param {boolean} openInNewWindow Whether the link should open in a new window
-     *     when clicked.
-     * @param {boolean} noFollow Whether the link should have 'rel=nofollow'
-     *     attribute.
-     * @constructor
-     * @extends {goog.events.Event}
-     * @final
-     */
-    class OkEvent extends goog.events.Event {
-        /**
-         * OK event object for the link dialog.
-         * @param {string} linkText Text the user chose to display for the link.
-         * @param {string} linkUrl Url the user chose for the link to point to.
-         * @param {boolean} openInNewWindow Whether the link should open in a new window
-         *     when clicked.
-         * @param {boolean} noFollow Whether the link should have 'rel=nofollow'
-         *     attribute.
-         * @constructor
-         * @extends {goog.events.Event}
-         * @final
-         */
-        constructor(linkText: string, linkUrl: string, openInNewWindow: boolean, noFollow: boolean);
-    }
-
-    /**
-     * Event fired before testing a link by opening it in another window.
-     * Calling preventDefault will stop the link from being opened.
-     * @param {string} url Url of the link being tested.
-     * @constructor
-     * @extends {goog.events.Event}
-     * @final
-     */
-    class BeforeTestLinkEvent extends goog.events.Event {
-        /**
-         * Event fired before testing a link by opening it in another window.
-         * Calling preventDefault will stop the link from being opened.
-         * @param {string} url Url of the link being tested.
-         * @constructor
-         * @extends {goog.events.Event}
-         * @final
-         */
-        constructor(url: string);
-    }
-}
-
 declare module goog.ui.editor {
 
     /**
@@ -217,7 +143,7 @@ declare module goog.ui.editor {
      * @extends {goog.ui.editor.AbstractDialog}
      * @final
      */
-    class LinkDialog extends goog.ui.editor.GoogAbstractDialog {
+    class LinkDialog extends goog.ui.editor.AbstractDialog {
         /**
          * A type of goog.ui.editor.AbstractDialog for editing/creating a link.
          * @param {goog.dom.DomHelper} domHelper DomHelper to be used to create the
@@ -274,5 +200,79 @@ declare module goog.ui.editor {
          */
         setAutogenFeatureEnabled(enable: boolean): void;
     }
+}
+
+declare module goog.ui.editor.LinkDialog {
+
+    /**
+     * OK event object for the link dialog.
+     * @param {string} linkText Text the user chose to display for the link.
+     * @param {string} linkUrl Url the user chose for the link to point to.
+     * @param {boolean} openInNewWindow Whether the link should open in a new window
+     *     when clicked.
+     * @param {boolean} noFollow Whether the link should have 'rel=nofollow'
+     *     attribute.
+     * @constructor
+     * @extends {goog.events.Event}
+     * @final
+     */
+    class OkEvent extends goog.events.Event {
+        /**
+         * OK event object for the link dialog.
+         * @param {string} linkText Text the user chose to display for the link.
+         * @param {string} linkUrl Url the user chose for the link to point to.
+         * @param {boolean} openInNewWindow Whether the link should open in a new window
+         *     when clicked.
+         * @param {boolean} noFollow Whether the link should have 'rel=nofollow'
+         *     attribute.
+         * @constructor
+         * @extends {goog.events.Event}
+         * @final
+         */
+        constructor(linkText: string, linkUrl: string, openInNewWindow: boolean, noFollow: boolean);
+    }
+
+    /**
+     * Event fired before testing a link by opening it in another window.
+     * Calling preventDefault will stop the link from being opened.
+     * @param {string} url Url of the link being tested.
+     * @constructor
+     * @extends {goog.events.Event}
+     * @final
+     */
+    class BeforeTestLinkEvent extends goog.events.Event {
+        /**
+         * Event fired before testing a link by opening it in another window.
+         * Calling preventDefault will stop the link from being opened.
+         * @param {string} url Url of the link being tested.
+         * @constructor
+         * @extends {goog.events.Event}
+         * @final
+         */
+        constructor(url: string);
+    }
+
+    /**
+     * Events specific to the link dialog.
+     * @enum {string}
+     */
+    enum EventType { BEFORE_TEST_LINK } 
+
+    /**
+     * Checks if {@code str} contains {@code "nofollow"} as a separate word.
+     * @param {string} str String to be tested.  This is usually {@code rel}
+     *     attribute of an {@code HTMLAnchorElement} object.
+     * @return {boolean} {@code true} if {@code str} contains {@code nofollow}.
+     */
+    function hasNoFollow(str: string): boolean;
+
+    /**
+     * Removes {@code "nofollow"} from {@code rel} if it's present as a separate
+     * word.
+     * @param {string} rel Input string.  This is usually {@code rel} attribute of
+     *     an {@code HTMLAnchorElement} object.
+     * @return {string} {@code rel} with any {@code "nofollow"} removed.
+     */
+    function removeNoFollow(rel: string): string;
 }
 

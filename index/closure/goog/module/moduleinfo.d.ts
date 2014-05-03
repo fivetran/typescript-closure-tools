@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:05:28 PDT 2014
+// Generated Sat May  3 12:21:20 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/disposable/idisposable.d.ts" />
@@ -27,7 +27,7 @@ declare module goog.module {
      * @extends {goog.Disposable}
      * @final
      */
-    class ModuleInfo extends goog.GoogDisposable {
+    class ModuleInfo extends goog.Disposable {
         /**
          * A ModuleInfo object is used by the ModuleManager to hold information about a
          * module of js code that may or may not yet be loaded into the environment.

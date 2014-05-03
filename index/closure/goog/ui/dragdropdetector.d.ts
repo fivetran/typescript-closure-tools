@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:00:20 PDT 2014
+// Generated Sat May  3 12:16:09 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -39,19 +39,32 @@
 /// <reference path="../../goog/events/eventhandler.d.ts" />
 /// <reference path="../../goog/events/eventtarget.d.ts" />
 
+declare module goog.ui {
+
+    /**
+     * Creates a new drag and drop detector.
+     * @param {string=} opt_filePath The URL of the page to use for the detector.
+     *     It should contain the same contents as dragdropdetector_target.html in
+     *     the demos directory.
+     * @constructor
+     * @extends {goog.events.EventTarget}
+     * @final
+     */
+    class DragDropDetector extends goog.events.EventTarget {
+        /**
+         * Creates a new drag and drop detector.
+         * @param {string=} opt_filePath The URL of the page to use for the detector.
+         *     It should contain the same contents as dragdropdetector_target.html in
+         *     the demos directory.
+         * @constructor
+         * @extends {goog.events.EventTarget}
+         * @final
+         */
+        constructor(opt_filePath?: string);
+    }
+}
+
 declare module goog.ui.DragDropDetector {
-
-    /**
-     * Drag and drop event types.
-     * @enum {string}
-     */
-    enum EventType { IMAGE_DROPPED, LINK_DROPPED } 
-
-    /**
-     * Initial value for clientX and clientY indicating that the location has
-     * never been updated.
-     */
-    var INIT_POSITION: any /*missing*/;
 
     /**
      * Creates a new image drop event object.
@@ -109,30 +122,17 @@ declare module goog.ui.DragDropDetector {
          */
         getUrl(): string;
     }
-}
-
-declare module goog.ui {
 
     /**
-     * Creates a new drag and drop detector.
-     * @param {string=} opt_filePath The URL of the page to use for the detector.
-     *     It should contain the same contents as dragdropdetector_target.html in
-     *     the demos directory.
-     * @constructor
-     * @extends {goog.events.EventTarget}
-     * @final
+     * Drag and drop event types.
+     * @enum {string}
      */
-    class DragDropDetector extends goog.events.EventTarget {
-        /**
-         * Creates a new drag and drop detector.
-         * @param {string=} opt_filePath The URL of the page to use for the detector.
-         *     It should contain the same contents as dragdropdetector_target.html in
-         *     the demos directory.
-         * @constructor
-         * @extends {goog.events.EventTarget}
-         * @final
-         */
-        constructor(opt_filePath?: string);
-    }
+    enum EventType { IMAGE_DROPPED, LINK_DROPPED } 
+
+    /**
+     * Initial value for clientX and clientY indicating that the location has
+     * never been updated.
+     */
+    var INIT_POSITION: any /*missing*/;
 }
 

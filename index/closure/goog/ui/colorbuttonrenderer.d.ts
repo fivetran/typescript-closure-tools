@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:00:28 PDT 2014
+// Generated Sat May  3 12:16:18 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -72,16 +72,6 @@
 /// <reference path="../../goog/ui/menubuttonrenderer.d.ts" />
 /// <reference path="../../goog/ui/colormenubuttonrenderer.d.ts" />
 
-declare module goog.ui.ColorButtonRenderer {
-
-    /**
-     * Default CSS class to be applied to the root element of components rendered
-     * by this renderer. Additionally, applies class to the button's caption.
-     * @type {string}
-     */
-    var CSS_CLASS: string;
-}
-
 declare module goog.ui {
 
     /**
@@ -92,7 +82,7 @@ declare module goog.ui {
      * @extends {goog.ui.ColorMenuButtonRenderer}
      * @final
      */
-    class ColorButtonRenderer extends goog.ui.GoogColorMenuButtonRenderer {
+    class ColorButtonRenderer extends goog.ui.ColorMenuButtonRenderer {
         /**
          * Renderer for {@link goog.ui.ColorButton}s.
          * Uses {@link goog.ui.ColorMenuButton}s but disables the dropdown.
@@ -103,5 +93,15 @@ declare module goog.ui {
          */
         constructor();
     }
+}
+
+declare module goog.ui.ColorButtonRenderer {
+
+    /**
+     * Default CSS class to be applied to the root element of components rendered
+     * by this renderer. Additionally, applies class to the button's caption.
+     * @type {string}
+     */
+    var CSS_CLASS: string;
 }
 

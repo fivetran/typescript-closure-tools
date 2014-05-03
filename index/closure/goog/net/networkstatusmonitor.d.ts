@@ -1,17 +1,8 @@
-// Generated Fri May  2 14:58:27 PDT 2014
+// Generated Sat May  3 12:14:15 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/events/eventid.d.ts" />
 /// <reference path="../../goog/events/listenable.d.ts" />
-
-declare module goog.net.NetworkStatusMonitor {
-
-    /**
-     * Enum for the events dispatched by the OnlineHandler.
-     * @enum {string}
-     */
-    enum EventType { ONLINE, OFFLINE } 
-}
 
 declare module goog.net {
 
@@ -27,5 +18,14 @@ declare module goog.net {
          */
         isOnline(): boolean;
     }
+}
+
+declare module goog.net.NetworkStatusMonitor {
+
+    /**
+     * Enum for the events dispatched by the OnlineHandler.
+     * @enum {string}
+     */
+    enum EventType { ONLINE, OFFLINE } 
 }
 

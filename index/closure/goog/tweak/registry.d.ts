@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:02:18 PDT 2014
+// Generated Sat May  3 12:18:08 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -25,16 +25,6 @@
 /// <reference path="../../goog/debug/logger.d.ts" />
 /// <reference path="../../goog/log/log.d.ts" />
 /// <reference path="../../goog/tweak/entries.d.ts" />
-
-declare module goog.tweak.Registry {
-
-    /**
-     * Simple parser for query params. Makes all keys lower-case.
-     * @param {string} queryParams The part of the url between the ? and the #.
-     * @return {!Object.<string>} map of key->value.
-     */
-    function parseQueryParams(queryParams: string): { [key: string]: any /*missing*/ };
-}
 
 declare module goog.tweak {
 
@@ -136,5 +126,15 @@ declare module goog.tweak {
          */
         overrideDefaultValue(id: string, value: any /*string|number|boolean*/): void;
     }
+}
+
+declare module goog.tweak.Registry {
+
+    /**
+     * Simple parser for query params. Makes all keys lower-case.
+     * @param {string} queryParams The part of the url between the ? and the #.
+     * @return {!Object.<string>} map of key->value.
+     */
+    function parseQueryParams(queryParams: string): { [key: string]: any /*missing*/ };
 }
 

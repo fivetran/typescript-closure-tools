@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:56:21 PDT 2014
+// Generated Sat May  3 12:12:07 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -56,7 +56,7 @@ declare module goog.fx {
      * @extends {goog.fx.AbstractDragDrop}
      * @constructor
      */
-    class DragDrop extends goog.fx.GoogAbstractDragDrop {
+    class DragDrop extends goog.fx.AbstractDragDrop {
         /**
          * Drag/drop implementation for creating drag sources/drop targets consisting of
          * a single HTML Element.

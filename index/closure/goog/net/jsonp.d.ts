@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:58:22 PDT 2014
+// Generated Sat May  3 12:14:10 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/string/string.d.ts" />
@@ -32,15 +32,6 @@
 /// <reference path="../../goog/promise/thenable.d.ts" />
 /// <reference path="../../goog/promise/promise.d.ts" />
 /// <reference path="../../goog/net/jsloader.d.ts" />
-
-declare module goog.net.Jsonp {
-
-    /**
-     * The name of the property of goog.global under which the callback is
-     * stored.
-     */
-    var CALLBACKS: any /*missing*/;
-}
 
 declare module goog.net {
 
@@ -140,5 +131,14 @@ declare module goog.net {
          */
         cancel(request: Object): void;
     }
+}
+
+declare module goog.net.Jsonp {
+
+    /**
+     * The name of the property of goog.global under which the callback is
+     * stored.
+     */
+    var CALLBACKS: any /*missing*/;
 }
 

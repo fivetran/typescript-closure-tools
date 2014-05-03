@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:04:39 PDT 2014
+// Generated Sat May  3 12:20:31 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/date/datelike.d.ts" />
@@ -7,40 +7,6 @@
 /// <reference path="../../goog/debug/error.d.ts" />
 /// <reference path="../../goog/asserts/asserts.d.ts" />
 /// <reference path="../../goog/array/array.d.ts" />
-
-declare module goog.i18n.TimeZone {
-
-    /**
-     * Indices into the array of time zone names.
-     * @enum {number}
-     */
-    enum NameType { STD_SHORT_NAME, STD_LONG_NAME, DLT_SHORT_NAME, DLT_LONG_NAME } 
-
-    /**
-     * This factory method creates a time zone instance.  It takes either an object
-     * containing complete time zone information, or a single number representing a
-     * constant time zone offset.  If the latter form is used, DST functionality is
-     * not available.
-     *
-     * @param {number|Object} timeZoneData If this parameter is a number, it should
-     *     indicate minutes WEST of UTC to be used as a constant time zone offset.
-     *     Otherwise, it should be an object with these four fields:
-     *     <ul>
-     *     <li>id: A string ID for the time zone.
-     *     <li>std_offset: The standard time zone offset in minutes EAST of UTC.
-     *     <li>names: An array of four names (standard short name, standard long
-     *           name, daylight short name, daylight long, name)
-     *     <li>transitions: An array of numbers which are interpreted in pairs:
-     *           [time1, adjustment1, time2, adjustment2, ...] where each time is
-     *           a DST transition point given as a number of hours since 00:00 UTC,
-     *           January 1, 1970, and each adjustment is the adjustment to apply
-     *           for times after the DST transition, given as minutes EAST of UTC.
-     *     </ul>
-     * @return {!goog.i18n.TimeZone} A goog.i18n.TimeZone object for the given
-     *     time zone data.
-     */
-    function createTimeZone(timeZoneData: any /*number|Object*/): goog.i18n.TimeZone;
-}
 
 declare module goog.i18n {
 
@@ -151,5 +117,39 @@ declare module goog.i18n {
          */
         isDaylightTime(date: goog.date.DateLike): boolean;
     }
+}
+
+declare module goog.i18n.TimeZone {
+
+    /**
+     * Indices into the array of time zone names.
+     * @enum {number}
+     */
+    enum NameType { STD_SHORT_NAME, STD_LONG_NAME, DLT_SHORT_NAME, DLT_LONG_NAME } 
+
+    /**
+     * This factory method creates a time zone instance.  It takes either an object
+     * containing complete time zone information, or a single number representing a
+     * constant time zone offset.  If the latter form is used, DST functionality is
+     * not available.
+     *
+     * @param {number|Object} timeZoneData If this parameter is a number, it should
+     *     indicate minutes WEST of UTC to be used as a constant time zone offset.
+     *     Otherwise, it should be an object with these four fields:
+     *     <ul>
+     *     <li>id: A string ID for the time zone.
+     *     <li>std_offset: The standard time zone offset in minutes EAST of UTC.
+     *     <li>names: An array of four names (standard short name, standard long
+     *           name, daylight short name, daylight long, name)
+     *     <li>transitions: An array of numbers which are interpreted in pairs:
+     *           [time1, adjustment1, time2, adjustment2, ...] where each time is
+     *           a DST transition point given as a number of hours since 00:00 UTC,
+     *           January 1, 1970, and each adjustment is the adjustment to apply
+     *           for times after the DST transition, given as minutes EAST of UTC.
+     *     </ul>
+     * @return {!goog.i18n.TimeZone} A goog.i18n.TimeZone object for the given
+     *     time zone data.
+     */
+    function createTimeZone(timeZoneData: any /*number|Object*/): goog.i18n.TimeZone;
 }
 

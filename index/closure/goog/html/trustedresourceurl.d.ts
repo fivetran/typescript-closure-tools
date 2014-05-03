@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:05:02 PDT 2014
+// Generated Sat May  3 12:20:53 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -8,35 +8,6 @@
 /// <reference path="../../goog/i18n/bidi.d.ts" />
 /// <reference path="../../goog/string/typedstring.d.ts" />
 /// <reference path="../../goog/string/const.d.ts" />
-
-declare module goog.html.TrustedResourceUrl {
-
-    /**
-     * Performs a runtime check that the provided object is indeed a
-     * TrustedResourceUrl object, and returns its value.
-     *
-     * @param {!goog.html.TrustedResourceUrl} trustedResourceUrl The object to
-     *     extract from.
-     * @return {string} The trustedResourceUrl object's contained string, unless
-     *     the run-time type check fails. In that case, {@code unwrap} returns an
-     *     innocuous string, or, if assertions are enabled, throws
-     *     {@code goog.asserts.AssertionError}.
-     */
-    function unwrap(trustedResourceUrl: goog.html.TrustedResourceUrl): string;
-
-    /**
-     * Creates a TrustedResourceUrl object from a compile-time constant string.
-     *
-     * Compile-time constant strings are inherently program-controlled and hence
-     * trusted.
-     *
-     * @param {!googstring.Const} url A compile-time-constant string from which to
-     *     create a TrustedResourceUrl.
-     * @return {!goog.html.TrustedResourceUrl} A TrustedResourceUrl object
-     *     initialized to {@code url}.
-     */
-    function fromConstant(url: googstring.Const): goog.html.TrustedResourceUrl;
-}
 
 declare module goog.html {
 
@@ -62,9 +33,9 @@ declare module goog.html {
      * @final
      * @struct
      * @implements {goog.i18n.bidi.DirectionalString}
-     * @implements {googstring.TypedString}
+     * @implements {goog.string.TypedString}
      */
-    class TrustedResourceUrl implements goog.i18n.bidi.DirectionalString, googstring.TypedString {
+    class TrustedResourceUrl implements goog.i18n.bidi.DirectionalString, goog.string.TypedString {
         /**
          * A URL which is under application control and from which script, CSS, and
          * other resources that represent executable code, can be fetched.
@@ -87,9 +58,38 @@ declare module goog.html {
          * @final
          * @struct
          * @implements {goog.i18n.bidi.DirectionalString}
-         * @implements {googstring.TypedString}
+         * @implements {goog.string.TypedString}
          */
         constructor();
     }
+}
+
+declare module goog.html.TrustedResourceUrl {
+
+    /**
+     * Performs a runtime check that the provided object is indeed a
+     * TrustedResourceUrl object, and returns its value.
+     *
+     * @param {!goog.html.TrustedResourceUrl} trustedResourceUrl The object to
+     *     extract from.
+     * @return {string} The trustedResourceUrl object's contained string, unless
+     *     the run-time type check fails. In that case, {@code unwrap} returns an
+     *     innocuous string, or, if assertions are enabled, throws
+     *     {@code goog.asserts.AssertionError}.
+     */
+    function unwrap(trustedResourceUrl: goog.html.TrustedResourceUrl): string;
+
+    /**
+     * Creates a TrustedResourceUrl object from a compile-time constant string.
+     *
+     * Compile-time constant strings are inherently program-controlled and hence
+     * trusted.
+     *
+     * @param {!goog.string.Const} url A compile-time-constant string from which to
+     *     create a TrustedResourceUrl.
+     * @return {!goog.html.TrustedResourceUrl} A TrustedResourceUrl object
+     *     initialized to {@code url}.
+     */
+    function fromConstant(url: goog.string.Const): goog.html.TrustedResourceUrl;
 }
 

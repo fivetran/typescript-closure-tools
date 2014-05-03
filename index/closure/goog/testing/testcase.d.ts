@@ -1,129 +1,9 @@
-// Generated Fri May  2 15:04:01 PDT 2014
+// Generated Sat May  3 12:19:52 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/testing/stacktrace.d.ts" />
 /// <reference path="../../goog/testing/asserts.d.ts" />
 /// <reference path="../../goog/object/object.d.ts" />
-
-declare module goog.testing.TestCase {
-
-    /**
-     * The order to run the auto-discovered tests.
-     * @enum {string}
-     */
-    enum Order { NATURAL, RANDOM, SORTED } 
-
-    /**
-     * The maximum amount of time that the test can run before we force it to be
-     * async.  This prevents the test runner from blocking the browser and
-     * potentially hurting the Selenium test harness.
-     * @type {number}
-     */
-    var MAX_RUN_TIME: number;
-
-    /**
-     * TODO(user) replace this with prototype.currentTest.
-     * Name of the current test that is running, or null if none is running.
-     * @type {?string}
-     */
-    var currentTestName: string;
-
-    /**
-     * Avoid a dependency on goog.userAgent and keep our own reference of whether
-     * the browser is IE.
-     * @type {boolean}
-     */
-    var IS_IE: boolean;
-
-    /**
-     * Gets the object with all globals.
-     * @param {string=} opt_prefix An optional prefix. If specified, only get things
-     *     under this prefix. Note that the prefix is only honored in IE, since it
-     *     supports the RuntimeObject:
-     *     http://msdn.microsoft.com/en-us/library/ff521039%28VS.85%29.aspx
-     *     TODO: Fix this method to honor the prefix in all browsers.
-     * @return {Object} An object with all globals starting with the prefix.
-     */
-    function getGlobals(opt_prefix?: string): Object;
-
-    /**
-     * Initializes the given test case with the global test runner 'G_testRunner'.
-     * @param {goog.testing.TestCase} testCase The test case to install.
-     */
-    function initializeTestRunner(testCase: goog.testing.TestCase): void;
-
-    /**
-     * A class representing a single test function.
-     * @param {string} name The test name.
-     * @param {Function} ref Reference to the test function.
-     * @param {Object=} opt_scope Optional scope that the test function should be
-     *     called in.
-     * @constructor
-     */
-    class Test {
-        /**
-         * A class representing a single test function.
-         * @param {string} name The test name.
-         * @param {Function} ref Reference to the test function.
-         * @param {Object=} opt_scope Optional scope that the test function should be
-         *     called in.
-         * @constructor
-         */
-        constructor(name: string, ref: Function, opt_scope?: Object);
-    
-        /**
-         * Executes the test function.
-         */
-        execute(): void;
-    }
-
-    /**
-     * A class for representing test results.  A bag of public properties.
-     * @param {goog.testing.TestCase} testCase The test case that owns this result.
-     * @constructor
-     * @final
-     */
-    class Result {
-        /**
-         * A class for representing test results.  A bag of public properties.
-         * @param {goog.testing.TestCase} testCase The test case that owns this result.
-         * @constructor
-         * @final
-         */
-        constructor(testCase: goog.testing.TestCase);
-    
-        /**
-         * @return {boolean} Whether the test was successful.
-         */
-        isSuccess(): boolean;
-    
-        /**
-         * @return {string} A summary of the tests, including total number of tests that
-         *     passed, failed, and the time taken.
-         */
-        getSummary(): string;
-    }
-
-    /**
-     * A class representing an error thrown by the test
-     * @param {string} source The name of the test which threw the error.
-     * @param {string} message The error message.
-     * @param {string=} opt_stack A string showing the execution stack.
-     * @constructor
-     * @final
-     */
-    class Error {
-        /**
-         * A class representing an error thrown by the test
-         * @param {string} source The name of the test which threw the error.
-         * @param {string} message The error message.
-         * @param {string=} opt_stack A string showing the execution stack.
-         * @constructor
-         * @final
-         */
-        constructor(source: string, message: string, opt_stack?: string);
-    }
-}
 
 declare module goog.testing {
 
@@ -146,7 +26,7 @@ declare module goog.testing {
      *     'Untitled Test Case'.
      * @constructor
      */
-    class GoogTestCase {
+    class TestCase {
         /**
          * A class representing a JsUnit test case.  A TestCase is made up of a number
          * of test functions which can be run.  Individual test cases can override the
@@ -474,7 +354,125 @@ declare module goog.testing {
          */
         logError(name: string, opt_e?: any): goog.testing.TestCase.Error;
     }
+}
 
-    class TestCase extends GoogTestCase { }
+declare module goog.testing.TestCase {
+
+    /**
+     * A class representing a single test function.
+     * @param {string} name The test name.
+     * @param {Function} ref Reference to the test function.
+     * @param {Object=} opt_scope Optional scope that the test function should be
+     *     called in.
+     * @constructor
+     */
+    class Test {
+        /**
+         * A class representing a single test function.
+         * @param {string} name The test name.
+         * @param {Function} ref Reference to the test function.
+         * @param {Object=} opt_scope Optional scope that the test function should be
+         *     called in.
+         * @constructor
+         */
+        constructor(name: string, ref: Function, opt_scope?: Object);
+    
+        /**
+         * Executes the test function.
+         */
+        execute(): void;
+    }
+
+    /**
+     * A class for representing test results.  A bag of public properties.
+     * @param {goog.testing.TestCase} testCase The test case that owns this result.
+     * @constructor
+     * @final
+     */
+    class Result {
+        /**
+         * A class for representing test results.  A bag of public properties.
+         * @param {goog.testing.TestCase} testCase The test case that owns this result.
+         * @constructor
+         * @final
+         */
+        constructor(testCase: goog.testing.TestCase);
+    
+        /**
+         * @return {boolean} Whether the test was successful.
+         */
+        isSuccess(): boolean;
+    
+        /**
+         * @return {string} A summary of the tests, including total number of tests that
+         *     passed, failed, and the time taken.
+         */
+        getSummary(): string;
+    }
+
+    /**
+     * A class representing an error thrown by the test
+     * @param {string} source The name of the test which threw the error.
+     * @param {string} message The error message.
+     * @param {string=} opt_stack A string showing the execution stack.
+     * @constructor
+     * @final
+     */
+    class Error {
+        /**
+         * A class representing an error thrown by the test
+         * @param {string} source The name of the test which threw the error.
+         * @param {string} message The error message.
+         * @param {string=} opt_stack A string showing the execution stack.
+         * @constructor
+         * @final
+         */
+        constructor(source: string, message: string, opt_stack?: string);
+    }
+
+    /**
+     * The order to run the auto-discovered tests.
+     * @enum {string}
+     */
+    enum Order { NATURAL, RANDOM, SORTED } 
+
+    /**
+     * The maximum amount of time that the test can run before we force it to be
+     * async.  This prevents the test runner from blocking the browser and
+     * potentially hurting the Selenium test harness.
+     * @type {number}
+     */
+    var MAX_RUN_TIME: number;
+
+    /**
+     * TODO(user) replace this with prototype.currentTest.
+     * Name of the current test that is running, or null if none is running.
+     * @type {?string}
+     */
+    var currentTestName: string;
+
+    /**
+     * Avoid a dependency on goog.userAgent and keep our own reference of whether
+     * the browser is IE.
+     * @type {boolean}
+     */
+    var IS_IE: boolean;
+
+    /**
+     * Gets the object with all globals.
+     * @param {string=} opt_prefix An optional prefix. If specified, only get things
+     *     under this prefix. Note that the prefix is only honored in IE, since it
+     *     supports the RuntimeObject:
+     *     http://msdn.microsoft.com/en-us/library/ff521039%28VS.85%29.aspx
+     *     TODO: Fix this method to honor the prefix in all browsers.
+     * @return {Object} An object with all globals starting with the prefix.
+     */
+    function getGlobals(opt_prefix?: string): Object;
+
+    /**
+     * Initializes the given test case with the global test runner 'G_testRunner'.
+     * @param {goog.testing.TestCase} testCase The test case to install.
+     */
+    function initializeTestRunner(testCase: goog.testing.TestCase): void;
 }
 

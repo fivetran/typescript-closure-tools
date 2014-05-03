@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:57:23 PDT 2014
+// Generated Sat May  3 12:13:10 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -95,7 +95,7 @@ declare module goog.editor {
      * @constructor
      * @extends {goog.Disposable}
      */
-    class ClickToEditWrapper extends goog.GoogDisposable {
+    class ClickToEditWrapper extends goog.Disposable {
         /**
          * Initialize the wrapper, and begin listening to mouse events immediately.
          * @param {goog.editor.Field} fieldObj The editable field being wrapped.

@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:03:43 PDT 2014
+// Generated Sat May  3 12:19:34 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/testing/stacktrace.d.ts" />
@@ -108,7 +108,7 @@ declare module goog.testing.editor {
      * @extends {goog.Disposable}
      * @final
      */
-    class TestHelper extends goog.GoogDisposable {
+    class TestHelper extends goog.Disposable {
         /**
          * Create a new test controller.
          * @param {Element} root The root editable element.

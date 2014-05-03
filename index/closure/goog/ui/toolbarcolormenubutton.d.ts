@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:00:23 PDT 2014
+// Generated Sat May  3 12:16:13 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -110,7 +110,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.ColorMenuButton}
      */
-    class ToolbarColorMenuButton extends goog.ui.GoogColorMenuButton {
+    class ToolbarColorMenuButton extends goog.ui.ColorMenuButton {
         /**
          * A color menu button control for a toolbar.
          *

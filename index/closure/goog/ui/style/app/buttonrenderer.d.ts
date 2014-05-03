@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:59:22 PDT 2014
+// Generated Sat May  3 12:15:11 PDT 2014
 
 /// <reference path="../../../../goog/base.d.ts" />
 /// <reference path="../../../../goog/dom/nodetype.d.ts" />
@@ -59,6 +59,29 @@
 /// <reference path="../../../../goog/ui/cssnames.d.ts" />
 /// <reference path="../../../../goog/ui/custombuttonrenderer.d.ts" />
 
+declare module goog.ui.style.app {
+
+    /**
+     * Custom renderer for {@link goog.ui.Button}s. Imageless buttons can contain
+     * almost arbitrary HTML content, will flow like inline elements, but can be
+     * styled like block-level elements.
+     *
+     * @constructor
+     * @extends {goog.ui.CustomButtonRenderer}
+     */
+    class ButtonRenderer extends goog.ui.CustomButtonRenderer {
+        /**
+         * Custom renderer for {@link goog.ui.Button}s. Imageless buttons can contain
+         * almost arbitrary HTML content, will flow like inline elements, but can be
+         * styled like block-level elements.
+         *
+         * @constructor
+         * @extends {goog.ui.CustomButtonRenderer}
+         */
+        constructor();
+    }
+}
+
 declare module goog.ui.style.app.ButtonRenderer {
 
     /**
@@ -75,30 +98,5 @@ declare module goog.ui.style.app.ButtonRenderer {
      * @type {Array.<Array.<string>>}
      */
     var IE6_CLASS_COMBINATIONS: string[][];
-}
-
-declare module goog.ui.style.app {
-
-    /**
-     * Custom renderer for {@link goog.ui.Button}s. Imageless buttons can contain
-     * almost arbitrary HTML content, will flow like inline elements, but can be
-     * styled like block-level elements.
-     *
-     * @constructor
-     * @extends {goog.ui.CustomButtonRenderer}
-     */
-    class GoogButtonRenderer extends goog.ui.GoogCustomButtonRenderer {
-        /**
-         * Custom renderer for {@link goog.ui.Button}s. Imageless buttons can contain
-         * almost arbitrary HTML content, will flow like inline elements, but can be
-         * styled like block-level elements.
-         *
-         * @constructor
-         * @extends {goog.ui.CustomButtonRenderer}
-         */
-        constructor();
-    }
-
-    class ButtonRenderer extends GoogButtonRenderer { }
 }
 

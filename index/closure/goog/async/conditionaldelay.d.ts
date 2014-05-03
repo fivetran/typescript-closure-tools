@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:02:23 PDT 2014
+// Generated Sat May  3 12:18:13 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/disposable/idisposable.d.ts" />
@@ -48,7 +48,7 @@ declare module goog.async {
      * @constructor
      * @extends {goog.Disposable}
      */
-    class ConditionalDelay extends goog.GoogDisposable {
+    class ConditionalDelay extends goog.Disposable {
         /**
          * A ConditionalDelay object invokes the associated function after a specified
          * interval delay and checks its return value. If the function returns

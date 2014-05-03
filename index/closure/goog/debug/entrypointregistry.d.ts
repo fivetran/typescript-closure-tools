@@ -1,10 +1,45 @@
-// Generated Fri May  2 15:02:59 PDT 2014
+// Generated Sat May  3 12:18:50 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
 /// <reference path="../../goog/debug/error.d.ts" />
 /// <reference path="../../goog/string/string.d.ts" />
 /// <reference path="../../goog/asserts/asserts.d.ts" />
+
+declare module goog.debug {
+
+    /**
+     * @interface
+     */
+    interface EntryPointMonitor {
+    
+        /**
+         * Instruments a function.
+         *
+         * @param {!Function} fn A function to instrument.
+         * @return {!Function} The instrumented function.
+         */
+        wrap(fn: Function): Function;
+    
+        /**
+         * Try to remove an instrumentation wrapper created by this monitor.
+         * If the function passed to unwrap is not a wrapper created by this
+         * monitor, then we will do nothing.
+         *
+         * Notice that some wrappers may not be unwrappable. For example, if other
+         * monitors have applied their own wrappers, then it will be impossible to
+         * unwrap them because their wrappers will have captured our wrapper.
+         *
+         * So it is important that entry points are unwrapped in the reverse
+         * order that they were wrapped.
+         *
+         * @param {!Function} fn A function to unwrap.
+         * @return {!Function} The unwrapped function, or {@code fn} if it was not
+         *     a wrapped function created by this monitor.
+         */
+        unwrap(fn: Function): Function;
+    }
+}
 
 declare module goog.debug.entryPointRegistry {
 
@@ -44,40 +79,5 @@ declare module goog.debug.entryPointRegistry {
      * @throws {Error} If the monitor is not the most recently configured monitor.
      */
     function unmonitorAllIfPossible(monitor: goog.debug.EntryPointMonitor): void;
-}
-
-declare module goog.debug {
-
-    /**
-     * @interface
-     */
-    interface EntryPointMonitor {
-    
-        /**
-         * Instruments a function.
-         *
-         * @param {!Function} fn A function to instrument.
-         * @return {!Function} The instrumented function.
-         */
-        wrap(fn: Function): Function;
-    
-        /**
-         * Try to remove an instrumentation wrapper created by this monitor.
-         * If the function passed to unwrap is not a wrapper created by this
-         * monitor, then we will do nothing.
-         *
-         * Notice that some wrappers may not be unwrappable. For example, if other
-         * monitors have applied their own wrappers, then it will be impossible to
-         * unwrap them because their wrappers will have captured our wrapper.
-         *
-         * So it is important that entry points are unwrapped in the reverse
-         * order that they were wrapped.
-         *
-         * @param {!Function} fn A function to unwrap.
-         * @return {!Function} The unwrapped function, or {@code fn} if it was not
-         *     a wrapped function created by this monitor.
-         */
-        unwrap(fn: Function): Function;
-    }
 }
 

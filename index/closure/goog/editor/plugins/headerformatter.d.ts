@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:57:33 PDT 2014
+// Generated Sat May  3 12:13:20 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/string/string.d.ts" />
@@ -40,15 +40,6 @@
 /// <reference path="../../../goog/events/eventtarget.d.ts" />
 /// <reference path="../../../goog/editor/plugin.d.ts" />
 
-declare module goog.editor.plugins.HeaderFormatter {
-
-    /**
-     * Commands that can be passed as the optional argument to execCommand.
-     * @enum {string}
-     */
-    enum HEADER_COMMAND { H1, H2, H3, H4 } 
-}
-
 declare module goog.editor.plugins {
 
     /**
@@ -57,7 +48,7 @@ declare module goog.editor.plugins {
      * @extends {goog.editor.Plugin}
      * @final
      */
-    class HeaderFormatter extends goog.editor.GoogPlugin {
+    class HeaderFormatter extends goog.editor.Plugin {
         /**
          * Applies header styles to text.
          * @constructor
@@ -66,5 +57,14 @@ declare module goog.editor.plugins {
          */
         constructor();
     }
+}
+
+declare module goog.editor.plugins.HeaderFormatter {
+
+    /**
+     * Commands that can be passed as the optional argument to execCommand.
+     * @enum {string}
+     */
+    enum HEADER_COMMAND { H1, H2, H3, H4 } 
 }
 

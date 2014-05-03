@@ -1,8 +1,48 @@
-// Generated Fri May  2 14:56:11 PDT 2014
+// Generated Sat May  3 12:11:56 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 
 declare module goog.json {
+
+    /**
+     * Class that is used to serialize JSON objects to a string.
+     * @param {?goog.json.Replacer=} opt_replacer Replacer.
+     * @constructor
+     */
+    class Serializer {
+        /**
+         * Class that is used to serialize JSON objects to a string.
+         * @param {?goog.json.Replacer=} opt_replacer Replacer.
+         * @constructor
+         */
+        constructor(opt_replacer?: goog.json.Replacer);
+    
+        /**
+         * Serializes an object or a value to a JSON string.
+         *
+         * @param {*} object The object to serialize.
+         * @throws Error if there are loops in the object graph.
+         * @return {string} A JSON string representation of the input.
+         */
+        serialize(object: any): string;
+    
+        /**
+         * Serializes a generic value to a JSON string
+         * @protected
+         * @param {*} object The object to serialize.
+         * @param {Array} sb Array used as a string builder.
+         * @throws Error if there are loops in the object graph.
+         */
+        serializeInternal(object: any, sb: any[]): void;
+    
+        /**
+         * Serializes an array to a JSON string
+         * @param {Array} arr The array to serialize.
+         * @param {Array} sb Array used as a string builder.
+         * @protected
+         */
+        serializeArray(arr: any[], sb: any[]): void;
+    }
 
     /**
      * Parses a JSON string and returns the result. This throws an exception if
@@ -60,45 +100,5 @@ declare module goog.json {
      * @return {string} A JSON string representation of the input.
      */
     function serialize(object: any, opt_replacer?: goog.json.Replacer): string;
-
-    /**
-     * Class that is used to serialize JSON objects to a string.
-     * @param {?goog.json.Replacer=} opt_replacer Replacer.
-     * @constructor
-     */
-    class Serializer {
-        /**
-         * Class that is used to serialize JSON objects to a string.
-         * @param {?goog.json.Replacer=} opt_replacer Replacer.
-         * @constructor
-         */
-        constructor(opt_replacer?: goog.json.Replacer);
-    
-        /**
-         * Serializes an object or a value to a JSON string.
-         *
-         * @param {*} object The object to serialize.
-         * @throws Error if there are loops in the object graph.
-         * @return {string} A JSON string representation of the input.
-         */
-        serialize(object: any): string;
-    
-        /**
-         * Serializes a generic value to a JSON string
-         * @protected
-         * @param {*} object The object to serialize.
-         * @param {Array} sb Array used as a string builder.
-         * @throws Error if there are loops in the object graph.
-         */
-        serializeInternal(object: any, sb: any[]): void;
-    
-        /**
-         * Serializes an array to a JSON string
-         * @param {Array} arr The array to serialize.
-         * @param {Array} sb Array used as a string builder.
-         * @protected
-         */
-        serializeArray(arr: any[], sb: any[]): void;
-    }
 }
 

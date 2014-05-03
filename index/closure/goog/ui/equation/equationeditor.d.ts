@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:00:33 PDT 2014
+// Generated Sat May  3 12:16:22 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/dom/nodetype.d.ts" />
@@ -74,15 +74,6 @@
 /// <reference path="../../../goog/ui/container.d.ts" />
 /// <reference path="../../../goog/ui/tabbar.d.ts" />
 
-declare module goog.ui.equation.EquationEditor {
-
-    /**
-     * Constants for event names.
-     * @enum {string}
-     */
-    enum EventType { CHANGE } 
-}
-
 declare module goog.ui.equation {
 
     /**
@@ -95,7 +86,7 @@ declare module goog.ui.equation {
      * @extends {goog.ui.Component}
      * @final
      */
-    class EquationEditor extends goog.ui.GoogComponent {
+    class EquationEditor extends goog.ui.Component {
         /**
          * User interface for equation editor plugin.
          * @constructor
@@ -138,5 +129,14 @@ declare module goog.ui.equation {
          */
         setEquation(equation: string): void;
     }
+}
+
+declare module goog.ui.equation.EquationEditor {
+
+    /**
+     * Constants for event names.
+     * @enum {string}
+     */
+    enum EventType { CHANGE } 
 }
 

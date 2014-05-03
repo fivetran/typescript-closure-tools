@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:04:04 PDT 2014
+// Generated Sat May  3 12:19:55 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/testing/objectpropertystring.d.ts" />
@@ -35,7 +35,7 @@ declare module goog.testing {
 
     /**
      * Class used to mock a function. Useful for mocking closures and anonymous
-     * callbacks etc. Creates a function object that extends goog.testing.GoogMock.
+     * callbacks etc. Creates a function object that extends goog.testing.Mock.
      * @param {string=} opt_functionName The optional name of the function to mock.
      *     Set to '[anonymous mocked function]' if not passed in.
      * @param {number=} opt_strictness One of goog.testing.Mock.LOOSE or

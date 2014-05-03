@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:59:20 PDT 2014
+// Generated Sat May  3 12:15:09 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -68,81 +68,6 @@
 /// <reference path="../../goog/structs/map.d.ts" />
 /// <reference path="../../goog/structs/set.d.ts" />
 
-declare module goog.ui.Tooltip {
-
-    /**
-     * Possible states for the tooltip to be in.
-     * @enum {number}
-     */
-    enum State { INACTIVE, WAITING_TO_SHOW, SHOWING, WAITING_TO_HIDE, UPDATING } 
-
-    /**
-     * Popup activation types. Used to select a positioning strategy.
-     * @enum {number}
-     */
-    enum Activation { CURSOR, FOCUS } 
-
-    /**
-     * Popup position implementation that positions the popup (the tooltip in this
-     * case) based on the cursor position. It's positioned below the cursor to the
-     * right if there's enough room to fit all of it inside the Viewport. Otherwise
-     * it's displayed as far right as possible either above or below the element.
-     *
-     * Used to position tooltips triggered by the cursor.
-     *
-     * @param {number|!goog.math.Coordinate} arg1 Left position or coordinate.
-     * @param {number=} opt_arg2 Top position.
-     * @constructor
-     * @extends {goog.positioning.ViewportPosition}
-     * @final
-     */
-    class CursorTooltipPosition extends goog.positioning.ViewportPosition {
-        /**
-         * Popup position implementation that positions the popup (the tooltip in this
-         * case) based on the cursor position. It's positioned below the cursor to the
-         * right if there's enough room to fit all of it inside the Viewport. Otherwise
-         * it's displayed as far right as possible either above or below the element.
-         *
-         * Used to position tooltips triggered by the cursor.
-         *
-         * @param {number|!goog.math.Coordinate} arg1 Left position or coordinate.
-         * @param {number=} opt_arg2 Top position.
-         * @constructor
-         * @extends {goog.positioning.ViewportPosition}
-         * @final
-         */
-        constructor(arg1: any /*number|goog.math.Coordinate*/, opt_arg2?: number);
-    }
-
-    /**
-     * Popup position implementation that positions the popup (the tooltip in this
-     * case) based on the element position. It's positioned below the element to the
-     * right if there's enough room to fit all of it inside the Viewport. Otherwise
-     * it's displayed as far right as possible either above or below the element.
-     *
-     * Used to position tooltips triggered by focus changes.
-     *
-     * @param {Element} element The element to anchor the popup at.
-     * @constructor
-     * @extends {goog.positioning.AnchoredPosition}
-     */
-    class ElementTooltipPosition extends goog.positioning.AnchoredPosition {
-        /**
-         * Popup position implementation that positions the popup (the tooltip in this
-         * case) based on the element position. It's positioned below the element to the
-         * right if there's enough room to fit all of it inside the Viewport. Otherwise
-         * it's displayed as far right as possible either above or below the element.
-         *
-         * Used to position tooltips triggered by focus changes.
-         *
-         * @param {Element} element The element to anchor the popup at.
-         * @constructor
-         * @extends {goog.positioning.AnchoredPosition}
-         */
-        constructor(element: Element);
-    }
-}
-
 declare module goog.ui {
 
     /**
@@ -157,7 +82,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.Popup}
      */
-    class GoogTooltip extends goog.ui.Popup {
+    class Tooltip extends goog.ui.Popup {
         /**
          * Tooltip widget. Can be attached to one or more elements and is shown, with a
          * slight delay, when the the cursor is over the element or the element gains
@@ -464,7 +389,80 @@ declare module goog.ui {
          */
         clearHideTimer(): void;
     }
+}
 
-    class Tooltip extends GoogTooltip { }
+declare module goog.ui.Tooltip {
+
+    /**
+     * Popup position implementation that positions the popup (the tooltip in this
+     * case) based on the cursor position. It's positioned below the cursor to the
+     * right if there's enough room to fit all of it inside the Viewport. Otherwise
+     * it's displayed as far right as possible either above or below the element.
+     *
+     * Used to position tooltips triggered by the cursor.
+     *
+     * @param {number|!goog.math.Coordinate} arg1 Left position or coordinate.
+     * @param {number=} opt_arg2 Top position.
+     * @constructor
+     * @extends {goog.positioning.ViewportPosition}
+     * @final
+     */
+    class CursorTooltipPosition extends goog.positioning.ViewportPosition {
+        /**
+         * Popup position implementation that positions the popup (the tooltip in this
+         * case) based on the cursor position. It's positioned below the cursor to the
+         * right if there's enough room to fit all of it inside the Viewport. Otherwise
+         * it's displayed as far right as possible either above or below the element.
+         *
+         * Used to position tooltips triggered by the cursor.
+         *
+         * @param {number|!goog.math.Coordinate} arg1 Left position or coordinate.
+         * @param {number=} opt_arg2 Top position.
+         * @constructor
+         * @extends {goog.positioning.ViewportPosition}
+         * @final
+         */
+        constructor(arg1: any /*number|goog.math.Coordinate*/, opt_arg2?: number);
+    }
+
+    /**
+     * Popup position implementation that positions the popup (the tooltip in this
+     * case) based on the element position. It's positioned below the element to the
+     * right if there's enough room to fit all of it inside the Viewport. Otherwise
+     * it's displayed as far right as possible either above or below the element.
+     *
+     * Used to position tooltips triggered by focus changes.
+     *
+     * @param {Element} element The element to anchor the popup at.
+     * @constructor
+     * @extends {goog.positioning.AnchoredPosition}
+     */
+    class ElementTooltipPosition extends goog.positioning.AnchoredPosition {
+        /**
+         * Popup position implementation that positions the popup (the tooltip in this
+         * case) based on the element position. It's positioned below the element to the
+         * right if there's enough room to fit all of it inside the Viewport. Otherwise
+         * it's displayed as far right as possible either above or below the element.
+         *
+         * Used to position tooltips triggered by focus changes.
+         *
+         * @param {Element} element The element to anchor the popup at.
+         * @constructor
+         * @extends {goog.positioning.AnchoredPosition}
+         */
+        constructor(element: Element);
+    }
+
+    /**
+     * Possible states for the tooltip to be in.
+     * @enum {number}
+     */
+    enum State { INACTIVE, WAITING_TO_SHOW, SHOWING, WAITING_TO_HIDE, UPDATING } 
+
+    /**
+     * Popup activation types. Used to select a positioning strategy.
+     * @enum {number}
+     */
+    enum Activation { CURSOR, FOCUS } 
 }
 

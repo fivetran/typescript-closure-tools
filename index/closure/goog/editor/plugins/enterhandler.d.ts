@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:57:30 PDT 2014
+// Generated Sat May  3 12:13:17 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/dom/nodetype.d.ts" />
@@ -81,25 +81,6 @@
 /// <reference path="../../../goog/dom/classlist.d.ts" />
 /// <reference path="../../../goog/editor/plugins/blockquote.d.ts" />
 
-declare module goog.editor.plugins.EnterHandler {
-
-    /**
-     * Determines whether the lowest containing block node is a blockquote.
-     * @param {Node} n The node.
-     * @return {boolean} Whether the deepest block ancestor of n is a blockquote.
-     */
-    function isDirectlyInBlockquote(n: Node): boolean;
-
-    /**
-     * Whether this is a node that contains a single BR tag and non-nbsp
-     * whitespace.
-     * @param {Node} node Node to check.
-     * @return {boolean} Whether this is an element that only contains a BR.
-     * @protected
-     */
-    function isBrElem(node: Node): boolean;
-}
-
 declare module goog.editor.plugins {
 
     /**
@@ -113,7 +94,7 @@ declare module goog.editor.plugins {
      * @constructor
      * @extends {goog.editor.Plugin}
      */
-    class GoogEnterHandler extends goog.editor.GoogPlugin {
+    class EnterHandler extends goog.editor.Plugin {
         /**
          * Plugin to handle enter keys. This does all the crazy to normalize (as much as
          * is reasonable) what happens when you hit enter. This also handles the
@@ -229,7 +210,24 @@ declare module goog.editor.plugins {
          */
         ensureBlockIeOpera(tag: goog.dom.TagName, opt_keyUp?: boolean): void;
     }
+}
 
-    class EnterHandler extends GoogEnterHandler { }
+declare module goog.editor.plugins.EnterHandler {
+
+    /**
+     * Determines whether the lowest containing block node is a blockquote.
+     * @param {Node} n The node.
+     * @return {boolean} Whether the deepest block ancestor of n is a blockquote.
+     */
+    function isDirectlyInBlockquote(n: Node): boolean;
+
+    /**
+     * Whether this is a node that contains a single BR tag and non-nbsp
+     * whitespace.
+     * @param {Node} node Node to check.
+     * @return {boolean} Whether this is an element that only contains a BR.
+     * @protected
+     */
+    function isBrElem(node: Node): boolean;
 }
 

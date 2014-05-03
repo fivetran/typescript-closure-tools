@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:00:16 PDT 2014
+// Generated Sat May  3 12:16:05 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/dom/nodetype.d.ts" />
@@ -66,59 +66,6 @@
 /// <reference path="../../../goog/log/log.d.ts" />
 /// <reference path="../../../goog/ui/media/flashobject.d.ts" />
 /// <reference path="../../../goog/ui/media/mediamodel.d.ts" />
-
-declare module goog.ui.media.PicasaAlbum {
-
-    /**
-     * Default CSS class to be applied to the root element of components rendered
-     * by this renderer.
-     *
-     * @type {string}
-     */
-    var CSS_CLASS: string;
-
-    /**
-     * A static convenient method to construct a goog.ui.media.Media control out of
-     * a picasa data model. It sets it as the data model goog.ui.media.PicasaAlbum
-     * renderer uses, sets the states supported by the renderer, and returns a
-     * Control that binds everything together. This is what you should be using for
-     * constructing Picasa albums, except if you need finer control over the
-     * configuration.
-     *
-     * @param {goog.ui.media.PicasaAlbumModel} dataModel A picasa album data model.
-     * @param {goog.dom.DomHelper=} opt_domHelper Optional DOM helper, used for
-     *     document interaction.
-     * @return {goog.ui.media.Media} A Control instance binded to the Picasa
-     *     renderer.
-     */
-    function newControl(dataModel: goog.ui.media.PicasaAlbumModel, opt_domHelper?: goog.dom.DomHelper): goog.ui.media.Media;
-}
-
-declare module goog.ui.media.PicasaAlbumModel {
-
-    /**
-     * Gets a {@code picasaUrl} and extracts the user and album id.
-     *
-     * @param {string} picasaUrl A picasa album URL.
-     * @param {string=} opt_caption An optional caption of the picasa album.
-     * @param {string=} opt_description An optional description of the picasa album.
-     * @param {boolean=} opt_autoplay Whether to autoplay the slideshow.
-     * @return {goog.ui.media.PicasaAlbumModel} The picasa album data model that
-     *     represents the picasa URL.
-     * @throws exception in case the parsing fails
-     */
-    function newInstance(picasaUrl: string, opt_caption?: string, opt_description?: string, opt_autoplay?: boolean): goog.ui.media.PicasaAlbumModel;
-
-    /**
-     * The opposite of {@code newInstance}: takes an {@code userId} and an
-     * {@code albumId} and builds a URL.
-     *
-     * @param {string} userId The user that owns the album.
-     * @param {string} albumId The album id.
-     * @return {string} The URL of the album.
-     */
-    function buildUrl(userId: string, albumId: string): string;
-}
 
 declare module goog.ui.media {
 
@@ -194,7 +141,7 @@ declare module goog.ui.media {
      * @extends {goog.ui.media.MediaModel}
      * @final
      */
-    class PicasaAlbumModel extends goog.ui.media.GoogMediaModel {
+    class PicasaAlbumModel extends goog.ui.media.MediaModel {
         /**
          * The {@code goog.ui.media.PicasaAlbum} media data model. It stores a required
          * {@code userId} and {@code albumId} fields, sets the picasa album URL, and
@@ -231,5 +178,58 @@ declare module goog.ui.media {
          */
         getAuthKey(): string;
     }
+}
+
+declare module goog.ui.media.PicasaAlbum {
+
+    /**
+     * Default CSS class to be applied to the root element of components rendered
+     * by this renderer.
+     *
+     * @type {string}
+     */
+    var CSS_CLASS: string;
+
+    /**
+     * A static convenient method to construct a goog.ui.media.Media control out of
+     * a picasa data model. It sets it as the data model goog.ui.media.PicasaAlbum
+     * renderer uses, sets the states supported by the renderer, and returns a
+     * Control that binds everything together. This is what you should be using for
+     * constructing Picasa albums, except if you need finer control over the
+     * configuration.
+     *
+     * @param {goog.ui.media.PicasaAlbumModel} dataModel A picasa album data model.
+     * @param {goog.dom.DomHelper=} opt_domHelper Optional DOM helper, used for
+     *     document interaction.
+     * @return {goog.ui.media.Media} A Control instance binded to the Picasa
+     *     renderer.
+     */
+    function newControl(dataModel: goog.ui.media.PicasaAlbumModel, opt_domHelper?: goog.dom.DomHelper): goog.ui.media.Media;
+}
+
+declare module goog.ui.media.PicasaAlbumModel {
+
+    /**
+     * Gets a {@code picasaUrl} and extracts the user and album id.
+     *
+     * @param {string} picasaUrl A picasa album URL.
+     * @param {string=} opt_caption An optional caption of the picasa album.
+     * @param {string=} opt_description An optional description of the picasa album.
+     * @param {boolean=} opt_autoplay Whether to autoplay the slideshow.
+     * @return {goog.ui.media.PicasaAlbumModel} The picasa album data model that
+     *     represents the picasa URL.
+     * @throws exception in case the parsing fails
+     */
+    function newInstance(picasaUrl: string, opt_caption?: string, opt_description?: string, opt_autoplay?: boolean): goog.ui.media.PicasaAlbumModel;
+
+    /**
+     * The opposite of {@code newInstance}: takes an {@code userId} and an
+     * {@code albumId} and builds a URL.
+     *
+     * @param {string} userId The user that owns the album.
+     * @param {string} albumId The album id.
+     * @return {string} The URL of the album.
+     */
+    function buildUrl(userId: string, albumId: string): string;
 }
 

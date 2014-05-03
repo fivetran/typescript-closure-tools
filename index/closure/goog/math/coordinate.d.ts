@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:04:27 PDT 2014
+// Generated Sat May  3 12:20:18 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -8,73 +8,6 @@
 /// <reference path="../../goog/array/array.d.ts" />
 /// <reference path="../../goog/math/math.d.ts" />
 
-declare module goog.math.Coordinate {
-
-    /**
-     * Compares coordinates for equality.
-     * @param {goog.math.Coordinate} a A Coordinate.
-     * @param {goog.math.Coordinate} b A Coordinate.
-     * @return {boolean} True iff the coordinates are equal, or if both are null.
-     */
-    function equals(a: goog.math.Coordinate, b: goog.math.Coordinate): boolean;
-
-    /**
-     * Returns the distance between two coordinates.
-     * @param {!goog.math.Coordinate} a A Coordinate.
-     * @param {!goog.math.Coordinate} b A Coordinate.
-     * @return {number} The distance between {@code a} and {@code b}.
-     */
-    function distance(a: goog.math.Coordinate, b: goog.math.Coordinate): number;
-
-    /**
-     * Returns the magnitude of a coordinate.
-     * @param {!goog.math.Coordinate} a A Coordinate.
-     * @return {number} The distance between the origin and {@code a}.
-     */
-    function magnitude(a: goog.math.Coordinate): number;
-
-    /**
-     * Returns the angle from the origin to a coordinate.
-     * @param {!goog.math.Coordinate} a A Coordinate.
-     * @return {number} The angle, in degrees, clockwise from the positive X
-     *     axis to {@code a}.
-     */
-    function azimuth(a: goog.math.Coordinate): number;
-
-    /**
-     * Returns the squared distance between two coordinates. Squared distances can
-     * be used for comparisons when the actual value is not required.
-     *
-     * Performance note: eliminating the square root is an optimization often used
-     * in lower-level languages, but the speed difference is not nearly as
-     * pronounced in JavaScript (only a few percent.)
-     *
-     * @param {!goog.math.Coordinate} a A Coordinate.
-     * @param {!goog.math.Coordinate} b A Coordinate.
-     * @return {number} The squared distance between {@code a} and {@code b}.
-     */
-    function squaredDistance(a: goog.math.Coordinate, b: goog.math.Coordinate): number;
-
-    /**
-     * Returns the difference between two coordinates as a new
-     * goog.math.Coordinate.
-     * @param {!goog.math.Coordinate} a A Coordinate.
-     * @param {!goog.math.Coordinate} b A Coordinate.
-     * @return {!goog.math.Coordinate} A Coordinate representing the difference
-     *     between {@code a} and {@code b}.
-     */
-    function difference(a: goog.math.Coordinate, b: goog.math.Coordinate): goog.math.Coordinate;
-
-    /**
-     * Returns the sum of two coordinates as a new goog.math.Coordinate.
-     * @param {!goog.math.Coordinate} a A Coordinate.
-     * @param {!goog.math.Coordinate} b A Coordinate.
-     * @return {!goog.math.Coordinate} A Coordinate representing the sum of the two
-     *     coordinates.
-     */
-    function sum(a: goog.math.Coordinate, b: goog.math.Coordinate): goog.math.Coordinate;
-}
-
 declare module goog.math {
 
     /**
@@ -83,7 +16,7 @@ declare module goog.math {
      * @param {number=} opt_y Top, defaults to 0.
      * @constructor
      */
-    class GoogCoordinate {
+    class Coordinate {
         /**
          * Class for representing coordinates and positions.
          * @param {number=} opt_x Left, defaults to 0.
@@ -158,7 +91,72 @@ declare module goog.math {
          */
         rotateDegrees(degrees: number, opt_center?: goog.math.Coordinate): void;
     }
+}
 
-    class Coordinate extends GoogCoordinate { }
+declare module goog.math.Coordinate {
+
+    /**
+     * Compares coordinates for equality.
+     * @param {goog.math.Coordinate} a A Coordinate.
+     * @param {goog.math.Coordinate} b A Coordinate.
+     * @return {boolean} True iff the coordinates are equal, or if both are null.
+     */
+    function equals(a: goog.math.Coordinate, b: goog.math.Coordinate): boolean;
+
+    /**
+     * Returns the distance between two coordinates.
+     * @param {!goog.math.Coordinate} a A Coordinate.
+     * @param {!goog.math.Coordinate} b A Coordinate.
+     * @return {number} The distance between {@code a} and {@code b}.
+     */
+    function distance(a: goog.math.Coordinate, b: goog.math.Coordinate): number;
+
+    /**
+     * Returns the magnitude of a coordinate.
+     * @param {!goog.math.Coordinate} a A Coordinate.
+     * @return {number} The distance between the origin and {@code a}.
+     */
+    function magnitude(a: goog.math.Coordinate): number;
+
+    /**
+     * Returns the angle from the origin to a coordinate.
+     * @param {!goog.math.Coordinate} a A Coordinate.
+     * @return {number} The angle, in degrees, clockwise from the positive X
+     *     axis to {@code a}.
+     */
+    function azimuth(a: goog.math.Coordinate): number;
+
+    /**
+     * Returns the squared distance between two coordinates. Squared distances can
+     * be used for comparisons when the actual value is not required.
+     *
+     * Performance note: eliminating the square root is an optimization often used
+     * in lower-level languages, but the speed difference is not nearly as
+     * pronounced in JavaScript (only a few percent.)
+     *
+     * @param {!goog.math.Coordinate} a A Coordinate.
+     * @param {!goog.math.Coordinate} b A Coordinate.
+     * @return {number} The squared distance between {@code a} and {@code b}.
+     */
+    function squaredDistance(a: goog.math.Coordinate, b: goog.math.Coordinate): number;
+
+    /**
+     * Returns the difference between two coordinates as a new
+     * goog.math.Coordinate.
+     * @param {!goog.math.Coordinate} a A Coordinate.
+     * @param {!goog.math.Coordinate} b A Coordinate.
+     * @return {!goog.math.Coordinate} A Coordinate representing the difference
+     *     between {@code a} and {@code b}.
+     */
+    function difference(a: goog.math.Coordinate, b: goog.math.Coordinate): goog.math.Coordinate;
+
+    /**
+     * Returns the sum of two coordinates as a new goog.math.Coordinate.
+     * @param {!goog.math.Coordinate} a A Coordinate.
+     * @param {!goog.math.Coordinate} b A Coordinate.
+     * @return {!goog.math.Coordinate} A Coordinate representing the sum of the two
+     *     coordinates.
+     */
+    function sum(a: goog.math.Coordinate, b: goog.math.Coordinate): goog.math.Coordinate;
 }
 

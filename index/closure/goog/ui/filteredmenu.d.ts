@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:00:44 PDT 2014
+// Generated Sat May  3 12:16:34 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -68,15 +68,6 @@
 /// <reference path="../../goog/timer/timer.d.ts" />
 /// <reference path="../../goog/events/inputhandler.d.ts" />
 
-declare module goog.ui.FilteredMenu {
-
-    /**
-     * Events fired by component.
-     * @enum {string}
-     */
-    enum EventType { FILTER_CHANGED } 
-}
-
 declare module goog.ui {
 
     /**
@@ -87,7 +78,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.Menu}
      */
-    class FilteredMenu extends goog.ui.GoogMenu {
+    class FilteredMenu extends goog.ui.Menu {
         /**
          * Filtered menu class.
          * @param {goog.ui.MenuRenderer=} opt_renderer Renderer used to render filtered
@@ -180,5 +171,14 @@ declare module goog.ui {
          */
         getFilterInputElement(): Element;
     }
+}
+
+declare module goog.ui.FilteredMenu {
+
+    /**
+     * Events fired by component.
+     * @enum {string}
+     */
+    enum EventType { FILTER_CHANGED } 
 }
 

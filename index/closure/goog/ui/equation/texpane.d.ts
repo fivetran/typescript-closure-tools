@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:00:34 PDT 2014
+// Generated Sat May  3 12:16:23 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/dom/nodetype.d.ts" />
@@ -67,6 +67,31 @@
 /// <reference path="../../../goog/ui/equation/changeevent.d.ts" />
 /// <reference path="../../../goog/ui/equation/editorpane.d.ts" />
 
+declare module goog.ui.equation {
+
+    /**
+     * User interface for TeX equation editor tab pane.
+     * @param {Object} context The context this Tex editor pane runs in.
+     * @param {string} helpUrl The help link URL.
+     * @param {goog.dom.DomHelper=} opt_domHelper Optional DOM helper.
+     * @constructor
+     * @extends {goog.ui.equation.EditorPane}
+     * @final
+     */
+    class TexPane extends goog.ui.equation.EditorPane {
+        /**
+         * User interface for TeX equation editor tab pane.
+         * @param {Object} context The context this Tex editor pane runs in.
+         * @param {string} helpUrl The help link URL.
+         * @param {goog.dom.DomHelper=} opt_domHelper Optional DOM helper.
+         * @constructor
+         * @extends {goog.ui.equation.EditorPane}
+         * @final
+         */
+        constructor(context: Object, helpUrl: string, opt_domHelper?: goog.dom.DomHelper);
+    }
+}
+
 declare module goog.ui.equation.TexPane {
 
     /**
@@ -104,30 +129,5 @@ declare module goog.ui.equation.TexPane {
      * @type {string}
      */
     var WARNING_CLASS: string;
-}
-
-declare module goog.ui.equation {
-
-    /**
-     * User interface for TeX equation editor tab pane.
-     * @param {Object} context The context this Tex editor pane runs in.
-     * @param {string} helpUrl The help link URL.
-     * @param {goog.dom.DomHelper=} opt_domHelper Optional DOM helper.
-     * @constructor
-     * @extends {goog.ui.equation.EditorPane}
-     * @final
-     */
-    class TexPane extends goog.ui.equation.EditorPane {
-        /**
-         * User interface for TeX equation editor tab pane.
-         * @param {Object} context The context this Tex editor pane runs in.
-         * @param {string} helpUrl The help link URL.
-         * @param {goog.dom.DomHelper=} opt_domHelper Optional DOM helper.
-         * @constructor
-         * @extends {goog.ui.equation.EditorPane}
-         * @final
-         */
-        constructor(context: Object, helpUrl: string, opt_domHelper?: goog.dom.DomHelper);
-    }
 }
 

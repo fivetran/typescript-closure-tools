@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:00:54 PDT 2014
+// Generated Sat May  3 12:16:43 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/disposable/idisposable.d.ts" />
@@ -44,23 +44,6 @@
 /// <reference path="../../../goog/events/keycodes.d.ts" />
 /// <reference path="../../../goog/events/keyhandler.d.ts" />
 
-declare module goog.ui.ac.InputHandler {
-
-    /**
-     * Standard list separators.
-     * @type {string}
-     * @const
-     */
-    var STANDARD_LIST_SEPARATORS: string;
-
-    /**
-     * Literals for quotes.
-     * @type {string}
-     * @const
-     */
-    var QUOTE_LITERALS: string;
-}
-
 declare module goog.ui.ac {
 
     /**
@@ -78,7 +61,7 @@ declare module goog.ui.ac {
      * @constructor
      * @extends {goog.Disposable}
      */
-    class GoogInputHandler extends goog.GoogDisposable {
+    class InputHandler extends goog.Disposable {
         /**
          * Class for managing the interaction between an auto-complete object and a
          * text-input or textarea.
@@ -344,7 +327,22 @@ declare module goog.ui.ac {
          */
         parseToken(): string;
     }
+}
 
-    class InputHandler extends GoogInputHandler { }
+declare module goog.ui.ac.InputHandler {
+
+    /**
+     * Standard list separators.
+     * @type {string}
+     * @const
+     */
+    var STANDARD_LIST_SEPARATORS: string;
+
+    /**
+     * Literals for quotes.
+     * @type {string}
+     * @const
+     */
+    var QUOTE_LITERALS: string;
 }
 

@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:02:21 PDT 2014
+// Generated Sat May  3 12:18:11 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/disposable/idisposable.d.ts" />
@@ -43,7 +43,7 @@ declare module goog.async {
      * @extends {goog.Disposable}
      * @final
      */
-    class Delay extends goog.GoogDisposable {
+    class Delay extends goog.Disposable {
         /**
          * A Delay object invokes the associated function after a specified delay. The
          * interval duration can be specified once in the constructor, or can be defined

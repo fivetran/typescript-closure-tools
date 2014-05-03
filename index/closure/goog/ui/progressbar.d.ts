@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:00:38 PDT 2014
+// Generated Sat May  3 12:16:28 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -47,16 +47,6 @@
 /// <reference path="../../goog/dom/classlist.d.ts" />
 /// <reference path="../../goog/ui/rangemodel.d.ts" />
 
-declare module goog.ui.ProgressBar {
-
-    /**
-     * Enum for representing the orientation of the progress bar.
-     *
-     * @enum {string}
-     */
-    enum Orientation { VERTICAL, HORIZONTAL } 
-}
-
 declare module goog.ui {
 
     /**
@@ -65,7 +55,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.Component}
      */
-    class ProgressBar extends goog.ui.GoogComponent {
+    class ProgressBar extends goog.ui.Component {
         /**
          * This creates a progress bar object.
          * @param {goog.dom.DomHelper=} opt_domHelper Optional DOM helper.
@@ -131,5 +121,15 @@ declare module goog.ui {
          */
         setStep(step: number): void;
     }
+}
+
+declare module goog.ui.ProgressBar {
+
+    /**
+     * Enum for representing the orientation of the progress bar.
+     *
+     * @enum {string}
+     */
+    enum Orientation { VERTICAL, HORIZONTAL } 
 }
 

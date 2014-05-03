@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:01:35 PDT 2014
+// Generated Sat May  3 12:17:25 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/string/string.d.ts" />
@@ -25,15 +25,6 @@
 /// <reference path="../../goog/events/browserevent.d.ts" />
 /// <reference path="../../goog/events/events.d.ts" />
 /// <reference path="../../goog/events/eventtarget.d.ts" />
-
-declare module goog.events.FocusHandler {
-
-    /**
-     * Enum type for the events fired by the focus handler
-     * @enum {string}
-     */
-    enum EventType { FOCUSIN, FOCUSOUT } 
-}
 
 declare module goog.events {
 
@@ -62,5 +53,14 @@ declare module goog.events {
          */
         handleEvent(e: goog.events.BrowserEvent): void;
     }
+}
+
+declare module goog.events.FocusHandler {
+
+    /**
+     * Enum type for the events fired by the focus handler
+     * @enum {string}
+     */
+    enum EventType { FOCUSIN, FOCUSOUT } 
 }
 

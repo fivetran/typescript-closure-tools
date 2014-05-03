@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:03:34 PDT 2014
+// Generated Sat May  3 12:19:25 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/object/object.d.ts" />
@@ -76,7 +76,7 @@ declare module goog.labs.html.scrubber {
      *    tokens removed.
      * @private
      */
-    function filter_(tagWhitelist: { [key: string]: boolean }): void;
+    function filter_(tagWhitelist: { [key: string]: boolean }, attrWhitelist: any /* jsdoc error */, htmlTokens: any /* jsdoc error */): void;
 
     /** @const @private */
     var ALL_SCOPES_: any /*missing*/;

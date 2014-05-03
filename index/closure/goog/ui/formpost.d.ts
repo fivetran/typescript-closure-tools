@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:01:12 PDT 2014
+// Generated Sat May  3 12:17:02 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -58,7 +58,7 @@ declare module goog.ui {
      * @param {goog.dom.DomHelper=} opt_dom The DOM helper.
      * @final
      */
-    class FormPost extends goog.ui.GoogComponent {
+    class FormPost extends goog.ui.Component {
         /**
          * Creates a formpost object.
          * @constructor

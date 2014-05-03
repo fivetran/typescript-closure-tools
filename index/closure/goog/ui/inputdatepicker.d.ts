@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:00:45 PDT 2014
+// Generated Sat May  3 12:16:35 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -88,7 +88,7 @@ declare module goog.ui {
      * @extends {goog.ui.Component}
      * @constructor
      */
-    class InputDatePicker extends goog.ui.GoogComponent {
+    class InputDatePicker extends goog.ui.Component {
         /**
          * Input date picker widget.
          *

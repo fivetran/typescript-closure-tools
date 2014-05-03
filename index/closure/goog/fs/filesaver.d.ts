@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:02:36 PDT 2014
+// Generated Sat May  3 12:18:26 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/events/eventid.d.ts" />
@@ -28,31 +28,6 @@
 /// <reference path="../../goog/events/events.d.ts" />
 /// <reference path="../../goog/events/eventtarget.d.ts" />
 
-declare module goog.fs.FileSaver {
-
-    /**
-     * Possible states for a FileSaver.
-     *
-     * @enum {number}
-     */
-    enum ReadyState { INIT, WRITING, DONE } 
-
-    /**
-     * Events emitted by a FileSaver.
-     *
-     * @enum {string}
-     */
-    enum EventType { WRITE_START, PROGRESS, WRITE, ABORT, ERROR, WRITE_END } 
-
-    /**
-     * A wrapper for the progress events emitted by the FileSaver.
-     *
-     * @deprecated Use {goog.fs.ProgressEvent}.
-     * @final
-     */
-    var ProgressEvent: any /*missing*/;
-}
-
 declare module goog.fs {
 
     /**
@@ -67,7 +42,7 @@ declare module goog.fs {
      * @constructor
      * @extends {goog.events.EventTarget}
      */
-    class GoogFileSaver extends goog.events.EventTarget {
+    class FileSaver extends goog.events.EventTarget {
         /**
          * An object for monitoring the saving of files. This emits ProgressEvents of
          * the types listed in {@link goog.fs.FileSaver.EventType}.
@@ -97,7 +72,30 @@ declare module goog.fs {
          */
         getError(): goog.fs.Error;
     }
+}
 
-    class FileSaver extends GoogFileSaver { }
+declare module goog.fs.FileSaver {
+
+    /**
+     * Possible states for a FileSaver.
+     *
+     * @enum {number}
+     */
+    enum ReadyState { INIT, WRITING, DONE } 
+
+    /**
+     * Events emitted by a FileSaver.
+     *
+     * @enum {string}
+     */
+    enum EventType { WRITE_START, PROGRESS, WRITE, ABORT, ERROR, WRITE_END } 
+
+    /**
+     * A wrapper for the progress events emitted by the FileSaver.
+     *
+     * @deprecated Use {goog.fs.ProgressEvent}.
+     * @final
+     */
+    var ProgressEvent: any /*missing*/;
 }
 

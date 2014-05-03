@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:00:07 PDT 2014
+// Generated Sat May  3 12:15:56 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/string/string.d.ts" />
@@ -59,7 +59,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.ButtonRenderer}
      */
-    class NativeButtonRenderer extends goog.ui.GoogButtonRenderer {
+    class NativeButtonRenderer extends goog.ui.ButtonRenderer {
         /**
          * Renderer for {@link goog.ui.Button}s.  Renders and decorates native HTML
          * button elements.  Since native HTML buttons have built-in support for many

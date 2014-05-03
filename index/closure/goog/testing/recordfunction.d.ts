@@ -1,32 +1,10 @@
-// Generated Fri May  2 15:03:42 PDT 2014
+// Generated Sat May  3 12:19:33 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/testing/stacktrace.d.ts" />
 /// <reference path="../../goog/testing/asserts.d.ts" />
 
 declare module goog.testing {
-
-    /**
-     * Wraps the function into another one which calls the inner function and
-     * records its calls. The recorded function will have 3 static methods:
-     * {@code getCallCount}, {@code getCalls} and {@code getLastCall} but won't
-     * inherit the original function's prototype and static fields.
-     *
-     * @param {!Function=} opt_f The function to wrap and record. Defaults to
-     *     {@link goog.nullFunction}.
-     * @return {!Function} The wrapped function.
-     */
-    function recordFunction(opt_f?: Function): Function;
-
-    /**
-     * Same as {@link goog.testing.recordFunction} but the recorded function will
-     * have the same prototype and static fields as the original one. It can be
-     * used with constructors.
-     *
-     * @param {!Function} ctor The function to wrap and record.
-     * @return {!Function} The wrapped function.
-     */
-    function recordConstructor(ctor: Function): Function;
 
     /**
      * Struct for a single function call.
@@ -82,6 +60,28 @@ declare module goog.testing {
          */
         getError(): any;
     }
+
+    /**
+     * Wraps the function into another one which calls the inner function and
+     * records its calls. The recorded function will have 3 static methods:
+     * {@code getCallCount}, {@code getCalls} and {@code getLastCall} but won't
+     * inherit the original function's prototype and static fields.
+     *
+     * @param {!Function=} opt_f The function to wrap and record. Defaults to
+     *     {@link goog.nullFunction}.
+     * @return {!Function} The wrapped function.
+     */
+    function recordFunction(opt_f?: Function): Function;
+
+    /**
+     * Same as {@link goog.testing.recordFunction} but the recorded function will
+     * have the same prototype and static fields as the original one. It can be
+     * used with constructors.
+     *
+     * @param {!Function} ctor The function to wrap and record.
+     * @return {!Function} The wrapped function.
+     */
+    function recordConstructor(ctor: Function): Function;
 }
 
 declare module recordedFunction {

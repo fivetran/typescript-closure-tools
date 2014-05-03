@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:03:00 PDT 2014
+// Generated Sat May  3 12:18:51 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/string/string.d.ts" />
@@ -26,27 +26,6 @@
 /// <reference path="../../goog/debug/logbuffer.d.ts" />
 /// <reference path="../../goog/debug/logger.d.ts" />
 
-declare module goog.debug.DebugWindow {
-
-    /**
-     * Max number of messages to be saved
-     * @type {number}
-     */
-    var MAX_SAVED: number;
-
-    /**
-     * How long to keep the cookies for in milliseconds
-     * @type {number}
-     */
-    var COOKIE_TIME: number;
-
-    /**
-     * @param {string} identifier Identifier for logging class.
-     * @return {boolean} Whether the DebugWindow is enabled.
-     */
-    function isEnabled(identifier: string): boolean;
-}
-
 declare module goog.debug {
 
     /**
@@ -61,7 +40,7 @@ declare module goog.debug {
      * @param {string=} opt_identifier Identifier for this logging class.
      * @param {string=} opt_prefix Prefix prepended to messages.
      */
-    class GoogDebugWindow {
+    class DebugWindow {
         /**
          * Provides a debug DebugWindow that is bound to the goog.debug.Logger.
          * It handles log messages and writes them to the DebugWindow. This doesn't
@@ -223,7 +202,26 @@ declare module goog.debug {
          */
         resetBufferWithNewSize(size: number): void;
     }
+}
 
-    class DebugWindow extends GoogDebugWindow { }
+declare module goog.debug.DebugWindow {
+
+    /**
+     * Max number of messages to be saved
+     * @type {number}
+     */
+    var MAX_SAVED: number;
+
+    /**
+     * How long to keep the cookies for in milliseconds
+     * @type {number}
+     */
+    var COOKIE_TIME: number;
+
+    /**
+     * @param {string} identifier Identifier for logging class.
+     * @return {boolean} Whether the DebugWindow is enabled.
+     */
+    function isEnabled(identifier: string): boolean;
 }
 

@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:00:32 PDT 2014
+// Generated Sat May  3 12:16:21 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/math/size.d.ts" />
@@ -70,7 +70,7 @@ declare module goog.ui.equation {
      * @constructor
      * @final
      */
-    class MathPalette extends goog.ui.equation.GoogPalette {
+    class MathPalette extends goog.ui.equation.Palette {
         /**
          * Constructs a new math palette.
          * @param {goog.ui.equation.PaletteManager} paletteManager The

@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:01:10 PDT 2014
+// Generated Sat May  3 12:16:59 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -48,16 +48,6 @@
 /// <reference path="../../goog/ui/controlrenderer.d.ts" />
 /// <reference path="../../goog/i18n/bidi.d.ts" />
 
-declare module goog.ui.DimensionPickerRenderer {
-
-    /**
-     * Default CSS class to be applied to the root element of components rendered
-     * by this renderer.
-     * @type {string}
-     */
-    var CSS_CLASS: string;
-}
-
 declare module goog.ui {
 
     /**
@@ -68,7 +58,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.ControlRenderer}
      */
-    class DimensionPickerRenderer extends goog.ui.GoogControlRenderer {
+    class DimensionPickerRenderer extends goog.ui.ControlRenderer {
         /**
          * Default renderer for {@link goog.ui.DimensionPicker}s.  Renders the
          * palette as two divs, one with the un-highlighted background, and one with the
@@ -125,5 +115,15 @@ declare module goog.ui {
          */
         positionMouseCatcher(palette: goog.ui.DimensionPicker): void;
     }
+}
+
+declare module goog.ui.DimensionPickerRenderer {
+
+    /**
+     * Default CSS class to be applied to the root element of components rendered
+     * by this renderer.
+     * @type {string}
+     */
+    var CSS_CLASS: string;
 }
 

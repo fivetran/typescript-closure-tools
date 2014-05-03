@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:00:09 PDT 2014
+// Generated Sat May  3 12:15:58 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/dom/nodetype.d.ts" />
@@ -52,12 +52,6 @@
 /// <reference path="../../../goog/dom/nodeiterator.d.ts" />
 /// <reference path="../../../goog/ui/paletterenderer.d.ts" />
 
-declare module goog.ui.emoji.EmojiPaletteRenderer {
-
-    /** @override */
-    function getCssClass(): void;
-}
-
 declare module goog.ui.emoji {
 
     /**
@@ -69,7 +63,7 @@ declare module goog.ui.emoji {
      * @constructor
      * @extends {goog.ui.PaletteRenderer}
      */
-    class GoogEmojiPaletteRenderer extends goog.ui.GoogPaletteRenderer {
+    class EmojiPaletteRenderer extends goog.ui.PaletteRenderer {
         /**
          * Renders an emoji palette.
          *
@@ -113,7 +107,11 @@ declare module goog.ui.emoji {
          */
         buildElementFromSpriteMetadata(dom: goog.dom.DomHelper, spriteInfo: goog.ui.emoji.SpriteInfo, displayUrl: string): HTMLDivElement;
     }
+}
 
-    class EmojiPaletteRenderer extends GoogEmojiPaletteRenderer { }
+declare module goog.ui.emoji.EmojiPaletteRenderer {
+
+    /** @override */
+    function getCssClass(): void;
 }
 

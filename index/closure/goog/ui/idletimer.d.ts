@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:00:00 PDT 2014
+// Generated Sat May  3 12:15:49 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -41,15 +41,6 @@
 /// <reference path="../../goog/iter/iter.d.ts" />
 /// <reference path="../../goog/structs/map.d.ts" />
 /// <reference path="../../goog/structs/set.d.ts" />
-
-declare module goog.ui.IdleTimer {
-
-    /**
-     * Event constants for the idle timer event target
-     * @enum {string}
-     */
-    enum Event { BECOME_ACTIVE, BECOME_IDLE } 
-}
 
 declare module goog.ui {
 
@@ -105,5 +96,14 @@ declare module goog.ui {
          */
         isIdle(): boolean;
     }
+}
+
+declare module goog.ui.IdleTimer {
+
+    /**
+     * Event constants for the idle timer event target
+     * @enum {string}
+     */
+    enum Event { BECOME_ACTIVE, BECOME_IDLE } 
 }
 

@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:04:09 PDT 2014
+// Generated Sat May  3 12:20:00 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/dom/nodetype.d.ts" />
@@ -184,7 +184,7 @@ declare module goog.testing.fs {
          * @return {!goog.testing.fs.Entry} The loaded entry.
          * @private
          */
-        getEntry_(path: string, behavior: goog.fs.DirectoryEntry.Behavior, isFile: boolean): void;
+        getEntry_(path: string, behavior: goog.fs.DirectoryEntry.Behavior, isFile: boolean, createFn: any /* jsdoc error */): void;
     
         /**
          * Returns whether this directory has a child with the given name.

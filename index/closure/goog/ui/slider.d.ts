@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:59:54 PDT 2014
+// Generated Sat May  3 12:15:43 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/a11y/aria/roles.d.ts" />
@@ -64,6 +64,29 @@
 /// <reference path="../../goog/ui/rangemodel.d.ts" />
 /// <reference path="../../goog/ui/sliderbase.d.ts" />
 
+declare module goog.ui {
+
+    /**
+     * This creates a slider object.
+     * @param {goog.dom.DomHelper=} opt_domHelper Optional DOM helper.
+     * @param {(function(number):string)=} opt_labelFn An optional function mapping
+     *     slider values to a description of the value.
+     * @constructor
+     * @extends {goog.ui.SliderBase}
+     */
+    class Slider extends goog.ui.SliderBase {
+        /**
+         * This creates a slider object.
+         * @param {goog.dom.DomHelper=} opt_domHelper Optional DOM helper.
+         * @param {(function(number):string)=} opt_labelFn An optional function mapping
+         *     slider values to a description of the value.
+         * @constructor
+         * @extends {goog.ui.SliderBase}
+         */
+        constructor(opt_domHelper?: goog.dom.DomHelper, opt_labelFn?: any /*(_0: number) => string*/);
+    }
+}
+
 declare module goog.ui.Slider {
 
     /**
@@ -77,28 +100,5 @@ declare module goog.ui.Slider {
      * @type {string}
      */
     var THUMB_CSS_CLASS: string;
-}
-
-declare module goog.ui {
-
-    /**
-     * This creates a slider object.
-     * @param {goog.dom.DomHelper=} opt_domHelper Optional DOM helper.
-     * @param {(function(number):string)=} opt_labelFn An optional function mapping
-     *     slider values to a description of the value.
-     * @constructor
-     * @extends {goog.ui.SliderBase}
-     */
-    class Slider extends goog.ui.GoogSliderBase {
-        /**
-         * This creates a slider object.
-         * @param {goog.dom.DomHelper=} opt_domHelper Optional DOM helper.
-         * @param {(function(number):string)=} opt_labelFn An optional function mapping
-         *     slider values to a description of the value.
-         * @constructor
-         * @extends {goog.ui.SliderBase}
-         */
-        constructor(opt_domHelper?: goog.dom.DomHelper, opt_labelFn?: any /*(_0: number) => string*/);
-    }
 }
 

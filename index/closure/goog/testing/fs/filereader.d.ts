@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:04:08 PDT 2014
+// Generated Sat May  3 12:19:59 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/events/eventid.d.ts" />
@@ -37,15 +37,6 @@
 /// <reference path="../../../goog/promise/thenable.d.ts" />
 /// <reference path="../../../goog/promise/promise.d.ts" />
 /// <reference path="../../../goog/fs/filereader.d.ts" />
-
-declare module goog.testing.fs.FileReader {
-
-    /**
-     * The possible return types.
-     * @enum {number}
-     */
-    enum ReturnType { TEXT, BINARY_STRING, ARRAY_BUFFER, DATA_URL } 
-}
 
 declare module goog.testing.fs {
 
@@ -114,5 +105,14 @@ declare module goog.testing.fs {
          */
         readAsDataUrl(blob: goog.testing.fs.Blob): void;
     }
+}
+
+declare module goog.testing.fs.FileReader {
+
+    /**
+     * The possible return types.
+     * @enum {number}
+     */
+    enum ReturnType { TEXT, BINARY_STRING, ARRAY_BUFFER, DATA_URL } 
 }
 

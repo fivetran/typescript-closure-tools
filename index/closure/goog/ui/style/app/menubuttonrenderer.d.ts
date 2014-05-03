@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:59:22 PDT 2014
+// Generated Sat May  3 12:15:10 PDT 2014
 
 /// <reference path="../../../../goog/base.d.ts" />
 /// <reference path="../../../../goog/dom/nodetype.d.ts" />
@@ -71,24 +71,6 @@
 /// <reference path="../../../../goog/ui/custombuttonrenderer.d.ts" />
 /// <reference path="../../../../goog/ui/style/app/buttonrenderer.d.ts" />
 
-declare module goog.ui.style.app.MenuButtonRenderer {
-
-    /**
-     * Default CSS class to be applied to the root element of components rendered
-     * by this renderer.
-     * @type {string}
-     */
-    var CSS_CLASS: string;
-
-    /**
-     * Array of arrays of CSS classes that we want composite classes added and
-     * removed for in IE6 and lower as a workaround for lack of multi-class CSS
-     * selector support.
-     * @type {Array.<Array.<string>>}
-     */
-    var IE6_CLASS_COMBINATIONS: string[][];
-}
-
 declare module goog.ui.style.app {
 
     /**
@@ -99,7 +81,7 @@ declare module goog.ui.style.app {
      * @extends {goog.ui.style.app.ButtonRenderer}
      * @final
      */
-    class MenuButtonRenderer extends goog.ui.style.app.GoogButtonRenderer {
+    class MenuButtonRenderer extends goog.ui.style.app.ButtonRenderer {
         /**
          * Renderer for {@link goog.ui.style.app.MenuButton}s.  This implementation
          * overrides {@link goog.ui.style.app.ButtonRenderer#createButton} to insert a
@@ -127,5 +109,23 @@ declare module goog.ui.style.app {
          */
         createDropdown(dom: goog.dom.DomHelper): Element;
     }
+}
+
+declare module goog.ui.style.app.MenuButtonRenderer {
+
+    /**
+     * Default CSS class to be applied to the root element of components rendered
+     * by this renderer.
+     * @type {string}
+     */
+    var CSS_CLASS: string;
+
+    /**
+     * Array of arrays of CSS classes that we want composite classes added and
+     * removed for in IE6 and lower as a workaround for lack of multi-class CSS
+     * selector support.
+     * @type {Array.<Array.<string>>}
+     */
+    var IE6_CLASS_COMBINATIONS: string[][];
 }
 

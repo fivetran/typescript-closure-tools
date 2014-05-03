@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:00:25 PDT 2014
+// Generated Sat May  3 12:16:14 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -79,7 +79,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.Palette}
      */
-    class ColorPalette extends goog.ui.GoogPalette {
+    class ColorPalette extends goog.ui.Palette {
         /**
          * A color palette is a grid of color swatches that the user can highlight or
          * select via the keyboard or the mouse.  The selection state of the palette is

@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:59:07 PDT 2014
+// Generated Sat May  3 12:14:56 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/a11y/aria/roles.d.ts" />
@@ -55,16 +55,6 @@
 /// <reference path="../../goog/ui/control.d.ts" />
 /// <reference path="../../goog/ui/container.d.ts" />
 
-declare module goog.ui.MenuBarRenderer {
-
-    /**
-     * Default CSS class to be applied to the root element of elements rendered
-     * by this renderer.
-     * @type {string}
-     */
-    var CSS_CLASS: string;
-}
-
 declare module goog.ui {
 
     /**
@@ -74,7 +64,7 @@ declare module goog.ui {
      * @extends {goog.ui.ContainerRenderer}
      * @final
      */
-    class MenuBarRenderer extends goog.ui.GoogContainerRenderer {
+    class MenuBarRenderer extends goog.ui.ContainerRenderer {
         /**
          * Default renderer for {@link goog.ui.menuBar}s, based on {@link
          * goog.ui.ContainerRenderer}.
@@ -84,5 +74,15 @@ declare module goog.ui {
          */
         constructor();
     }
+}
+
+declare module goog.ui.MenuBarRenderer {
+
+    /**
+     * Default CSS class to be applied to the root element of elements rendered
+     * by this renderer.
+     * @type {string}
+     */
+    var CSS_CLASS: string;
 }
 

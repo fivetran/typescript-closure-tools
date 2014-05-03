@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:05:21 PDT 2014
+// Generated Sat May  3 12:21:13 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -33,78 +33,6 @@
 /// <reference path="../../goog/iter/iter.d.ts" />
 /// <reference path="../../goog/structs/map.d.ts" />
 /// <reference path="../../goog/structs/set.d.ts" />
-
-declare module goog.spell.SpellCheck {
-
-    /**
-     * Constants for event names
-     *
-     * @enum {string}
-     */
-    enum EventType { READY, ERROR, WORD_CHANGED } 
-
-    /**
-     * Codes representing the status of an individual word.
-     *
-     * @enum {number}
-     */
-    enum WordStatus { UNKNOWN, VALID, INVALID, IGNORED, CORRECTED } 
-
-    /**
-     * Fields for word array in cache.
-     *
-     * @enum {number}
-     */
-    enum CacheIndex { STATUS, SUGGESTIONS } 
-
-    /**
-     * Regular expression for identifying word boundaries.
-     *
-     * @type {string}
-     */
-    var WORD_BOUNDARY_CHARS: string;
-
-    /**
-     * Regular expression for identifying word boundaries.
-     *
-     * @type {RegExp}
-     */
-    var WORD_BOUNDARY_REGEX: RegExp;
-
-    /**
-     * Regular expression for splitting a string into individual words and blocks of
-     * separators. Matches zero or one word followed by zero or more separators.
-     *
-     * @type {RegExp}
-     */
-    var SPLIT_REGEX: RegExp;
-
-    /**
-     * Object representing a word changed event. Fired when the status of a word
-     * changes.
-     *
-     * @param {goog.spell.SpellCheck} target Spellcheck object initiating event.
-     * @param {string} word Word to set status for.
-     * @param {goog.spell.SpellCheck.WordStatus} status Status of word.
-     * @extends {goog.events.Event}
-     * @constructor
-     * @final
-     */
-    class WordChangedEvent extends goog.events.Event {
-        /**
-         * Object representing a word changed event. Fired when the status of a word
-         * changes.
-         *
-         * @param {goog.spell.SpellCheck} target Spellcheck object initiating event.
-         * @param {string} word Word to set status for.
-         * @param {goog.spell.SpellCheck.WordStatus} status Status of word.
-         * @extends {goog.events.Event}
-         * @constructor
-         * @final
-         */
-        constructor(target: goog.spell.SpellCheck, word: string, status: goog.spell.SpellCheck.WordStatus);
-    }
-}
 
 declare module goog.spell {
 
@@ -227,5 +155,77 @@ declare module goog.spell {
          */
         getSuggestions(word: string): string[];
     }
+}
+
+declare module goog.spell.SpellCheck {
+
+    /**
+     * Object representing a word changed event. Fired when the status of a word
+     * changes.
+     *
+     * @param {goog.spell.SpellCheck} target Spellcheck object initiating event.
+     * @param {string} word Word to set status for.
+     * @param {goog.spell.SpellCheck.WordStatus} status Status of word.
+     * @extends {goog.events.Event}
+     * @constructor
+     * @final
+     */
+    class WordChangedEvent extends goog.events.Event {
+        /**
+         * Object representing a word changed event. Fired when the status of a word
+         * changes.
+         *
+         * @param {goog.spell.SpellCheck} target Spellcheck object initiating event.
+         * @param {string} word Word to set status for.
+         * @param {goog.spell.SpellCheck.WordStatus} status Status of word.
+         * @extends {goog.events.Event}
+         * @constructor
+         * @final
+         */
+        constructor(target: goog.spell.SpellCheck, word: string, status: goog.spell.SpellCheck.WordStatus);
+    }
+
+    /**
+     * Constants for event names
+     *
+     * @enum {string}
+     */
+    enum EventType { READY, ERROR, WORD_CHANGED } 
+
+    /**
+     * Codes representing the status of an individual word.
+     *
+     * @enum {number}
+     */
+    enum WordStatus { UNKNOWN, VALID, INVALID, IGNORED, CORRECTED } 
+
+    /**
+     * Fields for word array in cache.
+     *
+     * @enum {number}
+     */
+    enum CacheIndex { STATUS, SUGGESTIONS } 
+
+    /**
+     * Regular expression for identifying word boundaries.
+     *
+     * @type {string}
+     */
+    var WORD_BOUNDARY_CHARS: string;
+
+    /**
+     * Regular expression for identifying word boundaries.
+     *
+     * @type {RegExp}
+     */
+    var WORD_BOUNDARY_REGEX: RegExp;
+
+    /**
+     * Regular expression for splitting a string into individual words and blocks of
+     * separators. Matches zero or one word followed by zero or more separators.
+     *
+     * @type {RegExp}
+     */
+    var SPLIT_REGEX: RegExp;
 }
 

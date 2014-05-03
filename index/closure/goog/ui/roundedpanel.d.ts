@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:59:41 PDT 2014
+// Generated Sat May  3 12:15:30 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -65,31 +65,6 @@
 /// <reference path="../../goog/graphics/canvasgraphics.d.ts" />
 /// <reference path="../../goog/graphics/graphics.d.ts" />
 
-declare module goog.ui.RoundedPanel {
-
-    /**
-     * Factory method that returns an instance of a BaseRoundedPanel.
-     * @param {number} radius The radius of the rounded corner(s), in pixels.
-     * @param {number} borderWidth The thickness of the border, in pixels.
-     * @param {string} borderColor The border color of the panel.
-     * @param {string=} opt_backgroundColor The background color of the panel.
-     * @param {number=} opt_corners The corners of the panel to be rounded. Any
-     *     corners not specified will be rendered as square corners. Will default
-     *     to all square corners if not specified.
-     * @param {goog.dom.DomHelper=} opt_domHelper The DOM helper object for the
-     *     document we want to render in.
-     * @return {goog.ui.BaseRoundedPanel} An instance of a
-     *     goog.ui.BaseRoundedPanel subclass.
-     */
-    function create(radius: number, borderWidth: number, borderColor: string, opt_backgroundColor?: string, opt_corners?: number, opt_domHelper?: goog.dom.DomHelper): goog.ui.BaseRoundedPanel;
-
-    /**
-     * Enum for specifying which corners to render.
-     * @enum {number}
-     */
-    enum Corner { NONE, BOTTOM_LEFT, TOP_LEFT, LEFT, TOP_RIGHT, TOP, BOTTOM_RIGHT, BOTTOM, RIGHT, ALL } 
-}
-
 declare module goog.ui {
 
     /**
@@ -114,7 +89,7 @@ declare module goog.ui {
      * @extends {goog.ui.Component}
      * @constructor
      */
-    class BaseRoundedPanel extends goog.ui.GoogComponent {
+    class BaseRoundedPanel extends goog.ui.Component {
         /**
          * Base class for the hierarchy of RoundedPanel classes. Do not
          * instantiate directly. Instead, call goog.ui.RoundedPanel.create().
@@ -213,5 +188,30 @@ declare module goog.ui {
          */
         constructor(radius: number, borderWidth: number, borderColor: string, opt_backgroundColor?: string, opt_corners?: number, opt_domHelper?: goog.dom.DomHelper);
     }
+}
+
+declare module goog.ui.RoundedPanel {
+
+    /**
+     * Factory method that returns an instance of a BaseRoundedPanel.
+     * @param {number} radius The radius of the rounded corner(s), in pixels.
+     * @param {number} borderWidth The thickness of the border, in pixels.
+     * @param {string} borderColor The border color of the panel.
+     * @param {string=} opt_backgroundColor The background color of the panel.
+     * @param {number=} opt_corners The corners of the panel to be rounded. Any
+     *     corners not specified will be rendered as square corners. Will default
+     *     to all square corners if not specified.
+     * @param {goog.dom.DomHelper=} opt_domHelper The DOM helper object for the
+     *     document we want to render in.
+     * @return {goog.ui.BaseRoundedPanel} An instance of a
+     *     goog.ui.BaseRoundedPanel subclass.
+     */
+    function create(radius: number, borderWidth: number, borderColor: string, opt_backgroundColor?: string, opt_corners?: number, opt_domHelper?: goog.dom.DomHelper): goog.ui.BaseRoundedPanel;
+
+    /**
+     * Enum for specifying which corners to render.
+     * @enum {number}
+     */
+    enum Corner { NONE, BOTTOM_LEFT, TOP_LEFT, LEFT, TOP_RIGHT, TOP, BOTTOM_RIGHT, BOTTOM, RIGHT, ALL } 
 }
 

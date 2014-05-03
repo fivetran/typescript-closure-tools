@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:56:22 PDT 2014
+// Generated Sat May  3 12:12:07 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/disposable/idisposable.d.ts" />
@@ -31,6 +31,22 @@
 /// <reference path="../../../goog/async/animationdelay.d.ts" />
 
 declare module goog.fx.anim {
+
+    /**
+     * An interface for programatically animated objects. I.e. rendered in
+     * javascript frame by frame.
+     *
+     * @interface
+     */
+    interface Animated {
+    
+        /**
+         * Function called when a frame is requested for the animation.
+         *
+         * @param {number} now Current time in milliseconds.
+         */
+        onAnimationFrame(now: number): void;
+    }
 
     /**
      * Default wait timeout for animations (in milliseconds).  Only used for timed
@@ -69,21 +85,5 @@ declare module goog.fx.anim {
      * @param {Window} animationWindow The window in which to animate elements.
      */
     function setAnimationWindow(animationWindow: Window): void;
-
-    /**
-     * An interface for programatically animated objects. I.e. rendered in
-     * javascript frame by frame.
-     *
-     * @interface
-     */
-    interface Animated {
-    
-        /**
-         * Function called when a frame is requested for the animation.
-         *
-         * @param {number} now Current time in milliseconds.
-         */
-        onAnimationFrame(now: number): void;
-    }
 }
 

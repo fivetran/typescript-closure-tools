@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:01:42 PDT 2014
+// Generated Sat May  3 12:17:32 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/events/eventid.d.ts" />
@@ -6,16 +6,6 @@
 /// <reference path="../../goog/disposable/disposable.d.ts" />
 
 declare module goog.events {
-
-    /**
-     * A typedef for event like objects that are dispatchable via the
-     * goog.events.dispatchEvent function. strings are treated as the type for a
-     * goog.events.Event. Objects are treated as an extension of a new
-     * goog.events.Event with the type property of the object being used as the type
-     * of the Event.
-     * @typedef {string|Object|goog.events.Event|goog.events.EventId}
-     */
-    interface EventLike { /*any (string|Object|goog.events.Event|goog.events.EventId)*/ }
 
     /**
      * A base class for event objects, so that they can support preventDefault and
@@ -64,6 +54,16 @@ declare module goog.events {
          */
         preventDefault(): void;
     }
+
+    /**
+     * A typedef for event like objects that are dispatchable via the
+     * goog.events.dispatchEvent function. strings are treated as the type for a
+     * goog.events.Event. Objects are treated as an extension of a new
+     * goog.events.Event with the type property of the object being used as the type
+     * of the Event.
+     * @typedef {string|Object|goog.events.Event|goog.events.EventId}
+     */
+    interface EventLike { /*any (string|Object|goog.events.Event|goog.events.EventId)*/ }
 }
 
 declare module goog.events.Event {

@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:57:30 PDT 2014
+// Generated Sat May  3 12:13:17 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/dom/nodetype.d.ts" />
@@ -147,7 +147,7 @@ declare module goog.editor.plugins {
      * @extends {goog.editor.plugins.AbstractDialogPlugin}
      * @final
      */
-    class EquationEditorPlugin extends goog.editor.plugins.GoogAbstractDialogPlugin {
+    class EquationEditorPlugin extends goog.editor.plugins.AbstractDialogPlugin {
         /**
          * A plugin that opens the equation editor in a dialog window.
          * @param {string=} opt_helpUrl A URL pointing to help documentation.

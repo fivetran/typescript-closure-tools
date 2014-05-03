@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:01:11 PDT 2014
+// Generated Sat May  3 12:17:01 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -54,7 +54,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.Component}
      */
-    class BidiInput extends goog.ui.GoogComponent {
+    class BidiInput extends goog.ui.Component {
         /**
          * Default implementation of BidiInput.
          *

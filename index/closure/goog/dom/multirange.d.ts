@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:56:56 PDT 2014
+// Generated Sat May  3 12:12:42 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/string/string.d.ts" />
@@ -48,33 +48,6 @@
 /// <reference path="../../goog/dom/browserrange/browserrange.d.ts" />
 /// <reference path="../../goog/dom/textrange.d.ts" />
 
-declare module goog.dom.MultiRange {
-
-    /**
-     * Creates a new range wrapper from the given browser selection object.  Do not
-     * use this method directly - please use goog.dom.Range.createFrom* instead.
-     * @param {Selection} selection The browser selection object.
-     * @return {goog.dom.MultiRange} A range wrapper object.
-     */
-    function createFromBrowserSelection(selection: Selection): goog.dom.MultiRange;
-
-    /**
-     * Creates a new range wrapper from the given browser ranges.  Do not
-     * use this method directly - please use goog.dom.Range.createFrom* instead.
-     * @param {Array.<Range>} browserRanges The browser ranges.
-     * @return {goog.dom.MultiRange} A range wrapper object.
-     */
-    function createFromBrowserRanges(browserRanges: Range[]): goog.dom.MultiRange;
-
-    /**
-     * Creates a new range wrapper from the given goog.dom.TextRange objects.  Do
-     * not use this method directly - please use goog.dom.Range.createFrom* instead.
-     * @param {Array.<goog.dom.TextRange>} textRanges The text range objects.
-     * @return {goog.dom.MultiRange} A range wrapper object.
-     */
-    function createFromTextRanges(textRanges: goog.dom.TextRange[]): goog.dom.MultiRange;
-}
-
 declare module goog.dom {
 
     /**
@@ -122,5 +95,32 @@ declare module goog.dom {
          */
         constructor(range: goog.dom.MultiRange);
     }
+}
+
+declare module goog.dom.MultiRange {
+
+    /**
+     * Creates a new range wrapper from the given browser selection object.  Do not
+     * use this method directly - please use goog.dom.Range.createFrom* instead.
+     * @param {Selection} selection The browser selection object.
+     * @return {goog.dom.MultiRange} A range wrapper object.
+     */
+    function createFromBrowserSelection(selection: Selection): goog.dom.MultiRange;
+
+    /**
+     * Creates a new range wrapper from the given browser ranges.  Do not
+     * use this method directly - please use goog.dom.Range.createFrom* instead.
+     * @param {Array.<Range>} browserRanges The browser ranges.
+     * @return {goog.dom.MultiRange} A range wrapper object.
+     */
+    function createFromBrowserRanges(browserRanges: Range[]): goog.dom.MultiRange;
+
+    /**
+     * Creates a new range wrapper from the given goog.dom.TextRange objects.  Do
+     * not use this method directly - please use goog.dom.Range.createFrom* instead.
+     * @param {Array.<goog.dom.TextRange>} textRanges The text range objects.
+     * @return {goog.dom.MultiRange} A range wrapper object.
+     */
+    function createFromTextRanges(textRanges: goog.dom.TextRange[]): goog.dom.MultiRange;
 }
 

@@ -1,9 +1,9 @@
-// Generated Fri May  2 15:02:25 PDT 2014
+// Generated Sat May  3 12:18:16 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/string/string.d.ts" />
 
-declare module googstring.linkify {
+declare module goog.string.linkify {
 
     /**
      * Takes a string of plain text and linkifies URLs and email addresses. For a

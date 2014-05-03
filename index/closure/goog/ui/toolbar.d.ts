@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:00:22 PDT 2014
+// Generated Sat May  3 12:16:11 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/a11y/aria/roles.d.ts" />
@@ -74,7 +74,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.Container}
      */
-    class Toolbar extends goog.ui.GoogContainer {
+    class Toolbar extends goog.ui.Container {
         /**
          * A toolbar class, implemented as a {@link goog.ui.Container} that defaults to
          * having a horizontal orientation and {@link goog.ui.ToolbarRenderer} as its

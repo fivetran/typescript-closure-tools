@@ -1,9 +1,38 @@
-// Generated Fri May  2 15:02:39 PDT 2014
+// Generated Sat May  3 12:18:29 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/debug/error.d.ts" />
 /// <reference path="../../goog/object/object.d.ts" />
 /// <reference path="../../goog/string/string.d.ts" />
+
+declare module goog.fs {
+
+    /**
+     * A filesystem error. Since the filesystem API is asynchronous, stack traces
+     * are less useful for identifying where errors come from, so this includes a
+     * large amount of metadata in the message.
+     *
+     * @param {!DOMError} error
+     * @param {string} action The action being undertaken when the error was raised.
+     * @constructor
+     * @extends {goog.debug.Error}
+     * @final
+     */
+    class Error extends goog.debug.Error {
+        /**
+         * A filesystem error. Since the filesystem API is asynchronous, stack traces
+         * are less useful for identifying where errors come from, so this includes a
+         * large amount of metadata in the message.
+         *
+         * @param {!DOMError} error
+         * @param {string} action The action being undertaken when the error was raised.
+         * @constructor
+         * @extends {goog.debug.Error}
+         * @final
+         */
+        constructor(error: DOMError, action: string);
+    }
+}
 
 declare module goog.fs.Error {
 
@@ -33,34 +62,5 @@ declare module goog.fs.Error {
      * @private {!Object.<string, goog.fs.Error.ErrorCode>}
      */
     var NameToCodeMap_: any /*missing*/;
-}
-
-declare module goog.fs {
-
-    /**
-     * A filesystem error. Since the filesystem API is asynchronous, stack traces
-     * are less useful for identifying where errors come from, so this includes a
-     * large amount of metadata in the message.
-     *
-     * @param {!DOMError} error
-     * @param {string} action The action being undertaken when the error was raised.
-     * @constructor
-     * @extends {goog.debug.GoogError}
-     * @final
-     */
-    class Error extends goog.debug.GoogError {
-        /**
-         * A filesystem error. Since the filesystem API is asynchronous, stack traces
-         * are less useful for identifying where errors come from, so this includes a
-         * large amount of metadata in the message.
-         *
-         * @param {!DOMError} error
-         * @param {string} action The action being undertaken when the error was raised.
-         * @constructor
-         * @extends {goog.debug.GoogError}
-         * @final
-         */
-        constructor(error: DOMError, action: string);
-    }
 }
 

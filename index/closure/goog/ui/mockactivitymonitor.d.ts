@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:59:23 PDT 2014
+// Generated Sat May  3 12:15:12 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/string/string.d.ts" />
@@ -46,7 +46,7 @@ declare module goog.ui {
      * @extends {goog.ui.ActivityMonitor}
      * @final
      */
-    class MockActivityMonitor extends goog.ui.GoogActivityMonitor {
+    class MockActivityMonitor extends goog.ui.ActivityMonitor {
         /**
          * A mock implementation of goog.ui.ActivityMonitor for unit testing. Clients
          * of this class should override goog.now to return a synthetic time from

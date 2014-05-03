@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:03:34 PDT 2014
+// Generated Sat May  3 12:19:24 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/dom/nodetype.d.ts" />
@@ -13,24 +13,6 @@
 /// <reference path="../../../goog/object/object.d.ts" />
 /// <reference path="../../../goog/dom/tags.d.ts" />
 /// <reference path="../../../goog/labs/html/scrubber.d.ts" />
-
-declare module goog.labs.html.Sanitizer {
-
-    /**
-     * A new object that is as blank as possible.
-     *
-     * Using {@code Object.create} to create an object with
-     * no prototype speeds up whitelist access since there's fewer prototypes
-     * to fall-back to for a common case where an element is not in the
-     * white-list, and reduces the chance of confusing a member of
-     * {@code Object.prototype} with a whitelist entry.
-     *
-     * @return {!Object.<string, ?>} a reference to a newly allocated object that
-     *    does not alias any reference that existed prior.
-     * @private
-     */
-    function createBlankObject_(): void;
-}
 
 declare module goog.labs.html {
 
@@ -133,5 +115,23 @@ declare module goog.labs.html {
          */
         allowAttributes(elementNames: any /*string[]|string*/, attrNames: any /*string[]|string*/, opt_rewriteValue?: goog.labs.html.AttributeRewriter): goog.labs.html.Sanitizer;
     }
+}
+
+declare module goog.labs.html.Sanitizer {
+
+    /**
+     * A new object that is as blank as possible.
+     *
+     * Using {@code Object.create} to create an object with
+     * no prototype speeds up whitelist access since there's fewer prototypes
+     * to fall-back to for a common case where an element is not in the
+     * white-list, and reduces the chance of confusing a member of
+     * {@code Object.prototype} with a whitelist entry.
+     *
+     * @return {!Object.<string, ?>} a reference to a newly allocated object that
+     *    does not alias any reference that existed prior.
+     * @private
+     */
+    function createBlankObject_(): void;
 }
 

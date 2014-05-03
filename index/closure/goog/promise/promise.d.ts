@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:03:37 PDT 2014
+// Generated Sat May  3 12:19:28 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/promise/resolver.d.ts" />
@@ -12,6 +12,106 @@
 /// <reference path="../../goog/async/nexttick.d.ts" />
 /// <reference path="../../goog/async/run.d.ts" />
 /// <reference path="../../goog/promise/thenable.d.ts" />
+
+declare module goog.Promise {
+
+    /**
+     * Error used as a rejection reason for canceled Promises.
+     *
+     * @param {string=} opt_message
+     * @constructor
+     * @extends {goog.debug.Error}
+     * @final
+     */
+    class CancellationError extends goog.debug.Error {
+        /**
+         * Error used as a rejection reason for canceled Promises.
+         *
+         * @param {string=} opt_message
+         * @constructor
+         * @extends {goog.debug.Error}
+         * @final
+         */
+        constructor(opt_message?: string);
+    }
+
+    /**
+     * Typedef for entries in the callback chain. Each call to {@code then},
+     * {@code thenCatch}, or {@code thenAlways} creates an entry containing the
+     * functions that may be invoked once the Promise is resolved.
+     *
+     * @typedef {{
+     *   child: goog.Promise,
+     *   onFulfilled: function(*),
+     *   onRejected: function(*)
+     * }}
+     * @private
+     */
+    var CallbackEntry_: any /*missing*/;
+
+    /**
+     * @param {(TYPE|goog.Thenable.<TYPE>|Thenable)=} opt_value
+     * @return {!goog.Promise.<TYPE>} A new Promise that is immediately resolved
+     *     with the given value.
+     * @template TYPE
+     */
+    function resolve<TYPE>(opt_value?: any /*TYPE|goog.Thenable<TYPE>|Thenable*/): goog.Promise<TYPE>;
+
+    /**
+     * @param {*=} opt_reason
+     * @return {!goog.Promise} A new Promise that is immediately rejected with the
+     *     given reason.
+     */
+    function reject(opt_reason?: any): goog.Promise;
+
+    /**
+     * @param {!Array.<!(goog.Thenable.<TYPE>|Thenable)>} promises
+     * @return {!goog.Promise.<TYPE>} A Promise that receives the result of the
+     *     first Promise (or Promise-like) input to complete.
+     * @template TYPE
+     */
+    function race<TYPE>(promises: any /*goog.Thenable<TYPE>|Thenable*/[]): goog.Promise<TYPE>;
+
+    /**
+     * @param {!Array.<!(goog.Thenable.<TYPE>|Thenable)>} promises
+     * @return {!goog.Promise.<!Array.<TYPE>>} A Promise that receives a list of
+     *     every fulfilled value once every input Promise (or Promise-like) is
+     *     successfully fulfilled, or is rejected by the first rejection result.
+     * @template TYPE
+     */
+    function all<TYPE>(promises: any /*goog.Thenable<TYPE>|Thenable*/[]): goog.Promise<TYPE[]>;
+
+    /**
+     * @param {!Array.<!(goog.Thenable.<TYPE>|Thenable)>} promises
+     * @return {!goog.Promise.<TYPE>} A Promise that receives the value of the first
+     *     input to be fulfilled, or is rejected with a list of every rejection
+     *     reason if all inputs are rejected.
+     * @template TYPE
+     */
+    function firstFulfilled<TYPE>(promises: any /*goog.Thenable<TYPE>|Thenable*/[]): goog.Promise<TYPE>;
+
+    /**
+     * @return {!goog.promise.Resolver.<TYPE>} Resolver wrapping the promise and its
+     *     resolve / reject functions. Resolving or rejecting the resolver
+     *     resolves or rejects the promise.
+     * @template TYPE
+     */
+    function withResolver<TYPE>(): goog.promise.Resolver<TYPE>;
+
+    /**
+     * Sets a handler that will be called with reasons from unhandled rejected
+     * Promises. If the rejected Promise (or one of its descendants) has an
+     * {@code onRejected} callback registered, the rejection will be considered
+     * handled, and the rejection handler will not be called.
+     *
+     * By default, unhandled rejections are rethrown so that the error may be
+     * captured by the developer console or a {@code window.onerror} handler.
+     *
+     * @param {function(*)} handler A function that will be called with reasons from
+     *     rejected Promises. Defaults to {@code goog.async.throwException}.
+     */
+    function setUnhandledRejectionHandler(handler: (_0: any) => any /*missing*/): void;
+}
 
 declare module goog {
 
@@ -63,112 +163,6 @@ declare module goog {
      * @implements {goog.Thenable.<TYPE>}
      * @template TYPE,RESOLVER_CONTEXT
      */
-    class GoogPromise<TYPE> {
-        constructor(resolve:(value:TYPE) => any, reject:(error:any) => any);
-
-        constructor(resolve:(value:goog.Thenable<TYPE>) => any, reject:(error:any) => any);
-    }
-
-    class Promise<TYPE> extends GoogPromise<TYPE> { }
-}
-
-declare module goog.Promise {
-
-    /**
-     * Typedef for entries in the callback chain. Each call to {@code then},
-     * {@code thenCatch}, or {@code thenAlways} creates an entry containing the
-     * functions that may be invoked once the Promise is resolved.
-     *
-     * @typedef {{
-     *   child: goog.Promise,
-     *   onFulfilled: function(*),
-     *   onRejected: function(*)
-     * }}
-     * @private
-     */
-    var CallbackEntry_: any /*missing*/;
-
-    /**
-     * @param {(TYPE|goog.Thenable.<TYPE>|Thenable)=} opt_value
-     * @return {!goog.Promise.<TYPE>} A new Promise that is immediately resolved
-     *     with the given value.
-     * @template TYPE
-     */
-    function resolve<TYPE>(opt_value?: any /*TYPE|goog.Thenable<TYPE>|Thenable*/): goog.Promise<TYPE>;
-
-    /**
-     * @param {*=} opt_reason
-     * @return {!goog.Promise} A new Promise that is immediately rejected with the
-     *     given reason.
-     */
-    function reject(opt_reason?: any): goog.Promise<any>;
-
-    /**
-     * @param {!Array.<!(goog.Thenable.<TYPE>|Thenable)>} promises
-     * @return {!goog.Promise.<TYPE>} A Promise that receives the result of the
-     *     first Promise (or Promise-like) input to complete.
-     * @template TYPE
-     */
-    function race<TYPE>(promises: any /*goog.Thenable<TYPE>|Thenable*/[]): goog.Promise<TYPE>;
-
-    /**
-     * @param {!Array.<!(goog.Thenable.<TYPE>|Thenable)>} promises
-     * @return {!goog.Promise.<!Array.<TYPE>>} A Promise that receives a list of
-     *     every fulfilled value once every input Promise (or Promise-like) is
-     *     successfully fulfilled, or is rejected by the first rejection result.
-     * @template TYPE
-     */
-    function all<TYPE>(promises: any /*goog.Thenable<TYPE>|Thenable*/[]): goog.Promise<TYPE[]>;
-
-    /**
-     * @param {!Array.<!(goog.Thenable.<TYPE>|Thenable)>} promises
-     * @return {!goog.Promise.<TYPE>} A Promise that receives the value of the first
-     *     input to be fulfilled, or is rejected with a list of every rejection
-     *     reason if all inputs are rejected.
-     * @template TYPE
-     */
-    function firstFulfilled<TYPE>(promises: any /*goog.Thenable<TYPE>|Thenable*/[]): goog.Promise<TYPE>;
-
-    /**
-     * @return {!goog.promise.Resolver.<TYPE>} Resolver wrapping the promise and its
-     *     resolve / reject functions. Resolving or rejecting the resolver
-     *     resolves or rejects the promise.
-     * @template TYPE
-     */
-    function withResolver<TYPE>(): goog.promise.Resolver<TYPE>;
-
-    /**
-     * Sets a handler that will be called with reasons from unhandled rejected
-     * Promises. If the rejected Promise (or one of its descendants) has an
-     * {@code onRejected} callback registered, the rejection will be considered
-     * handled, and the rejection handler will not be called.
-     *
-     * By default, unhandled rejections are rethrown so that the error may be
-     * captured by the developer console or a {@code window.onerror} handler.
-     *
-     * @param {function(*)} handler A function that will be called with reasons from
-     *     rejected Promises. Defaults to {@code goog.async.throwException}.
-     */
-    function setUnhandledRejectionHandler(handler: (_0: any) => any /*missing*/): void;
-
-    /**
-     * Error used as a rejection reason for canceled Promises.
-     *
-     * @param {string=} opt_message
-     * @constructor
-     * @extends {goog.debug.GoogError}
-     * @final
-     */
-    class CancellationError extends goog.debug.GoogError {
-        /**
-         * Error used as a rejection reason for canceled Promises.
-         *
-         * @param {string=} opt_message
-         * @constructor
-         * @extends {goog.debug.GoogError}
-         * @final
-         */
-        constructor(opt_message?: string);
-    }
+    function Promise(resolver: any /* jsdoc error */, opt_context?: any /* jsdoc error */): void;
 }
 

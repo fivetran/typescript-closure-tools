@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:57:26 PDT 2014
+// Generated Sat May  3 12:13:13 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/dom/nodetype.d.ts" />
@@ -79,6 +79,25 @@
 /// <reference path="../../../goog/events/eventtarget.d.ts" />
 /// <reference path="../../../goog/editor/plugin.d.ts" />
 
+declare module goog.editor.plugins {
+
+    /**
+     * First Strong plugin.
+     * @constructor
+     * @extends {goog.editor.Plugin}
+     * @final
+     */
+    class FirstStrong extends goog.editor.Plugin {
+        /**
+         * First Strong plugin.
+         * @constructor
+         * @extends {goog.editor.Plugin}
+         * @final
+         */
+        constructor();
+    }
+}
+
 declare module goog.editor.plugins.FirstStrong {
 
     /**
@@ -88,24 +107,5 @@ declare module goog.editor.plugins.FirstStrong {
      * @const
      */
     var INPUT_ATTRIBUTE: string;
-}
-
-declare module goog.editor.plugins {
-
-    /**
-     * First Strong plugin.
-     * @constructor
-     * @extends {goog.editor.Plugin}
-     * @final
-     */
-    class FirstStrong extends goog.editor.GoogPlugin {
-        /**
-         * First Strong plugin.
-         * @constructor
-         * @extends {goog.editor.Plugin}
-         * @final
-         */
-        constructor();
-    }
 }
 

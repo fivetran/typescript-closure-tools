@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:01:14 PDT 2014
+// Generated Sat May  3 12:17:03 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -69,16 +69,6 @@
 /// <reference path="../../goog/ui/menu.d.ts" />
 /// <reference path="../../goog/ui/menubuttonrenderer.d.ts" />
 
-declare module goog.ui.ToolbarMenuButtonRenderer {
-
-    /**
-     * Default CSS class to be applied to the root element of menu buttons rendered
-     * by this renderer.
-     * @type {string}
-     */
-    var CSS_CLASS: string;
-}
-
 declare module goog.ui {
 
     /**
@@ -87,7 +77,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.MenuButtonRenderer}
      */
-    class GoogToolbarMenuButtonRenderer extends goog.ui.GoogMenuButtonRenderer {
+    class ToolbarMenuButtonRenderer extends goog.ui.MenuButtonRenderer {
         /**
          * Toolbar-specific renderer for {@link goog.ui.MenuButton}s, based on {@link
          * goog.ui.MenuButtonRenderer}.
@@ -96,7 +86,15 @@ declare module goog.ui {
          */
         constructor();
     }
+}
 
-    class ToolbarMenuButtonRenderer extends GoogToolbarMenuButtonRenderer { }
+declare module goog.ui.ToolbarMenuButtonRenderer {
+
+    /**
+     * Default CSS class to be applied to the root element of menu buttons rendered
+     * by this renderer.
+     * @type {string}
+     */
+    var CSS_CLASS: string;
 }
 

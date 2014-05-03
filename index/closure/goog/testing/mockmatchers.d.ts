@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:04:17 PDT 2014
+// Generated Sat May  3 12:20:08 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/testing/stacktrace.d.ts" />
@@ -23,81 +23,6 @@
 /// <reference path="../../goog/dom/dom.d.ts" />
 
 declare module goog.testing.mockmatchers {
-
-    /**
-     * An instance of the IgnoreArgument matcher. Returns true for all matches.
-     * @type {goog.testing.mockmatchers.IgnoreArgument}
-     */
-    var ignoreArgument: goog.testing.mockmatchers.IgnoreArgument;
-
-    /**
-     * A matcher that verifies that an argument is an array.
-     * @type {goog.testing.mockmatchers.ArgumentMatcher}
-     */
-    var isArray: goog.testing.mockmatchers.ArgumentMatcher;
-
-    /**
-     * A matcher that verifies that an argument is a array-like.  A NodeList is an
-     * example of a collection that is very close to an array.
-     * @type {goog.testing.mockmatchers.ArgumentMatcher}
-     */
-    var isArrayLike: goog.testing.mockmatchers.ArgumentMatcher;
-
-    /**
-     * A matcher that verifies that an argument is a date-like.
-     * @type {goog.testing.mockmatchers.ArgumentMatcher}
-     */
-    var isDateLike: goog.testing.mockmatchers.ArgumentMatcher;
-
-    /**
-     * A matcher that verifies that an argument is a string.
-     * @type {goog.testing.mockmatchers.ArgumentMatcher}
-     */
-    var isString: goog.testing.mockmatchers.ArgumentMatcher;
-
-    /**
-     * A matcher that verifies that an argument is a boolean.
-     * @type {goog.testing.mockmatchers.ArgumentMatcher}
-     */
-    var isBoolean: goog.testing.mockmatchers.ArgumentMatcher;
-
-    /**
-     * A matcher that verifies that an argument is a number.
-     * @type {goog.testing.mockmatchers.ArgumentMatcher}
-     */
-    var isNumber: goog.testing.mockmatchers.ArgumentMatcher;
-
-    /**
-     * A matcher that verifies that an argument is a function.
-     * @type {goog.testing.mockmatchers.ArgumentMatcher}
-     */
-    var isFunction: goog.testing.mockmatchers.ArgumentMatcher;
-
-    /**
-     * A matcher that verifies that an argument is an object.
-     * @type {goog.testing.mockmatchers.ArgumentMatcher}
-     */
-    var isObject: goog.testing.mockmatchers.ArgumentMatcher;
-
-    /**
-     * A matcher that verifies that an argument is like a DOM node.
-     * @type {goog.testing.mockmatchers.ArgumentMatcher}
-     */
-    var isNodeLike: goog.testing.mockmatchers.ArgumentMatcher;
-
-    /**
-     * A function that checks to see if an array matches a given set of
-     * expectations.  The expectations array can be a mix of ArgumentMatcher
-     * implementations and values.  True will be returned if values are identical or
-     * if a matcher returns a positive result.
-     * @param {Array} expectedArr An array of expectations which can be either
-     *     values to check for equality or ArgumentMatchers.
-     * @param {Array} arr The array to match.
-     * @param {goog.testing.MockExpectation?=} opt_expectation The expectation
-     *     for this match.
-     * @return {boolean} Whether or not the given array matches the expectations.
-     */
-    function flexibleArrayMatcher(expectedArr: any[], arr: any[], opt_expectation?: goog.testing.MockExpectation): boolean;
 
     /**
      * A simple interface for executing argument matching.  A match in this case is
@@ -265,5 +190,80 @@ declare module goog.testing.mockmatchers {
          */
         arg: any;
     }
+
+    /**
+     * An instance of the IgnoreArgument matcher. Returns true for all matches.
+     * @type {goog.testing.mockmatchers.IgnoreArgument}
+     */
+    var ignoreArgument: goog.testing.mockmatchers.IgnoreArgument;
+
+    /**
+     * A matcher that verifies that an argument is an array.
+     * @type {goog.testing.mockmatchers.ArgumentMatcher}
+     */
+    var isArray: goog.testing.mockmatchers.ArgumentMatcher;
+
+    /**
+     * A matcher that verifies that an argument is a array-like.  A NodeList is an
+     * example of a collection that is very close to an array.
+     * @type {goog.testing.mockmatchers.ArgumentMatcher}
+     */
+    var isArrayLike: goog.testing.mockmatchers.ArgumentMatcher;
+
+    /**
+     * A matcher that verifies that an argument is a date-like.
+     * @type {goog.testing.mockmatchers.ArgumentMatcher}
+     */
+    var isDateLike: goog.testing.mockmatchers.ArgumentMatcher;
+
+    /**
+     * A matcher that verifies that an argument is a string.
+     * @type {goog.testing.mockmatchers.ArgumentMatcher}
+     */
+    var isString: goog.testing.mockmatchers.ArgumentMatcher;
+
+    /**
+     * A matcher that verifies that an argument is a boolean.
+     * @type {goog.testing.mockmatchers.ArgumentMatcher}
+     */
+    var isBoolean: goog.testing.mockmatchers.ArgumentMatcher;
+
+    /**
+     * A matcher that verifies that an argument is a number.
+     * @type {goog.testing.mockmatchers.ArgumentMatcher}
+     */
+    var isNumber: goog.testing.mockmatchers.ArgumentMatcher;
+
+    /**
+     * A matcher that verifies that an argument is a function.
+     * @type {goog.testing.mockmatchers.ArgumentMatcher}
+     */
+    var isFunction: goog.testing.mockmatchers.ArgumentMatcher;
+
+    /**
+     * A matcher that verifies that an argument is an object.
+     * @type {goog.testing.mockmatchers.ArgumentMatcher}
+     */
+    var isObject: goog.testing.mockmatchers.ArgumentMatcher;
+
+    /**
+     * A matcher that verifies that an argument is like a DOM node.
+     * @type {goog.testing.mockmatchers.ArgumentMatcher}
+     */
+    var isNodeLike: goog.testing.mockmatchers.ArgumentMatcher;
+
+    /**
+     * A function that checks to see if an array matches a given set of
+     * expectations.  The expectations array can be a mix of ArgumentMatcher
+     * implementations and values.  True will be returned if values are identical or
+     * if a matcher returns a positive result.
+     * @param {Array} expectedArr An array of expectations which can be either
+     *     values to check for equality or ArgumentMatchers.
+     * @param {Array} arr The array to match.
+     * @param {goog.testing.MockExpectation?=} opt_expectation The expectation
+     *     for this match.
+     * @return {boolean} Whether or not the given array matches the expectations.
+     */
+    function flexibleArrayMatcher(expectedArr: any[], arr: any[], opt_expectation?: goog.testing.MockExpectation): boolean;
 }
 

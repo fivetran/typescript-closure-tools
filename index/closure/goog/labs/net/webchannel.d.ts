@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:03:17 PDT 2014
+// Generated Sat May  3 12:19:08 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/dom/nodetype.d.ts" />
@@ -25,62 +25,48 @@
 /// <reference path="../../../goog/events/browserevent.d.ts" />
 /// <reference path="../../../goog/events/events.d.ts" />
 
+declare module goog.net {
+
+    /**
+     * A WebChannel represents a logical bi-directional channel over which the
+     * client communicates with a remote server that holds the other endpoint
+     * of the channel. A WebChannel is always created in the context of a shared
+     * {@link WebChannelTransport} instance. It is up to the underlying client-side
+     * and server-side implementations to decide how or when multiplexing is
+     * to be enabled.
+     *
+     * @interface
+     * @extends {EventTarget}
+     */
+    interface WebChannel extends EventTarget {
+    
+        /**
+         * Open the WebChannel against the URI specified in the constructor.
+         */
+        open: any /*missing*/;
+    
+        /**
+         * Close the WebChannel.
+         */
+        close: any /*missing*/;
+    
+        /**
+         * Sends a message to the server that maintains the other end point of
+         * the WebChannel.
+         *
+         * @param {!goog.net.WebChannel.MessageData} message The message to send.
+         */
+        send(message: goog.net.WebChannel.MessageData): void;
+    
+        /**
+         * @return {!goog.net.WebChannel.RuntimeProperties} The runtime properties
+         * of the WebChannel instance.
+         */
+        getRuntimeProperties(): goog.net.WebChannel.RuntimeProperties;
+    }
+}
+
 declare module goog.net.WebChannel {
-
-    /**
-     * Configuration spec for newly created WebChannel instances.
-     *
-     * WebChannels are configured in the context of the containing
-     * {@link WebChannelTransport}. The configuration parameters are specified
-     * when a new instance of WebChannel is created via {@link WebChannelTransport}.
-     *
-     * messageHeaders: custom headers to be added to every message sent to the
-     * server.
-     *
-     * messageUrlParams: custom url query parameters to be added to every message
-     * sent to the server.
-     *
-     * spdyRequestLimit: the maximum number of in-flight HTTP requests allowed
-     * when SPDY is enabled. Currently we only detect SPDY in Chrome.
-     * This parameter defaults to 10. When SPDY is not enabled, this parameter
-     * will have no effect.
-     *
-     * supportsCrossDomainXhr: setting this to true to allow the use of sub-domains
-     * (as configured by the server) to send XHRs with the CORS withCredentials
-     * bit set to true.
-     *
-     * testUrl: the test URL for detecting connectivity during the initial
-     * handshake. This parameter defaults to "/<channel_url>/test".
-     *
-     *
-     * @typedef {{
-     *   messageHeaders: (!Object.<string, string>|undefined),
-     *   messageUrlParams: (!Object.<string, string>|undefined),
-     *   spdyRequestLimit: (number|undefined),
-     *   supportsCrossDomainXhr: (boolean|undefined),
-     *   testUrl: (string|undefined)
-     * }}
-     */
-    var Options: any /*missing*/;
-
-    /**
-     * Types that are allowed as message data.
-     *
-     * @typedef {(ArrayBuffer|Blob|Object.<string, string>|Array)}
-     */
-    interface MessageData { /*any (ArrayBuffer|Blob|{ [key: string]: string }|any[])*/ }
-
-    /**
-     * Common events fired by WebChannels.
-     * @enum {string}
-     */
-    enum EventType { OPEN, CLOSE, ERROR, MESSAGE } 
-
-    /**
-     * WebChannel level error conditions.
-     * @enum {number}
-     */
-    enum ErrorStatus { OK, NETWORK_ERROR, SERVER_ERROR } 
 
     /**
      * The readonly runtime properties of the WebChannel instance.
@@ -161,46 +147,60 @@ declare module goog.net.WebChannel {
          */
         status: goog.net.WebChannel.ErrorStatus;
     }
-}
-
-declare module goog.net {
 
     /**
-     * A WebChannel represents a logical bi-directional channel over which the
-     * client communicates with a remote server that holds the other endpoint
-     * of the channel. A WebChannel is always created in the context of a shared
-     * {@link WebChannelTransport} instance. It is up to the underlying client-side
-     * and server-side implementations to decide how or when multiplexing is
-     * to be enabled.
+     * Configuration spec for newly created WebChannel instances.
      *
-     * @interface
-     * @extends {EventTarget}
+     * WebChannels are configured in the context of the containing
+     * {@link WebChannelTransport}. The configuration parameters are specified
+     * when a new instance of WebChannel is created via {@link WebChannelTransport}.
+     *
+     * messageHeaders: custom headers to be added to every message sent to the
+     * server.
+     *
+     * messageUrlParams: custom url query parameters to be added to every message
+     * sent to the server.
+     *
+     * spdyRequestLimit: the maximum number of in-flight HTTP requests allowed
+     * when SPDY is enabled. Currently we only detect SPDY in Chrome.
+     * This parameter defaults to 10. When SPDY is not enabled, this parameter
+     * will have no effect.
+     *
+     * supportsCrossDomainXhr: setting this to true to allow the use of sub-domains
+     * (as configured by the server) to send XHRs with the CORS withCredentials
+     * bit set to true.
+     *
+     * testUrl: the test URL for detecting connectivity during the initial
+     * handshake. This parameter defaults to "/<channel_url>/test".
+     *
+     *
+     * @typedef {{
+     *   messageHeaders: (!Object.<string, string>|undefined),
+     *   messageUrlParams: (!Object.<string, string>|undefined),
+     *   spdyRequestLimit: (number|undefined),
+     *   supportsCrossDomainXhr: (boolean|undefined),
+     *   testUrl: (string|undefined)
+     * }}
      */
-    interface WebChannel extends EventTarget {
-    
-        /**
-         * Open the WebChannel against the URI specified in the constructor.
-         */
-        open: any /*missing*/;
-    
-        /**
-         * Close the WebChannel.
-         */
-        close: any /*missing*/;
-    
-        /**
-         * Sends a message to the server that maintains the other end point of
-         * the WebChannel.
-         *
-         * @param {!goog.net.WebChannel.MessageData} message The message to send.
-         */
-        send(message: goog.net.WebChannel.MessageData): void;
-    
-        /**
-         * @return {!goog.net.WebChannel.RuntimeProperties} The runtime properties
-         * of the WebChannel instance.
-         */
-        getRuntimeProperties(): goog.net.WebChannel.RuntimeProperties;
-    }
+    var Options: any /*missing*/;
+
+    /**
+     * Types that are allowed as message data.
+     *
+     * @typedef {(ArrayBuffer|Blob|Object.<string, string>|Array)}
+     */
+    interface MessageData { /*any (ArrayBuffer|Blob|{ [key: string]: string }|any[])*/ }
+
+    /**
+     * Common events fired by WebChannels.
+     * @enum {string}
+     */
+    enum EventType { OPEN, CLOSE, ERROR, MESSAGE } 
+
+    /**
+     * WebChannel level error conditions.
+     * @enum {number}
+     */
+    enum ErrorStatus { OK, NETWORK_ERROR, SERVER_ERROR } 
 }
 

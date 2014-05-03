@@ -1,9 +1,67 @@
-// Generated Fri May  2 15:05:10 PDT 2014
+// Generated Sat May  3 12:21:01 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/debug/error.d.ts" />
 
+declare module goog.db {
+
+    /**
+     * A database error. Since the stack trace can be unhelpful in an asynchronous
+     * context, the error provides a message about where it was produced.
+     *
+     * @param {number|!DOMError} error The DOMError instance returned by the
+     *     browser for Chrome22+, or an error code for previous versions.
+     * @param {string} context A description of where the error occured.
+     * @param {string=} opt_message Additional message.
+     * @constructor
+     * @extends {goog.debug.Error}
+     * @final
+     */
+    class Error extends goog.debug.Error {
+        /**
+         * A database error. Since the stack trace can be unhelpful in an asynchronous
+         * context, the error provides a message about where it was produced.
+         *
+         * @param {number|!DOMError} error The DOMError instance returned by the
+         *     browser for Chrome22+, or an error code for previous versions.
+         * @param {string} context A description of where the error occured.
+         * @param {string=} opt_message Additional message.
+         * @constructor
+         * @extends {goog.debug.Error}
+         * @final
+         */
+        constructor(error: any /*number|DOMError*/, context: string, opt_message?: string);
+    
+        /**
+         * @return {string} The name of the error.
+         */
+        getName(): string;
+    }
+}
+
 declare module goog.db.Error {
+
+    /**
+     * A specific kind of database error. If a Version Change is unable to proceed
+     * due to other open database connections, it will block and this error will be
+     * thrown.
+     *
+     * @constructor
+     * @extends {goog.debug.Error}
+     * @final
+     */
+    class VersionChangeBlockedError extends goog.debug.Error {
+        /**
+         * A specific kind of database error. If a Version Change is unable to proceed
+         * due to other open database connections, it will block and this error will be
+         * thrown.
+         *
+         * @constructor
+         * @extends {goog.debug.Error}
+         * @final
+         */
+        constructor();
+    }
 
     /**
      * Error codes for database errors.
@@ -68,63 +126,5 @@ declare module goog.db.Error {
      *     is invalid and will not compile.
      */
     function fromException(ex: IDBDatabaseException, message: string): goog.db.Error;
-
-    /**
-     * A specific kind of database error. If a Version Change is unable to proceed
-     * due to other open database connections, it will block and this error will be
-     * thrown.
-     *
-     * @constructor
-     * @extends {goog.debug.GoogError}
-     * @final
-     */
-    class VersionChangeBlockedError extends goog.debug.GoogError {
-        /**
-         * A specific kind of database error. If a Version Change is unable to proceed
-         * due to other open database connections, it will block and this error will be
-         * thrown.
-         *
-         * @constructor
-         * @extends {goog.debug.GoogError}
-         * @final
-         */
-        constructor();
-    }
-}
-
-declare module goog.db {
-
-    /**
-     * A database error. Since the stack trace can be unhelpful in an asynchronous
-     * context, the error provides a message about where it was produced.
-     *
-     * @param {number|!DOMError} error The DOMError instance returned by the
-     *     browser for Chrome22+, or an error code for previous versions.
-     * @param {string} context A description of where the error occured.
-     * @param {string=} opt_message Additional message.
-     * @constructor
-     * @extends {goog.debug.GoogError}
-     * @final
-     */
-    class Error extends goog.debug.GoogError {
-        /**
-         * A database error. Since the stack trace can be unhelpful in an asynchronous
-         * context, the error provides a message about where it was produced.
-         *
-         * @param {number|!DOMError} error The DOMError instance returned by the
-         *     browser for Chrome22+, or an error code for previous versions.
-         * @param {string} context A description of where the error occured.
-         * @param {string=} opt_message Additional message.
-         * @constructor
-         * @extends {goog.debug.GoogError}
-         * @final
-         */
-        constructor(error: any /*number|DOMError*/, context: string, opt_message?: string);
-    
-        /**
-         * @return {string} The name of the error.
-         */
-        getName(): string;
-    }
 }
 

@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:02:14 PDT 2014
+// Generated Sat May  3 12:18:04 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -197,7 +197,7 @@ declare module goog.graphics {
      * @extends {goog.graphics.PathElement}
      * @final
      */
-    class CanvasPathElement extends goog.graphics.GoogPathElement {
+    class CanvasPathElement extends goog.graphics.PathElement {
         /**
          * Thin wrapper for canvas path elements.
          * This is an implementation of the goog.graphics.PathElement interface.

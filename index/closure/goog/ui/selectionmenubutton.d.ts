@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:01:10 PDT 2014
+// Generated Sat May  3 12:17:00 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -80,15 +80,6 @@
 /// <reference path="../../goog/ui/menubuttonrenderer.d.ts" />
 /// <reference path="../../goog/ui/menubutton.d.ts" />
 
-declare module goog.ui.SelectionMenuButton {
-
-    /**
-     * Constants for menu action types.
-     * @enum {number}
-     */
-    enum SelectionState { ALL, SOME, NONE } 
-}
-
 declare module goog.ui {
 
     /**
@@ -108,7 +99,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.MenuButton}
      */
-    class SelectionMenuButton extends goog.ui.GoogMenuButton {
+    class SelectionMenuButton extends goog.ui.MenuButton {
         /**
          * A selection menu button control.  Extends {@link goog.ui.MenuButton}.
          * Menu contains 'select all' and 'select none' MenuItems for selecting all and
@@ -181,5 +172,14 @@ declare module goog.ui {
     */
         getSelectionState(): goog.ui.SelectionMenuButton.SelectionState;
     }
+}
+
+declare module goog.ui.SelectionMenuButton {
+
+    /**
+     * Constants for menu action types.
+     * @enum {number}
+     */
+    enum SelectionState { ALL, SOME, NONE } 
 }
 

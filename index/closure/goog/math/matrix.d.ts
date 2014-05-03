@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:04:23 PDT 2014
+// Generated Sat May  3 12:20:15 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/math/size.d.ts" />
@@ -8,54 +8,6 @@
 /// <reference path="../../goog/asserts/asserts.d.ts" />
 /// <reference path="../../goog/array/array.d.ts" />
 /// <reference path="../../goog/math/math.d.ts" />
-
-declare module goog.math.Matrix {
-
-    /**
-     * Creates a square identity matrix. i.e. for n = 3:
-     * <pre>
-     * [ 1 0 0 ]
-     * [ 0 1 0 ]
-     * [ 0 0 1 ]
-     * </pre>
-     * @param {number} n The size of the square identity matrix.
-     * @return {!goog.math.Matrix} Identity matrix of width and height {@code n}.
-     */
-    function createIdentityMatrix(n: number): goog.math.Matrix;
-
-    /**
-     * Calls a function for each cell in a matrix.
-     * @param {goog.math.Matrix} matrix The matrix to iterate over.
-     * @param {Function} fn The function to call for every element. This function
-     *     takes 4 arguments (value, i, j, and the matrix)
-     *     and the return value is irrelevant.
-     * @param {Object=} opt_obj The object to be used as the value of 'this'
-     *     within {@code fn}.
-     */
-    function forEach(matrix: goog.math.Matrix, fn: Function, opt_obj?: Object): void;
-
-    /**
-     * Tests whether an array is a valid matrix.  A valid array is an array of
-     * arrays where all arrays are of the same length and all elements are numbers.
-     * @param {Array} arr An array to test.
-     * @return {boolean} Whether the array is a valid matrix.
-     */
-    function isValidArray(arr: any[]): boolean;
-
-    /**
-     * Calls a function for every cell in a matrix and inserts the result into a
-     * new matrix of equal dimensions.
-     * @param {goog.math.Matrix} matrix The matrix to iterate over.
-     * @param {Function} fn The function to call for every element. This function
-     *                     takes 4 arguments (value, i, j and the matrix)
-     *                     and should return something. The result will be inserted
-     *                     into a new matrix.
-     * @param {Object=} opt_obj The object to be used as the value of 'this'
-     *     within {@code fn}.
-     * @return {!goog.math.Matrix} A new matrix with the results from {@code fn}.
-     */
-    function map(matrix: goog.math.Matrix, fn: Function, opt_obj?: Object): goog.math.Matrix;
-}
 
 declare module goog.math {
 
@@ -233,5 +185,53 @@ declare module goog.math {
          */
         toArray(): number[][];
     }
+}
+
+declare module goog.math.Matrix {
+
+    /**
+     * Creates a square identity matrix. i.e. for n = 3:
+     * <pre>
+     * [ 1 0 0 ]
+     * [ 0 1 0 ]
+     * [ 0 0 1 ]
+     * </pre>
+     * @param {number} n The size of the square identity matrix.
+     * @return {!goog.math.Matrix} Identity matrix of width and height {@code n}.
+     */
+    function createIdentityMatrix(n: number): goog.math.Matrix;
+
+    /**
+     * Calls a function for each cell in a matrix.
+     * @param {goog.math.Matrix} matrix The matrix to iterate over.
+     * @param {Function} fn The function to call for every element. This function
+     *     takes 4 arguments (value, i, j, and the matrix)
+     *     and the return value is irrelevant.
+     * @param {Object=} opt_obj The object to be used as the value of 'this'
+     *     within {@code fn}.
+     */
+    function forEach(matrix: goog.math.Matrix, fn: Function, opt_obj?: Object): void;
+
+    /**
+     * Tests whether an array is a valid matrix.  A valid array is an array of
+     * arrays where all arrays are of the same length and all elements are numbers.
+     * @param {Array} arr An array to test.
+     * @return {boolean} Whether the array is a valid matrix.
+     */
+    function isValidArray(arr: any[]): boolean;
+
+    /**
+     * Calls a function for every cell in a matrix and inserts the result into a
+     * new matrix of equal dimensions.
+     * @param {goog.math.Matrix} matrix The matrix to iterate over.
+     * @param {Function} fn The function to call for every element. This function
+     *                     takes 4 arguments (value, i, j and the matrix)
+     *                     and should return something. The result will be inserted
+     *                     into a new matrix.
+     * @param {Object=} opt_obj The object to be used as the value of 'this'
+     *     within {@code fn}.
+     * @return {!goog.math.Matrix} A new matrix with the results from {@code fn}.
+     */
+    function map(matrix: goog.math.Matrix, fn: Function, opt_obj?: Object): goog.math.Matrix;
 }
 

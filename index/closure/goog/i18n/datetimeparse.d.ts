@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:04:50 PDT 2014
+// Generated Sat May  3 12:20:41 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/i18n/datetimesymbols.d.ts" />
@@ -11,17 +11,6 @@
 /// <reference path="../../goog/array/array.d.ts" />
 /// <reference path="../../goog/i18n/timezone.d.ts" />
 /// <reference path="../../goog/i18n/datetimeformat.d.ts" />
-
-declare module goog.i18n.DateTimeParse {
-
-    /**
-     * Number of years prior to now that the century used to
-     * disambiguate two digit years will begin
-     *
-     * @type {number}
-     */
-    var ambiguousYearCenturyStart: number;
-}
 
 declare module goog.i18n {
 
@@ -60,5 +49,16 @@ declare module goog.i18n {
          */
         strictParse(text: string, date: goog.date.DateLike, opt_start?: number): number;
     }
+}
+
+declare module goog.i18n.DateTimeParse {
+
+    /**
+     * Number of years prior to now that the century used to
+     * disambiguate two digit years will begin
+     *
+     * @type {number}
+     */
+    var ambiguousYearCenturyStart: number;
 }
 

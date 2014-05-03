@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:58:40 PDT 2014
+// Generated Sat May  3 12:14:28 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/string/string.d.ts" />
@@ -40,15 +40,6 @@
 /// <reference path="../../goog/events/events.d.ts" />
 /// <reference path="../../goog/events/eventtarget.d.ts" />
 /// <reference path="../../goog/timer/timer.d.ts" />
-
-declare module goog.net.NetworkTester {
-
-    /**
-     * Default timeout
-     * @type {number}
-     */
-    var DEFAULT_TIMEOUT_MS: number;
-}
 
 declare module goog.net {
 
@@ -149,5 +140,14 @@ declare module goog.net {
          */
         onResult(succeeded: boolean): void;
     }
+}
+
+declare module goog.net.NetworkTester {
+
+    /**
+     * Default timeout
+     * @type {number}
+     */
+    var DEFAULT_TIMEOUT_MS: number;
 }
 

@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:58:13 PDT 2014
+// Generated Sat May  3 12:14:01 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -38,69 +38,6 @@
 /// <reference path="../../goog/debug/logbuffer.d.ts" />
 /// <reference path="../../goog/debug/logger.d.ts" />
 /// <reference path="../../goog/log/log.d.ts" />
-
-declare module goog.net.WebSocket {
-
-    /**
-     * The events fired by the web socket.
-     * @enum {string} The event types for the web socket.
-     */
-    enum EventType { CLOSED, ERROR, MESSAGE, OPENED } 
-
-    /**
-     * Installs exception protection for all entry points introduced by
-     * goog.net.WebSocket instances which are not protected by
-     * {@link goog.debug.ErrorHandler#protectWindowSetTimeout},
-     * {@link goog.debug.ErrorHandler#protectWindowSetInterval}, or
-     * {@link goog.events.protectBrowserEventEntryPoint}.
-     *
-     * @param {!goog.debug.ErrorHandler} errorHandler Error handler with which to
-     *     protect the entry points.
-     */
-    function protectEntryPoints(errorHandler: goog.debug.ErrorHandler): void;
-
-    /**
-     * Object representing a new incoming message event.
-     *
-     * @param {string} message The raw message coming from the web socket.
-     * @extends {goog.events.Event}
-     * @constructor
-     * @final
-     */
-    class MessageEvent extends goog.events.Event {
-        /**
-         * Object representing a new incoming message event.
-         *
-         * @param {string} message The raw message coming from the web socket.
-         * @extends {goog.events.Event}
-         * @constructor
-         * @final
-         */
-        constructor(message: string);
-    }
-
-    /**
-     * Object representing an error event. This is fired whenever an error occurs
-     * on the web socket.
-     *
-     * @param {string} data The error data.
-     * @extends {goog.events.Event}
-     * @constructor
-     * @final
-     */
-    class ErrorEvent extends goog.events.Event {
-        /**
-         * Object representing an error event. This is fired whenever an error occurs
-         * on the web socket.
-         *
-         * @param {string} data The error data.
-         * @extends {goog.events.Event}
-         * @constructor
-         * @final
-         */
-        constructor(data: string);
-    }
-}
 
 declare module goog.net {
 
@@ -168,5 +105,68 @@ declare module goog.net {
          */
         isOpen(): boolean;
     }
+}
+
+declare module goog.net.WebSocket {
+
+    /**
+     * Object representing a new incoming message event.
+     *
+     * @param {string} message The raw message coming from the web socket.
+     * @extends {goog.events.Event}
+     * @constructor
+     * @final
+     */
+    class MessageEvent extends goog.events.Event {
+        /**
+         * Object representing a new incoming message event.
+         *
+         * @param {string} message The raw message coming from the web socket.
+         * @extends {goog.events.Event}
+         * @constructor
+         * @final
+         */
+        constructor(message: string);
+    }
+
+    /**
+     * Object representing an error event. This is fired whenever an error occurs
+     * on the web socket.
+     *
+     * @param {string} data The error data.
+     * @extends {goog.events.Event}
+     * @constructor
+     * @final
+     */
+    class ErrorEvent extends goog.events.Event {
+        /**
+         * Object representing an error event. This is fired whenever an error occurs
+         * on the web socket.
+         *
+         * @param {string} data The error data.
+         * @extends {goog.events.Event}
+         * @constructor
+         * @final
+         */
+        constructor(data: string);
+    }
+
+    /**
+     * The events fired by the web socket.
+     * @enum {string} The event types for the web socket.
+     */
+    enum EventType { CLOSED, ERROR, MESSAGE, OPENED } 
+
+    /**
+     * Installs exception protection for all entry points introduced by
+     * goog.net.WebSocket instances which are not protected by
+     * {@link goog.debug.ErrorHandler#protectWindowSetTimeout},
+     * {@link goog.debug.ErrorHandler#protectWindowSetInterval}, or
+     * {@link goog.events.protectBrowserEventEntryPoint}.
+     *
+     * @param {!goog.debug.ErrorHandler} errorHandler Error handler with which to
+     *     protect the entry points.
+     */
+    function protectEntryPoints(errorHandler: goog.debug.ErrorHandler): void;
 }
 

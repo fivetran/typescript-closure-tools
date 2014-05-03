@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:57:28 PDT 2014
+// Generated Sat May  3 12:13:15 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/dom/nodetype.d.ts" />
@@ -25,15 +25,6 @@
 /// <reference path="../../../goog/events/browserevent.d.ts" />
 /// <reference path="../../../goog/events/events.d.ts" />
 /// <reference path="../../../goog/events/eventtarget.d.ts" />
-
-declare module goog.editor.plugins.UndoRedoState {
-
-    /**
-     * Event type for events indicating that this state has completed an undo or
-     * redo operation.
-     */
-    var ACTION_COMPLETED: any /*missing*/;
-}
 
 declare module goog.editor.plugins {
 
@@ -82,5 +73,14 @@ declare module goog.editor.plugins {
          */
         equals(state: goog.editor.plugins.UndoRedoState): boolean;
     }
+}
+
+declare module goog.editor.plugins.UndoRedoState {
+
+    /**
+     * Event type for events indicating that this state has completed an undo or
+     * redo operation.
+     */
+    var ACTION_COMPLETED: any /*missing*/;
 }
 

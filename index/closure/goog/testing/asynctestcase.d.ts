@@ -1,52 +1,10 @@
-// Generated Fri May  2 15:03:49 PDT 2014
+// Generated Sat May  3 12:19:40 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/testing/stacktrace.d.ts" />
 /// <reference path="../../goog/testing/asserts.d.ts" />
 /// <reference path="../../goog/object/object.d.ts" />
 /// <reference path="../../goog/testing/testcase.d.ts" />
-
-declare module goog.testing.AsyncTestCase.ControlBreakingException {
-
-    /**
-     * Return value for .toString().
-     * @type {string}
-     */
-    var TO_STRING: string;
-}
-
-declare module goog.testing.AsyncTestCase {
-
-    /**
-     * Preferred way of creating an AsyncTestCase. Creates one and initializes it
-     * with the G_testRunner.
-     * @param {string=} opt_name A descriptive name for the test case.
-     * @return {!goog.testing.AsyncTestCase} The created AsyncTestCase.
-     */
-    function createAndInstall(opt_name?: string): goog.testing.AsyncTestCase;
-
-    /**
-     * An exception class used solely for control flow.
-     * @param {string=} opt_message Error message.
-     * @constructor
-     * @final
-     */
-    class ControlBreakingException {
-        /**
-         * An exception class used solely for control flow.
-         * @param {string=} opt_message Error message.
-         * @constructor
-         * @final
-         */
-        constructor(opt_message?: string);
-    
-        /**
-         * Marks this object as a ControlBreakingException
-         * @type {boolean}
-         */
-        isControlBreakingException: boolean;
-    }
-}
 
 declare module goog.testing {
 
@@ -56,7 +14,7 @@ declare module goog.testing {
      * @extends {goog.testing.TestCase}
      * @constructor
      */
-    class GoogAsyncTestCase extends goog.testing.GoogTestCase {
+    class AsyncTestCase extends goog.testing.TestCase {
         /**
          * A test case that is capable of running tests the contain asynchronous logic.
          * @param {string=} opt_name A descriptive name for the test case.
@@ -137,7 +95,47 @@ declare module goog.testing {
          */
         enableDebugLogging(): void;
     }
+}
 
-    class AsyncTestCase extends GoogAsyncTestCase { }
+declare module goog.testing.AsyncTestCase {
+
+    /**
+     * An exception class used solely for control flow.
+     * @param {string=} opt_message Error message.
+     * @constructor
+     * @final
+     */
+    class ControlBreakingException {
+        /**
+         * An exception class used solely for control flow.
+         * @param {string=} opt_message Error message.
+         * @constructor
+         * @final
+         */
+        constructor(opt_message?: string);
+    
+        /**
+         * Marks this object as a ControlBreakingException
+         * @type {boolean}
+         */
+        isControlBreakingException: boolean;
+    }
+
+    /**
+     * Preferred way of creating an AsyncTestCase. Creates one and initializes it
+     * with the G_testRunner.
+     * @param {string=} opt_name A descriptive name for the test case.
+     * @return {!goog.testing.AsyncTestCase} The created AsyncTestCase.
+     */
+    function createAndInstall(opt_name?: string): goog.testing.AsyncTestCase;
+}
+
+declare module goog.testing.AsyncTestCase.ControlBreakingException {
+
+    /**
+     * Return value for .toString().
+     * @type {string}
+     */
+    var TO_STRING: string;
 }
 

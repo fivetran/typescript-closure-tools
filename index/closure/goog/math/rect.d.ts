@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:04:24 PDT 2014
+// Generated Sat May  3 12:20:15 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -10,68 +10,6 @@
 /// <reference path="../../goog/math/coordinate.d.ts" />
 /// <reference path="../../goog/math/box.d.ts" />
 /// <reference path="../../goog/math/size.d.ts" />
-
-declare module goog.math.Rect {
-
-    /**
-     * Creates a new Rect object with the same position and dimensions as a given
-     * Box.  Note that this is only the inverse of toBox if left/top are defined.
-     * @param {goog.math.Box} box A box.
-     * @return {!goog.math.Rect} A new Rect initialized with the box's position
-     *     and size.
-     */
-    function createFromBox(box: goog.math.Box): goog.math.Rect;
-
-    /**
-     * Compares rectangles for equality.
-     * @param {goog.math.Rect} a A Rectangle.
-     * @param {goog.math.Rect} b A Rectangle.
-     * @return {boolean} True iff the rectangles have the same left, top, width,
-     *     and height, or if both are null.
-     */
-    function equals(a: goog.math.Rect, b: goog.math.Rect): boolean;
-
-    /**
-     * Returns the intersection of two rectangles. Two rectangles intersect if they
-     * touch at all, for example, two zero width and height rectangles would
-     * intersect if they had the same top and left.
-     * @param {goog.math.Rect} a A Rectangle.
-     * @param {goog.math.Rect} b A Rectangle.
-     * @return {goog.math.Rect} A new intersection rect (even if width and height
-     *     are 0), or null if there is no intersection.
-     */
-    function intersection(a: goog.math.Rect, b: goog.math.Rect): goog.math.Rect;
-
-    /**
-     * Returns whether two rectangles intersect. Two rectangles intersect if they
-     * touch at all, for example, two zero width and height rectangles would
-     * intersect if they had the same top and left.
-     * @param {goog.math.Rect} a A Rectangle.
-     * @param {goog.math.Rect} b A Rectangle.
-     * @return {boolean} Whether a and b intersect.
-     */
-    function intersects(a: goog.math.Rect, b: goog.math.Rect): boolean;
-
-    /**
-     * Computes the difference regions between two rectangles. The return value is
-     * an array of 0 to 4 rectangles defining the remaining regions of the first
-     * rectangle after the second has been subtracted.
-     * @param {goog.math.Rect} a A Rectangle.
-     * @param {goog.math.Rect} b A Rectangle.
-     * @return {!Array.<!goog.math.Rect>} An array with 0 to 4 rectangles which
-     *     together define the difference area of rectangle a minus rectangle b.
-     */
-    function difference(a: goog.math.Rect, b: goog.math.Rect): goog.math.Rect[];
-
-    /**
-     * Returns a new rectangle which completely contains both input rectangles.
-     * @param {goog.math.Rect} a A rectangle.
-     * @param {goog.math.Rect} b A rectangle.
-     * @return {goog.math.Rect} A new bounding rect, or null if either rect is
-     *     null.
-     */
-    function boundingRect(a: goog.math.Rect, b: goog.math.Rect): goog.math.Rect;
-}
 
 declare module goog.math {
 
@@ -227,5 +165,67 @@ declare module goog.math {
          */
         scale(sx: number, opt_sy?: number): goog.math.Rect;
     }
+}
+
+declare module goog.math.Rect {
+
+    /**
+     * Creates a new Rect object with the same position and dimensions as a given
+     * Box.  Note that this is only the inverse of toBox if left/top are defined.
+     * @param {goog.math.Box} box A box.
+     * @return {!goog.math.Rect} A new Rect initialized with the box's position
+     *     and size.
+     */
+    function createFromBox(box: goog.math.Box): goog.math.Rect;
+
+    /**
+     * Compares rectangles for equality.
+     * @param {goog.math.Rect} a A Rectangle.
+     * @param {goog.math.Rect} b A Rectangle.
+     * @return {boolean} True iff the rectangles have the same left, top, width,
+     *     and height, or if both are null.
+     */
+    function equals(a: goog.math.Rect, b: goog.math.Rect): boolean;
+
+    /**
+     * Returns the intersection of two rectangles. Two rectangles intersect if they
+     * touch at all, for example, two zero width and height rectangles would
+     * intersect if they had the same top and left.
+     * @param {goog.math.Rect} a A Rectangle.
+     * @param {goog.math.Rect} b A Rectangle.
+     * @return {goog.math.Rect} A new intersection rect (even if width and height
+     *     are 0), or null if there is no intersection.
+     */
+    function intersection(a: goog.math.Rect, b: goog.math.Rect): goog.math.Rect;
+
+    /**
+     * Returns whether two rectangles intersect. Two rectangles intersect if they
+     * touch at all, for example, two zero width and height rectangles would
+     * intersect if they had the same top and left.
+     * @param {goog.math.Rect} a A Rectangle.
+     * @param {goog.math.Rect} b A Rectangle.
+     * @return {boolean} Whether a and b intersect.
+     */
+    function intersects(a: goog.math.Rect, b: goog.math.Rect): boolean;
+
+    /**
+     * Computes the difference regions between two rectangles. The return value is
+     * an array of 0 to 4 rectangles defining the remaining regions of the first
+     * rectangle after the second has been subtracted.
+     * @param {goog.math.Rect} a A Rectangle.
+     * @param {goog.math.Rect} b A Rectangle.
+     * @return {!Array.<!goog.math.Rect>} An array with 0 to 4 rectangles which
+     *     together define the difference area of rectangle a minus rectangle b.
+     */
+    function difference(a: goog.math.Rect, b: goog.math.Rect): goog.math.Rect[];
+
+    /**
+     * Returns a new rectangle which completely contains both input rectangles.
+     * @param {goog.math.Rect} a A rectangle.
+     * @param {goog.math.Rect} b A rectangle.
+     * @return {goog.math.Rect} A new bounding rect, or null if either rect is
+     *     null.
+     */
+    function boundingRect(a: goog.math.Rect, b: goog.math.Rect): goog.math.Rect;
 }
 

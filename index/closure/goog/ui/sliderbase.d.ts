@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:59:24 PDT 2014
+// Generated Sat May  3 12:15:12 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -66,21 +66,6 @@
 declare module goog.ui.SliderBase {
 
     /**
-     * Event types used to listen for dragging events. Note that extent drag events
-     * are also sent for single-thumb sliders, since the one thumb controls both
-     * value and extent together; in this case, they can simply be ignored.
-     * @enum {string}
-     */
-    enum EventType { DRAG_VALUE_START, DRAG_VALUE_END, DRAG_EXTENT_START, DRAG_EXTENT_END, DRAG_START, DRAG_END } 
-
-    /**
-     * Enum for representing the orientation of the slider.
-     *
-     * @enum {string}
-     */
-    enum Orientation { VERTICAL, HORIZONTAL } 
-
-    /**
      * The factory for creating additional animations to be played when animating to
      * a new value.
      * @interface
@@ -97,6 +82,21 @@ declare module goog.ui.SliderBase {
          */
         createAnimations(previousValue: number, newValue: number, interval: number): goog.fx.TransitionBase[];
     }
+
+    /**
+     * Event types used to listen for dragging events. Note that extent drag events
+     * are also sent for single-thumb sliders, since the one thumb controls both
+     * value and extent together; in this case, they can simply be ignored.
+     * @enum {string}
+     */
+    enum EventType { DRAG_VALUE_START, DRAG_VALUE_END, DRAG_EXTENT_START, DRAG_EXTENT_END, DRAG_START, DRAG_END } 
+
+    /**
+     * Enum for representing the orientation of the slider.
+     *
+     * @enum {string}
+     */
+    enum Orientation { VERTICAL, HORIZONTAL } 
 }
 
 declare module goog.ui {
@@ -109,7 +109,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.Component}
      */
-    class GoogSliderBase extends goog.ui.GoogComponent {
+    class SliderBase extends goog.ui.Component {
         /**
          * This creates a SliderBase object.
          * @param {goog.dom.DomHelper=} opt_domHelper Optional DOM helper.
@@ -437,7 +437,5 @@ declare module goog.ui {
          */
         getTextValue(): string;
     }
-
-    class SliderBase extends GoogSliderBase { }
 }
 

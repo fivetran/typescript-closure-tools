@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:59:12 PDT 2014
+// Generated Sat May  3 12:15:00 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -58,16 +58,6 @@
 /// <reference path="../../goog/ui/button.d.ts" />
 /// <reference path="../../goog/ui/cssnames.d.ts" />
 
-declare module goog.ui.FlatButtonRenderer {
-
-    /**
-     * Default CSS class to be applied to the root element of components rendered
-     * by this renderer.
-     * @type {string}
-     */
-    var CSS_CLASS: string;
-}
-
 declare module goog.ui {
 
     /**
@@ -77,7 +67,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.ButtonRenderer}
      */
-    class GoogFlatButtonRenderer extends goog.ui.GoogButtonRenderer {
+    class FlatButtonRenderer extends goog.ui.ButtonRenderer {
         /**
          * Flat renderer for {@link goog.ui.Button}s.  Flat buttons can contain
          * almost arbitrary HTML content, will flow like inline elements, but can be
@@ -87,7 +77,15 @@ declare module goog.ui {
          */
         constructor();
     }
+}
 
-    class FlatButtonRenderer extends GoogFlatButtonRenderer { }
+declare module goog.ui.FlatButtonRenderer {
+
+    /**
+     * Default CSS class to be applied to the root element of components rendered
+     * by this renderer.
+     * @type {string}
+     */
+    var CSS_CLASS: string;
 }
 

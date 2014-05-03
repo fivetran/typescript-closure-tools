@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:59:26 PDT 2014
+// Generated Sat May  3 12:15:14 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -70,7 +70,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.PopupBase}
      */
-    class Popup extends goog.ui.GoogPopupBase {
+    class Popup extends goog.ui.PopupBase {
         /**
          * The Popup class provides functionality for displaying an absolutely
          * positioned element at a particular location in the window. It's designed to

@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:59:50 PDT 2014
+// Generated Sat May  3 12:15:39 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -42,42 +42,6 @@
 /// <reference path="../../goog/ui/component.d.ts" />
 /// <reference path="../../goog/dom/classlist.d.ts" />
 
-declare module goog.ui.DrilldownRow {
-
-    /**
-     * Example object with properties of the form accepted by the class
-     * constructor.  These are educational and show the compiler that
-     * these properties can be set so it doesn't emit warnings.
-     */
-    var sampleProperties: any /*missing*/;
-
-    /**
-     * This static function is a default decorator that adds HTML at the
-     * beginning of the first cell to display indentation and an expander
-     * image; sets up a click handler on the toggler; initializes a class
-     * for the row: either goog-drilldown-expanded or
-     * goog-drilldown-collapsed, depending on the initial state of the
-     * DrilldownRow; and sets up a click event handler on the toggler
-     * element.
-     *
-     * This creates a DIV with class=toggle.  Your application can set up
-     * CSS style rules something like this:
-     *
-     * tr.goog-drilldown-expanded .toggle {
-     *   background-image: url('minus.png');
-     * }
-     *
-     * tr.goog-drilldown-collapsed .toggle {
-     *   background-image: url('plus.png');
-     * }
-     *
-     * These background images show whether the DrilldownRow is expanded.
-     *
-     * @param {goog.ui.DrilldownRow} selfObj DrilldownRow to be decorated.
-     */
-    function decorate(selfObj: goog.ui.DrilldownRow): void;
-}
-
 declare module goog.ui {
 
     /**
@@ -99,7 +63,7 @@ declare module goog.ui {
      * @extends {goog.ui.Component}
      * @final
      */
-    class DrilldownRow extends goog.ui.GoogComponent {
+    class DrilldownRow extends goog.ui.Component {
         /**
          * Builds a DrilldownRow component, which can overlay a tree
          * structure onto sections of an HTML table.
@@ -151,5 +115,41 @@ declare module goog.ui {
          */
         getDepth(): number;
     }
+}
+
+declare module goog.ui.DrilldownRow {
+
+    /**
+     * Example object with properties of the form accepted by the class
+     * constructor.  These are educational and show the compiler that
+     * these properties can be set so it doesn't emit warnings.
+     */
+    var sampleProperties: any /*missing*/;
+
+    /**
+     * This static function is a default decorator that adds HTML at the
+     * beginning of the first cell to display indentation and an expander
+     * image; sets up a click handler on the toggler; initializes a class
+     * for the row: either goog-drilldown-expanded or
+     * goog-drilldown-collapsed, depending on the initial state of the
+     * DrilldownRow; and sets up a click event handler on the toggler
+     * element.
+     *
+     * This creates a DIV with class=toggle.  Your application can set up
+     * CSS style rules something like this:
+     *
+     * tr.goog-drilldown-expanded .toggle {
+     *   background-image: url('minus.png');
+     * }
+     *
+     * tr.goog-drilldown-collapsed .toggle {
+     *   background-image: url('plus.png');
+     * }
+     *
+     * These background images show whether the DrilldownRow is expanded.
+     *
+     * @param {goog.ui.DrilldownRow} selfObj DrilldownRow to be decorated.
+     */
+    function decorate(selfObj: goog.ui.DrilldownRow): void;
 }
 

@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:56:53 PDT 2014
+// Generated Sat May  3 12:12:39 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/disposable/idisposable.d.ts" />
@@ -27,15 +27,6 @@
 /// <reference path="../../goog/events/eventtarget.d.ts" />
 /// <reference path="../../goog/timer/timer.d.ts" />
 /// <reference path="../../goog/async/delay.d.ts" />
-
-declare module goog.dom.BufferedViewportSizeMonitor {
-
-    /**
-     * Additional events to dispatch.
-     * @enum {string}
-     */
-    enum EventType { RESIZE_HEIGHT, RESIZE_WIDTH } 
-}
 
 declare module goog.dom {
 
@@ -68,5 +59,14 @@ declare module goog.dom {
          */
         getSize(): goog.math.Size;
     }
+}
+
+declare module goog.dom.BufferedViewportSizeMonitor {
+
+    /**
+     * Additional events to dispatch.
+     * @enum {string}
+     */
+    enum EventType { RESIZE_HEIGHT, RESIZE_WIDTH } 
 }
 

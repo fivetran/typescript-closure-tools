@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:00:37 PDT 2014
+// Generated Sat May  3 12:16:27 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/dom/nodetype.d.ts" />
@@ -60,15 +60,6 @@
 /// <reference path="../../../goog/ui/palette.d.ts" />
 /// <reference path="../../../goog/ui/equation/palette.d.ts" />
 
-declare module goog.ui.equation.MenuPalette {
-
-    /**
-     * The CSS class name for the palette.
-     * @type {string}
-     */
-    var CSS_CLASS: string;
-}
-
 declare module goog.ui.equation {
 
     /**
@@ -79,7 +70,7 @@ declare module goog.ui.equation {
      * @constructor
      * @final
      */
-    class MenuPalette extends goog.ui.equation.GoogPalette {
+    class MenuPalette extends goog.ui.equation.Palette {
         /**
          * Constructs a new menu palette.
          * @param {goog.ui.equation.PaletteManager} paletteManager The
@@ -106,5 +97,14 @@ declare module goog.ui.equation {
          */
         constructor();
     }
+}
+
+declare module goog.ui.equation.MenuPalette {
+
+    /**
+     * The CSS class name for the palette.
+     * @type {string}
+     */
+    var CSS_CLASS: string;
 }
 

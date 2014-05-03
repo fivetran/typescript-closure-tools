@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:58:00 PDT 2014
+// Generated Sat May  3 12:13:48 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -55,15 +55,6 @@
 /// <reference path="../../goog/debug/logbuffer.d.ts" />
 /// <reference path="../../goog/debug/logger.d.ts" />
 /// <reference path="../../goog/log/log.d.ts" />
-
-declare module goog.crypt.BlobHasher {
-
-    /**
-     * Event names for hash computation events
-     * @enum {string}
-     */
-    enum EventType { STARTED, PROGRESS, THROTTLED, COMPLETE, ABORT, ERROR } 
-}
 
 declare module goog.crypt {
 
@@ -122,5 +113,14 @@ declare module goog.crypt {
          */
         getHash(): number[];
     }
+}
+
+declare module goog.crypt.BlobHasher {
+
+    /**
+     * Event names for hash computation events
+     * @enum {string}
+     */
+    enum EventType { STARTED, PROGRESS, THROTTLED, COMPLETE, ABORT, ERROR } 
 }
 

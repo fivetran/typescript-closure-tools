@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:00:11 PDT 2014
+// Generated Sat May  3 12:16:00 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/dom/nodetype.d.ts" />
@@ -77,7 +77,7 @@ declare module goog.ui.emoji {
      * @constructor
      * @final
      */
-    class EmojiPalette extends goog.ui.GoogPalette {
+    class EmojiPalette extends goog.ui.Palette {
         /**
          * A page of emoji to be displayed in an EmojiPicker.
          *

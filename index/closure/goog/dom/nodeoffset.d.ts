@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:56:52 PDT 2014
+// Generated Sat May  3 12:12:38 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/tagname.d.ts" />
@@ -16,7 +16,7 @@ declare module goog.dom {
      * @constructor
      * @final
      */
-    class NodeOffset extends goog.GoogDisposable {
+    class NodeOffset extends goog.Disposable {
         /**
          * Object to store the offset from one node to another in a way that works on
          * any similar DOM structure regardless of whether it is the same actual nodes.

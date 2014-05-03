@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:56:17 PDT 2014
+// Generated Sat May  3 12:12:03 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/disposable/idisposable.d.ts" />
@@ -33,26 +33,6 @@
 /// <reference path="../../goog/fx/transition.d.ts" />
 /// <reference path="../../goog/fx/transitionbase.d.ts" />
 
-declare module goog.fx.Animation {
-
-    /**
-     * Events fired by the animation.
-     * @enum {string}
-     */
-    enum EventType { PLAY, BEGIN, RESUME, END, STOP, FINISH, PAUSE, ANIMATE, DESTROY } 
-
-    /**
-     * @deprecated Use goog.fx.anim.TIMEOUT.
-     */
-    var TIMEOUT: any /*missing*/;
-
-    /**
-     * @deprecated Use goog.fx.anim.setAnimationWindow.
-     * @param {Window} animationWindow The window in which to animate elements.
-     */
-    function setAnimationWindow(animationWindow: Window): void;
-}
-
 declare module goog.fx {
 
     /**
@@ -66,7 +46,7 @@ declare module goog.fx {
      * @implements {goog.fx.Transition}
      * @extends {goog.fx.TransitionBase}
      */
-    class GoogAnimation extends goog.fx.GoogTransitionBase implements goog.fx.anim.Animated, goog.fx.Transition {
+    class Animation extends goog.fx.TransitionBase implements goog.fx.anim.Animated, goog.fx.Transition {
         /**
          * Constructor for an animation object.
          * @param {Array.<number>} start Array for start coordinates.
@@ -154,8 +134,6 @@ declare module goog.fx {
         onDestroy(): void;
     }
 
-    class Animation extends GoogAnimation { }
-
     /**
      * Class for an animation event object.
      * @param {string} type Event type.
@@ -180,5 +158,25 @@ declare module goog.fx {
          */
         coordsAsInts(): number[];
     }
+}
+
+declare module goog.fx.Animation {
+
+    /**
+     * Events fired by the animation.
+     * @enum {string}
+     */
+    enum EventType { PLAY, BEGIN, RESUME, END, STOP, FINISH, PAUSE, ANIMATE, DESTROY } 
+
+    /**
+     * @deprecated Use goog.fx.anim.TIMEOUT.
+     */
+    var TIMEOUT: any /*missing*/;
+
+    /**
+     * @deprecated Use goog.fx.anim.setAnimationWindow.
+     * @param {Window} animationWindow The window in which to animate elements.
+     */
+    function setAnimationWindow(animationWindow: Window): void;
 }
 

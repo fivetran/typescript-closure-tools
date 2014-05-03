@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:02:19 PDT 2014
+// Generated Sat May  3 12:18:09 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -59,25 +59,6 @@
 /// <reference path="../../goog/uri/utils.d.ts" />
 /// <reference path="../../goog/tweak/registry.d.ts" />
 /// <reference path="../../goog/tweak/tweak.d.ts" />
-
-declare module goog.tweak.TweakUi {
-
-    /**
-     * Creates a TweakUi if tweaks are enabled.
-     * @param {goog.dom.DomHelper=} opt_domHelper The DomHelper to render with.
-     * @return {!Element|undefined} The root UI element or undefined if tweaks are
-     *     not enabled.
-     */
-    function create(opt_domHelper?: goog.dom.DomHelper): any /*Element|any (undefined)*/;
-
-    /**
-     * Creates a TweakUi inside of a show/hide link.
-     * @param {goog.dom.DomHelper=} opt_domHelper The DomHelper to render with.
-     * @return {!Element|undefined} The root UI element or undefined if tweaks are
-     *     not enabled.
-     */
-    function createCollapsible(opt_domHelper?: goog.dom.DomHelper): any /*Element|any (undefined)*/;
-}
 
 declare module goog.tweak {
 
@@ -162,5 +143,24 @@ declare module goog.tweak {
          */
         toggleAllDescriptions(): void;
     }
+}
+
+declare module goog.tweak.TweakUi {
+
+    /**
+     * Creates a TweakUi if tweaks are enabled.
+     * @param {goog.dom.DomHelper=} opt_domHelper The DomHelper to render with.
+     * @return {!Element|undefined} The root UI element or undefined if tweaks are
+     *     not enabled.
+     */
+    function create(opt_domHelper?: goog.dom.DomHelper): any /*Element|any (undefined)*/;
+
+    /**
+     * Creates a TweakUi inside of a show/hide link.
+     * @param {goog.dom.DomHelper=} opt_domHelper The DomHelper to render with.
+     * @return {!Element|undefined} The root UI element or undefined if tweaks are
+     *     not enabled.
+     */
+    function createCollapsible(opt_domHelper?: goog.dom.DomHelper): any /*Element|any (undefined)*/;
 }
 

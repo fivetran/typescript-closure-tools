@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:04:11 PDT 2014
+// Generated Sat May  3 12:20:02 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -15,88 +15,6 @@
 /// <reference path="../../goog/async/run.d.ts" />
 /// <reference path="../../goog/promise/thenable.d.ts" />
 /// <reference path="../../goog/promise/promise.d.ts" />
-
-declare module goog.testing.PerformanceTimer {
-
-    /**
-     * Creates a performance timer results object by analyzing a given array of
-     * sample timings.
-     * @param {Array.<number>} samples The samples to analyze.
-     * @return {!Object} Object containing performance stats.
-     */
-    function createResults(samples: number[]): Object;
-
-    /**
-     * A test function whose performance should be measured or a setUp/tearDown
-     * function. It may optionally return a deferred object. If it does so, the
-     * test harness will assume the function is asynchronous and it must signal
-     * that it's done by setting an (empty) result on the deferred object. If the
-     * function doesn't return anything, the test harness will assume it's
-     * synchronous.
-     * @typedef {function():(goog.async.Deferred|undefined)}
-     */
-    interface TestFunction {
-        (): any /*goog.async.Deferred|any (undefined)*/
-    }
-
-    /**
-     * A task for the performance timer to measure. Callers can specify optional
-     * setUp and tearDown methods to control state before and after each run of the
-     * test function.
-     * @param {goog.testing.PerformanceTimer.TestFunction} test Test function whose
-     *     performance is to be measured.
-     * @constructor
-     * @final
-     */
-    class Task {
-        /**
-         * A task for the performance timer to measure. Callers can specify optional
-         * setUp and tearDown methods to control state before and after each run of the
-         * test function.
-         * @param {goog.testing.PerformanceTimer.TestFunction} test Test function whose
-         *     performance is to be measured.
-         * @constructor
-         * @final
-         */
-        constructor(test: goog.testing.PerformanceTimer.TestFunction);
-    
-        /**
-         * @return {goog.testing.PerformanceTimer.TestFunction} The test function to
-         *     time.
-         */
-        getTest(): goog.testing.PerformanceTimer.TestFunction;
-    
-        /**
-         * Specifies a set up function to be invoked before each invocation of the test
-         * function.
-         * @param {goog.testing.PerformanceTimer.TestFunction} setUp The set up
-         *     function.
-         * @return {!goog.testing.PerformanceTimer.Task} This task.
-         */
-        withSetUp(setUp: goog.testing.PerformanceTimer.TestFunction): goog.testing.PerformanceTimer.Task;
-    
-        /**
-         * @return {goog.testing.PerformanceTimer.TestFunction} The set up function or
-         *     the default no-op function if none was specified.
-         */
-        getSetUp(): goog.testing.PerformanceTimer.TestFunction;
-    
-        /**
-         * Specifies a tear down function to be invoked after each invocation of the
-         * test function.
-         * @param {goog.testing.PerformanceTimer.TestFunction} tearDown The tear down
-         *     function.
-         * @return {!goog.testing.PerformanceTimer.Task} This task.
-         */
-        withTearDown(tearDown: goog.testing.PerformanceTimer.TestFunction): goog.testing.PerformanceTimer.Task;
-    
-        /**
-         * @return {goog.testing.PerformanceTimer.TestFunction} The tear down function
-         *     or the default no-op function if none was specified.
-         */
-        getTearDown(): goog.testing.PerformanceTimer.TestFunction;
-    }
-}
 
 declare module goog.testing {
 
@@ -204,6 +122,88 @@ declare module goog.testing {
          *     containing performance stats.
          */
         runAsyncTask(task: goog.testing.PerformanceTimer.Task): goog.async.Deferred;
+    }
+}
+
+declare module goog.testing.PerformanceTimer {
+
+    /**
+     * A task for the performance timer to measure. Callers can specify optional
+     * setUp and tearDown methods to control state before and after each run of the
+     * test function.
+     * @param {goog.testing.PerformanceTimer.TestFunction} test Test function whose
+     *     performance is to be measured.
+     * @constructor
+     * @final
+     */
+    class Task {
+        /**
+         * A task for the performance timer to measure. Callers can specify optional
+         * setUp and tearDown methods to control state before and after each run of the
+         * test function.
+         * @param {goog.testing.PerformanceTimer.TestFunction} test Test function whose
+         *     performance is to be measured.
+         * @constructor
+         * @final
+         */
+        constructor(test: goog.testing.PerformanceTimer.TestFunction);
+    
+        /**
+         * @return {goog.testing.PerformanceTimer.TestFunction} The test function to
+         *     time.
+         */
+        getTest(): goog.testing.PerformanceTimer.TestFunction;
+    
+        /**
+         * Specifies a set up function to be invoked before each invocation of the test
+         * function.
+         * @param {goog.testing.PerformanceTimer.TestFunction} setUp The set up
+         *     function.
+         * @return {!goog.testing.PerformanceTimer.Task} This task.
+         */
+        withSetUp(setUp: goog.testing.PerformanceTimer.TestFunction): goog.testing.PerformanceTimer.Task;
+    
+        /**
+         * @return {goog.testing.PerformanceTimer.TestFunction} The set up function or
+         *     the default no-op function if none was specified.
+         */
+        getSetUp(): goog.testing.PerformanceTimer.TestFunction;
+    
+        /**
+         * Specifies a tear down function to be invoked after each invocation of the
+         * test function.
+         * @param {goog.testing.PerformanceTimer.TestFunction} tearDown The tear down
+         *     function.
+         * @return {!goog.testing.PerformanceTimer.Task} This task.
+         */
+        withTearDown(tearDown: goog.testing.PerformanceTimer.TestFunction): goog.testing.PerformanceTimer.Task;
+    
+        /**
+         * @return {goog.testing.PerformanceTimer.TestFunction} The tear down function
+         *     or the default no-op function if none was specified.
+         */
+        getTearDown(): goog.testing.PerformanceTimer.TestFunction;
+    }
+
+    /**
+     * Creates a performance timer results object by analyzing a given array of
+     * sample timings.
+     * @param {Array.<number>} samples The samples to analyze.
+     * @return {!Object} Object containing performance stats.
+     */
+    function createResults(samples: number[]): Object;
+
+    /**
+     * A test function whose performance should be measured or a setUp/tearDown
+     * function. It may optionally return a deferred object. If it does so, the
+     * test harness will assume the function is asynchronous and it must signal
+     * that it's done by setting an (empty) result on the deferred object. If the
+     * function doesn't return anything, the test harness will assume it's
+     * synchronous.
+     * @typedef {function():(goog.async.Deferred|undefined)}
+     */
+    interface TestFunction {
+        (): any /*goog.async.Deferred|any (undefined)*/
     }
 }
 

@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:03:25 PDT 2014
+// Generated Sat May  3 12:19:16 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/promise/resolver.d.ts" />
@@ -15,6 +15,17 @@
 /// <reference path="../../../goog/promise/promise.d.ts" />
 
 declare module goog.labs {
+
+    /**
+     * Alias for the {@code goog.promise.Resolver} interface. This alias will be
+     * removed once existing users have had a chance to migrate to the new name.
+     *
+     * @deprecated Use goog.promise.Resolver instead.
+     * @interface
+     * @template TYPE
+     */
+    interface Resolver<TYPE> {
+    }
 
     /**
      * Alias for the {@code goog.Promise} class. Closure Promises were developed
@@ -36,16 +47,5 @@ declare module goog.labs {
      * @template TYPE,RESOLVER_CONTEXT
      */
     var Promise: any /*missing*/;
-
-    /**
-     * Alias for the {@code goog.promise.Resolver} interface. This alias will be
-     * removed once existing users have had a chance to migrate to the new name.
-     *
-     * @deprecated Use goog.promise.Resolver instead.
-     * @interface
-     * @template TYPE
-     */
-    interface Resolver<TYPE> {
-    }
 }
 

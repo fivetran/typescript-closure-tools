@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:00:51 PDT 2014
+// Generated Sat May  3 12:16:41 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -69,39 +69,6 @@
 /// <reference path="../../goog/structs/set.d.ts" />
 /// <reference path="../../goog/ui/tooltip.d.ts" />
 /// <reference path="../../goog/ui/advancedtooltip.d.ts" />
-
-declare module goog.ui.HoverCard {
-
-    /**
-     * Enum for event type fired by HoverCard.
-     * @enum {string}
-     */
-    enum EventType { TRIGGER, CANCEL_TRIGGER, BEFORE_SHOW, SHOW, BEFORE_HIDE, HIDE } 
-
-    /**
-     * Create a trigger event for specified anchor and optional data.
-     * @param {goog.ui.HoverCard.EventType} type Event type.
-     * @param {goog.ui.HoverCard} target Hovercard that is triggering the event.
-     * @param {Element} anchor Element that triggered event.
-     * @param {Object=} opt_data Optional data to be available in the TRIGGER event.
-     * @constructor
-     * @extends {goog.events.Event}
-     * @final
-     */
-    class TriggerEvent extends goog.events.Event {
-        /**
-         * Create a trigger event for specified anchor and optional data.
-         * @param {goog.ui.HoverCard.EventType} type Event type.
-         * @param {goog.ui.HoverCard} target Hovercard that is triggering the event.
-         * @param {Element} anchor Element that triggered event.
-         * @param {Object=} opt_data Optional data to be available in the TRIGGER event.
-         * @constructor
-         * @extends {goog.events.Event}
-         * @final
-         */
-        constructor(type: goog.ui.HoverCard.EventType, target: goog.ui.HoverCard, anchor: Element, opt_data?: Object);
-    }
-}
 
 declare module goog.ui {
 
@@ -230,5 +197,38 @@ declare module goog.ui {
          */
         setMaxSearchSteps(maxSearchSteps: number): void;
     }
+}
+
+declare module goog.ui.HoverCard {
+
+    /**
+     * Create a trigger event for specified anchor and optional data.
+     * @param {goog.ui.HoverCard.EventType} type Event type.
+     * @param {goog.ui.HoverCard} target Hovercard that is triggering the event.
+     * @param {Element} anchor Element that triggered event.
+     * @param {Object=} opt_data Optional data to be available in the TRIGGER event.
+     * @constructor
+     * @extends {goog.events.Event}
+     * @final
+     */
+    class TriggerEvent extends goog.events.Event {
+        /**
+         * Create a trigger event for specified anchor and optional data.
+         * @param {goog.ui.HoverCard.EventType} type Event type.
+         * @param {goog.ui.HoverCard} target Hovercard that is triggering the event.
+         * @param {Element} anchor Element that triggered event.
+         * @param {Object=} opt_data Optional data to be available in the TRIGGER event.
+         * @constructor
+         * @extends {goog.events.Event}
+         * @final
+         */
+        constructor(type: goog.ui.HoverCard.EventType, target: goog.ui.HoverCard, anchor: Element, opt_data?: Object);
+    }
+
+    /**
+     * Enum for event type fired by HoverCard.
+     * @enum {string}
+     */
+    enum EventType { TRIGGER, CANCEL_TRIGGER, BEFORE_SHOW, SHOW, BEFORE_HIDE, HIDE } 
 }
 

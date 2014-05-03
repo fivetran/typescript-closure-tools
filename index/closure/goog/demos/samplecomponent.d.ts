@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:02:49 PDT 2014
+// Generated Sat May  3 12:18:39 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -59,7 +59,7 @@ declare module goog.demos {
      * @constructor
      * @final
      */
-    class SampleComponent extends goog.ui.GoogComponent {
+    class SampleComponent extends goog.ui.Component {
         /**
          * A simple box that changes colour when clicked. This class demonstrates the
          * goog.ui.Component API, and is keyboard accessible, as per

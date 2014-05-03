@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:59:25 PDT 2014
+// Generated Sat May  3 12:15:14 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -35,21 +35,6 @@
 /// <reference path="../../goog/dom/dom.d.ts" />
 /// <reference path="../../goog/events/eventtarget.d.ts" />
 
-declare module goog.ui.ActivityMonitor {
-
-    /**
-     * Minimum amount of time in ms between throttled ACTIVITY events
-     * @type {number}
-     */
-    var MIN_EVENT_SPACING: number;
-
-    /**
-     * Event constants for the activity monitor.
-     * @enum {string}
-     */
-    enum Event { ACTIVITY } 
-}
-
 declare module goog.ui {
 
     /**
@@ -68,7 +53,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.events.EventTarget}
      */
-    class GoogActivityMonitor extends goog.events.EventTarget {
+    class ActivityMonitor extends goog.events.EventTarget {
         /**
          * Once initialized with a document, the activity monitor can be queried for
          * the current idle time.
@@ -137,7 +122,20 @@ declare module goog.ui {
          */
         getLastEventTime(): number;
     }
+}
 
-    class ActivityMonitor extends GoogActivityMonitor { }
+declare module goog.ui.ActivityMonitor {
+
+    /**
+     * Minimum amount of time in ms between throttled ACTIVITY events
+     * @type {number}
+     */
+    var MIN_EVENT_SPACING: number;
+
+    /**
+     * Event constants for the activity monitor.
+     * @enum {string}
+     */
+    enum Event { ACTIVITY } 
 }
 

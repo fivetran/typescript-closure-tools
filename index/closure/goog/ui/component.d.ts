@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:00:43 PDT 2014
+// Generated Sat May  3 12:16:32 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -40,53 +40,6 @@
 /// <reference path="../../goog/ui/idgenerator.d.ts" />
 /// <reference path="../../goog/events/eventtarget.d.ts" />
 
-declare module goog.ui.Component {
-
-    /**
-     * Common events fired by components so that event propagation is useful.  Not
-     * all components are expected to dispatch or listen for all event types.
-     * Events dispatched before a state transition should be cancelable to prevent
-     * the corresponding state change.
-     * @enum {string}
-     */
-    enum EventType { BEFORE_SHOW, SHOW, HIDE, DISABLE, ENABLE, HIGHLIGHT, UNHIGHLIGHT, ACTIVATE, DEACTIVATE, SELECT, UNSELECT, CHECK, UNCHECK, FOCUS, BLUR, OPEN, CLOSE, ENTER, LEAVE, ACTION, CHANGE } 
-
-    /**
-     * Errors thrown by the component.
-     * @enum {string}
-     */
-    enum Error { NOT_SUPPORTED, DECORATE_INVALID, ALREADY_RENDERED, PARENT_UNABLE_TO_BE_SET, CHILD_INDEX_OUT_OF_BOUNDS, NOT_OUR_CHILD, NOT_IN_DOCUMENT, STATE_INVALID } 
-
-    /**
-     * Common component states.  Components may have distinct appearance depending
-     * on what state(s) apply to them.  Not all components are expected to support
-     * all states.
-     * @enum {number}
-     */
-    enum State { ALL, DISABLED, HOVER, ACTIVE, SELECTED, CHECKED, FOCUSED, OPENED } 
-
-    /**
-     * Static helper method; returns the type of event components are expected to
-     * dispatch when transitioning to or from the given state.
-     * @param {goog.ui.Component.State} state State to/from which the component
-     *     is transitioning.
-     * @param {boolean} isEntering Whether the component is entering or leaving the
-     *     state.
-     * @return {goog.ui.Component.EventType} Event type to dispatch.
-     */
-    function getStateTransitionEvent(state: goog.ui.Component.State, isEntering: boolean): goog.ui.Component.EventType;
-
-    /**
-     * Set the default right-to-left value. This causes all component's created from
-     * this point foward to have the given value. This is useful for cases where
-     * a given page is always in one directionality, avoiding unnecessary
-     * right to left determinations.
-     * @param {?boolean} rightToLeft Whether the components should be rendered
-     *     right-to-left. Null iff components should determine their directionality.
-     */
-    function setDefaultRightToLeft(rightToLeft: boolean): void;
-}
-
 declare module goog.ui {
 
     /**
@@ -96,7 +49,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.events.EventTarget}
      */
-    class GoogComponent extends goog.events.EventTarget {
+    class Component extends goog.events.EventTarget {
         /**
          * Default implementation of UI component.
          *
@@ -167,7 +120,7 @@ declare module goog.ui {
          * @param {string} className The name of the class to look for.
          * @return {!goog.array.ArrayLike} The items found with the class name provided.
          */
-        getElementsByClass(className: string): goog.array.ArrayLike<any>;
+        getElementsByClass(className: string): goog.array.ArrayLike;
     
         /**
          * Returns the first element in this component's DOM with the provided
@@ -542,7 +495,52 @@ declare module goog.ui {
          */
         removeChildren(opt_unrender?: boolean): goog.ui.Component[];
     }
+}
 
-    class Component extends GoogComponent { }
+declare module goog.ui.Component {
+
+    /**
+     * Common events fired by components so that event propagation is useful.  Not
+     * all components are expected to dispatch or listen for all event types.
+     * Events dispatched before a state transition should be cancelable to prevent
+     * the corresponding state change.
+     * @enum {string}
+     */
+    enum EventType { BEFORE_SHOW, SHOW, HIDE, DISABLE, ENABLE, HIGHLIGHT, UNHIGHLIGHT, ACTIVATE, DEACTIVATE, SELECT, UNSELECT, CHECK, UNCHECK, FOCUS, BLUR, OPEN, CLOSE, ENTER, LEAVE, ACTION, CHANGE } 
+
+    /**
+     * Errors thrown by the component.
+     * @enum {string}
+     */
+    enum Error { NOT_SUPPORTED, DECORATE_INVALID, ALREADY_RENDERED, PARENT_UNABLE_TO_BE_SET, CHILD_INDEX_OUT_OF_BOUNDS, NOT_OUR_CHILD, NOT_IN_DOCUMENT, STATE_INVALID } 
+
+    /**
+     * Common component states.  Components may have distinct appearance depending
+     * on what state(s) apply to them.  Not all components are expected to support
+     * all states.
+     * @enum {number}
+     */
+    enum State { ALL, DISABLED, HOVER, ACTIVE, SELECTED, CHECKED, FOCUSED, OPENED } 
+
+    /**
+     * Static helper method; returns the type of event components are expected to
+     * dispatch when transitioning to or from the given state.
+     * @param {goog.ui.Component.State} state State to/from which the component
+     *     is transitioning.
+     * @param {boolean} isEntering Whether the component is entering or leaving the
+     *     state.
+     * @return {goog.ui.Component.EventType} Event type to dispatch.
+     */
+    function getStateTransitionEvent(state: goog.ui.Component.State, isEntering: boolean): goog.ui.Component.EventType;
+
+    /**
+     * Set the default right-to-left value. This causes all component's created from
+     * this point foward to have the given value. This is useful for cases where
+     * a given page is always in one directionality, avoiding unnecessary
+     * right to left determinations.
+     * @param {?boolean} rightToLeft Whether the components should be rendered
+     *     right-to-left. Null iff components should determine their directionality.
+     */
+    function setDefaultRightToLeft(rightToLeft: boolean): void;
 }
 

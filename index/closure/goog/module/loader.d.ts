@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:05:22 PDT 2014
+// Generated Sat May  3 12:21:14 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -34,16 +34,6 @@
 /// <reference path="../../goog/math/math.d.ts" />
 /// <reference path="../../goog/math/coordinate.d.ts" />
 /// <reference path="../../goog/dom/dom.d.ts" />
-
-declare module goog.module.Loader {
-
-    /**
-     * The globally exported name of the load callback. Matches the
-     * definition in the js_modular_binary() BUILD rule.
-     * @type {string}
-     */
-    var LOAD_CALLBACK: string;
-}
 
 declare module goog.module {
 
@@ -112,5 +102,15 @@ declare module goog.module {
          */
         provide(module: string, opt_symbol?: any /*number|string*/, opt_object?: Object): void;
     }
+}
+
+declare module goog.module.Loader {
+
+    /**
+     * The globally exported name of the load callback. Matches the
+     * definition in the js_modular_binary() BUILD rule.
+     * @type {string}
+     */
+    var LOAD_CALLBACK: string;
 }
 

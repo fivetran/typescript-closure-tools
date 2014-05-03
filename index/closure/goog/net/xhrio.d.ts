@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:58:29 PDT 2014
+// Generated Sat May  3 12:14:17 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/net/httpstatus.d.ts" />
@@ -47,117 +47,6 @@
 /// <reference path="../../goog/net/xmlhttp.d.ts" />
 /// <reference path="../../goog/uri/utils.d.ts" />
 /// <reference path="../../goog/net/eventtype.d.ts" />
-
-declare module goog.net.XhrIo {
-
-    /**
-     * Response types that may be requested for XMLHttpRequests.
-     * @enum {string}
-     * @see http://www.w3.org/TR/XMLHttpRequest/#the-responsetype-attribute
-     */
-    enum ResponseType { DEFAULT, TEXT, DOCUMENT, BLOB, ARRAY_BUFFER } 
-
-    /**
-     * The Content-Type HTTP header name
-     * @type {string}
-     */
-    var CONTENT_TYPE_HEADER: string;
-
-    /**
-     * The pattern matching the 'http' and 'https' URI schemes
-     * @type {!RegExp}
-     */
-    var HTTP_SCHEME_PATTERN: RegExp;
-
-    /**
-     * The methods that typically come along with form data.  We set different
-     * headers depending on whether the HTTP action is one of these.
-     */
-    var METHODS_WITH_FORM_DATA: any /*missing*/;
-
-    /**
-     * The Content-Type HTTP header value for a url-encoded form
-     * @type {string}
-     */
-    var FORM_CONTENT_TYPE: string;
-
-    /**
-     * The XMLHttpRequest Level two timeout delay ms property name.
-     *
-     * @see http://www.w3.org/TR/XMLHttpRequest/#the-timeout-attribute
-     *
-     * @private {string}
-     * @const
-     */
-    var XHR2_TIMEOUT_: any /*missing*/;
-
-    /**
-     * The XMLHttpRequest Level two ontimeout handler property name.
-     *
-     * @see http://www.w3.org/TR/XMLHttpRequest/#the-timeout-attribute
-     *
-     * @private {string}
-     * @const
-     */
-    var XHR2_ON_TIMEOUT_: any /*missing*/;
-
-    /**
-     * All non-disposed instances of goog.net.XhrIo created
-     * by {@link goog.net.XhrIo.send} are in this Array.
-     * @see goog.net.XhrIo.cleanup
-     * @private {!Array.<!goog.net.XhrIo>}
-     */
-    var sendInstances_: any /*missing*/;
-
-    /**
-     * Static send that creates a short lived instance of XhrIo to send the
-     * request.
-     * @see goog.net.XhrIo.cleanup
-     * @param {string|goog.Uri} url Uri to make request to.
-     * @param {Function=} opt_callback Callback function for when request is
-     *     complete.
-     * @param {string=} opt_method Send method, default: GET.
-     * @param {ArrayBuffer|ArrayBufferView|Blob|Document|FormData|string=}
-     *     opt_content Body data.
-     * @param {Object|goog.structs.Map=} opt_headers Map of headers to add to the
-     *     request.
-     * @param {number=} opt_timeoutInterval Number of milliseconds after which an
-     *     incomplete request will be aborted; 0 means no timeout is set.
-     * @param {boolean=} opt_withCredentials Whether to send credentials with the
-     *     request. Default to false. See {@link goog.net.XhrIo#setWithCredentials}.
-     */
-    function send(url: any /*string|goog.Uri*/, opt_callback?: Function, opt_method?: string, opt_content?: any /*ArrayBuffer|ArrayBufferView|Blob|Document|FormData|string*/, opt_headers?: any /*Object|goog.structs.Map*/, opt_timeoutInterval?: number, opt_withCredentials?: boolean): void;
-
-    /**
-     * Disposes all non-disposed instances of goog.net.XhrIo created by
-     * {@link goog.net.XhrIo.send}.
-     * {@link goog.net.XhrIo.send} cleans up the goog.net.XhrIo instance
-     * it creates when the request completes or fails.  However, if
-     * the request never completes, then the goog.net.XhrIo is not disposed.
-     * This can occur if the window is unloaded before the request completes.
-     * We could have {@link goog.net.XhrIo.send} return the goog.net.XhrIo
-     * it creates and make the client of {@link goog.net.XhrIo.send} be
-     * responsible for disposing it in this case.  However, this makes things
-     * significantly more complicated for the client, and the whole point
-     * of {@link goog.net.XhrIo.send} is that it's simple and easy to use.
-     * Clients of {@link goog.net.XhrIo.send} should call
-     * {@link goog.net.XhrIo.cleanup} when doing final
-     * cleanup on window unload.
-     */
-    function cleanup(): void;
-
-    /**
-     * Installs exception protection for all entry point introduced by
-     * goog.net.XhrIo instances which are not protected by
-     * {@link goog.debug.ErrorHandler#protectWindowSetTimeout},
-     * {@link goog.debug.ErrorHandler#protectWindowSetInterval}, or
-     * {@link goog.events.protectBrowserEventEntryPoint}.
-     *
-     * @param {goog.debug.ErrorHandler} errorHandler Error handler with which to
-     *     protect the entry point(s).
-     */
-    function protectEntryPoints(errorHandler: goog.debug.ErrorHandler): void;
-}
 
 declare module goog.net {
 
@@ -412,5 +301,116 @@ declare module goog.net {
          */
         getLastError(): string;
     }
+}
+
+declare module goog.net.XhrIo {
+
+    /**
+     * Response types that may be requested for XMLHttpRequests.
+     * @enum {string}
+     * @see http://www.w3.org/TR/XMLHttpRequest/#the-responsetype-attribute
+     */
+    enum ResponseType { DEFAULT, TEXT, DOCUMENT, BLOB, ARRAY_BUFFER } 
+
+    /**
+     * The Content-Type HTTP header name
+     * @type {string}
+     */
+    var CONTENT_TYPE_HEADER: string;
+
+    /**
+     * The pattern matching the 'http' and 'https' URI schemes
+     * @type {!RegExp}
+     */
+    var HTTP_SCHEME_PATTERN: RegExp;
+
+    /**
+     * The methods that typically come along with form data.  We set different
+     * headers depending on whether the HTTP action is one of these.
+     */
+    var METHODS_WITH_FORM_DATA: any /*missing*/;
+
+    /**
+     * The Content-Type HTTP header value for a url-encoded form
+     * @type {string}
+     */
+    var FORM_CONTENT_TYPE: string;
+
+    /**
+     * The XMLHttpRequest Level two timeout delay ms property name.
+     *
+     * @see http://www.w3.org/TR/XMLHttpRequest/#the-timeout-attribute
+     *
+     * @private {string}
+     * @const
+     */
+    var XHR2_TIMEOUT_: any /*missing*/;
+
+    /**
+     * The XMLHttpRequest Level two ontimeout handler property name.
+     *
+     * @see http://www.w3.org/TR/XMLHttpRequest/#the-timeout-attribute
+     *
+     * @private {string}
+     * @const
+     */
+    var XHR2_ON_TIMEOUT_: any /*missing*/;
+
+    /**
+     * All non-disposed instances of goog.net.XhrIo created
+     * by {@link goog.net.XhrIo.send} are in this Array.
+     * @see goog.net.XhrIo.cleanup
+     * @private {!Array.<!goog.net.XhrIo>}
+     */
+    var sendInstances_: any /*missing*/;
+
+    /**
+     * Static send that creates a short lived instance of XhrIo to send the
+     * request.
+     * @see goog.net.XhrIo.cleanup
+     * @param {string|goog.Uri} url Uri to make request to.
+     * @param {Function=} opt_callback Callback function for when request is
+     *     complete.
+     * @param {string=} opt_method Send method, default: GET.
+     * @param {ArrayBuffer|ArrayBufferView|Blob|Document|FormData|string=}
+     *     opt_content Body data.
+     * @param {Object|goog.structs.Map=} opt_headers Map of headers to add to the
+     *     request.
+     * @param {number=} opt_timeoutInterval Number of milliseconds after which an
+     *     incomplete request will be aborted; 0 means no timeout is set.
+     * @param {boolean=} opt_withCredentials Whether to send credentials with the
+     *     request. Default to false. See {@link goog.net.XhrIo#setWithCredentials}.
+     */
+    function send(url: any /*string|goog.Uri*/, opt_callback?: Function, opt_method?: string, opt_content?: any /*ArrayBuffer|ArrayBufferView|Blob|Document|FormData|string*/, opt_headers?: any /*Object|goog.structs.Map*/, opt_timeoutInterval?: number, opt_withCredentials?: boolean): void;
+
+    /**
+     * Disposes all non-disposed instances of goog.net.XhrIo created by
+     * {@link goog.net.XhrIo.send}.
+     * {@link goog.net.XhrIo.send} cleans up the goog.net.XhrIo instance
+     * it creates when the request completes or fails.  However, if
+     * the request never completes, then the goog.net.XhrIo is not disposed.
+     * This can occur if the window is unloaded before the request completes.
+     * We could have {@link goog.net.XhrIo.send} return the goog.net.XhrIo
+     * it creates and make the client of {@link goog.net.XhrIo.send} be
+     * responsible for disposing it in this case.  However, this makes things
+     * significantly more complicated for the client, and the whole point
+     * of {@link goog.net.XhrIo.send} is that it's simple and easy to use.
+     * Clients of {@link goog.net.XhrIo.send} should call
+     * {@link goog.net.XhrIo.cleanup} when doing final
+     * cleanup on window unload.
+     */
+    function cleanup(): void;
+
+    /**
+     * Installs exception protection for all entry point introduced by
+     * goog.net.XhrIo instances which are not protected by
+     * {@link goog.debug.ErrorHandler#protectWindowSetTimeout},
+     * {@link goog.debug.ErrorHandler#protectWindowSetInterval}, or
+     * {@link goog.events.protectBrowserEventEntryPoint}.
+     *
+     * @param {goog.debug.ErrorHandler} errorHandler Error handler with which to
+     *     protect the entry point(s).
+     */
+    function protectEntryPoints(errorHandler: goog.debug.ErrorHandler): void;
 }
 

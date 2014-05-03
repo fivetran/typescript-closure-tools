@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:59:47 PDT 2014
+// Generated Sat May  3 12:15:36 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -28,42 +28,6 @@
 /// <reference path="../../goog/timer/timer.d.ts" />
 /// <reference path="../../goog/events/keycodes.d.ts" />
 /// <reference path="../../goog/events/keynames.d.ts" />
-
-declare module goog.ui.KeyboardShortcutHandler {
-
-    /**
-     * Maximum allowed delay, in milliseconds, allowed between the first and second
-     * key in a key sequence.
-     * @type {number}
-     */
-    var MAX_KEY_SEQUENCE_DELAY: number;
-
-    /**
-     * Bit values for modifier keys.
-     * @enum {number}
-     */
-    enum Modifiers { NONE, SHIFT, CTRL, ALT, META } 
-
-    /**
-     * Events.
-     * @enum {string}
-     */
-    enum EventType { SHORTCUT_TRIGGERED, SHORTCUT_PREFIX } 
-
-    /**
-     * Static method for getting the key code for a given key.
-     * @param {string} name Name of key.
-     * @return {number} The key code.
-     */
-    function getKeyCode(name: string): number;
-
-    /**
-     * Builds stroke array from string representation of shortcut.
-     * @param {string} s String representation of shortcut.
-     * @return {!Array.<Object>} The stroke array.
-     */
-    function parseStringShortcut(s: string): Object[];
-}
 
 declare module goog.ui {
 
@@ -325,5 +289,41 @@ declare module goog.ui {
          */
         constructor(type: string, identifier: string, target: any /*Node|goog.events.EventTarget*/);
     }
+}
+
+declare module goog.ui.KeyboardShortcutHandler {
+
+    /**
+     * Maximum allowed delay, in milliseconds, allowed between the first and second
+     * key in a key sequence.
+     * @type {number}
+     */
+    var MAX_KEY_SEQUENCE_DELAY: number;
+
+    /**
+     * Bit values for modifier keys.
+     * @enum {number}
+     */
+    enum Modifiers { NONE, SHIFT, CTRL, ALT, META } 
+
+    /**
+     * Events.
+     * @enum {string}
+     */
+    enum EventType { SHORTCUT_TRIGGERED, SHORTCUT_PREFIX } 
+
+    /**
+     * Static method for getting the key code for a given key.
+     * @param {string} name Name of key.
+     * @return {number} The key code.
+     */
+    function getKeyCode(name: string): number;
+
+    /**
+     * Builds stroke array from string representation of shortcut.
+     * @param {string} s String representation of shortcut.
+     * @return {!Array.<Object>} The stroke array.
+     */
+    function parseStringShortcut(s: string): Object[];
 }
 

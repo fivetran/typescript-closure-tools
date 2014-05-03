@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:01:08 PDT 2014
+// Generated Sat May  3 12:16:58 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -74,7 +74,7 @@ declare module goog.ui {
      * @extends {goog.ui.Control}
      * @final
      */
-    class DimensionPicker extends goog.ui.GoogControl {
+    class DimensionPicker extends goog.ui.Control {
         /**
          * A dimension picker allows the user to visually select a row and column
          * count using their mouse and keyboard.

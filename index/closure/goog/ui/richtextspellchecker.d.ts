@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:59:38 PDT 2014
+// Generated Sat May  3 12:15:27 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/string/stringbuffer.d.ts" />
@@ -98,7 +98,7 @@ declare module goog.ui {
      * @extends {goog.ui.AbstractSpellChecker}
      * @final
      */
-    class RichTextSpellChecker extends goog.ui.GoogAbstractSpellChecker {
+    class RichTextSpellChecker extends goog.ui.AbstractSpellChecker {
         /**
          * Rich text spell checker implementation.
          *

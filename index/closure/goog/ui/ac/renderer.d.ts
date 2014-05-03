@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:01:00 PDT 2014
+// Generated Sat May  3 12:16:50 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/dom/nodetype.d.ts" />
@@ -56,55 +56,6 @@
 /// <reference path="../../../goog/a11y/aria/aria.d.ts" />
 /// <reference path="../../../goog/dom/classlist.d.ts" />
 /// <reference path="../../../goog/ui/idgenerator.d.ts" />
-
-declare module goog.ui.ac.Renderer {
-
-    /**
-     * The delay before mouseover events are registered, in milliseconds
-     * @type {number}
-     * @const
-     */
-    var DELAY_BEFORE_MOUSEOVER: number;
-
-    /**
-     * Class allowing different implementations to custom render the autocomplete.
-     * Extending classes should override the render function.
-     * @constructor
-     */
-    class CustomRenderer {
-        /**
-         * Class allowing different implementations to custom render the autocomplete.
-         * Extending classes should override the render function.
-         * @constructor
-         */
-        constructor();
-    
-        /**
-         * Renders the autocomplete box. May be set to null.
-         *
-         * Because of the type, this function cannot be documented with param JSDoc.
-         *
-         * The function expects the following parameters:
-         *
-         * renderer, goog.ui.ac.Renderer: The autocomplete renderer.
-         * element, Element: The main element that controls the rendered autocomplete.
-         * rows, Array: The current set of rows being displayed.
-         * token, string: The current token that has been entered. *
-         *
-         * @type {function(goog.ui.ac.Renderer, Element, Array, string)|
-         *        null|undefined}
-         */
-        render(): void;
-    
-        /**
-         * Generic function that takes a row and renders a DOM structure for that row.
-         * @param {Object} row Object representing row.
-         * @param {string} token Token to highlight.
-         * @param {Node} node The node to render into.
-         */
-        renderRow(row: Object, token: string, node: Node): void;
-    }
-}
 
 declare module goog.ui.ac {
 
@@ -319,5 +270,54 @@ declare module goog.ui.ac {
          */
         renderRowHtml(row: Object, token: string): Element;
     }
+}
+
+declare module goog.ui.ac.Renderer {
+
+    /**
+     * Class allowing different implementations to custom render the autocomplete.
+     * Extending classes should override the render function.
+     * @constructor
+     */
+    class CustomRenderer {
+        /**
+         * Class allowing different implementations to custom render the autocomplete.
+         * Extending classes should override the render function.
+         * @constructor
+         */
+        constructor();
+    
+        /**
+         * Renders the autocomplete box. May be set to null.
+         *
+         * Because of the type, this function cannot be documented with param JSDoc.
+         *
+         * The function expects the following parameters:
+         *
+         * renderer, goog.ui.ac.Renderer: The autocomplete renderer.
+         * element, Element: The main element that controls the rendered autocomplete.
+         * rows, Array: The current set of rows being displayed.
+         * token, string: The current token that has been entered. *
+         *
+         * @type {function(goog.ui.ac.Renderer, Element, Array, string)|
+         *        null|undefined}
+         */
+        render(renderer: any /* jsdoc error */, element: any /* jsdoc error */, rows: any /* jsdoc error */, token: any /* jsdoc error */): void;
+    
+        /**
+         * Generic function that takes a row and renders a DOM structure for that row.
+         * @param {Object} row Object representing row.
+         * @param {string} token Token to highlight.
+         * @param {Node} node The node to render into.
+         */
+        renderRow(row: Object, token: string, node: Node): void;
+    }
+
+    /**
+     * The delay before mouseover events are registered, in milliseconds
+     * @type {number}
+     * @const
+     */
+    var DELAY_BEFORE_MOUSEOVER: number;
 }
 

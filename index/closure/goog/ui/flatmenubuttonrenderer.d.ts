@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:00:42 PDT 2014
+// Generated Sat May  3 12:16:31 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -81,16 +81,6 @@
 /// <reference path="../../goog/ui/menubutton.d.ts" />
 /// <reference path="../../goog/ui/flatbuttonrenderer.d.ts" />
 
-declare module goog.ui.FlatMenuButtonRenderer {
-
-    /**
-     * Default CSS class to be applied to the root element of components rendered
-     * by this renderer.
-     * @type {string}
-     */
-    var CSS_CLASS: string;
-}
-
 declare module goog.ui {
 
     /**
@@ -101,7 +91,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.FlatButtonRenderer}
      */
-    class FlatMenuButtonRenderer extends goog.ui.GoogFlatButtonRenderer {
+    class FlatMenuButtonRenderer extends goog.ui.FlatButtonRenderer {
         /**
          * Flat Menu Button renderer. Creates a simpler version of
          * {@link goog.ui.MenuButton} that doesn't look like a button and
@@ -136,5 +126,15 @@ declare module goog.ui {
          */
         createDropdown(dom: goog.dom.DomHelper): Element;
     }
+}
+
+declare module goog.ui.FlatMenuButtonRenderer {
+
+    /**
+     * Default CSS class to be applied to the root element of components rendered
+     * by this renderer.
+     * @type {string}
+     */
+    var CSS_CLASS: string;
 }
 

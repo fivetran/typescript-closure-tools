@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:04:49 PDT 2014
+// Generated Sat May  3 12:20:41 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/i18n/numberformatsymbols.d.ts" />
@@ -10,56 +10,6 @@
 /// <reference path="../../goog/array/array.d.ts" />
 /// <reference path="../../goog/math/math.d.ts" />
 /// <reference path="../../goog/i18n/currency.d.ts" />
-
-declare module goog.i18n.NumberFormat {
-
-    /**
-     * Standard number formatting patterns.
-     * @enum {number}
-     */
-    enum Format { DECIMAL, SCIENTIFIC, PERCENT, CURRENCY, COMPACT_SHORT, COMPACT_LONG } 
-
-    /**
-     * Currency styles.
-     * @enum {number}
-     */
-    enum CurrencyStyle { LOCAL, PORTABLE, GLOBAL } 
-
-    /**
-     * Compacting styles.
-     * @enum {number}
-     */
-    enum CompactStyle { NONE, SHORT, LONG } 
-
-    /**
-     * Set if the usage of Ascii digits in formatting should be enforced.
-     * @param {boolean} doEnforce Boolean value about if Ascii digits should be
-     *     enforced.
-     */
-    function setEnforceAsciiDigits(doEnforce: boolean): void;
-
-    /**
-     * Return if Ascii digits is enforced.
-     * @return {boolean} If Ascii digits is enforced.
-     */
-    function isEnforceAsciiDigits(): boolean;
-
-    /**
-     * Alias for the compact format 'unit' object.
-     * @typedef {{
-     *     prefix: string,
-     *     suffix: string,
-     *     divisorBase: number
-     * }}
-     */
-    var CompactNumberUnit: any /*missing*/;
-
-    /**
-     * The empty unit, corresponding to a base of 0.
-     * @private {!goog.i18n.NumberFormat.CompactNumberUnit}
-     */
-    var NULL_UNIT_: any /*missing*/;
-}
 
 declare module goog.i18n {
 
@@ -183,5 +133,55 @@ declare module goog.i18n {
          */
         isCurrencyCodeBeforeValue(): boolean;
     }
+}
+
+declare module goog.i18n.NumberFormat {
+
+    /**
+     * Standard number formatting patterns.
+     * @enum {number}
+     */
+    enum Format { DECIMAL, SCIENTIFIC, PERCENT, CURRENCY, COMPACT_SHORT, COMPACT_LONG } 
+
+    /**
+     * Currency styles.
+     * @enum {number}
+     */
+    enum CurrencyStyle { LOCAL, PORTABLE, GLOBAL } 
+
+    /**
+     * Compacting styles.
+     * @enum {number}
+     */
+    enum CompactStyle { NONE, SHORT, LONG } 
+
+    /**
+     * Set if the usage of Ascii digits in formatting should be enforced.
+     * @param {boolean} doEnforce Boolean value about if Ascii digits should be
+     *     enforced.
+     */
+    function setEnforceAsciiDigits(doEnforce: boolean): void;
+
+    /**
+     * Return if Ascii digits is enforced.
+     * @return {boolean} If Ascii digits is enforced.
+     */
+    function isEnforceAsciiDigits(): boolean;
+
+    /**
+     * Alias for the compact format 'unit' object.
+     * @typedef {{
+     *     prefix: string,
+     *     suffix: string,
+     *     divisorBase: number
+     * }}
+     */
+    var CompactNumberUnit: any /*missing*/;
+
+    /**
+     * The empty unit, corresponding to a base of 0.
+     * @private {!goog.i18n.NumberFormat.CompactNumberUnit}
+     */
+    var NULL_UNIT_: any /*missing*/;
 }
 

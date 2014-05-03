@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:00:52 PDT 2014
+// Generated Sat May  3 12:16:41 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -37,15 +37,6 @@
 /// <reference path="../../goog/math/coordinate.d.ts" />
 /// <reference path="../../goog/dom/dom.d.ts" />
 /// <reference path="../../goog/events/inputhandler.d.ts" />
-
-declare module goog.ui.CharCounter {
-
-    /**
-     * Display mode for the char counter.
-     * @enum {number}
-     */
-    enum Display { REMAINING, INCREMENTAL } 
-}
 
 declare module goog.ui {
 
@@ -120,5 +111,14 @@ declare module goog.ui {
          */
         checkLength(): void;
     }
+}
+
+declare module goog.ui.CharCounter {
+
+    /**
+     * Display mode for the char counter.
+     * @enum {number}
+     */
+    enum Display { REMAINING, INCREMENTAL } 
 }
 

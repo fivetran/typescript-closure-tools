@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:57:41 PDT 2014
+// Generated Sat May  3 12:13:28 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -33,45 +33,6 @@
 /// <reference path="../../goog/debug/logbuffer.d.ts" />
 /// <reference path="../../goog/debug/logger.d.ts" />
 /// <reference path="../../goog/log/log.d.ts" />
-
-declare module goog.editor.Table {
-
-    /**
-     * Returns all child elements of a TR element that are of type TD or TH.
-     * @param {Element} tr TR element in which to find children.
-     * @return {!Array.<Element>} array of child cell elements.
-     */
-    function getChildCellElements(tr: Element): Element[];
-
-    /**
-     * Optimum size of empty cells (in pixels), if possible.
-     * @type {number}
-     */
-    var OPTIMUM_EMPTY_CELL_WIDTH: number;
-
-    /**
-     * Maximum width for new tables.
-     * @type {number}
-     */
-    var OPTIMUM_MAX_NEW_TABLE_WIDTH: number;
-
-    /**
-     * Default color for table borders.
-     * @type {string}
-     */
-    var DEFAULT_BORDER_COLOR: string;
-
-    /**
-     * Creates a new table element, populated with cells and formatted.
-     * @param {Document} doc Document in which to create the table element.
-     * @param {number} columns Number of columns in the table.
-     * @param {number} rows Number of rows in the table.
-     * @param {Object=} opt_tableStyle Object containing borderWidth and borderColor
-     *    properties, used to set the inital style of the table.
-     * @return {!Element} a table element.
-     */
-    function createDomTable(doc: Document, columns: number, rows: number, opt_tableStyle?: Object): Element;
-}
 
 declare module goog.editor {
 
@@ -230,5 +191,44 @@ declare module goog.editor {
          */
         setRowSpan(rowSpan: number): void;
     }
+}
+
+declare module goog.editor.Table {
+
+    /**
+     * Returns all child elements of a TR element that are of type TD or TH.
+     * @param {Element} tr TR element in which to find children.
+     * @return {!Array.<Element>} array of child cell elements.
+     */
+    function getChildCellElements(tr: Element): Element[];
+
+    /**
+     * Optimum size of empty cells (in pixels), if possible.
+     * @type {number}
+     */
+    var OPTIMUM_EMPTY_CELL_WIDTH: number;
+
+    /**
+     * Maximum width for new tables.
+     * @type {number}
+     */
+    var OPTIMUM_MAX_NEW_TABLE_WIDTH: number;
+
+    /**
+     * Default color for table borders.
+     * @type {string}
+     */
+    var DEFAULT_BORDER_COLOR: string;
+
+    /**
+     * Creates a new table element, populated with cells and formatted.
+     * @param {Document} doc Document in which to create the table element.
+     * @param {number} columns Number of columns in the table.
+     * @param {number} rows Number of rows in the table.
+     * @param {Object=} opt_tableStyle Object containing borderWidth and borderColor
+     *    properties, used to set the inital style of the table.
+     * @return {!Element} a table element.
+     */
+    function createDomTable(doc: Document, columns: number, rows: number, opt_tableStyle?: Object): Element;
 }
 

@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:58:58 PDT 2014
+// Generated Sat May  3 12:14:46 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -68,7 +68,7 @@ declare module goog.messaging {
      * @implements {goog.messaging.PortNetwork}
      * @final
      */
-    class PortOperator extends goog.GoogDisposable implements goog.messaging.PortNetwork {
+    class PortOperator extends goog.Disposable implements goog.messaging.PortNetwork {
         /**
          * The central node of a PortNetwork.
          *

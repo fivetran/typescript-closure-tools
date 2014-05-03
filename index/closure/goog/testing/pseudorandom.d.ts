@@ -1,41 +1,8 @@
-// Generated Fri May  2 15:04:15 PDT 2014
+// Generated Sat May  3 12:20:06 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/disposable/idisposable.d.ts" />
 /// <reference path="../../goog/disposable/disposable.d.ts" />
-
-declare module goog.testing.PseudoRandom {
-
-    /**
-     * Constant used as part of the algorithm.
-     * @type {number}
-     */
-    var A: number;
-
-    /**
-     * Constant used as part of the algorithm. 2^31 - 1.
-     * @type {number}
-     */
-    var M: number;
-
-    /**
-     * Constant used as part of the algorithm. It is equal to M / A.
-     * @type {number}
-     */
-    var Q: number;
-
-    /**
-     * Constant used as part of the algorithm. It is equal to M % A.
-     * @type {number}
-     */
-    var R: number;
-
-    /**
-     * Constant used as part of the algorithm to get values from range [0, 1).
-     * @type {number}
-     */
-    var ONE_OVER_M_MINUS_ONE: number;
-}
 
 declare module goog.testing {
 
@@ -50,7 +17,7 @@ declare module goog.testing {
      * @constructor
      * @final
      */
-    class PseudoRandom extends goog.GoogDisposable {
+    class PseudoRandom extends goog.Disposable {
         /**
          * Class for unit testing code that uses Math.random. Generates deterministic
          * random numbers.
@@ -86,5 +53,38 @@ declare module goog.testing {
          */
         random(): number;
     }
+}
+
+declare module goog.testing.PseudoRandom {
+
+    /**
+     * Constant used as part of the algorithm.
+     * @type {number}
+     */
+    var A: number;
+
+    /**
+     * Constant used as part of the algorithm. 2^31 - 1.
+     * @type {number}
+     */
+    var M: number;
+
+    /**
+     * Constant used as part of the algorithm. It is equal to M / A.
+     * @type {number}
+     */
+    var Q: number;
+
+    /**
+     * Constant used as part of the algorithm. It is equal to M % A.
+     * @type {number}
+     */
+    var R: number;
+
+    /**
+     * Constant used as part of the algorithm to get values from range [0, 1).
+     * @type {number}
+     */
+    var ONE_OVER_M_MINUS_ONE: number;
 }
 

@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:01:16 PDT 2014
+// Generated Sat May  3 12:17:05 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/json/json.d.ts" />
@@ -6,6 +6,29 @@
 /// <reference path="../../goog/storage/storage.d.ts" />
 /// <reference path="../../goog/storage/mechanism/mechanism.d.ts" />
 /// <reference path="../../goog/storage/richstorage.d.ts" />
+
+declare module goog.storage {
+
+    /**
+     * Provides a storage with expirning keys.
+     *
+     * @param {!goog.storage.mechanism.Mechanism} mechanism The underlying
+     *     storage mechanism.
+     * @constructor
+     * @extends {goog.storage.RichStorage}
+     */
+    class ExpiringStorage extends goog.storage.RichStorage {
+        /**
+         * Provides a storage with expirning keys.
+         *
+         * @param {!goog.storage.mechanism.Mechanism} mechanism The underlying
+         *     storage mechanism.
+         * @constructor
+         * @extends {goog.storage.RichStorage}
+         */
+        constructor(mechanism: goog.storage.mechanism.Mechanism);
+    }
+}
 
 declare module goog.storage.ExpiringStorage {
 
@@ -48,30 +71,5 @@ declare module goog.storage.ExpiringStorage {
      * @return {boolean} True if the item has expired.
      */
     function isExpired(wrapper: Object): boolean;
-}
-
-declare module goog.storage {
-
-    /**
-     * Provides a storage with expirning keys.
-     *
-     * @param {!goog.storage.mechanism.Mechanism} mechanism The underlying
-     *     storage mechanism.
-     * @constructor
-     * @extends {goog.storage.RichStorage}
-     */
-    class GoogExpiringStorage extends goog.storage.GoogRichStorage {
-        /**
-         * Provides a storage with expirning keys.
-         *
-         * @param {!goog.storage.mechanism.Mechanism} mechanism The underlying
-         *     storage mechanism.
-         * @constructor
-         * @extends {goog.storage.RichStorage}
-         */
-        constructor(mechanism: goog.storage.mechanism.Mechanism);
-    }
-
-    class ExpiringStorage extends GoogExpiringStorage { }
 }
 

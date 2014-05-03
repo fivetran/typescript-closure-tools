@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:56:18 PDT 2014
+// Generated Sat May  3 12:12:04 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/disposable/idisposable.d.ts" />
@@ -59,7 +59,7 @@ declare module goog.fx {
      * @extends {goog.fx.Animation}
      * @final
      */
-    class CssSpriteAnimation extends goog.fx.GoogAnimation {
+    class CssSpriteAnimation extends goog.fx.Animation {
         /**
          * This animation class is used to animate a CSS sprite (moving a background
          * image).  This moves through a series of images in a single image sprite and

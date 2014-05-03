@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:59:56 PDT 2014
+// Generated Sat May  3 12:15:45 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -30,50 +30,6 @@
 /// <reference path="../../goog/style/style.d.ts" />
 /// <reference path="../../goog/ui/registry.d.ts" />
 
-declare module goog.ui.ContainerRenderer {
-
-    /**
-     * Constructs a new renderer and sets the CSS class that the renderer will use
-     * as the base CSS class to apply to all elements rendered by that renderer.
-     * An example to use this function using a menu is:
-     *
-     * <pre>
-     * var myCustomRenderer = goog.ui.ContainerRenderer.getCustomRenderer(
-     *     goog.ui.MenuRenderer, 'my-special-menu');
-     * var newMenu = new goog.ui.Menu(opt_domHelper, myCustomRenderer);
-     * </pre>
-     *
-     * Your styles for the menu can now be:
-     * <pre>
-     * .my-special-menu { }
-     * </pre>
-     *
-     * <em>instead</em> of
-     * <pre>
-     * .CSS_MY_SPECIAL_MENU .goog-menu { }
-     * </pre>
-     *
-     * You would want to use this functionality when you want an instance of a
-     * component to have specific styles different than the other components of the
-     * same type in your application.  This avoids using descendant selectors to
-     * apply the specific styles to this component.
-     *
-     * @param {Function} ctor The constructor of the renderer you want to create.
-     * @param {string} cssClassName The name of the CSS class for this renderer.
-     * @return {goog.ui.ContainerRenderer} An instance of the desired renderer with
-     *     its getCssClass() method overridden to return the supplied custom CSS
-     *     class name.
-     */
-    function getCustomRenderer(ctor: Function, cssClassName: string): goog.ui.ContainerRenderer;
-
-    /**
-     * Default CSS class to be applied to the root element of containers rendered
-     * by this renderer.
-     * @type {string}
-     */
-    var CSS_CLASS: string;
-}
-
 declare module goog.ui {
 
     /**
@@ -83,7 +39,7 @@ declare module goog.ui {
      * @param {string=} opt_ariaRole Optional ARIA role used for the element.
      * @constructor
      */
-    class GoogContainerRenderer {
+    class ContainerRenderer {
         /**
          * Default renderer for {@link goog.ui.Container}.  Can be used as-is, but
          * subclasses of Container will probably want to use renderers specifically
@@ -226,7 +182,49 @@ declare module goog.ui {
          */
         getDefaultOrientation(): goog.ui.Container.Orientation;
     }
+}
 
-    class ContainerRenderer extends GoogContainerRenderer { }
+declare module goog.ui.ContainerRenderer {
+
+    /**
+     * Constructs a new renderer and sets the CSS class that the renderer will use
+     * as the base CSS class to apply to all elements rendered by that renderer.
+     * An example to use this function using a menu is:
+     *
+     * <pre>
+     * var myCustomRenderer = goog.ui.ContainerRenderer.getCustomRenderer(
+     *     goog.ui.MenuRenderer, 'my-special-menu');
+     * var newMenu = new goog.ui.Menu(opt_domHelper, myCustomRenderer);
+     * </pre>
+     *
+     * Your styles for the menu can now be:
+     * <pre>
+     * .my-special-menu { }
+     * </pre>
+     *
+     * <em>instead</em> of
+     * <pre>
+     * .CSS_MY_SPECIAL_MENU .goog-menu { }
+     * </pre>
+     *
+     * You would want to use this functionality when you want an instance of a
+     * component to have specific styles different than the other components of the
+     * same type in your application.  This avoids using descendant selectors to
+     * apply the specific styles to this component.
+     *
+     * @param {Function} ctor The constructor of the renderer you want to create.
+     * @param {string} cssClassName The name of the CSS class for this renderer.
+     * @return {goog.ui.ContainerRenderer} An instance of the desired renderer with
+     *     its getCssClass() method overridden to return the supplied custom CSS
+     *     class name.
+     */
+    function getCustomRenderer(ctor: Function, cssClassName: string): goog.ui.ContainerRenderer;
+
+    /**
+     * Default CSS class to be applied to the root element of containers rendered
+     * by this renderer.
+     * @type {string}
+     */
+    var CSS_CLASS: string;
 }
 

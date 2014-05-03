@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:58:17 PDT 2014
+// Generated Sat May  3 12:14:05 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/string/string.d.ts" />
@@ -48,6 +48,60 @@
 /// <reference path="../../goog/math/coordinate.d.ts" />
 /// <reference path="../../goog/dom/dom.d.ts" />
 /// <reference path="../../goog/net/eventtype.d.ts" />
+
+declare module goog.net {
+
+    /**
+     * Creates a new instance of cross domain RPC
+     * @extends {goog.events.EventTarget}
+     * @constructor
+     * @final
+     */
+    class CrossDomainRpc extends goog.events.EventTarget {
+        /**
+         * Creates a new instance of cross domain RPC
+         * @extends {goog.events.EventTarget}
+         * @constructor
+         * @final
+         */
+        constructor();
+    
+        /**
+         * Sends a request across domain.
+         * @param {string} uri Uri to make request to.
+         * @param {string=} opt_method Method of request. Default is POST.
+         * @param {Object=} opt_params Parameters. Each property is turned into a
+         *     request parameter.
+         * @param {Object=} opt_headers Map of headers of the request.
+         */
+        sendRequest(uri: string, opt_method?: string, opt_params?: Object, opt_headers?: Object): void;
+    
+        /**
+         * If response is JSON, evaluates it to a JavaScript object and
+         * returns it; otherwise returns undefined.
+         * @return {Object|undefined} JavaScript object if response is in JSON
+         *     or undefined.
+         */
+        getResponseJson(): any /*Object|any (undefined)*/;
+    
+        /**
+         * @return {boolean} Whether the request completed with a success.
+         */
+        isSuccess(): boolean;
+    
+        /**
+         * Removes request iframe used.
+         */
+        reset(): void;
+    
+        /**
+         * Gets a response header.
+         * @param {string} name Name of response header.
+         * @return {string|undefined} Value of response header; undefined if not found.
+         */
+        getResponseHeader(name: string): any /*string|any (undefined)*/;
+    }
+}
 
 declare module goog.net.CrossDomainRpc {
 
@@ -143,59 +197,5 @@ declare module goog.net.CrossDomainRpc {
      * @param {string} headers Response headers in JSON format.
      */
     function sendResponse(data: string, isDataJson: boolean, echo: Object, status: number, headers: string): void;
-}
-
-declare module goog.net {
-
-    /**
-     * Creates a new instance of cross domain RPC
-     * @extends {goog.events.EventTarget}
-     * @constructor
-     * @final
-     */
-    class CrossDomainRpc extends goog.events.EventTarget {
-        /**
-         * Creates a new instance of cross domain RPC
-         * @extends {goog.events.EventTarget}
-         * @constructor
-         * @final
-         */
-        constructor();
-    
-        /**
-         * Sends a request across domain.
-         * @param {string} uri Uri to make request to.
-         * @param {string=} opt_method Method of request. Default is POST.
-         * @param {Object=} opt_params Parameters. Each property is turned into a
-         *     request parameter.
-         * @param {Object=} opt_headers Map of headers of the request.
-         */
-        sendRequest(uri: string, opt_method?: string, opt_params?: Object, opt_headers?: Object): void;
-    
-        /**
-         * If response is JSON, evaluates it to a JavaScript object and
-         * returns it; otherwise returns undefined.
-         * @return {Object|undefined} JavaScript object if response is in JSON
-         *     or undefined.
-         */
-        getResponseJson(): any /*Object|any (undefined)*/;
-    
-        /**
-         * @return {boolean} Whether the request completed with a success.
-         */
-        isSuccess(): boolean;
-    
-        /**
-         * Removes request iframe used.
-         */
-        reset(): void;
-    
-        /**
-         * Gets a response header.
-         * @param {string} name Name of response header.
-         * @return {string|undefined} Value of response header; undefined if not found.
-         */
-        getResponseHeader(name: string): any /*string|any (undefined)*/;
-    }
 }
 

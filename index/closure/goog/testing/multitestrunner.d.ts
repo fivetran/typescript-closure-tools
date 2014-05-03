@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:04:12 PDT 2014
+// Generated Sat May  3 12:20:03 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -50,71 +50,6 @@
 /// <reference path="../../goog/dom/classlist.d.ts" />
 /// <reference path="../../goog/ui/tablesorter.d.ts" />
 
-declare module goog.testing.MultiTestRunner {
-
-    /**
-     * Default maximimum amount of time to spend at each stage of the test.
-     * @type {number}
-     */
-    var DEFAULT_TIMEOUT_MS: number;
-
-    /**
-     * Messages corresponding to the numeric states.
-     * @type {Array.<string>}
-     */
-    var STATES: string[];
-
-    /**
-     * Class used to manage the interaction with a single iframe.
-     * @param {string} basePath The base path for tests.
-     * @param {number} timeoutMs The time to wait for the test to load and run.
-     * @param {boolean} verbosePasses Whether to show results for passes.
-     * @param {goog.dom.DomHelper=} opt_domHelper Optional dom helper.
-     * @constructor
-     * @extends {goog.ui.Component}
-     * @final
-     */
-    class TestFrame extends goog.ui.GoogComponent {
-        /**
-         * Class used to manage the interaction with a single iframe.
-         * @param {string} basePath The base path for tests.
-         * @param {number} timeoutMs The time to wait for the test to load and run.
-         * @param {boolean} verbosePasses Whether to show results for passes.
-         * @param {goog.dom.DomHelper=} opt_domHelper Optional dom helper.
-         * @constructor
-         * @extends {goog.ui.Component}
-         * @final
-         */
-        constructor(basePath: string, timeoutMs: number, verbosePasses: boolean, opt_domHelper?: goog.dom.DomHelper);
-    
-        /**
-         * Runs a test file in this test frame.
-         * @param {string} testFile The test to run.
-         */
-        runTest(testFile: string): void;
-    
-        /**
-         * @return {string} The test file the TestFrame is running.
-         */
-        getTestFile(): string;
-    
-        /**
-         * @return {!Object} Stats about the test run.
-         */
-        getStats(): Object;
-    
-        /**
-         * @return {string} The report for the test run.
-         */
-        getReport(): string;
-    
-        /**
-         * @return {?boolean} Whether the test frame had a success.
-         */
-        isSuccess(): boolean;
-    }
-}
-
 declare module goog.testing {
 
     /**
@@ -124,7 +59,7 @@ declare module goog.testing {
      * @constructor
      * @final
      */
-    class MultiTestRunner extends goog.ui.GoogComponent {
+    class MultiTestRunner extends goog.ui.Component {
         /**
          * A component for running multiple tests within the browser.
          * @param {goog.dom.DomHelper=} opt_domHelper A DOM helper.
@@ -297,5 +232,70 @@ declare module goog.testing {
          */
         processResult(frame: goog.testing.MultiTestRunner.TestFrame): void;
     }
+}
+
+declare module goog.testing.MultiTestRunner {
+
+    /**
+     * Class used to manage the interaction with a single iframe.
+     * @param {string} basePath The base path for tests.
+     * @param {number} timeoutMs The time to wait for the test to load and run.
+     * @param {boolean} verbosePasses Whether to show results for passes.
+     * @param {goog.dom.DomHelper=} opt_domHelper Optional dom helper.
+     * @constructor
+     * @extends {goog.ui.Component}
+     * @final
+     */
+    class TestFrame extends goog.ui.Component {
+        /**
+         * Class used to manage the interaction with a single iframe.
+         * @param {string} basePath The base path for tests.
+         * @param {number} timeoutMs The time to wait for the test to load and run.
+         * @param {boolean} verbosePasses Whether to show results for passes.
+         * @param {goog.dom.DomHelper=} opt_domHelper Optional dom helper.
+         * @constructor
+         * @extends {goog.ui.Component}
+         * @final
+         */
+        constructor(basePath: string, timeoutMs: number, verbosePasses: boolean, opt_domHelper?: goog.dom.DomHelper);
+    
+        /**
+         * Runs a test file in this test frame.
+         * @param {string} testFile The test to run.
+         */
+        runTest(testFile: string): void;
+    
+        /**
+         * @return {string} The test file the TestFrame is running.
+         */
+        getTestFile(): string;
+    
+        /**
+         * @return {!Object} Stats about the test run.
+         */
+        getStats(): Object;
+    
+        /**
+         * @return {string} The report for the test run.
+         */
+        getReport(): string;
+    
+        /**
+         * @return {?boolean} Whether the test frame had a success.
+         */
+        isSuccess(): boolean;
+    }
+
+    /**
+     * Default maximimum amount of time to spend at each stage of the test.
+     * @type {number}
+     */
+    var DEFAULT_TIMEOUT_MS: number;
+
+    /**
+     * Messages corresponding to the numeric states.
+     * @type {Array.<string>}
+     */
+    var STATES: string[];
 }
 

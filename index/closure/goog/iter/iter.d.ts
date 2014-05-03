@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:56:09 PDT 2014
+// Generated Sat May  3 12:11:55 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -12,17 +12,33 @@
 declare module goog.iter {
 
     /**
-     * @typedef {goog.iter.Iterator|{length:number}|{__iterator__}}
+     * Class/interface for iterators.  An iterator needs to implement a {@code next}
+     * method and it needs to throw a {@code goog.iter.StopIteration} when the
+     * iteration passes beyond the end.  Iterators have no {@code hasNext} method.
+     * It is recommended to always use the helper functions to iterate over the
+     * iterator or in case you are only targeting JavaScript 1.7 for in loops.
+     * @constructor
+     * @template VALUE
      */
-    interface Iterable<TYPE> { /*any (goog.iter.Iterator|{ length: number }|{ __iterator__: any (missing) })*/
-
+    class Iterator<VALUE> {
+        /**
+         * Class/interface for iterators.  An iterator needs to implement a {@code next}
+         * method and it needs to throw a {@code goog.iter.StopIteration} when the
+         * iteration passes beyond the end.  Iterators have no {@code hasNext} method.
+         * It is recommended to always use the helper functions to iterate over the
+         * iterator or in case you are only targeting JavaScript 1.7 for in loops.
+         * @constructor
+         * @template VALUE
+         */
+        constructor();
+    
         /**
          * Returns the next value of the iteration.  This will throw the object
          * {@see goog.iter#StopIteration} when the iteration passes the end.
          * @return {VALUE} Any object or value.
          */
-        next?: () => TYPE;
-
+        next(): VALUE;
+    
         /**
          * Returns the {@code Iterator} object itself.  This is used to implement
          * the iterator protocol in JavaScript 1.7
@@ -33,10 +49,13 @@ declare module goog.iter {
          *     return the keys when true is passed.
          * @return {!goog.iter.Iterator.<VALUE>} The object itself.
          */
-        __iterator__?: (opt_keys?: boolean) => goog.iter.Iterator<TYPE>;
-
-        length?: number;
+        __iterator__(opt_keys?: boolean): goog.iter.Iterator<VALUE>;
     }
+
+    /**
+     * @typedef {goog.iter.Iterator|{length:number}|{__iterator__}}
+     */
+    interface Iterable { /*any (goog.iter.Iterator|{ length: number }|{ __iterator__: any (missing) })*/ }
 
     /**
        * Singleton Error object that is used to terminate iterations.
@@ -76,7 +95,7 @@ declare module goog.iter {
      *     {@code f}.
      * @template THIS, VALUE
      */
-    function forEach(iterable: any /*goog.iter.Iterator<VALUE>|goog.iter.Iterable*/): void;
+    function forEach(iterable: any /*goog.iter.Iterator<VALUE>|goog.iter.Iterable*/, f: any /* jsdoc error */, opt_obj?: any /* jsdoc error */): void;
 
     /**
      * Calls a function for every element in the iterator, and if the function
@@ -96,7 +115,7 @@ declare module goog.iter {
      *     that passed the test are present.
      * @template THIS, VALUE
      */
-    function filter(iterable: any /*goog.iter.Iterator<VALUE>|goog.iter.Iterable*/): void;
+    function filter(iterable: any /*goog.iter.Iterator<VALUE>|goog.iter.Iterable*/, f: any /* jsdoc error */, opt_obj?: any /* jsdoc error */): void;
 
     /**
      * Calls a function for every element in the iterator, and if the function
@@ -116,7 +135,7 @@ declare module goog.iter {
      *     that did not pass the test are present.
      * @template THIS, VALUE
      */
-    function filterFalse(iterable: any /*goog.iter.Iterator<VALUE>|goog.iter.Iterable*/): void;
+    function filterFalse(iterable: any /*goog.iter.Iterator<VALUE>|goog.iter.Iterable*/, f: any /* jsdoc error */, opt_obj?: any /* jsdoc error */): void;
 
     /**
      * Creates a new iterator that returns the values in a range.  This function
@@ -165,7 +184,7 @@ declare module goog.iter {
      *     iterator.
      * @template THIS, VALUE, RESULT
      */
-    function map(iterable: any /*goog.iter.Iterator<VALUE>|goog.iter.Iterable*/): void;
+    function map(iterable: any /*goog.iter.Iterator<VALUE>|goog.iter.Iterable*/, f: any /* jsdoc error */, opt_obj?: any /* jsdoc error */): void;
 
     /**
      * Passes every element of an iterator into a function and accumulates the
@@ -203,7 +222,7 @@ declare module goog.iter {
      * @return {boolean} true if any value passes the test.
      * @template THIS, VALUE
      */
-    function some(iterable: any /*goog.iter.Iterator<VALUE>|goog.iter.Iterable*/): void;
+    function some(iterable: any /*goog.iter.Iterator<VALUE>|goog.iter.Iterable*/, f: any /* jsdoc error */, opt_obj?: any /* jsdoc error */): void;
 
     /**
      * Goes through the values in the iterator. Calls f for each of these and if any
@@ -221,7 +240,7 @@ declare module goog.iter {
      * @return {boolean} true if every value passes the test.
      * @template THIS, VALUE
      */
-    function every(iterable: any /*goog.iter.Iterator<VALUE>|goog.iter.Iterable*/): void;
+    function every(iterable: any /*goog.iter.Iterator<VALUE>|goog.iter.Iterable*/, f: any /* jsdoc error */, opt_obj?: any /* jsdoc error */): void;
 
     /**
      * Takes zero or more iterables and returns one iterator that will iterate over
@@ -244,7 +263,7 @@ declare module goog.iter {
      *     {@code iterable}.
      * @template VALUE
      */
-    function chainFromIterable<VALUE>(iterable: goog.iter.Iterable<any>): goog.iter.Iterator<VALUE>;
+    function chainFromIterable<VALUE>(iterable: goog.iter.Iterable): goog.iter.Iterator<VALUE>;
 
     /**
      * Builds a new iterator that iterates over the original, but skips elements as
@@ -261,7 +280,7 @@ declare module goog.iter {
      *     the original iterator as long as {@code f} is true.
      * @template THIS, VALUE
      */
-    function dropWhile(iterable: any /*goog.iter.Iterator<VALUE>|goog.iter.Iterable*/): void;
+    function dropWhile(iterable: any /*goog.iter.Iterator<VALUE>|goog.iter.Iterable*/, f: any /* jsdoc error */, opt_obj?: any /* jsdoc error */): void;
 
     /**
      * Builds a new iterator that iterates over the original, but only as long as a
@@ -277,7 +296,7 @@ declare module goog.iter {
      *     the original iterator as long as the function is true.
      * @template THIS, VALUE
      */
-    function takeWhile(iterable: any /*goog.iter.Iterator<VALUE>|goog.iter.Iterable*/): void;
+    function takeWhile(iterable: any /*goog.iter.Iterator<VALUE>|goog.iter.Iterable*/, f: any /* jsdoc error */, opt_obj?: any /* jsdoc error */): void;
 
     /**
      * Converts the iterator to an array
@@ -463,7 +482,7 @@ declare module goog.iter {
      *     iterator.
      * @template THIS, RESULT
      */
-    function starMap<THIS, RESULT>(iterable: goog.iter.Iterable<goog.iter.Iterable<any>>, f: (_0: any[][]) => RESULT, opt_obj?: THIS): goog.iter.Iterator<RESULT>;
+    function starMap<THIS, RESULT>(iterable: goog.iter.Iterable<goog.iter.Iterable>, f: (_0: any[][]) => RESULT, opt_obj?: THIS): goog.iter.Iterator<RESULT>;
 
     /**
      * Returns an array of iterators each of which can iterate over the values in
@@ -587,46 +606,5 @@ declare module goog.iter {
      * @template VALUE
      */
     function combinationsWithReplacement<VALUE>(iterable: any /*goog.iter.Iterator<VALUE>|goog.iter.Iterable*/, length: number): goog.iter.Iterator<VALUE[]>;
-
-    /**
-     * Class/interface for iterators.  An iterator needs to implement a {@code next}
-     * method and it needs to throw a {@code goog.iter.StopIteration} when the
-     * iteration passes beyond the end.  Iterators have no {@code hasNext} method.
-     * It is recommended to always use the helper functions to iterate over the
-     * iterator or in case you are only targeting JavaScript 1.7 for in loops.
-     * @constructor
-     * @template VALUE
-     */
-    class Iterator<VALUE> {
-        /**
-         * Class/interface for iterators.  An iterator needs to implement a {@code next}
-         * method and it needs to throw a {@code goog.iter.StopIteration} when the
-         * iteration passes beyond the end.  Iterators have no {@code hasNext} method.
-         * It is recommended to always use the helper functions to iterate over the
-         * iterator or in case you are only targeting JavaScript 1.7 for in loops.
-         * @constructor
-         * @template VALUE
-         */
-        constructor();
-    
-        /**
-         * Returns the next value of the iteration.  This will throw the object
-         * {@see goog.iter#StopIteration} when the iteration passes the end.
-         * @return {VALUE} Any object or value.
-         */
-        next(): VALUE;
-    
-        /**
-         * Returns the {@code Iterator} object itself.  This is used to implement
-         * the iterator protocol in JavaScript 1.7
-         * @param {boolean=} opt_keys  Whether to return the keys or values. Default is
-         *     to only return the values.  This is being used by the for-in loop (true)
-         *     and the for-each-in loop (false).  Even though the param gives a hint
-         *     about what the iterator will return there is no guarantee that it will
-         *     return the keys when true is passed.
-         * @return {!goog.iter.Iterator.<VALUE>} The object itself.
-         */
-        __iterator__(opt_keys?: boolean): goog.iter.Iterator<VALUE>;
-    }
 }
 

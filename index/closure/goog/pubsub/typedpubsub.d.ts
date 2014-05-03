@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:55:54 PDT 2014
+// Generated Sat May  3 12:11:40 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/disposable/idisposable.d.ts" />
@@ -18,7 +18,7 @@ declare module goog.pubsub {
      * @constructor
      * @extends {goog.Disposable}
      */
-    class TypedPubSub extends goog.GoogDisposable {
+    class TypedPubSub extends goog.Disposable {
         /**
          * This object is a temporary shim that provides goog.pubsub.TopicId support
          * for goog.pubsub.PubSub.  See b/12477087 for more info.

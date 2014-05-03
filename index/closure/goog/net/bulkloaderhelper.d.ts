@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:58:15 PDT 2014
+// Generated Sat May  3 12:14:03 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/string/string.d.ts" />
@@ -35,7 +35,7 @@ declare module goog.net {
      * @extends {goog.Disposable}
      * @final
      */
-    class BulkLoaderHelper extends goog.GoogDisposable {
+    class BulkLoaderHelper extends goog.Disposable {
         /**
          * Helper class used to load multiple URIs.
          * @param {Array.<string|goog.Uri>} uris The URIs to load.

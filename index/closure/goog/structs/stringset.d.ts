@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:57:07 PDT 2014
+// Generated Sat May  3 12:12:53 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -187,7 +187,7 @@ declare module goog.structs {
          * @param {boolean=} opt_keys Ignored for sets.
          * @return {!goog.iter.Iterator} An iterator over the elements in the set.
          */
-        __iterator__(opt_keys?: boolean): goog.iter.Iterator<String>;
+        __iterator__(opt_keys?: boolean): goog.iter.Iterator;
     }
 }
 

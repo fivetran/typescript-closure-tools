@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:00:21 PDT 2014
+// Generated Sat May  3 12:16:10 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -50,16 +50,6 @@
 /// <reference path="../../goog/dom/tagiterator.d.ts" />
 /// <reference path="../../goog/dom/nodeiterator.d.ts" />
 
-declare module goog.ui.PaletteRenderer {
-
-    /**
-     * Default CSS class to be applied to the root element of components rendered
-     * by this renderer.
-     * @type {string}
-     */
-    var CSS_CLASS: string;
-}
-
 declare module goog.ui {
 
     /**
@@ -84,7 +74,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.ControlRenderer}
      */
-    class GoogPaletteRenderer extends goog.ui.GoogControlRenderer {
+    class PaletteRenderer extends goog.ui.ControlRenderer {
         /**
          * Default renderer for {@link goog.ui.Palette}s.  Renders the palette as an
          * HTML table wrapped in a DIV, with one palette item per cell:
@@ -182,7 +172,15 @@ declare module goog.ui {
          */
         selectCell(palette: goog.ui.Palette, node: Node, select: boolean): void;
     }
+}
 
-    class PaletteRenderer extends GoogPaletteRenderer { }
+declare module goog.ui.PaletteRenderer {
+
+    /**
+     * Default CSS class to be applied to the root element of components rendered
+     * by this renderer.
+     * @type {string}
+     */
+    var CSS_CLASS: string;
 }
 

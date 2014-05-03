@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:59:19 PDT 2014
+// Generated Sat May  3 12:15:08 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -50,6 +50,23 @@
 /// <reference path="../../goog/ui/menuseparatorrenderer.d.ts" />
 /// <reference path="../../goog/ui/cssnames.d.ts" />
 
+declare module goog.ui {
+
+    /**
+     * Renderer for toolbar separators.
+     * @constructor
+     * @extends {goog.ui.MenuSeparatorRenderer}
+     */
+    class ToolbarSeparatorRenderer extends goog.ui.MenuSeparatorRenderer {
+        /**
+         * Renderer for toolbar separators.
+         * @constructor
+         * @extends {goog.ui.MenuSeparatorRenderer}
+         */
+        constructor();
+    }
+}
+
 declare module goog.ui.ToolbarSeparatorRenderer {
 
     /**
@@ -58,22 +75,5 @@ declare module goog.ui.ToolbarSeparatorRenderer {
      * @type {string}
      */
     var CSS_CLASS: string;
-}
-
-declare module goog.ui {
-
-    /**
-     * Renderer for toolbar separators.
-     * @constructor
-     * @extends {goog.ui.MenuSeparatorRenderer}
-     */
-    class ToolbarSeparatorRenderer extends goog.ui.GoogMenuSeparatorRenderer {
-        /**
-         * Renderer for toolbar separators.
-         * @constructor
-         * @extends {goog.ui.MenuSeparatorRenderer}
-         */
-        constructor();
-    }
 }
 

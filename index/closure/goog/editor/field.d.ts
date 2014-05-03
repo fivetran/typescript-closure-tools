@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:57:45 PDT 2014
+// Generated Sat May  3 12:13:32 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/string/string.d.ts" />
@@ -86,45 +86,6 @@
 /// <reference path="../../goog/timer/timer.d.ts" />
 /// <reference path="../../goog/async/delay.d.ts" />
 
-declare module goog.editor.Field {
-
-    /**
-     * Event types that can be stopped/started.
-     * @enum {string}
-     */
-    enum EventType { COMMAND_VALUE_CHANGE, LOAD, UNLOAD, BEFORECHANGE, CHANGE, DELAYEDCHANGE, BEFOREFOCUS, FOCUS, BLUR, BEFORETAB, IFRAME_RESIZED, SELECTIONCHANGE } 
-
-    /**
-     * Sets the active field id.
-     * @param {?string} fieldId The active field id.
-     */
-    function setActiveFieldId(fieldId: string): void;
-
-    /**
-     * @return {?string} The id of the active field.
-     */
-    function getActiveFieldId(): string;
-
-    /**
-     * Number of milliseconds after a change when the change event should be fired.
-     * @type {number}
-     */
-    var CHANGE_FREQUENCY: number;
-
-    /**
-     * Number of milliseconds between delayed change events.
-     * @type {number}
-     */
-    var DELAYED_CHANGE_FREQUENCY: number;
-
-    /**
-     * List of mutation events in Gecko browsers.
-     * @type {Array.<string>}
-     * @protected
-     */
-    var MUTATION_EVENTS_GECKO: string[];
-}
-
 declare module goog.editor {
 
     /**
@@ -152,7 +113,7 @@ declare module goog.editor {
      * @constructor
      * @extends {goog.events.EventTarget}
      */
-    class GoogField extends goog.events.EventTarget {
+    class Field extends goog.events.EventTarget {
         /**
          * This class encapsulates an editable field.
          *
@@ -766,7 +727,44 @@ declare module goog.editor {
          */
         getIframeAttributes(): Object;
     }
+}
 
-    class Field extends GoogField { }
+declare module goog.editor.Field {
+
+    /**
+     * Event types that can be stopped/started.
+     * @enum {string}
+     */
+    enum EventType { COMMAND_VALUE_CHANGE, LOAD, UNLOAD, BEFORECHANGE, CHANGE, DELAYEDCHANGE, BEFOREFOCUS, FOCUS, BLUR, BEFORETAB, IFRAME_RESIZED, SELECTIONCHANGE } 
+
+    /**
+     * Sets the active field id.
+     * @param {?string} fieldId The active field id.
+     */
+    function setActiveFieldId(fieldId: string): void;
+
+    /**
+     * @return {?string} The id of the active field.
+     */
+    function getActiveFieldId(): string;
+
+    /**
+     * Number of milliseconds after a change when the change event should be fired.
+     * @type {number}
+     */
+    var CHANGE_FREQUENCY: number;
+
+    /**
+     * Number of milliseconds between delayed change events.
+     * @type {number}
+     */
+    var DELAYED_CHANGE_FREQUENCY: number;
+
+    /**
+     * List of mutation events in Gecko browsers.
+     * @type {Array.<string>}
+     * @protected
+     */
+    var MUTATION_EVENTS_GECKO: string[];
 }
 

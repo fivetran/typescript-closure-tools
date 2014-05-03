@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:00:59 PDT 2014
+// Generated Sat May  3 12:16:48 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/string/string.d.ts" />
@@ -63,7 +63,7 @@ declare module goog.ui.ac {
      * @constructor
      * @extends {goog.Disposable}
      */
-    class RemoteArrayMatcher extends goog.GoogDisposable {
+    class RemoteArrayMatcher extends goog.Disposable {
         /**
          * An array matcher that requests matches via ajax.
          * @param {string} url The Uri which generates the auto complete matches.  The

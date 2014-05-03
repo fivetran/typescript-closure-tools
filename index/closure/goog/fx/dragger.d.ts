@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:56:24 PDT 2014
+// Generated Sat May  3 12:12:10 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -39,25 +39,6 @@
 /// <reference path="../../goog/events/eventhandler.d.ts" />
 /// <reference path="../../goog/style/bidi.d.ts" />
 /// <reference path="../../goog/events/eventtarget.d.ts" />
-
-declare module goog.fx.Dragger {
-
-    /**
-     * Creates copy of node being dragged.  This is a utility function to be used
-     * wherever it is inappropriate for the original source to follow the mouse
-     * cursor itself.
-     *
-     * @param {Element} sourceEl Element to copy.
-     * @return {!Element} The clone of {@code sourceEl}.
-     */
-    function cloneNode(sourceEl: Element): Element;
-
-    /**
-     * Constants for event names.
-     * @enum {string}
-     */
-    enum EventType { EARLY_CANCEL, START, BEFOREDRAG, DRAG, END } 
-}
 
 declare module goog.fx {
 
@@ -340,5 +321,24 @@ declare module goog.fx {
          */
         constructor(type: string, dragobj: goog.fx.Dragger, clientX: number, clientY: number, browserEvent: goog.events.BrowserEvent, opt_actX?: number, opt_actY?: number, opt_dragCanceled?: boolean);
     }
+}
+
+declare module goog.fx.Dragger {
+
+    /**
+     * Creates copy of node being dragged.  This is a utility function to be used
+     * wherever it is inappropriate for the original source to follow the mouse
+     * cursor itself.
+     *
+     * @param {Element} sourceEl Element to copy.
+     * @return {!Element} The clone of {@code sourceEl}.
+     */
+    function cloneNode(sourceEl: Element): Element;
+
+    /**
+     * Constants for event names.
+     * @enum {string}
+     */
+    enum EventType { EARLY_CANCEL, START, BEFOREDRAG, DRAG, END } 
 }
 

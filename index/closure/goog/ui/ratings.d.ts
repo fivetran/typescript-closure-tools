@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:59:57 PDT 2014
+// Generated Sat May  3 12:15:46 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -46,22 +46,6 @@
 /// <reference path="../../goog/a11y/aria/aria.d.ts" />
 /// <reference path="../../goog/dom/classlist.d.ts" />
 
-declare module goog.ui.Ratings {
-
-    /**
-     * Default CSS class to be applied to the root element of components rendered
-     * by this renderer.
-     * @type {string}
-     */
-    var CSS_CLASS: string;
-
-    /**
-     * Enums for Ratings event type.
-     * @enum {string}
-     */
-    enum EventType { CHANGE, HIGHLIGHT_CHANGE, HIGHLIGHT, UNHIGHLIGHT } 
-}
-
 declare module goog.ui {
 
     /**
@@ -71,7 +55,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.Component}
      */
-    class Ratings extends goog.ui.GoogComponent {
+    class Ratings extends goog.ui.Component {
         /**
          * A UI Control used for rating things, i.e. videos on Google Video.
          * @param {Array.<string>=} opt_ratings Ratings. Default: [1,2,3,4,5].
@@ -155,5 +139,21 @@ declare module goog.ui {
          */
         isEnabled(): boolean;
     }
+}
+
+declare module goog.ui.Ratings {
+
+    /**
+     * Default CSS class to be applied to the root element of components rendered
+     * by this renderer.
+     * @type {string}
+     */
+    var CSS_CLASS: string;
+
+    /**
+     * Enums for Ratings event type.
+     * @enum {string}
+     */
+    enum EventType { CHANGE, HIGHLIGHT_CHANGE, HIGHLIGHT, UNHIGHLIGHT } 
 }
 

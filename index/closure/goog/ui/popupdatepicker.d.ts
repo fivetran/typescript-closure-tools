@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:59:28 PDT 2014
+// Generated Sat May  3 12:15:17 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -84,7 +84,7 @@ declare module goog.ui {
      * @extends {goog.ui.Component}
      * @constructor
      */
-    class PopupDatePicker extends goog.ui.GoogComponent {
+    class PopupDatePicker extends goog.ui.Component {
         /**
          * Popup date picker widget. Fires goog.ui.PopupBase.EventType.SHOW or HIDE
          * events when its visibility changes.

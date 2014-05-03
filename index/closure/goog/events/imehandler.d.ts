@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:01:39 PDT 2014
+// Generated Sat May  3 12:17:29 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/string/string.d.ts" />
@@ -28,42 +28,6 @@
 /// <reference path="../../goog/events/keycodes.d.ts" />
 /// <reference path="../../goog/events/eventtarget.d.ts" />
 
-declare module goog.events.ImeHandler {
-
-    /**
-     * Event types fired by ImeHandler. These events do not make any guarantees
-     * about whether they were fired before or after the event in question.
-     * @enum {string}
-     */
-    enum EventType { START, UPDATE, END } 
-
-    /**
-     * Whether to use the composition events.
-     * @type {boolean}
-     */
-    var USES_COMPOSITION_EVENTS: boolean;
-
-    /**
-     * An event fired by ImeHandler.
-     * @param {goog.events.ImeHandler.EventType} type The type.
-     * @param {goog.events.BrowserEvent} reason The trigger for this event.
-     * @constructor
-     * @extends {goog.events.Event}
-     * @final
-     */
-    class Event extends goog.events.Event {
-        /**
-         * An event fired by ImeHandler.
-         * @param {goog.events.ImeHandler.EventType} type The type.
-         * @param {goog.events.BrowserEvent} reason The trigger for this event.
-         * @constructor
-         * @extends {goog.events.Event}
-         * @final
-         */
-        constructor(type: goog.events.ImeHandler.EventType, reason: goog.events.BrowserEvent);
-    }
-}
-
 declare module goog.events {
 
     /**
@@ -88,5 +52,41 @@ declare module goog.events {
          */
         isImeMode(): boolean;
     }
+}
+
+declare module goog.events.ImeHandler {
+
+    /**
+     * An event fired by ImeHandler.
+     * @param {goog.events.ImeHandler.EventType} type The type.
+     * @param {goog.events.BrowserEvent} reason The trigger for this event.
+     * @constructor
+     * @extends {goog.events.Event}
+     * @final
+     */
+    class Event extends goog.events.Event {
+        /**
+         * An event fired by ImeHandler.
+         * @param {goog.events.ImeHandler.EventType} type The type.
+         * @param {goog.events.BrowserEvent} reason The trigger for this event.
+         * @constructor
+         * @extends {goog.events.Event}
+         * @final
+         */
+        constructor(type: goog.events.ImeHandler.EventType, reason: goog.events.BrowserEvent);
+    }
+
+    /**
+     * Event types fired by ImeHandler. These events do not make any guarantees
+     * about whether they were fired before or after the event in question.
+     * @enum {string}
+     */
+    enum EventType { START, UPDATE, END } 
+
+    /**
+     * Whether to use the composition events.
+     * @type {boolean}
+     */
+    var USES_COMPOSITION_EVENTS: boolean;
 }
 

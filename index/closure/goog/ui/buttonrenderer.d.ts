@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:00:50 PDT 2014
+// Generated Sat May  3 12:16:39 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -48,16 +48,6 @@
 /// <reference path="../../goog/ui/controlrenderer.d.ts" />
 /// <reference path="../../goog/ui/buttonside.d.ts" />
 
-declare module goog.ui.ButtonRenderer {
-
-    /**
-     * Default CSS class to be applied to the root element of components rendered
-     * by this renderer.
-     * @type {string}
-     */
-    var CSS_CLASS: string;
-}
-
 declare module goog.ui {
 
     /**
@@ -76,7 +66,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.ControlRenderer}
      */
-    class GoogButtonRenderer extends goog.ui.GoogControlRenderer {
+    class ButtonRenderer extends goog.ui.ControlRenderer {
         /**
          * Default renderer for {@link goog.ui.Button}s.  Extends the superclass with
          * the following button-specific API methods:
@@ -138,7 +128,15 @@ declare module goog.ui {
          */
         setCollapsed(button: goog.ui.Button, sides: number): void;
     }
+}
 
-    class ButtonRenderer extends GoogButtonRenderer { }
+declare module goog.ui.ButtonRenderer {
+
+    /**
+     * Default CSS class to be applied to the root element of components rendered
+     * by this renderer.
+     * @type {string}
+     */
+    var CSS_CLASS: string;
 }
 

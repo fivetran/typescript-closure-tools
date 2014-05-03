@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:56:20 PDT 2014
+// Generated Sat May  3 12:12:06 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/fx/transition.d.ts" />
@@ -27,15 +27,6 @@
 /// <reference path="../../goog/events/events.d.ts" />
 /// <reference path="../../goog/events/eventtarget.d.ts" />
 
-declare module goog.fx.TransitionBase {
-
-    /**
-     * Enum for the possible states of an animation.
-     * @enum {number}
-     */
-    enum State { STOPPED, PAUSED, PLAYING } 
-}
-
 declare module goog.fx {
 
     /**
@@ -45,7 +36,7 @@ declare module goog.fx {
      * @implements {goog.fx.Transition}
      * @extends {goog.events.EventTarget}
      */
-    class GoogTransitionBase extends goog.events.EventTarget implements goog.fx.Transition {
+    class TransitionBase extends goog.events.EventTarget implements goog.fx.Transition {
         /**
          * Constructor for a transition object.
          *
@@ -155,7 +146,14 @@ declare module goog.fx {
          */
         dispatchAnimationEvent(type: string): void;
     }
+}
 
-    class TransitionBase extends GoogTransitionBase { }
+declare module goog.fx.TransitionBase {
+
+    /**
+     * Enum for the possible states of an animation.
+     * @enum {number}
+     */
+    enum State { STOPPED, PAUSED, PLAYING } 
 }
 

@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:58:33 PDT 2014
+// Generated Sat May  3 12:14:21 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/string/string.d.ts" />
@@ -35,13 +35,66 @@
 /// <reference path="../../../goog/disposable/disposable.d.ts" />
 /// <reference path="../../../goog/net/xpc/transport.d.ts" />
 
-declare module goog.net.xpc.IframePollingTransport {
+declare module goog.net.xpc {
 
     /**
-     * The string used to prefix all iframe names and IDs.
-     * @type {string}
+     * Iframe polling transport. Uses hidden iframes to transfer data
+     * in the fragment identifier of the URL. The peer polls the iframe's location
+     * for changes.
+     * Unfortunately, in Safari this screws up the history, because Safari doesn't
+     * allow to call location.replace() on a window containing a document from a
+     * different domain (last version tested: 2.0.4).
+     *
+     * @param {goog.net.xpc.CrossPageChannel} channel The channel this
+     *     transport belongs to.
+     * @param {goog.dom.DomHelper=} opt_domHelper The dom helper to use for finding
+     *     the correct window.
+     * @constructor
+     * @extends {goog.net.xpc.Transport}
+     * @final
      */
-    var IFRAME_PREFIX: string;
+    class IframePollingTransport extends goog.net.xpc.Transport {
+        /**
+         * Iframe polling transport. Uses hidden iframes to transfer data
+         * in the fragment identifier of the URL. The peer polls the iframe's location
+         * for changes.
+         * Unfortunately, in Safari this screws up the history, because Safari doesn't
+         * allow to call location.replace() on a window containing a document from a
+         * different domain (last version tested: 2.0.4).
+         *
+         * @param {goog.net.xpc.CrossPageChannel} channel The channel this
+         *     transport belongs to.
+         * @param {goog.dom.DomHelper=} opt_domHelper The dom helper to use for finding
+         *     the correct window.
+         * @constructor
+         * @extends {goog.net.xpc.Transport}
+         * @final
+         */
+        constructor(channel: goog.net.xpc.CrossPageChannel, opt_domHelper?: goog.dom.DomHelper);
+    
+        /**
+         * Determines whether the channel is still available. The channel is
+         * unavailable if the transport was disposed or the peer is no longer
+         * available.
+         * @return {boolean} Whether the channel is available.
+         */
+        isChannelAvailable(): boolean;
+    
+        /**
+         * Processes an incoming message.
+         * @param {string} raw The complete received string.
+         */
+        processIncomingMsg(raw: string): void;
+    
+        /**
+         * Process an incoming acknowdedgement.
+         * @param {string} msgStr The incoming ack string to process.
+         */
+        processIncomingAck(msgStr: string): void;
+    }
+}
+
+declare module goog.net.xpc.IframePollingTransport {
 
     /**
      * goog.net.xpc.IframePollingTransport.Sender
@@ -106,64 +159,11 @@ declare module goog.net.xpc.IframePollingTransport {
          */
         receive(): boolean;
     }
-}
-
-declare module goog.net.xpc {
 
     /**
-     * Iframe polling transport. Uses hidden iframes to transfer data
-     * in the fragment identifier of the URL. The peer polls the iframe's location
-     * for changes.
-     * Unfortunately, in Safari this screws up the history, because Safari doesn't
-     * allow to call location.replace() on a window containing a document from a
-     * different domain (last version tested: 2.0.4).
-     *
-     * @param {goog.net.xpc.CrossPageChannel} channel The channel this
-     *     transport belongs to.
-     * @param {goog.dom.DomHelper=} opt_domHelper The dom helper to use for finding
-     *     the correct window.
-     * @constructor
-     * @extends {goog.net.xpc.Transport}
-     * @final
+     * The string used to prefix all iframe names and IDs.
+     * @type {string}
      */
-    class IframePollingTransport extends goog.net.xpc.Transport {
-        /**
-         * Iframe polling transport. Uses hidden iframes to transfer data
-         * in the fragment identifier of the URL. The peer polls the iframe's location
-         * for changes.
-         * Unfortunately, in Safari this screws up the history, because Safari doesn't
-         * allow to call location.replace() on a window containing a document from a
-         * different domain (last version tested: 2.0.4).
-         *
-         * @param {goog.net.xpc.CrossPageChannel} channel The channel this
-         *     transport belongs to.
-         * @param {goog.dom.DomHelper=} opt_domHelper The dom helper to use for finding
-         *     the correct window.
-         * @constructor
-         * @extends {goog.net.xpc.Transport}
-         * @final
-         */
-        constructor(channel: goog.net.xpc.CrossPageChannel, opt_domHelper?: goog.dom.DomHelper);
-    
-        /**
-         * Determines whether the channel is still available. The channel is
-         * unavailable if the transport was disposed or the peer is no longer
-         * available.
-         * @return {boolean} Whether the channel is available.
-         */
-        isChannelAvailable(): boolean;
-    
-        /**
-         * Processes an incoming message.
-         * @param {string} raw The complete received string.
-         */
-        processIncomingMsg(raw: string): void;
-    
-        /**
-         * Process an incoming acknowdedgement.
-         * @param {string} msgStr The incoming ack string to process.
-         */
-        processIncomingAck(msgStr: string): void;
-    }
+    var IFRAME_PREFIX: string;
 }
 

@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:57:02 PDT 2014
+// Generated Sat May  3 12:12:49 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/string/stringbuffer.d.ts" />
@@ -40,26 +40,6 @@
 /// <reference path="../../../goog/dom/textrangeiterator.d.ts" />
 /// <reference path="../../../goog/dom/browserrange/abstractrange.d.ts" />
 
-declare module goog.dom.browserrange.IeRange {
-
-    /**
-     * Create a range object that selects the given node's text.
-     * @param {Node} node The node to select.
-     * @return {goog.dom.browserrange.IeRange} An IE range wrapper object.
-     */
-    function createFromNodeContents(node: Node): goog.dom.browserrange.IeRange;
-
-    /**
-     * Static method that returns the proper type of browser range.
-     * @param {Node} startNode The node to start with.
-     * @param {number} startOffset The offset within the start node.
-     * @param {Node} endNode The node to end with.
-     * @param {number} endOffset The offset within the end node.
-     * @return {goog.dom.browserrange.AbstractRange} A wrapper object.
-     */
-    function createFromNodes(startNode: Node, startOffset: number, endNode: Node, endOffset: number): goog.dom.browserrange.AbstractRange;
-}
-
 declare module goog.dom.browserrange {
 
     /**
@@ -90,5 +70,25 @@ declare module goog.dom.browserrange {
          */
         isRangeInDocument(): boolean;
     }
+}
+
+declare module goog.dom.browserrange.IeRange {
+
+    /**
+     * Create a range object that selects the given node's text.
+     * @param {Node} node The node to select.
+     * @return {goog.dom.browserrange.IeRange} An IE range wrapper object.
+     */
+    function createFromNodeContents(node: Node): goog.dom.browserrange.IeRange;
+
+    /**
+     * Static method that returns the proper type of browser range.
+     * @param {Node} startNode The node to start with.
+     * @param {number} startOffset The offset within the start node.
+     * @param {Node} endNode The node to end with.
+     * @param {number} endOffset The offset within the end node.
+     * @return {goog.dom.browserrange.AbstractRange} A wrapper object.
+     */
+    function createFromNodes(startNode: Node, startOffset: number, endNode: Node, endOffset: number): goog.dom.browserrange.AbstractRange;
 }
 

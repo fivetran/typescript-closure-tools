@@ -1,9 +1,9 @@
-// Generated Fri May  2 15:02:28 PDT 2014
+// Generated Sat May  3 12:18:18 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/string/string.d.ts" />
 
-declare module googstring {
+declare module goog.string {
 
     /**
      * Performs sprintf-like conversion, ie. puts the values in a template.

@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:57:36 PDT 2014
+// Generated Sat May  3 12:13:23 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/object/object.d.ts" />
@@ -87,7 +87,7 @@ declare module goog.editor.plugins {
      * @extends {goog.editor.Plugin}
      * @final
      */
-    class LinkShortcutPlugin extends goog.editor.GoogPlugin {
+    class LinkShortcutPlugin extends goog.editor.Plugin {
         /**
          * Plugin to add a keyboard shortcut for the link command
          * @constructor

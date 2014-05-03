@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:05:18 PDT 2014
+// Generated Sat May  3 12:21:10 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/string/string.d.ts" />
@@ -24,57 +24,6 @@
 /// <reference path="../../goog/debug/logger.d.ts" />
 /// <reference path="../../goog/log/log.d.ts" />
 /// <reference path="../../goog/datasource/datasource.d.ts" />
-
-declare module goog.ds.Expr {
-
-    /**
-     * Create an expression from a string, can use cached values
-     *
-     * @param {string} expr The expression string.
-     * @return {goog.ds.Expr} The expression object.
-     */
-    function create(expr: string): goog.ds.Expr;
-
-    /**
-     * The current node
-     */
-    var CURRENT: any /*missing*/;
-
-    /**
-     * For DOM interop - all DOM child nodes (text + element).
-     * Text nodes have dataName #text
-     */
-    var ALL_CHILD_NODES: any /*missing*/;
-
-    /**
-     * For DOM interop - all DOM element child nodes
-     */
-    var ALL_ELEMENTS: any /*missing*/;
-
-    /**
-     * For DOM interop - all DOM attribute nodes
-     * Attribute nodes have dataName starting with "@"
-     */
-    var ALL_ATTRIBUTES: any /*missing*/;
-
-    /**
-     * Get the dataName of a node
-     */
-    var NAME: any /*missing*/;
-
-    /**
-     * Get the count of nodes matching an expression
-     */
-    var COUNT: any /*missing*/;
-
-    /**
-     * Get the position of the "current" node in the current node list
-     * This will only apply for datasources that support the concept of a current
-     * node (none exist yet). This is similar to XPath position() and concept of
-     * current node
-     */
-    var POSITION: any /*missing*/;
-}
 
 declare module goog.ds {
 
@@ -156,5 +105,56 @@ declare module goog.ds {
          */
         getNode(opt_ds?: goog.ds.DataNode, opt_canCreate?: boolean): goog.ds.DataNode;
     }
+}
+
+declare module goog.ds.Expr {
+
+    /**
+     * Create an expression from a string, can use cached values
+     *
+     * @param {string} expr The expression string.
+     * @return {goog.ds.Expr} The expression object.
+     */
+    function create(expr: string): goog.ds.Expr;
+
+    /**
+     * The current node
+     */
+    var CURRENT: any /*missing*/;
+
+    /**
+     * For DOM interop - all DOM child nodes (text + element).
+     * Text nodes have dataName #text
+     */
+    var ALL_CHILD_NODES: any /*missing*/;
+
+    /**
+     * For DOM interop - all DOM element child nodes
+     */
+    var ALL_ELEMENTS: any /*missing*/;
+
+    /**
+     * For DOM interop - all DOM attribute nodes
+     * Attribute nodes have dataName starting with "@"
+     */
+    var ALL_ATTRIBUTES: any /*missing*/;
+
+    /**
+     * Get the dataName of a node
+     */
+    var NAME: any /*missing*/;
+
+    /**
+     * Get the count of nodes matching an expression
+     */
+    var COUNT: any /*missing*/;
+
+    /**
+     * Get the position of the "current" node in the current node list
+     * This will only apply for datasources that support the concept of a current
+     * node (none exist yet). This is similar to XPath position() and concept of
+     * current node
+     */
+    var POSITION: any /*missing*/;
 }
 

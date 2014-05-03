@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:00:15 PDT 2014
+// Generated Sat May  3 12:16:04 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/dom/nodetype.d.ts" />
@@ -68,7 +68,7 @@ declare module goog.ui.media {
      * @extends {goog.ui.Control}
      * @final
      */
-    class Media extends goog.ui.GoogControl {
+    class Media extends goog.ui.Control {
         /**
          * Provides the control mechanism of media types.
          *
@@ -118,7 +118,7 @@ declare module goog.ui.media {
      * @constructor
      * @extends {goog.ui.ControlRenderer}
      */
-    class MediaRenderer extends goog.ui.GoogControlRenderer {
+    class MediaRenderer extends goog.ui.ControlRenderer {
         /**
          * Base class of all media renderers. Provides the common renderer functionality
          * of medias.

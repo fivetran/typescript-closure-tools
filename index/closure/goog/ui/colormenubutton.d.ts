@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:59:08 PDT 2014
+// Generated Sat May  3 12:14:57 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -90,35 +90,6 @@
 /// <reference path="../../goog/ui/palette.d.ts" />
 /// <reference path="../../goog/ui/colorpalette.d.ts" />
 
-declare module goog.ui.ColorMenuButton {
-
-    /**
-     * Default color palettes.
-     * @type {!Object}
-     */
-    var PALETTES: Object;
-
-    /**
-     * Value for the "no color" menu item object in the color menu (if present).
-     * The {@link goog.ui.ColorMenuButton#handleMenuAction} method interprets
-     * ACTION events dispatched by an item with this value as meaning "clear the
-     * selected color."
-     * @type {string}
-     */
-    var NO_COLOR: string;
-
-    /**
-     * Factory method that creates and returns a new {@link goog.ui.Menu} instance
-     * containing default color palettes.
-     * @param {Array.<goog.ui.Control>=} opt_extraItems Optional extra menu items to
-     *     add before the color palettes.
-     * @param {goog.dom.DomHelper=} opt_domHelper Optional DOM hepler, used for
-     *     document interaction.
-     * @return {goog.ui.Menu} Color menu.
-     */
-    function newColorMenu(opt_extraItems?: goog.ui.Control[], opt_domHelper?: goog.dom.DomHelper): goog.ui.Menu;
-}
-
 declare module goog.ui {
 
     /**
@@ -137,7 +108,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.MenuButton}
      */
-    class GoogColorMenuButton extends goog.ui.GoogMenuButton {
+    class ColorMenuButton extends goog.ui.MenuButton {
         /**
          * A color menu button control.  Extends {@link goog.ui.MenuButton} by adding
          * an API for getting and setting the currently selected color from a menu of
@@ -169,7 +140,34 @@ declare module goog.ui {
          */
         setSelectedColor(color: string): void;
     }
+}
 
-    class ColorMenuButton extends GoogColorMenuButton { }
+declare module goog.ui.ColorMenuButton {
+
+    /**
+     * Default color palettes.
+     * @type {!Object}
+     */
+    var PALETTES: Object;
+
+    /**
+     * Value for the "no color" menu item object in the color menu (if present).
+     * The {@link goog.ui.ColorMenuButton#handleMenuAction} method interprets
+     * ACTION events dispatched by an item with this value as meaning "clear the
+     * selected color."
+     * @type {string}
+     */
+    var NO_COLOR: string;
+
+    /**
+     * Factory method that creates and returns a new {@link goog.ui.Menu} instance
+     * containing default color palettes.
+     * @param {Array.<goog.ui.Control>=} opt_extraItems Optional extra menu items to
+     *     add before the color palettes.
+     * @param {goog.dom.DomHelper=} opt_domHelper Optional DOM hepler, used for
+     *     document interaction.
+     * @return {goog.ui.Menu} Color menu.
+     */
+    function newColorMenu(opt_extraItems?: goog.ui.Control[], opt_domHelper?: goog.dom.DomHelper): goog.ui.Menu;
 }
 

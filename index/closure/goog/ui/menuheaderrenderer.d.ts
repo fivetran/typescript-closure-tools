@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:59:13 PDT 2014
+// Generated Sat May  3 12:15:01 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -47,6 +47,23 @@
 /// <reference path="../../goog/dom/classlist.d.ts" />
 /// <reference path="../../goog/ui/controlrenderer.d.ts" />
 
+declare module goog.ui {
+
+    /**
+     * Renderer for menu headers.
+     * @constructor
+     * @extends {goog.ui.ControlRenderer}
+     */
+    class MenuHeaderRenderer extends goog.ui.ControlRenderer {
+        /**
+         * Renderer for menu headers.
+         * @constructor
+         * @extends {goog.ui.ControlRenderer}
+         */
+        constructor();
+    }
+}
+
 declare module goog.ui.MenuHeaderRenderer {
 
     /**
@@ -55,22 +72,5 @@ declare module goog.ui.MenuHeaderRenderer {
      * @type {string}
      */
     var CSS_CLASS: string;
-}
-
-declare module goog.ui {
-
-    /**
-     * Renderer for menu headers.
-     * @constructor
-     * @extends {goog.ui.ControlRenderer}
-     */
-    class MenuHeaderRenderer extends goog.ui.GoogControlRenderer {
-        /**
-         * Renderer for menu headers.
-         * @constructor
-         * @extends {goog.ui.ControlRenderer}
-         */
-        constructor();
-    }
 }
 

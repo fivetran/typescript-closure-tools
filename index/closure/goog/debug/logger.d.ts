@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:02:52 PDT 2014
+// Generated Sat May  3 12:18:43 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/string/string.d.ts" />
@@ -23,24 +23,6 @@
 /// <reference path="../../goog/debug/logbuffer.d.ts" />
 
 declare module goog.debug {
-
-    /**
-     * A message value that can be handled by a Logger.
-     *
-     * Functions are treated like callbacks, but are only called when the event's
-     * log level is enabled. This is useful for logging messages that are expensive
-     * to construct.
-     *
-     * @typedef {string|function(): string}
-     */
-    interface Loggable { /*any (string|() => string)*/ }
-
-    /**
-     * There is a single global LogManager object that is used to maintain a set of
-     * shared state about Loggers and log services. This is loosely based on the
-     * java class java.util.logging.LogManager.
-     */
-    var LogManager: any /*missing*/;
 
     /**
      * The Logger is an object used for logging debug messages. Loggers are
@@ -254,6 +236,111 @@ declare module goog.debug {
          */
         logRecord(logRecord: goog.debug.LogRecord): void;
     }
+
+    /**
+     * A message value that can be handled by a Logger.
+     *
+     * Functions are treated like callbacks, but are only called when the event's
+     * log level is enabled. This is useful for logging messages that are expensive
+     * to construct.
+     *
+     * @typedef {string|function(): string}
+     */
+    interface Loggable { /*any (string|() => string)*/ }
+
+    /**
+     * There is a single global LogManager object that is used to maintain a set of
+     * shared state about Loggers and log services. This is loosely based on the
+     * java class java.util.logging.LogManager.
+     */
+    var LogManager: any /*missing*/;
+}
+
+declare module goog.debug.Logger {
+
+    /**
+     * The Level class defines a set of standard logging levels that
+     * can be used to control logging output.  The logging Level objects
+     * are ordered and are specified by ordered integers.  Enabling logging
+     * at a given level also enables logging at all higher levels.
+     * <p>
+     * Clients should normally use the predefined Level constants such
+     * as Level.SEVERE.
+     * <p>
+     * The levels in descending order are:
+     * <ul>
+     * <li>SEVERE (highest value)
+     * <li>WARNING
+     * <li>INFO
+     * <li>CONFIG
+     * <li>FINE
+     * <li>FINER
+     * <li>FINEST  (lowest value)
+     * </ul>
+     * In addition there is a level OFF that can be used to turn
+     * off logging, and a level ALL that can be used to enable
+     * logging of all messages.
+     *
+     * @param {string} name The name of the level.
+     * @param {number} value The numeric value of the level.
+     * @constructor
+     * @final
+     */
+    class Level {
+        /**
+         * The Level class defines a set of standard logging levels that
+         * can be used to control logging output.  The logging Level objects
+         * are ordered and are specified by ordered integers.  Enabling logging
+         * at a given level also enables logging at all higher levels.
+         * <p>
+         * Clients should normally use the predefined Level constants such
+         * as Level.SEVERE.
+         * <p>
+         * The levels in descending order are:
+         * <ul>
+         * <li>SEVERE (highest value)
+         * <li>WARNING
+         * <li>INFO
+         * <li>CONFIG
+         * <li>FINE
+         * <li>FINER
+         * <li>FINEST  (lowest value)
+         * </ul>
+         * In addition there is a level OFF that can be used to turn
+         * off logging, and a level ALL that can be used to enable
+         * logging of all messages.
+         *
+         * @param {string} name The name of the level.
+         * @param {number} value The numeric value of the level.
+         * @constructor
+         * @final
+         */
+        constructor(name: string, value: number);
+    }
+
+    /**
+     * Finds or creates a logger for a named subsystem. If a logger has already been
+     * created with the given name it is returned. Otherwise a new logger is
+     * created. If a new logger is created its log level will be configured based
+     * on the LogManager configuration and it will configured to also send logging
+     * output to its parent's handlers. It will be registered in the LogManager
+     * global namespace.
+     *
+     * @param {string} name A name for the logger. This should be a dot-separated
+     * name and should normally be based on the package name or class name of the
+     * subsystem, such as goog.net.BrowserChannel.
+     * @return {!goog.debug.Logger} The named logger.
+     * @deprecated use goog.log instead. http://go/goog-debug-logger-deprecated
+     */
+    function getLogger(name: string): goog.debug.Logger;
+
+    /**
+     * Logs a message to profiling tools, if available.
+     * {@see http://code.google.com/webtoolkit/speedtracer/logging-api.html}
+     * {@see http://msdn.microsoft.com/en-us/library/dd433074(VS.85).aspx}
+     * @param {string} msg The message to log.
+     */
+    function logToProfilers(msg: string): void;
 }
 
 declare module goog.debug.Logger.Level {
@@ -348,93 +435,6 @@ declare module goog.debug.Logger.Level {
      * @return {goog.debug.Logger.Level} The level, or null if none found.
      */
     function getPredefinedLevelByValue(value: number): goog.debug.Logger.Level;
-}
-
-declare module goog.debug.Logger {
-
-    /**
-     * Finds or creates a logger for a named subsystem. If a logger has already been
-     * created with the given name it is returned. Otherwise a new logger is
-     * created. If a new logger is created its log level will be configured based
-     * on the LogManager configuration and it will configured to also send logging
-     * output to its parent's handlers. It will be registered in the LogManager
-     * global namespace.
-     *
-     * @param {string} name A name for the logger. This should be a dot-separated
-     * name and should normally be based on the package name or class name of the
-     * subsystem, such as goog.net.BrowserChannel.
-     * @return {!goog.debug.Logger} The named logger.
-     * @deprecated use goog.log instead. http://go/goog-debug-logger-deprecated
-     */
-    function getLogger(name: string): goog.debug.Logger;
-
-    /**
-     * Logs a message to profiling tools, if available.
-     * {@see http://code.google.com/webtoolkit/speedtracer/logging-api.html}
-     * {@see http://msdn.microsoft.com/en-us/library/dd433074(VS.85).aspx}
-     * @param {string} msg The message to log.
-     */
-    function logToProfilers(msg: string): void;
-
-    /**
-     * The Level class defines a set of standard logging levels that
-     * can be used to control logging output.  The logging Level objects
-     * are ordered and are specified by ordered integers.  Enabling logging
-     * at a given level also enables logging at all higher levels.
-     * <p>
-     * Clients should normally use the predefined Level constants such
-     * as Level.SEVERE.
-     * <p>
-     * The levels in descending order are:
-     * <ul>
-     * <li>SEVERE (highest value)
-     * <li>WARNING
-     * <li>INFO
-     * <li>CONFIG
-     * <li>FINE
-     * <li>FINER
-     * <li>FINEST  (lowest value)
-     * </ul>
-     * In addition there is a level OFF that can be used to turn
-     * off logging, and a level ALL that can be used to enable
-     * logging of all messages.
-     *
-     * @param {string} name The name of the level.
-     * @param {number} value The numeric value of the level.
-     * @constructor
-     * @final
-     */
-    class Level {
-        /**
-         * The Level class defines a set of standard logging levels that
-         * can be used to control logging output.  The logging Level objects
-         * are ordered and are specified by ordered integers.  Enabling logging
-         * at a given level also enables logging at all higher levels.
-         * <p>
-         * Clients should normally use the predefined Level constants such
-         * as Level.SEVERE.
-         * <p>
-         * The levels in descending order are:
-         * <ul>
-         * <li>SEVERE (highest value)
-         * <li>WARNING
-         * <li>INFO
-         * <li>CONFIG
-         * <li>FINE
-         * <li>FINER
-         * <li>FINEST  (lowest value)
-         * </ul>
-         * In addition there is a level OFF that can be used to turn
-         * off logging, and a level ALL that can be used to enable
-         * logging of all messages.
-         *
-         * @param {string} name The name of the level.
-         * @param {number} value The numeric value of the level.
-         * @constructor
-         * @final
-         */
-        constructor(name: string, value: number);
-    }
 }
 
 declare module goog.debug.LogManager {

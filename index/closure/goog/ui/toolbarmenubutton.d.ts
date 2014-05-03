@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:00:47 PDT 2014
+// Generated Sat May  3 12:16:36 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -97,7 +97,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.MenuButton}
      */
-    class ToolbarMenuButton extends goog.ui.GoogMenuButton {
+    class ToolbarMenuButton extends goog.ui.MenuButton {
         /**
          * A menu button control for a toolbar.
          *

@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:00:13 PDT 2014
+// Generated Sat May  3 12:16:02 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/dom/nodetype.d.ts" />
@@ -52,42 +52,6 @@
 /// <reference path="../../../goog/debug/logger.d.ts" />
 /// <reference path="../../../goog/log/log.d.ts" />
 
-declare module goog.ui.media.FlashObject {
-
-    /**
-     * The different modes for displaying a SWF. Note that different wmodes
-     * can result in different bugs in different browsers and also that
-     * both OPAQUE and TRANSPARENT will result in a performance hit.
-     *
-     * @enum {string}
-     */
-    enum Wmodes { OPAQUE, TRANSPARENT, WINDOW } 
-
-    /**
-     * The different levels of allowScriptAccess.
-     *
-     * Talked about at:
-     * http://kb2.adobe.com/cps/164/tn_16494.html
-     *
-     * @enum {string}
-     */
-    enum ScriptAccessLevel { ALWAYS, SAME_DOMAIN, NEVER } 
-
-    /**
-     * The component CSS namespace.
-     *
-     * @type {string}
-     */
-    var CSS_CLASS: string;
-
-    /**
-     * The flash object CSS class.
-     *
-     * @type {string}
-     */
-    var FLASH_CSS_CLASS: string;
-}
-
 declare module goog.ui.media {
 
     /**
@@ -101,7 +65,7 @@ declare module goog.ui.media {
      * @extends {goog.ui.Component}
      * @constructor
      */
-    class FlashObject extends goog.ui.GoogComponent {
+    class FlashObject extends goog.ui.Component {
         /**
          * A very simple flash wrapper, that allows you to create flash object
          * programmatically, instead of embedding your own HTML. It extends
@@ -232,5 +196,41 @@ declare module goog.ui.media {
          */
         isLoaded(): boolean;
     }
+}
+
+declare module goog.ui.media.FlashObject {
+
+    /**
+     * The different modes for displaying a SWF. Note that different wmodes
+     * can result in different bugs in different browsers and also that
+     * both OPAQUE and TRANSPARENT will result in a performance hit.
+     *
+     * @enum {string}
+     */
+    enum Wmodes { OPAQUE, TRANSPARENT, WINDOW } 
+
+    /**
+     * The different levels of allowScriptAccess.
+     *
+     * Talked about at:
+     * http://kb2.adobe.com/cps/164/tn_16494.html
+     *
+     * @enum {string}
+     */
+    enum ScriptAccessLevel { ALWAYS, SAME_DOMAIN, NEVER } 
+
+    /**
+     * The component CSS namespace.
+     *
+     * @type {string}
+     */
+    var CSS_CLASS: string;
+
+    /**
+     * The flash object CSS class.
+     *
+     * @type {string}
+     */
+    var FLASH_CSS_CLASS: string;
 }
 

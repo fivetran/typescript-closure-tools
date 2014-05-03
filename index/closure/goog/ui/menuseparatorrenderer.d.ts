@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:01:05 PDT 2014
+// Generated Sat May  3 12:16:55 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -48,6 +48,23 @@
 /// <reference path="../../goog/a11y/aria/aria.d.ts" />
 /// <reference path="../../goog/ui/controlrenderer.d.ts" />
 
+declare module goog.ui {
+
+    /**
+     * Renderer for menu separators.
+     * @constructor
+     * @extends {goog.ui.ControlRenderer}
+     */
+    class MenuSeparatorRenderer extends goog.ui.ControlRenderer {
+        /**
+         * Renderer for menu separators.
+         * @constructor
+         * @extends {goog.ui.ControlRenderer}
+         */
+        constructor();
+    }
+}
+
 declare module goog.ui.MenuSeparatorRenderer {
 
     /**
@@ -56,24 +73,5 @@ declare module goog.ui.MenuSeparatorRenderer {
      * @type {string}
      */
     var CSS_CLASS: string;
-}
-
-declare module goog.ui {
-
-    /**
-     * Renderer for menu separators.
-     * @constructor
-     * @extends {goog.ui.ControlRenderer}
-     */
-    class GoogMenuSeparatorRenderer extends goog.ui.GoogControlRenderer {
-        /**
-         * Renderer for menu separators.
-         * @constructor
-         * @extends {goog.ui.ControlRenderer}
-         */
-        constructor();
-    }
-
-    class MenuSeparatorRenderer extends GoogMenuSeparatorRenderer { }
 }
 

@@ -1,53 +1,9 @@
-// Generated Fri May  2 15:05:15 PDT 2014
+// Generated Sat May  3 12:21:06 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/disposable/idisposable.d.ts" />
 
-declare module goog.Disposable {
-
-    /**
-     * @enum {number} Different monitoring modes for Disposable.
-     */
-    enum MonitoringMode { OFF, PERMANENT, INTERACTIVE }
-
-    /**
-     * @return {!Array.<!goog.Disposable>} All {@code goog.Disposable} objects that
-     *     haven't been disposed of.
-     */
-    function getUndisposedObjects(): goog.Disposable[];
-
-    /**
-     * Clears the registry of undisposed objects but doesn't dispose of them.
-     */
-    function clearUndisposedObjects(): void;
-
-    /**
-     * Returns True if we can verify the object is disposed.
-     * Calls {@code isDisposed} on the argument if it supports it.  If obj
-     * is not an object with an isDisposed() method, return false.
-     * @param {*} obj The object to investigate.
-     * @return {boolean} True if we can verify the object is disposed.
-     */
-    function isDisposed(obj: any): boolean;
-}
-
 declare module goog {
-
-    /**
-     * Calls {@code dispose} on the argument if it supports it. If obj is not an
-     *     object with a dispose() method, this is a no-op.
-     * @param {*} obj The object to dispose of.
-     */
-    function dispose(obj: any): void;
-
-    /**
-     * Calls {@code dispose} on each member of the list that supports it. (If the
-     * member is an ArrayLike<any>, then {@code goog.disposeAll()} will be called
-     * recursively on each of its members.) If the member is not an object with a
-     * {@code dispose()} method, then it is ignored.
-     * @param {...*} var_args The list.
-     */
-    function disposeAll(...var_args: any[]): void;
 
     /**
      * Class that provides the basic implementation for disposable objects. If your
@@ -57,7 +13,7 @@ declare module goog {
      * @constructor
      * @implements {goog.disposable.IDisposable}
      */
-    class GoogDisposable implements goog.disposable.IDisposable {
+    class Disposable implements goog.disposable.IDisposable {
         /**
          * Class that provides the basic implementation for disposable objects. If your
          * class holds one or more references to COM objects, DOM nodes, or other
@@ -67,10 +23,6 @@ declare module goog {
          * @implements {goog.disposable.IDisposable}
          */
         constructor();
-
-        dispose(): void;
-
-        isDisposed(): boolean;
     
         /**
          * If monitoring the goog.Disposable instances is enabled, stores the creation
@@ -131,7 +83,48 @@ declare module goog {
         disposeInternal(): void;
     }
 
-    class Disposable extends GoogDisposable { }
+    /**
+     * Calls {@code dispose} on the argument if it supports it. If obj is not an
+     *     object with a dispose() method, this is a no-op.
+     * @param {*} obj The object to dispose of.
+     */
+    function dispose(obj: any): void;
 
+    /**
+     * Calls {@code dispose} on each member of the list that supports it. (If the
+     * member is an ArrayLike, then {@code goog.disposeAll()} will be called
+     * recursively on each of its members.) If the member is not an object with a
+     * {@code dispose()} method, then it is ignored.
+     * @param {...*} var_args The list.
+     */
+    function disposeAll(...var_args: any[]): void;
+}
+
+declare module goog.Disposable {
+
+    /**
+     * @enum {number} Different monitoring modes for Disposable.
+     */
+    enum MonitoringMode { OFF, PERMANENT, INTERACTIVE } 
+
+    /**
+     * @return {!Array.<!goog.Disposable>} All {@code goog.Disposable} objects that
+     *     haven't been disposed of.
+     */
+    function getUndisposedObjects(): goog.Disposable[];
+
+    /**
+     * Clears the registry of undisposed objects but doesn't dispose of them.
+     */
+    function clearUndisposedObjects(): void;
+
+    /**
+     * Returns True if we can verify the object is disposed.
+     * Calls {@code isDisposed} on the argument if it supports it.  If obj
+     * is not an object with an isDisposed() method, return false.
+     * @param {*} obj The object to investigate.
+     * @return {boolean} True if we can verify the object is disposed.
+     */
+    function isDisposed(obj: any): boolean;
 }
 

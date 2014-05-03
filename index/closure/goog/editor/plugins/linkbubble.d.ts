@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:57:26 PDT 2014
+// Generated Sat May  3 12:13:13 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/dom/nodetype.d.ts" />
@@ -109,7 +109,7 @@ declare module goog.editor.plugins {
      * @constructor
      * @extends {goog.editor.plugins.AbstractBubblePlugin}
      */
-    class LinkBubble extends goog.editor.plugins.GoogAbstractBubblePlugin {
+    class LinkBubble extends goog.editor.plugins.AbstractBubblePlugin {
         /**
          * Property bubble plugin for links.
          * @param {...!goog.editor.plugins.LinkBubble.Action} var_args List of

@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:58:17 PDT 2014
+// Generated Sat May  3 12:14:05 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -28,6 +28,28 @@
 /// <reference path="../../goog/promise/promise.d.ts" />
 
 declare module goog.net.jsloader {
+
+    /**
+     * A jsloader error.
+     *
+     * @param {goog.net.jsloader.ErrorCode} code The error code.
+     * @param {string=} opt_message Additional message.
+     * @constructor
+     * @extends {goog.debug.Error}
+     * @final
+     */
+    class Error extends goog.debug.Error {
+        /**
+         * A jsloader error.
+         *
+         * @param {goog.net.jsloader.ErrorCode} code The error code.
+         * @param {string=} opt_message Additional message.
+         * @constructor
+         * @extends {goog.debug.Error}
+         * @final
+         */
+        constructor(code: goog.net.jsloader.ErrorCode, opt_message?: string);
+    }
 
     /**
      * The default length of time, in milliseconds, we are prepared to wait for a
@@ -123,27 +145,5 @@ declare module goog.net.jsloader {
      * @enum {number}
      */
     enum ErrorCode { LOAD_ERROR, TIMEOUT, VERIFY_ERROR, VERIFY_OBJECT_ALREADY_EXISTS } 
-
-    /**
-     * A jsloader error.
-     *
-     * @param {goog.net.jsloader.ErrorCode} code The error code.
-     * @param {string=} opt_message Additional message.
-     * @constructor
-     * @extends {goog.debug.GoogError}
-     * @final
-     */
-    class Error extends goog.debug.GoogError {
-        /**
-         * A jsloader error.
-         *
-         * @param {goog.net.jsloader.ErrorCode} code The error code.
-         * @param {string=} opt_message Additional message.
-         * @constructor
-         * @extends {goog.debug.GoogError}
-         * @final
-         */
-        constructor(code: goog.net.jsloader.ErrorCode, opt_message?: string);
-    }
 }
 

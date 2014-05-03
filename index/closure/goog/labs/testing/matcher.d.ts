@@ -1,18 +1,6 @@
-// Generated Fri May  2 15:03:29 PDT 2014
+// Generated Sat May  3 12:19:20 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
-
-declare module goog.labs.testing.Matcher {
-
-    /**
-     * Generates a Matcher from the ‘matches’ and ‘describe’ functions passed in.
-     *
-     * @param {!Function} matchesFunction The ‘matches’ function.
-     * @param {Function=} opt_describeFunction The ‘describe’ function.
-     * @return {!Function} The custom matcher.
-     */
-    function makeMatcher(matchesFunction: Function, opt_describeFunction?: Function): Function;
-}
 
 declare module goog.labs.testing {
 
@@ -41,5 +29,17 @@ declare module goog.labs.testing {
          */
         describe(value: any, opt_description?: string): string;
     }
+}
+
+declare module goog.labs.testing.Matcher {
+
+    /**
+     * Generates a Matcher from the ‘matches’ and ‘describe’ functions passed in.
+     *
+     * @param {!Function} matchesFunction The ‘matches’ function.
+     * @param {Function=} opt_describeFunction The ‘describe’ function.
+     * @return {!Function} The custom matcher.
+     */
+    function makeMatcher(matchesFunction: Function, opt_describeFunction?: Function): Function;
 }
 

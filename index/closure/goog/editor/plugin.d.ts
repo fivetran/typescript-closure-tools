@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:57:42 PDT 2014
+// Generated Sat May  3 12:13:30 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/object/object.d.ts" />
@@ -39,26 +39,6 @@
 /// <reference path="../../goog/events/events.d.ts" />
 /// <reference path="../../goog/events/eventtarget.d.ts" />
 
-declare module goog.editor.Plugin {
-
-    /**
-     * An enum of operations that plugins may support.
-     * @enum {number}
-     */
-    enum Op { KEYDOWN, KEYPRESS, KEYUP, SELECTION, SHORTCUT, EXEC_COMMAND, QUERY_COMMAND, PREPARE_CONTENTS_HTML, CLEAN_CONTENTS_HTML, CLEAN_CONTENTS_DOM } 
-
-    /**
-     * A map from plugin operations to the names of the methods that
-     * invoke those operations.
-     */
-    var OPCODE: any /*missing*/;
-
-    /**
-     * A set of op codes that run even on disabled plugins.
-     */
-    var IRREPRESSIBLE_OPS: any /*missing*/;
-}
-
 declare module goog.editor {
 
     /**
@@ -66,7 +46,7 @@ declare module goog.editor {
      * @constructor
      * @extends {goog.events.EventTarget}
      */
-    class GoogPlugin extends goog.events.EventTarget {
+    class Plugin extends goog.events.EventTarget {
         /**
          * Abstract API for trogedit plugins.
          * @constructor
@@ -323,7 +303,25 @@ declare module goog.editor {
          */
         isSupportedCommand(command: string): boolean;
     }
+}
 
-    class Plugin extends GoogPlugin { }
+declare module goog.editor.Plugin {
+
+    /**
+     * An enum of operations that plugins may support.
+     * @enum {number}
+     */
+    enum Op { KEYDOWN, KEYPRESS, KEYUP, SELECTION, SHORTCUT, EXEC_COMMAND, QUERY_COMMAND, PREPARE_CONTENTS_HTML, CLEAN_CONTENTS_HTML, CLEAN_CONTENTS_DOM } 
+
+    /**
+     * A map from plugin operations to the names of the methods that
+     * invoke those operations.
+     */
+    var OPCODE: any /*missing*/;
+
+    /**
+     * A set of op codes that run even on disabled plugins.
+     */
+    var IRREPRESSIBLE_OPS: any /*missing*/;
 }
 

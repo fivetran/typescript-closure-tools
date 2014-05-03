@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:56:29 PDT 2014
+// Generated Sat May  3 12:12:14 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -33,27 +33,6 @@
 /// <reference path="../../goog/math/coordinate.d.ts" />
 /// <reference path="../../goog/dom/dom.d.ts" />
 /// <reference path="../../goog/events/eventtarget.d.ts" />
-
-declare module goog.dom.ViewportSizeMonitor {
-
-    /**
-     * Returns a viewport size monitor for the given window.  A new one is created
-     * if it doesn't exist already.  This prevents the unnecessary creation of
-     * multiple spooling monitors for a window.
-     * @param {Window=} opt_window The window to monitor; defaults to the window in
-     *     which this code is executing.
-     * @return {!goog.dom.ViewportSizeMonitor} Monitor for the given window.
-     */
-    function getInstanceForWindow(opt_window?: Window): goog.dom.ViewportSizeMonitor;
-
-    /**
-     * Removes and disposes a viewport size monitor for the given window if one
-     * exists.
-     * @param {Window=} opt_window The window whose monitor should be removed;
-     *     defaults to the window in which this code is executing.
-     */
-    function removeInstanceForWindow(opt_window?: Window): void;
-}
 
 declare module goog.dom {
 
@@ -123,5 +102,26 @@ declare module goog.dom {
          */
         getSize(): goog.math.Size;
     }
+}
+
+declare module goog.dom.ViewportSizeMonitor {
+
+    /**
+     * Returns a viewport size monitor for the given window.  A new one is created
+     * if it doesn't exist already.  This prevents the unnecessary creation of
+     * multiple spooling monitors for a window.
+     * @param {Window=} opt_window The window to monitor; defaults to the window in
+     *     which this code is executing.
+     * @return {!goog.dom.ViewportSizeMonitor} Monitor for the given window.
+     */
+    function getInstanceForWindow(opt_window?: Window): goog.dom.ViewportSizeMonitor;
+
+    /**
+     * Removes and disposes a viewport size monitor for the given window if one
+     * exists.
+     * @param {Window=} opt_window The window whose monitor should be removed;
+     *     defaults to the window in which this code is executing.
+     */
+    function removeInstanceForWindow(opt_window?: Window): void;
 }
 

@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:01:19 PDT 2014
+// Generated Sat May  3 12:17:09 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/dom/nodetype.d.ts" />
@@ -18,18 +18,6 @@
 /// <reference path="../../../goog/object/object.d.ts" />
 /// <reference path="../../../goog/structs/map.d.ts" />
 /// <reference path="../../../goog/storage/mechanism/errorcode.d.ts" />
-
-declare module goog.storage.mechanism.IEUserData {
-
-    /**
-     * Encoding map for characters which are not encoded by encodeURIComponent().
-     * See encodeKey_ documentation for encoding details.
-     *
-     * @type {!Object}
-     * @const
-     */
-    var ENCODE_MAP: Object;
-}
 
 declare module goog.storage.mechanism {
 
@@ -63,5 +51,17 @@ declare module goog.storage.mechanism {
          */
         isAvailable(): boolean;
     }
+}
+
+declare module goog.storage.mechanism.IEUserData {
+
+    /**
+     * Encoding map for characters which are not encoded by encodeURIComponent().
+     * See encodeKey_ documentation for encoding details.
+     *
+     * @type {!Object}
+     * @const
+     */
+    var ENCODE_MAP: Object;
 }
 

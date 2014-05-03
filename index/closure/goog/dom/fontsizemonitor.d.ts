@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:56:59 PDT 2014
+// Generated Sat May  3 12:12:45 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/string/string.d.ts" />
@@ -33,22 +33,6 @@
 /// <reference path="../../goog/math/coordinate.d.ts" />
 /// <reference path="../../goog/dom/dom.d.ts" />
 /// <reference path="../../goog/events/eventtarget.d.ts" />
-
-declare module goog.dom.FontSizeMonitor {
-
-    /**
-     * The event types that the FontSizeMonitor fires.
-     * @enum {string}
-     */
-    enum EventType { CHANGE } 
-
-    /**
-     * Constant for the change event.
-     * @type {string}
-     * @deprecated Use {@code goog.dom.FontSizeMonitor.EventType.CHANGE} instead.
-     */
-    var CHANGE_EVENT: string;
-}
 
 declare module goog.dom {
 
@@ -91,5 +75,21 @@ declare module goog.dom {
          */
         constructor(opt_domHelper?: goog.dom.DomHelper);
     }
+}
+
+declare module goog.dom.FontSizeMonitor {
+
+    /**
+     * The event types that the FontSizeMonitor fires.
+     * @enum {string}
+     */
+    enum EventType { CHANGE } 
+
+    /**
+     * Constant for the change event.
+     * @type {string}
+     * @deprecated Use {@code goog.dom.FontSizeMonitor.EventType.CHANGE} instead.
+     */
+    var CHANGE_EVENT: string;
 }
 

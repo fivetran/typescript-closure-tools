@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:57:14 PDT 2014
+// Generated Sat May  3 12:13:00 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/disposable/idisposable.d.ts" />
@@ -27,7 +27,7 @@ declare module goog.structs {
      * @extends {goog.Disposable}
      * @template T
      */
-    class SimplePool<T> extends goog.GoogDisposable {
+    class SimplePool<T> extends goog.Disposable {
         /**
          * A generic pool class. Simpler and more efficient than goog.structs.Pool
          * because it doesn't maintain a list of objects that are in use. This class

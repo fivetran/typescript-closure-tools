@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:59:30 PDT 2014
+// Generated Sat May  3 12:15:18 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/dom/nodetype.d.ts" />
@@ -70,7 +70,7 @@ declare module goog.ui.editor {
      * @extends {goog.ui.Component}
      * @final
      */
-    class TabPane extends goog.ui.GoogComponent {
+    class TabPane extends goog.ui.Component {
         /**
          * Creates a new Editor-style tab pane.
          * @param {goog.dom.DomHelper} dom The dom helper for the window to create this

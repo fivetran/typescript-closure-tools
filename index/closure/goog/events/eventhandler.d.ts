@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:01:36 PDT 2014
+// Generated Sat May  3 12:17:26 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -36,7 +36,7 @@ declare module goog.events {
      * @extends {goog.Disposable}
      * @template SCOPE
      */
-    class EventHandler<SCOPE> extends goog.GoogDisposable {
+    class EventHandler<SCOPE> extends goog.Disposable {
         /**
          * Super class for objects that want to easily manage a number of event
          * listeners.  It allows a short cut to listen and also provides a quick way
@@ -63,7 +63,7 @@ declare module goog.events {
          *     calls.
          * @template EVENTOBJ
          */
-        listen(src: goog.events.ListenableType): void;
+        listen(src: goog.events.ListenableType, type: any /* jsdoc error */, opt_fn?: any /* jsdoc error */, opt_capture?: any /* jsdoc error */): void;
     
         /**
          * Listen to an event on a Listenable.  If the function is omitted then the
@@ -81,7 +81,7 @@ declare module goog.events {
          *     calls.
          * @template T,EVENTOBJ
          */
-        listenWithScope(src: goog.events.ListenableType): void;
+        listenWithScope(src: goog.events.ListenableType, type: any /* jsdoc error */, fn: any /* jsdoc error */, capture: any /* jsdoc error */, scope: any /* jsdoc error */): void;
     
         /**
          * Listen to an event on a Listenable.  If the function is omitted then the
@@ -100,7 +100,7 @@ declare module goog.events {
          * @template EVENTOBJ
          * @private
          */
-        listen_(src: goog.events.ListenableType): void;
+        listen_(src: goog.events.ListenableType, type: any /* jsdoc error */, opt_fn?: any /* jsdoc error */, opt_capture?: any /* jsdoc error */, opt_scope?: any /* jsdoc error */): void;
     
         /**
          * Listen to an event on a Listenable.  If the function is omitted, then the
@@ -119,7 +119,7 @@ declare module goog.events {
          *     calls.
          * @template EVENTOBJ
          */
-        listenOnce(src: goog.events.ListenableType): void;
+        listenOnce(src: goog.events.ListenableType, type: any /* jsdoc error */, opt_fn?: any /* jsdoc error */, opt_capture?: any /* jsdoc error */): void;
     
         /**
          * Listen to an event on a Listenable.  If the function is omitted, then the
@@ -139,7 +139,7 @@ declare module goog.events {
          *     calls.
          * @template T,EVENTOBJ
          */
-        listenOnceWithScope(src: goog.events.ListenableType): void;
+        listenOnceWithScope(src: goog.events.ListenableType, type: any /* jsdoc error */, fn: any /* jsdoc error */, capture: any /* jsdoc error */, scope: any /* jsdoc error */): void;
     
         /**
          * Listen to an event on a Listenable.  If the function is omitted, then the
@@ -160,7 +160,7 @@ declare module goog.events {
          * @template EVENTOBJ
          * @private
          */
-        listenOnce_(src: goog.events.ListenableType): void;
+        listenOnce_(src: goog.events.ListenableType, type: any /* jsdoc error */, opt_fn?: any /* jsdoc error */, opt_capture?: any /* jsdoc error */, opt_scope?: any /* jsdoc error */): void;
     
         /**
          * Adds an event listener with a specific event wrapper on a DOM Node or an
@@ -218,7 +218,7 @@ declare module goog.events {
          *     calls.
          * @template EVENTOBJ
          */
-        unlisten(src: goog.events.ListenableType): void;
+        unlisten(src: goog.events.ListenableType, type: any /* jsdoc error */, opt_fn?: any /* jsdoc error */, opt_capture?: any /* jsdoc error */, opt_scope?: any /* jsdoc error */): void;
     
         /**
          * Removes an event listener which was added with listenWithWrapper().

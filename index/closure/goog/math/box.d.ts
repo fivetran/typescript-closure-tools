@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:04:26 PDT 2014
+// Generated Sat May  3 12:20:17 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -8,87 +8,6 @@
 /// <reference path="../../goog/array/array.d.ts" />
 /// <reference path="../../goog/math/math.d.ts" />
 /// <reference path="../../goog/math/coordinate.d.ts" />
-
-declare module goog.math.Box {
-
-    /**
-     * Creates a Box by bounding a collection of goog.math.Coordinate objects
-     * @param {...goog.math.Coordinate} var_args Coordinates to be included inside
-     *     the box.
-     * @return {!goog.math.Box} A Box containing all the specified Coordinates.
-     */
-    function boundingBox(...var_args: goog.math.Coordinate[]): goog.math.Box;
-
-    /**
-     * Compares boxes for equality.
-     * @param {goog.math.Box} a A Box.
-     * @param {goog.math.Box} b A Box.
-     * @return {boolean} True iff the boxes are equal, or if both are null.
-     */
-    function equals(a: goog.math.Box, b: goog.math.Box): boolean;
-
-    /**
-     * Returns whether a box contains a coordinate or another box.
-     *
-     * @param {goog.math.Box} box A Box.
-     * @param {goog.math.Coordinate|goog.math.Box} other A Coordinate or a Box.
-     * @return {boolean} Whether the box contains the coordinate or other box.
-     */
-    function contains(box: goog.math.Box, other: any /*goog.math.Coordinate|goog.math.Box*/): boolean;
-
-    /**
-     * Returns the relative x position of a coordinate compared to a box.  Returns
-     * zero if the coordinate is inside the box.
-     *
-     * @param {goog.math.Box} box A Box.
-     * @param {goog.math.Coordinate} coord A Coordinate.
-     * @return {number} The x position of {@code coord} relative to the nearest
-     *     side of {@code box}, or zero if {@code coord} is inside {@code box}.
-     */
-    function relativePositionX(box: goog.math.Box, coord: goog.math.Coordinate): number;
-
-    /**
-     * Returns the relative y position of a coordinate compared to a box.  Returns
-     * zero if the coordinate is inside the box.
-     *
-     * @param {goog.math.Box} box A Box.
-     * @param {goog.math.Coordinate} coord A Coordinate.
-     * @return {number} The y position of {@code coord} relative to the nearest
-     *     side of {@code box}, or zero if {@code coord} is inside {@code box}.
-     */
-    function relativePositionY(box: goog.math.Box, coord: goog.math.Coordinate): number;
-
-    /**
-     * Returns the distance between a coordinate and the nearest corner/side of a
-     * box. Returns zero if the coordinate is inside the box.
-     *
-     * @param {goog.math.Box} box A Box.
-     * @param {goog.math.Coordinate} coord A Coordinate.
-     * @return {number} The distance between {@code coord} and the nearest
-     *     corner/side of {@code box}, or zero if {@code coord} is inside
-     *     {@code box}.
-     */
-    function distance(box: goog.math.Box, coord: goog.math.Coordinate): number;
-
-    /**
-     * Returns whether two boxes intersect.
-     *
-     * @param {goog.math.Box} a A Box.
-     * @param {goog.math.Box} b A second Box.
-     * @return {boolean} Whether the boxes intersect.
-     */
-    function intersects(a: goog.math.Box, b: goog.math.Box): boolean;
-
-    /**
-     * Returns whether two boxes would intersect with additional padding.
-     *
-     * @param {goog.math.Box} a A Box.
-     * @param {goog.math.Box} b A second Box.
-     * @param {number} padding The additional padding.
-     * @return {boolean} Whether the boxes intersect.
-     */
-    function intersectsWithPadding(a: goog.math.Box, b: goog.math.Box, padding: number): boolean;
-}
 
 declare module goog.math {
 
@@ -195,5 +114,86 @@ declare module goog.math {
          */
         scale(sx: number, opt_sy?: number): goog.math.Box;
     }
+}
+
+declare module goog.math.Box {
+
+    /**
+     * Creates a Box by bounding a collection of goog.math.Coordinate objects
+     * @param {...goog.math.Coordinate} var_args Coordinates to be included inside
+     *     the box.
+     * @return {!goog.math.Box} A Box containing all the specified Coordinates.
+     */
+    function boundingBox(...var_args: goog.math.Coordinate[]): goog.math.Box;
+
+    /**
+     * Compares boxes for equality.
+     * @param {goog.math.Box} a A Box.
+     * @param {goog.math.Box} b A Box.
+     * @return {boolean} True iff the boxes are equal, or if both are null.
+     */
+    function equals(a: goog.math.Box, b: goog.math.Box): boolean;
+
+    /**
+     * Returns whether a box contains a coordinate or another box.
+     *
+     * @param {goog.math.Box} box A Box.
+     * @param {goog.math.Coordinate|goog.math.Box} other A Coordinate or a Box.
+     * @return {boolean} Whether the box contains the coordinate or other box.
+     */
+    function contains(box: goog.math.Box, other: any /*goog.math.Coordinate|goog.math.Box*/): boolean;
+
+    /**
+     * Returns the relative x position of a coordinate compared to a box.  Returns
+     * zero if the coordinate is inside the box.
+     *
+     * @param {goog.math.Box} box A Box.
+     * @param {goog.math.Coordinate} coord A Coordinate.
+     * @return {number} The x position of {@code coord} relative to the nearest
+     *     side of {@code box}, or zero if {@code coord} is inside {@code box}.
+     */
+    function relativePositionX(box: goog.math.Box, coord: goog.math.Coordinate): number;
+
+    /**
+     * Returns the relative y position of a coordinate compared to a box.  Returns
+     * zero if the coordinate is inside the box.
+     *
+     * @param {goog.math.Box} box A Box.
+     * @param {goog.math.Coordinate} coord A Coordinate.
+     * @return {number} The y position of {@code coord} relative to the nearest
+     *     side of {@code box}, or zero if {@code coord} is inside {@code box}.
+     */
+    function relativePositionY(box: goog.math.Box, coord: goog.math.Coordinate): number;
+
+    /**
+     * Returns the distance between a coordinate and the nearest corner/side of a
+     * box. Returns zero if the coordinate is inside the box.
+     *
+     * @param {goog.math.Box} box A Box.
+     * @param {goog.math.Coordinate} coord A Coordinate.
+     * @return {number} The distance between {@code coord} and the nearest
+     *     corner/side of {@code box}, or zero if {@code coord} is inside
+     *     {@code box}.
+     */
+    function distance(box: goog.math.Box, coord: goog.math.Coordinate): number;
+
+    /**
+     * Returns whether two boxes intersect.
+     *
+     * @param {goog.math.Box} a A Box.
+     * @param {goog.math.Box} b A second Box.
+     * @return {boolean} Whether the boxes intersect.
+     */
+    function intersects(a: goog.math.Box, b: goog.math.Box): boolean;
+
+    /**
+     * Returns whether two boxes would intersect with additional padding.
+     *
+     * @param {goog.math.Box} a A Box.
+     * @param {goog.math.Box} b A second Box.
+     * @param {number} padding The additional padding.
+     * @return {boolean} Whether the boxes intersect.
+     */
+    function intersectsWithPadding(a: goog.math.Box, b: goog.math.Box, padding: number): boolean;
 }
 

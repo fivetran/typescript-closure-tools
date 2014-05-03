@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:59:11 PDT 2014
+// Generated Sat May  3 12:15:00 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -54,15 +54,6 @@
 /// <reference path="../../goog/events/keyhandler.d.ts" />
 /// <reference path="../../goog/ui/control.d.ts" />
 
-declare module goog.ui.Checkbox {
-
-    /**
-     * Possible checkbox states.
-     * @enum {?boolean}
-     */
-    enum State { CHECKED, UNCHECKED, UNDETERMINED } 
-}
-
 declare module goog.ui {
 
     /**
@@ -78,7 +69,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.Control}
      */
-    class Checkbox extends goog.ui.GoogControl {
+    class Checkbox extends goog.ui.Control {
         /**
          * 3-state checkbox widget. Fires CHECK or UNCHECK events before toggled and
          * CHANGE event after toggled by user.
@@ -138,5 +129,14 @@ declare module goog.ui {
          */
         toggle(): void;
     }
+}
+
+declare module goog.ui.Checkbox {
+
+    /**
+     * Possible checkbox states.
+     * @enum {?boolean}
+     */
+    enum State { CHECKED, UNCHECKED, UNDETERMINED } 
 }
 

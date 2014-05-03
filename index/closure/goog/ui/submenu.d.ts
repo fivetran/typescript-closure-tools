@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:00:19 PDT 2014
+// Generated Sat May  3 12:16:08 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -71,15 +71,6 @@
 /// <reference path="../../goog/positioning/anchoredviewportposition.d.ts" />
 /// <reference path="../../goog/ui/submenurenderer.d.ts" />
 
-declare module goog.ui.SubMenu {
-
-    /**
-     * The delay before opening the sub menu in milliseconds.
-     * @type {number}
-     */
-    var MENU_DELAY_MS: number;
-}
-
 declare module goog.ui {
 
     /**
@@ -96,7 +87,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.MenuItem}
      */
-    class SubMenu extends goog.ui.GoogMenuItem {
+    class SubMenu extends goog.ui.MenuItem {
         /**
          * Class representing a submenu that can be added as an item to other menus.
          *
@@ -228,5 +219,14 @@ declare module goog.ui {
          */
         isPositionAdjustable(): boolean;
     }
+}
+
+declare module goog.ui.SubMenu {
+
+    /**
+     * The delay before opening the sub menu in milliseconds.
+     * @type {number}
+     */
+    var MENU_DELAY_MS: number;
 }
 

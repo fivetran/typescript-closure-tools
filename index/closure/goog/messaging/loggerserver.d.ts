@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:59:03 PDT 2014
+// Generated Sat May  3 12:14:52 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/string/string.d.ts" />
@@ -42,7 +42,7 @@ declare module goog.messaging {
      * @extends {goog.Disposable}
      * @final
      */
-    class LoggerServer extends goog.GoogDisposable {
+    class LoggerServer extends goog.Disposable {
         /**
          * Creates a logger server that logs messages on behalf of the remote end of a
          * message channel. The remote end of the channel should use a

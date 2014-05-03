@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:00:12 PDT 2014
+// Generated Sat May  3 12:16:01 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/dom/nodetype.d.ts" />
@@ -102,7 +102,7 @@ declare module goog.ui.emoji {
      * @constructor
      * @final
      */
-    class PopupEmojiPicker extends goog.ui.GoogComponent {
+    class PopupEmojiPicker extends goog.ui.Component {
         /**
          * Constructs a popup emoji picker widget.
          *

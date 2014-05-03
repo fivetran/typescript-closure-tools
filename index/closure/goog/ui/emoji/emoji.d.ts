@@ -1,15 +1,6 @@
-// Generated Fri May  2 15:00:08 PDT 2014
+// Generated Sat May  3 12:15:57 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
-
-declare module goog.ui.emoji.Emoji {
-
-    /**
-     * The name of the goomoji attribute, used for emoji image elements.
-     * @type {string}
-     */
-    var ATTRIBUTE: string;
-}
 
 declare module goog.ui.emoji {
 
@@ -46,5 +37,14 @@ declare module goog.ui.emoji {
          */
         getId(): string;
     }
+}
+
+declare module goog.ui.emoji.Emoji {
+
+    /**
+     * The name of the goomoji attribute, used for emoji image elements.
+     * @type {string}
+     */
+    var ATTRIBUTE: string;
 }
 

@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:01:13 PDT 2014
+// Generated Sat May  3 12:17:03 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -58,15 +58,6 @@
 /// <reference path="../../goog/events/keyhandler.d.ts" />
 /// <reference path="../../goog/ui/control.d.ts" />
 
-declare module goog.ui.Palette {
-
-    /**
-     * Events fired by the palette object
-     * @enum {string}
-     */
-    enum EventType { AFTER_HIGHLIGHT } 
-}
-
 declare module goog.ui {
 
     /**
@@ -88,7 +79,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.Control}
      */
-    class GoogPalette extends goog.ui.GoogControl {
+    class Palette extends goog.ui.Control {
         /**
          * A palette is a grid of DOM nodes that the user can highlight or select via
          * the keyboard or the mouse.  The selection state of the palette is controlled
@@ -192,7 +183,14 @@ declare module goog.ui {
          */
         setSelectedItem(item: Node): void;
     }
+}
 
-    class Palette extends GoogPalette { }
+declare module goog.ui.Palette {
+
+    /**
+     * Events fired by the palette object
+     * @enum {string}
+     */
+    enum EventType { AFTER_HIGHLIGHT } 
 }
 

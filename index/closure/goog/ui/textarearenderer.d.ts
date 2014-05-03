@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:00:49 PDT 2014
+// Generated Sat May  3 12:16:39 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -47,16 +47,6 @@
 /// <reference path="../../goog/dom/classlist.d.ts" />
 /// <reference path="../../goog/ui/controlrenderer.d.ts" />
 
-declare module goog.ui.TextareaRenderer {
-
-    /**
-     * Default CSS class to be applied to the root element of components rendered
-     * by this renderer.
-     * @type {string}
-     */
-    var CSS_CLASS: string;
-}
-
 declare module goog.ui {
 
     /**
@@ -68,7 +58,7 @@ declare module goog.ui {
      * @extends {goog.ui.ControlRenderer}
      * @final
      */
-    class TextareaRenderer extends goog.ui.GoogControlRenderer {
+    class TextareaRenderer extends goog.ui.ControlRenderer {
         /**
          * Renderer for {@link goog.ui.Textarea}s.  Renders and decorates native HTML
          * textarea elements.  Since native HTML textareas have built-in support for
@@ -80,5 +70,15 @@ declare module goog.ui {
          */
         constructor();
     }
+}
+
+declare module goog.ui.TextareaRenderer {
+
+    /**
+     * Default CSS class to be applied to the root element of components rendered
+     * by this renderer.
+     * @type {string}
+     */
+    var CSS_CLASS: string;
 }
 

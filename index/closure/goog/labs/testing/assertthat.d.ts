@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:03:28 PDT 2014
+// Generated Sat May  3 12:19:19 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/labs/testing/matcher.d.ts" />
@@ -10,6 +10,24 @@
 declare module goog.labs.testing {
 
     /**
+     * Error thrown when a Matcher fails to match the input value.
+     * @param {string=} opt_message The error message.
+     * @constructor
+     * @extends {goog.debug.Error}
+     * @final
+     */
+    class MatcherError extends goog.debug.Error {
+        /**
+         * Error thrown when a Matcher fails to match the input value.
+         * @param {string=} opt_message The error message.
+         * @constructor
+         * @extends {goog.debug.Error}
+         * @final
+         */
+        constructor(opt_message?: string);
+    }
+
+    /**
      * Asserts that the actual value evaluated by the matcher is true.
      *
      * @param {*} actual The object to assert by the matcher.
@@ -18,23 +36,5 @@ declare module goog.labs.testing {
      *
      */
     function assertThat(actual: any, matcher: goog.labs.testing.Matcher, opt_reason?: string): void;
-
-    /**
-     * Error thrown when a Matcher fails to match the input value.
-     * @param {string=} opt_message The error message.
-     * @constructor
-     * @extends {goog.debug.GoogError}
-     * @final
-     */
-    class MatcherError extends goog.debug.GoogError {
-        /**
-         * Error thrown when a Matcher fails to match the input value.
-         * @param {string=} opt_message The error message.
-         * @constructor
-         * @extends {goog.debug.GoogError}
-         * @final
-         */
-        constructor(opt_message?: string);
-    }
 }
 

@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:00:48 PDT 2014
+// Generated Sat May  3 12:16:37 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -80,16 +80,6 @@
 /// <reference path="../../goog/ui/menubuttonrenderer.d.ts" />
 /// <reference path="../../goog/ui/menubutton.d.ts" />
 
-declare module goog.ui.ImagelessMenuButtonRenderer {
-
-    /**
-     * Default CSS class to be applied to the root element of components rendered
-     * by this renderer.
-     * @type {string}
-     */
-    var CSS_CLASS: string;
-}
-
 declare module goog.ui {
 
     /**
@@ -103,7 +93,7 @@ declare module goog.ui {
      * @extends {goog.ui.MenuButtonRenderer}
      * @final
      */
-    class ImagelessMenuButtonRenderer extends goog.ui.GoogMenuButtonRenderer {
+    class ImagelessMenuButtonRenderer extends goog.ui.MenuButtonRenderer {
         /**
          * Custom renderer for {@link goog.ui.MenuButton}s. Imageless buttons can
          * contain almost arbitrary HTML content, will flow like inline elements, but
@@ -117,5 +107,15 @@ declare module goog.ui {
          */
         constructor();
     }
+}
+
+declare module goog.ui.ImagelessMenuButtonRenderer {
+
+    /**
+     * Default CSS class to be applied to the root element of components rendered
+     * by this renderer.
+     * @type {string}
+     */
+    var CSS_CLASS: string;
 }
 

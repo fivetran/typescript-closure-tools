@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:00:03 PDT 2014
+// Generated Sat May  3 12:15:52 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -70,7 +70,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.Control}
      */
-    class Button extends goog.ui.GoogControl {
+    class Button extends goog.ui.Control {
         /**
          * A button control, rendered as a native browser button by default.
          *

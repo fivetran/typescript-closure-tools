@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:59:46 PDT 2014
+// Generated Sat May  3 12:15:35 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/string/stringbuffer.d.ts" />
@@ -58,24 +58,6 @@
 /// <reference path="../../../goog/html/trustedresourceurl.d.ts" />
 /// <reference path="../../../goog/html/legacyconversions.d.ts" />
 
-declare module goog.ui.tree.BaseNode {
-
-    /**
-     * The event types dispatched by this class.
-     * @enum {string}
-     */
-    enum EventType { BEFORE_EXPAND, EXPAND, BEFORE_COLLAPSE, COLLAPSE } 
-
-    /**
-     * Map of nodes in existence. Needed to route events to the appropriate nodes.
-     * Nodes are added to the map at {@link #enterDocument} time and removed at
-     * {@link #exitDocument} time.
-     * @type {Object}
-     * @protected
-     */
-    var allNodes: Object;
-}
-
 declare module goog.ui.tree {
 
     /**
@@ -89,7 +71,7 @@ declare module goog.ui.tree {
      * @constructor
      * @extends {goog.ui.Component}
      */
-    class GoogBaseNode extends goog.ui.GoogComponent {
+    class BaseNode extends goog.ui.Component {
         /**
          * An abstract base class for a node in the tree.
          *
@@ -548,7 +530,23 @@ declare module goog.ui.tree {
          */
         setTreeInternal(tree: goog.ui.tree.TreeControl): void;
     }
+}
 
-    class BaseNode extends GoogBaseNode { }
+declare module goog.ui.tree.BaseNode {
+
+    /**
+     * The event types dispatched by this class.
+     * @enum {string}
+     */
+    enum EventType { BEFORE_EXPAND, EXPAND, BEFORE_COLLAPSE, COLLAPSE } 
+
+    /**
+     * Map of nodes in existence. Needed to route events to the appropriate nodes.
+     * Nodes are added to the map at {@link #enterDocument} time and removed at
+     * {@link #exitDocument} time.
+     * @type {Object}
+     * @protected
+     */
+    var allNodes: Object;
 }
 

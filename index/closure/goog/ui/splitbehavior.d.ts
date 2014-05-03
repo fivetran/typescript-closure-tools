@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:00:27 PDT 2014
+// Generated Sat May  3 12:16:16 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -45,21 +45,6 @@
 /// <reference path="../../goog/ui/decorate.d.ts" />
 /// <reference path="../../goog/ui/buttonside.d.ts" />
 
-declare module goog.ui.SplitBehavior {
-
-    /**
-     * Css class for elements rendered by this behavior.
-     * @type {string}
-     */
-    var CSS_CLASS: string;
-
-    /**
-     * An emum of split behavior handlers.
-     * @enum {function(goog.ui.Control,Event)}
-     */
-    enum DefaultHandlers { NONE, CAPTION, VALUE } 
-}
-
 declare module goog.ui {
 
     /**
@@ -79,7 +64,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.Disposable}
      */
-    class GoogSplitBehavior extends goog.GoogDisposable {
+    class SplitBehavior extends goog.Disposable {
         /**
          * Creates a behavior for combining two controls. The behavior is triggered
          * by a given event type which applies the behavior handler.
@@ -160,7 +145,20 @@ declare module goog.ui {
          */
         setActive(activate: boolean): void;
     }
+}
 
-    class SplitBehavior extends GoogSplitBehavior { }
+declare module goog.ui.SplitBehavior {
+
+    /**
+     * Css class for elements rendered by this behavior.
+     * @type {string}
+     */
+    var CSS_CLASS: string;
+
+    /**
+     * An emum of split behavior handlers.
+     * @enum {function(goog.ui.Control,Event)}
+     */
+    enum DefaultHandlers { NONE, CAPTION, VALUE } 
 }
 

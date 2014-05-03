@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:01:03 PDT 2014
+// Generated Sat May  3 12:16:52 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -47,15 +47,6 @@
 /// <reference path="../../goog/dom/classlist.d.ts" />
 /// <reference path="../../goog/ui/controlrenderer.d.ts" />
 
-declare module goog.ui.MenuItemRenderer {
-
-    /**
-     * CSS class name the renderer applies to menu item elements.
-     * @type {string}
-     */
-    var CSS_CLASS: string;
-}
-
 declare module goog.ui {
 
     /**
@@ -71,7 +62,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.ControlRenderer}
      */
-    class GoogMenuItemRenderer extends goog.ui.GoogControlRenderer {
+    class MenuItemRenderer extends goog.ui.ControlRenderer {
         /**
          * Default renderer for {@link goog.ui.MenuItem}s.  Each item has the following
          * structure:
@@ -150,7 +141,14 @@ declare module goog.ui {
          */
         correctAriaRole(item: goog.ui.Control, element: Element): void;
     }
+}
 
-    class MenuItemRenderer extends GoogMenuItemRenderer { }
+declare module goog.ui.MenuItemRenderer {
+
+    /**
+     * CSS class name the renderer applies to menu item elements.
+     * @type {string}
+     */
+    var CSS_CLASS: string;
 }
 

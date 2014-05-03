@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:03:07 PDT 2014
+// Generated Sat May  3 12:18:57 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/dom/nodetype.d.ts" />
@@ -25,22 +25,6 @@
 /// <reference path="../../../goog/events/browserevent.d.ts" />
 /// <reference path="../../../goog/events/events.d.ts" />
 /// <reference path="../../../goog/events/eventtarget.d.ts" />
-
-declare module goog.labs.style.PixelDensityMonitor {
-
-    /**
-     * The two different pixel density modes on which the various ratios between
-     * physical and device pixels are mapped.
-     * @enum {number}
-     */
-    enum Density { NORMAL, HIGH } 
-
-    /**
-     * The events fired by the PixelDensityMonitor.
-     * @enum {string}
-     */
-    enum EventType { CHANGE } 
-}
 
 declare module goog.labs.style {
 
@@ -96,5 +80,21 @@ declare module goog.labs.style {
          */
         getDensity(): goog.labs.style.PixelDensityMonitor.Density;
     }
+}
+
+declare module goog.labs.style.PixelDensityMonitor {
+
+    /**
+     * The two different pixel density modes on which the various ratios between
+     * physical and device pixels are mapped.
+     * @enum {number}
+     */
+    enum Density { NORMAL, HIGH } 
+
+    /**
+     * The events fired by the PixelDensityMonitor.
+     * @enum {string}
+     */
+    enum EventType { CHANGE } 
 }
 

@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:01:37 PDT 2014
+// Generated Sat May  3 12:17:27 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -37,15 +37,6 @@
 /// <reference path="../../goog/math/coordinate.d.ts" />
 /// <reference path="../../goog/dom/dom.d.ts" />
 
-declare module goog.events.InputHandler {
-
-    /**
-     * Enum type for the events fired by the input handler
-     * @enum {string}
-     */
-    enum EventType { INPUT } 
-}
-
 declare module goog.events {
 
     /**
@@ -73,5 +64,14 @@ declare module goog.events {
          */
         handleEvent(e: goog.events.BrowserEvent): void;
     }
+}
+
+declare module goog.events.InputHandler {
+
+    /**
+     * Enum type for the events fired by the input handler
+     * @enum {string}
+     */
+    enum EventType { INPUT } 
 }
 

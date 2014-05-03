@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:56:48 PDT 2014
+// Generated Sat May  3 12:12:34 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/string/string.d.ts" />
@@ -36,12 +36,6 @@
 /// <reference path="../../goog/dom/savedcaretrange.d.ts" />
 
 declare module goog.dom {
-
-    /**
-     * Types of ranges.
-     * @enum {string}
-     */
-    enum RangeType { TEXT, CONTROL, MULTI } 
 
     /**
      * Creates a new selection with no properties.  Do not use this constructor -
@@ -383,6 +377,12 @@ declare module goog.dom {
          */
         isLast(): boolean;
     }
+
+    /**
+     * Types of ranges.
+     * @enum {string}
+     */
+    enum RangeType { TEXT, CONTROL, MULTI } 
 }
 
 declare module goog.dom.AbstractRange {

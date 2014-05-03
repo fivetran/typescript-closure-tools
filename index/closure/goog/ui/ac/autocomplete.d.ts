@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:00:53 PDT 2014
+// Generated Sat May  3 12:16:43 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/dom/nodetype.d.ts" />
@@ -25,23 +25,6 @@
 /// <reference path="../../../goog/events/browserevent.d.ts" />
 /// <reference path="../../../goog/events/events.d.ts" />
 /// <reference path="../../../goog/events/eventtarget.d.ts" />
-
-declare module goog.ui.ac.AutoComplete {
-
-    /**
-     * Events associated with the autocomplete
-     * @enum {string}
-     */
-    enum EventType { ROW_HILITE, HILITE, SELECT, DISMISS, CANCEL_DISMISS, UPDATE, SUGGESTIONS_UPDATE } 
-
-    /**
-     * @typedef {{
-     *   requestMatchingRows:(!Function|undefined),
-     *   isRowDisabled:(!Function|undefined)
-     * }}
-     */
-    var Matcher: any /*missing*/;
-}
 
 declare module goog.ui.ac {
 
@@ -70,7 +53,7 @@ declare module goog.ui.ac {
      * @constructor
      * @extends {goog.events.EventTarget}
      */
-    class GoogAutoComplete extends goog.events.EventTarget {
+    class AutoComplete extends goog.events.EventTarget {
         /**
          * This is the central manager class for an AutoComplete instance. The matcher
          * can specify disabled rows that should not be hilited or selected by
@@ -385,7 +368,22 @@ declare module goog.ui.ac {
          */
         update(opt_force?: boolean): void;
     }
+}
 
-    class AutoComplete extends GoogAutoComplete { }
+declare module goog.ui.ac.AutoComplete {
+
+    /**
+     * Events associated with the autocomplete
+     * @enum {string}
+     */
+    enum EventType { ROW_HILITE, HILITE, SELECT, DISMISS, CANCEL_DISMISS, UPDATE, SUGGESTIONS_UPDATE } 
+
+    /**
+     * @typedef {{
+     *   requestMatchingRows:(!Function|undefined),
+     *   isRowDisabled:(!Function|undefined)
+     * }}
+     */
+    var Matcher: any /*missing*/;
 }
 

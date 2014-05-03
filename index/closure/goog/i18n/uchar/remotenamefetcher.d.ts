@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:04:43 PDT 2014
+// Generated Sat May  3 12:20:35 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/string/string.d.ts" />
@@ -64,7 +64,7 @@ declare module goog.i18n.uChar {
      * @extends {goog.Disposable}
      * @final
      */
-    class RemoteNameFetcher extends goog.GoogDisposable implements goog.i18n.uChar.NameFetcher {
+    class RemoteNameFetcher extends goog.Disposable implements goog.i18n.uChar.NameFetcher {
         /**
          * Builds the RemoteNameFetcher object. This object retrieves codepoint names
          * from a remote data source.

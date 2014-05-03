@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:58:34 PDT 2014
+// Generated Sat May  3 12:14:23 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/string/string.d.ts" />
@@ -45,18 +45,6 @@
 /// <reference path="../../../goog/dom/dom.d.ts" />
 /// <reference path="../../../goog/net/xpc/transport.d.ts" />
 
-declare module goog.net.xpc.IframeRelayTransport {
-
-    /**
-     * @typedef {{fragments: !Array.<string>, received: number, expected: number}}
-     */
-    interface FragmentInfo {
-        fragments: string[];
-        received: number;
-        expected: number
-    }
-}
-
 declare module goog.net.xpc {
 
     /**
@@ -89,6 +77,18 @@ declare module goog.net.xpc {
          * @final
          */
         constructor(channel: goog.net.xpc.CrossPageChannel, opt_domHelper?: goog.dom.DomHelper);
+    }
+}
+
+declare module goog.net.xpc.IframeRelayTransport {
+
+    /**
+     * @typedef {{fragments: !Array.<string>, received: number, expected: number}}
+     */
+    interface FragmentInfo {
+        fragments: string[];
+        received: number;
+        expected: number
     }
 }
 

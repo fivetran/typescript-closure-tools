@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:00:28 PDT 2014
+// Generated Sat May  3 12:16:17 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -83,28 +83,6 @@
 /// <reference path="../../goog/ui/menu.d.ts" />
 /// <reference path="../../goog/ui/popupmenu.d.ts" />
 
-declare module goog.ui.AbstractSpellChecker {
-
-    /**
-     * @return {number} The next unique instance ID for a misspelled word.
-     * @protected
-     */
-    function getNextId(): number;
-
-    /**
-     * Constants for representing the direction while navigating.
-     *
-     * @enum {number}
-     */
-    enum Direction { PREVIOUS, NEXT } 
-
-    /**
-     * Constants for the result of asynchronous processing.
-     * @enum {number}
-     */
-    enum AsyncResult { PENDING, DONE } 
-}
-
 declare module goog.ui {
 
     /**
@@ -118,7 +96,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.Component}
      */
-    class GoogAbstractSpellChecker extends goog.ui.GoogComponent {
+    class AbstractSpellChecker extends goog.ui.Component {
         /**
          * Abstract base class for spell checker editor implementations. Provides basic
          * functionality such as word lookup and caching.
@@ -422,7 +400,27 @@ declare module goog.ui {
          */
         continueAsyncProcessing(): goog.ui.AbstractSpellChecker.AsyncResult;
     }
+}
 
-    class AbstractSpellChecker extends GoogAbstractSpellChecker { }
+declare module goog.ui.AbstractSpellChecker {
+
+    /**
+     * @return {number} The next unique instance ID for a misspelled word.
+     * @protected
+     */
+    function getNextId(): number;
+
+    /**
+     * Constants for representing the direction while navigating.
+     *
+     * @enum {number}
+     */
+    enum Direction { PREVIOUS, NEXT } 
+
+    /**
+     * Constants for the result of asynchronous processing.
+     * @enum {number}
+     */
+    enum AsyncResult { PENDING, DONE } 
 }
 

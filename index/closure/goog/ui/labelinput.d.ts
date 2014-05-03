@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:00:02 PDT 2014
+// Generated Sat May  3 12:15:51 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -56,7 +56,7 @@ declare module goog.ui {
      * @extends {goog.ui.Component}
      * @constructor
      */
-    class LabelInput extends goog.ui.GoogComponent {
+    class LabelInput extends goog.ui.Component {
         /**
          * This creates the label input object.
          * @param {string=} opt_label The text to show as the label.

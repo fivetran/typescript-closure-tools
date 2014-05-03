@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:56:19 PDT 2014
+// Generated Sat May  3 12:12:05 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -40,15 +40,6 @@
 /// <reference path="../../goog/events/eventtarget.d.ts" />
 /// <reference path="../../goog/timer/timer.d.ts" />
 
-declare module goog.fx.DragScrollSupport {
-
-    /**
-     * The suggested scrolling margin.
-     * @type {number}
-     */
-    var MARGIN: number;
-}
-
 declare module goog.fx {
 
     /**
@@ -68,7 +59,7 @@ declare module goog.fx {
      * @extends {goog.Disposable}
      * @see ../demos/dragscrollsupport.html
      */
-    class DragScrollSupport extends goog.GoogDisposable {
+    class DragScrollSupport extends goog.Disposable {
         /**
          * A scroll support class. Currently this class will automatically scroll
          * a scrollable container node and scroll it by a fixed amount at a timed
@@ -123,5 +114,14 @@ declare module goog.fx {
          */
         calculateScrollDelta(coordinate: number, min: number, rangeLength: number): number;
     }
+}
+
+declare module goog.fx.DragScrollSupport {
+
+    /**
+     * The suggested scrolling margin.
+     * @type {number}
+     */
+    var MARGIN: number;
 }
 

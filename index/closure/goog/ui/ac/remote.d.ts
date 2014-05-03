@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:00:59 PDT 2014
+// Generated Sat May  3 12:16:49 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/string/string.d.ts" />
@@ -100,7 +100,7 @@ declare module goog.ui.ac {
      * @constructor
      * @extends {goog.ui.ac.AutoComplete}
      */
-    class Remote extends goog.ui.ac.GoogAutoComplete {
+    class Remote extends goog.ui.ac.AutoComplete {
         /**
          * Factory class for building a remote autocomplete widget that autocompletes
          * an inputbox or text area from a data array provided via ajax.

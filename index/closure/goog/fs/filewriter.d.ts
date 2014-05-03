@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:02:35 PDT 2014
+// Generated Sat May  3 12:18:25 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/events/eventid.d.ts" />
@@ -43,7 +43,7 @@ declare module goog.fs {
      * @extends {goog.fs.FileSaver}
      * @final
      */
-    class FileWriter extends goog.fs.GoogFileSaver {
+    class FileWriter extends goog.fs.FileSaver {
         /**
          * An object for monitoring the saving of files, as well as other fine-grained
          * writing operations.

@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:00:52 PDT 2014
+// Generated Sat May  3 12:16:42 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -59,16 +59,6 @@
 /// <reference path="../../goog/ui/cssnames.d.ts" />
 /// <reference path="../../goog/ui/flatbuttonrenderer.d.ts" />
 
-declare module goog.ui.LinkButtonRenderer {
-
-    /**
-     * Default CSS class to be applied to the root element of components rendered
-     * by this renderer.
-     * @type {string}
-     */
-    var CSS_CLASS: string;
-}
-
 declare module goog.ui {
 
     /**
@@ -78,7 +68,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.FlatButtonRenderer}
      */
-    class LinkButtonRenderer extends goog.ui.GoogFlatButtonRenderer {
+    class LinkButtonRenderer extends goog.ui.FlatButtonRenderer {
         /**
          * Link renderer for {@link goog.ui.Button}s.  Link buttons can contain
          * almost arbitrary HTML content, will flow like inline elements, but can be
@@ -88,5 +78,15 @@ declare module goog.ui {
          */
         constructor();
     }
+}
+
+declare module goog.ui.LinkButtonRenderer {
+
+    /**
+     * Default CSS class to be applied to the root element of components rendered
+     * by this renderer.
+     * @type {string}
+     */
+    var CSS_CLASS: string;
 }
 

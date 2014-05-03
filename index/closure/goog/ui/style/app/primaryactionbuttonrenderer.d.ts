@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:59:21 PDT 2014
+// Generated Sat May  3 12:15:10 PDT 2014
 
 /// <reference path="../../../../goog/base.d.ts" />
 /// <reference path="../../../../goog/dom/nodetype.d.ts" />
@@ -60,6 +60,29 @@
 /// <reference path="../../../../goog/ui/custombuttonrenderer.d.ts" />
 /// <reference path="../../../../goog/ui/style/app/buttonrenderer.d.ts" />
 
+declare module goog.ui.style.app {
+
+    /**
+     * Custom renderer for {@link goog.ui.Button}s. This renderer supports the
+     * "primary action" style for buttons.
+     *
+     * @constructor
+     * @extends {goog.ui.style.app.ButtonRenderer}
+     * @final
+     */
+    class PrimaryActionButtonRenderer extends goog.ui.style.app.ButtonRenderer {
+        /**
+         * Custom renderer for {@link goog.ui.Button}s. This renderer supports the
+         * "primary action" style for buttons.
+         *
+         * @constructor
+         * @extends {goog.ui.style.app.ButtonRenderer}
+         * @final
+         */
+        constructor();
+    }
+}
+
 declare module goog.ui.style.app.PrimaryActionButtonRenderer {
 
     /**
@@ -76,28 +99,5 @@ declare module goog.ui.style.app.PrimaryActionButtonRenderer {
      * @type {Array.<Array.<string>>}
      */
     var IE6_CLASS_COMBINATIONS: string[][];
-}
-
-declare module goog.ui.style.app {
-
-    /**
-     * Custom renderer for {@link goog.ui.Button}s. This renderer supports the
-     * "primary action" style for buttons.
-     *
-     * @constructor
-     * @extends {goog.ui.style.app.ButtonRenderer}
-     * @final
-     */
-    class PrimaryActionButtonRenderer extends goog.ui.style.app.GoogButtonRenderer {
-        /**
-         * Custom renderer for {@link goog.ui.Button}s. This renderer supports the
-         * "primary action" style for buttons.
-         *
-         * @constructor
-         * @extends {goog.ui.style.app.ButtonRenderer}
-         * @final
-         */
-        constructor();
-    }
 }
 

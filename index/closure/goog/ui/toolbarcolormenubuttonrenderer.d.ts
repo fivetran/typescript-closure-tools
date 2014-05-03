@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:59:40 PDT 2014
+// Generated Sat May  3 12:15:29 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/string/string.d.ts" />
@@ -81,7 +81,7 @@ declare module goog.ui {
      * @extends {goog.ui.ToolbarMenuButtonRenderer}
      * @final
      */
-    class ToolbarColorMenuButtonRenderer extends goog.ui.GoogToolbarMenuButtonRenderer {
+    class ToolbarColorMenuButtonRenderer extends goog.ui.ToolbarMenuButtonRenderer {
         /**
          * Toolbar-style renderer for {@link goog.ui.ColorMenuButton}s.
          * @constructor

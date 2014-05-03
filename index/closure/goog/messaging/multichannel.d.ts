@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:58:57 PDT 2014
+// Generated Sat May  3 12:14:46 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -55,7 +55,7 @@ declare module goog.messaging {
      * @extends {goog.Disposable}
      * @final
      */
-    class MultiChannel extends goog.GoogDisposable {
+    class MultiChannel extends goog.Disposable {
         /**
          * Creates a new MultiChannel wrapping a single MessageChannel. The
          * underlying channel shouldn't have any other listeners registered, but it
@@ -99,7 +99,7 @@ declare module goog.messaging.MultiChannel {
      * @extends {goog.Disposable}
      * @final
      */
-    class VirtualChannel extends goog.GoogDisposable implements goog.messaging.MessageChannel {
+    class VirtualChannel extends goog.Disposable implements goog.messaging.MessageChannel {
         /**
          * A message channel that proxies its messages over another underlying channel.
          *

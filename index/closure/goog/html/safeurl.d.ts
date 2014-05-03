@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:05:05 PDT 2014
+// Generated Sat May  3 12:20:56 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -8,6 +8,87 @@
 /// <reference path="../../goog/i18n/bidi.d.ts" />
 /// <reference path="../../goog/string/typedstring.d.ts" />
 /// <reference path="../../goog/string/const.d.ts" />
+
+declare module goog.html {
+
+    /**
+     * A string that is safe to use in URL context in DOM APIs and HTML documents.
+     *
+     * A SafeUrl is a string-like object that carries the security type contract
+     * that its value as a string will not cause untrusted script execution
+     * when evaluated as a hyperlink URL in a browser.
+     *
+     * Values of this type are guaranteed to be safe to use in URL/hyperlink
+     * contexts, such as, assignment to URL-valued DOM properties, or
+     * interpolation into a HTML template in URL context (e.g., inside a href
+     * attribute), in the sense that the use will not result in a
+     * Cross-Site-Scripting vulnerability.
+     *
+     * Note that, as documented in {@code goog.html.SafeUrl.unwrap}, this type's
+     * contract does not guarantee that instances are safe to interpolate into HTML
+     * without appropriate escaping.
+     *
+     * Note also that this type's contract does not imply any guarantees regarding
+     * the resource the URL refers to.  In particular, SafeUrls are <b>not<b/>
+     * safe to use in a context where the referred-to resource is interpreted as
+     * trusted code, e.g., as the src of a script tag.
+     *
+     * Instances of this type must be created via the factory methods
+     * ({@code goog.html.SafeUrl.from}, {@code goog.html.SafeUrl.sanitize}), etc and
+     * not by invoking its constructor.  The constructor intentionally takes no
+     * parameters and the type is immutable; hence only a default instance
+     * corresponding to the empty string can be obtained via constructor invocation.
+     *
+     * @see goog.html.SafeUrl#fromConstant
+     * @see goog.html.SafeUrl#from
+     * @see goog.html.SafeUrl#sanitize
+     * @constructor
+     * @final
+     * @struct
+     * @implements {goog.i18n.bidi.DirectionalString}
+     * @implements {goog.string.TypedString}
+     */
+    class SafeUrl implements goog.i18n.bidi.DirectionalString, goog.string.TypedString {
+        /**
+         * A string that is safe to use in URL context in DOM APIs and HTML documents.
+         *
+         * A SafeUrl is a string-like object that carries the security type contract
+         * that its value as a string will not cause untrusted script execution
+         * when evaluated as a hyperlink URL in a browser.
+         *
+         * Values of this type are guaranteed to be safe to use in URL/hyperlink
+         * contexts, such as, assignment to URL-valued DOM properties, or
+         * interpolation into a HTML template in URL context (e.g., inside a href
+         * attribute), in the sense that the use will not result in a
+         * Cross-Site-Scripting vulnerability.
+         *
+         * Note that, as documented in {@code goog.html.SafeUrl.unwrap}, this type's
+         * contract does not guarantee that instances are safe to interpolate into HTML
+         * without appropriate escaping.
+         *
+         * Note also that this type's contract does not imply any guarantees regarding
+         * the resource the URL refers to.  In particular, SafeUrls are <b>not<b/>
+         * safe to use in a context where the referred-to resource is interpreted as
+         * trusted code, e.g., as the src of a script tag.
+         *
+         * Instances of this type must be created via the factory methods
+         * ({@code goog.html.SafeUrl.from}, {@code goog.html.SafeUrl.sanitize}), etc and
+         * not by invoking its constructor.  The constructor intentionally takes no
+         * parameters and the type is immutable; hence only a default instance
+         * corresponding to the empty string can be obtained via constructor invocation.
+         *
+         * @see goog.html.SafeUrl#fromConstant
+         * @see goog.html.SafeUrl#from
+         * @see goog.html.SafeUrl#sanitize
+         * @constructor
+         * @final
+         * @struct
+         * @implements {goog.i18n.bidi.DirectionalString}
+         * @implements {goog.string.TypedString}
+         */
+        constructor();
+    }
+}
 
 declare module goog.html.SafeUrl {
 
@@ -62,11 +143,11 @@ declare module goog.html.SafeUrl {
      * Compile-time constant strings are inherently program-controlled and hence
      * trusted.
      *
-     * @param {!googstring.Const} url A compile-time-constant string from which to
+     * @param {!goog.string.Const} url A compile-time-constant string from which to
      *         create a SafeUrl.
      * @return {!goog.html.SafeUrl} A SafeUrl object initialized to {@code url}.
      */
-    function fromConstant(url: googstring.Const): goog.html.SafeUrl;
+    function fromConstant(url: goog.string.Const): goog.html.SafeUrl;
 
     /**
      * Creates a SafeUrl object from {@code url}. If {@code url} is a
@@ -92,90 +173,9 @@ declare module goog.html.SafeUrl {
      * object containing an innocuous string, goog.html.SafeUrl.INNOCUOUS_STRING.
      *
      * @see http://url.spec.whatwg.org/#concept-relative-url
-     * @param {string|!googstring.TypedString} url The URL to validate.
+     * @param {string|!goog.string.TypedString} url The URL to validate.
      * @return {!goog.html.SafeUrl} The validated URL, wrapped as a SafeUrl.
      */
-    function sanitize(url: any /*string|googstring.TypedString*/): goog.html.SafeUrl;
-}
-
-declare module goog.html {
-
-    /**
-     * A string that is safe to use in URL context in DOM APIs and HTML documents.
-     *
-     * A SafeUrl is a string-like object that carries the security type contract
-     * that its value as a string will not cause untrusted script execution
-     * when evaluated as a hyperlink URL in a browser.
-     *
-     * Values of this type are guaranteed to be safe to use in URL/hyperlink
-     * contexts, such as, assignment to URL-valued DOM properties, or
-     * interpolation into a HTML template in URL context (e.g., inside a href
-     * attribute), in the sense that the use will not result in a
-     * Cross-Site-Scripting vulnerability.
-     *
-     * Note that, as documented in {@code goog.html.SafeUrl.unwrap}, this type's
-     * contract does not guarantee that instances are safe to interpolate into HTML
-     * without appropriate escaping.
-     *
-     * Note also that this type's contract does not imply any guarantees regarding
-     * the resource the URL refers to.  In particular, SafeUrls are <b>not<b/>
-     * safe to use in a context where the referred-to resource is interpreted as
-     * trusted code, e.g., as the src of a script tag.
-     *
-     * Instances of this type must be created via the factory methods
-     * ({@code goog.html.SafeUrl.from}, {@code goog.html.SafeUrl.sanitize}), etc and
-     * not by invoking its constructor.  The constructor intentionally takes no
-     * parameters and the type is immutable; hence only a default instance
-     * corresponding to the empty string can be obtained via constructor invocation.
-     *
-     * @see goog.html.SafeUrl#fromConstant
-     * @see goog.html.SafeUrl#from
-     * @see goog.html.SafeUrl#sanitize
-     * @constructor
-     * @final
-     * @struct
-     * @implements {goog.i18n.bidi.DirectionalString}
-     * @implements {googstring.TypedString}
-     */
-    class SafeUrl implements goog.i18n.bidi.DirectionalString, googstring.TypedString {
-        /**
-         * A string that is safe to use in URL context in DOM APIs and HTML documents.
-         *
-         * A SafeUrl is a string-like object that carries the security type contract
-         * that its value as a string will not cause untrusted script execution
-         * when evaluated as a hyperlink URL in a browser.
-         *
-         * Values of this type are guaranteed to be safe to use in URL/hyperlink
-         * contexts, such as, assignment to URL-valued DOM properties, or
-         * interpolation into a HTML template in URL context (e.g., inside a href
-         * attribute), in the sense that the use will not result in a
-         * Cross-Site-Scripting vulnerability.
-         *
-         * Note that, as documented in {@code goog.html.SafeUrl.unwrap}, this type's
-         * contract does not guarantee that instances are safe to interpolate into HTML
-         * without appropriate escaping.
-         *
-         * Note also that this type's contract does not imply any guarantees regarding
-         * the resource the URL refers to.  In particular, SafeUrls are <b>not<b/>
-         * safe to use in a context where the referred-to resource is interpreted as
-         * trusted code, e.g., as the src of a script tag.
-         *
-         * Instances of this type must be created via the factory methods
-         * ({@code goog.html.SafeUrl.from}, {@code goog.html.SafeUrl.sanitize}), etc and
-         * not by invoking its constructor.  The constructor intentionally takes no
-         * parameters and the type is immutable; hence only a default instance
-         * corresponding to the empty string can be obtained via constructor invocation.
-         *
-         * @see goog.html.SafeUrl#fromConstant
-         * @see goog.html.SafeUrl#from
-         * @see goog.html.SafeUrl#sanitize
-         * @constructor
-         * @final
-         * @struct
-         * @implements {goog.i18n.bidi.DirectionalString}
-         * @implements {googstring.TypedString}
-         */
-        constructor();
-    }
+    function sanitize(url: any /*string|goog.string.TypedString*/): goog.html.SafeUrl;
 }
 

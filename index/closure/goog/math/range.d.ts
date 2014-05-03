@@ -1,10 +1,51 @@
-// Generated Fri May  2 15:04:32 PDT 2014
+// Generated Sat May  3 12:20:23 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
 /// <reference path="../../goog/debug/error.d.ts" />
 /// <reference path="../../goog/string/string.d.ts" />
 /// <reference path="../../goog/asserts/asserts.d.ts" />
+
+declare module goog.math {
+
+    /**
+     * A number range.
+     * @param {number} a One end of the range.
+     * @param {number} b The other end of the range.
+     * @constructor
+     */
+    class Range {
+        /**
+         * A number range.
+         * @param {number} a One end of the range.
+         * @param {number} b The other end of the range.
+         * @constructor
+         */
+        constructor(a: number, b: number);
+    
+        /**
+         * @return {!goog.math.Range} A clone of this Range.
+         */
+        clone(): goog.math.Range;
+    
+        /**
+         * @return {number} Length of the range.
+         */
+        getLength(): number;
+    
+        /**
+         * Extends this range to include the given point.
+         * @param {number} point
+         */
+        includePoint(point: number): void;
+    
+        /**
+         * Extends this range to include the given range.
+         * @param {!goog.math.Range} range
+         */
+        includeRange(range: goog.math.Range): void;
+    }
+}
 
 declare module goog.math.Range {
 
@@ -69,46 +110,5 @@ declare module goog.math.Range {
      * @return {boolean} True if p is contained inside range, false otherwise.
      */
     function containsPoint(range: goog.math.Range, p: number): boolean;
-}
-
-declare module goog.math {
-
-    /**
-     * A number range.
-     * @param {number} a One end of the range.
-     * @param {number} b The other end of the range.
-     * @constructor
-     */
-    class Range {
-        /**
-         * A number range.
-         * @param {number} a One end of the range.
-         * @param {number} b The other end of the range.
-         * @constructor
-         */
-        constructor(a: number, b: number);
-    
-        /**
-         * @return {!goog.math.Range} A clone of this Range.
-         */
-        clone(): goog.math.Range;
-    
-        /**
-         * @return {number} Length of the range.
-         */
-        getLength(): number;
-    
-        /**
-         * Extends this range to include the given point.
-         * @param {number} point
-         */
-        includePoint(point: number): void;
-    
-        /**
-         * Extends this range to include the given range.
-         * @param {!goog.math.Range} range
-         */
-        includeRange(range: goog.math.Range): void;
-    }
 }
 

@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:58:37 PDT 2014
+// Generated Sat May  3 12:14:25 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -34,49 +34,6 @@
 /// <reference path="../../goog/net/wrapperxmlhttpfactory.d.ts" />
 /// <reference path="../../goog/net/xmlhttp.d.ts" />
 /// <reference path="../../goog/net/eventtype.d.ts" />
-
-declare module goog.net.ChannelRequest {
-
-    /**
-     * Default timeout in MS for a request. The server must return data within this
-     * time limit for the request to not timeout.
-     * @type {number}
-     */
-    var TIMEOUT_MS: number;
-
-    /**
-     * How often to poll (in MS) for changes to responseText in browsers that don't
-     * fire onreadystatechange during incremental loading of responseText.
-     * @type {number}
-     */
-    var POLLING_INTERVAL_MS: number;
-
-    /**
-     * Enum type for identifying a ChannelRequest error.
-     * @enum {number}
-     */
-    enum Error { STATUS, NO_DATA, TIMEOUT, UNKNOWN_SESSION_ID, BAD_DATA, HANDLER_EXCEPTION, BROWSER_OFFLINE, ACTIVE_X_BLOCKED } 
-
-    /**
-     * Returns a useful error string for debugging based on the specified error
-     * code.
-     * @param {goog.net.ChannelRequest.Error} errorCode The error code.
-     * @param {number} statusCode The HTTP status code.
-     * @return {string} The error string for the given code combination.
-     */
-    function errorStringFromCode(errorCode: goog.net.ChannelRequest.Error, statusCode: number): string;
-
-    /**
-     * Returns whether XHR streaming is supported on this browser.
-     *
-     * If XHR streaming is not supported, we will try to use an ActiveXObject
-     * to create a Forever IFrame.
-     *
-     * @return {boolean} Whether XHR streaming is supported.
-     * @see http://code.google.com/p/closure-library/issues/detail?id=346
-     */
-    function supportsXhrStreaming(): boolean;
-}
 
 declare module goog.net {
 
@@ -227,5 +184,48 @@ declare module goog.net {
          */
         getRequestStartTime(): number;
     }
+}
+
+declare module goog.net.ChannelRequest {
+
+    /**
+     * Default timeout in MS for a request. The server must return data within this
+     * time limit for the request to not timeout.
+     * @type {number}
+     */
+    var TIMEOUT_MS: number;
+
+    /**
+     * How often to poll (in MS) for changes to responseText in browsers that don't
+     * fire onreadystatechange during incremental loading of responseText.
+     * @type {number}
+     */
+    var POLLING_INTERVAL_MS: number;
+
+    /**
+     * Enum type for identifying a ChannelRequest error.
+     * @enum {number}
+     */
+    enum Error { STATUS, NO_DATA, TIMEOUT, UNKNOWN_SESSION_ID, BAD_DATA, HANDLER_EXCEPTION, BROWSER_OFFLINE, ACTIVE_X_BLOCKED } 
+
+    /**
+     * Returns a useful error string for debugging based on the specified error
+     * code.
+     * @param {goog.net.ChannelRequest.Error} errorCode The error code.
+     * @param {number} statusCode The HTTP status code.
+     * @return {string} The error string for the given code combination.
+     */
+    function errorStringFromCode(errorCode: goog.net.ChannelRequest.Error, statusCode: number): string;
+
+    /**
+     * Returns whether XHR streaming is supported on this browser.
+     *
+     * If XHR streaming is not supported, we will try to use an ActiveXObject
+     * to create a Forever IFrame.
+     *
+     * @return {boolean} Whether XHR streaming is supported.
+     * @see http://code.google.com/p/closure-library/issues/detail?id=346
+     */
+    function supportsXhrStreaming(): boolean;
 }
 

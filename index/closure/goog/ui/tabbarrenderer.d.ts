@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:00:23 PDT 2014
+// Generated Sat May  3 12:16:12 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/a11y/aria/roles.d.ts" />
@@ -31,16 +31,6 @@
 /// <reference path="../../goog/ui/registry.d.ts" />
 /// <reference path="../../goog/ui/containerrenderer.d.ts" />
 
-declare module goog.ui.TabBarRenderer {
-
-    /**
-     * Default CSS class to be applied to the root element of components rendered
-     * by this renderer.
-     * @type {string}
-     */
-    var CSS_CLASS: string;
-}
-
 declare module goog.ui {
 
     /**
@@ -56,7 +46,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.ContainerRenderer}
      */
-    class TabBarRenderer extends goog.ui.GoogContainerRenderer {
+    class TabBarRenderer extends goog.ui.ContainerRenderer {
         /**
          * Default renderer for {@link goog.ui.TabBar}s, based on the {@code TabPane}
          * code.  The tab bar's DOM structure is determined by its orientation and
@@ -72,5 +62,15 @@ declare module goog.ui {
          */
         constructor();
     }
+}
+
+declare module goog.ui.TabBarRenderer {
+
+    /**
+     * Default CSS class to be applied to the root element of components rendered
+     * by this renderer.
+     * @type {string}
+     */
+    var CSS_CLASS: string;
 }
 

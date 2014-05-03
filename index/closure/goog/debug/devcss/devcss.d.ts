@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:03:03 PDT 2014
+// Generated Sat May  3 12:18:53 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/dom/nodetype.d.ts" />
@@ -35,15 +35,6 @@
 /// <reference path="../../../goog/events/events.d.ts" />
 /// <reference path="../../../goog/dom/classlist.d.ts" />
 
-declare module goog.debug.DevCss {
-
-    /**
-     * A list of possible user agent strings.
-     * @enum {string}
-     */
-    enum UserAgent { OPERA, IE, GECKO, FIREFOX, WEBKIT, SAFARI, MOBILE } 
-}
-
 declare module goog.debug {
 
     /**
@@ -78,5 +69,14 @@ declare module goog.debug {
          */
         activateBrowserSpecificCssRules(opt_enableIe6ReadyHandler?: boolean): void;
     }
+}
+
+declare module goog.debug.DevCss {
+
+    /**
+     * A list of possible user agent strings.
+     * @enum {string}
+     */
+    enum UserAgent { OPERA, IE, GECKO, FIREFOX, WEBKIT, SAFARI, MOBILE } 
 }
 

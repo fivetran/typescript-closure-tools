@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:02:15 PDT 2014
+// Generated Sat May  3 12:18:06 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -7,50 +7,6 @@
 /// <reference path="../../goog/asserts/asserts.d.ts" />
 /// <reference path="../../goog/array/array.d.ts" />
 /// <reference path="../../goog/math/math.d.ts" />
-
-declare module goog.graphics.AffineTransform {
-
-    /**
-     * Creates a transform representing a scaling transformation.
-     *
-     * @param {number} sx The x-axis scaling factor.
-     * @param {number} sy The y-axis scaling factor.
-     * @return {!goog.graphics.AffineTransform} A transform representing a scaling
-     *     transformation.
-     */
-    function getScaleInstance(sx: number, sy: number): goog.graphics.AffineTransform;
-
-    /**
-     * Creates a transform representing a translation transformation.
-     *
-     * @param {number} dx The distance to translate in the x direction.
-     * @param {number} dy The distance to translate in the y direction.
-     * @return {!goog.graphics.AffineTransform} A transform representing a
-     *     translation transformation.
-     */
-    function getTranslateInstance(dx: number, dy: number): goog.graphics.AffineTransform;
-
-    /**
-     * Creates a transform representing a shearing transformation.
-     *
-     * @param {number} shx The x-axis shear factor.
-     * @param {number} shy The y-axis shear factor.
-     * @return {!goog.graphics.AffineTransform} A transform representing a shearing
-     *     transformation.
-     */
-    function getShearInstance(shx: number, shy: number): goog.graphics.AffineTransform;
-
-    /**
-     * Creates a transform representing a rotation transformation.
-     *
-     * @param {number} theta The angle of rotation measured in radians.
-     * @param {number} x The x coordinate of the anchor point.
-     * @param {number} y The y coordinate of the anchor point.
-     * @return {!goog.graphics.AffineTransform} A transform representing a rotation
-     *     transformation.
-     */
-    function getRotateInstance(theta: number, x: number, y: number): goog.graphics.AffineTransform;
-}
 
 declare module goog.graphics {
 
@@ -368,5 +324,49 @@ declare module goog.graphics {
          */
         equals(tx: goog.graphics.AffineTransform): boolean;
     }
+}
+
+declare module goog.graphics.AffineTransform {
+
+    /**
+     * Creates a transform representing a scaling transformation.
+     *
+     * @param {number} sx The x-axis scaling factor.
+     * @param {number} sy The y-axis scaling factor.
+     * @return {!goog.graphics.AffineTransform} A transform representing a scaling
+     *     transformation.
+     */
+    function getScaleInstance(sx: number, sy: number): goog.graphics.AffineTransform;
+
+    /**
+     * Creates a transform representing a translation transformation.
+     *
+     * @param {number} dx The distance to translate in the x direction.
+     * @param {number} dy The distance to translate in the y direction.
+     * @return {!goog.graphics.AffineTransform} A transform representing a
+     *     translation transformation.
+     */
+    function getTranslateInstance(dx: number, dy: number): goog.graphics.AffineTransform;
+
+    /**
+     * Creates a transform representing a shearing transformation.
+     *
+     * @param {number} shx The x-axis shear factor.
+     * @param {number} shy The y-axis shear factor.
+     * @return {!goog.graphics.AffineTransform} A transform representing a shearing
+     *     transformation.
+     */
+    function getShearInstance(shx: number, shy: number): goog.graphics.AffineTransform;
+
+    /**
+     * Creates a transform representing a rotation transformation.
+     *
+     * @param {number} theta The angle of rotation measured in radians.
+     * @param {number} x The x coordinate of the anchor point.
+     * @param {number} y The y coordinate of the anchor point.
+     * @return {!goog.graphics.AffineTransform} A transform representing a rotation
+     *     transformation.
+     */
+    function getRotateInstance(theta: number, x: number, y: number): goog.graphics.AffineTransform;
 }
 

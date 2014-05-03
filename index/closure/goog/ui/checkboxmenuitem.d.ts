@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:01:05 PDT 2014
+// Generated Sat May  3 12:16:54 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -70,7 +70,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.MenuItem}
      */
-    class CheckBoxMenuItem extends goog.ui.GoogMenuItem {
+    class CheckBoxMenuItem extends goog.ui.MenuItem {
         /**
          * Class representing a checkbox menu item.  This is just a convenience class
          * that extends {@link goog.ui.MenuItem} by making it checkable.

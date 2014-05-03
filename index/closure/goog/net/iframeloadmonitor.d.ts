@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:58:38 PDT 2014
+// Generated Sat May  3 12:14:26 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/string/string.d.ts" />
@@ -33,17 +33,6 @@
 /// <reference path="../../goog/math/coordinate.d.ts" />
 /// <reference path="../../goog/dom/dom.d.ts" />
 /// <reference path="../../goog/events/eventtarget.d.ts" />
-
-declare module goog.net.IframeLoadMonitor {
-
-    /**
-     * Event type dispatched by a goog.net.IframeLoadMonitor when it internal iframe
-     * finishes loading for the first time after construction of the
-     * goog.net.IframeLoadMonitor
-     * @type {string}
-     */
-    var LOAD_EVENT: string;
-}
 
 declare module goog.net {
 
@@ -93,5 +82,16 @@ declare module goog.net {
          */
         getIframe(): HTMLIFrameElement;
     }
+}
+
+declare module goog.net.IframeLoadMonitor {
+
+    /**
+     * Event type dispatched by a goog.net.IframeLoadMonitor when it internal iframe
+     * finishes loading for the first time after construction of the
+     * goog.net.IframeLoadMonitor
+     * @type {string}
+     */
+    var LOAD_EVENT: string;
 }
 

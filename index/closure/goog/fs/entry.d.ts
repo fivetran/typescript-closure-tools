@@ -1,15 +1,6 @@
-// Generated Fri May  2 15:02:39 PDT 2014
+// Generated Sat May  3 12:18:30 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
-
-declare module goog.fs.DirectoryEntry {
-
-    /**
-     * Behaviors for getting files and directories.
-     * @enum {number}
-     */
-    enum Behavior { DEFAULT, CREATE, CREATE_EXCLUSIVE } 
-}
 
 declare module goog.fs {
 
@@ -214,5 +205,14 @@ declare module goog.fs {
          */
         file(): goog.async.Deferred<File>;
     }
+}
+
+declare module goog.fs.DirectoryEntry {
+
+    /**
+     * Behaviors for getting files and directories.
+     * @enum {number}
+     */
+    enum Behavior { DEFAULT, CREATE, CREATE_EXCLUSIVE } 
 }
 

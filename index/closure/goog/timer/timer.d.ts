@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:02:34 PDT 2014
+// Generated Sat May  3 12:18:25 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -25,56 +25,6 @@
 /// <reference path="../../goog/events/browserevent.d.ts" />
 /// <reference path="../../goog/events/events.d.ts" />
 /// <reference path="../../goog/events/eventtarget.d.ts" />
-
-declare module goog.Timer {
-
-    /**
-     * An object that implements setTimout, setInterval, clearTimeout and
-     * clearInterval. We default to the global object. Changing
-     * goog.Timer.defaultTimerObject changes the object for all timer instances
-     * which can be useful if your environment has some other implementation of
-     * timers you'd like to use.
-     * @type {Object}
-     */
-    var defaultTimerObject: Object;
-
-    /**
-     * A variable that controls the timer error correction. If the
-     * timer is called before the requested interval times
-     * intervalScale, which often happens on mozilla, the timer is
-     * rescheduled. See also this.last_
-     * @type {number}
-     */
-    var intervalScale: number;
-
-    /**
-     * Constant for the timer's event type
-     * @type {string}
-     */
-    var TICK: string;
-
-    /**
-     * Calls the given function once, after the optional pause.
-     *
-     * The function is always called asynchronously, even if the delay is 0. This
-     * is a common trick to schedule a function to run after a batch of browser
-     * event processing.
-     *
-     * @param {function(this:SCOPE)|{handleEvent:function()}|null} listener Function
-     *     or object that has a handleEvent method.
-     * @param {number=} opt_delay Milliseconds to wait; default is 0.
-     * @param {SCOPE=} opt_handler Object in whose scope to call the listener.
-     * @return {number} A handle to the timer ID.
-     * @template SCOPE
-     */
-    function callOnce<SCOPE>(listener: any /*() => any (missing)|{ handleEvent: () => any (missing) }|any (null)*/, opt_delay?: number, opt_handler?: SCOPE): number;
-
-    /**
-     * Clears a timeout initiated by callOnce
-     * @param {?number} timerId a timer ID.
-     */
-    function clear(timerId: number): void;
-}
 
 declare module goog {
 
@@ -132,5 +82,55 @@ declare module goog {
          */
         stop(): void;
     }
+}
+
+declare module goog.Timer {
+
+    /**
+     * An object that implements setTimout, setInterval, clearTimeout and
+     * clearInterval. We default to the global object. Changing
+     * goog.Timer.defaultTimerObject changes the object for all timer instances
+     * which can be useful if your environment has some other implementation of
+     * timers you'd like to use.
+     * @type {Object}
+     */
+    var defaultTimerObject: Object;
+
+    /**
+     * A variable that controls the timer error correction. If the
+     * timer is called before the requested interval times
+     * intervalScale, which often happens on mozilla, the timer is
+     * rescheduled. See also this.last_
+     * @type {number}
+     */
+    var intervalScale: number;
+
+    /**
+     * Constant for the timer's event type
+     * @type {string}
+     */
+    var TICK: string;
+
+    /**
+     * Calls the given function once, after the optional pause.
+     *
+     * The function is always called asynchronously, even if the delay is 0. This
+     * is a common trick to schedule a function to run after a batch of browser
+     * event processing.
+     *
+     * @param {function(this:SCOPE)|{handleEvent:function()}|null} listener Function
+     *     or object that has a handleEvent method.
+     * @param {number=} opt_delay Milliseconds to wait; default is 0.
+     * @param {SCOPE=} opt_handler Object in whose scope to call the listener.
+     * @return {number} A handle to the timer ID.
+     * @template SCOPE
+     */
+    function callOnce<SCOPE>(listener: any /*() => any (missing)|{ handleEvent: () => any (missing) }|any (null)*/, opt_delay?: number, opt_handler?: SCOPE): number;
+
+    /**
+     * Clears a timeout initiated by callOnce
+     * @param {?number} timerId a timer ID.
+     */
+    function clear(timerId: number): void;
 }
 

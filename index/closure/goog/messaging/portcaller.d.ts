@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:58:58 PDT 2014
+// Generated Sat May  3 12:14:47 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/disposable/idisposable.d.ts" />
@@ -72,7 +72,7 @@ declare module goog.messaging {
      * @implements {goog.messaging.PortNetwork}
      * @final
      */
-    class PortCaller extends goog.GoogDisposable implements goog.messaging.PortNetwork {
+    class PortCaller extends goog.Disposable implements goog.messaging.PortNetwork {
         /**
          * The leaf node of a network.
          *

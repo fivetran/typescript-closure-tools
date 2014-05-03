@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:00:05 PDT 2014
+// Generated Sat May  3 12:15:55 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/i18n/datetimepatterns.d.ts" />
@@ -58,16 +58,6 @@
 /// <reference path="../../goog/i18n/timezone.d.ts" />
 /// <reference path="../../goog/i18n/datetimeformat.d.ts" />
 
-declare module goog.ui.DatePicker {
-
-    /**
-     * Constants for event names
-     *
-     * @type {Object}
-     */
-    var Events: Object;
-}
-
 declare module goog.ui {
 
     /**
@@ -84,7 +74,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.Component}
      */
-    class DatePicker extends goog.ui.GoogComponent {
+    class DatePicker extends goog.ui.Component {
         /**
          * DatePicker widget. Allows a single date to be selected from a calendar like
          * view.
@@ -352,5 +342,15 @@ declare module goog.ui {
          */
         constructor(type: string, target: goog.ui.DatePicker, date: goog.date.Date);
     }
+}
+
+declare module goog.ui.DatePicker {
+
+    /**
+     * Constants for event names
+     *
+     * @type {Object}
+     */
+    var Events: Object;
 }
 

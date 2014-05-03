@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:56:25 PDT 2014
+// Generated Sat May  3 12:12:11 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -51,20 +51,6 @@
 declare module goog.fx.dom {
 
     /**
-     * Fade elements background color from start color to the element's current
-     * background color.
-     *
-     * Start should be a 3D array representing R,G,B
-     *
-     * @param {Element} element Dom Node to be used in the animation.
-     * @param {Array.<number>} start 3D Array for RGB of start color.
-     * @param {number} time Length of animation in milliseconds.
-     * @param {goog.events.EventHandler=} opt_eventHandler Optional event handler
-     *     to use when listening for events.
-     */
-    function bgColorFadeIn(element: Element, start: number[], time: number, opt_eventHandler?: goog.events.EventHandler): void;
-
-    /**
      * Abstract class that provides reusable functionality for predefined animations
      * that manipulate a single DOM element
      *
@@ -76,7 +62,7 @@ declare module goog.fx.dom {
      * @extends {goog.fx.Animation}
      * @constructor
      */
-    class PredefinedEffect extends goog.fx.GoogAnimation {
+    class PredefinedEffect extends goog.fx.Animation {
         /**
          * Abstract class that provides reusable functionality for predefined animations
          * that manipulate a single DOM element
@@ -505,5 +491,19 @@ declare module goog.fx.dom {
          */
         constructor(element: Element, start: number[], end: number[], time: number, opt_acc?: Function);
     }
+
+    /**
+     * Fade elements background color from start color to the element's current
+     * background color.
+     *
+     * Start should be a 3D array representing R,G,B
+     *
+     * @param {Element} element Dom Node to be used in the animation.
+     * @param {Array.<number>} start 3D Array for RGB of start color.
+     * @param {number} time Length of animation in milliseconds.
+     * @param {goog.events.EventHandler=} opt_eventHandler Optional event handler
+     *     to use when listening for events.
+     */
+    function bgColorFadeIn(element: Element, start: number[], time: number, opt_eventHandler?: goog.events.EventHandler): void;
 }
 

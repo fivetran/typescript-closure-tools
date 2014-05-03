@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:58:22 PDT 2014
+// Generated Sat May  3 12:14:10 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/string/string.d.ts" />
@@ -62,441 +62,6 @@
 /// <reference path="../../goog/net/browsertestchannel.d.ts" />
 /// <reference path="../../goog/net/httpstatus.d.ts" />
 /// <reference path="../../goog/net/xhrio.d.ts" />
-
-declare module goog.net.BrowserChannel {
-
-    /**
-     * The latest protocol version that this class supports. We request this version
-     * from the server when opening the connection. Should match
-     * com.google.net.browserchannel.BrowserChannel.LATEST_CHANNEL_VERSION.
-     * @type {number}
-     */
-    var LATEST_CHANNEL_VERSION: number;
-
-    /**
-     * Enum type for the browser channel state machine.
-     * @enum {number}
-     */
-    enum State { CLOSED, INIT, OPENING, OPENED } 
-
-    /**
-     * The timeout in milliseconds for a forward channel request.
-     * @type {number}
-     */
-    var FORWARD_CHANNEL_RETRY_TIMEOUT: number;
-
-    /**
-     * Maximum number of attempts to connect to the server for back channel
-     * requests.
-     * @type {number}
-     */
-    var BACK_CHANNEL_MAX_RETRIES: number;
-
-    /**
-     * A number in MS of how long we guess the maxmium amount of time a round trip
-     * to the server should take. In the future this could be substituted with a
-     * real measurement of the RTT.
-     * @type {number}
-     */
-    var RTT_ESTIMATE: number;
-
-    /**
-     * When retrying for an inactive channel, we will multiply the total delay by
-     * this number.
-     * @type {number}
-     */
-    var INACTIVE_CHANNEL_RETRY_FACTOR: number;
-
-    /**
-     * Enum type for identifying a BrowserChannel error.
-     * @enum {number}
-     */
-    enum Error { OK, REQUEST_FAILED, LOGGED_OUT, NO_DATA, UNKNOWN_SESSION_ID, STOP, NETWORK, BLOCKED, BAD_DATA, BAD_RESPONSE, ACTIVE_X_BLOCKED } 
-
-    /**
-     * Events fired by BrowserChannel and associated objects
-     * @type {Object}
-     */
-    var Event: Object;
-
-    /**
-     * Types of events which reveal information about the reachability of the
-     * server.
-     * @enum {number}
-     */
-    enum ServerReachability { REQUEST_MADE, REQUEST_SUCCEEDED, REQUEST_FAILED, BACK_CHANNEL_ACTIVITY } 
-
-    /**
-     * Enum that identifies events for statistics that are interesting to track.
-     * TODO(user) - Change name not to use Event or use EventTarget
-     * @enum {number}
-     */
-    enum Stat { CONNECT_ATTEMPT, ERROR_NETWORK, ERROR_OTHER, TEST_STAGE_ONE_START, CHANNEL_BLOCKED, TEST_STAGE_TWO_START, TEST_STAGE_TWO_DATA_ONE, TEST_STAGE_TWO_DATA_TWO, TEST_STAGE_TWO_DATA_BOTH, TEST_STAGE_ONE_FAILED, TEST_STAGE_TWO_FAILED, PROXY, NOPROXY, REQUEST_UNKNOWN_SESSION_ID, REQUEST_BAD_STATUS, REQUEST_INCOMPLETE_DATA, REQUEST_BAD_DATA, REQUEST_NO_DATA, REQUEST_TIMEOUT, BACKCHANNEL_MISSING, BACKCHANNEL_DEAD, BROWSER_OFFLINE, ACTIVE_X_BLOCKED } 
-
-    /**
-     * The normal response for forward channel requests.
-     * Used only before version 8 of the protocol.
-     * @type {string}
-     */
-    var MAGIC_RESPONSE_COOKIE: string;
-
-    /**
-     * A guess at a cutoff at which to no longer assume the backchannel is dead
-     * when we are slow to receive data. Number in bytes.
-     *
-     * Assumption: The worst bandwidth we work on is 50 kilobits/sec
-     * 50kbits/sec * (1 byte / 8 bits) * 6 sec dead backchannel timeout
-     * @type {number}
-     */
-    var OUTSTANDING_DATA_BACKCHANNEL_RETRY_CUTOFF: number;
-
-    /**
-     * Allows the application to set an execution hooks for when BrowserChannel
-     * starts processing requests. This is useful to track timing or logging
-     * special information. The function takes no parameters and return void.
-     * @param {Function} startHook  The function for the start hook.
-     */
-    function setStartThreadExecutionHook(startHook: Function): void;
-
-    /**
-     * Allows the application to set an execution hooks for when BrowserChannel
-     * stops processing requests. This is useful to track timing or logging
-     * special information. The function takes no parameters and return void.
-     * @param {Function} endHook  The function for the end hook.
-     */
-    function setEndThreadExecutionHook(endHook: Function): void;
-
-    /**
-     * Instantiates a ChannelRequest with the given parameters. Overidden in tests.
-     *
-     * @param {goog.net.BrowserChannel|goog.net.BrowserTestChannel} channel
-     *     The BrowserChannel that owns this request.
-     * @param {goog.net.ChannelDebug} channelDebug A ChannelDebug to use for
-     *     logging.
-     * @param {string=} opt_sessionId  The session id for the channel.
-     * @param {string|number=} opt_requestId  The request id for this request.
-     * @param {number=} opt_retryId  The retry id for this request.
-     * @return {goog.net.ChannelRequest} The created channel request.
-     */
-    function createChannelRequest(channel: any /*goog.net.BrowserChannel|goog.net.BrowserTestChannel*/, channelDebug: goog.net.ChannelDebug, opt_sessionId?: string, opt_requestId?: any /*string|number*/, opt_retryId?: number): goog.net.ChannelRequest;
-
-    /**
-     * Wrapper around SafeTimeout which calls the start and end execution hooks
-     * with a try...finally block.
-     * @param {Function} fn The callback function.
-     * @param {number} ms The time in MS for the timer.
-     * @return {number} The ID of the timer.
-     */
-    function setTimeout(fn: Function, ms: number): number;
-
-    /**
-     * Helper function to call the start hook
-     */
-    function onStartExecution(): void;
-
-    /**
-     * Helper function to call the end hook
-     */
-    function onEndExecution(): void;
-
-    /**
-     * Returns the singleton event target for stat events.
-     * @return {goog.events.EventTarget} The event target for stat events.
-     */
-    function getStatEventTarget(): goog.events.EventTarget;
-
-    /**
-     * Helper function to call the stat event callback.
-     * @param {goog.net.BrowserChannel.Stat} stat The stat.
-     */
-    function notifyStatEvent(stat: goog.net.BrowserChannel.Stat): void;
-
-    /**
-     * Helper function to notify listeners about POST request performance.
-     *
-     * @param {number} size Number of characters in the POST data.
-     * @param {number} rtt The amount of time from POST start to response.
-     * @param {number} retries The number of times the POST had to be retried.
-     */
-    function notifyTimingEvent(size: number, rtt: number, retries: number): void;
-
-    /**
-     * A LogSaver that can be used to accumulate all the debug logs for
-     * BrowserChannels so they can be sent to the server when a problem is
-     * detected.
-     */
-    var LogSaver: any /*missing*/;
-
-    /**
-     * Simple container class for a (mapId, map) pair.
-     * @param {number} mapId The id for this map.
-     * @param {Object|goog.structs.Map} map The map itself.
-     * @param {Object=} opt_context The context associated with the map.
-     * @constructor
-     * @final
-     */
-    class QueuedMap {
-        /**
-         * Simple container class for a (mapId, map) pair.
-         * @param {number} mapId The id for this map.
-         * @param {Object|goog.structs.Map} map The map itself.
-         * @param {Object=} opt_context The context associated with the map.
-         * @constructor
-         * @final
-         */
-        constructor(mapId: number, map: any /*Object|goog.structs.Map*/, opt_context?: Object);
-    }
-
-    /**
-     * Event class for goog.net.BrowserChannel.Event.STAT_EVENT
-     *
-     * @param {goog.events.EventTarget} eventTarget The stat event target for
-           the browser channel.
-     * @param {goog.net.BrowserChannel.Stat} stat The stat.
-     * @constructor
-     * @extends {goog.events.Event}
-     * @final
-     */
-    class StatEvent extends goog.events.Event {
-        /**
-         * Event class for goog.net.BrowserChannel.Event.STAT_EVENT
-         *
-         * @param {goog.events.EventTarget} eventTarget The stat event target for
-         the browser channel.
-         * @param {goog.net.BrowserChannel.Stat} stat The stat.
-         * @constructor
-         * @extends {goog.events.Event}
-         * @final
-         */
-        constructor(eventTarget: goog.events.EventTarget, stat: goog.net.BrowserChannel.Stat);
-    }
-
-    /**
-     * Event class for goog.net.BrowserChannel.Event.TIMING_EVENT
-     *
-     * @param {goog.events.EventTarget} target The stat event target for
-           the browser channel.
-     * @param {number} size The number of characters in the POST data.
-     * @param {number} rtt The total round trip time from POST to response in MS.
-     * @param {number} retries The number of times the POST had to be retried.
-     * @constructor
-     * @extends {goog.events.Event}
-     * @final
-     */
-    class TimingEvent extends goog.events.Event {
-        /**
-         * Event class for goog.net.BrowserChannel.Event.TIMING_EVENT
-         *
-         * @param {goog.events.EventTarget} target The stat event target for
-         the browser channel.
-         * @param {number} size The number of characters in the POST data.
-         * @param {number} rtt The total round trip time from POST to response in MS.
-         * @param {number} retries The number of times the POST had to be retried.
-         * @constructor
-         * @extends {goog.events.Event}
-         * @final
-         */
-        constructor(target: goog.events.EventTarget, size: number, rtt: number, retries: number);
-    }
-
-    /**
-     * Event class for goog.net.BrowserChannel.Event.SERVER_REACHABILITY_EVENT.
-     *
-     * @param {goog.events.EventTarget} target The stat event target for
-           the browser channel.
-     * @param {goog.net.BrowserChannel.ServerReachability} reachabilityType The
-     *     reachability event type.
-     * @constructor
-     * @extends {goog.events.Event}
-     * @final
-     */
-    class ServerReachabilityEvent extends goog.events.Event {
-        /**
-         * Event class for goog.net.BrowserChannel.Event.SERVER_REACHABILITY_EVENT.
-         *
-         * @param {goog.events.EventTarget} target The stat event target for
-         the browser channel.
-         * @param {goog.net.BrowserChannel.ServerReachability} reachabilityType The
-         *     reachability event type.
-         * @constructor
-         * @extends {goog.events.Event}
-         * @final
-         */
-        constructor(target: goog.events.EventTarget, reachabilityType: goog.net.BrowserChannel.ServerReachability);
-    }
-
-    /**
-     * Abstract base class for the browser channel handler
-     * @constructor
-     */
-    class Handler {
-        /**
-         * Abstract base class for the browser channel handler
-         * @constructor
-         */
-        constructor();
-    
-        /**
-         * Callback handler for when a batch of response arrays is received from the
-         * server.
-         * @type {?function(!goog.net.BrowserChannel, !Array.<!Array>)}
-         */
-        channelHandleMultipleArrays: (_0: goog.net.BrowserChannel, _1: any[][]) => any /*missing*/;
-    
-        /**
-         * Whether it's okay to make a request to the server. A handler can return
-         * false if the channel should fail. For example, if the user has logged out,
-         * the handler may want all requests to fail immediately.
-         * @param {goog.net.BrowserChannel} browserChannel The browser channel.
-         * @return {goog.net.BrowserChannel.Error} An error code. The code should
-         * return goog.net.BrowserChannel.Error.OK to indicate it's okay. Any other
-         * error code will cause a failure.
-         */
-        okToMakeRequest(browserChannel: goog.net.BrowserChannel): goog.net.BrowserChannel.Error;
-    
-        /**
-         * Indicates the BrowserChannel has successfully negotiated with the server
-         * and can now send and receive data.
-         * @param {goog.net.BrowserChannel} browserChannel The browser channel.
-         */
-        channelOpened(browserChannel: goog.net.BrowserChannel): void;
-    
-        /**
-         * New input is available for the application to process.
-         *
-         * @param {goog.net.BrowserChannel} browserChannel The browser channel.
-         * @param {Array} array The data array.
-         */
-        channelHandleArray(browserChannel: goog.net.BrowserChannel, array: any[]): void;
-    
-        /**
-         * Indicates maps were successfully sent on the BrowserChannel.
-         *
-         * @param {goog.net.BrowserChannel} browserChannel The browser channel.
-         * @param {Array.<goog.net.BrowserChannel.QueuedMap>} deliveredMaps The
-         *     array of maps that have been delivered to the server. This is a direct
-         *     reference to the internal BrowserChannel array, so a copy should be made
-         *     if the caller desires a reference to the data.
-         */
-        channelSuccess(browserChannel: goog.net.BrowserChannel, deliveredMaps: goog.net.BrowserChannel.QueuedMap[]): void;
-    
-        /**
-         * Indicates an error occurred on the BrowserChannel.
-         *
-         * @param {goog.net.BrowserChannel} browserChannel The browser channel.
-         * @param {goog.net.BrowserChannel.Error} error The error code.
-         */
-        channelError(browserChannel: goog.net.BrowserChannel, error: goog.net.BrowserChannel.Error): void;
-    
-        /**
-         * Indicates the BrowserChannel is closed. Also notifies about which maps,
-         * if any, that may not have been delivered to the server.
-         * @param {goog.net.BrowserChannel} browserChannel The browser channel.
-         * @param {Array.<goog.net.BrowserChannel.QueuedMap>=} opt_pendingMaps The
-         *     array of pending maps, which may or may not have been delivered to the
-         *     server.
-         * @param {Array.<goog.net.BrowserChannel.QueuedMap>=} opt_undeliveredMaps
-         *     The array of undelivered maps, which have definitely not been delivered
-         *     to the server.
-         */
-        channelClosed(browserChannel: goog.net.BrowserChannel, opt_pendingMaps?: goog.net.BrowserChannel.QueuedMap[], opt_undeliveredMaps?: goog.net.BrowserChannel.QueuedMap[]): void;
-    
-        /**
-         * Gets any parameters that should be added at the time another connection is
-         * made to the server.
-         * @param {goog.net.BrowserChannel} browserChannel The browser channel.
-         * @return {Object} Extra parameter keys and values to add to the
-         *                  requests.
-         */
-        getAdditionalParams(browserChannel: goog.net.BrowserChannel): Object;
-    
-        /**
-         * Gets the URI of an image that can be used to test network connectivity.
-         * @param {goog.net.BrowserChannel} browserChannel The browser channel.
-         * @return {goog.Uri?} A custom URI to load for the network test.
-         */
-        getNetworkTestImageUri(browserChannel: goog.net.BrowserChannel): goog.Uri;
-    
-        /**
-         * Gets whether this channel is currently active. This is used to determine the
-         * length of time to wait before retrying.
-         * @param {goog.net.BrowserChannel} browserChannel The browser channel.
-         * @return {boolean} Whether the channel is currently active.
-         */
-        isActive(browserChannel: goog.net.BrowserChannel): boolean;
-    
-        /**
-         * Called by the channel if enumeration of the map throws an exception.
-         * @param {goog.net.BrowserChannel} browserChannel The browser channel.
-         * @param {Object} map The map that can't be enumerated.
-         */
-        badMapError(browserChannel: goog.net.BrowserChannel, map: Object): void;
-    
-        /**
-         * Allows the handler to override a host prefix provided by the server.  Will
-         * be called whenever the channel has received such a prefix and is considering
-         * its use.
-         * @param {?string} serverHostPrefix The host prefix provided by the server.
-         * @return {?string} The host prefix the client should use.
-         */
-        correctHostPrefix(serverHostPrefix: string): string;
-    }
-}
-
-declare module goog.net.BrowserChannel.Event {
-
-    /**
-     * Stat Event that fires when things of interest happen that may be useful for
-     * applications to know about for stats or debugging purposes. This event fires
-     * on the EventTarget returned by getStatEventTarget.
-     */
-    var STAT_EVENT: any /*missing*/;
-
-    /**
-     * An event that fires when POST requests complete successfully, indicating
-     * the size of the POST and the round trip time.
-     * This event fires on the EventTarget returned by getStatEventTarget.
-     */
-    var TIMING_EVENT: any /*missing*/;
-
-    /**
-     * The type of event that occurs every time some information about how reachable
-     * the server is is discovered.
-     */
-    var SERVER_REACHABILITY_EVENT: any /*missing*/;
-}
-
-declare module goog.net.BrowserChannel.LogSaver {
-
-    /**
-     * Returns whether the LogSaver is enabled.
-     * @return {boolean} Whether saving is enabled or disabled.
-     */
-    function isEnabled(): boolean;
-
-    /**
-     * Enables of disables the LogSaver.
-     * @param {boolean} enable Whether to enable or disable saving.
-     */
-    function setEnabled(enable: boolean): void;
-
-    /**
-     * Adds a log record.
-     * @param {goog.log.LogRecord} logRecord the LogRecord.
-     */
-    function addLogRecord(logRecord: goog.log.LogRecord): void;
-
-    /**
-     * Returns the log as a single string.
-     * @return {string} The log as a single string.
-     */
-    function getBuffer(): string;
-
-    /**
-     * Clears the buffer
-     */
-    function clearBuffer(): void;
-}
 
 declare module goog.net {
 
@@ -730,9 +295,9 @@ declare module goog.net {
          * Sets a new parser for the response payload. A custom parser may be set to
          * avoid using eval(), for example. By default, the parser uses
          * {@code goog.json.unsafeParse}.
-         * @param {!googstring.Parser} parser Parser.
+         * @param {!goog.string.Parser} parser Parser.
          */
-        setParser(parser: googstring.Parser): void;
+        setParser(parser: goog.string.Parser): void;
     
         /**
          * Callback from BrowserTestChannel for when the channel is finished.
@@ -874,5 +439,440 @@ declare module goog.net {
          */
         shouldUseSecondaryDomains(): boolean;
     }
+}
+
+declare module goog.net.BrowserChannel {
+
+    /**
+     * Simple container class for a (mapId, map) pair.
+     * @param {number} mapId The id for this map.
+     * @param {Object|goog.structs.Map} map The map itself.
+     * @param {Object=} opt_context The context associated with the map.
+     * @constructor
+     * @final
+     */
+    class QueuedMap {
+        /**
+         * Simple container class for a (mapId, map) pair.
+         * @param {number} mapId The id for this map.
+         * @param {Object|goog.structs.Map} map The map itself.
+         * @param {Object=} opt_context The context associated with the map.
+         * @constructor
+         * @final
+         */
+        constructor(mapId: number, map: any /*Object|goog.structs.Map*/, opt_context?: Object);
+    }
+
+    /**
+     * Event class for goog.net.BrowserChannel.Event.STAT_EVENT
+     *
+     * @param {goog.events.EventTarget} eventTarget The stat event target for
+           the browser channel.
+     * @param {goog.net.BrowserChannel.Stat} stat The stat.
+     * @constructor
+     * @extends {goog.events.Event}
+     * @final
+     */
+    class StatEvent extends goog.events.Event {
+        /**
+         * Event class for goog.net.BrowserChannel.Event.STAT_EVENT
+         *
+         * @param {goog.events.EventTarget} eventTarget The stat event target for
+         the browser channel.
+         * @param {goog.net.BrowserChannel.Stat} stat The stat.
+         * @constructor
+         * @extends {goog.events.Event}
+         * @final
+         */
+        constructor(eventTarget: goog.events.EventTarget, stat: goog.net.BrowserChannel.Stat);
+    }
+
+    /**
+     * Event class for goog.net.BrowserChannel.Event.TIMING_EVENT
+     *
+     * @param {goog.events.EventTarget} target The stat event target for
+           the browser channel.
+     * @param {number} size The number of characters in the POST data.
+     * @param {number} rtt The total round trip time from POST to response in MS.
+     * @param {number} retries The number of times the POST had to be retried.
+     * @constructor
+     * @extends {goog.events.Event}
+     * @final
+     */
+    class TimingEvent extends goog.events.Event {
+        /**
+         * Event class for goog.net.BrowserChannel.Event.TIMING_EVENT
+         *
+         * @param {goog.events.EventTarget} target The stat event target for
+         the browser channel.
+         * @param {number} size The number of characters in the POST data.
+         * @param {number} rtt The total round trip time from POST to response in MS.
+         * @param {number} retries The number of times the POST had to be retried.
+         * @constructor
+         * @extends {goog.events.Event}
+         * @final
+         */
+        constructor(target: goog.events.EventTarget, size: number, rtt: number, retries: number);
+    }
+
+    /**
+     * Event class for goog.net.BrowserChannel.Event.SERVER_REACHABILITY_EVENT.
+     *
+     * @param {goog.events.EventTarget} target The stat event target for
+           the browser channel.
+     * @param {goog.net.BrowserChannel.ServerReachability} reachabilityType The
+     *     reachability event type.
+     * @constructor
+     * @extends {goog.events.Event}
+     * @final
+     */
+    class ServerReachabilityEvent extends goog.events.Event {
+        /**
+         * Event class for goog.net.BrowserChannel.Event.SERVER_REACHABILITY_EVENT.
+         *
+         * @param {goog.events.EventTarget} target The stat event target for
+         the browser channel.
+         * @param {goog.net.BrowserChannel.ServerReachability} reachabilityType The
+         *     reachability event type.
+         * @constructor
+         * @extends {goog.events.Event}
+         * @final
+         */
+        constructor(target: goog.events.EventTarget, reachabilityType: goog.net.BrowserChannel.ServerReachability);
+    }
+
+    /**
+     * Abstract base class for the browser channel handler
+     * @constructor
+     */
+    class Handler {
+        /**
+         * Abstract base class for the browser channel handler
+         * @constructor
+         */
+        constructor();
+    
+        /**
+         * Callback handler for when a batch of response arrays is received from the
+         * server.
+         * @type {?function(!goog.net.BrowserChannel, !Array.<!Array>)}
+         */
+        channelHandleMultipleArrays: (_0: goog.net.BrowserChannel, _1: any[][]) => any /*missing*/;
+    
+        /**
+         * Whether it's okay to make a request to the server. A handler can return
+         * false if the channel should fail. For example, if the user has logged out,
+         * the handler may want all requests to fail immediately.
+         * @param {goog.net.BrowserChannel} browserChannel The browser channel.
+         * @return {goog.net.BrowserChannel.Error} An error code. The code should
+         * return goog.net.BrowserChannel.Error.OK to indicate it's okay. Any other
+         * error code will cause a failure.
+         */
+        okToMakeRequest(browserChannel: goog.net.BrowserChannel): goog.net.BrowserChannel.Error;
+    
+        /**
+         * Indicates the BrowserChannel has successfully negotiated with the server
+         * and can now send and receive data.
+         * @param {goog.net.BrowserChannel} browserChannel The browser channel.
+         */
+        channelOpened(browserChannel: goog.net.BrowserChannel): void;
+    
+        /**
+         * New input is available for the application to process.
+         *
+         * @param {goog.net.BrowserChannel} browserChannel The browser channel.
+         * @param {Array} array The data array.
+         */
+        channelHandleArray(browserChannel: goog.net.BrowserChannel, array: any[]): void;
+    
+        /**
+         * Indicates maps were successfully sent on the BrowserChannel.
+         *
+         * @param {goog.net.BrowserChannel} browserChannel The browser channel.
+         * @param {Array.<goog.net.BrowserChannel.QueuedMap>} deliveredMaps The
+         *     array of maps that have been delivered to the server. This is a direct
+         *     reference to the internal BrowserChannel array, so a copy should be made
+         *     if the caller desires a reference to the data.
+         */
+        channelSuccess(browserChannel: goog.net.BrowserChannel, deliveredMaps: goog.net.BrowserChannel.QueuedMap[]): void;
+    
+        /**
+         * Indicates an error occurred on the BrowserChannel.
+         *
+         * @param {goog.net.BrowserChannel} browserChannel The browser channel.
+         * @param {goog.net.BrowserChannel.Error} error The error code.
+         */
+        channelError(browserChannel: goog.net.BrowserChannel, error: goog.net.BrowserChannel.Error): void;
+    
+        /**
+         * Indicates the BrowserChannel is closed. Also notifies about which maps,
+         * if any, that may not have been delivered to the server.
+         * @param {goog.net.BrowserChannel} browserChannel The browser channel.
+         * @param {Array.<goog.net.BrowserChannel.QueuedMap>=} opt_pendingMaps The
+         *     array of pending maps, which may or may not have been delivered to the
+         *     server.
+         * @param {Array.<goog.net.BrowserChannel.QueuedMap>=} opt_undeliveredMaps
+         *     The array of undelivered maps, which have definitely not been delivered
+         *     to the server.
+         */
+        channelClosed(browserChannel: goog.net.BrowserChannel, opt_pendingMaps?: goog.net.BrowserChannel.QueuedMap[], opt_undeliveredMaps?: goog.net.BrowserChannel.QueuedMap[]): void;
+    
+        /**
+         * Gets any parameters that should be added at the time another connection is
+         * made to the server.
+         * @param {goog.net.BrowserChannel} browserChannel The browser channel.
+         * @return {Object} Extra parameter keys and values to add to the
+         *                  requests.
+         */
+        getAdditionalParams(browserChannel: goog.net.BrowserChannel): Object;
+    
+        /**
+         * Gets the URI of an image that can be used to test network connectivity.
+         * @param {goog.net.BrowserChannel} browserChannel The browser channel.
+         * @return {goog.Uri?} A custom URI to load for the network test.
+         */
+        getNetworkTestImageUri(browserChannel: goog.net.BrowserChannel): goog.Uri;
+    
+        /**
+         * Gets whether this channel is currently active. This is used to determine the
+         * length of time to wait before retrying.
+         * @param {goog.net.BrowserChannel} browserChannel The browser channel.
+         * @return {boolean} Whether the channel is currently active.
+         */
+        isActive(browserChannel: goog.net.BrowserChannel): boolean;
+    
+        /**
+         * Called by the channel if enumeration of the map throws an exception.
+         * @param {goog.net.BrowserChannel} browserChannel The browser channel.
+         * @param {Object} map The map that can't be enumerated.
+         */
+        badMapError(browserChannel: goog.net.BrowserChannel, map: Object): void;
+    
+        /**
+         * Allows the handler to override a host prefix provided by the server.  Will
+         * be called whenever the channel has received such a prefix and is considering
+         * its use.
+         * @param {?string} serverHostPrefix The host prefix provided by the server.
+         * @return {?string} The host prefix the client should use.
+         */
+        correctHostPrefix(serverHostPrefix: string): string;
+    }
+
+    /**
+     * The latest protocol version that this class supports. We request this version
+     * from the server when opening the connection. Should match
+     * com.google.net.browserchannel.BrowserChannel.LATEST_CHANNEL_VERSION.
+     * @type {number}
+     */
+    var LATEST_CHANNEL_VERSION: number;
+
+    /**
+     * Enum type for the browser channel state machine.
+     * @enum {number}
+     */
+    enum State { CLOSED, INIT, OPENING, OPENED } 
+
+    /**
+     * The timeout in milliseconds for a forward channel request.
+     * @type {number}
+     */
+    var FORWARD_CHANNEL_RETRY_TIMEOUT: number;
+
+    /**
+     * Maximum number of attempts to connect to the server for back channel
+     * requests.
+     * @type {number}
+     */
+    var BACK_CHANNEL_MAX_RETRIES: number;
+
+    /**
+     * A number in MS of how long we guess the maxmium amount of time a round trip
+     * to the server should take. In the future this could be substituted with a
+     * real measurement of the RTT.
+     * @type {number}
+     */
+    var RTT_ESTIMATE: number;
+
+    /**
+     * When retrying for an inactive channel, we will multiply the total delay by
+     * this number.
+     * @type {number}
+     */
+    var INACTIVE_CHANNEL_RETRY_FACTOR: number;
+
+    /**
+     * Enum type for identifying a BrowserChannel error.
+     * @enum {number}
+     */
+    enum Error { OK, REQUEST_FAILED, LOGGED_OUT, NO_DATA, UNKNOWN_SESSION_ID, STOP, NETWORK, BLOCKED, BAD_DATA, BAD_RESPONSE, ACTIVE_X_BLOCKED } 
+
+    /**
+     * Events fired by BrowserChannel and associated objects
+     * @type {Object}
+     */
+    var Event: Object;
+
+    /**
+     * Types of events which reveal information about the reachability of the
+     * server.
+     * @enum {number}
+     */
+    enum ServerReachability { REQUEST_MADE, REQUEST_SUCCEEDED, REQUEST_FAILED, BACK_CHANNEL_ACTIVITY } 
+
+    /**
+     * Enum that identifies events for statistics that are interesting to track.
+     * TODO(user) - Change name not to use Event or use EventTarget
+     * @enum {number}
+     */
+    enum Stat { CONNECT_ATTEMPT, ERROR_NETWORK, ERROR_OTHER, TEST_STAGE_ONE_START, CHANNEL_BLOCKED, TEST_STAGE_TWO_START, TEST_STAGE_TWO_DATA_ONE, TEST_STAGE_TWO_DATA_TWO, TEST_STAGE_TWO_DATA_BOTH, TEST_STAGE_ONE_FAILED, TEST_STAGE_TWO_FAILED, PROXY, NOPROXY, REQUEST_UNKNOWN_SESSION_ID, REQUEST_BAD_STATUS, REQUEST_INCOMPLETE_DATA, REQUEST_BAD_DATA, REQUEST_NO_DATA, REQUEST_TIMEOUT, BACKCHANNEL_MISSING, BACKCHANNEL_DEAD, BROWSER_OFFLINE, ACTIVE_X_BLOCKED } 
+
+    /**
+     * The normal response for forward channel requests.
+     * Used only before version 8 of the protocol.
+     * @type {string}
+     */
+    var MAGIC_RESPONSE_COOKIE: string;
+
+    /**
+     * A guess at a cutoff at which to no longer assume the backchannel is dead
+     * when we are slow to receive data. Number in bytes.
+     *
+     * Assumption: The worst bandwidth we work on is 50 kilobits/sec
+     * 50kbits/sec * (1 byte / 8 bits) * 6 sec dead backchannel timeout
+     * @type {number}
+     */
+    var OUTSTANDING_DATA_BACKCHANNEL_RETRY_CUTOFF: number;
+
+    /**
+     * Allows the application to set an execution hooks for when BrowserChannel
+     * starts processing requests. This is useful to track timing or logging
+     * special information. The function takes no parameters and return void.
+     * @param {Function} startHook  The function for the start hook.
+     */
+    function setStartThreadExecutionHook(startHook: Function): void;
+
+    /**
+     * Allows the application to set an execution hooks for when BrowserChannel
+     * stops processing requests. This is useful to track timing or logging
+     * special information. The function takes no parameters and return void.
+     * @param {Function} endHook  The function for the end hook.
+     */
+    function setEndThreadExecutionHook(endHook: Function): void;
+
+    /**
+     * Instantiates a ChannelRequest with the given parameters. Overidden in tests.
+     *
+     * @param {goog.net.BrowserChannel|goog.net.BrowserTestChannel} channel
+     *     The BrowserChannel that owns this request.
+     * @param {goog.net.ChannelDebug} channelDebug A ChannelDebug to use for
+     *     logging.
+     * @param {string=} opt_sessionId  The session id for the channel.
+     * @param {string|number=} opt_requestId  The request id for this request.
+     * @param {number=} opt_retryId  The retry id for this request.
+     * @return {goog.net.ChannelRequest} The created channel request.
+     */
+    function createChannelRequest(channel: any /*goog.net.BrowserChannel|goog.net.BrowserTestChannel*/, channelDebug: goog.net.ChannelDebug, opt_sessionId?: string, opt_requestId?: any /*string|number*/, opt_retryId?: number): goog.net.ChannelRequest;
+
+    /**
+     * Wrapper around SafeTimeout which calls the start and end execution hooks
+     * with a try...finally block.
+     * @param {Function} fn The callback function.
+     * @param {number} ms The time in MS for the timer.
+     * @return {number} The ID of the timer.
+     */
+    function setTimeout(fn: Function, ms: number): number;
+
+    /**
+     * Helper function to call the start hook
+     */
+    function onStartExecution(): void;
+
+    /**
+     * Helper function to call the end hook
+     */
+    function onEndExecution(): void;
+
+    /**
+     * Returns the singleton event target for stat events.
+     * @return {goog.events.EventTarget} The event target for stat events.
+     */
+    function getStatEventTarget(): goog.events.EventTarget;
+
+    /**
+     * Helper function to call the stat event callback.
+     * @param {goog.net.BrowserChannel.Stat} stat The stat.
+     */
+    function notifyStatEvent(stat: goog.net.BrowserChannel.Stat): void;
+
+    /**
+     * Helper function to notify listeners about POST request performance.
+     *
+     * @param {number} size Number of characters in the POST data.
+     * @param {number} rtt The amount of time from POST start to response.
+     * @param {number} retries The number of times the POST had to be retried.
+     */
+    function notifyTimingEvent(size: number, rtt: number, retries: number): void;
+
+    /**
+     * A LogSaver that can be used to accumulate all the debug logs for
+     * BrowserChannels so they can be sent to the server when a problem is
+     * detected.
+     */
+    var LogSaver: any /*missing*/;
+}
+
+declare module goog.net.BrowserChannel.Event {
+
+    /**
+     * Stat Event that fires when things of interest happen that may be useful for
+     * applications to know about for stats or debugging purposes. This event fires
+     * on the EventTarget returned by getStatEventTarget.
+     */
+    var STAT_EVENT: any /*missing*/;
+
+    /**
+     * An event that fires when POST requests complete successfully, indicating
+     * the size of the POST and the round trip time.
+     * This event fires on the EventTarget returned by getStatEventTarget.
+     */
+    var TIMING_EVENT: any /*missing*/;
+
+    /**
+     * The type of event that occurs every time some information about how reachable
+     * the server is is discovered.
+     */
+    var SERVER_REACHABILITY_EVENT: any /*missing*/;
+}
+
+declare module goog.net.BrowserChannel.LogSaver {
+
+    /**
+     * Returns whether the LogSaver is enabled.
+     * @return {boolean} Whether saving is enabled or disabled.
+     */
+    function isEnabled(): boolean;
+
+    /**
+     * Enables of disables the LogSaver.
+     * @param {boolean} enable Whether to enable or disable saving.
+     */
+    function setEnabled(enable: boolean): void;
+
+    /**
+     * Adds a log record.
+     * @param {goog.log.LogRecord} logRecord the LogRecord.
+     */
+    function addLogRecord(logRecord: goog.log.LogRecord): void;
+
+    /**
+     * Returns the log as a single string.
+     * @return {string} The log as a single string.
+     */
+    function getBuffer(): string;
+
+    /**
+     * Clears the buffer
+     */
+    function clearBuffer(): void;
 }
 

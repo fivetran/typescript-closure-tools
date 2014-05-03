@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:02:51 PDT 2014
+// Generated Sat May  3 12:18:41 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/string/string.d.ts" />
@@ -51,68 +51,6 @@
 /// <reference path="../../goog/net/xmlhttp.d.ts" />
 /// <reference path="../../goog/net/eventtype.d.ts" />
 /// <reference path="../../goog/net/xhrio.d.ts" />
-
-declare module goog.debug.ErrorReporter.ExceptionEvent {
-
-    /**
-     * Event type for notifying of a logged exception.
-     * @type {string}
-     */
-    var TYPE: string;
-}
-
-declare module goog.debug.ErrorReporter {
-
-    /**
-     * Installs an error reporter to catch all JavaScript errors raised.
-     *
-     * @param {string} loggingUrl The URL to which the errors caught will be
-     *     reported.
-     * @param {function(!Error, !Object.<string, string>)=}
-     *     opt_contextProvider When a report is to be sent to the server,
-     *     this method will be called, and given an opportunity to modify the
-     *     context object before submission to the server.
-     * @param {boolean=} opt_noAutoProtect Whether to automatically add handlers for
-     *     onerror and to protect entry points.  If apps have other error reporting
-     *     facilities, it may make sense for them to set these up themselves and use
-     *     the ErrorReporter just for transmission of reports.
-     * @return {!goog.debug.ErrorReporter} The error reporter.
-     */
-    function install(loggingUrl: string, opt_contextProvider?: (_0: Error, _1: { [key: string]: string }) => any /*missing*/, opt_noAutoProtect?: boolean): goog.debug.ErrorReporter;
-
-    /**
-     * Default implementation of XHR sender interface.
-     *
-     * @param {string} uri URI to make request to.
-     * @param {string} method Send method.
-     * @param {string} content Post data.
-     * @param {Object|goog.structs.Map=} opt_headers Map of headers to add to the
-     *     request.
-     */
-    function defaultXhrSender(uri: string, method: string, content: string, opt_headers?: any /*Object|goog.structs.Map*/): void;
-
-    /**
-     * Event broadcast when an exception is logged.
-     * @param {Error} error The exception that was was reported.
-     * @param {!Object.<string, string>} context The context values sent to the
-     *     server alongside this error.
-     * @constructor
-     * @extends {goog.events.Event}
-     * @final
-     */
-    class ExceptionEvent extends goog.events.Event {
-        /**
-         * Event broadcast when an exception is logged.
-         * @param {Error} error The exception that was was reported.
-         * @param {!Object.<string, string>} context The context values sent to the
-         *     server alongside this error.
-         * @constructor
-         * @extends {goog.events.Event}
-         * @final
-         */
-        constructor(error: Error, context: { [key: string]: string });
-    }
-}
 
 declare module goog.debug {
 
@@ -222,5 +160,67 @@ declare module goog.debug {
          */
         setAdditionalArguments(urlArgs: { [key: string]: string }): void;
     }
+}
+
+declare module goog.debug.ErrorReporter {
+
+    /**
+     * Event broadcast when an exception is logged.
+     * @param {Error} error The exception that was was reported.
+     * @param {!Object.<string, string>} context The context values sent to the
+     *     server alongside this error.
+     * @constructor
+     * @extends {goog.events.Event}
+     * @final
+     */
+    class ExceptionEvent extends goog.events.Event {
+        /**
+         * Event broadcast when an exception is logged.
+         * @param {Error} error The exception that was was reported.
+         * @param {!Object.<string, string>} context The context values sent to the
+         *     server alongside this error.
+         * @constructor
+         * @extends {goog.events.Event}
+         * @final
+         */
+        constructor(error: Error, context: { [key: string]: string });
+    }
+
+    /**
+     * Installs an error reporter to catch all JavaScript errors raised.
+     *
+     * @param {string} loggingUrl The URL to which the errors caught will be
+     *     reported.
+     * @param {function(!Error, !Object.<string, string>)=}
+     *     opt_contextProvider When a report is to be sent to the server,
+     *     this method will be called, and given an opportunity to modify the
+     *     context object before submission to the server.
+     * @param {boolean=} opt_noAutoProtect Whether to automatically add handlers for
+     *     onerror and to protect entry points.  If apps have other error reporting
+     *     facilities, it may make sense for them to set these up themselves and use
+     *     the ErrorReporter just for transmission of reports.
+     * @return {!goog.debug.ErrorReporter} The error reporter.
+     */
+    function install(loggingUrl: string, opt_contextProvider?: (_0: Error, _1: { [key: string]: string }) => any /*missing*/, opt_noAutoProtect?: boolean): goog.debug.ErrorReporter;
+
+    /**
+     * Default implementation of XHR sender interface.
+     *
+     * @param {string} uri URI to make request to.
+     * @param {string} method Send method.
+     * @param {string} content Post data.
+     * @param {Object|goog.structs.Map=} opt_headers Map of headers to add to the
+     *     request.
+     */
+    function defaultXhrSender(uri: string, method: string, content: string, opt_headers?: any /*Object|goog.structs.Map*/): void;
+}
+
+declare module goog.debug.ErrorReporter.ExceptionEvent {
+
+    /**
+     * Event type for notifying of a logged exception.
+     * @type {string}
+     */
+    var TYPE: string;
 }
 

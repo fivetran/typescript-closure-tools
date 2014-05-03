@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:05:02 PDT 2014
+// Generated Sat May  3 12:20:54 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/string/typedstring.d.ts" />
@@ -7,48 +7,6 @@
 /// <reference path="../../goog/string/string.d.ts" />
 /// <reference path="../../goog/asserts/asserts.d.ts" />
 /// <reference path="../../goog/string/const.d.ts" />
-
-declare module goog.html.SafeStyle {
-
-    /**
-     * Creates a SafeStyle object from a compile-time constant string.
-     *
-     * {@code style} should be in the format
-     * {@code name: value; [name: value; ...]} and must not have any < or >
-     * characters in it. This is so that SafeStyle's contract is preserved,
-     * allowing the SafeStyle to correctly be interpreted as a sequence of CSS
-     * declarations and without affecting the syntactic structure of any
-     * surrounding CSS and HTML.
-     *
-     * This method performs basic sanity checks on the format of {@code style}
-     * but does not constrain the format of {@code name} and {@code value}, except
-     * for disallowing tag characters.
-     *
-     * @param {!googstring.Const} style A compile-time-constant string from which
-     *     to create a SafeStyle.
-     * @return {!goog.html.SafeStyle} A SafeStyle object initialized to
-     *     {@code style}.
-     */
-    function fromConstant(style: googstring.Const): goog.html.SafeStyle;
-
-    /**
-     * Performs a runtime check that the provided object is indeed a
-     * SafeStyle object, and returns its value.
-     *
-     * @param {!goog.html.SafeStyle} safeStyle The object to extract from.
-     * @return {string} The safeStyle object's contained string, unless
-     *     the run-time type check fails. In that case, {@code unwrap} returns an
-     *     innocuous string, or, if assertions are enabled, throws
-     *     {@code goog.asserts.AssertionError}.
-     */
-    function unwrap(safeStyle: goog.html.SafeStyle): string;
-
-    /**
-     * A SafeStyle instance corresponding to the empty string.
-     * @const {!goog.html.SafeStyle}
-     */
-    var EMPTY: any /*missing*/;
-}
 
 declare module goog.html {
 
@@ -133,9 +91,9 @@ declare module goog.html {
      * @constructor
      * @final
      * @struct
-     * @implements {googstring.TypedString}
+     * @implements {goog.string.TypedString}
      */
-    class SafeStyle implements googstring.TypedString {
+    class SafeStyle implements goog.string.TypedString {
         /**
          * A string-like object which represents a sequence of CSS declarations
          * ({@code propertyName1: propertyvalue1; propertyName2: propertyValue2; ...})
@@ -217,9 +175,51 @@ declare module goog.html {
          * @constructor
          * @final
          * @struct
-         * @implements {googstring.TypedString}
+         * @implements {goog.string.TypedString}
          */
         constructor();
     }
+}
+
+declare module goog.html.SafeStyle {
+
+    /**
+     * Creates a SafeStyle object from a compile-time constant string.
+     *
+     * {@code style} should be in the format
+     * {@code name: value; [name: value; ...]} and must not have any < or >
+     * characters in it. This is so that SafeStyle's contract is preserved,
+     * allowing the SafeStyle to correctly be interpreted as a sequence of CSS
+     * declarations and without affecting the syntactic structure of any
+     * surrounding CSS and HTML.
+     *
+     * This method performs basic sanity checks on the format of {@code style}
+     * but does not constrain the format of {@code name} and {@code value}, except
+     * for disallowing tag characters.
+     *
+     * @param {!goog.string.Const} style A compile-time-constant string from which
+     *     to create a SafeStyle.
+     * @return {!goog.html.SafeStyle} A SafeStyle object initialized to
+     *     {@code style}.
+     */
+    function fromConstant(style: goog.string.Const): goog.html.SafeStyle;
+
+    /**
+     * Performs a runtime check that the provided object is indeed a
+     * SafeStyle object, and returns its value.
+     *
+     * @param {!goog.html.SafeStyle} safeStyle The object to extract from.
+     * @return {string} The safeStyle object's contained string, unless
+     *     the run-time type check fails. In that case, {@code unwrap} returns an
+     *     innocuous string, or, if assertions are enabled, throws
+     *     {@code goog.asserts.AssertionError}.
+     */
+    function unwrap(safeStyle: goog.html.SafeStyle): string;
+
+    /**
+     * A SafeStyle instance corresponding to the empty string.
+     * @const {!goog.html.SafeStyle}
+     */
+    var EMPTY: any /*missing*/;
 }
 

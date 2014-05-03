@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:00:06 PDT 2014
+// Generated Sat May  3 12:15:55 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -69,7 +69,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.Control}
      */
-    class Tab extends goog.ui.GoogControl {
+    class Tab extends goog.ui.Control {
         /**
          * Tab control, designed to be hosted in a {@link goog.ui.TabBar}.  The tab's
          * DOM may be different based on the configuration of the containing tab bar,

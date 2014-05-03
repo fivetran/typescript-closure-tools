@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:57:22 PDT 2014
+// Generated Sat May  3 12:13:09 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -65,49 +65,6 @@
 /// <reference path="../../goog/editor/range.d.ts" />
 /// <reference path="../../goog/uri/utils.d.ts" />
 /// <reference path="../../goog/editor/command.d.ts" />
-
-declare module goog.editor.Link {
-
-    /**
-     * Initialize a new link.
-     * @param {HTMLAnchorElement} anchor The anchor element.
-     * @param {string} url The initial URL.
-     * @param {string=} opt_target The target.
-     * @param {Array.<HTMLAnchorElement>=} opt_extraAnchors Extra anchors created
-     *     by the browser when parsing a selection.
-     * @return {!goog.editor.Link} The link.
-     */
-    function createNewLink(anchor: HTMLAnchorElement, url: string, opt_target?: string, opt_extraAnchors?: HTMLAnchorElement[]): goog.editor.Link;
-
-    /**
-     * Returns true if str could be a URL, false otherwise
-     *
-     * Ex: TR_Util.isLikelyUrl_("http://www.google.com") == true
-     *     TR_Util.isLikelyUrl_("www.google.com") == true
-     *
-     * @param {string} str String to check if it looks like a URL.
-     * @return {boolean} Whether str could be a URL.
-     */
-    function isLikelyUrl(str: string): boolean;
-
-    /**
-     * Returns true if str could be an email address, false otherwise
-     *
-     * Ex: goog.editor.Link.isLikelyEmailAddress_("some word") == false
-     *     goog.editor.Link.isLikelyEmailAddress_("foo@foo.com") == true
-     *
-     * @param {string} str String to test for being email address.
-     * @return {boolean} Whether "str" looks like an email address.
-     */
-    function isLikelyEmailAddress(str: string): boolean;
-
-    /**
-     * Determines whether or not a url is an email link.
-     * @param {string} url A url.
-     * @return {boolean} Whether the url is a mailto link.
-     */
-    function isMailto(url: string): boolean;
-}
 
 declare module goog.editor {
 
@@ -194,5 +151,48 @@ declare module goog.editor {
          */
         finishLinkCreation(field: goog.editor.Field): void;
     }
+}
+
+declare module goog.editor.Link {
+
+    /**
+     * Initialize a new link.
+     * @param {HTMLAnchorElement} anchor The anchor element.
+     * @param {string} url The initial URL.
+     * @param {string=} opt_target The target.
+     * @param {Array.<HTMLAnchorElement>=} opt_extraAnchors Extra anchors created
+     *     by the browser when parsing a selection.
+     * @return {!goog.editor.Link} The link.
+     */
+    function createNewLink(anchor: HTMLAnchorElement, url: string, opt_target?: string, opt_extraAnchors?: HTMLAnchorElement[]): goog.editor.Link;
+
+    /**
+     * Returns true if str could be a URL, false otherwise
+     *
+     * Ex: TR_Util.isLikelyUrl_("http://www.google.com") == true
+     *     TR_Util.isLikelyUrl_("www.google.com") == true
+     *
+     * @param {string} str String to check if it looks like a URL.
+     * @return {boolean} Whether str could be a URL.
+     */
+    function isLikelyUrl(str: string): boolean;
+
+    /**
+     * Returns true if str could be an email address, false otherwise
+     *
+     * Ex: goog.editor.Link.isLikelyEmailAddress_("some word") == false
+     *     goog.editor.Link.isLikelyEmailAddress_("foo@foo.com") == true
+     *
+     * @param {string} str String to test for being email address.
+     * @return {boolean} Whether "str" looks like an email address.
+     */
+    function isLikelyEmailAddress(str: string): boolean;
+
+    /**
+     * Determines whether or not a url is an email link.
+     * @param {string} url A url.
+     * @return {boolean} Whether the url is a mailto link.
+     */
+    function isMailto(url: string): boolean;
 }
 

@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:03:46 PDT 2014
+// Generated Sat May  3 12:19:37 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -77,7 +77,7 @@ declare module goog.testing {
      * @constructor
      * @extends {goog.testing.Mock}
      */
-    class LooseMock extends goog.testing.GoogMock {
+    class LooseMock extends goog.testing.Mock {
         /**
          * This is a mock that does not care about the order of method calls. As a
          * result, it won't throw exceptions until verify() is called. The only

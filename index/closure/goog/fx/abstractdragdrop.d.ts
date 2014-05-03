@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:56:25 PDT 2014
+// Generated Sat May  3 12:12:10 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -42,22 +42,6 @@
 /// <reference path="../../goog/fx/dragger.d.ts" />
 /// <reference path="../../goog/dom/classlist.d.ts" />
 
-declare module goog.fx.AbstractDragDrop {
-
-    /**
-     * Constants for event names
-     * @type {Object}
-     */
-    var EventType: Object;
-
-    /**
-     * Constant for distance threshold, in pixels, an element has to be moved to
-     * initiate a drag operation.
-     * @type {number}
-     */
-    var initDragDistanceThreshold: number;
-}
-
 declare module goog.fx {
 
     /**
@@ -76,7 +60,7 @@ declare module goog.fx {
      * @extends {goog.events.EventTarget}
      * @constructor
      */
-    class GoogAbstractDragDrop extends goog.events.EventTarget {
+    class AbstractDragDrop extends goog.events.EventTarget {
         /**
          * Abstract class that provides reusable functionality for implementing drag
          * and drop functionality.
@@ -352,8 +336,6 @@ declare module goog.fx {
         getEventPosition(event: goog.fx.DragEvent): goog.math.Coordinate;
     }
 
-    class AbstractDragDrop extends GoogAbstractDragDrop { }
-
     /**
      * Object representing a drag and drop event.
      *
@@ -453,5 +435,21 @@ declare module goog.fx {
          */
         setParent(parent: goog.fx.AbstractDragDrop): void;
     }
+}
+
+declare module goog.fx.AbstractDragDrop {
+
+    /**
+     * Constants for event names
+     * @type {Object}
+     */
+    var EventType: Object;
+
+    /**
+     * Constant for distance threshold, in pixels, an element has to be moved to
+     * initiate a drag operation.
+     * @type {number}
+     */
+    var initDragDistanceThreshold: number;
 }
 

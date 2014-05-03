@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:56:26 PDT 2014
+// Generated Sat May  3 12:12:12 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/fx/transition.d.ts" />
@@ -82,6 +82,6 @@ declare module goog.fx.css3 {
      * @extends {goog.fx.TransitionBase}
      * @constructor
      */
-    function Transition(element: Element, duration: number, initialStyle: Object, finalStyle: Object): void;
+    function Transition(element: Element, duration: number, initialStyle: Object, finalStyle: Object, transitions: any /* jsdoc error */): void;
 }
 

@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:59:52 PDT 2014
+// Generated Sat May  3 12:15:41 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -58,16 +58,6 @@
 /// <reference path="../../goog/ui/button.d.ts" />
 /// <reference path="../../goog/ui/cssnames.d.ts" />
 
-declare module goog.ui.Css3ButtonRenderer {
-
-    /**
-     * Default CSS class to be applied to the root element of components rendered
-     * by this renderer.
-     * @type {string}
-     */
-    var CSS_CLASS: string;
-}
-
 declare module goog.ui {
 
     /**
@@ -79,7 +69,7 @@ declare module goog.ui {
      * @extends {goog.ui.ButtonRenderer}
      * @final
      */
-    class Css3ButtonRenderer extends goog.ui.GoogButtonRenderer {
+    class Css3ButtonRenderer extends goog.ui.ButtonRenderer {
         /**
          * Custom renderer for {@link goog.ui.Button}s. Css3 buttons can contain
          * almost arbitrary HTML content, will flow like inline elements, but can be
@@ -91,5 +81,15 @@ declare module goog.ui {
          */
         constructor();
     }
+}
+
+declare module goog.ui.Css3ButtonRenderer {
+
+    /**
+     * Default CSS class to be applied to the root element of components rendered
+     * by this renderer.
+     * @type {string}
+     */
+    var CSS_CLASS: string;
 }
 

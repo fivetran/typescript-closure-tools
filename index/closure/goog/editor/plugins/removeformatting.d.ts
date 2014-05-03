@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:57:28 PDT 2014
+// Generated Sat May  3 12:13:15 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/dom/nodetype.d.ts" />
@@ -77,15 +77,6 @@
 /// <reference path="../../../goog/events/eventtarget.d.ts" />
 /// <reference path="../../../goog/editor/plugin.d.ts" />
 
-declare module goog.editor.plugins.RemoveFormatting {
-
-    /**
-     * The editor command this plugin in handling.
-     * @type {string}
-     */
-    var REMOVE_FORMATTING_COMMAND: string;
-}
-
 declare module goog.editor.plugins {
 
     /**
@@ -94,7 +85,7 @@ declare module goog.editor.plugins {
      * @extends {goog.editor.Plugin}
      * @final
      */
-    class RemoveFormatting extends goog.editor.GoogPlugin {
+    class RemoveFormatting extends goog.editor.Plugin {
         /**
          * A plugin to handle removing formatting from selected text.
          * @constructor
@@ -123,5 +114,14 @@ declare module goog.editor.plugins {
          */
         setRemoveFormattingFunc(removeFormattingFunc: (_0: string) => string): void;
     }
+}
+
+declare module goog.editor.plugins.RemoveFormatting {
+
+    /**
+     * The editor command this plugin in handling.
+     * @type {string}
+     */
+    var REMOVE_FORMATTING_COMMAND: string;
 }
 

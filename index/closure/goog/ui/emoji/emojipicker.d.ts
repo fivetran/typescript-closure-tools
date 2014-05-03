@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:00:10 PDT 2014
+// Generated Sat May  3 12:15:59 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/dom/nodetype.d.ts" />
@@ -75,30 +75,6 @@
 /// <reference path="../../../goog/debug/logger.d.ts" />
 /// <reference path="../../../goog/log/log.d.ts" />
 
-declare module goog.ui.emoji.EmojiPicker {
-
-    /**
-     * Default number of rows per grid of emoji.
-     *
-     * @type {number}
-     */
-    var DEFAULT_NUM_ROWS: number;
-
-    /**
-     * Default number of columns per grid of emoji.
-     *
-     * @type {number}
-     */
-    var DEFAULT_NUM_COLS: number;
-
-    /**
-     * Default location of the tabs in relation to the emoji grids.
-     *
-     * @type {goog.ui.TabPane.TabLocation}
-     */
-    var DEFAULT_TAB_LOCATION: goog.ui.TabPane.TabLocation;
-}
-
 declare module goog.ui.emoji {
 
     /**
@@ -125,7 +101,7 @@ declare module goog.ui.emoji {
      * @extends {goog.ui.Component}
      * @constructor
      */
-    class EmojiPicker extends goog.ui.GoogComponent {
+    class EmojiPicker extends goog.ui.Component {
         /**
          * Creates a new, empty emoji picker. An emoji picker is a grid of emoji, each
          * cell of the grid containing a single emoji. The picker may contain multiple
@@ -321,5 +297,29 @@ declare module goog.ui.emoji {
          */
         getTabPane(): goog.ui.TabPane;
     }
+}
+
+declare module goog.ui.emoji.EmojiPicker {
+
+    /**
+     * Default number of rows per grid of emoji.
+     *
+     * @type {number}
+     */
+    var DEFAULT_NUM_ROWS: number;
+
+    /**
+     * Default number of columns per grid of emoji.
+     *
+     * @type {number}
+     */
+    var DEFAULT_NUM_COLS: number;
+
+    /**
+     * Default location of the tabs in relation to the emoji grids.
+     *
+     * @type {goog.ui.TabPane.TabLocation}
+     */
+    var DEFAULT_TAB_LOCATION: goog.ui.TabPane.TabLocation;
 }
 

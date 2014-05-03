@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:01:45 PDT 2014
+// Generated Sat May  3 12:17:35 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/string/string.d.ts" />
@@ -26,15 +26,6 @@
 /// <reference path="../../goog/events/events.d.ts" />
 /// <reference path="../../goog/events/keycodes.d.ts" />
 /// <reference path="../../goog/events/eventtarget.d.ts" />
-
-declare module goog.events.KeyHandler {
-
-    /**
-     * Enum type for the events fired by the key handler
-     * @enum {string}
-     */
-    enum EventType { KEY } 
-}
 
 declare module goog.events {
 
@@ -105,7 +96,7 @@ declare module goog.events {
      * @extends {goog.events.BrowserEvent}
      * @final
      */
-    class KeyEvent extends goog.events.GoogBrowserEvent {
+    class KeyEvent extends goog.events.BrowserEvent {
         /**
          * This class is used for the goog.events.KeyHandler.EventType.KEY event and
          * it overrides the key code with the fixed key code.
@@ -119,5 +110,14 @@ declare module goog.events {
          */
         constructor(keyCode: number, charCode: number, repeat: boolean, browserEvent: Event);
     }
+}
+
+declare module goog.events.KeyHandler {
+
+    /**
+     * Enum type for the events fired by the key handler
+     * @enum {string}
+     */
+    enum EventType { KEY } 
 }
 

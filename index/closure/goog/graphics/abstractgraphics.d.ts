@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:02:08 PDT 2014
+// Generated Sat May  3 12:17:59 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -58,7 +58,7 @@ declare module goog.graphics {
      * @constructor
      * @extends {goog.ui.Component}
      */
-    class AbstractGraphics extends goog.ui.GoogComponent {
+    class AbstractGraphics extends goog.ui.Component {
         /**
          * Base class for the different graphics. You should never construct objects
          * of this class. Instead us goog.graphics.createGraphics

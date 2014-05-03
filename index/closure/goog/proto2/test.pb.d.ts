@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:56:06 PDT 2014
+// Generated Sat May  3 12:11:52 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -11,203 +11,6 @@
 /// <reference path="../../goog/proto2/descriptor.d.ts" />
 /// <reference path="../../goog/proto2/message.d.ts" />
 
-declare module proto2.TestAllTypes {
-
-    /**
-     * Enumeration NestedEnum.
-     * @enum {number}
-     */
-    enum NestedEnum { FOO, BAR, BAZ } 
-
-    /**
-     * Message NestedMessage.
-     * @constructor
-     * @extends {goog.proto2.Message}
-     * @final
-     */
-    class NestedMessage extends goog.proto2.GoogMessage {
-        /**
-         * Message NestedMessage.
-         * @constructor
-         * @extends {goog.proto2.Message}
-         * @final
-         */
-        constructor();
-    
-        /**
-         * Gets the value of the b field.
-         * @return {?number} The value.
-         */
-        getB(): number;
-    
-        /**
-         * Gets the value of the b field or the default value if not set.
-         * @return {number} The value.
-         */
-        getBOrDefault(): number;
-    
-        /**
-         * Sets the value of the b field.
-         * @param {number} value The value.
-         */
-        setB(value: number): void;
-    
-        /**
-         * @return {boolean} Whether the b field has a value.
-         */
-        hasB(): boolean;
-    
-        /**
-         * @return {number} The number of values in the b field.
-         */
-        bCount(): number;
-    
-        /**
-         * Clears the values in the b field.
-         */
-        clearB(): void;
-    
-        /**
-         * Gets the value of the c field.
-         * @return {?number} The value.
-         */
-        getC(): number;
-    
-        /**
-         * Gets the value of the c field or the default value if not set.
-         * @return {number} The value.
-         */
-        getCOrDefault(): number;
-    
-        /**
-         * Sets the value of the c field.
-         * @param {number} value The value.
-         */
-        setC(value: number): void;
-    
-        /**
-         * @return {boolean} Whether the c field has a value.
-         */
-        hasC(): boolean;
-    
-        /**
-         * @return {number} The number of values in the c field.
-         */
-        cCount(): number;
-    
-        /**
-         * Clears the values in the c field.
-         */
-        clearC(): void;
-    }
-
-    /**
-     * Message OptionalGroup.
-     * @constructor
-     * @extends {goog.proto2.Message}
-     * @final
-     */
-    class OptionalGroup extends goog.proto2.GoogMessage {
-        /**
-         * Message OptionalGroup.
-         * @constructor
-         * @extends {goog.proto2.Message}
-         * @final
-         */
-        constructor();
-    
-        /**
-         * Gets the value of the a field.
-         * @return {?number} The value.
-         */
-        getA(): number;
-    
-        /**
-         * Gets the value of the a field or the default value if not set.
-         * @return {number} The value.
-         */
-        getAOrDefault(): number;
-    
-        /**
-         * Sets the value of the a field.
-         * @param {number} value The value.
-         */
-        setA(value: number): void;
-    
-        /**
-         * @return {boolean} Whether the a field has a value.
-         */
-        hasA(): boolean;
-    
-        /**
-         * @return {number} The number of values in the a field.
-         */
-        aCount(): number;
-    
-        /**
-         * Clears the values in the a field.
-         */
-        clearA(): void;
-    }
-
-    /**
-     * Message RepeatedGroup.
-     * @constructor
-     * @extends {goog.proto2.Message}
-     * @final
-     */
-    class RepeatedGroup extends goog.proto2.GoogMessage {
-        /**
-         * Message RepeatedGroup.
-         * @constructor
-         * @extends {goog.proto2.Message}
-         * @final
-         */
-        constructor();
-    
-        /**
-         * Gets the value of the a field at the index given.
-         * @param {number} index The index to lookup.
-         * @return {?number} The value.
-         */
-        getA(index: number): number;
-    
-        /**
-         * Gets the value of the a field at the index given or the default value if not set.
-         * @param {number} index The index to lookup.
-         * @return {number} The value.
-         */
-        getAOrDefault(index: number): number;
-    
-        /**
-         * Adds a value to the a field.
-         * @param {number} value The value to add.
-         */
-        addA(value: number): void;
-    
-        /**
-         * Returns the array of values in the a field.
-         * @return {!Array.<number>} The values in the field.
-         */
-        aArray(): number[];
-    
-        /**
-         * @return {boolean} Whether the a field has a value.
-         */
-        hasA(): boolean;
-    
-        /**
-         * @return {number} The number of values in the a field.
-         */
-        aCount(): number;
-    
-        /**
-         * Clears the values in the a field.
-         */
-        clearA(): void;
-    }
-}
-
 declare module proto2 {
 
     /**
@@ -216,7 +19,7 @@ declare module proto2 {
      * @extends {goog.proto2.Message}
      * @final
      */
-    class TestAllTypes extends goog.proto2.GoogMessage {
+    class TestAllTypes extends goog.proto2.Message {
         /**
          * Message TestAllTypes.
          * @constructor
@@ -1712,7 +1515,7 @@ declare module proto2 {
      * @extends {goog.proto2.Message}
      * @final
      */
-    class TestDefaultParent extends goog.proto2.GoogMessage {
+    class TestDefaultParent extends goog.proto2.Message {
         /**
          * Message TestDefaultParent.
          * @constructor
@@ -1761,7 +1564,7 @@ declare module proto2 {
      * @extends {goog.proto2.Message}
      * @final
      */
-    class TestDefaultChild extends goog.proto2.GoogMessage {
+    class TestDefaultChild extends goog.proto2.Message {
         /**
          * Message TestDefaultChild.
          * @constructor
@@ -1803,5 +1606,202 @@ declare module proto2 {
          */
         clearFoo(): void;
     }
+}
+
+declare module proto2.TestAllTypes {
+
+    /**
+     * Message NestedMessage.
+     * @constructor
+     * @extends {goog.proto2.Message}
+     * @final
+     */
+    class NestedMessage extends goog.proto2.Message {
+        /**
+         * Message NestedMessage.
+         * @constructor
+         * @extends {goog.proto2.Message}
+         * @final
+         */
+        constructor();
+    
+        /**
+         * Gets the value of the b field.
+         * @return {?number} The value.
+         */
+        getB(): number;
+    
+        /**
+         * Gets the value of the b field or the default value if not set.
+         * @return {number} The value.
+         */
+        getBOrDefault(): number;
+    
+        /**
+         * Sets the value of the b field.
+         * @param {number} value The value.
+         */
+        setB(value: number): void;
+    
+        /**
+         * @return {boolean} Whether the b field has a value.
+         */
+        hasB(): boolean;
+    
+        /**
+         * @return {number} The number of values in the b field.
+         */
+        bCount(): number;
+    
+        /**
+         * Clears the values in the b field.
+         */
+        clearB(): void;
+    
+        /**
+         * Gets the value of the c field.
+         * @return {?number} The value.
+         */
+        getC(): number;
+    
+        /**
+         * Gets the value of the c field or the default value if not set.
+         * @return {number} The value.
+         */
+        getCOrDefault(): number;
+    
+        /**
+         * Sets the value of the c field.
+         * @param {number} value The value.
+         */
+        setC(value: number): void;
+    
+        /**
+         * @return {boolean} Whether the c field has a value.
+         */
+        hasC(): boolean;
+    
+        /**
+         * @return {number} The number of values in the c field.
+         */
+        cCount(): number;
+    
+        /**
+         * Clears the values in the c field.
+         */
+        clearC(): void;
+    }
+
+    /**
+     * Message OptionalGroup.
+     * @constructor
+     * @extends {goog.proto2.Message}
+     * @final
+     */
+    class OptionalGroup extends goog.proto2.Message {
+        /**
+         * Message OptionalGroup.
+         * @constructor
+         * @extends {goog.proto2.Message}
+         * @final
+         */
+        constructor();
+    
+        /**
+         * Gets the value of the a field.
+         * @return {?number} The value.
+         */
+        getA(): number;
+    
+        /**
+         * Gets the value of the a field or the default value if not set.
+         * @return {number} The value.
+         */
+        getAOrDefault(): number;
+    
+        /**
+         * Sets the value of the a field.
+         * @param {number} value The value.
+         */
+        setA(value: number): void;
+    
+        /**
+         * @return {boolean} Whether the a field has a value.
+         */
+        hasA(): boolean;
+    
+        /**
+         * @return {number} The number of values in the a field.
+         */
+        aCount(): number;
+    
+        /**
+         * Clears the values in the a field.
+         */
+        clearA(): void;
+    }
+
+    /**
+     * Message RepeatedGroup.
+     * @constructor
+     * @extends {goog.proto2.Message}
+     * @final
+     */
+    class RepeatedGroup extends goog.proto2.Message {
+        /**
+         * Message RepeatedGroup.
+         * @constructor
+         * @extends {goog.proto2.Message}
+         * @final
+         */
+        constructor();
+    
+        /**
+         * Gets the value of the a field at the index given.
+         * @param {number} index The index to lookup.
+         * @return {?number} The value.
+         */
+        getA(index: number): number;
+    
+        /**
+         * Gets the value of the a field at the index given or the default value if not set.
+         * @param {number} index The index to lookup.
+         * @return {number} The value.
+         */
+        getAOrDefault(index: number): number;
+    
+        /**
+         * Adds a value to the a field.
+         * @param {number} value The value to add.
+         */
+        addA(value: number): void;
+    
+        /**
+         * Returns the array of values in the a field.
+         * @return {!Array.<number>} The values in the field.
+         */
+        aArray(): number[];
+    
+        /**
+         * @return {boolean} Whether the a field has a value.
+         */
+        hasA(): boolean;
+    
+        /**
+         * @return {number} The number of values in the a field.
+         */
+        aCount(): number;
+    
+        /**
+         * Clears the values in the a field.
+         */
+        clearA(): void;
+    }
+
+    /**
+     * Enumeration NestedEnum.
+     * @enum {number}
+     */
+    enum NestedEnum { FOO, BAR, BAZ } 
 }
 

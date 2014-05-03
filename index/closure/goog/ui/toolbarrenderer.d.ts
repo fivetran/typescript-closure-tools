@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:00:47 PDT 2014
+// Generated Sat May  3 12:16:37 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/a11y/aria/roles.d.ts" />
@@ -59,16 +59,6 @@
 /// <reference path="../../goog/ui/toolbarseparatorrenderer.d.ts" />
 /// <reference path="../../goog/ui/separator.d.ts" />
 
-declare module goog.ui.ToolbarRenderer {
-
-    /**
-     * Default CSS class to be applied to the root element of toolbars rendered
-     * by this renderer.
-     * @type {string}
-     */
-    var CSS_CLASS: string;
-}
-
 declare module goog.ui {
 
     /**
@@ -77,7 +67,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.ContainerRenderer}
      */
-    class ToolbarRenderer extends goog.ui.GoogContainerRenderer {
+    class ToolbarRenderer extends goog.ui.ContainerRenderer {
         /**
          * Default renderer for {@link goog.ui.Toolbar}s, based on {@link
          * goog.ui.ContainerRenderer}.
@@ -86,5 +76,15 @@ declare module goog.ui {
          */
         constructor();
     }
+}
+
+declare module goog.ui.ToolbarRenderer {
+
+    /**
+     * Default CSS class to be applied to the root element of toolbars rendered
+     * by this renderer.
+     * @type {string}
+     */
+    var CSS_CLASS: string;
 }
 

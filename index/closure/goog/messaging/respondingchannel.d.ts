@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:59:03 PDT 2014
+// Generated Sat May  3 12:14:51 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/disposable/idisposable.d.ts" />
@@ -52,7 +52,7 @@ declare module goog.messaging {
      * @constructor
      * @extends {goog.Disposable}
      */
-    class RespondingChannel extends goog.GoogDisposable {
+    class RespondingChannel extends goog.Disposable {
         /**
          * Creates a new RespondingChannel wrapping a single MessageChannel.
          * @param {goog.messaging.MessageChannel} messageChannel The messageChannel to

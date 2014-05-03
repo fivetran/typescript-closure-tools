@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:58:35 PDT 2014
+// Generated Sat May  3 12:14:23 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/string/string.d.ts" />
@@ -35,6 +35,39 @@
 /// <reference path="../../../goog/disposable/disposable.d.ts" />
 /// <reference path="../../../goog/net/xpc/transport.d.ts" />
 /// <reference path="../../../goog/reflect/reflect.d.ts" />
+
+declare module goog.net.xpc {
+
+    /**
+     * NIX method transport.
+     *
+     * NOTE(user): NIX method tested in all IE versions starting from 6.0.
+     *
+     * @param {goog.net.xpc.CrossPageChannel} channel The channel this transport
+     *     belongs to.
+     * @param {goog.dom.DomHelper=} opt_domHelper The dom helper to use for finding
+     *     the correct window.
+     * @constructor
+     * @extends {goog.net.xpc.Transport}
+     * @final
+     */
+    class NixTransport extends goog.net.xpc.Transport {
+        /**
+         * NIX method transport.
+         *
+         * NOTE(user): NIX method tested in all IE versions starting from 6.0.
+         *
+         * @param {goog.net.xpc.CrossPageChannel} channel The channel this transport
+         *     belongs to.
+         * @param {goog.dom.DomHelper=} opt_domHelper The dom helper to use for finding
+         *     the correct window.
+         * @constructor
+         * @extends {goog.net.xpc.Transport}
+         * @final
+         */
+        constructor(channel: goog.net.xpc.CrossPageChannel, opt_domHelper?: goog.dom.DomHelper);
+    }
+}
 
 declare module goog.net.xpc.NixTransport {
 
@@ -84,38 +117,5 @@ declare module goog.net.xpc.NixTransport {
      * @return {boolean} Whether window.opener behavior is compatible with NIX.
      */
     function isNixSupported(): boolean;
-}
-
-declare module goog.net.xpc {
-
-    /**
-     * NIX method transport.
-     *
-     * NOTE(user): NIX method tested in all IE versions starting from 6.0.
-     *
-     * @param {goog.net.xpc.CrossPageChannel} channel The channel this transport
-     *     belongs to.
-     * @param {goog.dom.DomHelper=} opt_domHelper The dom helper to use for finding
-     *     the correct window.
-     * @constructor
-     * @extends {goog.net.xpc.Transport}
-     * @final
-     */
-    class NixTransport extends goog.net.xpc.Transport {
-        /**
-         * NIX method transport.
-         *
-         * NOTE(user): NIX method tested in all IE versions starting from 6.0.
-         *
-         * @param {goog.net.xpc.CrossPageChannel} channel The channel this transport
-         *     belongs to.
-         * @param {goog.dom.DomHelper=} opt_domHelper The dom helper to use for finding
-         *     the correct window.
-         * @constructor
-         * @extends {goog.net.xpc.Transport}
-         * @final
-         */
-        constructor(channel: goog.net.xpc.CrossPageChannel, opt_domHelper?: goog.dom.DomHelper);
-    }
 }
 

@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:01:45 PDT 2014
+// Generated Sat May  3 12:17:35 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -37,15 +37,6 @@
 /// <reference path="../../goog/events/browserevent.d.ts" />
 /// <reference path="../../goog/events/events.d.ts" />
 /// <reference path="../../goog/events/eventtarget.d.ts" />
-
-declare module goog.events.MouseWheelHandler {
-
-    /**
-     * Enum type for the events fired by the mouse wheel handler.
-     * @enum {string}
-     */
-    enum EventType { MOUSEWHEEL } 
-}
 
 declare module goog.events {
 
@@ -105,7 +96,7 @@ declare module goog.events {
      * @extends {goog.events.BrowserEvent}
      * @final
      */
-    class MouseWheelEvent extends goog.events.GoogBrowserEvent {
+    class MouseWheelEvent extends goog.events.BrowserEvent {
         /**
          * A base class for mouse wheel events. This is used with the
          * MouseWheelHandler.
@@ -122,5 +113,14 @@ declare module goog.events {
          */
         constructor(detail: number, browserEvent: Event, deltaX: number, deltaY: number);
     }
+}
+
+declare module goog.events.MouseWheelHandler {
+
+    /**
+     * Enum type for the events fired by the mouse wheel handler.
+     * @enum {string}
+     */
+    enum EventType { MOUSEWHEEL } 
 }
 

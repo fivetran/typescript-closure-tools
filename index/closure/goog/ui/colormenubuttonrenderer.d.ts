@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:00:21 PDT 2014
+// Generated Sat May  3 12:16:11 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/string/string.d.ts" />
@@ -71,6 +71,23 @@
 /// <reference path="../../goog/ui/menu.d.ts" />
 /// <reference path="../../goog/ui/menubuttonrenderer.d.ts" />
 
+declare module goog.ui {
+
+    /**
+     * Renderer for {@link goog.ui.ColorMenuButton}s.
+     * @constructor
+     * @extends {goog.ui.MenuButtonRenderer}
+     */
+    class ColorMenuButtonRenderer extends goog.ui.MenuButtonRenderer {
+        /**
+         * Renderer for {@link goog.ui.ColorMenuButton}s.
+         * @constructor
+         * @extends {goog.ui.MenuButtonRenderer}
+         */
+        constructor();
+    }
+}
+
 declare module goog.ui.ColorMenuButtonRenderer {
 
     /**
@@ -95,24 +112,5 @@ declare module goog.ui.ColorMenuButtonRenderer {
      * @param {*} value New value; assumed to be a color spec string.
      */
     function setCaptionValue(caption: Element, value: any): void;
-}
-
-declare module goog.ui {
-
-    /**
-     * Renderer for {@link goog.ui.ColorMenuButton}s.
-     * @constructor
-     * @extends {goog.ui.MenuButtonRenderer}
-     */
-    class GoogColorMenuButtonRenderer extends goog.ui.GoogMenuButtonRenderer {
-        /**
-         * Renderer for {@link goog.ui.ColorMenuButton}s.
-         * @constructor
-         * @extends {goog.ui.MenuButtonRenderer}
-         */
-        constructor();
-    }
-
-    class ColorMenuButtonRenderer extends GoogColorMenuButtonRenderer { }
 }
 

@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:56:05 PDT 2014
+// Generated Sat May  3 12:11:51 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -13,18 +13,6 @@
 /// <reference path="../../goog/proto2/serializer.d.ts" />
 /// <reference path="../../goog/json/json.d.ts" />
 /// <reference path="../../goog/math/math.d.ts" />
-
-declare module goog.proto2.TextFormatSerializer.Parser {
-
-    /**
-     * Parse NaN, positive infinity, or negative infinity from a string.
-     * @param {string} identifier An identifier string to check.
-     * @return {?number} Infinity, negative infinity, NaN, or null if none
-     *     of the constants could be parsed.
-     * @private.
-     */
-    function parseNumericalConstant_(identifier: string): number;
-}
 
 declare module goog.proto2 {
 
@@ -86,5 +74,17 @@ declare module goog.proto2.TextFormatSerializer {
          */
         getError(): string;
     }
+}
+
+declare module goog.proto2.TextFormatSerializer.Parser {
+
+    /**
+     * Parse NaN, positive infinity, or negative infinity from a string.
+     * @param {string} identifier An identifier string to check.
+     * @return {?number} Infinity, negative infinity, NaN, or null if none
+     *     of the constants could be parsed.
+     * @private.
+     */
+    function parseNumericalConstant_(identifier: string): number;
 }
 

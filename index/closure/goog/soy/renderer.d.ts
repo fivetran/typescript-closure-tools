@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:56:16 PDT 2014
+// Generated Sat May  3 12:12:01 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -30,14 +30,6 @@
 /// <reference path="../../goog/math/coordinate.d.ts" />
 /// <reference path="../../goog/dom/dom.d.ts" />
 /// <reference path="../../goog/soy/soy.d.ts" />
-
-declare module goog.soy.Renderer {
-
-    /**
-     * @typedef {Array.<{template: string, data: Object, ijData: Object}>}
-     */
-    interface SavedTemplateRender extends Array<{ template: string; data: Object; ijData: Object }> { }
-}
 
 declare module goog.soy {
 
@@ -146,7 +138,7 @@ declare module goog.soy {
          * @return {string} The return value of rendering the template directly.
          * @template ARG_TYPES
          */
-        renderText(): void;
+        renderText(template: any /* jsdoc error */, opt_templateData?: any /* jsdoc error */): void;
     
         /**
          * Renders a strict Soy template and returns the output SanitizedContent object.
@@ -177,7 +169,7 @@ declare module goog.soy {
          * @return {!goog.html.SafeHtml}
          * @template ARG_TYPES
          */
-        renderSafeHtml(): void;
+        renderSafeHtml(template: any /* jsdoc error */, opt_templateData?: any /* jsdoc error */): void;
     
         /**
          * @return {!goog.soy.Renderer.SavedTemplateRender} Saved template data for
@@ -194,5 +186,13 @@ declare module goog.soy {
          */
         handleRender(opt_node?: Node): void;
     }
+}
+
+declare module goog.soy.Renderer {
+
+    /**
+     * @typedef {Array.<{template: string, data: Object, ijData: Object}>}
+     */
+    interface SavedTemplateRender extends Array<{ template: string; data: Object; ijData: Object }> { }
 }
 

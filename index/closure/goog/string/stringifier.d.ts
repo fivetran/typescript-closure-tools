@@ -1,8 +1,8 @@
-// Generated Fri May  2 15:02:25 PDT 2014
+// Generated Sat May  3 12:18:15 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 
-declare module googstring {
+declare module goog.string {
 
     /**
      * An interface for serializing objects into strings.

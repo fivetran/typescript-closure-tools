@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:02:07 PDT 2014
+// Generated Sat May  3 12:17:57 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/dom/nodetype.d.ts" />
@@ -22,7 +22,7 @@ declare module goog.graphics.ext {
      * @extends {goog.graphics.Path}
      * @final
      */
-    class Path extends goog.graphics.GoogPath {
+    class Path extends goog.graphics.Path {
         /**
          * Creates a path object
          * @constructor

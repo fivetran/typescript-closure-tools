@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:59:31 PDT 2014
+// Generated Sat May  3 12:15:20 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/dom/nodetype.d.ts" />
@@ -104,7 +104,7 @@ declare module goog.ui.editor {
      * @extends {goog.ui.editor.AbstractDialog}
      * @final
      */
-    class EquationEditorDialog extends goog.ui.editor.GoogAbstractDialog {
+    class EquationEditorDialog extends goog.ui.editor.AbstractDialog {
         /**
          * Equation editor dialog (based on goog.ui.editor.AbstractDialog).
          * @param {Object} context The context that this dialog runs in.

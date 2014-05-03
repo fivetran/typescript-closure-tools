@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:04:10 PDT 2014
+// Generated Sat May  3 12:20:01 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/testing/mockinterface.d.ts" />
@@ -23,27 +23,6 @@
 /// <reference path="../../goog/math/coordinate.d.ts" />
 /// <reference path="../../goog/dom/dom.d.ts" />
 /// <reference path="../../goog/testing/mockmatchers.d.ts" />
-
-declare module goog.testing.Mock {
-
-    /**
-     * Option that may be passed when constructing function, method, and
-     * constructor mocks. Indicates that the expected calls should be accepted in
-     * any order.
-     * @const
-     * @type {number}
-     */
-    var LOOSE: number;
-
-    /**
-     * Option that may be passed when constructing function, method, and
-     * constructor mocks. Indicates that the expected calls should be accepted in
-     * the recorded order only.
-     * @const
-     * @type {number}
-     */
-    var STRICT: number;
-}
 
 declare module goog.testing {
 
@@ -142,7 +121,7 @@ declare module goog.testing {
      * @constructor
      * @implements {goog.testing.MockInterface}
      */
-    class GoogMock implements goog.testing.MockInterface {
+    class Mock implements goog.testing.MockInterface {
         /**
          * The base class for a mock object.
          * @param {Object|Function} objectToMock The object that should be mocked, or
@@ -323,7 +302,26 @@ declare module goog.testing {
          */
         $throwCallException(name: string, args: any[], opt_expectation?: goog.testing.MockExpectation): void;
     }
+}
 
-    class Mock extends GoogMock { }
+declare module goog.testing.Mock {
+
+    /**
+     * Option that may be passed when constructing function, method, and
+     * constructor mocks. Indicates that the expected calls should be accepted in
+     * any order.
+     * @const
+     * @type {number}
+     */
+    var LOOSE: number;
+
+    /**
+     * Option that may be passed when constructing function, method, and
+     * constructor mocks. Indicates that the expected calls should be accepted in
+     * the recorded order only.
+     * @const
+     * @type {number}
+     */
+    var STRICT: number;
 }
 

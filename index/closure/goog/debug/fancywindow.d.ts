@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:02:56 PDT 2014
+// Generated Sat May  3 12:18:47 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/string/string.d.ts" />
@@ -41,6 +41,31 @@
 /// <reference path="../../goog/math/coordinate.d.ts" />
 /// <reference path="../../goog/dom/dom.d.ts" />
 
+declare module goog.debug {
+
+    /**
+     * Provides a Fancy extension to the DebugWindow class.  Allows filtering based
+     * on loggers and levels.
+     *
+     * @param {string=} opt_identifier Idenitifier for this logging class.
+     * @param {string=} opt_prefix Prefix pre-pended to messages.
+     * @constructor
+     * @extends {goog.debug.DebugWindow}
+     */
+    class FancyWindow extends goog.debug.DebugWindow {
+        /**
+         * Provides a Fancy extension to the DebugWindow class.  Allows filtering based
+         * on loggers and levels.
+         *
+         * @param {string=} opt_identifier Idenitifier for this logging class.
+         * @param {string=} opt_prefix Prefix pre-pended to messages.
+         * @constructor
+         * @extends {goog.debug.DebugWindow}
+         */
+        constructor(opt_identifier?: string, opt_prefix?: string);
+    }
+}
+
 declare module goog.debug.FancyWindow {
 
     /**
@@ -54,30 +79,5 @@ declare module goog.debug.FancyWindow {
      * @type {string}
      */
     var LOCAL_STORE_PREFIX: string;
-}
-
-declare module goog.debug {
-
-    /**
-     * Provides a Fancy extension to the DebugWindow class.  Allows filtering based
-     * on loggers and levels.
-     *
-     * @param {string=} opt_identifier Idenitifier for this logging class.
-     * @param {string=} opt_prefix Prefix pre-pended to messages.
-     * @constructor
-     * @extends {goog.debug.DebugWindow}
-     */
-    class FancyWindow extends goog.debug.GoogDebugWindow {
-        /**
-         * Provides a Fancy extension to the DebugWindow class.  Allows filtering based
-         * on loggers and levels.
-         *
-         * @param {string=} opt_identifier Idenitifier for this logging class.
-         * @param {string=} opt_prefix Prefix pre-pended to messages.
-         * @constructor
-         * @extends {goog.debug.DebugWindow}
-         */
-        constructor(opt_identifier?: string, opt_prefix?: string);
-    }
 }
 

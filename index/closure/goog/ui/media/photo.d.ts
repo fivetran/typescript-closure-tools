@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:00:16 PDT 2014
+// Generated Sat May  3 12:16:05 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/dom/nodetype.d.ts" />
@@ -54,31 +54,6 @@
 /// <reference path="../../../goog/ui/control.d.ts" />
 /// <reference path="../../../goog/ui/media/media.d.ts" />
 
-declare module goog.ui.media.Photo {
-
-    /**
-     * Default CSS class to be applied to the root element of components rendered
-     * by this renderer.
-     *
-     * @type {string}
-     */
-    var CSS_CLASS: string;
-
-    /**
-     * A static convenient method to construct a goog.ui.media.Media control out of
-     * a photo {@code goog.ui.media.MediaModel}. It sets it as the data model
-     * goog.ui.media.Photo renderer uses, sets the states supported by the renderer,
-     * and returns a Control that binds everything together. This is what you
-     * should be using for constructing Photos, except if you need finer control
-     * over the configuration.
-     *
-     * @param {goog.ui.media.MediaModel} dataModel The photo data model.
-     * @return {goog.ui.media.Media} A goog.ui.Control subclass with the photo
-     *     renderer.
-     */
-    function newControl(dataModel: goog.ui.media.MediaModel): goog.ui.media.Media;
-}
-
 declare module goog.ui.media {
 
     /**
@@ -114,5 +89,30 @@ declare module goog.ui.media {
          */
         constructor();
     }
+}
+
+declare module goog.ui.media.Photo {
+
+    /**
+     * Default CSS class to be applied to the root element of components rendered
+     * by this renderer.
+     *
+     * @type {string}
+     */
+    var CSS_CLASS: string;
+
+    /**
+     * A static convenient method to construct a goog.ui.media.Media control out of
+     * a photo {@code goog.ui.media.MediaModel}. It sets it as the data model
+     * goog.ui.media.Photo renderer uses, sets the states supported by the renderer,
+     * and returns a Control that binds everything together. This is what you
+     * should be using for constructing Photos, except if you need finer control
+     * over the configuration.
+     *
+     * @param {goog.ui.media.MediaModel} dataModel The photo data model.
+     * @return {goog.ui.media.Media} A goog.ui.Control subclass with the photo
+     *     renderer.
+     */
+    function newControl(dataModel: goog.ui.media.MediaModel): goog.ui.media.Media;
 }
 

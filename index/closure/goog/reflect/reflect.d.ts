@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:01:29 PDT 2014
+// Generated Sat May  3 12:17:19 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 
@@ -28,7 +28,7 @@ declare module goog.reflect {
      * </code>
      * @type {!Function}
      */
-    function sinkValue(): void;
+    function sinkValue(x: any /* jsdoc error */): void;
 
     /**
      * Check if a property can be accessed without throwing an exception.

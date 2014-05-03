@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:59:12 PDT 2014
+// Generated Sat May  3 12:15:01 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -59,16 +59,6 @@
 /// <reference path="../../goog/ui/control.d.ts" />
 /// <reference path="../../goog/ui/button.d.ts" />
 
-declare module goog.ui.ImagelessButtonRenderer {
-
-    /**
-     * Default CSS class to be applied to the root element of components rendered
-     * by this renderer.
-     * @type {string}
-     */
-    var CSS_CLASS: string;
-}
-
 declare module goog.ui {
 
     /**
@@ -81,7 +71,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.CustomButtonRenderer}
      */
-    class ImagelessButtonRenderer extends goog.ui.GoogCustomButtonRenderer {
+    class ImagelessButtonRenderer extends goog.ui.CustomButtonRenderer {
         /**
          * Custom renderer for {@link goog.ui.Button}s. Imageless buttons can contain
          * almost arbitrary HTML content, will flow like inline elements, but can be
@@ -94,5 +84,15 @@ declare module goog.ui {
          */
         constructor();
     }
+}
+
+declare module goog.ui.ImagelessButtonRenderer {
+
+    /**
+     * Default CSS class to be applied to the root element of components rendered
+     * by this renderer.
+     * @type {string}
+     */
+    var CSS_CLASS: string;
 }
 

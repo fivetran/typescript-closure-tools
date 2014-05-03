@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:58:41 PDT 2014
+// Generated Sat May  3 12:14:29 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/string/string.d.ts" />
@@ -49,87 +49,6 @@
 /// <reference path="../../goog/math/coordinate.d.ts" />
 /// <reference path="../../goog/dom/dom.d.ts" />
 /// <reference path="../../goog/net/eventtype.d.ts" />
-
-declare module goog.net.IframeIo {
-
-    /**
-     * Prefix for frame names
-     * @type {string}
-     */
-    var FRAME_NAME_PREFIX: string;
-
-    /**
-     * Suffix that is added to inner frames used for sending requests in non-IE
-     * browsers
-     * @type {string}
-     */
-    var INNER_FRAME_SUFFIX: string;
-
-    /**
-     * The number of milliseconds after a request is completed to dispose the
-     * iframes.  This can be done lazily so we wait long enough for any processing
-     * that occurred as a result of the response to finish.
-     * @type {number}
-     */
-    var IFRAME_DISPOSE_DELAY_MS: number;
-
-    /**
-     * Static send that creates a short lived instance of IframeIo to send the
-     * request.
-     * @param {goog.Uri|string} uri Uri of the request, it is up the caller to
-     *     manage query string params.
-     * @param {Function=} opt_callback Event handler for when request is completed.
-     * @param {string=} opt_method Default is GET, POST uses a form to submit the
-     *     request.
-     * @param {boolean=} opt_noCache Append a timestamp to the request to avoid
-     *     caching.
-     * @param {Object|goog.structs.Map=} opt_data Map of key-value pairs that
-     *     will be posted to the server via the iframe's form.
-     */
-    function send(uri: any /*goog.Uri|string*/, opt_callback?: Function, opt_method?: string, opt_noCache?: boolean, opt_data?: any /*Object|goog.structs.Map*/): void;
-
-    /**
-     * Find an iframe by name (assumes the context is goog.global since that is
-     * where IframeIo's iframes are kept).
-     * @param {string} fname The name to find.
-     * @return {HTMLIFrameElement} The iframe element with that name.
-     */
-    function getIframeByName(fname: string): HTMLIFrameElement;
-
-    /**
-     * Find an instance of the IframeIo object by name.
-     * @param {string} fname The name to find.
-     * @return {goog.net.IframeIo} The instance of IframeIo.
-     */
-    function getInstanceByName(fname: string): goog.net.IframeIo;
-
-    /**
-     * Handles incremental data and routes it to the correct iframeIo instance.
-     * The HTML page requested by the IframeIo instance should contain script blocks
-     * that call an externed reference to this method.
-     * @param {Window} win The window object.
-     * @param {Object} data The data object.
-     */
-    function handleIncrementalData(win: Window, data: Object): void;
-
-    /**
-     * Class for representing incremental data events.
-     * @param {Object} data The data associated with the event.
-     * @extends {goog.events.Event}
-     * @constructor
-     * @final
-     */
-    class IncrementalDataEvent extends goog.events.Event {
-        /**
-         * Class for representing incremental data events.
-         * @param {Object} data The data associated with the event.
-         * @extends {goog.events.Event}
-         * @constructor
-         * @final
-         */
-        constructor(data: Object);
-    }
-}
 
 declare module goog.net {
 
@@ -318,5 +237,86 @@ declare module goog.net {
          */
         getRequestIframe(): HTMLIFrameElement;
     }
+}
+
+declare module goog.net.IframeIo {
+
+    /**
+     * Class for representing incremental data events.
+     * @param {Object} data The data associated with the event.
+     * @extends {goog.events.Event}
+     * @constructor
+     * @final
+     */
+    class IncrementalDataEvent extends goog.events.Event {
+        /**
+         * Class for representing incremental data events.
+         * @param {Object} data The data associated with the event.
+         * @extends {goog.events.Event}
+         * @constructor
+         * @final
+         */
+        constructor(data: Object);
+    }
+
+    /**
+     * Prefix for frame names
+     * @type {string}
+     */
+    var FRAME_NAME_PREFIX: string;
+
+    /**
+     * Suffix that is added to inner frames used for sending requests in non-IE
+     * browsers
+     * @type {string}
+     */
+    var INNER_FRAME_SUFFIX: string;
+
+    /**
+     * The number of milliseconds after a request is completed to dispose the
+     * iframes.  This can be done lazily so we wait long enough for any processing
+     * that occurred as a result of the response to finish.
+     * @type {number}
+     */
+    var IFRAME_DISPOSE_DELAY_MS: number;
+
+    /**
+     * Static send that creates a short lived instance of IframeIo to send the
+     * request.
+     * @param {goog.Uri|string} uri Uri of the request, it is up the caller to
+     *     manage query string params.
+     * @param {Function=} opt_callback Event handler for when request is completed.
+     * @param {string=} opt_method Default is GET, POST uses a form to submit the
+     *     request.
+     * @param {boolean=} opt_noCache Append a timestamp to the request to avoid
+     *     caching.
+     * @param {Object|goog.structs.Map=} opt_data Map of key-value pairs that
+     *     will be posted to the server via the iframe's form.
+     */
+    function send(uri: any /*goog.Uri|string*/, opt_callback?: Function, opt_method?: string, opt_noCache?: boolean, opt_data?: any /*Object|goog.structs.Map*/): void;
+
+    /**
+     * Find an iframe by name (assumes the context is goog.global since that is
+     * where IframeIo's iframes are kept).
+     * @param {string} fname The name to find.
+     * @return {HTMLIFrameElement} The iframe element with that name.
+     */
+    function getIframeByName(fname: string): HTMLIFrameElement;
+
+    /**
+     * Find an instance of the IframeIo object by name.
+     * @param {string} fname The name to find.
+     * @return {goog.net.IframeIo} The instance of IframeIo.
+     */
+    function getInstanceByName(fname: string): goog.net.IframeIo;
+
+    /**
+     * Handles incremental data and routes it to the correct iframeIo instance.
+     * The HTML page requested by the IframeIo instance should contain script blocks
+     * that call an externed reference to this method.
+     * @param {Window} win The window object.
+     * @param {Object} data The data object.
+     */
+    function handleIncrementalData(win: Window, data: Object): void;
 }
 

@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:05:13 PDT 2014
+// Generated Sat May  3 12:21:05 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/a11y/aria/attributes.d.ts" />
@@ -37,7 +37,7 @@ declare module goog.a11y.aria {
      * @extends {goog.Disposable}
      * @final
      */
-    class Announcer extends goog.GoogDisposable {
+    class Announcer extends goog.Disposable {
         /**
          * Class that allows messages to be spoken by assistive technologies that the
          * user may have active.

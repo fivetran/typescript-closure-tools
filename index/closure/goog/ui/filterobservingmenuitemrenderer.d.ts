@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:00:41 PDT 2014
+// Generated Sat May  3 12:16:30 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -48,15 +48,6 @@
 /// <reference path="../../goog/ui/controlrenderer.d.ts" />
 /// <reference path="../../goog/ui/menuitemrenderer.d.ts" />
 
-declare module goog.ui.FilterObservingMenuItemRenderer {
-
-    /**
-     * CSS class name the renderer applies to menu item elements.
-     * @type {string}
-     */
-    var CSS_CLASS: string;
-}
-
 declare module goog.ui {
 
     /**
@@ -68,7 +59,7 @@ declare module goog.ui {
      * @extends {goog.ui.MenuItemRenderer}
      * @final
      */
-    class FilterObservingMenuItemRenderer extends goog.ui.GoogMenuItemRenderer {
+    class FilterObservingMenuItemRenderer extends goog.ui.MenuItemRenderer {
         /**
          * Default renderer for {@link goog.ui.FilterObservingMenuItem}s. Each item has
          * the following structure:
@@ -80,5 +71,14 @@ declare module goog.ui {
          */
         constructor();
     }
+}
+
+declare module goog.ui.FilterObservingMenuItemRenderer {
+
+    /**
+     * CSS class name the renderer applies to menu item elements.
+     * @type {string}
+     */
+    var CSS_CLASS: string;
 }
 

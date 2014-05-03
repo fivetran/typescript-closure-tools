@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:03:18 PDT 2014
+// Generated Sat May  3 12:19:09 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/dom/nodetype.d.ts" />
@@ -21,6 +21,32 @@
 /// <reference path="../../../goog/debug/debug.d.ts" />
 
 declare module goog.labs.mock {
+
+    /**
+     * Error thrown when verification failed.
+     *
+     * @param {Array} recordedCalls The recorded calls that didn't match the
+     *     expectation.
+     * @param {!string} methodName The expected method call.
+     * @param {!Array} args The expected arguments.
+     * @constructor
+     * @extends {goog.debug.Error}
+     * @final
+     */
+    class VerificationError extends goog.debug.Error {
+        /**
+         * Error thrown when verification failed.
+         *
+         * @param {Array} recordedCalls The recorded calls that didn't match the
+         *     expectation.
+         * @param {!string} methodName The expected method call.
+         * @param {!Array} args The expected arguments.
+         * @constructor
+         * @extends {goog.debug.Error}
+         * @final
+         */
+        constructor(recordedCalls: any[], methodName: string, args: any[]);
+    }
 
     /**
      * Mocks a given object or class.
@@ -74,31 +100,5 @@ declare module goog.labs.mock {
      * @return {!goog.labs.mock.StubBinder_} The property binder.
      */
     function when(mockObject: Object): goog.labs.mock.StubBinder_;
-
-    /**
-     * Error thrown when verification failed.
-     *
-     * @param {Array} recordedCalls The recorded calls that didn't match the
-     *     expectation.
-     * @param {!string} methodName The expected method call.
-     * @param {!Array} args The expected arguments.
-     * @constructor
-     * @extends {goog.debug.GoogError}
-     * @final
-     */
-    class VerificationError extends goog.debug.GoogError {
-        /**
-         * Error thrown when verification failed.
-         *
-         * @param {Array} recordedCalls The recorded calls that didn't match the
-         *     expectation.
-         * @param {!string} methodName The expected method call.
-         * @param {!Array} args The expected arguments.
-         * @constructor
-         * @extends {goog.debug.GoogError}
-         * @final
-         */
-        constructor(recordedCalls: any[], methodName: string, args: any[]);
-    }
 }
 

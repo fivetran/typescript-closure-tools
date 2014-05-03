@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:57:59 PDT 2014
+// Generated Sat May  3 12:13:46 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -7,16 +7,6 @@
 /// <reference path="../../goog/asserts/asserts.d.ts" />
 /// <reference path="../../goog/array/array.d.ts" />
 /// <reference path="../../goog/crypt/hash.d.ts" />
-
-declare module goog.crypt.Sha2 {
-
-    /**
-     * Constants used in SHA-2.
-     * @const
-     * @private {!Array.<number>}
-     */
-    var K_: any /*missing*/;
-}
 
 declare module goog.crypt {
 
@@ -28,7 +18,7 @@ declare module goog.crypt {
      * @extends {goog.crypt.Hash}
      * @struct
      */
-    class GoogSha2 extends goog.crypt.Hash {
+    class Sha2 extends goog.crypt.Hash {
         /**
          * SHA-2 cryptographic hash constructor.
          * This constructor should not be used directly to create the object. Rather,
@@ -39,7 +29,15 @@ declare module goog.crypt {
          */
         constructor();
     }
+}
 
-    class Sha2 extends GoogSha2 { }
+declare module goog.crypt.Sha2 {
+
+    /**
+     * Constants used in SHA-2.
+     * @const
+     * @private {!Array.<number>}
+     */
+    var K_: any /*missing*/;
 }
 

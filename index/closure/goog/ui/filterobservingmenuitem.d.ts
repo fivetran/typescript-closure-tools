@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:01:06 PDT 2014
+// Generated Sat May  3 12:16:56 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -71,7 +71,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.MenuItem}
      */
-    class FilterObservingMenuItem extends goog.ui.GoogMenuItem {
+    class FilterObservingMenuItem extends goog.ui.MenuItem {
         /**
          * Class representing a filter observing menu item.
          *

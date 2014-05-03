@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:57:35 PDT 2014
+// Generated Sat May  3 12:13:22 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/string/string.d.ts" />
@@ -104,7 +104,7 @@ declare module goog.editor.plugins.equation {
      * @extends {goog.editor.plugins.AbstractBubblePlugin}
      * @final
      */
-    class EquationBubble extends goog.editor.plugins.GoogAbstractBubblePlugin {
+    class EquationBubble extends goog.editor.plugins.AbstractBubblePlugin {
         /**
          * Property bubble plugin for equations.
          *

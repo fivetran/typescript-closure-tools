@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:00:14 PDT 2014
+// Generated Sat May  3 12:16:03 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/dom/nodetype.d.ts" />
@@ -67,6 +67,93 @@
 /// <reference path="../../../goog/log/log.d.ts" />
 /// <reference path="../../../goog/ui/media/flashobject.d.ts" />
 
+declare module goog.ui.media {
+
+    /**
+     * Subclasses a goog.ui.media.MediaRenderer to provide a GoogleVideo specific
+     * media renderer.
+     *
+     * This class knows how to parse GoogleVideo URLs, and render the DOM structure
+     * of GoogleVideo video players. This class is meant to be used as a singleton
+     * static stateless class, that takes {@code goog.ui.media.Media} instances and
+     * renders it. It expects {@code goog.ui.media.Media.getModel} to return a well
+     * formed, previously constructed, GoogleVideo video id, which is the data model
+     * this renderer will use to construct the DOM structure.
+     * {@see goog.ui.media.GoogleVideo.newControl} for a example of constructing a
+     * control with this renderer.
+     *
+     * This design is patterned after http://go/closure_control_subclassing
+     *
+     * It uses {@link goog.ui.media.FlashObject} to embed the flash object.
+     *
+     * @constructor
+     * @extends {goog.ui.media.MediaRenderer}
+     * @final
+     */
+    class GoogleVideo extends goog.ui.media.MediaRenderer {
+        /**
+         * Subclasses a goog.ui.media.MediaRenderer to provide a GoogleVideo specific
+         * media renderer.
+         *
+         * This class knows how to parse GoogleVideo URLs, and render the DOM structure
+         * of GoogleVideo video players. This class is meant to be used as a singleton
+         * static stateless class, that takes {@code goog.ui.media.Media} instances and
+         * renders it. It expects {@code goog.ui.media.Media.getModel} to return a well
+         * formed, previously constructed, GoogleVideo video id, which is the data model
+         * this renderer will use to construct the DOM structure.
+         * {@see goog.ui.media.GoogleVideo.newControl} for a example of constructing a
+         * control with this renderer.
+         *
+         * This design is patterned after http://go/closure_control_subclassing
+         *
+         * It uses {@link goog.ui.media.FlashObject} to embed the flash object.
+         *
+         * @constructor
+         * @extends {goog.ui.media.MediaRenderer}
+         * @final
+         */
+        constructor();
+    }
+
+    /**
+     * The {@code goog.ui.media.GoogleVideo} media data model. It stores a required
+     * {@code videoId} field, sets the GoogleVideo URL, and allows a few optional
+     * parameters.
+     *
+     * @param {string} videoId The GoogleVideo video id.
+     * @param {string=} opt_caption An optional caption of the GoogleVideo video.
+     * @param {string=} opt_description An optional description of the GoogleVideo
+     *     video.
+     * @param {boolean=} opt_autoplay Whether to autoplay video.
+     * @constructor
+     * @extends {goog.ui.media.MediaModel}
+     * @final
+     */
+    class GoogleVideoModel extends goog.ui.media.MediaModel {
+        /**
+         * The {@code goog.ui.media.GoogleVideo} media data model. It stores a required
+         * {@code videoId} field, sets the GoogleVideo URL, and allows a few optional
+         * parameters.
+         *
+         * @param {string} videoId The GoogleVideo video id.
+         * @param {string=} opt_caption An optional caption of the GoogleVideo video.
+         * @param {string=} opt_description An optional description of the GoogleVideo
+         *     video.
+         * @param {boolean=} opt_autoplay Whether to autoplay video.
+         * @constructor
+         * @extends {goog.ui.media.MediaModel}
+         * @final
+         */
+        constructor(videoId: string, opt_caption?: string, opt_description?: string, opt_autoplay?: boolean);
+    
+        /**
+         * Gets the GoogleVideo video id.
+         * @return {string} The GoogleVideo video id.
+         */
+        getVideoId(): string;
+    }
+}
+
 declare module goog.ui.media.GoogleVideo {
 
     /**
@@ -130,92 +217,5 @@ declare module goog.ui.media.GoogleVideoModel {
      * @return {string} The flash URL to be embedded on the page.
      */
     function buildFlashUrl(videoId: string, opt_autoplay?: boolean): string;
-}
-
-declare module goog.ui.media {
-
-    /**
-     * Subclasses a goog.ui.media.MediaRenderer to provide a GoogleVideo specific
-     * media renderer.
-     *
-     * This class knows how to parse GoogleVideo URLs, and render the DOM structure
-     * of GoogleVideo video players. This class is meant to be used as a singleton
-     * static stateless class, that takes {@code goog.ui.media.Media} instances and
-     * renders it. It expects {@code goog.ui.media.Media.getModel} to return a well
-     * formed, previously constructed, GoogleVideo video id, which is the data model
-     * this renderer will use to construct the DOM structure.
-     * {@see goog.ui.media.GoogleVideo.newControl} for a example of constructing a
-     * control with this renderer.
-     *
-     * This design is patterned after http://go/closure_control_subclassing
-     *
-     * It uses {@link goog.ui.media.FlashObject} to embed the flash object.
-     *
-     * @constructor
-     * @extends {goog.ui.media.MediaRenderer}
-     * @final
-     */
-    class GoogleVideo extends goog.ui.media.MediaRenderer {
-        /**
-         * Subclasses a goog.ui.media.MediaRenderer to provide a GoogleVideo specific
-         * media renderer.
-         *
-         * This class knows how to parse GoogleVideo URLs, and render the DOM structure
-         * of GoogleVideo video players. This class is meant to be used as a singleton
-         * static stateless class, that takes {@code goog.ui.media.Media} instances and
-         * renders it. It expects {@code goog.ui.media.Media.getModel} to return a well
-         * formed, previously constructed, GoogleVideo video id, which is the data model
-         * this renderer will use to construct the DOM structure.
-         * {@see goog.ui.media.GoogleVideo.newControl} for a example of constructing a
-         * control with this renderer.
-         *
-         * This design is patterned after http://go/closure_control_subclassing
-         *
-         * It uses {@link goog.ui.media.FlashObject} to embed the flash object.
-         *
-         * @constructor
-         * @extends {goog.ui.media.MediaRenderer}
-         * @final
-         */
-        constructor();
-    }
-
-    /**
-     * The {@code goog.ui.media.GoogleVideo} media data model. It stores a required
-     * {@code videoId} field, sets the GoogleVideo URL, and allows a few optional
-     * parameters.
-     *
-     * @param {string} videoId The GoogleVideo video id.
-     * @param {string=} opt_caption An optional caption of the GoogleVideo video.
-     * @param {string=} opt_description An optional description of the GoogleVideo
-     *     video.
-     * @param {boolean=} opt_autoplay Whether to autoplay video.
-     * @constructor
-     * @extends {goog.ui.media.MediaModel}
-     * @final
-     */
-    class GoogleVideoModel extends goog.ui.media.GoogMediaModel {
-        /**
-         * The {@code goog.ui.media.GoogleVideo} media data model. It stores a required
-         * {@code videoId} field, sets the GoogleVideo URL, and allows a few optional
-         * parameters.
-         *
-         * @param {string} videoId The GoogleVideo video id.
-         * @param {string=} opt_caption An optional caption of the GoogleVideo video.
-         * @param {string=} opt_description An optional description of the GoogleVideo
-         *     video.
-         * @param {boolean=} opt_autoplay Whether to autoplay video.
-         * @constructor
-         * @extends {goog.ui.media.MediaModel}
-         * @final
-         */
-        constructor(videoId: string, opt_caption?: string, opt_description?: string, opt_autoplay?: boolean);
-    
-        /**
-         * Gets the GoogleVideo video id.
-         * @return {string} The GoogleVideo video id.
-         */
-        getVideoId(): string;
-    }
 }
 

@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:02:34 PDT 2014
+// Generated Sat May  3 12:18:24 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/i18n/datetimesymbols.d.ts" />
@@ -9,126 +9,6 @@
 /// <reference path="../../goog/asserts/asserts.d.ts" />
 
 declare module goog.date {
-
-    /**
-     * Constants for weekdays.
-     * @enum {number}
-     */
-    enum weekDay { MON, TUE, WED, THU, FRI, SAT, SUN } 
-
-    /**
-     * Constants for months.
-     * @enum {number}
-     */
-    enum month { JAN, FEB, MAR, APR, MAY, JUN, JUL, AUG, SEP, OCT, NOV, DEC } 
-
-    /**
-     * Formats a month/year string.
-     * Example: "January 2008"
-     *
-     * @param {string} monthName The month name to use in the result.
-     * @param {number} yearNum The numeric year to use in the result.
-     * @return {string} A formatted month/year string.
-     */
-    function formatMonthAndYear(monthName: string, yearNum: number): string;
-
-    /**
-     * Returns whether the given year is a leap year.
-     *
-     * @param {number} year Year part of date.
-     * @return {boolean} Whether the given year is a leap year.
-     */
-    function isLeapYear(year: number): boolean;
-
-    /**
-     * Returns whether the given year is a long ISO year.
-     * See {@link http://www.phys.uu.nl/~vgent/calendar/isocalendar_text3.htm}.
-     *
-     * @param {number} year Full year part of date.
-     * @return {boolean} Whether the given year is a long ISO year.
-     */
-    function isLongIsoYear(year: number): boolean;
-
-    /**
-     * Returns the number of days for a given month.
-     *
-     * @param {number} year Year part of date.
-     * @param {number} month Month part of date.
-     * @return {number} The number of days for the given month.
-     */
-    function getNumberOfDaysInMonth(year: number, month: number): number;
-
-    /**
-     * Returns true if the 2 dates are in the same day.
-     * @param {goog.date.DateLike} date The time to check.
-     * @param {goog.date.DateLike=} opt_now The current time.
-     * @return {boolean} Whether the dates are on the same day.
-     */
-    function isSameDay(date: goog.date.DateLike, opt_now?: goog.date.DateLike): boolean;
-
-    /**
-     * Returns true if the 2 dates are in the same month.
-     * @param {goog.date.DateLike} date The time to check.
-     * @param {goog.date.DateLike=} opt_now The current time.
-     * @return {boolean} Whether the dates are in the same calendar month.
-     */
-    function isSameMonth(date: goog.date.DateLike, opt_now?: goog.date.DateLike): boolean;
-
-    /**
-     * Returns true if the 2 dates are in the same year.
-     * @param {goog.date.DateLike} date The time to check.
-     * @param {goog.date.DateLike=} opt_now The current time.
-     * @return {boolean} Whether the dates are in the same calendar year.
-     */
-    function isSameYear(date: goog.date.DateLike, opt_now?: goog.date.DateLike): boolean;
-
-    /**
-     * Static function for week number calculation. ISO 8601 implementation.
-     *
-     * @param {number} year Year part of date.
-     * @param {number} month Month part of date (0-11).
-     * @param {number} date Day part of date (1-31).
-     * @param {number=} opt_weekDay Cut off weekday, defaults to Thursday.
-     * @param {number=} opt_firstDayOfWeek First day of the week, defaults to
-     *     Monday.
-     *     Monday=0, Sunday=6.
-     * @return {number} The week number (1-53).
-     */
-    function getWeekNumber(year: number, month: number, date: number, opt_weekDay?: number, opt_firstDayOfWeek?: number): number;
-
-    /**
-     * @param {!T} date1 A datelike object.
-     * @param {!S} date2 Another datelike object.
-     * @return {!(T|S)} The earlier of them in time.
-     * @template T,S
-     */
-    function min<T,S>(date1: T, date2: S): any /*T|S*/;
-
-    /**
-     * @param {!T} date1 A datelike object.
-     * @param {!S} date2 Another datelike object.
-     * @return {!(T|S)} The later of them in time.
-     * @template T,S
-     */
-    function max<T,S>(date1: T, date2: S): any /*T|S*/;
-
-    /**
-     * Creates a DateTime from a datetime string expressed in ISO 8601 format.
-     *
-     * @param {string} formatted A date or datetime expressed in ISO 8601 format.
-     * @return {goog.date.DateTime} Parsed date or null if parse fails.
-     */
-    function fromIsoString(formatted: string): goog.date.DateTime;
-
-    /**
-     * Parses a datetime string expressed in ISO 8601 format. Overwrites the date
-     * and optionally the time part of the given object with the parsed values.
-     *
-     * @param {!goog.date.DateTime} dateTime Object whose fields will be set.
-     * @param {string} formatted A date or datetime expressed in ISO 8601 format.
-     * @return {boolean} Whether the parsing succeeded.
-     */
-    function setIso8601DateTime(dateTime: goog.date.DateTime, formatted: string): boolean;
 
     /**
      * Class representing a date/time interval. Used for date calculations.
@@ -706,6 +586,126 @@ declare module goog.date {
          */
         toIsoTimeString(opt_showSeconds?: boolean): string;
     }
+
+    /**
+     * Constants for weekdays.
+     * @enum {number}
+     */
+    enum weekDay { MON, TUE, WED, THU, FRI, SAT, SUN } 
+
+    /**
+     * Constants for months.
+     * @enum {number}
+     */
+    enum month { JAN, FEB, MAR, APR, MAY, JUN, JUL, AUG, SEP, OCT, NOV, DEC } 
+
+    /**
+     * Formats a month/year string.
+     * Example: "January 2008"
+     *
+     * @param {string} monthName The month name to use in the result.
+     * @param {number} yearNum The numeric year to use in the result.
+     * @return {string} A formatted month/year string.
+     */
+    function formatMonthAndYear(monthName: string, yearNum: number): string;
+
+    /**
+     * Returns whether the given year is a leap year.
+     *
+     * @param {number} year Year part of date.
+     * @return {boolean} Whether the given year is a leap year.
+     */
+    function isLeapYear(year: number): boolean;
+
+    /**
+     * Returns whether the given year is a long ISO year.
+     * See {@link http://www.phys.uu.nl/~vgent/calendar/isocalendar_text3.htm}.
+     *
+     * @param {number} year Full year part of date.
+     * @return {boolean} Whether the given year is a long ISO year.
+     */
+    function isLongIsoYear(year: number): boolean;
+
+    /**
+     * Returns the number of days for a given month.
+     *
+     * @param {number} year Year part of date.
+     * @param {number} month Month part of date.
+     * @return {number} The number of days for the given month.
+     */
+    function getNumberOfDaysInMonth(year: number, month: number): number;
+
+    /**
+     * Returns true if the 2 dates are in the same day.
+     * @param {goog.date.DateLike} date The time to check.
+     * @param {goog.date.DateLike=} opt_now The current time.
+     * @return {boolean} Whether the dates are on the same day.
+     */
+    function isSameDay(date: goog.date.DateLike, opt_now?: goog.date.DateLike): boolean;
+
+    /**
+     * Returns true if the 2 dates are in the same month.
+     * @param {goog.date.DateLike} date The time to check.
+     * @param {goog.date.DateLike=} opt_now The current time.
+     * @return {boolean} Whether the dates are in the same calendar month.
+     */
+    function isSameMonth(date: goog.date.DateLike, opt_now?: goog.date.DateLike): boolean;
+
+    /**
+     * Returns true if the 2 dates are in the same year.
+     * @param {goog.date.DateLike} date The time to check.
+     * @param {goog.date.DateLike=} opt_now The current time.
+     * @return {boolean} Whether the dates are in the same calendar year.
+     */
+    function isSameYear(date: goog.date.DateLike, opt_now?: goog.date.DateLike): boolean;
+
+    /**
+     * Static function for week number calculation. ISO 8601 implementation.
+     *
+     * @param {number} year Year part of date.
+     * @param {number} month Month part of date (0-11).
+     * @param {number} date Day part of date (1-31).
+     * @param {number=} opt_weekDay Cut off weekday, defaults to Thursday.
+     * @param {number=} opt_firstDayOfWeek First day of the week, defaults to
+     *     Monday.
+     *     Monday=0, Sunday=6.
+     * @return {number} The week number (1-53).
+     */
+    function getWeekNumber(year: number, month: number, date: number, opt_weekDay?: number, opt_firstDayOfWeek?: number): number;
+
+    /**
+     * @param {!T} date1 A datelike object.
+     * @param {!S} date2 Another datelike object.
+     * @return {!(T|S)} The earlier of them in time.
+     * @template T,S
+     */
+    function min<T,S>(date1: T, date2: S): any /*T|S*/;
+
+    /**
+     * @param {!T} date1 A datelike object.
+     * @param {!S} date2 Another datelike object.
+     * @return {!(T|S)} The later of them in time.
+     * @template T,S
+     */
+    function max<T,S>(date1: T, date2: S): any /*T|S*/;
+
+    /**
+     * Creates a DateTime from a datetime string expressed in ISO 8601 format.
+     *
+     * @param {string} formatted A date or datetime expressed in ISO 8601 format.
+     * @return {goog.date.DateTime} Parsed date or null if parse fails.
+     */
+    function fromIsoString(formatted: string): goog.date.DateTime;
+
+    /**
+     * Parses a datetime string expressed in ISO 8601 format. Overwrites the date
+     * and optionally the time part of the given object with the parsed values.
+     *
+     * @param {!goog.date.DateTime} dateTime Object whose fields will be set.
+     * @param {string} formatted A date or datetime expressed in ISO 8601 format.
+     * @return {boolean} Whether the parsing succeeded.
+     */
+    function setIso8601DateTime(dateTime: goog.date.DateTime, formatted: string): boolean;
 }
 
 declare module goog.date.Interval {

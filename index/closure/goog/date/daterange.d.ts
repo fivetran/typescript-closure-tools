@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:02:31 PDT 2014
+// Generated Sat May  3 12:18:21 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -13,7 +13,69 @@
 /// <reference path="../../goog/date/datelike.d.ts" />
 /// <reference path="../../goog/date/date.d.ts" />
 
+declare module goog.date {
+
+    /**
+     * Constructs a date range.
+     * @constructor
+     * @param {goog.date.Date} startDate The first date in the range.
+     * @param {goog.date.Date} endDate The last date in the range.
+     * @final
+     */
+    class DateRange {
+        /**
+         * Constructs a date range.
+         * @constructor
+         * @param {goog.date.Date} startDate The first date in the range.
+         * @param {goog.date.Date} endDate The last date in the range.
+         * @final
+         */
+        constructor(startDate: goog.date.Date, endDate: goog.date.Date);
+    
+        /**
+         * @return {goog.date.Date} The first date in the range.
+         */
+        getStartDate(): goog.date.Date;
+    
+        /**
+         * @return {goog.date.Date} The last date in the range.
+         */
+        getEndDate(): goog.date.Date;
+    
+        /**
+         * Tests if a date falls within this range.
+         *
+         * @param {goog.date.Date} date The date to test.
+         * @return {boolean} Whether the date is in the range.
+         */
+        contains(date: goog.date.Date): boolean;
+    
+        /**
+         * @return {!goog.iter.Iterator} An iterator over the date range.
+         */
+        iterator(): goog.iter.Iterator;
+    }
+}
+
 declare module goog.date.DateRange {
+
+    /**
+     * Creates an iterator over the dates in a {@link goog.date.DateRange}.
+     * @constructor
+     * @extends {goog.iter.Iterator}
+     * @param {goog.date.DateRange} dateRange The date range to iterate.
+     * @final
+     */
+    class Iterator extends goog.iter.Iterator {
+        /**
+         * Creates an iterator over the dates in a {@link goog.date.DateRange}.
+         * @constructor
+         * @extends {goog.iter.Iterator}
+         * @param {goog.date.DateRange} dateRange The date range to iterate.
+         * @final
+         */
+        constructor(dateRange: goog.date.DateRange);
+    }
 
     /**
      * The first possible day, as far as this class is concerned.
@@ -137,67 +199,5 @@ declare module goog.date.DateRange {
      * @throws {Error} If no standard date range with that key exists.
      */
     function standardDateRange(dateRangeKey: string, opt_today?: goog.date.Date): goog.date.DateRange;
-
-    /**
-     * Creates an iterator over the dates in a {@link goog.date.DateRange}.
-     * @constructor
-     * @extends {goog.iter.Iterator}
-     * @param {goog.date.DateRange} dateRange The date range to iterate.
-     * @final
-     */
-    class Iterator extends goog.iter.Iterator<goog.date.Date> {
-        /**
-         * Creates an iterator over the dates in a {@link goog.date.DateRange}.
-         * @constructor
-         * @extends {goog.iter.Iterator}
-         * @param {goog.date.DateRange} dateRange The date range to iterate.
-         * @final
-         */
-        constructor(dateRange: goog.date.DateRange);
-    }
-}
-
-declare module goog.date {
-
-    /**
-     * Constructs a date range.
-     * @constructor
-     * @param {goog.date.Date} startDate The first date in the range.
-     * @param {goog.date.Date} endDate The last date in the range.
-     * @final
-     */
-    class DateRange {
-        /**
-         * Constructs a date range.
-         * @constructor
-         * @param {goog.date.Date} startDate The first date in the range.
-         * @param {goog.date.Date} endDate The last date in the range.
-         * @final
-         */
-        constructor(startDate: goog.date.Date, endDate: goog.date.Date);
-    
-        /**
-         * @return {goog.date.Date} The first date in the range.
-         */
-        getStartDate(): goog.date.Date;
-    
-        /**
-         * @return {goog.date.Date} The last date in the range.
-         */
-        getEndDate(): goog.date.Date;
-    
-        /**
-         * Tests if a date falls within this range.
-         *
-         * @param {goog.date.Date} date The date to test.
-         * @return {boolean} Whether the date is in the range.
-         */
-        contains(date: goog.date.Date): boolean;
-    
-        /**
-         * @return {!goog.iter.Iterator} An iterator over the date range.
-         */
-        iterator(): goog.iter.Iterator<goog.date.Date>;
-    }
 }
 

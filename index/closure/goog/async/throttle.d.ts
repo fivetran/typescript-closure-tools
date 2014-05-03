@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:02:22 PDT 2014
+// Generated Sat May  3 12:18:13 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/disposable/idisposable.d.ts" />
@@ -44,7 +44,7 @@ declare module goog.async {
      * @final
      * @template T
      */
-    class Throttle<T> extends goog.GoogDisposable {
+    class Throttle<T> extends goog.Disposable {
         /**
          * Throttle will perform an action that is passed in no more than once
          * per interval (specified in milliseconds). If it gets multiple signals

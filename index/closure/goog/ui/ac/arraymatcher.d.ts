@@ -1,43 +1,7 @@
-// Generated Fri May  2 15:00:58 PDT 2014
+// Generated Sat May  3 12:16:47 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/string/string.d.ts" />
-
-declare module goog.ui.ac.ArrayMatcher {
-
-    /**
-     * Matches the token against the specified rows, first looking for prefix
-     * matches and if that fails, then looking for similar matches.
-     *
-     * @param {string} token Token to match.
-     * @param {number} maxMatches Max number of matches to return.
-     * @param {!Array} rows Rows to search for matches. Can be objects if they have
-     *     a toString method that returns the value to match against.
-     * @return {!Array} Rows that match.
-     */
-    function getMatchesForRows(token: string, maxMatches: number, rows: any[]): any[];
-
-    /**
-     * Matches the token against the start of words in the row.
-     * @param {string} token Token to match.
-     * @param {number} maxMatches Max number of matches to return.
-     * @param {!Array} rows Rows to search for matches. Can be objects if they have
-     *     a toString method that returns the value to match against.
-     * @return {!Array} Rows that match.
-     */
-    function getPrefixMatchesForRows(token: string, maxMatches: number, rows: any[]): any[];
-
-    /**
-     * Matches the token against similar rows, by calculating "distance" between the
-     * terms.
-     * @param {string} token Token to match.
-     * @param {number} maxMatches Max number of matches to return.
-     * @param {!Array} rows Rows to search for matches. Can be objects if they have
-     *     a toString method that returns the value to match against.
-     * @return {!Array} The best maxMatches rows.
-     */
-    function getSimilarMatchesForRows(token: string, maxMatches: number, rows: any[]): any[];
-}
 
 declare module goog.ui.ac {
 
@@ -92,5 +56,41 @@ declare module goog.ui.ac {
          */
         getSimilarRows(token: string, maxMatches: number): any[];
     }
+}
+
+declare module goog.ui.ac.ArrayMatcher {
+
+    /**
+     * Matches the token against the specified rows, first looking for prefix
+     * matches and if that fails, then looking for similar matches.
+     *
+     * @param {string} token Token to match.
+     * @param {number} maxMatches Max number of matches to return.
+     * @param {!Array} rows Rows to search for matches. Can be objects if they have
+     *     a toString method that returns the value to match against.
+     * @return {!Array} Rows that match.
+     */
+    function getMatchesForRows(token: string, maxMatches: number, rows: any[]): any[];
+
+    /**
+     * Matches the token against the start of words in the row.
+     * @param {string} token Token to match.
+     * @param {number} maxMatches Max number of matches to return.
+     * @param {!Array} rows Rows to search for matches. Can be objects if they have
+     *     a toString method that returns the value to match against.
+     * @return {!Array} Rows that match.
+     */
+    function getPrefixMatchesForRows(token: string, maxMatches: number, rows: any[]): any[];
+
+    /**
+     * Matches the token against similar rows, by calculating "distance" between the
+     * terms.
+     * @param {string} token Token to match.
+     * @param {number} maxMatches Max number of matches to return.
+     * @param {!Array} rows Rows to search for matches. Can be objects if they have
+     *     a toString method that returns the value to match against.
+     * @return {!Array} The best maxMatches rows.
+     */
+    function getSimilarMatchesForRows(token: string, maxMatches: number, rows: any[]): any[];
 }
 

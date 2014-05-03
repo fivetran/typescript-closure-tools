@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:03:48 PDT 2014
+// Generated Sat May  3 12:19:39 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/dom/nodetype.d.ts" />
@@ -55,37 +55,6 @@
 /// <reference path="../../../goog/uri/utils.d.ts" />
 /// <reference path="../../../goog/net/eventtype.d.ts" />
 /// <reference path="../../../goog/net/xhrio.d.ts" />
-
-declare module goog.testing.net.XhrIo {
-
-    /**
-     * Returns an Array containing all non-disposed instances of
-     * goog.testing.net.XhrIo created by {@link goog.testing.net.XhrIo.send}.
-     * @return {Array} Array of goog.testing.net.XhrIo instances.
-     */
-    function getSendInstances(): any[];
-
-    /**
-     * Disposes all non-disposed instances of goog.testing.net.XhrIo created by
-     * {@link goog.testing.net.XhrIo.send}.
-     * @see goog.net.XhrIo.cleanup
-     */
-    function cleanup(): void;
-
-    /**
-     * Simulates the static XhrIo send method.
-     * @param {string} url Uri to make request to.
-     * @param {Function=} opt_callback Callback function for when request is
-     *     complete.
-     * @param {string=} opt_method Send method, default: GET.
-     * @param {string=} opt_content Post data.
-     * @param {Object|goog.structs.Map=} opt_headers Map of headers to add to the
-     *     request.
-     * @param {number=} opt_timeoutInterval Number of milliseconds after which an
-     *     incomplete request will be aborted; 0 means no timeout is set.
-     */
-    function send(url: string, opt_callback?: Function, opt_method?: string, opt_content?: string, opt_headers?: any /*Object|goog.structs.Map*/, opt_timeoutInterval?: number): void;
-}
 
 declare module goog.testing.net {
 
@@ -359,5 +328,36 @@ declare module goog.testing.net {
          */
         getResponseHeaders(): { [key: string]: string };
     }
+}
+
+declare module goog.testing.net.XhrIo {
+
+    /**
+     * Returns an Array containing all non-disposed instances of
+     * goog.testing.net.XhrIo created by {@link goog.testing.net.XhrIo.send}.
+     * @return {Array} Array of goog.testing.net.XhrIo instances.
+     */
+    function getSendInstances(): any[];
+
+    /**
+     * Disposes all non-disposed instances of goog.testing.net.XhrIo created by
+     * {@link goog.testing.net.XhrIo.send}.
+     * @see goog.net.XhrIo.cleanup
+     */
+    function cleanup(): void;
+
+    /**
+     * Simulates the static XhrIo send method.
+     * @param {string} url Uri to make request to.
+     * @param {Function=} opt_callback Callback function for when request is
+     *     complete.
+     * @param {string=} opt_method Send method, default: GET.
+     * @param {string=} opt_content Post data.
+     * @param {Object|goog.structs.Map=} opt_headers Map of headers to add to the
+     *     request.
+     * @param {number=} opt_timeoutInterval Number of milliseconds after which an
+     *     incomplete request will be aborted; 0 means no timeout is set.
+     */
+    function send(url: string, opt_callback?: Function, opt_method?: string, opt_content?: string, opt_headers?: any /*Object|goog.structs.Map*/, opt_timeoutInterval?: number): void;
 }
 

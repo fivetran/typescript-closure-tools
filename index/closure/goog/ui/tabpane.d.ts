@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:59:07 PDT 2014
+// Generated Sat May  3 12:14:55 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -39,99 +39,6 @@
 /// <reference path="../../goog/style/style.d.ts" />
 /// <reference path="../../goog/events/keycodes.d.ts" />
 /// <reference path="../../goog/events/eventtarget.d.ts" />
-
-declare module goog.ui.TabPane {
-
-    /**
-     * Constants for event names
-     *
-     * @type {Object}
-     */
-    var Events: Object;
-
-    /**
-     * Enum for representing the location of the tabs in relation to the content.
-     *
-     * @enum {number}
-     */
-    enum TabLocation { TOP, BOTTOM, LEFT, RIGHT } 
-
-    /**
-     * Object representing an individual tab pane.
-     *
-     * @param {Element=} opt_el Container element to create the pane out of.
-     * @param {(Element|string)=} opt_title Pane title or element to use as the
-     *     title. If not specified the first element in the container is used as
-     *     the title.
-     * @param {goog.dom.DomHelper=} opt_domHelper Optional DOM helper
-     * The first parameter can be omitted.
-     * @constructor
-     */
-    class TabPage {
-        /**
-         * Object representing an individual tab pane.
-         *
-         * @param {Element=} opt_el Container element to create the pane out of.
-         * @param {(Element|string)=} opt_title Pane title or element to use as the
-         *     title. If not specified the first element in the container is used as
-         *     the title.
-         * @param {goog.dom.DomHelper=} opt_domHelper Optional DOM helper
-         * The first parameter can be omitted.
-         * @constructor
-         */
-        constructor(opt_el?: Element, opt_title?: any /*Element|string*/, opt_domHelper?: goog.dom.DomHelper);
-    
-        /**
-         * @return {string} The title for tab page.
-         */
-        getTitle(): string;
-    
-        /**
-         * Sets title for tab page.
-         *
-         * @param {string} title Title for tab page.
-         */
-        setTitle(title: string): void;
-    
-        /**
-         * @return {Element} The title element.
-         */
-        getTitleElement(): Element;
-    
-        /**
-         * @return {Element} The content element.
-         */
-        getContentElement(): Element;
-    
-        /**
-         * @return {?number} The index of page in tab pane.
-         */
-        getIndex(): number;
-    
-        /**
-         * @return {goog.ui.TabPane?} The parent tab pane for page.
-         */
-        getParent(): goog.ui.TabPane;
-    
-        /**
-         * Selects page in the associated tab pane.
-         */
-        select(): void;
-    
-        /**
-         * Sets the enabled state.
-         *
-         * @param {boolean} enabled Enabled state.
-         */
-        setEnabled(enabled: boolean): void;
-    
-        /**
-         * Returns if the page is enabled.
-         * @return {boolean} Whether the page is enabled or not.
-         */
-        isEnabled(): boolean;
-    }
-}
 
 declare module goog.ui {
 
@@ -256,5 +163,98 @@ declare module goog.ui {
          */
         constructor(type: string, target: goog.ui.TabPane, page: goog.ui.TabPane.TabPage);
     }
+}
+
+declare module goog.ui.TabPane {
+
+    /**
+     * Object representing an individual tab pane.
+     *
+     * @param {Element=} opt_el Container element to create the pane out of.
+     * @param {(Element|string)=} opt_title Pane title or element to use as the
+     *     title. If not specified the first element in the container is used as
+     *     the title.
+     * @param {goog.dom.DomHelper=} opt_domHelper Optional DOM helper
+     * The first parameter can be omitted.
+     * @constructor
+     */
+    class TabPage {
+        /**
+         * Object representing an individual tab pane.
+         *
+         * @param {Element=} opt_el Container element to create the pane out of.
+         * @param {(Element|string)=} opt_title Pane title or element to use as the
+         *     title. If not specified the first element in the container is used as
+         *     the title.
+         * @param {goog.dom.DomHelper=} opt_domHelper Optional DOM helper
+         * The first parameter can be omitted.
+         * @constructor
+         */
+        constructor(opt_el?: Element, opt_title?: any /*Element|string*/, opt_domHelper?: goog.dom.DomHelper);
+    
+        /**
+         * @return {string} The title for tab page.
+         */
+        getTitle(): string;
+    
+        /**
+         * Sets title for tab page.
+         *
+         * @param {string} title Title for tab page.
+         */
+        setTitle(title: string): void;
+    
+        /**
+         * @return {Element} The title element.
+         */
+        getTitleElement(): Element;
+    
+        /**
+         * @return {Element} The content element.
+         */
+        getContentElement(): Element;
+    
+        /**
+         * @return {?number} The index of page in tab pane.
+         */
+        getIndex(): number;
+    
+        /**
+         * @return {goog.ui.TabPane?} The parent tab pane for page.
+         */
+        getParent(): goog.ui.TabPane;
+    
+        /**
+         * Selects page in the associated tab pane.
+         */
+        select(): void;
+    
+        /**
+         * Sets the enabled state.
+         *
+         * @param {boolean} enabled Enabled state.
+         */
+        setEnabled(enabled: boolean): void;
+    
+        /**
+         * Returns if the page is enabled.
+         * @return {boolean} Whether the page is enabled or not.
+         */
+        isEnabled(): boolean;
+    }
+
+    /**
+     * Constants for event names
+     *
+     * @type {Object}
+     */
+    var Events: Object;
+
+    /**
+     * Enum for representing the location of the tabs in relation to the content.
+     *
+     * @enum {number}
+     */
+    enum TabLocation { TOP, BOTTOM, LEFT, RIGHT } 
 }
 

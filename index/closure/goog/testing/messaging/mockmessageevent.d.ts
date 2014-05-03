@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:03:52 PDT 2014
+// Generated Sat May  3 12:19:43 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/string/string.d.ts" />
@@ -40,25 +40,6 @@
 /// <reference path="../../../goog/events/eventtarget.d.ts" />
 /// <reference path="../../../goog/testing/events/events.d.ts" />
 
-declare module goog.testing.messaging.MockMessageEvent {
-
-    /**
-     * Wraps a new fake MessageEvent in a BrowserEvent, like how a real MessageEvent
-     * would be wrapped.
-     *
-     * @param {*} data The data of the message.
-     * @param {string=} opt_origin The origin of the message, for server-sent and
-     *     cross-document events.
-     * @param {string=} opt_lastEventId The last event ID, for server-sent events.
-     * @param {Window=} opt_source The proxy for the source window, for
-     *     cross-document events.
-     * @param {Array.<MessagePort>=} opt_ports The Array of ports sent with the
-     *     message, for cross-document and channel events.
-     * @return {!goog.events.BrowserEvent} The wrapping event.
-     */
-    function wrap(data: any, opt_origin?: string, opt_lastEventId?: string, opt_source?: Window, opt_ports?: MessagePort[]): goog.events.BrowserEvent;
-}
-
 declare module goog.testing.messaging {
 
     /**
@@ -94,5 +75,24 @@ declare module goog.testing.messaging {
          */
         constructor(data: any, opt_origin?: string, opt_lastEventId?: string, opt_source?: Window, opt_ports?: MessagePort[]);
     }
+}
+
+declare module goog.testing.messaging.MockMessageEvent {
+
+    /**
+     * Wraps a new fake MessageEvent in a BrowserEvent, like how a real MessageEvent
+     * would be wrapped.
+     *
+     * @param {*} data The data of the message.
+     * @param {string=} opt_origin The origin of the message, for server-sent and
+     *     cross-document events.
+     * @param {string=} opt_lastEventId The last event ID, for server-sent events.
+     * @param {Window=} opt_source The proxy for the source window, for
+     *     cross-document events.
+     * @param {Array.<MessagePort>=} opt_ports The Array of ports sent with the
+     *     message, for cross-document and channel events.
+     * @return {!goog.events.BrowserEvent} The wrapping event.
+     */
+    function wrap(data: any, opt_origin?: string, opt_lastEventId?: string, opt_source?: Window, opt_ports?: MessagePort[]): goog.events.BrowserEvent;
 }
 

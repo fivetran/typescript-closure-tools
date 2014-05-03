@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:57:32 PDT 2014
+// Generated Sat May  3 12:13:19 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/dom/nodetype.d.ts" />
@@ -91,7 +91,7 @@ declare module goog.editor.plugins {
      * @constructor
      * @extends {goog.editor.plugins.EnterHandler}
      */
-    class TagOnEnterHandler extends goog.editor.plugins.GoogEnterHandler {
+    class TagOnEnterHandler extends goog.editor.plugins.EnterHandler {
         /**
          * Plugin to handle enter keys. This subclass normalizes all browsers to use
          * the given block tag on enter.

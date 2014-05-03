@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:59:39 PDT 2014
+// Generated Sat May  3 12:15:28 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -51,16 +51,6 @@
 /// <reference path="../../goog/ui/cssnames.d.ts" />
 /// <reference path="../../goog/ui/custombuttonrenderer.d.ts" />
 
-declare module goog.ui.ToolbarButtonRenderer {
-
-    /**
-     * Default CSS class to be applied to the root element of buttons rendered
-     * by this renderer.
-     * @type {string}
-     */
-    var CSS_CLASS: string;
-}
-
 declare module goog.ui {
 
     /**
@@ -69,7 +59,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.CustomButtonRenderer}
      */
-    class ToolbarButtonRenderer extends goog.ui.GoogCustomButtonRenderer {
+    class ToolbarButtonRenderer extends goog.ui.CustomButtonRenderer {
         /**
          * Toolbar-specific renderer for {@link goog.ui.Button}s, based on {@link
          * goog.ui.CustomButtonRenderer}.
@@ -78,5 +68,15 @@ declare module goog.ui {
          */
         constructor();
     }
+}
+
+declare module goog.ui.ToolbarButtonRenderer {
+
+    /**
+     * Default CSS class to be applied to the root element of buttons rendered
+     * by this renderer.
+     * @type {string}
+     */
+    var CSS_CLASS: string;
 }
 

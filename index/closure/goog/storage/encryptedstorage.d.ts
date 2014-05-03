@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:01:14 PDT 2014
+// Generated Sat May  3 12:17:04 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -26,17 +26,6 @@
 /// <reference path="../../goog/labs/useragent/browser.d.ts" />
 /// <reference path="../../goog/useragent/useragent.d.ts" />
 /// <reference path="../../goog/crypt/base64.d.ts" />
-
-declare module goog.storage.EncryptedStorage {
-
-    /**
-     * Metadata key under which the salt is stored.
-     *
-     * @type {string}
-     * @protected
-     */
-    var SALT_KEY: string;
-}
 
 declare module goog.storage {
 
@@ -69,5 +58,16 @@ declare module goog.storage {
          */
         constructor(mechanism: goog.storage.mechanism.IterableMechanism, secret: string);
     }
+}
+
+declare module goog.storage.EncryptedStorage {
+
+    /**
+     * Metadata key under which the salt is stored.
+     *
+     * @type {string}
+     * @protected
+     */
+    var SALT_KEY: string;
 }
 

@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:05:08 PDT 2014
+// Generated Sat May  3 12:20:59 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -45,46 +45,6 @@
 /// <reference path="../../goog/db/objectstore.d.ts" />
 /// <reference path="../../goog/events/eventhandler.d.ts" />
 /// <reference path="../../goog/db/transaction.d.ts" />
-
-declare module goog.db.IndexedDb {
-
-    /**
-     * Event types fired by a database.
-     *
-     * @enum {string} The event types for the web socket.
-     */
-    enum EventType { ABORT, CLOSE, ERROR, VERSION_CHANGE } 
-
-    /**
-     * Event representing a (possibly attempted) change in the database structure.
-     *
-     * At time of writing, no Chrome versions support oldVersion or newVersion. See
-     * http://crbug.com/153122.
-     *
-     * @param {number} oldVersion The previous version of the database.
-     * @param {number} newVersion The version the database is being or has been
-     *     updated to.
-     * @constructor
-     * @extends {goog.events.Event}
-     * @final
-     */
-    class VersionChangeEvent extends goog.events.Event {
-        /**
-         * Event representing a (possibly attempted) change in the database structure.
-         *
-         * At time of writing, no Chrome versions support oldVersion or newVersion. See
-         * http://crbug.com/153122.
-         *
-         * @param {number} oldVersion The previous version of the database.
-         * @param {number} newVersion The version the database is being or has been
-         *     updated to.
-         * @constructor
-         * @extends {goog.events.Event}
-         * @final
-         */
-        constructor(oldVersion: number, newVersion: number);
-    }
-}
 
 declare module goog.db {
 
@@ -200,5 +160,45 @@ declare module goog.db {
          */
         createTransaction(storeNames: string[], opt_mode?: goog.db.Transaction.TransactionMode): goog.db.Transaction;
     }
+}
+
+declare module goog.db.IndexedDb {
+
+    /**
+     * Event representing a (possibly attempted) change in the database structure.
+     *
+     * At time of writing, no Chrome versions support oldVersion or newVersion. See
+     * http://crbug.com/153122.
+     *
+     * @param {number} oldVersion The previous version of the database.
+     * @param {number} newVersion The version the database is being or has been
+     *     updated to.
+     * @constructor
+     * @extends {goog.events.Event}
+     * @final
+     */
+    class VersionChangeEvent extends goog.events.Event {
+        /**
+         * Event representing a (possibly attempted) change in the database structure.
+         *
+         * At time of writing, no Chrome versions support oldVersion or newVersion. See
+         * http://crbug.com/153122.
+         *
+         * @param {number} oldVersion The previous version of the database.
+         * @param {number} newVersion The version the database is being or has been
+         *     updated to.
+         * @constructor
+         * @extends {goog.events.Event}
+         * @final
+         */
+        constructor(oldVersion: number, newVersion: number);
+    }
+
+    /**
+     * Event types fired by a database.
+     *
+     * @enum {string} The event types for the web socket.
+     */
+    enum EventType { ABORT, CLOSE, ERROR, VERSION_CHANGE } 
 }
 

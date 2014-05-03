@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:01:32 PDT 2014
+// Generated Sat May  3 12:17:22 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -59,7 +59,7 @@ declare module goog.events {
      * @extends {goog.Disposable}
      * @implements {goog.events.Listenable}
      */
-    class EventTarget extends goog.GoogDisposable implements goog.events.Listenable {
+    class EventTarget extends goog.Disposable implements goog.events.Listenable {
         /**
          * An implementation of {@code goog.events.Listenable} with full W3C
          * EventTarget-like support (capture/bubble mechanism, stopping event

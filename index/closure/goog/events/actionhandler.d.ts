@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:01:47 PDT 2014
+// Generated Sat May  3 12:17:37 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/string/string.d.ts" />
@@ -27,15 +27,6 @@
 /// <reference path="../../goog/events/keycodes.d.ts" />
 /// <reference path="../../goog/events/eventtarget.d.ts" />
 
-declare module goog.events.ActionHandler {
-
-    /**
-     * Enum type for the events fired by the action handler
-     * @enum {string}
-     */
-    enum EventType { ACTION, BEFOREACTION } 
-}
-
 declare module goog.events {
 
     /**
@@ -63,7 +54,7 @@ declare module goog.events {
      * @extends {goog.events.BrowserEvent}
      * @final
      */
-    class ActionEvent extends goog.events.GoogBrowserEvent {
+    class ActionEvent extends goog.events.BrowserEvent {
         /**
          * This class is used for the goog.events.ActionHandler.EventType.ACTION event.
          * @param {!goog.events.BrowserEvent} browserEvent Browser event object.
@@ -83,7 +74,7 @@ declare module goog.events {
      * @extends {goog.events.BrowserEvent}
      * @final
      */
-    class BeforeActionEvent extends goog.events.GoogBrowserEvent {
+    class BeforeActionEvent extends goog.events.BrowserEvent {
         /**
          * This class is used for the goog.events.ActionHandler.EventType.BEFOREACTION
          * event. BEFOREACTION gives a chance to the application so the keyboard focus
@@ -95,5 +86,14 @@ declare module goog.events {
          */
         constructor(browserEvent: goog.events.BrowserEvent);
     }
+}
+
+declare module goog.events.ActionHandler {
+
+    /**
+     * Enum type for the events fired by the action handler
+     * @enum {string}
+     */
+    enum EventType { ACTION, BEFOREACTION } 
 }
 

@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:59:05 PDT 2014
+// Generated Sat May  3 12:14:53 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -55,6 +55,49 @@
 /// <reference path="../../goog/log/log.d.ts" />
 /// <reference path="../../goog/messaging/abstractchannel.d.ts" />
 
+declare module goog.messaging {
+
+    /**
+     * A wrapper for several types of HTML5 message-passing entities
+     * ({@link MessagePort}s and {@link WebWorker}s). This class implements the
+     * {@link goog.messaging.MessageChannel} interface.
+     *
+     * This class can be used in conjunction with other communication on the port.
+     * It sets {@link goog.messaging.PortChannel.FLAG} to true on all messages it
+     * sends.
+     *
+     * @param {!MessagePort|!WebWorker} underlyingPort The message-passing
+     *     entity to wrap. If this is a {@link MessagePort}, it should be started.
+     *     The remote end should also be wrapped in a PortChannel. This will be
+     *     disposed along with the PortChannel; this means terminating it if it's a
+     *     worker or removing it from the DOM if it's an iframe.
+     * @constructor
+     * @extends {goog.messaging.AbstractChannel}
+     * @final
+     */
+    class PortChannel extends goog.messaging.AbstractChannel {
+        /**
+         * A wrapper for several types of HTML5 message-passing entities
+         * ({@link MessagePort}s and {@link WebWorker}s). This class implements the
+         * {@link goog.messaging.MessageChannel} interface.
+         *
+         * This class can be used in conjunction with other communication on the port.
+         * It sets {@link goog.messaging.PortChannel.FLAG} to true on all messages it
+         * sends.
+         *
+         * @param {!MessagePort|!WebWorker} underlyingPort The message-passing
+         *     entity to wrap. If this is a {@link MessagePort}, it should be started.
+         *     The remote end should also be wrapped in a PortChannel. This will be
+         *     disposed along with the PortChannel; this means terminating it if it's a
+         *     worker or removing it from the DOM if it's an iframe.
+         * @constructor
+         * @extends {goog.messaging.AbstractChannel}
+         * @final
+         */
+        constructor(underlyingPort: any /*MessagePort|WebWorker*/);
+    }
+}
+
 declare module goog.messaging.PortChannel {
 
     /**
@@ -103,48 +146,5 @@ declare module goog.messaging.PortChannel {
      * @type {string}
      */
     var FLAG: string;
-}
-
-declare module goog.messaging {
-
-    /**
-     * A wrapper for several types of HTML5 message-passing entities
-     * ({@link MessagePort}s and {@link WebWorker}s). This class implements the
-     * {@link goog.messaging.MessageChannel} interface.
-     *
-     * This class can be used in conjunction with other communication on the port.
-     * It sets {@link goog.messaging.PortChannel.FLAG} to true on all messages it
-     * sends.
-     *
-     * @param {!MessagePort|!WebWorker} underlyingPort The message-passing
-     *     entity to wrap. If this is a {@link MessagePort}, it should be started.
-     *     The remote end should also be wrapped in a PortChannel. This will be
-     *     disposed along with the PortChannel; this means terminating it if it's a
-     *     worker or removing it from the DOM if it's an iframe.
-     * @constructor
-     * @extends {goog.messaging.AbstractChannel}
-     * @final
-     */
-    class PortChannel extends goog.messaging.AbstractChannel {
-        /**
-         * A wrapper for several types of HTML5 message-passing entities
-         * ({@link MessagePort}s and {@link WebWorker}s). This class implements the
-         * {@link goog.messaging.MessageChannel} interface.
-         *
-         * This class can be used in conjunction with other communication on the port.
-         * It sets {@link goog.messaging.PortChannel.FLAG} to true on all messages it
-         * sends.
-         *
-         * @param {!MessagePort|!WebWorker} underlyingPort The message-passing
-         *     entity to wrap. If this is a {@link MessagePort}, it should be started.
-         *     The remote end should also be wrapped in a PortChannel. This will be
-         *     disposed along with the PortChannel; this means terminating it if it's a
-         *     worker or removing it from the DOM if it's an iframe.
-         * @constructor
-         * @extends {goog.messaging.AbstractChannel}
-         * @final
-         */
-        constructor(underlyingPort: any /*MessagePort|WebWorker*/);
-    }
 }
 

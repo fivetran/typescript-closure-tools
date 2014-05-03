@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:02:56 PDT 2014
+// Generated Sat May  3 12:18:46 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -42,19 +42,6 @@
 /// <reference path="../../goog/ui/component.d.ts" />
 /// <reference path="../../goog/async/animationdelay.d.ts" />
 
-declare module goog.debug.FpsDisplay {
-
-    /**
-     * CSS class for the FPS display.
-     */
-    var CSS: any /*missing*/;
-
-    /**
-     * The number of samples per FPS report.
-     */
-    var SAMPLES: any /*missing*/;
-}
-
 declare module goog.debug {
 
     /**
@@ -66,7 +53,7 @@ declare module goog.debug {
      * @extends {goog.ui.Component}
      * @final
      */
-    class FpsDisplay extends goog.ui.GoogComponent {
+    class FpsDisplay extends goog.ui.Component {
         /**
          * Displays frames per seconds that the window this component is
          * rendered in is animating at.
@@ -83,5 +70,18 @@ declare module goog.debug {
          */
         getFps(): number;
     }
+}
+
+declare module goog.debug.FpsDisplay {
+
+    /**
+     * CSS class for the FPS display.
+     */
+    var CSS: any /*missing*/;
+
+    /**
+     * The number of samples per FPS report.
+     */
+    var SAMPLES: any /*missing*/;
 }
 

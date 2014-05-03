@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:05:19 PDT 2014
+// Generated Sat May  3 12:21:10 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/string/string.d.ts" />
@@ -71,7 +71,7 @@ declare module goog.ds {
      * @constructor
      * @final
      */
-    class JsXmlHttpDataSource extends goog.ds.GoogFastDataNode {
+    class JsXmlHttpDataSource extends goog.ds.FastDataNode {
         /**
          * Similar to JsonDataSource, with using XMLHttpRequest for transport
          * Currently requires the result be a JS object that can be evaluated and

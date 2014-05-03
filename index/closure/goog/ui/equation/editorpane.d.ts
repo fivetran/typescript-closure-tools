@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:00:32 PDT 2014
+// Generated Sat May  3 12:16:22 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/dom/nodetype.d.ts" />
@@ -49,7 +49,7 @@ declare module goog.ui.equation {
      * @constructor
      * @extends {goog.ui.Component}
      */
-    class EditorPane extends goog.ui.GoogComponent {
+    class EditorPane extends goog.ui.Component {
         /**
          * An abstract equation editor tab pane.
          * @param {goog.dom.DomHelper=} opt_domHelper Optional DOM helper.

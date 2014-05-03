@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:05:24 PDT 2014
+// Generated Sat May  3 12:21:15 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/disposable/idisposable.d.ts" />
@@ -13,7 +13,7 @@ declare module goog.module {
      * @constructor
      * @extends {goog.Disposable}
      */
-    class BaseModule extends goog.GoogDisposable {
+    class BaseModule extends goog.Disposable {
         /**
          * A basic module object that represents a module of Javascript code that can
          * be dynamically loaded.

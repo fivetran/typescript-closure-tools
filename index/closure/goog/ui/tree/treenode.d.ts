@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:59:46 PDT 2014
+// Generated Sat May  3 12:15:35 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/string/stringbuffer.d.ts" />
@@ -71,7 +71,7 @@ declare module goog.ui.tree {
      * @constructor
      * @extends {goog.ui.tree.BaseNode}
      */
-    class TreeNode extends goog.ui.tree.GoogBaseNode {
+    class TreeNode extends goog.ui.tree.BaseNode {
         /**
          * A single node in the tree.
          * @param {string|!goog.html.SafeHtml} html The html content of the node label.

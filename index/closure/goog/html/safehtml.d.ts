@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:05:05 PDT 2014
+// Generated Sat May  3 12:20:57 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -13,6 +13,65 @@
 /// <reference path="../../goog/dom/tags.d.ts" />
 /// <reference path="../../goog/html/safestyle.d.ts" />
 /// <reference path="../../goog/array/array.d.ts" />
+
+declare module goog.html {
+
+    /**
+     * A string that is safe to use in HTML context in DOM APIs and HTML documents.
+     *
+     * A SafeHtml is a string-like object that carries the security type contract
+     * that its value as a string will not cause untrusted script execution when
+     * evaluated as HTML in a browser.
+     *
+     * Values of this type are guaranteed to be safe to use in HTML contexts,
+     * such as, assignment to the innerHTML DOM property, or interpolation into
+     * a HTML template in HTML PC_DATA context, in the sense that the use will not
+     * result in a Cross-Site-Scripting vulnerability.
+     *
+     * Instances of this type must be created via the factory methods
+     * ({@code goog.html.SafeHtml.from}, {@code goog.html.SafeHtml.htmlEscape}), etc
+     * and not by invoking its constructor.  The constructor intentionally takes no
+     * parameters and the type is immutable; hence only a default instance
+     * corresponding to the empty string can be obtained via constructor invocation.
+     *
+     * @see goog.html.SafeHtml#from
+     * @see goog.html.SafeHtml#htmlEscape
+     * @constructor
+     * @final
+     * @struct
+     * @implements {goog.i18n.bidi.DirectionalString}
+     * @implements {goog.string.TypedString}
+     */
+    class SafeHtml implements goog.i18n.bidi.DirectionalString, goog.string.TypedString {
+        /**
+         * A string that is safe to use in HTML context in DOM APIs and HTML documents.
+         *
+         * A SafeHtml is a string-like object that carries the security type contract
+         * that its value as a string will not cause untrusted script execution when
+         * evaluated as HTML in a browser.
+         *
+         * Values of this type are guaranteed to be safe to use in HTML contexts,
+         * such as, assignment to the innerHTML DOM property, or interpolation into
+         * a HTML template in HTML PC_DATA context, in the sense that the use will not
+         * result in a Cross-Site-Scripting vulnerability.
+         *
+         * Instances of this type must be created via the factory methods
+         * ({@code goog.html.SafeHtml.from}, {@code goog.html.SafeHtml.htmlEscape}), etc
+         * and not by invoking its constructor.  The constructor intentionally takes no
+         * parameters and the type is immutable; hence only a default instance
+         * corresponding to the empty string can be obtained via constructor invocation.
+         *
+         * @see goog.html.SafeHtml#from
+         * @see goog.html.SafeHtml#htmlEscape
+         * @constructor
+         * @final
+         * @struct
+         * @implements {goog.i18n.bidi.DirectionalString}
+         * @implements {goog.string.TypedString}
+         */
+        constructor();
+    }
+}
 
 declare module goog.html.SafeHtml {
 
@@ -65,8 +124,8 @@ declare module goog.html.SafeHtml {
      * @param {!Object.<string, goog.html.SafeHtml.AttributeValue_>=}
      *     opt_attributes Mapping from attribute names to their values. Only
      *     attribute names consisting of [a-zA-Z0-9-] are allowed. Attributes with
-     *     a special meaning (e.g. on*) require googstring.Const value, attributes
-     *     containing URL require googstring.Const or goog.html.SafeUrl. Value of
+     *     a special meaning (e.g. on*) require goog.string.Const value, attributes
+     *     containing URL require goog.string.Const or goog.html.SafeUrl. Value of
      *     null or undefined causes the attribute to be omitted. Values are
      *     HTML-escaped before usage.
      * @param {!goog.html.SafeHtml.TextOrHtml_|
@@ -78,7 +137,7 @@ declare module goog.html.SafeHtml {
      *     provided.
      * @throws {goog.asserts.AssertionError} If content for void tag is provided.
      */
-    function create(tagName: string, opt_attributes?: { [key: string]: goog.html.SafeHtml.AttributeValue_ }): void;
+    function create(tagName: string, opt_attributes?: { [key: string]: goog.html.SafeHtml.AttributeValue_ }, opt_content?: any /* jsdoc error */): void;
 
     /**
      * Creates a new SafeHtml object by concatenating the values.
@@ -87,71 +146,12 @@ declare module goog.html.SafeHtml {
      *     arguments would be processed recursively.
      * @return {!goog.html.SafeHtml}
      */
-    function concat(): void;
+    function concat(var_args: any /* jsdoc error */): void;
 
     /**
      * A SafeHtml instance corresponding to the empty string.
      * @const {!goog.html.SafeHtml}
      */
     var EMPTY: any /*missing*/;
-}
-
-declare module goog.html {
-
-    /**
-     * A string that is safe to use in HTML context in DOM APIs and HTML documents.
-     *
-     * A SafeHtml is a string-like object that carries the security type contract
-     * that its value as a string will not cause untrusted script execution when
-     * evaluated as HTML in a browser.
-     *
-     * Values of this type are guaranteed to be safe to use in HTML contexts,
-     * such as, assignment to the innerHTML DOM property, or interpolation into
-     * a HTML template in HTML PC_DATA context, in the sense that the use will not
-     * result in a Cross-Site-Scripting vulnerability.
-     *
-     * Instances of this type must be created via the factory methods
-     * ({@code goog.html.SafeHtml.from}, {@code goog.html.SafeHtml.htmlEscape}), etc
-     * and not by invoking its constructor.  The constructor intentionally takes no
-     * parameters and the type is immutable; hence only a default instance
-     * corresponding to the empty string can be obtained via constructor invocation.
-     *
-     * @see goog.html.SafeHtml#from
-     * @see goog.html.SafeHtml#htmlEscape
-     * @constructor
-     * @final
-     * @struct
-     * @implements {goog.i18n.bidi.DirectionalString}
-     * @implements {googstring.TypedString}
-     */
-    class SafeHtml implements goog.i18n.bidi.DirectionalString, googstring.TypedString {
-        /**
-         * A string that is safe to use in HTML context in DOM APIs and HTML documents.
-         *
-         * A SafeHtml is a string-like object that carries the security type contract
-         * that its value as a string will not cause untrusted script execution when
-         * evaluated as HTML in a browser.
-         *
-         * Values of this type are guaranteed to be safe to use in HTML contexts,
-         * such as, assignment to the innerHTML DOM property, or interpolation into
-         * a HTML template in HTML PC_DATA context, in the sense that the use will not
-         * result in a Cross-Site-Scripting vulnerability.
-         *
-         * Instances of this type must be created via the factory methods
-         * ({@code goog.html.SafeHtml.from}, {@code goog.html.SafeHtml.htmlEscape}), etc
-         * and not by invoking its constructor.  The constructor intentionally takes no
-         * parameters and the type is immutable; hence only a default instance
-         * corresponding to the empty string can be obtained via constructor invocation.
-         *
-         * @see goog.html.SafeHtml#from
-         * @see goog.html.SafeHtml#htmlEscape
-         * @constructor
-         * @final
-         * @struct
-         * @implements {goog.i18n.bidi.DirectionalString}
-         * @implements {googstring.TypedString}
-         */
-        constructor();
-    }
 }
 

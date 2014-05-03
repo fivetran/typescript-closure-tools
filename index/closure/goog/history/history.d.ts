@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:58:11 PDT 2014
+// Generated Sat May  3 12:13:59 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/history/eventtype.d.ts" />
@@ -38,59 +38,6 @@
 /// <reference path="../../goog/dom/dom.d.ts" />
 /// <reference path="../../goog/history/event.d.ts" />
 /// <reference path="../../goog/memoize/memoize.d.ts" />
-
-declare module goog.History {
-
-    /**
-     * Whether the browser supports HTML5 history management's onhashchange event.
-     * {@link http://www.w3.org/TR/html5/history.html}. IE 9 in compatibility mode
-     * indicates that onhashchange is in window, but testing reveals the event
-     * isn't actually fired.
-     * @return {boolean} Whether onhashchange is supported.
-     */
-    function isOnHashChangeSupported(): boolean;
-
-    /**
-     * Whether the current browser is Internet Explorer prior to version 8. Many IE
-     * specific workarounds developed before version 8 are unnecessary in more
-     * current versions.
-     * @type {boolean}
-     */
-    var LEGACY_IE: boolean;
-
-    /**
-     * Whether the browser always requires the hash to be present. Internet Explorer
-     * before version 8 will reload the HTML page if the hash is omitted.
-     * @type {boolean}
-     */
-    var HASH_ALWAYS_REQUIRED: boolean;
-
-    /**
-     * Types of polling. The values are in ms of the polling interval.
-     * @enum {number}
-     */
-    enum PollingType { NORMAL, LONG } 
-
-    /**
-     * Constant for the history change event type.
-     * @param {string} token The string identifying the new history state.
-     * @extends {goog.events.Event}
-     * @constructor
-     * @deprecated Use goog.history.Event.
-     * @final
-     */
-    class Event extends goog.events.Event {
-        /**
-         * Constant for the history change event type.
-         * @param {string} token The string identifying the new history state.
-         * @extends {goog.events.Event}
-         * @constructor
-         * @deprecated Use goog.history.Event.
-         * @final
-         */
-        constructor(token: string);
-    }
-}
 
 declare module goog {
 
@@ -238,5 +185,58 @@ declare module goog {
          */
         replaceToken(token: string, opt_title?: string): void;
     }
+}
+
+declare module goog.History {
+
+    /**
+     * Constant for the history change event type.
+     * @param {string} token The string identifying the new history state.
+     * @extends {goog.events.Event}
+     * @constructor
+     * @deprecated Use goog.history.Event.
+     * @final
+     */
+    class Event extends goog.events.Event {
+        /**
+         * Constant for the history change event type.
+         * @param {string} token The string identifying the new history state.
+         * @extends {goog.events.Event}
+         * @constructor
+         * @deprecated Use goog.history.Event.
+         * @final
+         */
+        constructor(token: string);
+    }
+
+    /**
+     * Whether the browser supports HTML5 history management's onhashchange event.
+     * {@link http://www.w3.org/TR/html5/history.html}. IE 9 in compatibility mode
+     * indicates that onhashchange is in window, but testing reveals the event
+     * isn't actually fired.
+     * @return {boolean} Whether onhashchange is supported.
+     */
+    function isOnHashChangeSupported(): boolean;
+
+    /**
+     * Whether the current browser is Internet Explorer prior to version 8. Many IE
+     * specific workarounds developed before version 8 are unnecessary in more
+     * current versions.
+     * @type {boolean}
+     */
+    var LEGACY_IE: boolean;
+
+    /**
+     * Whether the browser always requires the hash to be present. Internet Explorer
+     * before version 8 will reload the HTML page if the hash is omitted.
+     * @type {boolean}
+     */
+    var HASH_ALWAYS_REQUIRED: boolean;
+
+    /**
+     * Types of polling. The values are in ms of the polling interval.
+     * @enum {number}
+     */
+    enum PollingType { NORMAL, LONG } 
 }
 

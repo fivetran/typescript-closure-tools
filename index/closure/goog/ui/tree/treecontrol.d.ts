@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:59:44 PDT 2014
+// Generated Sat May  3 12:15:33 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/string/stringbuffer.d.ts" />
@@ -75,14 +75,6 @@
 /// <reference path="../../../goog/log/log.d.ts" />
 /// <reference path="../../../goog/events/focushandler.d.ts" />
 
-declare module goog.ui.tree.TreeControl {
-
-    /**
-     * A default configuration for the tree.
-     */
-    var defaultConfig: any /*missing*/;
-}
-
 declare module goog.ui.tree {
 
     /**
@@ -96,7 +88,7 @@ declare module goog.ui.tree {
      * @constructor
      * @extends {goog.ui.tree.BaseNode}
      */
-    class TreeControl extends goog.ui.tree.GoogBaseNode {
+    class TreeControl extends goog.ui.tree.BaseNode {
         /**
          * This creates a TreeControl object. A tree control provides a way to
          * view a hierarchical set of data.
@@ -205,5 +197,13 @@ declare module goog.ui.tree {
          */
         clearTypeAhead(): void;
     }
+}
+
+declare module goog.ui.tree.TreeControl {
+
+    /**
+     * A default configuration for the tree.
+     */
+    var defaultConfig: any /*missing*/;
 }
 

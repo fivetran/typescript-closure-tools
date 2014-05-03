@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:59:24 PDT 2014
+// Generated Sat May  3 12:15:13 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -84,15 +84,6 @@
 /// <reference path="../../goog/log/log.d.ts" />
 /// <reference path="../../goog/ui/labelinput.d.ts" />
 
-declare module goog.ui.ComboBox {
-
-    /**
-     * Number of milliseconds to wait before dismissing combobox after blur.
-     * @type {number}
-     */
-    var BLUR_DISMISS_TIMER_MS: number;
-}
-
 declare module goog.ui {
 
     /**
@@ -105,7 +96,7 @@ declare module goog.ui {
      * @extends {goog.ui.Component}
      * @constructor
      */
-    class ComboBox extends goog.ui.GoogComponent {
+    class ComboBox extends goog.ui.Component {
         /**
          * A ComboBox control.
          * @param {goog.dom.DomHelper=} opt_domHelper Optional DOM helper.
@@ -277,7 +268,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.MenuItem}
      */
-    class ComboBoxItem extends goog.ui.GoogMenuItem {
+    class ComboBoxItem extends goog.ui.MenuItem {
         /**
          * Class for combo box items.
          * @param {goog.ui.ControlContent} content Text caption or DOM structure to
@@ -309,5 +300,14 @@ declare module goog.ui {
          */
         setFormatFromToken(token: string): void;
     }
+}
+
+declare module goog.ui.ComboBox {
+
+    /**
+     * Number of milliseconds to wait before dismissing combobox after blur.
+     * @type {number}
+     */
+    var BLUR_DISMISS_TIMER_MS: number;
 }
 

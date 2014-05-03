@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:03:58 PDT 2014
+// Generated Sat May  3 12:19:49 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/dom/nodetype.d.ts" />
@@ -40,6 +40,52 @@
 /// <reference path="../../../goog/events/eventtarget.d.ts" />
 
 declare module goog.testing.events {
+
+    /**
+     * goog.events.BrowserEvent expects an Event so we provide one for JSCompiler.
+     *
+     * This clones a lot of the functionality of goog.events.Event. This used to
+     * use a mixin, but the mixin results in confusing the two types when compiled.
+     *
+     * @param {string} type Event Type.
+     * @param {Object=} opt_target Reference to the object that is the target of
+     *     this event.
+     * @constructor
+     * @extends {Event}
+     */
+    class Event extends Event {
+        /**
+         * goog.events.BrowserEvent expects an Event so we provide one for JSCompiler.
+         *
+         * This clones a lot of the functionality of goog.events.Event. This used to
+         * use a mixin, but the mixin results in confusing the two types when compiled.
+         *
+         * @param {string} type Event Type.
+         * @param {Object=} opt_target Reference to the object that is the target of
+         *     this event.
+         * @constructor
+         * @extends {Event}
+         */
+        constructor(type: string, opt_target?: Object);
+    
+        /**
+         * Whether to cancel the event in internal capture/bubble processing for IE.
+         * @type {boolean}
+         * @public
+         * @suppress {underscore|visibility} Technically public, but referencing this
+         *     outside this package is strongly discouraged.
+         */
+        propagationStopped_: boolean;
+    
+        /**
+         * Return value for in internal capture/bubble processing for IE.
+         * @type {boolean}
+         * @public
+         * @suppress {underscore|visibility} Technically public, but referencing this
+         *     outside this package is strongly discouraged.
+         */
+        returnValue_: boolean;
+    }
 
     /**
      * Simulates a mousedown, mouseup, and then click on the given event target,
@@ -300,51 +346,5 @@ declare module goog.testing.events {
      * @param {!Object} obj The object to mixin into.
      */
     function mixinListenable(obj: Object): void;
-
-    /**
-     * goog.events.BrowserEvent expects an Event so we provide one for JSCompiler.
-     *
-     * This clones a lot of the functionality of goog.events.Event. This used to
-     * use a mixin, but the mixin results in confusing the two types when compiled.
-     *
-     * @param {string} type Event Type.
-     * @param {Object=} opt_target Reference to the object that is the target of
-     *     this event.
-     * @constructor
-     * @extends {Event}
-     */
-    class Event extends Event {
-        /**
-         * goog.events.BrowserEvent expects an Event so we provide one for JSCompiler.
-         *
-         * This clones a lot of the functionality of goog.events.Event. This used to
-         * use a mixin, but the mixin results in confusing the two types when compiled.
-         *
-         * @param {string} type Event Type.
-         * @param {Object=} opt_target Reference to the object that is the target of
-         *     this event.
-         * @constructor
-         * @extends {Event}
-         */
-        constructor(type: string, opt_target?: Object);
-    
-        /**
-         * Whether to cancel the event in internal capture/bubble processing for IE.
-         * @type {boolean}
-         * @public
-         * @suppress {underscore|visibility} Technically public, but referencing this
-         *     outside this package is strongly discouraged.
-         */
-        propagationStopped_: boolean;
-    
-        /**
-         * Return value for in internal capture/bubble processing for IE.
-         * @type {boolean}
-         * @public
-         * @suppress {underscore|visibility} Technically public, but referencing this
-         *     outside this package is strongly discouraged.
-         */
-        returnValue_: boolean;
-    }
 }
 

@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:57:21 PDT 2014
+// Generated Sat May  3 12:13:07 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -6,6 +6,26 @@
 /// <reference path="../../goog/string/string.d.ts" />
 
 declare module goog.asserts {
+
+    /**
+     * Error object for failed assertions.
+     * @param {string} messagePattern The pattern that was used to form message.
+     * @param {!Array.<*>} messageArgs The items to substitute into the pattern.
+     * @constructor
+     * @extends {goog.debug.Error}
+     * @final
+     */
+    class AssertionError extends goog.debug.Error {
+        /**
+         * Error object for failed assertions.
+         * @param {string} messagePattern The pattern that was used to form message.
+         * @param {!Array.<*>} messageArgs The items to substitute into the pattern.
+         * @constructor
+         * @extends {goog.debug.Error}
+         * @final
+         */
+        constructor(messagePattern: string, messageArgs: any[]);
+    }
 
     /**
      * Checks if the condition evaluates to true if goog.asserts.ENABLE_ASSERTS is
@@ -134,25 +154,5 @@ declare module goog.asserts {
      * would break most code that use {@code for (var ... in ...)} loops.
      */
     function assertObjectPrototypeIsIntact(): void;
-
-    /**
-     * Error object for failed assertions.
-     * @param {string} messagePattern The pattern that was used to form message.
-     * @param {!Array.<*>} messageArgs The items to substitute into the pattern.
-     * @constructor
-     * @extends {goog.debug.GoogError}
-     * @final
-     */
-    class AssertionError extends goog.debug.GoogError {
-        /**
-         * Error object for failed assertions.
-         * @param {string} messagePattern The pattern that was used to form message.
-         * @param {!Array.<*>} messageArgs The items to substitute into the pattern.
-         * @constructor
-         * @extends {goog.debug.GoogError}
-         * @final
-         */
-        constructor(messagePattern: string, messageArgs: any[]);
-    }
 }
 

@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:01:16 PDT 2014
+// Generated Sat May  3 12:17:06 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/json/json.d.ts" />
@@ -26,7 +26,7 @@ declare module goog.storage {
      * @constructor
      * @extends {goog.storage.ExpiringStorage}
      */
-    class CollectableStorage extends goog.storage.GoogExpiringStorage {
+    class CollectableStorage extends goog.storage.ExpiringStorage {
         /**
          * Provides a storage with expirning keys and a collection method.
          *

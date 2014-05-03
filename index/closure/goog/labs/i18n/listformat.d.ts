@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:03:30 PDT 2014
+// Generated Sat May  3 12:19:21 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/labs/i18n/listsymbols.d.ts" />
@@ -6,17 +6,6 @@
 /// <reference path="../../../goog/debug/error.d.ts" />
 /// <reference path="../../../goog/string/string.d.ts" />
 /// <reference path="../../../goog/asserts/asserts.d.ts" />
-
-declare module goog.labs.i18n.GenderInfo {
-
-    /**
-     * Enumeration for the possible gender values.
-     * Gender: OTHER means either the information is unavailable,
-     * or the person has declined to state MALE or FEMALE.
-     * @enum {number}
-     */
-    enum Gender { MALE, FEMALE, OTHER } 
-}
 
 declare module goog.labs.i18n {
 
@@ -93,5 +82,16 @@ declare module goog.labs.i18n {
     */
         getListGender(genders: goog.labs.i18n.GenderInfo.Gender[]): goog.labs.i18n.GenderInfo.Gender;
     }
+}
+
+declare module goog.labs.i18n.GenderInfo {
+
+    /**
+     * Enumeration for the possible gender values.
+     * Gender: OTHER means either the information is unavailable,
+     * or the person has declined to state MALE or FEMALE.
+     * @enum {number}
+     */
+    enum Gender { MALE, FEMALE, OTHER } 
 }
 

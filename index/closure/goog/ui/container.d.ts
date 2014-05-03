@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:59:40 PDT 2014
+// Generated Sat May  3 12:15:29 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -54,21 +54,6 @@
 /// <reference path="../../goog/ui/controlcontent.d.ts" />
 /// <reference path="../../goog/ui/control.d.ts" />
 
-declare module goog.ui.Container {
-
-    /**
-     * Container-specific events.
-     * @enum {string}
-     */
-    enum EventType { AFTER_SHOW, AFTER_HIDE } 
-
-    /**
-     * Container orientation constants.
-     * @enum {string}
-     */
-    enum Orientation { HORIZONTAL, VERTICAL } 
-}
-
 declare module goog.ui {
 
     /**
@@ -90,7 +75,7 @@ declare module goog.ui {
      * @extends {goog.ui.Component}
      * @constructor
      */
-    class GoogContainer extends goog.ui.GoogComponent {
+    class Container extends goog.ui.Component {
         /**
          * Base class for containers.  Extends {@link goog.ui.Component} by adding
          * the following:
@@ -439,7 +424,20 @@ declare module goog.ui {
          */
         setMouseButtonPressed(pressed: boolean): void;
     }
+}
 
-    class Container extends GoogContainer { }
+declare module goog.ui.Container {
+
+    /**
+     * Container-specific events.
+     * @enum {string}
+     */
+    enum EventType { AFTER_SHOW, AFTER_HIDE } 
+
+    /**
+     * Container orientation constants.
+     * @enum {string}
+     */
+    enum Orientation { HORIZONTAL, VERTICAL } 
 }
 

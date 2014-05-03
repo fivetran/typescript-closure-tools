@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:04:14 PDT 2014
+// Generated Sat May  3 12:20:05 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/testing/stacktrace.d.ts" />
@@ -9,16 +9,6 @@
 /// <reference path="../../goog/debug/error.d.ts" />
 /// <reference path="../../goog/string/string.d.ts" />
 /// <reference path="../../goog/asserts/asserts.d.ts" />
-
-declare module goog.testing.ShardingTestCase {
-
-    /**
-     * Shards tests based on the test filename. Assumes that the filename is
-     * formatted like 'foo_1of5_test.html'.
-     * @param {string=} opt_name A descriptive name for the test case.
-     */
-    function shardByFileName(opt_name?: string): void;
-}
 
 declare module goog.testing {
 
@@ -31,7 +21,7 @@ declare module goog.testing {
      * @constructor
      * @final
      */
-    class ShardingTestCase extends goog.testing.GoogTestCase {
+    class ShardingTestCase extends goog.testing.TestCase {
         /**
          * A test case that runs tests in per-file shards.
          * @param {number} shardIndex Shard index for this page,
@@ -43,5 +33,15 @@ declare module goog.testing {
          */
         constructor(shardIndex: number, numShards: number);
     }
+}
+
+declare module goog.testing.ShardingTestCase {
+
+    /**
+     * Shards tests based on the test filename. Assumes that the filename is
+     * formatted like 'foo_1of5_test.html'.
+     * @param {string=} opt_name A descriptive name for the test case.
+     */
+    function shardByFileName(opt_name?: string): void;
 }
 

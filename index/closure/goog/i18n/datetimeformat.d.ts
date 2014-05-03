@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:04:44 PDT 2014
+// Generated Sat May  3 12:20:35 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/i18n/datetimesymbols.d.ts" />
@@ -10,25 +10,6 @@
 /// <reference path="../../goog/date/date.d.ts" />
 /// <reference path="../../goog/array/array.d.ts" />
 /// <reference path="../../goog/i18n/timezone.d.ts" />
-
-declare module goog.i18n.DateTimeFormat {
-
-    /**
-     * Enum to identify predefined Date/Time format pattern.
-     * @enum {number}
-     */
-    enum Format { FULL_DATE, LONG_DATE, MEDIUM_DATE, SHORT_DATE, FULL_TIME, LONG_TIME, MEDIUM_TIME, SHORT_TIME, FULL_DATETIME, LONG_DATETIME, MEDIUM_DATETIME, SHORT_DATETIME } 
-
-    /**
-     * Localizes a string potentially containing numbers, replacing ASCII digits
-     * with native digits if specified so by the locale. Leaves other characters.
-     * @param {number|string} input the string to be localized, using ASCII digits.
-     * @param {!Object=} opt_dateTimeSymbols Optional symbols to use use rather than
-     *     the global symbols.
-     * @return {string} localized string, potentially using native digits.
-     */
-    function localizeNumbers(input: any /*number|string*/, opt_dateTimeSymbols?: Object): string;
-}
 
 declare module goog.i18n {
 
@@ -64,5 +45,24 @@ declare module goog.i18n {
          */
         format(date: goog.date.DateLike, opt_timeZone?: goog.i18n.TimeZone): string;
     }
+}
+
+declare module goog.i18n.DateTimeFormat {
+
+    /**
+     * Enum to identify predefined Date/Time format pattern.
+     * @enum {number}
+     */
+    enum Format { FULL_DATE, LONG_DATE, MEDIUM_DATE, SHORT_DATE, FULL_TIME, LONG_TIME, MEDIUM_TIME, SHORT_TIME, FULL_DATETIME, LONG_DATETIME, MEDIUM_DATETIME, SHORT_DATETIME } 
+
+    /**
+     * Localizes a string potentially containing numbers, replacing ASCII digits
+     * with native digits if specified so by the locale. Leaves other characters.
+     * @param {number|string} input the string to be localized, using ASCII digits.
+     * @param {!Object=} opt_dateTimeSymbols Optional symbols to use use rather than
+     *     the global symbols.
+     * @return {string} localized string, potentially using native digits.
+     */
+    function localizeNumbers(input: any /*number|string*/, opt_dateTimeSymbols?: Object): string;
 }
 

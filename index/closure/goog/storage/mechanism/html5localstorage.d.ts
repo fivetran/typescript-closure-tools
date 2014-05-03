@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:01:25 PDT 2014
+// Generated Sat May  3 12:17:14 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/dom/nodetype.d.ts" />
@@ -22,7 +22,7 @@ declare module goog.storage.mechanism {
      * @constructor
      * @extends {goog.storage.mechanism.HTML5WebStorage}
      */
-    class HTML5LocalStorage extends goog.storage.mechanism.GoogHTML5WebStorage {
+    class HTML5LocalStorage extends goog.storage.mechanism.HTML5WebStorage {
         /**
          * Provides a storage mechanism that uses HTML5 local storage.
          *

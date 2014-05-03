@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:01:39 PDT 2014
+// Generated Sat May  3 12:17:28 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/string/string.d.ts" />
@@ -18,21 +18,6 @@
 /// <reference path="../../goog/events/event.d.ts" />
 /// <reference path="../../goog/reflect/reflect.d.ts" />
 
-declare module goog.events.BrowserEvent {
-
-    /**
-     * Normalized button constants for the mouse.
-     * @enum {number}
-     */
-    enum MouseButton { LEFT, MIDDLE, RIGHT } 
-
-    /**
-     * Static data for mapping mouse buttons.
-     * @type {!Array.<number>}
-     */
-    var IEButtonMap: number[];
-}
-
 declare module goog.events {
 
     /**
@@ -45,7 +30,7 @@ declare module goog.events {
      * @constructor
      * @extends {goog.events.Event}
      */
-    class GoogBrowserEvent extends goog.events.Event {
+    class BrowserEvent extends goog.events.Event {
         /**
          * Accepts a browser event object and creates a patched, cross browser event
          * object.
@@ -99,7 +84,20 @@ declare module goog.events {
          */
         getBrowserEvent(): Event;
     }
+}
 
-    class BrowserEvent extends GoogBrowserEvent { }
+declare module goog.events.BrowserEvent {
+
+    /**
+     * Normalized button constants for the mouse.
+     * @enum {number}
+     */
+    enum MouseButton { LEFT, MIDDLE, RIGHT } 
+
+    /**
+     * Static data for mapping mouse buttons.
+     * @type {!Array.<number>}
+     */
+    var IEButtonMap: number[];
 }
 

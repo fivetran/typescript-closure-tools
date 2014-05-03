@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:57:01 PDT 2014
+// Generated Sat May  3 12:12:47 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/dom/nodetype.d.ts" />
@@ -40,6 +40,33 @@
 /// <reference path="../../../goog/dom/textrangeiterator.d.ts" />
 /// <reference path="../../../goog/dom/browserrange/abstractrange.d.ts" />
 
+declare module goog.dom.browserrange {
+
+    /**
+     * The constructor for W3C specific browser ranges.
+     * @param {Range} range The range object.
+     * @constructor
+     * @extends {goog.dom.browserrange.AbstractRange}
+     */
+    class W3cRange extends goog.dom.browserrange.AbstractRange {
+        /**
+         * The constructor for W3C specific browser ranges.
+         * @param {Range} range The range object.
+         * @constructor
+         * @extends {goog.dom.browserrange.AbstractRange}
+         */
+        constructor(range: Range);
+    
+        /**
+         * Select this range.
+         * @param {Selection} selection Browser selection object.
+         * @param {*} reverse Whether to select this range in reverse.
+         * @protected
+         */
+        selectInternal(selection: Selection, reverse: any): void;
+    }
+}
+
 declare module goog.dom.browserrange.W3cRange {
 
     /**
@@ -77,34 +104,5 @@ declare module goog.dom.browserrange.W3cRange {
      * @return {goog.dom.browserrange.W3cRange} A wrapper object.
      */
     function createFromNodes(startNode: Node, startOffset: number, endNode: Node, endOffset: number): goog.dom.browserrange.W3cRange;
-}
-
-declare module goog.dom.browserrange {
-
-    /**
-     * The constructor for W3C specific browser ranges.
-     * @param {Range} range The range object.
-     * @constructor
-     * @extends {goog.dom.browserrange.AbstractRange}
-     */
-    class GoogW3cRange extends goog.dom.browserrange.AbstractRange {
-        /**
-         * The constructor for W3C specific browser ranges.
-         * @param {Range} range The range object.
-         * @constructor
-         * @extends {goog.dom.browserrange.AbstractRange}
-         */
-        constructor(range: Range);
-    
-        /**
-         * Select this range.
-         * @param {Selection} selection Browser selection object.
-         * @param {*} reverse Whether to select this range in reverse.
-         * @protected
-         */
-        selectInternal(selection: Selection, reverse: any): void;
-    }
-
-    class W3cRange extends GoogW3cRange { }
 }
 

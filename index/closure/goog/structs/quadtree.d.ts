@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:57:06 PDT 2014
+// Generated Sat May  3 12:12:53 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -8,95 +8,6 @@
 /// <reference path="../../goog/array/array.d.ts" />
 /// <reference path="../../goog/math/math.d.ts" />
 /// <reference path="../../goog/math/coordinate.d.ts" />
-
-declare module goog.structs.QuadTree {
-
-    /**
-     * Enumeration of node types.
-     * @enum {number}
-     */
-    enum NodeType { EMPTY, LEAF, POINTER } 
-
-    /**
-     * Constructs a new quad tree node.
-     * @param {number} x X-coordiate of node.
-     * @param {number} y Y-coordinate of node.
-     * @param {number} w Width of node.
-     * @param {number} h Height of node.
-     * @param {goog.structs.QuadTree.Node=} opt_parent Optional parent node.
-     * @constructor
-     * @final
-     */
-    class Node {
-        /**
-         * Constructs a new quad tree node.
-         * @param {number} x X-coordiate of node.
-         * @param {number} y Y-coordinate of node.
-         * @param {number} w Width of node.
-         * @param {number} h Height of node.
-         * @param {goog.structs.QuadTree.Node=} opt_parent Optional parent node.
-         * @constructor
-         * @final
-         */
-        constructor(x: number, y: number, w: number, h: number, opt_parent?: goog.structs.QuadTree.Node);
-    
-        /**
-         * The node's type.
-         * @type {goog.structs.QuadTree.NodeType}
-         */
-        nodeType: goog.structs.QuadTree.NodeType;
-    
-        /**
-         * The child node in the North-West quadrant.
-         * @type {goog.structs.QuadTree.Node?}
-         */
-        nw: goog.structs.QuadTree.Node;
-    
-        /**
-         * The child node in the North-East quadrant.
-         * @type {goog.structs.QuadTree.Node?}
-         */
-        ne: goog.structs.QuadTree.Node;
-    
-        /**
-         * The child node in the South-West quadrant.
-         * @type {goog.structs.QuadTree.Node?}
-         */
-        sw: goog.structs.QuadTree.Node;
-    
-        /**
-         * The child node in the South-East quadrant.
-         * @type {goog.structs.QuadTree.Node?}
-         */
-        se: goog.structs.QuadTree.Node;
-    
-        /**
-         * The point for the node, if it is a leaf node.
-         * @type {goog.structs.QuadTree.Point?}
-         */
-        point: goog.structs.QuadTree.Point;
-    }
-
-    /**
-     * Creates a new point object.
-     * @param {number} x The x-coordinate of the point.
-     * @param {number} y The y-coordinate of the point.
-     * @param {*=} opt_value Optional value associated with the point.
-     * @constructor
-     * @final
-     */
-    class Point {
-        /**
-         * Creates a new point object.
-         * @param {number} x The x-coordinate of the point.
-         * @param {number} y The y-coordinate of the point.
-         * @param {*=} opt_value Optional value associated with the point.
-         * @constructor
-         * @final
-         */
-        constructor(x: number, y: number, opt_value?: any);
-    }
-}
 
 declare module goog.structs {
 
@@ -209,5 +120,94 @@ declare module goog.structs {
          */
         forEach(fn: (_0: any, _1: goog.math.Coordinate, _2: goog.structs.QuadTree) => any /*missing*/, opt_obj?: Object): void;
     }
+}
+
+declare module goog.structs.QuadTree {
+
+    /**
+     * Constructs a new quad tree node.
+     * @param {number} x X-coordiate of node.
+     * @param {number} y Y-coordinate of node.
+     * @param {number} w Width of node.
+     * @param {number} h Height of node.
+     * @param {goog.structs.QuadTree.Node=} opt_parent Optional parent node.
+     * @constructor
+     * @final
+     */
+    class Node {
+        /**
+         * Constructs a new quad tree node.
+         * @param {number} x X-coordiate of node.
+         * @param {number} y Y-coordinate of node.
+         * @param {number} w Width of node.
+         * @param {number} h Height of node.
+         * @param {goog.structs.QuadTree.Node=} opt_parent Optional parent node.
+         * @constructor
+         * @final
+         */
+        constructor(x: number, y: number, w: number, h: number, opt_parent?: goog.structs.QuadTree.Node);
+    
+        /**
+         * The node's type.
+         * @type {goog.structs.QuadTree.NodeType}
+         */
+        nodeType: goog.structs.QuadTree.NodeType;
+    
+        /**
+         * The child node in the North-West quadrant.
+         * @type {goog.structs.QuadTree.Node?}
+         */
+        nw: goog.structs.QuadTree.Node;
+    
+        /**
+         * The child node in the North-East quadrant.
+         * @type {goog.structs.QuadTree.Node?}
+         */
+        ne: goog.structs.QuadTree.Node;
+    
+        /**
+         * The child node in the South-West quadrant.
+         * @type {goog.structs.QuadTree.Node?}
+         */
+        sw: goog.structs.QuadTree.Node;
+    
+        /**
+         * The child node in the South-East quadrant.
+         * @type {goog.structs.QuadTree.Node?}
+         */
+        se: goog.structs.QuadTree.Node;
+    
+        /**
+         * The point for the node, if it is a leaf node.
+         * @type {goog.structs.QuadTree.Point?}
+         */
+        point: goog.structs.QuadTree.Point;
+    }
+
+    /**
+     * Creates a new point object.
+     * @param {number} x The x-coordinate of the point.
+     * @param {number} y The y-coordinate of the point.
+     * @param {*=} opt_value Optional value associated with the point.
+     * @constructor
+     * @final
+     */
+    class Point {
+        /**
+         * Creates a new point object.
+         * @param {number} x The x-coordinate of the point.
+         * @param {number} y The y-coordinate of the point.
+         * @param {*=} opt_value Optional value associated with the point.
+         * @constructor
+         * @final
+         */
+        constructor(x: number, y: number, opt_value?: any);
+    }
+
+    /**
+     * Enumeration of node types.
+     * @enum {number}
+     */
+    enum NodeType { EMPTY, LEAF, POINTER } 
 }
 

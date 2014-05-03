@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:57:10 PDT 2014
+// Generated Sat May  3 12:12:56 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/structs/collection.d.ts" />
@@ -103,7 +103,7 @@ declare module goog.structs {
          *     (primitives or objects) present in this set but not in the given
          *     collection.
          */
-        difference(col: any /*T[]|goog.structs.Collection<T>|{ [key: string]: T }*/): goog.structs.Set<T>;
+        difference(col: any /*T[]|goog.structs.Collection<T>|{ [key: string]: T }*/): goog.structs.Set;
     
         /**
          * Returns an array containing all the elements in this set.
@@ -144,7 +144,7 @@ declare module goog.structs {
          * @param {boolean=} opt_keys This argument is ignored.
          * @return {!goog.iter.Iterator} An iterator over the elements in this set.
          */
-        __iterator__(opt_keys?: boolean): goog.iter.Iterator<T>;
+        __iterator__(opt_keys?: boolean): goog.iter.Iterator;
     }
 }
 

@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:00:04 PDT 2014
+// Generated Sat May  3 12:15:53 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -59,7 +59,7 @@ declare module goog.ui {
      * @extends {goog.ui.Component}
      * @constructor
      */
-    class HsvPalette extends goog.ui.GoogComponent {
+    class HsvPalette extends goog.ui.Component {
         /**
          * Creates an HSV palette. Allows a user to select the hue, saturation and
          * value/brightness.

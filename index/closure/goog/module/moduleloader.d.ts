@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:05:24 PDT 2014
+// Generated Sat May  3 12:21:16 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -67,61 +67,6 @@
 /// <reference path="../../goog/net/xhrio.d.ts" />
 /// <reference path="../../goog/net/bulkloader.d.ts" />
 
-declare module goog.module.ModuleLoader {
-
-    /**
-     * @return {boolean} Whether sourceURL affects stack traces.
-     *     Chrome is currently the only browser that does this, but
-     *     we believe other browsers are working on this.
-     * @see http://bugzilla.mozilla.org/show_bug.cgi?id=583083
-     */
-    function supportsSourceUrlStackTraces(): boolean;
-
-    /**
-     * @return {boolean} Whether sourceURL affects the debugger.
-     */
-    function supportsSourceUrlDebugger(): boolean;
-
-    /**
-     * @enum {string}
-     */
-    enum EventType { EVALUATE_CODE, REQUEST_SUCCESS, REQUEST_ERROR } 
-
-    /**
-     * @param {goog.module.ModuleLoader.EventType} type The type.
-     * @param {Array.<string>} moduleIds The ids of the modules being evaluated.
-     * @constructor
-     * @extends {goog.events.Event}
-     * @final
-     */
-    class Event extends goog.events.Event {
-        /**
-         * @param {goog.module.ModuleLoader.EventType} type The type.
-         * @param {Array.<string>} moduleIds The ids of the modules being evaluated.
-         * @constructor
-         * @extends {goog.events.Event}
-         * @final
-         */
-        constructor(type: goog.module.ModuleLoader.EventType, moduleIds: string[]);
-    }
-
-    /**
-     * A class that keeps the state of the module during the loading process. It is
-     * used to save loading information between modules download and evaluation.
-     * @constructor
-     * @final
-     */
-    class LoadStatus {
-        /**
-         * A class that keeps the state of the module during the loading process. It is
-         * used to save loading information between modules download and evaluation.
-         * @constructor
-         * @final
-         */
-        constructor();
-    }
-}
-
 declare module goog.module {
 
     /**
@@ -180,5 +125,60 @@ declare module goog.module {
          */
         setSourceUrlInjection(enabled: boolean): void;
     }
+}
+
+declare module goog.module.ModuleLoader {
+
+    /**
+     * @param {goog.module.ModuleLoader.EventType} type The type.
+     * @param {Array.<string>} moduleIds The ids of the modules being evaluated.
+     * @constructor
+     * @extends {goog.events.Event}
+     * @final
+     */
+    class Event extends goog.events.Event {
+        /**
+         * @param {goog.module.ModuleLoader.EventType} type The type.
+         * @param {Array.<string>} moduleIds The ids of the modules being evaluated.
+         * @constructor
+         * @extends {goog.events.Event}
+         * @final
+         */
+        constructor(type: goog.module.ModuleLoader.EventType, moduleIds: string[]);
+    }
+
+    /**
+     * A class that keeps the state of the module during the loading process. It is
+     * used to save loading information between modules download and evaluation.
+     * @constructor
+     * @final
+     */
+    class LoadStatus {
+        /**
+         * A class that keeps the state of the module during the loading process. It is
+         * used to save loading information between modules download and evaluation.
+         * @constructor
+         * @final
+         */
+        constructor();
+    }
+
+    /**
+     * @return {boolean} Whether sourceURL affects stack traces.
+     *     Chrome is currently the only browser that does this, but
+     *     we believe other browsers are working on this.
+     * @see http://bugzilla.mozilla.org/show_bug.cgi?id=583083
+     */
+    function supportsSourceUrlStackTraces(): boolean;
+
+    /**
+     * @return {boolean} Whether sourceURL affects the debugger.
+     */
+    function supportsSourceUrlDebugger(): boolean;
+
+    /**
+     * @enum {string}
+     */
+    enum EventType { EVALUATE_CODE, REQUEST_SUCCESS, REQUEST_ERROR } 
 }
 

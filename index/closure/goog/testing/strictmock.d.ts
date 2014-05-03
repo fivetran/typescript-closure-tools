@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:04:16 PDT 2014
+// Generated Sat May  3 12:20:07 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -43,7 +43,7 @@ declare module goog.testing {
      * @extends {goog.testing.Mock}
      * @final
      */
-    class StrictMock extends goog.testing.GoogMock {
+    class StrictMock extends goog.testing.Mock {
         /**
          * This is a mock that verifies that methods are called in the order that they
          * are specified during the recording phase. Since it verifies order, it

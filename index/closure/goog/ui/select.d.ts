@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:59:28 PDT 2014
+// Generated Sat May  3 12:15:16 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -104,7 +104,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.MenuButton}
      */
-    class Select extends goog.ui.GoogMenuButton {
+    class Select extends goog.ui.MenuButton {
         /**
          * A selection control.  Extends {@link goog.ui.MenuButton} by composing a
          * menu with a selection model, and automatically updating the button's caption

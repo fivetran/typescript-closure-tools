@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:57:07 PDT 2014
+// Generated Sat May  3 12:12:54 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -7,19 +7,6 @@
 /// <reference path="../../goog/asserts/asserts.d.ts" />
 /// <reference path="../../goog/array/array.d.ts" />
 /// <reference path="../../goog/structs/node.d.ts" />
-
-declare module goog.structs.TreeNode {
-
-    /**
-     * Finds the deepest common ancestor of the given nodes. The concept of
-     * ancestor is not strict in this case, it includes the node itself.
-     * @param {...!goog.structs.TreeNode.<KEY, VALUE>} var_args The nodes.
-     * @return {goog.structs.TreeNode.<KEY, VALUE>} The common ancestor of the nodes
-     *     or null if they are from different trees.
-     * @template KEY, VALUE
-     */
-    function findCommonAncestor<KEY, VALUE>(...var_args: goog.structs.TreeNode<KEY,VALUE>[]): goog.structs.TreeNode<KEY,VALUE>;
-}
 
 declare module goog.structs {
 
@@ -162,7 +149,7 @@ declare module goog.structs {
          *     within {@code f}.
          * @template THIS
          */
-        forEachChild(): void;
+        forEachChild(f: any /* jsdoc error */, opt_this?: any /* jsdoc error */): void;
     
         /**
          * Traverses all child nodes recursively in preorder.
@@ -184,7 +171,7 @@ declare module goog.structs {
          *     within {@code f}.
          * @template THIS
          */
-        traverse(): void;
+        traverse(f: any /* jsdoc error */, opt_this?: any /* jsdoc error */): void;
     
         /**
          * Sets the parent node of this node. The callers must ensure that the parent
@@ -248,5 +235,18 @@ declare module goog.structs {
          */
         removeChildren(): void;
     }
+}
+
+declare module goog.structs.TreeNode {
+
+    /**
+     * Finds the deepest common ancestor of the given nodes. The concept of
+     * ancestor is not strict in this case, it includes the node itself.
+     * @param {...!goog.structs.TreeNode.<KEY, VALUE>} var_args The nodes.
+     * @return {goog.structs.TreeNode.<KEY, VALUE>} The common ancestor of the nodes
+     *     or null if they are from different trees.
+     * @template KEY, VALUE
+     */
+    function findCommonAncestor<KEY, VALUE>(...var_args: goog.structs.TreeNode<KEY,VALUE>[]): goog.structs.TreeNode<KEY,VALUE>;
 }
 

@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:05:17 PDT 2014
+// Generated Sat May  3 12:21:09 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/string/string.d.ts" />
@@ -26,25 +26,6 @@
 /// <reference path="../../goog/datasource/datasource.d.ts" />
 /// <reference path="../../goog/datasource/expr.d.ts" />
 /// <reference path="../../goog/datasource/datamanager.d.ts" />
-
-declare module goog.ds.FastDataNode {
-
-    /**
-     * Creates a new FastDataNode structure initialized from object. This will
-     * return an instance of the most suitable sub-class of FastDataNode.
-     *
-     * You should not modify object after creating a fast data node from it
-     * or assume that changing object changes the data node. Doing so results
-     * in undefined behaviour.
-     *
-     * @param {Object|number|boolean|string} object Object to initialize data
-     *     node from.
-     * @param {string} dataName Name of data node.
-     * @param {goog.ds.DataNode=} opt_parent Parent of data node.
-     * @return {!goog.ds.AbstractFastDataNode} Data node representing object.
-     */
-    function fromJs(object: any /*Object|number|boolean|string*/, dataName: string, opt_parent?: goog.ds.DataNode): goog.ds.AbstractFastDataNode;
-}
 
 declare module goog.ds {
 
@@ -74,7 +55,7 @@ declare module goog.ds {
      * @extends {goog.ds.AbstractFastDataNode}
      * @constructor
      */
-    class GoogFastDataNode extends goog.ds.AbstractFastDataNode {
+    class FastDataNode extends goog.ds.AbstractFastDataNode {
         /**
          * Creates a new fast data node, using the properties of root.
          * @param {Object} root JSON-like object to initialize data node from.
@@ -105,8 +86,6 @@ declare module goog.ds {
          */
         clone(): goog.ds.FastDataNode;
     }
-
-    class FastDataNode extends GoogFastDataNode { }
 
     /**
      * Creates a new data node wrapping a primitive value.
@@ -174,5 +153,24 @@ declare module goog.ds {
          */
         indexOf(name: string): number;
     }
+}
+
+declare module goog.ds.FastDataNode {
+
+    /**
+     * Creates a new FastDataNode structure initialized from object. This will
+     * return an instance of the most suitable sub-class of FastDataNode.
+     *
+     * You should not modify object after creating a fast data node from it
+     * or assume that changing object changes the data node. Doing so results
+     * in undefined behaviour.
+     *
+     * @param {Object|number|boolean|string} object Object to initialize data
+     *     node from.
+     * @param {string} dataName Name of data node.
+     * @param {goog.ds.DataNode=} opt_parent Parent of data node.
+     * @return {!goog.ds.AbstractFastDataNode} Data node representing object.
+     */
+    function fromJs(object: any /*Object|number|boolean|string*/, dataName: string, opt_parent?: goog.ds.DataNode): goog.ds.AbstractFastDataNode;
 }
 

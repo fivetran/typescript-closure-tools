@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:59:19 PDT 2014
+// Generated Sat May  3 12:15:07 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -77,7 +77,7 @@ declare module goog.ui {
      *     goog.ui.Component} for semantics.
      * @extends {goog.ui.Component}
      */
-    class ModalPopup extends goog.ui.GoogComponent {
+    class ModalPopup extends goog.ui.Component {
         /**
          * Base class for modal popup UI components. This can also be used as
          * a standalone component to render a modal popup with an empty div.

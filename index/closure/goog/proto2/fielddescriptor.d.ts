@@ -1,21 +1,10 @@
-// Generated Fri May  2 14:56:02 PDT 2014
+// Generated Sat May  3 12:11:48 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
 /// <reference path="../../goog/debug/error.d.ts" />
 /// <reference path="../../goog/string/string.d.ts" />
 /// <reference path="../../goog/asserts/asserts.d.ts" />
-
-declare module goog.proto2.FieldDescriptor {
-
-    /**
-     * An enumeration defining the possible field types.
-     * Should be a mirror of that defined in descriptor.h.
-     *
-     * @enum {number}
-     */
-    enum FieldType { DOUBLE, FLOAT, INT64, UINT64, INT32, FIXED64, FIXED32, BOOL, STRING, GROUP, MESSAGE, BYTES, UINT32, ENUM, SFIXED32, SFIXED64, SINT32, SINT64 } 
-}
 
 declare module goog.proto2 {
 
@@ -125,5 +114,16 @@ declare module goog.proto2 {
          */
         isOptional(): boolean;
     }
+}
+
+declare module goog.proto2.FieldDescriptor {
+
+    /**
+     * An enumeration defining the possible field types.
+     * Should be a mirror of that defined in descriptor.h.
+     *
+     * @enum {number}
+     */
+    enum FieldType { DOUBLE, FLOAT, INT64, UINT64, INT32, FIXED64, FIXED32, BOOL, STRING, GROUP, MESSAGE, BYTES, UINT32, ENUM, SFIXED32, SFIXED64, SINT32, SINT64 } 
 }
 

@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:05:07 PDT 2014
+// Generated Sat May  3 12:20:59 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -44,27 +44,6 @@
 /// <reference path="../../goog/db/index.d.ts" />
 /// <reference path="../../goog/db/objectstore.d.ts" />
 /// <reference path="../../goog/events/eventhandler.d.ts" />
-
-declare module goog.db.Transaction {
-
-    /**
-     * Event types the Transaction can dispatch. COMPLETE events are dispatched
-     * when the transaction is committed. If a transaction is aborted it dispatches
-     * both an ABORT event and an ERROR event with the ABORT_ERR code. Error events
-     * are dispatched on any error.
-     *
-     * @enum {string}
-     */
-    enum EventTypes { COMPLETE, ABORT, ERROR } 
-
-    /**
-     * The three possible transaction modes.
-     * @see http://www.w3.org/TR/IndexedDB/#idl-def-IDBTransaction
-     *
-     * @enum {string}
-     */
-    enum TransactionMode { READ_ONLY, READ_WRITE, VERSION_CHANGE } 
-}
 
 declare module goog.db {
 
@@ -129,5 +108,26 @@ declare module goog.db {
          */
         abort(): void;
     }
+}
+
+declare module goog.db.Transaction {
+
+    /**
+     * Event types the Transaction can dispatch. COMPLETE events are dispatched
+     * when the transaction is committed. If a transaction is aborted it dispatches
+     * both an ABORT event and an ERROR event with the ABORT_ERR code. Error events
+     * are dispatched on any error.
+     *
+     * @enum {string}
+     */
+    enum EventTypes { COMPLETE, ABORT, ERROR } 
+
+    /**
+     * The three possible transaction modes.
+     * @see http://www.w3.org/TR/IndexedDB/#idl-def-IDBTransaction
+     *
+     * @enum {string}
+     */
+    enum TransactionMode { READ_ONLY, READ_WRITE, VERSION_CHANGE } 
 }
 

@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:59:32 PDT 2014
+// Generated Sat May  3 12:15:21 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/dom/nodetype.d.ts" />
@@ -63,15 +63,6 @@
 /// <reference path="../../../goog/log/log.d.ts" />
 /// <reference path="../../../goog/ui/idgenerator.d.ts" />
 /// <reference path="../../../goog/ui/component.d.ts" />
-
-declare module goog.ui.editor.Bubble {
-
-    /**
-     * The css class name of the bubble container element.
-     * @type {string}
-     */
-    var BUBBLE_CLASSNAME: string;
-}
 
 declare module goog.ui.editor {
 
@@ -183,5 +174,14 @@ declare module goog.ui.editor {
          */
         reposition(): void;
     }
+}
+
+declare module goog.ui.editor.Bubble {
+
+    /**
+     * The css class name of the bubble container element.
+     * @type {string}
+     */
+    var BUBBLE_CLASSNAME: string;
 }
 

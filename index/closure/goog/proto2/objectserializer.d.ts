@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:56:03 PDT 2014
+// Generated Sat May  3 12:11:49 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -11,17 +11,6 @@
 /// <reference path="../../goog/proto2/descriptor.d.ts" />
 /// <reference path="../../goog/proto2/message.d.ts" />
 /// <reference path="../../goog/proto2/serializer.d.ts" />
-
-declare module goog.proto2.ObjectSerializer {
-
-    /**
-     * An enumeration of the options for how to emit the keys in
-     * the generated simplified object.
-     *
-     * @enum {number}
-     */
-    enum KeyOption { TAG, NAME } 
-}
 
 declare module goog.proto2 {
 
@@ -46,5 +35,16 @@ declare module goog.proto2 {
          */
         constructor(opt_keyOption?: goog.proto2.ObjectSerializer.KeyOption);
     }
+}
+
+declare module goog.proto2.ObjectSerializer {
+
+    /**
+     * An enumeration of the options for how to emit the keys in
+     * the generated simplified object.
+     *
+     * @enum {number}
+     */
+    enum KeyOption { TAG, NAME } 
 }
 

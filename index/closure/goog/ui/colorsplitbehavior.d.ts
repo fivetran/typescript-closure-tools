@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:59:53 PDT 2014
+// Generated Sat May  3 12:15:42 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -111,7 +111,7 @@ declare module goog.ui {
      * @constructor
      * @final
      */
-    class ColorSplitBehavior extends goog.ui.GoogSplitBehavior {
+    class ColorSplitBehavior extends goog.ui.SplitBehavior {
         /**
          * Constructs a ColorSplitBehavior for combining a color button and a menu.
          * To use this, provide a goog.ui.ColorButton which will be attached with

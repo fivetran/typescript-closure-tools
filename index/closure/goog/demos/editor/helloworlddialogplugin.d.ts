@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:02:44 PDT 2014
+// Generated Sat May  3 12:18:34 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/dom/nodetype.d.ts" />
@@ -111,15 +111,6 @@
 /// <reference path="../../../goog/editor/plugins/abstractdialogplugin.d.ts" />
 /// <reference path="../../../goog/demos/editor/helloworlddialog.d.ts" />
 
-declare module goog.demos.editor.HelloWorldDialogPlugin {
-
-    /**
-     * Commands implemented by this plugin.
-     * @enum {string}
-     */
-    enum Command { HELLO_WORLD_DIALOG } 
-}
-
 declare module goog.demos.editor {
 
     /**
@@ -128,7 +119,7 @@ declare module goog.demos.editor {
      * @extends {goog.editor.plugins.AbstractDialogPlugin}
      * @final
      */
-    class HelloWorldDialogPlugin extends goog.editor.plugins.GoogAbstractDialogPlugin {
+    class HelloWorldDialogPlugin extends goog.editor.plugins.AbstractDialogPlugin {
         /**
          * A plugin that opens the hello world dialog.
          * @constructor
@@ -137,5 +128,14 @@ declare module goog.demos.editor {
          */
         constructor();
     }
+}
+
+declare module goog.demos.editor.HelloWorldDialogPlugin {
+
+    /**
+     * Commands implemented by this plugin.
+     * @enum {string}
+     */
+    enum Command { HELLO_WORLD_DIALOG } 
 }
 

@@ -1,14 +1,6 @@
-// Generated Fri May  2 15:02:50 PDT 2014
+// Generated Sat May  3 12:18:41 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
-
-declare module goog.debug.RelativeTimeProvider {
-
-    /**
-     * @return {goog.debug.RelativeTimeProvider} The default instance.
-     */
-    function getDefaultInstance(): goog.debug.RelativeTimeProvider;
-}
 
 declare module goog.debug {
 
@@ -53,5 +45,13 @@ declare module goog.debug {
          */
         get(): number;
     }
+}
+
+declare module goog.debug.RelativeTimeProvider {
+
+    /**
+     * @return {goog.debug.RelativeTimeProvider} The default instance.
+     */
+    function getDefaultInstance(): goog.debug.RelativeTimeProvider;
 }
 

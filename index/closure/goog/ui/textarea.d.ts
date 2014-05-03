@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:59:17 PDT 2014
+// Generated Sat May  3 12:15:05 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -54,21 +54,6 @@
 /// <reference path="../../goog/events/keyhandler.d.ts" />
 /// <reference path="../../goog/ui/control.d.ts" />
 
-declare module goog.ui.Textarea {
-
-    /**
-     * Constants for event names.
-     * @enum {string}
-     */
-    enum EventType { RESIZE } 
-
-    /**
-     * The CSS class name to add to the input when the user has not entered a
-     * value.
-     */
-    var TEXTAREA_PLACEHOLDER_CLASS: any /*missing*/;
-}
-
 declare module goog.ui {
 
     /**
@@ -82,7 +67,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.Control}
      */
-    class Textarea extends goog.ui.GoogControl {
+    class Textarea extends goog.ui.Control {
         /**
          * A textarea control to handle growing/shrinking with textarea.value.
          *
@@ -142,5 +127,20 @@ declare module goog.ui {
          */
         resize(): void;
     }
+}
+
+declare module goog.ui.Textarea {
+
+    /**
+     * Constants for event names.
+     * @enum {string}
+     */
+    enum EventType { RESIZE } 
+
+    /**
+     * The CSS class name to add to the input when the user has not entered a
+     * value.
+     */
+    var TEXTAREA_PLACEHOLDER_CLASS: any /*missing*/;
 }
 

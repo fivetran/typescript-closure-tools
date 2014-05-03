@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:59:10 PDT 2014
+// Generated Sat May  3 12:14:59 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -77,7 +77,7 @@ declare module goog.ui {
      * @extends {goog.Disposable}
      * @final
      */
-    class ContainerScroller extends goog.GoogDisposable {
+    class ContainerScroller extends goog.Disposable {
         /**
          * Plug-on scrolling behavior for a container.
          *

@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:00:38 PDT 2014
+// Generated Sat May  3 12:16:27 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/dom/nodetype.d.ts" />
@@ -59,30 +59,6 @@
 /// <reference path="../../../goog/ui/control.d.ts" />
 /// <reference path="../../../goog/ui/palette.d.ts" />
 
-declare module goog.ui.equation.Palette {
-
-    /**
-     * The type of possible palettes. They are made short to minimize JS size.
-     * @enum {string}
-     */
-    enum Type { MENU, GREEK, SYMBOL, COMPARISON, MATH, ARROW } 
-
-    /**
-     * The CSS class name for the palette.
-     * @type {string}
-     */
-    var CSS_CLASS: string;
-}
-
-declare module goog.ui.equation.PaletteEvent {
-
-    /**
-     * The type of events that can be fired on palettes.
-     * @enum {string}
-     */
-    enum Type { ACTION } 
-}
-
 declare module goog.ui.equation {
 
     /**
@@ -103,7 +79,7 @@ declare module goog.ui.equation {
      * @extends {goog.ui.Palette}
      * @constructor
      */
-    class GoogPalette extends goog.ui.GoogPalette {
+    class Palette extends goog.ui.Palette {
         /**
          * Constructs a new palette.
          * @param {goog.ui.equation.PaletteManager} paletteManager The
@@ -152,8 +128,6 @@ declare module goog.ui.equation {
         getAction(index: number): string;
     }
 
-    class Palette extends GoogPalette { }
-
     /**
      * The event that palettes dispatches.
      * @param {string} type Type of the event.
@@ -190,7 +164,7 @@ declare module goog.ui.equation {
      * @extends {goog.ui.PaletteRenderer}
      * @constructor
      */
-    class PaletteRenderer extends goog.ui.GoogPaletteRenderer {
+    class PaletteRenderer extends goog.ui.PaletteRenderer {
         /**
          * The renderer for palette.
          * @extends {goog.ui.PaletteRenderer}
@@ -204,5 +178,29 @@ declare module goog.ui.equation {
          */
         getItemCssClass(): string;
     }
+}
+
+declare module goog.ui.equation.Palette {
+
+    /**
+     * The type of possible palettes. They are made short to minimize JS size.
+     * @enum {string}
+     */
+    enum Type { MENU, GREEK, SYMBOL, COMPARISON, MATH, ARROW } 
+
+    /**
+     * The CSS class name for the palette.
+     * @type {string}
+     */
+    var CSS_CLASS: string;
+}
+
+declare module goog.ui.equation.PaletteEvent {
+
+    /**
+     * The type of events that can be fired on palettes.
+     * @enum {string}
+     */
+    enum Type { ACTION } 
 }
 

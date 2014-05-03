@@ -1,17 +1,43 @@
-// Generated Fri May  2 15:01:30 PDT 2014
+// Generated Sat May  3 12:17:19 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/string/stringbuffer.d.ts" />
 /// <reference path="../../goog/object/object.d.ts" />
 
-declare module goog.format.HtmlPrettyPrinter {
+declare module goog.format {
 
     /**
-     * Static utility function. See prototype #format.
-     * @param {string} html The HTML text to pretty print.
-     * @return {string} Formatted result.
+     * This class formats HTML to be more human-readable.
+     * TODO(user): Add hierarchical indentation.
+     * @param {number=} opt_timeOutMillis Max # milliseconds to spend on #format. If
+     *     this time is exceeded, return partially formatted. 0 or negative number
+     *     indicates no timeout.
+     * @constructor
+     * @final
      */
-    function format(html: string): string;
+    class HtmlPrettyPrinter {
+        /**
+         * This class formats HTML to be more human-readable.
+         * TODO(user): Add hierarchical indentation.
+         * @param {number=} opt_timeOutMillis Max # milliseconds to spend on #format. If
+         *     this time is exceeded, return partially formatted. 0 or negative number
+         *     indicates no timeout.
+         * @constructor
+         * @final
+         */
+        constructor(opt_timeOutMillis?: number);
+    
+        /**
+         * Breaks up HTML so it's easily readable by the user.
+         * @param {string} html The HTML text to pretty print.
+         * @return {string} Formatted result.
+         * @throws {Error} Regex error, data loss, or endless loop detected.
+         */
+        format(html: string): string;
+    }
+}
+
+declare module goog.format.HtmlPrettyPrinter {
 
     /**
      * This class is a buffer to which we push our output. It tracks line breaks to
@@ -49,38 +75,12 @@ declare module goog.format.HtmlPrettyPrinter {
          */
         lineBreak(): void;
     }
-}
-
-declare module goog.format {
 
     /**
-     * This class formats HTML to be more human-readable.
-     * TODO(user): Add hierarchical indentation.
-     * @param {number=} opt_timeOutMillis Max # milliseconds to spend on #format. If
-     *     this time is exceeded, return partially formatted. 0 or negative number
-     *     indicates no timeout.
-     * @constructor
-     * @final
+     * Static utility function. See prototype #format.
+     * @param {string} html The HTML text to pretty print.
+     * @return {string} Formatted result.
      */
-    class HtmlPrettyPrinter {
-        /**
-         * This class formats HTML to be more human-readable.
-         * TODO(user): Add hierarchical indentation.
-         * @param {number=} opt_timeOutMillis Max # milliseconds to spend on #format. If
-         *     this time is exceeded, return partially formatted. 0 or negative number
-         *     indicates no timeout.
-         * @constructor
-         * @final
-         */
-        constructor(opt_timeOutMillis?: number);
-    
-        /**
-         * Breaks up HTML so it's easily readable by the user.
-         * @param {string} html The HTML text to pretty print.
-         * @return {string} Formatted result.
-         * @throws {Error} Regex error, data loss, or endless loop detected.
-         */
-        format(html: string): string;
-    }
+    function format(html: string): string;
 }
 

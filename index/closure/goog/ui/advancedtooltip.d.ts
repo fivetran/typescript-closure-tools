@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:59:55 PDT 2014
+// Generated Sat May  3 12:15:44 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -83,7 +83,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.Tooltip}
      */
-    class AdvancedTooltip extends goog.ui.GoogTooltip {
+    class AdvancedTooltip extends goog.ui.Tooltip {
         /**
          * Advanced tooltip widget with cursor tracking abilities. Works like a regular
          * tooltip but can track the cursor position and direction to determine if the

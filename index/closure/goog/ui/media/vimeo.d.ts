@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:00:18 PDT 2014
+// Generated Sat May  3 12:16:07 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/dom/nodetype.d.ts" />
@@ -67,67 +67,6 @@
 /// <reference path="../../../goog/log/log.d.ts" />
 /// <reference path="../../../goog/ui/media/flashobject.d.ts" />
 
-declare module goog.ui.media.Vimeo {
-
-    /**
-     * Default CSS class to be applied to the root element of components rendered
-     * by this renderer.
-     *
-     * @type {string}
-     */
-    var CSS_CLASS: string;
-
-    /**
-     * A static convenient method to construct a goog.ui.media.Media control out of
-     * a Vimeo URL. It extracts the videoId information on the URL, sets it
-     * as the data model goog.ui.media.Vimeo renderer uses, sets the states
-     * supported by the renderer, and returns a Control that binds everything
-     * together. This is what you should be using for constructing Vimeo videos,
-     * except if you need more fine control over the configuration.
-     *
-     * @param {goog.ui.media.VimeoModel} dataModel A vimeo video URL.
-     * @param {goog.dom.DomHelper=} opt_domHelper Optional DOM helper, used for
-     *     document interaction.
-     * @return {goog.ui.media.Media} A Control binded to the Vimeo renderer.
-     */
-    function newControl(dataModel: goog.ui.media.VimeoModel, opt_domHelper?: goog.dom.DomHelper): goog.ui.media.Media;
-}
-
-declare module goog.ui.media.VimeoModel {
-
-    /**
-     * Takes a {@code vimeoUrl} and extracts the video id.
-     *
-     * @param {string} vimeoUrl A vimeo video URL.
-     * @param {string=} opt_caption An optional caption of the vimeo video.
-     * @param {string=} opt_description An optional description of the vimeo video.
-     * @param {boolean=} opt_autoplay Whether to autoplay video.
-     * @return {goog.ui.media.VimeoModel} The vimeo data model that represents this
-     *     URL.
-     * @throws exception in case the parsing fails
-     */
-    function newInstance(vimeoUrl: string, opt_caption?: string, opt_description?: string, opt_autoplay?: boolean): goog.ui.media.VimeoModel;
-
-    /**
-     * The opposite of {@code goog.ui.media.Vimeo.parseUrl}: it takes a videoId
-     * and returns a vimeo URL.
-     *
-     * @param {string} videoId The vimeo video ID.
-     * @return {string} The vimeo URL.
-     */
-    function buildUrl(videoId: string): string;
-
-    /**
-     * Builds a flash url from the vimeo {@code videoId}.
-     *
-     * @param {string} videoId The vimeo video ID.
-     * @param {boolean=} opt_autoplay Whether the flash movie should start playing
-     *     as soon as it is shown, or if it should show a 'play' button.
-     * @return {string} The vimeo flash URL.
-     */
-    function buildFlashUrl(videoId: string, opt_autoplay?: boolean): string;
-}
-
 declare module goog.ui.media {
 
     /**
@@ -189,7 +128,7 @@ declare module goog.ui.media {
      * @extends {goog.ui.media.MediaModel}
      * @final
      */
-    class VimeoModel extends goog.ui.media.GoogMediaModel {
+    class VimeoModel extends goog.ui.media.MediaModel {
         /**
          * The {@code goog.ui.media.Vimeo} media data model. It stores a required
          * {@code videoId} field, sets the vimeo URL, and allows a few optional
@@ -211,5 +150,66 @@ declare module goog.ui.media {
          */
         getVideoId(): string;
     }
+}
+
+declare module goog.ui.media.Vimeo {
+
+    /**
+     * Default CSS class to be applied to the root element of components rendered
+     * by this renderer.
+     *
+     * @type {string}
+     */
+    var CSS_CLASS: string;
+
+    /**
+     * A static convenient method to construct a goog.ui.media.Media control out of
+     * a Vimeo URL. It extracts the videoId information on the URL, sets it
+     * as the data model goog.ui.media.Vimeo renderer uses, sets the states
+     * supported by the renderer, and returns a Control that binds everything
+     * together. This is what you should be using for constructing Vimeo videos,
+     * except if you need more fine control over the configuration.
+     *
+     * @param {goog.ui.media.VimeoModel} dataModel A vimeo video URL.
+     * @param {goog.dom.DomHelper=} opt_domHelper Optional DOM helper, used for
+     *     document interaction.
+     * @return {goog.ui.media.Media} A Control binded to the Vimeo renderer.
+     */
+    function newControl(dataModel: goog.ui.media.VimeoModel, opt_domHelper?: goog.dom.DomHelper): goog.ui.media.Media;
+}
+
+declare module goog.ui.media.VimeoModel {
+
+    /**
+     * Takes a {@code vimeoUrl} and extracts the video id.
+     *
+     * @param {string} vimeoUrl A vimeo video URL.
+     * @param {string=} opt_caption An optional caption of the vimeo video.
+     * @param {string=} opt_description An optional description of the vimeo video.
+     * @param {boolean=} opt_autoplay Whether to autoplay video.
+     * @return {goog.ui.media.VimeoModel} The vimeo data model that represents this
+     *     URL.
+     * @throws exception in case the parsing fails
+     */
+    function newInstance(vimeoUrl: string, opt_caption?: string, opt_description?: string, opt_autoplay?: boolean): goog.ui.media.VimeoModel;
+
+    /**
+     * The opposite of {@code goog.ui.media.Vimeo.parseUrl}: it takes a videoId
+     * and returns a vimeo URL.
+     *
+     * @param {string} videoId The vimeo video ID.
+     * @return {string} The vimeo URL.
+     */
+    function buildUrl(videoId: string): string;
+
+    /**
+     * Builds a flash url from the vimeo {@code videoId}.
+     *
+     * @param {string} videoId The vimeo video ID.
+     * @param {boolean=} opt_autoplay Whether the flash movie should start playing
+     *     as soon as it is shown, or if it should show a 'play' button.
+     * @return {string} The vimeo flash URL.
+     */
+    function buildFlashUrl(videoId: string, opt_autoplay?: boolean): string;
 }
 

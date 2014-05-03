@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:59:45 PDT 2014
+// Generated Sat May  3 12:15:34 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/dom/nodetype.d.ts" />
@@ -14,17 +14,6 @@
 /// <reference path="../../../goog/object/object.d.ts" />
 /// <reference path="../../../goog/structs/structs.d.ts" />
 /// <reference path="../../../goog/structs/trie.d.ts" />
-
-declare module goog.ui.tree.TypeAhead {
-
-    /**
-     * Enum for offset values that are used for ctrl-key navigation among the
-     * multiple matches of a given typeahead buffer.
-     *
-     * @enum {number}
-     */
-    enum Offset { DOWN, UP } 
-}
 
 declare module goog.ui.tree {
 
@@ -76,5 +65,16 @@ declare module goog.ui.tree {
          */
         clear(): void;
     }
+}
+
+declare module goog.ui.tree.TypeAhead {
+
+    /**
+     * Enum for offset values that are used for ctrl-key navigation among the
+     * multiple matches of a given typeahead buffer.
+     *
+     * @enum {number}
+     */
+    enum Offset { DOWN, UP } 
 }
 

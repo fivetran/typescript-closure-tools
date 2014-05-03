@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:01:18 PDT 2014
+// Generated Sat May  3 12:17:08 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/dom/nodetype.d.ts" />
@@ -13,16 +13,6 @@
 /// <reference path="../../../goog/storage/mechanism/iterablemechanism.d.ts" />
 /// <reference path="../../../goog/storage/mechanism/errorcode.d.ts" />
 
-declare module goog.storage.mechanism.HTML5WebStorage {
-
-    /**
-     * The key used to check if the storage instance is available.
-     * @private {string}
-     * @const
-     */
-    var STORAGE_AVAILABLE_KEY_: any /*missing*/;
-}
-
 declare module goog.storage.mechanism {
 
     /**
@@ -32,7 +22,7 @@ declare module goog.storage.mechanism {
      * @constructor
      * @extends {goog.storage.mechanism.IterableMechanism}
      */
-    class GoogHTML5WebStorage extends goog.storage.mechanism.IterableMechanism {
+    class HTML5WebStorage extends goog.storage.mechanism.IterableMechanism {
         /**
          * Provides a storage mechanism that uses HTML5 Web storage.
          *
@@ -59,7 +49,15 @@ declare module goog.storage.mechanism {
          */
         key(index: number): string;
     }
+}
 
-    class HTML5WebStorage extends GoogHTML5WebStorage { }
+declare module goog.storage.mechanism.HTML5WebStorage {
+
+    /**
+     * The key used to check if the storage instance is available.
+     * @private {string}
+     * @const
+     */
+    var STORAGE_AVAILABLE_KEY_: any /*missing*/;
 }
 

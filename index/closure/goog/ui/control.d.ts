@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:01:01 PDT 2014
+// Generated Sat May  3 12:16:50 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -52,44 +52,6 @@
 /// <reference path="../../goog/events/keycodes.d.ts" />
 /// <reference path="../../goog/events/keyhandler.d.ts" />
 
-declare module goog.ui.Control {
-
-    /**
-     * Maps a CSS class name to a function that returns a new instance of
-     * {@link goog.ui.Control} or a subclass thereof, suitable to decorate
-     * an element that has the specified CSS class.  UI components that extend
-     * {@link goog.ui.Control} and want {@link goog.ui.Container}s to be able
-     * to discover and decorate elements using them should register a factory
-     * function via this API.
-     * @param {string} className CSS class name.
-     * @param {Function} decoratorFunction Function that takes no arguments and
-     *     returns a new instance of a control to decorate an element with the
-     *     given class.
-     * @deprecated Use {@link goog.ui.registry.setDecoratorByClassName} instead.
-     */
-    function registerDecorator(className: string, decoratorFunction: Function): void;
-
-    /**
-     * Takes an element and returns a new instance of {@link goog.ui.Control}
-     * or a subclass, suitable to decorate it (based on the element's CSS class).
-     * @param {Element} element Element to decorate.
-     * @return {goog.ui.Control?} New control instance to decorate the element
-     *     (null if none).
-     * @deprecated Use {@link goog.ui.registry.getDecorator} instead.
-     */
-    function getDecorator(element: Element): goog.ui.Control;
-
-    /**
-     * Takes an element, and decorates it with a {@link goog.ui.Control} instance
-     * if a suitable decorator is found.
-     * @param {Element} element Element to decorate.
-     * @return {goog.ui.Control?} New control instance that decorates the element
-     *     (null if none).
-     * @deprecated Use {@link goog.ui.decorate} instead.
-     */
-    function decorate(element: Element): goog.ui.Control;
-}
-
 declare module goog.ui {
 
     /**
@@ -122,7 +84,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.Component}
      */
-    class GoogControl extends goog.ui.GoogComponent {
+    class Control extends goog.ui.Component {
         /**
          * Base class for UI controls.  Extends {@link goog.ui.Component} by adding
          * the following:
@@ -670,7 +632,43 @@ declare module goog.ui {
          */
         handleKeyEventInternal(e: goog.events.KeyEvent): boolean;
     }
+}
 
-    class Control extends GoogControl { }
+declare module goog.ui.Control {
+
+    /**
+     * Maps a CSS class name to a function that returns a new instance of
+     * {@link goog.ui.Control} or a subclass thereof, suitable to decorate
+     * an element that has the specified CSS class.  UI components that extend
+     * {@link goog.ui.Control} and want {@link goog.ui.Container}s to be able
+     * to discover and decorate elements using them should register a factory
+     * function via this API.
+     * @param {string} className CSS class name.
+     * @param {Function} decoratorFunction Function that takes no arguments and
+     *     returns a new instance of a control to decorate an element with the
+     *     given class.
+     * @deprecated Use {@link goog.ui.registry.setDecoratorByClassName} instead.
+     */
+    function registerDecorator(className: string, decoratorFunction: Function): void;
+
+    /**
+     * Takes an element and returns a new instance of {@link goog.ui.Control}
+     * or a subclass, suitable to decorate it (based on the element's CSS class).
+     * @param {Element} element Element to decorate.
+     * @return {goog.ui.Control?} New control instance to decorate the element
+     *     (null if none).
+     * @deprecated Use {@link goog.ui.registry.getDecorator} instead.
+     */
+    function getDecorator(element: Element): goog.ui.Control;
+
+    /**
+     * Takes an element, and decorates it with a {@link goog.ui.Control} instance
+     * if a suitable decorator is found.
+     * @param {Element} element Element to decorate.
+     * @return {goog.ui.Control?} New control instance that decorates the element
+     *     (null if none).
+     * @deprecated Use {@link goog.ui.decorate} instead.
+     */
+    function decorate(element: Element): goog.ui.Control;
 }
 

@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:57:43 PDT 2014
+// Generated Sat May  3 12:13:30 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -64,6 +64,30 @@
 /// <reference path="../../goog/dom/range.d.ts" />
 
 declare module goog.editor.range {
+
+    /**
+     * One endpoint of a range, represented as a Node and and offset.
+     * @param {Node} node The node containing the point.
+     * @param {number} offset The offset of the point into the node.
+     * @constructor
+     * @final
+     */
+    class Point {
+        /**
+         * One endpoint of a range, represented as a Node and and offset.
+         * @param {Node} node The node containing the point.
+         * @param {number} offset The offset of the point into the node.
+         * @constructor
+         * @final
+         */
+        constructor(node: Node, offset: number);
+    
+        /**
+         * Gets the point of this point's node in the DOM.
+         * @return {!goog.editor.range.Point} The node's point.
+         */
+        getParentPoint(): goog.editor.range.Point;
+    }
 
     /**
      * Given a range and an element, create a narrower range that is limited to the
@@ -201,30 +225,6 @@ declare module goog.editor.range {
      *     text nodes.
      */
     function saveUsingNormalizedCarets(range: goog.dom.AbstractRange): goog.dom.SavedCaretRange;
-
-    /**
-     * One endpoint of a range, represented as a Node and and offset.
-     * @param {Node} node The node containing the point.
-     * @param {number} offset The offset of the point into the node.
-     * @constructor
-     * @final
-     */
-    class Point {
-        /**
-         * One endpoint of a range, represented as a Node and and offset.
-         * @param {Node} node The node containing the point.
-         * @param {number} offset The offset of the point into the node.
-         * @constructor
-         * @final
-         */
-        constructor(node: Node, offset: number);
-    
-        /**
-         * Gets the point of this point's node in the DOM.
-         * @return {!goog.editor.range.Point} The node's point.
-         */
-        getParentPoint(): goog.editor.range.Point;
-    }
 }
 
 declare module goog.editor.range.Point {

@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:00:30 PDT 2014
+// Generated Sat May  3 12:16:20 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/dom/nodetype.d.ts" />
@@ -112,7 +112,7 @@ declare module goog.ui.equation {
      * @extends {goog.ui.Dialog}
      * @final
      */
-    class EquationEditorDialog extends goog.ui.GoogDialog {
+    class EquationEditorDialog extends goog.ui.Dialog {
         /**
          * User interface for equation editor plugin standalone tests.
          * @constructor

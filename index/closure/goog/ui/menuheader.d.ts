@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:59:51 PDT 2014
+// Generated Sat May  3 12:15:40 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -67,7 +67,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.Control}
      */
-    class MenuHeader extends goog.ui.GoogControl {
+    class MenuHeader extends goog.ui.Control {
         /**
          * Class representing a menu header.
          * @param {goog.ui.ControlContent} content Text caption or DOM structure to

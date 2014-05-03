@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:02:46 PDT 2014
+// Generated Sat May  3 12:18:36 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/object/object.d.ts" />
@@ -46,15 +46,6 @@
 /// <reference path="../../../goog/math/coordinate.d.ts" />
 /// <reference path="../../../goog/dom/dom.d.ts" />
 
-declare module goog.demos.editor.HelloWorld {
-
-    /**
-     * Commands implemented by this plugin.
-     * @enum {string}
-     */
-    enum COMMAND { HELLO_WORLD } 
-}
-
 declare module goog.demos.editor {
 
     /**
@@ -63,7 +54,7 @@ declare module goog.demos.editor {
      * @extends {goog.editor.Plugin}
      * @final
      */
-    class HelloWorld extends goog.editor.GoogPlugin {
+    class HelloWorld extends goog.editor.Plugin {
         /**
          * Plugin to insert 'Hello World!' into an editable field.
          * @constructor
@@ -72,5 +63,14 @@ declare module goog.demos.editor {
          */
         constructor();
     }
+}
+
+declare module goog.demos.editor.HelloWorld {
+
+    /**
+     * Commands implemented by this plugin.
+     * @enum {string}
+     */
+    enum COMMAND { HELLO_WORLD } 
 }
 

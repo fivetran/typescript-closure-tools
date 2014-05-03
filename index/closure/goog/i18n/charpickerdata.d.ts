@@ -1,6 +1,44 @@
-// Generated Fri May  2 15:04:48 PDT 2014
+// Generated Sat May  3 12:20:40 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
+
+declare module goog.i18n {
+
+    /**
+     * Object holding two level character organization and character listing.
+     * @constructor
+     */
+    class CharPickerData {
+        /**
+         * Object holding two level character organization and character listing.
+         * @constructor
+         */
+        constructor();
+    
+        /**
+         * Top catagory names of character organization.
+         * @type {Array.<string>}
+         */
+        categories: string[];
+    
+        /**
+         * Subcategory names. Each subarray in this array is a list of subcategory
+         * names for the corresponding category specified in
+         * {@code goog.i18n.CharPickerData.categories}.
+         * @type {Array.<Array.<string>>}
+         */
+        subcategories: string[][];
+    
+        /**
+         * Character lists in base88 encoding scheme. Each subarray is a list of
+         * base88 encoded charater strings representing corresponding subcategory
+         * specified in {@code goog.i18n.CharPickerData.categories}. Encoding
+         * scheme is described in {@code goog.i18n.CharListDecompressor}.
+         * @type {Array.<Array.<string>>}
+         */
+        charList: string[][];
+    }
+}
 
 declare module goog.i18n.CharPickerData {
 
@@ -2212,43 +2250,5 @@ declare module goog.i18n.CharPickerData {
      * @type {Array.<string>}
      */
     var CHARLIST_OF_HAN_OTHER: string[];
-}
-
-declare module goog.i18n {
-
-    /**
-     * Object holding two level character organization and character listing.
-     * @constructor
-     */
-    class CharPickerData {
-        /**
-         * Object holding two level character organization and character listing.
-         * @constructor
-         */
-        constructor();
-    
-        /**
-         * Top catagory names of character organization.
-         * @type {Array.<string>}
-         */
-        categories: string[];
-    
-        /**
-         * Subcategory names. Each subarray in this array is a list of subcategory
-         * names for the corresponding category specified in
-         * {@code goog.i18n.CharPickerData.categories}.
-         * @type {Array.<Array.<string>>}
-         */
-        subcategories: string[][];
-    
-        /**
-         * Character lists in base88 encoding scheme. Each subarray is a list of
-         * base88 encoded charater strings representing corresponding subcategory
-         * specified in {@code goog.i18n.CharPickerData.categories}. Encoding
-         * scheme is described in {@code goog.i18n.CharListDecompressor}.
-         * @type {Array.<Array.<string>>}
-         */
-        charList: string[][];
-    }
 }
 

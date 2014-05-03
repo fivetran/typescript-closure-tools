@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:59:10 PDT 2014
+// Generated Sat May  3 12:14:58 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -69,7 +69,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.Control}
      */
-    class MenuItem extends goog.ui.GoogControl {
+    class MenuItem extends goog.ui.Control {
         /**
          * Class representing an item in a menu.
          *

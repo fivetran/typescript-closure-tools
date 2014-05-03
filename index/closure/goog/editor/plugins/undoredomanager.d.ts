@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:57:37 PDT 2014
+// Generated Sat May  3 12:13:24 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/dom/nodetype.d.ts" />
@@ -26,15 +26,6 @@
 /// <reference path="../../../goog/events/events.d.ts" />
 /// <reference path="../../../goog/events/eventtarget.d.ts" />
 /// <reference path="../../../goog/editor/plugins/undoredostate.d.ts" />
-
-declare module goog.editor.plugins.UndoRedoManager {
-
-    /**
-     * Event types for the events dispatched by undo-redo manager.
-     * @enum {string}
-     */
-    enum EventType { STATE_CHANGE, STATE_ADDED, BEFORE_UNDO, BEFORE_REDO } 
-}
 
 declare module goog.editor.plugins {
 
@@ -112,5 +103,14 @@ declare module goog.editor.plugins {
          */
         redoPeek(): any /*goog.editor.plugins.UndoRedoState|any (undefined)*/;
     }
+}
+
+declare module goog.editor.plugins.UndoRedoManager {
+
+    /**
+     * Event types for the events dispatched by undo-redo manager.
+     * @enum {string}
+     */
+    enum EventType { STATE_CHANGE, STATE_ADDED, BEFORE_UNDO, BEFORE_REDO } 
 }
 

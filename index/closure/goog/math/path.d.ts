@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:04:34 PDT 2014
+// Generated Sat May  3 12:20:25 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -7,33 +7,6 @@
 /// <reference path="../../goog/asserts/asserts.d.ts" />
 /// <reference path="../../goog/array/array.d.ts" />
 /// <reference path="../../goog/math/math.d.ts" />
-
-declare module goog.math.Path {
-
-    /**
-     * Path segment types.
-     * @enum {number}
-     */
-    enum Segment { MOVETO, LINETO, CURVETO, ARCTO, CLOSE } 
-
-    /**
-     * Returns the number of points for a segment type.
-     *
-     * @param {number} segment The segment type.
-     * @return {number} The number of points.
-     */
-    function getSegmentCount(segment: number): number;
-
-    /**
-     * Creates a copy of the given path, replacing {@code arcTo} with
-     * {@code arcToAsCurves}. The resulting path is simplified and can
-     * be transformed.
-     *
-     * @param {!goog.math.Path} src The path to simplify.
-     * @return {!goog.math.Path} A new simplified path.
-     */
-    function createSimplifiedPath(src: goog.math.Path): goog.math.Path;
-}
 
 declare module goog.math {
 
@@ -250,5 +223,32 @@ declare module goog.math {
          */
         isEmpty(): boolean;
     }
+}
+
+declare module goog.math.Path {
+
+    /**
+     * Path segment types.
+     * @enum {number}
+     */
+    enum Segment { MOVETO, LINETO, CURVETO, ARCTO, CLOSE } 
+
+    /**
+     * Returns the number of points for a segment type.
+     *
+     * @param {number} segment The segment type.
+     * @return {number} The number of points.
+     */
+    function getSegmentCount(segment: number): number;
+
+    /**
+     * Creates a copy of the given path, replacing {@code arcTo} with
+     * {@code arcToAsCurves}. The resulting path is simplified and can
+     * be transformed.
+     *
+     * @param {!goog.math.Path} src The path to simplify.
+     * @return {!goog.math.Path} A new simplified path.
+     */
+    function createSimplifiedPath(src: goog.math.Path): goog.math.Path;
 }
 

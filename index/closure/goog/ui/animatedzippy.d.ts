@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:59:37 PDT 2014
+// Generated Sat May  3 12:15:26 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -70,7 +70,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.Zippy}
      */
-    class AnimatedZippy extends goog.ui.GoogZippy {
+    class AnimatedZippy extends goog.ui.Zippy {
         /**
          * Zippy widget. Expandable/collapsible container, clicking the header toggles
          * the visibility of the content.

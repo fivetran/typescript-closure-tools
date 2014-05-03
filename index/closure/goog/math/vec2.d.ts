@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:04:23 PDT 2014
+// Generated Sat May  3 12:20:14 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -8,6 +8,86 @@
 /// <reference path="../../goog/array/array.d.ts" />
 /// <reference path="../../goog/math/math.d.ts" />
 /// <reference path="../../goog/math/coordinate.d.ts" />
+
+declare module goog.math {
+
+    /**
+     * Class for a two-dimensional vector object and assorted functions useful for
+     * manipulating points.
+     *
+     * @param {number} x The x coordinate for the vector.
+     * @param {number} y The y coordinate for the vector.
+     * @constructor
+     * @extends {goog.math.Coordinate}
+     */
+    class Vec2 extends goog.math.Coordinate {
+        /**
+         * Class for a two-dimensional vector object and assorted functions useful for
+         * manipulating points.
+         *
+         * @param {number} x The x coordinate for the vector.
+         * @param {number} y The y coordinate for the vector.
+         * @constructor
+         * @extends {goog.math.Coordinate}
+         */
+        constructor(x: number, y: number);
+    
+        /**
+         * Returns the magnitude of the vector measured from the origin.
+         * @return {number} The length of the vector.
+         */
+        magnitude(): number;
+    
+        /**
+         * Returns the squared magnitude of the vector measured from the origin.
+         * NOTE(brenneman): Leaving out the square root is not a significant
+         * optimization in JavaScript.
+         * @return {number} The length of the vector, squared.
+         */
+        squaredMagnitude(): number;
+    
+        /**
+         * Reverses the sign of the vector. Equivalent to scaling the vector by -1.
+         * @return {!goog.math.Vec2} The inverted vector.
+         */
+        invert(): goog.math.Vec2;
+    
+        /**
+         * Normalizes the current vector to have a magnitude of 1.
+         * @return {!goog.math.Vec2} The normalized vector.
+         */
+        normalize(): goog.math.Vec2;
+    
+        /**
+         * Adds another vector to this vector in-place.
+         * @param {!goog.math.Coordinate} b The vector to add.
+         * @return {!goog.math.Vec2}  This vector with {@code b} added.
+         */
+        add(b: goog.math.Coordinate): goog.math.Vec2;
+    
+        /**
+         * Subtracts another vector from this vector in-place.
+         * @param {!goog.math.Coordinate} b The vector to subtract.
+         * @return {!goog.math.Vec2} This vector with {@code b} subtracted.
+         */
+        subtract(b: goog.math.Coordinate): goog.math.Vec2;
+    
+        /**
+         * Rotates this vector in-place by a given angle, specified in radians.
+         * @param {number} angle The angle, in radians.
+         * @return {!goog.math.Vec2} This vector rotated {@code angle} radians.
+         */
+        rotate(angle: number): goog.math.Vec2;
+    
+        /**
+         * Compares this vector with another for equality.
+         * @param {!goog.math.Vec2} b The other vector.
+         * @return {boolean} Whether this vector has the same x and y as the given
+         *     vector.
+         */
+        equals(b: goog.math.Vec2): boolean;
+    }
+}
 
 declare module goog.math.Vec2 {
 
@@ -96,85 +176,5 @@ declare module goog.math.Vec2 {
      * @return {!goog.math.Vec2} The interpolated vector.
      */
     function lerp(a: goog.math.Coordinate, b: goog.math.Coordinate, x: number): goog.math.Vec2;
-}
-
-declare module goog.math {
-
-    /**
-     * Class for a two-dimensional vector object and assorted functions useful for
-     * manipulating points.
-     *
-     * @param {number} x The x coordinate for the vector.
-     * @param {number} y The y coordinate for the vector.
-     * @constructor
-     * @extends {goog.math.Coordinate}
-     */
-    class Vec2 extends goog.math.GoogCoordinate {
-        /**
-         * Class for a two-dimensional vector object and assorted functions useful for
-         * manipulating points.
-         *
-         * @param {number} x The x coordinate for the vector.
-         * @param {number} y The y coordinate for the vector.
-         * @constructor
-         * @extends {goog.math.Coordinate}
-         */
-        constructor(x: number, y: number);
-    
-        /**
-         * Returns the magnitude of the vector measured from the origin.
-         * @return {number} The length of the vector.
-         */
-        magnitude(): number;
-    
-        /**
-         * Returns the squared magnitude of the vector measured from the origin.
-         * NOTE(brenneman): Leaving out the square root is not a significant
-         * optimization in JavaScript.
-         * @return {number} The length of the vector, squared.
-         */
-        squaredMagnitude(): number;
-    
-        /**
-         * Reverses the sign of the vector. Equivalent to scaling the vector by -1.
-         * @return {!goog.math.Vec2} The inverted vector.
-         */
-        invert(): goog.math.Vec2;
-    
-        /**
-         * Normalizes the current vector to have a magnitude of 1.
-         * @return {!goog.math.Vec2} The normalized vector.
-         */
-        normalize(): goog.math.Vec2;
-    
-        /**
-         * Adds another vector to this vector in-place.
-         * @param {!goog.math.Coordinate} b The vector to add.
-         * @return {!goog.math.Vec2}  This vector with {@code b} added.
-         */
-        add(b: goog.math.Coordinate): goog.math.Vec2;
-    
-        /**
-         * Subtracts another vector from this vector in-place.
-         * @param {!goog.math.Coordinate} b The vector to subtract.
-         * @return {!goog.math.Vec2} This vector with {@code b} subtracted.
-         */
-        subtract(b: goog.math.Coordinate): goog.math.Vec2;
-    
-        /**
-         * Rotates this vector in-place by a given angle, specified in radians.
-         * @param {number} angle The angle, in radians.
-         * @return {!goog.math.Vec2} This vector rotated {@code angle} radians.
-         */
-        rotate(angle: number): goog.math.Vec2;
-    
-        /**
-         * Compares this vector with another for equality.
-         * @param {!goog.math.Vec2} b The other vector.
-         * @return {boolean} Whether this vector has the same x and y as the given
-         *     vector.
-         */
-        equals(b: goog.math.Vec2): boolean;
-    }
 }
 

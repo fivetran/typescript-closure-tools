@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:01:44 PDT 2014
+// Generated Sat May  3 12:17:34 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/disposable/idisposable.d.ts" />
@@ -43,28 +43,6 @@
 /// <reference path="../../goog/debug/logger.d.ts" />
 /// <reference path="../../goog/log/log.d.ts" />
 
-declare module goog.events.PasteHandler {
-
-    /**
-     * The types of events fired by this class.
-     * @enum {string}
-     */
-    enum EventType { PASTE, AFTER_PASTE } 
-
-    /**
-     * The mandatory delay we expect between two {@code input} events, used to
-     * differentiated between non key paste events and key events.
-     * @type {number}
-     */
-    var MANDATORY_MS_BETWEEN_INPUT_EVENTS_TIE_BREAKER: number;
-
-    /**
-     * The states that this class can be found, on the paste detection algorithm.
-     * @enum {string}
-     */
-    enum State { INIT, FOCUSED, TYPING } 
-}
-
 declare module goog.events {
 
     /**
@@ -106,5 +84,27 @@ declare module goog.events {
          */
         getEventHandler<T>(): goog.events.EventHandler<T>;
     }
+}
+
+declare module goog.events.PasteHandler {
+
+    /**
+     * The types of events fired by this class.
+     * @enum {string}
+     */
+    enum EventType { PASTE, AFTER_PASTE } 
+
+    /**
+     * The mandatory delay we expect between two {@code input} events, used to
+     * differentiated between non key paste events and key events.
+     * @type {number}
+     */
+    var MANDATORY_MS_BETWEEN_INPUT_EVENTS_TIE_BREAKER: number;
+
+    /**
+     * The states that this class can be found, on the paste detection algorithm.
+     * @enum {string}
+     */
+    enum State { INIT, FOCUSED, TYPING } 
 }
 

@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:05:17 PDT 2014
+// Generated Sat May  3 12:21:08 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/string/string.d.ts" />
@@ -25,20 +25,6 @@
 /// <reference path="../../goog/log/log.d.ts" />
 /// <reference path="../../goog/datasource/datasource.d.ts" />
 /// <reference path="../../goog/datasource/expr.d.ts" />
-
-declare module goog.ds.DataManager {
-
-    /**
-     * Get the global instance
-     * @return {!goog.ds.DataManager} The data manager singleton.
-     */
-    function getInstance(): goog.ds.DataManager;
-
-    /**
-     * Clears the global instance (for unit tests to reset state).
-     */
-    function clearInstance(): void;
-}
 
 declare module goog.ds {
 
@@ -190,5 +176,19 @@ declare module goog.ds {
          */
         fireDataChange(dataPath: string): void;
     }
+}
+
+declare module goog.ds.DataManager {
+
+    /**
+     * Get the global instance
+     * @return {!goog.ds.DataManager} The data manager singleton.
+     */
+    function getInstance(): goog.ds.DataManager;
+
+    /**
+     * Clears the global instance (for unit tests to reset state).
+     */
+    function clearInstance(): void;
 }
 

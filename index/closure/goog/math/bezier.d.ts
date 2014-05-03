@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:04:25 PDT 2014
+// Generated Sat May  3 12:20:17 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -8,16 +8,6 @@
 /// <reference path="../../goog/array/array.d.ts" />
 /// <reference path="../../goog/math/math.d.ts" />
 /// <reference path="../../goog/math/coordinate.d.ts" />
-
-declare module goog.math.Bezier {
-
-    /**
-     * Constant used to approximate ellipses.
-     * See: http://canvaspaint.org/blog/2006/12/ellipse/
-     * @type {number}
-     */
-    var KAPPA: number;
-}
 
 declare module goog.math {
 
@@ -124,5 +114,15 @@ declare module goog.math {
          */
         solveYValueFromXValue(xVal: number): number;
     }
+}
+
+declare module goog.math.Bezier {
+
+    /**
+     * Constant used to approximate ellipses.
+     * See: http://canvaspaint.org/blog/2006/12/ellipse/
+     * @type {number}
+     */
+    var KAPPA: number;
 }
 

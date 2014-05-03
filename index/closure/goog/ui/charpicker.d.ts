@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:59:27 PDT 2014
+// Generated Sat May  3 12:15:16 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/a11y/aria/attributes.d.ts" />
@@ -134,7 +134,7 @@ declare module goog.ui {
      * @extends {goog.ui.Component}
      * @final
      */
-    class CharPicker extends goog.ui.GoogComponent {
+    class CharPicker extends goog.ui.Component {
         /**
          * Character Picker Class. This widget can be used to pick any Unicode
          * character by traversing a category-subcategory structure or by inputing its

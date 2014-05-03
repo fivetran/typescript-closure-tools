@@ -1,17 +1,6 @@
-// Generated Fri May  2 14:58:52 PDT 2014
+// Generated Sat May  3 12:14:41 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
-
-declare module goog.vec.Float32Array {
-
-    /**
-     * The number of bytes in an element (as defined by the Typed Array
-     * specification).
-     *
-     * @type {number}
-     */
-    var BYTES_PER_ELEMENT: number;
-}
 
 declare module goog.vec {
 
@@ -51,5 +40,16 @@ declare module goog.vec {
          */
         set(values: any /*number[]|Float32Array*/, opt_offset?: number): void;
     }
+}
+
+declare module goog.vec.Float32Array {
+
+    /**
+     * The number of bytes in an element (as defined by the Typed Array
+     * specification).
+     *
+     * @type {number}
+     */
+    var BYTES_PER_ELEMENT: number;
 }
 

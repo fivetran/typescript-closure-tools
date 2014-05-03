@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:01:01 PDT 2014
+// Generated Sat May  3 12:16:51 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -42,39 +42,6 @@
 /// <reference path="../../goog/events/keycodes.d.ts" />
 /// <reference path="../../goog/fx/transition.d.ts" />
 
-declare module goog.ui.PopupBase {
-
-    /**
-     * Constants for type of Popup
-     * @enum {string}
-     */
-    enum Type { TOGGLE_DISPLAY, MOVE_OFFSCREEN } 
-
-    /**
-     * Constants for event type fired by Popup
-     *
-     * @enum {string}
-     */
-    enum EventType { BEFORE_SHOW, SHOW, BEFORE_HIDE, HIDE } 
-
-    /**
-     * A time in ms used to debounce events that happen right after each other.
-     *
-     * A note about why this is necessary. There are two cases to consider.
-     * First case, a popup will usually see a focus event right after it's launched
-     * because it's typical for it to be launched in a mouse-down event which will
-     * then move focus to the launching button. We don't want to think this is a
-     * separate user action moving focus. Second case, a user clicks on the
-     * launcher button to close the menu. In that case, we'll close the menu in the
-     * focus event and then show it again because of the mouse down event, even
-     * though the intention is to just close the menu. This workaround appears to
-     * be the least intrusive fix.
-     *
-     * @type {number}
-     */
-    var DEBOUNCE_DELAY_MS: number;
-}
-
 declare module goog.ui {
 
     /**
@@ -87,7 +54,7 @@ declare module goog.ui {
      * @param {Element=} opt_element A DOM element for the popup.
      * @param {goog.ui.PopupBase.Type=} opt_type Type of popup.
      */
-    class GoogPopupBase extends goog.events.EventTarget {
+    class PopupBase extends goog.events.EventTarget {
         /**
          * The PopupBase class provides functionality for showing and hiding a generic
          * container element. It also provides the option for hiding the popup element
@@ -322,7 +289,38 @@ declare module goog.ui {
          */
         onHide_(opt_target?: Object): void;
     }
+}
 
-    class PopupBase extends GoogPopupBase { }
+declare module goog.ui.PopupBase {
+
+    /**
+     * Constants for type of Popup
+     * @enum {string}
+     */
+    enum Type { TOGGLE_DISPLAY, MOVE_OFFSCREEN } 
+
+    /**
+     * Constants for event type fired by Popup
+     *
+     * @enum {string}
+     */
+    enum EventType { BEFORE_SHOW, SHOW, BEFORE_HIDE, HIDE } 
+
+    /**
+     * A time in ms used to debounce events that happen right after each other.
+     *
+     * A note about why this is necessary. There are two cases to consider.
+     * First case, a popup will usually see a focus event right after it's launched
+     * because it's typical for it to be launched in a mouse-down event which will
+     * then move focus to the launching button. We don't want to think this is a
+     * separate user action moving focus. Second case, a user clicks on the
+     * launcher button to close the menu. In that case, we'll close the menu in the
+     * focus event and then show it again because of the mouse down event, even
+     * though the intention is to just close the menu. This workaround appears to
+     * be the least intrusive fix.
+     *
+     * @type {number}
+     */
+    var DEBOUNCE_DELAY_MS: number;
 }
 

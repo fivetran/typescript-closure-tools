@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:59:16 PDT 2014
+// Generated Sat May  3 12:15:05 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -47,16 +47,6 @@
 /// <reference path="../../goog/dom/classlist.d.ts" />
 /// <reference path="../../goog/ui/controlrenderer.d.ts" />
 
-declare module goog.ui.CheckboxRenderer {
-
-    /**
-     * Default CSS class to be applied to the root element of components rendered
-     * by this renderer.
-     * @type {string}
-     */
-    var CSS_CLASS: string;
-}
-
 declare module goog.ui {
 
     /**
@@ -65,7 +55,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.ControlRenderer}
      */
-    class CheckboxRenderer extends goog.ui.GoogControlRenderer {
+    class CheckboxRenderer extends goog.ui.ControlRenderer {
         /**
          * Default renderer for {@link goog.ui.Checkbox}s.  Extends the superclass
          * to support checkbox states:
@@ -91,5 +81,15 @@ declare module goog.ui {
          */
         getClassForCheckboxState(state: goog.ui.Checkbox.State): string;
     }
+}
+
+declare module goog.ui.CheckboxRenderer {
+
+    /**
+     * Default CSS class to be applied to the root element of components rendered
+     * by this renderer.
+     * @type {string}
+     */
+    var CSS_CLASS: string;
 }
 

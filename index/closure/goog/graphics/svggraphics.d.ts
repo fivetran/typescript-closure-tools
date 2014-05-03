@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:02:12 PDT 2014
+// Generated Sat May  3 12:18:02 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -57,19 +57,6 @@
 /// <reference path="../../goog/graphics/abstractgraphics.d.ts" />
 /// <reference path="../../goog/graphics/lineargradient.d.ts" />
 /// <reference path="../../goog/graphics/stroke.d.ts" />
-
-declare module goog.graphics.SvgGraphics {
-
-    /**
-     * Returns a string representation of a logical path suitable for use in
-     * an SVG element.
-     *
-     * @param {goog.graphics.Path} path The logical path.
-     * @return {string} The SVG path representation.
-     * @suppress {deprecated} goog.graphics is deprecated.
-     */
-    function getSvgPath(path: goog.graphics.Path): string;
-}
 
 declare module goog.graphics {
 
@@ -164,5 +151,18 @@ declare module goog.graphics {
          */
         removeDef(defKey: string): void;
     }
+}
+
+declare module goog.graphics.SvgGraphics {
+
+    /**
+     * Returns a string representation of a logical path suitable for use in
+     * an SVG element.
+     *
+     * @param {goog.graphics.Path} path The logical path.
+     * @return {string} The SVG path representation.
+     * @suppress {deprecated} goog.graphics is deprecated.
+     */
+    function getSvgPath(path: goog.graphics.Path): string;
 }
 

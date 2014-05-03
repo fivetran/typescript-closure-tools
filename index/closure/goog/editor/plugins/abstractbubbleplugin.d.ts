@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:57:34 PDT 2014
+// Generated Sat May  3 12:13:21 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/dom/nodetype.d.ts" />
@@ -92,24 +92,6 @@
 /// <reference path="../../../goog/dom/viewportsizemonitor.d.ts" />
 /// <reference path="../../../goog/ui/editor/bubble.d.ts" />
 
-declare module goog.editor.plugins.AbstractBubblePlugin {
-
-    /**
-     * The constant string used to separate option links.
-     * @type {string}
-     * @protected
-     */
-    var DASH_NBSP_STRING: string;
-
-    /**
-     * Sets the global bubble factory function.
-     * @param {function(!Element, number): !goog.ui.editor.Bubble}
-     *     bubbleFactory Function that creates a bubble for the given bubble parent
-     *     element and z index.
-     */
-    function setBubbleFactory(bubbleFactory: (_0: Element, _1: number) => goog.ui.editor.Bubble): void;
-}
-
 declare module goog.editor.plugins {
 
     /**
@@ -127,7 +109,7 @@ declare module goog.editor.plugins {
      * @constructor
      * @extends {goog.editor.Plugin}
      */
-    class GoogAbstractBubblePlugin extends goog.editor.GoogPlugin {
+    class AbstractBubblePlugin extends goog.editor.Plugin {
         /**
          * Base class for bubble plugins. This is used for to connect user behavior
          * in the editor to a goog.ui.editor.Bubble UI element that allows
@@ -330,7 +312,23 @@ declare module goog.editor.plugins {
          */
         setupLink(link: Element, linkId: string, opt_container?: Element): void;
     }
+}
 
-    class AbstractBubblePlugin extends GoogAbstractBubblePlugin { }
+declare module goog.editor.plugins.AbstractBubblePlugin {
+
+    /**
+     * The constant string used to separate option links.
+     * @type {string}
+     * @protected
+     */
+    var DASH_NBSP_STRING: string;
+
+    /**
+     * Sets the global bubble factory function.
+     * @param {function(!Element, number): !goog.ui.editor.Bubble}
+     *     bubbleFactory Function that creates a bubble for the given bubble parent
+     *     element and z index.
+     */
+    function setBubbleFactory(bubbleFactory: (_0: Element, _1: number) => goog.ui.editor.Bubble): void;
 }
 

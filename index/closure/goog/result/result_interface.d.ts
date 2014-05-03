@@ -1,36 +1,7 @@
-// Generated Fri May  2 15:04:20 PDT 2014
+// Generated Sat May  3 12:20:11 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/promise/thenable.d.ts" />
-
-declare module goog.result.Result {
-
-    /**
-     * The States this object can be in.
-     *
-     * @enum {string}
-     * @deprecated Use {@link goog.Promise} instead - http://go/promisemigration
-     */
-    enum State { SUCCESS, ERROR, PENDING } 
-
-    /**
-     * The value to be passed to the error handlers invoked upon cancellation.
-     * @constructor
-     * @extends {Error}
-     * @final
-     * @deprecated Use {@link goog.Promise} instead - http://go/promisemigration
-     */
-    class CancelError extends Error {
-        /**
-         * The value to be passed to the error handlers invoked upon cancellation.
-         * @constructor
-         * @extends {Error}
-         * @final
-         * @deprecated Use {@link goog.Promise} instead - http://go/promisemigration
-         */
-        constructor();
-    }
-}
 
 declare module goog.result {
 
@@ -87,5 +58,34 @@ declare module goog.result {
          */
         isCanceled(): boolean;
     }
+}
+
+declare module goog.result.Result {
+
+    /**
+     * The value to be passed to the error handlers invoked upon cancellation.
+     * @constructor
+     * @extends {Error}
+     * @final
+     * @deprecated Use {@link goog.Promise} instead - http://go/promisemigration
+     */
+    class CancelError extends Error {
+        /**
+         * The value to be passed to the error handlers invoked upon cancellation.
+         * @constructor
+         * @extends {Error}
+         * @final
+         * @deprecated Use {@link goog.Promise} instead - http://go/promisemigration
+         */
+        constructor();
+    }
+
+    /**
+     * The States this object can be in.
+     *
+     * @enum {string}
+     * @deprecated Use {@link goog.Promise} instead - http://go/promisemigration
+     */
+    enum State { SUCCESS, ERROR, PENDING } 
 }
 

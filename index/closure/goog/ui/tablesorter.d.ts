@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:00:04 PDT 2014
+// Generated Sat May  3 12:15:53 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -42,47 +42,6 @@
 /// <reference path="../../goog/ui/component.d.ts" />
 /// <reference path="../../goog/dom/classlist.d.ts" />
 
-declare module goog.ui.TableSorter {
-
-    /**
-     * Table sorter events.
-     * @enum {string}
-     */
-    enum EventType { BEFORESORT, SORT } 
-
-    /**
-     * Disables sorting on the specified column
-     * @param {*} a First sort value.
-     * @param {*} b Second sort value.
-     * @return {number} Negative if a < b, 0 if a = b, and positive if a > b.
-     */
-    function noSort(a: any, b: any): number;
-
-    /**
-     * A numeric sort function.
-     * @param {*} a First sort value.
-     * @param {*} b Second sort value.
-     * @return {number} Negative if a < b, 0 if a = b, and positive if a > b.
-     */
-    function numericSort(a: any, b: any): number;
-
-    /**
-     * Alphabetic sort function.
-     * @param {*} a First sort value.
-     * @param {*} b Second sort value.
-     * @return {number} Negative if a < b, 0 if a = b, and positive if a > b.
-     */
-    function alphaSort(a: any, b: any): number;
-
-    /**
-     * Returns a function that is the given sort function in reverse.
-     * @param {function(*, *) : number} sortFunction The original sort function.
-     * @return {function(*, *) : number} A new sort function that reverses the
-     *     given sort function.
-     */
-    function createReverseSort(sortFunction: (_0: any, _1: any) => number): (_0: any, _1: any) => number;
-}
-
 declare module goog.ui {
 
     /**
@@ -98,7 +57,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.Component}
      */
-    class TableSorter extends goog.ui.GoogComponent {
+    class TableSorter extends goog.ui.Component {
         /**
          * A table sorter allows for sorting of a table by column.  This component can
          * be used to decorate an already existing TABLE element with sorting
@@ -169,5 +128,46 @@ declare module goog.ui {
          */
         sort(column: number, opt_reverse?: boolean): boolean;
     }
+}
+
+declare module goog.ui.TableSorter {
+
+    /**
+     * Table sorter events.
+     * @enum {string}
+     */
+    enum EventType { BEFORESORT, SORT } 
+
+    /**
+     * Disables sorting on the specified column
+     * @param {*} a First sort value.
+     * @param {*} b Second sort value.
+     * @return {number} Negative if a < b, 0 if a = b, and positive if a > b.
+     */
+    function noSort(a: any, b: any): number;
+
+    /**
+     * A numeric sort function.
+     * @param {*} a First sort value.
+     * @param {*} b Second sort value.
+     * @return {number} Negative if a < b, 0 if a = b, and positive if a > b.
+     */
+    function numericSort(a: any, b: any): number;
+
+    /**
+     * Alphabetic sort function.
+     * @param {*} a First sort value.
+     * @param {*} b Second sort value.
+     * @return {number} Negative if a < b, 0 if a = b, and positive if a > b.
+     */
+    function alphaSort(a: any, b: any): number;
+
+    /**
+     * Returns a function that is the given sort function in reverse.
+     * @param {function(*, *) : number} sortFunction The original sort function.
+     * @return {function(*, *) : number} A new sort function that reverses the
+     *     given sort function.
+     */
+    function createReverseSort(sortFunction: (_0: any, _1: any) => number): (_0: any, _1: any) => number;
 }
 

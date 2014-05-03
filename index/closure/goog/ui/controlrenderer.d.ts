@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:00:49 PDT 2014
+// Generated Sat May  3 12:16:38 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -46,89 +46,6 @@
 /// <reference path="../../goog/a11y/aria/aria.d.ts" />
 /// <reference path="../../goog/dom/classlist.d.ts" />
 
-declare module goog.ui.ControlRenderer {
-
-    /**
-     * Constructs a new renderer and sets the CSS class that the renderer will use
-     * as the base CSS class to apply to all elements rendered by that renderer.
-     * An example to use this function using a color palette:
-     *
-     * <pre>
-     * var myCustomRenderer = goog.ui.ControlRenderer.getCustomRenderer(
-     *     goog.ui.PaletteRenderer, 'my-special-palette');
-     * var newColorPalette = new goog.ui.ColorPalette(
-     *     colors, myCustomRenderer, opt_domHelper);
-     * </pre>
-     *
-     * Your CSS can look like this now:
-     * <pre>
-     * .my-special-palette { }
-     * .my-special-palette-table { }
-     * .my-special-palette-cell { }
-     * etc.
-     * </pre>
-     *
-     * <em>instead</em> of
-     * <pre>
-     * .CSS_MY_SPECIAL_PALETTE .goog-palette { }
-     * .CSS_MY_SPECIAL_PALETTE .goog-palette-table { }
-     * .CSS_MY_SPECIAL_PALETTE .goog-palette-cell { }
-     * etc.
-     * </pre>
-     *
-     * You would want to use this functionality when you want an instance of a
-     * component to have specific styles different than the other components of the
-     * same type in your application.  This avoids using descendant selectors to
-     * apply the specific styles to this component.
-     *
-     * @param {Function} ctor The constructor of the renderer you are trying to
-     *     create.
-     * @param {string} cssClassName The name of the CSS class for this renderer.
-     * @return {goog.ui.ControlRenderer} An instance of the desired renderer with
-     *     its getCssClass() method overridden to return the supplied custom CSS
-     *     class name.
-     */
-    function getCustomRenderer(ctor: Function, cssClassName: string): goog.ui.ControlRenderer;
-
-    /**
-     * Default CSS class to be applied to the root element of components rendered
-     * by this renderer.
-     * @type {string}
-     */
-    var CSS_CLASS: string;
-
-    /**
-     * Array of arrays of CSS classes that we want composite classes added and
-     * removed for in IE6 and lower as a workaround for lack of multi-class CSS
-     * selector support.
-     *
-     * Subclasses that have accompanying CSS requiring this workaround should define
-     * their own static IE6_CLASS_COMBINATIONS constant and override
-     * getIe6ClassCombinations to return it.
-     *
-     * For example, if your stylesheet uses the selector .button.collapse-left
-     * (and is compiled to .button_collapse-left for the IE6 version of the
-     * stylesheet,) you should include ['button', 'collapse-left'] in this array
-     * and the class button_collapse-left will be applied to the root element
-     * whenever both button and collapse-left are applied individually.
-     *
-     * Members of each class name combination will be joined with underscores in the
-     * order that they're defined in the array. You should alphabetize them (for
-     * compatibility with the CSS compiler) unless you are doing something special.
-     * @type {Array.<Array.<string>>}
-     */
-    var IE6_CLASS_COMBINATIONS: string[][];
-
-    /**
-     * Map of certain ARIA states to ARIA roles that support them. Used for checked
-     * and selected Component states because they are used on Components with ARIA
-     * roles that do not support the corresponding ARIA state.
-     * @private {!Object.<goog.a11y.aria.Role, goog.a11y.aria.State>}
-     * @const
-     */
-    var TOGGLE_ARIA_STATE_MAP_: any /*missing*/;
-}
-
 declare module goog.ui {
 
     /**
@@ -150,7 +67,7 @@ declare module goog.ui {
      * reusable.
      * @constructor
      */
-    class GoogControlRenderer {
+    class ControlRenderer {
         /**
          * Default renderer for {@link goog.ui.Control}s.  Can be used as-is, but
          * subclasses of Control will probably want to use renderers specifically
@@ -442,7 +359,88 @@ declare module goog.ui {
          */
         getStateFromClass(className: string): goog.ui.Component.State;
     }
+}
 
-    class ControlRenderer extends GoogControlRenderer { }
+declare module goog.ui.ControlRenderer {
+
+    /**
+     * Constructs a new renderer and sets the CSS class that the renderer will use
+     * as the base CSS class to apply to all elements rendered by that renderer.
+     * An example to use this function using a color palette:
+     *
+     * <pre>
+     * var myCustomRenderer = goog.ui.ControlRenderer.getCustomRenderer(
+     *     goog.ui.PaletteRenderer, 'my-special-palette');
+     * var newColorPalette = new goog.ui.ColorPalette(
+     *     colors, myCustomRenderer, opt_domHelper);
+     * </pre>
+     *
+     * Your CSS can look like this now:
+     * <pre>
+     * .my-special-palette { }
+     * .my-special-palette-table { }
+     * .my-special-palette-cell { }
+     * etc.
+     * </pre>
+     *
+     * <em>instead</em> of
+     * <pre>
+     * .CSS_MY_SPECIAL_PALETTE .goog-palette { }
+     * .CSS_MY_SPECIAL_PALETTE .goog-palette-table { }
+     * .CSS_MY_SPECIAL_PALETTE .goog-palette-cell { }
+     * etc.
+     * </pre>
+     *
+     * You would want to use this functionality when you want an instance of a
+     * component to have specific styles different than the other components of the
+     * same type in your application.  This avoids using descendant selectors to
+     * apply the specific styles to this component.
+     *
+     * @param {Function} ctor The constructor of the renderer you are trying to
+     *     create.
+     * @param {string} cssClassName The name of the CSS class for this renderer.
+     * @return {goog.ui.ControlRenderer} An instance of the desired renderer with
+     *     its getCssClass() method overridden to return the supplied custom CSS
+     *     class name.
+     */
+    function getCustomRenderer(ctor: Function, cssClassName: string): goog.ui.ControlRenderer;
+
+    /**
+     * Default CSS class to be applied to the root element of components rendered
+     * by this renderer.
+     * @type {string}
+     */
+    var CSS_CLASS: string;
+
+    /**
+     * Array of arrays of CSS classes that we want composite classes added and
+     * removed for in IE6 and lower as a workaround for lack of multi-class CSS
+     * selector support.
+     *
+     * Subclasses that have accompanying CSS requiring this workaround should define
+     * their own static IE6_CLASS_COMBINATIONS constant and override
+     * getIe6ClassCombinations to return it.
+     *
+     * For example, if your stylesheet uses the selector .button.collapse-left
+     * (and is compiled to .button_collapse-left for the IE6 version of the
+     * stylesheet,) you should include ['button', 'collapse-left'] in this array
+     * and the class button_collapse-left will be applied to the root element
+     * whenever both button and collapse-left are applied individually.
+     *
+     * Members of each class name combination will be joined with underscores in the
+     * order that they're defined in the array. You should alphabetize them (for
+     * compatibility with the CSS compiler) unless you are doing something special.
+     * @type {Array.<Array.<string>>}
+     */
+    var IE6_CLASS_COMBINATIONS: string[][];
+
+    /**
+     * Map of certain ARIA states to ARIA roles that support them. Used for checked
+     * and selected Component states because they are used on Components with ARIA
+     * roles that do not support the corresponding ARIA state.
+     * @private {!Object.<goog.a11y.aria.Role, goog.a11y.aria.State>}
+     * @const
+     */
+    var TOGGLE_ARIA_STATE_MAP_: any /*missing*/;
 }
 

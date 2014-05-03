@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:59:55 PDT 2014
+// Generated Sat May  3 12:15:44 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -56,15 +56,6 @@
 /// <reference path="../../goog/ui/control.d.ts" />
 /// <reference path="../../goog/ui/menuitem.d.ts" />
 
-declare module goog.ui.TriStateMenuItem {
-
-    /**
-     * Checked states for component.
-     * @enum {number}
-     */
-    enum State { NOT_CHECKED, PARTIALLY_CHECKED, FULLY_CHECKED } 
-}
-
 declare module goog.ui {
 
     /**
@@ -117,5 +108,14 @@ declare module goog.ui {
          */
         setCheckedState(state: goog.ui.TriStateMenuItem.State): void;
     }
+}
+
+declare module goog.ui.TriStateMenuItem {
+
+    /**
+     * Checked states for component.
+     * @enum {number}
+     */
+    enum State { NOT_CHECKED, PARTIALLY_CHECKED, FULLY_CHECKED } 
 }
 

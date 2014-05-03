@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:57:38 PDT 2014
+// Generated Sat May  3 12:13:25 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/dom/tagname.d.ts" />
@@ -90,15 +90,6 @@
 /// <reference path="../../../goog/editor/plugins/undoredostate.d.ts" />
 /// <reference path="../../../goog/editor/plugins/undoredomanager.d.ts" />
 
-declare module goog.editor.plugins.UndoRedo {
-
-    /**
-     * Commands implemented by this plugin.
-     * @enum {string}
-     */
-    enum COMMAND { UNDO, REDO } 
-}
-
 declare module goog.editor.plugins {
 
     /**
@@ -112,7 +103,7 @@ declare module goog.editor.plugins {
      * @constructor
      * @extends {goog.editor.Plugin}
      */
-    class UndoRedo extends goog.editor.GoogPlugin {
+    class UndoRedo extends goog.editor.Plugin {
         /**
          * Encapsulates undo/redo logic using a custom undo stack (i.e. not browser
          * built-in). Browser built-in undo stacks are too flaky (e.g. IE's gets
@@ -182,5 +173,14 @@ declare module goog.editor.plugins {
          */
         refreshCurrentState(fieldObject: goog.editor.Field): void;
     }
+}
+
+declare module goog.editor.plugins.UndoRedo {
+
+    /**
+     * Commands implemented by this plugin.
+     * @enum {string}
+     */
+    enum COMMAND { UNDO, REDO } 
 }
 

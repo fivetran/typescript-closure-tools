@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:59:48 PDT 2014
+// Generated Sat May  3 12:15:37 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -58,23 +58,6 @@
 /// <reference path="../../goog/ui/tabbarrenderer.d.ts" />
 /// <reference path="../../goog/ui/container.d.ts" />
 
-declare module goog.ui.TabBar {
-
-    /**
-     * Tab bar location relative to tab contents.
-     * @enum {string}
-     */
-    enum Location { TOP, BOTTOM, START, END } 
-
-    /**
-     * Returns the {@link goog.ui.Container.Orientation} that is implied by the
-     * given {@link goog.ui.TabBar.Location}.
-     * @param {goog.ui.TabBar.Location} location Tab bar location.
-     * @return {goog.ui.Container.Orientation} Corresponding orientation.
-     */
-    function getOrientationFromLocation(location: goog.ui.TabBar.Location): goog.ui.Container.Orientation;
-}
-
 declare module goog.ui {
 
     /**
@@ -102,7 +85,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.Container}
      */
-    class TabBar extends goog.ui.GoogContainer {
+    class TabBar extends goog.ui.Container {
         /**
          * Tab bar UI component.  A tab bar contains tabs, rendered above, below,
          * before, or after tab contents.  Tabs in tab bars dispatch the following
@@ -228,5 +211,22 @@ declare module goog.ui {
          */
         handleTabHide(e: goog.events.Event): void;
     }
+}
+
+declare module goog.ui.TabBar {
+
+    /**
+     * Tab bar location relative to tab contents.
+     * @enum {string}
+     */
+    enum Location { TOP, BOTTOM, START, END } 
+
+    /**
+     * Returns the {@link goog.ui.Container.Orientation} that is implied by the
+     * given {@link goog.ui.TabBar.Location}.
+     * @param {goog.ui.TabBar.Location} location Tab bar location.
+     * @return {goog.ui.Container.Orientation} Corresponding orientation.
+     */
+    function getOrientationFromLocation(location: goog.ui.TabBar.Location): goog.ui.Container.Orientation;
 }
 

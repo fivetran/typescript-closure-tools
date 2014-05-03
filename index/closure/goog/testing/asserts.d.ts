@@ -1,7 +1,28 @@
-// Generated Fri May  2 15:04:00 PDT 2014
+// Generated Sat May  3 12:19:51 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/testing/stacktrace.d.ts" />
+
+declare module goog.testing {
+
+    /**
+     * @param {string} comment A summary for the exception.
+     * @param {?string=} opt_message A description of the exception.
+     * @constructor
+     * @extends {Error}
+     * @final
+     */
+    class JsUnitException extends Error {
+        /**
+         * @param {string} comment A summary for the exception.
+         * @param {?string=} opt_message A description of the exception.
+         * @constructor
+         * @extends {Error}
+         * @final
+         */
+        constructor(comment: string, opt_message?: string);
+    }
+}
 
 declare module goog.testing.asserts {
 
@@ -55,26 +76,5 @@ declare module goog.testing.asserts {
      * @param {string=} opt_message A description of the exception.
      */
     function raiseException(comment: string, opt_message?: string): void;
-}
-
-declare module goog.testing {
-
-    /**
-     * @param {string} comment A summary for the exception.
-     * @param {?string=} opt_message A description of the exception.
-     * @constructor
-     * @extends {Error}
-     * @final
-     */
-    class JsUnitException extends Error {
-        /**
-         * @param {string} comment A summary for the exception.
-         * @param {?string=} opt_message A description of the exception.
-         * @constructor
-         * @extends {Error}
-         * @final
-         */
-        constructor(comment: string, opt_message?: string);
-    }
 }
 

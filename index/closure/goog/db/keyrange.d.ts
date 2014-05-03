@@ -1,6 +1,40 @@
-// Generated Fri May  2 15:05:09 PDT 2014
+// Generated Sat May  3 12:21:01 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
+
+declare module goog.db {
+
+    /**
+     * Creates a new IDBKeyRange wrapper object. Should not be created directly,
+     * instead use one of the static factory methods. For example:
+     * @see goog.db.KeyRange.bound
+     * @see goog.db.KeyRange.lowerBound
+     *
+     * @param {!IDBKeyRange} range Underlying IDBKeyRange object.
+     * @constructor
+     * @final
+     */
+    class KeyRange {
+        /**
+         * Creates a new IDBKeyRange wrapper object. Should not be created directly,
+         * instead use one of the static factory methods. For example:
+         * @see goog.db.KeyRange.bound
+         * @see goog.db.KeyRange.lowerBound
+         *
+         * @param {!IDBKeyRange} range Underlying IDBKeyRange object.
+         * @constructor
+         * @final
+         */
+        constructor(range: IDBKeyRange);
+    
+        /**
+         * Returns underlying key range object. This is used in ObjectStore's openCursor
+         * and count methods.
+         * @return {!IDBKeyRange}
+         */
+        range(): IDBKeyRange;
+    }
+}
 
 declare module goog.db.KeyRange {
 
@@ -44,39 +78,5 @@ declare module goog.db.KeyRange {
      * @return {!goog.db.KeyRange} The key range.
      */
     function upperBound(upper: IDBKeyType, opt_upperOpen?: boolean): goog.db.KeyRange;
-}
-
-declare module goog.db {
-
-    /**
-     * Creates a new IDBKeyRange wrapper object. Should not be created directly,
-     * instead use one of the static factory methods. For example:
-     * @see goog.db.KeyRange.bound
-     * @see goog.db.KeyRange.lowerBound
-     *
-     * @param {!IDBKeyRange} range Underlying IDBKeyRange object.
-     * @constructor
-     * @final
-     */
-    class KeyRange {
-        /**
-         * Creates a new IDBKeyRange wrapper object. Should not be created directly,
-         * instead use one of the static factory methods. For example:
-         * @see goog.db.KeyRange.bound
-         * @see goog.db.KeyRange.lowerBound
-         *
-         * @param {!IDBKeyRange} range Underlying IDBKeyRange object.
-         * @constructor
-         * @final
-         */
-        constructor(range: IDBKeyRange);
-    
-        /**
-         * Returns underlying key range object. This is used in ObjectStore's openCursor
-         * and count methods.
-         * @return {!IDBKeyRange}
-         */
-        range(): IDBKeyRange;
-    }
 }
 

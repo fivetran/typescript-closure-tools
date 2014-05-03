@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:01:04 PDT 2014
+// Generated Sat May  3 12:16:54 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -59,16 +59,6 @@
 /// <reference path="../../goog/ui/container.d.ts" />
 /// <reference path="../../goog/ui/tabbar.d.ts" />
 
-declare module goog.ui.RoundedTabRenderer {
-
-    /**
-     * Default CSS class to be applied to the root element of components rendered
-     * by this renderer.
-     * @type {string}
-     */
-    var CSS_CLASS: string;
-}
-
 declare module goog.ui {
 
     /**
@@ -77,7 +67,7 @@ declare module goog.ui {
      * @extends {goog.ui.TabRenderer}
      * @final
      */
-    class RoundedTabRenderer extends goog.ui.GoogTabRenderer {
+    class RoundedTabRenderer extends goog.ui.TabRenderer {
         /**
          * Rounded corner tab renderer for {@link goog.ui.Tab}s.
          * @constructor
@@ -117,5 +107,15 @@ declare module goog.ui {
          */
         createEdge(dom: goog.dom.DomHelper, isTopEdge: boolean): Element;
     }
+}
+
+declare module goog.ui.RoundedTabRenderer {
+
+    /**
+     * Default CSS class to be applied to the root element of components rendered
+     * by this renderer.
+     * @type {string}
+     */
+    var CSS_CLASS: string;
 }
 

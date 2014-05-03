@@ -1,26 +1,8 @@
-// Generated Fri May  2 14:58:26 PDT 2014
+// Generated Sat May  3 12:14:14 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 
-declare module goog.net.Cookies {
-
-    /**
-     * Static constant for the size of cookies. Per the spec, there's a 4K limit
-     * to the size of a cookie. To make sure users can't break this limit, we
-     * should truncate long cookies at 3950 bytes, to be extra careful with dumb
-     * browsers/proxies that interpret 4K as 4000 rather than 4096.
-     * @type {number}
-     */
-    var MAX_COOKIE_LENGTH: number;
-}
-
 declare module goog.net {
-
-    /**
-     * A static default instance.
-     * @type {goog.net.Cookies}
-     */
-    var cookies: goog.net.Cookies;
 
     /**
      * A class for handling browser cookies.
@@ -172,6 +154,24 @@ declare module goog.net {
          */
         clear(): void;
     }
+
+    /**
+     * A static default instance.
+     * @type {goog.net.Cookies}
+     */
+    var cookies: goog.net.Cookies;
+}
+
+declare module goog.net.Cookies {
+
+    /**
+     * Static constant for the size of cookies. Per the spec, there's a 4K limit
+     * to the size of a cookie. To make sure users can't break this limit, we
+     * should truncate long cookies at 3950 bytes, to be extra careful with dumb
+     * browsers/proxies that interpret 4K as 4000 rather than 4096.
+     * @type {number}
+     */
+    var MAX_COOKIE_LENGTH: number;
 }
 
 declare module goog.net.cookies {

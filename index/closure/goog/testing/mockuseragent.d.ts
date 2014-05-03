@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:04:18 PDT 2014
+// Generated Sat May  3 12:20:09 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/string/string.d.ts" />
@@ -24,7 +24,7 @@ declare module goog.testing {
      * @constructor
      * @final
      */
-    class MockUserAgent extends goog.GoogDisposable {
+    class MockUserAgent extends goog.Disposable {
         /**
          * Class for unit testing code that uses goog.userAgent.
          *

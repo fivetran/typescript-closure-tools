@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:58:15 PDT 2014
+// Generated Sat May  3 12:14:03 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/net/xhrlike.d.ts" />
@@ -10,15 +10,6 @@
 /// <reference path="../../goog/asserts/asserts.d.ts" />
 
 declare module goog.net {
-
-    /**
-     * Static class for creating XMLHttpRequest objects.
-     * @return {!goog.net.XhrLike.OrNative} A new XMLHttpRequest object.
-     */
-    function XmlHttp(): goog.net.XhrLike.OrNative;
-
-    /** @const */
-    var XmlHttpDefines: any /*missing*/;
 
     /**
      * Default factory to use when creating xhr objects.  You probably shouldn't be
@@ -35,6 +26,15 @@ declare module goog.net {
          */
         constructor();
     }
+
+    /**
+     * Static class for creating XMLHttpRequest objects.
+     * @return {!goog.net.XhrLike.OrNative} A new XMLHttpRequest object.
+     */
+    function XmlHttp(): goog.net.XhrLike.OrNative;
+
+    /** @const */
+    var XmlHttpDefines: any /*missing*/;
 }
 
 declare module goog.net.XmlHttp {

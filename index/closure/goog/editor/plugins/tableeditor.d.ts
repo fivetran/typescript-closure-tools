@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:57:24 PDT 2014
+// Generated Sat May  3 12:13:11 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/dom/nodetype.d.ts" />
@@ -78,15 +78,6 @@
 /// <reference path="../../../goog/events/eventtarget.d.ts" />
 /// <reference path="../../../goog/editor/plugin.d.ts" />
 
-declare module goog.editor.plugins.TableEditor {
-
-    /**
-     * Commands supported by goog.editor.plugins.TableEditor.
-     * @enum {string}
-     */
-    enum COMMAND { TABLE, INSERT_ROW_AFTER, INSERT_ROW_BEFORE, INSERT_COLUMN_AFTER, INSERT_COLUMN_BEFORE, REMOVE_ROWS, REMOVE_COLUMNS, SPLIT_CELL, MERGE_CELLS, REMOVE_TABLE } 
-}
-
 declare module goog.editor.plugins {
 
     /**
@@ -95,7 +86,7 @@ declare module goog.editor.plugins {
      * @extends {goog.editor.Plugin}
      * @final
      */
-    class TableEditor extends goog.editor.GoogPlugin {
+    class TableEditor extends goog.editor.Plugin {
         /**
          * Plugin that adds support for table creation and editing commands.
          * @constructor
@@ -111,5 +102,14 @@ declare module goog.editor.plugins {
          */
         addIsTableEditableFunction(func: (_0: Element) => boolean): void;
     }
+}
+
+declare module goog.editor.plugins.TableEditor {
+
+    /**
+     * Commands supported by goog.editor.plugins.TableEditor.
+     * @enum {string}
+     */
+    enum COMMAND { TABLE, INSERT_ROW_AFTER, INSERT_ROW_BEFORE, INSERT_COLUMN_AFTER, INSERT_COLUMN_BEFORE, REMOVE_ROWS, REMOVE_COLUMNS, SPLIT_CELL, MERGE_CELLS, REMOVE_TABLE } 
 }
 

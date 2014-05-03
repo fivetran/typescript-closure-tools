@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:03:05 PDT 2014
+// Generated Sat May  3 12:18:56 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/labs/object/object.d.ts" />
@@ -9,15 +9,6 @@
 /// <reference path="../../../goog/object/object.d.ts" />
 /// <reference path="../../../goog/array/array.d.ts" />
 
-declare module goog.labs.structs.Map {
-
-    /**
-     * Browser feature enum necessary for map.
-     * @enum {boolean}
-     */
-    enum BrowserFeature { OBJECT_CREATE_SUPPORTED, OBJECT_KEYS_SUPPORTED } 
-}
-
 declare module goog.labs.structs {
 
     /**
@@ -26,7 +17,7 @@ declare module goog.labs.structs {
      * @struct
      * @final
      */
-    class GoogMap {
+    class Map {
         /**
          * Creates a new map.
          * @constructor
@@ -125,7 +116,14 @@ declare module goog.labs.structs {
          */
         clone(): goog.labs.structs.Map;
     }
+}
 
-    class Map extends GoogMap { }
+declare module goog.labs.structs.Map {
+
+    /**
+     * Browser feature enum necessary for map.
+     * @enum {boolean}
+     */
+    enum BrowserFeature { OBJECT_CREATE_SUPPORTED, OBJECT_KEYS_SUPPORTED } 
 }
 

@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:57:25 PDT 2014
+// Generated Sat May  3 12:13:12 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/string/string.d.ts" />
@@ -145,7 +145,7 @@ declare module goog.editor.plugins {
      * @constructor
      * @extends {goog.editor.plugins.AbstractDialogPlugin}
      */
-    class LinkDialogPlugin extends goog.editor.plugins.GoogAbstractDialogPlugin {
+    class LinkDialogPlugin extends goog.editor.plugins.AbstractDialogPlugin {
         /**
          * A plugin that opens the link dialog.
          * @constructor

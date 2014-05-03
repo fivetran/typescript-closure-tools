@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:00:33 PDT 2014
+// Generated Sat May  3 12:16:23 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/dom/nodetype.d.ts" />
@@ -79,7 +79,7 @@ declare module goog.ui.equation {
      * @extends {goog.ui.Component}
      * @final
      */
-    class TexEditor extends goog.ui.GoogComponent {
+    class TexEditor extends goog.ui.Component {
         /**
          * User interface for equation editor plugin.
          * @constructor

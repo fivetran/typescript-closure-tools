@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:02:51 PDT 2014
+// Generated Sat May  3 12:18:42 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -6,20 +6,6 @@
 /// <reference path="../../goog/string/string.d.ts" />
 /// <reference path="../../goog/asserts/asserts.d.ts" />
 /// <reference path="../../goog/debug/logrecord.d.ts" />
-
-declare module goog.debug.LogBuffer {
-
-    /**
-     * A static method that always returns the same instance of LogBuffer.
-     * @return {!goog.debug.LogBuffer} The LogBuffer singleton instance.
-     */
-    function getInstance(): goog.debug.LogBuffer;
-
-    /**
-     * @return {boolean} Whether the log buffer is enabled.
-     */
-    function isBufferingEnabled(): boolean;
-}
 
 declare module goog.debug {
 
@@ -57,5 +43,19 @@ declare module goog.debug {
          */
         forEachRecord(func: (_0: goog.debug.LogRecord) => any /*missing*/): void;
     }
+}
+
+declare module goog.debug.LogBuffer {
+
+    /**
+     * A static method that always returns the same instance of LogBuffer.
+     * @return {!goog.debug.LogBuffer} The LogBuffer singleton instance.
+     */
+    function getInstance(): goog.debug.LogBuffer;
+
+    /**
+     * @return {boolean} Whether the log buffer is enabled.
+     */
+    function isBufferingEnabled(): boolean;
 }
 

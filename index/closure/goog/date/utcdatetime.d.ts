@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:02:32 PDT 2014
+// Generated Sat May  3 12:18:22 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/i18n/datetimesymbols.d.ts" />
@@ -8,17 +8,6 @@
 /// <reference path="../../goog/debug/error.d.ts" />
 /// <reference path="../../goog/asserts/asserts.d.ts" />
 /// <reference path="../../goog/date/date.d.ts" />
-
-declare module goog.date.UtcDateTime {
-
-    /**
-     * Creates a DateTime from a UTC datetime string expressed in ISO 8601 format.
-     *
-     * @param {string} formatted A date or datetime expressed in ISO 8601 format.
-     * @return {goog.date.UtcDateTime} Parsed date or null if parse fails.
-     */
-    function fromIsoString(formatted: string): goog.date.UtcDateTime;
-}
 
 declare module goog.date {
 
@@ -59,5 +48,16 @@ declare module goog.date {
          */
         constructor(opt_year?: any /*number|Object*/, opt_month?: number, opt_date?: number, opt_hours?: number, opt_minutes?: number, opt_seconds?: number, opt_milliseconds?: number);
     }
+}
+
+declare module goog.date.UtcDateTime {
+
+    /**
+     * Creates a DateTime from a UTC datetime string expressed in ISO 8601 format.
+     *
+     * @param {string} formatted A date or datetime expressed in ISO 8601 format.
+     * @return {goog.date.UtcDateTime} Parsed date or null if parse fails.
+     */
+    function fromIsoString(formatted: string): goog.date.UtcDateTime;
 }
 

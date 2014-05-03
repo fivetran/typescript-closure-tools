@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:00:01 PDT 2014
+// Generated Sat May  3 12:15:50 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/a11y/aria/roles.d.ts" />
@@ -64,6 +64,25 @@
 /// <reference path="../../goog/ui/rangemodel.d.ts" />
 /// <reference path="../../goog/ui/sliderbase.d.ts" />
 
+declare module goog.ui {
+
+    /**
+     * This creates a TwoThumbSlider object.
+     * @param {goog.dom.DomHelper=} opt_domHelper Optional DOM helper.
+     * @constructor
+     * @extends {goog.ui.SliderBase}
+     */
+    class TwoThumbSlider extends goog.ui.SliderBase {
+        /**
+         * This creates a TwoThumbSlider object.
+         * @param {goog.dom.DomHelper=} opt_domHelper Optional DOM helper.
+         * @constructor
+         * @extends {goog.ui.SliderBase}
+         */
+        constructor(opt_domHelper?: goog.dom.DomHelper);
+    }
+}
+
 declare module goog.ui.TwoThumbSlider {
 
     /**
@@ -89,24 +108,5 @@ declare module goog.ui.TwoThumbSlider {
      * @type {string}
      */
     var RANGE_HIGHLIGHT_CSS_CLASS: string;
-}
-
-declare module goog.ui {
-
-    /**
-     * This creates a TwoThumbSlider object.
-     * @param {goog.dom.DomHelper=} opt_domHelper Optional DOM helper.
-     * @constructor
-     * @extends {goog.ui.SliderBase}
-     */
-    class TwoThumbSlider extends goog.ui.GoogSliderBase {
-        /**
-         * This creates a TwoThumbSlider object.
-         * @param {goog.dom.DomHelper=} opt_domHelper Optional DOM helper.
-         * @constructor
-         * @extends {goog.ui.SliderBase}
-         */
-        constructor(opt_domHelper?: goog.dom.DomHelper);
-    }
 }
 

@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:59:36 PDT 2014
+// Generated Sat May  3 12:15:25 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -42,15 +42,6 @@
 /// <reference path="../../goog/ui/component.d.ts" />
 /// <reference path="../../goog/dom/classlist.d.ts" />
 
-declare module goog.ui.ScrollFloater {
-
-    /**
-     * Events dispatched by this component.
-     * @enum {string}
-     */
-    enum EventType { FLOAT, DOCK, PIN } 
-}
-
 declare module goog.ui {
 
     /**
@@ -65,7 +56,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.Component}
      */
-    class ScrollFloater extends goog.ui.GoogComponent {
+    class ScrollFloater extends goog.ui.Component {
         /**
          * Creates a ScrollFloater; see file overview for details.
          *
@@ -128,5 +119,14 @@ declare module goog.ui {
          */
         setContainerElement(container: Element): void;
     }
+}
+
+declare module goog.ui.ScrollFloater {
+
+    /**
+     * Events dispatched by this component.
+     * @enum {string}
+     */
+    enum EventType { FLOAT, DOCK, PIN } 
 }
 

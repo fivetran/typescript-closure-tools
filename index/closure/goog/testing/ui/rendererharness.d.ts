@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:03:55 PDT 2014
+// Generated Sat May  3 12:19:46 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/testing/stacktrace.d.ts" />
@@ -47,7 +47,7 @@ declare module goog.testing.ui {
      * @extends {goog.Disposable}
      * @final
      */
-    class RendererHarness extends goog.GoogDisposable {
+    class RendererHarness extends goog.Disposable {
         /**
          * A driver for testing renderers.
          *

@@ -1,15 +1,6 @@
-// Generated Fri May  2 14:58:40 PDT 2014
+// Generated Sat May  3 12:14:28 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
-
-declare module goog.net.XhrLike {
-
-    /**
-     * Typedef that refers to either native or custom-implemented XHR objects.
-     * @typedef {!goog.net.XhrLike|!XMLHttpRequest}
-     */
-    interface OrNative { /*any (goog.net.XhrLike|XMLHttpRequest)*/ }
-}
 
 declare module goog.net {
 
@@ -100,5 +91,14 @@ declare module goog.net {
          */
         getAllResponseHeaders(): string;
     }
+}
+
+declare module goog.net.XhrLike {
+
+    /**
+     * Typedef that refers to either native or custom-implemented XHR objects.
+     * @typedef {!goog.net.XhrLike|!XMLHttpRequest}
+     */
+    interface OrNative { /*any (goog.net.XhrLike|XMLHttpRequest)*/ }
 }
 

@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:59:20 PDT 2014
+// Generated Sat May  3 12:15:08 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -44,21 +44,6 @@
 /// <reference path="../../goog/ui/component.d.ts" />
 /// <reference path="../../goog/dom/classlist.d.ts" />
 
-declare module goog.ui.SplitPane {
-
-    /**
-     * Events.
-     * @enum {string}
-     */
-    enum EventType { HANDLE_DRAG, HANDLE_DRAG_END, HANDLE_SNAP } 
-
-    /**
-    * Orientation values for the splitpane.
-    * @enum {string}
-    */
-    enum Orientation { HORIZONTAL, VERTICAL } 
-}
-
 declare module goog.ui {
 
     /**
@@ -76,7 +61,7 @@ declare module goog.ui {
      * @extends {goog.ui.Component}
      * @constructor
      */
-    class SplitPane extends goog.ui.GoogComponent {
+    class SplitPane extends goog.ui.Component {
         /**
          * A left/right up/down Container SplitPane.
          * Create SplitPane with two goog.ui.Component opjects to split.
@@ -157,5 +142,20 @@ declare module goog.ui {
          */
         setSize(size: goog.math.Size): void;
     }
+}
+
+declare module goog.ui.SplitPane {
+
+    /**
+     * Events.
+     * @enum {string}
+     */
+    enum EventType { HANDLE_DRAG, HANDLE_DRAG_END, HANDLE_SNAP } 
+
+    /**
+    * Orientation values for the splitpane.
+    * @enum {string}
+    */
+    enum Orientation { HORIZONTAL, VERTICAL } 
 }
 

@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:56:49 PDT 2014
+// Generated Sat May  3 12:12:35 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/string/string.d.ts" />
@@ -33,7 +33,7 @@ declare module goog.dom {
      * @constructor
      * @extends {goog.Disposable}
      */
-    class SavedRange extends goog.GoogDisposable {
+    class SavedRange extends goog.Disposable {
         /**
          * Abstract interface for a saved range.
          * @constructor

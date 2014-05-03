@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:02:53 PDT 2014
+// Generated Sat May  3 12:18:43 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/string/string.d.ts" />
@@ -29,15 +29,6 @@
 /// <reference path="../../goog/debug/tracer.d.ts" />
 /// <reference path="../../goog/debug/entrypointregistry.d.ts" />
 
-declare module goog.debug.ErrorHandler.ProtectedFunctionError {
-
-    /**
-     * Text to prefix the message with.
-     * @type {string}
-     */
-    var MESSAGE_PREFIX: string;
-}
-
 declare module goog.debug {
 
     /**
@@ -57,7 +48,7 @@ declare module goog.debug {
      * @extends {goog.Disposable}
      * @implements {goog.debug.EntryPointMonitor}
      */
-    class ErrorHandler extends goog.GoogDisposable implements goog.debug.EntryPointMonitor {
+    class ErrorHandler extends goog.Disposable implements goog.debug.EntryPointMonitor {
         /**
          * The ErrorHandler can be used to to wrap functions with a try/catch
          * statement. If an exception is thrown, the given error handler function will
@@ -145,19 +136,28 @@ declare module goog.debug.ErrorHandler {
      * throws an error.
      * @param {*} cause The error thrown by the entry point.
      * @constructor
-     * @extends {goog.debug.GoogError}
+     * @extends {goog.debug.Error}
      * @final
      */
-    class ProtectedFunctionError extends goog.debug.GoogError {
+    class ProtectedFunctionError extends goog.debug.Error {
         /**
          * Error thrown to the caller of a protected entry point if the entry point
          * throws an error.
          * @param {*} cause The error thrown by the entry point.
          * @constructor
-         * @extends {goog.debug.GoogError}
+         * @extends {goog.debug.Error}
          * @final
          */
         constructor(cause: any);
     }
+}
+
+declare module goog.debug.ErrorHandler.ProtectedFunctionError {
+
+    /**
+     * Text to prefix the message with.
+     * @type {string}
+     */
+    var MESSAGE_PREFIX: string;
 }
 

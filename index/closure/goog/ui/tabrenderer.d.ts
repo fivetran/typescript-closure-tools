@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:01:02 PDT 2014
+// Generated Sat May  3 12:16:52 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/a11y/aria/roles.d.ts" />
@@ -47,16 +47,6 @@
 /// <reference path="../../goog/dom/classlist.d.ts" />
 /// <reference path="../../goog/ui/controlrenderer.d.ts" />
 
-declare module goog.ui.TabRenderer {
-
-    /**
-     * Default CSS class to be applied to the root element of components rendered
-     * by this renderer.
-     * @type {string}
-     */
-    var CSS_CLASS: string;
-}
-
 declare module goog.ui {
 
     /**
@@ -64,7 +54,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.ControlRenderer}
      */
-    class GoogTabRenderer extends goog.ui.GoogControlRenderer {
+    class TabRenderer extends goog.ui.ControlRenderer {
         /**
          * Default renderer for {@link goog.ui.Tab}s, based on the {@code TabPane} code.
          * @constructor
@@ -89,7 +79,15 @@ declare module goog.ui {
          */
         setTooltip(element: Element, tooltip: any /*string|any (null)|any (undefined)*/): void;
     }
+}
 
-    class TabRenderer extends GoogTabRenderer { }
+declare module goog.ui.TabRenderer {
+
+    /**
+     * Default CSS class to be applied to the root element of components rendered
+     * by this renderer.
+     * @type {string}
+     */
+    var CSS_CLASS: string;
 }
 

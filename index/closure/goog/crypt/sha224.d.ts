@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:57:51 PDT 2014
+// Generated Sat May  3 12:13:38 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -19,7 +19,7 @@ declare module goog.crypt {
      * @final
      * @struct
      */
-    class Sha224 extends goog.crypt.GoogSha2 {
+    class Sha224 extends goog.crypt.Sha2 {
         /**
          * SHA-224 cryptographic hash constructor.
          *

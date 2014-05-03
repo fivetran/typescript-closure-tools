@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:00:00 PDT 2014
+// Generated Sat May  3 12:15:49 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -45,16 +45,6 @@
 /// <reference path="../../goog/events/keycodes.d.ts" />
 /// <reference path="../../goog/events/eventtarget.d.ts" />
 
-declare module goog.ui.Zippy {
-
-    /**
-     * Constants for event names
-     *
-     * @type {Object}
-     */
-    var Events: Object;
-}
-
 declare module goog.ui {
 
     /**
@@ -76,7 +66,7 @@ declare module goog.ui {
      * @param {goog.dom.DomHelper=} opt_domHelper An optional DOM helper.
      * @constructor
      */
-    class GoogZippy extends goog.events.EventTarget {
+    class Zippy extends goog.events.EventTarget {
         /**
          * Zippy widget. Expandable/collapsible container, clicking the header toggles
          * the visibility of the content.
@@ -180,8 +170,6 @@ declare module goog.ui {
         setHandleMouseEvents(enable: boolean): void;
     }
 
-    class Zippy extends GoogZippy { }
-
     /**
      * Object representing a zippy toggle event.
      *
@@ -205,5 +193,15 @@ declare module goog.ui {
          */
         constructor(type: string, target: goog.ui.Zippy, expanded: boolean);
     }
+}
+
+declare module goog.ui.Zippy {
+
+    /**
+     * Constants for event names
+     *
+     * @type {Object}
+     */
+    var Events: Object;
 }
 

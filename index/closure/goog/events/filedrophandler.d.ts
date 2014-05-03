@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:01:37 PDT 2014
+// Generated Sat May  3 12:17:26 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -45,15 +45,6 @@
 /// <reference path="../../goog/dom/dom.d.ts" />
 /// <reference path="../../goog/events/eventtarget.d.ts" />
 
-declare module goog.events.FileDropHandler {
-
-    /**
-     * The types of events fired by this class.
-     * @enum {string}
-     */
-    enum EventType { DROP } 
-}
-
 declare module goog.events {
 
     /**
@@ -83,5 +74,14 @@ declare module goog.events {
          */
         constructor(element: any /*Element|Document*/, opt_preventDropOutside?: boolean);
     }
+}
+
+declare module goog.events.FileDropHandler {
+
+    /**
+     * The types of events fired by this class.
+     * @enum {string}
+     */
+    enum EventType { DROP } 
 }
 

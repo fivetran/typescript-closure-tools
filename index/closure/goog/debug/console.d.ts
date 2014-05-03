@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:02:53 PDT 2014
+// Generated Sat May  3 12:18:44 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/debug/relativetimeprovider.d.ts" />
@@ -24,32 +24,6 @@
 /// <reference path="../../goog/debug/logrecord.d.ts" />
 /// <reference path="../../goog/debug/logbuffer.d.ts" />
 /// <reference path="../../goog/debug/logger.d.ts" />
-
-declare module goog.debug.Console {
-
-    /**
-     * Global console logger instance
-     * @type {goog.debug.Console}
-     */
-    var instance: goog.debug.Console;
-
-    /**
-     * Sets the console to which to log.
-     * @param {!Object} console The console to which to log.
-     */
-    function setConsole(console: Object): void;
-
-    /**
-     * Install the console and start capturing if "Debug=true" is in the page URL
-     */
-    function autoInstall(): void;
-
-    /**
-     * Show an alert with all of the captured debug information.
-     * Information is only captured if console is not available
-     */
-    function show(): void;
-}
 
 declare module goog.debug {
 
@@ -94,5 +68,31 @@ declare module goog.debug {
          */
         removeFilter(loggerName: string): void;
     }
+}
+
+declare module goog.debug.Console {
+
+    /**
+     * Global console logger instance
+     * @type {goog.debug.Console}
+     */
+    var instance: goog.debug.Console;
+
+    /**
+     * Sets the console to which to log.
+     * @param {!Object} console The console to which to log.
+     */
+    function setConsole(console: Object): void;
+
+    /**
+     * Install the console and start capturing if "Debug=true" is in the page URL
+     */
+    function autoInstall(): void;
+
+    /**
+     * Show an alert with all of the captured debug information.
+     * Information is only captured if console is not available
+     */
+    function show(): void;
 }
 

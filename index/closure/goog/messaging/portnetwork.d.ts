@@ -1,27 +1,6 @@
-// Generated Fri May  2 14:59:05 PDT 2014
+// Generated Sat May  3 12:14:54 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
-
-declare module goog.messaging.PortNetwork {
-
-    /**
-     * The name of the service exported by the operator for creating a connection
-     * between two callers.
-     *
-     * @type {string}
-     * @const
-     */
-    var REQUEST_CONNECTION_SERVICE: string;
-
-    /**
-     * The name of the service exported by the callers for adding a connection to
-     * another context.
-     *
-     * @type {string}
-     * @const
-     */
-    var GRANT_CONNECTION_SERVICE: string;
-}
 
 declare module goog.messaging {
 
@@ -47,5 +26,26 @@ declare module goog.messaging {
          */
         dial(name: string): goog.messaging.MessageChannel;
     }
+}
+
+declare module goog.messaging.PortNetwork {
+
+    /**
+     * The name of the service exported by the operator for creating a connection
+     * between two callers.
+     *
+     * @type {string}
+     * @const
+     */
+    var REQUEST_CONNECTION_SERVICE: string;
+
+    /**
+     * The name of the service exported by the callers for adding a connection to
+     * another context.
+     *
+     * @type {string}
+     * @const
+     */
+    var GRANT_CONNECTION_SERVICE: string;
 }
 

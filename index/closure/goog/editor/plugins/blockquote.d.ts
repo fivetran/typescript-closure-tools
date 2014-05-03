@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:57:37 PDT 2014
+// Generated Sat May  3 12:13:25 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/dom/nodetype.d.ts" />
@@ -53,41 +53,6 @@
 /// <reference path="../../../goog/useragent/product_isversion.d.ts" />
 /// <reference path="../../../goog/editor/browserfeature.d.ts" />
 
-declare module goog.editor.plugins.Blockquote {
-
-    /**
-     * Command implemented by this plugin.
-     * @type {string}
-     */
-    var SPLIT_COMMAND: string;
-
-    /**
-     * Class ID used to identify this plugin.
-     * @type {string}
-     */
-    var CLASS_ID: string;
-
-    /**
-     * Checks if a node is a blockquote node.  If isAlreadySetup is set, it also
-     * makes sure the node has the blockquote classname applied.  Otherwise, it
-     * ensures that the blockquote does not already have the classname applied.
-     * @param {Node} node DOM node to check.
-     * @param {boolean} isAlreadySetup True to enforce that the classname must be
-     *                  set in order for it to count as a blockquote, false to
-     *                  enforce that the classname must not be set in order for
-     *                  it to count as a blockquote.
-     * @param {boolean} requiresClassNameToSplit Whether only blockquotes with the
-     *     class name should be split.
-     * @param {string} className The official blockquote class name.
-     * @return {boolean} Whether node is a blockquote and if isAlreadySetup is
-     *    true, then whether this is a setup blockquote.
-     * @deprecated Use {@link #isSplittableBlockquote},
-     *     {@link #isSetupBlockquote}, or {@link #isUnsetupBlockquote} instead
-     *     since this has confusing behavior.
-     */
-    function isBlockquote(node: Node, isAlreadySetup: boolean, requiresClassNameToSplit: boolean, className: string): boolean;
-}
-
 declare module goog.editor.plugins {
 
     /**
@@ -102,7 +67,7 @@ declare module goog.editor.plugins {
      * @extends {goog.editor.Plugin}
      * @final
      */
-    class Blockquote extends goog.editor.GoogPlugin {
+    class Blockquote extends goog.editor.Plugin {
         /**
          * Plugin to handle splitting block quotes.  This plugin does nothing on its
          * own and should be used in conjunction with EnterHandler or one of its
@@ -153,5 +118,40 @@ declare module goog.editor.plugins {
          */
         getBlockquoteClassName(): string;
     }
+}
+
+declare module goog.editor.plugins.Blockquote {
+
+    /**
+     * Command implemented by this plugin.
+     * @type {string}
+     */
+    var SPLIT_COMMAND: string;
+
+    /**
+     * Class ID used to identify this plugin.
+     * @type {string}
+     */
+    var CLASS_ID: string;
+
+    /**
+     * Checks if a node is a blockquote node.  If isAlreadySetup is set, it also
+     * makes sure the node has the blockquote classname applied.  Otherwise, it
+     * ensures that the blockquote does not already have the classname applied.
+     * @param {Node} node DOM node to check.
+     * @param {boolean} isAlreadySetup True to enforce that the classname must be
+     *                  set in order for it to count as a blockquote, false to
+     *                  enforce that the classname must not be set in order for
+     *                  it to count as a blockquote.
+     * @param {boolean} requiresClassNameToSplit Whether only blockquotes with the
+     *     class name should be split.
+     * @param {string} className The official blockquote class name.
+     * @return {boolean} Whether node is a blockquote and if isAlreadySetup is
+     *    true, then whether this is a setup blockquote.
+     * @deprecated Use {@link #isSplittableBlockquote},
+     *     {@link #isSetupBlockquote}, or {@link #isUnsetupBlockquote} instead
+     *     since this has confusing behavior.
+     */
+    function isBlockquote(node: Node, isAlreadySetup: boolean, requiresClassNameToSplit: boolean, className: string): boolean;
 }
 

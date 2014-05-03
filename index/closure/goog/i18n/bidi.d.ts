@@ -1,8 +1,34 @@
-// Generated Fri May  2 15:04:56 PDT 2014
+// Generated Sat May  3 12:20:47 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 
 declare module goog.i18n.bidi {
+
+    /**
+     * Strings that have an (optional) known direction.
+     *
+     * Implementations of this interface are string-like objects that carry an
+     * attached direction, if known.
+     * @interface
+     */
+    interface DirectionalString {
+    
+        /**
+         * Interface marker of the DirectionalString interface.
+         *
+         * This property can be used to determine at runtime whether or not an object
+         * implements this interface.  All implementations of this interface set this
+         * property to {@code true}.
+         * @type {boolean}
+         */
+        implementsGoogI18nBidiDirectionalString: boolean;
+    
+        /**
+         * Retrieves this object's known direction (if any).
+         * @return {?goog.i18n.bidi.Dir} The known direction. Null if unknown.
+         */
+        getDirection(): goog.i18n.bidi.Dir;
+    }
 
     /**
      * Constant that defines whether or not the current locale is a RTL locale.
@@ -365,31 +391,5 @@ declare module goog.i18n.bidi {
      *     4. A null for unknown directionality.
      */
     function setElementDirAndAlign(element: Element, dir: any /*goog.i18n.bidi.Dir|number|boolean|any (null)*/): void;
-
-    /**
-     * Strings that have an (optional) known direction.
-     *
-     * Implementations of this interface are string-like objects that carry an
-     * attached direction, if known.
-     * @interface
-     */
-    interface DirectionalString {
-    
-        /**
-         * Interface marker of the DirectionalString interface.
-         *
-         * This property can be used to determine at runtime whether or not an object
-         * implements this interface.  All implementations of this interface set this
-         * property to {@code true}.
-         * @type {boolean}
-         */
-        implementsGoogI18nBidiDirectionalString: boolean;
-    
-        /**
-         * Retrieves this object's known direction (if any).
-         * @return {?goog.i18n.bidi.Dir} The known direction. Null if unknown.
-         */
-        getDirection(): goog.i18n.bidi.Dir;
-    }
 }
 

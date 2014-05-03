@@ -1,27 +1,8 @@
-// Generated Fri May  2 15:03:57 PDT 2014
+// Generated Sat May  3 12:19:48 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 
 declare module goog.testing.stacktrace {
-
-    /**
-     * Sets function to deobfuscate function names.
-     * @param {function(string): string} fn function to deobfuscate function names.
-     */
-    function setDeobfuscateFunctionName(fn: (_0: string) => string): void;
-
-    /**
-     * Brings the stack trace into a common format across browsers.
-     * @param {string} stack Browser-specific stack trace.
-     * @return {string} Same stack trace in common format.
-     */
-    function canonicalize(stack: string): string;
-
-    /**
-     * Gets the native stack trace if available otherwise follows the call chain.
-     * @return {string} The stack trace in canonical format.
-     */
-    function get(): string;
 
     /**
      * Class representing one stack frame.
@@ -71,5 +52,24 @@ declare module goog.testing.stacktrace {
          */
         toCanonicalString(): string;
     }
+
+    /**
+     * Sets function to deobfuscate function names.
+     * @param {function(string): string} fn function to deobfuscate function names.
+     */
+    function setDeobfuscateFunctionName(fn: (_0: string) => string): void;
+
+    /**
+     * Brings the stack trace into a common format across browsers.
+     * @param {string} stack Browser-specific stack trace.
+     * @return {string} Same stack trace in common format.
+     */
+    function canonicalize(stack: string): string;
+
+    /**
+     * Gets the native stack trace if available otherwise follows the call chain.
+     * @return {string} The stack trace in canonical format.
+     */
+    function get(): string;
 }
 

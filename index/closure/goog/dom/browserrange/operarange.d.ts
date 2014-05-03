@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:57:03 PDT 2014
+// Generated Sat May  3 12:12:49 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/dom/nodetype.d.ts" />
@@ -41,6 +41,27 @@
 /// <reference path="../../../goog/dom/browserrange/abstractrange.d.ts" />
 /// <reference path="../../../goog/dom/browserrange/w3crange.d.ts" />
 
+declare module goog.dom.browserrange {
+
+    /**
+     * The constructor for Opera specific browser ranges.
+     * @param {Range} range The range object.
+     * @constructor
+     * @extends {goog.dom.browserrange.W3cRange}
+     * @final
+     */
+    class OperaRange extends goog.dom.browserrange.W3cRange {
+        /**
+         * The constructor for Opera specific browser ranges.
+         * @param {Range} range The range object.
+         * @constructor
+         * @extends {goog.dom.browserrange.W3cRange}
+         * @final
+         */
+        constructor(range: Range);
+    }
+}
+
 declare module goog.dom.browserrange.OperaRange {
 
     /**
@@ -59,26 +80,5 @@ declare module goog.dom.browserrange.OperaRange {
      * @return {goog.dom.browserrange.OperaRange} A wrapper object.
      */
     function createFromNodes(startNode: Node, startOffset: number, endNode: Node, endOffset: number): goog.dom.browserrange.OperaRange;
-}
-
-declare module goog.dom.browserrange {
-
-    /**
-     * The constructor for Opera specific browser ranges.
-     * @param {Range} range The range object.
-     * @constructor
-     * @extends {goog.dom.browserrange.W3cRange}
-     * @final
-     */
-    class OperaRange extends goog.dom.browserrange.GoogW3cRange {
-        /**
-         * The constructor for Opera specific browser ranges.
-         * @param {Range} range The range object.
-         * @constructor
-         * @extends {goog.dom.browserrange.W3cRange}
-         * @final
-         */
-        constructor(range: Range);
-    }
 }
 

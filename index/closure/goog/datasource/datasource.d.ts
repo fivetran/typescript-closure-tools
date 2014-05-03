@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:05:16 PDT 2014
+// Generated Sat May  3 12:21:08 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/string/string.d.ts" />
@@ -25,48 +25,6 @@
 /// <reference path="../../goog/log/log.d.ts" />
 
 declare module goog.ds {
-
-    /**
-     * Enum for load state of a DataNode.
-     * @enum {string}
-     */
-    enum LoadState { LOADED, LOADING, FAILED, NOT_LOADED } 
-
-    /**
-     * The character denoting an attribute.
-     * @type {string}
-     */
-    var STR_ATTRIBUTE_START: string;
-
-    /**
-     * The character denoting all children.
-     * @type {string}
-     */
-    var STR_ALL_CHILDREN_SELECTOR: string;
-
-    /**
-     * The wildcard character.
-     * @type {string}
-     */
-    var STR_WILDCARD: string;
-
-    /**
-     * The character denoting path separation.
-     * @type {string}
-     */
-    var STR_PATH_SEPARATOR: string;
-
-    /**
-     * The character denoting the start of an array.
-     * @type {string}
-     */
-    var STR_ARRAY_START: string;
-
-    /**
-     * Shared logger instance for data package
-     * @type {goog.log.Logger}
-     */
-    var logger: goog.log.Logger;
 
     /**
      * Interface for node in rich data tree.
@@ -417,6 +375,48 @@ declare module goog.ds {
          */
         append(node: goog.ds.DataNode): void;
     }
+
+    /**
+     * Enum for load state of a DataNode.
+     * @enum {string}
+     */
+    enum LoadState { LOADED, LOADING, FAILED, NOT_LOADED } 
+
+    /**
+     * The character denoting an attribute.
+     * @type {string}
+     */
+    var STR_ATTRIBUTE_START: string;
+
+    /**
+     * The character denoting all children.
+     * @type {string}
+     */
+    var STR_ALL_CHILDREN_SELECTOR: string;
+
+    /**
+     * The wildcard character.
+     * @type {string}
+     */
+    var STR_WILDCARD: string;
+
+    /**
+     * The character denoting path separation.
+     * @type {string}
+     */
+    var STR_PATH_SEPARATOR: string;
+
+    /**
+     * The character denoting the start of an array.
+     * @type {string}
+     */
+    var STR_ARRAY_START: string;
+
+    /**
+     * Shared logger instance for data package
+     * @type {goog.log.Logger}
+     */
+    var logger: goog.log.Logger;
 }
 
 declare module goog.ds.Util {

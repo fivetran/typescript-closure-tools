@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:57:44 PDT 2014
+// Generated Sat May  3 12:13:32 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -102,7 +102,7 @@ declare module goog.editor {
      * @constructor
      * @extends {goog.editor.Field}
      */
-    class ContentEditableField extends goog.editor.GoogField {
+    class ContentEditableField extends goog.editor.Field {
         /**
          * This class encapsulates an editable field that is just a contentEditable
          * div.

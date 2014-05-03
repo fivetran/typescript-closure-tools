@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:00:18 PDT 2014
+// Generated Sat May  3 12:16:07 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/dom/nodetype.d.ts" />
@@ -7,22 +7,257 @@
 /// <reference path="../../../goog/asserts/asserts.d.ts" />
 /// <reference path="../../../goog/array/array.d.ts" />
 
+declare module goog.ui.media {
+
+    /**
+     * An base data value class for all media data models.
+     *
+     * MediaModels are exact matches to the fields defined in the Yahoo RSS media
+     * specification {@link http://search.yahoo.com/mrss/}.
+     *
+     * The current common data shared by medias is to have URLs, mime types,
+     * captions, descriptions, thumbnails and players. Some of these may not be
+     * available, or applications may not want to render them, so {@code null}
+     * values are allowed. {@code goog.ui.media.MediaRenderer} checks whether the
+     * values are available before creating DOMs for them.
+     *
+     * TODO(user): support asynchronous data models by subclassing
+     * {@link goog.events.EventTarget} or {@link goog.ds.DataNode}. Understand why
+     * {@link http://goto/datanode} is not available in closure. Add setters to
+     * MediaModel once this is supported.
+     *
+     * @param {string=} opt_url An optional URL of the media.
+     * @param {string=} opt_caption An optional caption of the media.
+     * @param {string=} opt_description An optional description of the media.
+     * @param {goog.ui.media.MediaModel.MimeType=} opt_type The type of the media.
+     * @param {goog.ui.media.MediaModel.Medium=} opt_medium The medium of the media.
+     * @param {number=} opt_duration The duration of the media in seconds.
+     * @param {number=} opt_width The width of the media in pixels.
+     * @param {number=} opt_height The height of the media in pixels.
+     * @constructor
+     */
+    class MediaModel {
+        /**
+         * An base data value class for all media data models.
+         *
+         * MediaModels are exact matches to the fields defined in the Yahoo RSS media
+         * specification {@link http://search.yahoo.com/mrss/}.
+         *
+         * The current common data shared by medias is to have URLs, mime types,
+         * captions, descriptions, thumbnails and players. Some of these may not be
+         * available, or applications may not want to render them, so {@code null}
+         * values are allowed. {@code goog.ui.media.MediaRenderer} checks whether the
+         * values are available before creating DOMs for them.
+         *
+         * TODO(user): support asynchronous data models by subclassing
+         * {@link goog.events.EventTarget} or {@link goog.ds.DataNode}. Understand why
+         * {@link http://goto/datanode} is not available in closure. Add setters to
+         * MediaModel once this is supported.
+         *
+         * @param {string=} opt_url An optional URL of the media.
+         * @param {string=} opt_caption An optional caption of the media.
+         * @param {string=} opt_description An optional description of the media.
+         * @param {goog.ui.media.MediaModel.MimeType=} opt_type The type of the media.
+         * @param {goog.ui.media.MediaModel.Medium=} opt_medium The medium of the media.
+         * @param {number=} opt_duration The duration of the media in seconds.
+         * @param {number=} opt_width The width of the media in pixels.
+         * @param {number=} opt_height The height of the media in pixels.
+         * @constructor
+         */
+        constructor(opt_url?: string, opt_caption?: string, opt_description?: string, opt_type?: goog.ui.media.MediaModel.MimeType, opt_medium?: goog.ui.media.MediaModel.Medium, opt_duration?: number, opt_width?: number, opt_height?: number);
+    
+        /**
+         * Gets the URL of this media.
+         * @return {string|undefined} The URL of the media.
+         */
+        getUrl(): any /*string|any (undefined)*/;
+    
+        /**
+         * Sets the URL of this media.
+         * @param {string} url The URL of the media.
+         * @return {!goog.ui.media.MediaModel} The object itself, used for chaining.
+         */
+        setUrl(url: string): goog.ui.media.MediaModel;
+    
+        /**
+         * Gets the caption of this media.
+         * @return {string|undefined} The caption of the media.
+         */
+        getCaption(): any /*string|any (undefined)*/;
+    
+        /**
+         * Sets the caption of this media.
+         * @param {string} caption The caption of the media.
+         * @return {!goog.ui.media.MediaModel} The object itself, used for chaining.
+         */
+        setCaption(caption: string): goog.ui.media.MediaModel;
+    
+        /**
+         * Gets the media mime type.
+         * @return {goog.ui.media.MediaModel.MimeType|undefined} The media mime type.
+         */
+        getType(): any /*goog.ui.media.MediaModel.MimeType|any (undefined)*/;
+    
+        /**
+         * Sets the media mime type.
+         * @param {goog.ui.media.MediaModel.MimeType} type The media mime type.
+         * @return {!goog.ui.media.MediaModel} The object itself, used for chaining.
+         */
+        setType(type: goog.ui.media.MediaModel.MimeType): goog.ui.media.MediaModel;
+    
+        /**
+         * Gets the media medium.
+         * @return {goog.ui.media.MediaModel.Medium|undefined} The media medium.
+         */
+        getMedium(): any /*goog.ui.media.MediaModel.Medium|any (undefined)*/;
+    
+        /**
+         * Sets the media medium.
+         * @param {goog.ui.media.MediaModel.Medium} medium The media medium.
+         * @return {!goog.ui.media.MediaModel} The object itself, used for chaining.
+         */
+        setMedium(medium: goog.ui.media.MediaModel.Medium): goog.ui.media.MediaModel;
+    
+        /**
+         * Gets the description of this media.
+         * @return {string|undefined} The description of the media.
+         */
+        getDescription(): any /*string|any (undefined)*/;
+    
+        /**
+         * Sets the description of this media.
+         * @param {string} description The description of the media.
+         * @return {!goog.ui.media.MediaModel} The object itself, used for chaining.
+         */
+        setDescription(description: string): goog.ui.media.MediaModel;
+    
+        /**
+         * Gets the thumbnail urls.
+         * @return {Array.<goog.ui.media.MediaModel.Thumbnail>} The list of thumbnails.
+         */
+        getThumbnails(): goog.ui.media.MediaModel.Thumbnail[];
+    
+        /**
+         * Sets the thumbnail list.
+         * @param {Array.<goog.ui.media.MediaModel.Thumbnail>} thumbnails The list of
+         *     thumbnail.
+         * @return {!goog.ui.media.MediaModel} The object itself, used for chaining.
+         */
+        setThumbnails(thumbnails: goog.ui.media.MediaModel.Thumbnail[]): goog.ui.media.MediaModel;
+    
+        /**
+         * Gets the duration of the media.
+         * @return {number|undefined} The duration in seconds.
+         */
+        getDuration(): any /*number|any (undefined)*/;
+    
+        /**
+         * Sets duration of the media.
+         * @param {number} duration The duration of the media, in seconds.
+         * @return {!goog.ui.media.MediaModel} The object itself, used for chaining.
+         */
+        setDuration(duration: number): goog.ui.media.MediaModel;
+    
+        /**
+         * Gets the width of the media in pixels.
+         * @return {number|undefined} The width in pixels.
+         */
+        getWidth(): any /*number|any (undefined)*/;
+    
+        /**
+         * Sets the width of the media.
+         * @param {number} width The width of the media, in pixels.
+         * @return {!goog.ui.media.MediaModel} The object itself, used for chaining.
+         */
+        setWidth(width: number): goog.ui.media.MediaModel;
+    
+        /**
+         * Gets the height of the media in pixels.
+         * @return {number|undefined} The height in pixels.
+         */
+        getHeight(): any /*number|any (undefined)*/;
+    
+        /**
+         * Sets the height of the media.
+         * @param {number} height The height of the media, in pixels.
+         * @return {!goog.ui.media.MediaModel} The object itself, used for chaining.
+         */
+        setHeight(height: number): goog.ui.media.MediaModel;
+    
+        /**
+         * Gets the player data.
+         * @return {goog.ui.media.MediaModel.Player|undefined} The media player data.
+         */
+        getPlayer(): any /*goog.ui.media.MediaModel.Player|any (undefined)*/;
+    
+        /**
+         * Sets the player data.
+         * @param {goog.ui.media.MediaModel.Player} player The media player data.
+         * @return {!goog.ui.media.MediaModel} The object itself, used for chaining.
+         */
+        setPlayer(player: goog.ui.media.MediaModel.Player): goog.ui.media.MediaModel;
+    
+        /**
+         * Gets the categories of the media.
+         * @return {Array.<goog.ui.media.MediaModel.Category>} The categories of the
+         *     media.
+         */
+        getCategories(): goog.ui.media.MediaModel.Category[];
+    
+        /**
+         * Sets the categories of the media
+         * @param {Array.<goog.ui.media.MediaModel.Category>} categories The categories
+         *     of the media.
+         * @return {!goog.ui.media.MediaModel} The object itself, used for chaining.
+         */
+        setCategories(categories: goog.ui.media.MediaModel.Category[]): goog.ui.media.MediaModel;
+    
+        /**
+         * Finds the first category with the given scheme.
+         * @param {string} scheme The scheme to search for.
+         * @return {goog.ui.media.MediaModel.Category} The category that has the
+         *     given scheme. May be null.
+         */
+        findCategoryWithScheme(scheme: string): goog.ui.media.MediaModel.Category;
+    
+        /**
+         * Gets the credits of the media.
+         * @return {!Array.<goog.ui.media.MediaModel.Credit>} The credits of the media.
+         */
+        getCredits(): goog.ui.media.MediaModel.Credit[];
+    
+        /**
+         * Sets the credits of the media
+         * @param {!Array.<goog.ui.media.MediaModel.Credit>} credits The credits of the
+         *     media.
+         * @return {!goog.ui.media.MediaModel} The object itself, used for chaining.
+         */
+        setCredits(credits: goog.ui.media.MediaModel.Credit[]): goog.ui.media.MediaModel;
+    
+        /**
+         * Finds all credits with the given role.
+         * @param {string} role The role to search for.
+         * @return {!Array.<!goog.ui.media.MediaModel.Credit>} An array of credits
+         *     with the given role. May be empty.
+         */
+        findCreditsWithRole(role: string): goog.ui.media.MediaModel.Credit[];
+    
+        /**
+         * Gets the subtitles for the media.
+         * @return {Array.<goog.ui.media.MediaModel.SubTitle>} The subtitles.
+         */
+        getSubTitles(): goog.ui.media.MediaModel.SubTitle[];
+    
+        /**
+         * Sets the subtitles for the media
+         * @param {Array.<goog.ui.media.MediaModel.SubTitle>} subtitles The subtitles.
+         * @return {!goog.ui.media.MediaModel} The object itself.
+         */
+        setSubTitles(subtitles: goog.ui.media.MediaModel.SubTitle[]): goog.ui.media.MediaModel;
+    }
+}
+
 declare module goog.ui.media.MediaModel {
-
-    /**
-     * The supported media mime types, a subset of the media types found here:
-     * {@link http://www.iana.org/assignments/media-types/} and here
-     * {@link http://en.wikipedia.org/wiki/Internet_media_type}
-     * @enum {string}
-     */
-    enum MimeType { HTML, PLAIN, FLASH, JPEG, GIF, PNG } 
-
-    /**
-     * Supported mediums, found here:
-     * {@link http://video.search.yahoo.com/mrss}
-     * @enum {string}
-     */
-    enum Medium { IMAGE, AUDIO, VIDEO, DOCUMENT, EXECUTABLE } 
 
     /**
      * Constructs a thumbnail containing details of the thumbnail's image URL and
@@ -333,6 +568,21 @@ declare module goog.ui.media.MediaModel {
          */
         getType(): string;
     }
+
+    /**
+     * The supported media mime types, a subset of the media types found here:
+     * {@link http://www.iana.org/assignments/media-types/} and here
+     * {@link http://en.wikipedia.org/wiki/Internet_media_type}
+     * @enum {string}
+     */
+    enum MimeType { HTML, PLAIN, FLASH, JPEG, GIF, PNG } 
+
+    /**
+     * Supported mediums, found here:
+     * {@link http://video.search.yahoo.com/mrss}
+     * @enum {string}
+     */
+    enum Medium { IMAGE, AUDIO, VIDEO, DOCUMENT, EXECUTABLE } 
 }
 
 declare module goog.ui.media.MediaModel.Credit {
@@ -348,257 +598,5 @@ declare module goog.ui.media.MediaModel.Credit {
      * @enum {string}
      */
     enum Scheme { EUROPEAN_BROADCASTING, YAHOO, YOUTUBE } 
-}
-
-declare module goog.ui.media {
-
-    /**
-     * An base data value class for all media data models.
-     *
-     * MediaModels are exact matches to the fields defined in the Yahoo RSS media
-     * specification {@link http://search.yahoo.com/mrss/}.
-     *
-     * The current common data shared by medias is to have URLs, mime types,
-     * captions, descriptions, thumbnails and players. Some of these may not be
-     * available, or applications may not want to render them, so {@code null}
-     * values are allowed. {@code goog.ui.media.MediaRenderer} checks whether the
-     * values are available before creating DOMs for them.
-     *
-     * TODO(user): support asynchronous data models by subclassing
-     * {@link goog.events.EventTarget} or {@link goog.ds.DataNode}. Understand why
-     * {@link http://goto/datanode} is not available in closure. Add setters to
-     * MediaModel once this is supported.
-     *
-     * @param {string=} opt_url An optional URL of the media.
-     * @param {string=} opt_caption An optional caption of the media.
-     * @param {string=} opt_description An optional description of the media.
-     * @param {goog.ui.media.MediaModel.MimeType=} opt_type The type of the media.
-     * @param {goog.ui.media.MediaModel.Medium=} opt_medium The medium of the media.
-     * @param {number=} opt_duration The duration of the media in seconds.
-     * @param {number=} opt_width The width of the media in pixels.
-     * @param {number=} opt_height The height of the media in pixels.
-     * @constructor
-     */
-    class GoogMediaModel {
-        /**
-         * An base data value class for all media data models.
-         *
-         * MediaModels are exact matches to the fields defined in the Yahoo RSS media
-         * specification {@link http://search.yahoo.com/mrss/}.
-         *
-         * The current common data shared by medias is to have URLs, mime types,
-         * captions, descriptions, thumbnails and players. Some of these may not be
-         * available, or applications may not want to render them, so {@code null}
-         * values are allowed. {@code goog.ui.media.MediaRenderer} checks whether the
-         * values are available before creating DOMs for them.
-         *
-         * TODO(user): support asynchronous data models by subclassing
-         * {@link goog.events.EventTarget} or {@link goog.ds.DataNode}. Understand why
-         * {@link http://goto/datanode} is not available in closure. Add setters to
-         * MediaModel once this is supported.
-         *
-         * @param {string=} opt_url An optional URL of the media.
-         * @param {string=} opt_caption An optional caption of the media.
-         * @param {string=} opt_description An optional description of the media.
-         * @param {goog.ui.media.MediaModel.MimeType=} opt_type The type of the media.
-         * @param {goog.ui.media.MediaModel.Medium=} opt_medium The medium of the media.
-         * @param {number=} opt_duration The duration of the media in seconds.
-         * @param {number=} opt_width The width of the media in pixels.
-         * @param {number=} opt_height The height of the media in pixels.
-         * @constructor
-         */
-        constructor(opt_url?: string, opt_caption?: string, opt_description?: string, opt_type?: goog.ui.media.MediaModel.MimeType, opt_medium?: goog.ui.media.MediaModel.Medium, opt_duration?: number, opt_width?: number, opt_height?: number);
-    
-        /**
-         * Gets the URL of this media.
-         * @return {string|undefined} The URL of the media.
-         */
-        getUrl(): any /*string|any (undefined)*/;
-    
-        /**
-         * Sets the URL of this media.
-         * @param {string} url The URL of the media.
-         * @return {!goog.ui.media.MediaModel} The object itself, used for chaining.
-         */
-        setUrl(url: string): goog.ui.media.MediaModel;
-    
-        /**
-         * Gets the caption of this media.
-         * @return {string|undefined} The caption of the media.
-         */
-        getCaption(): any /*string|any (undefined)*/;
-    
-        /**
-         * Sets the caption of this media.
-         * @param {string} caption The caption of the media.
-         * @return {!goog.ui.media.MediaModel} The object itself, used for chaining.
-         */
-        setCaption(caption: string): goog.ui.media.MediaModel;
-    
-        /**
-         * Gets the media mime type.
-         * @return {goog.ui.media.MediaModel.MimeType|undefined} The media mime type.
-         */
-        getType(): any /*goog.ui.media.MediaModel.MimeType|any (undefined)*/;
-    
-        /**
-         * Sets the media mime type.
-         * @param {goog.ui.media.MediaModel.MimeType} type The media mime type.
-         * @return {!goog.ui.media.MediaModel} The object itself, used for chaining.
-         */
-        setType(type: goog.ui.media.MediaModel.MimeType): goog.ui.media.MediaModel;
-    
-        /**
-         * Gets the media medium.
-         * @return {goog.ui.media.MediaModel.Medium|undefined} The media medium.
-         */
-        getMedium(): any /*goog.ui.media.MediaModel.Medium|any (undefined)*/;
-    
-        /**
-         * Sets the media medium.
-         * @param {goog.ui.media.MediaModel.Medium} medium The media medium.
-         * @return {!goog.ui.media.MediaModel} The object itself, used for chaining.
-         */
-        setMedium(medium: goog.ui.media.MediaModel.Medium): goog.ui.media.MediaModel;
-    
-        /**
-         * Gets the description of this media.
-         * @return {string|undefined} The description of the media.
-         */
-        getDescription(): any /*string|any (undefined)*/;
-    
-        /**
-         * Sets the description of this media.
-         * @param {string} description The description of the media.
-         * @return {!goog.ui.media.MediaModel} The object itself, used for chaining.
-         */
-        setDescription(description: string): goog.ui.media.MediaModel;
-    
-        /**
-         * Gets the thumbnail urls.
-         * @return {Array.<goog.ui.media.MediaModel.Thumbnail>} The list of thumbnails.
-         */
-        getThumbnails(): goog.ui.media.MediaModel.Thumbnail[];
-    
-        /**
-         * Sets the thumbnail list.
-         * @param {Array.<goog.ui.media.MediaModel.Thumbnail>} thumbnails The list of
-         *     thumbnail.
-         * @return {!goog.ui.media.MediaModel} The object itself, used for chaining.
-         */
-        setThumbnails(thumbnails: goog.ui.media.MediaModel.Thumbnail[]): goog.ui.media.MediaModel;
-    
-        /**
-         * Gets the duration of the media.
-         * @return {number|undefined} The duration in seconds.
-         */
-        getDuration(): any /*number|any (undefined)*/;
-    
-        /**
-         * Sets duration of the media.
-         * @param {number} duration The duration of the media, in seconds.
-         * @return {!goog.ui.media.MediaModel} The object itself, used for chaining.
-         */
-        setDuration(duration: number): goog.ui.media.MediaModel;
-    
-        /**
-         * Gets the width of the media in pixels.
-         * @return {number|undefined} The width in pixels.
-         */
-        getWidth(): any /*number|any (undefined)*/;
-    
-        /**
-         * Sets the width of the media.
-         * @param {number} width The width of the media, in pixels.
-         * @return {!goog.ui.media.MediaModel} The object itself, used for chaining.
-         */
-        setWidth(width: number): goog.ui.media.MediaModel;
-    
-        /**
-         * Gets the height of the media in pixels.
-         * @return {number|undefined} The height in pixels.
-         */
-        getHeight(): any /*number|any (undefined)*/;
-    
-        /**
-         * Sets the height of the media.
-         * @param {number} height The height of the media, in pixels.
-         * @return {!goog.ui.media.MediaModel} The object itself, used for chaining.
-         */
-        setHeight(height: number): goog.ui.media.MediaModel;
-    
-        /**
-         * Gets the player data.
-         * @return {goog.ui.media.MediaModel.Player|undefined} The media player data.
-         */
-        getPlayer(): any /*goog.ui.media.MediaModel.Player|any (undefined)*/;
-    
-        /**
-         * Sets the player data.
-         * @param {goog.ui.media.MediaModel.Player} player The media player data.
-         * @return {!goog.ui.media.MediaModel} The object itself, used for chaining.
-         */
-        setPlayer(player: goog.ui.media.MediaModel.Player): goog.ui.media.MediaModel;
-    
-        /**
-         * Gets the categories of the media.
-         * @return {Array.<goog.ui.media.MediaModel.Category>} The categories of the
-         *     media.
-         */
-        getCategories(): goog.ui.media.MediaModel.Category[];
-    
-        /**
-         * Sets the categories of the media
-         * @param {Array.<goog.ui.media.MediaModel.Category>} categories The categories
-         *     of the media.
-         * @return {!goog.ui.media.MediaModel} The object itself, used for chaining.
-         */
-        setCategories(categories: goog.ui.media.MediaModel.Category[]): goog.ui.media.MediaModel;
-    
-        /**
-         * Finds the first category with the given scheme.
-         * @param {string} scheme The scheme to search for.
-         * @return {goog.ui.media.MediaModel.Category} The category that has the
-         *     given scheme. May be null.
-         */
-        findCategoryWithScheme(scheme: string): goog.ui.media.MediaModel.Category;
-    
-        /**
-         * Gets the credits of the media.
-         * @return {!Array.<goog.ui.media.MediaModel.Credit>} The credits of the media.
-         */
-        getCredits(): goog.ui.media.MediaModel.Credit[];
-    
-        /**
-         * Sets the credits of the media
-         * @param {!Array.<goog.ui.media.MediaModel.Credit>} credits The credits of the
-         *     media.
-         * @return {!goog.ui.media.MediaModel} The object itself, used for chaining.
-         */
-        setCredits(credits: goog.ui.media.MediaModel.Credit[]): goog.ui.media.MediaModel;
-    
-        /**
-         * Finds all credits with the given role.
-         * @param {string} role The role to search for.
-         * @return {!Array.<!goog.ui.media.MediaModel.Credit>} An array of credits
-         *     with the given role. May be empty.
-         */
-        findCreditsWithRole(role: string): goog.ui.media.MediaModel.Credit[];
-    
-        /**
-         * Gets the subtitles for the media.
-         * @return {Array.<goog.ui.media.MediaModel.SubTitle>} The subtitles.
-         */
-        getSubTitles(): goog.ui.media.MediaModel.SubTitle[];
-    
-        /**
-         * Sets the subtitles for the media
-         * @param {Array.<goog.ui.media.MediaModel.SubTitle>} subtitles The subtitles.
-         * @return {!goog.ui.media.MediaModel} The object itself.
-         */
-        setSubTitles(subtitles: goog.ui.media.MediaModel.SubTitle[]): goog.ui.media.MediaModel;
-    }
-
-    class MediaModel extends GoogMediaModel { }
 }
 

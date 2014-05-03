@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:03:47 PDT 2014
+// Generated Sat May  3 12:19:38 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -43,17 +43,6 @@
 /// <reference path="../../goog/testing/propertyreplacer.d.ts" />
 /// <reference path="../../goog/testing/watchers.d.ts" />
 
-declare module goog.testing.MockClock {
-
-    /**
-     * Default wait timeout for mocking requestAnimationFrame (in milliseconds).
-     *
-     * @type {number}
-     * @const
-     */
-    var REQUEST_ANIMATION_FRAME_TIMEOUT: number;
-}
-
 declare module goog.testing {
 
     /**
@@ -80,7 +69,7 @@ declare module goog.testing {
      * @extends {goog.Disposable}
      * @final
      */
-    class MockClock extends goog.GoogDisposable {
+    class MockClock extends goog.Disposable {
         /**
          * Class for unit testing code that uses setTimeout and clearTimeout.
          *
@@ -175,5 +164,16 @@ declare module goog.testing {
          */
         isTimeoutSet(timeoutKey: number): boolean;
     }
+}
+
+declare module goog.testing.MockClock {
+
+    /**
+     * Default wait timeout for mocking requestAnimationFrame (in milliseconds).
+     *
+     * @type {number}
+     * @const
+     */
+    var REQUEST_ANIMATION_FRAME_TIMEOUT: number;
 }
 

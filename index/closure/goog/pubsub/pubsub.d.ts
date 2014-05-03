@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:55:53 PDT 2014
+// Generated Sat May  3 12:11:39 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/disposable/idisposable.d.ts" />
@@ -24,7 +24,7 @@ declare module goog.pubsub {
      * @constructor
      * @extends {goog.Disposable}
      */
-    class PubSub extends goog.GoogDisposable {
+    class PubSub extends goog.Disposable {
         /**
          * Topic-based publish/subscribe channel.  Maintains a map of topics to
          * subscriptions.  When a message is published to a topic, all functions

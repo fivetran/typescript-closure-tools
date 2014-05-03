@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:00:27 PDT 2014
+// Generated Sat May  3 12:16:16 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -67,7 +67,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.Control}
      */
-    class Separator extends goog.ui.GoogControl {
+    class Separator extends goog.ui.Control {
         /**
          * Class representing a separator.  Although it extends {@link goog.ui.Control},
          * the Separator class doesn't allocate any event handlers, nor does it change

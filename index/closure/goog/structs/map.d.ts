@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:57:04 PDT 2014
+// Generated Sat May  3 12:12:51 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -11,17 +11,6 @@
 /// <reference path="../../goog/iter/iter.d.ts" />
 /// <reference path="../../goog/object/object.d.ts" />
 
-declare module goog.structs.Map {
-
-    /**
-     * Default equality test for values.
-     * @param {*} a The first value.
-     * @param {*} b The second value.
-     * @return {boolean} Whether a and b reference the same object.
-     */
-    function defaultEquals(a: any, b: any): boolean;
-}
-
 declare module goog.structs {
 
     /**
@@ -32,7 +21,7 @@ declare module goog.structs {
      * @constructor
      * @template K, V
      */
-    class GoogMap<K, V> {
+    class Map<K, V> {
         /**
          * Class for Hash Map datastructure.
          * @param {*=} opt_map Map or Object to initialize the map with.
@@ -163,14 +152,14 @@ declare module goog.structs {
          * while iterating might have undesired side effects.
          * @return {!goog.iter.Iterator} An iterator over the keys in the map.
          */
-        getKeyIterator(): goog.iter.Iterator<K>;
+        getKeyIterator(): goog.iter.Iterator;
     
         /**
          * Returns an iterator that iterates over the values in the map.  Removal of
          * keys while iterating might have undesired side effects.
          * @return {!goog.iter.Iterator} An iterator over the values in the map.
          */
-        getValueIterator(): goog.iter.Iterator<K>;
+        getValueIterator(): goog.iter.Iterator;
     
         /**
          * Returns an iterator that iterates over the values or the keys in the map.
@@ -180,9 +169,18 @@ declare module goog.structs {
          *     over the values.  The default value is false.
          * @return {!goog.iter.Iterator} An iterator over the values or keys in the map.
          */
-        __iterator__(opt_keys?: boolean): goog.iter.Iterator<K>;
+        __iterator__(opt_keys?: boolean): goog.iter.Iterator;
     }
+}
 
-    class Map extends GoogMap { }
+declare module goog.structs.Map {
+
+    /**
+     * Default equality test for values.
+     * @param {*} a The first value.
+     * @param {*} b The second value.
+     * @return {boolean} Whether a and b reference the same object.
+     */
+    function defaultEquals(a: any, b: any): boolean;
 }
 

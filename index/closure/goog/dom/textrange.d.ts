@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:56:40 PDT 2014
+// Generated Sat May  3 12:12:26 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/string/string.d.ts" />
@@ -46,48 +46,6 @@
 /// <reference path="../../goog/dom/browserrange/operarange.d.ts" />
 /// <reference path="../../goog/dom/browserrange/browserrange.d.ts" />
 
-declare module goog.dom.TextRange {
-
-    /**
-     * Create a new range wrapper from the given browser range object.  Do not use
-     * this method directly - please use goog.dom.Range.createFrom* instead.
-     * @param {Range|TextRange} range The browser range object.
-     * @param {boolean=} opt_isReversed Whether the focus node is before the anchor
-     *     node.
-     * @return {goog.dom.TextRange} A range wrapper object.
-     */
-    function createFromBrowserRange(range: any /*Range|TextRange*/, opt_isReversed?: boolean): goog.dom.TextRange;
-
-    /**
-     * Create a new range wrapper that selects the given node's text.  Do not use
-     * this method directly - please use goog.dom.Range.createFrom* instead.
-     * @param {Node} node The node to select.
-     * @param {boolean=} opt_isReversed Whether the focus node is before the anchor
-     *     node.
-     * @return {goog.dom.TextRange} A range wrapper object.
-     */
-    function createFromNodeContents(node: Node, opt_isReversed?: boolean): goog.dom.TextRange;
-
-    /**
-     * Create a new range wrapper that selects the area between the given nodes,
-     * accounting for the given offsets.  Do not use this method directly - please
-     * use goog.dom.Range.createFrom* instead.
-     * @param {Node} anchorNode The node to start with.
-     * @param {number} anchorOffset The offset within the node to start.
-     * @param {Node} focusNode The node to end with.
-     * @param {number} focusOffset The offset within the node to end.
-     * @return {goog.dom.TextRange} A range wrapper object.
-     */
-    function createFromNodes(anchorNode: Node, anchorOffset: number, focusNode: Node, focusOffset: number): goog.dom.TextRange;
-
-    /**
-     * Tests if the given node is in a document.
-     * @param {Node} node The node to check.
-     * @return {boolean} Whether the given node is in the given document.
-     */
-    function isAttachedNode(node: Node): boolean;
-}
-
 declare module goog.dom {
 
     /**
@@ -129,5 +87,47 @@ declare module goog.dom {
          */
         surroundContents(element: Element): Element;
     }
+}
+
+declare module goog.dom.TextRange {
+
+    /**
+     * Create a new range wrapper from the given browser range object.  Do not use
+     * this method directly - please use goog.dom.Range.createFrom* instead.
+     * @param {Range|TextRange} range The browser range object.
+     * @param {boolean=} opt_isReversed Whether the focus node is before the anchor
+     *     node.
+     * @return {goog.dom.TextRange} A range wrapper object.
+     */
+    function createFromBrowserRange(range: any /*Range|TextRange*/, opt_isReversed?: boolean): goog.dom.TextRange;
+
+    /**
+     * Create a new range wrapper that selects the given node's text.  Do not use
+     * this method directly - please use goog.dom.Range.createFrom* instead.
+     * @param {Node} node The node to select.
+     * @param {boolean=} opt_isReversed Whether the focus node is before the anchor
+     *     node.
+     * @return {goog.dom.TextRange} A range wrapper object.
+     */
+    function createFromNodeContents(node: Node, opt_isReversed?: boolean): goog.dom.TextRange;
+
+    /**
+     * Create a new range wrapper that selects the area between the given nodes,
+     * accounting for the given offsets.  Do not use this method directly - please
+     * use goog.dom.Range.createFrom* instead.
+     * @param {Node} anchorNode The node to start with.
+     * @param {number} anchorOffset The offset within the node to start.
+     * @param {Node} focusNode The node to end with.
+     * @param {number} focusOffset The offset within the node to end.
+     * @return {goog.dom.TextRange} A range wrapper object.
+     */
+    function createFromNodes(anchorNode: Node, anchorOffset: number, focusNode: Node, focusOffset: number): goog.dom.TextRange;
+
+    /**
+     * Tests if the given node is in a document.
+     * @param {Node} node The node to check.
+     * @return {boolean} Whether the given node is in the given document.
+     */
+    function isAttachedNode(node: Node): boolean;
 }
 

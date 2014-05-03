@@ -1,18 +1,6 @@
-// Generated Fri May  2 15:04:25 PDT 2014
+// Generated Sat May  3 12:20:16 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
-
-declare module goog.math.Size {
-
-    /**
-     * Compares sizes for equality.
-     * @param {goog.math.Size} a A Size.
-     * @param {goog.math.Size} b A Size.
-     * @return {boolean} True iff the sizes have equal widths and equal
-     *     heights, or if both are null.
-     */
-    function equals(a: goog.math.Size, b: goog.math.Size): boolean;
-}
 
 declare module goog.math {
 
@@ -114,5 +102,17 @@ declare module goog.math {
          */
         scaleToFit(target: goog.math.Size): goog.math.Size;
     }
+}
+
+declare module goog.math.Size {
+
+    /**
+     * Compares sizes for equality.
+     * @param {goog.math.Size} a A Size.
+     * @param {goog.math.Size} b A Size.
+     * @return {boolean} True iff the sizes have equal widths and equal
+     *     heights, or if both are null.
+     */
+    function equals(a: goog.math.Size, b: goog.math.Size): boolean;
 }
 

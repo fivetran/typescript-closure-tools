@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:00:40 PDT 2014
+// Generated Sat May  3 12:16:30 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -56,16 +56,6 @@
 /// <reference path="../../goog/ui/menuseparatorrenderer.d.ts" />
 /// <reference path="../../goog/ui/separator.d.ts" />
 
-declare module goog.ui.MenuRenderer {
-
-    /**
-     * Default CSS class to be applied to the root element of toolbars rendered
-     * by this renderer.
-     * @type {string}
-     */
-    var CSS_CLASS: string;
-}
-
 declare module goog.ui {
 
     /**
@@ -75,7 +65,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.ContainerRenderer}
      */
-    class MenuRenderer extends goog.ui.GoogContainerRenderer {
+    class MenuRenderer extends goog.ui.ContainerRenderer {
         /**
          * Default renderer for {@link goog.ui.Menu}s, based on {@link
          * goog.ui.ContainerRenderer}.
@@ -93,5 +83,15 @@ declare module goog.ui {
          */
         containsElement(menu: goog.ui.Menu, element: Element): boolean;
     }
+}
+
+declare module goog.ui.MenuRenderer {
+
+    /**
+     * Default CSS class to be applied to the root element of toolbars rendered
+     * by this renderer.
+     * @type {string}
+     */
+    var CSS_CLASS: string;
 }
 

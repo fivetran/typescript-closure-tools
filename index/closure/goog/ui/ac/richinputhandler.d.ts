@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:00:54 PDT 2014
+// Generated Sat May  3 12:16:44 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/disposable/idisposable.d.ts" />
@@ -59,7 +59,7 @@ declare module goog.ui.ac {
      * @constructor
      * @extends {goog.ui.ac.InputHandler}
      */
-    class RichInputHandler extends goog.ui.ac.GoogInputHandler {
+    class RichInputHandler extends goog.ui.ac.InputHandler {
         /**
          * Class for managing the interaction between an autocomplete object and a
          * text-input or textarea.

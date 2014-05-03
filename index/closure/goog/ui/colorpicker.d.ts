@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:59:49 PDT 2014
+// Generated Sat May  3 12:15:38 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -62,37 +62,6 @@
 /// <reference path="../../goog/color/color.d.ts" />
 /// <reference path="../../goog/ui/colorpalette.d.ts" />
 
-declare module goog.ui.ColorPicker {
-
-    /**
-     * Default number of columns in the color palette. May be overridden by calling
-     * setSize.
-     *
-     * @type {number}
-     */
-    var DEFAULT_NUM_COLS: number;
-
-    /**
-     * Constants for event names.
-     * @enum {string}
-     */
-    enum EventType { CHANGE } 
-
-    /**
-     * Returns an unrendered instance of the color picker.  The colors and layout
-     * are a simple color grid, the same as the old Gmail color picker.
-     * @param {goog.dom.DomHelper=} opt_domHelper Optional DOM helper.
-     * @return {goog.ui.ColorPicker} The unrendered instance.
-     */
-    function createSimpleColorGrid(opt_domHelper?: goog.dom.DomHelper): goog.ui.ColorPicker;
-
-    /**
-     * Array of colors for a 7-cell wide simple-grid color picker.
-     * @type {Array.<string>}
-     */
-    var SIMPLE_GRID_COLORS: string[];
-}
-
 declare module goog.ui {
 
     /**
@@ -105,7 +74,7 @@ declare module goog.ui {
      * @constructor
      * @final
      */
-    class ColorPicker extends goog.ui.GoogComponent {
+    class ColorPicker extends goog.ui.Component {
         /**
          * Create a new, empty color picker.
          *
@@ -206,5 +175,36 @@ declare module goog.ui {
          */
         focus(): void;
     }
+}
+
+declare module goog.ui.ColorPicker {
+
+    /**
+     * Default number of columns in the color palette. May be overridden by calling
+     * setSize.
+     *
+     * @type {number}
+     */
+    var DEFAULT_NUM_COLS: number;
+
+    /**
+     * Constants for event names.
+     * @enum {string}
+     */
+    enum EventType { CHANGE } 
+
+    /**
+     * Returns an unrendered instance of the color picker.  The colors and layout
+     * are a simple color grid, the same as the old Gmail color picker.
+     * @param {goog.dom.DomHelper=} opt_domHelper Optional DOM helper.
+     * @return {goog.ui.ColorPicker} The unrendered instance.
+     */
+    function createSimpleColorGrid(opt_domHelper?: goog.dom.DomHelper): goog.ui.ColorPicker;
+
+    /**
+     * Array of colors for a 7-cell wide simple-grid color picker.
+     * @type {Array.<string>}
+     */
+    var SIMPLE_GRID_COLORS: string[];
 }
 

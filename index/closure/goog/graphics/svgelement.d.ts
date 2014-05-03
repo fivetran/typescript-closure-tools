@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:01:58 PDT 2014
+// Generated Sat May  3 12:17:48 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -155,7 +155,7 @@ declare module goog.graphics {
      * @extends {goog.graphics.PathElement}
      * @final
      */
-    class SvgPathElement extends goog.graphics.GoogPathElement {
+    class SvgPathElement extends goog.graphics.PathElement {
         /**
          * Thin wrapper for SVG path elements.
          * This is an implementation of the goog.graphics.PathElement interface.

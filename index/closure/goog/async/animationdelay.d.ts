@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:02:20 PDT 2014
+// Generated Sat May  3 12:18:10 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -26,18 +26,6 @@
 /// <reference path="../../goog/events/events.d.ts" />
 /// <reference path="../../goog/functions/functions.d.ts" />
 
-declare module goog.async.AnimationDelay {
-
-    /**
-     * Default wait timeout for animations (in milliseconds).  Only used for timed
-     * animation, which uses a timer (setTimeout) to schedule animation.
-     *
-     * @type {number}
-     * @const
-     */
-    var TIMEOUT: number;
-}
-
 declare module goog.async {
 
     /**
@@ -61,7 +49,7 @@ declare module goog.async {
      * @extends {goog.Disposable}
      * @final
      */
-    class AnimationDelay extends goog.GoogDisposable {
+    class AnimationDelay extends goog.Disposable {
         /**
          * A delayed callback that pegs to the next animation frame
          * instead of a user configurable timeout. By design, this should have
@@ -114,5 +102,17 @@ declare module goog.async {
          */
         isActive(): boolean;
     }
+}
+
+declare module goog.async.AnimationDelay {
+
+    /**
+     * Default wait timeout for animations (in milliseconds).  Only used for timed
+     * animation, which uses a timer (setTimeout) to schedule animation.
+     *
+     * @type {number}
+     * @const
+     */
+    var TIMEOUT: number;
 }
 

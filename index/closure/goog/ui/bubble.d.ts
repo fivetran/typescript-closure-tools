@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:59:43 PDT 2014
+// Generated Sat May  3 12:15:32 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -55,16 +55,6 @@
 /// <reference path="../../goog/positioning/viewportposition.d.ts" />
 /// <reference path="../../goog/ui/popup.d.ts" />
 
-declare module goog.ui.Bubble {
-
-    /**
-     * A default configuration for the bubble.
-     *
-     * @type {Object}
-     */
-    var defaultConfig: Object;
-}
-
 declare module goog.ui {
 
     /**
@@ -80,7 +70,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.Component}
      */
-    class Bubble extends goog.ui.GoogComponent {
+    class Bubble extends goog.ui.Component {
         /**
          * The Bubble provides a general purpose bubble implementation that can be
          * anchored to a particular element and displayed for a period of time.
@@ -158,5 +148,15 @@ declare module goog.ui {
          */
         getComputedAnchoredPosition(anchorElement: Element): goog.ui.Popup.AnchoredPosition;
     }
+}
+
+declare module goog.ui.Bubble {
+
+    /**
+     * A default configuration for the bubble.
+     *
+     * @type {Object}
+     */
+    var defaultConfig: Object;
 }
 

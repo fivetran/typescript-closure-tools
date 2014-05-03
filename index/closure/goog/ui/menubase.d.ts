@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:59:42 PDT 2014
+// Generated Sat May  3 12:15:31 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -54,22 +54,6 @@
 /// <reference path="../../goog/positioning/viewportposition.d.ts" />
 /// <reference path="../../goog/ui/popup.d.ts" />
 
-declare module goog.ui.MenuBase {
-
-    /**
-     * Events fired by the Menu
-     */
-    var Events: any /*missing*/;
-}
-
-declare module goog.ui.MenuBase.Events {
-
-    /**
-     * Event fired by the Menu when an item is "clicked".
-     */
-    var ITEM_ACTION: any /*missing*/;
-}
-
 declare module goog.ui {
 
     /**
@@ -81,7 +65,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.Popup}
      */
-    class GoogMenuBase extends goog.ui.Popup {
+    class MenuBase extends goog.ui.Popup {
         /**
          * The MenuBase class provides an abstract base class for different
          * implementations of menu controls.
@@ -148,7 +132,21 @@ declare module goog.ui {
          */
         onKeyDown(e: goog.events.KeyEvent): void;
     }
+}
 
-    class MenuBase extends GoogMenuBase { }
+declare module goog.ui.MenuBase {
+
+    /**
+     * Events fired by the Menu
+     */
+    var Events: any /*missing*/;
+}
+
+declare module goog.ui.MenuBase.Events {
+
+    /**
+     * Event fired by the Menu when an item is "clicked".
+     */
+    var ITEM_ACTION: any /*missing*/;
 }
 

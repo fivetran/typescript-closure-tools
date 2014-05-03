@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:56:58 PDT 2014
+// Generated Sat May  3 12:12:44 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -22,20 +22,6 @@
 /// <reference path="../../goog/dom/dom.d.ts" />
 
 declare module goog.dom {
-
-    /**
-     * There are three types of token:
-     *  <ol>
-     *    <li>{@code START_TAG} - The beginning of a tag.
-     *    <li>{@code OTHER} - Any non-element node position.
-     *    <li>{@code END_TAG} - The end of a tag.
-     *  </ol>
-     * Users of this enumeration can rely on {@code START_TAG + END_TAG = 0} and
-     * that {@code OTHER = 0}.
-     *
-     * @enum {number}
-     */
-    enum TagWalkType { START_TAG, OTHER, END_TAG } 
 
     /**
      * A DOM tree traversal iterator.
@@ -248,5 +234,19 @@ declare module goog.dom {
          */
         splice(...var_args: Object[]): void;
     }
+
+    /**
+     * There are three types of token:
+     *  <ol>
+     *    <li>{@code START_TAG} - The beginning of a tag.
+     *    <li>{@code OTHER} - Any non-element node position.
+     *    <li>{@code END_TAG} - The end of a tag.
+     *  </ol>
+     * Users of this enumeration can rely on {@code START_TAG + END_TAG = 0} and
+     * that {@code OTHER = 0}.
+     *
+     * @enum {number}
+     */
+    enum TagWalkType { START_TAG, OTHER, END_TAG } 
 }
 

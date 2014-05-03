@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:56:16 PDT 2014
+// Generated Sat May  3 12:12:02 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -43,12 +43,6 @@
 /// <reference path="../../goog/dom/classlist.d.ts" />
 
 declare module goog.fx {
-
-    /**
-     * Enum to indicate the direction that a drag list grows.
-     * @enum {number}
-     */
-    enum DragListDirection { DOWN, RIGHT, LEFT, RIGHT_2D, LEFT_2D } 
 
     /**
      * A class representing a group of one or more "drag lists" with items that can
@@ -304,6 +298,12 @@ declare module goog.fx {
          */
         constructor(type: string, dragListGroup: goog.fx.DragListGroup, event: any /*goog.events.BrowserEvent|goog.fx.DragEvent*/, currDragItem: Element, draggerEl: Element, dragger: goog.fx.Dragger, opt_draggerElCenter?: goog.math.Coordinate, opt_hoverList?: Element, opt_hoverNextItem?: Element);
     }
+
+    /**
+     * Enum to indicate the direction that a drag list grows.
+     * @enum {number}
+     */
+    enum DragListDirection { DOWN, RIGHT, LEFT, RIGHT_2D, LEFT_2D } 
 }
 
 declare module goog.fx.DragListGroup {

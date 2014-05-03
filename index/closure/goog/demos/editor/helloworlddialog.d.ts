@@ -1,4 +1,4 @@
-// Generated Fri May  2 15:02:44 PDT 2014
+// Generated Sat May  3 12:18:35 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/events/eventid.d.ts" />
@@ -79,7 +79,7 @@ declare module goog.demos.editor {
      * @extends {goog.ui.editor.AbstractDialog}
      * @final
      */
-    class HelloWorldDialog extends goog.ui.editor.GoogAbstractDialog {
+    class HelloWorldDialog extends goog.ui.editor.AbstractDialog {
         /**
          * Creates a dialog to let the user enter a customized hello world message.
          * @param {goog.dom.DomHelper} domHelper DomHelper to be used to create the
