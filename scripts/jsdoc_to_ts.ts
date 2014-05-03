@@ -361,6 +361,16 @@ function generate_function_parameter(annotation) {
     return generate_function_parameter_name(annotation) + ': ' + generate_type(annotation.type);
 }
 
+function get_params(docs) {
+    var acc = {};
+
+    docs.tags.forEach(function(tag) {
+        acc[tag.name] = tag;
+    });
+
+    return acc;
+}
+
 function generate_var(name, docs) {
     var typeTag = goog.array.find(docs.tags, is_title('type')) || { type: null };
 
@@ -380,9 +390,11 @@ function generics(docs) {
 }
 
 function generate_function(name, docs) {
-    var paramTags = docs.tags.filter(is_title('param'));
+    var names = docs.value.params.map(pick('name'));
+    var types = get_params(docs);
+    var paramStrings = generate_param_strings(names, types);
     var returnTag = goog.array.find(docs.tags, is_title_in(['return', 'returns'])) || VOID_TYPE;
-    return 'function ' + name + generics(docs) + '(' + paramTags.map(generate_function_parameter).join(', ') + '): ' + generate_type(returnTag.type) + ';';
+    return 'function ' + name + generics(docs) + '(' + paramStrings.join(', ') + '): ' + generate_type(returnTag.type) + ';';
 }
 
 function generate_property(name, docs) {
@@ -394,11 +406,24 @@ function generate_property(name, docs) {
         return generate_var(name, docs);
 }
 
+function generate_param_strings(names, types) {
+    return names.map(function(name) {
+        if (name in types)
+            return generate_function_parameter(types[name]);
+        else if (name.substring(0,4) === 'opt_')
+            return safe_name(name) + '?: any /* jsdoc error */';
+        else
+            return safe_name(name) + ': any /* jsdoc error */';
+    });
+}
+
 function generate_method(name, docs) {
-    var paramTags = docs.tags.filter(is_title('param'));
+    var names = docs.value.params.map(pick('name'));
+    var types = get_params(docs);
+    var paramStrings = generate_param_strings(names, types);
     var returnTag = goog.array.find(docs.tags, is_title_in(['return', 'returns'])) || VOID_TYPE;
 
-    return name + generics(docs) + '(' + paramTags.map(generate_function_parameter).join(', ') + '): ' + generate_type(returnTag.type);
+    return name + generics(docs) + '(' + paramStrings.join(', ') + '): ' + generate_type(returnTag.type);
 }
 
 function generate_field_name(name, type) {
