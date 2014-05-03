@@ -35,17 +35,17 @@ declare module goog.net.jsloader {
      * @param {goog.net.jsloader.ErrorCode} code The error code.
      * @param {string=} opt_message Additional message.
      * @constructor
-     * @extends {goog.debug.Error}
+     * @extends {goog.debug.GoogError}
      * @final
      */
-    class Error extends goog.debug.Error {
+    class Error extends goog.debug.GoogError {
         /**
          * A jsloader error.
          *
          * @param {goog.net.jsloader.ErrorCode} code The error code.
          * @param {string=} opt_message Additional message.
          * @constructor
-         * @extends {goog.debug.Error}
+         * @extends {goog.debug.GoogError}
          * @final
          */
         constructor(code: goog.net.jsloader.ErrorCode, opt_message?: string);
