@@ -12,16 +12,16 @@ declare module goog.asserts {
      * @param {string} messagePattern The pattern that was used to form message.
      * @param {!Array.<*>} messageArgs The items to substitute into the pattern.
      * @constructor
-     * @extends {goog.debug.Error}
+     * @extends {goog.debug.GoogError}
      * @final
      */
-    class AssertionError extends goog.debug.Error {
+    class AssertionError extends goog.debug.GoogError {
         /**
          * Error object for failed assertions.
          * @param {string} messagePattern The pattern that was used to form message.
          * @param {!Array.<*>} messageArgs The items to substitute into the pattern.
          * @constructor
-         * @extends {goog.debug.Error}
+         * @extends {goog.debug.GoogError}
          * @final
          */
         constructor(messagePattern: string, messageArgs: any[]);
