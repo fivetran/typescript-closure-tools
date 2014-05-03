@@ -285,7 +285,7 @@ declare module goog.iter {
      *     {@code iterable}.
      * @template VALUE
      */
-    function chainFromIterable<VALUE>(iterable: goog.iter.Iterable): goog.iter.Iterator<VALUE>;
+    function chainFromIterable<VALUE>(iterable: goog.iter.Iterable<any>): goog.iter.Iterator<VALUE>;
 
     /**
      * Builds a new iterator that iterates over the original, but skips elements as
@@ -504,7 +504,7 @@ declare module goog.iter {
      *     iterator.
      * @template THIS, RESULT
      */
-    function starMap<THIS, RESULT>(iterable: goog.iter.Iterable<goog.iter.Iterable>, f: (_0: any[][]) => RESULT, opt_obj?: THIS): goog.iter.Iterator<RESULT>;
+    function starMap<THIS, RESULT>(iterable: goog.iter.Iterable<goog.iter.Iterable<any>>, f: (_0: any[][]) => RESULT, opt_obj?: THIS): goog.iter.Iterator<RESULT>;
 
     /**
      * Returns an array of iterators each of which can iterate over the values in
