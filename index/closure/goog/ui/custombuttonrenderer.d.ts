@@ -70,7 +70,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.ButtonRenderer}
      */
-    class CustomButtonRenderer extends goog.ui.ButtonRenderer {
+    class GoogCustomButtonRenderer extends goog.ui.GoogButtonRenderer {
         /**
          * Custom renderer for {@link goog.ui.Button}s.  Custom buttons can contain
          * almost arbitrary HTML content, will flow like inline elements, but can be
@@ -108,5 +108,7 @@ declare module goog.ui {
          */
         hasBoxStructure(button: goog.ui.Button, element: Element): boolean;
     }
+
+    class CustomButtonRenderer extends GoogCustomButtonRenderer { }
 }
 

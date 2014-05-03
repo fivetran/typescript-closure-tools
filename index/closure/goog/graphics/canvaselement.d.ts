@@ -197,7 +197,7 @@ declare module goog.graphics {
      * @extends {goog.graphics.PathElement}
      * @final
      */
-    class CanvasPathElement extends goog.graphics.PathElement {
+    class CanvasPathElement extends goog.graphics.GoogPathElement {
         /**
          * Thin wrapper for canvas path elements.
          * This is an implementation of the goog.graphics.PathElement interface.

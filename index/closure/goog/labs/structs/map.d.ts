@@ -26,7 +26,7 @@ declare module goog.labs.structs {
      * @struct
      * @final
      */
-    class Map {
+    class GoogMap {
         /**
          * Creates a new map.
          * @constructor
@@ -125,5 +125,7 @@ declare module goog.labs.structs {
          */
         clone(): goog.labs.structs.Map;
     }
+
+    class Map extends GoogMap { }
 }
 

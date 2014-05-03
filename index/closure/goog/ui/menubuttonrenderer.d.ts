@@ -101,7 +101,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.CustomButtonRenderer}
      */
-    class MenuButtonRenderer extends goog.ui.CustomButtonRenderer {
+    class GoogMenuButtonRenderer extends goog.ui.GoogCustomButtonRenderer {
         /**
          * Renderer for {@link goog.ui.MenuButton}s.  This implementation overrides
          * {@link goog.ui.CustomButtonRenderer#createButton} to create a separate
@@ -135,5 +135,7 @@ declare module goog.ui {
          */
         createDropdown(dom: goog.dom.DomHelper): Element;
     }
+
+    class MenuButtonRenderer extends GoogMenuButtonRenderer { }
 }
 

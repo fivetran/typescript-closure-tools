@@ -147,7 +147,7 @@ declare module goog.editor.plugins {
      * @extends {goog.editor.plugins.AbstractDialogPlugin}
      * @final
      */
-    class EquationEditorPlugin extends goog.editor.plugins.AbstractDialogPlugin {
+    class EquationEditorPlugin extends goog.editor.plugins.GoogAbstractDialogPlugin {
         /**
          * A plugin that opens the equation editor in a dialog window.
          * @param {string=} opt_helpUrl A URL pointing to help documentation.

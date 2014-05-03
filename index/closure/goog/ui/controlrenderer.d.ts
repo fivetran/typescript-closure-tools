@@ -150,7 +150,7 @@ declare module goog.ui {
      * reusable.
      * @constructor
      */
-    class ControlRenderer {
+    class GoogControlRenderer {
         /**
          * Default renderer for {@link goog.ui.Control}s.  Can be used as-is, but
          * subclasses of Control will probably want to use renderers specifically
@@ -442,5 +442,7 @@ declare module goog.ui {
          */
         getStateFromClass(className: string): goog.ui.Component.State;
     }
+
+    class ControlRenderer extends GoogControlRenderer { }
 }
 

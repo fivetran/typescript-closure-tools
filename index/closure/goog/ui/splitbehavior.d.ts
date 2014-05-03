@@ -79,7 +79,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.Disposable}
      */
-    class SplitBehavior extends goog.Disposable {
+    class GoogSplitBehavior extends goog.GoogDisposable {
         /**
          * Creates a behavior for combining two controls. The behavior is triggered
          * by a given event type which applies the behavior handler.
@@ -160,5 +160,7 @@ declare module goog.ui {
          */
         setActive(activate: boolean): void;
     }
+
+    class SplitBehavior extends GoogSplitBehavior { }
 }
 

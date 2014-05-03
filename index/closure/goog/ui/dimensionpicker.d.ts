@@ -74,7 +74,7 @@ declare module goog.ui {
      * @extends {goog.ui.Control}
      * @final
      */
-    class DimensionPicker extends goog.ui.Control {
+    class DimensionPicker extends goog.ui.GoogControl {
         /**
          * A dimension picker allows the user to visually select a row and column
          * count using their mouse and keyboard.

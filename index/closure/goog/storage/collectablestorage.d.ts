@@ -26,7 +26,7 @@ declare module goog.storage {
      * @constructor
      * @extends {goog.storage.ExpiringStorage}
      */
-    class CollectableStorage extends goog.storage.ExpiringStorage {
+    class CollectableStorage extends goog.storage.GoogExpiringStorage {
         /**
          * Provides a storage with expirning keys and a collection method.
          *

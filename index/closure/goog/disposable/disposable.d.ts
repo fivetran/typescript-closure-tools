@@ -57,7 +57,7 @@ declare module goog {
      * @constructor
      * @implements {goog.disposable.IDisposable}
      */
-    class Disposable implements goog.disposable.IDisposable {
+    class GoogDisposable implements goog.disposable.IDisposable {
         /**
          * Class that provides the basic implementation for disposable objects. If your
          * class holds one or more references to COM objects, DOM nodes, or other
@@ -130,5 +130,8 @@ declare module goog {
          */
         disposeInternal(): void;
     }
+
+    class Disposable extends GoogDisposable { }
+
 }
 

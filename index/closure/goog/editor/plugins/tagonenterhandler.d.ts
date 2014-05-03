@@ -91,7 +91,7 @@ declare module goog.editor.plugins {
      * @constructor
      * @extends {goog.editor.plugins.EnterHandler}
      */
-    class TagOnEnterHandler extends goog.editor.plugins.EnterHandler {
+    class TagOnEnterHandler extends goog.editor.plugins.GoogEnterHandler {
         /**
          * Plugin to handle enter keys. This subclass normalizes all browsers to use
          * the given block tag on enter.

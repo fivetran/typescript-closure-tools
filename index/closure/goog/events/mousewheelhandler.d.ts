@@ -105,7 +105,7 @@ declare module goog.events {
      * @extends {goog.events.BrowserEvent}
      * @final
      */
-    class MouseWheelEvent extends goog.events.BrowserEvent {
+    class MouseWheelEvent extends goog.events.GoogBrowserEvent {
         /**
          * A base class for mouse wheel events. This is used with the
          * MouseWheelHandler.

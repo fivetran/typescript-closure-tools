@@ -67,7 +67,7 @@ declare module goog.fs {
      * @constructor
      * @extends {goog.events.EventTarget}
      */
-    class FileSaver extends goog.events.EventTarget {
+    class GoogFileSaver extends goog.events.EventTarget {
         /**
          * An object for monitoring the saving of files. This emits ProgressEvents of
          * the types listed in {@link goog.fs.FileSaver.EventType}.
@@ -97,5 +97,7 @@ declare module goog.fs {
          */
         getError(): goog.fs.Error;
     }
+
+    class FileSaver extends GoogFileSaver { }
 }
 

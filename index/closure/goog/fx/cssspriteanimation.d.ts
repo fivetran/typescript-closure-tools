@@ -59,7 +59,7 @@ declare module goog.fx {
      * @extends {goog.fx.Animation}
      * @final
      */
-    class CssSpriteAnimation extends goog.fx.Animation {
+    class CssSpriteAnimation extends goog.fx.GoogAnimation {
         /**
          * This animation class is used to animate a CSS sprite (moving a background
          * image).  This moves through a series of images in a single image sprite and

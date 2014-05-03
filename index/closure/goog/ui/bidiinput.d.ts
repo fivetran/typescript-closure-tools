@@ -54,7 +54,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.Component}
      */
-    class BidiInput extends goog.ui.Component {
+    class BidiInput extends goog.ui.GoogComponent {
         /**
          * Default implementation of BidiInput.
          *

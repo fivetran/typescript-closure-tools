@@ -89,7 +89,7 @@ declare module goog.ui.tree {
      * @constructor
      * @extends {goog.ui.Component}
      */
-    class BaseNode extends goog.ui.Component {
+    class GoogBaseNode extends goog.ui.GoogComponent {
         /**
          * An abstract base class for a node in the tree.
          *
@@ -548,5 +548,7 @@ declare module goog.ui.tree {
          */
         setTreeInternal(tree: goog.ui.tree.TreeControl): void;
     }
+
+    class BaseNode extends GoogBaseNode { }
 }
 

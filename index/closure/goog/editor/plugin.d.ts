@@ -66,7 +66,7 @@ declare module goog.editor {
      * @constructor
      * @extends {goog.events.EventTarget}
      */
-    class Plugin extends goog.events.EventTarget {
+    class GoogPlugin extends goog.events.EventTarget {
         /**
          * Abstract API for trogedit plugins.
          * @constructor
@@ -323,5 +323,7 @@ declare module goog.editor {
          */
         isSupportedCommand(command: string): boolean;
     }
+
+    class Plugin extends GoogPlugin { }
 }
 

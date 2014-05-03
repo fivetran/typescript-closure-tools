@@ -65,7 +65,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.Component}
      */
-    class ScrollFloater extends goog.ui.Component {
+    class ScrollFloater extends goog.ui.GoogComponent {
         /**
          * Creates a ScrollFloater; see file overview for details.
          *

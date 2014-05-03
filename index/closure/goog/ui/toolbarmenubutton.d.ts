@@ -97,7 +97,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.MenuButton}
      */
-    class ToolbarMenuButton extends goog.ui.MenuButton {
+    class ToolbarMenuButton extends goog.ui.GoogMenuButton {
         /**
          * A menu button control for a toolbar.
          *

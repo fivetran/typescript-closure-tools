@@ -57,7 +57,7 @@ declare module goog.editor.plugins {
      * @extends {goog.editor.Plugin}
      * @final
      */
-    class LoremIpsum extends goog.editor.Plugin {
+    class LoremIpsum extends goog.editor.GoogPlugin {
         /**
          * A plugin that manages lorem ipsum state of editable fields.
          * @param {string} message The lorem ipsum message.

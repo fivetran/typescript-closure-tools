@@ -87,7 +87,7 @@ declare module goog.ui.style.app {
      * @constructor
      * @extends {goog.ui.CustomButtonRenderer}
      */
-    class ButtonRenderer extends goog.ui.CustomButtonRenderer {
+    class GoogButtonRenderer extends goog.ui.GoogCustomButtonRenderer {
         /**
          * Custom renderer for {@link goog.ui.Button}s. Imageless buttons can contain
          * almost arbitrary HTML content, will flow like inline elements, but can be
@@ -98,5 +98,7 @@ declare module goog.ui.style.app {
          */
         constructor();
     }
+
+    class ButtonRenderer extends GoogButtonRenderer { }
 }
 

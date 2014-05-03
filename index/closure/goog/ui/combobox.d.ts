@@ -105,7 +105,7 @@ declare module goog.ui {
      * @extends {goog.ui.Component}
      * @constructor
      */
-    class ComboBox extends goog.ui.Component {
+    class ComboBox extends goog.ui.GoogComponent {
         /**
          * A ComboBox control.
          * @param {goog.dom.DomHelper=} opt_domHelper Optional DOM helper.
@@ -277,7 +277,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.MenuItem}
      */
-    class ComboBoxItem extends goog.ui.MenuItem {
+    class ComboBoxItem extends goog.ui.GoogMenuItem {
         /**
          * Class for combo box items.
          * @param {goog.ui.ControlContent} content Text caption or DOM structure to

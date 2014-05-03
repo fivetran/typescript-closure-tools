@@ -87,7 +87,7 @@ declare module goog.ui {
      * @extends {goog.ui.Component}
      * @constructor
      */
-    class PopupColorPicker extends goog.ui.Component {
+    class PopupColorPicker extends goog.ui.GoogComponent {
         /**
          * Popup color picker widget.
          *

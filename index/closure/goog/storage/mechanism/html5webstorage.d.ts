@@ -32,7 +32,7 @@ declare module goog.storage.mechanism {
      * @constructor
      * @extends {goog.storage.mechanism.IterableMechanism}
      */
-    class HTML5WebStorage extends goog.storage.mechanism.IterableMechanism {
+    class GoogHTML5WebStorage extends goog.storage.mechanism.IterableMechanism {
         /**
          * Provides a storage mechanism that uses HTML5 Web storage.
          *
@@ -59,5 +59,7 @@ declare module goog.storage.mechanism {
          */
         key(index: number): string;
     }
+
+    class HTML5WebStorage extends GoogHTML5WebStorage { }
 }
 

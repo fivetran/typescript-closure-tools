@@ -84,7 +84,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.ControlRenderer}
      */
-    class PaletteRenderer extends goog.ui.ControlRenderer {
+    class GoogPaletteRenderer extends goog.ui.GoogControlRenderer {
         /**
          * Default renderer for {@link goog.ui.Palette}s.  Renders the palette as an
          * HTML table wrapped in a DIV, with one palette item per cell:
@@ -182,5 +182,7 @@ declare module goog.ui {
          */
         selectCell(palette: goog.ui.Palette, node: Node, select: boolean): void;
     }
+
+    class PaletteRenderer extends GoogPaletteRenderer { }
 }
 

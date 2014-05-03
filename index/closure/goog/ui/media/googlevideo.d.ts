@@ -194,7 +194,7 @@ declare module goog.ui.media {
      * @extends {goog.ui.media.MediaModel}
      * @final
      */
-    class GoogleVideoModel extends goog.ui.media.MediaModel {
+    class GoogleVideoModel extends goog.ui.media.GoogMediaModel {
         /**
          * The {@code goog.ui.media.GoogleVideo} media data model. It stores a required
          * {@code videoId} field, sets the GoogleVideo URL, and allows a few optional

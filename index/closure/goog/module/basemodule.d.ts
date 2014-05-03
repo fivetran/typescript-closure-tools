@@ -13,7 +13,7 @@ declare module goog.module {
      * @constructor
      * @extends {goog.Disposable}
      */
-    class BaseModule extends goog.Disposable {
+    class BaseModule extends goog.GoogDisposable {
         /**
          * A basic module object that represents a module of Javascript code that can
          * be dynamically loaded.

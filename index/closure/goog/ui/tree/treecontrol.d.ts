@@ -96,7 +96,7 @@ declare module goog.ui.tree {
      * @constructor
      * @extends {goog.ui.tree.BaseNode}
      */
-    class TreeControl extends goog.ui.tree.BaseNode {
+    class TreeControl extends goog.ui.tree.GoogBaseNode {
         /**
          * This creates a TreeControl object. A tree control provides a way to
          * view a hierarchical set of data.

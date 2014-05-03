@@ -76,7 +76,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.ControlRenderer}
      */
-    class ButtonRenderer extends goog.ui.ControlRenderer {
+    class GoogButtonRenderer extends goog.ui.GoogControlRenderer {
         /**
          * Default renderer for {@link goog.ui.Button}s.  Extends the superclass with
          * the following button-specific API methods:
@@ -138,5 +138,7 @@ declare module goog.ui {
          */
         setCollapsed(button: goog.ui.Button, sides: number): void;
     }
+
+    class ButtonRenderer extends GoogButtonRenderer { }
 }
 

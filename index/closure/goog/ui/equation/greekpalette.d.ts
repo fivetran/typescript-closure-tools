@@ -70,7 +70,7 @@ declare module goog.ui.equation {
      * @constructor
      * @final
      */
-    class GreekPalette extends goog.ui.equation.Palette {
+    class GreekPalette extends goog.ui.equation.GoogPalette {
         /**
          * Constructs a new Greek symbols palette.
          * @param {goog.ui.equation.PaletteManager} paletteManager The

@@ -203,7 +203,7 @@ declare module goog.ui {
      *     https://developers.google.com/chart/image/ for details.
      * @final
      */
-    class ServerChart extends goog.ui.Component {
+    class ServerChart extends goog.ui.GoogComponent {
         /**
          * Will construct a chart using Google's chartserver.
          *

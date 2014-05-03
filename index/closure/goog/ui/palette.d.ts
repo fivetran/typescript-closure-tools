@@ -88,7 +88,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.Control}
      */
-    class Palette extends goog.ui.Control {
+    class GoogPalette extends goog.ui.GoogControl {
         /**
          * A palette is a grid of DOM nodes that the user can highlight or select via
          * the keyboard or the mouse.  The selection state of the palette is controlled
@@ -192,5 +192,7 @@ declare module goog.ui {
          */
         setSelectedItem(item: Node): void;
     }
+
+    class Palette extends GoogPalette { }
 }
 

@@ -63,7 +63,7 @@ declare module goog.demos.editor {
      * @extends {goog.editor.Plugin}
      * @final
      */
-    class HelloWorld extends goog.editor.Plugin {
+    class HelloWorld extends goog.editor.GoogPlugin {
         /**
          * Plugin to insert 'Hello World!' into an editable field.
          * @constructor

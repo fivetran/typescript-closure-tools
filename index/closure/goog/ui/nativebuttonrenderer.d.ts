@@ -59,7 +59,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.ButtonRenderer}
      */
-    class NativeButtonRenderer extends goog.ui.ButtonRenderer {
+    class NativeButtonRenderer extends goog.ui.GoogButtonRenderer {
         /**
          * Renderer for {@link goog.ui.Button}s.  Renders and decorates native HTML
          * button elements.  Since native HTML buttons have built-in support for many

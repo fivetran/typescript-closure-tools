@@ -104,7 +104,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.MenuButtonRenderer}
      */
-    class ColorMenuButtonRenderer extends goog.ui.MenuButtonRenderer {
+    class GoogColorMenuButtonRenderer extends goog.ui.GoogMenuButtonRenderer {
         /**
          * Renderer for {@link goog.ui.ColorMenuButton}s.
          * @constructor
@@ -112,5 +112,7 @@ declare module goog.ui {
          */
         constructor();
     }
+
+    class ColorMenuButtonRenderer extends GoogColorMenuButtonRenderer { }
 }
 

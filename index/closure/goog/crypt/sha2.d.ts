@@ -28,7 +28,7 @@ declare module goog.crypt {
      * @extends {goog.crypt.Hash}
      * @struct
      */
-    class Sha2 extends goog.crypt.Hash {
+    class GoogSha2 extends goog.crypt.Hash {
         /**
          * SHA-2 cryptographic hash constructor.
          * This constructor should not be used directly to create the object. Rather,
@@ -39,5 +39,7 @@ declare module goog.crypt {
          */
         constructor();
     }
+
+    class Sha2 extends GoogSha2 { }
 }
 

@@ -49,7 +49,7 @@ declare module goog.editor.plugins {
      * @constructor
      * @extends {goog.editor.Plugin}
      */
-    class AbstractTabHandler extends goog.editor.Plugin {
+    class AbstractTabHandler extends goog.editor.GoogPlugin {
         /**
          * Plugin to handle tab keys. Specific tab behavior defined by subclasses.
          *

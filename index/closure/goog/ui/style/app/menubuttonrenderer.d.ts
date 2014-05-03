@@ -99,7 +99,7 @@ declare module goog.ui.style.app {
      * @extends {goog.ui.style.app.ButtonRenderer}
      * @final
      */
-    class MenuButtonRenderer extends goog.ui.style.app.ButtonRenderer {
+    class MenuButtonRenderer extends goog.ui.style.app.GoogButtonRenderer {
         /**
          * Renderer for {@link goog.ui.style.app.MenuButton}s.  This implementation
          * overrides {@link goog.ui.style.app.ButtonRenderer#createButton} to insert a

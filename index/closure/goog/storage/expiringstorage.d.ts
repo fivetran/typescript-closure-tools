@@ -60,7 +60,7 @@ declare module goog.storage {
      * @constructor
      * @extends {goog.storage.RichStorage}
      */
-    class ExpiringStorage extends goog.storage.RichStorage {
+    class GoogExpiringStorage extends goog.storage.GoogRichStorage {
         /**
          * Provides a storage with expirning keys.
          *
@@ -71,5 +71,7 @@ declare module goog.storage {
          */
         constructor(mechanism: goog.storage.mechanism.Mechanism);
     }
+
+    class ExpiringStorage extends GoogExpiringStorage { }
 }
 

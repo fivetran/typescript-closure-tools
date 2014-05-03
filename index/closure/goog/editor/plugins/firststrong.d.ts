@@ -98,7 +98,7 @@ declare module goog.editor.plugins {
      * @extends {goog.editor.Plugin}
      * @final
      */
-    class FirstStrong extends goog.editor.Plugin {
+    class FirstStrong extends goog.editor.GoogPlugin {
         /**
          * First Strong plugin.
          * @constructor

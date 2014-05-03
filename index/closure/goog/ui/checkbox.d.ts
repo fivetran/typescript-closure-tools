@@ -78,7 +78,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.Control}
      */
-    class Checkbox extends goog.ui.Control {
+    class Checkbox extends goog.ui.GoogControl {
         /**
          * 3-state checkbox widget. Fires CHECK or UNCHECK events before toggled and
          * CHANGE event after toggled by user.

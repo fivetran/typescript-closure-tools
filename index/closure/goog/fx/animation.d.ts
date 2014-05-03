@@ -66,7 +66,7 @@ declare module goog.fx {
      * @implements {goog.fx.Transition}
      * @extends {goog.fx.TransitionBase}
      */
-    class Animation extends goog.fx.TransitionBase implements goog.fx.anim.Animated, goog.fx.Transition {
+    class GoogAnimation extends goog.fx.GoogTransitionBase implements goog.fx.anim.Animated, goog.fx.Transition {
         /**
          * Constructor for an animation object.
          * @param {Array.<number>} start Array for start coordinates.
@@ -153,6 +153,8 @@ declare module goog.fx {
          */
         onDestroy(): void;
     }
+
+    class Animation extends GoogAnimation { }
 
     /**
      * Class for an animation event object.

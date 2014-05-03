@@ -35,7 +35,7 @@ declare module goog.testing {
 
     /**
      * Class used to mock a function. Useful for mocking closures and anonymous
-     * callbacks etc. Creates a function object that extends goog.testing.Mock.
+     * callbacks etc. Creates a function object that extends goog.testing.GoogMock.
      * @param {string=} opt_functionName The optional name of the function to mock.
      *     Set to '[anonymous mocked function]' if not passed in.
      * @param {number=} opt_strictness One of goog.testing.Mock.LOOSE or

@@ -48,7 +48,7 @@ declare module goog.graphics {
      *
      * @constructor
      */
-    class Path {
+    class GoogPath {
         /**
          * Creates a path object. A path is a sequence of segments and may be open or
          * closed. Path uses the EVEN-ODD fill rule for determining the interior of the
@@ -227,5 +227,7 @@ declare module goog.graphics {
          */
         isEmpty(): boolean;
     }
+
+    class Path extends GoogPath { }
 }
 

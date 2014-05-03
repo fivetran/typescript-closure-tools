@@ -65,7 +65,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.ControlRenderer}
      */
-    class CheckboxRenderer extends goog.ui.ControlRenderer {
+    class CheckboxRenderer extends goog.ui.GoogControlRenderer {
         /**
          * Default renderer for {@link goog.ui.Checkbox}s.  Extends the superclass
          * to support checkbox states:

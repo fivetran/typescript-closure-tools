@@ -122,7 +122,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.Component}
      */
-    class Control extends goog.ui.Component {
+    class GoogControl extends goog.ui.GoogComponent {
         /**
          * Base class for UI controls.  Extends {@link goog.ui.Component} by adding
          * the following:
@@ -670,5 +670,7 @@ declare module goog.ui {
          */
         handleKeyEventInternal(e: goog.events.KeyEvent): boolean;
     }
+
+    class Control extends GoogControl { }
 }
 

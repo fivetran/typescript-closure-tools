@@ -152,7 +152,7 @@ declare module goog.editor {
      * @constructor
      * @extends {goog.events.EventTarget}
      */
-    class Field extends goog.events.EventTarget {
+    class GoogField extends goog.events.EventTarget {
         /**
          * This class encapsulates an editable field.
          *
@@ -766,5 +766,7 @@ declare module goog.editor {
          */
         getIframeAttributes(): Object;
     }
+
+    class Field extends GoogField { }
 }
 

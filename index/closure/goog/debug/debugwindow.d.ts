@@ -61,7 +61,7 @@ declare module goog.debug {
      * @param {string=} opt_identifier Identifier for this logging class.
      * @param {string=} opt_prefix Prefix prepended to messages.
      */
-    class DebugWindow {
+    class GoogDebugWindow {
         /**
          * Provides a debug DebugWindow that is bound to the goog.debug.Logger.
          * It handles log messages and writes them to the DebugWindow. This doesn't
@@ -223,5 +223,7 @@ declare module goog.debug {
          */
         resetBufferWithNewSize(size: number): void;
     }
+
+    class DebugWindow extends GoogDebugWindow { }
 }
 

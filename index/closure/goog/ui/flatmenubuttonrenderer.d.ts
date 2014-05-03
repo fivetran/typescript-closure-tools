@@ -101,7 +101,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.FlatButtonRenderer}
      */
-    class FlatMenuButtonRenderer extends goog.ui.FlatButtonRenderer {
+    class FlatMenuButtonRenderer extends goog.ui.GoogFlatButtonRenderer {
         /**
          * Flat Menu Button renderer. Creates a simpler version of
          * {@link goog.ui.MenuButton} that doesn't look like a button and

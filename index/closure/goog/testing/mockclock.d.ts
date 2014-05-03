@@ -80,7 +80,7 @@ declare module goog.testing {
      * @extends {goog.Disposable}
      * @final
      */
-    class MockClock extends goog.Disposable {
+    class MockClock extends goog.GoogDisposable {
         /**
          * Class for unit testing code that uses setTimeout and clearTimeout.
          *

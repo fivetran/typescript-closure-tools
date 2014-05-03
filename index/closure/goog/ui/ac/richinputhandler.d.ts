@@ -59,7 +59,7 @@ declare module goog.ui.ac {
      * @constructor
      * @extends {goog.ui.ac.InputHandler}
      */
-    class RichInputHandler extends goog.ui.ac.InputHandler {
+    class RichInputHandler extends goog.ui.ac.GoogInputHandler {
         /**
          * Class for managing the interaction between an autocomplete object and a
          * text-input or textarea.

@@ -37,7 +37,7 @@ declare module goog.fx {
      * @constructor
      * @extends {goog.fx.TransitionBase}
      */
-    class AnimationQueue extends goog.fx.TransitionBase {
+    class AnimationQueue extends goog.fx.GoogTransitionBase {
         /**
          * Constructor for AnimationQueue object.
          *

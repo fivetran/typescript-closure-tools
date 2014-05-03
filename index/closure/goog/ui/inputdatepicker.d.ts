@@ -88,7 +88,7 @@ declare module goog.ui {
      * @extends {goog.ui.Component}
      * @constructor
      */
-    class InputDatePicker extends goog.ui.Component {
+    class InputDatePicker extends goog.ui.GoogComponent {
         /**
          * Input date picker widget.
          *

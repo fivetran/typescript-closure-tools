@@ -94,7 +94,7 @@ declare module goog.editor.plugins {
      * @extends {goog.editor.Plugin}
      * @final
      */
-    class RemoveFormatting extends goog.editor.Plugin {
+    class RemoveFormatting extends goog.editor.GoogPlugin {
         /**
          * A plugin to handle removing formatting from selected text.
          * @constructor

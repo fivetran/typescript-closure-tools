@@ -16,7 +16,7 @@ declare module goog.dom {
      * @constructor
      * @final
      */
-    class NodeOffset extends goog.Disposable {
+    class NodeOffset extends goog.GoogDisposable {
         /**
          * Object to store the offset from one node to another in a way that works on
          * any similar DOM structure regardless of whether it is the same actual nodes.

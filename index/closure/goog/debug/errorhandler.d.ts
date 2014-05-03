@@ -57,7 +57,7 @@ declare module goog.debug {
      * @extends {goog.Disposable}
      * @implements {goog.debug.EntryPointMonitor}
      */
-    class ErrorHandler extends goog.Disposable implements goog.debug.EntryPointMonitor {
+    class ErrorHandler extends goog.GoogDisposable implements goog.debug.EntryPointMonitor {
         /**
          * The ErrorHandler can be used to to wrap functions with a try/catch
          * statement. If an exception is thrown, the given error handler function will

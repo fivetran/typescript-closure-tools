@@ -95,7 +95,7 @@ declare module goog.ui.equation {
      * @extends {goog.ui.Component}
      * @final
      */
-    class EquationEditor extends goog.ui.Component {
+    class EquationEditor extends goog.ui.GoogComponent {
         /**
          * User interface for equation editor plugin.
          * @constructor

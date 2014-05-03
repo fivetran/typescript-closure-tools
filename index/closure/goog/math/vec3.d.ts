@@ -125,7 +125,7 @@ declare module goog.math {
      * @constructor
      * @extends {goog.math.Coordinate3}
      */
-    class Vec3 extends goog.math.Coordinate3 {
+    class Vec3 extends goog.math.GoogCoordinate3 {
         /**
          * Class for a three-dimensional vector object and assorted functions useful for
          * manipulation.

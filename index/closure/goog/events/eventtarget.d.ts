@@ -59,7 +59,7 @@ declare module goog.events {
      * @extends {goog.Disposable}
      * @implements {goog.events.Listenable}
      */
-    class EventTarget extends goog.Disposable implements goog.events.Listenable {
+    class EventTarget extends goog.GoogDisposable implements goog.events.Listenable {
         /**
          * An implementation of {@code goog.events.Listenable} with full W3C
          * EventTarget-like support (capture/bubble mechanism, stopping event

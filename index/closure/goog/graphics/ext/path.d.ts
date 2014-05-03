@@ -22,7 +22,7 @@ declare module goog.graphics.ext {
      * @extends {goog.graphics.Path}
      * @final
      */
-    class Path extends goog.graphics.Path {
+    class Path extends goog.graphics.GoogPath {
         /**
          * Creates a path object
          * @constructor

@@ -27,7 +27,7 @@ declare module goog.module {
      * @extends {goog.Disposable}
      * @final
      */
-    class ModuleInfo extends goog.Disposable {
+    class ModuleInfo extends goog.GoogDisposable {
         /**
          * A ModuleInfo object is used by the ModuleManager to hold information about a
          * module of js code that may or may not yet be loaded into the environment.

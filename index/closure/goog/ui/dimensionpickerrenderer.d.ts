@@ -68,7 +68,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.ControlRenderer}
      */
-    class DimensionPickerRenderer extends goog.ui.ControlRenderer {
+    class DimensionPickerRenderer extends goog.ui.GoogControlRenderer {
         /**
          * Default renderer for {@link goog.ui.DimensionPicker}s.  Renders the
          * palette as two divs, one with the un-highlighted background, and one with the

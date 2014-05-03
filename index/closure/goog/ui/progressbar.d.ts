@@ -65,7 +65,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.Component}
      */
-    class ProgressBar extends goog.ui.Component {
+    class ProgressBar extends goog.ui.GoogComponent {
         /**
          * This creates a progress bar object.
          * @param {goog.dom.DomHelper=} opt_domHelper Optional DOM helper.

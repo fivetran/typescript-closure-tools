@@ -83,7 +83,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.Tooltip}
      */
-    class AdvancedTooltip extends goog.ui.Tooltip {
+    class AdvancedTooltip extends goog.ui.GoogTooltip {
         /**
          * Advanced tooltip widget with cursor tracking abilities. Works like a regular
          * tooltip but can track the cursor position and direction to determine if the

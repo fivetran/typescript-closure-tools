@@ -70,7 +70,7 @@ declare module goog.dom.browserrange {
      * @extends {goog.dom.browserrange.W3cRange}
      * @final
      */
-    class WebKitRange extends goog.dom.browserrange.W3cRange {
+    class WebKitRange extends goog.dom.browserrange.GoogW3cRange {
         /**
          * The constructor for WebKit specific browser ranges.
          * @param {Range} range The range object.

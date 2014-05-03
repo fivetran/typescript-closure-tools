@@ -63,7 +63,7 @@ declare module goog.events {
      * @extends {goog.events.BrowserEvent}
      * @final
      */
-    class ActionEvent extends goog.events.BrowserEvent {
+    class ActionEvent extends goog.events.GoogBrowserEvent {
         /**
          * This class is used for the goog.events.ActionHandler.EventType.ACTION event.
          * @param {!goog.events.BrowserEvent} browserEvent Browser event object.
@@ -83,7 +83,7 @@ declare module goog.events {
      * @extends {goog.events.BrowserEvent}
      * @final
      */
-    class BeforeActionEvent extends goog.events.BrowserEvent {
+    class BeforeActionEvent extends goog.events.GoogBrowserEvent {
         /**
          * This class is used for the goog.events.ActionHandler.EventType.BEFOREACTION
          * event. BEFOREACTION gives a chance to the application so the keyboard focus

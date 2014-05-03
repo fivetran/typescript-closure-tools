@@ -88,7 +88,7 @@ declare module goog.ui.style.app {
      * @extends {goog.ui.style.app.ButtonRenderer}
      * @final
      */
-    class PrimaryActionButtonRenderer extends goog.ui.style.app.ButtonRenderer {
+    class PrimaryActionButtonRenderer extends goog.ui.style.app.GoogButtonRenderer {
         /**
          * Custom renderer for {@link goog.ui.Button}s. This renderer supports the
          * "primary action" style for buttons.

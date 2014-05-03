@@ -104,7 +104,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.MenuButton}
      */
-    class Select extends goog.ui.MenuButton {
+    class Select extends goog.ui.GoogMenuButton {
         /**
          * A selection control.  Extends {@link goog.ui.MenuButton} by composing a
          * menu with a selection model, and automatically updating the button's caption

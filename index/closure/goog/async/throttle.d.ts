@@ -44,7 +44,7 @@ declare module goog.async {
      * @final
      * @template T
      */
-    class Throttle<T> extends goog.Disposable {
+    class Throttle<T> extends goog.GoogDisposable {
         /**
          * Throttle will perform an action that is passed in no more than once
          * per interval (specified in milliseconds). If it gets multiple signals

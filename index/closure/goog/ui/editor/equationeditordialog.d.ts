@@ -104,7 +104,7 @@ declare module goog.ui.editor {
      * @extends {goog.ui.editor.AbstractDialog}
      * @final
      */
-    class EquationEditorDialog extends goog.ui.editor.AbstractDialog {
+    class EquationEditorDialog extends goog.ui.editor.GoogAbstractDialog {
         /**
          * Equation editor dialog (based on goog.ui.editor.AbstractDialog).
          * @param {Object} context The context that this dialog runs in.

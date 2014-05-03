@@ -76,7 +76,7 @@ declare module goog.fx.dom {
      * @extends {goog.fx.Animation}
      * @constructor
      */
-    class PredefinedEffect extends goog.fx.Animation {
+    class PredefinedEffect extends goog.fx.GoogAnimation {
         /**
          * Abstract class that provides reusable functionality for predefined animations
          * that manipulate a single DOM element

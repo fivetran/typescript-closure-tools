@@ -51,7 +51,7 @@ declare module goog.ui {
      * @extends {goog.ui.Component}
      * @final
      */
-    class CookieEditor extends goog.ui.Component {
+    class CookieEditor extends goog.ui.GoogComponent {
         /**
          * Displays and edits the value of a cookie.
          * @param {goog.dom.DomHelper=} opt_domHelper Optional DOM helper.

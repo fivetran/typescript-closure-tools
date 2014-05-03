@@ -112,7 +112,7 @@ declare module goog.ui.equation {
      * @extends {goog.ui.Dialog}
      * @final
      */
-    class EquationEditorDialog extends goog.ui.Dialog {
+    class EquationEditorDialog extends goog.ui.GoogDialog {
         /**
          * User interface for equation editor plugin standalone tests.
          * @constructor

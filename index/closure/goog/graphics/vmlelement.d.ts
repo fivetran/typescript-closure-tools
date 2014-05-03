@@ -192,7 +192,7 @@ declare module goog.graphics {
      *     http://en.wikipedia.org/wiki/Canvas_element for details.
      * @final
      */
-    class VmlPathElement extends goog.graphics.PathElement {
+    class VmlPathElement extends goog.graphics.GoogPathElement {
         /**
          * Thin wrapper for VML path elements.
          * This is an implementation of the goog.graphics.PathElement interface.

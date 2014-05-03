@@ -98,7 +98,7 @@ declare module goog.ui {
      * @extends {goog.ui.AbstractSpellChecker}
      * @final
      */
-    class RichTextSpellChecker extends goog.ui.AbstractSpellChecker {
+    class RichTextSpellChecker extends goog.ui.GoogAbstractSpellChecker {
         /**
          * Rich text spell checker implementation.
          *

@@ -87,7 +87,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.Menu}
      */
-    class FilteredMenu extends goog.ui.Menu {
+    class FilteredMenu extends goog.ui.GoogMenu {
         /**
          * Filtered menu class.
          * @param {goog.ui.MenuRenderer=} opt_renderer Renderer used to render filtered

@@ -16,7 +16,7 @@ declare module goog.testing {
      * @constructor
      * @final
      */
-    class MockRandom extends goog.Disposable {
+    class MockRandom extends goog.GoogDisposable {
         /**
          * Class for unit testing code that uses Math.random.
          *

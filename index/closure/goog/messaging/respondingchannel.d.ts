@@ -52,7 +52,7 @@ declare module goog.messaging {
      * @constructor
      * @extends {goog.Disposable}
      */
-    class RespondingChannel extends goog.Disposable {
+    class RespondingChannel extends goog.GoogDisposable {
         /**
          * Creates a new RespondingChannel wrapping a single MessageChannel.
          * @param {goog.messaging.MessageChannel} messageChannel The messageChannel to

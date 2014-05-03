@@ -33,7 +33,7 @@ declare module goog.dom {
      * @constructor
      * @extends {goog.Disposable}
      */
-    class SavedRange extends goog.Disposable {
+    class SavedRange extends goog.GoogDisposable {
         /**
          * Abstract interface for a saved range.
          * @constructor

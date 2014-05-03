@@ -48,7 +48,7 @@ declare module goog.async {
      * @constructor
      * @extends {goog.Disposable}
      */
-    class ConditionalDelay extends goog.Disposable {
+    class ConditionalDelay extends goog.GoogDisposable {
         /**
          * A ConditionalDelay object invokes the associated function after a specified
          * interval delay and checks its return value. If the function returns

@@ -70,7 +70,7 @@ declare module goog.ui.equation {
      * @constructor
      * @final
      */
-    class ComparisonPalette extends goog.ui.equation.Palette {
+    class ComparisonPalette extends goog.ui.equation.GoogPalette {
         /**
          * Constructs a new comparison palette.
          * @param {goog.ui.equation.PaletteManager} paletteManager The

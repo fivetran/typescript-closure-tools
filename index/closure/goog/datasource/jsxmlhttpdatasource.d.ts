@@ -71,7 +71,7 @@ declare module goog.ds {
      * @constructor
      * @final
      */
-    class JsXmlHttpDataSource extends goog.ds.FastDataNode {
+    class JsXmlHttpDataSource extends goog.ds.GoogFastDataNode {
         /**
          * Similar to JsonDataSource, with using XMLHttpRequest for transport
          * Currently requires the result be a JS object that can be evaluated and

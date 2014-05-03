@@ -67,7 +67,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.MenuSeparatorRenderer}
      */
-    class ToolbarSeparatorRenderer extends goog.ui.MenuSeparatorRenderer {
+    class ToolbarSeparatorRenderer extends goog.ui.GoogMenuSeparatorRenderer {
         /**
          * Renderer for toolbar separators.
          * @constructor

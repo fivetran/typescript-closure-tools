@@ -70,7 +70,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.MenuItem}
      */
-    class Option extends goog.ui.MenuItem {
+    class Option extends goog.ui.GoogMenuItem {
         /**
          * Class representing a menu option.  This is just a convenience class that
          * extends {@link goog.ui.MenuItem} by making it selectable.

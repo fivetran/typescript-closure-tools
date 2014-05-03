@@ -109,7 +109,7 @@ declare module goog.math {
      * @constructor
      * @extends {goog.math.Coordinate}
      */
-    class Vec2 extends goog.math.Coordinate {
+    class Vec2 extends goog.math.GoogCoordinate {
         /**
          * Class for a two-dimensional vector object and assorted functions useful for
          * manipulating points.

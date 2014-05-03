@@ -77,7 +77,7 @@ declare module goog.testing {
      * @constructor
      * @extends {goog.testing.Mock}
      */
-    class LooseMock extends goog.testing.Mock {
+    class LooseMock extends goog.testing.GoogMock {
         /**
          * This is a mock that does not care about the order of method calls. As a
          * result, it won't throw exceptions until verify() is called. The only

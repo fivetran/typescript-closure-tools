@@ -69,7 +69,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.CustomButtonRenderer}
      */
-    class ToolbarButtonRenderer extends goog.ui.CustomButtonRenderer {
+    class ToolbarButtonRenderer extends goog.ui.GoogCustomButtonRenderer {
         /**
          * Toolbar-specific renderer for {@link goog.ui.Button}s, based on {@link
          * goog.ui.CustomButtonRenderer}.

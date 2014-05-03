@@ -379,7 +379,7 @@ declare module goog.ui.media {
      * @param {number=} opt_height The height of the media in pixels.
      * @constructor
      */
-    class MediaModel {
+    class GoogMediaModel {
         /**
          * An base data value class for all media data models.
          *
@@ -598,5 +598,7 @@ declare module goog.ui.media {
          */
         setSubTitles(subtitles: goog.ui.media.MediaModel.SubTitle[]): goog.ui.media.MediaModel;
     }
+
+    class MediaModel extends GoogMediaModel { }
 }
 

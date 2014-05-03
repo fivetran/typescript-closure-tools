@@ -145,7 +145,7 @@ declare module goog.editor.plugins {
      * @constructor
      * @extends {goog.editor.plugins.AbstractDialogPlugin}
      */
-    class LinkDialogPlugin extends goog.editor.plugins.AbstractDialogPlugin {
+    class LinkDialogPlugin extends goog.editor.plugins.GoogAbstractDialogPlugin {
         /**
          * A plugin that opens the link dialog.
          * @constructor

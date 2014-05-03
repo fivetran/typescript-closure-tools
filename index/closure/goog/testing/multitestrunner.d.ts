@@ -74,7 +74,7 @@ declare module goog.testing.MultiTestRunner {
      * @extends {goog.ui.Component}
      * @final
      */
-    class TestFrame extends goog.ui.Component {
+    class TestFrame extends goog.ui.GoogComponent {
         /**
          * Class used to manage the interaction with a single iframe.
          * @param {string} basePath The base path for tests.
@@ -124,7 +124,7 @@ declare module goog.testing {
      * @constructor
      * @final
      */
-    class MultiTestRunner extends goog.ui.Component {
+    class MultiTestRunner extends goog.ui.GoogComponent {
         /**
          * A component for running multiple tests within the browser.
          * @param {goog.dom.DomHelper=} opt_domHelper A DOM helper.

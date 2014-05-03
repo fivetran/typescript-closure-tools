@@ -68,7 +68,7 @@ declare module goog.ui {
      * @extends {goog.ui.MenuItemRenderer}
      * @final
      */
-    class FilterObservingMenuItemRenderer extends goog.ui.MenuItemRenderer {
+    class FilterObservingMenuItemRenderer extends goog.ui.GoogMenuItemRenderer {
         /**
          * Default renderer for {@link goog.ui.FilterObservingMenuItem}s. Each item has
          * the following structure:

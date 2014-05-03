@@ -20,7 +20,7 @@ declare module goog.crypt {
      * @final
      * @struct
      */
-    class Sha384 extends goog.crypt.Sha2_64bit {
+    class Sha384 extends goog.crypt.GoogSha2_64bit {
         /**
          * Constructs a SHA-384 cryptographic hash.
          *

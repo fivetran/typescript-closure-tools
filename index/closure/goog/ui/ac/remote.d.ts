@@ -100,7 +100,7 @@ declare module goog.ui.ac {
      * @constructor
      * @extends {goog.ui.ac.AutoComplete}
      */
-    class Remote extends goog.ui.ac.AutoComplete {
+    class Remote extends goog.ui.ac.GoogAutoComplete {
         /**
          * Factory class for building a remote autocomplete widget that autocompletes
          * an inputbox or text area from a data array provided via ajax.

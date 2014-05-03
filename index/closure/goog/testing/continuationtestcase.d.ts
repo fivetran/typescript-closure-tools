@@ -59,7 +59,7 @@ declare module goog.testing.ContinuationTestCase {
      * @extends {goog.testing.TestCase.Test}
      * @final
      */
-    class Test extends goog.testing.TestCase.Test {
+    class Test extends goog.testing.GoogTestCase.Test {
         /**
          * Creates a continuation test case, which consists of multiple test steps that
          * occur in several phases.
@@ -136,7 +136,7 @@ declare module goog.testing.ContinuationTestCase {
      * @extends {goog.testing.TestCase.Test}
      * @final
      */
-    class Step extends goog.testing.TestCase.Test {
+    class Step extends goog.testing.GoogTestCase.Test {
         /**
          * Constructs a single step in a larger continuation test. Each step is similar
          * to a typical TestCase test, except it may wait for an event or timeout to
@@ -186,7 +186,7 @@ declare module goog.testing {
      * @extends {goog.testing.TestCase}
      * @final
      */
-    class ContinuationTestCase extends goog.testing.TestCase {
+    class ContinuationTestCase extends goog.testing.GoogTestCase {
         /**
          * Constructs a test case that supports tests with continuations. Test functions
          * may issue "wait" commands that suspend the test temporarily and continue once

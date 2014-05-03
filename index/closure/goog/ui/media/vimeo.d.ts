@@ -189,7 +189,7 @@ declare module goog.ui.media {
      * @extends {goog.ui.media.MediaModel}
      * @final
      */
-    class VimeoModel extends goog.ui.media.MediaModel {
+    class VimeoModel extends goog.ui.media.GoogMediaModel {
         /**
          * The {@code goog.ui.media.Vimeo} media data model. It stores a required
          * {@code videoId} field, sets the vimeo URL, and allows a few optional

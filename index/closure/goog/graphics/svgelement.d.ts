@@ -155,7 +155,7 @@ declare module goog.graphics {
      * @extends {goog.graphics.PathElement}
      * @final
      */
-    class SvgPathElement extends goog.graphics.PathElement {
+    class SvgPathElement extends goog.graphics.GoogPathElement {
         /**
          * Thin wrapper for SVG path elements.
          * This is an implementation of the goog.graphics.PathElement interface.

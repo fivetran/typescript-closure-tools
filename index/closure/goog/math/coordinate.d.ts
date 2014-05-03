@@ -83,7 +83,7 @@ declare module goog.math {
      * @param {number=} opt_y Top, defaults to 0.
      * @constructor
      */
-    class Coordinate {
+    class GoogCoordinate {
         /**
          * Class for representing coordinates and positions.
          * @param {number=} opt_x Left, defaults to 0.
@@ -158,5 +158,7 @@ declare module goog.math {
          */
         rotateDegrees(degrees: number, opt_center?: goog.math.Coordinate): void;
     }
+
+    class Coordinate extends GoogCoordinate { }
 }
 

@@ -74,7 +74,7 @@ declare module goog.ds {
      * @extends {goog.ds.AbstractFastDataNode}
      * @constructor
      */
-    class FastDataNode extends goog.ds.AbstractFastDataNode {
+    class GoogFastDataNode extends goog.ds.AbstractFastDataNode {
         /**
          * Creates a new fast data node, using the properties of root.
          * @param {Object} root JSON-like object to initialize data node from.
@@ -105,6 +105,8 @@ declare module goog.ds {
          */
         clone(): goog.ds.FastDataNode;
     }
+
+    class FastDataNode extends GoogFastDataNode { }
 
     /**
      * Creates a new data node wrapping a primitive value.

@@ -81,7 +81,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.CustomButtonRenderer}
      */
-    class ImagelessButtonRenderer extends goog.ui.CustomButtonRenderer {
+    class ImagelessButtonRenderer extends goog.ui.GoogCustomButtonRenderer {
         /**
          * Custom renderer for {@link goog.ui.Button}s. Imageless buttons can contain
          * almost arbitrary HTML content, will flow like inline elements, but can be

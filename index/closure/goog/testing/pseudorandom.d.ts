@@ -50,7 +50,7 @@ declare module goog.testing {
      * @constructor
      * @final
      */
-    class PseudoRandom extends goog.Disposable {
+    class PseudoRandom extends goog.GoogDisposable {
         /**
          * Class for unit testing code that uses Math.random. Generates deterministic
          * random numbers.

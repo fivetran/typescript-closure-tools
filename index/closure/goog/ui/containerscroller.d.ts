@@ -77,7 +77,7 @@ declare module goog.ui {
      * @extends {goog.Disposable}
      * @final
      */
-    class ContainerScroller extends goog.Disposable {
+    class ContainerScroller extends goog.GoogDisposable {
         /**
          * Plug-on scrolling behavior for a container.
          *

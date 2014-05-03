@@ -79,7 +79,7 @@ declare module goog.ui.equation {
      * @constructor
      * @final
      */
-    class MenuPalette extends goog.ui.equation.Palette {
+    class MenuPalette extends goog.ui.equation.GoogPalette {
         /**
          * Constructs a new menu palette.
          * @param {goog.ui.equation.PaletteManager} paletteManager The

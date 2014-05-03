@@ -19,7 +19,7 @@ declare module goog.crypt {
      * @final
      * @struct
      */
-    class Sha256 extends goog.crypt.Sha2 {
+    class Sha256 extends goog.crypt.GoogSha2 {
         /**
          * SHA-256 cryptographic hash constructor.
          *

@@ -22,7 +22,7 @@ declare module goog.storage.mechanism {
      * @constructor
      * @extends {goog.storage.mechanism.HTML5WebStorage}
      */
-    class HTML5LocalStorage extends goog.storage.mechanism.HTML5WebStorage {
+    class HTML5LocalStorage extends goog.storage.mechanism.GoogHTML5WebStorage {
         /**
          * Provides a storage mechanism that uses HTML5 local storage.
          *

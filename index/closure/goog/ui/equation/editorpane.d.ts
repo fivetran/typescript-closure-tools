@@ -49,7 +49,7 @@ declare module goog.ui.equation {
      * @constructor
      * @extends {goog.ui.Component}
      */
-    class EditorPane extends goog.ui.Component {
+    class EditorPane extends goog.ui.GoogComponent {
         /**
          * An abstract equation editor tab pane.
          * @param {goog.dom.DomHelper=} opt_domHelper Optional DOM helper.

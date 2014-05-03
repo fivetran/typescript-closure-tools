@@ -67,7 +67,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.Control}
      */
-    class MenuHeader extends goog.ui.Control {
+    class MenuHeader extends goog.ui.GoogControl {
         /**
          * Class representing a menu header.
          * @param {goog.ui.ControlContent} content Text caption or DOM structure to

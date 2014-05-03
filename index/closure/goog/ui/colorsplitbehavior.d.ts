@@ -111,7 +111,7 @@ declare module goog.ui {
      * @constructor
      * @final
      */
-    class ColorSplitBehavior extends goog.ui.SplitBehavior {
+    class ColorSplitBehavior extends goog.ui.GoogSplitBehavior {
         /**
          * Constructs a ColorSplitBehavior for combining a color button and a menu.
          * To use this, provide a goog.ui.ColorButton which will be attached with

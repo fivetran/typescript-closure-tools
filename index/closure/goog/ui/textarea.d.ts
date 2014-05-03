@@ -82,7 +82,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.Control}
      */
-    class Textarea extends goog.ui.Control {
+    class Textarea extends goog.ui.GoogControl {
         /**
          * A textarea control to handle growing/shrinking with textarea.value.
          *

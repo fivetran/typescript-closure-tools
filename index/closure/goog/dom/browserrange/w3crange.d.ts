@@ -87,7 +87,7 @@ declare module goog.dom.browserrange {
      * @constructor
      * @extends {goog.dom.browserrange.AbstractRange}
      */
-    class W3cRange extends goog.dom.browserrange.AbstractRange {
+    class GoogW3cRange extends goog.dom.browserrange.AbstractRange {
         /**
          * The constructor for W3C specific browser ranges.
          * @param {Range} range The range object.
@@ -104,5 +104,7 @@ declare module goog.dom.browserrange {
          */
         selectInternal(selection: Selection, reverse: any): void;
     }
+
+    class W3cRange extends GoogW3cRange { }
 }
 

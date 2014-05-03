@@ -105,7 +105,7 @@ declare module goog.events {
      * @extends {goog.events.BrowserEvent}
      * @final
      */
-    class KeyEvent extends goog.events.BrowserEvent {
+    class KeyEvent extends goog.events.GoogBrowserEvent {
         /**
          * This class is used for the goog.events.KeyHandler.EventType.KEY event and
          * it overrides the key code with the fixed key code.

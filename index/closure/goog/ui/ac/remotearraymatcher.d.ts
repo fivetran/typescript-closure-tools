@@ -63,7 +63,7 @@ declare module goog.ui.ac {
      * @constructor
      * @extends {goog.Disposable}
      */
-    class RemoteArrayMatcher extends goog.Disposable {
+    class RemoteArrayMatcher extends goog.GoogDisposable {
         /**
          * An array matcher that requests matches via ajax.
          * @param {string} url The Uri which generates the auto complete matches.  The

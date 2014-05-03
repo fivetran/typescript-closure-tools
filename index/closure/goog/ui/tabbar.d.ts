@@ -102,7 +102,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.Container}
      */
-    class TabBar extends goog.ui.Container {
+    class TabBar extends goog.ui.GoogContainer {
         /**
          * Tab bar UI component.  A tab bar contains tabs, rendered above, below,
          * before, or after tab contents.  Tabs in tab bars dispatch the following

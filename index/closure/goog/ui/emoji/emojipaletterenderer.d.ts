@@ -69,7 +69,7 @@ declare module goog.ui.emoji {
      * @constructor
      * @extends {goog.ui.PaletteRenderer}
      */
-    class EmojiPaletteRenderer extends goog.ui.PaletteRenderer {
+    class GoogEmojiPaletteRenderer extends goog.ui.GoogPaletteRenderer {
         /**
          * Renders an emoji palette.
          *
@@ -113,5 +113,7 @@ declare module goog.ui.emoji {
          */
         buildElementFromSpriteMetadata(dom: goog.dom.DomHelper, spriteInfo: goog.ui.emoji.SpriteInfo, displayUrl: string): HTMLDivElement;
     }
+
+    class EmojiPaletteRenderer extends GoogEmojiPaletteRenderer { }
 }
 

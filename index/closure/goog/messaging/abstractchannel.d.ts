@@ -37,7 +37,7 @@ declare module goog.messaging {
      * @extends {goog.Disposable}
      * @implements {goog.messaging.MessageChannel}
      */
-    class AbstractChannel extends goog.Disposable implements goog.messaging.MessageChannel {
+    class AbstractChannel extends goog.GoogDisposable implements goog.messaging.MessageChannel {
         /**
          * Creates an abstract message channel.
          *

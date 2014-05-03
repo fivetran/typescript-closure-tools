@@ -70,7 +70,7 @@ declare module goog.ui.equation {
      * @constructor
      * @final
      */
-    class SymbolPalette extends goog.ui.equation.Palette {
+    class SymbolPalette extends goog.ui.equation.GoogPalette {
         /**
          * Constructs a new symbols palette.
          * @param {goog.ui.equation.PaletteManager} paletteManager The

@@ -80,7 +80,7 @@ declare module goog.ui {
      * @deprecated Use goog.ui.PopupMenu.
      * @final
      */
-    class AttachableMenu extends goog.ui.MenuBase {
+    class AttachableMenu extends goog.ui.GoogMenuBase {
         /**
          * An implementation of a menu that can attach itself to DOM element that
          * are annotated appropriately.

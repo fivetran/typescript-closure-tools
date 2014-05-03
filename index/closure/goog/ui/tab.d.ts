@@ -69,7 +69,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.Control}
      */
-    class Tab extends goog.ui.Control {
+    class Tab extends goog.ui.GoogControl {
         /**
          * Tab control, designed to be hosted in a {@link goog.ui.TabBar}.  The tab's
          * DOM may be different based on the configuration of the containing tab bar,

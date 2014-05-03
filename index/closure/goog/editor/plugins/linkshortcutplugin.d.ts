@@ -87,7 +87,7 @@ declare module goog.editor.plugins {
      * @extends {goog.editor.Plugin}
      * @final
      */
-    class LinkShortcutPlugin extends goog.editor.Plugin {
+    class LinkShortcutPlugin extends goog.editor.GoogPlugin {
         /**
          * Plugin to add a keyboard shortcut for the link command
          * @constructor

@@ -28,7 +28,7 @@ declare module goog.structs {
      * @extends {goog.Disposable}
      * @template T
      */
-    class Pool<T> extends goog.Disposable {
+    class Pool<T> extends goog.GoogDisposable {
         /**
          * A generic pool class. If min is greater than max, an error is thrown.
          * @param {number=} opt_minCount Min. number of objects (Default: 1).

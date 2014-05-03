@@ -24,7 +24,7 @@ declare module goog.pubsub {
      * @constructor
      * @extends {goog.Disposable}
      */
-    class PubSub extends goog.Disposable {
+    class PubSub extends goog.GoogDisposable {
         /**
          * Topic-based publish/subscribe channel.  Maintains a map of topics to
          * subscriptions.  When a message is published to a topic, all functions

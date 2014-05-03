@@ -70,7 +70,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.Control}
      */
-    class Button extends goog.ui.Control {
+    class Button extends goog.ui.GoogControl {
         /**
          * A button control, rendered as a native browser button by default.
          *

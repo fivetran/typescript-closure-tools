@@ -104,7 +104,7 @@ declare module goog.editor.plugins.equation {
      * @extends {goog.editor.plugins.AbstractBubblePlugin}
      * @final
      */
-    class EquationBubble extends goog.editor.plugins.AbstractBubblePlugin {
+    class EquationBubble extends goog.editor.plugins.GoogAbstractBubblePlugin {
         /**
          * Property bubble plugin for equations.
          *

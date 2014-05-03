@@ -194,7 +194,7 @@ declare module goog.ui.media {
      * @extends {goog.ui.media.MediaModel}
      * @final
      */
-    class PicasaAlbumModel extends goog.ui.media.MediaModel {
+    class PicasaAlbumModel extends goog.ui.media.GoogMediaModel {
         /**
          * The {@code goog.ui.media.PicasaAlbum} media data model. It stores a required
          * {@code userId} and {@code albumId} fields, sets the picasa album URL, and

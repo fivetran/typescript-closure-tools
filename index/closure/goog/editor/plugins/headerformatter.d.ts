@@ -57,7 +57,7 @@ declare module goog.editor.plugins {
      * @extends {goog.editor.Plugin}
      * @final
      */
-    class HeaderFormatter extends goog.editor.Plugin {
+    class HeaderFormatter extends goog.editor.GoogPlugin {
         /**
          * Applies header styles to text.
          * @constructor

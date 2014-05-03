@@ -77,7 +77,7 @@ declare module goog.ui {
      *     goog.ui.Component} for semantics.
      * @extends {goog.ui.Component}
      */
-    class ModalPopup extends goog.ui.Component {
+    class ModalPopup extends goog.ui.GoogComponent {
         /**
          * Base class for modal popup UI components. This can also be used as
          * a standalone component to render a modal popup with an empty div.

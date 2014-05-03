@@ -63,11 +63,13 @@ declare module goog {
      * @implements {goog.Thenable.<TYPE>}
      * @template TYPE,RESOLVER_CONTEXT
      */
-    class Promise<TYPE> {
+    class GoogPromise<TYPE> {
         constructor(resolve:(value:TYPE) => any, reject:(error:any) => any);
 
         constructor(resolve:(value:goog.Thenable<TYPE>) => any, reject:(error:any) => any);
     }
+
+    class Promise<TYPE> extends GoogPromise<TYPE> { }
 }
 
 declare module goog.Promise {

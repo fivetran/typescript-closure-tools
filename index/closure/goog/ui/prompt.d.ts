@@ -93,7 +93,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.Dialog}
      */
-    class Prompt extends goog.ui.Dialog {
+    class Prompt extends goog.ui.GoogDialog {
         /**
          * Creates an object that represents a prompt (used in place of javascript's
          * prompt). The html structure of the prompt is the same as the layout for

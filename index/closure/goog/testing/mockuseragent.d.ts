@@ -24,7 +24,7 @@ declare module goog.testing {
      * @constructor
      * @final
      */
-    class MockUserAgent extends goog.Disposable {
+    class MockUserAgent extends goog.GoogDisposable {
         /**
          * Class for unit testing code that uses goog.userAgent.
          *

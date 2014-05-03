@@ -70,7 +70,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.Zippy}
      */
-    class AnimatedZippy extends goog.ui.Zippy {
+    class AnimatedZippy extends goog.ui.GoogZippy {
         /**
          * Zippy widget. Expandable/collapsible container, clicking the header toggles
          * the visibility of the content.

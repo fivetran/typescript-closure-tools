@@ -77,7 +77,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.ContainerRenderer}
      */
-    class ToolbarRenderer extends goog.ui.ContainerRenderer {
+    class ToolbarRenderer extends goog.ui.GoogContainerRenderer {
         /**
          * Default renderer for {@link goog.ui.Toolbar}s, based on {@link
          * goog.ui.ContainerRenderer}.

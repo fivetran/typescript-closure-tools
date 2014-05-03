@@ -112,7 +112,7 @@ declare module goog.editor.plugins {
      * @constructor
      * @extends {goog.editor.Plugin}
      */
-    class UndoRedo extends goog.editor.Plugin {
+    class UndoRedo extends goog.editor.GoogPlugin {
         /**
          * Encapsulates undo/redo logic using a custom undo stack (i.e. not browser
          * built-in). Browser built-in undo stacks are too flaky (e.g. IE's gets

@@ -37,7 +37,7 @@ declare module goog.a11y.aria {
      * @extends {goog.Disposable}
      * @final
      */
-    class Announcer extends goog.Disposable {
+    class Announcer extends goog.GoogDisposable {
         /**
          * Class that allows messages to be spoken by assistive technologies that the
          * user may have active.

@@ -99,7 +99,7 @@ declare module goog.ui {
      * @extends {goog.ui.Component}
      * @final
      */
-    class DrilldownRow extends goog.ui.Component {
+    class DrilldownRow extends goog.ui.GoogComponent {
         /**
          * Builds a DrilldownRow component, which can overlay a tree
          * structure onto sections of an HTML table.

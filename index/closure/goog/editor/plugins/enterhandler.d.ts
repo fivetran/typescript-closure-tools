@@ -113,7 +113,7 @@ declare module goog.editor.plugins {
      * @constructor
      * @extends {goog.editor.Plugin}
      */
-    class EnterHandler extends goog.editor.Plugin {
+    class GoogEnterHandler extends goog.editor.GoogPlugin {
         /**
          * Plugin to handle enter keys. This does all the crazy to normalize (as much as
          * is reasonable) what happens when you hit enter. This also handles the
@@ -229,5 +229,7 @@ declare module goog.editor.plugins {
          */
         ensureBlockIeOpera(tag: goog.dom.TagName, opt_keyUp?: boolean): void;
     }
+
+    class EnterHandler extends GoogEnterHandler { }
 }
 

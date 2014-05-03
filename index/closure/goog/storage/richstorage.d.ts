@@ -80,7 +80,7 @@ declare module goog.storage {
      * @constructor
      * @extends {goog.storage.Storage}
      */
-    class RichStorage extends goog.storage.Storage {
+    class GoogRichStorage extends goog.storage.Storage {
         /**
          * Provides a storage for data with attached metadata.
          *
@@ -105,5 +105,7 @@ declare module goog.storage {
          */
         getWrapper(key: string): any /*Object|any (undefined)*/;
     }
+
+    class RichStorage extends GoogRichStorage { }
 }
 

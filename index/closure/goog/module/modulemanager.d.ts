@@ -73,7 +73,7 @@ declare module goog.module {
      * @constructor
      * @extends {goog.Disposable}
      */
-    class ModuleManager extends goog.Disposable {
+    class ModuleManager extends goog.GoogDisposable {
         /**
          * The ModuleManager keeps track of all modules in the environment.
          * Since modules may not have their code loaded, we must keep track of them.

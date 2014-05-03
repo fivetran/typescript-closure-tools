@@ -70,7 +70,7 @@ declare module goog.ui {
      * @extends {goog.ui.MenuItemRenderer}
      * @final
      */
-    class TriStateMenuItemRenderer extends goog.ui.MenuItemRenderer {
+    class TriStateMenuItemRenderer extends goog.ui.GoogMenuItemRenderer {
         /**
          * Default renderer for {@link goog.ui.TriStateMenuItemRenderer}s. Each item has
          * the following structure:

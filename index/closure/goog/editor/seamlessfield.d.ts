@@ -104,7 +104,7 @@ declare module goog.editor {
      * @constructor
      * @extends {goog.editor.Field}
      */
-    class SeamlessField extends goog.editor.Field {
+    class SeamlessField extends goog.editor.GoogField {
         /**
          * This class encapsulates an editable field that blends in with the
          * surrounding page.

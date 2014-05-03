@@ -121,7 +121,7 @@ declare module goog.ui.Dialog {
      * @constructor
      * @extends {goog.structs.Map}
      */
-    class ButtonSet extends goog.structs.Map {
+    class ButtonSet extends goog.structs.GoogMap {
         /**
          * A button set defines the behaviour of a set of buttons that the dialog can
          * show.  Uses the {@link goog.structs.Map} interface.
@@ -324,7 +324,7 @@ declare module goog.ui {
      *     goog.ui.Component} for semantics.
      * @extends {goog.ui.ModalPopup}
      */
-    class Dialog extends goog.ui.ModalPopup {
+    class GoogDialog extends goog.ui.ModalPopup {
         /**
          * Class for showing simple dialog boxes.
          * The Html structure of the dialog box is:
@@ -562,5 +562,7 @@ declare module goog.ui {
          */
         getButtonSet(): goog.ui.Dialog.ButtonSet;
     }
+
+    class Dialog extends GoogDialog { }
 }
 

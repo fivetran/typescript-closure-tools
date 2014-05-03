@@ -190,7 +190,7 @@ declare module goog.ui.media {
      * @extends {goog.ui.media.MediaModel}
      * @final
      */
-    class FlickrSetModel extends goog.ui.media.MediaModel {
+    class FlickrSetModel extends goog.ui.media.GoogMediaModel {
         /**
          * The {@code goog.ui.media.FlickrAlbum} media data model. It stores a required
          * {@code userId} and {@code setId} fields, sets the flickr Set URL, and

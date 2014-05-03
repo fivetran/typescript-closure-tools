@@ -87,7 +87,7 @@ declare module goog.ui {
      * @param {Element=} opt_element A DOM element for the popup.
      * @param {goog.ui.PopupBase.Type=} opt_type Type of popup.
      */
-    class PopupBase extends goog.events.EventTarget {
+    class GoogPopupBase extends goog.events.EventTarget {
         /**
          * The PopupBase class provides functionality for showing and hiding a generic
          * container element. It also provides the option for hiding the popup element
@@ -322,5 +322,7 @@ declare module goog.ui {
          */
         onHide_(opt_target?: Object): void;
     }
+
+    class PopupBase extends GoogPopupBase { }
 }
 

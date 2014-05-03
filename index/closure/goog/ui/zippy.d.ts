@@ -76,7 +76,7 @@ declare module goog.ui {
      * @param {goog.dom.DomHelper=} opt_domHelper An optional DOM helper.
      * @constructor
      */
-    class Zippy extends goog.events.EventTarget {
+    class GoogZippy extends goog.events.EventTarget {
         /**
          * Zippy widget. Expandable/collapsible container, clicking the header toggles
          * the visibility of the content.
@@ -179,6 +179,8 @@ declare module goog.ui {
          */
         setHandleMouseEvents(enable: boolean): void;
     }
+
+    class Zippy extends GoogZippy { }
 
     /**
      * Object representing a zippy toggle event.

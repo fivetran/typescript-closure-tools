@@ -61,7 +61,7 @@ declare module goog.async {
      * @extends {goog.Disposable}
      * @final
      */
-    class AnimationDelay extends goog.Disposable {
+    class AnimationDelay extends goog.GoogDisposable {
         /**
          * A delayed callback that pegs to the next animation frame
          * instead of a user configurable timeout. By design, this should have

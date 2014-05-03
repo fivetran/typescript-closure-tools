@@ -69,7 +69,7 @@ declare module goog.net {
      * @param {number} version The version number (4, 6).
      * @constructor
      */
-    class IpAddress {
+    class GoogIpAddress {
         /**
          * Abstract class defining an IP Address.
          *
@@ -104,6 +104,8 @@ declare module goog.net {
         toUriString(): string;
     }
 
+    class IpAddress extends GoogIpAddress { }
+
     /**
      * Takes a string or a number and returns a IPv4 Address.
      *
@@ -114,7 +116,7 @@ declare module goog.net {
      * @constructor
      * @final
      */
-    class Ipv4Address extends goog.net.IpAddress {
+    class Ipv4Address extends goog.net.GoogIpAddress {
         /**
          * Takes a string or a number and returns a IPv4 Address.
          *
@@ -138,7 +140,7 @@ declare module goog.net {
      * @extends {goog.net.IpAddress}
      * @final
      */
-    class Ipv6Address extends goog.net.IpAddress {
+    class Ipv6Address extends goog.net.GoogIpAddress {
         /**
          * Takes a string or a number and returns an IPv6 Address.
          *

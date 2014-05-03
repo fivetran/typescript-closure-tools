@@ -77,7 +77,7 @@ declare module goog.ui.emoji {
      * @constructor
      * @final
      */
-    class EmojiPalette extends goog.ui.Palette {
+    class EmojiPalette extends goog.ui.GoogPalette {
         /**
          * A page of emoji to be displayed in an EmojiPicker.
          *

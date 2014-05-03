@@ -56,7 +56,7 @@ declare module goog.fx {
      * @extends {goog.fx.AbstractDragDrop}
      * @constructor
      */
-    class DragDrop extends goog.fx.AbstractDragDrop {
+    class DragDrop extends goog.fx.GoogAbstractDragDrop {
         /**
          * Drag/drop implementation for creating drag sources/drop targets consisting of
          * a single HTML Element.

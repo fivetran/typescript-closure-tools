@@ -125,7 +125,7 @@ declare module goog.ui.emoji {
      * @extends {goog.ui.Component}
      * @constructor
      */
-    class EmojiPicker extends goog.ui.Component {
+    class EmojiPicker extends goog.ui.GoogComponent {
         /**
          * Creates a new, empty emoji picker. An emoji picker is a grid of emoji, each
          * cell of the grid containing a single emoji. The picker may contain multiple

@@ -18,7 +18,7 @@ declare module goog.pubsub {
      * @constructor
      * @extends {goog.Disposable}
      */
-    class TypedPubSub extends goog.Disposable {
+    class TypedPubSub extends goog.GoogDisposable {
         /**
          * This object is a temporary shim that provides goog.pubsub.TopicId support
          * for goog.pubsub.PubSub.  See b/12477087 for more info.

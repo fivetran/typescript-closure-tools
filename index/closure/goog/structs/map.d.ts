@@ -32,7 +32,7 @@ declare module goog.structs {
      * @constructor
      * @template K, V
      */
-    class Map<K, V> {
+    class GoogMap<K, V> {
         /**
          * Class for Hash Map datastructure.
          * @param {*=} opt_map Map or Object to initialize the map with.
@@ -182,5 +182,7 @@ declare module goog.structs {
          */
         __iterator__(opt_keys?: boolean): goog.iter.Iterator;
     }
+
+    class Map extends GoogMap { }
 }
 

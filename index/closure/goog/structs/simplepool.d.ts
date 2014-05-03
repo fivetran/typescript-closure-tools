@@ -27,7 +27,7 @@ declare module goog.structs {
      * @extends {goog.Disposable}
      * @template T
      */
-    class SimplePool<T> extends goog.Disposable {
+    class SimplePool<T> extends goog.GoogDisposable {
         /**
          * A generic pool class. Simpler and more efficient than goog.structs.Pool
          * because it doesn't maintain a list of objects that are in use. This class

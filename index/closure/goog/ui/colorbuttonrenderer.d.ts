@@ -92,7 +92,7 @@ declare module goog.ui {
      * @extends {goog.ui.ColorMenuButtonRenderer}
      * @final
      */
-    class ColorButtonRenderer extends goog.ui.ColorMenuButtonRenderer {
+    class ColorButtonRenderer extends goog.ui.GoogColorMenuButtonRenderer {
         /**
          * Renderer for {@link goog.ui.ColorButton}s.
          * Uses {@link goog.ui.ColorMenuButton}s but disables the dropdown.

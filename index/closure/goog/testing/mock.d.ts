@@ -142,7 +142,7 @@ declare module goog.testing {
      * @constructor
      * @implements {goog.testing.MockInterface}
      */
-    class Mock implements goog.testing.MockInterface {
+    class GoogMock implements goog.testing.MockInterface {
         /**
          * The base class for a mock object.
          * @param {Object|Function} objectToMock The object that should be mocked, or
@@ -323,5 +323,7 @@ declare module goog.testing {
          */
         $throwCallException(name: string, args: any[], opt_expectation?: goog.testing.MockExpectation): void;
     }
+
+    class Mock extends GoogMock { }
 }
 

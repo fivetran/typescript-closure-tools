@@ -70,7 +70,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.PopupBase}
      */
-    class Popup extends goog.ui.PopupBase {
+    class Popup extends goog.ui.GoogPopupBase {
         /**
          * The Popup class provides functionality for displaying an absolutely
          * positioned element at a particular location in the window. It's designed to

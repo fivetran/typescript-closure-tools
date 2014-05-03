@@ -68,7 +68,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.events.EventTarget}
      */
-    class ActivityMonitor extends goog.events.EventTarget {
+    class GoogActivityMonitor extends goog.events.EventTarget {
         /**
          * Once initialized with a document, the activity monitor can be queried for
          * the current idle time.
@@ -137,5 +137,7 @@ declare module goog.ui {
          */
         getLastEventTime(): number;
     }
+
+    class ActivityMonitor extends GoogActivityMonitor { }
 }
 

@@ -98,7 +98,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.Component}
      */
-    class TableSorter extends goog.ui.Component {
+    class TableSorter extends goog.ui.GoogComponent {
         /**
          * A table sorter allows for sorting of a table by column.  This component can
          * be used to decorate an already existing TABLE element with sorting

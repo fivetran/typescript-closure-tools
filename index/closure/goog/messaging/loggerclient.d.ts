@@ -39,7 +39,7 @@ declare module goog.messaging {
      * @extends {goog.Disposable}
      * @final
      */
-    class LoggerClient extends goog.Disposable {
+    class LoggerClient extends goog.GoogDisposable {
         /**
          * Creates a logger client that sends messages along a message channel for the
          * remote end to log. The remote end of the channel should use a

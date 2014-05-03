@@ -67,7 +67,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.Control}
      */
-    class Separator extends goog.ui.Control {
+    class Separator extends goog.ui.GoogControl {
         /**
          * Class representing a separator.  Although it extends {@link goog.ui.Control},
          * the Separator class doesn't allocate any event handlers, nor does it change

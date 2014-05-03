@@ -67,7 +67,7 @@ declare module goog.debug {
      * @constructor
      * @extends {goog.debug.DebugWindow}
      */
-    class FancyWindow extends goog.debug.DebugWindow {
+    class FancyWindow extends goog.debug.GoogDebugWindow {
         /**
          * Provides a Fancy extension to the DebugWindow class.  Allows filtering based
          * on loggers and levels.

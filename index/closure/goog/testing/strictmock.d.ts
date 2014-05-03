@@ -43,7 +43,7 @@ declare module goog.testing {
      * @extends {goog.testing.Mock}
      * @final
      */
-    class StrictMock extends goog.testing.Mock {
+    class StrictMock extends goog.testing.GoogMock {
         /**
          * This is a mock that verifies that methods are called in the order that they
          * are specified during the recording phase. Since it verifies order, it

@@ -71,7 +71,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.MenuItem}
      */
-    class FilterObservingMenuItem extends goog.ui.MenuItem {
+    class FilterObservingMenuItem extends goog.ui.GoogMenuItem {
         /**
          * Class representing a filter observing menu item.
          *

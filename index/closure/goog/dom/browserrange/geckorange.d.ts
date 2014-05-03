@@ -70,7 +70,7 @@ declare module goog.dom.browserrange {
      * @extends {goog.dom.browserrange.W3cRange}
      * @final
      */
-    class GeckoRange extends goog.dom.browserrange.W3cRange {
+    class GeckoRange extends goog.dom.browserrange.GoogW3cRange {
         /**
          * The constructor for Gecko specific browser ranges.
          * @param {Range} range The range object.

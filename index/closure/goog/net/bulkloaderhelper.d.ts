@@ -35,7 +35,7 @@ declare module goog.net {
      * @extends {goog.Disposable}
      * @final
      */
-    class BulkLoaderHelper extends goog.Disposable {
+    class BulkLoaderHelper extends goog.GoogDisposable {
         /**
          * Helper class used to load multiple URIs.
          * @param {Array.<string|goog.Uri>} uris The URIs to load.

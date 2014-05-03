@@ -78,7 +78,7 @@ declare module goog.ui.ac {
      * @constructor
      * @extends {goog.Disposable}
      */
-    class InputHandler extends goog.Disposable {
+    class GoogInputHandler extends goog.GoogDisposable {
         /**
          * Class for managing the interaction between an auto-complete object and a
          * text-input or textarea.
@@ -344,5 +344,7 @@ declare module goog.ui.ac {
          */
         parseToken(): string;
     }
+
+    class InputHandler extends GoogInputHandler { }
 }
 

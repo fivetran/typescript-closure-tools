@@ -55,7 +55,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.Disposable}
      */
-    class IframeMask extends goog.Disposable {
+    class IframeMask extends goog.GoogDisposable {
         /**
          * Controller for an iframe mask. The mask is only valid in the current
          * document, or else the document of the given DOM helper.

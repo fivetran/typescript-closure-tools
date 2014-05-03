@@ -25,7 +25,7 @@ declare module proto2.TestAllTypes {
      * @extends {goog.proto2.Message}
      * @final
      */
-    class NestedMessage extends goog.proto2.Message {
+    class NestedMessage extends goog.proto2.GoogMessage {
         /**
          * Message NestedMessage.
          * @constructor
@@ -107,7 +107,7 @@ declare module proto2.TestAllTypes {
      * @extends {goog.proto2.Message}
      * @final
      */
-    class OptionalGroup extends goog.proto2.Message {
+    class OptionalGroup extends goog.proto2.GoogMessage {
         /**
          * Message OptionalGroup.
          * @constructor
@@ -156,7 +156,7 @@ declare module proto2.TestAllTypes {
      * @extends {goog.proto2.Message}
      * @final
      */
-    class RepeatedGroup extends goog.proto2.Message {
+    class RepeatedGroup extends goog.proto2.GoogMessage {
         /**
          * Message RepeatedGroup.
          * @constructor
@@ -216,7 +216,7 @@ declare module proto2 {
      * @extends {goog.proto2.Message}
      * @final
      */
-    class TestAllTypes extends goog.proto2.Message {
+    class TestAllTypes extends goog.proto2.GoogMessage {
         /**
          * Message TestAllTypes.
          * @constructor
@@ -1712,7 +1712,7 @@ declare module proto2 {
      * @extends {goog.proto2.Message}
      * @final
      */
-    class TestDefaultParent extends goog.proto2.Message {
+    class TestDefaultParent extends goog.proto2.GoogMessage {
         /**
          * Message TestDefaultParent.
          * @constructor
@@ -1761,7 +1761,7 @@ declare module proto2 {
      * @extends {goog.proto2.Message}
      * @final
      */
-    class TestDefaultChild extends goog.proto2.Message {
+    class TestDefaultChild extends goog.proto2.GoogMessage {
         /**
          * Message TestDefaultChild.
          * @constructor

@@ -127,7 +127,7 @@ declare module goog.editor.plugins {
      * @constructor
      * @extends {goog.editor.Plugin}
      */
-    class AbstractBubblePlugin extends goog.editor.Plugin {
+    class GoogAbstractBubblePlugin extends goog.editor.GoogPlugin {
         /**
          * Base class for bubble plugins. This is used for to connect user behavior
          * in the editor to a goog.ui.editor.Bubble UI element that allows
@@ -330,5 +330,7 @@ declare module goog.editor.plugins {
          */
         setupLink(link: Element, linkId: string, opt_container?: Element): void;
     }
+
+    class AbstractBubblePlugin extends GoogAbstractBubblePlugin { }
 }
 

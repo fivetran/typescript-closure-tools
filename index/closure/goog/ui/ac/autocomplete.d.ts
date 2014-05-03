@@ -70,7 +70,7 @@ declare module goog.ui.ac {
      * @constructor
      * @extends {goog.events.EventTarget}
      */
-    class AutoComplete extends goog.events.EventTarget {
+    class GoogAutoComplete extends goog.events.EventTarget {
         /**
          * This is the central manager class for an AutoComplete instance. The matcher
          * can specify disabled rows that should not be hilited or selected by
@@ -385,5 +385,7 @@ declare module goog.ui.ac {
          */
         update(opt_force?: boolean): void;
     }
+
+    class AutoComplete extends GoogAutoComplete { }
 }
 

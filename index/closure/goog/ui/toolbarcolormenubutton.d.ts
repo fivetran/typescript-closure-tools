@@ -110,7 +110,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.ColorMenuButton}
      */
-    class ToolbarColorMenuButton extends goog.ui.ColorMenuButton {
+    class ToolbarColorMenuButton extends goog.ui.GoogColorMenuButton {
         /**
          * A color menu button control for a toolbar.
          *

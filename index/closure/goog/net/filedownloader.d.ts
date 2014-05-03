@@ -90,7 +90,7 @@ declare module goog.net {
      * @extends {goog.Disposable}
      * @final
      */
-    class FileDownloader extends goog.Disposable {
+    class FileDownloader extends goog.GoogDisposable {
         /**
          * A class for downloading remote files and storing them locally using the
          * HTML5 filesystem API.

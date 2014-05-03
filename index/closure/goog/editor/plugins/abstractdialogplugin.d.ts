@@ -130,7 +130,7 @@ declare module goog.editor.plugins {
      * @constructor
      * @extends {goog.editor.Plugin}
      */
-    class AbstractDialogPlugin extends goog.editor.Plugin {
+    class GoogAbstractDialogPlugin extends goog.editor.GoogPlugin {
         /**
          * An abstract superclass for a Trogedit plugin that creates exactly one
          * dialog. By default dialogs are not reused -- each time execCommand is called,
@@ -201,5 +201,7 @@ declare module goog.editor.plugins {
          */
         disposeOriginalSelection(): void;
     }
+
+    class AbstractDialogPlugin extends GoogAbstractDialogPlugin { }
 }
 

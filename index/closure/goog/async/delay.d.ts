@@ -43,7 +43,7 @@ declare module goog.async {
      * @extends {goog.Disposable}
      * @final
      */
-    class Delay extends goog.Disposable {
+    class Delay extends goog.GoogDisposable {
         /**
          * A Delay object invokes the associated function after a specified delay. The
          * interval duration can be specified once in the constructor, or can be defined

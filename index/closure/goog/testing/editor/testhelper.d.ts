@@ -108,7 +108,7 @@ declare module goog.testing.editor {
      * @extends {goog.Disposable}
      * @final
      */
-    class TestHelper extends goog.Disposable {
+    class TestHelper extends goog.GoogDisposable {
         /**
          * Create a new test controller.
          * @param {Element} root The root editable element.

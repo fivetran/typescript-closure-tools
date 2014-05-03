@@ -56,7 +56,7 @@ declare module goog.testing {
      * @extends {goog.testing.TestCase}
      * @constructor
      */
-    class AsyncTestCase extends goog.testing.TestCase {
+    class GoogAsyncTestCase extends goog.testing.GoogTestCase {
         /**
          * A test case that is capable of running tests the contain asynchronous logic.
          * @param {string=} opt_name A descriptive name for the test case.
@@ -137,5 +137,7 @@ declare module goog.testing {
          */
         enableDebugLogging(): void;
     }
+
+    class AsyncTestCase extends GoogAsyncTestCase { }
 }
 

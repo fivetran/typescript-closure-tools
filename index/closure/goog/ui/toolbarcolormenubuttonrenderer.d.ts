@@ -81,7 +81,7 @@ declare module goog.ui {
      * @extends {goog.ui.ToolbarMenuButtonRenderer}
      * @final
      */
-    class ToolbarColorMenuButtonRenderer extends goog.ui.ToolbarMenuButtonRenderer {
+    class ToolbarColorMenuButtonRenderer extends goog.ui.GoogToolbarMenuButtonRenderer {
         /**
          * Toolbar-style renderer for {@link goog.ui.ColorMenuButton}s.
          * @constructor

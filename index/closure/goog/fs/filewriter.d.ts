@@ -43,7 +43,7 @@ declare module goog.fs {
      * @extends {goog.fs.FileSaver}
      * @final
      */
-    class FileWriter extends goog.fs.FileSaver {
+    class FileWriter extends goog.fs.GoogFileSaver {
         /**
          * An object for monitoring the saving of files, as well as other fine-grained
          * writing operations.

@@ -68,7 +68,7 @@ declare module goog.fx {
      * @extends {goog.Disposable}
      * @see ../demos/dragscrollsupport.html
      */
-    class DragScrollSupport extends goog.Disposable {
+    class DragScrollSupport extends goog.GoogDisposable {
         /**
          * A scroll support class. Currently this class will automatically scroll
          * a scrollable container node and scroll it by a fixed amount at a timed

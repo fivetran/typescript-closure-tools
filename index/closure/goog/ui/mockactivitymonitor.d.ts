@@ -46,7 +46,7 @@ declare module goog.ui {
      * @extends {goog.ui.ActivityMonitor}
      * @final
      */
-    class MockActivityMonitor extends goog.ui.ActivityMonitor {
+    class MockActivityMonitor extends goog.ui.GoogActivityMonitor {
         /**
          * A mock implementation of goog.ui.ActivityMonitor for unit testing. Clients
          * of this class should override goog.now to return a synthetic time from

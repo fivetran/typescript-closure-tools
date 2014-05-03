@@ -96,7 +96,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.events.EventTarget}
      */
-    class Component extends goog.events.EventTarget {
+    class GoogComponent extends goog.events.EventTarget {
         /**
          * Default implementation of UI component.
          *
@@ -542,5 +542,7 @@ declare module goog.ui {
          */
         removeChildren(opt_unrender?: boolean): goog.ui.Component[];
     }
+
+    class Component extends GoogComponent { }
 }
 

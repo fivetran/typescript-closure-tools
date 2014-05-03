@@ -96,7 +96,7 @@ declare module goog.editor.plugins {
      * @constructor
      * @extends {goog.editor.Plugin}
      */
-    class BasicTextFormatter extends goog.editor.Plugin {
+    class BasicTextFormatter extends goog.editor.GoogPlugin {
         /**
          * Functions to style text (e.g. underline, make bold, etc.)
          * @constructor

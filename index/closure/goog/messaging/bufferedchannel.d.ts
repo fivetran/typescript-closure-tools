@@ -61,7 +61,7 @@ declare module goog.messaging {
      * @implements {goog.messaging.MessageChannel};
      * @final
      */
-    class BufferedChannel extends goog.Disposable implements goog.messaging.MessageChannel {
+    class BufferedChannel extends goog.GoogDisposable implements goog.messaging.MessageChannel {
         /**
          * Creates a new BufferedChannel, which operates like its underlying channel
          * except that it buffers calls to send until it receives a message from its

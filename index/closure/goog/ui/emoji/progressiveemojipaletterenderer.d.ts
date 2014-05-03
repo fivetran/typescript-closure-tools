@@ -68,7 +68,7 @@ declare module goog.ui.emoji {
      * @extends {goog.ui.emoji.EmojiPaletteRenderer}
      * @final
      */
-    class ProgressiveEmojiPaletteRenderer extends goog.ui.emoji.EmojiPaletteRenderer {
+    class ProgressiveEmojiPaletteRenderer extends goog.ui.emoji.GoogEmojiPaletteRenderer {
         /**
          * Progressively renders an emoji palette. The progressive renderer tries to
          * use img tags instead of background-image for sprited emoji, since most

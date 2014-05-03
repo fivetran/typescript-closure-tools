@@ -108,7 +108,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.MenuButton}
      */
-    class SelectionMenuButton extends goog.ui.MenuButton {
+    class SelectionMenuButton extends goog.ui.GoogMenuButton {
         /**
          * A selection menu button control.  Extends {@link goog.ui.MenuButton}.
          * Menu contains 'select all' and 'select none' MenuItems for selecting all and

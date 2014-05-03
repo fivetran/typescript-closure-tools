@@ -81,7 +81,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.Popup}
      */
-    class MenuBase extends goog.ui.Popup {
+    class GoogMenuBase extends goog.ui.Popup {
         /**
          * The MenuBase class provides an abstract base class for different
          * implementations of menu controls.
@@ -148,5 +148,7 @@ declare module goog.ui {
          */
         onKeyDown(e: goog.events.KeyEvent): void;
     }
+
+    class MenuBase extends GoogMenuBase { }
 }
 

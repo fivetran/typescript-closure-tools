@@ -89,7 +89,7 @@ declare module goog.ui {
      * @extends {goog.ui.MenuItemRenderer}
      * @final
      */
-    class SubMenuRenderer extends goog.ui.MenuItemRenderer {
+    class SubMenuRenderer extends goog.ui.GoogMenuItemRenderer {
         /**
          * Default renderer for {@link goog.ui.SubMenu}s.  Each item has the following
          * structure:

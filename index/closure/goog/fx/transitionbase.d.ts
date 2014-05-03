@@ -45,7 +45,7 @@ declare module goog.fx {
      * @implements {goog.fx.Transition}
      * @extends {goog.events.EventTarget}
      */
-    class TransitionBase extends goog.events.EventTarget implements goog.fx.Transition {
+    class GoogTransitionBase extends goog.events.EventTarget implements goog.fx.Transition {
         /**
          * Constructor for a transition object.
          *
@@ -155,5 +155,7 @@ declare module goog.fx {
          */
         dispatchAnimationEvent(type: string): void;
     }
+
+    class TransitionBase extends GoogTransitionBase { }
 }
 

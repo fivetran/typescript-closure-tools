@@ -72,7 +72,7 @@ declare module goog.messaging {
      * @implements {goog.messaging.PortNetwork}
      * @final
      */
-    class PortCaller extends goog.Disposable implements goog.messaging.PortNetwork {
+    class PortCaller extends goog.GoogDisposable implements goog.messaging.PortNetwork {
         /**
          * The leaf node of a network.
          *

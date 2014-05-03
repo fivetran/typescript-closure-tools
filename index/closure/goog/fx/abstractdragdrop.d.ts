@@ -76,7 +76,7 @@ declare module goog.fx {
      * @extends {goog.events.EventTarget}
      * @constructor
      */
-    class AbstractDragDrop extends goog.events.EventTarget {
+    class GoogAbstractDragDrop extends goog.events.EventTarget {
         /**
          * Abstract class that provides reusable functionality for implementing drag
          * and drop functionality.
@@ -351,6 +351,8 @@ declare module goog.fx {
          */
         getEventPosition(event: goog.fx.DragEvent): goog.math.Coordinate;
     }
+
+    class AbstractDragDrop extends GoogAbstractDragDrop { }
 
     /**
      * Object representing a drag and drop event.

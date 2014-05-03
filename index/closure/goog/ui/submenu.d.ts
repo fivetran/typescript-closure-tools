@@ -96,7 +96,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.MenuItem}
      */
-    class SubMenu extends goog.ui.MenuItem {
+    class SubMenu extends goog.ui.GoogMenuItem {
         /**
          * Class representing a submenu that can be added as an item to other menus.
          *

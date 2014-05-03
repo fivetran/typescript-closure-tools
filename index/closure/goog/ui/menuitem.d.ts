@@ -69,7 +69,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.Control}
      */
-    class MenuItem extends goog.ui.Control {
+    class MenuItem extends goog.ui.GoogControl {
         /**
          * Class representing an item in a menu.
          *

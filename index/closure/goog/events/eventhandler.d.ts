@@ -36,7 +36,7 @@ declare module goog.events {
      * @extends {goog.Disposable}
      * @template SCOPE
      */
-    class EventHandler<SCOPE> extends goog.Disposable {
+    class EventHandler<SCOPE> extends goog.GoogDisposable {
         /**
          * Super class for objects that want to easily manage a number of event
          * listeners.  It allows a short cut to listen and also provides a quick way

@@ -68,7 +68,7 @@ declare module goog.ui {
      * @extends {goog.ui.ControlRenderer}
      * @final
      */
-    class TextareaRenderer extends goog.ui.ControlRenderer {
+    class TextareaRenderer extends goog.ui.GoogControlRenderer {
         /**
          * Renderer for {@link goog.ui.Textarea}s.  Renders and decorates native HTML
          * textarea elements.  Since native HTML textareas have built-in support for

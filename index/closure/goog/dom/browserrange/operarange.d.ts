@@ -70,7 +70,7 @@ declare module goog.dom.browserrange {
      * @extends {goog.dom.browserrange.W3cRange}
      * @final
      */
-    class OperaRange extends goog.dom.browserrange.W3cRange {
+    class OperaRange extends goog.dom.browserrange.GoogW3cRange {
         /**
          * The constructor for Opera specific browser ranges.
          * @param {Range} range The range object.

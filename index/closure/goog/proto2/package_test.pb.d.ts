@@ -20,7 +20,7 @@ declare module someprotopackage {
      * @extends {goog.proto2.Message}
      * @final
      */
-    class TestPackageTypes extends goog.proto2.Message {
+    class TestPackageTypes extends goog.proto2.GoogMessage {
         /**
          * Message TestPackageTypes.
          * @constructor

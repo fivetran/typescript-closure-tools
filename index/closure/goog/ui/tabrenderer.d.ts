@@ -64,7 +64,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.ControlRenderer}
      */
-    class TabRenderer extends goog.ui.ControlRenderer {
+    class GoogTabRenderer extends goog.ui.GoogControlRenderer {
         /**
          * Default renderer for {@link goog.ui.Tab}s, based on the {@code TabPane} code.
          * @constructor
@@ -89,5 +89,7 @@ declare module goog.ui {
          */
         setTooltip(element: Element, tooltip: any /*string|any (null)|any (undefined)*/): void;
     }
+
+    class TabRenderer extends GoogTabRenderer { }
 }
 

@@ -69,7 +69,7 @@ declare module goog.math {
      * @param {number=} opt_z Z coordinate, defaults to 0.
      * @constructor
      */
-    class Coordinate3 {
+    class GoogCoordinate3 {
         /**
          * Class for representing coordinates and positions in 3 dimensions.
          *
@@ -94,5 +94,7 @@ declare module goog.math {
          */
         toArray(): number[];
     }
+
+    class Coordinate3 extends GoogCoordinate3 { }
 }
 

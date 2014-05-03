@@ -56,7 +56,7 @@ declare module goog.ui {
      * @extends {goog.ui.Component}
      * @constructor
      */
-    class LabelInput extends goog.ui.Component {
+    class LabelInput extends goog.ui.GoogComponent {
         /**
          * This creates the label input object.
          * @param {string=} opt_label The text to show as the label.

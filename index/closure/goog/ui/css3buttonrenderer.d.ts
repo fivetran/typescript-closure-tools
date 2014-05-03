@@ -79,7 +79,7 @@ declare module goog.ui {
      * @extends {goog.ui.ButtonRenderer}
      * @final
      */
-    class Css3ButtonRenderer extends goog.ui.ButtonRenderer {
+    class Css3ButtonRenderer extends goog.ui.GoogButtonRenderer {
         /**
          * Custom renderer for {@link goog.ui.Button}s. Css3 buttons can contain
          * almost arbitrary HTML content, will flow like inline elements, but can be

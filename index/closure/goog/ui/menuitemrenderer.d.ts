@@ -71,7 +71,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.ControlRenderer}
      */
-    class MenuItemRenderer extends goog.ui.ControlRenderer {
+    class GoogMenuItemRenderer extends goog.ui.GoogControlRenderer {
         /**
          * Default renderer for {@link goog.ui.MenuItem}s.  Each item has the following
          * structure:
@@ -150,5 +150,7 @@ declare module goog.ui {
          */
         correctAriaRole(item: goog.ui.Control, element: Element): void;
     }
+
+    class MenuItemRenderer extends GoogMenuItemRenderer { }
 }
 

@@ -89,7 +89,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.SliderBase}
      */
-    class Slider extends goog.ui.SliderBase {
+    class Slider extends goog.ui.GoogSliderBase {
         /**
          * This creates a slider object.
          * @param {goog.dom.DomHelper=} opt_domHelper Optional DOM helper.

@@ -78,7 +78,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.FlatButtonRenderer}
      */
-    class LinkButtonRenderer extends goog.ui.FlatButtonRenderer {
+    class LinkButtonRenderer extends goog.ui.GoogFlatButtonRenderer {
         /**
          * Link renderer for {@link goog.ui.Button}s.  Link buttons can contain
          * almost arbitrary HTML content, will flow like inline elements, but can be

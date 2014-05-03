@@ -83,7 +83,7 @@ declare module goog.ui {
      * @param {string=} opt_ariaRole Optional ARIA role used for the element.
      * @constructor
      */
-    class ContainerRenderer {
+    class GoogContainerRenderer {
         /**
          * Default renderer for {@link goog.ui.Container}.  Can be used as-is, but
          * subclasses of Container will probably want to use renderers specifically
@@ -226,5 +226,7 @@ declare module goog.ui {
          */
         getDefaultOrientation(): goog.ui.Container.Orientation;
     }
+
+    class ContainerRenderer extends GoogContainerRenderer { }
 }
 

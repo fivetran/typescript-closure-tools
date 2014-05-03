@@ -95,7 +95,7 @@ declare module goog.editor {
      * @constructor
      * @extends {goog.Disposable}
      */
-    class ClickToEditWrapper extends goog.Disposable {
+    class ClickToEditWrapper extends goog.GoogDisposable {
         /**
          * Initialize the wrapper, and begin listening to mouse events immediately.
          * @param {goog.editor.Field} fieldObj The editable field being wrapped.

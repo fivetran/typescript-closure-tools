@@ -90,7 +90,7 @@ declare module goog.ui {
      * @extends {goog.ui.Component}
      * @constructor
      */
-    class Container extends goog.ui.Component {
+    class GoogContainer extends goog.ui.GoogComponent {
         /**
          * Base class for containers.  Extends {@link goog.ui.Component} by adding
          * the following:
@@ -439,5 +439,7 @@ declare module goog.ui {
          */
         setMouseButtonPressed(pressed: boolean): void;
     }
+
+    class Container extends GoogContainer { }
 }
 

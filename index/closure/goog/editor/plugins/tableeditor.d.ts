@@ -95,7 +95,7 @@ declare module goog.editor.plugins {
      * @extends {goog.editor.Plugin}
      * @final
      */
-    class TableEditor extends goog.editor.Plugin {
+    class TableEditor extends goog.editor.GoogPlugin {
         /**
          * Plugin that adds support for table creation and editing commands.
          * @constructor

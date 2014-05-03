@@ -71,7 +71,7 @@ declare module goog.ui.tree {
      * @constructor
      * @extends {goog.ui.tree.BaseNode}
      */
-    class TreeNode extends goog.ui.tree.BaseNode {
+    class TreeNode extends goog.ui.tree.GoogBaseNode {
         /**
          * A single node in the tree.
          * @param {string|!goog.html.SafeHtml} html The html content of the node label.

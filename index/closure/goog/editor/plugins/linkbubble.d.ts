@@ -109,7 +109,7 @@ declare module goog.editor.plugins {
      * @constructor
      * @extends {goog.editor.plugins.AbstractBubblePlugin}
      */
-    class LinkBubble extends goog.editor.plugins.AbstractBubblePlugin {
+    class LinkBubble extends goog.editor.plugins.GoogAbstractBubblePlugin {
         /**
          * Property bubble plugin for links.
          * @param {...!goog.editor.plugins.LinkBubble.Action} var_args List of

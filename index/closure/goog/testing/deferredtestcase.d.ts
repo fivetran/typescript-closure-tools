@@ -39,7 +39,7 @@ declare module goog.testing {
      * @constructor
      * @extends {goog.testing.AsyncTestCase}
      */
-    class DeferredTestCase extends goog.testing.AsyncTestCase {
+    class DeferredTestCase extends goog.testing.GoogAsyncTestCase {
         /**
          * A test case that can asynchronously wait on a Deferred object.
          * @param {string=} opt_name A descriptive name for the test case.

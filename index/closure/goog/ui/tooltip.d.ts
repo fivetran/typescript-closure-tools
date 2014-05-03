@@ -157,7 +157,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.Popup}
      */
-    class Tooltip extends goog.ui.Popup {
+    class GoogTooltip extends goog.ui.Popup {
         /**
          * Tooltip widget. Can be attached to one or more elements and is shown, with a
          * slight delay, when the the cursor is over the element or the element gains
@@ -464,5 +464,7 @@ declare module goog.ui {
          */
         clearHideTimer(): void;
     }
+
+    class Tooltip extends GoogTooltip { }
 }
 

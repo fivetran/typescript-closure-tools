@@ -137,7 +137,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.MenuButton}
      */
-    class ColorMenuButton extends goog.ui.MenuButton {
+    class GoogColorMenuButton extends goog.ui.GoogMenuButton {
         /**
          * A color menu button control.  Extends {@link goog.ui.MenuButton} by adding
          * an API for getting and setting the currently selected color from a menu of
@@ -169,5 +169,7 @@ declare module goog.ui {
          */
         setSelectedColor(color: string): void;
     }
+
+    class ColorMenuButton extends GoogColorMenuButton { }
 }
 

@@ -56,7 +56,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.ContainerRenderer}
      */
-    class TabBarRenderer extends goog.ui.ContainerRenderer {
+    class TabBarRenderer extends goog.ui.GoogContainerRenderer {
         /**
          * Default renderer for {@link goog.ui.TabBar}s, based on the {@code TabPane}
          * code.  The tab bar's DOM structure is determined by its orientation and

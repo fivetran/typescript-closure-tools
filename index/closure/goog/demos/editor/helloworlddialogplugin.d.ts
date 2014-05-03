@@ -128,7 +128,7 @@ declare module goog.demos.editor {
      * @extends {goog.editor.plugins.AbstractDialogPlugin}
      * @final
      */
-    class HelloWorldDialogPlugin extends goog.editor.plugins.AbstractDialogPlugin {
+    class HelloWorldDialogPlugin extends goog.editor.plugins.GoogAbstractDialogPlugin {
         /**
          * A plugin that opens the hello world dialog.
          * @constructor

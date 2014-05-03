@@ -102,7 +102,7 @@ declare module goog.editor.plugins {
      * @extends {goog.editor.Plugin}
      * @final
      */
-    class Blockquote extends goog.editor.Plugin {
+    class Blockquote extends goog.editor.GoogPlugin {
         /**
          * Plugin to handle splitting block quotes.  This plugin does nothing on its
          * own and should be used in conjunction with EnterHandler or one of its

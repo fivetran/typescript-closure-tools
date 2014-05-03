@@ -102,7 +102,7 @@ declare module goog.editor {
      * @constructor
      * @extends {goog.editor.Field}
      */
-    class ContentEditableField extends goog.editor.Field {
+    class ContentEditableField extends goog.editor.GoogField {
         /**
          * This class encapsulates an editable field that is just a contentEditable
          * div.

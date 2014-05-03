@@ -77,7 +77,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.ButtonRenderer}
      */
-    class FlatButtonRenderer extends goog.ui.ButtonRenderer {
+    class GoogFlatButtonRenderer extends goog.ui.GoogButtonRenderer {
         /**
          * Flat renderer for {@link goog.ui.Button}s.  Flat buttons can contain
          * almost arbitrary HTML content, will flow like inline elements, but can be
@@ -87,5 +87,7 @@ declare module goog.ui {
          */
         constructor();
     }
+
+    class FlatButtonRenderer extends GoogFlatButtonRenderer { }
 }
 

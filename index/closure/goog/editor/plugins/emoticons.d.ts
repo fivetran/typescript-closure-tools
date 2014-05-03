@@ -93,7 +93,7 @@ declare module goog.editor.plugins {
      * @extends {goog.editor.Plugin}
      * @final
      */
-    class Emoticons extends goog.editor.Plugin {
+    class Emoticons extends goog.editor.GoogPlugin {
         /**
          * Plugin for generating emoticons.
          *

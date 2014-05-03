@@ -45,7 +45,7 @@ declare module goog.events {
      * @constructor
      * @extends {goog.events.Event}
      */
-    class BrowserEvent extends goog.events.Event {
+    class GoogBrowserEvent extends goog.events.Event {
         /**
          * Accepts a browser event object and creates a patched, cross browser event
          * object.
@@ -99,5 +99,7 @@ declare module goog.events {
          */
         getBrowserEvent(): Event;
     }
+
+    class BrowserEvent extends GoogBrowserEvent { }
 }
 

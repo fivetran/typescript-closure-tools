@@ -31,7 +31,7 @@ declare module goog.messaging {
      * @implements {goog.messaging.MessageChannel}
      * @final
      */
-    class DeferredChannel extends goog.Disposable implements goog.messaging.MessageChannel {
+    class DeferredChannel extends goog.GoogDisposable implements goog.messaging.MessageChannel {
         /**
          * Creates a new DeferredChannel, which wraps a deferred MessageChannel and
          * enqueues messages to be sent once the wrapped channel is resolved.
