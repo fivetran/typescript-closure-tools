@@ -14,10 +14,10 @@ declare module goog.db {
      * @param {string} context A description of where the error occured.
      * @param {string=} opt_message Additional message.
      * @constructor
-     * @extends {goog.debug.Error}
+     * @extends {goog.debug.GoogError}
      * @final
      */
-    class Error extends goog.debug.Error {
+    class Error extends goog.debug.GoogError {
         /**
          * A database error. Since the stack trace can be unhelpful in an asynchronous
          * context, the error provides a message about where it was produced.
@@ -27,7 +27,7 @@ declare module goog.db {
          * @param {string} context A description of where the error occured.
          * @param {string=} opt_message Additional message.
          * @constructor
-         * @extends {goog.debug.Error}
+         * @extends {goog.debug.GoogError}
          * @final
          */
         constructor(error: any /*number|DOMError*/, context: string, opt_message?: string);
@@ -47,17 +47,17 @@ declare module goog.db.Error {
      * thrown.
      *
      * @constructor
-     * @extends {goog.debug.Error}
+     * @extends {goog.debug.GoogError}
      * @final
      */
-    class VersionChangeBlockedError extends goog.debug.Error {
+    class VersionChangeBlockedError extends goog.debug.GoogError {
         /**
          * A specific kind of database error. If a Version Change is unable to proceed
          * due to other open database connections, it will block and this error will be
          * thrown.
          *
          * @constructor
-         * @extends {goog.debug.Error}
+         * @extends {goog.debug.GoogError}
          * @final
          */
         constructor();
