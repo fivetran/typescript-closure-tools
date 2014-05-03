@@ -1,4 +1,4 @@
-// Generated Mon May  5 19:19:12 PDT 2014
+// Generated Mon May  5 16:18:37 PDT 2014
 
 /// <reference path="../../../closure/goog/base.d.ts" />
 /// <reference path="../../../closure/goog/dom/nodetype.d.ts" />
@@ -22,7 +22,7 @@ declare module goog.dom.iter {
      * @constructor
      * @extends {goog.iter.Iterator}
      */
-    class SiblingIterator extends goog.iter.Iterator<any> {
+    class SiblingIterator extends goog.iter.Iterator<Node> {
         /**
          * Iterator over a Node's siblings.
          * @param {Node} node The node to start with.
@@ -69,7 +69,7 @@ declare module goog.dom.iter {
      * @extends {goog.iter.Iterator}
      * @final
      */
-    class AncestorIterator extends goog.iter.Iterator<any> {
+    class AncestorIterator extends goog.iter.Iterator<Node> {
         /**
          * Iterator over a Node's ancestors, stopping after the document body.
          * @param {Node} node The node to start with.
