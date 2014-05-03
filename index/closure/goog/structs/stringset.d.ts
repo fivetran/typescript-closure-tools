@@ -185,7 +185,7 @@ declare module goog.structs {
          * @param {boolean=} opt_keys Ignored for sets.
          * @return {!goog.iter.Iterator} An iterator over the elements in the set.
          */
-        __iterator__(opt_keys?: boolean): goog.iter.Iterator<any>;
+        __iterator__(opt_keys?: boolean): goog.iter.Iterator<String>;
     }
 }
 

@@ -53,7 +53,7 @@ declare module goog.iter {
     /**
      * @typedef {goog.iter.Iterator|{length:number}|{__iterator__}}
      */
-    interface Iterable { /*any (goog.iter.Iterator<any>|{ length: number }|{ __iterator__: any (missing) })*/ }
+    interface Iterable<TYPE> { /*any (goog.iter.Iterator|{ length: number }|{ __iterator__: any (missing) })*/ }
 
     /**
        * Singleton Error object that is used to terminate iterations.
