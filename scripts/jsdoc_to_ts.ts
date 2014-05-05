@@ -11,6 +11,8 @@ goog.require('goog.array');
 goog.require('goog.object');
 goog.require('goog.string');
 
+// TODO references argument, inject interfaces
+
 var reserved = [
     'break',
     'case',
@@ -218,7 +220,7 @@ function remove_private(parsed) {
     Object.keys(parsed).forEach(function (name) {
         var jsdoc = parsed[name].jsdoc;
 
-        if (jsdoc.tags.some(is_title('private')))
+        if (jsdoc.tags.some(is_title('private')) && !jsdoc.tags.some(is_title('typedef')))
             privatePrefixes.push(name);
     });
 
