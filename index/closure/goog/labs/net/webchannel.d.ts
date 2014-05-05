@@ -1,4 +1,4 @@
-// Generated Sat May  3 12:19:08 PDT 2014
+// Generated Sun May  4 18:19:01 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/dom/nodetype.d.ts" />
@@ -182,7 +182,13 @@ declare module goog.net.WebChannel {
      *   testUrl: (string|undefined)
      * }}
      */
-    var Options: any /*missing*/;
+    interface Options {
+        messageHeaders: any /*{ [key: string]: string }|any (undefined)*/;
+        messageUrlParams: any /*{ [key: string]: string }|any (undefined)*/;
+        spdyRequestLimit: any /*number|any (undefined)*/;
+        supportsCrossDomainXhr: any /*boolean|any (undefined)*/;
+        testUrl: any /*string|any (undefined)*/
+    }
 
     /**
      * Types that are allowed as message data.

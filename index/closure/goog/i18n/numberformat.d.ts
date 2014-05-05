@@ -1,4 +1,4 @@
-// Generated Sat May  3 12:20:41 PDT 2014
+// Generated Sun May  4 18:20:35 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/i18n/numberformatsymbols.d.ts" />
@@ -176,7 +176,11 @@ declare module goog.i18n.NumberFormat {
      *     divisorBase: number
      * }}
      */
-    var CompactNumberUnit: any /*missing*/;
+    interface CompactNumberUnit {
+        prefix: string;
+        suffix: string;
+        divisorBase: number
+    }
 
     /**
      * The empty unit, corresponding to a base of 0.

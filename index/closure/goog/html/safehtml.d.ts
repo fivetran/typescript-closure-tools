@@ -1,4 +1,4 @@
-// Generated Sat May  3 12:20:57 PDT 2014
+// Generated Sun May  4 18:20:51 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -137,7 +137,7 @@ declare module goog.html.SafeHtml {
      *     provided.
      * @throws {goog.asserts.AssertionError} If content for void tag is provided.
      */
-    function create(tagName: string, opt_attributes?: { [key: string]: goog.html.SafeHtml.AttributeValue_ }, opt_content?: any /* jsdoc error */): void;
+    function create(tagName: string, opt_attributes?: { [key: string]: goog.html.SafeHtml.AttributeValue_ }, opt_content?: any /*goog.html.SafeHtml.TextOrHtml_|goog.html.SafeHtml.TextOrHtml_[]*/): goog.html.SafeHtml;
 
     /**
      * Creates a new SafeHtml object by concatenating the values.
@@ -146,7 +146,7 @@ declare module goog.html.SafeHtml {
      *     arguments would be processed recursively.
      * @return {!goog.html.SafeHtml}
      */
-    function concat(var_args: any /* jsdoc error */): void;
+    function concat(...var_args: any /*goog.html.SafeHtml.TextOrHtml_|goog.html.SafeHtml.TextOrHtml_[]*/[]): goog.html.SafeHtml;
 
     /**
      * A SafeHtml instance corresponding to the empty string.

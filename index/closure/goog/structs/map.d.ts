@@ -1,4 +1,4 @@
-// Generated Sat May  3 12:12:51 PDT 2014
+// Generated Sun May  4 18:12:42 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -152,14 +152,14 @@ declare module goog.structs {
          * while iterating might have undesired side effects.
          * @return {!goog.iter.Iterator} An iterator over the keys in the map.
          */
-        getKeyIterator(): goog.iter.Iterator<K>;
+        getKeyIterator(): goog.iter.Iterator;
     
         /**
          * Returns an iterator that iterates over the values in the map.  Removal of
          * keys while iterating might have undesired side effects.
          * @return {!goog.iter.Iterator} An iterator over the values in the map.
          */
-        getValueIterator(): goog.iter.Iterator<K>;
+        getValueIterator(): goog.iter.Iterator;
     
         /**
          * Returns an iterator that iterates over the values or the keys in the map.
@@ -169,7 +169,7 @@ declare module goog.structs {
          *     over the values.  The default value is false.
          * @return {!goog.iter.Iterator} An iterator over the values or keys in the map.
          */
-        __iterator__(opt_keys?: boolean): goog.iter.Iterator<K>;
+        __iterator__(opt_keys?: boolean): goog.iter.Iterator;
     }
 }
 

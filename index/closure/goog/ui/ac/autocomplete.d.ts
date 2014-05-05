@@ -1,4 +1,4 @@
-// Generated Sat May  3 12:16:43 PDT 2014
+// Generated Sun May  4 18:16:34 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/dom/nodetype.d.ts" />
@@ -384,6 +384,9 @@ declare module goog.ui.ac.AutoComplete {
      *   isRowDisabled:(!Function|undefined)
      * }}
      */
-    var Matcher: any /*missing*/;
+    interface Matcher {
+        requestMatchingRows: any /*Function|any (undefined)*/;
+        isRowDisabled: any /*Function|any (undefined)*/
+    }
 }
 

@@ -1,4 +1,4 @@
-// Generated Sat May  3 12:12:13 PDT 2014
+// Generated Sun May  4 18:12:04 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 
@@ -79,7 +79,7 @@ declare module goog.functions {
      * @return {function(...[?]):T} A new function.
      * @template T
      */
-    function withReturnValue<T>(f: () => T, retValue: T): void;
+    function withReturnValue<T>(f: Function, retValue: T): (_0: any[][]) => T;
 
     /**
      * Creates the composition of the functions passed in.
@@ -89,7 +89,7 @@ declare module goog.functions {
      * @return {function(...[?]):T} The composition of all inputs.
      * @template T
      */
-    function compose(fn: any /*missing*/, ...var_args: Function[]): void;
+    function compose<T>(fn: (_0: any[][]) => T, ...var_args: Function[]): (_0: any[][]) => T;
 
     /**
      * Creates a function that calls the functions passed in in sequence, and
@@ -109,7 +109,7 @@ declare module goog.functions {
      * @return {function(...[?]):boolean} A function that ANDs its component
      *      functions.
      */
-    function and(...var_args: Function[]): void;
+    function and(...var_args: Function[]): (_0: any[][]) => boolean;
 
     /**
      * Creates a function that returns true if any of its components evaluates
@@ -120,7 +120,7 @@ declare module goog.functions {
      * @return {function(...[?]):boolean} A function that ORs its component
      *    functions.
      */
-    function or(...var_args: Function[]): void;
+    function or(...var_args: Function[]): (_0: any[][]) => boolean;
 
     /**
      * Creates a function that returns the Boolean opposite of a provided function.
@@ -129,7 +129,7 @@ declare module goog.functions {
      * @return {function(...[?]):boolean} A function that delegates to f and returns
      * opposite.
      */
-    function not(f: Function): void;
+    function not(f: Function): (_0: any[][]) => boolean;
 
     /**
      * Generic factory function to construct an object given the constructor

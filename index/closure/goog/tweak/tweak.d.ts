@@ -1,4 +1,4 @@
-// Generated Sat May  3 12:18:07 PDT 2014
+// Generated Sun May  4 18:18:00 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/string/string.d.ts" />
@@ -48,7 +48,7 @@ declare module goog.tweak {
      *     token:(string|undefined)
      *     }|!Object}
      */
-    var ConfigParams: any /*missing*/;
+    interface ConfigParams { /*any ({ label: any (string|any (undefined)); validValues: any (string[]|number[]|any (undefined)); paramName: any (string|any (undefined)); restartRequired: any (boolean|any (undefined)); callback: any (Function|any (undefined)); token: any (string|any (undefined)) }|Object)*/ }
 
     /**
      * Creates and registers a group of BooleanSettings that are all set by a

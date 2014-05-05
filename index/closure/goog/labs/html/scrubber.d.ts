@@ -1,4 +1,4 @@
-// Generated Sat May  3 12:19:25 PDT 2014
+// Generated Sun May  4 18:19:19 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/object/object.d.ts" />
@@ -51,32 +51,6 @@ declare module goog.labs.html.scrubber {
 
     /** Character code constant for {@code '?'}.  @private */
     var CC_QMARK_: any /*missing*/;
-
-    /**
-     * Replaces tags not on the white-list with empty text nodes, dropping all
-     * attributes, and drops other non-text nodes such as comments.
-     *
-     * @param {!Object.<string, boolean>} tagWhitelist a set of lower-case tag names
-     *    following the convention established by {@link goog.object.createSet}.
-     * @param {!Object.<string, Object.<string, goog.labs.html.AttributeRewriter>>
-     *        } attrWhitelist
-     *    maps lower-case tag names and the special string {@code "*"} to functions
-     *    from decoded attribute values to sanitized values or {@code null} to
-     *    indicate that the attribute is not allowed with that value.
-     *
-     *    For example, if {@code attrWhitelist['a']['href']} is defined then it is
-     *    used to sanitize the value of the link's URL.
-     *
-     *    If {@code attrWhitelist['*']['id']} is defined, and
-     *    {@code attrWhitelist['div']['id']} is not, then the former is used to
-     *    sanitize any {@code id} attribute on a {@code <div>} element.
-     * @param {Array.<string>} htmlTokens an array of HTML tokens as returned by
-     *    {@link goog.labs.html.scrubber.lex_}.
-     * @return {Array.<string>} the input array modified in place to have some
-     *    tokens removed.
-     * @private
-     */
-    function filter_(tagWhitelist: { [key: string]: boolean }, attrWhitelist: any /* jsdoc error */, htmlTokens: any /* jsdoc error */): void;
 
     /** @const @private */
     var ALL_SCOPES_: any /*missing*/;

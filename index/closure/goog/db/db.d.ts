@@ -1,4 +1,4 @@
-// Generated Sat May  3 12:20:58 PDT 2014
+// Generated Sun May  4 18:20:52 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -88,7 +88,9 @@ declare module goog.db {
      *                    !goog.db.IndexedDb,
      *                    !goog.db.Transaction)}
      */
-    var UpgradeNeededCallback: any /*missing*/;
+    interface UpgradeNeededCallback {
+        (_0: goog.db.IndexedDb.VersionChangeEvent, _1: goog.db.IndexedDb, _2: goog.db.Transaction): any /*missing*/
+    }
 
     /**
      * Opens a database connection and wraps it.

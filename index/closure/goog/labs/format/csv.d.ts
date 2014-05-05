@@ -1,4 +1,4 @@
-// Generated Sat May  3 12:19:10 PDT 2014
+// Generated Sun May  4 18:19:03 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/dom/nodetype.d.ts" />
@@ -19,10 +19,10 @@ declare module goog.labs.format.csv {
      *      error.
      * @param {string=} opt_message A description of the violated parse expectation.
      * @constructor
-     * @extends {goog.debug.GoogError}
+     * @extends {goog.debug.Error}
      * @final
      */
-    class ParseError extends goog.debug.GoogError {
+    class ParseError extends goog.debug.Error {
         /**
          * Error thrown when parsing fails.
          *
@@ -31,7 +31,7 @@ declare module goog.labs.format.csv {
          *      error.
          * @param {string=} opt_message A description of the violated parse expectation.
          * @constructor
-         * @extends {goog.debug.GoogError}
+         * @extends {goog.debug.Error}
          * @final
          */
         constructor(text: string, index: number, opt_message?: string);

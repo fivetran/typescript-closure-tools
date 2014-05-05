@@ -1,4 +1,4 @@
-// Generated Sat May  3 12:14:05 PDT 2014
+// Generated Sun May  4 18:13:56 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -35,17 +35,17 @@ declare module goog.net.jsloader {
      * @param {goog.net.jsloader.ErrorCode} code The error code.
      * @param {string=} opt_message Additional message.
      * @constructor
-     * @extends {goog.debug.GoogError}
+     * @extends {goog.debug.Error}
      * @final
      */
-    class Error extends goog.debug.GoogError {
+    class Error extends goog.debug.Error {
         /**
          * A jsloader error.
          *
          * @param {goog.net.jsloader.ErrorCode} code The error code.
          * @param {string=} opt_message Additional message.
          * @constructor
-         * @extends {goog.debug.GoogError}
+         * @extends {goog.debug.Error}
          * @final
          */
         constructor(code: goog.net.jsloader.ErrorCode, opt_message?: string);
@@ -74,7 +74,11 @@ declare module goog.net.jsloader {
      *   cleanupWhenDone: (boolean|undefined)
      * }}
      */
-    var Options: any /*missing*/;
+    interface Options {
+        timeout: any /*number|any (undefined)*/;
+        document: any /*HTMLDocument|any (undefined)*/;
+        cleanupWhenDone: any /*boolean|any (undefined)*/
+    }
 
     /**
      * Loads and evaluates the JavaScript files at the specified URIs, guaranteeing

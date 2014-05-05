@@ -1,4 +1,4 @@
-// Generated Sat May  3 12:17:01 PDT 2014
+// Generated Sun May  4 18:16:53 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/string/string.d.ts" />
@@ -548,7 +548,7 @@ declare module goog.ui {
          *     The axis type for the given axis, or all of them in an array if the
          *     axis number is not given.
          */
-        getMultiAxisType(opt_axisNumber?: number): void;
+        getMultiAxisType(opt_axisNumber?: number): any /*goog.ui.ServerChart.MultiAxisType|goog.ui.ServerChart.MultiAxisType[]*/;
     
         /**
          * Sets the label text (usually multiple values) for a given axis, overwriting

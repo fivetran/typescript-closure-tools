@@ -1,4 +1,4 @@
-// Generated Sat May  3 12:17:23 PDT 2014
+// Generated Sun May  4 18:17:15 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -81,7 +81,7 @@ declare module goog.events {
      * @return {goog.events.Key} Unique key for the listener.
      * @template T,EVENTOBJ
      */
-    function listen(src: any /*EventTarget|goog.events.Listenable*/, type: any /* jsdoc error */, listener: any /* jsdoc error */, opt_capt?: any /* jsdoc error */, opt_handler?: any /* jsdoc error */): void;
+    function listen<T,EVENTOBJ>(src: any /*EventTarget|goog.events.Listenable*/, type: any /*string|string[]|goog.events.EventId<EVENTOBJ>|goog.events.EventId<EVENTOBJ>[]*/, listener: any /*(_0: EVENTOBJ) => any|{ handleEvent: (_0: any) => any }|any (null)*/, opt_capt?: boolean, opt_handler?: T): goog.events.Key;
 
     /**
      * Helper function for returning a proxy function.
@@ -114,7 +114,7 @@ declare module goog.events {
      * @return {goog.events.Key} Unique key for the listener.
      * @template T,EVENTOBJ
      */
-    function listenOnce(src: any /*EventTarget|goog.events.Listenable*/, type: any /* jsdoc error */, listener: any /* jsdoc error */, opt_capt?: any /* jsdoc error */, opt_handler?: any /* jsdoc error */): void;
+    function listenOnce<T,EVENTOBJ>(src: any /*EventTarget|goog.events.Listenable*/, type: any /*string|string[]|goog.events.EventId<EVENTOBJ>|goog.events.EventId<EVENTOBJ>[]*/, listener: any /*(_0: EVENTOBJ) => any|{ handleEvent: (_0: any) => any }|any (null)*/, opt_capt?: boolean, opt_handler?: T): goog.events.Key;
 
     /**
      * Adds an event listener with a specific event wrapper on a DOM Node or an
@@ -150,7 +150,7 @@ declare module goog.events {
      * @return {?boolean} indicating whether the listener was there to remove.
      * @template EVENTOBJ
      */
-    function unlisten(src: any /*EventTarget|goog.events.Listenable*/, type: any /* jsdoc error */, listener: any /* jsdoc error */, opt_capt?: any /* jsdoc error */, opt_handler?: any /* jsdoc error */): void;
+    function unlisten<EVENTOBJ>(src: any /*EventTarget|goog.events.Listenable*/, type: any /*string|string[]|goog.events.EventId<EVENTOBJ>|goog.events.EventId<EVENTOBJ>[]*/, listener: any /*(_0: any) => any|{ handleEvent: (_0: any) => any }|any (null)*/, opt_capt?: boolean, opt_handler?: Object): boolean;
 
     /**
      * Removes an event listener which was added with listen() by the key

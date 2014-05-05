@@ -1,4 +1,4 @@
-// Generated Sat May  3 12:12:27 PDT 2014
+// Generated Sun May  4 18:12:18 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -14,7 +14,7 @@ declare module goog.dom.classlist {
      * @param {Element} element DOM node to get the classes of.
      * @return {!goog.array.ArrayLike} Class names on {@code element}.
      */
-    function get(element: Element): goog.array.ArrayLike<any>;
+    function get(element: Element): goog.array.ArrayLike;
 
     /**
      * Sets the entire class name of an element.

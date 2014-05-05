@@ -1,4 +1,4 @@
-// Generated Sat May  3 12:19:07 PDT 2014
+// Generated Sun May  4 18:19:01 PDT 2014
 
 /// <reference path="../../../../goog/base.d.ts" />
 /// <reference path="../../../../goog/labs/net/webchannel/connectionstate.d.ts" />

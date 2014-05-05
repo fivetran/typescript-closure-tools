@@ -1,4 +1,4 @@
-// Generated Sat May  3 12:14:51 PDT 2014
+// Generated Sun May  4 18:14:42 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/messaging/messagechannel.d.ts" />

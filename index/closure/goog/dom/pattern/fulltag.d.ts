@@ -1,4 +1,4 @@
-// Generated Sat May  3 12:12:21 PDT 2014
+// Generated Sun May  4 18:12:12 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/dom/pattern/pattern.d.ts" />

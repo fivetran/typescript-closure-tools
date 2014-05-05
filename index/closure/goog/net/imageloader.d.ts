@@ -1,4 +1,4 @@
-// Generated Sat May  3 12:14:30 PDT 2014
+// Generated Sun May  4 18:14:21 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/string/string.d.ts" />
@@ -139,16 +139,5 @@ declare module goog.net.ImageLoader {
      * @enum {string}
      */
     enum CorsRequestType { ANONYMOUS, USE_CREDENTIALS } 
-
-    /**
-     * Describes a request for an image. This includes its URL and its CORS-request
-     * type, if any.
-     * @typedef {{
-     *   src: string,
-     *   corsRequestType: ?goog.net.ImageLoader.CorsRequestType
-     * }}
-     * @private
-     */
-    var ImageRequest_: any /*missing*/;
 }
 

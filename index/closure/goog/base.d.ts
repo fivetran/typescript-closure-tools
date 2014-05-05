@@ -1,7 +1,12 @@
-// Generated Sat May  3 12:19:26 PDT 2014
+// Generated Sun May  4 18:19:19 PDT 2014
 
 
 declare module goog {
+
+    /**
+     * Reference to the global context.  In most cases this will be 'window'.
+     */
+    var global: any /*missing*/;
 
     /**
      * Defines a named value. In uncompiled mode, the value is retreived from

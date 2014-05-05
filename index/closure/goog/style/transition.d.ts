@@ -1,4 +1,4 @@
-// Generated Sat May  3 12:13:04 PDT 2014
+// Generated Sun May  4 18:12:55 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -41,7 +41,7 @@ declare module goog.style.transition {
      *   delay: number
      * } | string }
      */
-    var Css3Property: any /*missing*/;
+    interface Css3Property { /*any ({ property: string; duration: number; timing: string; delay: number }|string)*/ }
 
     /**
      * Sets the element CSS3 transition to properties.
@@ -50,7 +50,7 @@ declare module goog.style.transition {
      *     Array.<goog.style.transition.Css3Property>} properties A single CSS3
      *     transition property or array of properties.
      */
-    function set(element: Element, properties: any /* jsdoc error */): void;
+    function set(element: Element, properties: any /*goog.style.transition.Css3Property|goog.style.transition.Css3Property[]*/): void;
 
     /**
      * Removes any programmatically-added CSS3 transition in the given element.

@@ -1,4 +1,4 @@
-// Generated Sat May  3 12:20:00 PDT 2014
+// Generated Sun May  4 18:19:54 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/dom/nodetype.d.ts" />
@@ -168,23 +168,6 @@ declare module goog.testing.fs {
          * @return {!goog.testing.fs.DirectoryEntry} The created directory.
          */
         createDirectorySync(path: string): goog.testing.fs.DirectoryEntry;
-    
-        /**
-         * Get a file or directory entry from a path. This handles parsing the path for
-         * subdirectories and throwing appropriate errors should something go wrong.
-         *
-         * @param {string} path The path to the entry, relative to this directory.
-         * @param {goog.fs.DirectoryEntry.Behavior} behavior The behavior for loading
-         *     the entry.
-         * @param {boolean} isFile Whether a file or directory is being loaded.
-         * @param {function(!goog.testing.fs.DirectoryEntry, string) :
-         *             !goog.testing.fs.Entry} createFn
-         *     The function for creating the entry if it doesn't yet exist. This is
-         *     passed the parent entry and the name of the new entry.
-         * @return {!goog.testing.fs.Entry} The loaded entry.
-         * @private
-         */
-        getEntry_(path: string, behavior: goog.fs.DirectoryEntry.Behavior, isFile: boolean, createFn: any /* jsdoc error */): void;
     
         /**
          * Returns whether this directory has a child with the given name.

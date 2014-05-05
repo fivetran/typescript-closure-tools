@@ -1,4 +1,4 @@
-// Generated Sat May  3 12:15:24 PDT 2014
+// Generated Sun May  4 18:15:16 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/dom/nodetype.d.ts" />
@@ -325,6 +325,13 @@ declare module goog.ui.editor {
      *       goog.ui.ButtonRenderer, goog.dom.DomHelper):goog.ui.Button,
      *   queryable:?boolean}}
      */
-    var ButtonDescriptor: any /*missing*/;
+    interface ButtonDescriptor {
+        command: string;
+        tooltip: string;
+        caption: goog.ui.ControlContent;
+        classes: string;
+        factory: (_0: string, _1: string, _2: goog.ui.ControlContent, _3: string, _4: goog.ui.ButtonRenderer, _5: goog.dom.DomHelper) => goog.ui.Button;
+        queryable: boolean
+    }
 }
 

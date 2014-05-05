@@ -1,4 +1,4 @@
-// Generated Sat May  3 12:11:55 PDT 2014
+// Generated Sun May  4 18:11:46 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -55,29 +55,7 @@ declare module goog.iter {
     /**
      * @typedef {goog.iter.Iterator|{length:number}|{__iterator__}}
      */
-    interface Iterable<TYPE> { /*any (goog.iter.Iterator|{ length: number }|{ __iterator__: any (missing) })*/
-
-        /**
-         * Returns the next value of the iteration.  This will throw the object
-         * {@see goog.iter#StopIteration} when the iteration passes the end.
-         * @return {VALUE} Any object or value.
-         */
-        next?: () => TYPE;
-
-        /**
-         * Returns the {@code Iterator} object itself.  This is used to implement
-         * the iterator protocol in JavaScript 1.7
-         * @param {boolean=} opt_keys  Whether to return the keys or values. Default is
-         *     to only return the values.  This is being used by the for-in loop (true)
-         *     and the for-each-in loop (false).  Even though the param gives a hint
-         *     about what the iterator will return there is no guarantee that it will
-         *     return the keys when true is passed.
-         * @return {!goog.iter.Iterator.<VALUE>} The object itself.
-         */
-        __iterator__?: (opt_keys?: boolean) => goog.iter.Iterator<TYPE>;
-
-        length?: number;
-    }
+    interface Iterable { /*any (goog.iter.Iterator|{ length: number }|{ __iterator__: any (missing) })*/ }
 
     /**
        * Singleton Error object that is used to terminate iterations.
@@ -117,7 +95,7 @@ declare module goog.iter {
      *     {@code f}.
      * @template THIS, VALUE
      */
-    function forEach(iterable: any /*goog.iter.Iterator<VALUE>|goog.iter.Iterable*/, f: any /* jsdoc error */, opt_obj?: any /* jsdoc error */): void;
+    function forEach<THIS, VALUE>(iterable: any /*goog.iter.Iterator<VALUE>|goog.iter.Iterable*/, f: any /*(_0: VALUE, _1: any (undefined), _2: goog.iter.Iterator<VALUE>) => any (missing)|(_0: number, _1: any (undefined), _2: goog.iter.Iterator<VALUE>) => any (missing)*/, opt_obj?: THIS): void;
 
     /**
      * Calls a function for every element in the iterator, and if the function
@@ -137,7 +115,7 @@ declare module goog.iter {
      *     that passed the test are present.
      * @template THIS, VALUE
      */
-    function filter(iterable: any /*goog.iter.Iterator<VALUE>|goog.iter.Iterable*/, f: any /* jsdoc error */, opt_obj?: any /* jsdoc error */): void;
+    function filter<THIS, VALUE>(iterable: any /*goog.iter.Iterator<VALUE>|goog.iter.Iterable*/, f: (_0: VALUE, _1: any /*undefined*/, _2: goog.iter.Iterator<VALUE>) => boolean, opt_obj?: THIS): goog.iter.Iterator<VALUE>;
 
     /**
      * Calls a function for every element in the iterator, and if the function
@@ -157,7 +135,7 @@ declare module goog.iter {
      *     that did not pass the test are present.
      * @template THIS, VALUE
      */
-    function filterFalse(iterable: any /*goog.iter.Iterator<VALUE>|goog.iter.Iterable*/, f: any /* jsdoc error */, opt_obj?: any /* jsdoc error */): void;
+    function filterFalse<THIS, VALUE>(iterable: any /*goog.iter.Iterator<VALUE>|goog.iter.Iterable*/, f: (_0: VALUE, _1: any /*undefined*/, _2: goog.iter.Iterator<VALUE>) => boolean, opt_obj?: THIS): goog.iter.Iterator<VALUE>;
 
     /**
      * Creates a new iterator that returns the values in a range.  This function
@@ -206,7 +184,7 @@ declare module goog.iter {
      *     iterator.
      * @template THIS, VALUE, RESULT
      */
-    function map(iterable: any /*goog.iter.Iterator<VALUE>|goog.iter.Iterable*/, f: any /* jsdoc error */, opt_obj?: any /* jsdoc error */): void;
+    function map<THIS, VALUE, RESULT>(iterable: any /*goog.iter.Iterator<VALUE>|goog.iter.Iterable*/, f: (_0: VALUE, _1: any /*undefined*/, _2: goog.iter.Iterator<VALUE>) => RESULT, opt_obj?: THIS): goog.iter.Iterator<RESULT>;
 
     /**
      * Passes every element of an iterator into a function and accumulates the
@@ -244,7 +222,7 @@ declare module goog.iter {
      * @return {boolean} true if any value passes the test.
      * @template THIS, VALUE
      */
-    function some(iterable: any /*goog.iter.Iterator<VALUE>|goog.iter.Iterable*/, f: any /* jsdoc error */, opt_obj?: any /* jsdoc error */): void;
+    function some<THIS, VALUE>(iterable: any /*goog.iter.Iterator<VALUE>|goog.iter.Iterable*/, f: (_0: VALUE, _1: any /*undefined*/, _2: goog.iter.Iterator<VALUE>) => boolean, opt_obj?: THIS): boolean;
 
     /**
      * Goes through the values in the iterator. Calls f for each of these and if any
@@ -262,7 +240,7 @@ declare module goog.iter {
      * @return {boolean} true if every value passes the test.
      * @template THIS, VALUE
      */
-    function every(iterable: any /*goog.iter.Iterator<VALUE>|goog.iter.Iterable*/, f: any /* jsdoc error */, opt_obj?: any /* jsdoc error */): void;
+    function every<THIS, VALUE>(iterable: any /*goog.iter.Iterator<VALUE>|goog.iter.Iterable*/, f: (_0: VALUE, _1: any /*undefined*/, _2: goog.iter.Iterator<VALUE>) => boolean, opt_obj?: THIS): boolean;
 
     /**
      * Takes zero or more iterables and returns one iterator that will iterate over
@@ -285,7 +263,7 @@ declare module goog.iter {
      *     {@code iterable}.
      * @template VALUE
      */
-    function chainFromIterable<VALUE>(iterable: goog.iter.Iterable<any>): goog.iter.Iterator<VALUE>;
+    function chainFromIterable<VALUE>(iterable: goog.iter.Iterable): goog.iter.Iterator<VALUE>;
 
     /**
      * Builds a new iterator that iterates over the original, but skips elements as
@@ -302,7 +280,7 @@ declare module goog.iter {
      *     the original iterator as long as {@code f} is true.
      * @template THIS, VALUE
      */
-    function dropWhile(iterable: any /*goog.iter.Iterator<VALUE>|goog.iter.Iterable*/, f: any /* jsdoc error */, opt_obj?: any /* jsdoc error */): void;
+    function dropWhile<THIS, VALUE>(iterable: any /*goog.iter.Iterator<VALUE>|goog.iter.Iterable*/, f: (_0: VALUE, _1: any /*undefined*/, _2: goog.iter.Iterator<VALUE>) => boolean, opt_obj?: THIS): goog.iter.Iterator<VALUE>;
 
     /**
      * Builds a new iterator that iterates over the original, but only as long as a
@@ -318,7 +296,7 @@ declare module goog.iter {
      *     the original iterator as long as the function is true.
      * @template THIS, VALUE
      */
-    function takeWhile(iterable: any /*goog.iter.Iterator<VALUE>|goog.iter.Iterable*/, f: any /* jsdoc error */, opt_obj?: any /* jsdoc error */): void;
+    function takeWhile<THIS, VALUE>(iterable: any /*goog.iter.Iterator<VALUE>|goog.iter.Iterable*/, f: (_0: VALUE, _1: any /*undefined*/, _2: goog.iter.Iterator<VALUE>) => boolean, opt_obj?: THIS): goog.iter.Iterator<VALUE>;
 
     /**
      * Converts the iterator to an array
@@ -504,7 +482,7 @@ declare module goog.iter {
      *     iterator.
      * @template THIS, RESULT
      */
-    function starMap<THIS, RESULT>(iterable: goog.iter.Iterable<goog.iter.Iterable<any>>, f: (_0: any[][]) => RESULT, opt_obj?: THIS): goog.iter.Iterator<RESULT>;
+    function starMap<THIS, RESULT>(iterable: goog.iter.Iterable<goog.iter.Iterable>, f: (_0: any[][]) => RESULT, opt_obj?: THIS): goog.iter.Iterator<RESULT>;
 
     /**
      * Returns an array of iterators each of which can iterate over the values in

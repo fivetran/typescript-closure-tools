@@ -1,4 +1,4 @@
-// Generated Sat May  3 12:18:43 PDT 2014
+// Generated Sun May  4 18:18:36 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/string/string.d.ts" />
@@ -136,16 +136,16 @@ declare module goog.debug.ErrorHandler {
      * throws an error.
      * @param {*} cause The error thrown by the entry point.
      * @constructor
-     * @extends {goog.debug.GoogError}
+     * @extends {goog.debug.Error}
      * @final
      */
-    class ProtectedFunctionError extends goog.debug.GoogError {
+    class ProtectedFunctionError extends goog.debug.Error {
         /**
          * Error thrown to the caller of a protected entry point if the entry point
          * throws an error.
          * @param {*} cause The error thrown by the entry point.
          * @constructor
-         * @extends {goog.debug.GoogError}
+         * @extends {goog.debug.Error}
          * @final
          */
         constructor(cause: any);

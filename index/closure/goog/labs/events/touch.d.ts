@@ -1,4 +1,4 @@
-// Generated Sat May  3 12:19:11 PDT 2014
+// Generated Sun May  4 18:19:05 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/string/string.d.ts" />
@@ -25,7 +25,13 @@ declare module goog.labs.events.touch {
      *   target: EventTarget
      * }}
      */
-    var TouchData: any /*missing*/;
+    interface TouchData {
+        clientX: number;
+        clientY: number;
+        screenX: number;
+        screenY: number;
+        target: EventTarget
+    }
 
     /**
      * Takes a mouse or touch event and returns the relevent geometry and target

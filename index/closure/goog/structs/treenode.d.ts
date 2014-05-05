@@ -1,4 +1,4 @@
-// Generated Sat May  3 12:12:54 PDT 2014
+// Generated Sun May  4 18:12:45 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -149,7 +149,7 @@ declare module goog.structs {
          *     within {@code f}.
          * @template THIS
          */
-        forEachChild(f: any /* jsdoc error */, opt_this?: any /* jsdoc error */): void;
+        forEachChild<THIS>(f: (_0: goog.structs.TreeNode<KEY,VALUE>, _1: number, _2: goog.structs.TreeNode<KEY,VALUE>[]) => any /*missing*/, opt_this?: THIS): void;
     
         /**
          * Traverses all child nodes recursively in preorder.
@@ -171,7 +171,7 @@ declare module goog.structs {
          *     within {@code f}.
          * @template THIS
          */
-        traverse(f: any /* jsdoc error */, opt_this?: any /* jsdoc error */): void;
+        traverse<THIS>(f: (_0: goog.structs.TreeNode<KEY,VALUE>) => any /*boolean|any (undefined)*/, opt_this?: THIS): void;
     
         /**
          * Sets the parent node of this node. The callers must ensure that the parent

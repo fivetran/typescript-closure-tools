@@ -1,4 +1,4 @@
-// Generated Sat May  3 12:17:14 PDT 2014
+// Generated Sun May  4 18:17:06 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 /// <reference path="../../../goog/storage/mechanism/mechanism.d.ts" />
@@ -58,6 +58,8 @@ declare module goog.storage.mechanism.ErrorHandlingMechanism {
      *   string,
      *   *=)}
      */
-    var ErrorHandler: any /*missing*/;
+    interface ErrorHandler {
+        (_0: any /*Error|string*/, _1: goog.storage.mechanism.ErrorHandlingMechanism.Operation, _2: string, _3: any): any /*missing*/
+    }
 }
 

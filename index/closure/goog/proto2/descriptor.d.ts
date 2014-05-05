@@ -1,4 +1,4 @@
-// Generated Fri May  2 14:56:04 PDT 2014
+// Generated Sun May  4 18:11:41 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -9,17 +9,6 @@
 /// <reference path="../../goog/array/array.d.ts" />
 
 declare module goog.proto2 {
-
-    /**
-     * @typedef {{name: (string|undefined),
-     *            fullName: (string|undefined),
-     *            containingType: (goog.proto2.Message|undefined)}}
-     */
-    interface Metadata {
-        name?: string;
-        fullName?: string;
-        containingType?: goog.proto2.Message;
-    }
 
     /**
      * A class which describes a Protocol Buffer 2 Message.
@@ -117,6 +106,17 @@ declare module goog.proto2 {
          * @return {!goog.proto2.Message} The instance of the message.
          */
         createMessageInstance(): goog.proto2.Message;
+    }
+
+    /**
+     * @typedef {{name: (string|undefined),
+     *            fullName: (string|undefined),
+     *            containingType: (goog.proto2.Message|undefined)}}
+     */
+    interface Metadata {
+        name: any /*string|any (undefined)*/;
+        fullName: any /*string|any (undefined)*/;
+        containingType: any /*goog.proto2.Message|any (undefined)*/
     }
 }
 

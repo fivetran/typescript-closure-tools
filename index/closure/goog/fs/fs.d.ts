@@ -1,4 +1,4 @@
-// Generated Sat May  3 12:18:27 PDT 2014
+// Generated Sun May  4 18:18:20 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/events/eventid.d.ts" />
@@ -83,7 +83,7 @@ declare module goog.fs {
      * @typedef {!{createObjectURL: (function(!Blob): string),
      *             revokeObjectURL: function(string): void}}
      */
-    var UrlObject_: any /*missing*/;
+    interface UrlObject_ { /*{ createObjectURL: any ((_0: Blob) => string); revokeObjectURL: (_0: string) => void }*/ }
 
     /**
      * Concatenates one or more values together and converts them to a Blob.

@@ -1,4 +1,4 @@
-// Generated Sat May  3 12:13:07 PDT 2014
+// Generated Sun May  4 18:12:59 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -12,16 +12,16 @@ declare module goog.asserts {
      * @param {string} messagePattern The pattern that was used to form message.
      * @param {!Array.<*>} messageArgs The items to substitute into the pattern.
      * @constructor
-     * @extends {goog.debug.GoogError}
+     * @extends {goog.debug.Error}
      * @final
      */
-    class AssertionError extends goog.debug.GoogError {
+    class AssertionError extends goog.debug.Error {
         /**
          * Error object for failed assertions.
          * @param {string} messagePattern The pattern that was used to form message.
          * @param {!Array.<*>} messageArgs The items to substitute into the pattern.
          * @constructor
-         * @extends {goog.debug.GoogError}
+         * @extends {goog.debug.Error}
          * @final
          */
         constructor(messagePattern: string, messageArgs: any[]);

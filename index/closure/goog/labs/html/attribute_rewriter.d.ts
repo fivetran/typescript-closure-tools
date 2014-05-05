@@ -1,4 +1,4 @@
-// Generated Sat May  3 12:19:24 PDT 2014
+// Generated Sun May  4 18:19:17 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 
@@ -13,7 +13,7 @@ declare module goog.labs.html {
      * @typedef {(string |
      *            goog.html.SafeHtml | goog.html.SafeStyle | goog.html.SafeUrl)}
      */
-    var AttributeValue: any /*missing*/;
+    interface AttributeValue { /*any (string|goog.html.SafeHtml|goog.html.SafeStyle|goog.html.SafeUrl)*/ }
 
     /**
      * A function that takes an attribute value, and returns a safe value.
@@ -46,7 +46,9 @@ declare module goog.labs.html {
      * @typedef {function(goog.labs.html.AttributeValue) :
      *           goog.labs.html.AttributeValue}
      */
-    var AttributeRewriter: any /*missing*/;
+    interface AttributeRewriter {
+        (_0: goog.labs.html.AttributeValue): goog.labs.html.AttributeValue
+    }
 
     /**
      * g4 presubmit complains about requires of this file because its clients

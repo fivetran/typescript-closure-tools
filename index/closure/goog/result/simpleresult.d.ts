@@ -1,4 +1,4 @@
-// Generated Sat May  3 12:20:11 PDT 2014
+// Generated Sun May  4 18:20:06 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/promise/resolver.d.ts" />
@@ -65,32 +65,22 @@ declare module goog.result.SimpleResult {
      * more than once.
      *
      * @constructor
-     * @extends {goog.debug.GoogError}
+     * @extends {goog.debug.Error}
      * @final
      * @deprecated Use {@link goog.Promise} instead - http://go/promisemigration
      */
-    class StateError extends goog.debug.GoogError {
+    class StateError extends goog.debug.Error {
         /**
          * Error thrown if there is an attempt to set the value or error for this result
          * more than once.
          *
          * @constructor
-         * @extends {goog.debug.GoogError}
+         * @extends {goog.debug.Error}
          * @final
          * @deprecated Use {@link goog.Promise} instead - http://go/promisemigration
          */
         constructor();
     }
-
-    /**
-     * A waiting handler entry.
-     * @typedef {{
-     *   callback: !function(goog.result.SimpleResult),
-     *   scope: Object
-     * }}
-     * @private
-     */
-    var HandlerEntry_: any /*missing*/;
 
     /**
      * Creates a SimpleResult that fires when the given promise resolves.

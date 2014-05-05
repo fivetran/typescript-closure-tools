@@ -1,4 +1,4 @@
-// Generated Sat May  3 12:12:01 PDT 2014
+// Generated Sun May  4 18:11:53 PDT 2014
 
 /// <reference path="../../goog/base.d.ts" />
 /// <reference path="../../goog/dom/nodetype.d.ts" />
@@ -138,7 +138,7 @@ declare module goog.soy {
          * @return {string} The return value of rendering the template directly.
          * @template ARG_TYPES
          */
-        renderText(template: any /* jsdoc error */, opt_templateData?: any /* jsdoc error */): void;
+        renderText<ARG_TYPES>(template: any /*any (null)|(_0: ARG_TYPES, _1: any (null), _2: { [key: string]: any }) => goog.soy.data.SanitizedContent*/, opt_templateData?: ARG_TYPES): string;
     
         /**
          * Renders a strict Soy template and returns the output SanitizedContent object.
@@ -169,7 +169,7 @@ declare module goog.soy {
          * @return {!goog.html.SafeHtml}
          * @template ARG_TYPES
          */
-        renderSafeHtml(template: any /* jsdoc error */, opt_templateData?: any /* jsdoc error */): void;
+        renderSafeHtml<ARG_TYPES>(template: any /*any (null)|(_0: ARG_TYPES, _1: any (null), _2: { [key: string]: any }) => goog.soy.data.SanitizedContent*/, opt_templateData?: ARG_TYPES): goog.html.SafeHtml;
     
         /**
          * @return {!goog.soy.Renderer.SavedTemplateRender} Saved template data for

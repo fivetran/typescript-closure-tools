@@ -1,4 +1,4 @@
-// Generated Sat May  3 12:18:55 PDT 2014
+// Generated Sun May  4 18:18:48 PDT 2014
 
 /// <reference path="../../../goog/base.d.ts" />
 
@@ -7,7 +7,7 @@ declare module goog.labs.classdef {
     /** @typedef {
          {constructor:!Function}|
          {constructor:!Function, statics:(Object|function(Function):void)}} */
-    var ClassDescriptor: any /*missing*/;
+    interface ClassDescriptor { /*any ({ constructor: Function }|{ constructor: Function; statics: any (Object|(_0: Function) => void) })*/ }
 
     /**
      * Creates a restricted form of a Closure "class":
