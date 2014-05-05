@@ -1,22 +1,19 @@
-// Generated Mon May  5 15:42:58 PDT 2014
+// Generated Mon May  5 16:28:37 PDT 2014
 
 /// <reference path="../../../closure/goog/base.d.ts" />
 /// <reference path="../../../closure/goog/string/string.d.ts" />
 
-declare module goog {
+declare module goog.string {
 
-    module _string {
-
-        /**
-         * Performs sprintf-like conversion, ie. puts the values in a template.
-         * DO NOT use it instead of built-in conversions in simple cases such as
-         * 'Cost: %.2f' as it would introduce unneccessary latency oposed to
-         * 'Cost: ' + cost.toFixed(2).
-         * @param {string} formatString Template string containing % specifiers.
-         * @param {...string|number} var_args Values formatString is to be filled with.
-         * @return {string} Formatted string.
-         */
-        function format(formatString: string, ...var_args: any /*string|number*/[]): string;
-    }
+    /**
+     * Performs sprintf-like conversion, ie. puts the values in a template.
+     * DO NOT use it instead of built-in conversions in simple cases such as
+     * 'Cost: %.2f' as it would introduce unneccessary latency oposed to
+     * 'Cost: ' + cost.toFixed(2).
+     * @param {string} formatString Template string containing % specifiers.
+     * @param {...string|number} var_args Values formatString is to be filled with.
+     * @return {string} Formatted string.
+     */
+    function format(formatString: string, ...var_args: any /*string|number*/[]): string;
 }
 

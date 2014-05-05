@@ -1,10 +1,6 @@
-// Generated Mon May  5 15:43:45 PDT 2014
+// Generated Mon May  5 16:29:25 PDT 2014
 
 /// <reference path="../../../closure/goog/base.d.ts" />
-
-declare module goog._debug {
-    interface _Error extends Error { }
-}
 
 declare module goog.debug {
 
@@ -14,7 +10,7 @@ declare module goog.debug {
      * @constructor
      * @extends {Error}
      */
-    class Error implements goog._debug._Error {
+    class Error extends Error {
         /**
          * Base class for custom error objects.
          * @param {*=} opt_msg The message associated with the error.
@@ -22,10 +18,6 @@ declare module goog.debug {
          * @extends {Error}
          */
         constructor(opt_msg?: any);
-
-        name: string;
-
-        message: string;
     }
 }
 

@@ -1,26 +1,23 @@
-// Generated Mon May  5 15:42:54 PDT 2014
+// Generated Mon May  5 16:28:33 PDT 2014
 
 /// <reference path="../../../closure/goog/base.d.ts" />
 
-declare module goog {
+declare module goog.string {
 
-    module _string {
-
+    /**
+     * An interface for serializing objects into strings.
+     * @interface
+     */
+    interface Stringifier {
+    
         /**
-         * An interface for serializing objects into strings.
-         * @interface
+         * Serializes an object or a value to a string.
+         * Agnostic to the particular format of object and string.
+         *
+         * @param {*} object The object to stringify.
+         * @return {string} A string representation of the input.
          */
-        interface Stringifier {
-
-            /**
-             * Serializes an object or a value to a string.
-             * Agnostic to the particular format of object and string.
-             *
-             * @param {*} object The object to stringify.
-             * @return {string} A string representation of the input.
-             */
-            stringify(object: any): string;
-        }
+        stringify(object: any): string;
     }
 }
 

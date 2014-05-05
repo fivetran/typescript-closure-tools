@@ -1,4 +1,4 @@
-// Generated Mon May  5 15:41:18 PDT 2014
+// Generated Mon May  5 16:26:58 PDT 2014
 
 /// <reference path="../../../../closure/goog/base.d.ts" />
 /// <reference path="../../../../closure/goog/dom/nodetype.d.ts" />
@@ -46,7 +46,7 @@ declare module goog.storage.mechanism {
          *     over the values.  The default value is false.
          * @return {!goog.iter.Iterator} The iterator.
          */
-        __iterator__(opt_keys?: boolean): goog.iter.Iterator<any>;
+        __iterator__(opt_keys?: boolean): goog.iter.Iterator;
     
         /**
          * Remove all key-value pairs.

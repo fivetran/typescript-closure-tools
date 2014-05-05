@@ -1,11 +1,18 @@
-// Generated Mon May  5 15:42:57 PDT 2014
+// Generated Mon May  5 16:28:37 PDT 2014
 
 /// <reference path="../../../closure/goog/base.d.ts" />
 
-declare module goog {
+declare module goog.string {
 
-    module _string {
-
+    /**
+     * Utility class to facilitate string concatenation.
+     *
+     * @param {*=} opt_a1 Optional first initial item to append.
+     * @param {...*} var_args Other initial items to
+     *     append, e.g., new goog.string.StringBuffer('foo', 'bar').
+     * @constructor
+     */
+    class StringBuffer {
         /**
          * Utility class to facilitate string concatenation.
          *
@@ -14,49 +21,39 @@ declare module goog {
          *     append, e.g., new goog.string.StringBuffer('foo', 'bar').
          * @constructor
          */
-        class StringBuffer {
-            /**
-             * Utility class to facilitate string concatenation.
-             *
-             * @param {*=} opt_a1 Optional first initial item to append.
-             * @param {...*} var_args Other initial items to
-             *     append, e.g., new goog.string.StringBuffer('foo', 'bar').
-             * @constructor
-             */
-            constructor(opt_a1?: any, ...var_args: any[]);
-
-            /**
-             * Sets the contents of the string buffer object, replacing what's currently
-             * there.
-             *
-             * @param {*} s String to set.
-             */
-            set(s: any): void;
-
-            /**
-             * Appends one or more items to the buffer.
-             *
-             * Calling this with null, undefined, or empty arguments is an error.
-             *
-             * @param {*} a1 Required first string.
-             * @param {*=} opt_a2 Optional second string.
-             * @param {...*} var_args Other items to append,
-             *     e.g., sb.append('foo', 'bar', 'baz').
-             * @return {goog.string.StringBuffer} This same StringBuffer object.
-             * @suppress {duplicate}
-             */
-            append(a1: any, opt_a2?: any, ...var_args: any[]): goog.string.StringBuffer;
-
-            /**
-             * Clears the internal buffer.
-             */
-            clear(): void;
-
-            /**
-             * @return {number} the length of the current contents of the buffer.
-             */
-            getLength(): number;
-        }
+        constructor(opt_a1?: any, ...var_args: any[]);
+    
+        /**
+         * Sets the contents of the string buffer object, replacing what's currently
+         * there.
+         *
+         * @param {*} s String to set.
+         */
+        set(s: any): void;
+    
+        /**
+         * Appends one or more items to the buffer.
+         *
+         * Calling this with null, undefined, or empty arguments is an error.
+         *
+         * @param {*} a1 Required first string.
+         * @param {*=} opt_a2 Optional second string.
+         * @param {...*} var_args Other items to append,
+         *     e.g., sb.append('foo', 'bar', 'baz').
+         * @return {goog.string.StringBuffer} This same StringBuffer object.
+         * @suppress {duplicate}
+         */
+        append(a1: any, opt_a2?: any, ...var_args: any[]): goog.string.StringBuffer;
+    
+        /**
+         * Clears the internal buffer.
+         */
+        clear(): void;
+    
+        /**
+         * @return {number} the length of the current contents of the buffer.
+         */
+        getLength(): number;
     }
 }
 
