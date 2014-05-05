@@ -11,7 +11,7 @@ goog.require('goog.array');
 goog.require('goog.object');
 goog.require('goog.string');
 
-// TODO references argument, inject interfaces
+//  TODO references argument, inject interfaces
 
 var reserved = [
     'break',
@@ -211,6 +211,43 @@ function parse_comments(comments) {
     });
 
     return parsed;
+}
+
+function get_type_name(tag) {
+    if (tag.name)
+        return tag.name;
+    else if (tag.type) {
+        if (tag.type.type === 'NameExpression')
+            return tag.type.name;
+        else if (tag.type.type === 'TypeApplication')
+            return tag.type.expression.name;
+    }
+}
+
+function inject_interfaces(parsed, references) {
+    Object.keys(parsed).forEach(function(className) {
+        parsed[className].jsdoc.tags.forEach(function(tag) {
+            if (tag.title === 'implements') {
+                var interfaceName = get_type_name(tag);
+                var interfacePrefix = interfaceName + '.prototype.';
+
+                function is_interface_member(memberName) {
+                    return memberName.substring(0, interfacePrefix.length) === interfacePrefix;
+                }
+
+                function inject_interface_member(memberName) {
+                    var parts = memberName.split('.prototype.');
+                    var newName = className + '.prototype.' + parts[1];
+
+                    parsed[newName] = references[memberName];
+                }
+
+                var prototype = Object.keys(references).filter(is_interface_member);
+
+                prototype.forEach(inject_interface_member);
+            }
+        });
+    });
 }
 
 function remove_private(parsed) {
@@ -714,9 +751,37 @@ function pretty_print(modules, comments) {
     return acc;
 }
 
+var options = {};
+var currentArgument;
+process.argv.slice(2).forEach(function(name) {
+    if (name.substring(0, 2) === '--') {
+        currentArgument = name.substring(2);
+        options[currentArgument] = [];
+    }
+    else {
+        options[currentArgument].push(name);
+    }
+});
 
+var referenceComments = {};
 var comments = {};
-process.argv.slice(2).forEach(function (file) {
+
+if (typeof options.references === 'string')
+    options.references = [options.references];
+
+if (options.references) {
+    options.references.forEach(function(file) {
+        console.error('Reference: ' + file);
+        var code = fs.readFileSync(file);
+        var tree = esprima.parse(code, { attachComment: true });
+        extract_jsdoc(tree.body, referenceComments);
+    });
+}
+
+if (typeof options.js === 'string')
+    options.js = [options.js];
+
+options.js.forEach(function (file) {
     console.error(file);
     var code = fs.readFileSync(file);
     var tree = esprima.parse(code, { attachComment: true });
@@ -724,6 +789,7 @@ process.argv.slice(2).forEach(function (file) {
 });
 
 var parsed = parse_comments(comments);
+inject_interfaces(parsed, parse_comments(referenceComments));
 var exported = remove_private(parsed);
 var defs = generate_defs(exported);
 

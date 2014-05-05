@@ -15,8 +15,8 @@ do
 
     # Create reference tags
     GO_UP=$(dirname $GOOG | sed -e 's/[a-z0-9_\-]\+/../g')
-    REFS=$(./scripts/calculate_deps.sh $FILE)
-    REFS=$(for REF in $REFS
+    REF_FILES=$(./scripts/calculate_deps.sh $FILE)
+    REFS=$(for REF in $REF_FILES
            do
              echo ${REF%.js}
            done)
@@ -31,7 +31,7 @@ do
     done
 
     # Create modules
-    node scripts/jsdoc_to_ts.js $FILE >> $OUTPUT
+    node scripts/jsdoc_to_ts.js --js $FILE --references $REF_FILES >> $OUTPUT
 done
 
 rm deps-cache
