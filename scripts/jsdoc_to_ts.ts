@@ -13,7 +13,7 @@ goog.require('goog.string');
 
 //  TODO references argument, inject interfaces
 
-var reserved = [
+var reserved =  [
     'break',
     'case',
     'catch',
@@ -226,27 +226,40 @@ function get_type_name(tag) {
 
 function inject_interfaces(parsed, references) {
     Object.keys(parsed).forEach(function(className) {
-        parsed[className].jsdoc.tags.forEach(function(tag) {
-            if (tag.title === 'implements') {
-                var interfaceName = get_type_name(tag);
-                var interfacePrefix = interfaceName + '.prototype.';
+        function inject_members(interfaceName) {
+            var interfacePrefix = interfaceName + '.prototype.';
 
-                function is_interface_member(memberName) {
-                    return memberName.substring(0, interfacePrefix.length) === interfacePrefix;
-                }
-
-                function inject_interface_member(memberName) {
-                    var parts = memberName.split('.prototype.');
-                    var newName = className + '.prototype.' + parts[1];
-
-                    parsed[newName] = references[memberName];
-                }
-
-                var prototype = Object.keys(references).filter(is_interface_member);
-
-                prototype.forEach(inject_interface_member);
+            function is_interface_member(memberName) {
+                return memberName.substring(0, interfacePrefix.length) === interfacePrefix;
             }
-        });
+
+            function inject_interface_member(memberName) {
+                var parts = memberName.split('.prototype.');
+                var newName = className + '.prototype.' + parts[1];
+
+                parsed[newName] = references[memberName];
+            }
+
+            var prototype = Object.keys(references).filter(is_interface_member);
+
+            prototype.forEach(inject_interface_member);
+        }
+
+        function add_interface(name) {
+            if (references[name]) {
+                inject_members(name);
+
+                references[name].jsdoc.tags
+                    .filter(is_title('extends'))
+                    .map(get_type_name)
+                    .forEach(add_interface);
+            }
+        }
+
+        parsed[className].jsdoc.tags
+            .filter(is_title('implements'))
+            .map(get_type_name)
+            .forEach(add_interface);
     });
 }
 
