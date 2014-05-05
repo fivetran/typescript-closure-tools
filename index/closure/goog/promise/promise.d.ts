@@ -1,4 +1,4 @@
-// Generated Mon May  5 11:04:14 PDT 2014
+// Generated Mon May  5 15:44:40 PDT 2014
 
 /// <reference path="../../../closure/goog/base.d.ts" />
 /// <reference path="../../../closure/goog/promise/resolver.d.ts" />
@@ -63,7 +63,7 @@ declare module goog {
      * @implements {goog.Thenable.<TYPE>}
      * @template TYPE,RESOLVER_CONTEXT
      */
-    class Promise<TYPE> implements goog.Thenable<TYPE> {
+    class Promise<TYPE,RESOLVER_CONTEXT> implements goog.Thenable<TYPE> {
         /**
          * Promises provide a result that may be resolved asynchronously. A Promise may
          * be resolved by being fulfilled or rejected with a value, which will be known
@@ -112,27 +112,37 @@ declare module goog {
          * @implements {goog.Thenable.<TYPE>}
          * @template TYPE,RESOLVER_CONTEXT
          */
-        constructor(resolver: (_0: (_0: any /*TYPE|IThenable<TYPE>|Thenable*/) => any /*missing*/, _1: (_0: any) => any /*missing*/) => void, opt_context?: any);
-
+        constructor(resolver: (_0: (_0: any /*TYPE|IThenable<TYPE>|Thenable*/) => any /*missing*/, _1: (_0: any) => any /*missing*/) => void, opt_context?: RESOLVER_CONTEXT);
+    
         /**
-         * Adds callbacks that will operate on the result of the Promise, returning a
+         * Adds callbacks that will operate on the result of the Thenable, returning a
          * new child Promise.
          *
-         * If the Promise is fulfilled, the {@code onFulfilled} callback will be invoked
-         * with the fulfillment value as argument, and the child Promise will be
-         * fulfilled with the return value of the callback. If the callback throws an
-         * exception, the child Promise will be rejected with the thrown value instead.
+         * If the Thenable is fulfilled, the {@code onFulfilled} callback will be
+         * invoked with the fulfillment value as argument, and the child Promise will
+         * be fulfilled with the return value of the callback. If the callback throws
+         * an exception, the child Promise will be rejected with the thrown value
+         * instead.
          *
-         * If the Promise is rejected, the {@code onRejected} callback will be invoked
+         * If the Thenable is rejected, the {@code onRejected} callback will be invoked
          * with the rejection reason as argument, and the child Promise will be rejected
-         * with the return value (or thrown value) of the callback.
+         * with the return value of the callback or thrown value.
          *
-         * @override
+         * @param {?(function(this:THIS, TYPE):
+         *             (RESULT|IThenable.<RESULT>|Thenable))=} opt_onFulfilled A
+         *     function that will be invoked with the fulfillment value if the Promise
+         *     is fullfilled.
+         * @param {?(function(*): *)=} opt_onRejected A function that will be invoked
+         *     with the rejection reason if the Promise is rejected.
+         * @param {THIS=} opt_context An optional context object that will be the
+         *     execution context for the callbacks. By default, functions are executed
+         *     with the default this.
+         * @return {!goog.Promise.<RESULT>} A new Promise that will receive the result
+         *     of the fulfillment or rejection callback.
+         * @template RESULT,THIS
          */
-        then<RESULT>(onFulfilled?: (TYPE) => RESULT, onRejected?: (any) => any): goog.Promise<RESULT>;
-
-        then<RESULT>(onFulfilled?: (TYPE) => Thenable<RESULT>, onRejected?: (any) => any): goog.Promise<RESULT>;
-
+        then<RESULT,THIS>(opt_onFulfilled?: any /*(_0: TYPE) => any (RESULT|IThenable<RESULT>|Thenable)*/, opt_onRejected?: any /*(_0: any) => any*/, opt_context?: THIS): goog.Promise<RESULT>;
+    
         /**
          * Adds a callback that will be invoked whether the Promise is fulfilled or
          * rejected. The callback receives no argument, and no new child Promise is
@@ -194,19 +204,37 @@ declare module goog.Promise {
      *
      * @param {string=} opt_message
      * @constructor
-     * @extends {goog.debug.GoogError}
+     * @extends {goog.debug.Error}
      * @final
      */
-    class CancellationError extends goog.debug.GoogError {
+    class CancellationError extends goog.debug.Error {
         /**
          * Error used as a rejection reason for canceled Promises.
          *
          * @param {string=} opt_message
          * @constructor
-         * @extends {goog.debug.GoogError}
+         * @extends {goog.debug.Error}
          * @final
          */
         constructor(opt_message?: string);
+    }
+
+    /**
+     * Typedef for entries in the callback chain. Each call to {@code then},
+     * {@code thenCatch}, or {@code thenAlways} creates an entry containing the
+     * functions that may be invoked once the Promise is resolved.
+     *
+     * @typedef {{
+     *   child: goog.Promise,
+     *   onFulfilled: function(*),
+     *   onRejected: function(*)
+     * }}
+     * @private
+     */
+    interface CallbackEntry_ {
+        child: goog.Promise;
+        onFulfilled: (_0: any) => any /*missing*/;
+        onRejected: (_0: any) => any /*missing*/
     }
 
     /**

@@ -1,4 +1,4 @@
-// Generated Mon May  5 10:56:38 PDT 2014
+// Generated Mon May  5 15:31:50 PDT 2014
 
 /// <reference path="../../../closure/goog/base.d.ts" />
 /// <reference path="../../../closure/goog/dom/nodetype.d.ts" />
@@ -55,29 +55,7 @@ declare module goog.iter {
     /**
      * @typedef {goog.iter.Iterator|{length:number}|{__iterator__}}
      */
-    interface Iterable<TYPE> { /*any (goog.iter.Iterator|{ length: number }|{ __iterator__: any (missing) })*/
-
-        /**
-         * Returns the next value of the iteration.  This will throw the object
-         * {@see goog.iter#StopIteration} when the iteration passes the end.
-         * @return {VALUE} Any object or value.
-         */
-        next?: () => TYPE;
-
-        /**
-         * Returns the {@code Iterator} object itself.  This is used to implement
-         * the iterator protocol in JavaScript 1.7
-         * @param {boolean=} opt_keys  Whether to return the keys or values. Default is
-         *     to only return the values.  This is being used by the for-in loop (true)
-         *     and the for-each-in loop (false).  Even though the param gives a hint
-         *     about what the iterator will return there is no guarantee that it will
-         *     return the keys when true is passed.
-         * @return {!goog.iter.Iterator.<VALUE>} The object itself.
-         */
-        __iterator__?: (opt_keys?: boolean) => goog.iter.Iterator<TYPE>;
-
-        length?: number;
-    }
+    interface Iterable { /*any (goog.iter.Iterator|{ length: number }|{ __iterator__: any (missing) })*/ }
 
     /**
        * Singleton Error object that is used to terminate iterations.
@@ -285,7 +263,7 @@ declare module goog.iter {
      *     {@code iterable}.
      * @template VALUE
      */
-    function chainFromIterable<VALUE>(iterable: goog.iter.Iterable<any>): goog.iter.Iterator<VALUE>;
+    function chainFromIterable<VALUE>(iterable: goog.iter.Iterable): goog.iter.Iterator<VALUE>;
 
     /**
      * Builds a new iterator that iterates over the original, but skips elements as
@@ -504,7 +482,7 @@ declare module goog.iter {
      *     iterator.
      * @template THIS, RESULT
      */
-    function starMap<THIS, RESULT>(iterable: goog.iter.Iterable<goog.iter.Iterable<any>>, f: (_0: any[][]) => RESULT, opt_obj?: THIS): goog.iter.Iterator<RESULT>;
+    function starMap<THIS, RESULT>(iterable: goog.iter.Iterable<goog.iter.Iterable>, f: (_0: any[][]) => RESULT, opt_obj?: THIS): goog.iter.Iterator<RESULT>;
 
     /**
      * Returns an array of iterators each of which can iterate over the values in

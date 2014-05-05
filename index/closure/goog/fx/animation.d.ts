@@ -1,4 +1,4 @@
-// Generated Mon May  5 10:56:46 PDT 2014
+// Generated Mon May  5 15:32:01 PDT 2014
 
 /// <reference path="../../../closure/goog/base.d.ts" />
 /// <reference path="../../../closure/goog/disposable/idisposable.d.ts" />
@@ -95,6 +95,16 @@ declare module goog.fx {
         lastFrame: number;
     
         /**
+         * Plays the transition.
+         */
+        play: any /*missing*/;
+    
+        /**
+         * Stops the transition.
+         */
+        stop: any /*missing*/;
+    
+        /**
          * @return {number} The current progress of the animation, the number
          *     is between 0 and 1 inclusive.
          */
@@ -112,6 +122,13 @@ declare module goog.fx {
          * @deprecated Use dispose() instead.
          */
         destroy(): void;
+    
+        /**
+         * Function called when a frame is requested for the animation.
+         *
+         * @param {number} now Current time in milliseconds.
+         */
+        onAnimationFrame(now: number): void;
     
         /**
          * Handles the actual iteration of the animation in a timeout

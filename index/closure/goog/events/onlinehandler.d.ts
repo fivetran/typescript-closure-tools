@@ -1,4 +1,4 @@
-// Generated Mon May  5 11:02:06 PDT 2014
+// Generated Mon May  5 15:41:36 PDT 2014
 
 /// <reference path="../../../closure/goog/base.d.ts" />
 /// <reference path="../../../closure/goog/dom/nodetype.d.ts" />
@@ -45,6 +45,11 @@ declare module goog.events {
          * @implements {goog.net.NetworkStatusMonitor}
          */
         constructor();
+    
+        /**
+         * @return {boolean} Whether the system is online or otherwise.
+         */
+        isOnline(): boolean;
     }
 }
 

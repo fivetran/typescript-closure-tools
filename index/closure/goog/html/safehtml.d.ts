@@ -1,4 +1,4 @@
-// Generated Mon May  5 11:05:43 PDT 2014
+// Generated Mon May  5 15:46:53 PDT 2014
 
 /// <reference path="../../../closure/goog/base.d.ts" />
 /// <reference path="../../../closure/goog/dom/nodetype.d.ts" />
@@ -70,6 +70,38 @@ declare module goog.html {
          * @implements {goog.string.TypedString}
          */
         constructor();
+    
+        /**
+         * Interface marker of the DirectionalString interface.
+         *
+         * This property can be used to determine at runtime whether or not an object
+         * implements this interface.  All implementations of this interface set this
+         * property to {@code true}.
+         * @type {boolean}
+         */
+        implementsGoogI18nBidiDirectionalString: boolean;
+    
+        /**
+         * Retrieves this object's known direction (if any).
+         * @return {?goog.i18n.bidi.Dir} The known direction. Null if unknown.
+         */
+        getDirection(): goog.i18n.bidi.Dir;
+    
+        /**
+         * Interface marker of the TypedString interface.
+         *
+         * This property can be used to determine at runtime whether or not an object
+         * implements this interface.  All implementations of this interface set this
+         * property to {@code true}.
+         * @type {boolean}
+         */
+        implementsGoogStringTypedString: boolean;
+    
+        /**
+         * Retrieves this wrapped string's value.
+         * @return {!string} The wrapped string's value.
+         */
+        getTypedStringValue(): string;
     }
 }
 
@@ -85,6 +117,21 @@ declare module goog.html.SafeHtml {
      *     {@code goog.asserts.AssertionError}.
      */
     function unwrap(safeHtml: goog.html.SafeHtml): string;
+
+    /**
+     * Shorthand for union of types that can be sensibly converted to strings.
+     * @private
+     * @typedef {string|number|boolean|!goog.string.TypedString|
+     *           !goog.i18n.bidi.DirectionalString}
+     */
+    interface StringLike_ { /*any (string|number|boolean|goog.string.TypedString|goog.i18n.bidi.DirectionalString)*/ }
+
+    /**
+     * Shorthand for union of types that can be sensibly converted to SafeHtml.
+     * @private
+     * @typedef {!goog.html.SafeHtml.StringLike_|!goog.html.SafeHtml}
+     */
+    interface TextOrHtml_ { /*any (goog.html.SafeHtml.StringLike_|goog.html.SafeHtml)*/ }
 
     /**
      * Returns HTML-escaped text as a SafeHtml object.
@@ -114,6 +161,12 @@ declare module goog.html.SafeHtml {
      * @return {!goog.html.SafeHtml} The resulting SafeHtml object.
      */
     function from(textOrHtml: goog.html.SafeHtml.TextOrHtml_): goog.html.SafeHtml;
+
+    /**
+     * @private
+     * @typedef {string|goog.string.Const|goog.html.SafeUrl|goog.html.SafeStyle}
+     */
+    interface AttributeValue_ { /*any (string|goog.string.Const|goog.html.SafeUrl|goog.html.SafeStyle)*/ }
 
     /**
      * Creates a SafeHtml content consisting of a tag with optional attributes and

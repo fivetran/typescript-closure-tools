@@ -1,4 +1,4 @@
-// Generated Mon May  5 11:04:13 PDT 2014
+// Generated Mon May  5 15:44:39 PDT 2014
 
 /// <reference path="../../../closure/goog/base.d.ts" />
 /// <reference path="../../../closure/goog/promise/resolver.d.ts" />

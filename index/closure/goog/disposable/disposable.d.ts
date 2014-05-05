@@ -1,25 +1,9 @@
-// Generated Mon May  5 11:05:53 PDT 2014
+// Generated Mon May  5 15:47:07 PDT 2014
 
 /// <reference path="../../../closure/goog/base.d.ts" />
 /// <reference path="../../../closure/goog/disposable/idisposable.d.ts" />
 
 declare module goog {
-
-    /**
-     * Calls {@code dispose} on the argument if it supports it. If obj is not an
-     *     object with a dispose() method, this is a no-op.
-     * @param {*} obj The object to dispose of.
-     */
-    function dispose(obj: any): void;
-
-    /**
-     * Calls {@code dispose} on each member of the list that supports it. (If the
-     * member is an ArrayLike<any>, then {@code goog.disposeAll()} will be called
-     * recursively on each of its members.) If the member is not an object with a
-     * {@code dispose()} method, then it is ignored.
-     * @param {...*} var_args The list.
-     */
-    function disposeAll(...var_args: any[]): void;
 
     /**
      * Class that provides the basic implementation for disposable objects. If your
@@ -39,10 +23,6 @@ declare module goog {
          * @implements {goog.disposable.IDisposable}
          */
         constructor();
-
-        dispose(): void;
-
-        isDisposed(): boolean;
     
         /**
          * If monitoring the goog.Disposable instances is enabled, stores the creation
@@ -53,9 +33,20 @@ declare module goog {
     
         /**
          * @return {boolean} Whether the object has been disposed of.
+         */
+        isDisposed(): boolean;
+    
+        /**
+         * @return {boolean} Whether the object has been disposed of.
          * @deprecated Use {@link #isDisposed} instead.
          */
         getDisposed(): boolean;
+    
+        /**
+         * Disposes of the object and its resources.
+         * @return {void} Nothing.
+         */
+        dispose(): void;
     
         /**
          * Associates a disposable object with this object so that they will be disposed
@@ -102,6 +93,22 @@ declare module goog {
          */
         disposeInternal(): void;
     }
+
+    /**
+     * Calls {@code dispose} on the argument if it supports it. If obj is not an
+     *     object with a dispose() method, this is a no-op.
+     * @param {*} obj The object to dispose of.
+     */
+    function dispose(obj: any): void;
+
+    /**
+     * Calls {@code dispose} on each member of the list that supports it. (If the
+     * member is an ArrayLike, then {@code goog.disposeAll()} will be called
+     * recursively on each of its members.) If the member is not an object with a
+     * {@code dispose()} method, then it is ignored.
+     * @param {...*} var_args The list.
+     */
+    function disposeAll(...var_args: any[]): void;
 }
 
 declare module goog.Disposable {
@@ -109,7 +116,7 @@ declare module goog.Disposable {
     /**
      * @enum {number} Different monitoring modes for Disposable.
      */
-    enum MonitoringMode { OFF, PERMANENT, INTERACTIVE }
+    enum MonitoringMode { OFF, PERMANENT, INTERACTIVE } 
 
     /**
      * @return {!Array.<!goog.Disposable>} All {@code goog.Disposable} objects that

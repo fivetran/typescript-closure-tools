@@ -1,4 +1,4 @@
-// Generated Mon May  5 11:03:16 PDT 2014
+// Generated Mon May  5 15:43:17 PDT 2014
 
 /// <reference path="../../../closure/goog/base.d.ts" />
 /// <reference path="../../../closure/goog/debug/error.d.ts" />
@@ -66,6 +66,16 @@ declare module goog.fs {
          * @final
          */
         constructor(fs: FileSystem);
+    
+        /**
+         * @return {string} The name of the filesystem.
+         */
+        getName(): string;
+    
+        /**
+         * @return {!goog.fs.DirectoryEntry} The root directory of the filesystem.
+         */
+        getRoot(): goog.fs.DirectoryEntry;
     
         /**
          * @return {!FileSystem} The underlying FileSystem object.

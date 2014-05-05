@@ -1,4 +1,4 @@
-// Generated Mon May  5 11:04:47 PDT 2014
+// Generated Mon May  5 15:45:33 PDT 2014
 
 /// <reference path="../../../closure/goog/base.d.ts" />
 /// <reference path="../../../closure/goog/testing/mockinterface.d.ts" />
@@ -260,6 +260,18 @@ declare module goog.testing {
         $times(times: number): goog.testing.Mock;
     
         /**
+         * Write down all the expected functions that have been called on the
+         * mock so far. From here on out, future function calls will be
+         * compared against this list.
+         */
+        $replay(): void;
+    
+        /**
+         * Reset the mock.
+         */
+        $reset(): void;
+    
+        /**
          * Throws an exception and records that an exception was thrown.
          * @param {string} comment A short comment about the exception.
          * @param {?string=} opt_message A longer message about the exception.
@@ -275,6 +287,11 @@ declare module goog.testing {
          * @protected
          */
         $recordAndThrow(ex: Object): void;
+    
+        /**
+         * Assert that the expected function calls match the actual calls.
+         */
+        $verify(): void;
     
         /**
          * Verifies that a method call matches an expectation.

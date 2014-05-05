@@ -1,4 +1,4 @@
-// Generated Mon May  5 10:58:47 PDT 2014
+// Generated Mon May  5 15:35:21 PDT 2014
 
 /// <reference path="../../../closure/goog/base.d.ts" />
 /// <reference path="../../../closure/goog/dom/nodetype.d.ts" />
@@ -35,17 +35,17 @@ declare module goog.net.jsloader {
      * @param {goog.net.jsloader.ErrorCode} code The error code.
      * @param {string=} opt_message Additional message.
      * @constructor
-     * @extends {goog.debug.GoogError}
+     * @extends {goog.debug.Error}
      * @final
      */
-    class Error extends goog.debug.GoogError {
+    class Error extends goog.debug.Error {
         /**
          * A jsloader error.
          *
          * @param {goog.net.jsloader.ErrorCode} code The error code.
          * @param {string=} opt_message Additional message.
          * @constructor
-         * @extends {goog.debug.GoogError}
+         * @extends {goog.debug.Error}
          * @final
          */
         constructor(code: goog.net.jsloader.ErrorCode, opt_message?: string);

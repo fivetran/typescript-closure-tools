@@ -1,4 +1,4 @@
-// Generated Mon May  5 11:00:19 PDT 2014
+// Generated Mon May  5 15:38:05 PDT 2014
 
 /// <reference path="../../../closure/goog/base.d.ts" />
 /// <reference path="../../../closure/goog/graphics/stroke.d.ts" />

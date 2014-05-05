@@ -1,4 +1,4 @@
-// Generated Mon May  5 10:56:33 PDT 2014
+// Generated Mon May  5 15:31:43 PDT 2014
 
 /// <reference path="../../../closure/goog/base.d.ts" />
 /// <reference path="../../../closure/goog/dom/nodetype.d.ts" />
@@ -114,9 +114,9 @@ declare module goog.proto2 {
      *            containingType: (goog.proto2.Message|undefined)}}
      */
     interface Metadata {
-        name?: string;
-        fullName?: string;
-        containingType?: goog.proto2.Message;
+        name: any /*string|any (undefined)*/;
+        fullName: any /*string|any (undefined)*/;
+        containingType: any /*goog.proto2.Message|any (undefined)*/
     }
 }
 

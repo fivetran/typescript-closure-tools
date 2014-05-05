@@ -1,4 +1,4 @@
-// Generated Mon May  5 10:57:39 PDT 2014
+// Generated Mon May  5 15:33:24 PDT 2014
 
 /// <reference path="../../../closure/goog/base.d.ts" />
 /// <reference path="../../../closure/goog/structs/collection.d.ts" />
@@ -52,6 +52,16 @@ declare module goog.structs {
         constructor(opt_values?: any /*T[]|{ [key: string]: T }*/);
     
         /**
+         * @return {number} The number of values stored in the collection.
+         */
+        getCount(): number;
+    
+        /**
+         * @param {T} value Value to add to the collection.
+         */
+        add(value: T): void;
+    
+        /**
          * Adds all the values in the given collection to this set.
          * @param {Array.<T>|goog.structs.Collection.<T>|Object.<?,T>} col A collection
          *     containing the elements to add.
@@ -66,6 +76,11 @@ declare module goog.structs {
         removeAll(col: any /*T[]|goog.structs.Collection<T>|{ [key: string]: T }*/): void;
     
         /**
+         * @param {T} value Value to remove from the collection.
+         */
+        remove(value: T): void;
+    
+        /**
          * Removes all elements from this set.
          */
         clear(): void;
@@ -75,6 +90,12 @@ declare module goog.structs {
          * @return {boolean} True if there are no elements in this set.
          */
         isEmpty(): boolean;
+    
+        /**
+         * @param {T} value Value to find in the collection.
+         * @return {boolean} Whether the collection contains the specified value.
+         */
+        contains(value: T): boolean;
     
         /**
          * Tests whether this set contains all the values in a given collection.
@@ -103,7 +124,7 @@ declare module goog.structs {
          *     (primitives or objects) present in this set but not in the given
          *     collection.
          */
-        difference(col: any /*T[]|goog.structs.Collection<T>|{ [key: string]: T }*/): goog.structs.Set<T>;
+        difference(col: any /*T[]|goog.structs.Collection<T>|{ [key: string]: T }*/): goog.structs.Set;
     
         /**
          * Returns an array containing all the elements in this set.
@@ -144,7 +165,7 @@ declare module goog.structs {
          * @param {boolean=} opt_keys This argument is ignored.
          * @return {!goog.iter.Iterator} An iterator over the elements in this set.
          */
-        __iterator__(opt_keys?: boolean): goog.iter.Iterator<T>;
+        __iterator__(opt_keys?: boolean): goog.iter.Iterator;
     }
 }
 

@@ -1,4 +1,4 @@
-// Generated Mon May  5 11:03:28 PDT 2014
+// Generated Mon May  5 15:43:36 PDT 2014
 
 /// <reference path="../../../closure/goog/base.d.ts" />
 /// <reference path="../../../closure/goog/string/string.d.ts" />
@@ -75,6 +75,32 @@ declare module goog.debug {
         setAddTracersToProtectedFunctions(newVal: boolean): void;
     
         /**
+         * Instruments a function.
+         *
+         * @param {!Function} fn A function to instrument.
+         * @return {!Function} The instrumented function.
+         */
+        wrap(fn: Function): Function;
+    
+        /**
+         * Try to remove an instrumentation wrapper created by this monitor.
+         * If the function passed to unwrap is not a wrapper created by this
+         * monitor, then we will do nothing.
+         *
+         * Notice that some wrappers may not be unwrappable. For example, if other
+         * monitors have applied their own wrappers, then it will be impossible to
+         * unwrap them because their wrappers will have captured our wrapper.
+         *
+         * So it is important that entry points are unwrapped in the reverse
+         * order that they were wrapped.
+         *
+         * @param {!Function} fn A function to unwrap.
+         * @return {!Function} The unwrapped function, or {@code fn} if it was not
+         *     a wrapped function created by this monitor.
+         */
+        unwrap(fn: Function): Function;
+    
+        /**
          * Installs exception protection for an entry point function. When an exception
          * is thrown from a protected function, a handler will be invoked to handle it.
          *
@@ -136,16 +162,16 @@ declare module goog.debug.ErrorHandler {
      * throws an error.
      * @param {*} cause The error thrown by the entry point.
      * @constructor
-     * @extends {goog.debug.GoogError}
+     * @extends {goog.debug.Error}
      * @final
      */
-    class ProtectedFunctionError extends goog.debug.GoogError {
+    class ProtectedFunctionError extends goog.debug.Error {
         /**
          * Error thrown to the caller of a protected entry point if the entry point
          * throws an error.
          * @param {*} cause The error thrown by the entry point.
          * @constructor
-         * @extends {goog.debug.GoogError}
+         * @extends {goog.debug.Error}
          * @final
          */
         constructor(cause: any);

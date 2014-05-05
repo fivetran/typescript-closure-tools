@@ -1,4 +1,4 @@
-// Generated Mon May  5 11:05:40 PDT 2014
+// Generated Mon May  5 15:46:48 PDT 2014
 
 /// <reference path="../../../closure/goog/base.d.ts" />
 /// <reference path="../../../closure/goog/string/typedstring.d.ts" />
@@ -178,6 +178,22 @@ declare module goog.html {
          * @implements {goog.string.TypedString}
          */
         constructor();
+    
+        /**
+         * Interface marker of the TypedString interface.
+         *
+         * This property can be used to determine at runtime whether or not an object
+         * implements this interface.  All implementations of this interface set this
+         * property to {@code true}.
+         * @type {boolean}
+         */
+        implementsGoogStringTypedString: boolean;
+    
+        /**
+         * Retrieves this wrapped string's value.
+         * @return {!string} The wrapped string's value.
+         */
+        getTypedStringValue(): string;
     }
 }
 

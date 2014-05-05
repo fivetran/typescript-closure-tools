@@ -1,4 +1,4 @@
-// Generated Mon May  5 11:04:26 PDT 2014
+// Generated Mon May  5 15:45:01 PDT 2014
 
 /// <reference path="../../../closure/goog/base.d.ts" />
 /// <reference path="../../../closure/goog/testing/stacktrace.d.ts" />
@@ -119,6 +119,16 @@ declare module goog.testing.AsyncTestCase {
          * @type {boolean}
          */
         isControlBreakingException: boolean;
+    }
+
+    /**
+     * Represents result of top stack function call.
+     * @typedef {{controlBreakingExceptionThrown: boolean, message: string}}
+     * @private
+     */
+    interface TopStackFuncResult_ {
+        controlBreakingExceptionThrown: boolean;
+        message: string
     }
 
     /**

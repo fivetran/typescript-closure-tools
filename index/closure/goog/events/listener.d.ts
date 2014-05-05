@@ -1,4 +1,4 @@
-// Generated Mon May  5 11:02:17 PDT 2014
+// Generated Mon May  5 15:41:51 PDT 2014
 
 /// <reference path="../../../closure/goog/base.d.ts" />
 /// <reference path="../../../closure/goog/events/eventid.d.ts" />
@@ -45,6 +45,42 @@ declare module goog.events {
          * this listener object (such as listener and event source).
          */
         markAsRemoved(): void;
+    
+        /**
+         * The source event target.
+         * @type {!(Object|goog.events.Listenable|goog.events.EventTarget)}
+         */
+        src: any /*Object|goog.events.Listenable|goog.events.EventTarget*/;
+    
+        /**
+         * The event type the listener is listening to.
+         * @type {string}
+         */
+        type: string;
+    
+        /**
+         * The listener function.
+         * @type {function(?):?|{handleEvent:function(?):?}|null}
+         */
+        listener: any /*(_0: any) => any|{ handleEvent: (_0: any) => any }|any (null)*/;
+    
+        /**
+         * Whether the listener works on capture phase.
+         * @type {boolean}
+         */
+        capture: boolean;
+    
+        /**
+         * The 'this' object for the listener function's scope.
+         * @type {Object}
+         */
+        handler: Object;
+    
+        /**
+         * A globally unique number to identify the key.
+         * @type {number}
+         */
+        key: number;
     }
 }
 

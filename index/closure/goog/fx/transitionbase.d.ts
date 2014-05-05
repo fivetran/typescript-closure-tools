@@ -1,4 +1,4 @@
-// Generated Mon May  5 10:56:49 PDT 2014
+// Generated Mon May  5 15:32:07 PDT 2014
 
 /// <reference path="../../../closure/goog/base.d.ts" />
 /// <reference path="../../../closure/goog/fx/transition.d.ts" />
@@ -45,6 +45,16 @@ declare module goog.fx {
          * @extends {goog.events.EventTarget}
          */
         constructor();
+    
+        /**
+         * Plays the transition.
+         */
+        play: any /*missing*/;
+    
+        /**
+         * Stops the transition.
+         */
+        stop: any /*missing*/;
     
         /**
          * Pauses the animation.

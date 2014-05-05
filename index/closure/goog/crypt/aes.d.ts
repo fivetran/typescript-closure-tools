@@ -1,4 +1,4 @@
-// Generated Mon May  5 10:58:18 PDT 2014
+// Generated Mon May  5 15:34:40 PDT 2014
 
 /// <reference path="../../../closure/goog/base.d.ts" />
 /// <reference path="../../../closure/goog/dom/nodetype.d.ts" />
@@ -51,6 +51,24 @@ declare module goog.crypt {
          * @struct
          */
         constructor(key: number[]);
+    
+        /**
+         * Encrypt a plaintext block.  The implementation may expect (and assert)
+         * a particular block length.
+         * @param {!Array.<number>} input Plaintext array of input bytes.
+         * @return {!Array.<number>} Encrypted ciphertext array of bytes.  Should be the
+         *     same length as input.
+         */
+        encrypt(input: number[]): number[];
+    
+        /**
+         * Decrypt a plaintext block.  The implementation may expect (and assert)
+         * a particular block length.
+         * @param {!Array.<number>} input Ciphertext. Array of input bytes.
+         * @return {!Array.<number>} Decrypted plaintext array of bytes.  Should be the
+         *     same length as input.
+         */
+        decrypt(input: number[]): number[];
     }
 }
 

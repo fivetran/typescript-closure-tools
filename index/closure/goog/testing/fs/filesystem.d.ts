@@ -1,4 +1,4 @@
-// Generated Mon May  5 11:04:44 PDT 2014
+// Generated Mon May  5 15:45:29 PDT 2014
 
 /// <reference path="../../../../closure/goog/base.d.ts" />
 /// <reference path="../../../../closure/goog/dom/nodetype.d.ts" />
@@ -68,6 +68,16 @@ declare module goog.testing.fs {
          * @final
          */
         constructor(opt_name?: string);
+    
+        /**
+         * @return {string} The name of the filesystem.
+         */
+        getName(): string;
+    
+        /**
+         * @return {!goog.fs.DirectoryEntry} The root directory of the filesystem.
+         */
+        getRoot(): goog.fs.DirectoryEntry;
     }
 }
 

@@ -1,4 +1,4 @@
-// Generated Mon May  5 10:56:40 PDT 2014
+// Generated Mon May  5 15:31:53 PDT 2014
 
 /// <reference path="../../../closure/goog/base.d.ts" />
 /// <reference path="../../../closure/goog/json/json.d.ts" />
@@ -52,24 +52,6 @@ declare module goog.json {
          * @final
          */
         constructor(opt_replacer?: goog.json.Replacer, opt_reviver?: goog.json.Reviver);
-
-        /**
-         * Parses a string into an object and returns the result.
-         * Agnostic to the format of string and object.
-         *
-         * @param {string} s The string to parse.
-         * @return {*} The object generated from the string.
-         */
-        parse(s: string): any;
-
-        /**
-         * Serializes an object or a value to a string.
-         * Agnostic to the particular format of object and string.
-         *
-         * @param {*} object The object to stringify.
-         * @return {string} A string representation of the input.
-         */
-        stringify(object: any): string;
     }
 }
 

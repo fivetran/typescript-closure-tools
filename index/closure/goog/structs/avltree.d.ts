@@ -1,4 +1,4 @@
-// Generated Mon May  5 10:57:34 PDT 2014
+// Generated Mon May  5 15:33:17 PDT 2014
 
 /// <reference path="../../../closure/goog/base.d.ts" />
 /// <reference path="../../../closure/goog/structs/collection.d.ts" />
@@ -38,9 +38,30 @@ declare module goog.structs {
         root_: any /*missing*/;
     
         /**
+         * @param {T} value Value to add to the collection.
+         */
+        add(value: T): void;
+    
+        /**
+         * @param {T} value Value to remove from the collection.
+         */
+        remove(value: T): void;
+    
+        /**
          * Removes all nodes from the tree.
          */
         clear(): void;
+    
+        /**
+         * @param {T} value Value to find in the collection.
+         * @return {boolean} Whether the collection contains the specified value.
+         */
+        contains(value: T): boolean;
+    
+        /**
+         * @return {number} The number of values stored in the collection.
+         */
+        getCount(): number;
     
         /**
          * Returns a k-th smallest value, based on the comparator, where 0 <= k <

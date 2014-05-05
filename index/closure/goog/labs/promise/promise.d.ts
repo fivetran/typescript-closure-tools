@@ -1,4 +1,4 @@
-// Generated Mon May  5 11:04:01 PDT 2014
+// Generated Mon May  5 15:44:24 PDT 2014
 
 /// <reference path="../../../../closure/goog/base.d.ts" />
 /// <reference path="../../../../closure/goog/promise/resolver.d.ts" />
@@ -67,6 +67,35 @@ declare module goog.labs {
          * @template TYPE,RESOLVER_CONTEXT
          */
         constructor(resolver: (_0: (_0: any /*TYPE|IThenable<TYPE>|Thenable*/) => any /*missing*/, _1: (_0: any) => any /*missing*/) => void, opt_context?: RESOLVER_CONTEXT);
+    
+        /**
+         * Adds callbacks that will operate on the result of the Thenable, returning a
+         * new child Promise.
+         *
+         * If the Thenable is fulfilled, the {@code onFulfilled} callback will be
+         * invoked with the fulfillment value as argument, and the child Promise will
+         * be fulfilled with the return value of the callback. If the callback throws
+         * an exception, the child Promise will be rejected with the thrown value
+         * instead.
+         *
+         * If the Thenable is rejected, the {@code onRejected} callback will be invoked
+         * with the rejection reason as argument, and the child Promise will be rejected
+         * with the return value of the callback or thrown value.
+         *
+         * @param {?(function(this:THIS, TYPE):
+         *             (RESULT|IThenable.<RESULT>|Thenable))=} opt_onFulfilled A
+         *     function that will be invoked with the fulfillment value if the Promise
+         *     is fullfilled.
+         * @param {?(function(*): *)=} opt_onRejected A function that will be invoked
+         *     with the rejection reason if the Promise is rejected.
+         * @param {THIS=} opt_context An optional context object that will be the
+         *     execution context for the callbacks. By default, functions are executed
+         *     with the default this.
+         * @return {!goog.Promise.<RESULT>} A new Promise that will receive the result
+         *     of the fulfillment or rejection callback.
+         * @template RESULT,THIS
+         */
+        then<RESULT,THIS>(opt_onFulfilled?: any /*(_0: TYPE) => any (RESULT|IThenable<RESULT>|Thenable)*/, opt_onRejected?: any /*(_0: any) => any*/, opt_context?: THIS): goog.Promise<RESULT>;
     }
 }
 

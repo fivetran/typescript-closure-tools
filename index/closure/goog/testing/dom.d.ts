@@ -1,4 +1,4 @@
-// Generated Mon May  5 11:04:53 PDT 2014
+// Generated Mon May  5 15:45:42 PDT 2014
 
 /// <reference path="../../../closure/goog/base.d.ts" />
 /// <reference path="../../../closure/goog/testing/stacktrace.d.ts" />
@@ -51,7 +51,7 @@ declare module goog.testing.dom {
      *             after "#".
      *         other string: Match the text node's contents.
      */
-    function assertNodesMatch(it: goog.iter.Iterator<Node>, array: any /*Node|number|string*/[]): void;
+    function assertNodesMatch(it: goog.iter.Iterator, array: any /*Node|number|string*/[]): void;
 
     /**
      * Exposes a node as a string.

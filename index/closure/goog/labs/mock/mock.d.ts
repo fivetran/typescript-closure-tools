@@ -1,4 +1,4 @@
-// Generated Mon May  5 11:03:54 PDT 2014
+// Generated Mon May  5 15:44:15 PDT 2014
 
 /// <reference path="../../../../closure/goog/base.d.ts" />
 /// <reference path="../../../../closure/goog/dom/nodetype.d.ts" />
@@ -30,10 +30,10 @@ declare module goog.labs.mock {
      * @param {!string} methodName The expected method call.
      * @param {!Array} args The expected arguments.
      * @constructor
-     * @extends {goog.debug.GoogError}
+     * @extends {goog.debug.Error}
      * @final
      */
-    class VerificationError extends goog.debug.GoogError {
+    class VerificationError extends goog.debug.Error {
         /**
          * Error thrown when verification failed.
          *
@@ -42,7 +42,7 @@ declare module goog.labs.mock {
          * @param {!string} methodName The expected method call.
          * @param {!Array} args The expected arguments.
          * @constructor
-         * @extends {goog.debug.GoogError}
+         * @extends {goog.debug.Error}
          * @final
          */
         constructor(recordedCalls: any[], methodName: string, args: any[]);
