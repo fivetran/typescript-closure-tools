@@ -1,8 +1,8 @@
-// Generated Sun May  4 18:16:56 PDT 2014
+// Generated Mon May  5 11:01:48 PDT 2014
 
-/// <reference path="../../goog/base.d.ts" />
-/// <reference path="../../goog/json/json.d.ts" />
-/// <reference path="../../goog/storage/errorcode.d.ts" />
+/// <reference path="../../../closure/goog/base.d.ts" />
+/// <reference path="../../../closure/goog/json/json.d.ts" />
+/// <reference path="../../../closure/goog/storage/errorcode.d.ts" />
 
 declare module goog.storage {
 

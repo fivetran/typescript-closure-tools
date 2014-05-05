@@ -1,7 +1,7 @@
-// Generated Sun May  4 18:19:15 PDT 2014
+// Generated Mon May  5 11:04:08 PDT 2014
 
-/// <reference path="../../../goog/base.d.ts" />
-/// <reference path="../../../goog/labs/i18n/listsymbols.d.ts" />
+/// <reference path="../../../../closure/goog/base.d.ts" />
+/// <reference path="../../../../closure/goog/labs/i18n/listsymbols.d.ts" />
 
 declare module goog.labs.i18n {
 

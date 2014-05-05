@@ -1,11 +1,11 @@
-// Generated Sun May  4 18:12:18 PDT 2014
+// Generated Mon May  5 10:57:10 PDT 2014
 
-/// <reference path="../../goog/base.d.ts" />
-/// <reference path="../../goog/dom/nodetype.d.ts" />
-/// <reference path="../../goog/debug/error.d.ts" />
-/// <reference path="../../goog/string/string.d.ts" />
-/// <reference path="../../goog/asserts/asserts.d.ts" />
-/// <reference path="../../goog/array/array.d.ts" />
+/// <reference path="../../../closure/goog/base.d.ts" />
+/// <reference path="../../../closure/goog/dom/nodetype.d.ts" />
+/// <reference path="../../../closure/goog/debug/error.d.ts" />
+/// <reference path="../../../closure/goog/string/string.d.ts" />
+/// <reference path="../../../closure/goog/asserts/asserts.d.ts" />
+/// <reference path="../../../closure/goog/array/array.d.ts" />
 
 declare module goog.dom.classlist {
 
@@ -14,7 +14,7 @@ declare module goog.dom.classlist {
      * @param {Element} element DOM node to get the classes of.
      * @return {!goog.array.ArrayLike} Class names on {@code element}.
      */
-    function get(element: Element): goog.array.ArrayLike<any>;
+    function get(element: Element): goog.array.ArrayLike;
 
     /**
      * Sets the entire class name of an element.

@@ -1,10 +1,10 @@
-// Generated Sun May  4 18:19:19 PDT 2014
+// Generated Mon May  5 11:04:11 PDT 2014
 
-/// <reference path="../../../goog/base.d.ts" />
-/// <reference path="../../../goog/object/object.d.ts" />
-/// <reference path="../../../goog/dom/tags.d.ts" />
-/// <reference path="../../../goog/labs/html/attribute_rewriter.d.ts" />
-/// <reference path="../../../goog/string/string.d.ts" />
+/// <reference path="../../../../closure/goog/base.d.ts" />
+/// <reference path="../../../../closure/goog/object/object.d.ts" />
+/// <reference path="../../../../closure/goog/dom/tags.d.ts" />
+/// <reference path="../../../../closure/goog/labs/html/attribute_rewriter.d.ts" />
+/// <reference path="../../../../closure/goog/string/string.d.ts" />
 
 declare module goog.labs.html.scrubber {
 

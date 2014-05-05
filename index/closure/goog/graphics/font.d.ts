@@ -1,6 +1,6 @@
-// Generated Sun May  4 18:17:52 PDT 2014
+// Generated Mon May  5 11:02:44 PDT 2014
 
-/// <reference path="../../goog/base.d.ts" />
+/// <reference path="../../../closure/goog/base.d.ts" />
 
 declare module goog.graphics {
 

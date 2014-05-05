@@ -1,11 +1,11 @@
-// Generated Sun May  4 18:13:48 PDT 2014
+// Generated Mon May  5 10:58:40 PDT 2014
 
-/// <reference path="../../goog/base.d.ts" />
-/// <reference path="../../goog/events/eventid.d.ts" />
-/// <reference path="../../goog/disposable/idisposable.d.ts" />
-/// <reference path="../../goog/disposable/disposable.d.ts" />
-/// <reference path="../../goog/events/event.d.ts" />
-/// <reference path="../../goog/history/eventtype.d.ts" />
+/// <reference path="../../../closure/goog/base.d.ts" />
+/// <reference path="../../../closure/goog/events/eventid.d.ts" />
+/// <reference path="../../../closure/goog/disposable/idisposable.d.ts" />
+/// <reference path="../../../closure/goog/disposable/disposable.d.ts" />
+/// <reference path="../../../closure/goog/events/event.d.ts" />
+/// <reference path="../../../closure/goog/history/eventtype.d.ts" />
 
 declare module goog.history {
 

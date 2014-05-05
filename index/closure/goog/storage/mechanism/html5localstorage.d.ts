@@ -1,18 +1,18 @@
-// Generated Sun May  4 18:17:06 PDT 2014
+// Generated Mon May  5 11:01:58 PDT 2014
 
-/// <reference path="../../../goog/base.d.ts" />
-/// <reference path="../../../goog/dom/nodetype.d.ts" />
-/// <reference path="../../../goog/debug/error.d.ts" />
-/// <reference path="../../../goog/string/string.d.ts" />
-/// <reference path="../../../goog/asserts/asserts.d.ts" />
-/// <reference path="../../../goog/array/array.d.ts" />
-/// <reference path="../../../goog/math/math.d.ts" />
-/// <reference path="../../../goog/functions/functions.d.ts" />
-/// <reference path="../../../goog/iter/iter.d.ts" />
-/// <reference path="../../../goog/storage/mechanism/mechanism.d.ts" />
-/// <reference path="../../../goog/storage/mechanism/iterablemechanism.d.ts" />
-/// <reference path="../../../goog/storage/mechanism/errorcode.d.ts" />
-/// <reference path="../../../goog/storage/mechanism/html5webstorage.d.ts" />
+/// <reference path="../../../../closure/goog/base.d.ts" />
+/// <reference path="../../../../closure/goog/dom/nodetype.d.ts" />
+/// <reference path="../../../../closure/goog/debug/error.d.ts" />
+/// <reference path="../../../../closure/goog/string/string.d.ts" />
+/// <reference path="../../../../closure/goog/asserts/asserts.d.ts" />
+/// <reference path="../../../../closure/goog/array/array.d.ts" />
+/// <reference path="../../../../closure/goog/math/math.d.ts" />
+/// <reference path="../../../../closure/goog/functions/functions.d.ts" />
+/// <reference path="../../../../closure/goog/iter/iter.d.ts" />
+/// <reference path="../../../../closure/goog/storage/mechanism/mechanism.d.ts" />
+/// <reference path="../../../../closure/goog/storage/mechanism/iterablemechanism.d.ts" />
+/// <reference path="../../../../closure/goog/storage/mechanism/errorcode.d.ts" />
+/// <reference path="../../../../closure/goog/storage/mechanism/html5webstorage.d.ts" />
 
 declare module goog.storage.mechanism {
 

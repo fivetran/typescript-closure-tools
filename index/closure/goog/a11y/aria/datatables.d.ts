@@ -1,8 +1,8 @@
-// Generated Sun May  4 18:20:58 PDT 2014
+// Generated Mon May  5 11:05:50 PDT 2014
 
-/// <reference path="../../../goog/base.d.ts" />
-/// <reference path="../../../goog/object/object.d.ts" />
-/// <reference path="../../../goog/a11y/aria/attributes.d.ts" />
+/// <reference path="../../../../closure/goog/base.d.ts" />
+/// <reference path="../../../../closure/goog/object/object.d.ts" />
+/// <reference path="../../../../closure/goog/a11y/aria/attributes.d.ts" />
 
 declare module goog.a11y.aria {
 

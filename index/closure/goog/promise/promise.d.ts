@@ -1,17 +1,17 @@
-// Generated Sun May  4 18:19:22 PDT 2014
+// Generated Mon May  5 11:04:14 PDT 2014
 
-/// <reference path="../../goog/base.d.ts" />
-/// <reference path="../../goog/promise/resolver.d.ts" />
-/// <reference path="../../goog/dom/nodetype.d.ts" />
-/// <reference path="../../goog/debug/error.d.ts" />
-/// <reference path="../../goog/string/string.d.ts" />
-/// <reference path="../../goog/asserts/asserts.d.ts" />
-/// <reference path="../../goog/testing/watchers.d.ts" />
-/// <reference path="../../goog/debug/entrypointregistry.d.ts" />
-/// <reference path="../../goog/functions/functions.d.ts" />
-/// <reference path="../../goog/async/nexttick.d.ts" />
-/// <reference path="../../goog/async/run.d.ts" />
-/// <reference path="../../goog/promise/thenable.d.ts" />
+/// <reference path="../../../closure/goog/base.d.ts" />
+/// <reference path="../../../closure/goog/promise/resolver.d.ts" />
+/// <reference path="../../../closure/goog/dom/nodetype.d.ts" />
+/// <reference path="../../../closure/goog/debug/error.d.ts" />
+/// <reference path="../../../closure/goog/string/string.d.ts" />
+/// <reference path="../../../closure/goog/asserts/asserts.d.ts" />
+/// <reference path="../../../closure/goog/testing/watchers.d.ts" />
+/// <reference path="../../../closure/goog/debug/entrypointregistry.d.ts" />
+/// <reference path="../../../closure/goog/functions/functions.d.ts" />
+/// <reference path="../../../closure/goog/async/nexttick.d.ts" />
+/// <reference path="../../../closure/goog/async/run.d.ts" />
+/// <reference path="../../../closure/goog/promise/thenable.d.ts" />
 
 declare module goog {
 
@@ -63,7 +63,7 @@ declare module goog {
      * @implements {goog.Thenable.<TYPE>}
      * @template TYPE,RESOLVER_CONTEXT
      */
-    class Promise<TYPE> implements goog.Thenable<TYPE> {
+    class Promise<TYPE,RESOLVER_CONTEXT> implements goog.Thenable<TYPE> {
         /**
          * Promises provide a result that may be resolved asynchronously. A Promise may
          * be resolved by being fulfilled or rejected with a value, which will be known
@@ -113,26 +113,7 @@ declare module goog {
          * @template TYPE,RESOLVER_CONTEXT
          */
         constructor(resolver: (_0: (_0: any /*TYPE|IThenable<TYPE>|Thenable*/) => any /*missing*/, _1: (_0: any) => any /*missing*/) => void, opt_context?: RESOLVER_CONTEXT);
-
-        /**
-         * Adds callbacks that will operate on the result of the Promise, returning a
-         * new child Promise.
-         *
-         * If the Promise is fulfilled, the {@code onFulfilled} callback will be invoked
-         * with the fulfillment value as argument, and the child Promise will be
-         * fulfilled with the return value of the callback. If the callback throws an
-         * exception, the child Promise will be rejected with the thrown value instead.
-         *
-         * If the Promise is rejected, the {@code onRejected} callback will be invoked
-         * with the rejection reason as argument, and the child Promise will be rejected
-         * with the return value (or thrown value) of the callback.
-         *
-         * @override
-         */
-        then<RESULT>(onFulfilled?: (TYPE) => RESULT, onRejected?: (any) => any): goog.Promise<RESULT>;
-
-        then<RESULT>(onFulfilled?: (TYPE) => Thenable<RESULT>, onRejected?: (any) => any): goog.Promise<RESULT>;
-
+    
         /**
          * Adds a callback that will be invoked whether the Promise is fulfilled or
          * rejected. The callback receives no argument, and no new child Promise is
@@ -194,16 +175,16 @@ declare module goog.Promise {
      *
      * @param {string=} opt_message
      * @constructor
-     * @extends {goog.debug.GoogError}
+     * @extends {goog.debug.Error}
      * @final
      */
-    class CancellationError extends goog.debug.GoogError {
+    class CancellationError extends goog.debug.Error {
         /**
          * Error used as a rejection reason for canceled Promises.
          *
          * @param {string=} opt_message
          * @constructor
-         * @extends {goog.debug.GoogError}
+         * @extends {goog.debug.Error}
          * @final
          */
         constructor(opt_message?: string);

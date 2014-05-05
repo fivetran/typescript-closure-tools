@@ -1,7 +1,7 @@
-// Generated Sun May  4 18:12:13 PDT 2014
+// Generated Mon May  5 10:57:05 PDT 2014
 
-/// <reference path="../../../goog/base.d.ts" />
-/// <reference path="../../../goog/dom/pattern/pattern.d.ts" />
+/// <reference path="../../../../closure/goog/base.d.ts" />
+/// <reference path="../../../../closure/goog/dom/pattern/pattern.d.ts" />
 
 declare module goog.dom.pattern {
 

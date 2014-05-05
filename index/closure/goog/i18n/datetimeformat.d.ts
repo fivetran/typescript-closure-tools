@@ -1,15 +1,15 @@
-// Generated Sun May  4 18:20:30 PDT 2014
+// Generated Mon May  5 11:05:22 PDT 2014
 
-/// <reference path="../../goog/base.d.ts" />
-/// <reference path="../../goog/i18n/datetimesymbols.d.ts" />
-/// <reference path="../../goog/date/datelike.d.ts" />
-/// <reference path="../../goog/string/string.d.ts" />
-/// <reference path="../../goog/dom/nodetype.d.ts" />
-/// <reference path="../../goog/debug/error.d.ts" />
-/// <reference path="../../goog/asserts/asserts.d.ts" />
-/// <reference path="../../goog/date/date.d.ts" />
-/// <reference path="../../goog/array/array.d.ts" />
-/// <reference path="../../goog/i18n/timezone.d.ts" />
+/// <reference path="../../../closure/goog/base.d.ts" />
+/// <reference path="../../../closure/goog/i18n/datetimesymbols.d.ts" />
+/// <reference path="../../../closure/goog/date/datelike.d.ts" />
+/// <reference path="../../../closure/goog/string/string.d.ts" />
+/// <reference path="../../../closure/goog/dom/nodetype.d.ts" />
+/// <reference path="../../../closure/goog/debug/error.d.ts" />
+/// <reference path="../../../closure/goog/asserts/asserts.d.ts" />
+/// <reference path="../../../closure/goog/date/date.d.ts" />
+/// <reference path="../../../closure/goog/array/array.d.ts" />
+/// <reference path="../../../closure/goog/i18n/timezone.d.ts" />
 
 declare module goog.i18n {
 

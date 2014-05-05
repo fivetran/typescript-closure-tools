@@ -1,8 +1,8 @@
-// Generated Sun May  4 18:20:06 PDT 2014
+// Generated Mon May  5 11:04:58 PDT 2014
 
-/// <reference path="../../goog/base.d.ts" />
-/// <reference path="../../goog/promise/thenable.d.ts" />
-/// <reference path="../../goog/result/result_interface.d.ts" />
+/// <reference path="../../../closure/goog/base.d.ts" />
+/// <reference path="../../../closure/goog/promise/thenable.d.ts" />
+/// <reference path="../../../closure/goog/result/result_interface.d.ts" />
 
 declare module goog.result {
 

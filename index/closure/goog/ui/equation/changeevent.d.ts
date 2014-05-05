@@ -1,10 +1,10 @@
-// Generated Sun May  4 18:16:10 PDT 2014
+// Generated Mon May  5 11:01:01 PDT 2014
 
-/// <reference path="../../../goog/base.d.ts" />
-/// <reference path="../../../goog/events/eventid.d.ts" />
-/// <reference path="../../../goog/disposable/idisposable.d.ts" />
-/// <reference path="../../../goog/disposable/disposable.d.ts" />
-/// <reference path="../../../goog/events/event.d.ts" />
+/// <reference path="../../../../closure/goog/base.d.ts" />
+/// <reference path="../../../../closure/goog/events/eventid.d.ts" />
+/// <reference path="../../../../closure/goog/disposable/idisposable.d.ts" />
+/// <reference path="../../../../closure/goog/disposable/disposable.d.ts" />
+/// <reference path="../../../../closure/goog/events/event.d.ts" />
 
 declare module goog.ui.equation {
 

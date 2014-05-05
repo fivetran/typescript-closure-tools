@@ -1,30 +1,30 @@
-// Generated Sun May  4 18:12:26 PDT 2014
+// Generated Mon May  5 10:57:18 PDT 2014
 
-/// <reference path="../../goog/base.d.ts" />
-/// <reference path="../../goog/string/string.d.ts" />
-/// <reference path="../../goog/labs/useragent/util.d.ts" />
-/// <reference path="../../goog/dom/nodetype.d.ts" />
-/// <reference path="../../goog/debug/error.d.ts" />
-/// <reference path="../../goog/asserts/asserts.d.ts" />
-/// <reference path="../../goog/array/array.d.ts" />
-/// <reference path="../../goog/labs/useragent/engine.d.ts" />
-/// <reference path="../../goog/labs/useragent/browser.d.ts" />
-/// <reference path="../../goog/useragent/useragent.d.ts" />
-/// <reference path="../../goog/structs/collection.d.ts" />
-/// <reference path="../../goog/object/object.d.ts" />
-/// <reference path="../../goog/structs/structs.d.ts" />
-/// <reference path="../../goog/math/math.d.ts" />
-/// <reference path="../../goog/functions/functions.d.ts" />
-/// <reference path="../../goog/iter/iter.d.ts" />
-/// <reference path="../../goog/structs/map.d.ts" />
-/// <reference path="../../goog/structs/set.d.ts" />
-/// <reference path="../../goog/debug/debug.d.ts" />
-/// <reference path="../../goog/debug/logrecord.d.ts" />
-/// <reference path="../../goog/debug/logbuffer.d.ts" />
-/// <reference path="../../goog/debug/logger.d.ts" />
-/// <reference path="../../goog/log/log.d.ts" />
-/// <reference path="../../goog/disposable/idisposable.d.ts" />
-/// <reference path="../../goog/disposable/disposable.d.ts" />
+/// <reference path="../../../closure/goog/base.d.ts" />
+/// <reference path="../../../closure/goog/string/string.d.ts" />
+/// <reference path="../../../closure/goog/labs/useragent/util.d.ts" />
+/// <reference path="../../../closure/goog/dom/nodetype.d.ts" />
+/// <reference path="../../../closure/goog/debug/error.d.ts" />
+/// <reference path="../../../closure/goog/asserts/asserts.d.ts" />
+/// <reference path="../../../closure/goog/array/array.d.ts" />
+/// <reference path="../../../closure/goog/labs/useragent/engine.d.ts" />
+/// <reference path="../../../closure/goog/labs/useragent/browser.d.ts" />
+/// <reference path="../../../closure/goog/useragent/useragent.d.ts" />
+/// <reference path="../../../closure/goog/structs/collection.d.ts" />
+/// <reference path="../../../closure/goog/object/object.d.ts" />
+/// <reference path="../../../closure/goog/structs/structs.d.ts" />
+/// <reference path="../../../closure/goog/math/math.d.ts" />
+/// <reference path="../../../closure/goog/functions/functions.d.ts" />
+/// <reference path="../../../closure/goog/iter/iter.d.ts" />
+/// <reference path="../../../closure/goog/structs/map.d.ts" />
+/// <reference path="../../../closure/goog/structs/set.d.ts" />
+/// <reference path="../../../closure/goog/debug/debug.d.ts" />
+/// <reference path="../../../closure/goog/debug/logrecord.d.ts" />
+/// <reference path="../../../closure/goog/debug/logbuffer.d.ts" />
+/// <reference path="../../../closure/goog/debug/logger.d.ts" />
+/// <reference path="../../../closure/goog/log/log.d.ts" />
+/// <reference path="../../../closure/goog/disposable/idisposable.d.ts" />
+/// <reference path="../../../closure/goog/disposable/disposable.d.ts" />
 
 declare module goog.dom {
 

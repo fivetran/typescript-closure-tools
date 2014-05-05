@@ -1,6 +1,6 @@
-// Generated Sun May  4 18:18:23 PDT 2014
+// Generated Mon May  5 11:03:15 PDT 2014
 
-/// <reference path="../../goog/base.d.ts" />
+/// <reference path="../../../closure/goog/base.d.ts" />
 
 declare module goog.fs {
 

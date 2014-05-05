@@ -1,18 +1,18 @@
-// Generated Sun May  4 18:11:42 PDT 2014
+// Generated Mon May  5 10:56:34 PDT 2014
 
-/// <reference path="../../goog/base.d.ts" />
-/// <reference path="../../goog/dom/nodetype.d.ts" />
-/// <reference path="../../goog/debug/error.d.ts" />
-/// <reference path="../../goog/string/string.d.ts" />
-/// <reference path="../../goog/asserts/asserts.d.ts" />
-/// <reference path="../../goog/proto2/fielddescriptor.d.ts" />
-/// <reference path="../../goog/object/object.d.ts" />
-/// <reference path="../../goog/array/array.d.ts" />
-/// <reference path="../../goog/proto2/descriptor.d.ts" />
-/// <reference path="../../goog/proto2/message.d.ts" />
-/// <reference path="../../goog/proto2/serializer.d.ts" />
-/// <reference path="../../goog/json/json.d.ts" />
-/// <reference path="../../goog/math/math.d.ts" />
+/// <reference path="../../../closure/goog/base.d.ts" />
+/// <reference path="../../../closure/goog/dom/nodetype.d.ts" />
+/// <reference path="../../../closure/goog/debug/error.d.ts" />
+/// <reference path="../../../closure/goog/string/string.d.ts" />
+/// <reference path="../../../closure/goog/asserts/asserts.d.ts" />
+/// <reference path="../../../closure/goog/proto2/fielddescriptor.d.ts" />
+/// <reference path="../../../closure/goog/object/object.d.ts" />
+/// <reference path="../../../closure/goog/array/array.d.ts" />
+/// <reference path="../../../closure/goog/proto2/descriptor.d.ts" />
+/// <reference path="../../../closure/goog/proto2/message.d.ts" />
+/// <reference path="../../../closure/goog/proto2/serializer.d.ts" />
+/// <reference path="../../../closure/goog/json/json.d.ts" />
+/// <reference path="../../../closure/goog/math/math.d.ts" />
 
 declare module goog.proto2 {
 

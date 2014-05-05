@@ -1,7 +1,7 @@
-// Generated Sun May  4 18:17:33 PDT 2014
+// Generated Mon May  5 11:02:25 PDT 2014
 
-/// <reference path="../../goog/base.d.ts" />
-/// <reference path="../../goog/string/string.d.ts" />
+/// <reference path="../../../closure/goog/base.d.ts" />
+/// <reference path="../../../closure/goog/string/string.d.ts" />
 
 declare module goog.userAgent.flash {
 

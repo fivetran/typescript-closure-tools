@@ -1,6 +1,6 @@
-// Generated Sun May  4 18:16:32 PDT 2014
+// Generated Mon May  5 11:01:23 PDT 2014
 
-/// <reference path="../../goog/base.d.ts" />
+/// <reference path="../../../closure/goog/base.d.ts" />
 
 declare module goog.ui {
 

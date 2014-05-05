@@ -1,19 +1,19 @@
-// Generated Sun May  4 18:20:03 PDT 2014
+// Generated Mon May  5 11:04:55 PDT 2014
 
-/// <reference path="../../goog/base.d.ts" />
-/// <reference path="../../goog/string/string.d.ts" />
-/// <reference path="../../goog/labs/useragent/util.d.ts" />
-/// <reference path="../../goog/dom/nodetype.d.ts" />
-/// <reference path="../../goog/debug/error.d.ts" />
-/// <reference path="../../goog/asserts/asserts.d.ts" />
-/// <reference path="../../goog/array/array.d.ts" />
-/// <reference path="../../goog/labs/useragent/engine.d.ts" />
-/// <reference path="../../goog/labs/useragent/browser.d.ts" />
-/// <reference path="../../goog/useragent/useragent.d.ts" />
-/// <reference path="../../goog/testing/objectpropertystring.d.ts" />
-/// <reference path="../../goog/testing/propertyreplacer.d.ts" />
-/// <reference path="../../goog/disposable/idisposable.d.ts" />
-/// <reference path="../../goog/disposable/disposable.d.ts" />
+/// <reference path="../../../closure/goog/base.d.ts" />
+/// <reference path="../../../closure/goog/string/string.d.ts" />
+/// <reference path="../../../closure/goog/labs/useragent/util.d.ts" />
+/// <reference path="../../../closure/goog/dom/nodetype.d.ts" />
+/// <reference path="../../../closure/goog/debug/error.d.ts" />
+/// <reference path="../../../closure/goog/asserts/asserts.d.ts" />
+/// <reference path="../../../closure/goog/array/array.d.ts" />
+/// <reference path="../../../closure/goog/labs/useragent/engine.d.ts" />
+/// <reference path="../../../closure/goog/labs/useragent/browser.d.ts" />
+/// <reference path="../../../closure/goog/useragent/useragent.d.ts" />
+/// <reference path="../../../closure/goog/testing/objectpropertystring.d.ts" />
+/// <reference path="../../../closure/goog/testing/propertyreplacer.d.ts" />
+/// <reference path="../../../closure/goog/disposable/idisposable.d.ts" />
+/// <reference path="../../../closure/goog/disposable/disposable.d.ts" />
 
 declare module goog.testing {
 

@@ -1,7 +1,7 @@
-// Generated Sun May  4 18:20:26 PDT 2014
+// Generated Mon May  5 11:05:18 PDT 2014
 
-/// <reference path="../../goog/base.d.ts" />
-/// <reference path="../../goog/i18n/numberformatsymbols.d.ts" />
+/// <reference path="../../../closure/goog/base.d.ts" />
+/// <reference path="../../../closure/goog/i18n/numberformatsymbols.d.ts" />
 
 declare module goog.i18n {
 

@@ -1,7 +1,7 @@
-// Generated Sun May  4 18:12:20 PDT 2014
+// Generated Mon May  5 10:57:12 PDT 2014
 
-/// <reference path="../../goog/base.d.ts" />
-/// <reference path="../../goog/object/object.d.ts" />
+/// <reference path="../../../closure/goog/base.d.ts" />
+/// <reference path="../../../closure/goog/object/object.d.ts" />
 
 declare module goog.dom.tags {
 

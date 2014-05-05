@@ -1,19 +1,19 @@
-// Generated Sun May  4 18:20:06 PDT 2014
+// Generated Mon May  5 11:04:58 PDT 2014
 
-/// <reference path="../../goog/base.d.ts" />
-/// <reference path="../../goog/promise/resolver.d.ts" />
-/// <reference path="../../goog/dom/nodetype.d.ts" />
-/// <reference path="../../goog/debug/error.d.ts" />
-/// <reference path="../../goog/string/string.d.ts" />
-/// <reference path="../../goog/asserts/asserts.d.ts" />
-/// <reference path="../../goog/testing/watchers.d.ts" />
-/// <reference path="../../goog/debug/entrypointregistry.d.ts" />
-/// <reference path="../../goog/functions/functions.d.ts" />
-/// <reference path="../../goog/async/nexttick.d.ts" />
-/// <reference path="../../goog/async/run.d.ts" />
-/// <reference path="../../goog/promise/thenable.d.ts" />
-/// <reference path="../../goog/promise/promise.d.ts" />
-/// <reference path="../../goog/result/result_interface.d.ts" />
+/// <reference path="../../../closure/goog/base.d.ts" />
+/// <reference path="../../../closure/goog/promise/resolver.d.ts" />
+/// <reference path="../../../closure/goog/dom/nodetype.d.ts" />
+/// <reference path="../../../closure/goog/debug/error.d.ts" />
+/// <reference path="../../../closure/goog/string/string.d.ts" />
+/// <reference path="../../../closure/goog/asserts/asserts.d.ts" />
+/// <reference path="../../../closure/goog/testing/watchers.d.ts" />
+/// <reference path="../../../closure/goog/debug/entrypointregistry.d.ts" />
+/// <reference path="../../../closure/goog/functions/functions.d.ts" />
+/// <reference path="../../../closure/goog/async/nexttick.d.ts" />
+/// <reference path="../../../closure/goog/async/run.d.ts" />
+/// <reference path="../../../closure/goog/promise/thenable.d.ts" />
+/// <reference path="../../../closure/goog/promise/promise.d.ts" />
+/// <reference path="../../../closure/goog/result/result_interface.d.ts" />
 
 declare module goog.result {
 
@@ -65,17 +65,17 @@ declare module goog.result.SimpleResult {
      * more than once.
      *
      * @constructor
-     * @extends {goog.debug.GoogError}
+     * @extends {goog.debug.Error}
      * @final
      * @deprecated Use {@link goog.Promise} instead - http://go/promisemigration
      */
-    class StateError extends goog.debug.GoogError {
+    class StateError extends goog.debug.Error {
         /**
          * Error thrown if there is an attempt to set the value or error for this result
          * more than once.
          *
          * @constructor
-         * @extends {goog.debug.GoogError}
+         * @extends {goog.debug.Error}
          * @final
          * @deprecated Use {@link goog.Promise} instead - http://go/promisemigration
          */

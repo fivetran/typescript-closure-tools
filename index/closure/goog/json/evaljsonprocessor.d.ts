@@ -1,10 +1,10 @@
-// Generated Sun May  4 18:11:47 PDT 2014
+// Generated Mon May  5 10:56:39 PDT 2014
 
-/// <reference path="../../goog/base.d.ts" />
-/// <reference path="../../goog/json/json.d.ts" />
-/// <reference path="../../goog/string/stringifier.d.ts" />
-/// <reference path="../../goog/string/parser.d.ts" />
-/// <reference path="../../goog/json/processor.d.ts" />
+/// <reference path="../../../closure/goog/base.d.ts" />
+/// <reference path="../../../closure/goog/json/json.d.ts" />
+/// <reference path="../../../closure/goog/string/stringifier.d.ts" />
+/// <reference path="../../../closure/goog/string/parser.d.ts" />
+/// <reference path="../../../closure/goog/json/processor.d.ts" />
 
 declare module goog.json {
 

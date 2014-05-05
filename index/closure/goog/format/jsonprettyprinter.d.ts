@@ -1,10 +1,10 @@
-// Generated Sun May  4 18:17:13 PDT 2014
+// Generated Mon May  5 11:02:05 PDT 2014
 
-/// <reference path="../../goog/base.d.ts" />
-/// <reference path="../../goog/string/stringbuffer.d.ts" />
-/// <reference path="../../goog/json/json.d.ts" />
-/// <reference path="../../goog/string/string.d.ts" />
-/// <reference path="../../goog/string/stringformat.d.ts" />
+/// <reference path="../../../closure/goog/base.d.ts" />
+/// <reference path="../../../closure/goog/string/stringbuffer.d.ts" />
+/// <reference path="../../../closure/goog/json/json.d.ts" />
+/// <reference path="../../../closure/goog/string/string.d.ts" />
+/// <reference path="../../../closure/goog/string/stringformat.d.ts" />
 
 declare module goog.format {
 

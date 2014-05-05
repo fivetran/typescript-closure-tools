@@ -1,8 +1,8 @@
-// Generated Sun May  4 18:19:38 PDT 2014
+// Generated Mon May  5 11:04:30 PDT 2014
 
-/// <reference path="../../goog/base.d.ts" />
-/// <reference path="../../goog/disposable/idisposable.d.ts" />
-/// <reference path="../../goog/disposable/disposable.d.ts" />
+/// <reference path="../../../closure/goog/base.d.ts" />
+/// <reference path="../../../closure/goog/disposable/idisposable.d.ts" />
+/// <reference path="../../../closure/goog/disposable/disposable.d.ts" />
 
 declare module goog.testing {
 

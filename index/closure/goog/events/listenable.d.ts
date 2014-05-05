@@ -1,7 +1,7 @@
-// Generated Sun May  4 18:17:22 PDT 2014
+// Generated Mon May  5 11:02:14 PDT 2014
 
-/// <reference path="../../goog/base.d.ts" />
-/// <reference path="../../goog/events/eventid.d.ts" />
+/// <reference path="../../../closure/goog/base.d.ts" />
+/// <reference path="../../../closure/goog/events/eventid.d.ts" />
 
 declare module goog.events {
 

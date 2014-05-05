@@ -1,18 +1,18 @@
-// Generated Sun May  4 18:19:51 PDT 2014
+// Generated Mon May  5 11:04:44 PDT 2014
 
-/// <reference path="../../../goog/base.d.ts" />
-/// <reference path="../../../goog/dom/nodetype.d.ts" />
-/// <reference path="../../../goog/debug/error.d.ts" />
-/// <reference path="../../../goog/string/string.d.ts" />
-/// <reference path="../../../goog/asserts/asserts.d.ts" />
-/// <reference path="../../../goog/array/array.d.ts" />
-/// <reference path="../../../goog/crypt/crypt.d.ts" />
-/// <reference path="../../../goog/labs/useragent/util.d.ts" />
-/// <reference path="../../../goog/labs/useragent/engine.d.ts" />
-/// <reference path="../../../goog/labs/useragent/browser.d.ts" />
-/// <reference path="../../../goog/useragent/useragent.d.ts" />
-/// <reference path="../../../goog/crypt/base64.d.ts" />
-/// <reference path="../../../goog/testing/fs/blob.d.ts" />
+/// <reference path="../../../../closure/goog/base.d.ts" />
+/// <reference path="../../../../closure/goog/dom/nodetype.d.ts" />
+/// <reference path="../../../../closure/goog/debug/error.d.ts" />
+/// <reference path="../../../../closure/goog/string/string.d.ts" />
+/// <reference path="../../../../closure/goog/asserts/asserts.d.ts" />
+/// <reference path="../../../../closure/goog/array/array.d.ts" />
+/// <reference path="../../../../closure/goog/crypt/crypt.d.ts" />
+/// <reference path="../../../../closure/goog/labs/useragent/util.d.ts" />
+/// <reference path="../../../../closure/goog/labs/useragent/engine.d.ts" />
+/// <reference path="../../../../closure/goog/labs/useragent/browser.d.ts" />
+/// <reference path="../../../../closure/goog/useragent/useragent.d.ts" />
+/// <reference path="../../../../closure/goog/crypt/base64.d.ts" />
+/// <reference path="../../../../closure/goog/testing/fs/blob.d.ts" />
 
 declare module goog.testing.fs {
 

@@ -1,11 +1,11 @@
-// Generated Sun May  4 18:19:12 PDT 2014
+// Generated Mon May  5 11:04:05 PDT 2014
 
-/// <reference path="../../../goog/base.d.ts" />
-/// <reference path="../../../goog/labs/testing/matcher.d.ts" />
-/// <reference path="../../../goog/dom/nodetype.d.ts" />
-/// <reference path="../../../goog/debug/error.d.ts" />
-/// <reference path="../../../goog/string/string.d.ts" />
-/// <reference path="../../../goog/asserts/asserts.d.ts" />
+/// <reference path="../../../../closure/goog/base.d.ts" />
+/// <reference path="../../../../closure/goog/labs/testing/matcher.d.ts" />
+/// <reference path="../../../../closure/goog/dom/nodetype.d.ts" />
+/// <reference path="../../../../closure/goog/debug/error.d.ts" />
+/// <reference path="../../../../closure/goog/string/string.d.ts" />
+/// <reference path="../../../../closure/goog/asserts/asserts.d.ts" />
 
 declare module goog.labs.testing {
 
@@ -13,15 +13,15 @@ declare module goog.labs.testing {
      * Error thrown when a Matcher fails to match the input value.
      * @param {string=} opt_message The error message.
      * @constructor
-     * @extends {goog.debug.GoogError}
+     * @extends {goog.debug.Error}
      * @final
      */
-    class MatcherError extends goog.debug.GoogError {
+    class MatcherError extends goog.debug.Error {
         /**
          * Error thrown when a Matcher fails to match the input value.
          * @param {string=} opt_message The error message.
          * @constructor
-         * @extends {goog.debug.GoogError}
+         * @extends {goog.debug.Error}
          * @final
          */
         constructor(opt_message?: string);

@@ -1,17 +1,17 @@
-// Generated Sun May  4 18:21:16 PDT 2014
+// Generated Mon May  5 11:06:06 PDT 2014
 
-/// <reference path="../../goog/base.d.ts" />
-/// <reference path="../../goog/disposable/idisposable.d.ts" />
-/// <reference path="../../goog/disposable/disposable.d.ts" />
-/// <reference path="../../goog/functions/functions.d.ts" />
-/// <reference path="../../goog/module/basemodule.d.ts" />
-/// <reference path="../../goog/dom/nodetype.d.ts" />
-/// <reference path="../../goog/debug/error.d.ts" />
-/// <reference path="../../goog/string/string.d.ts" />
-/// <reference path="../../goog/asserts/asserts.d.ts" />
-/// <reference path="../../goog/debug/entrypointregistry.d.ts" />
-/// <reference path="../../goog/debug/errorhandlerweakdep.d.ts" />
-/// <reference path="../../goog/module/moduleloadcallback.d.ts" />
+/// <reference path="../../../closure/goog/base.d.ts" />
+/// <reference path="../../../closure/goog/disposable/idisposable.d.ts" />
+/// <reference path="../../../closure/goog/disposable/disposable.d.ts" />
+/// <reference path="../../../closure/goog/functions/functions.d.ts" />
+/// <reference path="../../../closure/goog/module/basemodule.d.ts" />
+/// <reference path="../../../closure/goog/dom/nodetype.d.ts" />
+/// <reference path="../../../closure/goog/debug/error.d.ts" />
+/// <reference path="../../../closure/goog/string/string.d.ts" />
+/// <reference path="../../../closure/goog/asserts/asserts.d.ts" />
+/// <reference path="../../../closure/goog/debug/entrypointregistry.d.ts" />
+/// <reference path="../../../closure/goog/debug/errorhandlerweakdep.d.ts" />
+/// <reference path="../../../closure/goog/module/moduleloadcallback.d.ts" />
 
 declare module goog.module {
 

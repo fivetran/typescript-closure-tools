@@ -1,6 +1,6 @@
-// Generated Sun May  4 18:13:01 PDT 2014
+// Generated Mon May  5 10:57:52 PDT 2014
 
-/// <reference path="../../goog/base.d.ts" />
+/// <reference path="../../../closure/goog/base.d.ts" />
 
 declare module goog.editor {
 

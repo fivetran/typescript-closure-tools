@@ -1,24 +1,24 @@
-// Generated Sun May  4 18:19:02 PDT 2014
+// Generated Mon May  5 11:03:54 PDT 2014
 
-/// <reference path="../../../goog/base.d.ts" />
-/// <reference path="../../../goog/dom/nodetype.d.ts" />
-/// <reference path="../../../goog/debug/error.d.ts" />
-/// <reference path="../../../goog/string/string.d.ts" />
-/// <reference path="../../../goog/asserts/asserts.d.ts" />
-/// <reference path="../../../goog/object/object.d.ts" />
-/// <reference path="../../../goog/array/array.d.ts" />
-/// <reference path="../../../goog/labs/useragent/util.d.ts" />
-/// <reference path="../../../goog/labs/useragent/engine.d.ts" />
-/// <reference path="../../../goog/labs/useragent/browser.d.ts" />
-/// <reference path="../../../goog/useragent/useragent.d.ts" />
-/// <reference path="../../../goog/structs/collection.d.ts" />
-/// <reference path="../../../goog/structs/structs.d.ts" />
-/// <reference path="../../../goog/math/math.d.ts" />
-/// <reference path="../../../goog/functions/functions.d.ts" />
-/// <reference path="../../../goog/iter/iter.d.ts" />
-/// <reference path="../../../goog/structs/map.d.ts" />
-/// <reference path="../../../goog/structs/set.d.ts" />
-/// <reference path="../../../goog/debug/debug.d.ts" />
+/// <reference path="../../../../closure/goog/base.d.ts" />
+/// <reference path="../../../../closure/goog/dom/nodetype.d.ts" />
+/// <reference path="../../../../closure/goog/debug/error.d.ts" />
+/// <reference path="../../../../closure/goog/string/string.d.ts" />
+/// <reference path="../../../../closure/goog/asserts/asserts.d.ts" />
+/// <reference path="../../../../closure/goog/object/object.d.ts" />
+/// <reference path="../../../../closure/goog/array/array.d.ts" />
+/// <reference path="../../../../closure/goog/labs/useragent/util.d.ts" />
+/// <reference path="../../../../closure/goog/labs/useragent/engine.d.ts" />
+/// <reference path="../../../../closure/goog/labs/useragent/browser.d.ts" />
+/// <reference path="../../../../closure/goog/useragent/useragent.d.ts" />
+/// <reference path="../../../../closure/goog/structs/collection.d.ts" />
+/// <reference path="../../../../closure/goog/structs/structs.d.ts" />
+/// <reference path="../../../../closure/goog/math/math.d.ts" />
+/// <reference path="../../../../closure/goog/functions/functions.d.ts" />
+/// <reference path="../../../../closure/goog/iter/iter.d.ts" />
+/// <reference path="../../../../closure/goog/structs/map.d.ts" />
+/// <reference path="../../../../closure/goog/structs/set.d.ts" />
+/// <reference path="../../../../closure/goog/debug/debug.d.ts" />
 
 declare module goog.labs.mock {
 
@@ -30,10 +30,10 @@ declare module goog.labs.mock {
      * @param {!string} methodName The expected method call.
      * @param {!Array} args The expected arguments.
      * @constructor
-     * @extends {goog.debug.GoogError}
+     * @extends {goog.debug.Error}
      * @final
      */
-    class VerificationError extends goog.debug.GoogError {
+    class VerificationError extends goog.debug.Error {
         /**
          * Error thrown when verification failed.
          *
@@ -42,7 +42,7 @@ declare module goog.labs.mock {
          * @param {!string} methodName The expected method call.
          * @param {!Array} args The expected arguments.
          * @constructor
-         * @extends {goog.debug.GoogError}
+         * @extends {goog.debug.Error}
          * @final
          */
         constructor(recordedCalls: any[], methodName: string, args: any[]);

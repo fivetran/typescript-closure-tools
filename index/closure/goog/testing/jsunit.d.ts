@@ -1,11 +1,11 @@
-// Generated Sun May  4 18:19:48 PDT 2014
+// Generated Mon May  5 11:04:40 PDT 2014
 
-/// <reference path="../../goog/base.d.ts" />
-/// <reference path="../../goog/testing/stacktrace.d.ts" />
-/// <reference path="../../goog/testing/asserts.d.ts" />
-/// <reference path="../../goog/object/object.d.ts" />
-/// <reference path="../../goog/testing/testcase.d.ts" />
-/// <reference path="../../goog/testing/testrunner.d.ts" />
+/// <reference path="../../../closure/goog/base.d.ts" />
+/// <reference path="../../../closure/goog/testing/stacktrace.d.ts" />
+/// <reference path="../../../closure/goog/testing/asserts.d.ts" />
+/// <reference path="../../../closure/goog/object/object.d.ts" />
+/// <reference path="../../../closure/goog/testing/testcase.d.ts" />
+/// <reference path="../../../closure/goog/testing/testrunner.d.ts" />
 
 declare module goog.testing.jsunit {
 

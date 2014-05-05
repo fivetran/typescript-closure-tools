@@ -1,9 +1,9 @@
-// Generated Sun May  4 18:18:22 PDT 2014
+// Generated Mon May  5 11:03:14 PDT 2014
 
-/// <reference path="../../goog/base.d.ts" />
-/// <reference path="../../goog/debug/error.d.ts" />
-/// <reference path="../../goog/object/object.d.ts" />
-/// <reference path="../../goog/string/string.d.ts" />
+/// <reference path="../../../closure/goog/base.d.ts" />
+/// <reference path="../../../closure/goog/debug/error.d.ts" />
+/// <reference path="../../../closure/goog/object/object.d.ts" />
+/// <reference path="../../../closure/goog/string/string.d.ts" />
 
 declare module goog.fs {
 
@@ -15,10 +15,10 @@ declare module goog.fs {
      * @param {!DOMError} error
      * @param {string} action The action being undertaken when the error was raised.
      * @constructor
-     * @extends {goog.debug.GoogError}
+     * @extends {goog.debug.Error}
      * @final
      */
-    class Error extends goog.debug.GoogError {
+    class Error extends goog.debug.Error {
         /**
          * A filesystem error. Since the filesystem API is asynchronous, stack traces
          * are less useful for identifying where errors come from, so this includes a
@@ -27,7 +27,7 @@ declare module goog.fs {
          * @param {!DOMError} error
          * @param {string} action The action being undertaken when the error was raised.
          * @constructor
-         * @extends {goog.debug.GoogError}
+         * @extends {goog.debug.Error}
          * @final
          */
         constructor(error: DOMError, action: string);

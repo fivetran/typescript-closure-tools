@@ -1,8 +1,8 @@
-// Generated Sun May  4 18:19:14 PDT 2014
+// Generated Mon May  5 11:04:06 PDT 2014
 
-/// <reference path="../../../goog/base.d.ts" />
-/// <reference path="../../../goog/labs/testing/matcher.d.ts" />
-/// <reference path="../../../goog/string/string.d.ts" />
+/// <reference path="../../../../closure/goog/base.d.ts" />
+/// <reference path="../../../../closure/goog/labs/testing/matcher.d.ts" />
+/// <reference path="../../../../closure/goog/string/string.d.ts" />
 
 declare module goog.labs.testing {
 

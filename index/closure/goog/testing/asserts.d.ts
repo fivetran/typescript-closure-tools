@@ -1,7 +1,7 @@
-// Generated Sun May  4 18:19:45 PDT 2014
+// Generated Mon May  5 11:04:37 PDT 2014
 
-/// <reference path="../../goog/base.d.ts" />
-/// <reference path="../../goog/testing/stacktrace.d.ts" />
+/// <reference path="../../../closure/goog/base.d.ts" />
+/// <reference path="../../../closure/goog/testing/stacktrace.d.ts" />
 
 declare module goog.testing {
 

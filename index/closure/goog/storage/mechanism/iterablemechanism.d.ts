@@ -1,15 +1,15 @@
-// Generated Sun May  4 18:17:01 PDT 2014
+// Generated Mon May  5 11:01:53 PDT 2014
 
-/// <reference path="../../../goog/base.d.ts" />
-/// <reference path="../../../goog/dom/nodetype.d.ts" />
-/// <reference path="../../../goog/debug/error.d.ts" />
-/// <reference path="../../../goog/string/string.d.ts" />
-/// <reference path="../../../goog/asserts/asserts.d.ts" />
-/// <reference path="../../../goog/array/array.d.ts" />
-/// <reference path="../../../goog/math/math.d.ts" />
-/// <reference path="../../../goog/functions/functions.d.ts" />
-/// <reference path="../../../goog/iter/iter.d.ts" />
-/// <reference path="../../../goog/storage/mechanism/mechanism.d.ts" />
+/// <reference path="../../../../closure/goog/base.d.ts" />
+/// <reference path="../../../../closure/goog/dom/nodetype.d.ts" />
+/// <reference path="../../../../closure/goog/debug/error.d.ts" />
+/// <reference path="../../../../closure/goog/string/string.d.ts" />
+/// <reference path="../../../../closure/goog/asserts/asserts.d.ts" />
+/// <reference path="../../../../closure/goog/array/array.d.ts" />
+/// <reference path="../../../../closure/goog/math/math.d.ts" />
+/// <reference path="../../../../closure/goog/functions/functions.d.ts" />
+/// <reference path="../../../../closure/goog/iter/iter.d.ts" />
+/// <reference path="../../../../closure/goog/storage/mechanism/mechanism.d.ts" />
 
 declare module goog.storage.mechanism {
 
@@ -46,7 +46,7 @@ declare module goog.storage.mechanism {
          *     over the values.  The default value is false.
          * @return {!goog.iter.Iterator} The iterator.
          */
-        __iterator__(opt_keys?: boolean): goog.iter.Iterator<any>;
+        __iterator__(opt_keys?: boolean): goog.iter.Iterator;
     
         /**
          * Remove all key-value pairs.

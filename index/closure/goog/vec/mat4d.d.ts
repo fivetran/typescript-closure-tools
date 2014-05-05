@@ -1,11 +1,11 @@
-// Generated Sun May  4 18:14:22 PDT 2014
+// Generated Mon May  5 10:59:13 PDT 2014
 
-/// <reference path="../../goog/base.d.ts" />
-/// <reference path="../../goog/vec/float64array.d.ts" />
-/// <reference path="../../goog/vec/float32array.d.ts" />
-/// <reference path="../../goog/vec/vec.d.ts" />
-/// <reference path="../../goog/vec/vec4d.d.ts" />
-/// <reference path="../../goog/vec/vec3d.d.ts" />
+/// <reference path="../../../closure/goog/base.d.ts" />
+/// <reference path="../../../closure/goog/vec/float64array.d.ts" />
+/// <reference path="../../../closure/goog/vec/float32array.d.ts" />
+/// <reference path="../../../closure/goog/vec/vec.d.ts" />
+/// <reference path="../../../closure/goog/vec/vec4d.d.ts" />
+/// <reference path="../../../closure/goog/vec/vec3d.d.ts" />
 
 declare module goog.vec.mat4d {
 

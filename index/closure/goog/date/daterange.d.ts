@@ -1,17 +1,17 @@
-// Generated Sun May  4 18:18:14 PDT 2014
+// Generated Mon May  5 11:03:07 PDT 2014
 
-/// <reference path="../../goog/base.d.ts" />
-/// <reference path="../../goog/dom/nodetype.d.ts" />
-/// <reference path="../../goog/debug/error.d.ts" />
-/// <reference path="../../goog/string/string.d.ts" />
-/// <reference path="../../goog/asserts/asserts.d.ts" />
-/// <reference path="../../goog/array/array.d.ts" />
-/// <reference path="../../goog/math/math.d.ts" />
-/// <reference path="../../goog/functions/functions.d.ts" />
-/// <reference path="../../goog/iter/iter.d.ts" />
-/// <reference path="../../goog/i18n/datetimesymbols.d.ts" />
-/// <reference path="../../goog/date/datelike.d.ts" />
-/// <reference path="../../goog/date/date.d.ts" />
+/// <reference path="../../../closure/goog/base.d.ts" />
+/// <reference path="../../../closure/goog/dom/nodetype.d.ts" />
+/// <reference path="../../../closure/goog/debug/error.d.ts" />
+/// <reference path="../../../closure/goog/string/string.d.ts" />
+/// <reference path="../../../closure/goog/asserts/asserts.d.ts" />
+/// <reference path="../../../closure/goog/array/array.d.ts" />
+/// <reference path="../../../closure/goog/math/math.d.ts" />
+/// <reference path="../../../closure/goog/functions/functions.d.ts" />
+/// <reference path="../../../closure/goog/iter/iter.d.ts" />
+/// <reference path="../../../closure/goog/i18n/datetimesymbols.d.ts" />
+/// <reference path="../../../closure/goog/date/datelike.d.ts" />
+/// <reference path="../../../closure/goog/date/date.d.ts" />
 
 declare module goog.date {
 
@@ -31,17 +31,17 @@ declare module goog.date {
          * @final
          */
         constructor(startDate: goog.date.Date, endDate: goog.date.Date);
-
+    
         /**
          * @return {goog.date.Date} The first date in the range.
          */
         getStartDate(): goog.date.Date;
-
+    
         /**
          * @return {goog.date.Date} The last date in the range.
          */
         getEndDate(): goog.date.Date;
-
+    
         /**
          * Tests if a date falls within this range.
          *
@@ -49,11 +49,11 @@ declare module goog.date {
          * @return {boolean} Whether the date is in the range.
          */
         contains(date: goog.date.Date): boolean;
-
+    
         /**
          * @return {!goog.iter.Iterator} An iterator over the date range.
          */
-        iterator(): goog.iter.Iterator<goog.date.Date>;
+        iterator(): goog.iter.Iterator;
     }
 }
 
@@ -66,7 +66,7 @@ declare module goog.date.DateRange {
      * @param {goog.date.DateRange} dateRange The date range to iterate.
      * @final
      */
-    class Iterator extends goog.iter.Iterator<goog.date.Date> {
+    class Iterator extends goog.iter.Iterator {
         /**
          * Creates an iterator over the dates in a {@link goog.date.DateRange}.
          * @constructor

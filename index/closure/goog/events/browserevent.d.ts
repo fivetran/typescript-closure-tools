@@ -1,22 +1,22 @@
-// Generated Sun May  4 18:17:20 PDT 2014
+// Generated Mon May  5 11:02:12 PDT 2014
 
-/// <reference path="../../goog/base.d.ts" />
-/// <reference path="../../goog/string/string.d.ts" />
-/// <reference path="../../goog/labs/useragent/util.d.ts" />
-/// <reference path="../../goog/dom/nodetype.d.ts" />
-/// <reference path="../../goog/debug/error.d.ts" />
-/// <reference path="../../goog/asserts/asserts.d.ts" />
-/// <reference path="../../goog/array/array.d.ts" />
-/// <reference path="../../goog/labs/useragent/engine.d.ts" />
-/// <reference path="../../goog/labs/useragent/browser.d.ts" />
-/// <reference path="../../goog/useragent/useragent.d.ts" />
-/// <reference path="../../goog/events/eventtype.d.ts" />
-/// <reference path="../../goog/events/browserfeature.d.ts" />
-/// <reference path="../../goog/events/eventid.d.ts" />
-/// <reference path="../../goog/disposable/idisposable.d.ts" />
-/// <reference path="../../goog/disposable/disposable.d.ts" />
-/// <reference path="../../goog/events/event.d.ts" />
-/// <reference path="../../goog/reflect/reflect.d.ts" />
+/// <reference path="../../../closure/goog/base.d.ts" />
+/// <reference path="../../../closure/goog/string/string.d.ts" />
+/// <reference path="../../../closure/goog/labs/useragent/util.d.ts" />
+/// <reference path="../../../closure/goog/dom/nodetype.d.ts" />
+/// <reference path="../../../closure/goog/debug/error.d.ts" />
+/// <reference path="../../../closure/goog/asserts/asserts.d.ts" />
+/// <reference path="../../../closure/goog/array/array.d.ts" />
+/// <reference path="../../../closure/goog/labs/useragent/engine.d.ts" />
+/// <reference path="../../../closure/goog/labs/useragent/browser.d.ts" />
+/// <reference path="../../../closure/goog/useragent/useragent.d.ts" />
+/// <reference path="../../../closure/goog/events/eventtype.d.ts" />
+/// <reference path="../../../closure/goog/events/browserfeature.d.ts" />
+/// <reference path="../../../closure/goog/events/eventid.d.ts" />
+/// <reference path="../../../closure/goog/disposable/idisposable.d.ts" />
+/// <reference path="../../../closure/goog/disposable/disposable.d.ts" />
+/// <reference path="../../../closure/goog/events/event.d.ts" />
+/// <reference path="../../../closure/goog/reflect/reflect.d.ts" />
 
 declare module goog.events {
 

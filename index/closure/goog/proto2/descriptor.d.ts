@@ -1,12 +1,12 @@
-// Generated Sat May  3 12:11:50 PDT 2014
+// Generated Mon May  5 10:56:33 PDT 2014
 
-/// <reference path="../../goog/base.d.ts" />
-/// <reference path="../../goog/dom/nodetype.d.ts" />
-/// <reference path="../../goog/debug/error.d.ts" />
-/// <reference path="../../goog/string/string.d.ts" />
-/// <reference path="../../goog/asserts/asserts.d.ts" />
-/// <reference path="../../goog/object/object.d.ts" />
-/// <reference path="../../goog/array/array.d.ts" />
+/// <reference path="../../../closure/goog/base.d.ts" />
+/// <reference path="../../../closure/goog/dom/nodetype.d.ts" />
+/// <reference path="../../../closure/goog/debug/error.d.ts" />
+/// <reference path="../../../closure/goog/string/string.d.ts" />
+/// <reference path="../../../closure/goog/asserts/asserts.d.ts" />
+/// <reference path="../../../closure/goog/object/object.d.ts" />
+/// <reference path="../../../closure/goog/array/array.d.ts" />
 
 declare module goog.proto2 {
 
@@ -114,9 +114,9 @@ declare module goog.proto2 {
      *            containingType: (goog.proto2.Message|undefined)}}
      */
     interface Metadata {
-        name?: string;
-        fullName?: string;
-        containingType?: goog.proto2.Message;
+        name: any /*string|any (undefined)*/;
+        fullName: any /*string|any (undefined)*/;
+        containingType: any /*goog.proto2.Message|any (undefined)*/
     }
 }
 

@@ -1,7 +1,7 @@
-// Generated Sun May  4 18:13:35 PDT 2014
+// Generated Mon May  5 10:58:27 PDT 2014
 
-/// <reference path="../../goog/base.d.ts" />
-/// <reference path="../../goog/crypt/hash.d.ts" />
+/// <reference path="../../../closure/goog/base.d.ts" />
+/// <reference path="../../../closure/goog/crypt/hash.d.ts" />
 
 declare module goog.crypt {
 

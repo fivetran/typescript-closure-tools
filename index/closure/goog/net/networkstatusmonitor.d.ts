@@ -1,8 +1,8 @@
-// Generated Sun May  4 18:14:06 PDT 2014
+// Generated Mon May  5 10:58:57 PDT 2014
 
-/// <reference path="../../goog/base.d.ts" />
-/// <reference path="../../goog/events/eventid.d.ts" />
-/// <reference path="../../goog/events/listenable.d.ts" />
+/// <reference path="../../../closure/goog/base.d.ts" />
+/// <reference path="../../../closure/goog/events/eventid.d.ts" />
+/// <reference path="../../../closure/goog/events/listenable.d.ts" />
 
 declare module goog.net {
 

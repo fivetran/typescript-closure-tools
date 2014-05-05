@@ -1,18 +1,18 @@
-// Generated Sun May  4 18:19:18 PDT 2014
+// Generated Mon May  5 11:04:10 PDT 2014
 
-/// <reference path="../../../goog/base.d.ts" />
-/// <reference path="../../../goog/dom/nodetype.d.ts" />
-/// <reference path="../../../goog/debug/error.d.ts" />
-/// <reference path="../../../goog/string/string.d.ts" />
-/// <reference path="../../../goog/asserts/asserts.d.ts" />
-/// <reference path="../../../goog/i18n/bidi.d.ts" />
-/// <reference path="../../../goog/string/typedstring.d.ts" />
-/// <reference path="../../../goog/string/const.d.ts" />
-/// <reference path="../../../goog/html/safeurl.d.ts" />
-/// <reference path="../../../goog/labs/html/attribute_rewriter.d.ts" />
-/// <reference path="../../../goog/object/object.d.ts" />
-/// <reference path="../../../goog/dom/tags.d.ts" />
-/// <reference path="../../../goog/labs/html/scrubber.d.ts" />
+/// <reference path="../../../../closure/goog/base.d.ts" />
+/// <reference path="../../../../closure/goog/dom/nodetype.d.ts" />
+/// <reference path="../../../../closure/goog/debug/error.d.ts" />
+/// <reference path="../../../../closure/goog/string/string.d.ts" />
+/// <reference path="../../../../closure/goog/asserts/asserts.d.ts" />
+/// <reference path="../../../../closure/goog/i18n/bidi.d.ts" />
+/// <reference path="../../../../closure/goog/string/typedstring.d.ts" />
+/// <reference path="../../../../closure/goog/string/const.d.ts" />
+/// <reference path="../../../../closure/goog/html/safeurl.d.ts" />
+/// <reference path="../../../../closure/goog/labs/html/attribute_rewriter.d.ts" />
+/// <reference path="../../../../closure/goog/object/object.d.ts" />
+/// <reference path="../../../../closure/goog/dom/tags.d.ts" />
+/// <reference path="../../../../closure/goog/labs/html/scrubber.d.ts" />
 
 declare module goog.labs.html {
 
