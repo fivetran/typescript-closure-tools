@@ -14,9 +14,9 @@ declare module 'doctrine' {
 
     interface Tag {
         title: string;
-        name?: string;
-        description?: string;
-        type?: AnyType;
+        name: string;
+        description: string;
+        type: AnyType;
     }
 
     interface Type {
@@ -24,28 +24,28 @@ declare module 'doctrine' {
     }
 
     interface UnionType extends Type {
-        elements?: Type[]
+        elements: Type[]
     }
 
     interface NameExpression extends Type {
-        name?: string;
+        name: string;
     }
 
     interface TypeApplication extends Type {
-        expression?: Type;
-        applications?: Type[];
+        expression: Type;
+        applications: Type[];
     }
 
     interface FunctionType extends Type {
-        params?: Type[];
-        result?: Type;
+        params: Type[];
+        result: Type;
     }
 
     interface OptionalType extends Type {
-        expression?: Type;
+        expression: Type;
     }
 
     interface AnyType extends UnionType, NameExpression, TypeApplication, FunctionType, OptionalType { }
 
-    function parse(comment: string, options?: Options): JSDoc;
+    function parse(comment: string, options: Options): JSDoc;
 }
