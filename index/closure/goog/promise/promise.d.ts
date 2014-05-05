@@ -63,7 +63,7 @@ declare module goog {
      * @implements {goog.Thenable.<TYPE>}
      * @template TYPE,RESOLVER_CONTEXT
      */
-    class Promise<TYPE,RESOLVER_CONTEXT> implements goog.Thenable<TYPE> {
+    class Promise<TYPE> implements goog.Thenable<TYPE> {
         /**
          * Promises provide a result that may be resolved asynchronously. A Promise may
          * be resolved by being fulfilled or rejected with a value, which will be known
@@ -113,7 +113,26 @@ declare module goog {
          * @template TYPE,RESOLVER_CONTEXT
          */
         constructor(resolver: (_0: (_0: any /*TYPE|IThenable<TYPE>|Thenable*/) => any /*missing*/, _1: (_0: any) => any /*missing*/) => void, opt_context?: RESOLVER_CONTEXT);
-    
+
+        /**
+         * Adds callbacks that will operate on the result of the Promise, returning a
+         * new child Promise.
+         *
+         * If the Promise is fulfilled, the {@code onFulfilled} callback will be invoked
+         * with the fulfillment value as argument, and the child Promise will be
+         * fulfilled with the return value of the callback. If the callback throws an
+         * exception, the child Promise will be rejected with the thrown value instead.
+         *
+         * If the Promise is rejected, the {@code onRejected} callback will be invoked
+         * with the rejection reason as argument, and the child Promise will be rejected
+         * with the return value (or thrown value) of the callback.
+         *
+         * @override
+         */
+        then<RESULT>(onFulfilled?: (TYPE) => RESULT, onRejected?: (any) => any): goog.Promise<RESULT>;
+
+        then<RESULT>(onFulfilled?: (TYPE) => Thenable<RESULT>, onRejected?: (any) => any): goog.Promise<RESULT>;
+
         /**
          * Adds a callback that will be invoked whether the Promise is fulfilled or
          * rejected. The callback receives no argument, and no new child Promise is
