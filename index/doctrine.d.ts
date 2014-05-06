@@ -3,8 +3,8 @@ declare module 'doctrine' {
         unwrap?: boolean;
         tags?: string[];
         recoverable?: boolean;
-        sloppy: boolean;
-        lineNumbers: boolean;
+        sloppy?: boolean;
+        lineNumbers?: boolean;
     }
 
     interface JSDoc {
