@@ -87,7 +87,7 @@ declare module goog.events.eventTargetTester {
     /**
      * The type of unlisten function's return value.
      */
-    var UnlistenReturnType: any /*missing*/;
+    enum UnlistenReturnType { BOOLEAN, UNDEFINED }
 
     /**
      * Expando property used on "listener" function to determine if a
