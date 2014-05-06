@@ -21,6 +21,8 @@
 /// <reference path="../../../closure/goog/events/event.d.ts" />
 /// <reference path="../../../closure/goog/reflect/reflect.d.ts" />
 /// <reference path="../../../closure/goog/events/browserevent.d.ts" />
+/// <reference path="../../../closure/goog/debug/errorhandler.d.ts" />
+/// <reference path="../../../closure/goog/events/eventhandler.d.ts" />
 
 declare module goog.events {
 
