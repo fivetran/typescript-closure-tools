@@ -157,7 +157,7 @@ declare module goog.editor.plugins {
          * @param {goog.editor.plugins.UndoRedo.CursorPosition_?} cursorPosition
          *     The cursor position within the content.
          */
-        restoreState(state: goog.editor.plugins.UndoRedo.UndoState_, content: string, cursorPosition: goog.editor.plugins.UndoRedo.CursorPosition_): void;
+        restoreState(state: any, content: string, cursorPosition: any): void;
     
         /**
          * Clear the undo/redo stack.

@@ -10,7 +10,7 @@ declare module goog {
      * @extends {IThenable.<TYPE>}
      * @template TYPE
      */
-    interface Thenable<TYPE> extends IThenable<TYPE> {
+    interface Thenable<TYPE> {
     
         /**
          * Adds callbacks that will operate on the result of the Thenable, returning a
@@ -39,7 +39,8 @@ declare module goog {
          *     of the fulfillment or rejection callback.
          * @template RESULT,THIS
          */
-        then<RESULT,THIS>(opt_onFulfilled?: any /*(_0: TYPE) => any (RESULT|IThenable<RESULT>|Thenable)*/, opt_onRejected?: any /*(_0: any) => any*/, opt_context?: THIS): goog.Promise<RESULT>;
+        then<RESULT,THIS>(opt_onFulfilled?: (_0: TYPE) => RESULT, opt_onRejected?: (_0: any) => any, opt_context?: THIS): goog.Promise<RESULT>;
+        then<RESULT,THIS>(opt_onFulfilled?: (_0: TYPE) => Thenable<RESULT>, opt_onRejected?: (_0: any) => any, opt_context?: THIS): goog.Promise<RESULT>;
     }
 }
 

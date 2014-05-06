@@ -44,6 +44,6 @@ declare module goog.events {
      * Singleton instance of ActionEventWrapper_.
      * @type {goog.events.ActionEventWrapper_}
      */
-    var actionEventWrapper: goog.events.ActionEventWrapper_;
+    var actionEventWrapper: any;
 }
 

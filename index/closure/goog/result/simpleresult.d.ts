@@ -123,7 +123,8 @@ declare module goog.result {
          *     of the fulfillment or rejection callback.
          * @template RESULT,THIS
          */
-        then<RESULT,THIS>(opt_onFulfilled?: any /*(_0: TYPE) => any (RESULT|IThenable<RESULT>|Thenable)*/, opt_onRejected?: any /*(_0: any) => any*/, opt_context?: THIS): goog.Promise<RESULT>;
+        then<RESULT,THIS>(opt_onFulfilled?: (_0: any) => RESULT, opt_onRejected?: (_0: any) => any, opt_context?: THIS): goog.Promise<RESULT>;
+        then<RESULT,THIS>(opt_onFulfilled?: (_0: any) => Thenable<RESULT>, opt_onRejected?: (_0: any) => any, opt_context?: THIS): goog.Promise<RESULT>;
     }
 }
 

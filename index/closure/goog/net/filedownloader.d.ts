@@ -255,7 +255,7 @@ declare module goog.net.FileDownloader {
          * @extends {goog.debug.Error}
          * @final
          */
-        constructor(download: goog.net.FileDownloader.Download_, opt_fsErr?: goog.fs.Error);
+        constructor(download: any, opt_fsErr?: goog.fs.Error);
     
         /**
          * The status of the XHR. Only set if the error was caused by an XHR failure.

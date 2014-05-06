@@ -110,7 +110,7 @@ declare module goog {
          * @implements {goog.Thenable.<TYPE>}
          * @template TYPE,RESOLVER_CONTEXT
          */
-        constructor(resolver: (_0: (_0: any /*TYPE|IThenable<TYPE>|Thenable*/) => any /*missing*/, _1: (_0: any) => any /*missing*/) => void, opt_context?: RESOLVER_CONTEXT);
+        constructor(resolver: (_0: (_0: Thenable<TYPE>) => any, _1: (_0: any) => any) => void, opt_context?: RESOLVER_CONTEXT);
     
         /**
          * Adds callbacks that will operate on the result of the Thenable, returning a
@@ -139,7 +139,8 @@ declare module goog {
          *     of the fulfillment or rejection callback.
          * @template RESULT,THIS
          */
-        then<RESULT,THIS>(opt_onFulfilled?: any /*(_0: TYPE) => any (RESULT|IThenable<RESULT>|Thenable)*/, opt_onRejected?: any /*(_0: any) => any*/, opt_context?: THIS): goog.Promise<RESULT>;
+        then<RESULT,THIS>(opt_onFulfilled?: (_0: TYPE) => RESULT, opt_onRejected?: (_0: any) => any, opt_context?: THIS): goog.Promise<RESULT>;
+        then<RESULT,THIS>(opt_onFulfilled?: (_0: TYPE) => Thenable<RESULT>, opt_onRejected?: (_0: any) => any, opt_context?: THIS): goog.Promise<RESULT>;
     
         /**
          * Adds a callback that will be invoked whether the Promise is fulfilled or
@@ -241,7 +242,7 @@ declare module goog.Promise {
      *     with the given value.
      * @template TYPE
      */
-    function resolve<TYPE>(opt_value?: any /*TYPE|goog.Thenable<TYPE>|Thenable*/): goog.Promise<TYPE>;
+    function resolve<TYPE>(opt_value?: goog.Thenable<TYPE>): goog.Promise<TYPE>;
 
     /**
      * @param {*=} opt_reason
@@ -256,7 +257,7 @@ declare module goog.Promise {
      *     first Promise (or Promise-like) input to complete.
      * @template TYPE
      */
-    function race<TYPE>(promises: any /*goog.Thenable<TYPE>|Thenable*/[]): goog.Promise<TYPE>;
+    function race<TYPE>(promises: goog.Thenable<TYPE>[]): goog.Promise<TYPE>;
 
     /**
      * @param {!Array.<!(goog.Thenable.<TYPE>|Thenable)>} promises
@@ -265,7 +266,7 @@ declare module goog.Promise {
      *     successfully fulfilled, or is rejected by the first rejection result.
      * @template TYPE
      */
-    function all<TYPE>(promises: any /*goog.Thenable<TYPE>|Thenable*/[]): goog.Promise<TYPE[]>;
+    function all<TYPE>(promises: goog.Thenable<TYPE>[]): goog.Promise<TYPE[]>;
 
     /**
      * @param {!Array.<!(goog.Thenable.<TYPE>|Thenable)>} promises
@@ -274,7 +275,7 @@ declare module goog.Promise {
      *     reason if all inputs are rejected.
      * @template TYPE
      */
-    function firstFulfilled<TYPE>(promises: any /*goog.Thenable<TYPE>|Thenable*/[]): goog.Promise<TYPE>;
+    function firstFulfilled<TYPE>(promises: goog.Thenable<TYPE>[]): goog.Promise<TYPE>;
 
     /**
      * @return {!goog.promise.Resolver.<TYPE>} Resolver wrapping the promise and its
