@@ -1,5 +1,3 @@
-// Generated Mon May  5 21:14:15 PDT 2014
-
 /// <reference path="../../../closure/goog/base.d.ts" />
 /// <reference path="../../../closure/goog/testing/watchers.d.ts" />
 /// <reference path="../../../closure/goog/dom/nodetype.d.ts" />

@@ -1,5 +1,3 @@
-// Generated Mon May  5 21:10:25 PDT 2014
-
 /// <reference path="../../../closure/goog/base.d.ts" />
 /// <reference path="../../../closure/goog/messaging/messagechannel.d.ts" />
 

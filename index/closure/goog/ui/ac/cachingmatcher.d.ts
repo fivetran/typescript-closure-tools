@@ -1,5 +1,3 @@
-// Generated Mon May  5 21:13:07 PDT 2014
-
 /// <reference path="../../../../closure/goog/base.d.ts" />
 /// <reference path="../../../../closure/goog/ui/ac/renderoptions.d.ts" />
 /// <reference path="../../../../closure/goog/disposable/idisposable.d.ts" />

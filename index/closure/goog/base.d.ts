@@ -1,5 +1,3 @@
-// Generated Mon May  5 21:15:07 PDT 2014
-
 
 declare module goog {
 

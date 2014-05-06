@@ -1,5 +1,3 @@
-// Generated Mon May  5 21:16:41 PDT 2014
-
 /// <reference path="../../../../../../closure/goog/base.d.ts" />
 /// <reference path="../../../../../../closure/goog/string/stringbuffer.d.ts" />
 /// <reference path="../../../../../../third_party/closure/goog/caja/string/html/htmlparser.d.ts" />

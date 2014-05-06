@@ -1,5 +1,3 @@
-// Generated Mon May  5 21:15:47 PDT 2014
-
 /// <reference path="../../../closure/goog/base.d.ts" />
 /// <reference path="../../../closure/goog/math/size.d.ts" />
 /// <reference path="../../../closure/goog/dom/nodetype.d.ts" />

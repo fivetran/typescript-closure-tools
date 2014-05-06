@@ -1,5 +1,3 @@
-// Generated Mon May  5 21:15:40 PDT 2014
-
 /// <reference path="../../../closure/goog/base.d.ts" />
 /// <reference path="../../../closure/goog/testing/objectpropertystring.d.ts" />
 /// <reference path="../../../closure/goog/string/string.d.ts" />

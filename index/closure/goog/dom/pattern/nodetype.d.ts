@@ -1,5 +1,3 @@
-// Generated Mon May  5 21:08:23 PDT 2014
-
 /// <reference path="../../../../closure/goog/base.d.ts" />
 /// <reference path="../../../../closure/goog/dom/pattern/pattern.d.ts" />
 /// <reference path="../../../../closure/goog/dom/pattern/abstractpattern.d.ts" />
