@@ -31,6 +31,6 @@ declare module goog.debug {
      * Singleton trace object
      * @type {goog.debug.Trace_}
      */
-    var Trace: goog.debug.Trace_;
+    var Trace: {};
 }
 
