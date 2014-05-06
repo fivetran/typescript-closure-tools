@@ -61,7 +61,7 @@ declare module goog {
      * @implements {goog.Thenable.<TYPE>}
      * @template TYPE,RESOLVER_CONTEXT
      */
-    class Promise<TYPE,RESOLVER_CONTEXT> implements goog.Thenable<TYPE> {
+    class Promise<TYPE> implements goog.Thenable<TYPE> {
         /**
          * Promises provide a result that may be resolved asynchronously. A Promise may
          * be resolved by being fulfilled or rejected with a value, which will be known
@@ -110,7 +110,7 @@ declare module goog {
          * @implements {goog.Thenable.<TYPE>}
          * @template TYPE,RESOLVER_CONTEXT
          */
-        constructor(resolver: (_0: (_0: Thenable<TYPE>) => any, _1: (_0: any) => any) => void, opt_context?: RESOLVER_CONTEXT);
+        constructor(resolver: (_0: (_0: Thenable<TYPE>) => any, _1: (_0: any) => any) => void, opt_context?: any);
     
         /**
          * Adds callbacks that will operate on the result of the Thenable, returning a
@@ -178,7 +178,7 @@ declare module goog {
          *     callback.
          * @template THIS
          */
-        thenCatch<THIS>(onRejected: (_0: any) => any, opt_context?: THIS): goog.Promise<any, any>;
+        thenCatch<THIS>(onRejected: (_0: any) => any, opt_context?: THIS): goog.Promise<any>;
     
         /**
          * Cancels the Promise if it is still pending by rejecting it with a cancel
@@ -231,7 +231,7 @@ declare module goog.Promise {
      * @private
      */
     interface CallbackEntry_ {
-        child: goog.Promise<any, any>;
+        child: goog.Promise<any>;
         onFulfilled: (_0: any) => any /*missing*/;
         onRejected: (_0: any) => any /*missing*/
     }
@@ -249,7 +249,7 @@ declare module goog.Promise {
      * @return {!goog.Promise} A new Promise that is immediately rejected with the
      *     given reason.
      */
-    function reject(opt_reason?: any): goog.Promise<any, any>;
+    function reject(opt_reason?: any): goog.Promise<any>;
 
     /**
      * @param {!Array.<!(goog.Thenable.<TYPE>|Thenable)>} promises
