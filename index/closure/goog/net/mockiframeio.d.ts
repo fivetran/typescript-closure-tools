@@ -1,4 +1,4 @@
-// Generated Mon May  5 16:20:56 PDT 2014
+// Generated Mon May  5 19:21:37 PDT 2014
 
 /// <reference path="../../../closure/goog/base.d.ts" />
 /// <reference path="../../../closure/goog/json/json.d.ts" />
@@ -84,7 +84,7 @@ declare module goog.net {
          *     caching.
          * @param {Object|goog.structs.Map=} opt_data Map of key-value pairs.
          */
-        send(uri: any /*goog.Uri|string*/, opt_method?: string, opt_noCache?: boolean, opt_data?: any /*Object|goog.structs.Map*/): void;
+        send(uri: any /*goog.Uri|string*/, opt_method?: string, opt_noCache?: boolean, opt_data?: any /*Object|goog.structs.Map<any>*/): void;
     
         /**
          * Simulates the iframe send from a form.

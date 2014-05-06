@@ -1,4 +1,4 @@
-// Generated Mon May  5 16:22:43 PDT 2014
+// Generated Mon May  5 19:23:25 PDT 2014
 
 /// <reference path="../../../closure/goog/base.d.ts" />
 /// <reference path="../../../closure/goog/dom/nodetype.d.ts" />
@@ -252,7 +252,7 @@ declare module goog.ui {
          * @return {goog.structs.Set} Elements this widget is attached to.
          * @protected
          */
-        getElements(): goog.structs.Set;
+        getElements(): goog.structs.Set<any>;
     
         /**
          * @return {Element} Active element reference.

@@ -1,4 +1,4 @@
-// Generated Mon May  5 16:21:01 PDT 2014
+// Generated Mon May  5 19:21:43 PDT 2014
 
 /// <reference path="../../../closure/goog/base.d.ts" />
 /// <reference path="../../../closure/goog/dom/nodetype.d.ts" />
@@ -113,7 +113,7 @@ declare module goog.net.jsloader {
      *     The error callback will be called with a single goog.net.jsloader.Error
      *     parameter.
      */
-    function load(uri: string, opt_options?: goog.net.jsloader.Options): goog.async.Deferred;
+    function load(uri: string, opt_options?: goog.net.jsloader.Options): goog.async.Deferred<any>;
 
     /**
      * Loads a JavaScript file and verifies it was evaluated successfully, using a
@@ -135,7 +135,7 @@ declare module goog.net.jsloader {
      *     The error callback will be called with a single goog.net.jsloader.Error
      *     parameter.
      */
-    function loadAndVerify(uri: string, verificationObjName: string, options: goog.net.jsloader.Options): goog.async.Deferred;
+    function loadAndVerify(uri: string, verificationObjName: string, options: goog.net.jsloader.Options): goog.async.Deferred<any>;
 
     /**
      * Cancels a given request.

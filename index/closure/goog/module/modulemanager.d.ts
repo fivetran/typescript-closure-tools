@@ -1,4 +1,4 @@
-// Generated Mon May  5 16:33:09 PDT 2014
+// Generated Mon May  5 19:33:59 PDT 2014
 
 /// <reference path="../../../closure/goog/base.d.ts" />
 /// <reference path="../../../closure/goog/dom/nodetype.d.ts" />
@@ -153,7 +153,7 @@ declare module goog.module {
          *     will be loaded asynchronously regardless of the value of this parameter.
          * @return {!goog.async.Deferred} A deferred object.
          */
-        preloadModule(id: string, opt_timeout?: number): goog.async.Deferred;
+        preloadModule(id: string, opt_timeout?: number): goog.async.Deferred<any>;
     
         /**
          * Prefetches a JavaScript module and its dependencies, which means that the
@@ -210,7 +210,7 @@ declare module goog.module {
          * @param {boolean=} opt_userInitiated If the load is a result of a user action.
          * @return {goog.async.Deferred} A deferred object.
          */
-        load(moduleId: string, opt_userInitiated?: boolean): goog.async.Deferred;
+        load(moduleId: string, opt_userInitiated?: boolean): goog.async.Deferred<any>;
     
         /**
          * Loads a list of modules, returning a goog.async.Deferred for keeping track of

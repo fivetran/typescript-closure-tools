@@ -1,4 +1,4 @@
-// Generated Mon May  5 16:32:38 PDT 2014
+// Generated Mon May  5 19:33:28 PDT 2014
 
 /// <reference path="../../../closure/goog/base.d.ts" />
 /// <reference path="../../../closure/goog/dom/nodetype.d.ts" />
@@ -100,7 +100,7 @@ declare module goog.db {
          *     transaction is complete. It fires the errback chain if an error occurs
          *     in the transaction, or if it is aborted.
          */
-        wait(): goog.async.Deferred;
+        wait(): goog.async.Deferred<any>;
     
         /**
          * Aborts this transaction. No pending operations will be applied to the

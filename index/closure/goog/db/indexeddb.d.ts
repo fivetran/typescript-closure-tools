@@ -1,4 +1,4 @@
-// Generated Mon May  5 16:32:39 PDT 2014
+// Generated Mon May  5 19:33:29 PDT 2014
 
 /// <reference path="../../../closure/goog/base.d.ts" />
 /// <reference path="../../../closure/goog/dom/nodetype.d.ts" />
@@ -144,7 +144,7 @@ declare module goog.db {
          * @return {!goog.async.Deferred} The deferred transaction for changing the
          *     version.
          */
-        setVersion(version: string): goog.async.Deferred;
+        setVersion(version: string): goog.async.Deferred<any>;
     
         /**
          * Creates a new transaction.

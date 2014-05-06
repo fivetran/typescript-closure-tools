@@ -1,4 +1,4 @@
-// Generated Mon May  5 16:27:16 PDT 2014
+// Generated Mon May  5 19:28:04 PDT 2014
 
 /// <reference path="../../../closure/goog/base.d.ts" />
 /// <reference path="../../../closure/goog/dom/nodetype.d.ts" />
@@ -188,7 +188,7 @@ declare module goog.events {
      *     Default is all types.
      * @return {number} Number of listeners removed.
      */
-    function removeAll(opt_obj?: Object, opt_type?: any /*string|goog.events.EventId*/): number;
+    function removeAll(opt_obj?: Object, opt_type?: any /*string|goog.events.EventId<any>*/): number;
 
     /**
      * Removes all native listeners registered via goog.events. Native
@@ -209,7 +209,7 @@ declare module goog.events {
      * @param {boolean} capture Capture phase?.
      * @return {Array.<goog.events.Listener>} Array of listener objects.
      */
-    function getListeners(obj: Object, type: any /*string|goog.events.EventId*/, capture: boolean): goog.events.Listener[];
+    function getListeners(obj: Object, type: any /*string|goog.events.EventId<any>*/, capture: boolean): goog.events.Listener[];
 
     /**
      * Gets the goog.events.Listener for the event or null if no such listener is
@@ -242,7 +242,7 @@ declare module goog.events {
      * @return {boolean} Whether an event target has one or more listeners matching
      *     the requested type and/or capture phase.
      */
-    function hasListener(obj: any /*EventTarget|goog.events.Listenable*/, opt_type?: any /*string|goog.events.EventId*/, opt_capture?: boolean): boolean;
+    function hasListener(obj: any /*EventTarget|goog.events.Listenable*/, opt_type?: any /*string|goog.events.EventId<any>*/, opt_capture?: boolean): boolean;
 
     /**
      * Provides a nice string showing the normalized event objects public members
@@ -260,7 +260,7 @@ declare module goog.events {
      * @param {Object} eventObject Event object to be passed to listener.
      * @return {boolean} True if all listeners returned true else false.
      */
-    function fireListeners(obj: Object, type: any /*string|goog.events.EventId*/, capture: boolean, eventObject: Object): boolean;
+    function fireListeners(obj: Object, type: any /*string|goog.events.EventId<any>*/, capture: boolean, eventObject: Object): boolean;
 
     /**
      * Fires a listener with a set of arguments

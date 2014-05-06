@@ -1,4 +1,4 @@
-// Generated Mon May  5 16:20:40 PDT 2014
+// Generated Mon May  5 19:21:21 PDT 2014
 
 /// <reference path="../../../closure/goog/base.d.ts" />
 /// <reference path="../../../closure/goog/string/string.d.ts" />
@@ -502,7 +502,7 @@ declare module goog.Uri {
          * @param {...(goog.Uri.QueryData|goog.structs.Map|Object)} var_args The object
          *     from which key value pairs will be copied.
          */
-        extend(...var_args: any /*goog.Uri.QueryData|goog.structs.Map|Object*/[]): void;
+        extend(...var_args: any /*goog.Uri.QueryData|goog.structs.Map<any>|Object*/[]): void;
     }
 
     /**
@@ -598,7 +598,7 @@ declare module goog.Uri.QueryData {
      *     name in #get.
      * @return {!goog.Uri.QueryData} The populated query data instance.
      */
-    function createFromMap(map: any /*goog.structs.Map|Object*/, opt_uri?: goog.Uri, opt_ignoreCase?: boolean): goog.Uri.QueryData;
+    function createFromMap(map: any /*goog.structs.Map<any>|Object*/, opt_uri?: goog.Uri, opt_ignoreCase?: boolean): goog.Uri.QueryData;
 
     /**
      * Creates a new query data instance from parallel arrays of parameter names

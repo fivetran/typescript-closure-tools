@@ -1,4 +1,4 @@
-// Generated Mon May  5 16:21:38 PDT 2014
+// Generated Mon May  5 19:22:20 PDT 2014
 
 /// <reference path="../../../closure/goog/base.d.ts" />
 /// <reference path="../../../closure/goog/string/string.d.ts" />
@@ -83,7 +83,7 @@ declare module goog.net {
          *     caching.
          * @param {Object|goog.structs.Map=} opt_data Map of key-value pairs.
          */
-        send(uri: any /*goog.Uri|string*/, opt_method?: string, opt_noCache?: boolean, opt_data?: any /*Object|goog.structs.Map*/): void;
+        send(uri: any /*goog.Uri|string*/, opt_method?: string, opt_noCache?: boolean, opt_data?: any /*Object|goog.structs.Map<any>*/): void;
     
         /**
          * Sends the data stored in an existing form to the server. The HTTP method
@@ -293,7 +293,7 @@ declare module goog.net.IframeIo {
      * @param {Object|goog.structs.Map=} opt_data Map of key-value pairs that
      *     will be posted to the server via the iframe's form.
      */
-    function send(uri: any /*goog.Uri|string*/, opt_callback?: Function, opt_method?: string, opt_noCache?: boolean, opt_data?: any /*Object|goog.structs.Map*/): void;
+    function send(uri: any /*goog.Uri|string*/, opt_callback?: Function, opt_method?: string, opt_noCache?: boolean, opt_data?: any /*Object|goog.structs.Map<any>*/): void;
 
     /**
      * Find an iframe by name (assumes the context is goog.global since that is

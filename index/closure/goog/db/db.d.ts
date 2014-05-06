@@ -1,4 +1,4 @@
-// Generated Mon May  5 16:32:37 PDT 2014
+// Generated Mon May  5 19:33:27 PDT 2014
 
 /// <reference path="../../../closure/goog/base.d.ts" />
 /// <reference path="../../../closure/goog/dom/nodetype.d.ts" />
@@ -107,7 +107,7 @@ declare module goog.db {
      *     connections to the database.
      * @return {!goog.async.Deferred} The deferred database object.
      */
-    function openDatabase(name: string, opt_version?: number, opt_onUpgradeNeeded?: goog.db.UpgradeNeededCallback, opt_onBlocked?: goog.db.BlockedCallback): goog.async.Deferred;
+    function openDatabase(name: string, opt_version?: number, opt_onUpgradeNeeded?: goog.db.UpgradeNeededCallback, opt_onBlocked?: goog.db.BlockedCallback): goog.async.Deferred<any>;
 
     /**
      * Deletes a database once all open connections have been closed.
@@ -118,6 +118,6 @@ declare module goog.db {
      * @return {!goog.async.Deferred} A deferred object that will fire once the
      *     database is deleted.
      */
-    function deleteDatabase(name: string, opt_onBlocked?: goog.db.BlockedCallback): goog.async.Deferred;
+    function deleteDatabase(name: string, opt_onBlocked?: goog.db.BlockedCallback): goog.async.Deferred<any>;
 }
 

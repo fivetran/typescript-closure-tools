@@ -1,4 +1,4 @@
-// Generated Mon May  5 16:29:13 PDT 2014
+// Generated Mon May  5 19:30:01 PDT 2014
 
 /// <reference path="../../../closure/goog/base.d.ts" />
 /// <reference path="../../../closure/goog/string/string.d.ts" />
@@ -107,7 +107,7 @@ declare module goog.debug {
          * @param {Object|goog.structs.Map} loggingHeaders Extra headers to send
          *     to the logging URL.
          */
-        setLoggingHeaders(loggingHeaders: any /*Object|goog.structs.Map*/): void;
+        setLoggingHeaders(loggingHeaders: any /*Object|goog.structs.Map<any>*/): void;
     
         /**
          * Set the function used to send error reports to the server.
@@ -117,7 +117,7 @@ declare module goog.debug {
          *     HTTP method request content, and (optionally) request headers to be
          *     added.
          */
-        setXhrSender(xhrSender: (_0: string, _1: string, _2: string, _3: any /*Object|goog.structs.Map*/) => any /*missing*/): void;
+        setXhrSender(xhrSender: (_0: string, _1: string, _2: string, _3: any /*Object|goog.structs.Map<any>*/) => any /*missing*/): void;
     
         /**
          * Handler for caught exceptions. Sends report to the LoggingServlet and
@@ -212,7 +212,7 @@ declare module goog.debug.ErrorReporter {
      * @param {Object|goog.structs.Map=} opt_headers Map of headers to add to the
      *     request.
      */
-    function defaultXhrSender(uri: string, method: string, content: string, opt_headers?: any /*Object|goog.structs.Map*/): void;
+    function defaultXhrSender(uri: string, method: string, content: string, opt_headers?: any /*Object|goog.structs.Map<any>*/): void;
 }
 
 declare module goog.debug.ErrorReporter.ExceptionEvent {

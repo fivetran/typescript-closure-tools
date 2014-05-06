@@ -1,4 +1,4 @@
-// Generated Mon May  5 16:33:13 PDT 2014
+// Generated Mon May  5 19:34:03 PDT 2014
 
 /// <reference path="../../../../../closure/goog/base.d.ts" />
 /// <reference path="../../../../../closure/goog/promise/resolver.d.ts" />
@@ -154,7 +154,7 @@ declare module goog.async {
          * @return {!goog.async.Deferred} This Deferred.
          * @template T
          */
-        addCallback<T>(cb: (_0: VALUE) => any, opt_scope?: T): goog.async.Deferred;
+        addCallback<T>(cb: (_0: VALUE) => any, opt_scope?: T): goog.async.Deferred<any>;
     
         /**
          * Register a callback function to be called with an error result. If no value
@@ -185,7 +185,7 @@ declare module goog.async {
          * @return {!goog.async.Deferred} This Deferred.
          * @template T
          */
-        addBoth<T>(f: (_0: any) => any, opt_scope?: T): goog.async.Deferred;
+        addBoth<T>(f: (_0: any) => any, opt_scope?: T): goog.async.Deferred<any>;
     
         /**
          * Registers a callback function and an errback function at the same position
@@ -203,7 +203,7 @@ declare module goog.async {
          * @return {!goog.async.Deferred} This Deferred.
          * @template T
          */
-        addCallbacks<T>(cb: any /*any ((_0: VALUE) => any)|any (null)*/, eb: any /*any ((_0: any) => any)|any (null)*/, opt_scope?: T): goog.async.Deferred;
+        addCallbacks<T>(cb: any /*any ((_0: VALUE) => any)|any (null)*/, eb: any /*any ((_0: any) => any)|any (null)*/, opt_scope?: T): goog.async.Deferred<any>;
     
         /**
          * Adds callbacks that will operate on the result of the Thenable, returning a
@@ -242,7 +242,7 @@ declare module goog.async {
          * @param {!goog.async.Deferred} otherDeferred The Deferred to chain.
          * @return {!goog.async.Deferred} This Deferred.
          */
-        chainDeferred(otherDeferred: goog.async.Deferred): goog.async.Deferred;
+        chainDeferred(otherDeferred: goog.async.Deferred<any>): goog.async.Deferred<any>;
     
         /**
          * Makes this Deferred wait for another Deferred's execution sequence to
@@ -255,7 +255,7 @@ declare module goog.async {
          * @param {!goog.async.Deferred} otherDeferred The Deferred to wait for.
          * @return {!goog.async.Deferred} This Deferred.
          */
-        awaitDeferred(otherDeferred: goog.async.Deferred): goog.async.Deferred;
+        awaitDeferred(otherDeferred: goog.async.Deferred<any>): goog.async.Deferred<any>;
     
         /**
          * Creates a branch off this Deferred's execution sequence, and returns it as a
@@ -308,7 +308,7 @@ declare module goog.async.Deferred {
          * @constructor
          * @extends {goog.debug.Error}
          */
-        constructor(deferred: goog.async.Deferred);
+        constructor(deferred: goog.async.Deferred<any>);
     }
 
     /**
@@ -326,7 +326,7 @@ declare module goog.async.Deferred {
          * @constructor
          * @extends {goog.debug.Error}
          */
-        constructor(deferred: goog.async.Deferred);
+        constructor(deferred: goog.async.Deferred<any>);
     }
 
     /**
@@ -335,7 +335,7 @@ declare module goog.async.Deferred {
      * @param {*=} opt_result The result.
      * @return {!goog.async.Deferred} The new Deferred.
      */
-    function succeed(opt_result?: any): goog.async.Deferred;
+    function succeed(opt_result?: any): goog.async.Deferred<any>;
 
     /**
      * Creates a Deferred that fires when the given promise resolves.
@@ -353,14 +353,14 @@ declare module goog.async.Deferred {
      * @param {*} res The error result.
      * @return {!goog.async.Deferred} The new Deferred.
      */
-    function fail(res: any): goog.async.Deferred;
+    function fail(res: any): goog.async.Deferred<any>;
 
     /**
      * Creates a Deferred that has already been canceled.
      *
      * @return {!goog.async.Deferred} The new Deferred.
      */
-    function canceled(): goog.async.Deferred;
+    function canceled(): goog.async.Deferred<any>;
 
     /**
      * Normalizes values that may or may not be Deferreds.
@@ -394,7 +394,7 @@ declare module goog.async.Deferred {
      *     callback with the input value.
      * @template T
      */
-    function when<T>(value: any, callback: (_0: any) => any, opt_scope?: T): goog.async.Deferred;
+    function when<T>(value: any, callback: (_0: any) => any, opt_scope?: T): goog.async.Deferred<any>;
 
     /**
      * Map of unhandled errors scheduled to be rethrown in a future timestep.

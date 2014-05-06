@@ -1,4 +1,4 @@
-// Generated Mon May  5 16:31:34 PDT 2014
+// Generated Mon May  5 19:32:24 PDT 2014
 
 /// <reference path="../../../closure/goog/base.d.ts" />
 /// <reference path="../../../closure/goog/promise/thenable.d.ts" />
@@ -30,7 +30,7 @@ declare module goog.result {
      * @final
      * @deprecated Use {@link goog.Promise} instead - http://go/promisemigration
      */
-    class DeferredAdaptor extends goog.async.Deferred {
+    class DeferredAdaptor extends goog.async.Deferred<any> {
         /**
          * An adaptor from Result to a Deferred, for use with existing Deferred chains.
          *

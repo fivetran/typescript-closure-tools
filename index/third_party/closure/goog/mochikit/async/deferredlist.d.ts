@@ -1,4 +1,4 @@
-// Generated Mon May  5 16:33:14 PDT 2014
+// Generated Mon May  5 19:34:04 PDT 2014
 
 /// <reference path="../../../../../closure/goog/base.d.ts" />
 /// <reference path="../../../../../closure/goog/promise/resolver.d.ts" />
@@ -58,7 +58,7 @@ declare module goog.async {
      * @constructor
      * @extends {goog.async.Deferred}
      */
-    class DeferredList extends goog.async.Deferred {
+    class DeferredList extends goog.async.Deferred<any> {
         /**
          * Constructs an object that waits on the results of multiple asynchronous
          * operations and marshals the results. It is itself a <code>Deferred</code>,
@@ -101,7 +101,7 @@ declare module goog.async {
          * @constructor
          * @extends {goog.async.Deferred}
          */
-        constructor(list: goog.async.Deferred[], opt_fireOnOneCallback?: boolean, opt_fireOnOneErrback?: boolean, opt_consumeErrors?: boolean, opt_canceler?: Function, opt_defaultScope?: Object);
+        constructor(list: goog.async.Deferred<any>[], opt_fireOnOneCallback?: boolean, opt_fireOnOneErrback?: boolean, opt_consumeErrors?: boolean, opt_canceler?: Function, opt_defaultScope?: Object);
     }
 }
 
@@ -119,6 +119,6 @@ declare module goog.async.DeferredList {
      * @return {!goog.async.Deferred} The deferred list of results from the inputs
      *     if they all succeed, or the error result of the first input to fail.
      */
-    function gatherResults(list: goog.async.Deferred[]): goog.async.Deferred;
+    function gatherResults(list: goog.async.Deferred<any>[]): goog.async.Deferred<any>;
 }
 

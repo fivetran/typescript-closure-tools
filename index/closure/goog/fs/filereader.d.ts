@@ -1,4 +1,4 @@
-// Generated Mon May  5 16:28:54 PDT 2014
+// Generated Mon May  5 19:29:42 PDT 2014
 
 /// <reference path="../../../closure/goog/base.d.ts" />
 /// <reference path="../../../closure/goog/events/eventid.d.ts" />
@@ -125,7 +125,7 @@ declare module goog.fs.FileReader {
      * @return {!goog.async.Deferred} The deferred Blob contents as a binary string.
      *     If an error occurs, the errback is called with a {@link goog.fs.Error}.
      */
-    function readAsBinaryString(blob: Blob): goog.async.Deferred;
+    function readAsBinaryString(blob: Blob): goog.async.Deferred<any>;
 
     /**
      * Reads a blob as an array buffer.
@@ -133,7 +133,7 @@ declare module goog.fs.FileReader {
      * @return {!goog.async.Deferred} The deferred Blob contents as an array buffer.
      *     If an error occurs, the errback is called with a {@link goog.fs.Error}.
      */
-    function readAsArrayBuffer(blob: Blob): goog.async.Deferred;
+    function readAsArrayBuffer(blob: Blob): goog.async.Deferred<any>;
 
     /**
      * Reads a blob as text.
@@ -142,7 +142,7 @@ declare module goog.fs.FileReader {
      * @return {!goog.async.Deferred} The deferred Blob contents as text.
      *     If an error occurs, the errback is called with a {@link goog.fs.Error}.
      */
-    function readAsText(blob: Blob, opt_encoding?: string): goog.async.Deferred;
+    function readAsText(blob: Blob, opt_encoding?: string): goog.async.Deferred<any>;
 
     /**
      * Reads a blob as a data URL.
@@ -150,6 +150,6 @@ declare module goog.fs.FileReader {
      * @return {!goog.async.Deferred} The deferred Blob contents as a data URL.
      *     If an error occurs, the errback is called with a {@link goog.fs.Error}.
      */
-    function readAsDataUrl(blob: Blob): goog.async.Deferred;
+    function readAsDataUrl(blob: Blob): goog.async.Deferred<any>;
 }
 

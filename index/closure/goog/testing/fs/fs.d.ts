@@ -1,4 +1,4 @@
-// Generated Mon May  5 16:31:08 PDT 2014
+// Generated Mon May  5 19:31:58 PDT 2014
 
 /// <reference path="../../../../closure/goog/base.d.ts" />
 /// <reference path="../../../../closure/goog/dom/nodetype.d.ts" />
@@ -62,7 +62,7 @@ declare module goog.testing.fs {
      * @return {!goog.async.Deferred} The deferred
      *     {@link goog.testing.fs.FileSystem}.
      */
-    function getTemporary(size: number): goog.async.Deferred;
+    function getTemporary(size: number): goog.async.Deferred<any>;
 
     /**
      * Get a filesystem object. Since these are mocks, there's no difference between
@@ -72,7 +72,7 @@ declare module goog.testing.fs {
      * @return {!goog.async.Deferred} The deferred
      *     {@link goog.testing.fs.FileSystem}.
      */
-    function getPersistent(size: number): goog.async.Deferred;
+    function getPersistent(size: number): goog.async.Deferred<any>;
 
     /**
      * Create a fake object URL for a given fake blob. This can be used as a real
@@ -114,7 +114,7 @@ declare module goog.testing.fs {
      * @param {string=} opt_encoding Ignored.
      * @return {!goog.async.Deferred} The deferred string value of the blob.
      */
-    function blobToString(blob: goog.testing.fs.Blob, opt_encoding?: string): goog.async.Deferred;
+    function blobToString(blob: goog.testing.fs.Blob, opt_encoding?: string): goog.async.Deferred<any>;
 
     /**
      * Installs goog.testing.fs in place of the standard goog.fs. After calling

@@ -1,4 +1,4 @@
-// Generated Mon May  5 16:31:30 PDT 2014
+// Generated Mon May  5 19:32:20 PDT 2014
 
 /// <reference path="../../../closure/goog/base.d.ts" />
 /// <reference path="../../../closure/goog/promise/thenable.d.ts" />
@@ -14,7 +14,7 @@ declare module goog.result {
      * @extends {goog.Thenable}
      * @deprecated Use {@link goog.Promise} instead - http://go/promisemigration
      */
-    interface Result extends goog.Thenable {
+    interface Result extends goog.Thenable<any> {
     
         /**
          * Attaches handlers to be called when the value of this Result is available.

@@ -1,4 +1,4 @@
-// Generated Mon May  5 16:30:29 PDT 2014
+// Generated Mon May  5 19:31:18 PDT 2014
 
 /// <reference path="../../../closure/goog/base.d.ts" />
 /// <reference path="../../../closure/goog/testing/stacktrace.d.ts" />
@@ -59,7 +59,7 @@ declare module goog.testing {
          *     callback to.
          * @see goog.testing.AsyncTestCase#waitForAsync
          */
-        addWaitForAsync(msg: string, d: goog.async.Deferred): void;
+        addWaitForAsync(msg: string, d: goog.async.Deferred<any>): void;
     
         /**
          * Wires up given Deferred object to the test case, then starts the
@@ -68,7 +68,7 @@ declare module goog.testing {
          *     deferred object to wait for.
          * @param {goog.async.Deferred=} opt_b The deferred object to wait for.
          */
-        waitForDeferred(a: any /*string|goog.async.Deferred*/, opt_b?: goog.async.Deferred): void;
+        waitForDeferred(a: any /*string|goog.async.Deferred<any>*/, opt_b?: goog.async.Deferred<any>): void;
     }
 }
 

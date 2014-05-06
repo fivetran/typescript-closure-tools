@@ -1,4 +1,4 @@
-// Generated Mon May  5 16:27:23 PDT 2014
+// Generated Mon May  5 19:28:10 PDT 2014
 
 /// <reference path="../../../closure/goog/base.d.ts" />
 /// <reference path="../../../closure/goog/events/eventid.d.ts" />
@@ -57,7 +57,7 @@ declare module goog.events {
          *     listener.
          * @return {goog.events.ListenableKey} Unique key for the listener.
          */
-        add(type: any /*string|goog.events.EventId*/, listener: Function, callOnce: boolean, opt_useCapture?: boolean, opt_listenerScope?: Object): goog.events.ListenableKey;
+        add(type: any /*string|goog.events.EventId<any>*/, listener: Function, callOnce: boolean, opt_useCapture?: boolean, opt_listenerScope?: Object): goog.events.ListenableKey;
     
         /**
          * Removes a matching listener.
@@ -68,7 +68,7 @@ declare module goog.events {
          *     listener.
          * @return {boolean} Whether any listener was removed.
          */
-        remove(type: any /*string|goog.events.EventId*/, listener: Function, opt_useCapture?: boolean, opt_listenerScope?: Object): boolean;
+        remove(type: any /*string|goog.events.EventId<any>*/, listener: Function, opt_useCapture?: boolean, opt_listenerScope?: Object): boolean;
     
         /**
          * Removes the given listener object.
@@ -83,7 +83,7 @@ declare module goog.events {
          * @param {string|!goog.events.EventId=} opt_type Type of event to remove.
          * @return {number} Number of listeners removed.
          */
-        removeAll(opt_type?: any /*string|goog.events.EventId*/): number;
+        removeAll(opt_type?: any /*string|goog.events.EventId<any>*/): number;
     
         /**
          * Gets all listeners that match the given type and capture mode. The
@@ -94,7 +94,7 @@ declare module goog.events {
          * @return {!Array.<goog.events.ListenableKey>} An array of matching
          *     listeners.
          */
-        getListeners(type: any /*string|goog.events.EventId*/, capture: boolean): goog.events.ListenableKey[];
+        getListeners(type: any /*string|goog.events.EventId<any>*/, capture: boolean): goog.events.ListenableKey[];
     
         /**
          * Gets the goog.events.ListenableKey for the event or null if no such
@@ -108,7 +108,7 @@ declare module goog.events {
          *     listener.
          * @return {goog.events.ListenableKey} the found listener or null if not found.
          */
-        getListener(type: any /*string|goog.events.EventId*/, listener: Function, capture: boolean, opt_listenerScope?: Object): goog.events.ListenableKey;
+        getListener(type: any /*string|goog.events.EventId<any>*/, listener: Function, capture: boolean, opt_listenerScope?: Object): goog.events.ListenableKey;
     
         /**
          * Whether there is a matching listener. If either the type or capture
@@ -120,7 +120,7 @@ declare module goog.events {
          * @return {boolean} Whether there is an active listener matching
          *     the requested type and/or capture phase.
          */
-        hasListener(opt_type?: any /*string|goog.events.EventId*/, opt_capture?: boolean): boolean;
+        hasListener(opt_type?: any /*string|goog.events.EventId<any>*/, opt_capture?: boolean): boolean;
     }
 }
 

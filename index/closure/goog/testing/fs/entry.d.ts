@@ -1,4 +1,4 @@
-// Generated Mon May  5 16:31:13 PDT 2014
+// Generated Mon May  5 19:32:03 PDT 2014
 
 /// <reference path="../../../../closure/goog/base.d.ts" />
 /// <reference path="../../../../closure/goog/dom/nodetype.d.ts" />
@@ -108,7 +108,7 @@ declare module goog.testing.fs {
          * @return {!goog.async.Deferred} The deferred Date for this entry. If an error
          *     occurs, the errback is called with a {@link goog.fs.Error}.
          */
-        getLastModified(): goog.async.Deferred;
+        getLastModified(): goog.async.Deferred<any>;
     
         /**
          * Retrieves the metadata for this entry.
@@ -116,7 +116,7 @@ declare module goog.testing.fs {
          * @return {!goog.async.Deferred} The deferred Metadata for this entry. If an
          *     error occurs, the errback is called with a {@link goog.fs.Error}.
          */
-        getMetadata(): goog.async.Deferred;
+        getMetadata(): goog.async.Deferred<any>;
     
         /**
          * Move this entry to a new location.
@@ -128,7 +128,7 @@ declare module goog.testing.fs {
          *     {@link goog.fs.DirectoryEntry} for the new entry. If an error occurs, the
          *     errback is called with a {@link goog.fs.Error}.
          */
-        moveTo(parent: goog.fs.DirectoryEntry, opt_newName?: string): goog.async.Deferred;
+        moveTo(parent: goog.fs.DirectoryEntry, opt_newName?: string): goog.async.Deferred<any>;
     
         /**
          * Copy this entry to a new location.
@@ -140,7 +140,7 @@ declare module goog.testing.fs {
          *     {@link goog.fs.DirectoryEntry} for the new entry. If an error occurs, the
          *     errback is called with a {@link goog.fs.Error}.
          */
-        copyTo(parent: goog.fs.DirectoryEntry, opt_newName?: string): goog.async.Deferred;
+        copyTo(parent: goog.fs.DirectoryEntry, opt_newName?: string): goog.async.Deferred<any>;
     
         /**
          * @return {!goog.testing.fs.Entry} A shallow copy of this entry object.
@@ -180,7 +180,7 @@ declare module goog.testing.fs {
          *     the callback is called with true. If an error occurs, the errback is
          *     called a {@link goog.fs.Error}.
          */
-        remove(): goog.async.Deferred;
+        remove(): goog.async.Deferred<any>;
     
         /**
          * Gets the parent directory.
@@ -188,7 +188,7 @@ declare module goog.testing.fs {
          * @return {!goog.async.Deferred} The deferred {@link goog.fs.DirectoryEntry}.
          *     If an error occurs, the errback is called with a {@link goog.fs.Error}.
          */
-        getParent(): goog.async.Deferred;
+        getParent(): goog.async.Deferred<any>;
     
         /**
          * Return a deferred that will call its errback if this entry has been deleted.
@@ -201,7 +201,7 @@ declare module goog.testing.fs {
          *     timeout of 0.
          * @protected
          */
-        checkNotDeleted(action: string): goog.async.Deferred;
+        checkNotDeleted(action: string): goog.async.Deferred<any>;
     }
 
     /**
@@ -253,7 +253,7 @@ declare module goog.testing.fs {
          * @return {!goog.async.Deferred} The deferred Date for this entry. If an error
          *     occurs, the errback is called with a {@link goog.fs.Error}.
          */
-        getLastModified(): goog.async.Deferred;
+        getLastModified(): goog.async.Deferred<any>;
     
         /**
          * Retrieves the metadata for this entry.
@@ -261,7 +261,7 @@ declare module goog.testing.fs {
          * @return {!goog.async.Deferred} The deferred Metadata for this entry. If an
          *     error occurs, the errback is called with a {@link goog.fs.Error}.
          */
-        getMetadata(): goog.async.Deferred;
+        getMetadata(): goog.async.Deferred<any>;
     
         /**
          * Remove this entry.
@@ -270,7 +270,7 @@ declare module goog.testing.fs {
          *     the callback is called with true. If an error occurs, the errback is
          *     called a {@link goog.fs.Error}.
          */
-        remove(): goog.async.Deferred;
+        remove(): goog.async.Deferred<any>;
     
         /**
          * Get a file in the directory.
@@ -281,7 +281,7 @@ declare module goog.testing.fs {
          * @return {!goog.async.Deferred} The deferred {@link goog.fs.FileEntry}. If an
          *     error occurs, the errback is called with a {@link goog.fs.Error}.
          */
-        getFile(path: string, opt_behavior?: goog.fs.DirectoryEntry.Behavior): goog.async.Deferred;
+        getFile(path: string, opt_behavior?: goog.fs.DirectoryEntry.Behavior): goog.async.Deferred<any>;
     
         /**
          * Get a directory within this directory.
@@ -292,7 +292,7 @@ declare module goog.testing.fs {
          * @return {!goog.async.Deferred} The deferred {@link goog.fs.DirectoryEntry}.
          *     If an error occurs, the errback is called a {@link goog.fs.Error}.
          */
-        getDirectory(path: string, opt_behavior?: goog.fs.DirectoryEntry.Behavior): goog.async.Deferred;
+        getDirectory(path: string, opt_behavior?: goog.fs.DirectoryEntry.Behavior): goog.async.Deferred<any>;
     
         /**
          * Get a file entry synchronously, without waiting for a Deferred to resolve.
@@ -349,7 +349,7 @@ declare module goog.testing.fs {
          *     the callback is called with true. If an error occurs, the errback is
          *     called a {@link goog.fs.Error}.
          */
-        removeRecursively(): goog.async.Deferred;
+        removeRecursively(): goog.async.Deferred<any>;
     
         /**
          * Gets a list of all entries in this directory.
@@ -358,7 +358,7 @@ declare module goog.testing.fs {
          *     results. If an error occurs, the errback is called with a
          *     {@link goog.fs.Error}.
          */
-        listDirectory(): goog.async.Deferred;
+        listDirectory(): goog.async.Deferred<any>;
     
         /**
          * Opens the directory for the specified path, creating the directory and any
@@ -371,7 +371,7 @@ declare module goog.testing.fs {
          *     the requested path. If an error occurs, the errback is called with a
          *     {@link goog.fs.Error}.
          */
-        createPath(path: string): goog.async.Deferred;
+        createPath(path: string): goog.async.Deferred<any>;
     
         /**
          * @return {string} The name of this entry.
@@ -398,7 +398,7 @@ declare module goog.testing.fs {
          *     {@link goog.fs.DirectoryEntry} for the new entry. If an error occurs, the
          *     errback is called with a {@link goog.fs.Error}.
          */
-        moveTo(parent: goog.fs.DirectoryEntry, opt_newName?: string): goog.async.Deferred;
+        moveTo(parent: goog.fs.DirectoryEntry, opt_newName?: string): goog.async.Deferred<any>;
     
         /**
          * Copy this entry to a new location.
@@ -410,7 +410,7 @@ declare module goog.testing.fs {
          *     {@link goog.fs.DirectoryEntry} for the new entry. If an error occurs, the
          *     errback is called with a {@link goog.fs.Error}.
          */
-        copyTo(parent: goog.fs.DirectoryEntry, opt_newName?: string): goog.async.Deferred;
+        copyTo(parent: goog.fs.DirectoryEntry, opt_newName?: string): goog.async.Deferred<any>;
     
         /**
          * Wrap an HTML5 entry object in an appropriate subclass instance.
@@ -444,7 +444,7 @@ declare module goog.testing.fs {
          * @return {!goog.async.Deferred} The deferred {@link goog.fs.DirectoryEntry}.
          *     If an error occurs, the errback is called with a {@link goog.fs.Error}.
          */
-        getParent(): goog.async.Deferred;
+        getParent(): goog.async.Deferred<any>;
     }
 
     /**
@@ -494,7 +494,7 @@ declare module goog.testing.fs {
          * @return {!goog.async.Deferred} The deferred Date for this entry. If an error
          *     occurs, the errback is called with a {@link goog.fs.Error}.
          */
-        getLastModified(): goog.async.Deferred;
+        getLastModified(): goog.async.Deferred<any>;
     
         /**
          * Retrieves the metadata for this entry.
@@ -502,7 +502,7 @@ declare module goog.testing.fs {
          * @return {!goog.async.Deferred} The deferred Metadata for this entry. If an
          *     error occurs, the errback is called with a {@link goog.fs.Error}.
          */
-        getMetadata(): goog.async.Deferred;
+        getMetadata(): goog.async.Deferred<any>;
     
         /**
          * Create a writer for writing to the file.
@@ -554,7 +554,7 @@ declare module goog.testing.fs {
          *     {@link goog.fs.DirectoryEntry} for the new entry. If an error occurs, the
          *     errback is called with a {@link goog.fs.Error}.
          */
-        moveTo(parent: goog.fs.DirectoryEntry, opt_newName?: string): goog.async.Deferred;
+        moveTo(parent: goog.fs.DirectoryEntry, opt_newName?: string): goog.async.Deferred<any>;
     
         /**
          * Copy this entry to a new location.
@@ -566,7 +566,7 @@ declare module goog.testing.fs {
          *     {@link goog.fs.DirectoryEntry} for the new entry. If an error occurs, the
          *     errback is called with a {@link goog.fs.Error}.
          */
-        copyTo(parent: goog.fs.DirectoryEntry, opt_newName?: string): goog.async.Deferred;
+        copyTo(parent: goog.fs.DirectoryEntry, opt_newName?: string): goog.async.Deferred<any>;
     
         /**
          * Wrap an HTML5 entry object in an appropriate subclass instance.
@@ -601,7 +601,7 @@ declare module goog.testing.fs {
          *     the callback is called with true. If an error occurs, the errback is
          *     called a {@link goog.fs.Error}.
          */
-        remove(): goog.async.Deferred;
+        remove(): goog.async.Deferred<any>;
     
         /**
          * Gets the parent directory.
@@ -609,7 +609,7 @@ declare module goog.testing.fs {
          * @return {!goog.async.Deferred} The deferred {@link goog.fs.DirectoryEntry}.
          *     If an error occurs, the errback is called with a {@link goog.fs.Error}.
          */
-        getParent(): goog.async.Deferred;
+        getParent(): goog.async.Deferred<any>;
     }
 }
 

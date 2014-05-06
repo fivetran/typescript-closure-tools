@@ -1,4 +1,4 @@
-// Generated Mon May  5 16:19:00 PDT 2014
+// Generated Mon May  5 19:19:38 PDT 2014
 
 /// <reference path="../../../closure/goog/base.d.ts" />
 /// <reference path="../../../closure/goog/dom/nodetype.d.ts" />
@@ -71,7 +71,7 @@ declare module goog.structs {
          *     the values contained in each map are identical objects.
          * @return {boolean} Whether the maps are equal.
          */
-        equals(otherMap: goog.structs.Map, opt_equalityFn?: (_0: V, _1: V) => boolean): boolean;
+        equals(otherMap: goog.structs.Map<any>, opt_equalityFn?: (_0: V, _1: V) => boolean): boolean;
     
         /**
          * @return {boolean} Whether the map is empty.
@@ -129,7 +129,7 @@ declare module goog.structs {
          * Clones a map and returns a new map.
          * @return {!goog.structs.Map} A new map with the same key-value pairs.
          */
-        clone(): goog.structs.Map;
+        clone(): goog.structs.Map<any>;
     
         /**
          * Returns a new map in which all the keys and values are interchanged
@@ -140,7 +140,7 @@ declare module goog.structs {
          *
          * @return {!goog.structs.Map} The transposed map.
          */
-        transpose(): goog.structs.Map;
+        transpose(): goog.structs.Map<any>;
     
         /**
          * @return {!Object} Object representation of the map.
@@ -152,14 +152,14 @@ declare module goog.structs {
          * while iterating might have undesired side effects.
          * @return {!goog.iter.Iterator} An iterator over the keys in the map.
          */
-        getKeyIterator(): goog.iter.Iterator<K>;
+        getKeyIterator(): goog.iter.Iterator<any>;
     
         /**
          * Returns an iterator that iterates over the values in the map.  Removal of
          * keys while iterating might have undesired side effects.
          * @return {!goog.iter.Iterator} An iterator over the values in the map.
          */
-        getValueIterator(): goog.iter.Iterator<K>;
+        getValueIterator(): goog.iter.Iterator<any>;
     
         /**
          * Returns an iterator that iterates over the values or the keys in the map.
@@ -169,7 +169,7 @@ declare module goog.structs {
          *     over the values.  The default value is false.
          * @return {!goog.iter.Iterator} An iterator over the values or keys in the map.
          */
-        __iterator__(opt_keys?: boolean): goog.iter.Iterator<K>;
+        __iterator__(opt_keys?: boolean): goog.iter.Iterator<any>;
     }
 }
 

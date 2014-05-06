@@ -1,4 +1,4 @@
-// Generated Mon May  5 16:21:18 PDT 2014
+// Generated Mon May  5 19:21:59 PDT 2014
 
 /// <reference path="../../../closure/goog/base.d.ts" />
 /// <reference path="../../../closure/goog/net/httpstatus.d.ts" />
@@ -131,7 +131,7 @@ declare module goog.net {
          * @param {Object|goog.structs.Map=} opt_headers Map of headers to add to the
          *     request.
          */
-        send(url: any /*string|goog.Uri*/, opt_method?: string, opt_content?: any /*ArrayBuffer|ArrayBufferView|Blob|Document|FormData|string*/, opt_headers?: any /*Object|goog.structs.Map*/): void;
+        send(url: any /*string|goog.Uri*/, opt_method?: string, opt_content?: any /*ArrayBuffer|ArrayBufferView|Blob|Document|FormData|string*/, opt_headers?: any /*Object|goog.structs.Map<any>*/): void;
     
         /**
          * Creates a new XHR object.
@@ -381,7 +381,7 @@ declare module goog.net.XhrIo {
      * @param {boolean=} opt_withCredentials Whether to send credentials with the
      *     request. Default to false. See {@link goog.net.XhrIo#setWithCredentials}.
      */
-    function send(url: any /*string|goog.Uri*/, opt_callback?: Function, opt_method?: string, opt_content?: any /*ArrayBuffer|ArrayBufferView|Blob|Document|FormData|string*/, opt_headers?: any /*Object|goog.structs.Map*/, opt_timeoutInterval?: number, opt_withCredentials?: boolean): void;
+    function send(url: any /*string|goog.Uri*/, opt_callback?: Function, opt_method?: string, opt_content?: any /*ArrayBuffer|ArrayBufferView|Blob|Document|FormData|string*/, opt_headers?: any /*Object|goog.structs.Map<any>*/, opt_timeoutInterval?: number, opt_withCredentials?: boolean): void;
 
     /**
      * Disposes all non-disposed instances of goog.net.XhrIo created by

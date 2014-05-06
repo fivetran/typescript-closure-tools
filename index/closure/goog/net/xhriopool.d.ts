@@ -1,4 +1,4 @@
-// Generated Mon May  5 16:21:15 PDT 2014
+// Generated Mon May  5 19:21:57 PDT 2014
 
 /// <reference path="../../../closure/goog/base.d.ts" />
 /// <reference path="../../../closure/goog/net/httpstatus.d.ts" />
@@ -66,7 +66,7 @@ declare module goog.net {
      * @constructor
      * @extends {goog.structs.PriorityPool}
      */
-    class XhrIoPool extends goog.structs.PriorityPool {
+    class XhrIoPool extends goog.structs.PriorityPool<any> {
         /**
          * A pool of XhrIo objects.
          * @param {goog.structs.Map=} opt_headers Map of default headers to add to every
@@ -76,7 +76,7 @@ declare module goog.net {
          * @constructor
          * @extends {goog.structs.PriorityPool}
          */
-        constructor(opt_headers?: goog.structs.Map, opt_minCount?: number, opt_maxCount?: number);
+        constructor(opt_headers?: goog.structs.Map<any>, opt_minCount?: number, opt_maxCount?: number);
     }
 }
 

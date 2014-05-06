@@ -1,4 +1,4 @@
-// Generated Mon May  5 16:26:18 PDT 2014
+// Generated Mon May  5 19:27:05 PDT 2014
 
 /// <reference path="../../../../closure/goog/base.d.ts" />
 /// <reference path="../../../../closure/goog/string/string.d.ts" />
@@ -144,7 +144,7 @@ declare module goog.ui.ac {
          * @param {Object|goog.structs.Map} headers Map of headers to add to the
          *     request.
          */
-        setHeaders(headers: any /*Object|goog.structs.Map*/): void;
+        setHeaders(headers: any /*Object|goog.structs.Map<any>*/): void;
     
         /**
          * Set the timeout interval for the matcher.

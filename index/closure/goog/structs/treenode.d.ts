@@ -1,4 +1,4 @@
-// Generated Mon May  5 16:19:04 PDT 2014
+// Generated Mon May  5 19:19:42 PDT 2014
 
 /// <reference path="../../../closure/goog/base.d.ts" />
 /// <reference path="../../../closure/goog/dom/nodetype.d.ts" />
@@ -40,7 +40,7 @@ declare module goog.structs {
         /**
          * @return {!goog.structs.TreeNode} Clone of the subtree with this node as root.
          */
-        deepClone(): goog.structs.TreeNode;
+        deepClone(): goog.structs.TreeNode<any>;
     
         /**
          * @return {goog.structs.TreeNode.<KEY, VALUE>} Parent node or null if it has no

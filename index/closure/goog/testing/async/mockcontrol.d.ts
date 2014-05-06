@@ -1,4 +1,4 @@
-// Generated Mon May  5 16:31:01 PDT 2014
+// Generated Mon May  5 19:31:51 PDT 2014
 
 /// <reference path="../../../../closure/goog/base.d.ts" />
 /// <reference path="../../../../closure/goog/testing/stacktrace.d.ts" />
@@ -89,7 +89,7 @@ declare module goog.testing.async {
          * @param {function() : void} fn A function wrapping the code in which the error
          *     will occur.
          */
-        assertDeferredError(deferred: goog.async.Deferred, fn: () => void): void;
+        assertDeferredError(deferred: goog.async.Deferred<any>, fn: () => void): void;
     
         /**
          * Asserts that a deferred object will call its callback with the given value.
@@ -101,7 +101,7 @@ declare module goog.testing.async {
          *     object, then the actual value is the deferred value. Either this or
          *     'expected' must be deferred.
          */
-        assertDeferredEquals(message: string, expected: any /*goog.async.Deferred|any*/, actual: any /*goog.async.Deferred|any*/): void;
+        assertDeferredEquals(message: string, expected: any /*goog.async.Deferred<any>|any*/, actual: any /*goog.async.Deferred<any>|any*/): void;
     }
 }
 

@@ -1,4 +1,4 @@
-// Generated Mon May  5 16:28:51 PDT 2014
+// Generated Mon May  5 19:29:39 PDT 2014
 
 /// <reference path="../../../closure/goog/base.d.ts" />
 /// <reference path="../../../closure/goog/events/eventid.d.ts" />
@@ -52,7 +52,7 @@ declare module goog.fs {
      * @return {!goog.async.Deferred} The deferred {@link goog.fs.FileSystem}. If an
      *     error occurs, the errback is called with a {@link goog.fs.Error}.
      */
-    function getTemporary(size: number): goog.async.Deferred;
+    function getTemporary(size: number): goog.async.Deferred<any>;
 
     /**
      * Returns a persistent FileSystem object. A persistent filesystem will never be
@@ -62,7 +62,7 @@ declare module goog.fs {
      * @return {!goog.async.Deferred} The deferred {@link goog.fs.FileSystem}. If an
      *     error occurs, the errback is called with a {@link goog.fs.Error}.
      */
-    function getPersistent(size: number): goog.async.Deferred;
+    function getPersistent(size: number): goog.async.Deferred<any>;
 
     /**
      * Creates a blob URL for a blob object.
@@ -104,7 +104,7 @@ declare module goog.fs {
      *     errback is called with a {@link goog.fs.Error}.
      * @deprecated Use {@link goog.fs.FileReader.readAsText} instead.
      */
-    function blobToString(blob: Blob, opt_encoding?: string): goog.async.Deferred;
+    function blobToString(blob: Blob, opt_encoding?: string): goog.async.Deferred<any>;
 
     /**
      * Slices the blob. The returned blob contains data from the start byte

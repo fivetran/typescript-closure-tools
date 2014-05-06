@@ -1,4 +1,4 @@
-// Generated Mon May  5 16:27:14 PDT 2014
+// Generated Mon May  5 19:28:02 PDT 2014
 
 /// <reference path="../../../closure/goog/base.d.ts" />
 /// <reference path="../../../closure/goog/dom/nodetype.d.ts" />
@@ -276,7 +276,7 @@ declare module goog.events {
          *     listeners.
          * @template EVENTOBJ
          */
-        getListeners<EVENTOBJ>(type: any /*string|goog.events.EventId*/, capture: boolean): goog.events.ListenableKey[];
+        getListeners<EVENTOBJ>(type: any /*string|goog.events.EventId<any>*/, capture: boolean): goog.events.ListenableKey[];
     
         /**
          * Gets the goog.events.ListenableKey for the event or null if no such

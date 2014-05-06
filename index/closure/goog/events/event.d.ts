@@ -1,4 +1,4 @@
-// Generated Mon May  5 16:27:28 PDT 2014
+// Generated Mon May  5 19:28:16 PDT 2014
 
 /// <reference path="../../../closure/goog/base.d.ts" />
 /// <reference path="../../../closure/goog/events/eventid.d.ts" />
@@ -28,7 +28,7 @@ declare module goog.events {
          *     declared at {@link http://developer.mozilla.org/en/DOM/EventTarget}.
          * @constructor
          */
-        constructor(type: any /*string|goog.events.EventId*/, opt_target?: Object);
+        constructor(type: any /*string|goog.events.EventId<any>*/, opt_target?: Object);
     
         /**
          * For backwards compatibility (goog.events.Event used to inherit
@@ -63,7 +63,7 @@ declare module goog.events {
      * of the Event.
      * @typedef {string|Object|goog.events.Event|goog.events.EventId}
      */
-    interface EventLike { /*any (string|Object|goog.events.Event|goog.events.EventId)*/ }
+    interface EventLike { /*any (string|Object|goog.events.Event|goog.events.EventId<any>)*/ }
 }
 
 declare module goog.events.Event {

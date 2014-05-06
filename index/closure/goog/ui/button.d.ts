@@ -1,4 +1,4 @@
-// Generated Mon May  5 16:24:17 PDT 2014
+// Generated Mon May  5 19:24:59 PDT 2014
 
 /// <reference path="../../../closure/goog/base.d.ts" />
 /// <reference path="../../../closure/goog/dom/nodetype.d.ts" />

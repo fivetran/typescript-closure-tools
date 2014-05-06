@@ -1,4 +1,4 @@
-// Generated Mon May  5 16:31:53 PDT 2014
+// Generated Mon May  5 19:32:43 PDT 2014
 
 /// <reference path="../../../closure/goog/base.d.ts" />
 /// <reference path="../../../closure/goog/dom/nodetype.d.ts" />
@@ -151,7 +151,7 @@ declare module goog.math {
          * @param {boolean=} opt_keys Ignored for RangeSets.
          * @return {!goog.iter.Iterator} An iterator over the values in the set.
          */
-        __iterator__(opt_keys?: boolean): goog.iter.Iterator<goog.math.Range>;
+        __iterator__(opt_keys?: boolean): goog.iter.Iterator<any>;
     }
 }
 

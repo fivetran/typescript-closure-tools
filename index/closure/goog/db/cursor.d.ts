@@ -1,4 +1,4 @@
-// Generated Mon May  5 16:32:43 PDT 2014
+// Generated Mon May  5 19:33:33 PDT 2014
 
 /// <reference path="../../../closure/goog/base.d.ts" />
 /// <reference path="../../../closure/goog/string/string.d.ts" />
@@ -84,7 +84,7 @@ declare module goog.db {
          * @param {*} value The value to be stored.
          * @return {!goog.async.Deferred} The resulting deferred request.
          */
-        update(value: any): goog.async.Deferred;
+        update(value: any): goog.async.Deferred<any>;
     
         /**
          * Deletes the value at the cursor's position, without changing the cursor's
@@ -92,7 +92,7 @@ declare module goog.db {
          *
          * @return {!goog.async.Deferred} The resulting deferred request.
          */
-        remove(): goog.async.Deferred;
+        remove(): goog.async.Deferred<any>;
     
         /**
          * @return {*} The value for the value at the cursor's position. Undefined
