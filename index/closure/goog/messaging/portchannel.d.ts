@@ -1,4 +1,4 @@
-// Generated Mon May  5 19:22:54 PDT 2014
+// Generated Mon May  5 21:10:26 PDT 2014
 
 /// <reference path="../../../closure/goog/base.d.ts" />
 /// <reference path="../../../closure/goog/dom/nodetype.d.ts" />
@@ -46,6 +46,7 @@
 /// <reference path="../../../closure/goog/async/run.d.ts" />
 /// <reference path="../../../closure/goog/promise/thenable.d.ts" />
 /// <reference path="../../../closure/goog/promise/promise.d.ts" />
+/// <reference path="../../../third_party/closure/goog/mochikit/async/deferred.d.ts" />
 /// <reference path="../../../closure/goog/messaging/messagechannel.d.ts" />
 /// <reference path="../../../closure/goog/messaging/deferredchannel.d.ts" />
 /// <reference path="../../../closure/goog/json/json.d.ts" />

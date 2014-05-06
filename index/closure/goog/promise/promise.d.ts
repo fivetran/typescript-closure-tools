@@ -1,4 +1,4 @@
-// Generated Mon May  5 19:31:11 PDT 2014
+// Generated Mon May  5 21:15:08 PDT 2014
 
 /// <reference path="../../../closure/goog/base.d.ts" />
 /// <reference path="../../../closure/goog/promise/resolver.d.ts" />
@@ -179,7 +179,7 @@ declare module goog {
          *     callback.
          * @template THIS
          */
-        thenCatch<THIS>(onRejected: (_0: any) => any, opt_context?: THIS): goog.Promise<any>;
+        thenCatch<THIS>(onRejected: (_0: any) => any, opt_context?: THIS): goog.Promise<any, any>;
     
         /**
          * Cancels the Promise if it is still pending by rejecting it with a cancel
@@ -232,7 +232,7 @@ declare module goog.Promise {
      * @private
      */
     interface CallbackEntry_ {
-        child: goog.Promise<any>;
+        child: goog.Promise<any, any>;
         onFulfilled: (_0: any) => any /*missing*/;
         onRejected: (_0: any) => any /*missing*/
     }
@@ -250,7 +250,7 @@ declare module goog.Promise {
      * @return {!goog.Promise} A new Promise that is immediately rejected with the
      *     given reason.
      */
-    function reject(opt_reason?: any): goog.Promise<any>;
+    function reject(opt_reason?: any): goog.Promise<any, any>;
 
     /**
      * @param {!Array.<!(goog.Thenable.<TYPE>|Thenable)>} promises

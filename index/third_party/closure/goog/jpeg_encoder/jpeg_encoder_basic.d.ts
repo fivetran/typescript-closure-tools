@@ -1,4 +1,4 @@
-// Generated Mon May  5 19:34:02 PDT 2014
+// Generated Mon May  5 21:16:38 PDT 2014
 
 /// <reference path="../../../../closure/goog/base.d.ts" />
 /// <reference path="../../../../closure/goog/dom/nodetype.d.ts" />
@@ -11,6 +11,7 @@
 /// <reference path="../../../../closure/goog/labs/useragent/engine.d.ts" />
 /// <reference path="../../../../closure/goog/labs/useragent/browser.d.ts" />
 /// <reference path="../../../../closure/goog/useragent/useragent.d.ts" />
+/// <reference path="../../../../closure/goog/crypt/base64.d.ts" />
 
 declare module goog.crypt {
 

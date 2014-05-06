@@ -1,4 +1,4 @@
-// Generated Mon May  5 19:19:47 PDT 2014
+// Generated Mon May  5 21:08:50 PDT 2014
 
 /// <reference path="../../../closure/goog/base.d.ts" />
 /// <reference path="../../../closure/goog/dom/nodetype.d.ts" />
@@ -148,7 +148,7 @@ declare module goog.structs {
          * @param {!goog.structs.LinkedMap.Node_} node The node to remove.
          * @protected
          */
-        removeNode(node: goog.structs.LinkedMap.Node_<any>): void;
+        removeNode(node: goog.structs.LinkedMap.Node_<any, any>): void;
     
         /**
          * @return {number} The number of items currently in the LinkedMap.

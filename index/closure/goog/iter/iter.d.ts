@@ -1,4 +1,4 @@
-// Generated Mon May  5 16:17:35 PDT 2014
+// Generated Mon May  5 21:07:59 PDT 2014
 
 /// <reference path="../../../closure/goog/base.d.ts" />
 /// <reference path="../../../closure/goog/dom/nodetype.d.ts" />
@@ -55,7 +55,7 @@ declare module goog.iter {
     /**
      * @typedef {goog.iter.Iterator|{length:number}|{__iterator__}}
      */
-    interface Iterable<TYPE> { /*any (goog.iter.Iterator|{ length: number }|{ __iterator__: any (missing) })*/ }
+    interface Iterable { /*any (goog.iter.Iterator<any>|{ length: number }|{ __iterator__: any (missing) })*/ }
 
     /**
        * Singleton Error object that is used to terminate iterations.

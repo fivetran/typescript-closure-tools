@@ -1,4 +1,4 @@
-// Generated Mon May  5 19:31:30 PDT 2014
+// Generated Mon May  5 21:15:19 PDT 2014
 
 /// <reference path="../../../../closure/goog/base.d.ts" />
 /// <reference path="../../../../closure/goog/dom/nodetype.d.ts" />
@@ -145,7 +145,7 @@ declare module goog.testing.net {
          * @param {Object|goog.structs.Map=} opt_headers Map of headers to add to the
          *     request.
          */
-        send(url: string, opt_method?: string, opt_content?: string, opt_headers?: any /*Object|goog.structs.Map<any>*/): void;
+        send(url: string, opt_method?: string, opt_content?: string, opt_headers?: any /*Object|goog.structs.Map<any, any>*/): void;
     
         /**
          * Creates a new XHR object.
@@ -255,7 +255,7 @@ declare module goog.testing.net {
          * @return {Object|goog.structs.Map|undefined} Last headers manually set in send
          *      call or undefined if no additional headers were specified.
          */
-        getLastRequestHeaders(): any /*Object|goog.structs.Map<any>|any (undefined)*/;
+        getLastRequestHeaders(): any /*Object|goog.structs.Map<any, any>|any (undefined)*/;
     
         /**
          * Gets the response text from the Xhr object.  Will only return correct result
@@ -358,6 +358,6 @@ declare module goog.testing.net.XhrIo {
      * @param {number=} opt_timeoutInterval Number of milliseconds after which an
      *     incomplete request will be aborted; 0 means no timeout is set.
      */
-    function send(url: string, opt_callback?: Function, opt_method?: string, opt_content?: string, opt_headers?: any /*Object|goog.structs.Map<any>*/, opt_timeoutInterval?: number): void;
+    function send(url: string, opt_callback?: Function, opt_method?: string, opt_content?: string, opt_headers?: any /*Object|goog.structs.Map<any, any>*/, opt_timeoutInterval?: number): void;
 }
 

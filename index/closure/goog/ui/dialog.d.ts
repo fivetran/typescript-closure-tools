@@ -1,4 +1,4 @@
-// Generated Mon May  5 19:27:13 PDT 2014
+// Generated Mon May  5 21:13:13 PDT 2014
 
 /// <reference path="../../../closure/goog/base.d.ts" />
 /// <reference path="../../../closure/goog/dom/nodetype.d.ts" />
@@ -368,7 +368,7 @@ declare module goog.ui.Dialog {
      * @constructor
      * @extends {goog.structs.Map}
      */
-    class ButtonSet extends goog.structs.Map<any> {
+    class ButtonSet extends goog.structs.Map<any, any> {
         /**
          * A button set defines the behaviour of a set of buttons that the dialog can
          * show.  Uses the {@link goog.structs.Map} interface.

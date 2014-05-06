@@ -1,4 +1,4 @@
-// Generated Mon May  5 19:21:49 PDT 2014
+// Generated Mon May  5 21:09:55 PDT 2014
 
 /// <reference path="../../../closure/goog/base.d.ts" />
 /// <reference path="../../../closure/goog/string/string.d.ts" />
@@ -227,7 +227,7 @@ declare module goog.net {
          * @param {Object|goog.structs.Map} map  The map to send.
          * @param {?Object=} opt_context The context associated with the map.
          */
-        sendMap(map: any /*Object|goog.structs.Map<any>*/, opt_context?: Object): void;
+        sendMap(map: any /*Object|goog.structs.Map<any, any>*/, opt_context?: Object): void;
     
         /**
          * When set to true, this changes the behavior of the forward channel so it
@@ -460,7 +460,7 @@ declare module goog.net.BrowserChannel {
          * @constructor
          * @final
          */
-        constructor(mapId: number, map: any /*Object|goog.structs.Map<any>*/, opt_context?: Object);
+        constructor(mapId: number, map: any /*Object|goog.structs.Map<any, any>*/, opt_context?: Object);
     }
 
     /**

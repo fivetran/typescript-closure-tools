@@ -1,4 +1,4 @@
-// Generated Mon May  5 19:19:04 PDT 2014
+// Generated Mon May  5 21:08:28 PDT 2014
 
 /// <reference path="../../../closure/goog/base.d.ts" />
 /// <reference path="../../../closure/goog/dom/nodetype.d.ts" />
@@ -21,7 +21,7 @@ declare module goog.dom.forms {
      * @return {!goog.structs.Map} A map of the form data as form name to arrays of
      *     values.
      */
-    function getFormDataMap(form: HTMLFormElement): goog.structs.Map<any>;
+    function getFormDataMap(form: HTMLFormElement): goog.structs.Map<any, any>;
 
     /**
      * Returns the form data as an application/x-www-url-encoded string. This

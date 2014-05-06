@@ -1,4 +1,4 @@
-// Generated Mon May  5 19:21:58 PDT 2014
+// Generated Mon May  5 21:09:59 PDT 2014
 
 /// <reference path="../../../closure/goog/base.d.ts" />
 /// <reference path="../../../closure/goog/net/httpstatus.d.ts" />
@@ -84,7 +84,7 @@ declare module goog.net {
          * @constructor
          * @extends {goog.events.EventTarget}
          */
-        constructor(opt_maxRetries?: number, opt_headers?: goog.structs.Map<any>, opt_minCount?: number, opt_maxCount?: number, opt_timeoutInterval?: number);
+        constructor(opt_maxRetries?: number, opt_headers?: goog.structs.Map<any, any>, opt_minCount?: number, opt_maxCount?: number, opt_timeoutInterval?: number);
     
         /**
          * Sets the number of milliseconds after which an incomplete request will be
@@ -132,7 +132,7 @@ declare module goog.net {
          *     this request; defaults to goog.net.XhrIo.ResponseType.DEFAULT.
          * @return {goog.net.XhrManager.Request} The queued request object.
          */
-        send(id: string, url: string, opt_method?: string, opt_content?: any /*ArrayBuffer|ArrayBufferView|Blob|Document|FormData|string*/, opt_headers?: any /*Object|goog.structs.Map<any>*/, opt_priority?: number, opt_callback?: Function, opt_maxRetries?: number, opt_responseType?: goog.net.XhrIo.ResponseType): goog.net.XhrManager.Request;
+        send(id: string, url: string, opt_method?: string, opt_content?: any /*ArrayBuffer|ArrayBufferView|Blob|Document|FormData|string*/, opt_headers?: any /*Object|goog.structs.Map<any, any>*/, opt_priority?: number, opt_callback?: Function, opt_maxRetries?: number, opt_responseType?: goog.net.XhrIo.ResponseType): goog.net.XhrManager.Request;
     
         /**
          * Aborts the request associated with id.
@@ -219,7 +219,7 @@ declare module goog.net.XhrManager {
          * @constructor
          * @final
          */
-        constructor(url: string, xhrEventCallback: Function, opt_method?: string, opt_content?: any /*ArrayBuffer|ArrayBufferView|Blob|Document|FormData|string*/, opt_headers?: any /*Object|goog.structs.Map<any>*/, opt_callback?: Function, opt_maxRetries?: number, opt_responseType?: goog.net.XhrIo.ResponseType);
+        constructor(url: string, xhrEventCallback: Function, opt_method?: string, opt_content?: any /*ArrayBuffer|ArrayBufferView|Blob|Document|FormData|string*/, opt_headers?: any /*Object|goog.structs.Map<any, any>*/, opt_callback?: Function, opt_maxRetries?: number, opt_responseType?: goog.net.XhrIo.ResponseType);
     
         /**
          * Gets the uri.
@@ -244,7 +244,7 @@ declare module goog.net.XhrManager {
          * Gets the map of headers.
          * @return {Object|goog.structs.Map} The map of headers.
          */
-        getHeaders(): any /*Object|goog.structs.Map<any>*/;
+        getHeaders(): any /*Object|goog.structs.Map<any, any>*/;
     
         /**
          * Gets the maximum number of times the request should be retried.

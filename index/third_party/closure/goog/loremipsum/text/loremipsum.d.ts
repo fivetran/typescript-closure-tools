@@ -1,4 +1,4 @@
-// Generated Mon May  5 19:34:06 PDT 2014
+// Generated Mon May  5 21:16:40 PDT 2014
 
 /// <reference path="../../../../../closure/goog/base.d.ts" />
 /// <reference path="../../../../../closure/goog/string/string.d.ts" />
@@ -13,6 +13,7 @@
 /// <reference path="../../../../../closure/goog/structs/map.d.ts" />
 /// <reference path="../../../../../closure/goog/structs/collection.d.ts" />
 /// <reference path="../../../../../closure/goog/structs/structs.d.ts" />
+/// <reference path="../../../../../closure/goog/structs/set.d.ts" />
 
 declare module goog.text {
 

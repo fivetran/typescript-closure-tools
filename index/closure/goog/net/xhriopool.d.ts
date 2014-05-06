@@ -1,4 +1,4 @@
-// Generated Mon May  5 19:21:57 PDT 2014
+// Generated Mon May  5 21:09:58 PDT 2014
 
 /// <reference path="../../../closure/goog/base.d.ts" />
 /// <reference path="../../../closure/goog/net/httpstatus.d.ts" />
@@ -76,7 +76,7 @@ declare module goog.net {
          * @constructor
          * @extends {goog.structs.PriorityPool}
          */
-        constructor(opt_headers?: goog.structs.Map<any>, opt_minCount?: number, opt_maxCount?: number);
+        constructor(opt_headers?: goog.structs.Map<any, any>, opt_minCount?: number, opt_maxCount?: number);
     }
 }
 

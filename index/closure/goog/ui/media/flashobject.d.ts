@@ -1,4 +1,4 @@
-// Generated Mon May  5 19:25:20 PDT 2014
+// Generated Mon May  5 21:12:04 PDT 2014
 
 /// <reference path="../../../../closure/goog/base.d.ts" />
 /// <reference path="../../../../closure/goog/dom/nodetype.d.ts" />
@@ -98,7 +98,7 @@ declare module goog.ui.media {
          * @param {goog.structs.Map|Object} map A key-value map of variables.
          * @return {goog.ui.media.FlashObject} The flash object instance for chaining.
          */
-        addFlashVars(map: any /*goog.structs.Map<any>|Object*/): goog.ui.media.FlashObject;
+        addFlashVars(map: any /*goog.structs.Map<any, any>|Object*/): goog.ui.media.FlashObject;
     
         /**
          * Sets a flash variable.
@@ -122,12 +122,12 @@ declare module goog.ui.media {
          * @param {string=} opt_value The optional value for the flashVar key.
          * @return {goog.ui.media.FlashObject} The flash object instance for chaining.
          */
-        setFlashVars(flashVar: any /*goog.structs.Map<any>|Object|string*/, opt_value?: string): goog.ui.media.FlashObject;
+        setFlashVars(flashVar: any /*goog.structs.Map<any, any>|Object|string*/, opt_value?: string): goog.ui.media.FlashObject;
     
         /**
          * @return {goog.structs.Map} The current flash variables.
          */
-        getFlashVars(): goog.structs.Map<any>;
+        getFlashVars(): goog.structs.Map<any, any>;
     
         /**
          * Sets the background color of the movie.

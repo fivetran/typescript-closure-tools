@@ -1,4 +1,4 @@
-// Generated Mon May  5 19:19:48 PDT 2014
+// Generated Mon May  5 21:08:50 PDT 2014
 
 /// <reference path="../../../closure/goog/base.d.ts" />
 /// <reference path="../../../closure/goog/structs/node.d.ts" />
@@ -28,7 +28,7 @@ declare module goog.structs {
          * @constructor
          * @template K, V
          */
-        constructor(opt_heap?: any /*goog.structs.Heap<any>|Object*/);
+        constructor(opt_heap?: any /*goog.structs.Heap<any, any>|Object*/);
     
         /**
          * Insert the given value into the heap with the given key.
@@ -41,7 +41,7 @@ declare module goog.structs {
          * Adds multiple key-value pairs from another goog.structs.Heap or Object
          * @param {goog.structs.Heap|Object} heap Object containing the data to add.
          */
-        insertAll(heap: any /*goog.structs.Heap<any>|Object*/): void;
+        insertAll(heap: any /*goog.structs.Heap<any, any>|Object*/): void;
     
         /**
          * Retrieves and removes the root value of this heap.
@@ -95,7 +95,7 @@ declare module goog.structs {
          * @return {goog.structs.Heap} A new goog.structs.Heap with the same key-value
          *     pairs.
          */
-        clone(): goog.structs.Heap<any>;
+        clone(): goog.structs.Heap<any, any>;
     
         /**
          * The number of key-value pairs in the map
