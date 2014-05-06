@@ -11,7 +11,7 @@ goog.require('goog.array');
 goog.require('goog.object');
 goog.require('goog.string');
 
-//  TODO references argument, inject interfaces
+// TODO parse everything ahead of time, to avoid re-parsing references
 
 var reserved =  [
     'break',
@@ -56,6 +56,12 @@ function pick(propertyName) {
 
 function last(values) {
     return values[values.length - 1];
+}
+
+function constantly(value) {
+    return function() {
+        return value;
+    }
 }
 
 /**
@@ -332,7 +338,7 @@ function generate_type_application(expression, applications) {
     else if (expression.name === 'Object')
         return generate_dictionary_type(applications);
     else
-        return generate_type(expression) + '<' + applications.map(generate_type).join(',') + '>';
+        return generate_applied_type(expression) + '<' + applications.map(generate_type).join(',') + '>';
 }
 
 function generate_indexed_function_parameter(type, index) {
@@ -351,11 +357,11 @@ function comment(text) {
 
     return '/*' + text + '*/';
 }
-
-function generate_type(t) {
-    if (!t)
-        return 'any /*missing*/';
-
+/**
+ * Generate a type, without worrying about whether generics have been applied
+ * @param t
+ */
+function generate_applied_type(t) {
     switch (t.type) {
         case 'NameExpression':
             return generate_type_name(t.name);
@@ -389,6 +395,29 @@ function generate_type(t) {
         default:
             throw new Error('Unknown type expression ' + t.type);
     }
+}
+
+function generate_type(t) {
+    if (!t)
+        return 'any /*missing*/';
+
+    var result = generate_applied_type(t);
+
+    // If t is a name expression, look for a definition and verify templates
+    if (t.type === 'NameExpression') {
+        var value = find_definition(t.name);
+
+        if (value && value.jsdoc && value.jsdoc.tags.some(is_title('template'))) {
+            var params = value.jsdoc.tags
+                .filter(is_title('template'))
+                .map(constantly('any'))
+                .join(', ');
+
+            return t.name + '<' + params + '>';
+        }
+    }
+
+    return result;
 }
 
 function safe_name(name) {
@@ -764,6 +793,10 @@ function pretty_print(modules, comments) {
     return acc;
 }
 
+function find_definition(name) {
+    return parsed[name] || references[name];
+}
+
 var options = {};
 var currentArgument;
 process.argv.slice(2).forEach(function(name) {
@@ -784,7 +817,7 @@ if (typeof options.references === 'string')
 
 if (options.references) {
     options.references.forEach(function(file) {
-        console.error('Reference: ' + file);
+//        console.error('Reference: ' + file);
         var code = fs.readFileSync(file);
         var tree = esprima.parse(code, { attachComment: true });
         extract_jsdoc(tree.body, referenceComments);
@@ -802,7 +835,8 @@ options.js.forEach(function (file) {
 });
 
 var parsed = parse_comments(comments);
-inject_interfaces(parsed, parse_comments(referenceComments));
+var references = parse_comments(referenceComments);
+inject_interfaces(parsed, references);
 var exported = remove_private(parsed);
 var defs = generate_defs(exported);
 
