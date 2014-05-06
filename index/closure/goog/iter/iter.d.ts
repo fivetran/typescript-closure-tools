@@ -73,7 +73,7 @@ declare module goog.iter {
      *     over the values in {@code iterable}.
      * @template VALUE
      */
-    function toIterator<VALUE>(iterable: any /*goog.iter.Iterator<VALUE>|goog.iter.Iterable*/): goog.iter.Iterator<VALUE>;
+    function toIterator<VALUE>(iterable: goog.iter.Iterable<VALUE>): goog.iter.Iterator<VALUE>;
 
     /**
      * Calls a function for each element in the iterator with the element of the
@@ -93,7 +93,7 @@ declare module goog.iter {
      *     {@code f}.
      * @template THIS, VALUE
      */
-    function forEach<THIS, VALUE>(iterable: any /*goog.iter.Iterator<VALUE>|goog.iter.Iterable*/, f: any /*(_0: VALUE, _1: any (undefined), _2: goog.iter.Iterator<VALUE>) => any (missing)|(_0: number, _1: any (undefined), _2: goog.iter.Iterator<VALUE>) => any (missing)*/, opt_obj?: THIS): void;
+    function forEach<THIS, VALUE>(iterable: goog.iter.Iterable<VALUE>, f: any /*(_0: VALUE, _1: any (undefined), _2: goog.iter.Iterator<VALUE>) => any (missing)|(_0: number, _1: any (undefined), _2: goog.iter.Iterator<VALUE>) => any (missing)*/, opt_obj?: THIS): void;
 
     /**
      * Calls a function for every element in the iterator, and if the function
@@ -113,7 +113,7 @@ declare module goog.iter {
      *     that passed the test are present.
      * @template THIS, VALUE
      */
-    function filter<THIS, VALUE>(iterable: any /*goog.iter.Iterator<VALUE>|goog.iter.Iterable*/, f: (_0: VALUE, _1: any /*undefined*/, _2: goog.iter.Iterator<VALUE>) => boolean, opt_obj?: THIS): goog.iter.Iterator<VALUE>;
+    function filter<THIS, VALUE>(iterable: goog.iter.Iterable<VALUE>, f: (_0: VALUE, _1: any /*undefined*/, _2: goog.iter.Iterator<VALUE>) => boolean, opt_obj?: THIS): goog.iter.Iterator<VALUE>;
 
     /**
      * Calls a function for every element in the iterator, and if the function
@@ -133,7 +133,7 @@ declare module goog.iter {
      *     that did not pass the test are present.
      * @template THIS, VALUE
      */
-    function filterFalse<THIS, VALUE>(iterable: any /*goog.iter.Iterator<VALUE>|goog.iter.Iterable*/, f: (_0: VALUE, _1: any /*undefined*/, _2: goog.iter.Iterator<VALUE>) => boolean, opt_obj?: THIS): goog.iter.Iterator<VALUE>;
+    function filterFalse<THIS, VALUE>(iterable: goog.iter.Iterable<VALUE>, f: (_0: VALUE, _1: any /*undefined*/, _2: goog.iter.Iterator<VALUE>) => boolean, opt_obj?: THIS): goog.iter.Iterator<VALUE>;
 
     /**
      * Creates a new iterator that returns the values in a range.  This function
@@ -163,7 +163,7 @@ declare module goog.iter {
      * @return {string} The joined value string.
      * @template VALUE
      */
-    function join<VALUE>(iterable: any /*goog.iter.Iterator<VALUE>|goog.iter.Iterable*/, deliminator: string): string;
+    function join<VALUE>(iterable: goog.iter.Iterable<VALUE>, deliminator: string): string;
 
     /**
      * For every element in the iterator call a function and return a new iterator
@@ -182,7 +182,7 @@ declare module goog.iter {
      *     iterator.
      * @template THIS, VALUE, RESULT
      */
-    function map<THIS, VALUE, RESULT>(iterable: any /*goog.iter.Iterator<VALUE>|goog.iter.Iterable*/, f: (_0: VALUE, _1: any /*undefined*/, _2: goog.iter.Iterator<VALUE>) => RESULT, opt_obj?: THIS): goog.iter.Iterator<RESULT>;
+    function map<THIS, VALUE, RESULT>(iterable: goog.iter.Iterable<VALUE>, f: (_0: VALUE, _1: any /*undefined*/, _2: goog.iter.Iterator<VALUE>) => RESULT, opt_obj?: THIS): goog.iter.Iterator<RESULT>;
 
     /**
      * Passes every element of an iterator into a function and accumulates the
@@ -202,7 +202,7 @@ declare module goog.iter {
      *     the iterator.
      * @template THIS, VALUE
      */
-    function reduce<THIS, VALUE>(iterable: any /*goog.iter.Iterator<VALUE>|goog.iter.Iterable*/, f: (_0: VALUE, _1: VALUE) => VALUE, val: VALUE, opt_obj?: THIS): VALUE;
+    function reduce<THIS, VALUE>(iterable: goog.iter.Iterable<VALUE>, f: (_0: VALUE, _1: VALUE) => VALUE, val: VALUE, opt_obj?: THIS): VALUE;
 
     /**
      * Goes through the values in the iterator. Calls f for each of these, and if
@@ -220,7 +220,7 @@ declare module goog.iter {
      * @return {boolean} true if any value passes the test.
      * @template THIS, VALUE
      */
-    function some<THIS, VALUE>(iterable: any /*goog.iter.Iterator<VALUE>|goog.iter.Iterable*/, f: (_0: VALUE, _1: any /*undefined*/, _2: goog.iter.Iterator<VALUE>) => boolean, opt_obj?: THIS): boolean;
+    function some<THIS, VALUE>(iterable: goog.iter.Iterable<VALUE>, f: (_0: VALUE, _1: any /*undefined*/, _2: goog.iter.Iterator<VALUE>) => boolean, opt_obj?: THIS): boolean;
 
     /**
      * Goes through the values in the iterator. Calls f for each of these and if any
@@ -238,7 +238,7 @@ declare module goog.iter {
      * @return {boolean} true if every value passes the test.
      * @template THIS, VALUE
      */
-    function every<THIS, VALUE>(iterable: any /*goog.iter.Iterator<VALUE>|goog.iter.Iterable*/, f: (_0: VALUE, _1: any /*undefined*/, _2: goog.iter.Iterator<VALUE>) => boolean, opt_obj?: THIS): boolean;
+    function every<THIS, VALUE>(iterable: goog.iter.Iterable<VALUE>, f: (_0: VALUE, _1: any /*undefined*/, _2: goog.iter.Iterator<VALUE>) => boolean, opt_obj?: THIS): boolean;
 
     /**
      * Takes zero or more iterables and returns one iterator that will iterate over
@@ -249,7 +249,7 @@ declare module goog.iter {
      *     iterate over all the given iterables' contents.
      * @template VALUE
      */
-    function chain<VALUE>(...var_args: any /*goog.iter.Iterator<VALUE>|goog.iter.Iterable*/[]): goog.iter.Iterator<VALUE>;
+    function chain<VALUE>(...var_args: goog.iter.Iterable<VALUE>[]): goog.iter.Iterator<VALUE>;
 
     /**
      * Takes a single iterable containing zero or more iterables and returns one
@@ -261,7 +261,7 @@ declare module goog.iter {
      *     {@code iterable}.
      * @template VALUE
      */
-    function chainFromIterable<VALUE>(iterable: goog.iter.Iterable): goog.iter.Iterator<VALUE>;
+    function chainFromIterable<VALUE>(iterable: goog.iter.Iterable<VALUE>): goog.iter.Iterator<VALUE>;
 
     /**
      * Builds a new iterator that iterates over the original, but skips elements as
@@ -278,7 +278,7 @@ declare module goog.iter {
      *     the original iterator as long as {@code f} is true.
      * @template THIS, VALUE
      */
-    function dropWhile<THIS, VALUE>(iterable: any /*goog.iter.Iterator<VALUE>|goog.iter.Iterable*/, f: (_0: VALUE, _1: any /*undefined*/, _2: goog.iter.Iterator<VALUE>) => boolean, opt_obj?: THIS): goog.iter.Iterator<VALUE>;
+    function dropWhile<THIS, VALUE>(iterable: goog.iter.Iterable<VALUE>, f: (_0: VALUE, _1: any /*undefined*/, _2: goog.iter.Iterator<VALUE>) => boolean, opt_obj?: THIS): goog.iter.Iterator<VALUE>;
 
     /**
      * Builds a new iterator that iterates over the original, but only as long as a
@@ -294,7 +294,7 @@ declare module goog.iter {
      *     the original iterator as long as the function is true.
      * @template THIS, VALUE
      */
-    function takeWhile<THIS, VALUE>(iterable: any /*goog.iter.Iterator<VALUE>|goog.iter.Iterable*/, f: (_0: VALUE, _1: any /*undefined*/, _2: goog.iter.Iterator<VALUE>) => boolean, opt_obj?: THIS): goog.iter.Iterator<VALUE>;
+    function takeWhile<THIS, VALUE>(iterable: goog.iter.Iterable<VALUE>, f: (_0: VALUE, _1: any /*undefined*/, _2: goog.iter.Iterator<VALUE>) => boolean, opt_obj?: THIS): goog.iter.Iterator<VALUE>;
 
     /**
      * Converts the iterator to an array
@@ -303,7 +303,7 @@ declare module goog.iter {
      * @return {!Array.<VALUE>} An array of the elements the iterator iterates over.
      * @template VALUE
      */
-    function toArray<VALUE>(iterable: any /*goog.iter.Iterator<VALUE>|goog.iter.Iterable*/): VALUE[];
+    function toArray<VALUE>(iterable: goog.iter.Iterable<VALUE>): VALUE[];
 
     /**
      * Iterates over two iterables and returns true if they contain the same
@@ -316,7 +316,7 @@ declare module goog.iter {
      *     and have the same length.
      * @template VALUE
      */
-    function equals<VALUE>(iterable1: any /*goog.iter.Iterator<VALUE>|goog.iter.Iterable*/, iterable2: any /*goog.iter.Iterator<VALUE>|goog.iter.Iterable*/): boolean;
+    function equals<VALUE>(iterable1: goog.iter.Iterable<VALUE>, iterable2: goog.iter.Iterable<VALUE>): boolean;
 
     /**
      * Advances the iterator to the next position, returning the given default value
@@ -328,7 +328,7 @@ declare module goog.iter {
      *     iterator was empty.
      * @template VALUE
      */
-    function nextOrValue<VALUE>(iterable: any /*goog.iter.Iterator<VALUE>|goog.iter.Iterable*/, defaultValue: VALUE): VALUE;
+    function nextOrValue<VALUE>(iterable: goog.iter.Iterable<VALUE>, defaultValue: VALUE): VALUE;
 
     /**
      * Cartesian product of zero or more sets.  Gives an iterator that gives every
@@ -353,7 +353,7 @@ declare module goog.iter {
      *     over the values in {@code iterable}.
      * @template VALUE
      */
-    function cycle<VALUE>(iterable: any /*goog.iter.Iterator<VALUE>|goog.iter.Iterable*/): goog.iter.Iterator<VALUE>;
+    function cycle<VALUE>(iterable: goog.iter.Iterable<VALUE>): goog.iter.Iterator<VALUE>;
 
     /**
      * Creates an iterator that counts indefinitely from a starting value.
@@ -400,7 +400,7 @@ declare module goog.iter {
      *     arrays of elements from the provided iterables.
      * @template VALUE
      */
-    function zip<VALUE>(...var_args: any /*goog.iter.Iterator<VALUE>|goog.iter.Iterable*/[]): goog.iter.Iterator<VALUE[]>;
+    function zip<VALUE>(...var_args: goog.iter.Iterable<VALUE>[]): goog.iter.Iterator<VALUE[]>;
 
     /**
      * Creates an iterator that returns arrays containing the ith elements from the
@@ -416,7 +416,7 @@ declare module goog.iter {
      *     arrays of elements from the provided iterables.
      * @template VALUE
      */
-    function zipLongest<VALUE>(fillValue: VALUE, ...var_args: any /*goog.iter.Iterator<VALUE>|goog.iter.Iterable*/[]): goog.iter.Iterator<VALUE[]>;
+    function zipLongest<VALUE>(fillValue: VALUE, ...var_args: goog.iter.Iterable<VALUE>[]): goog.iter.Iterator<VALUE[]>;
 
     /**
      * Creates an iterator that filters {@code iterable} based on a series of
@@ -437,7 +437,7 @@ declare module goog.iter {
      *     filtered values.
      * @template VALUE
      */
-    function compress<VALUE>(iterable: any /*goog.iter.Iterator<VALUE>|goog.iter.Iterable*/, selectors: any /*goog.iter.Iterator<VALUE>|goog.iter.Iterable*/): goog.iter.Iterator<VALUE>;
+    function compress<VALUE>(iterable: goog.iter.Iterable<VALUE>, selectors: goog.iter.Iterable<VALUE>): goog.iter.Iterator<VALUE>;
 
     /**
      * Creates an iterator that returns arrays containing elements from the
@@ -456,7 +456,7 @@ declare module goog.iter {
      *     consecutive key and groups.
      * @template KEY, VALUE
      */
-    function groupBy<KEY, VALUE>(iterable: any /*goog.iter.Iterator<VALUE>|goog.iter.Iterable*/, opt_keyFunc?: (_0: VALUE[][]) => KEY): goog.iter.Iterator<any[]>;
+    function groupBy<KEY, VALUE>(iterable: goog.iter.Iterable<VALUE>, opt_keyFunc?: (_0: VALUE[][]) => KEY): goog.iter.Iterator<any[]>;
 
     /**
      * Gives an iterator that gives the result of calling the given function
@@ -480,7 +480,7 @@ declare module goog.iter {
      *     iterator.
      * @template THIS, RESULT
      */
-    function starMap<THIS, RESULT>(iterable: goog.iter.Iterable<goog.iter.Iterable>, f: (_0: any[][]) => RESULT, opt_obj?: THIS): goog.iter.Iterator<RESULT>;
+    function starMap<THIS, RESULT>(iterable: goog.iter.Iterable<goog.iter.Iterable<any>>, f: (_0: any[][]) => RESULT, opt_obj?: THIS): goog.iter.Iterator<RESULT>;
 
     /**
      * Returns an array of iterators each of which can iterate over the values in
@@ -492,7 +492,7 @@ declare module goog.iter {
      * @return {!Array.<goog.iter.Iterator.<VALUE>>} An array of iterators.
      * @template VALUE
      */
-    function tee<VALUE>(iterable: any /*goog.iter.Iterator<VALUE>|goog.iter.Iterable*/, opt_num?: number): goog.iter.Iterator<VALUE>[];
+    function tee<VALUE>(iterable: goog.iter.Iterable<VALUE>, opt_num?: number): goog.iter.Iterator<VALUE>[];
 
     /**
      * Creates an iterator that returns arrays containing a count and an element
@@ -505,7 +505,7 @@ declare module goog.iter {
      *     pairs.
      * @template VALUE
      */
-    function enumerate<VALUE>(iterable: any /*goog.iter.Iterator<VALUE>|goog.iter.Iterable*/, opt_start?: number): goog.iter.Iterator<any[]>;
+    function enumerate<VALUE>(iterable: goog.iter.Iterable<VALUE>, opt_start?: number): goog.iter.Iterator<any[]>;
 
     /**
      * Creates an iterator that returns the first {@code limitSize} elements from an
@@ -519,7 +519,7 @@ declare module goog.iter {
      *     {@code limitSize} elements.
      * @template VALUE
      */
-    function limit<VALUE>(iterable: any /*goog.iter.Iterator<VALUE>|goog.iter.Iterable*/, limitSize: number): goog.iter.Iterator<VALUE>;
+    function limit<VALUE>(iterable: goog.iter.Iterable<VALUE>, limitSize: number): goog.iter.Iterator<VALUE>;
 
     /**
      * Creates an iterator that is advanced {@code count} steps ahead. Consumed
@@ -533,7 +533,7 @@ declare module goog.iter {
      *     ahead.
      * @template VALUE
      */
-    function consume<VALUE>(iterable: any /*goog.iter.Iterator<VALUE>|goog.iter.Iterable*/, count: number): goog.iter.Iterator<VALUE>;
+    function consume<VALUE>(iterable: goog.iter.Iterable<VALUE>, count: number): goog.iter.Iterator<VALUE>;
 
     /**
      * Creates an iterator that returns a range of elements from an iterable.
@@ -547,7 +547,7 @@ declare module goog.iter {
      *     the original.
      * @template VALUE
      */
-    function slice<VALUE>(iterable: any /*goog.iter.Iterator<VALUE>|goog.iter.Iterable*/, start: number, opt_end?: number): goog.iter.Iterator<VALUE>;
+    function slice<VALUE>(iterable: goog.iter.Iterable<VALUE>, start: number, opt_end?: number): goog.iter.Iterator<VALUE>;
 
     /**
      * Creates an iterator that returns permutations of elements in
@@ -566,7 +566,7 @@ declare module goog.iter {
      *     permutations of {@code iterable}.
      * @template VALUE
      */
-    function permutations<VALUE>(iterable: any /*goog.iter.Iterator<VALUE>|goog.iter.Iterable*/, opt_length?: number): goog.iter.Iterator<VALUE[]>;
+    function permutations<VALUE>(iterable: goog.iter.Iterable<VALUE>, opt_length?: number): goog.iter.Iterator<VALUE[]>;
 
     /**
      * Creates an iterator that returns combinations of elements from
@@ -584,7 +584,7 @@ declare module goog.iter {
      *     combinations from the {@code iterable}.
      * @template VALUE
      */
-    function combinations<VALUE>(iterable: any /*goog.iter.Iterator<VALUE>|goog.iter.Iterable*/, length: number): goog.iter.Iterator<VALUE[]>;
+    function combinations<VALUE>(iterable: goog.iter.Iterable<VALUE>, length: number): goog.iter.Iterator<VALUE[]>;
 
     /**
      * Creates an iterator that returns combinations of elements from
@@ -603,6 +603,6 @@ declare module goog.iter {
      *     combinations from the {@code iterable}.
      * @template VALUE
      */
-    function combinationsWithReplacement<VALUE>(iterable: any /*goog.iter.Iterator<VALUE>|goog.iter.Iterable*/, length: number): goog.iter.Iterator<VALUE[]>;
+    function combinationsWithReplacement<VALUE>(iterable: goog.iter.Iterable<VALUE>, length: number): goog.iter.Iterator<VALUE[]>;
 }
 
