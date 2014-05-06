@@ -10,7 +10,7 @@ declare module goog.testing {
      * @extends {Error}
      * @final
      */
-    class JsUnitException extends Error {
+    class JsUnitException implements Error {
         /**
          * @param {string} comment A summary for the exception.
          * @param {?string=} opt_message A description of the exception.
@@ -19,6 +19,10 @@ declare module goog.testing {
          * @final
          */
         constructor(comment: string, opt_message?: string);
+
+        name: string;
+
+        message: string;
     }
 }
 
