@@ -10,8 +10,8 @@ do
 
     # Clear file
     mkdir --parents $(dirname $OUTPUT)
-    echo "// Generated $(date)" > $OUTPUT
-    echo "" >> $OUTPUT
+    rm $OUTPUT
+    touch $OUTPUT
 
     # Create reference tags
     GO_UP=$(dirname $GOOG | sed -e 's/[a-z0-9_\-]\+/../g')
