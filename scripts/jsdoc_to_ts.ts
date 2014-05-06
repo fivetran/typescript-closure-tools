@@ -408,12 +408,15 @@ function generate_type(t) {
         var value = find_definition(t.name);
 
         if (value && value.jsdoc && value.jsdoc.tags.some(is_title('template'))) {
-            var params = value.jsdoc.tags
-                .filter(is_title('template'))
-                .map(constantly('any'))
-                .join(', ');
+            var params = [];
 
-            return t.name + '<' + params + '>';
+            value.jsdoc.tags.filter(is_title('template')).forEach(function(tag) {
+                tag.description.split(',').forEach(function() {
+                    params.push('any');
+                });
+            });
+
+            return t.name + '<' + params.join(', ') + '>';
         }
     }
 
