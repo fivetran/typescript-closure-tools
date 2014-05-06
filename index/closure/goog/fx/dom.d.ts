@@ -35,6 +35,7 @@
 /// <reference path="../../../closure/goog/events/browserevent.d.ts" />
 /// <reference path="../../../closure/goog/events/events.d.ts" />
 /// <reference path="../../../closure/goog/events/eventtarget.d.ts" />
+/// <reference path="../../../closure/goog/events/eventhandler.d.ts" />
 /// <reference path="../../../closure/goog/timer/timer.d.ts" />
 /// <reference path="../../../closure/goog/async/delay.d.ts" />
 /// <reference path="../../../closure/goog/async/animationdelay.d.ts" />
@@ -502,6 +503,6 @@ declare module goog.fx.dom {
      * @param {goog.events.EventHandler=} opt_eventHandler Optional event handler
      *     to use when listening for events.
      */
-    function bgColorFadeIn(element: Element, start: number[], time: number, opt_eventHandler?: goog.events.EventHandler): void;
+    function bgColorFadeIn(element: Element, start: number[], time: number, opt_eventHandler?: goog.events.EventHandler<any>): void;
 }
 

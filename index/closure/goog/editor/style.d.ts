@@ -22,6 +22,7 @@
 /// <reference path="../../../closure/goog/dom/dom.d.ts" />
 /// <reference path="../../../closure/goog/style/style.d.ts" />
 /// <reference path="../../../closure/goog/events/eventtype.d.ts" />
+/// <reference path="../../../closure/goog/events/eventhandler.d.ts" />
 /// <reference path="../../../closure/goog/editor/defines.d.ts" />
 /// <reference path="../../../closure/goog/useragent/product.d.ts" />
 /// <reference path="../../../closure/goog/useragent/product_isversion.d.ts" />
@@ -63,7 +64,7 @@ declare module goog.editor.style {
      *     the event with. Assumes when the node is destroyed, the eventHandler's
      *     listeners are destroyed as well.
      */
-    function makeUnselectable(element: Element, eventHandler: goog.events.EventHandler): void;
+    function makeUnselectable(element: Element, eventHandler: goog.events.EventHandler<any>): void;
 
     /**
      * Make the given element selectable.
