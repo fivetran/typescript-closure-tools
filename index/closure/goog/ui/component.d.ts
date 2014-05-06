@@ -47,7 +47,9 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.events.EventTarget}
      */
-    class Component extends goog.events.EventTarget {
+    class Component extends _Component { }
+
+    class _Component extends goog.events.EventTarget {
         /**
          * Default implementation of UI component.
          *

@@ -82,7 +82,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.Component}
      */
-    class Control extends goog.ui.Component {
+    class Control extends goog.ui._Component {
         /**
          * Base class for UI controls.  Extends {@link goog.ui.Component} by adding
          * the following:

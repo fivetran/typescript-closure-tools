@@ -68,7 +68,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.Component}
      */
-    class Bubble extends goog.ui.Component {
+    class Bubble extends goog.ui._Component {
         /**
          * The Bubble provides a general purpose bubble implementation that can be
          * anchored to a particular element and displayed for a period of time.

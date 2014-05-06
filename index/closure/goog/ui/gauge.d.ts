@@ -114,7 +114,7 @@ declare module goog.ui {
      * @extends {goog.ui.Component}
      * @final
      */
-    class Gauge extends goog.ui.Component {
+    class Gauge extends goog.ui._Component {
         /**
          * A UI component that displays a gauge.
          * A gauge displayes a current value within a round axis that represents a

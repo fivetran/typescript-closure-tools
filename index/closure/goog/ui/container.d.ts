@@ -73,7 +73,9 @@ declare module goog.ui {
      * @extends {goog.ui.Component}
      * @constructor
      */
-    class Container extends goog.ui.Component {
+    class Container extends _Container { }
+
+    class _Container extends goog.ui._Component {
         /**
          * Base class for containers.  Extends {@link goog.ui.Component} by adding
          * the following:

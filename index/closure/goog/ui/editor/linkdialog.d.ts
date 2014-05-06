@@ -141,7 +141,7 @@ declare module goog.ui.editor {
      * @extends {goog.ui.editor.AbstractDialog}
      * @final
      */
-    class LinkDialog extends goog.ui.editor.AbstractDialog {
+    class LinkDialog extends goog.ui.editor._AbstractDialog {
         /**
          * A type of goog.ui.editor.AbstractDialog for editing/creating a link.
          * @param {goog.dom.DomHelper} domHelper DomHelper to be used to create the

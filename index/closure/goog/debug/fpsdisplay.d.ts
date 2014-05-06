@@ -51,7 +51,7 @@ declare module goog.debug {
      * @extends {goog.ui.Component}
      * @final
      */
-    class FpsDisplay extends goog.ui.Component {
+    class FpsDisplay extends goog.ui._Component {
         /**
          * Displays frames per seconds that the window this component is
          * rendered in is animating at.

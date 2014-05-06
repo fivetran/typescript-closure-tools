@@ -77,7 +77,7 @@ declare module goog.demos.editor {
      * @extends {goog.ui.editor.AbstractDialog}
      * @final
      */
-    class HelloWorldDialog extends goog.ui.editor.AbstractDialog {
+    class HelloWorldDialog extends goog.ui.editor._AbstractDialog {
         /**
          * Creates a dialog to let the user enter a customized hello world message.
          * @param {goog.dom.DomHelper} domHelper DomHelper to be used to create the

@@ -94,7 +94,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.Component}
      */
-    class AbstractSpellChecker extends goog.ui.Component {
+    class AbstractSpellChecker extends goog.ui._Component {
         /**
          * Abstract base class for spell checker editor implementations. Provides basic
          * functionality such as word lookup and caching.

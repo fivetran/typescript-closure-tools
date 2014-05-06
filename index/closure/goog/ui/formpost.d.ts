@@ -56,7 +56,7 @@ declare module goog.ui {
      * @param {goog.dom.DomHelper=} opt_dom The DOM helper.
      * @final
      */
-    class FormPost extends goog.ui.Component {
+    class FormPost extends goog.ui._Component {
         /**
          * Creates a formpost object.
          * @constructor

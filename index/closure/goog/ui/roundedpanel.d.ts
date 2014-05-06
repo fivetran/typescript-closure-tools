@@ -87,7 +87,7 @@ declare module goog.ui {
      * @extends {goog.ui.Component}
      * @constructor
      */
-    class BaseRoundedPanel extends goog.ui.Component {
+    class BaseRoundedPanel extends goog.ui._Component {
         /**
          * Base class for the hierarchy of RoundedPanel classes. Do not
          * instantiate directly. Instead, call goog.ui.RoundedPanel.create().

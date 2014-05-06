@@ -57,7 +57,7 @@ declare module goog.demos {
      * @constructor
      * @final
      */
-    class SampleComponent extends goog.ui.Component {
+    class SampleComponent extends goog.ui._Component {
         /**
          * A simple box that changes colour when clicked. This class demonstrates the
          * goog.ui.Component API, and is keyboard accessible, as per

@@ -85,7 +85,7 @@ declare module goog.ui {
      * @extends {goog.ui.Menu}
      * @constructor
      */
-    class PopupMenu extends goog.ui.Menu {
+    class PopupMenu extends goog.ui._Menu {
         /**
          * A basic menu class.
          * @param {goog.dom.DomHelper=} opt_domHelper Optional DOM helper.

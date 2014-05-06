@@ -100,7 +100,7 @@ declare module goog.ui.emoji {
      * @constructor
      * @final
      */
-    class PopupEmojiPicker extends goog.ui.Component {
+    class PopupEmojiPicker extends goog.ui._Component {
         /**
          * Constructs a popup emoji picker widget.
          *

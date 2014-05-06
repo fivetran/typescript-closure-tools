@@ -75,7 +75,9 @@ declare module goog.ui.editor {
      * @constructor
      * @extends {goog.events.EventTarget}
      */
-    class AbstractDialog extends goog.events.EventTarget {
+    class AbstractDialog extends _AbstractDialog { }
+
+    class _AbstractDialog extends goog.events.EventTarget {
         /**
          * Creates an object that represents a dialog box.
          * @param {goog.dom.DomHelper} domHelper DomHelper to be used to create the

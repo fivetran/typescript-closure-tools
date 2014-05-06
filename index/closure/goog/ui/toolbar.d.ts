@@ -72,7 +72,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.Container}
      */
-    class Toolbar extends goog.ui.Container {
+    class Toolbar extends goog.ui._Container {
         /**
          * A toolbar class, implemented as a {@link goog.ui.Container} that defaults to
          * having a horizontal orientation and {@link goog.ui.ToolbarRenderer} as its

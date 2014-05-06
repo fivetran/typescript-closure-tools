@@ -56,7 +56,7 @@ declare module goog.graphics {
      * @constructor
      * @extends {goog.ui.Component}
      */
-    class AbstractGraphics extends goog.ui.Component {
+    class AbstractGraphics extends goog.ui._Component {
         /**
          * Base class for the different graphics. You should never construct objects
          * of this class. Instead us goog.graphics.createGraphics

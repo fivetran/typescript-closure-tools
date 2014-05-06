@@ -82,7 +82,7 @@ declare module goog.ui {
      * @extends {goog.ui.Component}
      * @constructor
      */
-    class PopupDatePicker extends goog.ui.Component {
+    class PopupDatePicker extends goog.ui._Component {
         /**
          * Popup date picker widget. Fires goog.ui.PopupBase.EventType.SHOW or HIDE
          * events when its visibility changes.

@@ -94,7 +94,7 @@ declare module goog.ui {
      * @extends {goog.ui.Component}
      * @constructor
      */
-    class ComboBox extends goog.ui.Component {
+    class ComboBox extends goog.ui._Component {
         /**
          * A ComboBox control.
          * @param {goog.dom.DomHelper=} opt_domHelper Optional DOM helper.

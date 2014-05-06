@@ -72,7 +72,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.Component}
      */
-    class DatePicker extends goog.ui.Component {
+    class DatePicker extends goog.ui._Component {
         /**
          * DatePicker widget. Allows a single date to be selected from a calendar like
          * view.

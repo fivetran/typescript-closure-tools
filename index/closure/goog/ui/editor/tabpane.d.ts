@@ -68,7 +68,7 @@ declare module goog.ui.editor {
      * @extends {goog.ui.Component}
      * @final
      */
-    class TabPane extends goog.ui.Component {
+    class TabPane extends goog.ui._Component {
         /**
          * Creates a new Editor-style tab pane.
          * @param {goog.dom.DomHelper} dom The dom helper for the window to create this

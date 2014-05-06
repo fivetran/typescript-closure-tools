@@ -59,7 +59,7 @@ declare module goog.ui {
      * @extends {goog.ui.Component}
      * @constructor
      */
-    class SplitPane extends goog.ui.Component {
+    class SplitPane extends goog.ui._Component {
         /**
          * A left/right up/down Container SplitPane.
          * Create SplitPane with two goog.ui.Component opjects to split.
