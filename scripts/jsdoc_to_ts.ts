@@ -1,6 +1,6 @@
-// <reference path="../index/references.ts" />
+/// <reference path="../index/references.ts" />
 
-import fs = require('fs');
+import fs =  require('fs');
 import esprima = require('esprima');
 import escodegen = require('escodegen');
 var doctrine = require('../lib/doctrine');
