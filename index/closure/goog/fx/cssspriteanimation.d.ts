@@ -31,6 +31,7 @@
 /// <reference path="../../../closure/goog/fx/transition.d.ts" />
 /// <reference path="../../../closure/goog/fx/transitionbase.d.ts" />
 /// <reference path="../../../closure/goog/fx/animation.d.ts" />
+/// <reference path="../../../closure/goog/math/size.d.ts" />
 
 declare module goog.fx {
 
