@@ -94,7 +94,7 @@ declare module goog.ui.emoji {
          * @param {Element} item The palette item to update.
          * @param {Image} animatedImg An Image object containing the animated emoji.
          */
-        updateAnimatedPaletteItem(item: Element, animatedImg: any): void;
+        updateAnimatedPaletteItem(item: Element, animatedImg: HTMLImageElement): void;
     
         /**
          * Builds the inner contents of a palette item out of sprite metadata.

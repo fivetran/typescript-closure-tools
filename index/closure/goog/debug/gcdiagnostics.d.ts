@@ -32,6 +32,6 @@ declare module goog.debug {
      * Singleton GcDiagnostics object
      * @type {goog.debug.GcDiagnostics_}
      */
-    var GcDiagnostics: goog.debug.GcDiagnostics_;
+    var GcDiagnostics: any;
 }
 
