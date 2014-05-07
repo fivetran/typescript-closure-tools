@@ -1,6 +1,6 @@
 #!/bin/bash
 
-FILES=$(find lib/closure-library/ -name '*.js' | grep -v '_test.js$' | grep -v '_perf.js$')
+FILES=$(find lib/closure-library/ -name '*.js' | grep -v '_test.js$' | grep -v '_perf.js$' | grep -v 'testdata')
 
 for FILE in $FILES
 do
