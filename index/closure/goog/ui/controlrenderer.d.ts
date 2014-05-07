@@ -43,6 +43,8 @@
 /// <reference path="../../../closure/goog/a11y/aria/roles.d.ts" />
 /// <reference path="../../../closure/goog/a11y/aria/aria.d.ts" />
 /// <reference path="../../../closure/goog/dom/classlist.d.ts" />
+/// <reference path="../../../closure/goog/ui/control.d.ts" />
+/// <reference path="../../../closure/goog/ui/controlcontent.d.ts" />
 
 declare module goog.ui {
 
