@@ -705,12 +705,6 @@ declare module goog.net.BrowserChannel {
     enum Error { OK, REQUEST_FAILED, LOGGED_OUT, NO_DATA, UNKNOWN_SESSION_ID, STOP, NETWORK, BLOCKED, BAD_DATA, BAD_RESPONSE, ACTIVE_X_BLOCKED } 
 
     /**
-     * Events fired by BrowserChannel and associated objects
-     * @type {Object}
-     */
-    var Event: Object;
-
-    /**
      * Types of events which reveal information about the reachability of the
      * server.
      * @enum {number}
@@ -810,13 +804,6 @@ declare module goog.net.BrowserChannel {
      * @param {number} retries The number of times the POST had to be retried.
      */
     function notifyTimingEvent(size: number, rtt: number, retries: number): void;
-
-    /**
-     * A LogSaver that can be used to accumulate all the debug logs for
-     * BrowserChannels so they can be sent to the server when a problem is
-     * detected.
-     */
-    var LogSaver: any /*missing*/;
 }
 
 declare module goog.net.BrowserChannel.Event {
