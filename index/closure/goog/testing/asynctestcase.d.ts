@@ -12,7 +12,7 @@ declare module goog.testing {
      * @extends {goog.testing.TestCase}
      * @constructor
      */
-    class AsyncTestCase extends goog.testing.TestCase {
+    class AsyncTestCase extends goog.testing._TestCase {
         /**
          * A test case that is capable of running tests the contain asynchronous logic.
          * @param {string=} opt_name A descriptive name for the test case.

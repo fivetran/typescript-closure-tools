@@ -19,7 +19,7 @@ declare module goog.testing {
      * @constructor
      * @final
      */
-    class ShardingTestCase extends goog.testing.TestCase {
+    class ShardingTestCase extends goog.testing._TestCase {
         /**
          * A test case that runs tests in per-file shards.
          * @param {number} shardIndex Shard index for this page,

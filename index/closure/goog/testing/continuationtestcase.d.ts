@@ -39,7 +39,7 @@ declare module goog.testing {
      * @extends {goog.testing.TestCase}
      * @final
      */
-    class ContinuationTestCase extends goog.testing.TestCase {
+    class ContinuationTestCase extends goog.testing._TestCase {
         /**
          * Constructs a test case that supports tests with continuations. Test functions
          * may issue "wait" commands that suspend the test temporarily and continue once

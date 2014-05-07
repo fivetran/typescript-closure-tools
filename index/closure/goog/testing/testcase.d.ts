@@ -24,7 +24,9 @@ declare module goog.testing {
      *     'Untitled Test Case'.
      * @constructor
      */
-    class TestCase {
+    class TestCase extends _TestCase { }
+
+    class _TestCase {
         /**
          * A class representing a JsUnit test case.  A TestCase is made up of a number
          * of test functions which can be run.  Individual test cases can override the
