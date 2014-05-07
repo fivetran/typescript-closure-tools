@@ -2522,9 +2522,5 @@ declare module goog.i18n {
      */
     var CompactNumberFormatSymbols_zh_Hant_TW: any /*missing*/;
 
-    /**
-     * Selected compact number formatting symbols by locale.
-     */
-    var CompactNumberFormatSymbols: any /*missing*/;
 }
 
