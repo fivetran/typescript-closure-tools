@@ -1,4 +1,4 @@
-declare module 'doctrine' {
+declare module doctrine {
     interface Options {
         unwrap?: boolean;
         tags?: string[];
@@ -24,7 +24,7 @@ declare module 'doctrine' {
     }
 
     interface UnionType extends Type {
-        elements: Type[]
+        elements: AnyType[]
     }
 
     interface NameExpression extends Type {
@@ -32,20 +32,33 @@ declare module 'doctrine' {
     }
 
     interface TypeApplication extends Type {
-        expression: Type;
-        applications: Type[];
+        expression: AnyType;
+        applications: AnyType[];
     }
 
     interface FunctionType extends Type {
-        params: Type[];
-        result: Type;
+        params: AnyType[];
+        result: AnyType;
     }
 
     interface OptionalType extends Type {
-        expression: Type;
+        expression: AnyType;
     }
 
-    interface AnyType extends UnionType, NameExpression, TypeApplication, FunctionType, OptionalType { }
+    interface FieldType extends Type {
+        key: string;
+        value: AnyType;
+    }
+
+    interface RecordType extends Type {
+        fields: FieldType[];
+    }
+
+    interface AnyType extends UnionType, NameExpression, TypeApplication, FunctionType, OptionalType, FieldType, RecordType { }
 
     function parse(comment: string, options: Options): JSDoc;
+}
+
+declare module 'doctrine' {
+    export = doctrine;
 }
