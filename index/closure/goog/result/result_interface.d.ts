@@ -67,7 +67,7 @@ declare module goog.result.Result {
      * @final
      * @deprecated Use {@link goog.Promise} instead - http://go/promisemigration
      */
-    class CancelError extends Error {
+    class CancelError implements Error {
         /**
          * The value to be passed to the error handlers invoked upon cancellation.
          * @constructor
@@ -76,6 +76,10 @@ declare module goog.result.Result {
          * @deprecated Use {@link goog.Promise} instead - http://go/promisemigration
          */
         constructor();
+
+        name: string;
+
+        message: string;
     }
 
     /**
