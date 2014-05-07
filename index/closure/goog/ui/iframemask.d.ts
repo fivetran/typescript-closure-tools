@@ -38,6 +38,7 @@
 /// <reference path="../../../closure/goog/events/eventtarget.d.ts" />
 /// <reference path="../../../closure/goog/timer/timer.d.ts" />
 /// <reference path="../../../closure/goog/dom/iframe.d.ts" />
+/// <reference path="../../../closure/goog/structs/pool.d.ts" />
 
 declare module goog.ui {
 
@@ -66,7 +67,7 @@ declare module goog.ui {
          * @constructor
          * @extends {goog.Disposable}
          */
-        constructor(opt_domHelper?: goog.dom.DomHelper, opt_iframePool?: goog.structs.Pool);
+        constructor(opt_domHelper?: goog.dom.DomHelper, opt_iframePool?: goog.structs.Pool<any>);
     
         /**
          * Removes the mask from the screen.
