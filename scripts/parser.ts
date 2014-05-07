@@ -6,6 +6,7 @@
 import fs =  require('fs');
 import esprima = require('esprima');
 import escodegen = require('escodegen');
+import DOCTRINE = require('doctrine');
 var doctrine = require('../lib/doctrine');
 
 function values(object: Object) {
@@ -136,25 +137,33 @@ function extract_jsdoc(tree) {
     return docstrings;
 }
 
-function parse_comments(comments) {
-    var parsed = {};
+export interface Parsed {
+    [symbol: string]: {
+        value: esprima.Syntax.SomeExpression;
+        jsdoc: DOCTRINE.JSDoc;
+        originalText: string;
+    }
+}
+
+function parse_comments(comments): Parsed {
+    var parsed: Parsed = {};
 
     Object.keys(comments).forEach(function (name) {
         var jsdoc = comments[name].jsdoc;
         var value = comments[name].value;
         var parsedDoc = doctrine.parse(jsdoc, { unwrap: true });
 
-        parsedDoc.originalText = jsdoc;
         parsed[name] = {
             value: value,
-            jsdoc: parsedDoc
+            jsdoc: parsedDoc,
+            originalText: jsdoc
         };
     });
 
     return parsed;
 }
 
-function remove_private(parsed) {
+function remove_private(parsed: Parsed): Parsed {
     // Identify all private names
     var privatePrefixes = [];
 
@@ -173,7 +182,7 @@ function remove_private(parsed) {
     });
 
     // Filter out just public names
-    var acc = {};
+    var acc: Parsed = {};
 
     publicNames.forEach(function (name) {
         acc[name] = parsed[name];
