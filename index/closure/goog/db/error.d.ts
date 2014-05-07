@@ -123,6 +123,6 @@ declare module goog.db.Error {
      * @suppress {invalidCasts} The cast from IDBDatabaseException to DOMError
      *     is invalid and will not compile.
      */
-    function fromException(ex: IDBDatabaseException, message: string): goog.db.Error;
+    function fromException(ex: any, message: string): goog.db.Error;
 }
 
