@@ -61,42 +61,6 @@
 /// <reference path="../../../closure/goog/events/mousewheelhandler.d.ts" />
 /// <reference path="../../../closure/goog/ui/rangemodel.d.ts" />
 
-declare module goog.ui.SliderBase {
-
-    /**
-     * The factory for creating additional animations to be played when animating to
-     * a new value.
-     * @interface
-     */
-    interface AnimationFactory {
-    
-        /**
-         * Creates an additonal animation to play when animating to a new value.
-         *
-         * @param {number} previousValue The previous value (before animation).
-         * @param {number} newValue The new value (after animation).
-         * @param {number} interval The animation interval.
-         * @return {!Array.<!goog.fx.TransitionBase>} The additional animations to play.
-         */
-        createAnimations(previousValue: number, newValue: number, interval: number): goog.fx.TransitionBase[];
-    }
-
-    /**
-     * Event types used to listen for dragging events. Note that extent drag events
-     * are also sent for single-thumb sliders, since the one thumb controls both
-     * value and extent together; in this case, they can simply be ignored.
-     * @enum {string}
-     */
-    enum EventType { DRAG_VALUE_START, DRAG_VALUE_END, DRAG_EXTENT_START, DRAG_EXTENT_END, DRAG_START, DRAG_END } 
-
-    /**
-     * Enum for representing the orientation of the slider.
-     *
-     * @enum {string}
-     */
-    enum Orientation { VERTICAL, HORIZONTAL } 
-}
-
 declare module goog.ui {
 
     /**
@@ -437,3 +401,38 @@ declare module goog.ui {
     }
 }
 
+declare module goog.ui.SliderBase {
+
+    /**
+     * The factory for creating additional animations to be played when animating to
+     * a new value.
+     * @interface
+     */
+    interface AnimationFactory {
+
+        /**
+         * Creates an additonal animation to play when animating to a new value.
+         *
+         * @param {number} previousValue The previous value (before animation).
+         * @param {number} newValue The new value (after animation).
+         * @param {number} interval The animation interval.
+         * @return {!Array.<!goog.fx.TransitionBase>} The additional animations to play.
+         */
+        createAnimations(previousValue: number, newValue: number, interval: number): goog.fx.TransitionBase[];
+    }
+
+    /**
+     * Event types used to listen for dragging events. Note that extent drag events
+     * are also sent for single-thumb sliders, since the one thumb controls both
+     * value and extent together; in this case, they can simply be ignored.
+     * @enum {string}
+     */
+    enum EventType { DRAG_VALUE_START, DRAG_VALUE_END, DRAG_EXTENT_START, DRAG_EXTENT_END, DRAG_START, DRAG_END }
+
+    /**
+     * Enum for representing the orientation of the slider.
+     *
+     * @enum {string}
+     */
+    enum Orientation { VERTICAL, HORIZONTAL }
+}
