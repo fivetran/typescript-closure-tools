@@ -1,4 +1,4 @@
-// Generated Thu May  1 12:22:52 PDT 2014
+// Generated Tue May  6 17:10:38 PDT 2014
 /// <reference path="goog/cssom/iframe/style.d.ts"/>
 /// <reference path="goog/cssom/cssom.d.ts"/>
 /// <reference path="goog/pubsub/typedpubsub.d.ts"/>
@@ -238,10 +238,6 @@
 /// <reference path="goog/net/iframeio.d.ts"/>
 /// <reference path="goog/net/browsertestchannel.d.ts"/>
 /// <reference path="goog/net/wrapperxmlhttpfactory.d.ts"/>
-/// <reference path="goog/net/testdata/jsloader_test4.d.ts"/>
-/// <reference path="goog/net/testdata/jsloader_test1.d.ts"/>
-/// <reference path="goog/net/testdata/jsloader_test2.d.ts"/>
-/// <reference path="goog/net/testdata/jsloader_test3.d.ts"/>
 /// <reference path="goog/net/jsonp.d.ts"/>
 /// <reference path="goog/net/eventtype.d.ts"/>
 /// <reference path="goog/net/jsloader.d.ts"/>
@@ -298,9 +294,6 @@
 /// <reference path="goog/messaging/messagechannel.d.ts"/>
 /// <reference path="goog/messaging/respondingchannel.d.ts"/>
 /// <reference path="goog/messaging/bufferedchannel.d.ts"/>
-/// <reference path="goog/messaging/testdata/portnetwork_worker2.d.ts"/>
-/// <reference path="goog/messaging/testdata/portnetwork_worker1.d.ts"/>
-/// <reference path="goog/messaging/testdata/portchannel_worker.d.ts"/>
 /// <reference path="goog/messaging/multichannel.d.ts"/>
 /// <reference path="goog/messaging/loggerserver.d.ts"/>
 /// <reference path="goog/messaging/deferredchannel.d.ts"/>
@@ -894,9 +887,6 @@
 /// <reference path="goog/module/loader.d.ts"/>
 /// <reference path="goog/module/moduleloadcallback.d.ts"/>
 /// <reference path="goog/module/basemodule.d.ts"/>
-/// <reference path="goog/module/testdata/modB_1.d.ts"/>
-/// <reference path="goog/module/testdata/modA_2.d.ts"/>
-/// <reference path="goog/module/testdata/modA_1.d.ts"/>
 /// <reference path="goog/module/abstractmoduleloader.d.ts"/>
 /// <reference path="goog/module/module.d.ts"/>
 /// <reference path="goog/module/moduleloader.d.ts"/>
