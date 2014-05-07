@@ -37,6 +37,62 @@
 /// <reference path="../../../../closure/goog/events/keycodes.d.ts" />
 /// <reference path="../../../../closure/goog/events/eventtarget.d.ts" />
 
+declare module goog.testing.events_ {
+
+    class _Event implements Event {
+        /**
+         * goog.events.BrowserEvent expects an Event so we provide one for JSCompiler.
+         *
+         * This clones a lot of the functionality of goog.events.Event. This used to
+         * use a mixin, but the mixin results in confusing the two types when compiled.
+         *
+         * @param {string} type Event Type.
+         * @param {Object=} opt_target Reference to the object that is the target of
+         *     this event.
+         * @constructor
+         * @extends {Event}
+         */
+        constructor(type: string, opt_target?: Object);
+
+        /**
+         * Whether to cancel the event in internal capture/bubble processing for IE.
+         * @type {boolean}
+         * @public
+         * @suppress {underscore|visibility} Technically public, but referencing this
+         *     outside this package is strongly discouraged.
+         */
+        propagationStopped_: boolean;
+
+        /**
+         * Return value for in internal capture/bubble processing for IE.
+         * @type {boolean}
+         * @public
+         * @suppress {underscore|visibility} Technically public, but referencing this
+         *     outside this package is strongly discouraged.
+         */
+        returnValue_: boolean;
+
+        timeStamp: number;
+        defaultPrevented: boolean;
+        isTrusted: boolean;
+        currentTarget: EventTarget;
+        cancelBubble: boolean;
+        target: EventTarget;
+        eventPhase: number;
+        cancelable: boolean;
+        type: string;
+        srcElement: Element;
+        bubbles: boolean;
+        initEvent(eventTypeArg: string, canBubbleArg: boolean, cancelableArg: boolean): void;
+        stopPropagation(): void;
+        stopImmediatePropagation(): void;
+        preventDefault(): void;
+        CAPTURING_PHASE: number;
+        AT_TARGET: number;
+        BUBBLING_PHASE: number;
+    }
+}
+
 declare module goog.testing.events {
 
     /**
@@ -51,39 +107,7 @@ declare module goog.testing.events {
      * @constructor
      * @extends {Event}
      */
-    class Event extends Event {
-        /**
-         * goog.events.BrowserEvent expects an Event so we provide one for JSCompiler.
-         *
-         * This clones a lot of the functionality of goog.events.Event. This used to
-         * use a mixin, but the mixin results in confusing the two types when compiled.
-         *
-         * @param {string} type Event Type.
-         * @param {Object=} opt_target Reference to the object that is the target of
-         *     this event.
-         * @constructor
-         * @extends {Event}
-         */
-        constructor(type: string, opt_target?: Object);
-    
-        /**
-         * Whether to cancel the event in internal capture/bubble processing for IE.
-         * @type {boolean}
-         * @public
-         * @suppress {underscore|visibility} Technically public, but referencing this
-         *     outside this package is strongly discouraged.
-         */
-        propagationStopped_: boolean;
-    
-        /**
-         * Return value for in internal capture/bubble processing for IE.
-         * @type {boolean}
-         * @public
-         * @suppress {underscore|visibility} Technically public, but referencing this
-         *     outside this package is strongly discouraged.
-         */
-        returnValue_: boolean;
-    }
+    class Event extends goog.testing.events_._Event { }
 
     /**
      * Simulates a mousedown, mouseup, and then click on the given event target,
