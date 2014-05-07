@@ -75,7 +75,7 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.MenuButtonRenderer}
      */
-    class ToolbarMenuButtonRenderer extends goog.ui.MenuButtonRenderer {
+    class ToolbarMenuButtonRenderer extends goog.ui._MenuButtonRenderer {
         /**
          * Toolbar-specific renderer for {@link goog.ui.MenuButton}s, based on {@link
          * goog.ui.MenuButtonRenderer}.

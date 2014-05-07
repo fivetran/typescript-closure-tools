@@ -91,7 +91,7 @@ declare module goog.ui {
      * @extends {goog.ui.MenuButtonRenderer}
      * @final
      */
-    class ImagelessMenuButtonRenderer extends goog.ui.MenuButtonRenderer {
+    class ImagelessMenuButtonRenderer extends goog.ui._MenuButtonRenderer {
         /**
          * Custom renderer for {@link goog.ui.MenuButton}s. Imageless buttons can
          * contain almost arbitrary HTML content, will flow like inline elements, but

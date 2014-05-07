@@ -75,7 +75,9 @@ declare module goog.ui {
      * @constructor
      * @extends {goog.ui.CustomButtonRenderer}
      */
-    class MenuButtonRenderer extends goog.ui.CustomButtonRenderer {
+    class MenuButtonRenderer extends _MenuButtonRenderer { }
+
+    class _MenuButtonRenderer extends goog.ui.CustomButtonRenderer {
         /**
          * Renderer for {@link goog.ui.MenuButton}s.  This implementation overrides
          * {@link goog.ui.CustomButtonRenderer#createButton} to create a separate
