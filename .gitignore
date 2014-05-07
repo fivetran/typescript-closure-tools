@@ -15,3 +15,4 @@ index/closure/*.js
 dependencies/
 *.map
 *.pyc
+symbols.tsv

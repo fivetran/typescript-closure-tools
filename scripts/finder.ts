@@ -3,10 +3,11 @@
 import fs = require('fs');
 import parser = require('./parser');
 import combine = require('./combine');
+import options = require('./options');
 
 var fileByProvide: { [key: string]: string } = {};
 
-fs.readFileSync('symbols.tsv', 'utf8').split('\n').forEach(line => {
+fs.readFileSync(options.options.provides, 'utf8').split('\n').forEach(line => {
     var columns = line.split('\t');
     var file = columns[0];
     var symbol = columns[1];
