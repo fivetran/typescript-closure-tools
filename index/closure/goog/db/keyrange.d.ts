@@ -42,7 +42,7 @@ declare module goog.db.KeyRange {
      * @param {IDBKeyType} key The single value in the range.
      * @return {!goog.db.KeyRange} The key range.
      */
-    function only(key: IDBKeyType): goog.db.KeyRange;
+    function only(key: any): goog.db.KeyRange;
 
     /**
      * Creates a key range with upper and lower bounds.
@@ -55,7 +55,7 @@ declare module goog.db.KeyRange {
      *     value.
      * @return {!goog.db.KeyRange} The key range.
      */
-    function bound(lower: IDBKeyType, upper: IDBKeyType, opt_lowerOpen?: boolean, opt_upperOpen?: boolean): goog.db.KeyRange;
+    function bound(lower: any, upper: any, opt_lowerOpen?: boolean, opt_upperOpen?: boolean): goog.db.KeyRange;
 
     /**
      * Creates a key range with a lower bound only, finishes at the last record.
@@ -65,7 +65,7 @@ declare module goog.db.KeyRange {
      *     value.
      * @return {!goog.db.KeyRange} The key range.
      */
-    function lowerBound(lower: IDBKeyType, opt_lowerOpen?: boolean): goog.db.KeyRange;
+    function lowerBound(lower: any, opt_lowerOpen?: boolean): goog.db.KeyRange;
 
     /**
      * Creates a key range with a upper bound only, starts at the first record.
@@ -75,6 +75,6 @@ declare module goog.db.KeyRange {
      *     value.
      * @return {!goog.db.KeyRange} The key range.
      */
-    function upperBound(upper: IDBKeyType, opt_upperOpen?: boolean): goog.db.KeyRange;
+    function upperBound(upper: any, opt_upperOpen?: boolean): goog.db.KeyRange;
 }
 

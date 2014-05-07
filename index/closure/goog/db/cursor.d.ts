@@ -73,7 +73,7 @@ declare module goog.db {
          *
          * @param {IDBKeyType=} opt_key The optional key to advance to.
          */
-        next(opt_key?: IDBKeyType): void;
+        next(opt_key?: any): void;
     
         /**
          * Updates the value at the current position of the cursor in the object store.
@@ -103,7 +103,7 @@ declare module goog.db {
          * @return {IDBKeyType} The key for the value at the cursor's position. If
          *     the cursor is outside its range, this is undefined.
          */
-        getKey(): IDBKeyType;
+        getKey(): any;
     }
 }
 
