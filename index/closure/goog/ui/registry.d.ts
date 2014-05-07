@@ -5,6 +5,8 @@
 /// <reference path="../../../closure/goog/asserts/asserts.d.ts" />
 /// <reference path="../../../closure/goog/array/array.d.ts" />
 /// <reference path="../../../closure/goog/dom/classlist.d.ts" />
+/// <reference path="../../../closure/goog/ui/controlrenderer.d.ts" />
+/// <reference path="../../../closure/goog/ui/component.d.ts" />
 
 declare module goog.ui.registry {
 
