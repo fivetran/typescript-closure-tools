@@ -49,6 +49,8 @@
 /// <reference path="../../../../closure/goog/dom/tagiterator.d.ts" />
 /// <reference path="../../../../closure/goog/dom/nodeiterator.d.ts" />
 /// <reference path="../../../../closure/goog/ui/paletterenderer.d.ts" />
+/// <reference path="../../../../closure/goog/ui/palette.d.ts" />
+/// <reference path="../../../../closure/goog/ui/emoji/spriteinfo.d.ts" />
 
 declare module goog.ui.emoji {
 
@@ -92,7 +94,7 @@ declare module goog.ui.emoji {
          * @param {Element} item The palette item to update.
          * @param {Image} animatedImg An Image object containing the animated emoji.
          */
-        updateAnimatedPaletteItem(item: Element, animatedImg: Image): void;
+        updateAnimatedPaletteItem(item: Element, animatedImg: any): void;
     
         /**
          * Builds the inner contents of a palette item out of sprite metadata.
