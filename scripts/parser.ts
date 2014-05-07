@@ -6,6 +6,7 @@
 import fs =  require('fs');
 import esprima = require('esprima');
 import escodegen = require('escodegen');
+// TODO get doctrine fixes accepted into upstream and switch
 import DOCTRINE = require('doctrine');
 var doctrine = require('../lib/doctrine');
 
@@ -137,16 +138,18 @@ function extract_jsdoc(tree) {
     return docstrings;
 }
 
-export interface Parsed {
-    [symbol: string]: {
-        value: esprima.Syntax.SomeExpression;
-        jsdoc: DOCTRINE.JSDoc;
-        originalText: string;
-    }
+export interface Value {
+    value: esprima.Syntax.SomeExpression;
+    jsdoc: DOCTRINE.JSDoc;
+    originalText: string;
 }
 
-function parse_comments(comments): Parsed {
-    var parsed: Parsed = {};
+export interface File {
+    [symbol: string]: Value
+}
+
+function parse_comments(comments): File {
+    var parsed: File = {};
 
     Object.keys(comments).forEach(function (name) {
         var jsdoc = comments[name].jsdoc;
@@ -163,7 +166,7 @@ function parse_comments(comments): Parsed {
     return parsed;
 }
 
-function remove_private(parsed: Parsed): Parsed {
+function remove_private(parsed: File): File {
     // Identify all private names
     var privatePrefixes = [];
 
@@ -182,7 +185,7 @@ function remove_private(parsed: Parsed): Parsed {
     });
 
     // Filter out just public names
-    var acc: Parsed = {};
+    var acc: File = {};
 
     publicNames.forEach(function (name) {
         acc[name] = parsed[name];
@@ -191,7 +194,11 @@ function remove_private(parsed: Parsed): Parsed {
     return acc;
 }
 
-export function jsdoc(file) {
+/**
+ * @param file
+ * @returns Parsed file
+ */
+export function jsdoc(file: string): File {
     var code = fs.readFileSync(file, 'utf8');
     var tree = esprima.parse(code, { attachComment: true });
     var comments = extract_jsdoc(tree.body);
