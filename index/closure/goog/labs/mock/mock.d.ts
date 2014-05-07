@@ -97,6 +97,6 @@ declare module goog.labs.mock {
      * @param {!Object} mockObject The mocked object.
      * @return {!goog.labs.mock.StubBinder_} The property binder.
      */
-    function when(mockObject: Object): goog.labs.mock.StubBinder_;
+    function when(mockObject: Object): any;
 }
 
