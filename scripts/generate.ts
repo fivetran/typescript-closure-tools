@@ -331,7 +331,7 @@ function generate_interface(name, prototype) {
     var constructor = prototype[''];
     var acc = 'interface ' + name + generics(constructor.jsdoc) + ' ' + generate_extends(constructor) + '{\n';
 
-    Object.keys(prototype).forEach(function (name) {
+    Object.keys(prototype).filter(name => name !== '').forEach(function (name) {
         var docs = prototype[name];
         var text = docs.originalText.replace(/\n\s+/g, '\n     ');
 
@@ -358,7 +358,7 @@ function generate_class(name: string, prototype: combine.Symbol) {
     acc += '    ' + text + '\n';
     acc += '    ' + generate_constructor(constructor.jsdoc) + ';\n';
 
-    Object.keys(prototype).forEach(function (name) {
+    Object.keys(prototype).filter(name => name !== '').forEach(function (name) {
         var docs = prototype[name].jsdoc;
         var text = prototype[name].originalText.replace(/\n\s+/g, '\n     ');
 
@@ -457,13 +457,14 @@ export function defs(symbols: combine.Symbols): Generated {
 
         Object.keys(symbol).forEach(propertyName => {
             var value: parser.Value = symbol[propertyName];
+            var comment = '\n\n' + value.originalText + '\n';
 
             if (value.jsdoc.tags.some(t => t.title === 'enum'))
-                modules[moduleName][propertyName] = generate_enum(propertyName, value.value);
+                modules[moduleName][propertyName] = comment + generate_enum(propertyName, value.value);
             else if (value.jsdoc.tags.some(t => t.title === 'typedef'))
-                modules[moduleName][propertyName] = generate_typedef(propertyName, value.jsdoc);
+                modules[moduleName][propertyName] = comment + generate_typedef(propertyName, value.jsdoc);
             else
-                modules[moduleName][propertyName] = generate_property(propertyName, value.jsdoc);
+                modules[moduleName][propertyName] = comment + generate_property(propertyName, value.jsdoc);
         });
     });
 
