@@ -45,6 +45,7 @@
 /// <reference path="../../../../closure/goog/testing/fs/progressevent.d.ts" />
 /// <reference path="../../../../closure/goog/testing/fs/filewriter.d.ts" />
 /// <reference path="../../../../closure/goog/testing/fs/filesystem.d.ts" />
+/// <reference path="../../../../closure/_window.d.ts" />
 
 declare module goog.testing.fs {
 
@@ -518,7 +519,7 @@ declare module goog.testing.fs {
          * @return {!goog.async.Deferred.<!File>} If an error occurs, the errback is
          *     called with a {@link goog.fs.Error}.
          */
-        file(): goog.async.Deferred<File>;
+        file(): goog.async.Deferred<_window._File>;
     
         /**
          * Get the internal file representation synchronously, without waiting for a
