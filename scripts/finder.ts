@@ -7,7 +7,7 @@ import options = require('./options');
 
 var fileByProvide: { [key: string]: string } = {};
 
-fs.readFileSync(options.options.provides, 'utf8').split('\n').forEach(line => {
+fs.readFileSync(options.provides, 'utf8').split('\n').forEach(line => {
     var columns = line.split('\t');
     var file = columns[0];
     var symbol = columns[1];
@@ -39,4 +39,13 @@ export function symbols(fileName: string): combine.Symbols {
 
     if (providesByFile[fileName])
         return providesByFile[fileName];
+}
+
+export function symbol(symbolName: string): combine.Symbol {
+    var fileName = file(symbolName);
+
+    if (fileName)
+        return symbols(fileName)[symbolName];
+    else
+        return null;
 }

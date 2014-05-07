@@ -34,7 +34,7 @@ export function members(file: parser.File): Symbols {
         // Class and constructor
         if (symbol.jsdoc.tags.some(t => t.title === 'interface') ||
             symbol.jsdoc.tags.some(t => t.title === 'constructor')) {
-            acc.classes[name] = { 'constructor': symbol };
+            acc.classes[name] = { '': symbol };
         }
         // Member of class or interface
         else if (name.indexOf('.prototype.') !== -1) {

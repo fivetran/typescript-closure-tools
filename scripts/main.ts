@@ -1,5 +1,9 @@
-import parser = require('./parser');
+/// <reference path="../index/node.d.ts"/>
 
-var p = parser.jsdoc('lib/closure-library/closure/goog/object/object.js');
+import finder = require('./finder');
+import generate = require('./generate');
 
-console.log(p);
+var symbols = finder.symbols('lib/closure-library/closure/goog/promise/promise.js');
+var defs = generate.defs(symbols);
+//console.log(symbols);
+console.log(defs);
