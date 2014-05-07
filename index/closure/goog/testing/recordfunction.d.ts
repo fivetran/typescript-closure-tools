@@ -23,7 +23,7 @@ declare module goog.testing {
          * @param {*} error The error thrown by the function or null if none.
          * @constructor
          */
-        constructor(func: Function, thisContext: Object, args: Arguments, ret: any, error: any);
+        constructor(func: Function, thisContext: Object, args: IArguments, ret: any, error: any);
     
         /**
          * @return {!Function} The called function.
