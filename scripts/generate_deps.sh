@@ -10,6 +10,7 @@ do
     OUTPUT="dependencies/$GOOG.txt"
     mkdir --parents $(dirname $OUTPUT)
 
+    # TODO reference based on types, not closure builder
     ./scripts/calculate_deps.sh $FILE > $OUTPUT
 done
 
