@@ -98,7 +98,7 @@ declare module goog.db {
          *     specified but autoIncrement was not enabled, it must be used.
          * @return {!goog.async.Deferred} The deferred put request.
          */
-        put(value: any, opt_key?: IDBKeyType): goog.async.Deferred<any>;
+        put(value: any, opt_key?: any): goog.async.Deferred<any>;
     
         /**
          * Adds an object to the object store. Requires that there is no object with
@@ -110,7 +110,7 @@ declare module goog.db {
          *     specified but autoIncrement was not enabled, it must be used.
          * @return {!goog.async.Deferred} The deferred add request.
          */
-        add(value: any, opt_key?: IDBKeyType): goog.async.Deferred<any>;
+        add(value: any, opt_key?: any): goog.async.Deferred<any>;
     
         /**
          * Removes an object from the store. No-op if there is no object present with
@@ -119,7 +119,7 @@ declare module goog.db {
          * @param {IDBKeyType} key The key to remove objects under.
          * @return {!goog.async.Deferred} The deferred remove request.
          */
-        remove(key: IDBKeyType): goog.async.Deferred<any>;
+        remove(key: any): goog.async.Deferred<any>;
     
         /**
          * Gets an object from the store. If no object is present with that key
@@ -128,7 +128,7 @@ declare module goog.db {
          * @param {IDBKeyType} key The key to look up.
          * @return {!goog.async.Deferred} The deferred get request.
          */
-        get(key: IDBKeyType): goog.async.Deferred<any>;
+        get(key: any): goog.async.Deferred<any>;
     
         /**
          * Gets all objects from the store and returns them as an array.
