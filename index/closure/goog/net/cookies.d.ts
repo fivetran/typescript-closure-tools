@@ -152,12 +152,6 @@ declare module goog.net {
          */
         clear(): void;
     }
-
-    /**
-     * A static default instance.
-     * @type {goog.net.Cookies}
-     */
-    var cookies: goog.net.Cookies;
 }
 
 declare module goog.net.Cookies {
