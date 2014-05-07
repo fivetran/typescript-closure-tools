@@ -1,4 +1,5 @@
 /// <reference path="../../../closure/goog/base.d.ts" />
+/// <reference path="../../../closure/goog/promise/promise.d.ts" />
 
 declare module goog {
 
