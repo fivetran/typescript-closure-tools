@@ -44,6 +44,7 @@
 /// <reference path="../../../../closure/goog/fs/entryimpl.d.ts" />
 /// <reference path="../../../../closure/goog/testing/fs/progressevent.d.ts" />
 /// <reference path="../../../../closure/goog/testing/fs/filewriter.d.ts" />
+/// <reference path="../../../../closure/goog/testing/fs/filesystem.d.ts" />
 
 declare module goog.testing.fs {
 
