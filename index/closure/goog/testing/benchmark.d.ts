@@ -31,12 +31,3 @@
 /// <reference path="../../../closure/goog/dom/dom.d.ts" />
 /// <reference path="../../../closure/goog/testing/performancetable.d.ts" />
 
-declare module window {
-
-    /**
-     * Onload handler that runs the benchmarks.
-     * @param {Event} e The event object.
-     */
-    function onload(e: Event): void;
-}
-
