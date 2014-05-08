@@ -2,7 +2,7 @@
 /// <reference path="../index/doctrine.d.ts"/>
 /// <reference path="../index/jasmine.d.ts"/>
 
-import disunion = require('../scripts/disunion');
+import disunion = require('../src/disunion');
 
 describe('disunion', () => {
     describe('outer', () => {
