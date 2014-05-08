@@ -1,0 +1,1 @@
+interface Arguments extends IArguments { }
