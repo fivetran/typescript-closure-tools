@@ -133,8 +133,8 @@ export function unload(t: doctrine.AnyType): doctrine.AnyType[] {
 }
 
 export function outer<T>(arrays: T[][]): T[][] {
-    if (arrays.length === 1)
-        return arrays[0].map(x => [x]);
+    if (arrays.length === 0)
+        return [[]];
     else {
         var next = outer(arrays.slice(1));
         var acc = [];

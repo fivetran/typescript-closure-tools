@@ -18,16 +18,18 @@ export function pretty(out: generate.Generated): string {
 
     out.references.forEach(symbol => {
         var filePath = finder.file(symbol);
-        var common = common_prefix(filePath, main.currentOutput);
-        var goUp = main.currentOutput
-            .substring(common.length)
-            .split('.')
-            .slice(1)
-            .map(_ => '..')
-            .join('/');
-        var goDown = filePath.substring(common.length);
+        if (filePath) {
+            var common = common_prefix(filePath, main.currentOutput);
+            var goUp = main.currentOutput
+                .substring(common.length)
+                .split('.')
+                .slice(1)
+                .map(_ => '..')
+                .join('/');
+            var goDown = filePath.substring(common.length);
 
-        acc += '/// <reference path="' + goUp + '/' + goDown + '.d.ts" />';
+            acc += '/// <reference path="' + goUp + '/' + goDown + '.d.ts" />\n';
+        }
     });
 
     Object.keys(out.modules).forEach(moduleName => {
@@ -38,7 +40,7 @@ export function pretty(out: generate.Generated): string {
             var member = moduleValue[propertyName];
 
             member = member.replace(/\n/g, '\n    ');
-            acc += '    ' + member + '\n';
+            acc += '\n    ' + member + '\n';
         });
 
         acc += '}\n';

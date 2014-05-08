@@ -233,7 +233,8 @@ function generate_var(name: string, docs: doctrine.JSDoc) {
 var VOID_TYPE = { type: { type: 'NameExpression', name: 'void' } };
 
 function generics(docs: doctrine.JSDoc) {
-    var templateTags = docs.tags.filter(t => t.title === 'template');
+    var tags = docs.tags || [];
+    var templateTags = tags.filter(t => t.title === 'template');
     var names = templateTags.map(x => x.description);
 
     if (names.length === 0)
@@ -242,22 +243,27 @@ function generics(docs: doctrine.JSDoc) {
         return '<' + names.join(', ') + '>';
 }
 
-function generate_function(name: string, docs: doctrine.JSDoc) {
-    // TODO overloads
+function generate_functions(name: string, docs: doctrine.JSDoc): string[] {
     var names = param_names(docs);
-    var types = tags_by_name(docs.tags);
-    var paramStrings = generate_param_strings(names, types);
-    var returnTag = find(docs.tags, t => t.title === 'return' || t.title === 'returns') || VOID_TYPE;
-    return 'function ' + name + generics(docs) + '(' + paramStrings.join(', ') + '): ' + generate_type(returnTag.type) + ';';
+    var tags = docs.tags || [];
+    var paramTags = tags.filter(t => t.title === 'param');
+    var overloads = find_overloads(paramTags);
+
+    return overloads.map(tagsByName => {
+        var paramStrings = generate_param_strings(names, tagsByName);
+        var returnTag = find(tags, t => t.title === 'return' || t.title === 'returns') || VOID_TYPE;
+
+        return 'function ' + name + generics(docs) + '(' + paramStrings.join(', ') + '): ' + generate_type(returnTag.type) + ';';
+    });
 }
 
-function generate_property(name: string, docs: doctrine.JSDoc) {
+function generate_properties(name: string, docs: doctrine.JSDoc): string[] {
     // Function
     if (is_function(docs))
-        return generate_function(name, docs);
+        return generate_functions(name, docs);
     // Field
     else
-        return generate_var(name, docs);
+        return [generate_var(name, docs)];
 }
 
 function generate_param_strings(names: string[], types: TagsByName) {
@@ -271,14 +277,18 @@ function generate_param_strings(names: string[], types: TagsByName) {
     });
 }
 
-function generate_method(name: string, docs: doctrine.JSDoc) {
-    // TODO overloads
+function generate_methods(name: string, docs: doctrine.JSDoc): string[] {
     var names = param_names(docs);
-    var types = tags_by_name(docs.tags);
-    var paramStrings = generate_param_strings(names, types);
-    var returnTag = find(docs.tags, t => t.title === 'return' || t.title === 'returns') || VOID_TYPE;
+    var tags = docs.tags || [];
+    var paramTags = tags.filter(t => t.title === 'param');
+    var overloads = find_overloads(paramTags);
 
-    return name + generics(docs) + '(' + paramStrings.join(', ') + '): ' + generate_type(returnTag.type);
+    return overloads.map(tagsByName => {
+        var paramStrings = generate_param_strings(names, tagsByName);
+        var returnTag = find(tags, t => t.title === 'return' || t.title === 'returns') || VOID_TYPE;
+
+        return name + generics(docs) + '(' + paramStrings.join(', ') + '): ' + generate_type(returnTag.type);
+    });
 }
 
 function generate_field_name(name, type) {
@@ -289,7 +299,8 @@ function generate_field_name(name, type) {
 }
 
 function generate_field(name: string, docs: doctrine.JSDoc) {
-    var typeTag = find(docs.tags, t => t.title === 'type');
+    var tags = docs.tags || [];
+    var typeTag = find(tags, t => t.title === 'type');
     var type = typeTag && typeTag.type;
     var fieldName = generate_field_name(name, type);
 
@@ -308,17 +319,18 @@ function is_function(docs) {
         || docs.tags.some(t => t.title === 'return');
 }
 
-function generate_member(name: string, docs: doctrine.JSDoc) {
+function generate_members(name: string, docs: doctrine.JSDoc): string[] {
     // Function
     if (is_function(docs))
-        return generate_method(name, docs);
+        return generate_methods(name, docs);
     // Field
     else
-        return generate_field(name, docs);
+        return [generate_field(name, docs)];
 }
 
 function generate_extends(docs: doctrine.JSDoc) {
-    var supers = docs.tags.filter(t => t.title === 'extends').map(x => x.type).map(generate_type);
+    var tags = docs.tags || [];
+    var supers = tags.filter(t => t.title === 'extends').map(x => x.type).map(generate_type);
 
     if (supers.length > 0)
         return 'extends ' + supers.join(', ') + ' ';
@@ -343,8 +355,11 @@ function generate_interface(name, prototype) {
         var docs = prototype[name];
         var text = docs.originalText.replace(/\n\s+/g, '\n     ');
 
-        acc += '\n    ' + text + '\n';
-        acc += '    ' + generate_member(name, docs) + ';\n'
+        acc += '\n';
+        generate_members(name, docs).forEach(member => {
+            acc += '    ' + text + '\n';
+            acc += '    ' + member + ';\n'
+        });
     });
 
     acc += '}';
@@ -386,6 +401,7 @@ function generate_class(name: string, prototype: combine.Symbol) {
 
     var text = constructor.originalText.replace(/\n\s+/g, '\n     ');
 
+    acc += '\n';
     generate_constructors(constructor.jsdoc).forEach(constructor => {
         acc += '    ' + text + '\n';
         acc += '    ' + constructor + ';\n';
@@ -396,8 +412,12 @@ function generate_class(name: string, prototype: combine.Symbol) {
         var text = prototype[name].originalText.replace(/\n\s+/g, '\n     ');
 
         if (!docs.tags.some(t => t.title === 'override')) {
-            acc += '\n    ' + text + '\n';
-            acc += '    ' + generate_member(name, docs) + ';\n'
+            acc += '\n';
+
+            generate_members(name, docs).forEach(member => {
+                acc += '    ' + text + '\n';
+                acc += '    ' + member + ';\n'
+            });
         }
     });
 
@@ -499,14 +519,17 @@ export function defs(symbols: combine.Symbols): Generated {
 
         Object.keys(symbol).forEach(propertyName => {
             var value: parser.Value = symbol[propertyName];
-            var comment = '\n\n' + value.originalText + '\n';
+            var comment = value.originalText + '\n';
 
             if (value.jsdoc.tags.some(t => t.title === 'enum'))
                 modules[moduleName][propertyName] = comment + generate_enum(propertyName, value.value);
             else if (value.jsdoc.tags.some(t => t.title === 'typedef'))
                 modules[moduleName][propertyName] = comment + generate_typedef(propertyName, value.jsdoc);
-            else
-                modules[moduleName][propertyName] = comment + generate_property(propertyName, value.jsdoc);
+            else {
+                modules[moduleName][propertyName] = generate_properties(propertyName, value.jsdoc)
+                    .map(property => comment + property)
+                    .join('\n');
+            }
         });
     });
 
