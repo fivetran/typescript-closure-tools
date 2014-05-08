@@ -12,6 +12,8 @@ export var currentInput: string;
 export var currentOutput: string;
 
 options.todo.forEach(todo => {
+    console.error(todo.input + ' ' + todo.output);
+
     currentInput = todo.input;
     currentOutput = todo.output;
 
