@@ -165,18 +165,16 @@ function generate_type(t) {
     // If t is a name expression, look for a definition and verify templates
     if (t.type === 'NameExpression') {
         var symbol = finder.symbol(t.name);
-        var tags: doctrine.Tag[] = get_in(symbol, ['', 'jsdoc', 'tags']);
+        var tags: doctrine.Tag[] = get_in(symbol, ['', 'jsdoc', 'tags']) || [];
+        var params = [];
 
-        if(tags) {
-            var params = [];
+        tags.filter(t => t.title === 'template')
+            .forEach(tag => {
+                tag.description.split(',').forEach(i => params.push('any'));
+            });
 
-            tags.filter(t => t.title === 'template')
-                .forEach(tag => {
-                    tag.description.split(',').forEach(i => params.push('any'));
-                });
-
+        if (params.length > 0)
             return t.name + '<' + params.join(', ') + '>';
-        }
     }
 
     return result;

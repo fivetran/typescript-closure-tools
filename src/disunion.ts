@@ -6,7 +6,7 @@
  * @param t
  */
 export function unload(t: doctrine.AnyType): doctrine.AnyType[] {
-    if(t === null)
+    if(!t)
         return [null];
 
     switch (t.type) {
