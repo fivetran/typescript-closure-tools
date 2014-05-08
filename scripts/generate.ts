@@ -162,7 +162,8 @@ function generate_type(t) {
 
     // If t is a name expression, look for a definition and verify templates
     if (t.type === 'NameExpression') {
-        var tags: doctrine.Tag[] = get_in(finder.symbol(t.name), ['constructor', 'jsdoc', 'tags']);
+        var symbol = finder.symbol(t.name);
+        var tags: doctrine.Tag[] = get_in(symbol, ['', 'jsdoc', 'tags']);
 
         if(tags) {
             var params = [];
@@ -398,6 +399,17 @@ function generate_constructors(value: parser.Value): string[] {
     });
 }
 
+function get_type_name(tag) {
+    if (tag.name)
+        return tag.name;
+    else if (tag.type) {
+        if (tag.type.type === 'NameExpression')
+            return tag.type.name;
+        else if (tag.type.type === 'TypeApplication')
+            return tag.type.expression.name;
+    }
+}
+
 function generate_class(name: string, prototype: combine.Symbol) {
     var constructor = prototype[''];
     var acc = 'class ' + name + generics(constructor.jsdoc) + ' ' + generate_extends(constructor.jsdoc) + generate_implements(constructor.jsdoc) + '{\n';
@@ -410,21 +422,37 @@ function generate_class(name: string, prototype: combine.Symbol) {
         acc += '    ' + constructor + ';\n';
     });
 
-    Object.keys(prototype).filter(name => name !== '').forEach(function (name) {
-        var value = prototype[name];
-        var docs = value.jsdoc;
-        var tags = docs.tags || [];
-        var text = value.originalText.replace(/\n\s+/g, '\n     ');
+    function add_members(prototype: combine.Symbol) {
+        Object.keys(prototype).filter(name => name !== '').forEach(function (name) {
+            var value = prototype[name];
+            var docs = value.jsdoc;
+            var tags = docs.tags || [];
+            var text = value.originalText.replace(/\n\s+/g, '\n     ');
 
-        if (!tags.some(t => t.title === 'override')) {
-            acc += '\n';
+            if (!tags.some(t => t.title === 'override')) {
+                acc += '\n';
 
-            generate_members(name, value).forEach(member => {
-                acc += '    ' + text + '\n';
-                acc += '    ' + member + ';\n'
-            });
-        }
-    });
+                generate_members(name, value).forEach(member => {
+                    acc += '    ' + text + '\n';
+                    acc += '    ' + member + ';\n'
+                });
+            }
+        });
+
+        // Look for implemented interfaces and inject them
+        var constructor = prototype[''];
+        var tags = constructor.jsdoc.tags || [];
+        var names = tags
+            .filter(t => t.title === 'implements')
+            .map(get_type_name);
+        var locations = names
+            .map(finder.symbol)
+            .filter(s => Boolean(s));
+
+        locations.forEach(add_members);
+    }
+
+    add_members(prototype);
 
     acc += '}';
 

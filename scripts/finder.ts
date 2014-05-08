@@ -44,8 +44,11 @@ export function symbols(fileName: string): combine.Symbols {
 export function symbol(symbolName: string): combine.Symbol {
     var fileName = file(symbolName);
 
-    if (fileName)
-        return symbols(fileName)[symbolName];
+    if (fileName) {
+        var s = symbols(fileName);
+
+        return s.classes[symbolName] || s.modules[symbolName];
+    }
     else
         return null;
 }
