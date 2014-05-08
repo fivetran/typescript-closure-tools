@@ -11,6 +11,9 @@ function common_prefix(x: string, y: string) {
     while (n < x.length && n < y.length && x.charAt(n) === y.charAt(n))
         n++;
 
+    while (n > 0 && x.charAt(n - 1) !== '/')
+        n--;
+
     return x.substring(0, n);
 }
 
@@ -38,6 +41,9 @@ export function pretty(out: generate.Generated): string {
                 .slice(1)
                 .map(_ => '..')
                 .join('/');
+
+            if (goUp === '')
+                goUp = '.';
 
             acc += '/// <reference path="' + goUp + '/' + reference + '" />\n';
         }
