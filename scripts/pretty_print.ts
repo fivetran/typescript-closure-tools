@@ -1,12 +1,37 @@
 /// <reference path="../index/node.d.ts"/>
 
 import generate = require('./generate');
+import main = require('./main');
+import finder = require('./finder');
 
-export function pretty(modules: generate.Generated): string {
+function common_prefix(x: string, y: string) {
+    var n = 0;
+
+    while (n < x.length && n < y.length && x.charAt(n) === y.charAt(n))
+        n++;
+
+    return x.substring(0, n);
+}
+
+export function pretty(out: generate.Generated): string {
     var acc = '';
 
-    Object.keys(modules).forEach(moduleName => {
-        var moduleValue = modules[moduleName];
+    out.references.forEach(symbol => {
+        var filePath = finder.file(symbol);
+        var common = common_prefix(filePath, main.currentOutput);
+        var goUp = main.currentOutput
+            .substring(common.length)
+            .split('.')
+            .slice(1)
+            .map(_ => '..')
+            .join('/');
+        var goDown = filePath.substring(common.length);
+
+        acc += '/// <reference path="' + goUp + '/' + goDown + '.d.ts" />';
+    });
+
+    Object.keys(out.modules).forEach(moduleName => {
+        var moduleValue = out.modules[moduleName];
         acc += '\ndeclare module ' + moduleName + ' {\n';
 
         Object.keys(moduleValue).forEach(function (propertyName) {

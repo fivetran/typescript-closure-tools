@@ -6,6 +6,9 @@ import combine = require('./combine');
 import parser = require('./parser');
 import finder = require('./finder');
 
+// TODO interpret unions as overloads
+// TODO inject interfaces
+
 var reserved =  [
     'break',
     'case',
@@ -117,6 +120,7 @@ function comment(text) {
 function generate_applied_type(t) {
     switch (t.type) {
         case 'NameExpression':
+            references[t.name] = true;
             return generate_type_name(t.name);
         case 'TypeApplication':
             return generate_type_application(t.expression, t.applications);
@@ -405,6 +409,7 @@ function generate_typedef(name: string, docs: doctrine.JSDoc) {
             return 'interface ' + name + ' {\n    ' + fieldsString + '\n}';
         // T NamedType becomes interface T extends NamedType { }
         case 'NameExpression':
+            references[typedef.name] = true;
             return 'interface ' + name + ' extends ' + typedef.name + ' { }';
         // T NamedType<Param> becomes interface T extends NamedType<Param> { }
         case 'TypeApplication':
@@ -422,14 +427,22 @@ function generate_typedef(name: string, docs: doctrine.JSDoc) {
     }
 }
 
-export interface Generated {
+export interface Modules {
     [name: string]: {
         [member: string]: string
-    };
+    }
 }
 
+export interface Generated {
+    references: string[];
+    modules: Modules
+}
+
+var references: { [symbol: string]: boolean } = {};
+
 export function defs(symbols: combine.Symbols): Generated {
-    var modules: Generated = {};
+    var modules: Modules = {};
+    references = {};
 
     // Generate classes
     Object.keys(symbols.classes).forEach(name => {
@@ -468,5 +481,8 @@ export function defs(symbols: combine.Symbols): Generated {
         });
     });
 
-    return modules;
+    return {
+        modules: modules,
+        references: Object.keys(references)
+    };
 }
