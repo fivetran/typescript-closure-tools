@@ -18,7 +18,7 @@ export function pretty(out: generate.Generated): string {
 
     out.references.forEach(symbol => {
         var filePath = finder.file(symbol);
-        if (filePath) {
+        if (filePath && filePath !== main.currentInput) {
             var common = common_prefix(filePath, main.currentOutput);
             var goUp = main.currentOutput
                 .substring(common.length)
