@@ -42,7 +42,8 @@ export function members(file: parser.File): Symbols {
             var className = parts[0];
             var memberName = parts[1];
 
-            acc.classes[className][memberName] = symbol;
+            if (acc.classes[className])
+                acc.classes[className][memberName] = symbol;
         }
         // Static member of module
         else {
