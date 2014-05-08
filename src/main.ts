@@ -23,5 +23,17 @@ options.todo.forEach(todo => {
     var parentDir = (/^.*\//).exec(todo.output)[0];
 
     mkdirp.sync(parentDir);
-    fs.writeFile(todo.output, pretty);
+
+    fs.exists(todo.output, exists => {
+        if (exists) {
+            fs.readFile(todo.output, 'utf8', (_, text) => {
+                if (text === pretty)
+                    console.log('No changes');
+                else
+                    fs.writeFile(todo.output, pretty);
+            });
+        } else {
+            fs.writeFile(todo.output, pretty);
+        }
+    });
 });
