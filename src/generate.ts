@@ -1,11 +1,13 @@
 /// <reference path="../index/node.d.ts"/>
 /// <reference path="../index/doctrine.d.ts"/>
 /// <reference path="../index/esprima.d.ts"/>
+/// <reference path="../index/escodegen.d.ts"/>
 
 import combine = require('./combine');
 import parser = require('./parser');
 import finder = require('./finder');
 import disunion = require('./disunion');
+import escodegen = require('escodegen');
 
 // TODO inject interfaces
 
@@ -459,7 +461,7 @@ function generate_class(name: string, prototype: combine.Symbol) {
     return acc;
 }
 
-function generate_enum(name: string, values: esprima.Syntax.ObjectExpression) {
+function generate_enum(name: string, values) {
     function key_id(property) {
         if ('name' in property)
             return property.name;
@@ -469,9 +471,28 @@ function generate_enum(name: string, values: esprima.Syntax.ObjectExpression) {
             throw new Error('Unknown enum property ' + property);
     }
 
-    var keys = values.properties.map(x => x.key).map(key_id);
+    if (values.type === 'ObjectExpression') {
+        var keys = values.properties.map(x => x.key).map(key_id);
 
-    return 'enum ' + name + ' { ' + keys.join(', ') + ' } ';
+        return 'enum ' + name + ' { ' + keys.join(', ') + ' } ';
+    }
+    // Otherwise try to follow references
+    else {
+        var reference = escodegen.generate(values);
+        var dot = reference.lastIndexOf('.');
+        var moduleName = reference.substring(0, dot);
+        var enumName = reference.substring(dot + 1);
+        var fileName = finder.file(moduleName);
+
+        if (!fileName)
+            return 'enum ' + name + ' { /* ' + reference + ' */ } ';
+
+        var symbols = finder.symbols(fileName);
+        var moduleValue = symbols.modules[moduleName];
+        var enumValue = moduleValue[enumName].value;
+
+        return generate_enum(name, enumValue);
+    }
 }
 
 function generate_typedef(name: string, docs: doctrine.JSDoc) {
