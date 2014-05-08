@@ -7,7 +7,6 @@ import parser = require('./parser');
 import finder = require('./finder');
 import disunion = require('./disunion');
 
-// TODO interpret function argument unions as overloads
 // TODO inject interfaces
 
 var reserved =  [
@@ -202,12 +201,11 @@ function generate_function_parameter(annotation) {
     return generate_function_parameter_name(annotation) + ': ' + generate_type(annotation.type);
 }
 
-function param_names(docs) {
-    // TODO use real value
+function param_names(docs: parser.Value) {
     if (docs.value && docs.value.params)
         return docs.value.params.map(x => x.name);
     else
-        return docs.tags.filter(t => t.title === 'param').map(x => x.name);
+        return docs.jsdoc.tags.filter(t => t.title === 'param').map(x => x.name);
 }
 
 interface TagsByName {
@@ -243,8 +241,9 @@ function generics(docs: doctrine.JSDoc) {
         return '<' + names.join(', ') + '>';
 }
 
-function generate_functions(name: string, docs: doctrine.JSDoc): string[] {
-    var names = param_names(docs);
+function generate_functions(name: string, value: parser.Value): string[] {
+    var docs = value.jsdoc;
+    var names = param_names(value);
     var tags = docs.tags || [];
     var paramTags = tags.filter(t => t.title === 'param');
     var overloads = find_overloads(paramTags);
@@ -257,13 +256,13 @@ function generate_functions(name: string, docs: doctrine.JSDoc): string[] {
     });
 }
 
-function generate_properties(name: string, docs: doctrine.JSDoc): string[] {
+function generate_properties(name: string, value: parser.Value): string[] {
     // Function
-    if (is_function(docs))
-        return generate_functions(name, docs);
+    if (is_function(value))
+        return generate_functions(name, value);
     // Field
     else
-        return [generate_var(name, docs)];
+        return [generate_var(name, value.jsdoc)];
 }
 
 function generate_param_strings(names: string[], types: TagsByName) {
@@ -277,8 +276,9 @@ function generate_param_strings(names: string[], types: TagsByName) {
     });
 }
 
-function generate_methods(name: string, docs: doctrine.JSDoc): string[] {
-    var names = param_names(docs);
+function generate_methods(name: string, value: parser.Value): string[] {
+    var docs = value.jsdoc;
+    var names = param_names(value);
     var tags = docs.tags || [];
     var paramTags = tags.filter(t => t.title === 'param');
     var overloads = find_overloads(paramTags);
@@ -313,19 +313,21 @@ function generate_record_field(field) {
     return fieldName + ': ' + generate_type(field.value);
 }
 
-function is_function(docs) {
-    return (docs.value && docs.value.type === 'FunctionExpression')
-        || docs.tags.some(t => t.title === 'param')
-        || docs.tags.some(t => t.title === 'return');
+function is_function(value: parser.Value) {
+    var tags = value.jsdoc.tags || [];
+
+    return (value.value && value.value.type === 'FunctionExpression')
+        || tags.some(t => t.title === 'param')
+        || tags.some(t => t.title === 'return');
 }
 
-function generate_members(name: string, docs: doctrine.JSDoc): string[] {
+function generate_members(name: string, value: parser.Value): string[] {
     // Function
-    if (is_function(docs))
-        return generate_methods(name, docs);
+    if (is_function(value))
+        return generate_methods(name, value);
     // Field
     else
-        return [generate_field(name, docs)];
+        return [generate_field(name, value.jsdoc)];
 }
 
 function generate_extends(docs: doctrine.JSDoc) {
@@ -347,16 +349,16 @@ function generate_implements(docs: doctrine.JSDoc) {
         return '';
 }
 
-function generate_interface(name, prototype) {
+function generate_interface(name: string, prototype: combine.Symbol) {
     var constructor = prototype[''];
-    var acc = 'interface ' + name + generics(constructor.jsdoc) + ' ' + generate_extends(constructor) + '{\n';
+    var acc = 'interface ' + name + generics(constructor.jsdoc) + ' ' + generate_extends(constructor.jsdoc) + '{\n';
 
     Object.keys(prototype).filter(name => name !== '').forEach(function (name) {
-        var docs = prototype[name];
-        var text = docs.originalText.replace(/\n\s+/g, '\n     ');
+        var value = prototype[name];
+        var text = value.originalText.replace(/\n\s+/g, '\n     ');
 
         acc += '\n';
-        generate_members(name, docs).forEach(member => {
+        generate_members(name, value).forEach(member => {
             acc += '    ' + text + '\n';
             acc += '    ' + member + ';\n'
         });
@@ -385,8 +387,9 @@ function find_overloads(params: doctrine.Tag[]): TagsByName[] {
     return overloads.map(tags_by_name);
 }
 
-function generate_constructors(docs: doctrine.JSDoc): string[] {
-    var names = param_names(docs);
+function generate_constructors(value: parser.Value): string[] {
+    var docs = value.jsdoc;
+    var names = param_names(value);
     var paramTags = docs.tags.filter(t => t.title === 'param');
     var overloads = find_overloads(paramTags);
 
@@ -402,19 +405,21 @@ function generate_class(name: string, prototype: combine.Symbol) {
     var text = constructor.originalText.replace(/\n\s+/g, '\n     ');
 
     acc += '\n';
-    generate_constructors(constructor.jsdoc).forEach(constructor => {
+    generate_constructors(constructor).forEach(constructor => {
         acc += '    ' + text + '\n';
         acc += '    ' + constructor + ';\n';
     });
 
     Object.keys(prototype).filter(name => name !== '').forEach(function (name) {
-        var docs = prototype[name].jsdoc;
-        var text = prototype[name].originalText.replace(/\n\s+/g, '\n     ');
+        var value = prototype[name];
+        var docs = value.jsdoc;
+        var tags = docs.tags || [];
+        var text = value.originalText.replace(/\n\s+/g, '\n     ');
 
-        if (!docs.tags.some(t => t.title === 'override')) {
+        if (!tags.some(t => t.title === 'override')) {
             acc += '\n';
 
-            generate_members(name, docs).forEach(member => {
+            generate_members(name, value).forEach(member => {
                 acc += '    ' + text + '\n';
                 acc += '    ' + member + ';\n'
             });
@@ -526,7 +531,7 @@ export function defs(symbols: combine.Symbols): Generated {
             else if (value.jsdoc.tags.some(t => t.title === 'typedef'))
                 modules[moduleName][propertyName] = comment + generate_typedef(propertyName, value.jsdoc);
             else {
-                modules[moduleName][propertyName] = generate_properties(propertyName, value.jsdoc)
+                modules[moduleName][propertyName] = generate_properties(propertyName, value)
                     .map(property => comment + property)
                     .join('\n');
             }
