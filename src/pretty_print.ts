@@ -14,21 +14,32 @@ function common_prefix(x: string, y: string) {
     return x.substring(0, n);
 }
 
+function drop_prefix(value: string, prefix: string) {
+    if (value.substring(0, prefix.length) === prefix)
+        return value.substring(prefix.length);
+    else
+        return value;
+}
+
 export function pretty(out: generate.Generated): string {
     var acc = '';
 
     function emit_reference(filePath) {
         if (filePath && filePath !== main.currentInput) {
-            var common = common_prefix(filePath, main.currentOutput);
-            var goUp = main.currentOutput
-                .substring(common.length)
+            var reference = drop_prefix(filePath, options.inputRoot);
+            var output = drop_prefix(main.currentOutput, options.outputRoot);
+            var common = common_prefix(reference, output);
+
+            reference = drop_prefix(reference, common);
+            output = drop_prefix(output, common);
+
+            var goUp = output
                 .split('/')
                 .slice(1)
                 .map(_ => '..')
                 .join('/');
-            var goDown = filePath.substring(common.length);
 
-            acc += '/// <reference path="' + goUp + '/' + goDown + '" />\n';
+            acc += '/// <reference path="' + goUp + '/' + reference + '" />\n';
         }
     }
 
@@ -42,7 +53,11 @@ export function pretty(out: generate.Generated): string {
     if (options.globals)
         emit_reference(options.globals);
 
-    out.references.forEach(symbol => emit_reference(change_extension(finder.file(symbol))));
+    out.references
+        .map(finder.file)
+        .filter(file => file !== main.currentInput)
+        .map(change_extension)
+        .forEach(emit_reference);
 
     Object.keys(out.modules).forEach(moduleName => {
         var moduleValue = out.modules[moduleName];

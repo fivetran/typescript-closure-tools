@@ -5,23 +5,25 @@ export interface InputOutput {
     output: string;
 }
 
-export var provides: string;
-export var globals: string;
-export var todo: InputOutput[] = [];
-
 var options: string[] = process.argv.slice(2);
 
-var findProvides = options.indexOf('--provides');
-if (findProvides !== -1) {
-    provides = options[findProvides + 1];
-    options.splice(findProvides, 2);
+function get_option(name): string {
+    var index = options.indexOf('--' + name);
+
+    if (index !== -1) {
+        var value = options[index + 1];
+
+        options.splice(index, 2);
+
+        return value;
+    }
 }
 
-var findGlobals = options.indexOf('--globals');
-if (findGlobals !== -1) {
-    globals = options[findGlobals + 1];
-    options.splice(findGlobals, 2);
-}
+export var provides = get_option('provides');
+export var globals = get_option('globals');
+export var inputRoot = get_option('input_root') || '';
+export var outputRoot = get_option('output_root') || '';
+export var todo: InputOutput[] = [];
 
 for (var i = 0; i < options.length; i += 2) {
     todo.push({
