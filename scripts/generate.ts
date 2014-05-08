@@ -203,6 +203,7 @@ function generate_function_parameter(annotation) {
 }
 
 function param_names(docs) {
+    // TODO use real value
     if (docs.value && docs.value.params)
         return docs.value.params.map(x => x.name);
     else
@@ -213,10 +214,10 @@ interface TagsByName {
     [name: string]: doctrine.Tag
 }
 
-function param_types_by_name(docs: doctrine.JSDoc): TagsByName {
+function tags_by_name(tags: doctrine.Tag[]): TagsByName {
     var acc: TagsByName = {};
 
-    docs.tags.forEach(function(tag) {
+    tags.forEach(function(tag) {
         acc[tag.name] = tag;
     });
 
@@ -244,7 +245,7 @@ function generics(docs: doctrine.JSDoc) {
 function generate_function(name: string, docs: doctrine.JSDoc) {
     // TODO overloads
     var names = param_names(docs);
-    var types = param_types_by_name(docs);
+    var types = tags_by_name(docs.tags);
     var paramStrings = generate_param_strings(names, types);
     var returnTag = find(docs.tags, t => t.title === 'return' || t.title === 'returns') || VOID_TYPE;
     return 'function ' + name + generics(docs) + '(' + paramStrings.join(', ') + '): ' + generate_type(returnTag.type) + ';';
@@ -273,7 +274,7 @@ function generate_param_strings(names: string[], types: TagsByName) {
 function generate_method(name: string, docs: doctrine.JSDoc) {
     // TODO overloads
     var names = param_names(docs);
-    var types = param_types_by_name(docs);
+    var types = tags_by_name(docs.tags);
     var paramStrings = generate_param_strings(names, types);
     var returnTag = find(docs.tags, t => t.title === 'return' || t.title === 'returns') || VOID_TYPE;
 
@@ -351,7 +352,7 @@ function generate_interface(name, prototype) {
     return acc;
 }
 
-function find_overloads(params: doctrine.Tag[]): doctrine.Tag[][] {
+function find_overloads(params: doctrine.Tag[]): TagsByName[] {
     var unions: doctrine.Tag[][] = params.map(tag => {
         function with_type(type: doctrine.AnyType) {
             return {
@@ -364,16 +365,18 @@ function find_overloads(params: doctrine.Tag[]): doctrine.Tag[][] {
 
         return disunion.unload(tag.type).map(with_type);
     });
+    var overloads: doctrine.Tag[][] = disunion.outer(unions);
 
-    return disunion.outer(unions);
+    return overloads.map(tags_by_name);
 }
 
 function generate_constructors(docs: doctrine.JSDoc): string[] {
+    var names = param_names(docs);
     var paramTags = docs.tags.filter(t => t.title === 'param');
     var overloads = find_overloads(paramTags);
 
-    return overloads.map(paramTags => {
-        return 'constructor(' + paramTags.map(generate_function_parameter).join(', ') + ')';
+    return overloads.map(tagsByName => {
+        return 'constructor(' + generate_param_strings(names, tagsByName).join(', ') + ')';
     });
 }
 
