@@ -50,11 +50,21 @@ declare module doctrine {
         value: AnyType;
     }
 
+    interface ParameterType extends Type {
+        name: string;
+        expression: AnyType;
+    }
+
     interface RecordType extends Type {
         fields: FieldType[];
     }
 
-    interface AnyType extends UnionType, NameExpression, TypeApplication, FunctionType, OptionalType, FieldType, RecordType { }
+    interface ArrayType extends Type {
+        elements: AnyType[];
+    }
+
+    interface AnyType extends UnionType, NameExpression, TypeApplication, FunctionType, OptionalType, FieldType,
+        ParameterType, RecordType, ArrayType { }
 
     function parse(comment: string, options: Options): JSDoc;
 }

@@ -6,6 +6,7 @@
     "escodegen": "*",
     "jsdoc": "*",
     "mocha": "*",
-    "chai": "*"
+    "chai": "*",
+    "jasmine-node": "*"
   }
 }

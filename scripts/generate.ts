@@ -5,8 +5,9 @@
 import combine = require('./combine');
 import parser = require('./parser');
 import finder = require('./finder');
+import disunion = require('./disunion');
 
-// TODO interpret unions as overloads
+// TODO interpret function argument unions as overloads
 // TODO inject interfaces
 
 var reserved =  [
@@ -241,6 +242,7 @@ function generics(docs: doctrine.JSDoc) {
 }
 
 function generate_function(name: string, docs: doctrine.JSDoc) {
+    // TODO overloads
     var names = param_names(docs);
     var types = param_types_by_name(docs);
     var paramStrings = generate_param_strings(names, types);
@@ -269,6 +271,7 @@ function generate_param_strings(names: string[], types: TagsByName) {
 }
 
 function generate_method(name: string, docs: doctrine.JSDoc) {
+    // TODO overloads
     var names = param_names(docs);
     var types = param_types_by_name(docs);
     var paramStrings = generate_param_strings(names, types);
@@ -348,10 +351,30 @@ function generate_interface(name, prototype) {
     return acc;
 }
 
-function generate_constructor(docs: doctrine.JSDoc) {
-    var paramTags = docs.tags.filter(t => t.title === 'param');
+function find_overloads(params: doctrine.Tag[]): doctrine.Tag[][] {
+    var unions: doctrine.Tag[][] = params.map(tag => {
+        function with_type(type: doctrine.AnyType) {
+            return {
+                title: tag.title,
+                name: tag.name,
+                description: tag.description,
+                type: type
+            }
+        }
 
-    return 'constructor(' + paramTags.map(generate_function_parameter).join(', ') + ')';
+        return disunion.unload(tag.type).map(with_type);
+    });
+
+    return disunion.outer(unions);
+}
+
+function generate_constructors(docs: doctrine.JSDoc): string[] {
+    var paramTags = docs.tags.filter(t => t.title === 'param');
+    var overloads = find_overloads(paramTags);
+
+    return overloads.map(paramTags => {
+        return 'constructor(' + paramTags.map(generate_function_parameter).join(', ') + ')';
+    });
 }
 
 function generate_class(name: string, prototype: combine.Symbol) {
@@ -359,8 +382,11 @@ function generate_class(name: string, prototype: combine.Symbol) {
     var acc = 'class ' + name + generics(constructor.jsdoc) + ' ' + generate_extends(constructor.jsdoc) + generate_implements(constructor.jsdoc) + '{\n';
 
     var text = constructor.originalText.replace(/\n\s+/g, '\n     ');
-    acc += '    ' + text + '\n';
-    acc += '    ' + generate_constructor(constructor.jsdoc) + ';\n';
+
+    generate_constructors(constructor.jsdoc).forEach(constructor => {
+        acc += '    ' + text + '\n';
+        acc += '    ' + constructor + ';\n';
+    });
 
     Object.keys(prototype).filter(name => name !== '').forEach(function (name) {
         var docs = prototype[name].jsdoc;
