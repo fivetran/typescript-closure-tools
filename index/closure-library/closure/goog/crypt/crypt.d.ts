@@ -34,14 +34,6 @@ declare module goog.crypt {
      *     representing characters.
      * @return {string} Hex string.
      */
-    function byteArrayToHex(array: Int8Array): string;
-    /**
-     * Turns an array of numbers into the hex string given by the concatenation of
-     * the hex values to which the numbers correspond.
-     * @param {Uint8Array|Int8Array|Array.<number>} array Array of numbers
-     *     representing characters.
-     * @return {string} Hex string.
-     */
     function byteArrayToHex(array: number[]): string;
 
     /**
@@ -65,12 +57,6 @@ declare module goog.crypt {
      * @return {string} 16-bit Unicode string.
      */
     function utf8ByteArrayToString(bytes: Uint8Array): string;
-    /**
-     * Converts a UTF-8 byte array to JavaScript's 16-bit Unicode.
-     * @param {Uint8Array|Int8Array|Array.<number>} bytes UTF-8 byte array.
-     * @return {string} 16-bit Unicode string.
-     */
-    function utf8ByteArrayToString(bytes: Int8Array): string;
     /**
      * Converts a UTF-8 byte array to JavaScript's 16-bit Unicode.
      * @param {Uint8Array|Int8Array|Array.<number>} bytes UTF-8 byte array.
