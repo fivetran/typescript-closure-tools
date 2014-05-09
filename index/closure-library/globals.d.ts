@@ -11,6 +11,8 @@ declare class _Error implements Error {
     message: string;
 }
 
+interface _File extends File { }
+
 interface Image extends HTMLImageElement { }
 
 interface IThenable<R> {
