@@ -65,6 +65,9 @@ export function pretty(out: generate.Generated): string {
         .map(change_extension)
         .forEach(emit_reference);
 
+    // TODO substitute goog.string
+    // TODO break static imports
+
     Object.keys(out.modules).forEach(moduleName => {
         var moduleValue = out.modules[moduleName];
         acc += '\ndeclare module ' + moduleName + ' {\n';

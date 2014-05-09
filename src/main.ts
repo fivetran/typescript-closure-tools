@@ -1,5 +1,6 @@
 /// <reference path="../index/node.d.ts"/>
 /// <reference path="../index/mkdirp.d.ts"/>
+/// <reference path="../index/colors.d.ts"/>
 
 import fs = require('fs');
 import finder = require('./finder');
@@ -7,13 +8,12 @@ import generate = require('./generate');
 import pretty_print = require('./pretty_print');
 import options = require('./options');
 import mkdirp = require('mkdirp');
+require('colors') ;
 
 export var currentInput: string;
 export var currentOutput: string;
 
 options.todo.forEach(todo => {
-    console.error(todo.input + ' ' + todo.output);
-
     currentInput = todo.input;
     currentOutput = todo.output;
 
@@ -24,16 +24,10 @@ options.todo.forEach(todo => {
 
     mkdirp.sync(parentDir);
 
-    fs.exists(todo.output, exists => {
-        if (exists) {
-            fs.readFile(todo.output, 'utf8', (_, text) => {
-                if (text === pretty)
-                    console.log('No changes');
-                else
-                    fs.writeFile(todo.output, pretty);
-            });
-        } else {
-            fs.writeFile(todo.output, pretty);
-        }
-    });
+    if (fs.existsSync(todo.output) && fs.readFileSync(todo.output, 'utf8') === pretty) {
+        console.error('No changes\t'.green + todo.output);
+    } else {
+        fs.writeFile(todo.output, pretty);
+        console.error('Wrote\t'.red + todo.output);
+    }
 });

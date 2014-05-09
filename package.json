@@ -8,6 +8,7 @@
     "mocha": "*",
     "chai": "*",
     "jasmine-node": "*",
-    "mkdirp": "*"
+    "mkdirp": "*",
+    "colors": "*"
   }
 }

@@ -1,6 +1,29 @@
 /// <reference path="../index/node.d.ts"/>
 /// <reference path="../index/doctrine.d.ts"/>
 
+function is_any(t: doctrine.AnyType): boolean {
+    switch (t.type) {
+        case 'UnionType':
+        case 'AllLiteral':
+        case 'NullableLiteral':
+        case 'NullLiteral':
+        case 'UndefinedLiteral':
+            return true;
+        default:
+            return false;
+    }
+}
+
+function simplify(types: doctrine.AnyType[]): doctrine.AnyType[] {
+    var unique = types.filter(t => !is_any(t));
+    var anys = types.filter(is_any);
+
+    if (anys.length > 0)
+      unique.push(anys[0]);
+
+    return unique;
+}
+
 /**
  * Eliminate union types by splitting into multiple types
  * @param t
@@ -117,7 +140,8 @@ export function unload(t: doctrine.AnyType): doctrine.AnyType[] {
             return acc;
         // Union types
         case 'UnionType':
-            var elements = outer(t.elements.map(unload));
+            var simple = simplify(t.elements);
+            var elements = outer(simple.map(unload));
             var acc = [];
 
             elements.forEach(e => {
