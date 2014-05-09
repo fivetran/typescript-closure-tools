@@ -29,7 +29,7 @@ declare module goog.date.relative {
      * @param {goog.date.relative.TimeDeltaFormatter} formatter The function to use
      *     for formatting time deltas (i.e. relative times).
      */
-    function setTimeDeltaFormatter(formatter: (_0: number, _1: boolean, _2: goog.date.relative.Unit) => string): void;
+    function setTimeDeltaFormatter(formatter: goog.date.relative.TimeDeltaFormatter): void;
 
     /**
      * Accepts a timestamp in milliseconds and outputs a relative time in the form

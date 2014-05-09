@@ -40,7 +40,7 @@ declare module goog.vec.mat4d {
      * @return {!goog.vec.mat4d.Type} return mat so that operations can be
      *     chained together.
      */
-    function setFromValues(mat: Float64Array, v00: number, v10: number, v20: number, v30: number, v01: number, v11: number, v21: number, v31: number, v02: number, v12: number, v22: number, v32: number, v03: number, v13: number, v23: number, v33: number): goog.vec.mat4d.Type;
+    function setFromValues(mat: goog.vec.mat4d.Type, v00: number, v10: number, v20: number, v30: number, v01: number, v11: number, v21: number, v31: number, v02: number, v12: number, v22: number, v32: number, v03: number, v13: number, v23: number, v33: number): goog.vec.mat4d.Type;
 
     /**
      * Initializes mat4d mat from mat4d src.
@@ -50,7 +50,7 @@ declare module goog.vec.mat4d {
      * @return {!goog.vec.mat4d.Type} Return mat so that operations can be
      *     chained together.
      */
-    function setFromMat4d(mat: Float64Array, src: Float64Array): goog.vec.mat4d.Type;
+    function setFromMat4d(mat: goog.vec.mat4d.Type, src: goog.vec.mat4d.Type): goog.vec.mat4d.Type;
 
     /**
      * Initializes mat4d mat from mat4f src (typed as a Float32Array to
@@ -61,7 +61,7 @@ declare module goog.vec.mat4d {
      * @return {!goog.vec.mat4d.Type} Return mat so that operations can be
      *     chained together.
      */
-    function setFromMat4f(mat: Float64Array, src: Float32Array): goog.vec.mat4d.Type;
+    function setFromMat4f(mat: goog.vec.mat4d.Type, src: Float32Array): goog.vec.mat4d.Type;
 
     /**
      * Initializes mat4d mat from Array src.
@@ -71,7 +71,7 @@ declare module goog.vec.mat4d {
      * @return {!goog.vec.mat4d.Type} Return mat so that operations can be
      *     chained together.
      */
-    function setFromArray(mat: Float64Array, src: number[]): goog.vec.mat4d.Type;
+    function setFromArray(mat: goog.vec.mat4d.Type, src: number[]): goog.vec.mat4d.Type;
 
     /**
      * Retrieves the element at the requested row and column.
@@ -82,7 +82,7 @@ declare module goog.vec.mat4d {
      * @param {number} column The column index.
      * @return {number} The element value at the requested row, column indices.
      */
-    function getElement(mat: Float64Array, row: number, column: number): number;
+    function getElement(mat: goog.vec.mat4d.Type, row: number, column: number): number;
 
     /**
      * Sets the element at the requested row and column.
@@ -95,7 +95,7 @@ declare module goog.vec.mat4d {
      * @return {!goog.vec.mat4d.Type} return mat so that operations can be
      *     chained together.
      */
-    function setElement(mat: Float64Array, row: number, column: number, value: number): goog.vec.mat4d.Type;
+    function setElement(mat: goog.vec.mat4d.Type, row: number, column: number, value: number): goog.vec.mat4d.Type;
 
     /**
      * Sets the diagonal values of the matrix from the given values.
@@ -108,7 +108,7 @@ declare module goog.vec.mat4d {
      * @return {!goog.vec.mat4d.Type} return mat so that operations can be
      *     chained together.
      */
-    function setDiagonalValues(mat: Float64Array, v00: number, v11: number, v22: number, v33: number): goog.vec.mat4d.Type;
+    function setDiagonalValues(mat: goog.vec.mat4d.Type, v00: number, v11: number, v22: number, v33: number): goog.vec.mat4d.Type;
 
     /**
      * Sets the diagonal values of the matrix from the given vector.
@@ -118,7 +118,7 @@ declare module goog.vec.mat4d {
      * @return {!goog.vec.mat4d.Type} return mat so that operations can be
      *     chained together.
      */
-    function setDiagonal(mat: Float64Array, vec: Float64Array): goog.vec.mat4d.Type;
+    function setDiagonal(mat: goog.vec.mat4d.Type, vec: goog.vec.vec4d.Type): goog.vec.mat4d.Type;
 
     /**
      * Gets the diagonal values of the matrix into the given vector.
@@ -131,7 +131,7 @@ declare module goog.vec.mat4d {
      * @return {goog.vec.vec4d.Type} return vec so that operations can be
      *     chained together.
      */
-    function getDiagonal(mat: Float64Array, vec: Float64Array, opt_diagonal?: number): goog.vec.vec4d.Type;
+    function getDiagonal(mat: goog.vec.mat4d.Type, vec: goog.vec.vec4d.Type, opt_diagonal?: number): goog.vec.vec4d.Type;
 
     /**
      * Sets the specified column with the supplied values.
@@ -145,7 +145,7 @@ declare module goog.vec.mat4d {
      * @return {!goog.vec.mat4d.Type} return mat so that operations can be
      *     chained together.
      */
-    function setColumnValues(mat: Float64Array, column: number, v0: number, v1: number, v2: number, v3: number): goog.vec.mat4d.Type;
+    function setColumnValues(mat: goog.vec.mat4d.Type, column: number, v0: number, v1: number, v2: number, v3: number): goog.vec.mat4d.Type;
 
     /**
      * Sets the specified column with the value from the supplied vector.
@@ -156,7 +156,7 @@ declare module goog.vec.mat4d {
      * @return {!goog.vec.mat4d.Type} return mat so that operations can be
      *     chained together.
      */
-    function setColumn(mat: Float64Array, column: number, vec: Float64Array): goog.vec.mat4d.Type;
+    function setColumn(mat: goog.vec.mat4d.Type, column: number, vec: goog.vec.vec4d.Type): goog.vec.mat4d.Type;
 
     /**
      * Retrieves the specified column from the matrix into the given vector.
@@ -168,7 +168,7 @@ declare module goog.vec.mat4d {
      * @return {!goog.vec.vec4d.Type} return vec so that operations can be
      *     chained together.
      */
-    function getColumn(mat: Float64Array, column: number, vec: Float64Array): goog.vec.vec4d.Type;
+    function getColumn(mat: goog.vec.mat4d.Type, column: number, vec: goog.vec.vec4d.Type): goog.vec.vec4d.Type;
 
     /**
      * Sets the columns of the matrix from the given vectors.
@@ -181,7 +181,7 @@ declare module goog.vec.mat4d {
      * @return {!goog.vec.mat4d.Type} return mat so that operations can be
      *     chained together.
      */
-    function setColumns(mat: Float64Array, vec0: Float64Array, vec1: Float64Array, vec2: Float64Array, vec3: Float64Array): goog.vec.mat4d.Type;
+    function setColumns(mat: goog.vec.mat4d.Type, vec0: goog.vec.vec4d.Type, vec1: goog.vec.vec4d.Type, vec2: goog.vec.vec4d.Type, vec3: goog.vec.vec4d.Type): goog.vec.mat4d.Type;
 
     /**
      * Retrieves the column values from the given matrix into the given vectors.
@@ -192,7 +192,7 @@ declare module goog.vec.mat4d {
      * @param {goog.vec.vec4d.Type} vec2 The vector to receive column 2.
      * @param {goog.vec.vec4d.Type} vec3 The vector to receive column 3.
      */
-    function getColumns(mat: Float64Array, vec0: Float64Array, vec1: Float64Array, vec2: Float64Array, vec3: Float64Array): void;
+    function getColumns(mat: goog.vec.mat4d.Type, vec0: goog.vec.vec4d.Type, vec1: goog.vec.vec4d.Type, vec2: goog.vec.vec4d.Type, vec3: goog.vec.vec4d.Type): void;
 
     /**
      * Sets the row values from the supplied values.
@@ -206,7 +206,7 @@ declare module goog.vec.mat4d {
      * @return {!goog.vec.mat4d.Type} return mat so that operations can be
      *     chained together.
      */
-    function setRowValues(mat: Float64Array, row: number, v0: number, v1: number, v2: number, v3: number): goog.vec.mat4d.Type;
+    function setRowValues(mat: goog.vec.mat4d.Type, row: number, v0: number, v1: number, v2: number, v3: number): goog.vec.mat4d.Type;
 
     /**
      * Sets the row values from the supplied vector.
@@ -217,7 +217,7 @@ declare module goog.vec.mat4d {
      * @return {!goog.vec.mat4d.Type} return mat so that operations can be
      *     chained together.
      */
-    function setRow(mat: Float64Array, row: number, vec: Float64Array): goog.vec.mat4d.Type;
+    function setRow(mat: goog.vec.mat4d.Type, row: number, vec: goog.vec.vec4d.Type): goog.vec.mat4d.Type;
 
     /**
      * Retrieves the row values into the given vector.
@@ -228,7 +228,7 @@ declare module goog.vec.mat4d {
      * @return {!goog.vec.vec4d.Type} return vec so that operations can be
      *     chained together.
      */
-    function getRow(mat: Float64Array, row: number, vec: Float64Array): goog.vec.vec4d.Type;
+    function getRow(mat: goog.vec.mat4d.Type, row: number, vec: goog.vec.vec4d.Type): goog.vec.vec4d.Type;
 
     /**
      * Sets the rows of the matrix from the supplied vectors.
@@ -241,7 +241,7 @@ declare module goog.vec.mat4d {
      * @return {!goog.vec.mat4d.Type} return mat so that operations can be
      *     chained together.
      */
-    function setRows(mat: Float64Array, vec0: Float64Array, vec1: Float64Array, vec2: Float64Array, vec3: Float64Array): goog.vec.mat4d.Type;
+    function setRows(mat: goog.vec.mat4d.Type, vec0: goog.vec.vec4d.Type, vec1: goog.vec.vec4d.Type, vec2: goog.vec.vec4d.Type, vec3: goog.vec.vec4d.Type): goog.vec.mat4d.Type;
 
     /**
      * Retrieves the rows of the matrix into the supplied vectors.
@@ -252,7 +252,7 @@ declare module goog.vec.mat4d {
      * @param {goog.vec.vec4d.Type} vec2 The vector to receive row 2.
      * @param {goog.vec.vec4d.Type} vec3 The vector to receive row 3.
      */
-    function getRows(mat: Float64Array, vec0: Float64Array, vec1: Float64Array, vec2: Float64Array, vec3: Float64Array): void;
+    function getRows(mat: goog.vec.mat4d.Type, vec0: goog.vec.vec4d.Type, vec1: goog.vec.vec4d.Type, vec2: goog.vec.vec4d.Type, vec3: goog.vec.vec4d.Type): void;
 
     /**
      * Makes the given 4x4 matrix the zero matrix.
@@ -260,7 +260,7 @@ declare module goog.vec.mat4d {
      * @param {goog.vec.mat4d.Type} mat The matrix.
      * @return {!goog.vec.mat4d.Type} return mat so operations can be chained.
      */
-    function makeZero(mat: Float64Array): goog.vec.mat4d.Type;
+    function makeZero(mat: goog.vec.mat4d.Type): goog.vec.mat4d.Type;
 
     /**
      * Makes the given 4x4 matrix the identity matrix.
@@ -268,7 +268,7 @@ declare module goog.vec.mat4d {
      * @param {goog.vec.mat4d.Type} mat The matrix.
      * @return {!goog.vec.mat4d.Type} return mat so operations can be chained.
      */
-    function makeIdentity(mat: Float64Array): goog.vec.mat4d.Type;
+    function makeIdentity(mat: goog.vec.mat4d.Type): goog.vec.mat4d.Type;
 
     /**
      * Performs a per-component addition of the matrix mat0 and mat1, storing
@@ -281,7 +281,7 @@ declare module goog.vec.mat4d {
      * @return {!goog.vec.mat4d.Type} return resultMat so that operations can be
      *     chained together.
      */
-    function addMat(mat0: Float64Array, mat1: Float64Array, resultMat: Float64Array): goog.vec.mat4d.Type;
+    function addMat(mat0: goog.vec.mat4d.Type, mat1: goog.vec.mat4d.Type, resultMat: goog.vec.mat4d.Type): goog.vec.mat4d.Type;
 
     /**
      * Performs a per-component subtraction of the matrix mat0 and mat1,
@@ -294,7 +294,7 @@ declare module goog.vec.mat4d {
      * @return {!goog.vec.mat4d.Type} return resultMat so that operations can be
      *     chained together.
      */
-    function subMat(mat0: Float64Array, mat1: Float64Array, resultMat: Float64Array): goog.vec.mat4d.Type;
+    function subMat(mat0: goog.vec.mat4d.Type, mat1: goog.vec.mat4d.Type, resultMat: goog.vec.mat4d.Type): goog.vec.mat4d.Type;
 
     /**
      * Multiplies matrix mat with the given scalar, storing the result
@@ -307,7 +307,7 @@ declare module goog.vec.mat4d {
      * @return {!goog.vec.mat4d.Type} return resultMat so that operations can be
      *     chained together.
      */
-    function multScalar(mat: Float64Array, scalar: number, resultMat: Float64Array): goog.vec.mat4d.Type;
+    function multScalar(mat: goog.vec.mat4d.Type, scalar: number, resultMat: goog.vec.mat4d.Type): goog.vec.mat4d.Type;
 
     /**
      * Multiplies the two matrices mat0 and mat1 using matrix multiplication,
@@ -320,7 +320,7 @@ declare module goog.vec.mat4d {
      * @return {!goog.vec.mat4d.Type} return resultMat so that operations can be
      *     chained together.
      */
-    function multMat(mat0: Float64Array, mat1: Float64Array, resultMat: Float64Array): goog.vec.mat4d.Type;
+    function multMat(mat0: goog.vec.mat4d.Type, mat1: goog.vec.mat4d.Type, resultMat: goog.vec.mat4d.Type): goog.vec.mat4d.Type;
 
     /**
      * Transposes the given matrix mat storing the result into resultMat.
@@ -331,7 +331,7 @@ declare module goog.vec.mat4d {
      * @return {!goog.vec.mat4d.Type} return resultMat so that operations can be
      *     chained together.
      */
-    function transpose(mat: Float64Array, resultMat: Float64Array): goog.vec.mat4d.Type;
+    function transpose(mat: goog.vec.mat4d.Type, resultMat: goog.vec.mat4d.Type): goog.vec.mat4d.Type;
 
     /**
      * Computes the determinant of the matrix.
@@ -339,7 +339,7 @@ declare module goog.vec.mat4d {
      * @param {goog.vec.mat4d.Type} mat The matrix to compute the matrix for.
      * @return {number} The determinant of the matrix.
      */
-    function determinant(mat: Float64Array): number;
+    function determinant(mat: goog.vec.mat4d.Type): number;
 
     /**
      * Computes the inverse of mat storing the result into resultMat. If the
@@ -351,7 +351,7 @@ declare module goog.vec.mat4d {
      * @return {boolean} True if the inverse is defined. If false is returned,
      *     resultMat is not modified.
      */
-    function invert(mat: Float64Array, resultMat: Float64Array): boolean;
+    function invert(mat: goog.vec.mat4d.Type, resultMat: goog.vec.mat4d.Type): boolean;
 
     /**
      * Returns true if the components of mat0 are equal to the components of mat1.
@@ -360,7 +360,7 @@ declare module goog.vec.mat4d {
      * @param {goog.vec.mat4d.Type} mat1 The second matrix.
      * @return {boolean} True if the the two matrices are equivalent.
      */
-    function equals(mat0: Float64Array, mat1: Float64Array): boolean;
+    function equals(mat0: goog.vec.mat4d.Type, mat1: goog.vec.mat4d.Type): boolean;
 
     /**
      * Transforms the given vector with the given matrix storing the resulting,
@@ -374,7 +374,7 @@ declare module goog.vec.mat4d {
      * @return {!goog.vec.vec3d.Type} return resultVec so that operations can be
      *     chained together.
      */
-    function multVec3(mat: Float64Array, vec: Float64Array, resultVec: Float64Array): goog.vec.vec3d.Type;
+    function multVec3(mat: goog.vec.mat4d.Type, vec: goog.vec.vec3d.Type, resultVec: goog.vec.vec3d.Type): goog.vec.vec3d.Type;
 
     /**
      * Transforms the given vector with the given matrix storing the resulting,
@@ -389,7 +389,7 @@ declare module goog.vec.mat4d {
      * @return {!goog.vec.vec3d.Type} return resultVec so that operations can be
      *     chained together.
      */
-    function multVec3NoTranslate(mat: Float64Array, vec: Float64Array, resultVec: Float64Array): goog.vec.vec3d.Type;
+    function multVec3NoTranslate(mat: goog.vec.mat4d.Type, vec: goog.vec.vec3d.Type, resultVec: goog.vec.vec3d.Type): goog.vec.vec3d.Type;
 
     /**
      * Transforms the given vector with the given matrix storing the resulting,
@@ -404,7 +404,7 @@ declare module goog.vec.mat4d {
      * @return {!goog.vec.vec3d.Type} return resultVec so that operations can be
      *     chained together.
      */
-    function multVec3Projective(mat: Float64Array, vec: Float64Array, resultVec: Float64Array): goog.vec.vec3d.Type;
+    function multVec3Projective(mat: goog.vec.mat4d.Type, vec: goog.vec.vec3d.Type, resultVec: goog.vec.vec3d.Type): goog.vec.vec3d.Type;
 
     /**
      * Transforms the given vector with the given matrix storing the resulting,
@@ -417,7 +417,7 @@ declare module goog.vec.mat4d {
      * @return {!goog.vec.vec4d.Type} return resultVec so that operations can be
      *     chained together.
      */
-    function multVec4(mat: Float64Array, vec: Float64Array, resultVec: Float64Array): goog.vec.vec4d.Type;
+    function multVec4(mat: goog.vec.mat4d.Type, vec: goog.vec.vec4d.Type, resultVec: goog.vec.vec4d.Type): goog.vec.vec4d.Type;
 
     /**
      * Makes the given 4x4 matrix a translation matrix with x, y and z
@@ -430,7 +430,7 @@ declare module goog.vec.mat4d {
      * @return {!goog.vec.mat4d.Type} return mat so that operations can be
      *     chained.
      */
-    function makeTranslate(mat: Float64Array, x: number, y: number, z: number): goog.vec.mat4d.Type;
+    function makeTranslate(mat: goog.vec.mat4d.Type, x: number, y: number, z: number): goog.vec.mat4d.Type;
 
     /**
      * Makes the given 4x4 matrix as a scale matrix with x, y and z scale factors.
@@ -442,7 +442,7 @@ declare module goog.vec.mat4d {
      * @return {!goog.vec.mat4d.Type} return mat so that operations can be
      *     chained.
      */
-    function makeScale(mat: Float64Array, x: number, y: number, z: number): goog.vec.mat4d.Type;
+    function makeScale(mat: goog.vec.mat4d.Type, x: number, y: number, z: number): goog.vec.mat4d.Type;
 
     /**
      * Makes the given 4x4 matrix a rotation matrix with the given rotation
@@ -456,7 +456,7 @@ declare module goog.vec.mat4d {
      * @return {!goog.vec.mat4d.Type} return mat so that operations can be
      *     chained.
      */
-    function makeRotate(mat: Float64Array, angle: number, ax: number, ay: number, az: number): goog.vec.mat4d.Type;
+    function makeRotate(mat: goog.vec.mat4d.Type, angle: number, ax: number, ay: number, az: number): goog.vec.mat4d.Type;
 
     /**
      * Makes the given 4x4 matrix a rotation matrix with the given rotation
@@ -467,7 +467,7 @@ declare module goog.vec.mat4d {
      * @return {!goog.vec.mat4d.Type} return mat so that operations can be
      *     chained.
      */
-    function makeRotateX(mat: Float64Array, angle: number): goog.vec.mat4d.Type;
+    function makeRotateX(mat: goog.vec.mat4d.Type, angle: number): goog.vec.mat4d.Type;
 
     /**
      * Makes the given 4x4 matrix a rotation matrix with the given rotation
@@ -478,7 +478,7 @@ declare module goog.vec.mat4d {
      * @return {!goog.vec.mat4d.Type} return mat so that operations can be
      *     chained.
      */
-    function makeRotateY(mat: Float64Array, angle: number): goog.vec.mat4d.Type;
+    function makeRotateY(mat: goog.vec.mat4d.Type, angle: number): goog.vec.mat4d.Type;
 
     /**
      * Makes the given 4x4 matrix a rotation matrix with the given rotation
@@ -489,7 +489,7 @@ declare module goog.vec.mat4d {
      * @return {!goog.vec.mat4d.Type} return mat so that operations can be
      *     chained.
      */
-    function makeRotateZ(mat: Float64Array, angle: number): goog.vec.mat4d.Type;
+    function makeRotateZ(mat: goog.vec.mat4d.Type, angle: number): goog.vec.mat4d.Type;
 
     /**
      * Makes the given 4x4 matrix a perspective projection matrix.
@@ -504,7 +504,7 @@ declare module goog.vec.mat4d {
      * @return {!goog.vec.mat4d.Type} return mat so that operations can be
      *     chained.
      */
-    function makeFrustum(mat: Float64Array, left: number, right: number, bottom: number, top: number, near: number, far: number): goog.vec.mat4d.Type;
+    function makeFrustum(mat: goog.vec.mat4d.Type, left: number, right: number, bottom: number, top: number, near: number, far: number): goog.vec.mat4d.Type;
 
     /**
      * Makse the given 4x4 matrix  perspective projection matrix given a
@@ -519,7 +519,7 @@ declare module goog.vec.mat4d {
      * @return {goog.vec.mat4d.Type} return mat so that operations can be
      *     chained.
      */
-    function makePerspective(mat: Float64Array, fovy: number, aspect: number, near: number, far: number): goog.vec.mat4d.Type;
+    function makePerspective(mat: goog.vec.mat4d.Type, fovy: number, aspect: number, near: number, far: number): goog.vec.mat4d.Type;
 
     /**
      * Makes the given 4x4 matrix an orthographic projection matrix.
@@ -534,7 +534,7 @@ declare module goog.vec.mat4d {
      * @return {!goog.vec.mat4d.Type} return mat so that operations can be
      *     chained.
      */
-    function makeOrtho(mat: Float64Array, left: number, right: number, bottom: number, top: number, near: number, far: number): goog.vec.mat4d.Type;
+    function makeOrtho(mat: goog.vec.mat4d.Type, left: number, right: number, bottom: number, top: number, near: number, far: number): goog.vec.mat4d.Type;
 
     /**
      * Makes the given 4x4 matrix a modelview matrix of a camera so that
@@ -554,7 +554,7 @@ declare module goog.vec.mat4d {
      * @return {goog.vec.mat4d.Type} return mat so that operations can be
      *     chained.
      */
-    function makeLookAt(mat: Float64Array, eyePt: Float64Array, centerPt: Float64Array, worldUpVec: Float64Array): goog.vec.mat4d.Type;
+    function makeLookAt(mat: goog.vec.mat4d.Type, eyePt: goog.vec.vec3d.Type, centerPt: goog.vec.vec3d.Type, worldUpVec: goog.vec.vec3d.Type): goog.vec.mat4d.Type;
 
     /**
      * Decomposes a matrix into the lookAt vectors eyePt, fwdVec and worldUpVec.
@@ -577,7 +577,7 @@ declare module goog.vec.mat4d {
      * @return {boolean} True if the method succeeds, false otherwise.
      *     The method can only fail if the inverse of viewMatrix is not defined.
      */
-    function toLookAt(mat: Float64Array, eyePt: Float64Array, fwdVec: Float64Array, worldUpVec: Float64Array): boolean;
+    function toLookAt(mat: goog.vec.mat4d.Type, eyePt: goog.vec.vec3d.Type, fwdVec: goog.vec.vec3d.Type, worldUpVec: goog.vec.vec3d.Type): boolean;
 
     /**
      * Makes the given 4x4 matrix a rotation matrix given Euler angles using
@@ -594,7 +594,7 @@ declare module goog.vec.mat4d {
      * @return {!goog.vec.mat4d.Type} return mat so that operations can be
      *     chained.
      */
-    function makeEulerZXZ(mat: Float64Array, theta1: number, theta2: number, theta3: number): goog.vec.mat4d.Type;
+    function makeEulerZXZ(mat: goog.vec.mat4d.Type, theta1: number, theta2: number, theta3: number): goog.vec.mat4d.Type;
 
     /**
      * Decomposes a rotation matrix into Euler angles using the ZXZ convention so
@@ -610,7 +610,7 @@ declare module goog.vec.mat4d {
      * @return {!goog.vec.vec4d.Type} return euler so that operations can be
      *     chained together.
      */
-    function toEulerZXZ(mat: Float64Array, euler: Float64Array, opt_theta2IsNegative?: boolean): goog.vec.vec4d.Type;
+    function toEulerZXZ(mat: goog.vec.mat4d.Type, euler: goog.vec.vec3d.Type, opt_theta2IsNegative?: boolean): goog.vec.vec4d.Type;
 
     /**
      * Translates the given matrix by x,y,z.  Equvialent to:
@@ -626,7 +626,7 @@ declare module goog.vec.mat4d {
      * @return {!goog.vec.mat4d.Type} return mat so that operations can be
      *     chained.
      */
-    function translate(mat: Float64Array, x: number, y: number, z: number): goog.vec.mat4d.Type;
+    function translate(mat: goog.vec.mat4d.Type, x: number, y: number, z: number): goog.vec.mat4d.Type;
 
     /**
      * Scales the given matrix by x,y,z.  Equivalent to:
@@ -642,7 +642,7 @@ declare module goog.vec.mat4d {
      * @return {!goog.vec.mat4d.Type} return mat so that operations can be
      *     chained.
      */
-    function scale(mat: Float64Array, x: number, y: number, z: number): goog.vec.mat4d.Type;
+    function scale(mat: goog.vec.mat4d.Type, x: number, y: number, z: number): goog.vec.mat4d.Type;
 
     /**
      * Rotate the given matrix by angle about the x,y,z axis.  Equivalent to:
@@ -659,7 +659,7 @@ declare module goog.vec.mat4d {
      * @return {!goog.vec.mat4d.Type} return mat so that operations can be
      *     chained.
      */
-    function rotate(mat: Float64Array, angle: number, x: number, y: number, z: number): goog.vec.mat4d.Type;
+    function rotate(mat: goog.vec.mat4d.Type, angle: number, x: number, y: number, z: number): goog.vec.mat4d.Type;
 
     /**
      * Rotate the given matrix by angle about the x axis.  Equivalent to:
@@ -673,7 +673,7 @@ declare module goog.vec.mat4d {
      * @return {!goog.vec.mat4d.Type} return mat so that operations can be
      *     chained.
      */
-    function rotateX(mat: Float64Array, angle: number): goog.vec.mat4d.Type;
+    function rotateX(mat: goog.vec.mat4d.Type, angle: number): goog.vec.mat4d.Type;
 
     /**
      * Rotate the given matrix by angle about the y axis.  Equivalent to:
@@ -687,7 +687,7 @@ declare module goog.vec.mat4d {
      * @return {!goog.vec.mat4d.Type} return mat so that operations can be
      *     chained.
      */
-    function rotateY(mat: Float64Array, angle: number): goog.vec.mat4d.Type;
+    function rotateY(mat: goog.vec.mat4d.Type, angle: number): goog.vec.mat4d.Type;
 
     /**
      * Rotate the given matrix by angle about the z axis.  Equivalent to:
@@ -701,7 +701,7 @@ declare module goog.vec.mat4d {
      * @return {!goog.vec.mat4d.Type} return mat so that operations can be
      *     chained.
      */
-    function rotateZ(mat: Float64Array, angle: number): goog.vec.mat4d.Type;
+    function rotateZ(mat: goog.vec.mat4d.Type, angle: number): goog.vec.mat4d.Type;
 
     /**
      * Retrieves the translation component of the transformation matrix.
@@ -712,5 +712,5 @@ declare module goog.vec.mat4d {
      * @return {!goog.vec.vec3d.Type} return translation so that operations can be
      *     chained.
      */
-    function getTranslation(mat: Float64Array, translation: Float64Array): goog.vec.vec3d.Type;
+    function getTranslation(mat: goog.vec.mat4d.Type, translation: goog.vec.vec3d.Type): goog.vec.vec3d.Type;
 }

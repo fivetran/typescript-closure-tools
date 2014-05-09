@@ -24,7 +24,7 @@ declare module goog.vec.vec4f {
      * @return {!goog.vec.vec4f.Type} Return vec so that operations can be
      *     chained together.
      */
-    function setFromValues(vec: Float32Array, v0: number, v1: number, v2: number, v3: number): goog.vec.vec4f.Type;
+    function setFromValues(vec: goog.vec.vec4f.Type, v0: number, v1: number, v2: number, v3: number): goog.vec.vec4f.Type;
 
     /**
      * Initializes vec4f vec from vec4f src.
@@ -34,7 +34,7 @@ declare module goog.vec.vec4f {
      * @return {!goog.vec.vec4f.Type} Return vec so that operations can be
      *     chained together.
      */
-    function setFromVec4f(vec: Float32Array, src: Float32Array): goog.vec.vec4f.Type;
+    function setFromVec4f(vec: goog.vec.vec4f.Type, src: goog.vec.vec4f.Type): goog.vec.vec4f.Type;
 
     /**
      * Initializes vec4f vec from vec4d src (typed as a Float64Array to
@@ -45,7 +45,7 @@ declare module goog.vec.vec4f {
      * @return {!goog.vec.vec4f.Type} Return vec so that operations can be
      *     chained together.
      */
-    function setFromVec4d(vec: Float32Array, src: Float64Array): goog.vec.vec4f.Type;
+    function setFromVec4d(vec: goog.vec.vec4f.Type, src: Float64Array): goog.vec.vec4f.Type;
 
     /**
      * Initializes vec4f vec from Array src.
@@ -55,7 +55,7 @@ declare module goog.vec.vec4f {
      * @return {!goog.vec.vec4f.Type} Return vec so that operations can be
      *     chained together.
      */
-    function setFromArray(vec: Float32Array, src: number[]): goog.vec.vec4f.Type;
+    function setFromArray(vec: goog.vec.vec4f.Type, src: number[]): goog.vec.vec4f.Type;
 
     /**
      * Performs a component-wise addition of vec0 and vec1 together storing the
@@ -68,7 +68,7 @@ declare module goog.vec.vec4f {
      * @return {!goog.vec.vec4f.Type} Return resultVec so that operations can be
      *     chained together.
      */
-    function add(vec0: Float32Array, vec1: Float32Array, resultVec: Float32Array): goog.vec.vec4f.Type;
+    function add(vec0: goog.vec.vec4f.Type, vec1: goog.vec.vec4f.Type, resultVec: goog.vec.vec4f.Type): goog.vec.vec4f.Type;
 
     /**
      * Performs a component-wise subtraction of vec1 from vec0 storing the
@@ -81,7 +81,7 @@ declare module goog.vec.vec4f {
      * @return {!goog.vec.vec4f.Type} Return resultVec so that operations can be
      *     chained together.
      */
-    function subtract(vec0: Float32Array, vec1: Float32Array, resultVec: Float32Array): goog.vec.vec4f.Type;
+    function subtract(vec0: goog.vec.vec4f.Type, vec1: goog.vec.vec4f.Type, resultVec: goog.vec.vec4f.Type): goog.vec.vec4f.Type;
 
     /**
      * Negates vec0, storing the result into resultVec.
@@ -92,7 +92,7 @@ declare module goog.vec.vec4f {
      * @return {!goog.vec.vec4f.Type} Return resultVec so that operations can be
      *     chained together.
      */
-    function negate(vec0: Float32Array, resultVec: Float32Array): goog.vec.vec4f.Type;
+    function negate(vec0: goog.vec.vec4f.Type, resultVec: goog.vec.vec4f.Type): goog.vec.vec4f.Type;
 
     /**
      * Takes the absolute value of each component of vec0 storing the result in
@@ -104,7 +104,7 @@ declare module goog.vec.vec4f {
      * @return {!goog.vec.vec4f.Type} Return resultVec so that operations can be
      *     chained together.
      */
-    function abs(vec0: Float32Array, resultVec: Float32Array): goog.vec.vec4f.Type;
+    function abs(vec0: goog.vec.vec4f.Type, resultVec: goog.vec.vec4f.Type): goog.vec.vec4f.Type;
 
     /**
      * Multiplies each component of vec0 with scalar storing the product into
@@ -117,7 +117,7 @@ declare module goog.vec.vec4f {
      * @return {!goog.vec.vec4f.Type} Return resultVec so that operations can be
      *     chained together.
      */
-    function scale(vec0: Float32Array, scalar: number, resultVec: Float32Array): goog.vec.vec4f.Type;
+    function scale(vec0: goog.vec.vec4f.Type, scalar: number, resultVec: goog.vec.vec4f.Type): goog.vec.vec4f.Type;
 
     /**
      * Returns the magnitudeSquared of the given vector.
@@ -125,7 +125,7 @@ declare module goog.vec.vec4f {
      * @param {goog.vec.vec4f.Type} vec0 The vector.
      * @return {number} The magnitude of the vector.
      */
-    function magnitudeSquared(vec0: Float32Array): number;
+    function magnitudeSquared(vec0: goog.vec.vec4f.Type): number;
 
     /**
      * Returns the magnitude of the given vector.
@@ -133,7 +133,7 @@ declare module goog.vec.vec4f {
      * @param {goog.vec.vec4f.Type} vec0 The vector.
      * @return {number} The magnitude of the vector.
      */
-    function magnitude(vec0: Float32Array): number;
+    function magnitude(vec0: goog.vec.vec4f.Type): number;
 
     /**
      * Normalizes the given vector storing the result into resultVec.
@@ -144,7 +144,7 @@ declare module goog.vec.vec4f {
      * @return {!goog.vec.vec4f.Type} Return resultVec so that operations can be
      *     chained together.
      */
-    function normalize(vec0: Float32Array, resultVec: Float32Array): goog.vec.vec4f.Type;
+    function normalize(vec0: goog.vec.vec4f.Type, resultVec: goog.vec.vec4f.Type): goog.vec.vec4f.Type;
 
     /**
      * Returns the scalar product of vectors v0 and v1.
@@ -153,7 +153,7 @@ declare module goog.vec.vec4f {
      * @param {goog.vec.vec4f.Type} v1 The second vector.
      * @return {number} The scalar product.
      */
-    function dot(v0: Float32Array, v1: Float32Array): number;
+    function dot(v0: goog.vec.vec4f.Type, v1: goog.vec.vec4f.Type): number;
 
     /**
      * Linearly interpolate from v0 to v1 according to f. The value of f should be
@@ -167,7 +167,7 @@ declare module goog.vec.vec4f {
      * @return {!goog.vec.vec4f.Type} Return resultVec so that operations can be
      *     chained together.
      */
-    function lerp(v0: Float32Array, v1: Float32Array, f: number, resultVec: Float32Array): goog.vec.vec4f.Type;
+    function lerp(v0: goog.vec.vec4f.Type, v1: goog.vec.vec4f.Type, f: number, resultVec: goog.vec.vec4f.Type): goog.vec.vec4f.Type;
 
     /**
      * Compares the components of vec0 with the components of another vector or
@@ -180,7 +180,7 @@ declare module goog.vec.vec4f {
      * @return {!goog.vec.vec4f.Type} Return resultVec so that operations can be
      *     chained together.
      */
-    function max(vec0: Float32Array, limit: Float32Array, resultVec: Float32Array): goog.vec.vec4f.Type;
+    function max(vec0: goog.vec.vec4f.Type, limit: goog.vec.vec4f.Type, resultVec: goog.vec.vec4f.Type): goog.vec.vec4f.Type;
     /**
      * Compares the components of vec0 with the components of another vector or
      * scalar, storing the larger values in resultVec.
@@ -192,7 +192,7 @@ declare module goog.vec.vec4f {
      * @return {!goog.vec.vec4f.Type} Return resultVec so that operations can be
      *     chained together.
      */
-    function max(vec0: Float32Array, limit: number, resultVec: Float32Array): goog.vec.vec4f.Type;
+    function max(vec0: goog.vec.vec4f.Type, limit: number, resultVec: goog.vec.vec4f.Type): goog.vec.vec4f.Type;
 
     /**
      * Compares the components of vec0 with the components of another vector or
@@ -205,7 +205,7 @@ declare module goog.vec.vec4f {
      * @return {!goog.vec.vec4f.Type} Return resultVec so that operations can be
      *     chained together.
      */
-    function min(vec0: Float32Array, limit: Float32Array, resultVec: Float32Array): goog.vec.vec4f.Type;
+    function min(vec0: goog.vec.vec4f.Type, limit: goog.vec.vec4f.Type, resultVec: goog.vec.vec4f.Type): goog.vec.vec4f.Type;
     /**
      * Compares the components of vec0 with the components of another vector or
      * scalar, storing the smaller values in resultVec.
@@ -217,7 +217,7 @@ declare module goog.vec.vec4f {
      * @return {!goog.vec.vec4f.Type} Return resultVec so that operations can be
      *     chained together.
      */
-    function min(vec0: Float32Array, limit: number, resultVec: Float32Array): goog.vec.vec4f.Type;
+    function min(vec0: goog.vec.vec4f.Type, limit: number, resultVec: goog.vec.vec4f.Type): goog.vec.vec4f.Type;
 
     /**
      * Returns true if the components of v0 are equal to the components of v1.
@@ -226,5 +226,5 @@ declare module goog.vec.vec4f {
      * @param {goog.vec.vec4f.Type} v1 The second vector.
      * @return {boolean} True if the vectors are equal, false otherwise.
      */
-    function equals(v0: Float32Array, v1: Float32Array): boolean;
+    function equals(v0: goog.vec.vec4f.Type, v1: goog.vec.vec4f.Type): boolean;
 }

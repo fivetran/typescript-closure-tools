@@ -23,7 +23,7 @@ declare module goog.vec.vec3f {
      * @return {!goog.vec.vec3f.Type} Return vec so that operations can be
      *     chained together.
      */
-    function setFromValues(vec: Float32Array, v0: number, v1: number, v2: number): goog.vec.vec3f.Type;
+    function setFromValues(vec: goog.vec.vec3f.Type, v0: number, v1: number, v2: number): goog.vec.vec3f.Type;
 
     /**
      * Initializes vec3f vec from vec3f src.
@@ -33,7 +33,7 @@ declare module goog.vec.vec3f {
      * @return {!goog.vec.vec3f.Type} Return vec so that operations can be
      *     chained together.
      */
-    function setFromVec3f(vec: Float32Array, src: Float32Array): goog.vec.vec3f.Type;
+    function setFromVec3f(vec: goog.vec.vec3f.Type, src: goog.vec.vec3f.Type): goog.vec.vec3f.Type;
 
     /**
      * Initializes vec3f vec from vec3d src (typed as a Float64Array to
@@ -44,7 +44,7 @@ declare module goog.vec.vec3f {
      * @return {!goog.vec.vec3f.Type} Return vec so that operations can be
      *     chained together.
      */
-    function setFromVec3d(vec: Float32Array, src: Float64Array): goog.vec.vec3f.Type;
+    function setFromVec3d(vec: goog.vec.vec3f.Type, src: Float64Array): goog.vec.vec3f.Type;
 
     /**
      * Initializes vec3f vec from Array src.
@@ -54,7 +54,7 @@ declare module goog.vec.vec3f {
      * @return {!goog.vec.vec3f.Type} Return vec so that operations can be
      *     chained together.
      */
-    function setFromArray(vec: Float32Array, src: number[]): goog.vec.vec3f.Type;
+    function setFromArray(vec: goog.vec.vec3f.Type, src: number[]): goog.vec.vec3f.Type;
 
     /**
      * Performs a component-wise addition of vec0 and vec1 together storing the
@@ -67,7 +67,7 @@ declare module goog.vec.vec3f {
      * @return {!goog.vec.vec3f.Type} Return resultVec so that operations can be
      *     chained together.
      */
-    function add(vec0: Float32Array, vec1: Float32Array, resultVec: Float32Array): goog.vec.vec3f.Type;
+    function add(vec0: goog.vec.vec3f.Type, vec1: goog.vec.vec3f.Type, resultVec: goog.vec.vec3f.Type): goog.vec.vec3f.Type;
 
     /**
      * Performs a component-wise subtraction of vec1 from vec0 storing the
@@ -80,7 +80,7 @@ declare module goog.vec.vec3f {
      * @return {!goog.vec.vec3f.Type} Return resultVec so that operations can be
      *     chained together.
      */
-    function subtract(vec0: Float32Array, vec1: Float32Array, resultVec: Float32Array): goog.vec.vec3f.Type;
+    function subtract(vec0: goog.vec.vec3f.Type, vec1: goog.vec.vec3f.Type, resultVec: goog.vec.vec3f.Type): goog.vec.vec3f.Type;
 
     /**
      * Negates vec0, storing the result into resultVec.
@@ -91,7 +91,7 @@ declare module goog.vec.vec3f {
      * @return {!goog.vec.vec3f.Type} Return resultVec so that operations can be
      *     chained together.
      */
-    function negate(vec0: Float32Array, resultVec: Float32Array): goog.vec.vec3f.Type;
+    function negate(vec0: goog.vec.vec3f.Type, resultVec: goog.vec.vec3f.Type): goog.vec.vec3f.Type;
 
     /**
      * Takes the absolute value of each component of vec0 storing the result in
@@ -103,7 +103,7 @@ declare module goog.vec.vec3f {
      * @return {!goog.vec.vec3f.Type} Return resultVec so that operations can be
      *     chained together.
      */
-    function abs(vec0: Float32Array, resultVec: Float32Array): goog.vec.vec3f.Type;
+    function abs(vec0: goog.vec.vec3f.Type, resultVec: goog.vec.vec3f.Type): goog.vec.vec3f.Type;
 
     /**
      * Multiplies each component of vec0 with scalar storing the product into
@@ -116,7 +116,7 @@ declare module goog.vec.vec3f {
      * @return {!goog.vec.vec3f.Type} Return resultVec so that operations can be
      *     chained together.
      */
-    function scale(vec0: Float32Array, scalar: number, resultVec: Float32Array): goog.vec.vec3f.Type;
+    function scale(vec0: goog.vec.vec3f.Type, scalar: number, resultVec: goog.vec.vec3f.Type): goog.vec.vec3f.Type;
 
     /**
      * Returns the magnitudeSquared of the given vector.
@@ -124,7 +124,7 @@ declare module goog.vec.vec3f {
      * @param {goog.vec.vec3f.Type} vec0 The vector.
      * @return {number} The magnitude of the vector.
      */
-    function magnitudeSquared(vec0: Float32Array): number;
+    function magnitudeSquared(vec0: goog.vec.vec3f.Type): number;
 
     /**
      * Returns the magnitude of the given vector.
@@ -132,7 +132,7 @@ declare module goog.vec.vec3f {
      * @param {goog.vec.vec3f.Type} vec0 The vector.
      * @return {number} The magnitude of the vector.
      */
-    function magnitude(vec0: Float32Array): number;
+    function magnitude(vec0: goog.vec.vec3f.Type): number;
 
     /**
      * Normalizes the given vector storing the result into resultVec.
@@ -143,7 +143,7 @@ declare module goog.vec.vec3f {
      * @return {!goog.vec.vec3f.Type} Return resultVec so that operations can be
      *     chained together.
      */
-    function normalize(vec0: Float32Array, resultVec: Float32Array): goog.vec.vec3f.Type;
+    function normalize(vec0: goog.vec.vec3f.Type, resultVec: goog.vec.vec3f.Type): goog.vec.vec3f.Type;
 
     /**
      * Returns the scalar product of vectors v0 and v1.
@@ -152,7 +152,7 @@ declare module goog.vec.vec3f {
      * @param {goog.vec.vec3f.Type} v1 The second vector.
      * @return {number} The scalar product.
      */
-    function dot(v0: Float32Array, v1: Float32Array): number;
+    function dot(v0: goog.vec.vec3f.Type, v1: goog.vec.vec3f.Type): number;
 
     /**
      * Computes the vector (cross) product of v0 and v1 storing the result into
@@ -165,7 +165,7 @@ declare module goog.vec.vec3f {
      * @return {!goog.vec.vec3f.Type} Return resultVec so that operations can be
      *     chained together.
      */
-    function cross(v0: Float32Array, v1: Float32Array, resultVec: Float32Array): goog.vec.vec3f.Type;
+    function cross(v0: goog.vec.vec3f.Type, v1: goog.vec.vec3f.Type, resultVec: goog.vec.vec3f.Type): goog.vec.vec3f.Type;
 
     /**
      * Returns the squared distance between two points.
@@ -174,7 +174,7 @@ declare module goog.vec.vec3f {
      * @param {goog.vec.vec3f.Type} vec1 Second point.
      * @return {number} The squared distance between the points.
      */
-    function distanceSquared(vec0: Float32Array, vec1: Float32Array): number;
+    function distanceSquared(vec0: goog.vec.vec3f.Type, vec1: goog.vec.vec3f.Type): number;
 
     /**
      * Returns the distance between two points.
@@ -183,7 +183,7 @@ declare module goog.vec.vec3f {
      * @param {goog.vec.vec3f.Type} vec1 Second point.
      * @return {number} The distance between the points.
      */
-    function distance(vec0: Float32Array, vec1: Float32Array): number;
+    function distance(vec0: goog.vec.vec3f.Type, vec1: goog.vec.vec3f.Type): number;
 
     /**
      * Returns a unit vector pointing from one point to another.
@@ -196,7 +196,7 @@ declare module goog.vec.vec3f {
      * @return {!goog.vec.vec3f.Type} Return resultVec so that operations can be
      *     chained together.
      */
-    function direction(vec0: Float32Array, vec1: Float32Array, resultVec: Float32Array): goog.vec.vec3f.Type;
+    function direction(vec0: goog.vec.vec3f.Type, vec1: goog.vec.vec3f.Type, resultVec: goog.vec.vec3f.Type): goog.vec.vec3f.Type;
 
     /**
      * Linearly interpolate from vec0 to v1 according to f. The value of f should be
@@ -210,7 +210,7 @@ declare module goog.vec.vec3f {
      * @return {!goog.vec.vec3f.Type} Return resultVec so that operations can be
      *     chained together.
      */
-    function lerp(v0: Float32Array, v1: Float32Array, f: number, resultVec: Float32Array): goog.vec.vec3f.Type;
+    function lerp(v0: goog.vec.vec3f.Type, v1: goog.vec.vec3f.Type, f: number, resultVec: goog.vec.vec3f.Type): goog.vec.vec3f.Type;
 
     /**
      * Compares the components of vec0 with the components of another vector or
@@ -223,7 +223,7 @@ declare module goog.vec.vec3f {
      * @return {!goog.vec.vec3f.Type} Return resultVec so that operations can be
      *     chained together.
      */
-    function max(vec0: Float32Array, limit: Float32Array, resultVec: Float32Array): goog.vec.vec3f.Type;
+    function max(vec0: goog.vec.vec3f.Type, limit: goog.vec.vec3f.Type, resultVec: goog.vec.vec3f.Type): goog.vec.vec3f.Type;
     /**
      * Compares the components of vec0 with the components of another vector or
      * scalar, storing the larger values in resultVec.
@@ -235,7 +235,7 @@ declare module goog.vec.vec3f {
      * @return {!goog.vec.vec3f.Type} Return resultVec so that operations can be
      *     chained together.
      */
-    function max(vec0: Float32Array, limit: number, resultVec: Float32Array): goog.vec.vec3f.Type;
+    function max(vec0: goog.vec.vec3f.Type, limit: number, resultVec: goog.vec.vec3f.Type): goog.vec.vec3f.Type;
 
     /**
      * Compares the components of vec0 with the components of another vector or
@@ -248,7 +248,7 @@ declare module goog.vec.vec3f {
      * @return {!goog.vec.vec3f.Type} Return resultVec so that operations can be
      *     chained together.
      */
-    function min(vec0: Float32Array, limit: Float32Array, resultVec: Float32Array): goog.vec.vec3f.Type;
+    function min(vec0: goog.vec.vec3f.Type, limit: goog.vec.vec3f.Type, resultVec: goog.vec.vec3f.Type): goog.vec.vec3f.Type;
     /**
      * Compares the components of vec0 with the components of another vector or
      * scalar, storing the smaller values in resultVec.
@@ -260,7 +260,7 @@ declare module goog.vec.vec3f {
      * @return {!goog.vec.vec3f.Type} Return resultVec so that operations can be
      *     chained together.
      */
-    function min(vec0: Float32Array, limit: number, resultVec: Float32Array): goog.vec.vec3f.Type;
+    function min(vec0: goog.vec.vec3f.Type, limit: number, resultVec: goog.vec.vec3f.Type): goog.vec.vec3f.Type;
 
     /**
      * Returns true if the components of v0 are equal to the components of v1.
@@ -269,5 +269,5 @@ declare module goog.vec.vec3f {
      * @param {goog.vec.vec3f.Type} v1 The second vector.
      * @return {boolean} True if the vectors are equal, false otherwise.
      */
-    function equals(v0: Float32Array, v1: Float32Array): boolean;
+    function equals(v0: goog.vec.vec3f.Type, v1: goog.vec.vec3f.Type): boolean;
 }

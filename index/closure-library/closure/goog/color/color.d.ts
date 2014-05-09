@@ -91,7 +91,7 @@ declare module goog.color {
      * @param {goog.color.Rgb} rgb rgb representation of the color.
      * @return {string} hex representation of the color.
      */
-    function rgbArrayToHex(rgb: number[]): string;
+    function rgbArrayToHex(rgb: goog.color.Rgb): string;
 
     /**
      * Converts a color from RGB color space to HSL color space.
@@ -108,7 +108,7 @@ declare module goog.color {
      * @param {goog.color.Rgb} rgb rgb representation of the color.
      * @return {!goog.color.Hsl} hsl representation of the color.
      */
-    function rgbArrayToHsl(rgb: number[]): goog.color.Hsl;
+    function rgbArrayToHsl(rgb: goog.color.Rgb): goog.color.Hsl;
 
     /**
      * Converts a color from HSL color space to RGB color space.
@@ -125,7 +125,7 @@ declare module goog.color {
      * @param {goog.color.Hsl} hsl hsl representation of the color.
      * @return {!goog.color.Rgb} rgb representation of the color.
      */
-    function hslArrayToRgb(hsl: number[]): goog.color.Rgb;
+    function hslArrayToRgb(hsl: goog.color.Hsl): goog.color.Rgb;
 
     /**
      * Takes a hex value and prepends a zero if it's a single digit.
@@ -169,14 +169,14 @@ declare module goog.color {
      * @param {goog.color.Rgb} rgb rgb representation of the color.
      * @return {!goog.color.Hsv} hsv representation of the color.
      */
-    function rgbArrayToHsv(rgb: number[]): goog.color.Hsv;
+    function rgbArrayToHsv(rgb: goog.color.Rgb): goog.color.Hsv;
 
     /**
      * Converts an HSV triplet to an RGB array.
      * @param {goog.color.Hsv} hsv hsv representation of the color.
      * @return {!goog.color.Rgb} rgb representation of the color.
      */
-    function hsvArrayToRgb(hsv: number[]): goog.color.Rgb;
+    function hsvArrayToRgb(hsv: goog.color.Hsv): goog.color.Rgb;
 
     /**
      * Converts a hex representation of a color to HSL.
@@ -199,7 +199,7 @@ declare module goog.color {
      * @param {goog.color.Hsl} hsl hsl representation of the color.
      * @return {string} hex representation of the color.
      */
-    function hslArrayToHex(hsl: number[]): string;
+    function hslArrayToHex(hsl: goog.color.Hsl): string;
 
     /**
      * Converts a hex representation of a color to HSV
@@ -222,7 +222,7 @@ declare module goog.color {
      * @param {goog.color.Hsv} hsv hsv representation of the color.
      * @return {string} hex representation of the color.
      */
-    function hsvArrayToHex(hsv: number[]): string;
+    function hsvArrayToHex(hsv: goog.color.Hsv): string;
 
     /**
      * Calculates the Euclidean distance between two color vectors on an HSL sphere.
@@ -235,7 +235,7 @@ declare module goog.color {
      * @param {goog.color.Hsl} hsl2 Second color in hsl representation.
      * @return {number} Distance between the two colors, in the range [0, 1].
      */
-    function hslDistance(hsl1: number[], hsl2: number[]): number;
+    function hslDistance(hsl1: goog.color.Hsl, hsl2: goog.color.Hsl): number;
 
     /**
      * Blend two colors together, using the specified factor to indicate the weight
@@ -247,7 +247,7 @@ declare module goog.color {
      *     If greater than 1, factor will be set to 1.
      * @return {!goog.color.Rgb} Combined color represented in rgb.
      */
-    function blend(rgb1: number[], rgb2: number[], factor: number): goog.color.Rgb;
+    function blend(rgb1: goog.color.Rgb, rgb2: goog.color.Rgb, factor: number): goog.color.Rgb;
 
     /**
      * Adds black to the specified color, darkening it
@@ -257,7 +257,7 @@ declare module goog.color {
      *     than 1, factor will be set to 1.
      * @return {!goog.color.Rgb} Combined rgb color.
      */
-    function darken(rgb: number[], factor: number): goog.color.Rgb;
+    function darken(rgb: goog.color.Rgb, factor: number): goog.color.Rgb;
 
     /**
      * Adds white to the specified color, lightening it
@@ -267,7 +267,7 @@ declare module goog.color {
      *     than 1, factor will be set to 1.
      * @return {!goog.color.Rgb} Combined rgb color.
      */
-    function lighten(rgb: number[], factor: number): goog.color.Rgb;
+    function lighten(rgb: goog.color.Rgb, factor: number): goog.color.Rgb;
 
     /**
      * Find the "best" (highest-contrast) of the suggested colors for the prime
@@ -278,5 +278,5 @@ declare module goog.color {
      *     each representing a rgb array.
      * @return {!goog.color.Rgb} Highest-contrast color represented by an array..
      */
-    function highContrast(prime: number[], suggestions: number[][]): goog.color.Rgb;
+    function highContrast(prime: goog.color.Rgb, suggestions: goog.color.Rgb[]): goog.color.Rgb;
 }

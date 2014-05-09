@@ -46,7 +46,7 @@ declare module goog.vec.Quaternion {
      * @param {goog.vec.AnyType} vec The source 4 element array.
      * @return {!goog.vec.Quaternion.Float32} The new quaternion.
      */
-    function createFloat32FromArray(vec: Float32Array): goog.vec.Quaternion.Float32;
+    function createFloat32FromArray(vec: goog.vec.Float32): goog.vec.Quaternion.Float32;
     /**
      * Creates a new Float32 quaternion initialized with the values from the
      * supplied array.
@@ -54,7 +54,7 @@ declare module goog.vec.Quaternion {
      * @param {goog.vec.AnyType} vec The source 4 element array.
      * @return {!goog.vec.Quaternion.Float32} The new quaternion.
      */
-    function createFloat32FromArray(vec: Float64Array): goog.vec.Quaternion.Float32;
+    function createFloat32FromArray(vec: goog.vec.Float64): goog.vec.Quaternion.Float32;
     /**
      * Creates a new Float32 quaternion initialized with the values from the
      * supplied array.
@@ -62,7 +62,7 @@ declare module goog.vec.Quaternion {
      * @param {goog.vec.AnyType} vec The source 4 element array.
      * @return {!goog.vec.Quaternion.Float32} The new quaternion.
      */
-    function createFloat32FromArray(vec: number[]): goog.vec.Quaternion.Float32;
+    function createFloat32FromArray(vec: goog.vec.Number): goog.vec.Quaternion.Float32;
 
     /**
      * Creates a new Float64 quaternion initialized with the values from the
@@ -71,7 +71,7 @@ declare module goog.vec.Quaternion {
      * @param {goog.vec.AnyType} vec The source 4 element array.
      * @return {!goog.vec.Quaternion.Float64} The new quaternion.
      */
-    function createFloat64FromArray(vec: Float32Array): goog.vec.Quaternion.Float64;
+    function createFloat64FromArray(vec: goog.vec.Float32): goog.vec.Quaternion.Float64;
     /**
      * Creates a new Float64 quaternion initialized with the values from the
      * supplied array.
@@ -79,7 +79,7 @@ declare module goog.vec.Quaternion {
      * @param {goog.vec.AnyType} vec The source 4 element array.
      * @return {!goog.vec.Quaternion.Float64} The new quaternion.
      */
-    function createFloat64FromArray(vec: Float64Array): goog.vec.Quaternion.Float64;
+    function createFloat64FromArray(vec: goog.vec.Float64): goog.vec.Quaternion.Float64;
     /**
      * Creates a new Float64 quaternion initialized with the values from the
      * supplied array.
@@ -87,7 +87,7 @@ declare module goog.vec.Quaternion {
      * @param {goog.vec.AnyType} vec The source 4 element array.
      * @return {!goog.vec.Quaternion.Float64} The new quaternion.
      */
-    function createFloat64FromArray(vec: number[]): goog.vec.Quaternion.Float64;
+    function createFloat64FromArray(vec: goog.vec.Number): goog.vec.Quaternion.Float64;
 
     /**
      * Creates a new Float32 quaternion initialized with the supplied values.
@@ -150,7 +150,7 @@ declare module goog.vec.Quaternion {
      * @return {!goog.vec.Quaternion.AnyType} return q so that operations can be
      *     chained together.
      */
-    function setFromArray(q: goog.vec.Quaternion.AnyType, values: Float32Array): goog.vec.Quaternion.AnyType;
+    function setFromArray(q: goog.vec.Quaternion.AnyType, values: goog.vec.Float32): goog.vec.Quaternion.AnyType;
     /**
      * Initializes the quaternion with the given array of values.
      *
@@ -160,7 +160,7 @@ declare module goog.vec.Quaternion {
      * @return {!goog.vec.Quaternion.AnyType} return q so that operations can be
      *     chained together.
      */
-    function setFromArray(q: goog.vec.Quaternion.AnyType, values: Float64Array): goog.vec.Quaternion.AnyType;
+    function setFromArray(q: goog.vec.Quaternion.AnyType, values: goog.vec.Float64): goog.vec.Quaternion.AnyType;
     /**
      * Initializes the quaternion with the given array of values.
      *
@@ -170,7 +170,7 @@ declare module goog.vec.Quaternion {
      * @return {!goog.vec.Quaternion.AnyType} return q so that operations can be
      *     chained together.
      */
-    function setFromArray(q: goog.vec.Quaternion.AnyType, values: number[]): goog.vec.Quaternion.AnyType;
+    function setFromArray(q: goog.vec.Quaternion.AnyType, values: goog.vec.Number): goog.vec.Quaternion.AnyType;
 
     /**
      * Adds the two quaternions.
@@ -310,7 +310,7 @@ declare module goog.vec.Quaternion {
      * @return {!goog.vec.AnyType} Return resulting matrix so that
      *     operations can be chained together.
      */
-    function toRotationMatrix4(quat: goog.vec.Quaternion.AnyType, matrix: Float32Array): goog.vec.AnyType;
+    function toRotationMatrix4(quat: goog.vec.Quaternion.AnyType, matrix: goog.vec.Float32): goog.vec.AnyType;
     /**
      * Generates the rotation matrix from the given quaternion.
      *
@@ -319,7 +319,7 @@ declare module goog.vec.Quaternion {
      * @return {!goog.vec.AnyType} Return resulting matrix so that
      *     operations can be chained together.
      */
-    function toRotationMatrix4(quat: goog.vec.Quaternion.AnyType, matrix: Float64Array): goog.vec.AnyType;
+    function toRotationMatrix4(quat: goog.vec.Quaternion.AnyType, matrix: goog.vec.Float64): goog.vec.AnyType;
     /**
      * Generates the rotation matrix from the given quaternion.
      *
@@ -328,7 +328,7 @@ declare module goog.vec.Quaternion {
      * @return {!goog.vec.AnyType} Return resulting matrix so that
      *     operations can be chained together.
      */
-    function toRotationMatrix4(quat: goog.vec.Quaternion.AnyType, matrix: number[]): goog.vec.AnyType;
+    function toRotationMatrix4(quat: goog.vec.Quaternion.AnyType, matrix: goog.vec.Number): goog.vec.AnyType;
 
     /**
      * Computes the spherical linear interpolated value from the given quaternions

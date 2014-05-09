@@ -1,5 +1,6 @@
 /// <reference path="../../../globals.d.ts" />
 /// <reference path="./processor.d.ts" />
+/// <reference path="./json.d.ts" />
 
 declare module goog.json {
 
@@ -20,6 +21,6 @@ declare module goog.json {
          * @implements {goog.json.Processor}
          * @final
          */
-        constructor(opt_replacer?: (_0: string, _1: any) => any, opt_useUnsafeParsing?: boolean);
+        constructor(opt_replacer?: goog.json.Replacer, opt_useUnsafeParsing?: boolean);
     }
 }
