@@ -1,12 +1,23 @@
 /// <reference path="../index/node.d.ts"/>
 /// <reference path="../index/doctrine.d.ts"/>
 
+import finder = require('./finder');
+
 function flatten<T>(arrays: T[][]): T[] {
     var acc = [];
 
     arrays.forEach(a => a.forEach(el => acc.push(el)));
 
     return acc;
+}
+
+function find<T>(values: T[], predicate: (T) => boolean): T {
+    for (var i = 0; i < values.length; i++) {
+        if (predicate(values[i]))
+            return values[i];
+    }
+
+    return null;
 }
 
 function is_any(t: doctrine.AnyType): boolean {
@@ -32,10 +43,25 @@ function simplify(types: doctrine.AnyType[]): doctrine.AnyType[] {
     return unique;
 }
 
-function inline(t: doctrine.AnyType): doctrine.AnyType {
+export function inline(t: doctrine.AnyType): doctrine.AnyType {
+    if (!t)
+        return null;
+
     switch (t.type) {
-        // Atomic types
         case 'NameExpression':
+            if (finder.file(t.name)) {
+                var member = finder.member(t.name);
+                if (!member) return t;
+
+                var typedef = find(member.jsdoc.tags, t => t.title === 'typedef');
+                if (!typedef) return t;
+
+                var type = typedef.type;
+                if (!type) return t;
+
+                return inline(type);
+            } else return t;
+        // Atomic types
         case 'AllLiteral':
         case 'NullableLiteral':
         case 'NullLiteral':
@@ -46,7 +72,7 @@ function inline(t: doctrine.AnyType): doctrine.AnyType {
         case 'TypeApplication':
             return <doctrine.AnyType> {
                 type: t.type,
-                expression: inline(t.expression),
+                expression: t.expression,
                 applications: t.applications.map(inline)
             };
         case 'OptionalType':

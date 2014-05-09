@@ -380,8 +380,10 @@ function find_overloads(params: doctrine.Tag[]): TagsByName[] {
                 type: type
             }
         }
+        var inlined = disunion.inline(tag.type);
+        var unloaded = disunion.unload(inlined);
 
-        return disunion.unload(tag.type).map(with_type);
+        return unloaded.map(with_type);
     });
     var overloads: doctrine.Tag[][] = disunion.outer(unions);
 

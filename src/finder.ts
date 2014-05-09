@@ -48,7 +48,20 @@ export function symbol(symbolName: string): combine.Symbol {
         var s = symbols(fileName);
 
         return s.classes[symbolName] || s.modules[symbolName];
-    }
-    else
-        return null;
+    } else return null;
+}
+
+export function member(symbolName: string): parser.Value {
+    var fileName = file(symbolName);
+
+    if (fileName) {
+        var s = symbols(fileName);
+        var dot = symbolName.lastIndexOf('.');
+        var moduleName = symbolName.substring(0, dot);
+        var memberName = symbolName.substring(dot + 1);
+        var moduleValue = s.modules[moduleName] || {};
+
+        return moduleValue[memberName] || null;
+    } else return null;
+
 }

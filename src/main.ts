@@ -17,18 +17,23 @@ options.todo.forEach(todo => {
     currentInput = todo.input;
     currentOutput = todo.output;
 
-    var symbols = finder.symbols(todo.input);
-    var defs = generate.defs(symbols);
-    var pretty = pretty_print.pretty(defs);
-    var parentPart = (/^.*\//).exec(todo.output) || [];
-    var parentDir = parentPart[0] || '';
+    try {
+        var symbols = finder.symbols(todo.input);
+        var defs = generate.defs(symbols);
+        var pretty = pretty_print.pretty(defs);
+        var parentPart = (/^.*\//).exec(todo.output) || [];
+        var parentDir = parentPart[0] || '';
 
-    mkdirp.sync(parentDir);
+        mkdirp.sync(parentDir);
 
-    if (fs.existsSync(todo.output) && fs.readFileSync(todo.output, 'utf8') === pretty) {
-        console.error('No changes\t'.green + todo.output);
-    } else {
-        fs.writeFile(todo.output, pretty);
-        console.error('Wrote\t'.red + todo.output);
+        if (fs.existsSync(todo.output) && fs.readFileSync(todo.output, 'utf8') === pretty) {
+            console.error('No changes\t'.green + todo.output);
+        } else {
+            fs.writeFile(todo.output, pretty);
+            console.error('Wrote\t'.red + todo.output);
+        }
+    } catch (e) {
+        console.error('ERROR\t'.bold.red + todo.input + ' ' + todo.output);
+        throw e;
     }
 });
