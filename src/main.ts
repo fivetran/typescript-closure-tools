@@ -20,7 +20,8 @@ options.todo.forEach(todo => {
     var symbols = finder.symbols(todo.input);
     var defs = generate.defs(symbols);
     var pretty = pretty_print.pretty(defs);
-    var parentDir = (/^.*\//).exec(todo.output)[0];
+    var parentPart = (/^.*\//).exec(todo.output) || [];
+    var parentDir = parentPart[0] || '';
 
     mkdirp.sync(parentDir);
 
