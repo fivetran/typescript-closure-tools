@@ -322,34 +322,6 @@ declare module goog.uri.utils {
      * @return {string} The URI with all query parameters added.
      */
     function appendParams(uri: string, ...var_args: string[]): string;
-    /**
-     * Appends URI parameters to an existing URI.
-     *
-     * The variable arguments may contain alternating keys and values.  Keys are
-     * assumed to be already URI encoded.  The values should not be URI-encoded,
-     * and will instead be encoded by this function.
-     * <pre>
-     * appendParams('http://www.foo.com?existing=true',
-     *     'key1', 'value1',
-     *     'key2', 'value?willBeEncoded',
-     *     'key3', ['valueA', 'valueB', 'valueC'],
-     *     'key4', null);
-     * result: 'http://www.foo.com?existing=true&' +
-     *     'key1=value1&' +
-     *     'key2=value%3FwillBeEncoded&' +
-     *     'key3=valueA&key3=valueB&key3=valueC'
-     * </pre>
-     *
-     * A single call to this function will not exhibit quadratic behavior in IE,
-     * whereas multiple repeated calls may, although the effect is limited by
-     * fact that URL's generally can't exceed 2kb.
-     *
-     * @param {string} uri The original URI, which may already have query data.
-     * @param {...(goog.uri.utils.QueryArray|string|goog.uri.utils.QueryValue)} var_args
-     *     An array or argument list conforming to goog.uri.utils.QueryArray.
-     * @return {string} The URI with all query parameters added.
-     */
-    function appendParams(uri: string, ...var_args: goog.uri.utils.QueryValue[]): string;
 
     /**
      * Appends query parameters from a map.
