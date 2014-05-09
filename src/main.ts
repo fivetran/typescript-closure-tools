@@ -8,7 +8,7 @@ import generate = require('./generate');
 import pretty_print = require('./pretty_print');
 import options = require('./options');
 import mkdirp = require('mkdirp');
-require('colors') ;
+require('colors');
 
 export var currentInput: string;
 export var currentOutput: string;

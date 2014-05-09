@@ -1,6 +1,14 @@
 /// <reference path="../index/node.d.ts"/>
 /// <reference path="../index/doctrine.d.ts"/>
 
+function flatten<T>(arrays: T[][]): T[] {
+    var acc = [];
+
+    arrays.forEach(a => a.forEach(el => acc.push(el)));
+
+    return acc;
+}
+
 function is_any(t: doctrine.AnyType): boolean {
     switch (t.type) {
         case 'UnionType':
@@ -22,6 +30,70 @@ function simplify(types: doctrine.AnyType[]): doctrine.AnyType[] {
       unique.push(anys[0]);
 
     return unique;
+}
+
+function inline(t: doctrine.AnyType): doctrine.AnyType {
+    switch (t.type) {
+        // Atomic types
+        case 'NameExpression':
+        case 'AllLiteral':
+        case 'NullableLiteral':
+        case 'NullLiteral':
+        case 'UndefinedLiteral':
+        case 'VoidLiteral':
+            return t;
+        // Compound types
+        case 'TypeApplication':
+            return <doctrine.AnyType> {
+                type: t.type,
+                expression: inline(t.expression),
+                applications: t.applications.map(inline)
+            };
+        case 'OptionalType':
+        case 'NullableType':
+        case 'NonNullableType':
+        case 'RestType':
+            return <doctrine.AnyType> {
+                type: t.type,
+                expression: inline(t.expression)
+            };
+        case 'FunctionType':
+            return <doctrine.AnyType> {
+                type: t.type,
+                params: t.params.map(inline),
+                result: inline(t.result)
+            };
+        case 'RecordType':
+            return <doctrine.AnyType> {
+                type: t.type,
+                fields: <doctrine.FieldType[]> t.fields.map(inline)
+            };
+        case 'ArrayType':
+            return <doctrine.AnyType> {
+                type: t.type,
+                elements: t.elements.map(inline)
+            };
+        case 'FieldType':
+            return <doctrine.AnyType> {
+                type: t.type,
+                key: t.key,
+                value: inline(t.value)
+            };
+        case 'ParameterType':
+            return <doctrine.AnyType> {
+                type: t.type,
+                name: t.name,
+                expression: inline(t.expression)
+            };
+        // Union types
+        case 'UnionType':
+            return <doctrine.AnyType> {
+                type: t.type,
+                elements: t.elements.map(inline)
+            };
+        default:
+            throw new Error('Unknown type expression ' + t.type);
+    }
 }
 
 /**
@@ -141,16 +213,9 @@ export function unload(t: doctrine.AnyType): doctrine.AnyType[] {
         // Union types
         case 'UnionType':
             var simple = simplify(t.elements);
-            var elements = outer(simple.map(unload));
-            var acc = [];
+            var unions = simple.map(unload);
 
-            elements.forEach(e => {
-                e.forEach(e => {
-                    acc.push(e);
-                });
-            });
-
-            return acc;
+            return flatten(unions);
         default:
             throw new Error('Unknown type expression ' + t.type);
     }

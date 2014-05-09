@@ -45,12 +45,25 @@ describe('disunion', () => {
             type: 'NameExpression',
             name: 'B'
         };
+        var c = {
+            type: 'NameExpression',
+            name: 'C'
+        };
         var union = <doctrine.AnyType> {
             type: 'UnionType',
             elements: [a, b]
         };
+        var unionUnion = <doctrine.AnyType> {
+            type: 'UnionType',
+            elements: [union, c]
+        };
+
         it('should unload a union', () => {
             expect(disunion.unload(union)).toEqual([a, b]);
+        });
+
+        it('should unload a union of unions', () => {
+            expect(disunion.unload(unionUnion)).toEqual([c, a, b]);
         });
 
         it('should unload an optional', () => {
