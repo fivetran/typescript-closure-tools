@@ -66,7 +66,7 @@ declare module doctrine {
     interface AnyType extends UnionType, NameExpression, TypeApplication, FunctionType, OptionalType, FieldType,
         ParameterType, RecordType, ArrayType { }
 
-    function parse(comment: string, options: Options): JSDoc;
+    function parse(comment: string, options?: Options): JSDoc;
 }
 
 declare module 'doctrine' {

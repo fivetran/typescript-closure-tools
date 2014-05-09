@@ -69,8 +69,11 @@ export function pretty(out: generate.Generated): string {
     // TODO break static imports
 
     Object.keys(out.modules).forEach(moduleName => {
+        // TODO eliminate when https://typescript.codeplex.com/workitem/2490 is resolved
+        var safeName = moduleName.replace(/\bstring\b/, '_string');
         var moduleValue = out.modules[moduleName];
-        acc += '\ndeclare module ' + moduleName + ' {\n';
+
+        acc += '\ndeclare module ' + safeName + ' {\n';
 
         Object.keys(moduleValue).forEach(function (propertyName) {
             var member = moduleValue[propertyName];
