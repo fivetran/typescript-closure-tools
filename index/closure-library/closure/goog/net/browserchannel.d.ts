@@ -780,13 +780,6 @@ declare module goog.net.BrowserChannel {
      * @param {number} retries The number of times the POST had to be retried.
      */
     function notifyTimingEvent(size: number, rtt: number, retries: number): void;
-
-    /**
-     * A LogSaver that can be used to accumulate all the debug logs for
-     * BrowserChannels so they can be sent to the server when a problem is
-     * detected.
-     */
-    var LogSaver: any /*missing*/;
 }
 
 declare module goog.net.BrowserChannel.Event {
