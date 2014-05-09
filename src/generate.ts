@@ -9,7 +9,7 @@ import finder = require('./finder');
 import disunion = require('./disunion');
 import escodegen = require('escodegen');
 
-// TODO inject interfaces
+// TODO inline union typedefs. May cause size explosion
 
 var reserved =  [
     'break',

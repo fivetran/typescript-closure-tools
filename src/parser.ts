@@ -173,8 +173,10 @@ function remove_private(parsed: File): File {
     Object.keys(parsed).forEach(function (name) {
         var jsdoc = parsed[name].jsdoc;
 
-        if (jsdoc.tags.some(t => t.title === 'private') && !jsdoc.tags.some(t => t.title === 'typedef'))
+        if (jsdoc.tags.some(t => t.title === 'private') &&
+            !jsdoc.tags.some(t => t.title === 'typedef' || t.title === 'interface' || t.title === 'constructor')) {
             privatePrefixes.push(name);
+        }
     });
 
     // Identify all public names
