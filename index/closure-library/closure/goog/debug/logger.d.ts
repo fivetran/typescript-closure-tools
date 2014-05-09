@@ -317,13 +317,6 @@ declare module goog.debug {
      * @typedef {string|function(): string}
      */
     interface Loggable { /*any (string|() => string)*/ }
-
-    /**
-     * There is a single global LogManager object that is used to maintain a set of
-     * shared state about Loggers and log services. This is loosely based on the
-     * java class java.util.logging.LogManager.
-     */
-    var LogManager: any /*missing*/;
 }
 
 declare module goog.debug.Logger {
