@@ -49,7 +49,7 @@ declare module goog.a11y.aria {
      * @param {!(goog.a11y.aria.State|string)} stateName State attribute being set.
      *     Automatically adds prefix 'aria-' to the state name if the attribute is
      *     not an extra attribute.
-     * @param {string|boolean|number|!goog.array.ArrayLike.<string>} value Value
+     * @param {string|boolean|number|!goog.array.ArrayLike} value Value
      * for the state attribute.
      */
     function setState(element: Element, stateName: goog.a11y.aria.State, value: string): void;
@@ -59,7 +59,7 @@ declare module goog.a11y.aria {
      * @param {!(goog.a11y.aria.State|string)} stateName State attribute being set.
      *     Automatically adds prefix 'aria-' to the state name if the attribute is
      *     not an extra attribute.
-     * @param {string|boolean|number|!goog.array.ArrayLike.<string>} value Value
+     * @param {string|boolean|number|!goog.array.ArrayLike} value Value
      * for the state attribute.
      */
     function setState(element: Element, stateName: goog.a11y.aria.State, value: boolean): void;
@@ -69,7 +69,7 @@ declare module goog.a11y.aria {
      * @param {!(goog.a11y.aria.State|string)} stateName State attribute being set.
      *     Automatically adds prefix 'aria-' to the state name if the attribute is
      *     not an extra attribute.
-     * @param {string|boolean|number|!goog.array.ArrayLike.<string>} value Value
+     * @param {string|boolean|number|!goog.array.ArrayLike} value Value
      * for the state attribute.
      */
     function setState(element: Element, stateName: goog.a11y.aria.State, value: number): void;
@@ -79,17 +79,47 @@ declare module goog.a11y.aria {
      * @param {!(goog.a11y.aria.State|string)} stateName State attribute being set.
      *     Automatically adds prefix 'aria-' to the state name if the attribute is
      *     not an extra attribute.
-     * @param {string|boolean|number|!goog.array.ArrayLike.<string>} value Value
+     * @param {string|boolean|number|!goog.array.ArrayLike} value Value
      * for the state attribute.
      */
-    function setState(element: Element, stateName: goog.a11y.aria.State, value: goog.array.ArrayLike<string>): void;
+    function setState(element: Element, stateName: goog.a11y.aria.State, value: any[]): void;
     /**
      * Sets the state or property of an element.
      * @param {!Element} element DOM node where we set state.
      * @param {!(goog.a11y.aria.State|string)} stateName State attribute being set.
      *     Automatically adds prefix 'aria-' to the state name if the attribute is
      *     not an extra attribute.
-     * @param {string|boolean|number|!goog.array.ArrayLike.<string>} value Value
+     * @param {string|boolean|number|!goog.array.ArrayLike} value Value
+     * for the state attribute.
+     */
+    function setState(element: Element, stateName: goog.a11y.aria.State, value: NodeList): void;
+    /**
+     * Sets the state or property of an element.
+     * @param {!Element} element DOM node where we set state.
+     * @param {!(goog.a11y.aria.State|string)} stateName State attribute being set.
+     *     Automatically adds prefix 'aria-' to the state name if the attribute is
+     *     not an extra attribute.
+     * @param {string|boolean|number|!goog.array.ArrayLike} value Value
+     * for the state attribute.
+     */
+    function setState(element: Element, stateName: goog.a11y.aria.State, value: Arguments): void;
+    /**
+     * Sets the state or property of an element.
+     * @param {!Element} element DOM node where we set state.
+     * @param {!(goog.a11y.aria.State|string)} stateName State attribute being set.
+     *     Automatically adds prefix 'aria-' to the state name if the attribute is
+     *     not an extra attribute.
+     * @param {string|boolean|number|!goog.array.ArrayLike} value Value
+     * for the state attribute.
+     */
+    function setState(element: Element, stateName: goog.a11y.aria.State, value: { length: number }): void;
+    /**
+     * Sets the state or property of an element.
+     * @param {!Element} element DOM node where we set state.
+     * @param {!(goog.a11y.aria.State|string)} stateName State attribute being set.
+     *     Automatically adds prefix 'aria-' to the state name if the attribute is
+     *     not an extra attribute.
+     * @param {string|boolean|number|!goog.array.ArrayLike} value Value
      * for the state attribute.
      */
     function setState(element: Element, stateName: string, value: string): void;
@@ -99,7 +129,7 @@ declare module goog.a11y.aria {
      * @param {!(goog.a11y.aria.State|string)} stateName State attribute being set.
      *     Automatically adds prefix 'aria-' to the state name if the attribute is
      *     not an extra attribute.
-     * @param {string|boolean|number|!goog.array.ArrayLike.<string>} value Value
+     * @param {string|boolean|number|!goog.array.ArrayLike} value Value
      * for the state attribute.
      */
     function setState(element: Element, stateName: string, value: boolean): void;
@@ -109,7 +139,7 @@ declare module goog.a11y.aria {
      * @param {!(goog.a11y.aria.State|string)} stateName State attribute being set.
      *     Automatically adds prefix 'aria-' to the state name if the attribute is
      *     not an extra attribute.
-     * @param {string|boolean|number|!goog.array.ArrayLike.<string>} value Value
+     * @param {string|boolean|number|!goog.array.ArrayLike} value Value
      * for the state attribute.
      */
     function setState(element: Element, stateName: string, value: number): void;
@@ -119,10 +149,40 @@ declare module goog.a11y.aria {
      * @param {!(goog.a11y.aria.State|string)} stateName State attribute being set.
      *     Automatically adds prefix 'aria-' to the state name if the attribute is
      *     not an extra attribute.
-     * @param {string|boolean|number|!goog.array.ArrayLike.<string>} value Value
+     * @param {string|boolean|number|!goog.array.ArrayLike} value Value
      * for the state attribute.
      */
-    function setState(element: Element, stateName: string, value: goog.array.ArrayLike<string>): void;
+    function setState(element: Element, stateName: string, value: any[]): void;
+    /**
+     * Sets the state or property of an element.
+     * @param {!Element} element DOM node where we set state.
+     * @param {!(goog.a11y.aria.State|string)} stateName State attribute being set.
+     *     Automatically adds prefix 'aria-' to the state name if the attribute is
+     *     not an extra attribute.
+     * @param {string|boolean|number|!goog.array.ArrayLike} value Value
+     * for the state attribute.
+     */
+    function setState(element: Element, stateName: string, value: NodeList): void;
+    /**
+     * Sets the state or property of an element.
+     * @param {!Element} element DOM node where we set state.
+     * @param {!(goog.a11y.aria.State|string)} stateName State attribute being set.
+     *     Automatically adds prefix 'aria-' to the state name if the attribute is
+     *     not an extra attribute.
+     * @param {string|boolean|number|!goog.array.ArrayLike} value Value
+     * for the state attribute.
+     */
+    function setState(element: Element, stateName: string, value: Arguments): void;
+    /**
+     * Sets the state or property of an element.
+     * @param {!Element} element DOM node where we set state.
+     * @param {!(goog.a11y.aria.State|string)} stateName State attribute being set.
+     *     Automatically adds prefix 'aria-' to the state name if the attribute is
+     *     not an extra attribute.
+     * @param {string|boolean|number|!goog.array.ArrayLike} value Value
+     * for the state attribute.
+     */
+    function setState(element: Element, stateName: string, value: { length: number }): void;
 
     /**
      * Remove the state or property for the element.
@@ -182,10 +242,37 @@ declare module goog.a11y.aria {
      * semantics is well supported by most screen readers.
      * Only to be used internally by the ARIA library in goog.a11y.aria.*.
      * @param {!Element} element The element to assert an ARIA role set.
-     * @param {!goog.array.ArrayLike.<string>} allowedRoles The child roles of
+     * @param {!goog.array.ArrayLike} allowedRoles The child roles of
      * the roles.
      */
-    function assertRoleIsSetInternalUtil(element: Element, allowedRoles: goog.array.ArrayLike<string>): void;
+    function assertRoleIsSetInternalUtil(element: Element, allowedRoles: any[]): void;
+    /**
+     * Asserts that the element has a role set if it's not an HTML element whose
+     * semantics is well supported by most screen readers.
+     * Only to be used internally by the ARIA library in goog.a11y.aria.*.
+     * @param {!Element} element The element to assert an ARIA role set.
+     * @param {!goog.array.ArrayLike} allowedRoles The child roles of
+     * the roles.
+     */
+    function assertRoleIsSetInternalUtil(element: Element, allowedRoles: NodeList): void;
+    /**
+     * Asserts that the element has a role set if it's not an HTML element whose
+     * semantics is well supported by most screen readers.
+     * Only to be used internally by the ARIA library in goog.a11y.aria.*.
+     * @param {!Element} element The element to assert an ARIA role set.
+     * @param {!goog.array.ArrayLike} allowedRoles The child roles of
+     * the roles.
+     */
+    function assertRoleIsSetInternalUtil(element: Element, allowedRoles: Arguments): void;
+    /**
+     * Asserts that the element has a role set if it's not an HTML element whose
+     * semantics is well supported by most screen readers.
+     * Only to be used internally by the ARIA library in goog.a11y.aria.*.
+     * @param {!Element} element The element to assert an ARIA role set.
+     * @param {!goog.array.ArrayLike} allowedRoles The child roles of
+     * the roles.
+     */
+    function assertRoleIsSetInternalUtil(element: Element, allowedRoles: { length: number }): void;
 
     /**
      * Gets the boolean value of an ARIA state/property.
@@ -244,8 +331,8 @@ declare module goog.a11y.aria {
      * Only to be used internally by the ARIA library in goog.a11y.aria.*.
      * @param {!Element} element DOM node to get state from.
      * @param {!goog.a11y.aria.State} stateName State name.
-     * @return {!goog.array.ArrayLike.<string>} string Array
+     * @return {!goog.array.ArrayLike} string Array
      *     value of the state attribute.
      */
-    function getStringArrayStateInternalUtil(element: Element, stateName: goog.a11y.aria.State): goog.array.ArrayLike<string>;
+    function getStringArrayStateInternalUtil(element: Element, stateName: goog.a11y.aria.State): goog.array.ArrayLike;
 }

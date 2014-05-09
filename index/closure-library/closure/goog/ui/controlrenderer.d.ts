@@ -2,7 +2,6 @@
 /// <reference path="../a11y/aria/roles.d.ts" />
 /// <reference path="./control.d.ts" />
 /// <reference path="./component.d.ts" />
-/// <reference path="./controlcontent.d.ts" />
 
 declare module goog.ui {
 
@@ -205,7 +204,40 @@ declare module goog.ui {
          *     set as the control's content. The DOM nodes will not be cloned, they
          *     will only moved under the content element of the control.
          */
-        setContent(element: Element, content: goog.ui.ControlContent): void;
+        setContent(element: Element, content: string): void;
+        /**
+         * Takes a control's root element, and sets its content to the given text
+         * caption or DOM structure.  The default implementation replaces the children
+         * of the given element.  Renderers that create more complex DOM structures
+         * must override this method accordingly.
+         * @param {Element} element The control's root element.
+         * @param {goog.ui.ControlContent} content Text caption or DOM structure to be
+         *     set as the control's content. The DOM nodes will not be cloned, they
+         *     will only moved under the content element of the control.
+         */
+        setContent(element: Element, content: Node): void;
+        /**
+         * Takes a control's root element, and sets its content to the given text
+         * caption or DOM structure.  The default implementation replaces the children
+         * of the given element.  Renderers that create more complex DOM structures
+         * must override this method accordingly.
+         * @param {Element} element The control's root element.
+         * @param {goog.ui.ControlContent} content Text caption or DOM structure to be
+         *     set as the control's content. The DOM nodes will not be cloned, they
+         *     will only moved under the content element of the control.
+         */
+        setContent(element: Element, content: Node[]): void;
+        /**
+         * Takes a control's root element, and sets its content to the given text
+         * caption or DOM structure.  The default implementation replaces the children
+         * of the given element.  Renderers that create more complex DOM structures
+         * must override this method accordingly.
+         * @param {Element} element The control's root element.
+         * @param {goog.ui.ControlContent} content Text caption or DOM structure to be
+         *     set as the control's content. The DOM nodes will not be cloned, they
+         *     will only moved under the content element of the control.
+         */
+        setContent(element: Element, content: NodeList): void;
     
         /**
          * Returns the element within the component's DOM that should receive keyboard

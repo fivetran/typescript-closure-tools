@@ -1,6 +1,5 @@
 /// <reference path="../../../globals.d.ts" />
 /// <reference path="./menubuttonrenderer.d.ts" />
-/// <reference path="./controlcontent.d.ts" />
 /// <reference path="../dom/dom.d.ts" />
 
 declare module goog.ui {
@@ -31,7 +30,28 @@ declare module goog.ui.ColorMenuButtonRenderer {
      * @param {goog.dom.DomHelper} dom DOM helper, used for document interaction.
      * @return {Element} Caption element.
      */
-    function wrapCaption(content: goog.ui.ControlContent, dom: goog.dom.DomHelper): Element;
+    function wrapCaption(content: string, dom: goog.dom.DomHelper): Element;
+    /**
+     * Wrap a caption in a div with the color-menu-button-indicator CSS class.
+     * @param {goog.ui.ControlContent} content Text caption or DOM structure.
+     * @param {goog.dom.DomHelper} dom DOM helper, used for document interaction.
+     * @return {Element} Caption element.
+     */
+    function wrapCaption(content: Node, dom: goog.dom.DomHelper): Element;
+    /**
+     * Wrap a caption in a div with the color-menu-button-indicator CSS class.
+     * @param {goog.ui.ControlContent} content Text caption or DOM structure.
+     * @param {goog.dom.DomHelper} dom DOM helper, used for document interaction.
+     * @return {Element} Caption element.
+     */
+    function wrapCaption(content: Node[], dom: goog.dom.DomHelper): Element;
+    /**
+     * Wrap a caption in a div with the color-menu-button-indicator CSS class.
+     * @param {goog.ui.ControlContent} content Text caption or DOM structure.
+     * @param {goog.dom.DomHelper} dom DOM helper, used for document interaction.
+     * @return {Element} Caption element.
+     */
+    function wrapCaption(content: NodeList, dom: goog.dom.DomHelper): Element;
 
     /**
      * Takes a control's content element and a value object (which is assumed

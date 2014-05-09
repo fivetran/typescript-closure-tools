@@ -26,7 +26,7 @@ declare module goog.style.transition {
      *     Array.<goog.style.transition.Css3Property>} properties A single CSS3
      *     transition property or array of properties.
      */
-    function set(element: Element, properties: goog.style.transition.Css3Property): void;
+    function set(element: Element, properties: { property: string; duration: number; timing: string; delay: number }[]): void;
     /**
      * Sets the element CSS3 transition to properties.
      * @param {Element} element The element to set transition on.
@@ -34,7 +34,23 @@ declare module goog.style.transition {
      *     Array.<goog.style.transition.Css3Property>} properties A single CSS3
      *     transition property or array of properties.
      */
-    function set(element: Element, properties: goog.style.transition.Css3Property[]): void;
+    function set(element: Element, properties: string[]): void;
+    /**
+     * Sets the element CSS3 transition to properties.
+     * @param {Element} element The element to set transition on.
+     * @param {goog.style.transition.Css3Property|
+     *     Array.<goog.style.transition.Css3Property>} properties A single CSS3
+     *     transition property or array of properties.
+     */
+    function set(element: Element, properties: { property: string; duration: number; timing: string; delay: number }): void;
+    /**
+     * Sets the element CSS3 transition to properties.
+     * @param {Element} element The element to set transition on.
+     * @param {goog.style.transition.Css3Property|
+     *     Array.<goog.style.transition.Css3Property>} properties A single CSS3
+     *     transition property or array of properties.
+     */
+    function set(element: Element, properties: string): void;
 
     /**
      * Removes any programmatically-added CSS3 transition in the given element.

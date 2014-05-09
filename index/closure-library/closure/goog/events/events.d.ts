@@ -1787,7 +1787,16 @@ declare module goog.events {
      *     event listener.
      * @return {boolean} indicating whether the listener was there to remove.
      */
-    function unlistenByKey(key: goog.events.Key): boolean;
+    function unlistenByKey(key: number): boolean;
+    /**
+     * Removes an event listener which was added with listen() by the key
+     * returned by listen().
+     *
+     * @param {goog.events.Key} key The key returned by listen() for this
+     *     event listener.
+     * @return {boolean} indicating whether the listener was there to remove.
+     */
+    function unlistenByKey(key: goog.events.ListenableKey): boolean;
 
     /**
      * Removes an event listener which was added with listenWithWrapper().
@@ -2254,7 +2263,58 @@ declare module goog.events {
      *     If there are no handlers, or if all handlers return true, this returns
      *     true.
      */
-    function dispatchEvent(src: goog.events.Listenable, e: goog.events.EventLike): boolean;
+    function dispatchEvent(src: goog.events.Listenable, e: string): boolean;
+    /**
+     * Dispatches an event (or event like object) and calls all listeners
+     * listening for events of this type. The type of the event is decided by the
+     * type property on the event object.
+     *
+     * If any of the listeners returns false OR calls preventDefault then this
+     * function will return false.  If one of the capture listeners calls
+     * stopPropagation, then the bubble listeners won't fire.
+     *
+     * @param {goog.events.Listenable} src The event target.
+     * @param {goog.events.EventLike} e Event object.
+     * @return {boolean} If anyone called preventDefault on the event object (or
+     *     if any of the handlers returns false) this will also return false.
+     *     If there are no handlers, or if all handlers return true, this returns
+     *     true.
+     */
+    function dispatchEvent(src: goog.events.Listenable, e: Object): boolean;
+    /**
+     * Dispatches an event (or event like object) and calls all listeners
+     * listening for events of this type. The type of the event is decided by the
+     * type property on the event object.
+     *
+     * If any of the listeners returns false OR calls preventDefault then this
+     * function will return false.  If one of the capture listeners calls
+     * stopPropagation, then the bubble listeners won't fire.
+     *
+     * @param {goog.events.Listenable} src The event target.
+     * @param {goog.events.EventLike} e Event object.
+     * @return {boolean} If anyone called preventDefault on the event object (or
+     *     if any of the handlers returns false) this will also return false.
+     *     If there are no handlers, or if all handlers return true, this returns
+     *     true.
+     */
+    function dispatchEvent(src: goog.events.Listenable, e: goog.events.Event): boolean;
+    /**
+     * Dispatches an event (or event like object) and calls all listeners
+     * listening for events of this type. The type of the event is decided by the
+     * type property on the event object.
+     *
+     * If any of the listeners returns false OR calls preventDefault then this
+     * function will return false.  If one of the capture listeners calls
+     * stopPropagation, then the bubble listeners won't fire.
+     *
+     * @param {goog.events.Listenable} src The event target.
+     * @param {goog.events.EventLike} e Event object.
+     * @return {boolean} If anyone called preventDefault on the event object (or
+     *     if any of the handlers returns false) this will also return false.
+     *     If there are no handlers, or if all handlers return true, this returns
+     *     true.
+     */
+    function dispatchEvent(src: goog.events.Listenable, e: goog.events.EventId<any>): boolean;
 
     /**
      * Installs exception protection for the browser event entry point using the

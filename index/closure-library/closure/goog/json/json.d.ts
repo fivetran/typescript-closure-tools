@@ -9,7 +9,7 @@ declare module goog.json {
          * @param {?goog.json.Replacer=} opt_replacer Replacer.
          * @constructor
          */
-        constructor(opt_replacer?: goog.json.Replacer);
+        constructor(opt_replacer?: (_0: string, _1: any) => any);
     
         /**
          * Serializes an object or a value to a JSON string.
@@ -93,5 +93,5 @@ declare module goog.json {
      * @throws Error if there are loops in the object graph.
      * @return {string} A JSON string representation of the input.
      */
-    function serialize(object: any, opt_replacer?: goog.json.Replacer): string;
+    function serialize(object: any, opt_replacer?: (_0: string, _1: any) => any): string;
 }

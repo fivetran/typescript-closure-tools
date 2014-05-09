@@ -1,6 +1,5 @@
 /// <reference path="../../../globals.d.ts" />
 /// <reference path="./controlrenderer.d.ts" />
-/// <reference path="./controlcontent.d.ts" />
 /// <reference path="../dom/dom.d.ts" />
 /// <reference path="./control.d.ts" />
 
@@ -40,7 +39,34 @@ declare module goog.ui {
          * @return {Element} Menu item content element.
          * @protected
          */
-        createContent(content: goog.ui.ControlContent, dom: goog.dom.DomHelper): Element;
+        createContent(content: string, dom: goog.dom.DomHelper): Element;
+        /**
+         * Wraps the given text caption or existing DOM node(s) in a structural element
+         * containing the menu item's contents.
+         * @param {goog.ui.ControlContent} content Menu item contents.
+         * @param {goog.dom.DomHelper} dom DOM helper for document interaction.
+         * @return {Element} Menu item content element.
+         * @protected
+         */
+        createContent(content: Node, dom: goog.dom.DomHelper): Element;
+        /**
+         * Wraps the given text caption or existing DOM node(s) in a structural element
+         * containing the menu item's contents.
+         * @param {goog.ui.ControlContent} content Menu item contents.
+         * @param {goog.dom.DomHelper} dom DOM helper for document interaction.
+         * @return {Element} Menu item content element.
+         * @protected
+         */
+        createContent(content: Node[], dom: goog.dom.DomHelper): Element;
+        /**
+         * Wraps the given text caption or existing DOM node(s) in a structural element
+         * containing the menu item's contents.
+         * @param {goog.ui.ControlContent} content Menu item contents.
+         * @param {goog.dom.DomHelper} dom DOM helper for document interaction.
+         * @return {Element} Menu item content element.
+         * @protected
+         */
+        createContent(content: NodeList, dom: goog.dom.DomHelper): Element;
     
         /**
          * Enables/disables radio button semantics on the menu item.

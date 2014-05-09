@@ -1,6 +1,6 @@
 /// <reference path="../../../globals.d.ts" />
-/// <reference path="./fielddescriptor.d.ts" />
 /// <reference path="./message.d.ts" />
+/// <reference path="./fielddescriptor.d.ts" />
 
 declare module goog.proto2 {
 
@@ -19,7 +19,105 @@ declare module goog.proto2 {
          * @constructor
          * @final
          */
-        constructor(messageType: () => any /*missing*/, metadata: goog.proto2.Metadata, fields: goog.proto2.FieldDescriptor[]);
+        constructor(messageType: () => any /*missing*/, metadata: { name: string; fullName: string; containingType: goog.proto2.Message }, fields: goog.proto2.FieldDescriptor[]);
+        /**
+         * A class which describes a Protocol Buffer 2 Message.
+         *
+         * @param {function(new:goog.proto2.Message)} messageType Constructor for
+         *      the message class that this descriptor describes.
+         * @param {!goog.proto2.Metadata} metadata The metadata about the message that
+         *      will be used to construct this descriptor.
+         * @param {Array.<!goog.proto2.FieldDescriptor>} fields The fields of the
+         *      message described by this descriptor.
+         *
+         * @constructor
+         * @final
+         */
+        constructor(messageType: () => any /*missing*/, metadata: { name: string; fullName: string; containingType: any /*undefined*/ }, fields: goog.proto2.FieldDescriptor[]);
+        /**
+         * A class which describes a Protocol Buffer 2 Message.
+         *
+         * @param {function(new:goog.proto2.Message)} messageType Constructor for
+         *      the message class that this descriptor describes.
+         * @param {!goog.proto2.Metadata} metadata The metadata about the message that
+         *      will be used to construct this descriptor.
+         * @param {Array.<!goog.proto2.FieldDescriptor>} fields The fields of the
+         *      message described by this descriptor.
+         *
+         * @constructor
+         * @final
+         */
+        constructor(messageType: () => any /*missing*/, metadata: { name: string; fullName: any /*undefined*/; containingType: goog.proto2.Message }, fields: goog.proto2.FieldDescriptor[]);
+        /**
+         * A class which describes a Protocol Buffer 2 Message.
+         *
+         * @param {function(new:goog.proto2.Message)} messageType Constructor for
+         *      the message class that this descriptor describes.
+         * @param {!goog.proto2.Metadata} metadata The metadata about the message that
+         *      will be used to construct this descriptor.
+         * @param {Array.<!goog.proto2.FieldDescriptor>} fields The fields of the
+         *      message described by this descriptor.
+         *
+         * @constructor
+         * @final
+         */
+        constructor(messageType: () => any /*missing*/, metadata: { name: string; fullName: any /*undefined*/; containingType: any /*undefined*/ }, fields: goog.proto2.FieldDescriptor[]);
+        /**
+         * A class which describes a Protocol Buffer 2 Message.
+         *
+         * @param {function(new:goog.proto2.Message)} messageType Constructor for
+         *      the message class that this descriptor describes.
+         * @param {!goog.proto2.Metadata} metadata The metadata about the message that
+         *      will be used to construct this descriptor.
+         * @param {Array.<!goog.proto2.FieldDescriptor>} fields The fields of the
+         *      message described by this descriptor.
+         *
+         * @constructor
+         * @final
+         */
+        constructor(messageType: () => any /*missing*/, metadata: { name: any /*undefined*/; fullName: string; containingType: goog.proto2.Message }, fields: goog.proto2.FieldDescriptor[]);
+        /**
+         * A class which describes a Protocol Buffer 2 Message.
+         *
+         * @param {function(new:goog.proto2.Message)} messageType Constructor for
+         *      the message class that this descriptor describes.
+         * @param {!goog.proto2.Metadata} metadata The metadata about the message that
+         *      will be used to construct this descriptor.
+         * @param {Array.<!goog.proto2.FieldDescriptor>} fields The fields of the
+         *      message described by this descriptor.
+         *
+         * @constructor
+         * @final
+         */
+        constructor(messageType: () => any /*missing*/, metadata: { name: any /*undefined*/; fullName: string; containingType: any /*undefined*/ }, fields: goog.proto2.FieldDescriptor[]);
+        /**
+         * A class which describes a Protocol Buffer 2 Message.
+         *
+         * @param {function(new:goog.proto2.Message)} messageType Constructor for
+         *      the message class that this descriptor describes.
+         * @param {!goog.proto2.Metadata} metadata The metadata about the message that
+         *      will be used to construct this descriptor.
+         * @param {Array.<!goog.proto2.FieldDescriptor>} fields The fields of the
+         *      message described by this descriptor.
+         *
+         * @constructor
+         * @final
+         */
+        constructor(messageType: () => any /*missing*/, metadata: { name: any /*undefined*/; fullName: any /*undefined*/; containingType: goog.proto2.Message }, fields: goog.proto2.FieldDescriptor[]);
+        /**
+         * A class which describes a Protocol Buffer 2 Message.
+         *
+         * @param {function(new:goog.proto2.Message)} messageType Constructor for
+         *      the message class that this descriptor describes.
+         * @param {!goog.proto2.Metadata} metadata The metadata about the message that
+         *      will be used to construct this descriptor.
+         * @param {Array.<!goog.proto2.FieldDescriptor>} fields The fields of the
+         *      message described by this descriptor.
+         *
+         * @constructor
+         * @final
+         */
+        constructor(messageType: () => any /*missing*/, metadata: { name: any /*undefined*/; fullName: any /*undefined*/; containingType: any /*undefined*/ }, fields: goog.proto2.FieldDescriptor[]);
     
         /**
          * Returns the name of the message, if any.

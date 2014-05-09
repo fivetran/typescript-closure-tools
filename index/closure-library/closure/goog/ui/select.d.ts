@@ -1,11 +1,11 @@
 /// <reference path="../../../globals.d.ts" />
 /// <reference path="./menubutton.d.ts" />
-/// <reference path="./controlcontent.d.ts" />
 /// <reference path="./menu.d.ts" />
 /// <reference path="./buttonrenderer.d.ts" />
 /// <reference path="../dom/dom.d.ts" />
 /// <reference path="./menurenderer.d.ts" />
 /// <reference path="../events/event.d.ts" />
+/// <reference path="./controlcontent.d.ts" />
 /// <reference path="./menuitem.d.ts" />
 /// <reference path="./selectionmodel.d.ts" />
 
@@ -34,7 +34,73 @@ declare module goog.ui {
          * @constructor
          * @extends {goog.ui.MenuButton}
          */
-        constructor(opt_caption?: goog.ui.ControlContent, opt_menu?: goog.ui.Menu, opt_renderer?: goog.ui.ButtonRenderer, opt_domHelper?: goog.dom.DomHelper, opt_menuRenderer?: goog.ui.MenuRenderer);
+        constructor(opt_caption?: string, opt_menu?: goog.ui.Menu, opt_renderer?: goog.ui.ButtonRenderer, opt_domHelper?: goog.dom.DomHelper, opt_menuRenderer?: goog.ui.MenuRenderer);
+        /**
+         * A selection control.  Extends {@link goog.ui.MenuButton} by composing a
+         * menu with a selection model, and automatically updating the button's caption
+         * based on the current selection.
+         *
+         * Select fires the following events:
+         *   CHANGE - after selection changes.
+         *
+         * @param {goog.ui.ControlContent=} opt_caption Default caption or existing DOM
+         *     structure to display as the button's caption when nothing is selected.
+         *     Defaults to no caption.
+         * @param {goog.ui.Menu=} opt_menu Menu containing selection options.
+         * @param {goog.ui.ButtonRenderer=} opt_renderer Renderer used to render or
+         *     decorate the control; defaults to {@link goog.ui.MenuButtonRenderer}.
+         * @param {goog.dom.DomHelper=} opt_domHelper Optional DOM hepler, used for
+         *     document interaction.
+         * @param {!goog.ui.MenuRenderer=} opt_menuRenderer Renderer used to render or
+         *     decorate the menu; defaults to {@link goog.ui.MenuRenderer}.
+         * @constructor
+         * @extends {goog.ui.MenuButton}
+         */
+        constructor(opt_caption?: Node, opt_menu?: goog.ui.Menu, opt_renderer?: goog.ui.ButtonRenderer, opt_domHelper?: goog.dom.DomHelper, opt_menuRenderer?: goog.ui.MenuRenderer);
+        /**
+         * A selection control.  Extends {@link goog.ui.MenuButton} by composing a
+         * menu with a selection model, and automatically updating the button's caption
+         * based on the current selection.
+         *
+         * Select fires the following events:
+         *   CHANGE - after selection changes.
+         *
+         * @param {goog.ui.ControlContent=} opt_caption Default caption or existing DOM
+         *     structure to display as the button's caption when nothing is selected.
+         *     Defaults to no caption.
+         * @param {goog.ui.Menu=} opt_menu Menu containing selection options.
+         * @param {goog.ui.ButtonRenderer=} opt_renderer Renderer used to render or
+         *     decorate the control; defaults to {@link goog.ui.MenuButtonRenderer}.
+         * @param {goog.dom.DomHelper=} opt_domHelper Optional DOM hepler, used for
+         *     document interaction.
+         * @param {!goog.ui.MenuRenderer=} opt_menuRenderer Renderer used to render or
+         *     decorate the menu; defaults to {@link goog.ui.MenuRenderer}.
+         * @constructor
+         * @extends {goog.ui.MenuButton}
+         */
+        constructor(opt_caption?: Node[], opt_menu?: goog.ui.Menu, opt_renderer?: goog.ui.ButtonRenderer, opt_domHelper?: goog.dom.DomHelper, opt_menuRenderer?: goog.ui.MenuRenderer);
+        /**
+         * A selection control.  Extends {@link goog.ui.MenuButton} by composing a
+         * menu with a selection model, and automatically updating the button's caption
+         * based on the current selection.
+         *
+         * Select fires the following events:
+         *   CHANGE - after selection changes.
+         *
+         * @param {goog.ui.ControlContent=} opt_caption Default caption or existing DOM
+         *     structure to display as the button's caption when nothing is selected.
+         *     Defaults to no caption.
+         * @param {goog.ui.Menu=} opt_menu Menu containing selection options.
+         * @param {goog.ui.ButtonRenderer=} opt_renderer Renderer used to render or
+         *     decorate the control; defaults to {@link goog.ui.MenuButtonRenderer}.
+         * @param {goog.dom.DomHelper=} opt_domHelper Optional DOM hepler, used for
+         *     document interaction.
+         * @param {!goog.ui.MenuRenderer=} opt_menuRenderer Renderer used to render or
+         *     decorate the menu; defaults to {@link goog.ui.MenuRenderer}.
+         * @constructor
+         * @extends {goog.ui.MenuButton}
+         */
+        constructor(opt_caption?: NodeList, opt_menu?: goog.ui.Menu, opt_renderer?: goog.ui.ButtonRenderer, opt_domHelper?: goog.dom.DomHelper, opt_menuRenderer?: goog.ui.MenuRenderer);
     
         /**
          * Handles {@link goog.events.EventType.SELECT} events raised by the
@@ -55,7 +121,25 @@ declare module goog.ui {
          * @param {goog.ui.ControlContent} caption Default caption to be shown
          *    when no option is selected.
          */
-        setDefaultCaption(caption: goog.ui.ControlContent): void;
+        setDefaultCaption(caption: string): void;
+        /**
+         * Sets the default caption to the given string or DOM structure.
+         * @param {goog.ui.ControlContent} caption Default caption to be shown
+         *    when no option is selected.
+         */
+        setDefaultCaption(caption: Node): void;
+        /**
+         * Sets the default caption to the given string or DOM structure.
+         * @param {goog.ui.ControlContent} caption Default caption to be shown
+         *    when no option is selected.
+         */
+        setDefaultCaption(caption: Node[]): void;
+        /**
+         * Sets the default caption to the given string or DOM structure.
+         * @param {goog.ui.ControlContent} caption Default caption to be shown
+         *    when no option is selected.
+         */
+        setDefaultCaption(caption: NodeList): void;
     
         /**
          * Selects the specified option (assumed to be in the select menu), and

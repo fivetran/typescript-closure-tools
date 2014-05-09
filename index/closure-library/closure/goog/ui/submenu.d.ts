@@ -1,6 +1,5 @@
 /// <reference path="../../../globals.d.ts" />
 /// <reference path="./menuitem.d.ts" />
-/// <reference path="./controlcontent.d.ts" />
 /// <reference path="../dom/dom.d.ts" />
 /// <reference path="./menuitemrenderer.d.ts" />
 /// <reference path="./menuheader.d.ts" />
@@ -26,7 +25,52 @@ declare module goog.ui {
          * @constructor
          * @extends {goog.ui.MenuItem}
          */
-        constructor(content: goog.ui.ControlContent, opt_model?: any, opt_domHelper?: goog.dom.DomHelper, opt_renderer?: goog.ui.MenuItemRenderer);
+        constructor(content: string, opt_model?: any, opt_domHelper?: goog.dom.DomHelper, opt_renderer?: goog.ui.MenuItemRenderer);
+        /**
+         * Class representing a submenu that can be added as an item to other menus.
+         *
+         * @param {goog.ui.ControlContent} content Text caption or DOM structure to
+         *     display as the content of the submenu (use to add icons or styling to
+         *     menus).
+         * @param {*=} opt_model Data/model associated with the menu item.
+         * @param {goog.dom.DomHelper=} opt_domHelper Optional dom helper used for dom
+         *     interactions.
+         * @param {goog.ui.MenuItemRenderer=} opt_renderer Renderer used to render or
+         *     decorate the component; defaults to {@link goog.ui.SubMenuRenderer}.
+         * @constructor
+         * @extends {goog.ui.MenuItem}
+         */
+        constructor(content: Node, opt_model?: any, opt_domHelper?: goog.dom.DomHelper, opt_renderer?: goog.ui.MenuItemRenderer);
+        /**
+         * Class representing a submenu that can be added as an item to other menus.
+         *
+         * @param {goog.ui.ControlContent} content Text caption or DOM structure to
+         *     display as the content of the submenu (use to add icons or styling to
+         *     menus).
+         * @param {*=} opt_model Data/model associated with the menu item.
+         * @param {goog.dom.DomHelper=} opt_domHelper Optional dom helper used for dom
+         *     interactions.
+         * @param {goog.ui.MenuItemRenderer=} opt_renderer Renderer used to render or
+         *     decorate the component; defaults to {@link goog.ui.SubMenuRenderer}.
+         * @constructor
+         * @extends {goog.ui.MenuItem}
+         */
+        constructor(content: Node[], opt_model?: any, opt_domHelper?: goog.dom.DomHelper, opt_renderer?: goog.ui.MenuItemRenderer);
+        /**
+         * Class representing a submenu that can be added as an item to other menus.
+         *
+         * @param {goog.ui.ControlContent} content Text caption or DOM structure to
+         *     display as the content of the submenu (use to add icons or styling to
+         *     menus).
+         * @param {*=} opt_model Data/model associated with the menu item.
+         * @param {goog.dom.DomHelper=} opt_domHelper Optional dom helper used for dom
+         *     interactions.
+         * @param {goog.ui.MenuItemRenderer=} opt_renderer Renderer used to render or
+         *     decorate the component; defaults to {@link goog.ui.SubMenuRenderer}.
+         * @constructor
+         * @extends {goog.ui.MenuItem}
+         */
+        constructor(content: NodeList, opt_model?: any, opt_domHelper?: goog.dom.DomHelper, opt_renderer?: goog.ui.MenuItemRenderer);
     
         /**
          * Show the submenu and ensure that all siblings are hidden.

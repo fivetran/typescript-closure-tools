@@ -222,7 +222,7 @@ declare module goog.dom {
          *     NodeList, its elements will be added as childNodes instead.
          * @return {!Element} Reference to a DOM node.
          */
-        createDom(tagName: string, opt_attributes?: Object, ...var_args: goog.dom.Appendable[]): Element;
+        createDom(tagName: string, opt_attributes?: Object, ...var_args: Object[]): Element;
         /**
          * Returns a dom node with a set of attributes.  This function accepts varargs
          * for subsequent nodes to be added.  Subsequent nodes will be added to the
@@ -247,7 +247,157 @@ declare module goog.dom {
          *     NodeList, its elements will be added as childNodes instead.
          * @return {!Element} Reference to a DOM node.
          */
-        createDom(tagName: string, opt_attributes?: string, ...var_args: goog.dom.Appendable[]): Element;
+        createDom(tagName: string, opt_attributes?: Object, ...var_args: string[]): Element;
+        /**
+         * Returns a dom node with a set of attributes.  This function accepts varargs
+         * for subsequent nodes to be added.  Subsequent nodes will be added to the
+         * first node as childNodes.
+         *
+         * So:
+         * <code>createDom('div', null, createDom('p'), createDom('p'));</code>
+         * would return a div with two child paragraphs
+         *
+         * An easy way to move all child nodes of an existing element to a new parent
+         * element is:
+         * <code>createDom('div', null, oldElement.childNodes);</code>
+         * which will remove all child nodes from the old element and add them as
+         * child nodes of the new DIV.
+         *
+         * @param {string} tagName Tag to create.
+         * @param {Object|string=} opt_attributes If object, then a map of name-value
+         *     pairs for attributes. If a string, then this is the className of the new
+         *     element.
+         * @param {...goog.dom.Appendable} var_args Further DOM nodes or
+         *     strings for text nodes. If one of the var_args is an array or
+         *     NodeList, its elements will be added as childNodes instead.
+         * @return {!Element} Reference to a DOM node.
+         */
+        createDom(tagName: string, opt_attributes?: Object, ...var_args: any[][]): Element;
+        /**
+         * Returns a dom node with a set of attributes.  This function accepts varargs
+         * for subsequent nodes to be added.  Subsequent nodes will be added to the
+         * first node as childNodes.
+         *
+         * So:
+         * <code>createDom('div', null, createDom('p'), createDom('p'));</code>
+         * would return a div with two child paragraphs
+         *
+         * An easy way to move all child nodes of an existing element to a new parent
+         * element is:
+         * <code>createDom('div', null, oldElement.childNodes);</code>
+         * which will remove all child nodes from the old element and add them as
+         * child nodes of the new DIV.
+         *
+         * @param {string} tagName Tag to create.
+         * @param {Object|string=} opt_attributes If object, then a map of name-value
+         *     pairs for attributes. If a string, then this is the className of the new
+         *     element.
+         * @param {...goog.dom.Appendable} var_args Further DOM nodes or
+         *     strings for text nodes. If one of the var_args is an array or
+         *     NodeList, its elements will be added as childNodes instead.
+         * @return {!Element} Reference to a DOM node.
+         */
+        createDom(tagName: string, opt_attributes?: Object, ...var_args: NodeList[]): Element;
+        /**
+         * Returns a dom node with a set of attributes.  This function accepts varargs
+         * for subsequent nodes to be added.  Subsequent nodes will be added to the
+         * first node as childNodes.
+         *
+         * So:
+         * <code>createDom('div', null, createDom('p'), createDom('p'));</code>
+         * would return a div with two child paragraphs
+         *
+         * An easy way to move all child nodes of an existing element to a new parent
+         * element is:
+         * <code>createDom('div', null, oldElement.childNodes);</code>
+         * which will remove all child nodes from the old element and add them as
+         * child nodes of the new DIV.
+         *
+         * @param {string} tagName Tag to create.
+         * @param {Object|string=} opt_attributes If object, then a map of name-value
+         *     pairs for attributes. If a string, then this is the className of the new
+         *     element.
+         * @param {...goog.dom.Appendable} var_args Further DOM nodes or
+         *     strings for text nodes. If one of the var_args is an array or
+         *     NodeList, its elements will be added as childNodes instead.
+         * @return {!Element} Reference to a DOM node.
+         */
+        createDom(tagName: string, opt_attributes?: string, ...var_args: Object[]): Element;
+        /**
+         * Returns a dom node with a set of attributes.  This function accepts varargs
+         * for subsequent nodes to be added.  Subsequent nodes will be added to the
+         * first node as childNodes.
+         *
+         * So:
+         * <code>createDom('div', null, createDom('p'), createDom('p'));</code>
+         * would return a div with two child paragraphs
+         *
+         * An easy way to move all child nodes of an existing element to a new parent
+         * element is:
+         * <code>createDom('div', null, oldElement.childNodes);</code>
+         * which will remove all child nodes from the old element and add them as
+         * child nodes of the new DIV.
+         *
+         * @param {string} tagName Tag to create.
+         * @param {Object|string=} opt_attributes If object, then a map of name-value
+         *     pairs for attributes. If a string, then this is the className of the new
+         *     element.
+         * @param {...goog.dom.Appendable} var_args Further DOM nodes or
+         *     strings for text nodes. If one of the var_args is an array or
+         *     NodeList, its elements will be added as childNodes instead.
+         * @return {!Element} Reference to a DOM node.
+         */
+        createDom(tagName: string, opt_attributes?: string, ...var_args: string[]): Element;
+        /**
+         * Returns a dom node with a set of attributes.  This function accepts varargs
+         * for subsequent nodes to be added.  Subsequent nodes will be added to the
+         * first node as childNodes.
+         *
+         * So:
+         * <code>createDom('div', null, createDom('p'), createDom('p'));</code>
+         * would return a div with two child paragraphs
+         *
+         * An easy way to move all child nodes of an existing element to a new parent
+         * element is:
+         * <code>createDom('div', null, oldElement.childNodes);</code>
+         * which will remove all child nodes from the old element and add them as
+         * child nodes of the new DIV.
+         *
+         * @param {string} tagName Tag to create.
+         * @param {Object|string=} opt_attributes If object, then a map of name-value
+         *     pairs for attributes. If a string, then this is the className of the new
+         *     element.
+         * @param {...goog.dom.Appendable} var_args Further DOM nodes or
+         *     strings for text nodes. If one of the var_args is an array or
+         *     NodeList, its elements will be added as childNodes instead.
+         * @return {!Element} Reference to a DOM node.
+         */
+        createDom(tagName: string, opt_attributes?: string, ...var_args: any[][]): Element;
+        /**
+         * Returns a dom node with a set of attributes.  This function accepts varargs
+         * for subsequent nodes to be added.  Subsequent nodes will be added to the
+         * first node as childNodes.
+         *
+         * So:
+         * <code>createDom('div', null, createDom('p'), createDom('p'));</code>
+         * would return a div with two child paragraphs
+         *
+         * An easy way to move all child nodes of an existing element to a new parent
+         * element is:
+         * <code>createDom('div', null, oldElement.childNodes);</code>
+         * which will remove all child nodes from the old element and add them as
+         * child nodes of the new DIV.
+         *
+         * @param {string} tagName Tag to create.
+         * @param {Object|string=} opt_attributes If object, then a map of name-value
+         *     pairs for attributes. If a string, then this is the className of the new
+         *     element.
+         * @param {...goog.dom.Appendable} var_args Further DOM nodes or
+         *     strings for text nodes. If one of the var_args is an array or
+         *     NodeList, its elements will be added as childNodes instead.
+         * @return {!Element} Reference to a DOM node.
+         */
+        createDom(tagName: string, opt_attributes?: string, ...var_args: NodeList[]): Element;
     
         /**
          * Alias for {@code createDom}.
@@ -261,7 +411,7 @@ declare module goog.dom {
          * @return {!Element} Reference to a DOM node.
          * @deprecated Use {@link goog.dom.DomHelper.prototype.createDom} instead.
          */
-        $dom(tagName: string, opt_attributes?: Object, ...var_args: goog.dom.Appendable[]): Element;
+        $dom(tagName: string, opt_attributes?: Object, ...var_args: Object[]): Element;
         /**
          * Alias for {@code createDom}.
          * @param {string} tagName Tag to create.
@@ -274,7 +424,85 @@ declare module goog.dom {
          * @return {!Element} Reference to a DOM node.
          * @deprecated Use {@link goog.dom.DomHelper.prototype.createDom} instead.
          */
-        $dom(tagName: string, opt_attributes?: string, ...var_args: goog.dom.Appendable[]): Element;
+        $dom(tagName: string, opt_attributes?: Object, ...var_args: string[]): Element;
+        /**
+         * Alias for {@code createDom}.
+         * @param {string} tagName Tag to create.
+         * @param {(Object|string)=} opt_attributes If object, then a map of name-value
+         *     pairs for attributes. If a string, then this is the className of the new
+         *     element.
+         * @param {...goog.dom.Appendable} var_args Further DOM nodes or strings for
+         *     text nodes.  If one of the var_args is an array, its children will be
+         *     added as childNodes instead.
+         * @return {!Element} Reference to a DOM node.
+         * @deprecated Use {@link goog.dom.DomHelper.prototype.createDom} instead.
+         */
+        $dom(tagName: string, opt_attributes?: Object, ...var_args: any[][]): Element;
+        /**
+         * Alias for {@code createDom}.
+         * @param {string} tagName Tag to create.
+         * @param {(Object|string)=} opt_attributes If object, then a map of name-value
+         *     pairs for attributes. If a string, then this is the className of the new
+         *     element.
+         * @param {...goog.dom.Appendable} var_args Further DOM nodes or strings for
+         *     text nodes.  If one of the var_args is an array, its children will be
+         *     added as childNodes instead.
+         * @return {!Element} Reference to a DOM node.
+         * @deprecated Use {@link goog.dom.DomHelper.prototype.createDom} instead.
+         */
+        $dom(tagName: string, opt_attributes?: Object, ...var_args: NodeList[]): Element;
+        /**
+         * Alias for {@code createDom}.
+         * @param {string} tagName Tag to create.
+         * @param {(Object|string)=} opt_attributes If object, then a map of name-value
+         *     pairs for attributes. If a string, then this is the className of the new
+         *     element.
+         * @param {...goog.dom.Appendable} var_args Further DOM nodes or strings for
+         *     text nodes.  If one of the var_args is an array, its children will be
+         *     added as childNodes instead.
+         * @return {!Element} Reference to a DOM node.
+         * @deprecated Use {@link goog.dom.DomHelper.prototype.createDom} instead.
+         */
+        $dom(tagName: string, opt_attributes?: string, ...var_args: Object[]): Element;
+        /**
+         * Alias for {@code createDom}.
+         * @param {string} tagName Tag to create.
+         * @param {(Object|string)=} opt_attributes If object, then a map of name-value
+         *     pairs for attributes. If a string, then this is the className of the new
+         *     element.
+         * @param {...goog.dom.Appendable} var_args Further DOM nodes or strings for
+         *     text nodes.  If one of the var_args is an array, its children will be
+         *     added as childNodes instead.
+         * @return {!Element} Reference to a DOM node.
+         * @deprecated Use {@link goog.dom.DomHelper.prototype.createDom} instead.
+         */
+        $dom(tagName: string, opt_attributes?: string, ...var_args: string[]): Element;
+        /**
+         * Alias for {@code createDom}.
+         * @param {string} tagName Tag to create.
+         * @param {(Object|string)=} opt_attributes If object, then a map of name-value
+         *     pairs for attributes. If a string, then this is the className of the new
+         *     element.
+         * @param {...goog.dom.Appendable} var_args Further DOM nodes or strings for
+         *     text nodes.  If one of the var_args is an array, its children will be
+         *     added as childNodes instead.
+         * @return {!Element} Reference to a DOM node.
+         * @deprecated Use {@link goog.dom.DomHelper.prototype.createDom} instead.
+         */
+        $dom(tagName: string, opt_attributes?: string, ...var_args: any[][]): Element;
+        /**
+         * Alias for {@code createDom}.
+         * @param {string} tagName Tag to create.
+         * @param {(Object|string)=} opt_attributes If object, then a map of name-value
+         *     pairs for attributes. If a string, then this is the className of the new
+         *     element.
+         * @param {...goog.dom.Appendable} var_args Further DOM nodes or strings for
+         *     text nodes.  If one of the var_args is an array, its children will be
+         *     added as childNodes instead.
+         * @return {!Element} Reference to a DOM node.
+         * @deprecated Use {@link goog.dom.DomHelper.prototype.createDom} instead.
+         */
+        $dom(tagName: string, opt_attributes?: string, ...var_args: NodeList[]): Element;
     
         /**
          * Creates a new element.
@@ -363,7 +591,34 @@ declare module goog.dom {
          *     If this is a string then a text node is appended.
          *     If this is an array like object then fields 0 to length - 1 are appended.
          */
-        append(parent: Node, ...var_args: goog.dom.Appendable[]): void;
+        append(parent: Node, ...var_args: Object[]): void;
+        /**
+         * Appends a node with text or other nodes.
+         * @param {!Node} parent The node to append nodes to.
+         * @param {...goog.dom.Appendable} var_args The things to append to the node.
+         *     If this is a Node it is appended as is.
+         *     If this is a string then a text node is appended.
+         *     If this is an array like object then fields 0 to length - 1 are appended.
+         */
+        append(parent: Node, ...var_args: string[]): void;
+        /**
+         * Appends a node with text or other nodes.
+         * @param {!Node} parent The node to append nodes to.
+         * @param {...goog.dom.Appendable} var_args The things to append to the node.
+         *     If this is a Node it is appended as is.
+         *     If this is a string then a text node is appended.
+         *     If this is an array like object then fields 0 to length - 1 are appended.
+         */
+        append(parent: Node, ...var_args: any[][]): void;
+        /**
+         * Appends a node with text or other nodes.
+         * @param {!Node} parent The node to append nodes to.
+         * @param {...goog.dom.Appendable} var_args The things to append to the node.
+         *     If this is a Node it is appended as is.
+         *     If this is a string then a text node is appended.
+         *     If this is an array like object then fields 0 to length - 1 are appended.
+         */
+        append(parent: Node, ...var_args: NodeList[]): void;
     
         /**
          * Determines if the given node can contain children, intended to be used for
@@ -1484,7 +1739,34 @@ declare module goog.dom {
      *     If this is a string then a text node is appended.
      *     If this is an array like object then fields 0 to length - 1 are appended.
      */
-    function append(parent: Node, ...var_args: goog.dom.Appendable[]): void;
+    function append(parent: Node, ...var_args: Object[]): void;
+    /**
+     * Appends a node with text or other nodes.
+     * @param {!Node} parent The node to append nodes to.
+     * @param {...goog.dom.Appendable} var_args The things to append to the node.
+     *     If this is a Node it is appended as is.
+     *     If this is a string then a text node is appended.
+     *     If this is an array like object then fields 0 to length - 1 are appended.
+     */
+    function append(parent: Node, ...var_args: string[]): void;
+    /**
+     * Appends a node with text or other nodes.
+     * @param {!Node} parent The node to append nodes to.
+     * @param {...goog.dom.Appendable} var_args The things to append to the node.
+     *     If this is a Node it is appended as is.
+     *     If this is a string then a text node is appended.
+     *     If this is an array like object then fields 0 to length - 1 are appended.
+     */
+    function append(parent: Node, ...var_args: any[][]): void;
+    /**
+     * Appends a node with text or other nodes.
+     * @param {!Node} parent The node to append nodes to.
+     * @param {...goog.dom.Appendable} var_args The things to append to the node.
+     *     If this is a Node it is appended as is.
+     *     If this is a string then a text node is appended.
+     *     If this is an array like object then fields 0 to length - 1 are appended.
+     */
+    function append(parent: Node, ...var_args: NodeList[]): void;
 
     /**
      * Removes all the child nodes on a DOM node.

@@ -1,6 +1,5 @@
 /// <reference path="../../../globals.d.ts" />
 /// <reference path="./button.d.ts" />
-/// <reference path="./controlcontent.d.ts" />
 /// <reference path="./menu.d.ts" />
 /// <reference path="./buttonrenderer.d.ts" />
 /// <reference path="../dom/dom.d.ts" />
@@ -33,7 +32,58 @@ declare module goog.ui {
          * @constructor
          * @extends {goog.ui.Button}
          */
-        constructor(opt_content?: goog.ui.ControlContent, opt_menu?: goog.ui.Menu, opt_renderer?: goog.ui.ButtonRenderer, opt_domHelper?: goog.dom.DomHelper, opt_menuRenderer?: goog.ui.MenuRenderer);
+        constructor(opt_content?: string, opt_menu?: goog.ui.Menu, opt_renderer?: goog.ui.ButtonRenderer, opt_domHelper?: goog.dom.DomHelper, opt_menuRenderer?: goog.ui.MenuRenderer);
+        /**
+         * A menu button control.  Extends {@link goog.ui.Button} by composing a button
+         * with a dropdown arrow and a popup menu.
+         *
+         * @param {goog.ui.ControlContent=} opt_content Text caption or existing DOM
+         *     structure to display as the button's caption (if any).
+         * @param {goog.ui.Menu=} opt_menu Menu to render under the button when clicked.
+         * @param {goog.ui.ButtonRenderer=} opt_renderer Renderer used to render or
+         *     decorate the menu button; defaults to {@link goog.ui.MenuButtonRenderer}.
+         * @param {goog.dom.DomHelper=} opt_domHelper Optional DOM hepler, used for
+         *     document interaction.
+         * @param {!goog.ui.MenuRenderer=} opt_menuRenderer Renderer used to render or
+         *     decorate the menu; defaults to {@link goog.ui.MenuRenderer}.
+         * @constructor
+         * @extends {goog.ui.Button}
+         */
+        constructor(opt_content?: Node, opt_menu?: goog.ui.Menu, opt_renderer?: goog.ui.ButtonRenderer, opt_domHelper?: goog.dom.DomHelper, opt_menuRenderer?: goog.ui.MenuRenderer);
+        /**
+         * A menu button control.  Extends {@link goog.ui.Button} by composing a button
+         * with a dropdown arrow and a popup menu.
+         *
+         * @param {goog.ui.ControlContent=} opt_content Text caption or existing DOM
+         *     structure to display as the button's caption (if any).
+         * @param {goog.ui.Menu=} opt_menu Menu to render under the button when clicked.
+         * @param {goog.ui.ButtonRenderer=} opt_renderer Renderer used to render or
+         *     decorate the menu button; defaults to {@link goog.ui.MenuButtonRenderer}.
+         * @param {goog.dom.DomHelper=} opt_domHelper Optional DOM hepler, used for
+         *     document interaction.
+         * @param {!goog.ui.MenuRenderer=} opt_menuRenderer Renderer used to render or
+         *     decorate the menu; defaults to {@link goog.ui.MenuRenderer}.
+         * @constructor
+         * @extends {goog.ui.Button}
+         */
+        constructor(opt_content?: Node[], opt_menu?: goog.ui.Menu, opt_renderer?: goog.ui.ButtonRenderer, opt_domHelper?: goog.dom.DomHelper, opt_menuRenderer?: goog.ui.MenuRenderer);
+        /**
+         * A menu button control.  Extends {@link goog.ui.Button} by composing a button
+         * with a dropdown arrow and a popup menu.
+         *
+         * @param {goog.ui.ControlContent=} opt_content Text caption or existing DOM
+         *     structure to display as the button's caption (if any).
+         * @param {goog.ui.Menu=} opt_menu Menu to render under the button when clicked.
+         * @param {goog.ui.ButtonRenderer=} opt_renderer Renderer used to render or
+         *     decorate the menu button; defaults to {@link goog.ui.MenuButtonRenderer}.
+         * @param {goog.dom.DomHelper=} opt_domHelper Optional DOM hepler, used for
+         *     document interaction.
+         * @param {!goog.ui.MenuRenderer=} opt_menuRenderer Renderer used to render or
+         *     decorate the menu; defaults to {@link goog.ui.MenuRenderer}.
+         * @constructor
+         * @extends {goog.ui.Button}
+         */
+        constructor(opt_content?: NodeList, opt_menu?: goog.ui.Menu, opt_renderer?: goog.ui.ButtonRenderer, opt_domHelper?: goog.dom.DomHelper, opt_menuRenderer?: goog.ui.MenuRenderer);
     
         /**
          * Handles mousedown events over the document.  If the mousedown happens over

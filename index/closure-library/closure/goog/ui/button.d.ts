@@ -1,6 +1,5 @@
 /// <reference path="../../../globals.d.ts" />
 /// <reference path="./control.d.ts" />
-/// <reference path="./controlcontent.d.ts" />
 /// <reference path="./buttonrenderer.d.ts" />
 /// <reference path="../dom/dom.d.ts" />
 
@@ -20,7 +19,46 @@ declare module goog.ui {
          * @constructor
          * @extends {goog.ui.Control}
          */
-        constructor(opt_content?: goog.ui.ControlContent, opt_renderer?: goog.ui.ButtonRenderer, opt_domHelper?: goog.dom.DomHelper);
+        constructor(opt_content?: string, opt_renderer?: goog.ui.ButtonRenderer, opt_domHelper?: goog.dom.DomHelper);
+        /**
+         * A button control, rendered as a native browser button by default.
+         *
+         * @param {goog.ui.ControlContent=} opt_content Text caption or existing DOM
+         *     structure to display as the button's caption (if any).
+         * @param {goog.ui.ButtonRenderer=} opt_renderer Renderer used to render or
+         *     decorate the button; defaults to {@link goog.ui.NativeButtonRenderer}.
+         * @param {goog.dom.DomHelper=} opt_domHelper Optional DOM hepler, used for
+         *     document interaction.
+         * @constructor
+         * @extends {goog.ui.Control}
+         */
+        constructor(opt_content?: Node, opt_renderer?: goog.ui.ButtonRenderer, opt_domHelper?: goog.dom.DomHelper);
+        /**
+         * A button control, rendered as a native browser button by default.
+         *
+         * @param {goog.ui.ControlContent=} opt_content Text caption or existing DOM
+         *     structure to display as the button's caption (if any).
+         * @param {goog.ui.ButtonRenderer=} opt_renderer Renderer used to render or
+         *     decorate the button; defaults to {@link goog.ui.NativeButtonRenderer}.
+         * @param {goog.dom.DomHelper=} opt_domHelper Optional DOM hepler, used for
+         *     document interaction.
+         * @constructor
+         * @extends {goog.ui.Control}
+         */
+        constructor(opt_content?: Node[], opt_renderer?: goog.ui.ButtonRenderer, opt_domHelper?: goog.dom.DomHelper);
+        /**
+         * A button control, rendered as a native browser button by default.
+         *
+         * @param {goog.ui.ControlContent=} opt_content Text caption or existing DOM
+         *     structure to display as the button's caption (if any).
+         * @param {goog.ui.ButtonRenderer=} opt_renderer Renderer used to render or
+         *     decorate the button; defaults to {@link goog.ui.NativeButtonRenderer}.
+         * @param {goog.dom.DomHelper=} opt_domHelper Optional DOM hepler, used for
+         *     document interaction.
+         * @constructor
+         * @extends {goog.ui.Control}
+         */
+        constructor(opt_content?: NodeList, opt_renderer?: goog.ui.ButtonRenderer, opt_domHelper?: goog.dom.DomHelper);
     
         /**
          * Returns the value associated with the button.
