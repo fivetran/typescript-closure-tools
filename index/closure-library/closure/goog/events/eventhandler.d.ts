@@ -2618,54 +2618,6 @@ declare module goog.events {
          *     calls.
          */
         listenWithWrapper(src: EventTarget, wrapper: goog.events.EventWrapper, listener: any /*null*/, opt_capt?: boolean): goog.events.EventHandler<any>;
-        /**
-         * Adds an event listener with a specific event wrapper on a DOM Node or an
-         * object that has implemented {@link goog.events.EventTarget}. A listener can
-         * only be added once to an object.
-         *
-         * @param {EventTarget|goog.events.EventTarget} src The node to listen to
-         *     events on.
-         * @param {goog.events.EventWrapper} wrapper Event wrapper to use.
-         * @param {function(this:SCOPE, ?):?|{handleEvent:function(?):?}|null} listener
-         *     Callback method, or an object with a handleEvent function.
-         * @param {boolean=} opt_capt Whether to fire in capture phase (defaults to
-         *     false).
-         * @return {goog.events.EventHandler} This object, allowing for chaining of
-         *     calls.
-         */
-        listenWithWrapper(src: goog.events.EventTarget, wrapper: goog.events.EventWrapper, listener: (_0: any) => any, opt_capt?: boolean): goog.events.EventHandler<any>;
-        /**
-         * Adds an event listener with a specific event wrapper on a DOM Node or an
-         * object that has implemented {@link goog.events.EventTarget}. A listener can
-         * only be added once to an object.
-         *
-         * @param {EventTarget|goog.events.EventTarget} src The node to listen to
-         *     events on.
-         * @param {goog.events.EventWrapper} wrapper Event wrapper to use.
-         * @param {function(this:SCOPE, ?):?|{handleEvent:function(?):?}|null} listener
-         *     Callback method, or an object with a handleEvent function.
-         * @param {boolean=} opt_capt Whether to fire in capture phase (defaults to
-         *     false).
-         * @return {goog.events.EventHandler} This object, allowing for chaining of
-         *     calls.
-         */
-        listenWithWrapper(src: goog.events.EventTarget, wrapper: goog.events.EventWrapper, listener: { handleEvent: (_0: any) => any }, opt_capt?: boolean): goog.events.EventHandler<any>;
-        /**
-         * Adds an event listener with a specific event wrapper on a DOM Node or an
-         * object that has implemented {@link goog.events.EventTarget}. A listener can
-         * only be added once to an object.
-         *
-         * @param {EventTarget|goog.events.EventTarget} src The node to listen to
-         *     events on.
-         * @param {goog.events.EventWrapper} wrapper Event wrapper to use.
-         * @param {function(this:SCOPE, ?):?|{handleEvent:function(?):?}|null} listener
-         *     Callback method, or an object with a handleEvent function.
-         * @param {boolean=} opt_capt Whether to fire in capture phase (defaults to
-         *     false).
-         * @return {goog.events.EventHandler} This object, allowing for chaining of
-         *     calls.
-         */
-        listenWithWrapper(src: goog.events.EventTarget, wrapper: goog.events.EventWrapper, listener: any /*null*/, opt_capt?: boolean): goog.events.EventHandler<any>;
     
         /**
          * Adds an event listener with a specific event wrapper on a DOM Node or an
@@ -2775,115 +2727,7 @@ declare module goog.events {
          * @template T
          */
         listenWithWrapperAndScope<T>(src: EventTarget, wrapper: goog.events.EventWrapper, listener: any /*null*/, capture: any /*undefined*/, scope: T): goog.events.EventHandler<any>;
-        /**
-         * Adds an event listener with a specific event wrapper on a DOM Node or an
-         * object that has implemented {@link goog.events.EventTarget}. A listener can
-         * only be added once to an object.
-         *
-         * @param {EventTarget|goog.events.EventTarget} src The node to listen to
-         *     events on.
-         * @param {goog.events.EventWrapper} wrapper Event wrapper to use.
-         * @param {function(this:T, ?):?|{handleEvent:function(this:T, ?):?}|null}
-         *     listener Optional callback function to be used as the
-         *     listener or an object with handleEvent function.
-         * @param {boolean|undefined} capture Optional whether to use capture phase.
-         * @param {T} scope Object in whose scope to call the listener.
-         * @return {goog.events.EventHandler} This object, allowing for chaining of
-         *     calls.
-         * @template T
-         */
-        listenWithWrapperAndScope<T>(src: goog.events.EventTarget, wrapper: goog.events.EventWrapper, listener: (_0: any) => any, capture: boolean, scope: T): goog.events.EventHandler<any>;
-        /**
-         * Adds an event listener with a specific event wrapper on a DOM Node or an
-         * object that has implemented {@link goog.events.EventTarget}. A listener can
-         * only be added once to an object.
-         *
-         * @param {EventTarget|goog.events.EventTarget} src The node to listen to
-         *     events on.
-         * @param {goog.events.EventWrapper} wrapper Event wrapper to use.
-         * @param {function(this:T, ?):?|{handleEvent:function(this:T, ?):?}|null}
-         *     listener Optional callback function to be used as the
-         *     listener or an object with handleEvent function.
-         * @param {boolean|undefined} capture Optional whether to use capture phase.
-         * @param {T} scope Object in whose scope to call the listener.
-         * @return {goog.events.EventHandler} This object, allowing for chaining of
-         *     calls.
-         * @template T
-         */
-        listenWithWrapperAndScope<T>(src: goog.events.EventTarget, wrapper: goog.events.EventWrapper, listener: (_0: any) => any, capture: any /*undefined*/, scope: T): goog.events.EventHandler<any>;
-        /**
-         * Adds an event listener with a specific event wrapper on a DOM Node or an
-         * object that has implemented {@link goog.events.EventTarget}. A listener can
-         * only be added once to an object.
-         *
-         * @param {EventTarget|goog.events.EventTarget} src The node to listen to
-         *     events on.
-         * @param {goog.events.EventWrapper} wrapper Event wrapper to use.
-         * @param {function(this:T, ?):?|{handleEvent:function(this:T, ?):?}|null}
-         *     listener Optional callback function to be used as the
-         *     listener or an object with handleEvent function.
-         * @param {boolean|undefined} capture Optional whether to use capture phase.
-         * @param {T} scope Object in whose scope to call the listener.
-         * @return {goog.events.EventHandler} This object, allowing for chaining of
-         *     calls.
-         * @template T
-         */
-        listenWithWrapperAndScope<T>(src: goog.events.EventTarget, wrapper: goog.events.EventWrapper, listener: { handleEvent: (_0: any) => any }, capture: boolean, scope: T): goog.events.EventHandler<any>;
-        /**
-         * Adds an event listener with a specific event wrapper on a DOM Node or an
-         * object that has implemented {@link goog.events.EventTarget}. A listener can
-         * only be added once to an object.
-         *
-         * @param {EventTarget|goog.events.EventTarget} src The node to listen to
-         *     events on.
-         * @param {goog.events.EventWrapper} wrapper Event wrapper to use.
-         * @param {function(this:T, ?):?|{handleEvent:function(this:T, ?):?}|null}
-         *     listener Optional callback function to be used as the
-         *     listener or an object with handleEvent function.
-         * @param {boolean|undefined} capture Optional whether to use capture phase.
-         * @param {T} scope Object in whose scope to call the listener.
-         * @return {goog.events.EventHandler} This object, allowing for chaining of
-         *     calls.
-         * @template T
-         */
-        listenWithWrapperAndScope<T>(src: goog.events.EventTarget, wrapper: goog.events.EventWrapper, listener: { handleEvent: (_0: any) => any }, capture: any /*undefined*/, scope: T): goog.events.EventHandler<any>;
-        /**
-         * Adds an event listener with a specific event wrapper on a DOM Node or an
-         * object that has implemented {@link goog.events.EventTarget}. A listener can
-         * only be added once to an object.
-         *
-         * @param {EventTarget|goog.events.EventTarget} src The node to listen to
-         *     events on.
-         * @param {goog.events.EventWrapper} wrapper Event wrapper to use.
-         * @param {function(this:T, ?):?|{handleEvent:function(this:T, ?):?}|null}
-         *     listener Optional callback function to be used as the
-         *     listener or an object with handleEvent function.
-         * @param {boolean|undefined} capture Optional whether to use capture phase.
-         * @param {T} scope Object in whose scope to call the listener.
-         * @return {goog.events.EventHandler} This object, allowing for chaining of
-         *     calls.
-         * @template T
-         */
-        listenWithWrapperAndScope<T>(src: goog.events.EventTarget, wrapper: goog.events.EventWrapper, listener: any /*null*/, capture: boolean, scope: T): goog.events.EventHandler<any>;
-        /**
-         * Adds an event listener with a specific event wrapper on a DOM Node or an
-         * object that has implemented {@link goog.events.EventTarget}. A listener can
-         * only be added once to an object.
-         *
-         * @param {EventTarget|goog.events.EventTarget} src The node to listen to
-         *     events on.
-         * @param {goog.events.EventWrapper} wrapper Event wrapper to use.
-         * @param {function(this:T, ?):?|{handleEvent:function(this:T, ?):?}|null}
-         *     listener Optional callback function to be used as the
-         *     listener or an object with handleEvent function.
-         * @param {boolean|undefined} capture Optional whether to use capture phase.
-         * @param {T} scope Object in whose scope to call the listener.
-         * @return {goog.events.EventHandler} This object, allowing for chaining of
-         *     calls.
-         * @template T
-         */
-        listenWithWrapperAndScope<T>(src: goog.events.EventTarget, wrapper: goog.events.EventWrapper, listener: any /*null*/, capture: any /*undefined*/, scope: T): goog.events.EventHandler<any>;
-    
+
         /**
          * @return {number} Number of listeners registered by this handler.
          */
@@ -3322,55 +3166,7 @@ declare module goog.events {
          *     calls.
          */
         unlistenWithWrapper(src: EventTarget, wrapper: goog.events.EventWrapper, listener: any /*null*/, opt_capt?: boolean, opt_scope?: Object): goog.events.EventHandler<any>;
-        /**
-         * Removes an event listener which was added with listenWithWrapper().
-         *
-         * @param {EventTarget|goog.events.EventTarget} src The target to stop
-         *     listening to events on.
-         * @param {goog.events.EventWrapper} wrapper Event wrapper to use.
-         * @param {function(?):?|{handleEvent:function(?):?}|null} listener The
-         *     listener function to remove.
-         * @param {boolean=} opt_capt In DOM-compliant browsers, this determines
-         *     whether the listener is fired during the capture or bubble phase of the
-         *     event.
-         * @param {Object=} opt_scope Element in whose scope to call the listener.
-         * @return {goog.events.EventHandler} This object, allowing for chaining of
-         *     calls.
-         */
-        unlistenWithWrapper(src: goog.events.EventTarget, wrapper: goog.events.EventWrapper, listener: (_0: any) => any, opt_capt?: boolean, opt_scope?: Object): goog.events.EventHandler<any>;
-        /**
-         * Removes an event listener which was added with listenWithWrapper().
-         *
-         * @param {EventTarget|goog.events.EventTarget} src The target to stop
-         *     listening to events on.
-         * @param {goog.events.EventWrapper} wrapper Event wrapper to use.
-         * @param {function(?):?|{handleEvent:function(?):?}|null} listener The
-         *     listener function to remove.
-         * @param {boolean=} opt_capt In DOM-compliant browsers, this determines
-         *     whether the listener is fired during the capture or bubble phase of the
-         *     event.
-         * @param {Object=} opt_scope Element in whose scope to call the listener.
-         * @return {goog.events.EventHandler} This object, allowing for chaining of
-         *     calls.
-         */
-        unlistenWithWrapper(src: goog.events.EventTarget, wrapper: goog.events.EventWrapper, listener: { handleEvent: (_0: any) => any }, opt_capt?: boolean, opt_scope?: Object): goog.events.EventHandler<any>;
-        /**
-         * Removes an event listener which was added with listenWithWrapper().
-         *
-         * @param {EventTarget|goog.events.EventTarget} src The target to stop
-         *     listening to events on.
-         * @param {goog.events.EventWrapper} wrapper Event wrapper to use.
-         * @param {function(?):?|{handleEvent:function(?):?}|null} listener The
-         *     listener function to remove.
-         * @param {boolean=} opt_capt In DOM-compliant browsers, this determines
-         *     whether the listener is fired during the capture or bubble phase of the
-         *     event.
-         * @param {Object=} opt_scope Element in whose scope to call the listener.
-         * @return {goog.events.EventHandler} This object, allowing for chaining of
-         *     calls.
-         */
-        unlistenWithWrapper(src: goog.events.EventTarget, wrapper: goog.events.EventWrapper, listener: any /*null*/, opt_capt?: boolean, opt_scope?: Object): goog.events.EventHandler<any>;
-    
+
         /**
          * Unlistens to all events.
          */
