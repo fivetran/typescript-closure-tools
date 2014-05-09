@@ -59,7 +59,11 @@ export function inline(t: doctrine.AnyType): doctrine.AnyType {
                 var type = typedef.type;
                 if (!type) return t;
 
-                return inline(type);
+                // Only inline union types
+                if (type.type === 'UnionType')
+                    return inline(type);
+                else
+                    return t;
             } else return t;
         // Atomic types
         case 'AllLiteral':
