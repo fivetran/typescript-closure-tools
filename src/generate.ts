@@ -469,8 +469,18 @@ function generate_enum(name: string, values) {
             throw new Error('Unknown enum property ' + property);
     }
 
+    function safe_id(name: string) {
+        if (/^\w+$/.test(name))
+            return name;
+        else
+            return "'" + name + "'";
+    }
+
     if (values.type === 'ObjectExpression') {
-        var keys = values.properties.map(x => x.key).map(key_id);
+        var keys = values.properties
+            .map(x => x.key)
+            .map(key_id)
+            .map(safe_id);
 
         return 'enum ' + name + ' { ' + keys.join(', ') + ' } ';
     }
