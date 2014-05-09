@@ -3,7 +3,7 @@
 declare module goog.debug {
 
     class Error extends __Error { }
-    class __Error extends Error {
+    class __Error extends _Error {
     
         /**
          * Base class for custom error objects.
