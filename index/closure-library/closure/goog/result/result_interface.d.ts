@@ -52,7 +52,7 @@ declare module goog.result {
 declare module goog.result.Result {
 
     class CancelError extends __CancelError { }
-    class __CancelError extends Error {
+    class __CancelError extends _Error {
     
         /**
          * The value to be passed to the error handlers invoked upon cancellation.
