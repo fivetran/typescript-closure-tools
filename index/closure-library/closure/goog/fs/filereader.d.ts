@@ -5,7 +5,8 @@
 
 declare module goog.fs {
 
-    class FileReader extends goog.events.EventTarget {
+    class FileReader extends __FileReader { }
+    class __FileReader extends goog.events.__EventTarget {
     
         /**
          * An object for monitoring the reading of files. This emits ProgressEvents of

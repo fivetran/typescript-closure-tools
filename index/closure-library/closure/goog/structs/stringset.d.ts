@@ -3,7 +3,8 @@
 
 declare module goog.structs {
 
-    class StringSet {
+    class StringSet extends __StringSet { }
+    class __StringSet {
     
         /**
          * Creates a set of strings.

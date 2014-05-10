@@ -4,7 +4,8 @@
 
 declare module goog.messaging {
 
-    class RespondingChannel extends goog.Disposable {
+    class RespondingChannel extends __RespondingChannel { }
+    class __RespondingChannel extends goog.__Disposable {
     
         /**
          * Creates a new RespondingChannel wrapping a single MessageChannel.

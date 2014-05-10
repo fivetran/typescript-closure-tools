@@ -3,7 +3,8 @@
 
 declare module goog.demos.editor {
 
-    class HelloWorldDialogPlugin extends goog.editor.plugins.AbstractDialogPlugin {
+    class HelloWorldDialogPlugin extends __HelloWorldDialogPlugin { }
+    class __HelloWorldDialogPlugin extends goog.editor.plugins.__AbstractDialogPlugin {
     
         /**
          * A plugin that opens the hello world dialog.

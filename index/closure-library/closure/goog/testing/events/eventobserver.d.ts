@@ -3,7 +3,8 @@
 
 declare module goog.testing.events {
 
-    class EventObserver {
+    class EventObserver extends __EventObserver { }
+    class __EventObserver {
     
         /**
          * Event observer.  Implements a handleEvent interface so it may be used as

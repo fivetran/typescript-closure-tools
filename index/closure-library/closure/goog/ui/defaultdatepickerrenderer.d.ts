@@ -4,7 +4,8 @@
 
 declare module goog.ui {
 
-    class DefaultDatePickerRenderer implements goog.ui.DatePickerRenderer {
+    class DefaultDatePickerRenderer extends __DefaultDatePickerRenderer { }
+    class __DefaultDatePickerRenderer implements goog.ui.DatePickerRenderer {
     
         /**
          * Default renderer for {@link goog.ui.DatePicker}. Renders the date picker's

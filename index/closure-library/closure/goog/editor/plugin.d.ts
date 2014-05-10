@@ -7,7 +7,8 @@
 
 declare module goog.editor {
 
-    class Plugin extends goog.events.EventTarget {
+    class Plugin extends __Plugin { }
+    class __Plugin extends goog.events.__EventTarget {
     
         /**
          * Abstract API for trogedit plugins.

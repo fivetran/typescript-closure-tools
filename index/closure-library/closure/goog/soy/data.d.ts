@@ -4,7 +4,8 @@
 
 declare module goog.soy.data {
 
-    class SanitizedContent {
+    class SanitizedContent extends __SanitizedContent { }
+    class __SanitizedContent {
     
         /**
          * A string-like object that carries a content-type and a content direction.

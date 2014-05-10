@@ -5,7 +5,8 @@
 
 declare module goog.ui {
 
-    class SplitBehavior extends goog.Disposable {
+    class SplitBehavior extends __SplitBehavior { }
+    class __SplitBehavior extends goog.__Disposable {
     
         /**
          * Creates a behavior for combining two controls. The behavior is triggered

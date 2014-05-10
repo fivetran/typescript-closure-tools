@@ -4,6 +4,6 @@
 
 declare module goog.json {
 
-    interface Processor extends goog.string.Parser, goog.string.Stringifier {
+    interface Processor extends goog.string.__Parser, goog.string.__Stringifier {
     }
 }

@@ -4,7 +4,8 @@
 
 declare module goog.messaging {
 
-    class BufferedChannel extends goog.Disposable implements goog.messaging.MessageChannel {
+    class BufferedChannel extends __BufferedChannel { }
+    class __BufferedChannel extends goog.__Disposable implements goog.messaging.MessageChannel {
     
         /**
          * Creates a new BufferedChannel, which operates like its underlying channel

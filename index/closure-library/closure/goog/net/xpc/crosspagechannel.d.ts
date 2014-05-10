@@ -5,7 +5,8 @@
 
 declare module goog.net.xpc {
 
-    class CrossPageChannel extends goog.messaging.AbstractChannel {
+    class CrossPageChannel extends __CrossPageChannel { }
+    class __CrossPageChannel extends goog.messaging.__AbstractChannel {
     
         /**
          * A communication channel between two documents from different domains.

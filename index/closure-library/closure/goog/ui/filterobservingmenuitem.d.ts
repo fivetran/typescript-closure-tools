@@ -5,7 +5,8 @@
 
 declare module goog.ui {
 
-    class FilterObservingMenuItem extends goog.ui.MenuItem {
+    class FilterObservingMenuItem extends __FilterObservingMenuItem { }
+    class __FilterObservingMenuItem extends goog.ui.__MenuItem {
     
         /**
          * Class representing a filter observing menu item.

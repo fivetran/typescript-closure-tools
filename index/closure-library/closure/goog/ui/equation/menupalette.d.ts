@@ -5,7 +5,8 @@
 
 declare module goog.ui.equation {
 
-    class MenuPalette extends goog.ui.equation.Palette {
+    class MenuPalette extends __MenuPalette { }
+    class __MenuPalette extends goog.ui.equation.__Palette {
     
         /**
          * Constructs a new menu palette.
@@ -18,7 +19,8 @@ declare module goog.ui.equation {
         constructor(paletteManager: goog.ui.equation.PaletteManager);
     }
 
-    class MenuPaletteRenderer extends goog.ui.equation.PaletteRenderer {
+    class MenuPaletteRenderer extends __MenuPaletteRenderer { }
+    class __MenuPaletteRenderer extends goog.ui.equation.__PaletteRenderer {
     
         /**
          * The renderer for menu palette.

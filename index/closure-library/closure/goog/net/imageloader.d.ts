@@ -3,7 +3,8 @@
 
 declare module goog.net {
 
-    class ImageLoader extends goog.events.EventTarget {
+    class ImageLoader extends __ImageLoader { }
+    class __ImageLoader extends goog.events.__EventTarget {
     
         /**
          * Image loader utility class.  Raises a {@link goog.events.EventType.LOAD}

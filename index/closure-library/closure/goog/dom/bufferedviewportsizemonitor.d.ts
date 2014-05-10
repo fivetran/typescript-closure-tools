@@ -5,7 +5,8 @@
 
 declare module goog.dom {
 
-    class BufferedViewportSizeMonitor extends goog.events.EventTarget {
+    class BufferedViewportSizeMonitor extends __BufferedViewportSizeMonitor { }
+    class __BufferedViewportSizeMonitor extends goog.events.__EventTarget {
     
         /**
          * Creates a new BufferedViewportSizeMonitor.

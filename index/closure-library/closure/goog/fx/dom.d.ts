@@ -4,7 +4,8 @@
 
 declare module goog.fx.dom {
 
-    class PredefinedEffect extends goog.fx.Animation {
+    class PredefinedEffect extends __PredefinedEffect { }
+    class __PredefinedEffect extends goog.fx.__Animation {
     
         /**
          * Abstract class that provides reusable functionality for predefined animations
@@ -34,7 +35,8 @@ declare module goog.fx.dom {
         isRightToLeft(): boolean;
     }
 
-    class Slide extends goog.fx.dom.PredefinedEffect {
+    class Slide extends __Slide { }
+    class __Slide extends goog.fx.dom.__PredefinedEffect {
     
         /**
          * Creates an animation object that will slide an element from A to B.  (This
@@ -53,7 +55,8 @@ declare module goog.fx.dom {
         constructor(element: Element, start: number[], end: number[], time: number, opt_acc?: Function);
     }
 
-    class SlideFrom extends goog.fx.dom.Slide {
+    class SlideFrom extends __SlideFrom { }
+    class __SlideFrom extends goog.fx.dom.__Slide {
     
         /**
          * Slides an element from its current position.
@@ -68,7 +71,8 @@ declare module goog.fx.dom {
         constructor(element: Element, end: number[], time: number, opt_acc?: Function);
     }
 
-    class Swipe extends goog.fx.dom.PredefinedEffect {
+    class Swipe extends __Swipe { }
+    class __Swipe extends goog.fx.dom.__PredefinedEffect {
     
         /**
          * Creates an animation object that will slide an element into its final size.
@@ -85,7 +89,8 @@ declare module goog.fx.dom {
         constructor(element: Element, start: number[], end: number[], time: number, opt_acc?: Function);
     }
 
-    class Scroll extends goog.fx.dom.PredefinedEffect {
+    class Scroll extends __Scroll { }
+    class __Scroll extends goog.fx.dom.__PredefinedEffect {
     
         /**
          * Creates an animation object that will scroll an element from A to B.
@@ -103,7 +108,8 @@ declare module goog.fx.dom {
         constructor(element: Element, start: number[], end: number[], time: number, opt_acc?: Function);
     }
 
-    class Resize extends goog.fx.dom.PredefinedEffect {
+    class Resize extends __Resize { }
+    class __Resize extends goog.fx.dom.__PredefinedEffect {
     
         /**
          * Creates an animation object that will resize an element between two widths
@@ -122,7 +128,8 @@ declare module goog.fx.dom {
         constructor(element: Element, start: number[], end: number[], time: number, opt_acc?: Function);
     }
 
-    class ResizeWidth extends goog.fx.dom.PredefinedEffect {
+    class ResizeWidth extends __ResizeWidth { }
+    class __ResizeWidth extends goog.fx.dom.__PredefinedEffect {
     
         /**
          * Creates an animation object that will resize an element between two widths
@@ -140,7 +147,8 @@ declare module goog.fx.dom {
         constructor(element: Element, start: number, end: number, time: number, opt_acc?: Function);
     }
 
-    class ResizeHeight extends goog.fx.dom.PredefinedEffect {
+    class ResizeHeight extends __ResizeHeight { }
+    class __ResizeHeight extends goog.fx.dom.__PredefinedEffect {
     
         /**
          * Creates an animation object that will resize an element between two heights
@@ -158,7 +166,8 @@ declare module goog.fx.dom {
         constructor(element: Element, start: number, end: number, time: number, opt_acc?: Function);
     }
 
-    class Fade extends goog.fx.dom.PredefinedEffect {
+    class Fade extends __Fade { }
+    class __Fade extends goog.fx.dom.__PredefinedEffect {
     
         /**
          * Creates an animation object that fades the opacity of an element between two
@@ -232,7 +241,8 @@ declare module goog.fx.dom {
         hide(): void;
     }
 
-    class FadeOut extends goog.fx.dom.Fade {
+    class FadeOut extends __FadeOut { }
+    class __FadeOut extends goog.fx.dom.__Fade {
     
         /**
          * Fades an element out from full opacity to completely transparent.
@@ -246,7 +256,8 @@ declare module goog.fx.dom {
         constructor(element: Element, time: number, opt_acc?: Function);
     }
 
-    class FadeIn extends goog.fx.dom.Fade {
+    class FadeIn extends __FadeIn { }
+    class __FadeIn extends goog.fx.dom.__Fade {
     
         /**
          * Fades an element in from completely transparent to fully opacity.
@@ -260,7 +271,8 @@ declare module goog.fx.dom {
         constructor(element: Element, time: number, opt_acc?: Function);
     }
 
-    class FadeOutAndHide extends goog.fx.dom.Fade {
+    class FadeOutAndHide extends __FadeOutAndHide { }
+    class __FadeOutAndHide extends goog.fx.dom.__Fade {
     
         /**
          * Fades an element out from full opacity to completely transparent and then
@@ -275,7 +287,8 @@ declare module goog.fx.dom {
         constructor(element: Element, time: number, opt_acc?: Function);
     }
 
-    class FadeInAndShow extends goog.fx.dom.Fade {
+    class FadeInAndShow extends __FadeInAndShow { }
+    class __FadeInAndShow extends goog.fx.dom.__Fade {
     
         /**
          * Sets an element's display to be visible and then fades an element in from
@@ -290,7 +303,8 @@ declare module goog.fx.dom {
         constructor(element: Element, time: number, opt_acc?: Function);
     }
 
-    class BgColorTransform extends goog.fx.dom.PredefinedEffect {
+    class BgColorTransform extends __BgColorTransform { }
+    class __BgColorTransform extends goog.fx.dom.__PredefinedEffect {
     
         /**
          * Provides a transformation of an elements background-color.
@@ -313,7 +327,8 @@ declare module goog.fx.dom {
         setColor(): void;
     }
 
-    class ColorTransform extends goog.fx.dom.PredefinedEffect {
+    class ColorTransform extends __ColorTransform { }
+    class __ColorTransform extends goog.fx.dom.__PredefinedEffect {
     
         /**
          * Provides a transformation of an elements color.

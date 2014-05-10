@@ -5,7 +5,8 @@
 
 declare module goog.ui {
 
-    class ToolbarToggleButton extends goog.ui.ToggleButton {
+    class ToolbarToggleButton extends __ToolbarToggleButton { }
+    class __ToolbarToggleButton extends goog.ui.__ToggleButton {
     
         /**
          * A toggle button control for a toolbar.

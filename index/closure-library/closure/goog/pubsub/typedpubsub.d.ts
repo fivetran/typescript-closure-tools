@@ -4,7 +4,8 @@
 
 declare module goog.pubsub {
 
-    class TypedPubSub extends goog.Disposable {
+    class TypedPubSub extends __TypedPubSub { }
+    class __TypedPubSub extends goog.__Disposable {
     
         /**
          * This object is a temporary shim that provides goog.pubsub.TopicId support

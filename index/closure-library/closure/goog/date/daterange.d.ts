@@ -4,7 +4,8 @@
 
 declare module goog.date {
 
-    class DateRange {
+    class DateRange extends __DateRange { }
+    class __DateRange {
     
         /**
          * Constructs a date range.
@@ -42,7 +43,8 @@ declare module goog.date {
 
 declare module goog.date.DateRange {
 
-    class Iterator extends goog.iter.Iterator<any> {
+    class Iterator extends __Iterator { }
+    class __Iterator extends goog.iter.__Iterator<any> {
     
         /**
          * Creates an iterator over the dates in a {@link goog.date.DateRange}.

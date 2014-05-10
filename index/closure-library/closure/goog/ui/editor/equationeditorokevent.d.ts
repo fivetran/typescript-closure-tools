@@ -3,7 +3,8 @@
 
 declare module goog.ui.editor {
 
-    class EquationEditorOkEvent extends goog.events.Event {
+    class EquationEditorOkEvent extends __EquationEditorOkEvent { }
+    class __EquationEditorOkEvent extends goog.events.__Event {
     
         /**
          * OK event object for the equation editor dialog.

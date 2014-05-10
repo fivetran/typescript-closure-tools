@@ -3,7 +3,8 @@
 
 declare module goog.testing {
 
-    class MockExpectation {
+    class MockExpectation extends __MockExpectation { }
+    class __MockExpectation {
     
         /**
          * This is a class that represents an expectation.
@@ -82,7 +83,8 @@ declare module goog.testing {
         getErrorMessageCount(): number;
     }
 
-    class Mock implements goog.testing.MockInterface {
+    class Mock extends __Mock { }
+    class __Mock implements goog.testing.MockInterface {
     
         /**
          * The base class for a mock object.

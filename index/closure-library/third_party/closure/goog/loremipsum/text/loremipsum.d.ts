@@ -2,7 +2,8 @@
 
 declare module goog.text {
 
-    class LoremIpsum {
+    class LoremIpsum extends __LoremIpsum { }
+    class __LoremIpsum {
     
         /**
          * Generates random strings of "lorem ipsum" text, based on the word

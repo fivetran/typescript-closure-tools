@@ -5,7 +5,8 @@
 
 declare module goog.positioning {
 
-    class AbstractPosition {
+    class AbstractPosition extends __AbstractPosition { }
+    class __AbstractPosition {
     
         /**
          * Abstract position object. Encapsulates position and overflow handling.

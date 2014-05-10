@@ -4,7 +4,8 @@
 
 declare module goog.structs {
 
-    class Set<T> implements goog.structs.Collection<T> {
+    class Set<T> extends __Set<T> { }
+    class __Set<T> implements goog.structs.Collection<T> {
     
         /**
          * A set that can contain both primitives and objects.  Adding and removing

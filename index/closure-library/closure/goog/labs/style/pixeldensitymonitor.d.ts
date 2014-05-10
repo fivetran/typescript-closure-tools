@@ -4,7 +4,8 @@
 
 declare module goog.labs.style {
 
-    class PixelDensityMonitor extends goog.events.EventTarget {
+    class PixelDensityMonitor extends __PixelDensityMonitor { }
+    class __PixelDensityMonitor extends goog.events.__EventTarget {
     
         /**
          * Monitors the window for changes to the ratio between device and screen

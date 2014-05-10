@@ -3,7 +3,8 @@
 
 declare module goog.structs {
 
-    class TreeNode<KEY, VALUE> extends goog.structs.Node<KEY,VALUE> {
+    class TreeNode<KEY, VALUE> extends __TreeNode<KEY, VALUE> { }
+    class __TreeNode<KEY, VALUE> extends goog.structs.__Node<KEY,VALUE> {
     
         /**
          * Generic tree node data structure with arbitrary number of child nodes.

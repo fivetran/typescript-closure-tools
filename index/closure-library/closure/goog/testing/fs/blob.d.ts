@@ -2,7 +2,8 @@
 
 declare module goog.testing.fs {
 
-    class Blob {
+    class Blob extends __Blob { }
+    class __Blob {
     
         /**
          * A mock Blob object. The data is stored as a string.

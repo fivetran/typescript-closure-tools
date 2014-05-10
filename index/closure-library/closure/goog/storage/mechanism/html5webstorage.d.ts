@@ -3,7 +3,8 @@
 
 declare module goog.storage.mechanism {
 
-    class HTML5WebStorage extends goog.storage.mechanism.IterableMechanism {
+    class HTML5WebStorage extends __HTML5WebStorage { }
+    class __HTML5WebStorage extends goog.storage.mechanism.__IterableMechanism {
     
         /**
          * Provides a storage mechanism that uses HTML5 Web storage.

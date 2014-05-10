@@ -4,7 +4,8 @@
 
 declare module goog.ui {
 
-    class Option extends goog.ui.MenuItem {
+    class Option extends __Option { }
+    class __Option extends goog.ui.__MenuItem {
     
         /**
          * Class representing a menu option.  This is just a convenience class that

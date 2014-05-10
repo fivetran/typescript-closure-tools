@@ -5,7 +5,8 @@
 
 declare module goog.ui {
 
-    class ColorButton extends goog.ui.Button {
+    class ColorButton extends __ColorButton { }
+    class __ColorButton extends goog.ui.__Button {
     
         /**
          * A color button control.  Identical to {@link goog.ui.Button}, except it

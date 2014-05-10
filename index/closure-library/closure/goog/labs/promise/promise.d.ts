@@ -4,7 +4,8 @@
 
 declare module goog.labs {
 
-    class Promise<TYPE,RESOLVER_CONTEXT> implements goog.Thenable<TYPE> {
+    class Promise<TYPE,RESOLVER_CONTEXT> extends __Promise<TYPE,RESOLVER_CONTEXT> { }
+    class __Promise<TYPE,RESOLVER_CONTEXT> implements goog.Thenable<TYPE> {
     
         /**
          * Alias for the {@code goog.Promise} class. Closure Promises were developed

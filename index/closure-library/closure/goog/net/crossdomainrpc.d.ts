@@ -3,7 +3,8 @@
 
 declare module goog.net {
 
-    class CrossDomainRpc extends goog.events.EventTarget {
+    class CrossDomainRpc extends __CrossDomainRpc { }
+    class __CrossDomainRpc extends goog.events.__EventTarget {
     
         /**
          * Creates a new instance of cross domain RPC

@@ -2,7 +2,8 @@
 
 declare module goog.crypt {
 
-    class JpegEncoder {
+    class JpegEncoder extends __JpegEncoder { }
+    class __JpegEncoder {
     
         /**
          * Initializes the JpegEncoder.

@@ -8,7 +8,8 @@
 
 declare module goog.ui {
 
-    class DatePicker extends goog.ui.Component {
+    class DatePicker extends __DatePicker { }
+    class __DatePicker extends goog.ui.__Component {
     
         /**
          * DatePicker widget. Allows a single date to be selected from a calendar like
@@ -275,7 +276,8 @@ declare module goog.ui {
         create: any /*missing*/;
     }
 
-    class DatePickerEvent extends goog.events.Event {
+    class DatePickerEvent extends __DatePickerEvent { }
+    class __DatePickerEvent extends goog.events.__Event {
     
         /**
          * Object representing a date picker event.

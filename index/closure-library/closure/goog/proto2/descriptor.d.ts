@@ -4,7 +4,8 @@
 
 declare module goog.proto2 {
 
-    class Descriptor {
+    class Descriptor extends __Descriptor { }
+    class __Descriptor {
     
         /**
          * A class which describes a Protocol Buffer 2 Message.

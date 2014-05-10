@@ -6,7 +6,8 @@
 
 declare module goog.ui {
 
-    class CharPicker extends goog.ui.Component {
+    class CharPicker extends __CharPicker { }
+    class __CharPicker extends goog.ui.__Component {
     
         /**
          * Character Picker Class. This widget can be used to pick any Unicode

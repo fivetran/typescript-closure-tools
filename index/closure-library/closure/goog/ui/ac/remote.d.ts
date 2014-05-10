@@ -5,7 +5,8 @@
 
 declare module goog.ui.ac {
 
-    class Remote extends goog.ui.ac.AutoComplete {
+    class Remote extends __Remote { }
+    class __Remote extends goog.ui.ac.__AutoComplete {
     
         /**
          * Factory class for building a remote autocomplete widget that autocompletes

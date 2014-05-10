@@ -6,7 +6,8 @@
 
 declare module goog.html {
 
-    class SafeUrl implements goog.i18n.bidi.DirectionalString, goog.string.TypedString {
+    class SafeUrl extends __SafeUrl { }
+    class __SafeUrl implements goog.i18n.bidi.DirectionalString, goog.string.TypedString {
     
         /**
          * A string that is safe to use in URL context in DOM APIs and HTML documents.

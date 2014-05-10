@@ -6,7 +6,8 @@
 
 declare module goog.graphics {
 
-    class RectElement extends goog.graphics.StrokeAndFillElement {
+    class RectElement extends __RectElement { }
+    class __RectElement extends goog.graphics.__StrokeAndFillElement {
     
         /**
          * Interface for a graphics rectangle element.

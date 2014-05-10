@@ -6,7 +6,8 @@
 
 declare module goog.ui.equation {
 
-    class Palette extends goog.ui.Palette {
+    class Palette extends __Palette { }
+    class __Palette extends goog.ui.__Palette {
     
         /**
          * Constructs a new palette.
@@ -56,7 +57,8 @@ declare module goog.ui.equation {
         getAction(index: number): string;
     }
 
-    class PaletteEvent extends goog.events.Event {
+    class PaletteEvent extends __PaletteEvent { }
+    class __PaletteEvent extends goog.events.__Event {
     
         /**
          * The event that palettes dispatches.
@@ -78,7 +80,8 @@ declare module goog.ui.equation {
         getPalette(): goog.ui.equation.Palette;
     }
 
-    class PaletteRenderer extends goog.ui.PaletteRenderer {
+    class PaletteRenderer extends __PaletteRenderer { }
+    class __PaletteRenderer extends goog.ui.__PaletteRenderer {
     
         /**
          * The renderer for palette.

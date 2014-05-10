@@ -4,7 +4,8 @@
 
 declare module goog.debug {
 
-    class Formatter {
+    class Formatter extends __Formatter { }
+    class __Formatter {
     
         /**
          * Base class for Formatters. A Formatter is used to format a LogRecord into
@@ -78,7 +79,8 @@ declare module goog.debug {
         resetRelativeTimeStart(): void;
     }
 
-    class HtmlFormatter extends goog.debug.Formatter {
+    class HtmlFormatter extends __HtmlFormatter { }
+    class __HtmlFormatter extends goog.debug.__Formatter {
     
         /**
          * Formatter that returns formatted html. See formatRecord for the classes
@@ -91,7 +93,8 @@ declare module goog.debug {
         constructor(opt_prefix?: string);
     }
 
-    class TextFormatter extends goog.debug.Formatter {
+    class TextFormatter extends __TextFormatter { }
+    class __TextFormatter extends goog.debug.__Formatter {
     
         /**
          * Formatter that returns formatted plain text

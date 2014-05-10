@@ -4,7 +4,8 @@
 
 declare module goog.dom.pattern {
 
-    class NodeType extends goog.dom.pattern.AbstractPattern {
+    class NodeType extends __NodeType { }
+    class __NodeType extends goog.dom.pattern.__AbstractPattern {
     
         /**
          * Pattern object that matches any node of the given type.

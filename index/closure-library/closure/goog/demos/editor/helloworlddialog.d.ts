@@ -5,7 +5,8 @@
 
 declare module goog.demos.editor {
 
-    class HelloWorldDialog extends goog.ui.editor.AbstractDialog {
+    class HelloWorldDialog extends __HelloWorldDialog { }
+    class __HelloWorldDialog extends goog.ui.editor.__AbstractDialog {
     
         /**
          * Creates a dialog to let the user enter a customized hello world message.
@@ -21,7 +22,8 @@ declare module goog.demos.editor {
 
 declare module goog.demos.editor.HelloWorldDialog {
 
-    class OkEvent extends goog.events.Event {
+    class OkEvent extends __OkEvent { }
+    class __OkEvent extends goog.events.__Event {
     
         /**
          * OK event object for the hello world dialog.

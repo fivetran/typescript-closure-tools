@@ -5,7 +5,8 @@
 
 declare module goog.editor.plugins {
 
-    class AbstractBubblePlugin extends goog.editor.Plugin {
+    class AbstractBubblePlugin extends __AbstractBubblePlugin { }
+    class __AbstractBubblePlugin extends goog.editor.__Plugin {
     
         /**
          * Base class for bubble plugins. This is used for to connect user behavior

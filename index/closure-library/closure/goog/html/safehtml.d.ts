@@ -8,7 +8,8 @@
 
 declare module goog.html {
 
-    class SafeHtml implements goog.i18n.bidi.DirectionalString, goog.string.TypedString {
+    class SafeHtml extends __SafeHtml { }
+    class __SafeHtml implements goog.i18n.bidi.DirectionalString, goog.string.TypedString {
     
         /**
          * A string that is safe to use in HTML context in DOM APIs and HTML documents.

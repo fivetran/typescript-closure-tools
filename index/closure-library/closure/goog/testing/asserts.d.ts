@@ -2,7 +2,8 @@
 
 declare module goog.testing {
 
-    class JsUnitException extends Error {
+    class JsUnitException extends __JsUnitException { }
+    class __JsUnitException extends Error {
     
         /**
          * @param {string} comment A summary for the exception.

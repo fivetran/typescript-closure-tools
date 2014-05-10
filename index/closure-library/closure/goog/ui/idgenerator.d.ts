@@ -2,7 +2,8 @@
 
 declare module goog.ui {
 
-    class IdGenerator {
+    class IdGenerator extends __IdGenerator { }
+    class __IdGenerator {
     
         /**
          * Creates a new id generator.

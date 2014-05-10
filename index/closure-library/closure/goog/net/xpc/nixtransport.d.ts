@@ -5,7 +5,8 @@
 
 declare module goog.net.xpc {
 
-    class NixTransport extends goog.net.xpc.Transport {
+    class NixTransport extends __NixTransport { }
+    class __NixTransport extends goog.net.xpc.__Transport {
     
         /**
          * NIX method transport.

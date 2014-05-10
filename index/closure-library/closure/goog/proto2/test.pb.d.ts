@@ -3,7 +3,8 @@
 
 declare module proto2 {
 
-    class TestAllTypes extends goog.proto2.Message {
+    class TestAllTypes extends __TestAllTypes { }
+    class __TestAllTypes extends goog.proto2.__Message {
     
         /**
          * Message TestAllTypes.
@@ -1494,7 +1495,8 @@ declare module proto2 {
         clearRepeatedInt64String(): void;
     }
 
-    class TestDefaultParent extends goog.proto2.Message {
+    class TestDefaultParent extends __TestDefaultParent { }
+    class __TestDefaultParent extends goog.proto2.__Message {
     
         /**
          * Message TestDefaultParent.
@@ -1538,7 +1540,8 @@ declare module proto2 {
         clearChild(): void;
     }
 
-    class TestDefaultChild extends goog.proto2.Message {
+    class TestDefaultChild extends __TestDefaultChild { }
+    class __TestDefaultChild extends goog.proto2.__Message {
     
         /**
          * Message TestDefaultChild.
@@ -1585,7 +1588,8 @@ declare module proto2 {
 
 declare module proto2.TestAllTypes {
 
-    class NestedMessage extends goog.proto2.Message {
+    class NestedMessage extends __NestedMessage { }
+    class __NestedMessage extends goog.proto2.__Message {
     
         /**
          * Message NestedMessage.
@@ -1662,7 +1666,8 @@ declare module proto2.TestAllTypes {
         clearC(): void;
     }
 
-    class OptionalGroup extends goog.proto2.Message {
+    class OptionalGroup extends __OptionalGroup { }
+    class __OptionalGroup extends goog.proto2.__Message {
     
         /**
          * Message OptionalGroup.
@@ -1706,7 +1711,8 @@ declare module proto2.TestAllTypes {
         clearA(): void;
     }
 
-    class RepeatedGroup extends goog.proto2.Message {
+    class RepeatedGroup extends __RepeatedGroup { }
+    class __RepeatedGroup extends goog.proto2.__Message {
     
         /**
          * Message RepeatedGroup.

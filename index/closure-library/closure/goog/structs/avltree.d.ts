@@ -3,7 +3,8 @@
 
 declare module goog.structs {
 
-    class AvlTree<T> implements goog.structs.Collection<T> {
+    class AvlTree<T> extends __AvlTree<T> { }
+    class __AvlTree<T> implements goog.structs.Collection<T> {
     
         /**
          * Constructs an AVL-Tree, which uses the specified comparator to order its
@@ -120,7 +121,8 @@ declare module goog.structs {
 
 declare module goog.structs.AvlTree {
 
-    class Node<T> {
+    class Node<T> extends __Node<T> { }
+    class __Node<T> {
     
         /**
          * Constructs an AVL-Tree node with the specified value. If no parent is

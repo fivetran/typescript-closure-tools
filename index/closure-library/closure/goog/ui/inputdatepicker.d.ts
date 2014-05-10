@@ -9,7 +9,8 @@
 
 declare module goog.ui {
 
-    class InputDatePicker extends goog.ui.Component {
+    class InputDatePicker extends __InputDatePicker { }
+    class __InputDatePicker extends goog.ui.__Component {
     
         /**
          * Input date picker widget.

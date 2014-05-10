@@ -5,7 +5,8 @@
 
 declare module goog.ui {
 
-    class Tab extends goog.ui.Control {
+    class Tab extends __Tab { }
+    class __Tab extends goog.ui.__Control {
     
         /**
          * Tab control, designed to be hosted in a {@link goog.ui.TabBar}.  The tab's

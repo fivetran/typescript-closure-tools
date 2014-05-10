@@ -5,7 +5,8 @@
 
 declare module goog.editor.range {
 
-    class Point {
+    class Point extends __Point { }
+    class __Point {
     
         /**
          * One endpoint of a range, represented as a Node and and offset.
@@ -23,7 +24,8 @@ declare module goog.editor.range {
         getParentPoint(): goog.editor.range.Point;
     }
 
-    class NormalizedCaretRange_ extends goog.dom.SavedCaretRange {
+    class NormalizedCaretRange_ extends __NormalizedCaretRange_ { }
+    class __NormalizedCaretRange_ extends goog.dom.__SavedCaretRange {
     
         /**
          * Saves the range using carets, but normalizes text nodes when carets

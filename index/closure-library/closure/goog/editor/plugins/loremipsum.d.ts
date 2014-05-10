@@ -3,7 +3,8 @@
 
 declare module goog.editor.plugins {
 
-    class LoremIpsum extends goog.editor.Plugin {
+    class LoremIpsum extends __LoremIpsum { }
+    class __LoremIpsum extends goog.editor.__Plugin {
     
         /**
          * A plugin that manages lorem ipsum state of editable fields.

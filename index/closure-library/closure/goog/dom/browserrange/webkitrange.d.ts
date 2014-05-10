@@ -3,7 +3,8 @@
 
 declare module goog.dom.browserrange {
 
-    class WebKitRange extends goog.dom.browserrange.W3cRange {
+    class WebKitRange extends __WebKitRange { }
+    class __WebKitRange extends goog.dom.browserrange.__W3cRange {
     
         /**
          * The constructor for WebKit specific browser ranges.

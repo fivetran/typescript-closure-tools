@@ -4,7 +4,8 @@
 
 declare module goog.debug {
 
-    class DebugWindow {
+    class DebugWindow extends __DebugWindow { }
+    class __DebugWindow {
     
         /**
          * Provides a debug DebugWindow that is bound to the goog.debug.Logger.

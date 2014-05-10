@@ -7,7 +7,8 @@
 
 declare module goog.ui.tree {
 
-    class BaseNode extends goog.ui.Component {
+    class BaseNode extends __BaseNode { }
+    class __BaseNode extends goog.ui.__Component {
     
         /**
          * An abstract base class for a node in the tree.

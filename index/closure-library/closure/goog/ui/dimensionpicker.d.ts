@@ -8,7 +8,8 @@
 
 declare module goog.ui {
 
-    class DimensionPicker extends goog.ui.Control {
+    class DimensionPicker extends __DimensionPicker { }
+    class __DimensionPicker extends goog.ui.__Control {
     
         /**
          * A dimension picker allows the user to visually select a row and column

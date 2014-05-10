@@ -3,7 +3,8 @@
 
 declare module goog.labs.format.csv {
 
-    class ParseError extends goog.debug.Error {
+    class ParseError extends __ParseError { }
+    class __ParseError extends goog.debug.__Error {
     
         /**
          * Error thrown when parsing fails.

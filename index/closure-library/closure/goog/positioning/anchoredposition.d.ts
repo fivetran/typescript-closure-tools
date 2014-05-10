@@ -4,7 +4,8 @@
 
 declare module goog.positioning {
 
-    class AnchoredPosition extends goog.positioning.AbstractPosition {
+    class AnchoredPosition extends __AnchoredPosition { }
+    class __AnchoredPosition extends goog.positioning.__AbstractPosition {
     
         /**
          * Encapsulates a popup position where the popup is anchored at a corner of

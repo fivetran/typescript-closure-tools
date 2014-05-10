@@ -2,7 +2,8 @@
 
 declare module goog.structs {
 
-    class CircularBuffer<T> {
+    class CircularBuffer<T> extends __CircularBuffer<T> { }
+    class __CircularBuffer<T> {
     
         /**
          * Class for CircularBuffer.

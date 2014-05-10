@@ -3,7 +3,8 @@
 
 declare module goog {
 
-    class Uri {
+    class Uri extends __Uri { }
+    class __Uri {
     
         /**
          * This class contains setters and getters for the parts of the URI.
@@ -325,7 +326,8 @@ declare module goog {
 
 declare module goog.Uri {
 
-    class QueryData {
+    class QueryData extends __QueryData { }
+    class __QueryData {
     
         /**
          * Class used to represent URI query parameters.  It is essentially a hash of

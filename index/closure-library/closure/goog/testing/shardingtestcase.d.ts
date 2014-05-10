@@ -3,7 +3,8 @@
 
 declare module goog.testing {
 
-    class ShardingTestCase extends goog.testing.TestCase {
+    class ShardingTestCase extends __ShardingTestCase { }
+    class __ShardingTestCase extends goog.testing.__TestCase {
     
         /**
          * A test case that runs tests in per-file shards.

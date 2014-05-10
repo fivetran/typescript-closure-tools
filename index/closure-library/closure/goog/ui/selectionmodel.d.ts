@@ -3,7 +3,8 @@
 
 declare module goog.ui {
 
-    class SelectionModel extends goog.events.EventTarget {
+    class SelectionModel extends __SelectionModel { }
+    class __SelectionModel extends goog.events.__EventTarget {
     
         /**
          * Single-selection model.  Dispatches a {@link goog.events.EventType.SELECT}

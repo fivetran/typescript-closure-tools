@@ -2,7 +2,8 @@
 
 declare module goog.labs.net.webChannel {
 
-    class ConnectionState {
+    class ConnectionState extends __ConnectionState { }
+    class __ConnectionState {
     
         /**
          * The connectivity state of the channel.

@@ -3,7 +3,8 @@
 
 declare module goog.i18n {
 
-    class TimeZone {
+    class TimeZone extends __TimeZone { }
+    class __TimeZone {
     
         /**
          * TimeZone class implemented a time zone resolution and name information

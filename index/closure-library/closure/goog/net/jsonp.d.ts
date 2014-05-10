@@ -3,7 +3,8 @@
 
 declare module goog.net {
 
-    class Jsonp {
+    class Jsonp extends __Jsonp { }
+    class __Jsonp {
     
         /**
          * Creates a new cross domain channel that sends data to the specified

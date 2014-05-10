@@ -3,7 +3,8 @@
 
 declare module goog.storage.mechanism {
 
-    class IEUserData extends goog.storage.mechanism.IterableMechanism {
+    class IEUserData extends __IEUserData { }
+    class __IEUserData extends goog.storage.mechanism.__IterableMechanism {
     
         /**
          * Provides a storage mechanism using IE userData.

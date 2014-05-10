@@ -3,7 +3,8 @@
 
 declare module goog.dom {
 
-    class AbstractMultiRange extends goog.dom.AbstractRange {
+    class AbstractMultiRange extends __AbstractMultiRange { }
+    class __AbstractMultiRange extends goog.dom.__AbstractRange {
     
         /**
          * Creates a new multi range with no properties.  Do not use this

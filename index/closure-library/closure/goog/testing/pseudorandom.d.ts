@@ -3,7 +3,8 @@
 
 declare module goog.testing {
 
-    class PseudoRandom extends goog.Disposable {
+    class PseudoRandom extends __PseudoRandom { }
+    class __PseudoRandom extends goog.__Disposable {
     
         /**
          * Class for unit testing code that uses Math.random. Generates deterministic

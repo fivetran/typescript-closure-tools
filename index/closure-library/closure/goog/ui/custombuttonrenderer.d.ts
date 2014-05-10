@@ -5,7 +5,8 @@
 
 declare module goog.ui {
 
-    class CustomButtonRenderer extends goog.ui.ButtonRenderer {
+    class CustomButtonRenderer extends __CustomButtonRenderer { }
+    class __CustomButtonRenderer extends goog.ui.__ButtonRenderer {
     
         /**
          * Custom renderer for {@link goog.ui.Button}s.  Custom buttons can contain

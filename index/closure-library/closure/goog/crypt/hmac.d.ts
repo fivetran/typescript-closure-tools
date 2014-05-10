@@ -3,7 +3,8 @@
 
 declare module goog.crypt {
 
-    class Hmac extends goog.crypt.Hash {
+    class Hmac extends __Hmac { }
+    class __Hmac extends goog.crypt.__Hash {
     
         /**
          * @constructor

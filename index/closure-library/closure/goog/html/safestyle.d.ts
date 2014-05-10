@@ -4,7 +4,8 @@
 
 declare module goog.html {
 
-    class SafeStyle implements goog.string.TypedString {
+    class SafeStyle extends __SafeStyle { }
+    class __SafeStyle implements goog.string.TypedString {
     
         /**
          * A string-like object which represents a sequence of CSS declarations

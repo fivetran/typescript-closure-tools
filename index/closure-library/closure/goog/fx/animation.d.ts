@@ -6,7 +6,8 @@
 
 declare module goog.fx {
 
-    class Animation extends goog.fx.TransitionBase implements goog.fx.anim.Animated, goog.fx.Transition {
+    class Animation extends __Animation { }
+    class __Animation extends goog.fx.__TransitionBase implements goog.fx.anim.Animated, goog.fx.Transition {
     
         /**
          * Constructor for an animation object.
@@ -112,7 +113,8 @@ declare module goog.fx {
         stop: any /*missing*/;
     }
 
-    class AnimationEvent extends goog.events.Event {
+    class AnimationEvent extends __AnimationEvent { }
+    class __AnimationEvent extends goog.events.__Event {
     
         /**
          * Class for an animation event object.

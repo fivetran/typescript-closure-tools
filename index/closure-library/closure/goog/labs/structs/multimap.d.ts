@@ -3,7 +3,8 @@
 
 declare module goog.labs.structs {
 
-    class Multimap {
+    class Multimap extends __Multimap { }
+    class __Multimap {
     
         /**
          * Creates a new multimap.

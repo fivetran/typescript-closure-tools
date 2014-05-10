@@ -6,7 +6,8 @@
 
 declare module goog.ui {
 
-    class Component extends goog.events.EventTarget {
+    class Component extends __Component { }
+    class __Component extends goog.events.__EventTarget {
     
         /**
          * Default implementation of UI component.

@@ -5,7 +5,8 @@
 
 declare module goog.debug {
 
-    class ErrorHandler extends goog.Disposable implements goog.debug.EntryPointMonitor {
+    class ErrorHandler extends __ErrorHandler { }
+    class __ErrorHandler extends goog.__Disposable implements goog.debug.EntryPointMonitor {
     
         /**
          * The ErrorHandler can be used to to wrap functions with a try/catch
@@ -115,7 +116,8 @@ declare module goog.debug {
 
 declare module goog.debug.ErrorHandler {
 
-    class ProtectedFunctionError extends goog.debug.Error {
+    class ProtectedFunctionError extends __ProtectedFunctionError { }
+    class __ProtectedFunctionError extends goog.debug.__Error {
     
         /**
          * Error thrown to the caller of a protected entry point if the entry point

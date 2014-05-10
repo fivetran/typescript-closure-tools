@@ -4,7 +4,8 @@
 
 declare module goog.demos {
 
-    class SampleComponent extends goog.ui.Component {
+    class SampleComponent extends __SampleComponent { }
+    class __SampleComponent extends goog.ui.__Component {
     
         /**
          * A simple box that changes colour when clicked. This class demonstrates the

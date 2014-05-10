@@ -4,7 +4,8 @@
 
 declare module goog.events {
 
-    class KeyHandler extends goog.events.EventTarget {
+    class KeyHandler extends __KeyHandler { }
+    class __KeyHandler extends goog.events.__EventTarget {
     
         /**
          * A wrapper around an element that you want to listen to keyboard events on.
@@ -69,7 +70,8 @@ declare module goog.events {
         detach(): void;
     }
 
-    class KeyEvent extends goog.events.BrowserEvent {
+    class KeyEvent extends __KeyEvent { }
+    class __KeyEvent extends goog.events.__BrowserEvent {
     
         /**
          * This class is used for the goog.events.KeyHandler.EventType.KEY event and

@@ -5,7 +5,8 @@
 
 declare module goog.ui {
 
-    class ControlRenderer {
+    class ControlRenderer extends __ControlRenderer { }
+    class __ControlRenderer {
     
         /**
          * Default renderer for {@link goog.ui.Control}s.  Can be used as-is, but

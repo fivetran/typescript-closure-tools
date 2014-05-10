@@ -5,7 +5,8 @@
 
 declare module goog.ui.ac {
 
-    class AutoComplete extends goog.events.EventTarget {
+    class AutoComplete extends __AutoComplete { }
+    class __AutoComplete extends goog.events.__EventTarget {
     
         /**
          * This is the central manager class for an AutoComplete instance. The matcher

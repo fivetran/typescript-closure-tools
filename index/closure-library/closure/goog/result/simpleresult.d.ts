@@ -4,7 +4,8 @@
 
 declare module goog.result {
 
-    class SimpleResult implements goog.result.Result {
+    class SimpleResult extends __SimpleResult { }
+    class __SimpleResult implements goog.result.Result {
     
         /**
          * A SimpleResult object is a basic implementation of the
@@ -79,7 +80,8 @@ declare module goog.result {
 
 declare module goog.result.SimpleResult {
 
-    class StateError extends goog.debug.Error {
+    class StateError extends __StateError { }
+    class __StateError extends goog.debug.__Error {
     
         /**
          * Error thrown if there is an attempt to set the value or error for this result

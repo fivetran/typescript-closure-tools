@@ -2,7 +2,8 @@
 
 declare module goog.structs {
 
-    class Node<K, V> {
+    class Node<K, V> extends __Node<K, V> { }
+    class __Node<K, V> {
     
         /**
          * A generic immutable node. This can be used in various collections that

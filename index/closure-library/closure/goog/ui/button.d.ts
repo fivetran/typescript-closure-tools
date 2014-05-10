@@ -5,7 +5,8 @@
 
 declare module goog.ui {
 
-    class Button extends goog.ui.Control {
+    class Button extends __Button { }
+    class __Button extends goog.ui.__Control {
     
         /**
          * A button control, rendered as a native browser button by default.

@@ -4,7 +4,8 @@
 
 declare module goog.ui.tree {
 
-    class TypeAhead {
+    class TypeAhead extends __TypeAhead { }
+    class __TypeAhead {
     
         /**
          * Constructs a TypeAhead object.

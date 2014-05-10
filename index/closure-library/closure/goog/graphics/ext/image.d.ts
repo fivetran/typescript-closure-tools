@@ -4,7 +4,8 @@
 
 declare module goog.graphics.ext {
 
-    class Image extends goog.graphics.ext.Element {
+    class Image extends __Image { }
+    class __Image extends goog.graphics.ext.__Element {
     
         /**
          * Wrapper for a graphics image element.

@@ -5,7 +5,8 @@
 
 declare module goog.ui {
 
-    class TabPane extends goog.events.EventTarget {
+    class TabPane extends __TabPane { }
+    class __TabPane extends goog.events.__EventTarget {
     
         /**
          * TabPane widget. All children already inside the tab pane container element
@@ -94,7 +95,8 @@ declare module goog.ui {
         getElement(): Element;
     }
 
-    class TabPaneEvent extends goog.events.Event {
+    class TabPaneEvent extends __TabPaneEvent { }
+    class __TabPaneEvent extends goog.events.__Event {
     
         /**
          * Object representing a tab pane page changed event.
@@ -112,7 +114,8 @@ declare module goog.ui {
 
 declare module goog.ui.TabPane {
 
-    class TabPage {
+    class TabPage extends __TabPage { }
+    class __TabPage {
     
         /**
          * Object representing an individual tab pane.

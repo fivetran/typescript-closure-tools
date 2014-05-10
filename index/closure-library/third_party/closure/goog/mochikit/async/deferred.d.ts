@@ -5,7 +5,8 @@
 
 declare module goog.async {
 
-    class Deferred<VALUE> implements goog.Thenable<VALUE> {
+    class Deferred<VALUE> extends __Deferred<VALUE> { }
+    class __Deferred<VALUE> implements goog.Thenable<VALUE> {
     
         /**
          * A Deferred represents the result of an asynchronous operation. A Deferred
@@ -297,7 +298,8 @@ declare module goog.async {
 
 declare module goog.async.Deferred {
 
-    class AlreadyCalledError extends goog.debug.Error {
+    class AlreadyCalledError extends __AlreadyCalledError { }
+    class __AlreadyCalledError extends goog.debug.__Error {
     
         /**
          * An error sub class that is used when a Deferred has already been called.
@@ -309,7 +311,8 @@ declare module goog.async.Deferred {
         constructor(deferred: goog.async.Deferred<any>);
     }
 
-    class CanceledError extends goog.debug.Error {
+    class CanceledError extends __CanceledError { }
+    class __CanceledError extends goog.debug.__Error {
     
         /**
          * An error sub class that is used when a Deferred is canceled.
@@ -321,7 +324,8 @@ declare module goog.async.Deferred {
         constructor(deferred: goog.async.Deferred<any>);
     }
 
-    class Error_ {
+    class Error_ extends __Error_ { }
+    class __Error_ {
     
         /**
          * Wrapper around errors that are scheduled to be thrown by failing deferreds

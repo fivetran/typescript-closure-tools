@@ -3,7 +3,8 @@
 
 declare module goog.storage {
 
-    class Storage {
+    class Storage extends __Storage { }
+    class __Storage {
     
         /**
          * The base implementation for all storage APIs.

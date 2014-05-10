@@ -6,7 +6,8 @@
 
 declare module goog.ui.media {
 
-    class GoogleVideo extends goog.ui.media.MediaRenderer {
+    class GoogleVideo extends __GoogleVideo { }
+    class __GoogleVideo extends goog.ui.media.__MediaRenderer {
     
         /**
          * Subclasses a goog.ui.media.MediaRenderer to provide a GoogleVideo specific
@@ -32,7 +33,8 @@ declare module goog.ui.media {
         constructor();
     }
 
-    class GoogleVideoModel extends goog.ui.media.MediaModel {
+    class GoogleVideoModel extends __GoogleVideoModel { }
+    class __GoogleVideoModel extends goog.ui.media.__MediaModel {
     
         /**
          * The {@code goog.ui.media.GoogleVideo} media data model. It stores a required

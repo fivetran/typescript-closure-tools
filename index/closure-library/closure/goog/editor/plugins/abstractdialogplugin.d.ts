@@ -6,7 +6,8 @@
 
 declare module goog.editor.plugins {
 
-    class AbstractDialogPlugin extends goog.editor.Plugin {
+    class AbstractDialogPlugin extends __AbstractDialogPlugin { }
+    class __AbstractDialogPlugin extends goog.editor.__Plugin {
     
         /**
          * An abstract superclass for a Trogedit plugin that creates exactly one

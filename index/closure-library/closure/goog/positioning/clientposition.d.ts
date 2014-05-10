@@ -4,7 +4,8 @@
 
 declare module goog.positioning {
 
-    class ClientPosition extends goog.positioning.AbstractPosition {
+    class ClientPosition extends __ClientPosition { }
+    class __ClientPosition extends goog.positioning.__AbstractPosition {
     
         /**
          * Encapsulates a popup position where the popup is positioned relative to the

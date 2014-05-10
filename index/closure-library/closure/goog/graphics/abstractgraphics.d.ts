@@ -17,7 +17,8 @@
 
 declare module goog.graphics {
 
-    class AbstractGraphics extends goog.ui.Component {
+    class AbstractGraphics extends __AbstractGraphics { }
+    class __AbstractGraphics extends goog.ui.__Component {
     
         /**
          * Base class for the different graphics. You should never construct objects

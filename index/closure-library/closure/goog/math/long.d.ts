@@ -2,7 +2,8 @@
 
 declare module goog.math {
 
-    class Long {
+    class Long extends __Long { }
+    class __Long {
     
         /**
          * Constructs a 64-bit two's-complement integer, given its low and high 32-bit

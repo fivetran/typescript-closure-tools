@@ -3,7 +3,8 @@
 
 declare module goog.editor.plugins {
 
-    class Emoticons extends goog.editor.Plugin {
+    class Emoticons extends __Emoticons { }
+    class __Emoticons extends goog.editor.__Plugin {
     
         /**
          * Plugin for generating emoticons.

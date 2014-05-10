@@ -3,7 +3,8 @@
 
 declare module goog.structs {
 
-    class QuadTree {
+    class QuadTree extends __QuadTree { }
+    class __QuadTree {
     
         /**
          * Constructs a new quad tree.
@@ -108,7 +109,8 @@ declare module goog.structs {
 
 declare module goog.structs.QuadTree {
 
-    class Node {
+    class Node extends __Node { }
+    class __Node {
     
         /**
          * Constructs a new quad tree node.
@@ -159,7 +161,8 @@ declare module goog.structs.QuadTree {
         point: goog.structs.QuadTree.Point;
     }
 
-    class Point {
+    class Point extends __Point { }
+    class __Point {
     
         /**
          * Creates a new point object.

@@ -3,7 +3,8 @@
 
 declare module goog.ui.equation {
 
-    class EquationEditorDialog extends goog.ui.Dialog {
+    class EquationEditorDialog extends __EquationEditorDialog { }
+    class __EquationEditorDialog extends goog.ui.__Dialog {
     
         /**
          * User interface for equation editor plugin standalone tests.

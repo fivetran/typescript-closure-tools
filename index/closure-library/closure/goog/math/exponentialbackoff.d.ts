@@ -2,7 +2,8 @@
 
 declare module goog.math {
 
-    class ExponentialBackoff {
+    class ExponentialBackoff extends __ExponentialBackoff { }
+    class __ExponentialBackoff {
     
         /**
          * @constructor

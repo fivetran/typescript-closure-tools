@@ -4,7 +4,8 @@
 
 declare module goog.events {
 
-    class InputHandler extends goog.events.EventTarget {
+    class InputHandler extends __InputHandler { }
+    class __InputHandler extends goog.events.__EventTarget {
     
         /**
          * This event handler will dispatch events when the user types into a text

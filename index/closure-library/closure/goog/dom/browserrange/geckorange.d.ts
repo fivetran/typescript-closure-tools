@@ -3,7 +3,8 @@
 
 declare module goog.dom.browserrange {
 
-    class GeckoRange extends goog.dom.browserrange.W3cRange {
+    class GeckoRange extends __GeckoRange { }
+    class __GeckoRange extends goog.dom.browserrange.__W3cRange {
     
         /**
          * The constructor for Gecko specific browser ranges.

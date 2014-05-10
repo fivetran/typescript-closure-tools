@@ -7,7 +7,8 @@
 
 declare module goog.graphics {
 
-    class PathElement extends goog.graphics.StrokeAndFillElement {
+    class PathElement extends __PathElement { }
+    class __PathElement extends goog.graphics.__StrokeAndFillElement {
     
         /**
          * Interface for a graphics path element.

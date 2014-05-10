@@ -14,7 +14,8 @@
 
 declare module goog.ui {
 
-    class MenuButton extends goog.ui.Button {
+    class MenuButton extends __MenuButton { }
+    class __MenuButton extends goog.ui.__Button {
     
         /**
          * A menu button control.  Extends {@link goog.ui.Button} by composing a button

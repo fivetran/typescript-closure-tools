@@ -5,7 +5,8 @@
 
 declare module goog.ui.tree {
 
-    class TreeNode extends goog.ui.tree.BaseNode {
+    class TreeNode extends __TreeNode { }
+    class __TreeNode extends goog.ui.tree.__BaseNode {
     
         /**
          * A single node in the tree.

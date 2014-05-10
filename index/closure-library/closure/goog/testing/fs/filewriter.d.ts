@@ -7,7 +7,8 @@
 
 declare module goog.testing.fs {
 
-    class FileWriter extends goog.events.EventTarget {
+    class FileWriter extends __FileWriter { }
+    class __FileWriter extends goog.events.__EventTarget {
     
         /**
          * A mock FileWriter object. This emits the same events as

@@ -2,7 +2,8 @@
 
 declare module goog.i18n {
 
-    class NumberFormat {
+    class NumberFormat extends __NumberFormat { }
+    class __NumberFormat {
     
         /**
          * Constructor of NumberFormat.

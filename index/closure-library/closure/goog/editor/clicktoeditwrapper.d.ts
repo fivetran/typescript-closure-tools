@@ -5,7 +5,8 @@
 
 declare module goog.editor {
 
-    class ClickToEditWrapper extends goog.Disposable {
+    class ClickToEditWrapper extends __ClickToEditWrapper { }
+    class __ClickToEditWrapper extends goog.__Disposable {
     
         /**
          * Initialize the wrapper, and begin listening to mouse events immediately.

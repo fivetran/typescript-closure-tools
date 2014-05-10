@@ -5,7 +5,8 @@
 
 declare module goog.ui.media {
 
-    class Photo extends goog.ui.media.MediaRenderer {
+    class Photo extends __Photo { }
+    class __Photo extends goog.ui.media.__MediaRenderer {
     
         /**
          * Subclasses a goog.ui.media.MediaRenderer to provide a Photo specific media

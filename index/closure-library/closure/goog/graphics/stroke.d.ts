@@ -2,7 +2,8 @@
 
 declare module goog.graphics {
 
-    class Stroke {
+    class Stroke extends __Stroke { }
+    class __Stroke {
     
         /**
          * Creates an immutable stroke object.

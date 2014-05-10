@@ -7,7 +7,8 @@
 
 declare module goog.ui.tree {
 
-    class TreeControl extends goog.ui.tree.BaseNode {
+    class TreeControl extends __TreeControl { }
+    class __TreeControl extends goog.ui.tree.__BaseNode {
     
         /**
          * This creates a TreeControl object. A tree control provides a way to

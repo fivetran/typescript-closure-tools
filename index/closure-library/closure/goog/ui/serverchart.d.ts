@@ -6,7 +6,8 @@
 
 declare module goog.ui {
 
-    class ServerChart extends goog.ui.Component {
+    class ServerChart extends __ServerChart { }
+    class __ServerChart extends goog.ui.__Component {
     
         /**
          * Will construct a chart using Google's chartserver.
@@ -641,7 +642,8 @@ declare module goog.ui {
 
 declare module goog.ui.ServerChart {
 
-    class UriTooLongEvent extends goog.events.Event {
+    class UriTooLongEvent extends __UriTooLongEvent { }
+    class __UriTooLongEvent extends goog.events.__Event {
     
         /**
          * Class for the event dispatched on the ServerChart when the resulting URI

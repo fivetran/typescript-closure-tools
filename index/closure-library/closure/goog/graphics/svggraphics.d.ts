@@ -7,7 +7,8 @@
 
 declare module goog.graphics {
 
-    class SvgGraphics extends goog.graphics.AbstractGraphics {
+    class SvgGraphics extends __SvgGraphics { }
+    class __SvgGraphics extends goog.graphics.__AbstractGraphics {
     
         /**
          * A Graphics implementation for drawing using SVG.

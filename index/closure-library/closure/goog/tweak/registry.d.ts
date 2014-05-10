@@ -7,7 +7,8 @@
 
 declare module goog.tweak {
 
-    class Registry {
+    class Registry extends __Registry { }
+    class __Registry {
     
         /**
          * Singleton that manages all tweaks. This should be instantiated only from

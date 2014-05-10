@@ -4,7 +4,8 @@
 
 declare module goog.ui {
 
-    class CheckBoxMenuItem extends goog.ui.MenuItem {
+    class CheckBoxMenuItem extends __CheckBoxMenuItem { }
+    class __CheckBoxMenuItem extends goog.ui.__MenuItem {
     
         /**
          * Class representing a checkbox menu item.  This is just a convenience class

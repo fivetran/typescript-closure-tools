@@ -4,7 +4,8 @@
 
 declare module goog.events {
 
-    class MouseWheelHandler extends goog.events.EventTarget {
+    class MouseWheelHandler extends __MouseWheelHandler { }
+    class __MouseWheelHandler extends goog.events.__EventTarget {
     
         /**
          * This event handler allows you to catch mouse wheel events in a consistent
@@ -48,7 +49,8 @@ declare module goog.events {
         handleEvent(e: goog.events.BrowserEvent): void;
     }
 
-    class MouseWheelEvent extends goog.events.BrowserEvent {
+    class MouseWheelEvent extends __MouseWheelEvent { }
+    class __MouseWheelEvent extends goog.events.__BrowserEvent {
     
         /**
          * A base class for mouse wheel events. This is used with the

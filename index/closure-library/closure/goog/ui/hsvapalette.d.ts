@@ -4,7 +4,8 @@
 
 declare module goog.ui {
 
-    class HsvaPalette extends goog.ui.HsvPalette {
+    class HsvaPalette extends __HsvaPalette { }
+    class __HsvaPalette extends goog.ui.__HsvPalette {
     
         /**
          * Creates an HSVA palette. Allows a user to select the hue, saturation,

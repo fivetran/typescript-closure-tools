@@ -3,7 +3,8 @@
 
 declare module goog.net {
 
-    class MultiIframeLoadMonitor {
+    class MultiIframeLoadMonitor extends __MultiIframeLoadMonitor { }
+    class __MultiIframeLoadMonitor {
     
         /**
          * Provides a wrapper around IframeLoadMonitor, to allow the caller to wait for

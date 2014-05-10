@@ -4,7 +4,8 @@
 
 declare module goog.ui.equation {
 
-    class TexPane extends goog.ui.equation.EditorPane {
+    class TexPane extends __TexPane { }
+    class __TexPane extends goog.ui.equation.__EditorPane {
     
         /**
          * User interface for TeX equation editor tab pane.

@@ -7,7 +7,8 @@
 
 declare module goog.events {
 
-    class EventTarget extends goog.Disposable implements goog.events.Listenable {
+    class EventTarget extends __EventTarget { }
+    class __EventTarget extends goog.__Disposable implements goog.events.Listenable {
     
         /**
          * An implementation of {@code goog.events.Listenable} with full W3C

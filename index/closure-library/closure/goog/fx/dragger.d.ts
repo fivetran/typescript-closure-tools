@@ -8,7 +8,8 @@
 
 declare module goog.fx {
 
-    class Dragger extends goog.events.EventTarget {
+    class Dragger extends __Dragger { }
+    class __Dragger extends goog.events.__EventTarget {
     
         /**
          * A class that allows mouse or touch-based dragging (moving) of an element
@@ -245,7 +246,8 @@ declare module goog.fx {
         isDragging(): boolean;
     }
 
-    class DragEvent extends goog.events.Event {
+    class DragEvent extends __DragEvent { }
+    class __DragEvent extends goog.events.__Event {
     
         /**
          * Object representing a drag event

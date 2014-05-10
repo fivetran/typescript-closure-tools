@@ -3,7 +3,8 @@
 
 declare module goog.graphics {
 
-    class Path {
+    class Path extends __Path { }
+    class __Path {
     
         /**
          * Creates a path object. A path is a sequence of segments and may be open or

@@ -4,7 +4,8 @@
 
 declare module goog.i18n.uChar {
 
-    class RemoteNameFetcher extends goog.Disposable implements goog.i18n.uChar.NameFetcher {
+    class RemoteNameFetcher extends __RemoteNameFetcher { }
+    class __RemoteNameFetcher extends goog.__Disposable implements goog.i18n.uChar.NameFetcher {
     
         /**
          * Builds the RemoteNameFetcher object. This object retrieves codepoint names

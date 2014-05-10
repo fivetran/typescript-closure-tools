@@ -4,7 +4,8 @@
 
 declare module goog.messaging {
 
-    class MultiChannel extends goog.Disposable {
+    class MultiChannel extends __MultiChannel { }
+    class __MultiChannel extends goog.__Disposable {
     
         /**
          * Creates a new MultiChannel wrapping a single MessageChannel. The
@@ -36,7 +37,8 @@ declare module goog.messaging {
 
 declare module goog.messaging.MultiChannel {
 
-    class VirtualChannel extends goog.Disposable implements goog.messaging.MessageChannel {
+    class VirtualChannel extends __VirtualChannel { }
+    class __VirtualChannel extends goog.__Disposable implements goog.messaging.MessageChannel {
     
         /**
          * A message channel that proxies its messages over another underlying channel.

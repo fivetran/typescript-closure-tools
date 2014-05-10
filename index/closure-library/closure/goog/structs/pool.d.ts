@@ -3,7 +3,8 @@
 
 declare module goog.structs {
 
-    class Pool<T> extends goog.Disposable {
+    class Pool<T> extends __Pool<T> { }
+    class __Pool<T> extends goog.__Disposable {
     
         /**
          * A generic pool class. If min is greater than max, an error is thrown.

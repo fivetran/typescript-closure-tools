@@ -4,7 +4,8 @@
 
 declare module goog.messaging {
 
-    class LoggerClient extends goog.Disposable {
+    class LoggerClient extends __LoggerClient { }
+    class __LoggerClient extends goog.__Disposable {
     
         /**
          * Creates a logger client that sends messages along a message channel for the

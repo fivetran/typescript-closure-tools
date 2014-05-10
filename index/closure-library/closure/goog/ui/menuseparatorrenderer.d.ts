@@ -3,7 +3,8 @@
 
 declare module goog.ui {
 
-    class MenuSeparatorRenderer extends goog.ui.ControlRenderer {
+    class MenuSeparatorRenderer extends __MenuSeparatorRenderer { }
+    class __MenuSeparatorRenderer extends goog.ui.__ControlRenderer {
     
         /**
          * Renderer for menu separators.

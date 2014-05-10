@@ -4,7 +4,8 @@
 
 declare module goog.ui {
 
-    class KeyboardShortcutHandler extends goog.events.EventTarget {
+    class KeyboardShortcutHandler extends __KeyboardShortcutHandler { }
+    class __KeyboardShortcutHandler extends goog.events.__EventTarget {
     
         /**
          * Component for handling keyboard shortcuts. A shortcut is registered and bound
@@ -405,7 +406,8 @@ declare module goog.ui {
         clearKeyListener(): void;
     }
 
-    class KeyboardShortcutEvent extends goog.events.Event {
+    class KeyboardShortcutEvent extends __KeyboardShortcutEvent { }
+    class __KeyboardShortcutEvent extends goog.events.__Event {
     
         /**
          * Object representing a keyboard shortcut event.

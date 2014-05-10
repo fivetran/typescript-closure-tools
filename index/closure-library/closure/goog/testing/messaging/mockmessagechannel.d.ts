@@ -4,7 +4,8 @@
 
 declare module goog.testing.messaging {
 
-    class MockMessageChannel extends goog.messaging.AbstractChannel {
+    class MockMessageChannel extends __MockMessageChannel { }
+    class __MockMessageChannel extends goog.messaging.__AbstractChannel {
     
         /**
          * Class for unit-testing code that communicates over a MessageChannel.

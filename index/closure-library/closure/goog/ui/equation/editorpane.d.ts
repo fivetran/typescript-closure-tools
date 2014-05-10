@@ -4,7 +4,8 @@
 
 declare module goog.ui.equation {
 
-    class EditorPane extends goog.ui.Component {
+    class EditorPane extends __EditorPane { }
+    class __EditorPane extends goog.ui.__Component {
     
         /**
          * An abstract equation editor tab pane.

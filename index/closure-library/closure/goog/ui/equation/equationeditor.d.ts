@@ -4,7 +4,8 @@
 
 declare module goog.ui.equation {
 
-    class EquationEditor extends goog.ui.Component {
+    class EquationEditor extends __EquationEditor { }
+    class __EquationEditor extends goog.ui.__Component {
     
         /**
          * User interface for equation editor plugin.

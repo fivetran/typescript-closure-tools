@@ -5,7 +5,8 @@
 
 declare module goog.testing {
 
-    class ContinuationTestCase extends goog.testing.TestCase {
+    class ContinuationTestCase extends __ContinuationTestCase { }
+    class __ContinuationTestCase extends goog.testing.__TestCase {
     
         /**
          * Constructs a test case that supports tests with continuations. Test functions
@@ -70,7 +71,8 @@ declare module goog.testing {
 
 declare module goog.testing.ContinuationTestCase {
 
-    class Test extends goog.testing.TestCase.Test {
+    class Test extends __Test { }
+    class __Test extends goog.testing.TestCase.__Test {
     
         /**
          * Creates a continuation test case, which consists of multiple test steps that
@@ -136,7 +138,8 @@ declare module goog.testing.ContinuationTestCase {
         cancelTestPhase(): void;
     }
 
-    class Step extends goog.testing.TestCase.Test {
+    class Step extends __Step { }
+    class __Step extends goog.testing.TestCase.__Test {
     
         /**
          * Constructs a single step in a larger continuation test. Each step is similar

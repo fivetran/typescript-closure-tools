@@ -4,7 +4,8 @@
 
 declare module goog.dom.pattern {
 
-    class ChildMatches extends goog.dom.pattern.AllChildren {
+    class ChildMatches extends __ChildMatches { }
+    class __ChildMatches extends goog.dom.pattern.__AllChildren {
     
         /**
          * Pattern object that matches any nodes at or below the current tree depth.

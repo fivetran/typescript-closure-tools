@@ -2,7 +2,8 @@
 
 declare module goog.iter {
 
-    class Iterator<VALUE> {
+    class Iterator<VALUE> extends __Iterator<VALUE> { }
+    class __Iterator<VALUE> {
     
         /**
          * Class/interface for iterators.  An iterator needs to implement a {@code next}
@@ -35,7 +36,8 @@ declare module goog.iter {
         __iterator__(opt_keys?: boolean): goog.iter.Iterator<VALUE>;
     }
 
-    class GroupByIterator_<KEY, VALUE> extends goog.iter.Iterator<any[]> {
+    class GroupByIterator_<KEY, VALUE> extends __GroupByIterator_<KEY, VALUE> { }
+    class __GroupByIterator_<KEY, VALUE> extends goog.iter.__Iterator<any[]> {
     
         /**
          * Implements the {@code goog.iter.groupBy} iterator.

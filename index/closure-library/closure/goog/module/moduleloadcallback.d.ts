@@ -2,7 +2,8 @@
 
 declare module goog.module {
 
-    class ModuleLoadCallback {
+    class ModuleLoadCallback extends __ModuleLoadCallback { }
+    class __ModuleLoadCallback {
     
         /**
          * Class used to encapsulate the callbacks to be called when a module loads.

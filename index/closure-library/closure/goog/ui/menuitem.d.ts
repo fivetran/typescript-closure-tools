@@ -6,7 +6,8 @@
 
 declare module goog.ui {
 
-    class MenuItem extends goog.ui.Control {
+    class MenuItem extends __MenuItem { }
+    class __MenuItem extends goog.ui.__Control {
     
         /**
          * Class representing an item in a menu.

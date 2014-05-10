@@ -7,7 +7,8 @@
 
 declare module goog.module {
 
-    class ModuleManager extends goog.Disposable {
+    class ModuleManager extends __ModuleManager { }
+    class __ModuleManager extends goog.__Disposable {
     
         /**
          * The ModuleManager keeps track of all modules in the environment.

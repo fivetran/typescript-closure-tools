@@ -4,7 +4,8 @@
 
 declare module goog.math {
 
-    class RangeSet {
+    class RangeSet extends __RangeSet { }
+    class __RangeSet {
     
         /**
          * Constructs a new RangeSet, which can store numeric ranges.

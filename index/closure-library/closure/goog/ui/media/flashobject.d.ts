@@ -5,7 +5,8 @@
 
 declare module goog.ui.media {
 
-    class FlashObject extends goog.ui.Component {
+    class FlashObject extends __FlashObject { }
+    class __FlashObject extends goog.ui.__Component {
     
         /**
          * A very simple flash wrapper, that allows you to create flash object

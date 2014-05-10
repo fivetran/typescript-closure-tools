@@ -2,7 +2,8 @@
 
 declare module goog.testing {
 
-    class TestQueue {
+    class TestQueue extends __TestQueue { }
+    class __TestQueue {
     
         /**
          * Generic queue for writing unit tests

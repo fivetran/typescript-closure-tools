@@ -4,7 +4,8 @@
 
 declare module goog.ui {
 
-    class ScrollFloater extends goog.ui.Component {
+    class ScrollFloater extends __ScrollFloater { }
+    class __ScrollFloater extends goog.ui.__Component {
     
         /**
          * Creates a ScrollFloater; see file overview for details.

@@ -3,7 +3,8 @@
 
 declare module goog.ui {
 
-    class MenuHeaderRenderer extends goog.ui.ControlRenderer {
+    class MenuHeaderRenderer extends __MenuHeaderRenderer { }
+    class __MenuHeaderRenderer extends goog.ui.__ControlRenderer {
     
         /**
          * Renderer for menu headers.

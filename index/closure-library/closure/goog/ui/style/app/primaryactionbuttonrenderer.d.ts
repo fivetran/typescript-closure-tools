@@ -3,7 +3,8 @@
 
 declare module goog.ui.style.app {
 
-    class PrimaryActionButtonRenderer extends goog.ui.style.app.ButtonRenderer {
+    class PrimaryActionButtonRenderer extends __PrimaryActionButtonRenderer { }
+    class __PrimaryActionButtonRenderer extends goog.ui.style.app.__ButtonRenderer {
     
         /**
          * Custom renderer for {@link goog.ui.Button}s. This renderer supports the

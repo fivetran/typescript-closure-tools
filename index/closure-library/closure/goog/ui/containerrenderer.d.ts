@@ -5,7 +5,8 @@
 
 declare module goog.ui {
 
-    class ContainerRenderer {
+    class ContainerRenderer extends __ContainerRenderer { }
+    class __ContainerRenderer {
     
         /**
          * Default renderer for {@link goog.ui.Container}.  Can be used as-is, but

@@ -3,7 +3,8 @@
 
 declare module goog.editor {
 
-    class SeamlessField extends goog.editor.Field {
+    class SeamlessField extends __SeamlessField { }
+    class __SeamlessField extends goog.editor.__Field {
     
         /**
          * This class encapsulates an editable field that blends in with the

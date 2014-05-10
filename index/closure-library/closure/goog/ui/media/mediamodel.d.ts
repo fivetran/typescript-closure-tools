@@ -3,7 +3,8 @@
 
 declare module goog.ui.media {
 
-    class MediaModel {
+    class MediaModel extends __MediaModel { }
+    class __MediaModel {
     
         /**
          * An base data value class for all media data models.
@@ -227,7 +228,8 @@ declare module goog.ui.media {
 
 declare module goog.ui.media.MediaModel {
 
-    class Thumbnail {
+    class Thumbnail extends __Thumbnail { }
+    class __Thumbnail {
     
         /**
          * Constructs a thumbnail containing details of the thumbnail's image URL and
@@ -268,7 +270,8 @@ declare module goog.ui.media.MediaModel {
         setSize(size: goog.math.Size): goog.ui.media.MediaModel.Thumbnail;
     }
 
-    class Player {
+    class Player extends __Player { }
+    class __Player {
     
         /**
          * Constructs a player containing details of the player's URL and
@@ -324,7 +327,8 @@ declare module goog.ui.media.MediaModel {
         setSize(size: goog.math.Size): goog.ui.media.MediaModel.Player;
     }
 
-    class Category {
+    class Category extends __Category { }
+    class __Category {
     
         /**
          * A taxonomy to be set that gives an indication of the type of media content,
@@ -381,7 +385,8 @@ declare module goog.ui.media.MediaModel {
         setLabel(label: string): goog.ui.media.MediaModel.Category;
     }
 
-    class Credit {
+    class Credit extends __Credit { }
+    class __Credit {
     
         /**
          * Indicates an entity that has contributed to a media object. Based on
@@ -438,7 +443,8 @@ declare module goog.ui.media.MediaModel {
         setScheme(scheme: goog.ui.media.MediaModel.Credit.Scheme): goog.ui.media.MediaModel.Credit;
     }
 
-    class SubTitle {
+    class SubTitle extends __SubTitle { }
+    class __SubTitle {
     
         /**
          * A reference to the subtitle URI for a media object.

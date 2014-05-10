@@ -6,7 +6,8 @@
 
 declare module goog.ui.media {
 
-    class Media extends goog.ui.Control {
+    class Media extends __Media { }
+    class __Media extends goog.ui.__Control {
     
         /**
          * Provides the control mechanism of media types.
@@ -37,7 +38,8 @@ declare module goog.ui.media {
         getDataModel(): goog.ui.media.MediaModel;
     }
 
-    class MediaRenderer extends goog.ui.ControlRenderer {
+    class MediaRenderer extends __MediaRenderer { }
+    class __MediaRenderer extends goog.ui.__ControlRenderer {
     
         /**
          * Base class of all media renderers. Provides the common renderer functionality

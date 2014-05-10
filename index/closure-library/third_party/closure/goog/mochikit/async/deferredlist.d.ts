@@ -3,7 +3,8 @@
 
 declare module goog.async {
 
-    class DeferredList extends goog.async.Deferred<any> {
+    class DeferredList extends __DeferredList { }
+    class __DeferredList extends goog.async.__Deferred<any> {
     
         /**
          * Constructs an object that waits on the results of multiple asynchronous

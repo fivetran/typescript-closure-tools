@@ -11,7 +11,8 @@
 
 declare module goog.editor {
 
-    class Field extends goog.events.EventTarget {
+    class Field extends __Field { }
+    class __Field extends goog.events.__EventTarget {
     
         /**
          * This class encapsulates an editable field.

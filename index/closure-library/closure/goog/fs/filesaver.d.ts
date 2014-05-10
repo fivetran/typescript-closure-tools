@@ -4,7 +4,8 @@
 
 declare module goog.fs {
 
-    class FileSaver extends goog.events.EventTarget {
+    class FileSaver extends __FileSaver { }
+    class __FileSaver extends goog.events.__EventTarget {
     
         /**
          * An object for monitoring the saving of files. This emits ProgressEvents of

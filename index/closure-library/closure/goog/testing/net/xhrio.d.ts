@@ -7,7 +7,8 @@
 
 declare module goog.testing.net {
 
-    class XhrIo extends goog.events.EventTarget {
+    class XhrIo extends __XhrIo { }
+    class __XhrIo extends goog.events.__EventTarget {
     
         /**
          * Mock implementation of goog.net.XhrIo. This doesn't provide a mock

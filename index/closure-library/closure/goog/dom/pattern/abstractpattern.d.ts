@@ -4,7 +4,8 @@
 
 declare module goog.dom.pattern {
 
-    class AbstractPattern {
+    class AbstractPattern extends __AbstractPattern { }
+    class __AbstractPattern {
     
         /**
          * Base pattern class for DOM matching.

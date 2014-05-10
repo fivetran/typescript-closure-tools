@@ -4,7 +4,8 @@
 
 declare module goog.graphics.ext {
 
-    class Ellipse extends goog.graphics.ext.StrokeAndFillElement {
+    class Ellipse extends __Ellipse { }
+    class __Ellipse extends goog.graphics.ext.__StrokeAndFillElement {
     
         /**
          * Wrapper for a graphics ellipse element.

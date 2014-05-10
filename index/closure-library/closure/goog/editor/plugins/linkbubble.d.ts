@@ -3,7 +3,8 @@
 
 declare module goog.editor.plugins {
 
-    class LinkBubble extends goog.editor.plugins.AbstractBubblePlugin {
+    class LinkBubble extends __LinkBubble { }
+    class __LinkBubble extends goog.editor.plugins.__AbstractBubblePlugin {
     
         /**
          * Property bubble plugin for links.
@@ -86,7 +87,8 @@ declare module goog.editor.plugins {
 
 declare module goog.editor.plugins.LinkBubble {
 
-    class Action {
+    class Action extends __Action { }
+    class __Action {
     
         /**
          * Constructor for extra actions that can be added to the link bubble.

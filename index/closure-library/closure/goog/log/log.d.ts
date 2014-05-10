@@ -2,7 +2,8 @@
 
 declare module goog.log {
 
-    class Logger {
+    class Logger extends __Logger { }
+    class __Logger {
     
         /**
          * @constructor
@@ -11,7 +12,8 @@ declare module goog.log {
         constructor();
     }
 
-    class Level {
+    class Level extends __Level { }
+    class __Level {
     
         /**
          * @constructor
@@ -20,7 +22,8 @@ declare module goog.log {
         constructor();
     }
 
-    class LogRecord {
+    class LogRecord extends __LogRecord { }
+    class __LogRecord {
     
         /**
          * @constructor

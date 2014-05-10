@@ -3,7 +3,8 @@
 
 declare module goog.dom.iter {
 
-    class SiblingIterator extends goog.iter.Iterator<any> {
+    class SiblingIterator extends __SiblingIterator { }
+    class __SiblingIterator extends goog.iter.__Iterator<any> {
     
         /**
          * Iterator over a Node's siblings.
@@ -18,7 +19,8 @@ declare module goog.dom.iter {
         constructor(node: Node, opt_includeNode?: boolean, opt_reverse?: boolean);
     }
 
-    class ChildIterator extends goog.dom.iter.SiblingIterator {
+    class ChildIterator extends __ChildIterator { }
+    class __ChildIterator extends goog.dom.iter.__SiblingIterator {
     
         /**
          * Iterator over an Element's children.
@@ -33,7 +35,8 @@ declare module goog.dom.iter {
         constructor(element: Element, opt_reverse?: boolean, opt_startIndex?: number);
     }
 
-    class AncestorIterator extends goog.iter.Iterator<any> {
+    class AncestorIterator extends __AncestorIterator { }
+    class __AncestorIterator extends goog.iter.__Iterator<any> {
     
         /**
          * Iterator over a Node's ancestors, stopping after the document body.

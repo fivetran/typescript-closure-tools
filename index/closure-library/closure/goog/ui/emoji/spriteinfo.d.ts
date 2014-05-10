@@ -2,7 +2,8 @@
 
 declare module goog.ui.emoji {
 
-    class SpriteInfo {
+    class SpriteInfo extends __SpriteInfo { }
+    class __SpriteInfo {
     
         /**
          * Creates a SpriteInfo object with the specified properties. If the image is

@@ -4,7 +4,8 @@
 
 declare module goog.editor.plugins {
 
-    class UndoRedoManager extends goog.events.EventTarget {
+    class UndoRedoManager extends __UndoRedoManager { }
+    class __UndoRedoManager extends goog.events.__EventTarget {
     
         /**
          * Manages undo and redo operations through a series of {@code UndoRedoState}s

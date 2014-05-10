@@ -6,7 +6,8 @@
 
 declare module goog.soy {
 
-    class Renderer {
+    class Renderer extends __Renderer { }
+    class __Renderer {
     
         /**
          * Creates a new soy renderer. Note that the renderer will only be

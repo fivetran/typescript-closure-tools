@@ -5,7 +5,8 @@
 
 declare module goog.dom {
 
-    class ControlRange extends goog.dom.AbstractMultiRange {
+    class ControlRange extends __ControlRange { }
+    class __ControlRange extends goog.dom.__AbstractMultiRange {
     
         /**
          * Create a new control selection with no properties.  Do not use this
@@ -28,7 +29,8 @@ declare module goog.dom {
         getSortedElements(): Element[];
     }
 
-    class DomSavedControlRange_ extends goog.dom.SavedRange {
+    class DomSavedControlRange_ extends __DomSavedControlRange_ { }
+    class __DomSavedControlRange_ extends goog.dom.__SavedRange {
     
         /**
          * A SavedRange implementation using DOM endpoints.
@@ -40,7 +42,8 @@ declare module goog.dom {
         constructor(range: goog.dom.ControlRange);
     }
 
-    class ControlRangeIterator extends goog.dom.RangeIterator {
+    class ControlRangeIterator extends __ControlRangeIterator { }
+    class __ControlRangeIterator extends goog.dom.__RangeIterator {
     
         /**
          * Subclass of goog.dom.TagIterator that iterates over a DOM range.  It

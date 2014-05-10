@@ -9,7 +9,8 @@
 
 declare module goog.fs {
 
-    class EntryImpl implements goog.fs.Entry {
+    class EntryImpl extends __EntryImpl { }
+    class __EntryImpl implements goog.fs.Entry {
     
         /**
          * Base class for concrete implementations of goog.fs.Entry.
@@ -129,7 +130,8 @@ declare module goog.fs {
         getParent(): goog.async.Deferred<any>;
     }
 
-    class DirectoryEntryImpl extends goog.fs.EntryImpl implements goog.fs.DirectoryEntry {
+    class DirectoryEntryImpl extends __DirectoryEntryImpl { }
+    class __DirectoryEntryImpl extends goog.fs.__EntryImpl implements goog.fs.DirectoryEntry {
     
         /**
          * A directory in a local FileSystem.
@@ -201,7 +203,8 @@ declare module goog.fs {
         removeRecursively(): goog.async.Deferred<any>;
     }
 
-    class FileEntryImpl extends goog.fs.EntryImpl implements goog.fs.FileEntry {
+    class FileEntryImpl extends __FileEntryImpl { }
+    class __FileEntryImpl extends goog.fs.__EntryImpl implements goog.fs.FileEntry {
     
         /**
          * A file in a local filesystem.

@@ -4,7 +4,8 @@
 
 declare module goog.ui.editor {
 
-    class TabPane extends goog.ui.Component {
+    class TabPane extends __TabPane { }
+    class __TabPane extends goog.ui.__Component {
     
         /**
          * Creates a new Editor-style tab pane.

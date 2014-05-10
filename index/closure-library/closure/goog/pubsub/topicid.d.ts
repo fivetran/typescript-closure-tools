@@ -2,7 +2,8 @@
 
 declare module goog.pubsub {
 
-    class TopicId<PAYLOAD> {
+    class TopicId<PAYLOAD> extends __TopicId<PAYLOAD> { }
+    class __TopicId<PAYLOAD> {
     
         /**
          * A templated class that is used to register {@code goog.pubsub.PubSub}

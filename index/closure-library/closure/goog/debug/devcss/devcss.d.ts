@@ -2,7 +2,8 @@
 
 declare module goog.debug {
 
-    class DevCss {
+    class DevCss extends __DevCss { }
+    class __DevCss {
     
         /**
          * A class for solving development CSS issues/emulating the CSS Compiler.

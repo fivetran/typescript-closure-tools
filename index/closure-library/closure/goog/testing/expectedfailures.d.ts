@@ -2,7 +2,8 @@
 
 declare module goog.testing {
 
-    class ExpectedFailures {
+    class ExpectedFailures extends __ExpectedFailures { }
+    class __ExpectedFailures {
     
         /**
          * Helper class for allowing some unit tests to fail, particularly designed to

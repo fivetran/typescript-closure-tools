@@ -6,7 +6,8 @@
 
 declare module goog.ui.editor {
 
-    class LinkDialog extends goog.ui.editor.AbstractDialog {
+    class LinkDialog extends __LinkDialog { }
+    class __LinkDialog extends goog.ui.editor.__AbstractDialog {
     
         /**
          * A type of goog.ui.editor.AbstractDialog for editing/creating a link.
@@ -68,7 +69,8 @@ declare module goog.ui.editor {
 
 declare module goog.ui.editor.LinkDialog {
 
-    class OkEvent extends goog.events.Event {
+    class OkEvent extends __OkEvent { }
+    class __OkEvent extends goog.events.__Event {
     
         /**
          * OK event object for the link dialog.
@@ -85,7 +87,8 @@ declare module goog.ui.editor.LinkDialog {
         constructor(linkText: string, linkUrl: string, openInNewWindow: boolean, noFollow: boolean);
     }
 
-    class BeforeTestLinkEvent extends goog.events.Event {
+    class BeforeTestLinkEvent extends __BeforeTestLinkEvent { }
+    class __BeforeTestLinkEvent extends goog.events.__Event {
     
         /**
          * Event fired before testing a link by opening it in another window.

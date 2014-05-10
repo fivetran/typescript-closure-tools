@@ -3,7 +3,8 @@
 
 declare module goog.net {
 
-    class WrapperXmlHttpFactory extends goog.net.XmlHttpFactory {
+    class WrapperXmlHttpFactory extends __WrapperXmlHttpFactory { }
+    class __WrapperXmlHttpFactory extends goog.net.__XmlHttpFactory {
     
         /**
          * An xhr factory subclass which can be constructed using two factory methods.

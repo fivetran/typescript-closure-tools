@@ -3,7 +3,8 @@
 
 declare module goog.pubsub {
 
-    class PubSub extends goog.Disposable {
+    class PubSub extends __PubSub { }
+    class __PubSub extends goog.__Disposable {
     
         /**
          * Topic-based publish/subscribe channel.  Maintains a map of topics to

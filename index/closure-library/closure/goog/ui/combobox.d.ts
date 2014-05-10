@@ -9,7 +9,8 @@
 
 declare module goog.ui {
 
-    class ComboBox extends goog.ui.Component {
+    class ComboBox extends __ComboBox { }
+    class __ComboBox extends goog.ui.__Component {
     
         /**
          * A ComboBox control.
@@ -170,7 +171,8 @@ declare module goog.ui {
         handleKeyEvent(e: goog.events.KeyEvent): boolean;
     }
 
-    class ComboBoxItem extends goog.ui.MenuItem {
+    class ComboBoxItem extends __ComboBoxItem { }
+    class __ComboBoxItem extends goog.ui.__MenuItem {
     
         /**
          * Class for combo box items.

@@ -4,7 +4,8 @@
 
 declare module goog.ui.equation {
 
-    class ArrowPalette extends goog.ui.equation.Palette {
+    class ArrowPalette extends __ArrowPalette { }
+    class __ArrowPalette extends goog.ui.equation.__Palette {
     
         /**
          * Constructs a new arrows palette.

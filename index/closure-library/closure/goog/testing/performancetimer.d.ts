@@ -3,7 +3,8 @@
 
 declare module goog.testing {
 
-    class PerformanceTimer {
+    class PerformanceTimer extends __PerformanceTimer { }
+    class __PerformanceTimer {
     
         /**
          * Creates a performance timer that runs test functions a number of times to
@@ -103,7 +104,8 @@ declare module goog.testing {
 
 declare module goog.testing.PerformanceTimer {
 
-    class Task {
+    class Task extends __Task { }
+    class __Task {
     
         /**
          * A task for the performance timer to measure. Callers can specify optional

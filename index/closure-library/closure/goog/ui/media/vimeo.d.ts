@@ -6,7 +6,8 @@
 
 declare module goog.ui.media {
 
-    class Vimeo extends goog.ui.media.MediaRenderer {
+    class Vimeo extends __Vimeo { }
+    class __Vimeo extends goog.ui.media.__MediaRenderer {
     
         /**
          * Subclasses a goog.ui.media.MediaRenderer to provide a Vimeo specific media
@@ -32,7 +33,8 @@ declare module goog.ui.media {
         constructor();
     }
 
-    class VimeoModel extends goog.ui.media.MediaModel {
+    class VimeoModel extends __VimeoModel { }
+    class __VimeoModel extends goog.ui.media.__MediaModel {
     
         /**
          * The {@code goog.ui.media.Vimeo} media data model. It stores a required

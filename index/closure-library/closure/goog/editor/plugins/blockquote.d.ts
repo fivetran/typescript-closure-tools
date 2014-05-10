@@ -3,7 +3,8 @@
 
 declare module goog.editor.plugins {
 
-    class Blockquote extends goog.editor.Plugin {
+    class Blockquote extends __Blockquote { }
+    class __Blockquote extends goog.editor.__Plugin {
     
         /**
          * Plugin to handle splitting block quotes.  This plugin does nothing on its

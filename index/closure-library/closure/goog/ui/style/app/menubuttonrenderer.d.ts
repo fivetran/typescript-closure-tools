@@ -4,7 +4,8 @@
 
 declare module goog.ui.style.app {
 
-    class MenuButtonRenderer extends goog.ui.style.app.ButtonRenderer {
+    class MenuButtonRenderer extends __MenuButtonRenderer { }
+    class __MenuButtonRenderer extends goog.ui.style.app.__ButtonRenderer {
     
         /**
          * Renderer for {@link goog.ui.style.app.MenuButton}s.  This implementation

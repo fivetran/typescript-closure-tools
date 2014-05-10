@@ -3,7 +3,8 @@
 
 declare module goog.debug {
 
-    class FancyWindow extends goog.debug.DebugWindow {
+    class FancyWindow extends __FancyWindow { }
+    class __FancyWindow extends goog.debug.__DebugWindow {
     
         /**
          * Provides a Fancy extension to the DebugWindow class.  Allows filtering based

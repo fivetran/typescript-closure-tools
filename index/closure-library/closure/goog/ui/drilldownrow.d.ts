@@ -4,7 +4,8 @@
 
 declare module goog.ui {
 
-    class DrilldownRow extends goog.ui.Component {
+    class DrilldownRow extends __DrilldownRow { }
+    class __DrilldownRow extends goog.ui.__Component {
     
         /**
          * Builds a DrilldownRow component, which can overlay a tree

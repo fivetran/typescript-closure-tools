@@ -2,7 +2,8 @@
 
 declare module goog.labs.i18n {
 
-    class ListFormat {
+    class ListFormat extends __ListFormat { }
+    class __ListFormat {
     
         /**
          * ListFormat provides a method to format a list/array of objects to a string,
@@ -36,7 +37,8 @@ declare module goog.labs.i18n {
         format(items: number[]): string;
     }
 
-    class GenderInfo {
+    class GenderInfo extends __GenderInfo { }
+    class __GenderInfo {
     
         /**
          * GenderInfo provides a method to determine the gender of a list/array

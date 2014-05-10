@@ -3,7 +3,8 @@
 
 declare module goog.async {
 
-    class Throttle<T> extends goog.Disposable {
+    class Throttle<T> extends __Throttle<T> { }
+    class __Throttle<T> extends goog.__Disposable {
     
         /**
          * Throttle will perform an action that is passed in no more than once
@@ -53,7 +54,8 @@ declare module goog.async {
 
 declare module goog {
 
-    class Throttle {
+    class Throttle extends __Throttle { }
+    class __Throttle {
     
         /**
          * A deprecated alias.

@@ -3,7 +3,8 @@
 
 declare module goog.dom.browserrange {
 
-    class OperaRange extends goog.dom.browserrange.W3cRange {
+    class OperaRange extends __OperaRange { }
+    class __OperaRange extends goog.dom.browserrange.__W3cRange {
     
         /**
          * The constructor for Opera specific browser ranges.

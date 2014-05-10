@@ -3,7 +3,8 @@
 
 declare module goog.ui.ac {
 
-    class RichInputHandler extends goog.ui.ac.InputHandler {
+    class RichInputHandler extends __RichInputHandler { }
+    class __RichInputHandler extends goog.ui.ac.__InputHandler {
     
         /**
          * Class for managing the interaction between an autocomplete object and a

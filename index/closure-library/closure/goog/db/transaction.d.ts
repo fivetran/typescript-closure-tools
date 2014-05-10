@@ -6,7 +6,8 @@
 
 declare module goog.db {
 
-    class Transaction extends goog.events.EventTarget {
+    class Transaction extends __Transaction { }
+    class __Transaction extends goog.events.__EventTarget {
     
         /**
          * Creates a new transaction. Transactions contain methods for accessing object

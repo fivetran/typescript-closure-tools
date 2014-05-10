@@ -6,7 +6,8 @@
 
 declare module goog.ui {
 
-    class ToolbarMenuButton extends goog.ui.MenuButton {
+    class ToolbarMenuButton extends __ToolbarMenuButton { }
+    class __ToolbarMenuButton extends goog.ui.__MenuButton {
     
         /**
          * A menu button control for a toolbar.

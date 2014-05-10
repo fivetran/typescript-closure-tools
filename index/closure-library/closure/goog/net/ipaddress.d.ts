@@ -3,7 +3,8 @@
 
 declare module goog.net {
 
-    class IpAddress {
+    class IpAddress extends __IpAddress { }
+    class __IpAddress {
     
         /**
          * Abstract class defining an IP Address.
@@ -39,7 +40,8 @@ declare module goog.net {
         toUriString(): string;
     }
 
-    class Ipv4Address extends goog.net.IpAddress {
+    class Ipv4Address extends __Ipv4Address { }
+    class __Ipv4Address extends goog.net.__IpAddress {
     
         /**
          * Takes a string or a number and returns a IPv4 Address.
@@ -65,7 +67,8 @@ declare module goog.net {
         constructor(address: goog.math.Integer);
     }
 
-    class Ipv6Address extends goog.net.IpAddress {
+    class Ipv6Address extends __Ipv6Address { }
+    class __Ipv6Address extends goog.net.__IpAddress {
     
         /**
          * Takes a string or a number and returns an IPv6 Address.

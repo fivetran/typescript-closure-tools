@@ -2,7 +2,8 @@
 
 declare module goog.testing {
 
-    class TestCase {
+    class TestCase extends __TestCase { }
+    class __TestCase {
     
         /**
          * A class representing a JsUnit test case.  A TestCase is made up of a number
@@ -335,7 +336,8 @@ declare module goog.testing {
 
 declare module goog.testing.TestCase {
 
-    class Test {
+    class Test extends __Test { }
+    class __Test {
     
         /**
          * A class representing a single test function.
@@ -353,7 +355,8 @@ declare module goog.testing.TestCase {
         execute(): void;
     }
 
-    class Result {
+    class Result extends __Result { }
+    class __Result {
     
         /**
          * A class for representing test results.  A bag of public properties.
@@ -375,7 +378,8 @@ declare module goog.testing.TestCase {
         getSummary(): string;
     }
 
-    class Error {
+    class Error extends __Error { }
+    class __Error {
     
         /**
          * A class representing an error thrown by the test

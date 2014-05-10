@@ -3,7 +3,8 @@
 
 declare module goog.proto {
 
-    class Serializer extends goog.json.Serializer {
+    class Serializer extends __Serializer { }
+    class __Serializer extends goog.json.__Serializer {
     
         /**
          * Object that can serialize objects or values to a protocol buffer string.

@@ -4,7 +4,8 @@
 
 declare module goog.ui {
 
-    class DimensionPickerRenderer extends goog.ui.ControlRenderer {
+    class DimensionPickerRenderer extends __DimensionPickerRenderer { }
+    class __DimensionPickerRenderer extends goog.ui.__ControlRenderer {
     
         /**
          * Default renderer for {@link goog.ui.DimensionPicker}s.  Renders the

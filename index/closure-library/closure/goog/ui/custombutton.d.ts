@@ -5,7 +5,8 @@
 
 declare module goog.ui {
 
-    class CustomButton extends goog.ui.Button {
+    class CustomButton extends __CustomButton { }
+    class __CustomButton extends goog.ui.__Button {
     
         /**
          * A custom button control.  Identical to {@link goog.ui.Button}, except it

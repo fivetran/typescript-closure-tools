@@ -3,7 +3,8 @@
 
 declare module goog.editor.plugins {
 
-    class BasicTextFormatter extends goog.editor.Plugin {
+    class BasicTextFormatter extends __BasicTextFormatter { }
+    class __BasicTextFormatter extends goog.editor.__Plugin {
     
         /**
          * Functions to style text (e.g. underline, make bold, etc.)

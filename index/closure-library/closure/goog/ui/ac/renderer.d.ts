@@ -4,7 +4,8 @@
 
 declare module goog.ui.ac {
 
-    class Renderer extends goog.events.EventTarget {
+    class Renderer extends __Renderer { }
+    class __Renderer extends goog.events.__EventTarget {
     
         /**
          * Class for rendering the results of an auto-complete in a drop down list.
@@ -221,7 +222,8 @@ declare module goog.ui.ac {
 
 declare module goog.ui.ac.Renderer {
 
-    class CustomRenderer {
+    class CustomRenderer extends __CustomRenderer { }
+    class __CustomRenderer {
     
         /**
          * Class allowing different implementations to custom render the autocomplete.

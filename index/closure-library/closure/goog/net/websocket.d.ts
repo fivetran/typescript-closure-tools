@@ -5,7 +5,8 @@
 
 declare module goog.net {
 
-    class WebSocket extends goog.events.EventTarget {
+    class WebSocket extends __WebSocket { }
+    class __WebSocket extends goog.events.__EventTarget {
     
         /**
          * Class encapsulating the logic for using a WebSocket.
@@ -60,7 +61,8 @@ declare module goog.net {
 
 declare module goog.net.WebSocket {
 
-    class MessageEvent extends goog.events.Event {
+    class MessageEvent extends __MessageEvent { }
+    class __MessageEvent extends goog.events.__Event {
     
         /**
          * Object representing a new incoming message event.
@@ -73,7 +75,8 @@ declare module goog.net.WebSocket {
         constructor(message: string);
     }
 
-    class ErrorEvent extends goog.events.Event {
+    class ErrorEvent extends __ErrorEvent { }
+    class __ErrorEvent extends goog.events.__Event {
     
         /**
          * Object representing an error event. This is fired whenever an error occurs

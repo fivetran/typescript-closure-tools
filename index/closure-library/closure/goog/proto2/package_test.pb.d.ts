@@ -4,7 +4,8 @@
 
 declare module someprotopackage {
 
-    class TestPackageTypes extends goog.proto2.Message {
+    class TestPackageTypes extends __TestPackageTypes { }
+    class __TestPackageTypes extends goog.proto2.__Message {
     
         /**
          * Message TestPackageTypes.

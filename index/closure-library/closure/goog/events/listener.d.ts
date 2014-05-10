@@ -5,7 +5,8 @@
 
 declare module goog.events {
 
-    class Listener implements goog.events.ListenableKey {
+    class Listener extends __Listener { }
+    class __Listener implements goog.events.ListenableKey {
     
         /**
          * Simple class that stores information about a listener

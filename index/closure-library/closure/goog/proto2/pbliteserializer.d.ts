@@ -3,7 +3,8 @@
 
 declare module goog.proto2 {
 
-    class PbLiteSerializer extends goog.proto2.LazyDeserializer {
+    class PbLiteSerializer extends __PbLiteSerializer { }
+    class __PbLiteSerializer extends goog.proto2.__LazyDeserializer {
     
         /**
          * PB-Lite serializer.

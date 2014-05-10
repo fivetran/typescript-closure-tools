@@ -2,7 +2,8 @@
 
 declare module goog.structs {
 
-    class Trie<VALUE> {
+    class Trie<VALUE> extends __Trie<VALUE> { }
+    class __Trie<VALUE> {
     
         /**
          * Class for a Trie datastructure.  Trie data structures are made out of trees

@@ -3,7 +3,8 @@
 
 declare module goog.storage.mechanism {
 
-    class PrefixedMechanism extends goog.storage.mechanism.IterableMechanism {
+    class PrefixedMechanism extends __PrefixedMechanism { }
+    class __PrefixedMechanism extends goog.storage.mechanism.__IterableMechanism {
     
         /**
          * Wraps an iterable storage mechanism and creates artificial namespaces.

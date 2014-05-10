@@ -3,7 +3,8 @@
 
 declare module goog.fs {
 
-    class Error extends goog.debug.Error {
+    class Error extends __Error { }
+    class __Error extends goog.debug.__Error {
     
         /**
          * A filesystem error. Since the filesystem API is asynchronous, stack traces

@@ -4,7 +4,8 @@
 
 declare module goog.ui {
 
-    class MenuRenderer extends goog.ui.ContainerRenderer {
+    class MenuRenderer extends __MenuRenderer { }
+    class __MenuRenderer extends goog.ui.__ContainerRenderer {
     
         /**
          * Default renderer for {@link goog.ui.Menu}s, based on {@link

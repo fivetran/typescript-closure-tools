@@ -4,7 +4,8 @@
 
 declare module goog.labs.net.webChannel {
 
-    class WebChannelBaseTransport implements goog.net.WebChannelTransport {
+    class WebChannelBaseTransport extends __WebChannelBaseTransport { }
+    class __WebChannelBaseTransport implements goog.net.WebChannelTransport {
     
         /**
          * Implementation of {@link goog.net.WebChannelTransport} with

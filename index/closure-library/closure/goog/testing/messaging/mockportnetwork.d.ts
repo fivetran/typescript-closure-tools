@@ -5,7 +5,8 @@
 
 declare module goog.testing.messaging {
 
-    class MockPortNetwork implements goog.messaging.PortNetwork {
+    class MockPortNetwork extends __MockPortNetwork { }
+    class __MockPortNetwork implements goog.messaging.PortNetwork {
     
         /**
          * The fake PortNetwork.

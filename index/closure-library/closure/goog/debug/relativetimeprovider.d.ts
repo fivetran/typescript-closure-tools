@@ -2,7 +2,8 @@
 
 declare module goog.debug {
 
-    class RelativeTimeProvider {
+    class RelativeTimeProvider extends __RelativeTimeProvider { }
+    class __RelativeTimeProvider {
     
         /**
          * A simple object to keep track of a timestamp considered the start of

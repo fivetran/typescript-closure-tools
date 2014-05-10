@@ -3,7 +3,8 @@
 
 declare module goog.ui.ac {
 
-    class RichRemoteArrayMatcher extends goog.ui.ac.RemoteArrayMatcher {
+    class RichRemoteArrayMatcher extends __RichRemoteArrayMatcher { }
+    class __RichRemoteArrayMatcher extends goog.ui.ac.__RemoteArrayMatcher {
     
         /**
          * An array matcher that requests rich matches via ajax and converts them into

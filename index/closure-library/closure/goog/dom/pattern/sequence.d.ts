@@ -3,7 +3,8 @@
 
 declare module goog.dom.pattern {
 
-    class Sequence extends goog.dom.pattern.AbstractPattern {
+    class Sequence extends __Sequence { }
+    class __Sequence extends goog.dom.pattern.__AbstractPattern {
     
         /**
          * Pattern object that matches a sequence of other patterns.

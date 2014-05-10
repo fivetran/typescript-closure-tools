@@ -6,7 +6,8 @@
 
 declare module goog.ui {
 
-    class ModalPopup extends goog.ui.Component {
+    class ModalPopup extends __ModalPopup { }
+    class __ModalPopup extends goog.ui.__Component {
     
         /**
          * Base class for modal popup UI components. This can also be used as

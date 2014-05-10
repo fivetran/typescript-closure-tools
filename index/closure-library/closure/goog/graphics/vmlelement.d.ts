@@ -11,7 +11,8 @@
 
 declare module goog.graphics {
 
-    class VmlGroupElement extends goog.graphics.GroupElement {
+    class VmlGroupElement extends __VmlGroupElement { }
+    class __VmlGroupElement extends goog.graphics.__GroupElement {
     
         /**
          * Thin wrapper for VML group elements.
@@ -31,7 +32,8 @@ declare module goog.graphics {
         constructor(element: Element, graphics: goog.graphics.VmlGraphics);
     }
 
-    class VmlEllipseElement extends goog.graphics.EllipseElement {
+    class VmlEllipseElement extends __VmlEllipseElement { }
+    class __VmlEllipseElement extends goog.graphics.__EllipseElement {
     
         /**
          * Thin wrapper for VML ellipse elements.
@@ -57,7 +59,8 @@ declare module goog.graphics {
         constructor(element: Element, graphics: goog.graphics.VmlGraphics, cx: number, cy: number, rx: number, ry: number, stroke: goog.graphics.Stroke, fill: goog.graphics.Fill);
     }
 
-    class VmlRectElement extends goog.graphics.RectElement {
+    class VmlRectElement extends __VmlRectElement { }
+    class __VmlRectElement extends goog.graphics.__RectElement {
     
         /**
          * Thin wrapper for VML rectangle elements.
@@ -79,7 +82,8 @@ declare module goog.graphics {
         constructor(element: Element, graphics: goog.graphics.VmlGraphics, stroke: goog.graphics.Stroke, fill: goog.graphics.Fill);
     }
 
-    class VmlPathElement extends goog.graphics.PathElement {
+    class VmlPathElement extends __VmlPathElement { }
+    class __VmlPathElement extends goog.graphics.__PathElement {
     
         /**
          * Thin wrapper for VML path elements.
@@ -101,7 +105,8 @@ declare module goog.graphics {
         constructor(element: Element, graphics: goog.graphics.VmlGraphics, stroke: goog.graphics.Stroke, fill: goog.graphics.Fill);
     }
 
-    class VmlTextElement extends goog.graphics.TextElement {
+    class VmlTextElement extends __VmlTextElement { }
+    class __VmlTextElement extends goog.graphics.__TextElement {
     
         /**
          * Thin wrapper for VML text elements.
@@ -123,7 +128,8 @@ declare module goog.graphics {
         constructor(element: Element, graphics: goog.graphics.VmlGraphics, stroke: goog.graphics.Stroke, fill: goog.graphics.Fill);
     }
 
-    class VmlImageElement extends goog.graphics.ImageElement {
+    class VmlImageElement extends __VmlImageElement { }
+    class __VmlImageElement extends goog.graphics.__ImageElement {
     
         /**
          * Thin wrapper for VML image elements.

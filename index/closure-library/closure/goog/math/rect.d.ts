@@ -5,7 +5,8 @@
 
 declare module goog.math {
 
-    class Rect {
+    class Rect extends __Rect { }
+    class __Rect {
     
         /**
          * Class for representing rectangular regions.

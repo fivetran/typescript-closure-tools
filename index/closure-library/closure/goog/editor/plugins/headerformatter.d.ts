@@ -3,7 +3,8 @@
 
 declare module goog.editor.plugins {
 
-    class HeaderFormatter extends goog.editor.Plugin {
+    class HeaderFormatter extends __HeaderFormatter { }
+    class __HeaderFormatter extends goog.editor.__Plugin {
     
         /**
          * Applies header styles to text.

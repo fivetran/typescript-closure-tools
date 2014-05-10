@@ -6,7 +6,8 @@
 
 declare module goog.ui.media {
 
-    class FlickrSet extends goog.ui.media.MediaRenderer {
+    class FlickrSet extends __FlickrSet { }
+    class __FlickrSet extends goog.ui.media.__MediaRenderer {
     
         /**
          * Subclasses a goog.ui.media.MediaRenderer to provide a FlickrSet specific
@@ -33,7 +34,8 @@ declare module goog.ui.media {
         constructor();
     }
 
-    class FlickrSetModel extends goog.ui.media.MediaModel {
+    class FlickrSetModel extends __FlickrSetModel { }
+    class __FlickrSetModel extends goog.ui.media.__MediaModel {
     
         /**
          * The {@code goog.ui.media.FlickrAlbum} media data model. It stores a required

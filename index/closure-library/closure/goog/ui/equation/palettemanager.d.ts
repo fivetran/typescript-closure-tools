@@ -5,7 +5,8 @@
 
 declare module goog.ui.equation {
 
-    class PaletteManager extends goog.events.EventTarget {
+    class PaletteManager extends __PaletteManager { }
+    class __PaletteManager extends goog.events.__EventTarget {
     
         /**
          * Constructs the palette manager that manages all the palettes in Equation

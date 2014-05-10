@@ -5,7 +5,8 @@
 
 declare module goog.ui {
 
-    class Checkbox extends goog.ui.Control {
+    class Checkbox extends __Checkbox { }
+    class __Checkbox extends goog.ui.__Control {
     
         /**
          * 3-state checkbox widget. Fires CHECK or UNCHECK events before toggled and

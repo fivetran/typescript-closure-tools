@@ -2,7 +2,8 @@
 
 declare module goog.debug {
 
-    class GcDiagnostics_ {
+    class GcDiagnostics_ extends __GcDiagnostics_ { }
+    class __GcDiagnostics_ {
     
         /**
          * Class used for singleton goog.debug.GcDiagnostics.  Used to hook into

@@ -5,7 +5,8 @@
 
 declare module goog.ui.emoji {
 
-    class EmojiPaletteRenderer extends goog.ui.PaletteRenderer {
+    class EmojiPaletteRenderer extends __EmojiPaletteRenderer { }
+    class __EmojiPaletteRenderer extends goog.ui.__PaletteRenderer {
     
         /**
          * Renders an emoji palette.

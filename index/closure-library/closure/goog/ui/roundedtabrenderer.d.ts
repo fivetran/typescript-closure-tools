@@ -5,7 +5,8 @@
 
 declare module goog.ui {
 
-    class RoundedTabRenderer extends goog.ui.TabRenderer {
+    class RoundedTabRenderer extends __RoundedTabRenderer { }
+    class __RoundedTabRenderer extends goog.ui.__TabRenderer {
     
         /**
          * Rounded corner tab renderer for {@link goog.ui.Tab}s.

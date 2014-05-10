@@ -3,7 +3,8 @@
 
 declare module goog.dom {
 
-    class TagIterator extends goog.iter.Iterator<Node> {
+    class TagIterator extends __TagIterator { }
+    class __TagIterator extends goog.iter.__Iterator<Node> {
     
         /**
          * A DOM tree traversal iterator.

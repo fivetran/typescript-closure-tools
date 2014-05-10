@@ -3,7 +3,8 @@
 
 declare module goog.math {
 
-    class Line {
+    class Line extends __Line { }
+    class __Line {
     
         /**
          * Object representing a line.

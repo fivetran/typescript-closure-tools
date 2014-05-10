@@ -7,7 +7,8 @@
 
 declare module goog.net {
 
-    class IframeIo extends goog.events.EventTarget {
+    class IframeIo extends __IframeIo { }
+    class __IframeIo extends goog.events.__EventTarget {
     
         /**
          * Class for managing requests via iFrames.
@@ -249,7 +250,8 @@ declare module goog.net {
 
 declare module goog.net.IframeIo {
 
-    class IncrementalDataEvent extends goog.events.Event {
+    class IncrementalDataEvent extends __IncrementalDataEvent { }
+    class __IncrementalDataEvent extends goog.events.__Event {
     
         /**
          * Class for representing incremental data events.

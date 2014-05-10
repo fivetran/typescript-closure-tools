@@ -3,7 +3,8 @@
 
 declare module goog.fx.css3 {
 
-    class Transition extends goog.fx.TransitionBase {
+    class Transition extends __Transition { }
+    class __Transition extends goog.fx.__TransitionBase {
     
         /**
          * A class to handle targeted CSS3 transition. This class

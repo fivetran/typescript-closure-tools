@@ -3,7 +3,8 @@
 
 declare module goog.testing {
 
-    class MockUserAgent extends goog.Disposable {
+    class MockUserAgent extends __MockUserAgent { }
+    class __MockUserAgent extends goog.__Disposable {
     
         /**
          * Class for unit testing code that uses goog.userAgent.

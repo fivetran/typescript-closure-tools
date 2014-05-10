@@ -3,7 +3,8 @@
 
 declare module goog.structs {
 
-    class SimplePool<T> extends goog.Disposable {
+    class SimplePool<T> extends __SimplePool<T> { }
+    class __SimplePool<T> extends goog.__Disposable {
     
         /**
          * A generic pool class. Simpler and more efficient than goog.structs.Pool

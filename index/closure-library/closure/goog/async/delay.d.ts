@@ -3,7 +3,8 @@
 
 declare module goog.async {
 
-    class Delay extends goog.Disposable {
+    class Delay extends __Delay { }
+    class __Delay extends goog.__Disposable {
     
         /**
          * A Delay object invokes the associated function after a specified delay. The
@@ -57,7 +58,8 @@ declare module goog.async {
 
 declare module goog {
 
-    class Delay {
+    class Delay extends __Delay { }
+    class __Delay {
     
         /**
          * A deprecated alias.

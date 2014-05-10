@@ -2,7 +2,8 @@
 
 declare module goog.ui.ac {
 
-    class ArrayMatcher {
+    class ArrayMatcher extends __ArrayMatcher { }
+    class __ArrayMatcher {
     
         /**
          * Basic class for matching words in an array

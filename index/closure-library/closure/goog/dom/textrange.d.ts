@@ -4,7 +4,8 @@
 
 declare module goog.dom {
 
-    class TextRange extends goog.dom.AbstractRange {
+    class TextRange extends __TextRange { }
+    class __TextRange extends goog.dom.__AbstractRange {
     
         /**
          * Create a new text selection with no properties.  Do not use this constructor:
@@ -38,7 +39,8 @@ declare module goog.dom {
         surroundContents(element: Element): Element;
     }
 
-    class DomSavedTextRange_ extends goog.dom.SavedRange {
+    class DomSavedTextRange_ extends __DomSavedTextRange_ { }
+    class __DomSavedTextRange_ extends goog.dom.__SavedRange {
     
         /**
          * A SavedRange implementation using DOM endpoints.

@@ -3,7 +3,8 @@
 
 declare module goog.structs {
 
-    class PriorityPool<VALUE> extends goog.structs.Pool<VALUE> {
+    class PriorityPool<VALUE> extends __PriorityPool<VALUE> { }
+    class __PriorityPool<VALUE> extends goog.structs.__Pool<VALUE> {
     
         /**
          * A generic pool class. If max is greater than min, an error is thrown.

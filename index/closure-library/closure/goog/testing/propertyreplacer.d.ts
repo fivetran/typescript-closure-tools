@@ -2,7 +2,8 @@
 
 declare module goog.testing {
 
-    class PropertyReplacer {
+    class PropertyReplacer extends __PropertyReplacer { }
+    class __PropertyReplacer {
     
         /**
          * Helper class for stubbing out variables and object properties for unit tests.

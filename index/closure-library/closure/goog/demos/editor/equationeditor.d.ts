@@ -2,7 +2,8 @@
 
 declare module goog.demos.editor {
 
-    class EquationEditor {
+    class EquationEditor extends __EquationEditor { }
+    class __EquationEditor {
     
         /**
          * @constructor

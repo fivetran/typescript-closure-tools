@@ -2,7 +2,8 @@
 
 declare module goog.structs {
 
-    class InversionMap<T> {
+    class InversionMap<T> extends __InversionMap<T> { }
+    class __InversionMap<T> {
     
         /**
          * Maps ranges to values.

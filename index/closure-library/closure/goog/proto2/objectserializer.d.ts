@@ -3,7 +3,8 @@
 
 declare module goog.proto2 {
 
-    class ObjectSerializer extends goog.proto2.Serializer {
+    class ObjectSerializer extends __ObjectSerializer { }
+    class __ObjectSerializer extends goog.proto2.__Serializer {
     
         /**
          * ObjectSerializer, a serializer which turns Messages into simplified

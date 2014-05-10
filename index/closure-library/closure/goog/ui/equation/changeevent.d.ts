@@ -3,7 +3,8 @@
 
 declare module goog.ui.equation {
 
-    class ChangeEvent extends goog.events.Event {
+    class ChangeEvent extends __ChangeEvent { }
+    class __ChangeEvent extends goog.events.__Event {
     
         /**
          * Event fired when equation changes.

@@ -3,7 +3,8 @@
 
 declare module goog.ui {
 
-    class Css3ButtonRenderer extends goog.ui.ButtonRenderer {
+    class Css3ButtonRenderer extends __Css3ButtonRenderer { }
+    class __Css3ButtonRenderer extends goog.ui.__ButtonRenderer {
     
         /**
          * Custom renderer for {@link goog.ui.Button}s. Css3 buttons can contain

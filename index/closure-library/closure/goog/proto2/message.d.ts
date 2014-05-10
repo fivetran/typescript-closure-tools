@@ -5,7 +5,8 @@
 
 declare module goog.proto2 {
 
-    class Message {
+    class Message extends __Message { }
+    class __Message {
     
         /**
          * Abstract base class for all Protocol Buffer 2 messages. It will be

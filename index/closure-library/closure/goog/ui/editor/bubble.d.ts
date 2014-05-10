@@ -6,7 +6,8 @@
 
 declare module goog.ui.editor {
 
-    class Bubble extends goog.events.EventTarget {
+    class Bubble extends __Bubble { }
+    class __Bubble extends goog.events.__EventTarget {
     
         /**
          * Property bubble UI element.
@@ -112,7 +113,8 @@ declare module goog.ui.editor {
 
 declare module goog.ui.editor.Bubble {
 
-    class Panel_ {
+    class Panel_ extends __Panel_ { }
+    class __Panel_ {
     
         /**
          * Private class used to describe a bubble panel.

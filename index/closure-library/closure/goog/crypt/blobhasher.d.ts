@@ -4,7 +4,8 @@
 
 declare module goog.crypt {
 
-    class BlobHasher extends goog.events.EventTarget {
+    class BlobHasher extends __BlobHasher { }
+    class __BlobHasher extends goog.events.__EventTarget {
     
         /**
          * Construct the hash computer.

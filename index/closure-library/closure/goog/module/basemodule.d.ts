@@ -3,7 +3,8 @@
 
 declare module goog.module {
 
-    class BaseModule extends goog.Disposable {
+    class BaseModule extends __BaseModule { }
+    class __BaseModule extends goog.__Disposable {
     
         /**
          * A basic module object that represents a module of Javascript code that can

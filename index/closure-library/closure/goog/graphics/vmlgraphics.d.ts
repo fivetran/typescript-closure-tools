@@ -7,7 +7,8 @@
 
 declare module goog.graphics {
 
-    class VmlGraphics extends goog.graphics.AbstractGraphics {
+    class VmlGraphics extends __VmlGraphics { }
+    class __VmlGraphics extends goog.graphics.__AbstractGraphics {
     
         /**
          * A Graphics implementation for drawing using VML.

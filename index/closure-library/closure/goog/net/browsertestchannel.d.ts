@@ -8,7 +8,8 @@
 
 declare module goog.net {
 
-    class BrowserTestChannel {
+    class BrowserTestChannel extends __BrowserTestChannel { }
+    class __BrowserTestChannel {
     
         /**
          * Encapsulates the logic for a single BrowserTestChannel.

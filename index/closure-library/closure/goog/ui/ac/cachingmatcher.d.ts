@@ -2,7 +2,8 @@
 
 declare module goog.ui.ac {
 
-    class CachingMatcher {
+    class CachingMatcher extends __CachingMatcher { }
+    class __CachingMatcher {
     
         /**
          * A matcher which wraps another (typically slow) matcher and

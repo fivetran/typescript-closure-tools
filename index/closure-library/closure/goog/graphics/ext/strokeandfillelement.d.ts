@@ -7,7 +7,8 @@
 
 declare module goog.graphics.ext {
 
-    class StrokeAndFillElement extends goog.graphics.ext.Element {
+    class StrokeAndFillElement extends __StrokeAndFillElement { }
+    class __StrokeAndFillElement extends goog.graphics.ext.__Element {
     
         /**
          * Interface for a graphics element that has a stroke and fill.

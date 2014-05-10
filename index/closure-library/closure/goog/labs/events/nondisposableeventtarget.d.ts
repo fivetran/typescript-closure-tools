@@ -6,7 +6,8 @@
 
 declare module goog.labs.events {
 
-    class NonDisposableEventTarget implements goog.events.Listenable {
+    class NonDisposableEventTarget extends __NonDisposableEventTarget { }
+    class __NonDisposableEventTarget implements goog.events.Listenable {
     
         /**
          * An implementation of {@code goog.events.Listenable} with full W3C

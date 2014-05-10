@@ -3,7 +3,7 @@
 
 declare module goog.result {
 
-    interface Result extends goog.Thenable<any> {
+    interface Result extends goog.__Thenable<any> {
     
         /**
          * Attaches handlers to be called when the value of this Result is available.
@@ -51,7 +51,8 @@ declare module goog.result {
 
 declare module goog.result.Result {
 
-    class CancelError extends Error {
+    class CancelError extends __CancelError { }
+    class __CancelError extends Error {
     
         /**
          * The value to be passed to the error handlers invoked upon cancellation.

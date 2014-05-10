@@ -4,7 +4,8 @@
 
 declare module goog.testing {
 
-    class AsyncTestCase extends goog.testing.TestCase {
+    class AsyncTestCase extends __AsyncTestCase { }
+    class __AsyncTestCase extends goog.testing.__TestCase {
     
         /**
          * A test case that is capable of running tests the contain asynchronous logic.
@@ -90,7 +91,8 @@ declare module goog.testing {
 
 declare module goog.testing.AsyncTestCase {
 
-    class ControlBreakingException {
+    class ControlBreakingException extends __ControlBreakingException { }
+    class __ControlBreakingException {
     
         /**
          * An exception class used solely for control flow.

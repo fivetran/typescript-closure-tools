@@ -3,7 +3,8 @@
 
 declare module goog.ui {
 
-    class TextareaRenderer extends goog.ui.ControlRenderer {
+    class TextareaRenderer extends __TextareaRenderer { }
+    class __TextareaRenderer extends goog.ui.__ControlRenderer {
     
         /**
          * Renderer for {@link goog.ui.Textarea}s.  Renders and decorates native HTML

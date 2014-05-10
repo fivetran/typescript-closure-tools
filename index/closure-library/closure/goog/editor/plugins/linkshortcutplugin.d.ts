@@ -3,7 +3,8 @@
 
 declare module goog.editor.plugins {
 
-    class LinkShortcutPlugin extends goog.editor.Plugin {
+    class LinkShortcutPlugin extends __LinkShortcutPlugin { }
+    class __LinkShortcutPlugin extends goog.editor.__Plugin {
     
         /**
          * Plugin to add a keyboard shortcut for the link command

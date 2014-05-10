@@ -4,7 +4,8 @@
 
 declare module goog.positioning {
 
-    class AbsolutePosition extends goog.positioning.AbstractPosition {
+    class AbsolutePosition extends __AbsolutePosition { }
+    class __AbsolutePosition extends goog.positioning.__AbstractPosition {
     
         /**
          * Encapsulates a popup position where the popup absolutely positioned by

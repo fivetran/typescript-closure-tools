@@ -4,7 +4,8 @@
 
 declare module goog.ui {
 
-    class LabelInput extends goog.ui.Component {
+    class LabelInput extends __LabelInput { }
+    class __LabelInput extends goog.ui.__Component {
     
         /**
          * This creates the label input object.

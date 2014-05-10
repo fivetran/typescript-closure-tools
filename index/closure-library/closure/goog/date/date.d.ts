@@ -2,7 +2,8 @@
 
 declare module goog.date {
 
-    class Interval {
+    class Interval extends __Interval { }
+    class __Interval {
     
         /**
          * Class representing a date/time interval. Used for date calculations.
@@ -100,7 +101,8 @@ declare module goog.date {
         add(interval: goog.date.Interval): void;
     }
 
-    class Date {
+    class Date extends __Date { }
+    class __Date {
     
         /**
          * Class representing a date. Defaults to current date if none is specified.
@@ -406,7 +408,8 @@ declare module goog.date {
         equals(other: goog.date.Date): boolean;
     }
 
-    class DateTime extends goog.date.Date {
+    class DateTime extends __DateTime { }
+    class __DateTime extends goog.date.__Date {
     
         /**
          * Class representing a date and time. Defaults to current date and time if none

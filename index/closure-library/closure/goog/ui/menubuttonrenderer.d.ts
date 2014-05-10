@@ -4,7 +4,8 @@
 
 declare module goog.ui {
 
-    class MenuButtonRenderer extends goog.ui.CustomButtonRenderer {
+    class MenuButtonRenderer extends __MenuButtonRenderer { }
+    class __MenuButtonRenderer extends goog.ui.__CustomButtonRenderer {
     
         /**
          * Renderer for {@link goog.ui.MenuButton}s.  This implementation overrides

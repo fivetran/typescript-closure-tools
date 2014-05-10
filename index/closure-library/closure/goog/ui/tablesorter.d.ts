@@ -4,7 +4,8 @@
 
 declare module goog.ui {
 
-    class TableSorter extends goog.ui.Component {
+    class TableSorter extends __TableSorter { }
+    class __TableSorter extends goog.ui.__Component {
     
         /**
          * A table sorter allows for sorting of a table by column.  This component can

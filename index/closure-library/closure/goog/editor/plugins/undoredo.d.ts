@@ -6,7 +6,8 @@
 
 declare module goog.editor.plugins {
 
-    class UndoRedo extends goog.editor.Plugin {
+    class UndoRedo extends __UndoRedo { }
+    class __UndoRedo extends goog.editor.__Plugin {
     
         /**
          * Encapsulates undo/redo logic using a custom undo stack (i.e. not browser
@@ -81,7 +82,8 @@ declare module goog.editor.plugins {
 
 declare module goog.editor.plugins.UndoRedo {
 
-    class UndoState_ extends goog.editor.plugins.UndoRedoState {
+    class UndoState_ extends __UndoState_ { }
+    class __UndoState_ extends goog.editor.plugins.__UndoRedoState {
     
         /**
          * This object encapsulates the state of an editable field.
@@ -119,7 +121,8 @@ declare module goog.editor.plugins.UndoRedo {
         setRedoState(content: string, cursorPosition: goog.editor.plugins.UndoRedo.CursorPosition_): void;
     }
 
-    class CursorPosition_ {
+    class CursorPosition_ extends __CursorPosition_ { }
+    class __CursorPosition_ {
     
         /**
          * Stores the state of the selection in a way the survives DOM modifications

@@ -4,7 +4,8 @@
 
 declare module goog.testing {
 
-    class MultiTestRunner extends goog.ui.Component {
+    class MultiTestRunner extends __MultiTestRunner { }
+    class __MultiTestRunner extends goog.ui.__Component {
     
         /**
          * A component for running multiple tests within the browser.
@@ -182,7 +183,8 @@ declare module goog.testing {
 
 declare module goog.testing.MultiTestRunner {
 
-    class TestFrame extends goog.ui.Component {
+    class TestFrame extends __TestFrame { }
+    class __TestFrame extends goog.ui.__Component {
     
         /**
          * Class used to manage the interaction with a single iframe.

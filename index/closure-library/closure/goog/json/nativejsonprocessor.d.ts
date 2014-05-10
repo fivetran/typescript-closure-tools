@@ -5,7 +5,8 @@
 
 declare module goog.json {
 
-    class NativeJsonProcessor implements goog.json.Processor {
+    class NativeJsonProcessor extends __NativeJsonProcessor { }
+    class __NativeJsonProcessor implements goog.json.Processor {
     
         /**
          * A class that parses and stringifies JSON using the browser's built-in JSON

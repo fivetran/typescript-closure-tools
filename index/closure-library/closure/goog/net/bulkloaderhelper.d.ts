@@ -4,7 +4,8 @@
 
 declare module goog.net {
 
-    class BulkLoaderHelper extends goog.Disposable {
+    class BulkLoaderHelper extends __BulkLoaderHelper { }
+    class __BulkLoaderHelper extends goog.__Disposable {
     
         /**
          * Helper class used to load multiple URIs.

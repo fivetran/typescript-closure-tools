@@ -5,7 +5,8 @@
 
 declare module goog.proto2 {
 
-    class Serializer {
+    class Serializer extends __Serializer { }
+    class __Serializer {
     
         /**
          * Abstract base class for PB2 serializers. A serializer is a class which

@@ -4,7 +4,8 @@
 
 declare module goog.ds {
 
-    class Expr {
+    class Expr extends __Expr { }
+    class __Expr {
     
         /**
          * Create a new expression. An expression uses a string expression language, and

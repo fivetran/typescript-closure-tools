@@ -4,7 +4,8 @@
 
 declare module goog.dom {
 
-    class SavedCaretRange extends goog.dom.SavedRange {
+    class SavedCaretRange extends __SavedCaretRange { }
+    class __SavedCaretRange extends goog.dom.__SavedRange {
     
         /**
          * A struct for holding context about saved selections.

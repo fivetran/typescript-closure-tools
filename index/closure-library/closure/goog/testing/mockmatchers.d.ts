@@ -3,7 +3,8 @@
 
 declare module goog.testing.mockmatchers {
 
-    class ArgumentMatcher {
+    class ArgumentMatcher extends __ArgumentMatcher { }
+    class __ArgumentMatcher {
     
         /**
          * A simple interface for executing argument matching.  A match in this case is
@@ -29,7 +30,8 @@ declare module goog.testing.mockmatchers {
         matches(toVerify: any, opt_expectation?: goog.testing.MockExpectation): boolean;
     }
 
-    class InstanceOf extends goog.testing.mockmatchers.ArgumentMatcher {
+    class InstanceOf extends __InstanceOf { }
+    class __InstanceOf extends goog.testing.mockmatchers.__ArgumentMatcher {
     
         /**
          * A matcher that verifies that an argument is an instance of a given class.
@@ -41,7 +43,8 @@ declare module goog.testing.mockmatchers {
         constructor(ctor: Function);
     }
 
-    class TypeOf extends goog.testing.mockmatchers.ArgumentMatcher {
+    class TypeOf extends __TypeOf { }
+    class __TypeOf extends goog.testing.mockmatchers.__ArgumentMatcher {
     
         /**
          * A matcher that verifies that an argument is of a given type (e.g. "object").
@@ -53,7 +56,8 @@ declare module goog.testing.mockmatchers {
         constructor(type: string);
     }
 
-    class RegexpMatch extends goog.testing.mockmatchers.ArgumentMatcher {
+    class RegexpMatch extends __RegexpMatch { }
+    class __RegexpMatch extends goog.testing.mockmatchers.__ArgumentMatcher {
     
         /**
          * A matcher that verifies that an argument matches a given RegExp.
@@ -65,7 +69,8 @@ declare module goog.testing.mockmatchers {
         constructor(regexp: RegExp);
     }
 
-    class IgnoreArgument extends goog.testing.mockmatchers.ArgumentMatcher {
+    class IgnoreArgument extends __IgnoreArgument { }
+    class __IgnoreArgument extends goog.testing.mockmatchers.__ArgumentMatcher {
     
         /**
          * A matcher that always returns true. It is useful when the user does not care
@@ -78,7 +83,8 @@ declare module goog.testing.mockmatchers {
         constructor();
     }
 
-    class ObjectEquals extends goog.testing.mockmatchers.ArgumentMatcher {
+    class ObjectEquals extends __ObjectEquals { }
+    class __ObjectEquals extends goog.testing.mockmatchers.__ArgumentMatcher {
     
         /**
          * A matcher that verifies that the argument is an object that equals the given
@@ -91,7 +97,8 @@ declare module goog.testing.mockmatchers {
         constructor(expectedObject: Object);
     }
 
-    class SaveArgument extends goog.testing.mockmatchers.ArgumentMatcher {
+    class SaveArgument extends __SaveArgument { }
+    class __SaveArgument extends goog.testing.mockmatchers.__ArgumentMatcher {
     
         /**
          * A matcher that saves the argument that it is verifying so that your unit test

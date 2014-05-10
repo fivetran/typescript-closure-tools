@@ -2,7 +2,8 @@
 
 declare module goog.crypt {
 
-    class Arc4 {
+    class Arc4 extends __Arc4 { }
+    class __Arc4 {
     
         /**
          * ARC4 streamcipher implementation.

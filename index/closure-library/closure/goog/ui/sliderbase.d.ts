@@ -8,7 +8,8 @@
 
 declare module goog.ui {
 
-    class SliderBase extends goog.ui.Component {
+    class SliderBase extends __SliderBase { }
+    class __SliderBase extends goog.ui.__Component {
     
         /**
          * This creates a SliderBase object.

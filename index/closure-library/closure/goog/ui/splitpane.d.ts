@@ -5,7 +5,8 @@
 
 declare module goog.ui {
 
-    class SplitPane extends goog.ui.Component {
+    class SplitPane extends __SplitPane { }
+    class __SplitPane extends goog.ui.__Component {
     
         /**
          * A left/right up/down Container SplitPane.

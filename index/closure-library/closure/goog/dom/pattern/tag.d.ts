@@ -4,7 +4,8 @@
 
 declare module goog.dom.pattern {
 
-    class Tag extends goog.dom.pattern.AbstractPattern {
+    class Tag extends __Tag { }
+    class __Tag extends goog.dom.pattern.__AbstractPattern {
     
         /**
          * Pattern object that matches an tag.

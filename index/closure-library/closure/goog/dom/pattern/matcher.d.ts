@@ -3,7 +3,8 @@
 
 declare module goog.dom.pattern {
 
-    class Matcher {
+    class Matcher extends __Matcher { }
+    class __Matcher {
     
         /**
          * Given a set of patterns and a root node, this class tests the patterns in

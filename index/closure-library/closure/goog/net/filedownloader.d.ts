@@ -9,7 +9,8 @@
 
 declare module goog.net {
 
-    class FileDownloader extends goog.Disposable {
+    class FileDownloader extends __FileDownloader { }
+    class __FileDownloader extends goog.__Disposable {
     
         /**
          * A class for downloading remote files and storing them locally using the
@@ -151,7 +152,8 @@ declare module goog.net {
 
 declare module goog.net.FileDownloader {
 
-    class Error extends goog.debug.Error {
+    class Error extends __Error { }
+    class __Error extends goog.debug.__Error {
     
         /**
          * The error object for FileDownloader download errors.
@@ -187,7 +189,8 @@ declare module goog.net.FileDownloader {
         fileError: any /*goog.fs.Error|any (undefined)*/;
     }
 
-    class Download_ extends goog.Disposable {
+    class Download_ extends __Download_ { }
+    class __Download_ extends goog.__Disposable {
     
         /**
          * A struct containing the data for a single download.

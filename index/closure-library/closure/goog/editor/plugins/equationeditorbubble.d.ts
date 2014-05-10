@@ -3,7 +3,8 @@
 
 declare module goog.editor.plugins.equation {
 
-    class EquationBubble extends goog.editor.plugins.AbstractBubblePlugin {
+    class EquationBubble extends __EquationBubble { }
+    class __EquationBubble extends goog.editor.plugins.__AbstractBubblePlugin {
     
         /**
          * Property bubble plugin for equations.

@@ -7,7 +7,8 @@
 
 declare module goog.graphics.ext {
 
-    class Graphics extends goog.graphics.ext.Group {
+    class Graphics extends __Graphics { }
+    class __Graphics extends goog.graphics.ext.__Group {
     
         /**
          * Wrapper for a graphics surface.

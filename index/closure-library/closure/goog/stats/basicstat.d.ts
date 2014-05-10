@@ -2,7 +2,8 @@
 
 declare module goog.stats {
 
-    class BasicStat {
+    class BasicStat extends __BasicStat { }
+    class __BasicStat {
     
         /**
          * Tracks basic statistics over a specified time interval.
@@ -71,7 +72,8 @@ declare module goog.stats {
 
 declare module goog.stats.BasicStat {
 
-    class Slot_ {
+    class Slot_ extends __Slot_ { }
+    class __Slot_ {
     
         /**
          * A struct containing information for each sub-interval.

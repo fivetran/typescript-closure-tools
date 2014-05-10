@@ -5,7 +5,8 @@
 
 declare module goog.ui {
 
-    class ToolbarSeparator extends goog.ui.Separator {
+    class ToolbarSeparator extends __ToolbarSeparator { }
+    class __ToolbarSeparator extends goog.ui.__Separator {
     
         /**
          * A separator control for a toolbar.

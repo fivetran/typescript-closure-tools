@@ -4,7 +4,8 @@
 
 declare module goog.debug {
 
-    class FpsDisplay extends goog.ui.Component {
+    class FpsDisplay extends __FpsDisplay { }
+    class __FpsDisplay extends goog.ui.__Component {
     
         /**
          * Displays frames per seconds that the window this component is
@@ -26,7 +27,8 @@ declare module goog.debug {
 
 declare module goog.debug.FpsDisplay {
 
-    class FpsAnimation_ {
+    class FpsAnimation_ extends __FpsAnimation_ { }
+    class __FpsAnimation_ {
     
         /**
          * @param {Element} elem An element to hold the FPS count.

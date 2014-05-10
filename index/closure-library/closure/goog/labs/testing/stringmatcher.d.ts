@@ -3,7 +3,8 @@
 
 declare module goog.labs.testing {
 
-    class ContainsStringMatcher implements goog.labs.testing.Matcher {
+    class ContainsStringMatcher extends __ContainsStringMatcher { }
+    class __ContainsStringMatcher implements goog.labs.testing.Matcher {
     
         /**
          * The ContainsString matcher.
@@ -37,7 +38,8 @@ declare module goog.labs.testing {
         describe(value: any, opt_description?: string): string;
     }
 
-    class EndsWithMatcher implements goog.labs.testing.Matcher {
+    class EndsWithMatcher extends __EndsWithMatcher { }
+    class __EndsWithMatcher implements goog.labs.testing.Matcher {
     
         /**
          * The EndsWith matcher.
@@ -71,7 +73,8 @@ declare module goog.labs.testing {
         describe(value: any, opt_description?: string): string;
     }
 
-    class EqualToIgnoringWhitespaceMatcher implements goog.labs.testing.Matcher {
+    class EqualToIgnoringWhitespaceMatcher extends __EqualToIgnoringWhitespaceMatcher { }
+    class __EqualToIgnoringWhitespaceMatcher implements goog.labs.testing.Matcher {
     
         /**
          * The EqualToIgnoringWhitespace matcher.
@@ -105,7 +108,8 @@ declare module goog.labs.testing {
         describe(value: any, opt_description?: string): string;
     }
 
-    class EqualsMatcher implements goog.labs.testing.Matcher {
+    class EqualsMatcher extends __EqualsMatcher { }
+    class __EqualsMatcher implements goog.labs.testing.Matcher {
     
         /**
          * The Equals matcher.
@@ -139,7 +143,8 @@ declare module goog.labs.testing {
         describe(value: any, opt_description?: string): string;
     }
 
-    class RegexMatcher implements goog.labs.testing.Matcher {
+    class RegexMatcher extends __RegexMatcher { }
+    class __RegexMatcher implements goog.labs.testing.Matcher {
     
         /**
          * The MatchesRegex matcher.
@@ -173,7 +178,8 @@ declare module goog.labs.testing {
         describe(value: any, opt_description?: string): string;
     }
 
-    class StartsWithMatcher implements goog.labs.testing.Matcher {
+    class StartsWithMatcher extends __StartsWithMatcher { }
+    class __StartsWithMatcher implements goog.labs.testing.Matcher {
     
         /**
          * The StartsWith matcher.
@@ -207,7 +213,8 @@ declare module goog.labs.testing {
         describe(value: any, opt_description?: string): string;
     }
 
-    class StringContainsInOrderMatcher implements goog.labs.testing.Matcher {
+    class StringContainsInOrderMatcher extends __StringContainsInOrderMatcher { }
+    class __StringContainsInOrderMatcher implements goog.labs.testing.Matcher {
     
         /**
          * The StringContainsInOrdermatcher.

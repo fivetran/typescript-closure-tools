@@ -3,7 +3,8 @@
 
 declare module goog.ui {
 
-    class ImagelessButtonRenderer extends goog.ui.CustomButtonRenderer {
+    class ImagelessButtonRenderer extends __ImagelessButtonRenderer { }
+    class __ImagelessButtonRenderer extends goog.ui.__CustomButtonRenderer {
     
         /**
          * Custom renderer for {@link goog.ui.Button}s. Imageless buttons can contain

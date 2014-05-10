@@ -6,7 +6,8 @@
 
 declare module goog.ui {
 
-    class ToolbarSelect extends goog.ui.Select {
+    class ToolbarSelect extends __ToolbarSelect { }
+    class __ToolbarSelect extends goog.ui.__Select {
     
         /**
          * A select control for a toolbar.

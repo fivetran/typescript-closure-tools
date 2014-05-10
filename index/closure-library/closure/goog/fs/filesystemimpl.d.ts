@@ -4,7 +4,8 @@
 
 declare module goog.fs {
 
-    class FileSystemImpl implements goog.fs.FileSystem {
+    class FileSystemImpl extends __FileSystemImpl { }
+    class __FileSystemImpl implements goog.fs.FileSystem {
     
         /**
          * A local filesystem.

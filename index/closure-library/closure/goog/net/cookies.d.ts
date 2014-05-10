@@ -2,7 +2,8 @@
 
 declare module goog.net {
 
-    class Cookies {
+    class Cookies extends __Cookies { }
+    class __Cookies {
     
         /**
          * A class for handling browser cookies.

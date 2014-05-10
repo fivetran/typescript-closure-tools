@@ -4,7 +4,8 @@
 
 declare module goog.ui {
 
-    class FlatMenuButtonRenderer extends goog.ui.FlatButtonRenderer {
+    class FlatMenuButtonRenderer extends __FlatMenuButtonRenderer { }
+    class __FlatMenuButtonRenderer extends goog.ui.__FlatButtonRenderer {
     
         /**
          * Flat Menu Button renderer. Creates a simpler version of

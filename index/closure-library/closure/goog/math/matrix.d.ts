@@ -3,7 +3,8 @@
 
 declare module goog.math {
 
-    class Matrix {
+    class Matrix extends __Matrix { }
+    class __Matrix {
     
         /**
          * Class for representing and manipulating matrices.

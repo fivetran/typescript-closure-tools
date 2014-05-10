@@ -6,7 +6,8 @@
 
 declare module goog.ui {
 
-    class PopupDatePicker extends goog.ui.Component {
+    class PopupDatePicker extends __PopupDatePicker { }
+    class __PopupDatePicker extends goog.ui.__Component {
     
         /**
          * Popup date picker widget. Fires goog.ui.PopupBase.EventType.SHOW or HIDE

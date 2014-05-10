@@ -4,7 +4,8 @@
 
 declare module goog.positioning {
 
-    class ViewportPosition extends goog.positioning.AbstractPosition {
+    class ViewportPosition extends __ViewportPosition { }
+    class __ViewportPosition extends goog.positioning.__AbstractPosition {
     
         /**
          * Encapsulates a popup position where the popup is positioned according to

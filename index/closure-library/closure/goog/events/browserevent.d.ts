@@ -3,7 +3,8 @@
 
 declare module goog.events {
 
-    class BrowserEvent extends goog.events.Event {
+    class BrowserEvent extends __BrowserEvent { }
+    class __BrowserEvent extends goog.events.__Event {
     
         /**
          * Accepts a browser event object and creates a patched, cross browser event

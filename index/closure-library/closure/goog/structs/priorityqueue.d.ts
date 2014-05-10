@@ -3,7 +3,8 @@
 
 declare module goog.structs {
 
-    class PriorityQueue<VALUE> extends goog.structs.Heap<number,VALUE> {
+    class PriorityQueue<VALUE> extends __PriorityQueue<VALUE> { }
+    class __PriorityQueue<VALUE> extends goog.structs.__Heap<number,VALUE> {
     
         /**
          * Class for Priority Queue datastructure.

@@ -4,7 +4,8 @@
 
 declare module goog.ui {
 
-    class Slider extends goog.ui.SliderBase {
+    class Slider extends __Slider { }
+    class __Slider extends goog.ui.__SliderBase {
     
         /**
          * This creates a slider object.

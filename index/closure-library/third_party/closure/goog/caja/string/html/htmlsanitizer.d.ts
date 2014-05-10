@@ -4,7 +4,8 @@
 
 declare module goog._string.html {
 
-    class HtmlSanitizer extends goog.string.html.HtmlSaxHandler {
+    class HtmlSanitizer extends __HtmlSanitizer { }
+    class __HtmlSanitizer extends goog.string.html.__HtmlSaxHandler {
     
         /**
          * An implementation of the {@code goog.string.HtmlSaxHandler} interface that

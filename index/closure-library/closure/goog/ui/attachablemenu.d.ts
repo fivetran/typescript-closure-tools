@@ -3,7 +3,8 @@
 
 declare module goog.ui {
 
-    class AttachableMenu extends goog.ui.MenuBase {
+    class AttachableMenu extends __AttachableMenu { }
+    class __AttachableMenu extends goog.ui.__MenuBase {
     
         /**
          * An implementation of a menu that can attach itself to DOM element that

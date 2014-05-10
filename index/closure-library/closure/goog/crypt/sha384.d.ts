@@ -3,7 +3,8 @@
 
 declare module goog.crypt {
 
-    class Sha384 extends goog.crypt.Sha2_64bit {
+    class Sha384 extends __Sha384 { }
+    class __Sha384 extends goog.crypt.__Sha2_64bit {
     
         /**
          * Constructs a SHA-384 cryptographic hash.

@@ -3,7 +3,8 @@
 
 declare module goog.math {
 
-    class Bezier {
+    class Bezier extends __Bezier { }
+    class __Bezier {
     
         /**
          * Object representing a cubic bezier curve.

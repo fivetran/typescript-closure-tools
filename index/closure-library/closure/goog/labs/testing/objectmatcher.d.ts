@@ -3,7 +3,8 @@
 
 declare module goog.labs.testing {
 
-    class ObjectEqualsMatcher implements goog.labs.testing.Matcher {
+    class ObjectEqualsMatcher extends __ObjectEqualsMatcher { }
+    class __ObjectEqualsMatcher implements goog.labs.testing.Matcher {
     
         /**
          * The Equals matcher.
@@ -37,7 +38,8 @@ declare module goog.labs.testing {
         describe(value: any, opt_description?: string): string;
     }
 
-    class HasPropertyMatcher implements goog.labs.testing.Matcher {
+    class HasPropertyMatcher extends __HasPropertyMatcher { }
+    class __HasPropertyMatcher implements goog.labs.testing.Matcher {
     
         /**
          * The HasProperty matcher.
@@ -71,7 +73,8 @@ declare module goog.labs.testing {
         describe(value: any, opt_description?: string): string;
     }
 
-    class InstanceOfMatcher implements goog.labs.testing.Matcher {
+    class InstanceOfMatcher extends __InstanceOfMatcher { }
+    class __InstanceOfMatcher implements goog.labs.testing.Matcher {
     
         /**
          * The InstanceOf matcher.
@@ -105,7 +108,8 @@ declare module goog.labs.testing {
         describe(value: any, opt_description?: string): string;
     }
 
-    class IsNullOrUndefinedMatcher implements goog.labs.testing.Matcher {
+    class IsNullOrUndefinedMatcher extends __IsNullOrUndefinedMatcher { }
+    class __IsNullOrUndefinedMatcher implements goog.labs.testing.Matcher {
     
         /**
          * The IsNullOrUndefined matcher.
@@ -137,7 +141,8 @@ declare module goog.labs.testing {
         describe(value: any, opt_description?: string): string;
     }
 
-    class IsNullMatcher implements goog.labs.testing.Matcher {
+    class IsNullMatcher extends __IsNullMatcher { }
+    class __IsNullMatcher implements goog.labs.testing.Matcher {
     
         /**
          * The IsNull matcher.
@@ -169,7 +174,8 @@ declare module goog.labs.testing {
         describe(value: any, opt_description?: string): string;
     }
 
-    class IsUndefinedMatcher implements goog.labs.testing.Matcher {
+    class IsUndefinedMatcher extends __IsUndefinedMatcher { }
+    class __IsUndefinedMatcher implements goog.labs.testing.Matcher {
     
         /**
          * The IsUndefined matcher.

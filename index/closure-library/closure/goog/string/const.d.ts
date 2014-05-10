@@ -3,7 +3,8 @@
 
 declare module goog._string {
 
-    class Const implements goog.string.TypedString {
+    class Const extends __Const { }
+    class __Const implements goog.string.TypedString {
     
         /**
          * Wrapper for compile-time-constant strings.

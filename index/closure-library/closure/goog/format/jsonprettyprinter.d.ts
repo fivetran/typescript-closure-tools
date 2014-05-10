@@ -2,7 +2,8 @@
 
 declare module goog.format {
 
-    class JsonPrettyPrinter {
+    class JsonPrettyPrinter extends __JsonPrettyPrinter { }
+    class __JsonPrettyPrinter {
     
         /**
          * Formats a JSON object as a string, properly indented for display.  Supports
@@ -44,7 +45,8 @@ declare module goog.format {
 
 declare module goog.format.JsonPrettyPrinter {
 
-    class TextDelimiters {
+    class TextDelimiters extends __TextDelimiters { }
+    class __TextDelimiters {
     
         /**
          * A container for the delimiting characters used to display the JSON string
@@ -140,7 +142,8 @@ declare module goog.format.JsonPrettyPrinter {
         indent: number;
     }
 
-    class HtmlDelimiters extends goog.format.JsonPrettyPrinter.TextDelimiters {
+    class HtmlDelimiters extends __HtmlDelimiters { }
+    class __HtmlDelimiters extends goog.format.JsonPrettyPrinter.__TextDelimiters {
     
         /**
          * A container for the delimiting characters used to display the JSON string

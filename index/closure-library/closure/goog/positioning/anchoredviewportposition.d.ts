@@ -5,7 +5,8 @@
 
 declare module goog.positioning {
 
-    class AnchoredViewportPosition extends goog.positioning.AnchoredPosition {
+    class AnchoredViewportPosition extends __AnchoredViewportPosition { }
+    class __AnchoredViewportPosition extends goog.positioning.__AnchoredPosition {
     
         /**
          * Encapsulates a popup position where the popup is anchored at a corner of

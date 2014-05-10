@@ -3,7 +3,8 @@
 
 declare module goog.asserts {
 
-    class AssertionError extends goog.debug.Error {
+    class AssertionError extends __AssertionError { }
+    class __AssertionError extends goog.debug.__Error {
     
         /**
          * Error object for failed assertions.

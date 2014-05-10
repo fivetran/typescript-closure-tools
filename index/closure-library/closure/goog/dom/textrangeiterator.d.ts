@@ -3,7 +3,8 @@
 
 declare module goog.dom {
 
-    class TextRangeIterator extends goog.dom.RangeIterator {
+    class TextRangeIterator extends __TextRangeIterator { }
+    class __TextRangeIterator extends goog.dom.__RangeIterator {
     
         /**
          * Subclass of goog.dom.TagIterator that iterates over a DOM range.  It

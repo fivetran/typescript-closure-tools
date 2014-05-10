@@ -2,7 +2,8 @@
 
 declare module goog.testing {
 
-    class ObjectPropertyString {
+    class ObjectPropertyString extends __ObjectPropertyString { }
+    class __ObjectPropertyString {
     
         /**
          * Object to pass a property name as a string literal and its containing object

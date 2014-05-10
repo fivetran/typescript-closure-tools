@@ -2,7 +2,8 @@
 
 declare module goog._string.newlines {
 
-    class Line {
+    class Line extends __Line { }
+    class __Line {
     
         /**
          * Line metadata class that records the start/end indicies of lines

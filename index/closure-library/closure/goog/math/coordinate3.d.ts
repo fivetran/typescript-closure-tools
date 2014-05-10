@@ -2,7 +2,8 @@
 
 declare module goog.math {
 
-    class Coordinate3 {
+    class Coordinate3 extends __Coordinate3 { }
+    class __Coordinate3 {
     
         /**
          * Class for representing coordinates and positions in 3 dimensions.

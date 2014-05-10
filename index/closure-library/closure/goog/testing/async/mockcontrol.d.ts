@@ -4,7 +4,8 @@
 
 declare module goog.testing.async {
 
-    class MockControl {
+    class MockControl extends __MockControl { }
+    class __MockControl {
     
         /**
          * Provides asynchronous mocks and assertions controlled by a parent

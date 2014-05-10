@@ -5,7 +5,8 @@
 
 declare module goog.dom.browserrange {
 
-    class AbstractRange {
+    class AbstractRange extends __AbstractRange { }
+    class __AbstractRange {
     
         /**
          * The constructor for abstract ranges.  Don't call this from subclasses.

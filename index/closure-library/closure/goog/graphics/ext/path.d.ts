@@ -4,7 +4,8 @@
 
 declare module goog.graphics.ext {
 
-    class Path extends goog.graphics.Path {
+    class Path extends __Path { }
+    class __Path extends goog.graphics.__Path {
     
         /**
          * Creates a path object

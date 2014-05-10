@@ -4,7 +4,8 @@
 
 declare module goog.i18n {
 
-    class DateTimeFormat {
+    class DateTimeFormat extends __DateTimeFormat { }
+    class __DateTimeFormat {
     
         /**
          * Construct a DateTimeFormat object based on current locale.

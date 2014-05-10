@@ -4,7 +4,8 @@
 
 declare module goog.storage {
 
-    class RichStorage extends goog.storage.Storage {
+    class RichStorage extends __RichStorage { }
+    class __RichStorage extends goog.storage.__Storage {
     
         /**
          * Provides a storage for data with attached metadata.
@@ -34,7 +35,8 @@ declare module goog.storage {
 
 declare module goog.storage.RichStorage {
 
-    class Wrapper {
+    class Wrapper extends __Wrapper { }
+    class __Wrapper {
     
         /**
          * Wraps a value so metadata can be associated with it. You probably want

@@ -2,7 +2,8 @@
 
 declare module goog.ui.ac {
 
-    class RenderOptions {
+    class RenderOptions extends __RenderOptions { }
+    class __RenderOptions {
     
         /**
          * A simple class that contains options for rendering a set of autocomplete

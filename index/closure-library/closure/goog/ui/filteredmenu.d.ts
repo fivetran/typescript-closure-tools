@@ -7,7 +7,8 @@
 
 declare module goog.ui {
 
-    class FilteredMenu extends goog.ui.Menu {
+    class FilteredMenu extends __FilteredMenu { }
+    class __FilteredMenu extends goog.ui.__Menu {
     
         /**
          * Filtered menu class.

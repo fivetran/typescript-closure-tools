@@ -3,7 +3,8 @@
 
 declare module goog.async {
 
-    class AnimationDelay extends goog.Disposable {
+    class AnimationDelay extends __AnimationDelay { }
+    class __AnimationDelay extends goog.__Disposable {
     
         /**
          * A delayed callback that pegs to the next animation frame

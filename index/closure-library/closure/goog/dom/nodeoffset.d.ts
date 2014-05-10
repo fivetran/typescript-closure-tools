@@ -3,7 +3,8 @@
 
 declare module goog.dom {
 
-    class NodeOffset extends goog.Disposable {
+    class NodeOffset extends __NodeOffset { }
+    class __NodeOffset extends goog.__Disposable {
     
         /**
          * Object to store the offset from one node to another in a way that works on

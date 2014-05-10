@@ -3,7 +3,8 @@
 
 declare module goog.labs.testing {
 
-    class GreaterThanMatcher implements goog.labs.testing.Matcher {
+    class GreaterThanMatcher extends __GreaterThanMatcher { }
+    class __GreaterThanMatcher implements goog.labs.testing.Matcher {
     
         /**
          * The GreaterThan matcher.
@@ -37,7 +38,8 @@ declare module goog.labs.testing {
         describe(value: any, opt_description?: string): string;
     }
 
-    class LessThanMatcher implements goog.labs.testing.Matcher {
+    class LessThanMatcher extends __LessThanMatcher { }
+    class __LessThanMatcher implements goog.labs.testing.Matcher {
     
         /**
          * The lessThan matcher.
@@ -71,7 +73,8 @@ declare module goog.labs.testing {
         describe(value: any, opt_description?: string): string;
     }
 
-    class GreaterThanEqualToMatcher implements goog.labs.testing.Matcher {
+    class GreaterThanEqualToMatcher extends __GreaterThanEqualToMatcher { }
+    class __GreaterThanEqualToMatcher implements goog.labs.testing.Matcher {
     
         /**
          * The GreaterThanEqualTo matcher.
@@ -105,7 +108,8 @@ declare module goog.labs.testing {
         describe(value: any, opt_description?: string): string;
     }
 
-    class LessThanEqualToMatcher implements goog.labs.testing.Matcher {
+    class LessThanEqualToMatcher extends __LessThanEqualToMatcher { }
+    class __LessThanEqualToMatcher implements goog.labs.testing.Matcher {
     
         /**
          * The LessThanEqualTo matcher.
@@ -139,7 +143,8 @@ declare module goog.labs.testing {
         describe(value: any, opt_description?: string): string;
     }
 
-    class EqualToMatcher implements goog.labs.testing.Matcher {
+    class EqualToMatcher extends __EqualToMatcher { }
+    class __EqualToMatcher implements goog.labs.testing.Matcher {
     
         /**
          * The EqualTo matcher.
@@ -173,7 +178,8 @@ declare module goog.labs.testing {
         describe(value: any, opt_description?: string): string;
     }
 
-    class CloseToMatcher implements goog.labs.testing.Matcher {
+    class CloseToMatcher extends __CloseToMatcher { }
+    class __CloseToMatcher implements goog.labs.testing.Matcher {
     
         /**
          * The CloseTo matcher.

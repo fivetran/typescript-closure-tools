@@ -2,7 +2,8 @@
 
 declare module goog.async.run {
 
-    class WorkItem_ {
+    class WorkItem_ extends __WorkItem_ { }
+    class __WorkItem_ {
     
         /**
          * @constructor

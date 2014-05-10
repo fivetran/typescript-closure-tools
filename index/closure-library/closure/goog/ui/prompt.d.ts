@@ -5,7 +5,8 @@
 
 declare module goog.ui {
 
-    class Prompt extends goog.ui.Dialog {
+    class Prompt extends __Prompt { }
+    class __Prompt extends goog.ui.__Dialog {
     
         /**
          * Creates an object that represents a prompt (used in place of javascript's

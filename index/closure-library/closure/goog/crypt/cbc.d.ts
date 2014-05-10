@@ -3,7 +3,8 @@
 
 declare module goog.crypt {
 
-    class Cbc {
+    class Cbc extends __Cbc { }
+    class __Cbc {
     
         /**
          * Implements the CBC mode for block ciphers. See

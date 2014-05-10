@@ -3,7 +3,8 @@
 
 declare module goog.crypt {
 
-    class Aes implements goog.crypt.BlockCipher {
+    class Aes extends __Aes { }
+    class __Aes implements goog.crypt.BlockCipher {
     
         /**
          * Implementation of AES in JavaScript.

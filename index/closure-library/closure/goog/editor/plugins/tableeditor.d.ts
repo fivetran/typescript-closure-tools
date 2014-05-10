@@ -5,7 +5,8 @@
 
 declare module goog.editor.plugins {
 
-    class TableEditor extends goog.editor.Plugin {
+    class TableEditor extends __TableEditor { }
+    class __TableEditor extends goog.editor.__Plugin {
     
         /**
          * Plugin that adds support for table creation and editing commands.
@@ -26,7 +27,8 @@ declare module goog.editor.plugins {
 
 declare module goog.editor.plugins.TableEditor {
 
-    class CellSelection_ {
+    class CellSelection_ extends __CellSelection_ { }
+    class __CellSelection_ {
     
         /**
          * Class representing the selected cell objects within a single  table.

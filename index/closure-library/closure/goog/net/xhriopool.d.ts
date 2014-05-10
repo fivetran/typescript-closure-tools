@@ -4,7 +4,8 @@
 
 declare module goog.net {
 
-    class XhrIoPool extends goog.structs.PriorityPool<any> {
+    class XhrIoPool extends __XhrIoPool { }
+    class __XhrIoPool extends goog.structs.__PriorityPool<any> {
     
         /**
          * A pool of XhrIo objects.

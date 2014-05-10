@@ -7,7 +7,8 @@
 
 declare module goog.graphics {
 
-    class CanvasGraphics extends goog.graphics.AbstractGraphics {
+    class CanvasGraphics extends __CanvasGraphics { }
+    class __CanvasGraphics extends goog.graphics.__AbstractGraphics {
     
         /**
          * A Graphics implementation for drawing using canvas.

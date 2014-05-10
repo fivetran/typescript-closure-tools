@@ -2,7 +2,8 @@
 
 declare module goog.i18n {
 
-    class CharPickerData {
+    class CharPickerData extends __CharPickerData { }
+    class __CharPickerData {
     
         /**
          * Object holding two level character organization and character listing.

@@ -2,7 +2,8 @@
 
 declare module goog.testing.stacktrace {
 
-    class Frame {
+    class Frame extends __Frame { }
+    class __Frame {
     
         /**
          * Class representing one stack frame.

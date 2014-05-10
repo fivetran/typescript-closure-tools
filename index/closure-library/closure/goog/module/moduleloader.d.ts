@@ -7,7 +7,8 @@
 
 declare module goog.module {
 
-    class ModuleLoader extends goog.events.EventTarget implements goog.module.AbstractModuleLoader {
+    class ModuleLoader extends __ModuleLoader { }
+    class __ModuleLoader extends goog.events.__EventTarget implements goog.module.AbstractModuleLoader {
     
         /**
          * A class that loads Javascript modules.
@@ -85,7 +86,8 @@ declare module goog.module {
 
 declare module goog.module.ModuleLoader {
 
-    class Event extends goog.events.Event {
+    class Event extends __Event { }
+    class __Event extends goog.events.__Event {
     
         /**
          * @param {goog.module.ModuleLoader.EventType} type The type.
@@ -97,7 +99,8 @@ declare module goog.module.ModuleLoader {
         constructor(type: goog.module.ModuleLoader.EventType, moduleIds: string[]);
     }
 
-    class LoadStatus {
+    class LoadStatus extends __LoadStatus { }
+    class __LoadStatus {
     
         /**
          * A class that keeps the state of the module during the loading process. It is

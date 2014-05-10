@@ -8,7 +8,8 @@
 
 declare module goog.db {
 
-    class IndexedDb extends goog.events.EventTarget {
+    class IndexedDb extends __IndexedDb { }
+    class __IndexedDb extends goog.events.__EventTarget {
     
         /**
          * Creates an IDBDatabase wrapper object. The database object has methods for
@@ -114,7 +115,8 @@ declare module goog.db {
 
 declare module goog.db.IndexedDb {
 
-    class VersionChangeEvent extends goog.events.Event {
+    class VersionChangeEvent extends __VersionChangeEvent { }
+    class __VersionChangeEvent extends goog.events.__Event {
     
         /**
          * Event representing a (possibly attempted) change in the database structure.

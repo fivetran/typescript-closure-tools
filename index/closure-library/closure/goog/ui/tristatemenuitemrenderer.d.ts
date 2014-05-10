@@ -3,7 +3,8 @@
 
 declare module goog.ui {
 
-    class TriStateMenuItemRenderer extends goog.ui.MenuItemRenderer {
+    class TriStateMenuItemRenderer extends __TriStateMenuItemRenderer { }
+    class __TriStateMenuItemRenderer extends goog.ui.__MenuItemRenderer {
     
         /**
          * Default renderer for {@link goog.ui.TriStateMenuItemRenderer}s. Each item has

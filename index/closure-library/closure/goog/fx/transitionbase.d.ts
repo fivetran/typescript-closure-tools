@@ -4,7 +4,8 @@
 
 declare module goog.fx {
 
-    class TransitionBase extends goog.events.EventTarget implements goog.fx.Transition {
+    class TransitionBase extends __TransitionBase { }
+    class __TransitionBase extends goog.events.__EventTarget implements goog.fx.Transition {
     
         /**
          * Constructor for a transition object.

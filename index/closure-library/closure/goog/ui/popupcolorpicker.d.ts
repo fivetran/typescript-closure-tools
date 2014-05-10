@@ -7,7 +7,8 @@
 
 declare module goog.ui {
 
-    class PopupColorPicker extends goog.ui.Component {
+    class PopupColorPicker extends __PopupColorPicker { }
+    class __PopupColorPicker extends goog.ui.__Component {
     
         /**
          * Popup color picker widget.

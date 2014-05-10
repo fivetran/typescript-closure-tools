@@ -4,7 +4,8 @@
 
 declare module goog.storage {
 
-    class EncryptedStorage extends goog.storage.CollectableStorage {
+    class EncryptedStorage extends __EncryptedStorage { }
+    class __EncryptedStorage extends goog.storage.__CollectableStorage {
     
         /**
          * Provides an encrypted storage. The keys are hashed with a secret, so

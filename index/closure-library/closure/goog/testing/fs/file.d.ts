@@ -3,7 +3,8 @@
 
 declare module goog.testing.fs {
 
-    class File extends goog.testing.fs.Blob {
+    class File extends __File { }
+    class __File extends goog.testing.fs.__Blob {
     
         /**
          * A mock file object.

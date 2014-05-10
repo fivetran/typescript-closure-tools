@@ -3,7 +3,8 @@
 
 declare module goog.testing {
 
-    class StrictMock extends goog.testing.Mock {
+    class StrictMock extends __StrictMock { }
+    class __StrictMock extends goog.testing.__Mock {
     
         /**
          * This is a mock that verifies that methods are called in the order that they

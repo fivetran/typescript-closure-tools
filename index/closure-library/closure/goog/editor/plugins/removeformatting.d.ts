@@ -3,7 +3,8 @@
 
 declare module goog.editor.plugins {
 
-    class RemoveFormatting extends goog.editor.Plugin {
+    class RemoveFormatting extends __RemoveFormatting { }
+    class __RemoveFormatting extends goog.editor.__Plugin {
     
         /**
          * A plugin to handle removing formatting from selected text.

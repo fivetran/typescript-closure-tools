@@ -4,7 +4,8 @@
 
 declare module goog.editor.plugins {
 
-    class AbstractTabHandler extends goog.editor.Plugin {
+    class AbstractTabHandler extends __AbstractTabHandler { }
+    class __AbstractTabHandler extends goog.editor.__Plugin {
     
         /**
          * Plugin to handle tab keys. Specific tab behavior defined by subclasses.

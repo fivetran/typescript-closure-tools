@@ -3,7 +3,8 @@
 
 declare module goog.events {
 
-    class FileDropHandler extends goog.events.EventTarget {
+    class FileDropHandler extends __FileDropHandler { }
+    class __FileDropHandler extends goog.events.__EventTarget {
     
         /**
          * A files drag and drop event detector. Gets an {@code element} as parameter

@@ -6,7 +6,8 @@
 
 declare module goog.ui.media {
 
-    class Mp3 extends goog.ui.media.MediaRenderer {
+    class Mp3 extends __Mp3 { }
+    class __Mp3 extends goog.ui.media.__MediaRenderer {
     
         /**
          * Subclasses a goog.ui.media.MediaRenderer to provide a Mp3 specific media

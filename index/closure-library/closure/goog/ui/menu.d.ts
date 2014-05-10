@@ -9,7 +9,8 @@
 
 declare module goog.ui {
 
-    class Menu extends goog.ui.Container {
+    class Menu extends __Menu { }
+    class __Menu extends goog.ui.__Container {
     
         /**
          * A basic menu class.

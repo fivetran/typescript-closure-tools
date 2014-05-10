@@ -5,7 +5,8 @@
 
 declare module goog.ui {
 
-    class MenuBase extends goog.ui.Popup {
+    class MenuBase extends __MenuBase { }
+    class __MenuBase extends goog.ui.__Popup {
     
         /**
          * The MenuBase class provides an abstract base class for different

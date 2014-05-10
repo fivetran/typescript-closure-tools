@@ -2,7 +2,8 @@
 
 declare module goog.crypt {
 
-    class Hash {
+    class Hash extends __Hash { }
+    class __Hash {
     
         /**
          * Create a cryptographic hash instance.

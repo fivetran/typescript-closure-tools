@@ -3,7 +3,8 @@
 
 declare module goog.events {
 
-    class Event {
+    class Event extends __Event { }
+    class __Event {
     
         /**
          * A base class for event objects, so that they can support preventDefault and

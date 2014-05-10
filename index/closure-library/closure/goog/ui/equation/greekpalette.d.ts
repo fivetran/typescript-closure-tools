@@ -4,7 +4,8 @@
 
 declare module goog.ui.equation {
 
-    class GreekPalette extends goog.ui.equation.Palette {
+    class GreekPalette extends __GreekPalette { }
+    class __GreekPalette extends goog.ui.equation.__Palette {
     
         /**
          * Constructs a new Greek symbols palette.

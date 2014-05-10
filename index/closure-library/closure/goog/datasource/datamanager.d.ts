@@ -3,7 +3,8 @@
 
 declare module goog.ds {
 
-    class DataManager extends goog.ds.DataNode {
+    class DataManager extends __DataManager { }
+    class __DataManager extends goog.ds.__DataNode {
     
         /**
          * Create a DataManger

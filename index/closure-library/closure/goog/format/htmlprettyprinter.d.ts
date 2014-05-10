@@ -2,7 +2,8 @@
 
 declare module goog.format {
 
-    class HtmlPrettyPrinter {
+    class HtmlPrettyPrinter extends __HtmlPrettyPrinter { }
+    class __HtmlPrettyPrinter {
     
         /**
          * This class formats HTML to be more human-readable.
@@ -27,7 +28,8 @@ declare module goog.format {
 
 declare module goog.format.HtmlPrettyPrinter {
 
-    class Buffer {
+    class Buffer extends __Buffer { }
+    class __Buffer {
     
         /**
          * This class is a buffer to which we push our output. It tracks line breaks to

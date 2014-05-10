@@ -7,7 +7,8 @@
 
 declare module goog.ui {
 
-    class HsvPalette extends goog.ui.Component {
+    class HsvPalette extends __HsvPalette { }
+    class __HsvPalette extends goog.ui.__Component {
     
         /**
          * Creates an HSV palette. Allows a user to select the hue, saturation and

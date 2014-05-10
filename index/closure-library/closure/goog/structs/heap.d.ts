@@ -2,7 +2,8 @@
 
 declare module goog.structs {
 
-    class Heap<K, V> {
+    class Heap<K, V> extends __Heap<K, V> { }
+    class __Heap<K, V> {
     
         /**
          * Class for a Heap datastructure.

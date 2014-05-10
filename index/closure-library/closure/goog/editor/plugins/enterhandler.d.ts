@@ -7,7 +7,8 @@
 
 declare module goog.editor.plugins {
 
-    class EnterHandler extends goog.editor.Plugin {
+    class EnterHandler extends __EnterHandler { }
+    class __EnterHandler extends goog.editor.__Plugin {
     
         /**
          * Plugin to handle enter keys. This does all the crazy to normalize (as much as

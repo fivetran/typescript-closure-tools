@@ -3,7 +3,8 @@
 
 declare module goog.editor.plugins {
 
-    class UndoRedoState extends goog.events.EventTarget {
+    class UndoRedoState extends __UndoRedoState { }
+    class __UndoRedoState extends goog.events.__EventTarget {
     
         /**
          * Represents an undo and redo action for a particular state transition.

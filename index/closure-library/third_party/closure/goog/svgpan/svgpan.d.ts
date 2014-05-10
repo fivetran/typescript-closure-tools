@@ -3,7 +3,8 @@
 
 declare module svgpan {
 
-    class SvgPan extends goog.Disposable {
+    class SvgPan extends __SvgPan { }
+    class __SvgPan extends goog.__Disposable {
     
         /**
          * Instantiates an SvgPan object.

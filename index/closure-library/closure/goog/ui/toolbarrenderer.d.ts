@@ -3,7 +3,8 @@
 
 declare module goog.ui {
 
-    class ToolbarRenderer extends goog.ui.ContainerRenderer {
+    class ToolbarRenderer extends __ToolbarRenderer { }
+    class __ToolbarRenderer extends goog.ui.__ContainerRenderer {
     
         /**
          * Default renderer for {@link goog.ui.Toolbar}s, based on {@link

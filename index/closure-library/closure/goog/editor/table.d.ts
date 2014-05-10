@@ -2,7 +2,8 @@
 
 declare module goog.editor {
 
-    class Table {
+    class Table extends __Table { }
+    class __Table {
     
         /**
          * Class providing high level table editing functions.
@@ -97,7 +98,8 @@ declare module goog.editor {
         createEmptyTd(): Element;
     }
 
-    class TableRow {
+    class TableRow extends __TableRow { }
+    class __TableRow {
     
         /**
          * Class representing a logical table row: a tr element and any cells
@@ -110,7 +112,8 @@ declare module goog.editor {
         constructor(trElement: Element, rowIndex: number);
     }
 
-    class TableCell {
+    class TableCell extends __TableCell { }
+    class __TableCell {
     
         /**
          * Class representing a table cell, which may span across multiple

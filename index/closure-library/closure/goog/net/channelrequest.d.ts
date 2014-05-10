@@ -6,7 +6,8 @@
 
 declare module goog.net {
 
-    class ChannelRequest {
+    class ChannelRequest extends __ChannelRequest { }
+    class __ChannelRequest {
     
         /**
          * Creates a ChannelRequest object which encapsulates a request to the server.

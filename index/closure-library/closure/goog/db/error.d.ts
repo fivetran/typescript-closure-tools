@@ -3,7 +3,8 @@
 
 declare module goog.db {
 
-    class Error extends goog.debug.Error {
+    class Error extends __Error { }
+    class __Error extends goog.debug.__Error {
     
         /**
          * A database error. Since the stack trace can be unhelpful in an asynchronous
@@ -41,7 +42,8 @@ declare module goog.db {
 
 declare module goog.db.Error {
 
-    class VersionChangeBlockedError extends goog.debug.Error {
+    class VersionChangeBlockedError extends __VersionChangeBlockedError { }
+    class __VersionChangeBlockedError extends goog.debug.__Error {
     
         /**
          * A specific kind of database error. If a Version Change is unable to proceed

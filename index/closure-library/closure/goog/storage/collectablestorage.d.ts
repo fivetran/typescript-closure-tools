@@ -4,7 +4,8 @@
 
 declare module goog.storage {
 
-    class CollectableStorage extends goog.storage.ExpiringStorage {
+    class CollectableStorage extends __CollectableStorage { }
+    class __CollectableStorage extends goog.storage.__ExpiringStorage {
     
         /**
          * Provides a storage with expirning keys and a collection method.

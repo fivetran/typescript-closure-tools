@@ -2,7 +2,8 @@
 
 declare module goog.module {
 
-    class Loader {
+    class Loader extends __Loader { }
+    class __Loader {
     
         /**
          * The dynamic loading functionality is defined as a class. The class

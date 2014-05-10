@@ -4,7 +4,8 @@
 
 declare module goog.dom {
 
-    class SavedRange extends goog.Disposable {
+    class SavedRange extends __SavedRange { }
+    class __SavedRange extends goog.__Disposable {
     
         /**
          * Abstract interface for a saved range.

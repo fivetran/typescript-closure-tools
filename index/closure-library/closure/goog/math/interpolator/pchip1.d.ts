@@ -3,7 +3,8 @@
 
 declare module goog.math.interpolator {
 
-    class Pchip1 extends goog.math.interpolator.Spline1 {
+    class Pchip1 extends __Pchip1 { }
+    class __Pchip1 extends goog.math.interpolator.__Spline1 {
     
         /**
          * A one dimensional monotone cubic spline interpolator.

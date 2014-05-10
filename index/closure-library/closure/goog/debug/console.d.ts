@@ -4,7 +4,8 @@
 
 declare module goog.debug {
 
-    class Console {
+    class Console extends __Console { }
+    class __Console {
     
         /**
          * Create and install a log handler that logs to window.console if available

@@ -3,7 +3,8 @@
 
 declare module goog.ui.emoji {
 
-    class ProgressiveEmojiPaletteRenderer extends goog.ui.emoji.EmojiPaletteRenderer {
+    class ProgressiveEmojiPaletteRenderer extends __ProgressiveEmojiPaletteRenderer { }
+    class __ProgressiveEmojiPaletteRenderer extends goog.ui.emoji.__EmojiPaletteRenderer {
     
         /**
          * Progressively renders an emoji palette. The progressive renderer tries to

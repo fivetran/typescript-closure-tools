@@ -3,7 +3,8 @@
 
 declare module goog.graphics {
 
-    class LinearGradient extends goog.graphics.Fill {
+    class LinearGradient extends __LinearGradient { }
+    class __LinearGradient extends goog.graphics.__Fill {
     
         /**
          * Creates an immutable linear gradient fill object.

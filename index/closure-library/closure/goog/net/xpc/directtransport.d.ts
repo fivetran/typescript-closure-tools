@@ -4,7 +4,8 @@
 
 declare module goog.net.xpc {
 
-    class DirectTransport extends Transport {
+    class DirectTransport extends __DirectTransport { }
+    class __DirectTransport extends Transport {
     
         /**
          * A direct window to window method transport.

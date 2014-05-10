@@ -3,7 +3,8 @@
 
 declare module goog.i18n.uChar {
 
-    class LocalNameFetcher implements goog.i18n.uChar.NameFetcher {
+    class LocalNameFetcher extends __LocalNameFetcher { }
+    class __LocalNameFetcher implements goog.i18n.uChar.NameFetcher {
     
         /**
          * Builds the NameFetcherLocal object. This is a simple object which retrieves

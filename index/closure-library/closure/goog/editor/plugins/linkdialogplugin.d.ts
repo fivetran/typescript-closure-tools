@@ -7,7 +7,8 @@
 
 declare module goog.editor.plugins {
 
-    class LinkDialogPlugin extends goog.editor.plugins.AbstractDialogPlugin {
+    class LinkDialogPlugin extends __LinkDialogPlugin { }
+    class __LinkDialogPlugin extends goog.editor.plugins.__AbstractDialogPlugin {
     
         /**
          * A plugin that opens the link dialog.

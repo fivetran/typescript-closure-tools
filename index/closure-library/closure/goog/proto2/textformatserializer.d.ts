@@ -4,7 +4,8 @@
 
 declare module goog.proto2 {
 
-    class TextFormatSerializer extends goog.proto2.Serializer {
+    class TextFormatSerializer extends __TextFormatSerializer { }
+    class __TextFormatSerializer extends goog.proto2.__Serializer {
     
         /**
          * TextFormatSerializer, a serializer which turns Messages into the human
@@ -23,7 +24,8 @@ declare module goog.proto2 {
 
 declare module goog.proto2.TextFormatSerializer {
 
-    class Printer_ {
+    class Printer_ extends __Printer_ { }
+    class __Printer_ {
     
         /**
          * Helper class used by the text format serializer for pretty-printing text.
@@ -54,7 +56,8 @@ declare module goog.proto2.TextFormatSerializer {
         appendLine(): void;
     }
 
-    class Tokenizer_ {
+    class Tokenizer_ extends __Tokenizer_ { }
+    class __Tokenizer_ {
     
         /**
          * Helper class for tokenizing the text format.
@@ -80,7 +83,8 @@ declare module goog.proto2.TextFormatSerializer {
         next(): boolean;
     }
 
-    class Parser {
+    class Parser extends __Parser { }
+    class __Parser {
     
         /**
          * Helper class for parsing the text format.

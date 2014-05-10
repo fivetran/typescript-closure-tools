@@ -4,7 +4,8 @@
 
 declare module goog.ui {
 
-    class ProgressBar extends goog.ui.Component {
+    class ProgressBar extends __ProgressBar { }
+    class __ProgressBar extends goog.ui.__Component {
     
         /**
          * This creates a progress bar object.

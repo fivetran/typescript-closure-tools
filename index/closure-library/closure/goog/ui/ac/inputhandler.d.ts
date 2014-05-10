@@ -7,7 +7,8 @@
 
 declare module goog.ui.ac {
 
-    class InputHandler extends goog.Disposable {
+    class InputHandler extends __InputHandler { }
+    class __InputHandler extends goog.__Disposable {
     
         /**
          * Class for managing the interaction between an auto-complete object and a

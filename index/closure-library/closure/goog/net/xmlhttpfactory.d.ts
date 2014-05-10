@@ -2,7 +2,8 @@
 
 declare module goog.net {
 
-    class XmlHttpFactory {
+    class XmlHttpFactory extends __XmlHttpFactory { }
+    class __XmlHttpFactory {
     
         /**
          * Abstract base class for an XmlHttpRequest factory.

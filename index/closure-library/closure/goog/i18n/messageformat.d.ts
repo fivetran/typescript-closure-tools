@@ -2,7 +2,8 @@
 
 declare module goog.i18n {
 
-    class MessageFormat {
+    class MessageFormat extends __MessageFormat { }
+    class __MessageFormat {
     
         /**
          * Constructor of MessageFormat.

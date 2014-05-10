@@ -3,7 +3,8 @@
 
 declare module goog.labs.mock {
 
-    class VerificationError extends goog.debug.Error {
+    class VerificationError extends __VerificationError { }
+    class __VerificationError extends goog.debug.__Error {
     
         /**
          * Error thrown when verification failed.
@@ -19,7 +20,8 @@ declare module goog.labs.mock {
         constructor(recordedCalls: any[], methodName: string, args: any[]);
     }
 
-    class MockManager_ {
+    class MockManager_ extends __MockManager_ { }
+    class __MockManager_ {
     
         /**
          * Base class that provides basic functionality for creating, adding and
@@ -93,7 +95,8 @@ declare module goog.labs.mock {
         verifyInvocation(methodName: string, var_args: any /*missing*/): void;
     }
 
-    class MockObjectManager_ extends goog.labs.mock.MockManager_ {
+    class MockObjectManager_ extends __MockObjectManager_ { }
+    class __MockObjectManager_ extends goog.labs.mock.__MockManager_ {
     
         /**
          * Sets up mock for the given object (or class), stubbing out all the defined
@@ -125,7 +128,8 @@ declare module goog.labs.mock {
         constructor(objOrClass: Function);
     }
 
-    class MockSpyManager_ extends goog.labs.mock.MockObjectManager_ {
+    class MockSpyManager_ extends __MockSpyManager_ { }
+    class __MockSpyManager_ extends goog.labs.mock.__MockObjectManager_ {
     
         /**
          * Sets up the spying behavior for the given object.
@@ -140,7 +144,8 @@ declare module goog.labs.mock {
         constructor(obj: Object);
     }
 
-    class MockFunctionManager_ extends goog.labs.mock.MockManager_ {
+    class MockFunctionManager_ extends __MockFunctionManager_ { }
+    class __MockFunctionManager_ extends goog.labs.mock.__MockManager_ {
     
         /**
          * Sets up mock for the given function, stubbing out. By default, all stubs
@@ -157,7 +162,8 @@ declare module goog.labs.mock {
         constructor(func: Function);
     }
 
-    class StubBinder_ {
+    class StubBinder_ extends __StubBinder_ { }
+    class __StubBinder_ {
     
         /**
          * The stub binder is the object that helps define the stubs by binding
@@ -191,7 +197,8 @@ declare module goog.labs.mock {
         thenReturn(value: any): void;
     }
 
-    class MethodBinding_ {
+    class MethodBinding_ extends __MethodBinding_ { }
+    class __MethodBinding_ {
     
         /**
          * Represents a binding between a method name, args and a stub.

@@ -9,7 +9,8 @@
 
 declare module goog.net {
 
-    class XhrIo extends goog.events.EventTarget {
+    class XhrIo extends __XhrIo { }
+    class __XhrIo extends goog.events.__EventTarget {
     
         /**
          * Basic class for handling XMLHttpRequests.

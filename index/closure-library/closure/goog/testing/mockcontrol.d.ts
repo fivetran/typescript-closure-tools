@@ -5,7 +5,8 @@
 
 declare module goog.testing {
 
-    class MockControl {
+    class MockControl extends __MockControl { }
+    class __MockControl {
     
         /**
          * Controls a set of mocks.  Controlled mocks are replayed, verified, and

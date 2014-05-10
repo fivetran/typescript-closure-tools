@@ -7,7 +7,8 @@
 
 declare module goog.ui {
 
-    class Popup extends goog.ui.PopupBase {
+    class Popup extends __Popup { }
+    class __Popup extends goog.ui.__PopupBase {
     
         /**
          * The Popup class provides functionality for displaying an absolutely
@@ -94,7 +95,8 @@ declare module goog.ui {
 
 declare module goog.ui.Popup {
 
-    class AnchoredPosition extends goog.positioning.AbstractPosition {
+    class AnchoredPosition extends __AnchoredPosition { }
+    class __AnchoredPosition extends goog.positioning.__AbstractPosition {
     
         /**
          * Encapsulates a popup position where the popup is anchored at a corner of
@@ -117,7 +119,8 @@ declare module goog.ui.Popup {
         constructor(element: Element, corner: goog.positioning.Corner);
     }
 
-    class AnchoredViewPortPosition extends goog.ui.Popup.AnchoredPosition {
+    class AnchoredViewPortPosition extends __AnchoredViewPortPosition { }
+    class __AnchoredViewPortPosition extends goog.ui.Popup.__AnchoredPosition {
     
         /**
          * Encapsulates a popup position where the popup is anchored at a corner of
@@ -145,7 +148,8 @@ declare module goog.ui.Popup {
         constructor(element: Element, corner: goog.positioning.Corner, opt_adjust?: boolean);
     }
 
-    class AbsolutePosition extends goog.positioning.AbstractPosition {
+    class AbsolutePosition extends __AbsolutePosition { }
+    class __AbsolutePosition extends goog.positioning.__AbstractPosition {
     
         /**
          * Encapsulates a popup position where the popup absolutely positioned by
@@ -183,7 +187,8 @@ declare module goog.ui.Popup {
         constructor(arg1: goog.math.Coordinate, opt_arg2?: number);
     }
 
-    class ViewPortPosition extends goog.ui.Popup.AbsolutePosition {
+    class ViewPortPosition extends __ViewPortPosition { }
+    class __ViewPortPosition extends goog.ui.Popup.__AbsolutePosition {
     
         /**
          * Encapsulates a popup position where the popup is positioned according to
@@ -217,7 +222,8 @@ declare module goog.ui.Popup {
         constructor(arg1: goog.math.Coordinate, opt_arg2?: number);
     }
 
-    class ClientPosition extends goog.ui.Popup.AbsolutePosition {
+    class ClientPosition extends __ClientPosition { }
+    class __ClientPosition extends goog.ui.Popup.__AbsolutePosition {
     
         /**
          * Encapsulates a popup position where the popup is positioned relative to the
@@ -257,7 +263,8 @@ declare module goog.ui.Popup {
         constructor(arg1: goog.math.Coordinate, opt_arg2?: number);
     }
 
-    class ViewPortClientPosition extends goog.ui.Popup.ClientPosition {
+    class ViewPortClientPosition extends __ViewPortClientPosition { }
+    class __ViewPortClientPosition extends goog.ui.Popup.__ClientPosition {
     
         /**
          * Encapsulates a popup position where the popup is positioned relative to the

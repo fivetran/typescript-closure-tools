@@ -3,7 +3,8 @@
 
 declare module goog.ui {
 
-    class ToolbarButtonRenderer extends goog.ui.CustomButtonRenderer {
+    class ToolbarButtonRenderer extends __ToolbarButtonRenderer { }
+    class __ToolbarButtonRenderer extends goog.ui.__CustomButtonRenderer {
     
         /**
          * Toolbar-specific renderer for {@link goog.ui.Button}s, based on {@link

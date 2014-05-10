@@ -5,7 +5,8 @@
 
 declare module goog.result {
 
-    class DependentResultImpl_ extends goog.result.SimpleResult implements goog.result.DependentResult {
+    class DependentResultImpl_ extends __DependentResultImpl_ { }
+    class __DependentResultImpl_ extends goog.result.__SimpleResult implements goog.result.DependentResult {
     
         /**
          * A DependentResult represents a Result whose eventual value depends on the

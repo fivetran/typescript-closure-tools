@@ -6,7 +6,8 @@
 
 declare module goog.ui {
 
-    class ToolbarColorMenuButton extends goog.ui.ColorMenuButton {
+    class ToolbarColorMenuButton extends __ToolbarColorMenuButton { }
+    class __ToolbarColorMenuButton extends goog.ui.__ColorMenuButton {
     
         /**
          * A color menu button control for a toolbar.

@@ -4,7 +4,8 @@
 
 declare module goog.testing.messaging {
 
-    class MockMessageEvent extends goog.testing.events.Event {
+    class MockMessageEvent extends __MockMessageEvent { }
+    class __MockMessageEvent extends goog.testing.events.__Event {
     
         /**
          * Creates a new fake MessageEvent.

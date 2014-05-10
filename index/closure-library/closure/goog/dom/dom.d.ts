@@ -5,7 +5,8 @@
 
 declare module goog.dom {
 
-    class DomHelper {
+    class DomHelper extends __DomHelper { }
+    class __DomHelper {
     
         /**
          * Create an instance of a DOM helper with a new document object.

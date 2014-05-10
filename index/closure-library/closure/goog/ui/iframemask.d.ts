@@ -6,7 +6,8 @@
 
 declare module goog.ui {
 
-    class IframeMask extends goog.Disposable {
+    class IframeMask extends __IframeMask { }
+    class __IframeMask extends goog.__Disposable {
     
         /**
          * Controller for an iframe mask. The mask is only valid in the current

@@ -8,7 +8,8 @@
 
 declare module goog.net {
 
-    class XhrManager extends goog.events.EventTarget {
+    class XhrManager extends __XhrManager { }
+    class __XhrManager extends goog.events.__EventTarget {
     
         /**
          * A manager of an XhrIoPool.
@@ -348,7 +349,8 @@ declare module goog.net {
 
 declare module goog.net.XhrManager {
 
-    class Event extends goog.events.Event {
+    class Event extends __Event { }
+    class __Event extends goog.events.__Event {
     
         /**
          * An event dispatched by XhrManager.
@@ -365,7 +367,8 @@ declare module goog.net.XhrManager {
         constructor(type: goog.net.EventType, target: goog.net.XhrManager, id: string, xhrIo: goog.net.XhrIo);
     }
 
-    class Request {
+    class Request extends __Request { }
+    class __Request {
     
         /**
          * An encapsulation of everything needed to make a Xhr request.

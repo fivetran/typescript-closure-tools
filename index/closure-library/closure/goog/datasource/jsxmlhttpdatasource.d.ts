@@ -3,7 +3,8 @@
 
 declare module goog.ds {
 
-    class JsXmlHttpDataSource extends goog.ds.FastDataNode {
+    class JsXmlHttpDataSource extends __JsXmlHttpDataSource { }
+    class __JsXmlHttpDataSource extends goog.ds.__FastDataNode {
     
         /**
          * Similar to JsonDataSource, with using XMLHttpRequest for transport

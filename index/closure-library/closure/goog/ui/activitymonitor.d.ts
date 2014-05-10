@@ -4,7 +4,8 @@
 
 declare module goog.ui {
 
-    class ActivityMonitor extends goog.events.EventTarget {
+    class ActivityMonitor extends __ActivityMonitor { }
+    class __ActivityMonitor extends goog.events.__EventTarget {
     
         /**
          * Once initialized with a document, the activity monitor can be queried for

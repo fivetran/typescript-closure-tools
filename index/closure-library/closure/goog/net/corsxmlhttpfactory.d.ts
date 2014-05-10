@@ -4,7 +4,8 @@
 
 declare module goog.net {
 
-    class CorsXmlHttpFactory extends goog.net.XmlHttpFactory {
+    class CorsXmlHttpFactory extends __CorsXmlHttpFactory { }
+    class __CorsXmlHttpFactory extends goog.net.__XmlHttpFactory {
     
         /**
          * A factory of XML http request objects that supports cross domain requests.
@@ -18,7 +19,8 @@ declare module goog.net {
         constructor();
     }
 
-    class IeCorsXhrAdapter implements goog.net.XhrLike {
+    class IeCorsXhrAdapter extends __IeCorsXhrAdapter { }
+    class __IeCorsXhrAdapter implements goog.net.XhrLike {
     
         /**
          * An adapter around Internet Explorer's XDomainRequest object that makes it

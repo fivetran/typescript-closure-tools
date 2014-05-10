@@ -3,7 +3,8 @@
 
 declare module goog.dom.pattern {
 
-    class AllChildren extends goog.dom.pattern.AbstractPattern {
+    class AllChildren extends __AllChildren { }
+    class __AllChildren extends goog.dom.pattern.__AbstractPattern {
     
         /**
          * Pattern object that matches any nodes at or below the current tree depth.

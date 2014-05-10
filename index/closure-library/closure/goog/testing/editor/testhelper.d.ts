@@ -3,7 +3,8 @@
 
 declare module goog.testing.editor {
 
-    class TestHelper extends goog.Disposable {
+    class TestHelper extends __TestHelper { }
+    class __TestHelper extends goog.__Disposable {
     
         /**
          * Create a new test controller.

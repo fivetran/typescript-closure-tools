@@ -9,7 +9,8 @@
 
 declare module goog.ui {
 
-    class SubMenu extends goog.ui.MenuItem {
+    class SubMenu extends __SubMenu { }
+    class __SubMenu extends goog.ui.__MenuItem {
     
         /**
          * Class representing a submenu that can be added as an item to other menus.

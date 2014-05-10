@@ -4,7 +4,8 @@
 
 declare module goog.testing {
 
-    class MockRange extends goog.testing.LooseMock {
+    class MockRange extends __MockRange { }
+    class __MockRange extends goog.testing.__LooseMock {
     
         /**
          * LooseMock of goog.dom.AbstractRange. Useful because the mock framework cannot
@@ -21,7 +22,8 @@ declare module goog.testing {
 
 declare module goog.testing.MockRange {
 
-    class ConcreteRange_ extends goog.dom.AbstractRange {
+    class ConcreteRange_ extends __ConcreteRange_ { }
+    class __ConcreteRange_ extends goog.dom.__AbstractRange {
     
         /**
          * Concrete subclass of goog.dom.AbstractRange that simply sets the abstract

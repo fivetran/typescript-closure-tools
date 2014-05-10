@@ -4,7 +4,8 @@
 
 declare module goog.ui {
 
-    class TwoThumbSlider extends goog.ui.SliderBase {
+    class TwoThumbSlider extends __TwoThumbSlider { }
+    class __TwoThumbSlider extends goog.ui.__SliderBase {
     
         /**
          * This creates a TwoThumbSlider object.

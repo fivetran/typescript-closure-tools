@@ -4,7 +4,8 @@
 
 declare module goog.net.jsloader {
 
-    class Error extends goog.debug.Error {
+    class Error extends __Error { }
+    class __Error extends goog.debug.__Error {
     
         /**
          * A jsloader error.

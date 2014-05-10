@@ -2,7 +2,8 @@
 
 declare module goog.graphics {
 
-    class Fill {
+    class Fill extends __Fill { }
+    class __Fill {
     
         /**
          * Creates a fill object

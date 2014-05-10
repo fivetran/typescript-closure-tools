@@ -4,7 +4,8 @@
 
 declare module goog.ui {
 
-    class AnimatedZippy extends goog.ui.Zippy {
+    class AnimatedZippy extends __AnimatedZippy { }
+    class __AnimatedZippy extends goog.ui.__Zippy {
     
         /**
          * Zippy widget. Expandable/collapsible container, clicking the header toggles

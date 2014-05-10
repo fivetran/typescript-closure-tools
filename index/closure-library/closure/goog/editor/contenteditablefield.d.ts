@@ -3,7 +3,8 @@
 
 declare module goog.editor {
 
-    class ContentEditableField extends goog.editor.Field {
+    class ContentEditableField extends __ContentEditableField { }
+    class __ContentEditableField extends goog.editor.__Field {
     
         /**
          * This class encapsulates an editable field that is just a contentEditable

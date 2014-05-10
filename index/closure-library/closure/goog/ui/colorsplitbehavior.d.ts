@@ -5,7 +5,8 @@
 
 declare module goog.ui {
 
-    class ColorSplitBehavior extends goog.ui.SplitBehavior {
+    class ColorSplitBehavior extends __ColorSplitBehavior { }
+    class __ColorSplitBehavior extends goog.ui.__SplitBehavior {
     
         /**
          * Constructs a ColorSplitBehavior for combining a color button and a menu.

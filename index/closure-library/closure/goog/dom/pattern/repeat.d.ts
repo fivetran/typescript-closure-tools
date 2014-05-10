@@ -3,7 +3,8 @@
 
 declare module goog.dom.pattern {
 
-    class Repeat extends goog.dom.pattern.AbstractPattern {
+    class Repeat extends __Repeat { }
+    class __Repeat extends goog.dom.pattern.__AbstractPattern {
     
         /**
          * Pattern object that matches a repetition of another pattern.

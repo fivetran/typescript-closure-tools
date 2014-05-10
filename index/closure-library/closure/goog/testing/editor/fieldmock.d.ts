@@ -4,7 +4,8 @@
 
 declare module goog.testing.editor {
 
-    class FieldMock extends goog.testing.LooseMock {
+    class FieldMock extends __FieldMock { }
+    class __FieldMock extends goog.testing.__LooseMock {
     
         /**
          * Mock of goog.editor.Field.

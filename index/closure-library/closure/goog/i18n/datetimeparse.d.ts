@@ -3,7 +3,8 @@
 
 declare module goog.i18n {
 
-    class DateTimeParse {
+    class DateTimeParse extends __DateTimeParse { }
+    class __DateTimeParse {
     
         /**
          * Construct a DateTimeParse based on current locale.
@@ -62,7 +63,8 @@ declare module goog.i18n {
 
 declare module goog.i18n.DateTimeParse {
 
-    class MyDate_ {
+    class MyDate_ extends __MyDate_ { }
+    class __MyDate_ {
     
         /**
          * This class hold the intermediate parsing result. After all fields are

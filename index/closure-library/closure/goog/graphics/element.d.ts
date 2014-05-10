@@ -5,7 +5,8 @@
 
 declare module goog.graphics {
 
-    class Element extends goog.events.EventTarget {
+    class Element extends __Element { }
+    class __Element extends goog.events.__EventTarget {
     
         /**
          * Base class for a thin wrapper around the DOM element returned from

@@ -4,7 +4,8 @@
 
 declare module goog.graphics {
 
-    class ImageElement extends goog.graphics.Element {
+    class ImageElement extends __ImageElement { }
+    class __ImageElement extends goog.graphics.__Element {
     
         /**
          * Interface for a graphics image element.

@@ -4,7 +4,8 @@
 
 declare module goog.testing.fs {
 
-    class FileSystem implements goog.fs.FileSystem {
+    class FileSystem extends __FileSystem { }
+    class __FileSystem implements goog.fs.FileSystem {
     
         /**
          * A mock filesystem object.

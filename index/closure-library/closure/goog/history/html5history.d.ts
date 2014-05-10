@@ -3,7 +3,8 @@
 
 declare module goog.history {
 
-    class Html5History extends goog.events.EventTarget {
+    class Html5History extends __Html5History { }
+    class __Html5History extends goog.events.__EventTarget {
     
         /**
          * An implementation compatible with goog.History that uses the HTML5

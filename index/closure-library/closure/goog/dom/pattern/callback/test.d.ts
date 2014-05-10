@@ -2,7 +2,8 @@
 
 declare module goog.dom.pattern.callback {
 
-    class Test {
+    class Test extends __Test { }
+    class __Test {
     
         /**
          * Callback class for testing for at least one match.

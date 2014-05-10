@@ -5,7 +5,8 @@
 
 declare module goog.ui {
 
-    class AdvancedTooltip extends goog.ui.Tooltip {
+    class AdvancedTooltip extends __AdvancedTooltip { }
+    class __AdvancedTooltip extends goog.ui.__Tooltip {
     
         /**
          * Advanced tooltip widget with cursor tracking abilities. Works like a regular

@@ -4,7 +4,8 @@
 
 declare module goog.testing {
 
-    class PerformanceTable {
+    class PerformanceTable extends __PerformanceTable { }
+    class __PerformanceTable {
     
         /**
          * A UI widget that runs performance tests and displays the results.

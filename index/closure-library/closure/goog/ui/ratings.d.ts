@@ -4,7 +4,8 @@
 
 declare module goog.ui {
 
-    class Ratings extends goog.ui.Component {
+    class Ratings extends __Ratings { }
+    class __Ratings extends goog.ui.__Component {
     
         /**
          * A UI Control used for rating things, i.e. videos on Google Video.

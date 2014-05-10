@@ -4,7 +4,8 @@
 
 declare module goog.ui {
 
-    class BaseRoundedPanel extends goog.ui.Component {
+    class BaseRoundedPanel extends __BaseRoundedPanel { }
+    class __BaseRoundedPanel extends goog.ui.__Component {
     
         /**
          * Base class for the hierarchy of RoundedPanel classes. Do not
@@ -31,7 +32,8 @@ declare module goog.ui {
         constructor(radius: number, borderWidth: number, borderColor: string, opt_backgroundColor?: string, opt_corners?: number, opt_domHelper?: goog.dom.DomHelper);
     }
 
-    class CssRoundedPanel extends goog.ui.BaseRoundedPanel {
+    class CssRoundedPanel extends __CssRoundedPanel { }
+    class __CssRoundedPanel extends goog.ui.__BaseRoundedPanel {
     
         /**
          * RoundedPanel class specifically for browsers that support CSS attributes
@@ -53,7 +55,8 @@ declare module goog.ui {
         constructor(radius: number, borderWidth: number, borderColor: string, opt_backgroundColor?: string, opt_corners?: number, opt_domHelper?: goog.dom.DomHelper);
     }
 
-    class GraphicsRoundedPanel extends goog.ui.BaseRoundedPanel {
+    class GraphicsRoundedPanel extends __GraphicsRoundedPanel { }
+    class __GraphicsRoundedPanel extends goog.ui.__BaseRoundedPanel {
     
         /**
          * RoundedPanel class that uses goog.graphics to create the rounded corners.

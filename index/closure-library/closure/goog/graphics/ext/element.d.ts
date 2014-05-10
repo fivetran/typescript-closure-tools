@@ -7,7 +7,8 @@
 
 declare module goog.graphics.ext {
 
-    class Element extends goog.events.EventTarget {
+    class Element extends __Element { }
+    class __Element extends goog.events.__EventTarget {
     
         /**
          * Base class for a wrapper around the goog.graphics wrapper that enables
@@ -605,7 +606,8 @@ declare module goog.graphics.ext {
 
 declare module goog.graphics.ext.Element {
 
-    class Position_ {
+    class Position_ extends __Position_ { }
+    class __Position_ {
     
         /**
          * Manages a position and size, either horizontal or vertical.

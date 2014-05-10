@@ -2,7 +2,8 @@
 
 declare module goog.vec {
 
-    class Float64Array {
+    class Float64Array extends __Float64Array { }
+    class __Float64Array {
     
         /**
          * Constructs a new Float64Array. The new array is initialized to all zeros.

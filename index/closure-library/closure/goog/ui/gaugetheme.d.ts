@@ -4,7 +4,8 @@
 
 declare module goog.ui {
 
-    class GaugeTheme {
+    class GaugeTheme extends __GaugeTheme { }
+    class __GaugeTheme {
     
         /**
          * A class for the default color theme for a Gauge.

@@ -4,7 +4,8 @@
 
 declare module goog.testing {
 
-    class MockClassRecord {
+    class MockClassRecord extends __MockClassRecord { }
+    class __MockClassRecord {
     
         /**
          * A record that represents all the data associated with a mock replacement of
@@ -96,7 +97,8 @@ declare module goog.testing {
         reset(): void;
     }
 
-    class MockClassFactory {
+    class MockClassFactory extends __MockClassFactory { }
+    class __MockClassFactory {
     
         /**
          * A factory used to create new mock class instances.  It is able to generate

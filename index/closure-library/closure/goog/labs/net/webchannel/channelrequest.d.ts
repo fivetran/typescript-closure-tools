@@ -4,7 +4,8 @@
 
 declare module goog.labs.net.webChannel {
 
-    class ChannelRequest {
+    class ChannelRequest extends __ChannelRequest { }
+    class __ChannelRequest {
     
         /**
          * A new ChannelRequest is created for each request to the server.

@@ -3,7 +3,8 @@
 
 declare module goog.editor {
 
-    class Link {
+    class Link extends __Link { }
+    class __Link {
     
         /**
          * Wrap an editable link.

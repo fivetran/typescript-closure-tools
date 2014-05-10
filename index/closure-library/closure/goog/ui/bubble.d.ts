@@ -7,7 +7,8 @@
 
 declare module goog.ui {
 
-    class Bubble extends goog.ui.Component {
+    class Bubble extends __Bubble { }
+    class __Bubble extends goog.ui.__Component {
     
         /**
          * The Bubble provides a general purpose bubble implementation that can be

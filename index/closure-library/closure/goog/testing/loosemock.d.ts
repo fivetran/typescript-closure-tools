@@ -4,7 +4,8 @@
 
 declare module goog.testing {
 
-    class LooseExpectationCollection {
+    class LooseExpectationCollection extends __LooseExpectationCollection { }
+    class __LooseExpectationCollection {
     
         /**
          * This class is an ordered collection of expectations for one method. Since
@@ -29,7 +30,8 @@ declare module goog.testing {
         getExpectations(): goog.testing.MockExpectation[];
     }
 
-    class LooseMock extends goog.testing.Mock {
+    class LooseMock extends __LooseMock { }
+    class __LooseMock extends goog.testing.__Mock {
     
         /**
          * This is a mock that does not care about the order of method calls. As a

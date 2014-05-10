@@ -4,7 +4,8 @@
 
 declare module goog.events {
 
-    class ActionHandler extends goog.events.EventTarget {
+    class ActionHandler extends __ActionHandler { }
+    class __ActionHandler extends goog.events.__EventTarget {
     
         /**
          * A wrapper around an element that you want to listen to ACTION events on.
@@ -24,7 +25,8 @@ declare module goog.events {
         constructor(element: Document);
     }
 
-    class ActionEvent extends goog.events.BrowserEvent {
+    class ActionEvent extends __ActionEvent { }
+    class __ActionEvent extends goog.events.__BrowserEvent {
     
         /**
          * This class is used for the goog.events.ActionHandler.EventType.ACTION event.
@@ -36,7 +38,8 @@ declare module goog.events {
         constructor(browserEvent: goog.events.BrowserEvent);
     }
 
-    class BeforeActionEvent extends goog.events.BrowserEvent {
+    class BeforeActionEvent extends __BeforeActionEvent { }
+    class __BeforeActionEvent extends goog.events.__BrowserEvent {
     
         /**
          * This class is used for the goog.events.ActionHandler.EventType.BEFOREACTION

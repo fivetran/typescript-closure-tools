@@ -2,7 +2,8 @@
 
 declare module goog.ui.emoji {
 
-    class Emoji {
+    class Emoji extends __Emoji { }
+    class __Emoji {
     
         /**
          * Creates an emoji.

@@ -6,7 +6,8 @@
 
 declare module goog.ui {
 
-    class PlainTextSpellChecker extends goog.ui.AbstractSpellChecker {
+    class PlainTextSpellChecker extends __PlainTextSpellChecker { }
+    class __PlainTextSpellChecker extends goog.ui.__AbstractSpellChecker {
     
         /**
          * Plain text spell checker implementation.

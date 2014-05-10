@@ -33,7 +33,8 @@ declare module goog.net {
 
 declare module goog.net.WebChannel {
 
-    class MessageEvent extends goog.events.Event {
+    class MessageEvent extends __MessageEvent { }
+    class __MessageEvent extends goog.events.__Event {
     
         /**
          * The event interface for the MESSAGE event.
@@ -51,7 +52,8 @@ declare module goog.net.WebChannel {
         data: goog.net.WebChannel.MessageData;
     }
 
-    class ErrorEvent extends goog.events.Event {
+    class ErrorEvent extends __ErrorEvent { }
+    class __ErrorEvent extends goog.events.__Event {
     
         /**
          * The event interface for the ERROR event.

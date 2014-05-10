@@ -5,7 +5,8 @@
 
 declare module goog.messaging {
 
-    class PortOperator extends goog.Disposable implements goog.messaging.PortNetwork {
+    class PortOperator extends __PortOperator { }
+    class __PortOperator extends goog.__Disposable implements goog.messaging.PortNetwork {
     
         /**
          * The central node of a PortNetwork.

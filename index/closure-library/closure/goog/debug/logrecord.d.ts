@@ -3,7 +3,8 @@
 
 declare module goog.debug {
 
-    class LogRecord {
+    class LogRecord extends __LogRecord { }
+    class __LogRecord {
     
         /**
          * LogRecord objects are used to pass logging requests between

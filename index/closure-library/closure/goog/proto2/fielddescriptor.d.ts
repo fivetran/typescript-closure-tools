@@ -3,7 +3,8 @@
 
 declare module goog.proto2 {
 
-    class FieldDescriptor {
+    class FieldDescriptor extends __FieldDescriptor { }
+    class __FieldDescriptor {
     
         /**
          * A class which describes a field in a Protocol Buffer 2 Message.

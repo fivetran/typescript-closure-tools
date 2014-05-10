@@ -2,7 +2,8 @@
 
 declare module goog.editor.icontent {
 
-    class FieldFormatInfo {
+    class FieldFormatInfo extends __FieldFormatInfo { }
+    class __FieldFormatInfo {
     
         /**
          * A data structure for storing simple rendering info about a field.
@@ -20,7 +21,8 @@ declare module goog.editor.icontent {
         constructor(fieldId: string, standards: boolean, blended: boolean, fixedHeight: boolean, opt_extraStyles?: Object);
     }
 
-    class FieldStyleInfo {
+    class FieldStyleInfo extends __FieldStyleInfo { }
+    class __FieldStyleInfo {
     
         /**
          * A data structure for storing simple info about the styles of a field.

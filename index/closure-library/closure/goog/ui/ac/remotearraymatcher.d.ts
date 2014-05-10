@@ -5,7 +5,8 @@
 
 declare module goog.ui.ac {
 
-    class RemoteArrayMatcher extends goog.Disposable {
+    class RemoteArrayMatcher extends __RemoteArrayMatcher { }
+    class __RemoteArrayMatcher extends goog.__Disposable {
     
         /**
          * An array matcher that requests matches via ajax.

@@ -5,7 +5,8 @@
 
 declare module goog.net.xpc {
 
-    class IframeRelayTransport extends goog.net.xpc.Transport {
+    class IframeRelayTransport extends __IframeRelayTransport { }
+    class __IframeRelayTransport extends goog.net.xpc.__Transport {
     
         /**
          * Iframe relay transport. Creates hidden iframes containing a document

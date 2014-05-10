@@ -5,7 +5,8 @@
 
 declare module goog.ui {
 
-    class DragDropDetector extends goog.events.EventTarget {
+    class DragDropDetector extends __DragDropDetector { }
+    class __DragDropDetector extends goog.events.__EventTarget {
     
         /**
          * Creates a new drag and drop detector.
@@ -22,7 +23,8 @@ declare module goog.ui {
 
 declare module goog.ui.DragDropDetector {
 
-    class ImageDropEvent extends goog.events.Event {
+    class ImageDropEvent extends __ImageDropEvent { }
+    class __ImageDropEvent extends goog.events.__Event {
     
         /**
          * Creates a new image drop event object.
@@ -48,7 +50,8 @@ declare module goog.ui.DragDropDetector {
         getPosition(): goog.math.Coordinate;
     }
 
-    class LinkDropEvent extends goog.events.Event {
+    class LinkDropEvent extends __LinkDropEvent { }
+    class __LinkDropEvent extends goog.events.__Event {
     
         /**
          * Creates a new link drop event object.

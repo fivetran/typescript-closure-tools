@@ -3,7 +3,8 @@
 
 declare module goog.storage.mechanism {
 
-    class ErrorHandlingMechanism extends goog.storage.mechanism.Mechanism {
+    class ErrorHandlingMechanism extends __ErrorHandlingMechanism { }
+    class __ErrorHandlingMechanism extends goog.storage.mechanism.__Mechanism {
     
         /**
          * Wraps a storage mechanism with a custom error handler.

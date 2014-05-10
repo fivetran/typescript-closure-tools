@@ -3,7 +3,7 @@
 
 declare module goog.net {
 
-    interface NetworkStatusMonitor extends goog.events.Listenable {
+    interface NetworkStatusMonitor extends goog.events.__Listenable {
     
         /**
          * @return {boolean} Whether the system is online or otherwise.

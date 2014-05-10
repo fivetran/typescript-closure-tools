@@ -5,7 +5,8 @@
 
 declare module goog.fx {
 
-    class AnimationQueue extends goog.fx.TransitionBase {
+    class AnimationQueue extends __AnimationQueue { }
+    class __AnimationQueue extends goog.fx.__TransitionBase {
     
         /**
          * Constructor for AnimationQueue object.
@@ -35,7 +36,8 @@ declare module goog.fx {
         onAnimationFinish(e: goog.events.Event): void;
     }
 
-    class AnimationParallelQueue extends goog.fx.AnimationQueue {
+    class AnimationParallelQueue extends __AnimationParallelQueue { }
+    class __AnimationParallelQueue extends goog.fx.__AnimationQueue {
     
         /**
          * Constructor for AnimationParallelQueue object.
@@ -45,7 +47,8 @@ declare module goog.fx {
         constructor();
     }
 
-    class AnimationSerialQueue extends goog.fx.AnimationQueue {
+    class AnimationSerialQueue extends __AnimationSerialQueue { }
+    class __AnimationSerialQueue extends goog.fx.__AnimationQueue {
     
         /**
          * Constructor for AnimationSerialQueue object.

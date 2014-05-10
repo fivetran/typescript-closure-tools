@@ -13,7 +13,8 @@
 
 declare module goog.net {
 
-    class BrowserChannel {
+    class BrowserChannel extends __BrowserChannel { }
+    class __BrowserChannel {
     
         /**
          * Encapsulates the logic for a single BrowserChannel.
@@ -390,7 +391,8 @@ declare module goog.net {
 
 declare module goog.net.BrowserChannel {
 
-    class QueuedMap {
+    class QueuedMap extends __QueuedMap { }
+    class __QueuedMap {
     
         /**
          * Simple container class for a (mapId, map) pair.
@@ -412,7 +414,8 @@ declare module goog.net.BrowserChannel {
         constructor(mapId: number, map: goog.structs.Map<any, any>, opt_context?: Object);
     }
 
-    class StatEvent extends goog.events.Event {
+    class StatEvent extends __StatEvent { }
+    class __StatEvent extends goog.events.__Event {
     
         /**
          * Event class for goog.net.BrowserChannel.Event.STAT_EVENT
@@ -427,7 +430,8 @@ declare module goog.net.BrowserChannel {
         constructor(eventTarget: goog.events.EventTarget, stat: goog.net.BrowserChannel.Stat);
     }
 
-    class TimingEvent extends goog.events.Event {
+    class TimingEvent extends __TimingEvent { }
+    class __TimingEvent extends goog.events.__Event {
     
         /**
          * Event class for goog.net.BrowserChannel.Event.TIMING_EVENT
@@ -444,7 +448,8 @@ declare module goog.net.BrowserChannel {
         constructor(target: goog.events.EventTarget, size: number, rtt: number, retries: number);
     }
 
-    class ServerReachabilityEvent extends goog.events.Event {
+    class ServerReachabilityEvent extends __ServerReachabilityEvent { }
+    class __ServerReachabilityEvent extends goog.events.__Event {
     
         /**
          * Event class for goog.net.BrowserChannel.Event.SERVER_REACHABILITY_EVENT.
@@ -460,7 +465,8 @@ declare module goog.net.BrowserChannel {
         constructor(target: goog.events.EventTarget, reachabilityType: goog.net.BrowserChannel.ServerReachability);
     }
 
-    class Handler {
+    class Handler extends __Handler { }
+    class __Handler {
     
         /**
          * Abstract base class for the browser channel handler

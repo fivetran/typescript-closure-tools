@@ -2,7 +2,8 @@
 
 declare module goog.labs.structs {
 
-    class Map {
+    class Map extends __Map { }
+    class __Map {
     
         /**
          * Creates a new map.

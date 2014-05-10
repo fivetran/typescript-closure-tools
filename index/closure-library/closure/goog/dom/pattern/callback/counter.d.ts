@@ -2,7 +2,8 @@
 
 declare module goog.dom.pattern.callback {
 
-    class Counter {
+    class Counter extends __Counter { }
+    class __Counter {
     
         /**
          * Callback class for counting matches.

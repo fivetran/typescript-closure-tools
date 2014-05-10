@@ -5,7 +5,8 @@
 
 declare module goog.vec {
 
-    class Ray {
+    class Ray extends __Ray { }
+    class __Ray {
     
         /**
          * Constructs a new ray with an optional origin and direction. If not specified,

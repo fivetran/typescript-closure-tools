@@ -8,7 +8,8 @@
 
 declare module goog.fx {
 
-    class DragListGroup extends goog.events.EventTarget {
+    class DragListGroup extends __DragListGroup { }
+    class __DragListGroup extends goog.events.__EventTarget {
     
         /**
          * A class representing a group of one or more "drag lists" with items that can
@@ -189,7 +190,8 @@ declare module goog.fx {
         insertCurrHoverItem(): void;
     }
 
-    class DragListGroupEvent extends goog.events.Event {
+    class DragListGroupEvent extends __DragListGroupEvent { }
+    class __DragListGroupEvent extends goog.events.__Event {
     
         /**
          * The event object dispatched by DragListGroup.

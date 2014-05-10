@@ -3,7 +3,8 @@
 
 declare module goog {
 
-    class Timer extends goog.events.EventTarget {
+    class Timer extends __Timer { }
+    class __Timer extends goog.events.__EventTarget {
     
         /**
          * Class for handling timing events.

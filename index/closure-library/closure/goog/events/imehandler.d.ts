@@ -5,7 +5,8 @@
 
 declare module goog.events {
 
-    class ImeHandler extends goog.events.EventTarget {
+    class ImeHandler extends __ImeHandler { }
+    class __ImeHandler extends goog.events.__EventTarget {
     
         /**
          * Dispatches high-level events for IMEs.
@@ -25,7 +26,8 @@ declare module goog.events {
 
 declare module goog.events.ImeHandler {
 
-    class Event extends goog.events.Event {
+    class Event extends __Event { }
+    class __Event extends goog.events.__Event {
     
         /**
          * An event fired by ImeHandler.

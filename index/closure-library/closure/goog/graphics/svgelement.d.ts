@@ -11,7 +11,8 @@
 
 declare module goog.graphics {
 
-    class SvgGroupElement extends goog.graphics.GroupElement {
+    class SvgGroupElement extends __SvgGroupElement { }
+    class __SvgGroupElement extends goog.graphics.__GroupElement {
     
         /**
          * Thin wrapper for SVG group elements.
@@ -30,7 +31,8 @@ declare module goog.graphics {
         constructor(element: Element, graphics: goog.graphics.SvgGraphics);
     }
 
-    class SvgEllipseElement extends goog.graphics.EllipseElement {
+    class SvgEllipseElement extends __SvgEllipseElement { }
+    class __SvgEllipseElement extends goog.graphics.__EllipseElement {
     
         /**
          * Thin wrapper for SVG ellipse elements.
@@ -49,7 +51,8 @@ declare module goog.graphics {
         constructor(element: Element, graphics: goog.graphics.SvgGraphics, stroke: goog.graphics.Stroke, fill: goog.graphics.Fill);
     }
 
-    class SvgRectElement extends goog.graphics.RectElement {
+    class SvgRectElement extends __SvgRectElement { }
+    class __SvgRectElement extends goog.graphics.__RectElement {
     
         /**
          * Thin wrapper for SVG rectangle elements.
@@ -68,7 +71,8 @@ declare module goog.graphics {
         constructor(element: Element, graphics: goog.graphics.SvgGraphics, stroke: goog.graphics.Stroke, fill: goog.graphics.Fill);
     }
 
-    class SvgPathElement extends goog.graphics.PathElement {
+    class SvgPathElement extends __SvgPathElement { }
+    class __SvgPathElement extends goog.graphics.__PathElement {
     
         /**
          * Thin wrapper for SVG path elements.
@@ -87,7 +91,8 @@ declare module goog.graphics {
         constructor(element: Element, graphics: goog.graphics.SvgGraphics, stroke: goog.graphics.Stroke, fill: goog.graphics.Fill);
     }
 
-    class SvgTextElement extends goog.graphics.TextElement {
+    class SvgTextElement extends __SvgTextElement { }
+    class __SvgTextElement extends goog.graphics.__TextElement {
     
         /**
          * Thin wrapper for SVG text elements.
@@ -106,7 +111,8 @@ declare module goog.graphics {
         constructor(element: Element, graphics: goog.graphics.SvgGraphics, stroke: goog.graphics.Stroke, fill: goog.graphics.Fill);
     }
 
-    class SvgImageElement extends goog.graphics.ImageElement {
+    class SvgImageElement extends __SvgImageElement { }
+    class __SvgImageElement extends goog.graphics.__ImageElement {
     
         /**
          * Thin wrapper for SVG image elements.

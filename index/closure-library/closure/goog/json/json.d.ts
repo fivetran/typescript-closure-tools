@@ -2,7 +2,8 @@
 
 declare module goog.json {
 
-    class Serializer {
+    class Serializer extends __Serializer { }
+    class __Serializer {
     
         /**
          * Class that is used to serialize JSON objects to a string.

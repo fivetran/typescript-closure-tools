@@ -5,7 +5,8 @@
 
 declare module goog.ui {
 
-    class ToggleButton extends goog.ui.Button {
+    class ToggleButton extends __ToggleButton { }
+    class __ToggleButton extends goog.ui.__Button {
     
         /**
          * A toggle button, with checkbox-like semantics.  Rendered using

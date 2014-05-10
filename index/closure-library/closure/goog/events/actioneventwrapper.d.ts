@@ -5,7 +5,8 @@
 
 declare module goog.events {
 
-    class ActionEventWrapper_ implements goog.events.EventWrapper {
+    class ActionEventWrapper_ extends __ActionEventWrapper_ { }
+    class __ActionEventWrapper_ implements goog.events.EventWrapper {
     
         /**
          * Event wrapper for action handling. Fires when an element is activated either

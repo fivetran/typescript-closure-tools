@@ -4,7 +4,8 @@
 
 declare module goog.ds {
 
-    class AbstractFastDataNode extends goog.ds.DataNodeList {
+    class AbstractFastDataNode extends __AbstractFastDataNode { }
+    class __AbstractFastDataNode extends goog.ds.__DataNodeList {
     
         /**
          * Creates a new abstract data node.
@@ -16,7 +17,8 @@ declare module goog.ds {
         constructor(dataName: string, opt_parent?: goog.ds.DataNode);
     }
 
-    class FastDataNode extends goog.ds.AbstractFastDataNode {
+    class FastDataNode extends __FastDataNode { }
+    class __FastDataNode extends goog.ds.__AbstractFastDataNode {
     
         /**
          * Creates a new fast data node, using the properties of root.
@@ -49,7 +51,8 @@ declare module goog.ds {
         clone(): goog.ds.FastDataNode;
     }
 
-    class PrimitiveFastDataNode extends goog.ds.AbstractFastDataNode {
+    class PrimitiveFastDataNode extends __PrimitiveFastDataNode { }
+    class __PrimitiveFastDataNode extends goog.ds.__AbstractFastDataNode {
     
         /**
          * Creates a new data node wrapping a primitive value.
@@ -90,7 +93,8 @@ declare module goog.ds {
         getJsObject(): any;
     }
 
-    class FastListNode extends goog.ds.AbstractFastDataNode {
+    class FastListNode extends __FastListNode { }
+    class __FastListNode extends goog.ds.__AbstractFastDataNode {
     
         /**
          * Creates a new list node from an array.

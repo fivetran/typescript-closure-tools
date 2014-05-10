@@ -2,7 +2,8 @@
 
 declare module goog.math {
 
-    class Integer {
+    class Integer extends __Integer { }
+    class __Integer {
     
         /**
          * Constructs a two's-complement integer an array containing bits of the

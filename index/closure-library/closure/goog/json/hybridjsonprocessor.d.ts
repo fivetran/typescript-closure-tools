@@ -3,7 +3,8 @@
 
 declare module goog.json {
 
-    class HybridJsonProcessor implements goog.json.Processor {
+    class HybridJsonProcessor extends __HybridJsonProcessor { }
+    class __HybridJsonProcessor implements goog.json.Processor {
     
         /**
          * Processor form of goog.json.hybrid, which attempts to parse/serialize

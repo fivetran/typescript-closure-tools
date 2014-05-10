@@ -8,7 +8,8 @@
 
 declare module goog.ui.emoji {
 
-    class EmojiPicker extends goog.ui.Component {
+    class EmojiPicker extends __EmojiPicker { }
+    class __EmojiPicker extends goog.ui.__Component {
     
         /**
          * Creates a new, empty emoji picker. An emoji picker is a grid of emoji, each

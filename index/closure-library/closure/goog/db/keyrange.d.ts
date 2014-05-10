@@ -2,7 +2,8 @@
 
 declare module goog.db {
 
-    class KeyRange {
+    class KeyRange extends __KeyRange { }
+    class __KeyRange {
     
         /**
          * Creates a new IDBKeyRange wrapper object. Should not be created directly,

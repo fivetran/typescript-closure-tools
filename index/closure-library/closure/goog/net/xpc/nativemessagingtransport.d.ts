@@ -5,7 +5,8 @@
 
 declare module goog.net.xpc {
 
-    class NativeMessagingTransport extends goog.net.xpc.Transport {
+    class NativeMessagingTransport extends __NativeMessagingTransport { }
+    class __NativeMessagingTransport extends goog.net.xpc.__Transport {
     
         /**
          * The native messaging transport

@@ -6,7 +6,8 @@
 
 declare module goog.graphics {
 
-    class EllipseElement extends goog.graphics.StrokeAndFillElement {
+    class EllipseElement extends __EllipseElement { }
+    class __EllipseElement extends goog.graphics.__StrokeAndFillElement {
     
         /**
          * Interface for a graphics ellipse element.

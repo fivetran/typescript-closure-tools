@@ -3,7 +3,8 @@
 
 declare module goog.math.interpolator {
 
-    class Linear1 implements goog.math.interpolator.Interpolator1 {
+    class Linear1 extends __Linear1 { }
+    class __Linear1 implements goog.math.interpolator.Interpolator1 {
     
         /**
          * A one dimensional linear interpolator.

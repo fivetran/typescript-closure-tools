@@ -3,7 +3,8 @@
 
 declare module goog.ui {
 
-    class FilterObservingMenuItemRenderer extends goog.ui.MenuItemRenderer {
+    class FilterObservingMenuItemRenderer extends __FilterObservingMenuItemRenderer { }
+    class __FilterObservingMenuItemRenderer extends goog.ui.__MenuItemRenderer {
     
         /**
          * Default renderer for {@link goog.ui.FilterObservingMenuItem}s. Each item has

@@ -3,7 +3,8 @@
 
 declare module goog.fx {
 
-    class DragDrop extends goog.fx.AbstractDragDrop {
+    class DragDrop extends __DragDrop { }
+    class __DragDrop extends goog.fx.__AbstractDragDrop {
     
         /**
          * Drag/drop implementation for creating drag sources/drop targets consisting of

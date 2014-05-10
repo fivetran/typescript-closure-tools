@@ -2,7 +2,8 @@
 
 declare module goog._string {
 
-    class StringBuffer {
+    class StringBuffer extends __StringBuffer { }
+    class __StringBuffer {
     
         /**
          * Utility class to facilitate string concatenation.

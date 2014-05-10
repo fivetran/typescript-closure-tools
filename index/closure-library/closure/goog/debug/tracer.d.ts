@@ -2,7 +2,8 @@
 
 declare module goog.debug {
 
-    class Trace_ {
+    class Trace_ extends __Trace_ { }
+    class __Trace_ {
     
         /**
          * Class used for singleton goog.debug.Trace.  Used for timing slow points in
@@ -124,7 +125,8 @@ declare module goog.debug {
 
 declare module goog.debug.Trace_ {
 
-    class Stat_ {
+    class Stat_ extends __Stat_ { }
+    class __Stat_ {
     
         /**
          * Class to keep track of a stat of a single tracer type. Stores the count
@@ -140,7 +142,8 @@ declare module goog.debug.Trace_ {
         type: any /*string|any (null)|any (undefined)*/;
     }
 
-    class Event_ {
+    class Event_ extends __Event_ { }
+    class __Event_ {
     
         /**
          * Private class used to encapsulate a single event, either the start or stop

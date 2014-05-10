@@ -4,7 +4,8 @@
 
 declare module goog.ui.editor {
 
-    class EquationEditorDialog extends goog.ui.editor.AbstractDialog {
+    class EquationEditorDialog extends __EquationEditorDialog { }
+    class __EquationEditorDialog extends goog.ui.editor.__AbstractDialog {
     
         /**
          * Equation editor dialog (based on goog.ui.editor.AbstractDialog).

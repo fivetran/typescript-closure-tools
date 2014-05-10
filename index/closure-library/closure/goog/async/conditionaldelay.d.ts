@@ -3,7 +3,8 @@
 
 declare module goog.async {
 
-    class ConditionalDelay extends goog.Disposable {
+    class ConditionalDelay extends __ConditionalDelay { }
+    class __ConditionalDelay extends goog.__Disposable {
     
         /**
          * A ConditionalDelay object invokes the associated function after a specified

@@ -3,7 +3,8 @@
 
 declare module goog.tweak {
 
-    class BaseEntry {
+    class BaseEntry extends __BaseEntry { }
+    class __BaseEntry {
     
         /**
          * Base class for all Registry entries.
@@ -59,7 +60,8 @@ declare module goog.tweak {
         fireCallbacks(): void;
     }
 
-    class BaseSetting extends goog.tweak.BaseEntry {
+    class BaseSetting extends __BaseSetting { }
+    class __BaseSetting extends goog.tweak.__BaseEntry {
     
         /**
          * Base class for all tweak entries that are settings. Settings are entries
@@ -131,7 +133,8 @@ declare module goog.tweak {
         ensureInitialized(): void;
     }
 
-    class BasePrimitiveSetting extends goog.tweak.BaseSetting {
+    class BasePrimitiveSetting extends __BasePrimitiveSetting { }
+    class __BasePrimitiveSetting extends goog.tweak.__BaseSetting {
     
         /**
          * Base class for all settings that wrap primitive values.
@@ -185,7 +188,8 @@ declare module goog.tweak {
         setDefaultValue(value: any): void;
     }
 
-    class StringSetting extends goog.tweak.BasePrimitiveSetting {
+    class StringSetting extends __StringSetting { }
+    class __StringSetting extends goog.tweak.__BasePrimitiveSetting {
     
         /**
          * A registry setting for string values.
@@ -215,7 +219,8 @@ declare module goog.tweak {
         getValidValues(): any /*string[]|any (undefined)*/;
     }
 
-    class NumericSetting extends goog.tweak.BasePrimitiveSetting {
+    class NumericSetting extends __NumericSetting { }
+    class __NumericSetting extends goog.tweak.__BasePrimitiveSetting {
     
         /**
          * A registry setting for numeric values.
@@ -245,7 +250,8 @@ declare module goog.tweak {
         getValidValues(): any /*number[]|any (undefined)*/;
     }
 
-    class BooleanSetting extends goog.tweak.BasePrimitiveSetting {
+    class BooleanSetting extends __BooleanSetting { }
+    class __BooleanSetting extends goog.tweak.__BasePrimitiveSetting {
     
         /**
          * A registry setting that can be either true of false.
@@ -257,7 +263,8 @@ declare module goog.tweak {
         constructor(id: string, description: string);
     }
 
-    class BooleanInGroupSetting extends goog.tweak.BooleanSetting {
+    class BooleanInGroupSetting extends __BooleanInGroupSetting { }
+    class __BooleanInGroupSetting extends goog.tweak.__BooleanSetting {
     
         /**
          * An entry in a BooleanGroup.
@@ -291,7 +298,8 @@ declare module goog.tweak {
         getGroup(): goog.tweak.BooleanGroup;
     }
 
-    class BooleanGroup extends goog.tweak.BaseSetting {
+    class BooleanGroup extends __BooleanGroup { }
+    class __BooleanGroup extends goog.tweak.__BaseSetting {
     
         /**
          * A registry setting that contains a group of boolean subfield, where all
@@ -318,7 +326,8 @@ declare module goog.tweak {
         addChild(boolEntry: goog.tweak.BooleanInGroupSetting): void;
     }
 
-    class ButtonAction extends goog.tweak.BaseEntry {
+    class ButtonAction extends __ButtonAction { }
+    class __ButtonAction extends goog.tweak.__BaseEntry {
     
         /**
          * A registry action (a button).

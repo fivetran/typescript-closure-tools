@@ -2,7 +2,8 @@
 
 declare module goog.format {
 
-    class EmailAddress {
+    class EmailAddress extends __EmailAddress { }
+    class __EmailAddress {
     
         /**
          * Formats an email address string for display, and allows for extraction of

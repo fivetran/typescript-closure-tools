@@ -3,7 +3,8 @@
 
 declare module goog.dom.pattern {
 
-    class Text extends goog.dom.pattern.AbstractPattern {
+    class Text extends __Text { }
+    class __Text extends goog.dom.pattern.__AbstractPattern {
     
         /**
          * Pattern object that matches text by exact matching or regular expressions.

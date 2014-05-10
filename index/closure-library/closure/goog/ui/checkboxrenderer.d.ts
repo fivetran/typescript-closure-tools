@@ -4,7 +4,8 @@
 
 declare module goog.ui {
 
-    class CheckboxRenderer extends goog.ui.ControlRenderer {
+    class CheckboxRenderer extends __CheckboxRenderer { }
+    class __CheckboxRenderer extends goog.ui.__ControlRenderer {
     
         /**
          * Default renderer for {@link goog.ui.Checkbox}s.  Extends the superclass

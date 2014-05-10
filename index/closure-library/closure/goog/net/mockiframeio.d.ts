@@ -7,7 +7,8 @@
 
 declare module goog.net {
 
-    class MockIFrameIo extends goog.events.EventTarget {
+    class MockIFrameIo extends __MockIFrameIo { }
+    class __MockIFrameIo extends goog.events.__EventTarget {
     
         /**
          * Mock implenetation of goog.net.IframeIo. This doesn't provide a mock

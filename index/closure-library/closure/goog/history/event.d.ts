@@ -3,7 +3,8 @@
 
 declare module goog.history {
 
-    class Event extends goog.events.Event {
+    class Event extends __Event { }
+    class __Event extends goog.events.__Event {
     
         /**
          * Event object dispatched after the history state has changed.

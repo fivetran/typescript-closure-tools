@@ -4,7 +4,8 @@
 
 declare module goog.spell {
 
-    class SpellCheck extends goog.events.EventTarget {
+    class SpellCheck extends __SpellCheck { }
+    class __SpellCheck extends goog.events.__EventTarget {
     
         /**
          * Support class for spell checker components. Provides basic functionality
@@ -114,7 +115,8 @@ declare module goog.spell {
 
 declare module goog.spell.SpellCheck {
 
-    class WordChangedEvent extends goog.events.Event {
+    class WordChangedEvent extends __WordChangedEvent { }
+    class __WordChangedEvent extends goog.events.__Event {
     
         /**
          * Object representing a word changed event. Fired when the status of a word

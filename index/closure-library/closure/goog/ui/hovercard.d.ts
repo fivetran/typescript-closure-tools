@@ -6,7 +6,8 @@
 
 declare module goog.ui {
 
-    class HoverCard extends goog.ui.AdvancedTooltip {
+    class HoverCard extends __HoverCard { }
+    class __HoverCard extends goog.ui.__AdvancedTooltip {
     
         /**
          * Create a hover card object.  Hover cards extend tooltips in that they don't
@@ -137,7 +138,8 @@ declare module goog.ui {
 
 declare module goog.ui.HoverCard {
 
-    class TriggerEvent extends goog.events.Event {
+    class TriggerEvent extends __TriggerEvent { }
+    class __TriggerEvent extends goog.events.__Event {
     
         /**
          * Create a trigger event for specified anchor and optional data.

@@ -7,7 +7,8 @@
 
 declare module goog.ui {
 
-    class Palette extends goog.ui.Control {
+    class Palette extends __Palette { }
+    class __Palette extends goog.ui.__Control {
     
         /**
          * A palette is a grid of DOM nodes that the user can highlight or select via
@@ -134,7 +135,8 @@ declare module goog.ui {
 
 declare module goog.ui.Palette {
 
-    class CurrentCell_ extends goog.ui.Control {
+    class CurrentCell_ extends __CurrentCell_ { }
+    class __CurrentCell_ extends goog.ui.__Control {
     
         /**
          * A component to represent the currently highlighted cell.

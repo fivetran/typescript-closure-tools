@@ -3,7 +3,8 @@
 
 declare module goog.labs.html {
 
-    class Sanitizer {
+    class Sanitizer extends __Sanitizer { }
+    class __Sanitizer {
     
         /**
          * A sanitizer that converts untrusted, messy HTML into more regular HTML

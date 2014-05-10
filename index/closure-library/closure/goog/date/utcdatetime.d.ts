@@ -3,7 +3,8 @@
 
 declare module goog.date {
 
-    class UtcDateTime extends goog.date.DateTime {
+    class UtcDateTime extends __UtcDateTime { }
+    class __UtcDateTime extends goog.date.__DateTime {
     
         /**
          * Class representing a date/time in GMT+0 time zone, without daylight saving.

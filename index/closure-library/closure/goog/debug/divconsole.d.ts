@@ -4,7 +4,8 @@
 
 declare module goog.debug {
 
-    class DivConsole {
+    class DivConsole extends __DivConsole { }
+    class __DivConsole {
     
         /**
          * A class for visualising logger calls in a div element.

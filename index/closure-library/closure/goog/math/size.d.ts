@@ -2,7 +2,8 @@
 
 declare module goog.math {
 
-    class Size {
+    class Size extends __Size { }
+    class __Size {
     
         /**
          * Class for representing sizes consisting of a width and height. Undefined

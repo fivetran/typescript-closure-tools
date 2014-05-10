@@ -6,7 +6,8 @@
 
 declare module goog.dom {
 
-    class MultiRange extends goog.dom.AbstractMultiRange {
+    class MultiRange extends __MultiRange { }
+    class __MultiRange extends goog.dom.__AbstractMultiRange {
     
         /**
          * Creates a new multi part range with no properties.  Do not use this
@@ -24,7 +25,8 @@ declare module goog.dom {
         getSortedRanges(): goog.dom.TextRange[];
     }
 
-    class DomSavedMultiRange_ extends goog.dom.SavedRange {
+    class DomSavedMultiRange_ extends __DomSavedMultiRange_ { }
+    class __DomSavedMultiRange_ extends goog.dom.__SavedRange {
     
         /**
          * A SavedRange implementation using DOM endpoints.
@@ -36,7 +38,8 @@ declare module goog.dom {
         constructor(range: goog.dom.MultiRange);
     }
 
-    class MultiRangeIterator extends goog.dom.RangeIterator {
+    class MultiRangeIterator extends __MultiRangeIterator { }
+    class __MultiRangeIterator extends goog.dom.__RangeIterator {
     
         /**
          * Subclass of goog.dom.TagIterator that iterates over a DOM range.  It

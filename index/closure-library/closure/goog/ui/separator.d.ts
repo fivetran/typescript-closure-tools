@@ -5,7 +5,8 @@
 
 declare module goog.ui {
 
-    class Separator extends goog.ui.Control {
+    class Separator extends __Separator { }
+    class __Separator extends goog.ui.__Control {
     
         /**
          * Class representing a separator.  Although it extends {@link goog.ui.Control},

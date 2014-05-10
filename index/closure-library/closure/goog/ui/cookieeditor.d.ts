@@ -4,7 +4,8 @@
 
 declare module goog.ui {
 
-    class CookieEditor extends goog.ui.Component {
+    class CookieEditor extends __CookieEditor { }
+    class __CookieEditor extends goog.ui.__Component {
     
         /**
          * Displays and edits the value of a cookie.

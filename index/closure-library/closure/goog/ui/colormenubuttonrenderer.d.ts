@@ -4,7 +4,8 @@
 
 declare module goog.ui {
 
-    class ColorMenuButtonRenderer extends goog.ui.MenuButtonRenderer {
+    class ColorMenuButtonRenderer extends __ColorMenuButtonRenderer { }
+    class __ColorMenuButtonRenderer extends goog.ui.__MenuButtonRenderer {
     
         /**
          * Renderer for {@link goog.ui.ColorMenuButton}s.

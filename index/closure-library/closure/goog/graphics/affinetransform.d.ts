@@ -2,7 +2,8 @@
 
 declare module goog.graphics {
 
-    class AffineTransform {
+    class AffineTransform extends __AffineTransform { }
+    class __AffineTransform {
     
         /**
          * Creates a 2D affine transform. An affine transform performs a linear

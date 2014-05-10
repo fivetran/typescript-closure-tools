@@ -3,7 +3,8 @@
 
 declare module goog.ds {
 
-    class XmlDataSource extends goog.ds.DataNode {
+    class XmlDataSource extends __XmlDataSource { }
+    class __XmlDataSource extends goog.ds.__DataNode {
     
         /**
          * Data source whose backing is an xml node
@@ -18,7 +19,8 @@ declare module goog.ds {
         constructor(node: Node, parent: goog.ds.XmlDataSource, opt_name?: string);
     }
 
-    class XmlHttpDataSource extends goog.ds.XmlDataSource {
+    class XmlHttpDataSource extends __XmlHttpDataSource { }
+    class __XmlHttpDataSource extends goog.ds.__XmlDataSource {
     
         /**
          * Data source whose backing is an XMLHttpRequest,

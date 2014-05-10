@@ -5,7 +5,8 @@
 
 declare module goog {
 
-    class Promise<TYPE,RESOLVER_CONTEXT> implements goog.Thenable<TYPE> {
+    class Promise<TYPE,RESOLVER_CONTEXT> extends __Promise<TYPE,RESOLVER_CONTEXT> { }
+    class __Promise<TYPE,RESOLVER_CONTEXT> implements goog.Thenable<TYPE> {
     
         /**
          * Promises provide a result that may be resolved asynchronously. A Promise may
@@ -296,7 +297,8 @@ declare module goog {
 
 declare module goog.Promise {
 
-    class CancellationError extends goog.debug.Error {
+    class CancellationError extends __CancellationError { }
+    class __CancellationError extends goog.debug.__Error {
     
         /**
          * Error used as a rejection reason for canceled Promises.
@@ -309,7 +311,8 @@ declare module goog.Promise {
         constructor(opt_message?: string);
     }
 
-    class Resolver_<TYPE> implements goog.promise.Resolver<TYPE> {
+    class Resolver_<TYPE> extends __Resolver_<TYPE> { }
+    class __Resolver_<TYPE> implements goog.promise.Resolver<TYPE> {
     
         /**
          * Internal implementation of the resolver interface.

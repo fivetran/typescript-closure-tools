@@ -4,7 +4,8 @@
 
 declare module goog.storage.mechanism {
 
-    class IterableMechanism extends goog.storage.mechanism.Mechanism {
+    class IterableMechanism extends __IterableMechanism { }
+    class __IterableMechanism extends goog.storage.mechanism.__Mechanism {
     
         /**
          * Interface for all iterable storage mechanisms.

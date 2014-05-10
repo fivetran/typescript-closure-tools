@@ -4,7 +4,8 @@
 
 declare module goog.debug {
 
-    class LogBuffer {
+    class LogBuffer extends __LogBuffer { }
+    class __LogBuffer {
     
         /**
          * Creates the log buffer.

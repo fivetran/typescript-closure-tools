@@ -3,7 +3,8 @@
 
 declare module goog.ui.ac {
 
-    class RichRemote extends goog.ui.ac.Remote {
+    class RichRemote extends __RichRemote { }
+    class __RichRemote extends goog.ui.ac.__Remote {
     
         /**
          * Factory class to create a rich autocomplete widget that autocompletes an

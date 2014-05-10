@@ -3,7 +3,8 @@
 
 declare module goog.labs.testing {
 
-    class HasEntriesMatcher implements goog.labs.testing.Matcher {
+    class HasEntriesMatcher extends __HasEntriesMatcher { }
+    class __HasEntriesMatcher implements goog.labs.testing.Matcher {
     
         /**
          * The HasEntries matcher.
@@ -37,7 +38,8 @@ declare module goog.labs.testing {
         describe(value: any, opt_description?: string): string;
     }
 
-    class HasEntryMatcher implements goog.labs.testing.Matcher {
+    class HasEntryMatcher extends __HasEntryMatcher { }
+    class __HasEntryMatcher implements goog.labs.testing.Matcher {
     
         /**
          * The HasEntry matcher.
@@ -72,7 +74,8 @@ declare module goog.labs.testing {
         describe(value: any, opt_description?: string): string;
     }
 
-    class HasKeyMatcher implements goog.labs.testing.Matcher {
+    class HasKeyMatcher extends __HasKeyMatcher { }
+    class __HasKeyMatcher implements goog.labs.testing.Matcher {
     
         /**
          * The HasKey matcher.
@@ -106,7 +109,8 @@ declare module goog.labs.testing {
         describe(value: any, opt_description?: string): string;
     }
 
-    class HasValueMatcher implements goog.labs.testing.Matcher {
+    class HasValueMatcher extends __HasValueMatcher { }
+    class __HasValueMatcher implements goog.labs.testing.Matcher {
     
         /**
          * The HasValue matcher.

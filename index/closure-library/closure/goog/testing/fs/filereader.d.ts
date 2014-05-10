@@ -6,7 +6,8 @@
 
 declare module goog.testing.fs {
 
-    class FileReader extends goog.events.EventTarget {
+    class FileReader extends __FileReader { }
+    class __FileReader extends goog.events.__EventTarget {
     
         /**
          * A mock FileReader object. This emits the same events as

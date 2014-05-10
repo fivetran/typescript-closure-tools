@@ -4,7 +4,8 @@
 
 declare module goog.ui {
 
-    class MockActivityMonitor extends goog.ui.ActivityMonitor {
+    class MockActivityMonitor extends __MockActivityMonitor { }
+    class __MockActivityMonitor extends goog.ui.__ActivityMonitor {
     
         /**
          * A mock implementation of goog.ui.ActivityMonitor for unit testing. Clients

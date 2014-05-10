@@ -4,7 +4,8 @@
 
 declare module goog.storage {
 
-    class ExpiringStorage extends goog.storage.RichStorage {
+    class ExpiringStorage extends __ExpiringStorage { }
+    class __ExpiringStorage extends goog.storage.__RichStorage {
     
         /**
          * Provides a storage with expirning keys.

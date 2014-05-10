@@ -6,7 +6,8 @@
 
 declare module goog.db {
 
-    class ObjectStore {
+    class ObjectStore extends __ObjectStore { }
+    class __ObjectStore {
     
         /**
          * Creates an IDBObjectStore wrapper object. Object stores have methods for

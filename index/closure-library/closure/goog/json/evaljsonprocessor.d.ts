@@ -4,7 +4,8 @@
 
 declare module goog.json {
 
-    class EvalJsonProcessor implements goog.json.Processor {
+    class EvalJsonProcessor extends __EvalJsonProcessor { }
+    class __EvalJsonProcessor implements goog.json.Processor {
     
         /**
          * A class that parses and stringifies JSON using eval (as implemented in

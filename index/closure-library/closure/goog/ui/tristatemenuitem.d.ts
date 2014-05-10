@@ -4,7 +4,8 @@
 
 declare module goog.ui {
 
-    class TriStateMenuItem {
+    class TriStateMenuItem extends __TriStateMenuItem { }
+    class __TriStateMenuItem {
     
         /**
          * Class representing a three state checkbox menu item.

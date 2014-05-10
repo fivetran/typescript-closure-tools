@@ -9,7 +9,8 @@
 
 declare module goog.ui {
 
-    class Dialog extends goog.ui.ModalPopup {
+    class Dialog extends __Dialog { }
+    class __Dialog extends goog.ui.__ModalPopup {
     
         /**
          * Class for showing simple dialog boxes.
@@ -252,7 +253,8 @@ declare module goog.ui {
 
 declare module goog.ui.Dialog {
 
-    class Event extends goog.events.Event {
+    class Event extends __Event { }
+    class __Event extends goog.events.__Event {
     
         /**
          * Dialog event class.
@@ -272,7 +274,8 @@ declare module goog.ui.Dialog {
         constructor(key: string, caption: Element);
     }
 
-    class ButtonSet extends goog.structs.Map<any, any> {
+    class ButtonSet extends __ButtonSet { }
+    class __ButtonSet extends goog.structs.__Map<any, any> {
     
         /**
          * A button set defines the behaviour of a set of buttons that the dialog can

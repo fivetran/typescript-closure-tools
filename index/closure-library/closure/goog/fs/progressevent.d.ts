@@ -3,7 +3,8 @@
 
 declare module goog.fs {
 
-    class ProgressEvent extends goog.events.Event {
+    class ProgressEvent extends __ProgressEvent { }
+    class __ProgressEvent extends goog.events.__Event {
     
         /**
          * A wrapper for the progress events emitted by the File APIs.

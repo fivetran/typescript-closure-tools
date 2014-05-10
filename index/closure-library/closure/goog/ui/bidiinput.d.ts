@@ -4,7 +4,8 @@
 
 declare module goog.ui {
 
-    class BidiInput extends goog.ui.Component {
+    class BidiInput extends __BidiInput { }
+    class __BidiInput extends goog.ui.__Component {
     
         /**
          * Default implementation of BidiInput.

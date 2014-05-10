@@ -4,7 +4,8 @@
 
 declare module goog.events {
 
-    class OnlineHandler extends goog.events.EventTarget implements goog.net.NetworkStatusMonitor {
+    class OnlineHandler extends __OnlineHandler { }
+    class __OnlineHandler extends goog.events.__EventTarget implements goog.net.NetworkStatusMonitor {
     
         /**
          * Basic object for detecting whether the online state changes.

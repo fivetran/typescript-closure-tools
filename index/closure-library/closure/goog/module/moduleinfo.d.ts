@@ -6,7 +6,8 @@
 
 declare module goog.module {
 
-    class ModuleInfo extends goog.Disposable {
+    class ModuleInfo extends __ModuleInfo { }
+    class __ModuleInfo extends goog.__Disposable {
     
         /**
          * A ModuleInfo object is used by the ModuleManager to hold information about a

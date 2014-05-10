@@ -5,7 +5,8 @@
 
 declare module goog.debug {
 
-    class ErrorReporter extends goog.events.EventTarget {
+    class ErrorReporter extends __ErrorReporter { }
+    class __ErrorReporter extends goog.events.__EventTarget {
     
         /**
          * Constructs an error reporter. Internal Use Only. To install an error
@@ -115,7 +116,8 @@ declare module goog.debug {
 
 declare module goog.debug.ErrorReporter {
 
-    class ExceptionEvent extends goog.events.Event {
+    class ExceptionEvent extends __ExceptionEvent { }
+    class __ExceptionEvent extends goog.events.__Event {
     
         /**
          * Event broadcast when an exception is logged.

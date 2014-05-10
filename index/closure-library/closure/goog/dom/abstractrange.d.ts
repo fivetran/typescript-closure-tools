@@ -7,7 +7,8 @@
 
 declare module goog.dom {
 
-    class AbstractRange {
+    class AbstractRange extends __AbstractRange { }
+    class __AbstractRange {
     
         /**
          * Creates a new selection with no properties.  Do not use this constructor -
@@ -304,7 +305,8 @@ declare module goog.dom {
         collapse(toAnchor: boolean): void;
     }
 
-    class RangeIterator extends goog.dom.TagIterator {
+    class RangeIterator extends __RangeIterator { }
+    class __RangeIterator extends goog.dom.__TagIterator {
     
         /**
          * Subclass of goog.dom.TagIterator that iterates over a DOM range.  It

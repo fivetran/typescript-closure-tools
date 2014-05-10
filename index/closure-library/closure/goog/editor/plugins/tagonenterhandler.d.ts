@@ -4,7 +4,8 @@
 
 declare module goog.editor.plugins {
 
-    class TagOnEnterHandler extends goog.editor.plugins.EnterHandler {
+    class TagOnEnterHandler extends __TagOnEnterHandler { }
+    class __TagOnEnterHandler extends goog.editor.plugins.__EnterHandler {
     
         /**
          * Plugin to handle enter keys. This subclass normalizes all browsers to use

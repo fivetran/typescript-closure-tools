@@ -7,7 +7,8 @@
 
 declare module goog.ui.editor {
 
-    class ToolbarController extends goog.events.EventTarget {
+    class ToolbarController extends __ToolbarController { }
+    class __ToolbarController extends goog.events.__EventTarget {
     
         /**
          * A class for managing the editor toolbar.  Acts as a bridge between

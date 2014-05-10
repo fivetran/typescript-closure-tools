@@ -6,7 +6,8 @@
 
 declare module goog.ui.media {
 
-    class PicasaAlbum extends goog.ui.media.MediaRenderer {
+    class PicasaAlbum extends __PicasaAlbum { }
+    class __PicasaAlbum extends goog.ui.media.__MediaRenderer {
     
         /**
          * Subclasses a goog.ui.media.MediaRenderer to provide a Picasa specific media
@@ -37,7 +38,8 @@ declare module goog.ui.media {
         constructor();
     }
 
-    class PicasaAlbumModel extends goog.ui.media.MediaModel {
+    class PicasaAlbumModel extends __PicasaAlbumModel { }
+    class __PicasaAlbumModel extends goog.ui.media.__MediaModel {
     
         /**
          * The {@code goog.ui.media.PicasaAlbum} media data model. It stores a required

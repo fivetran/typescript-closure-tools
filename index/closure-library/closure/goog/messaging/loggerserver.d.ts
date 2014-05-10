@@ -4,7 +4,8 @@
 
 declare module goog.messaging {
 
-    class LoggerServer extends goog.Disposable {
+    class LoggerServer extends __LoggerServer { }
+    class __LoggerServer extends goog.__Disposable {
     
         /**
          * Creates a logger server that logs messages on behalf of the remote end of a

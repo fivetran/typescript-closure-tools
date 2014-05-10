@@ -4,7 +4,8 @@
 
 declare module goog.events {
 
-    class PasteHandler extends goog.events.EventTarget {
+    class PasteHandler extends __PasteHandler { }
+    class __PasteHandler extends goog.events.__EventTarget {
     
         /**
          * A paste event detector. Gets an {@code element} as parameter and fires

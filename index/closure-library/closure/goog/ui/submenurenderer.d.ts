@@ -3,7 +3,8 @@
 
 declare module goog.ui {
 
-    class SubMenuRenderer extends goog.ui.MenuItemRenderer {
+    class SubMenuRenderer extends __SubMenuRenderer { }
+    class __SubMenuRenderer extends goog.ui.__MenuItemRenderer {
     
         /**
          * Default renderer for {@link goog.ui.SubMenu}s.  Each item has the following

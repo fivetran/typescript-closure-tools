@@ -2,7 +2,8 @@
 
 declare module goog.testing {
 
-    class FunctionCall {
+    class FunctionCall extends __FunctionCall { }
+    class __FunctionCall {
     
         /**
          * Struct for a single function call.

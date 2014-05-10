@@ -5,7 +5,8 @@
 
 declare module goog.tweak {
 
-    class TweakUi {
+    class TweakUi extends __TweakUi { }
+    class __TweakUi {
     
         /**
          * A UI for editing tweak settings / clicking tweak actions.
@@ -28,7 +29,8 @@ declare module goog.tweak {
         render(): Element;
     }
 
-    class EntriesPanel {
+    class EntriesPanel extends __EntriesPanel { }
+    class __EntriesPanel {
     
         /**
          * The body of the tweaks UI and also used for BooleanGroup.
@@ -89,7 +91,8 @@ declare module goog.tweak {
         toggleAllDescriptions(): void;
     }
 
-    class NamespaceEntry_ extends goog.tweak.BaseEntry {
+    class NamespaceEntry_ extends __NamespaceEntry_ { }
+    class __NamespaceEntry_ extends goog.tweak.__BaseEntry {
     
         /**
          * Entries used to represent the collapsible namespace links. These entries are

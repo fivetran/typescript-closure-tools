@@ -2,7 +2,8 @@
 
 declare module goog.i18n {
 
-    class CharListDecompressor {
+    class CharListDecompressor extends __CharListDecompressor { }
+    class __CharListDecompressor {
     
         /**
          * Class to decompress base88 compressed character list.

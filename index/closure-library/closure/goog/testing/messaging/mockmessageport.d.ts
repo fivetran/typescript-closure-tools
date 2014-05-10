@@ -4,7 +4,8 @@
 
 declare module goog.testing.messaging {
 
-    class MockMessagePort extends goog.events.EventTarget {
+    class MockMessagePort extends __MockMessagePort { }
+    class __MockMessagePort extends goog.events.__EventTarget {
     
         /**
          * Class for unit-testing code that uses MessagePorts.

@@ -3,7 +3,8 @@
 
 declare module goog.testing {
 
-    class MockClock extends goog.Disposable {
+    class MockClock extends __MockClock { }
+    class __MockClock extends goog.__Disposable {
     
         /**
          * Class for unit testing code that uses setTimeout and clearTimeout.

@@ -3,7 +3,8 @@
 
 declare module goog.crypt {
 
-    class Md5 extends goog.crypt.Hash {
+    class Md5 extends __Md5 { }
+    class __Md5 extends goog.crypt.__Hash {
     
         /**
          * MD5 cryptographic hash constructor.

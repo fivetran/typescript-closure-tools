@@ -3,7 +3,8 @@
 
 declare module goog.testing.storage {
 
-    class FakeMechanism extends goog.storage.mechanism.IterableMechanism {
+    class FakeMechanism extends __FakeMechanism { }
+    class __FakeMechanism extends goog.storage.mechanism.__IterableMechanism {
     
         /**
          * Creates a fake iterable mechanism.

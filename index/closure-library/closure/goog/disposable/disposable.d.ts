@@ -3,7 +3,8 @@
 
 declare module goog {
 
-    class Disposable implements goog.disposable.IDisposable {
+    class Disposable extends __Disposable { }
+    class __Disposable implements goog.disposable.IDisposable {
     
         /**
          * Class that provides the basic implementation for disposable objects. If your

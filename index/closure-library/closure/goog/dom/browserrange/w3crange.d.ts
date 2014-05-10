@@ -3,7 +3,8 @@
 
 declare module goog.dom.browserrange {
 
-    class W3cRange extends goog.dom.browserrange.AbstractRange {
+    class W3cRange extends __W3cRange { }
+    class __W3cRange extends goog.dom.browserrange.__AbstractRange {
     
         /**
          * The constructor for W3C specific browser ranges.

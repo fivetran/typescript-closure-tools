@@ -2,7 +2,8 @@
 
 declare module goog._string.html {
 
-    class HtmlParser {
+    class HtmlParser extends __HtmlParser { }
+    class __HtmlParser {
     
         /**
          * An Html parser: {@code parse} takes a string and calls methods on
@@ -24,7 +25,8 @@ declare module goog._string.html {
         parse(handler: goog.string.html.HtmlSaxHandler, htmlText: string): void;
     }
 
-    class HtmlSaxHandler {
+    class HtmlSaxHandler extends __HtmlSaxHandler { }
+    class __HtmlSaxHandler {
     
         /**
          * An interface to the {@code goog.string.html.HtmlParser} visitor, that gets

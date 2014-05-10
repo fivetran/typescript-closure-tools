@@ -5,7 +5,8 @@
 
 declare module goog.events {
 
-    class ListenerMap {
+    class ListenerMap extends __ListenerMap { }
+    class __ListenerMap {
     
         /**
          * Creates a new listener map.

@@ -4,7 +4,8 @@
 
 declare module goog {
 
-    class History extends goog.events.EventTarget {
+    class History extends __History { }
+    class __History extends goog.events.__EventTarget {
     
         /**
          * A history management object. Can be instantiated in user-visible mode (uses
@@ -108,7 +109,8 @@ declare module goog {
 
 declare module goog.History {
 
-    class Event extends goog.events.Event {
+    class Event extends __Event { }
+    class __Event extends goog.events.__Event {
     
         /**
          * Constant for the history change event type.

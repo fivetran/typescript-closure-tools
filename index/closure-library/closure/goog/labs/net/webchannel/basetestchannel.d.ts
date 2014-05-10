@@ -4,7 +4,8 @@
 
 declare module goog.labs.net.webChannel {
 
-    class BaseTestChannel implements goog.labs.net.webChannel.Channel {
+    class BaseTestChannel extends __BaseTestChannel { }
+    class __BaseTestChannel implements goog.labs.net.webChannel.Channel {
     
         /**
          * A TestChannel is used during the first part of channel negotiation

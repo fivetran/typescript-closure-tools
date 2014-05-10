@@ -3,7 +3,8 @@
 
 declare module goog.net.xpc {
 
-    class Transport {
+    class Transport extends __Transport { }
+    class __Transport {
     
         /**
          * The base class for transports.

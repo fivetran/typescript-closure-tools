@@ -8,7 +8,8 @@
 
 declare module goog.events {
 
-    class EventHandler<SCOPE> extends goog.Disposable {
+    class EventHandler<SCOPE> extends __EventHandler<SCOPE> { }
+    class __EventHandler<SCOPE> extends goog.__Disposable {
     
         /**
          * Super class for objects that want to easily manage a number of event

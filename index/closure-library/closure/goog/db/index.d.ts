@@ -5,7 +5,8 @@
 
 declare module goog.db {
 
-    class Index {
+    class Index extends __Index { }
+    class __Index {
     
         /**
          * Creates an IDBIndex wrapper object. Indexes are associated with object

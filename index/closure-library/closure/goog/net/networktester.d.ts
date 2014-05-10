@@ -3,7 +3,8 @@
 
 declare module goog.net {
 
-    class NetworkTester {
+    class NetworkTester extends __NetworkTester { }
+    class __NetworkTester {
     
         /**
          * Creates an instance of goog.net.NetworkTester which can be used to test

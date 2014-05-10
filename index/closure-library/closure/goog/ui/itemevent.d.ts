@@ -3,7 +3,8 @@
 
 declare module goog.ui {
 
-    class ItemEvent extends goog.events.Event {
+    class ItemEvent extends __ItemEvent { }
+    class __ItemEvent extends goog.events.__Event {
     
         /**
          * Generic ui event class for events that take a single item like a menu click

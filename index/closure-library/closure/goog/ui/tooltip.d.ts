@@ -11,7 +11,8 @@
 
 declare module goog.ui {
 
-    class Tooltip extends goog.ui.Popup {
+    class Tooltip extends __Tooltip { }
+    class __Tooltip extends goog.ui.__Popup {
     
         /**
          * Tooltip widget. Can be attached to one or more elements and is shown, with a
@@ -352,7 +353,8 @@ declare module goog.ui {
 
 declare module goog.ui.Tooltip {
 
-    class CursorTooltipPosition extends goog.positioning.ViewportPosition {
+    class CursorTooltipPosition extends __CursorTooltipPosition { }
+    class __CursorTooltipPosition extends goog.positioning.__ViewportPosition {
     
         /**
          * Popup position implementation that positions the popup (the tooltip in this
@@ -386,7 +388,8 @@ declare module goog.ui.Tooltip {
         constructor(arg1: goog.math.Coordinate, opt_arg2?: number);
     }
 
-    class ElementTooltipPosition extends goog.positioning.AnchoredPosition {
+    class ElementTooltipPosition extends __ElementTooltipPosition { }
+    class __ElementTooltipPosition extends goog.positioning.__AnchoredPosition {
     
         /**
          * Popup position implementation that positions the popup (the tooltip in this

@@ -3,7 +3,8 @@
 
 declare module goog.math {
 
-    class Vec3 extends goog.math.Coordinate3 {
+    class Vec3 extends __Vec3 { }
+    class __Vec3 extends goog.math.__Coordinate3 {
     
         /**
          * Class for a three-dimensional vector object and assorted functions useful for

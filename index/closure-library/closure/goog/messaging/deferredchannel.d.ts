@@ -5,7 +5,8 @@
 
 declare module goog.messaging {
 
-    class DeferredChannel extends goog.Disposable implements goog.messaging.MessageChannel {
+    class DeferredChannel extends __DeferredChannel { }
+    class __DeferredChannel extends goog.__Disposable implements goog.messaging.MessageChannel {
     
         /**
          * Creates a new DeferredChannel, which wraps a deferred MessageChannel and

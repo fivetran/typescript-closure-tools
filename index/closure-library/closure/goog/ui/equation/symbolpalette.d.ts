@@ -4,7 +4,8 @@
 
 declare module goog.ui.equation {
 
-    class SymbolPalette extends goog.ui.equation.Palette {
+    class SymbolPalette extends __SymbolPalette { }
+    class __SymbolPalette extends goog.ui.equation.__Palette {
     
         /**
          * Constructs a new symbols palette.

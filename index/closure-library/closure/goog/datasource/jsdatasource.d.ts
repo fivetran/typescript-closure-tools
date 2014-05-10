@@ -4,7 +4,8 @@
 
 declare module goog.ds {
 
-    class JsDataSource extends goog.ds.DataNode {
+    class JsDataSource extends __JsDataSource { }
+    class __JsDataSource extends goog.ds.__DataNode {
     
         /**
          * Data source whose backing is JavaScript data
@@ -40,7 +41,8 @@ declare module goog.ds {
         setRoot(root: Object): void;
     }
 
-    class JsPropertyDataSource extends goog.ds.BaseDataNode {
+    class JsPropertyDataSource extends __JsPropertyDataSource { }
+    class __JsPropertyDataSource extends goog.ds.__BaseDataNode {
     
         /**
          * Data source for JavaScript properties that arent objects. Contains reference

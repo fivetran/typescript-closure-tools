@@ -6,7 +6,8 @@
 
 declare module goog.graphics.ext {
 
-    class Shape extends goog.graphics.ext.StrokeAndFillElement {
+    class Shape extends __Shape { }
+    class __Shape extends goog.graphics.ext.__StrokeAndFillElement {
     
         /**
          * Wrapper for a graphics shape element.

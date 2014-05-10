@@ -6,7 +6,8 @@
 
 declare module goog.ui {
 
-    class PaletteRenderer extends goog.ui.ControlRenderer {
+    class PaletteRenderer extends __PaletteRenderer { }
+    class __PaletteRenderer extends goog.ui.__ControlRenderer {
     
         /**
          * Default renderer for {@link goog.ui.Palette}s.  Renders the palette as an

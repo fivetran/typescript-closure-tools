@@ -4,7 +4,8 @@
 
 declare module goog.ui {
 
-    class MenuSeparator extends goog.ui.Separator {
+    class MenuSeparator extends __MenuSeparator { }
+    class __MenuSeparator extends goog.ui.__Separator {
     
         /**
          * Class representing a menu separator.  A menu separator extends {@link

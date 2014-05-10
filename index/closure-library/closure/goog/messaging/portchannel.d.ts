@@ -6,7 +6,8 @@
 
 declare module goog.messaging {
 
-    class PortChannel extends goog.messaging.AbstractChannel {
+    class PortChannel extends __PortChannel { }
+    class __PortChannel extends goog.messaging.__AbstractChannel {
     
         /**
          * A wrapper for several types of HTML5 message-passing entities

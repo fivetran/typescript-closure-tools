@@ -10,7 +10,8 @@
 
 declare module goog.ui {
 
-    class AbstractSpellChecker extends goog.ui.Component {
+    class AbstractSpellChecker extends __AbstractSpellChecker { }
+    class __AbstractSpellChecker extends goog.ui.__Component {
     
         /**
          * Abstract base class for spell checker editor implementations. Provides basic

@@ -8,7 +8,8 @@
 
 declare module goog.ui {
 
-    class TabBar extends goog.ui.Container {
+    class TabBar extends __TabBar { }
+    class __TabBar extends goog.ui.__Container {
     
         /**
          * Tab bar UI component.  A tab bar contains tabs, rendered above, below,

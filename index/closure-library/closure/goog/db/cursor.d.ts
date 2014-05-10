@@ -5,7 +5,8 @@
 
 declare module goog.db {
 
-    class Cursor extends goog.events.EventTarget {
+    class Cursor extends __Cursor { }
+    class __Cursor extends goog.events.__EventTarget {
     
         /**
          * Creates a new IDBCursor wrapper object. Should not be created directly,

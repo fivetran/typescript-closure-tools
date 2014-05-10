@@ -3,7 +3,8 @@
 
 declare module goog.testing {
 
-    class TestRunner {
+    class TestRunner extends __TestRunner { }
+    class __TestRunner {
     
         /**
          * Construct a test runner.

@@ -2,7 +2,8 @@
 
 declare module goog.structs {
 
-    class Queue<T> {
+    class Queue<T> extends __Queue<T> { }
+    class __Queue<T> {
     
         /**
          * Class for FIFO Queue data structure.

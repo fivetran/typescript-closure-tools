@@ -3,7 +3,8 @@
 
 declare module goog.structs {
 
-    class Map<K, V> {
+    class Map<K, V> extends __Map<K, V> { }
+    class __Map<K, V> {
     
         /**
          * Class for Hash Map datastructure.

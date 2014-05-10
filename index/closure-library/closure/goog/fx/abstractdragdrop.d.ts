@@ -9,7 +9,8 @@
 
 declare module goog.fx {
 
-    class AbstractDragDrop extends goog.events.EventTarget {
+    class AbstractDragDrop extends __AbstractDragDrop { }
+    class __AbstractDragDrop extends goog.events.__EventTarget {
     
         /**
          * Abstract class that provides reusable functionality for implementing drag
@@ -294,7 +295,8 @@ declare module goog.fx {
         getEventPosition(event: goog.fx.DragEvent): goog.math.Coordinate;
     }
 
-    class DragDropEvent extends goog.events.Event {
+    class DragDropEvent extends __DragDropEvent { }
+    class __DragDropEvent extends goog.events.__Event {
     
         /**
          * Object representing a drag and drop event.
@@ -316,7 +318,8 @@ declare module goog.fx {
         constructor(type: string, source: goog.fx.AbstractDragDrop, sourceItem: goog.fx.DragDropItem, opt_target?: goog.fx.AbstractDragDrop, opt_targetItem?: goog.fx.DragDropItem, opt_targetElement?: Element, opt_clientX?: number, opt_clientY?: number, opt_x?: number, opt_y?: number, opt_subtarget?: Object);
     }
 
-    class DragDropItem extends goog.events.EventTarget {
+    class DragDropItem extends __DragDropItem { }
+    class __DragDropItem extends goog.events.__EventTarget {
     
         /**
          * Class representing a source or target element for drag and drop operations.
@@ -380,7 +383,8 @@ declare module goog.fx {
         setParent(parent: goog.fx.AbstractDragDrop): void;
     }
 
-    class ActiveDropTarget_ {
+    class ActiveDropTarget_ extends __ActiveDropTarget_ { }
+    class __ActiveDropTarget_ {
     
         /**
          * Class representing an active drop target
@@ -397,7 +401,8 @@ declare module goog.fx {
         constructor(box: goog.math.Box, opt_target?: goog.fx.AbstractDragDrop, opt_item?: goog.fx.DragDropItem, opt_element?: Element);
     }
 
-    class ScrollableContainer_ {
+    class ScrollableContainer_ extends __ScrollableContainer_ { }
+    class __ScrollableContainer_ {
     
         /**
          * Class for representing a scrollable container

@@ -5,7 +5,8 @@
 
 declare module goog.net.xpc {
 
-    class FrameElementMethodTransport extends goog.net.xpc.Transport {
+    class FrameElementMethodTransport extends __FrameElementMethodTransport { }
+    class __FrameElementMethodTransport extends goog.net.xpc.__Transport {
     
         /**
          * Frame-element method transport.

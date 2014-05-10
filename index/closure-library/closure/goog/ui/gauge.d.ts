@@ -6,7 +6,8 @@
 
 declare module goog.ui {
 
-    class GaugeColoredRange {
+    class GaugeColoredRange extends __GaugeColoredRange { }
+    class __GaugeColoredRange {
     
         /**
          * Information on how to decorate a range in the gauge.
@@ -20,7 +21,8 @@ declare module goog.ui {
         constructor(fromValue: number, toValue: number, backgroundColor: string);
     }
 
-    class Gauge extends goog.ui.Component {
+    class Gauge extends __Gauge { }
+    class __Gauge extends goog.ui.__Component {
     
         /**
          * A UI component that displays a gauge.

@@ -2,7 +2,8 @@
 
 declare module goog.events {
 
-    class EventId<T> {
+    class EventId<T> extends __EventId<T> { }
+    class __EventId<T> {
     
         /**
          * A templated class that is used when registering for events. Typical usage:

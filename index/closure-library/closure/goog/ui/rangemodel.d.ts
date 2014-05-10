@@ -3,7 +3,8 @@
 
 declare module goog.ui {
 
-    class RangeModel extends goog.events.EventTarget {
+    class RangeModel extends __RangeModel { }
+    class __RangeModel extends goog.events.__EventTarget {
     
         /**
          * Creates a range model

@@ -3,7 +3,8 @@
 
 declare module goog.testing {
 
-    class MockRandom extends goog.Disposable {
+    class MockRandom extends __MockRandom { }
+    class __MockRandom extends goog.__Disposable {
     
         /**
          * Class for unit testing code that uses Math.random.

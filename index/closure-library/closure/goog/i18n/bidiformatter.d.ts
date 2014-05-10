@@ -3,7 +3,8 @@
 
 declare module goog.i18n {
 
-    class BidiFormatter {
+    class BidiFormatter extends __BidiFormatter { }
+    class __BidiFormatter {
     
         /**
          * Utility class for formatting text for display in a potentially

@@ -3,7 +3,8 @@
 
 declare module goog.labs.net.webChannel {
 
-    class WebChannelBase implements goog.labs.net.webChannel.Channel {
+    class WebChannelBase extends __WebChannelBase { }
+    class __WebChannelBase implements goog.labs.net.webChannel.Channel {
     
         /**
          * This WebChannel implementation is branched off goog.net.BrowserChannel

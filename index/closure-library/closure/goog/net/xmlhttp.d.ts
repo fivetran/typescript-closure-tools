@@ -3,7 +3,8 @@
 
 declare module goog.net {
 
-    class DefaultXmlHttpFactory extends goog.net.XmlHttpFactory {
+    class DefaultXmlHttpFactory extends __DefaultXmlHttpFactory { }
+    class __DefaultXmlHttpFactory extends goog.net.__XmlHttpFactory {
     
         /**
          * Default factory to use when creating xhr objects.  You probably shouldn't be

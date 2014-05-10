@@ -10,7 +10,8 @@
 
 declare module goog.ui {
 
-    class Container extends goog.ui.Component {
+    class Container extends __Container { }
+    class __Container extends goog.ui.__Component {
     
         /**
          * Base class for containers.  Extends {@link goog.ui.Component} by adding

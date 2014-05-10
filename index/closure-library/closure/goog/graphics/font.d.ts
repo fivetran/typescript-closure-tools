@@ -2,7 +2,8 @@
 
 declare module goog.graphics {
 
-    class Font {
+    class Font extends __Font { }
+    class __Font {
     
         /**
          * This class represents a font to be used with a renderer.

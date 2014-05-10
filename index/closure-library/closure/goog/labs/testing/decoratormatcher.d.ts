@@ -3,7 +3,8 @@
 
 declare module goog.labs.testing {
 
-    class AnythingMatcher implements goog.labs.testing.Matcher {
+    class AnythingMatcher extends __AnythingMatcher { }
+    class __AnythingMatcher implements goog.labs.testing.Matcher {
     
         /**
          * The Anything matcher. Matches all possible inputs.

@@ -8,7 +8,8 @@
 
 declare module goog.ui.emoji {
 
-    class PopupEmojiPicker extends goog.ui.Component {
+    class PopupEmojiPicker extends __PopupEmojiPicker { }
+    class __PopupEmojiPicker extends goog.ui.__Component {
     
         /**
          * Constructs a popup emoji picker widget.

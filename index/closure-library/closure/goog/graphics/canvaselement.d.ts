@@ -14,7 +14,8 @@
 
 declare module goog.graphics {
 
-    class CanvasGroupElement extends goog.graphics.GroupElement {
+    class CanvasGroupElement extends __CanvasGroupElement { }
+    class __CanvasGroupElement extends goog.graphics.__GroupElement {
     
         /**
          * Object representing a group of objects in a canvas.
@@ -45,7 +46,8 @@ declare module goog.graphics {
         draw(ctx: CanvasRenderingContext2D): void;
     }
 
-    class CanvasEllipseElement extends goog.graphics.EllipseElement {
+    class CanvasEllipseElement extends __CanvasEllipseElement { }
+    class __CanvasEllipseElement extends goog.graphics.__EllipseElement {
     
         /**
          * Thin wrapper for canvas ellipse elements.
@@ -74,7 +76,8 @@ declare module goog.graphics {
         draw(ctx: CanvasRenderingContext2D): void;
     }
 
-    class CanvasRectElement extends goog.graphics.RectElement {
+    class CanvasRectElement extends __CanvasRectElement { }
+    class __CanvasRectElement extends goog.graphics.__RectElement {
     
         /**
          * Thin wrapper for canvas rectangle elements.
@@ -103,7 +106,8 @@ declare module goog.graphics {
         draw(ctx: CanvasRenderingContext2D): void;
     }
 
-    class CanvasPathElement extends goog.graphics.PathElement {
+    class CanvasPathElement extends __CanvasPathElement { }
+    class __CanvasPathElement extends goog.graphics.__PathElement {
     
         /**
          * Thin wrapper for canvas path elements.
@@ -130,7 +134,8 @@ declare module goog.graphics {
         draw(ctx: CanvasRenderingContext2D): void;
     }
 
-    class CanvasTextElement extends goog.graphics.TextElement {
+    class CanvasTextElement extends __CanvasTextElement { }
+    class __CanvasTextElement extends goog.graphics.__TextElement {
     
         /**
          * Thin wrapper for canvas text elements.
@@ -161,7 +166,8 @@ declare module goog.graphics {
         draw(ctx: CanvasRenderingContext2D): void;
     }
 
-    class CanvasImageElement extends goog.graphics.ImageElement {
+    class CanvasImageElement extends __CanvasImageElement { }
+    class __CanvasImageElement extends goog.graphics.__ImageElement {
     
         /**
          * Thin wrapper for canvas image elements.

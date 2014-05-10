@@ -5,7 +5,8 @@
 
 declare module goog.proto2 {
 
-    class LazyDeserializer extends goog.proto2.Serializer {
+    class LazyDeserializer extends __LazyDeserializer { }
+    class __LazyDeserializer extends goog.proto2.__Serializer {
     
         /**
          * Base class for all lazy deserializers.

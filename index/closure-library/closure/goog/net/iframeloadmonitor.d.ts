@@ -3,7 +3,8 @@
 
 declare module goog.net {
 
-    class IframeLoadMonitor extends goog.events.EventTarget {
+    class IframeLoadMonitor extends __IframeLoadMonitor { }
+    class __IframeLoadMonitor extends goog.events.__EventTarget {
     
         /**
          * The correct way to determine whether a same-domain iframe has completed

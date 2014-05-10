@@ -4,7 +4,8 @@
 
 declare module goog.events {
 
-    class FocusHandler extends goog.events.EventTarget {
+    class FocusHandler extends __FocusHandler { }
+    class __FocusHandler extends goog.events.__EventTarget {
     
         /**
          * This event handler allows you to catch focus events when descendants gain or

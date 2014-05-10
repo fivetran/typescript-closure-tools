@@ -3,7 +3,8 @@
 
 declare module goog.demos.editor {
 
-    class HelloWorld extends goog.editor.Plugin {
+    class HelloWorld extends __HelloWorld { }
+    class __HelloWorld extends goog.editor.__Plugin {
     
         /**
          * Plugin to insert 'Hello World!' into an editable field.

@@ -3,7 +3,8 @@
 
 declare module goog.ui {
 
-    class CharCounter extends goog.events.EventTarget {
+    class CharCounter extends __CharCounter { }
+    class __CharCounter extends goog.events.__EventTarget {
     
         /**
          * CharCounter widget. Counts the number of characters in a input field or a

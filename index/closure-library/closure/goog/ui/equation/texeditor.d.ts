@@ -4,7 +4,8 @@
 
 declare module goog.ui.equation {
 
-    class TexEditor extends goog.ui.Component {
+    class TexEditor extends __TexEditor { }
+    class __TexEditor extends goog.ui.__Component {
     
         /**
          * User interface for equation editor plugin.

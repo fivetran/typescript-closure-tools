@@ -6,7 +6,8 @@
 
 declare module goog.html {
 
-    class TrustedResourceUrl implements goog.i18n.bidi.DirectionalString, goog.string.TypedString {
+    class TrustedResourceUrl extends __TrustedResourceUrl { }
+    class __TrustedResourceUrl implements goog.i18n.bidi.DirectionalString, goog.string.TypedString {
     
         /**
          * A URL which is under application control and from which script, CSS, and

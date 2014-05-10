@@ -5,7 +5,8 @@
 
 declare module goog.net.xpc {
 
-    class IframePollingTransport extends goog.net.xpc.Transport {
+    class IframePollingTransport extends __IframePollingTransport { }
+    class __IframePollingTransport extends goog.net.xpc.__Transport {
     
         /**
          * Iframe polling transport. Uses hidden iframes to transfer data
@@ -49,7 +50,8 @@ declare module goog.net.xpc {
 
 declare module goog.net.xpc.IframePollingTransport {
 
-    class Sender {
+    class Sender extends __Sender { }
+    class __Sender {
     
         /**
          * goog.net.xpc.IframePollingTransport.Sender
@@ -72,7 +74,8 @@ declare module goog.net.xpc.IframePollingTransport {
         send(payload: string): void;
     }
 
-    class Receiver {
+    class Receiver extends __Receiver { }
+    class __Receiver {
     
         /**
          * goog.net.xpc.IframePollingTransport.Receiver

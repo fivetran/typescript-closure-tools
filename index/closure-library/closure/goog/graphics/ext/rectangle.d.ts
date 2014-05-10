@@ -4,7 +4,8 @@
 
 declare module goog.graphics.ext {
 
-    class Rectangle extends goog.graphics.ext.StrokeAndFillElement {
+    class Rectangle extends __Rectangle { }
+    class __Rectangle extends goog.graphics.ext.__StrokeAndFillElement {
     
         /**
          * Wrapper for a graphics rectangle element.

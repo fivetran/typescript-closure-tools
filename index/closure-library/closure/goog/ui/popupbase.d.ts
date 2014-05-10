@@ -5,7 +5,8 @@
 
 declare module goog.ui {
 
-    class PopupBase extends goog.events.EventTarget {
+    class PopupBase extends __PopupBase { }
+    class __PopupBase extends goog.events.__EventTarget {
     
         /**
          * The PopupBase class provides functionality for showing and hiding a generic

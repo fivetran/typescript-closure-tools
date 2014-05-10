@@ -2,7 +2,8 @@
 
 declare module goog.storage.mechanism {
 
-    class Mechanism {
+    class Mechanism extends __Mechanism { }
+    class __Mechanism {
     
         /**
          * Basic interface for all storage mechanisms.

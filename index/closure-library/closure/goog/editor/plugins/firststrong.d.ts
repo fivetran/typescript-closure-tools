@@ -3,7 +3,8 @@
 
 declare module goog.editor.plugins {
 
-    class FirstStrong extends goog.editor.Plugin {
+    class FirstStrong extends __FirstStrong { }
+    class __FirstStrong extends goog.editor.__Plugin {
     
         /**
          * First Strong plugin.

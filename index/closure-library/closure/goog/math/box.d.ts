@@ -3,7 +3,8 @@
 
 declare module goog.math {
 
-    class Box {
+    class Box extends __Box { }
+    class __Box {
     
         /**
          * Class for representing a box. A box is specified as a top, right, bottom,

@@ -3,7 +3,8 @@
 
 declare module goog.ui {
 
-    class FlatButtonRenderer extends goog.ui.ButtonRenderer {
+    class FlatButtonRenderer extends __FlatButtonRenderer { }
+    class __FlatButtonRenderer extends goog.ui.__ButtonRenderer {
     
         /**
          * Flat renderer for {@link goog.ui.Button}s.  Flat buttons can contain

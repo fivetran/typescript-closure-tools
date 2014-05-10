@@ -3,7 +3,8 @@
 
 declare module goog.dom.pattern {
 
-    class FullTag extends goog.dom.pattern.StartTag {
+    class FullTag extends __FullTag { }
+    class __FullTag extends goog.dom.pattern.__StartTag {
     
         /**
          * Pattern object that matches a full tag including all its children.

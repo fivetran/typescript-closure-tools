@@ -3,7 +3,8 @@
 
 declare module goog.editor.plugins {
 
-    class EquationEditorPlugin extends goog.editor.plugins.AbstractDialogPlugin {
+    class EquationEditorPlugin extends __EquationEditorPlugin { }
+    class __EquationEditorPlugin extends goog.editor.plugins.__AbstractDialogPlugin {
     
         /**
          * A plugin that opens the equation editor in a dialog window.

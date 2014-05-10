@@ -2,7 +2,8 @@
 
 declare module goog.structs {
 
-    class LinkedMap<KEY, VALUE> {
+    class LinkedMap<KEY, VALUE> extends __LinkedMap<KEY, VALUE> { }
+    class __LinkedMap<KEY, VALUE> {
     
         /**
          * Class for a LinkedMap datastructure, which combines O(1) map access for
@@ -216,7 +217,8 @@ declare module goog.structs {
 
 declare module goog.structs.LinkedMap {
 
-    class Node_<KEY, VALUE> {
+    class Node_<KEY, VALUE> extends __Node_<KEY, VALUE> { }
+    class __Node_<KEY, VALUE> {
     
         /**
          * Internal class for a doubly-linked list node containing a key/value pair.

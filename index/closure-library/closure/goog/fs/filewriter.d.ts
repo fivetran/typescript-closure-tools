@@ -3,7 +3,8 @@
 
 declare module goog.fs {
 
-    class FileWriter extends goog.fs.FileSaver {
+    class FileWriter extends __FileWriter { }
+    class __FileWriter extends goog.fs.__FileSaver {
     
         /**
          * An object for monitoring the saving of files, as well as other fine-grained

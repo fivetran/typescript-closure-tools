@@ -4,7 +4,8 @@
 
 declare module goog.labs.testing {
 
-    class MatcherError extends goog.debug.Error {
+    class MatcherError extends __MatcherError { }
+    class __MatcherError extends goog.debug.__Error {
     
         /**
          * Error thrown when a Matcher fails to match the input value.

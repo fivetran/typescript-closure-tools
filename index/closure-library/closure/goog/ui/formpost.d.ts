@@ -4,7 +4,8 @@
 
 declare module goog.ui {
 
-    class FormPost extends goog.ui.Component {
+    class FormPost extends __FormPost { }
+    class __FormPost extends goog.ui.__Component {
     
         /**
          * Creates a formpost object.

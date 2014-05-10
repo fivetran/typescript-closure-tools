@@ -3,7 +3,8 @@
 
 declare module goog.debug {
 
-    class Logger {
+    class Logger extends __Logger { }
+    class __Logger {
     
         /**
          * The Logger is an object used for logging debug messages. Loggers are
@@ -327,7 +328,8 @@ declare module goog.debug {
 
 declare module goog.debug.Logger {
 
-    class Level {
+    class Level extends __Level { }
+    class __Level {
     
         /**
          * The Level class defines a set of standard logging levels that

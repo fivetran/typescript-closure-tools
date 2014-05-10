@@ -3,7 +3,8 @@
 
 declare module goog.ui {
 
-    class TabBarRenderer extends goog.ui.ContainerRenderer {
+    class TabBarRenderer extends __TabBarRenderer { }
+    class __TabBarRenderer extends goog.ui.__ContainerRenderer {
     
         /**
          * Default renderer for {@link goog.ui.TabBar}s, based on the {@code TabPane}

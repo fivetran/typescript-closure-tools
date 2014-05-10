@@ -4,7 +4,8 @@
 
 declare module goog.testing {
 
-    class DeferredTestCase extends goog.testing.AsyncTestCase {
+    class DeferredTestCase extends __DeferredTestCase { }
+    class __DeferredTestCase extends goog.testing.__AsyncTestCase {
     
         /**
          * A test case that can asynchronously wait on a Deferred object.

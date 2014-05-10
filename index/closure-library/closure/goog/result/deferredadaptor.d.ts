@@ -4,7 +4,8 @@
 
 declare module goog.result {
 
-    class DeferredAdaptor extends goog.async.Deferred<any> {
+    class DeferredAdaptor extends __DeferredAdaptor { }
+    class __DeferredAdaptor extends goog.async.__Deferred<any> {
     
         /**
          * An adaptor from Result to a Deferred, for use with existing Deferred chains.

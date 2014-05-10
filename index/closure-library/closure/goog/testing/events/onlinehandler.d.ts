@@ -4,7 +4,8 @@
 
 declare module goog.testing.events {
 
-    class OnlineHandler extends goog.events.EventTarget implements goog.net.NetworkStatusMonitor {
+    class OnlineHandler extends __OnlineHandler { }
+    class __OnlineHandler extends goog.events.__EventTarget implements goog.net.NetworkStatusMonitor {
     
         /**
          * NetworkStatusMonitor test double.

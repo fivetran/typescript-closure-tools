@@ -4,7 +4,8 @@
 
 declare module goog.testing.net {
 
-    class XhrIoPool extends goog.net.XhrIoPool {
+    class XhrIoPool extends __XhrIoPool { }
+    class __XhrIoPool extends goog.net.__XhrIoPool {
     
         /**
          * A pool containing a single mock XhrIo object.

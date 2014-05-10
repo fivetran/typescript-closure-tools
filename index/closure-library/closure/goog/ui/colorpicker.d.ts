@@ -6,7 +6,8 @@
 
 declare module goog.ui {
 
-    class ColorPicker extends goog.ui.Component {
+    class ColorPicker extends __ColorPicker { }
+    class __ColorPicker extends goog.ui.__Component {
     
         /**
          * Create a new, empty color picker.

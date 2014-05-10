@@ -3,7 +3,8 @@
 
 declare module goog.ui {
 
-    class NativeButtonRenderer extends goog.ui.ButtonRenderer {
+    class NativeButtonRenderer extends __NativeButtonRenderer { }
+    class __NativeButtonRenderer extends goog.ui.__ButtonRenderer {
     
         /**
          * Renderer for {@link goog.ui.Button}s.  Renders and decorates native HTML

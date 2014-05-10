@@ -4,7 +4,8 @@
 
 declare module goog.testing.events {
 
-    class Event extends Event {
+    class Event extends __Event { }
+    class __Event extends Event {
     
         /**
          * goog.events.BrowserEvent expects an Event so we provide one for JSCompiler.

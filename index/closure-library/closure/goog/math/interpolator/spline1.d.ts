@@ -3,7 +3,8 @@
 
 declare module goog.math.interpolator {
 
-    class Spline1 implements goog.math.interpolator.Interpolator1 {
+    class Spline1 extends __Spline1 { }
+    class __Spline1 implements goog.math.interpolator.Interpolator1 {
     
         /**
          * A one dimensional cubic spline interpolator with natural boundary conditions.

@@ -2,7 +2,8 @@
 
 declare module goog.cssom.iframe.style {
 
-    class CssRuleSet_ {
+    class CssRuleSet_ extends __CssRuleSet_ { }
+    class __CssRuleSet_ {
     
         /**
          * Class representing a CSS rule set. A rule set is something like this:
@@ -53,7 +54,8 @@ declare module goog.cssom.iframe.style {
         writeToArray(array: string[]): void;
     }
 
-    class CssSelector_ {
+    class CssSelector_ extends __CssSelector_ { }
+    class __CssSelector_ {
     
         /**
          * Represents a single CSS selector, as described in
@@ -92,7 +94,8 @@ declare module goog.cssom.iframe.style {
         matchElementAncestry(elementAncestry: goog.cssom.iframe.style.NodeAncestry_): Object;
     }
 
-    class CssSelectorPart_ {
+    class CssSelectorPart_ extends __CssSelectorPart_ { }
+    class __CssSelectorPart_ {
     
         /**
          * Represents one part of a CSS Selector. For example in the selector
@@ -113,7 +116,8 @@ declare module goog.cssom.iframe.style {
         testElement(elementInfo: Object): boolean;
     }
 
-    class NodeAncestry_ {
+    class NodeAncestry_ extends __NodeAncestry_ { }
+    class __NodeAncestry_ {
     
         /**
          * Represents an element and all its parent/ancestor nodes.

@@ -4,7 +4,8 @@
 
 declare module goog.fx {
 
-    class DragScrollSupport extends goog.Disposable {
+    class DragScrollSupport extends __DragScrollSupport { }
+    class __DragScrollSupport extends goog.__Disposable {
     
         /**
          * A scroll support class. Currently this class will automatically scroll

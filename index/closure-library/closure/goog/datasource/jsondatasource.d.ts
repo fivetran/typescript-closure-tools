@@ -4,7 +4,8 @@
 
 declare module goog.ds {
 
-    class JsonDataSource extends goog.ds.JsDataSource {
+    class JsonDataSource extends __JsonDataSource { }
+    class __JsonDataSource extends goog.ds.__JsDataSource {
     
         /**
          * Data source whose backing is a JSON-like service, in which

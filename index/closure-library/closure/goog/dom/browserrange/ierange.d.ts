@@ -3,7 +3,8 @@
 
 declare module goog.dom.browserrange {
 
-    class IeRange extends goog.dom.browserrange.AbstractRange {
+    class IeRange extends __IeRange { }
+    class __IeRange extends goog.dom.browserrange.__AbstractRange {
     
         /**
          * The constructor for IE specific browser ranges.

@@ -4,7 +4,8 @@
 
 declare module goog.dom {
 
-    class ViewportSizeMonitor extends goog.events.EventTarget {
+    class ViewportSizeMonitor extends __ViewportSizeMonitor { }
+    class __ViewportSizeMonitor extends goog.events.__EventTarget {
     
         /**
          * This class can be used to monitor changes in the viewport size.  Instances

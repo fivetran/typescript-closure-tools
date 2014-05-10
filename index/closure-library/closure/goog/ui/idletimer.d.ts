@@ -4,7 +4,8 @@
 
 declare module goog.ui {
 
-    class IdleTimer extends goog.events.EventTarget {
+    class IdleTimer extends __IdleTimer { }
+    class __IdleTimer extends goog.events.__EventTarget {
     
         /**
          * Event target that will give notification of state changes between active and

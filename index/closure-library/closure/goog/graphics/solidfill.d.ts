@@ -3,7 +3,8 @@
 
 declare module goog.graphics {
 
-    class SolidFill extends goog.graphics.Fill {
+    class SolidFill extends __SolidFill { }
+    class __SolidFill extends goog.graphics.__Fill {
     
         /**
          * Creates an immutable solid color fill object.

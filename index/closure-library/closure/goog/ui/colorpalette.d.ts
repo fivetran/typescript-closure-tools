@@ -5,7 +5,8 @@
 
 declare module goog.ui {
 
-    class ColorPalette extends goog.ui.Palette {
+    class ColorPalette extends __ColorPalette { }
+    class __ColorPalette extends goog.ui.__Palette {
     
         /**
          * A color palette is a grid of color swatches that the user can highlight or

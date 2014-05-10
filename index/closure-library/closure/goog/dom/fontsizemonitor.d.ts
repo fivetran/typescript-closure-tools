@@ -4,7 +4,8 @@
 
 declare module goog.dom {
 
-    class FontSizeMonitor extends goog.events.EventTarget {
+    class FontSizeMonitor extends __FontSizeMonitor { }
+    class __FontSizeMonitor extends goog.events.__EventTarget {
     
         /**
          * This class can be used to monitor changes in font size.  Instances will

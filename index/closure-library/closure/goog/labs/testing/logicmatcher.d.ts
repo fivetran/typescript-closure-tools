@@ -3,7 +3,8 @@
 
 declare module goog.labs.testing {
 
-    class AllOfMatcher implements goog.labs.testing.Matcher {
+    class AllOfMatcher extends __AllOfMatcher { }
+    class __AllOfMatcher implements goog.labs.testing.Matcher {
     
         /**
          * The AllOf matcher.
@@ -37,7 +38,8 @@ declare module goog.labs.testing {
         describe(value: any, opt_description?: string): string;
     }
 
-    class AnyOfMatcher implements goog.labs.testing.Matcher {
+    class AnyOfMatcher extends __AnyOfMatcher { }
+    class __AnyOfMatcher implements goog.labs.testing.Matcher {
     
         /**
          * The AnyOf matcher.
@@ -71,7 +73,8 @@ declare module goog.labs.testing {
         describe(value: any, opt_description?: string): string;
     }
 
-    class IsNotMatcher implements goog.labs.testing.Matcher {
+    class IsNotMatcher extends __IsNotMatcher { }
+    class __IsNotMatcher implements goog.labs.testing.Matcher {
     
         /**
          * The IsNot matcher.

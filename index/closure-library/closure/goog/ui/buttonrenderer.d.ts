@@ -4,7 +4,8 @@
 
 declare module goog.ui {
 
-    class ButtonRenderer extends goog.ui.ControlRenderer {
+    class ButtonRenderer extends __ButtonRenderer { }
+    class __ButtonRenderer extends goog.ui.__ControlRenderer {
     
         /**
          * Default renderer for {@link goog.ui.Button}s.  Extends the superclass with

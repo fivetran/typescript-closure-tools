@@ -5,7 +5,8 @@
 
 declare module goog.testing.ui {
 
-    class RendererHarness extends goog.Disposable {
+    class RendererHarness extends __RendererHarness { }
+    class __RendererHarness extends goog.__Disposable {
     
         /**
          * A driver for testing renderers.

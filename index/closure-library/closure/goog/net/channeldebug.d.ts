@@ -5,7 +5,8 @@
 
 declare module goog.net {
 
-    class ChannelDebug {
+    class ChannelDebug extends __ChannelDebug { }
+    class __ChannelDebug {
     
         /**
          * Logs and keeps a buffer of debugging info for the Channel.

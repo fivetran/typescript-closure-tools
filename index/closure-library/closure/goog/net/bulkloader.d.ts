@@ -4,7 +4,8 @@
 
 declare module goog.net {
 
-    class BulkLoader extends goog.events.EventTarget {
+    class BulkLoader extends __BulkLoader { }
+    class __BulkLoader extends goog.events.__EventTarget {
     
         /**
          * Class used to load multiple URIs.

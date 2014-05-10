@@ -3,7 +3,8 @@
 
 declare module goog.ds {
 
-    class DataNode {
+    class DataNode extends __DataNode { }
+    class __DataNode {
     
         /**
          * Interface for node in rich data tree.
@@ -102,7 +103,8 @@ declare module goog.ds {
         isList(): boolean;
     }
 
-    class BaseDataNode {
+    class BaseDataNode extends __BaseDataNode { }
+    class __BaseDataNode {
     
         /**
          * Base class for data node functionality, has default implementations for
@@ -176,7 +178,8 @@ declare module goog.ds {
         getParent: Function;
     }
 
-    class DataNodeList extends goog.ds.DataNode {
+    class DataNodeList extends __DataNodeList { }
+    class __DataNodeList extends goog.ds.__DataNode {
     
         /**
          * Interface for node list in rich data tree.
@@ -227,7 +230,8 @@ declare module goog.ds {
         removeNode(name: string): boolean;
     }
 
-    class BasicNodeList extends goog.ds.DataNodeList {
+    class BasicNodeList extends __BasicNodeList { }
+    class __BasicNodeList extends goog.ds.__DataNodeList {
     
         /**
          * Simple node list implementation with underlying array and map
@@ -251,7 +255,8 @@ declare module goog.ds {
         indexOf(name: string): any /*number|any (undefined)*/;
     }
 
-    class EmptyNodeList extends goog.ds.BasicNodeList {
+    class EmptyNodeList extends __EmptyNodeList { }
+    class __EmptyNodeList extends goog.ds.__BasicNodeList {
     
         /**
          * Immulatable empty node list
@@ -262,7 +267,8 @@ declare module goog.ds {
         constructor();
     }
 
-    class SortedNodeList extends goog.ds.BasicNodeList {
+    class SortedNodeList extends __SortedNodeList { }
+    class __SortedNodeList extends goog.ds.__BasicNodeList {
     
         /**
          * Node list implementation which maintains sort order during insertion and

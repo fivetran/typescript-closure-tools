@@ -2,7 +2,8 @@
 
 declare module goog.labs.net.webChannel {
 
-    class ForwardChannelRequestPool {
+    class ForwardChannelRequestPool extends __ForwardChannelRequestPool { }
+    class __ForwardChannelRequestPool {
     
         /**
          * This class represents the state of all forward channel requests.

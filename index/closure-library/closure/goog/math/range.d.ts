@@ -2,7 +2,8 @@
 
 declare module goog.math {
 
-    class Range {
+    class Range extends __Range { }
+    class __Range {
     
         /**
          * A number range.

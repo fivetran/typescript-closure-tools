@@ -11,7 +11,8 @@
 
 declare module goog.testing.fs {
 
-    class Entry implements goog.fs.Entry {
+    class Entry extends __Entry { }
+    class __Entry implements goog.fs.Entry {
     
         /**
          * A mock filesystem entry object.
@@ -158,7 +159,8 @@ declare module goog.testing.fs {
         getParent(): goog.async.Deferred<any>;
     }
 
-    class DirectoryEntry extends goog.testing.fs.Entry implements goog.fs.DirectoryEntry {
+    class DirectoryEntry extends __DirectoryEntry { }
+    class __DirectoryEntry extends goog.testing.fs.__Entry implements goog.fs.DirectoryEntry {
     
         /**
          * A mock directory entry object.
@@ -279,7 +281,8 @@ declare module goog.testing.fs {
         removeRecursively(): goog.async.Deferred<any>;
     }
 
-    class FileEntry extends goog.testing.fs.Entry implements goog.fs.FileEntry {
+    class FileEntry extends __FileEntry { }
+    class __FileEntry extends goog.testing.fs.__Entry implements goog.fs.FileEntry {
     
         /**
          * A mock file entry object.

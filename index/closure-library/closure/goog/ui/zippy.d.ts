@@ -6,7 +6,8 @@
 
 declare module goog.ui {
 
-    class Zippy extends goog.events.EventTarget {
+    class Zippy extends __Zippy { }
+    class __Zippy extends goog.events.__EventTarget {
     
         /**
          * Zippy widget. Expandable/collapsible container, clicking the header toggles
@@ -451,7 +452,8 @@ declare module goog.ui {
         setHandleMouseEvents(enable: boolean): void;
     }
 
-    class ZippyEvent extends goog.events.Event {
+    class ZippyEvent extends __ZippyEvent { }
+    class __ZippyEvent extends goog.events.__Event {
     
         /**
          * Object representing a zippy toggle event.

@@ -5,7 +5,8 @@
 
 declare module goog.ui {
 
-    class Textarea extends goog.ui.Control {
+    class Textarea extends __Textarea { }
+    class __Textarea extends goog.ui.__Control {
     
         /**
          * A textarea control to handle growing/shrinking with textarea.value.

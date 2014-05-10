@@ -8,7 +8,8 @@
 
 declare module goog.ui.editor {
 
-    class AbstractDialog extends goog.events.EventTarget {
+    class AbstractDialog extends __AbstractDialog { }
+    class __AbstractDialog extends goog.events.__EventTarget {
     
         /**
          * Creates an object that represents a dialog box.
@@ -121,7 +122,8 @@ declare module goog.ui.editor {
 
 declare module goog.ui.editor.AbstractDialog {
 
-    class Builder {
+    class Builder extends __Builder { }
+    class __Builder {
     
         /**
          * A builder class for the dialog control. All methods except build return this.
