@@ -342,13 +342,23 @@ function with_underscore(type: string) {
         return moduleName + '.__' + memberName;
 }
 
-function generate_extends(docs: doctrine.JSDoc) {
+function generate_class_extends(docs: doctrine.JSDoc) {
     var tags = docs.tags || [];
     var supers = tags
         .filter(t => t.title === 'extends')
         .map(x => x.type)
         .map(generate_type)
         .map(with_underscore);
+
+    if (supers.length > 0)
+        return 'extends ' + supers.join(', ') + ' ';
+    else
+        return '';
+}
+
+function generate_interface_extends(docs: doctrine.JSDoc) {
+    var tags = docs.tags || [];
+    var supers = tags.filter(t => t.title === 'extends').map(x => x.type).map(generate_type);
 
     if (supers.length > 0)
         return 'extends ' + supers.join(', ') + ' ';
@@ -367,7 +377,7 @@ function generate_implements(docs: doctrine.JSDoc) {
 
 function generate_interface(name: string, prototype: combine.Symbol) {
     var constructor = prototype[''];
-    var acc = 'interface ' + name + generics(constructor.jsdoc) + ' ' + generate_extends(constructor.jsdoc) + '{\n';
+    var acc = 'interface ' + name + generics(constructor.jsdoc) + ' ' + generate_interface_extends(constructor.jsdoc) + '{\n';
 
     Object.keys(prototype).filter(name => name !== '').forEach(function (name) {
         var value = prototype[name];
@@ -430,7 +440,7 @@ function get_type_name(tag) {
 function generate_class(name: string, prototype: combine.Symbol) {
     var constructor = prototype[''];
     var acc = 'class ' + name + generics(constructor.jsdoc) + ' extends __' + name + generics(constructor.jsdoc) + ' { }\n';
-    acc += 'class __' + name + generics(constructor.jsdoc) + ' ' + generate_extends(constructor.jsdoc) + generate_implements(constructor.jsdoc) + '{\n';
+    acc += 'class __' + name + generics(constructor.jsdoc) + ' ' + generate_class_extends(constructor.jsdoc) + generate_implements(constructor.jsdoc) + '{\n';
 
     var text = constructor.originalText.replace(/\n\s+/g, '\n     ');
 
