@@ -30,16 +30,6 @@ declare module goog.tweak {
          * @final
          */
         constructor(queryParams: string, compilerOverrides: { [key: number]: any /*missing*/ });
-        /**
-         * Singleton that manages all tweaks. This should be instantiated only from
-         * goog.tweak.getRegistry().
-         * @param {string} queryParams Value of window.location.search.
-         * @param {!Object.<string|number|boolean>} compilerOverrides Default value
-         *     overrides set by the compiler.
-         * @constructor
-         * @final
-         */
-        constructor(queryParams: string, compilerOverrides: { [key: string]: any /*missing*/ });
     
         /**
          * Registers the given tweak setting/action.
