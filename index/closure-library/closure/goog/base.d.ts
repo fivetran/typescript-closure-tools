@@ -3,11 +3,6 @@
 declare module goog {
 
     /**
-     * Reference to the global context.  In most cases this will be 'window'.
-     */
-    var global: any /*missing*/;
-
-    /**
      * Defines a named value. In uncompiled mode, the value is retreived from
      * CLOSURE_DEFINES or CLOSURE_UNCOMPILED_DEFINES if the object is defined and
      * has the property specified, and otherwise used the defined defaultValue.
