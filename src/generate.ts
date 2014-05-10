@@ -331,9 +331,24 @@ function generate_members(name: string, value: parser.Value): string[] {
         return [generate_field(name, value.jsdoc)];
 }
 
+function with_underscore(type: string) {
+    var dot = type.lastIndexOf('.');
+    var moduleName = type.substring(0, dot);
+    var memberName = type.substring(dot + 1);
+
+    if (moduleName === '')
+        return type;
+    else
+        return moduleName + '.__' + memberName;
+}
+
 function generate_extends(docs: doctrine.JSDoc) {
     var tags = docs.tags || [];
-    var supers = tags.filter(t => t.title === 'extends').map(x => x.type).map(generate_type);
+    var supers = tags
+        .filter(t => t.title === 'extends')
+        .map(x => x.type)
+        .map(generate_type)
+        .map(with_underscore);
 
     if (supers.length > 0)
         return 'extends ' + supers.join(', ') + ' ';
@@ -414,7 +429,8 @@ function get_type_name(tag) {
 
 function generate_class(name: string, prototype: combine.Symbol) {
     var constructor = prototype[''];
-    var acc = 'class ' + name + generics(constructor.jsdoc) + ' ' + generate_extends(constructor.jsdoc) + generate_implements(constructor.jsdoc) + '{\n';
+    var acc = 'class ' + name + generics(constructor.jsdoc) + ' extends __' + name + generics(constructor.jsdoc) + ' { }\n';
+    acc += 'class __' + name + generics(constructor.jsdoc) + ' ' + generate_extends(constructor.jsdoc) + generate_implements(constructor.jsdoc) + '{\n';
 
     var text = constructor.originalText.replace(/\n\s+/g, '\n     ');
 
