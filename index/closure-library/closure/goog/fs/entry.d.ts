@@ -116,7 +116,7 @@ declare module goog.fs {
         getParent(): goog.async.Deferred<any>;
     }
 
-    interface DirectoryEntry extends goog.fs.__Entry {
+    interface DirectoryEntry extends goog.fs.Entry {
     
         /**
          * Get a file in the directory.
@@ -172,7 +172,7 @@ declare module goog.fs {
         removeRecursively(): goog.async.Deferred<any>;
     }
 
-    interface FileEntry extends goog.fs.__Entry {
+    interface FileEntry extends goog.fs.Entry {
     
         /**
          * Create a writer for writing to the file.
