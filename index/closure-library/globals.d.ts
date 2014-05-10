@@ -11,6 +11,27 @@ declare class _Error implements Error {
     message: string;
 }
 
+declare class _Event implements Event {
+    timeStamp: number;
+    defaultPrevented: boolean;
+    isTrusted: boolean;
+    currentTarget: EventTarget;
+    cancelBubble: boolean;
+    target: EventTarget;
+    eventPhase: number;
+    cancelable: boolean;
+    type: string;
+    srcElement: Element;
+    bubbles: boolean;
+    initEvent(eventTypeArg: string, canBubbleArg: boolean, cancelableArg: boolean): void;
+    stopPropagation(): void;
+    stopImmediatePropagation(): void;
+    preventDefault(): void;
+    CAPTURING_PHASE: number;
+    AT_TARGET: number;
+    BUBBLING_PHASE: number;
+}
+
 interface _File extends File { }
 
 interface Image extends HTMLImageElement { }
