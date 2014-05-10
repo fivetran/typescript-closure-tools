@@ -358,7 +358,10 @@ function generate_class_extends(docs: doctrine.JSDoc) {
 
 function generate_interface_extends(docs: doctrine.JSDoc) {
     var tags = docs.tags || [];
-    var supers = tags.filter(t => t.title === 'extends').map(x => x.type).map(generate_type);
+    var supers = tags
+        .filter(t => t.title === 'extends')
+        .map(x => x.type)
+        .map(generate_type);
 
     if (supers.length > 0)
         return 'extends ' + supers.join(', ') + ' ';
