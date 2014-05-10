@@ -370,7 +370,10 @@ function generate_interface_extends(docs: doctrine.JSDoc) {
 }
 
 function generate_implements(docs: doctrine.JSDoc) {
-    var supers = docs.tags.filter(t => t.title === 'implements').map(x => x.type).map(generate_type);
+    var supers = docs.tags
+        .filter(t => t.title === 'implements')
+        .map(x => x.type)
+        .map(generate_type);
 
     if (supers.length > 0)
         return 'implements ' + supers.join(', ') + ' ';
