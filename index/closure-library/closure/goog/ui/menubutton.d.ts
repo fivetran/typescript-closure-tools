@@ -174,12 +174,6 @@ declare module goog.ui {
          *     item to add to the menu.
          */
         addItem(item: goog.ui.MenuSeparator): void;
-        /**
-         * Adds a new menu item at the end of the menu.
-         * @param {goog.ui.MenuItem|goog.ui.MenuSeparator|goog.ui.Control} item Menu
-         *     item to add to the menu.
-         */
-        addItem(item: goog.ui.Control): void;
     
         /**
          * Adds a new menu item at the specific index in the menu.
