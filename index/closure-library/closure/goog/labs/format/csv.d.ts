@@ -47,4 +47,11 @@ declare module goog.labs.format.csv {
      * @return {!Array.<!Array.<string>>} The parsed CSV.
      */
     function parse(text: string, opt_ignoreErrors?: boolean): string[][];
+
+    /**
+     * Sentinel tracking objects.
+     * @enum {Object}
+     * @private
+     */
+    enum Sentinels_ { EMPTY, EOF, EOR, NEWLINE } 
 }

@@ -4,6 +4,14 @@
 declare module goog.fs {
 
     /**
+     * The two types of filesystem.
+     *
+     * @enum {number}
+     * @private
+     */
+    enum FileSystemType_ { TEMPORARY, PERSISTENT } 
+
+    /**
      * Returns a temporary FileSystem object. A temporary filesystem may be deleted
      * by the user agent at its discretion.
      *

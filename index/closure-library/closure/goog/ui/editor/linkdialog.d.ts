@@ -120,4 +120,11 @@ declare module goog.ui.editor.LinkDialog {
      * @return {string} {@code rel} with any {@code "nofollow"} removed.
      */
     function removeNoFollow(rel: string): string;
+
+    /**
+     * IDs for relevant DOM elements.
+     * @enum {string}
+     * @private
+     */
+    enum Id_ { TEXT_TO_DISPLAY, ON_WEB_TAB, ON_WEB_INPUT, EMAIL_ADDRESS_TAB, EMAIL_ADDRESS_INPUT, EMAIL_WARNING, TAB_INPUT_SUFFIX } 
 }

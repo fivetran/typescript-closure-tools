@@ -47,6 +47,24 @@ declare module goog.labs.html.scrubber {
     /** Character code constant for {@code '?'}.  @private */
     var CC_QMARK_: any /*missing*/;
 
+    /**
+     * Groups of elements used to specify containment relationships.
+     * @enum {number}
+     * @private
+     */
+    enum Group_ { BLOCK_, INLINE_, INLINE_MINUS_A_, MIXED_, TABLE_CONTENT_, HEAD_CONTENT_, TOP_CONTENT_, AREA_ELEMENT_, FORM_ELEMENT_, LEGEND_ELEMENT_, LI_ELEMENT_, DL_PART_, P_ELEMENT_, OPTIONS_ELEMENT_, OPTION_ELEMENT_, PARAM_ELEMENT_, TABLE_ELEMENT_, TR_ELEMENT_, TD_ELEMENT_, COL_ELEMENT_, CHARACTER_DATA_ } 
+
+    /**
+     * Element scopes limit where close tags can have effects.
+     * For example, a table cannot be implicitly closed by a {@code </p>} even if
+     * the table appears inside a {@code <p>} because the {@code <table>} element
+     * introduces a scope.
+     *
+     * @enum {number}
+     * @private
+     */
+    enum Scope_ { COMMON_, BUTTON_, LIST_ITEM_, TABLE_ } 
+
     /** @const @private */
     var ALL_SCOPES_: any /*missing*/;
 }

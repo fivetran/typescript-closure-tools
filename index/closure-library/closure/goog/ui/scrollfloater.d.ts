@@ -77,4 +77,11 @@ declare module goog.ui.ScrollFloater {
      * @enum {string}
      */
     enum EventType { FLOAT, DOCK, PIN } 
+
+    /**
+     * The element can float at different positions on the page.
+     * @enum {number}
+     * @private
+     */
+    enum FloatMode_ { TOP, BOTTOM } 
 }

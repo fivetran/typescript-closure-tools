@@ -87,6 +87,13 @@ declare module goog.ds.Expr {
     function create(expr: string): goog.ds.Expr;
 
     /**
+     * Commonly used strings in expressions.
+     * @enum {string}
+     * @private
+     */
+    enum String_ { SEPARATOR, CURRENT_NODE_EXPR, EMPTY_EXPR, ATTRIBUTE_START, ALL_CHILD_NODES_EXPR, ALL_ATTRIBUTES_EXPR, ALL_ELEMENTS_EXPR, NAME_EXPR, COUNT_EXPR, POSITION_EXPR, INDEX_START, INDEX_END, CAN_BE_EMPTY } 
+
+    /**
      * The current node
      */
     var CURRENT: any /*missing*/;

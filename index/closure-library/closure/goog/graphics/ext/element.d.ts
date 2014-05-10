@@ -704,4 +704,12 @@ declare module goog.graphics.ext.Element {
          */
         isParentDependent(): boolean;
     }
+
+    /**
+     * Position specification types.  Start corresponds to left/top, middle to
+     * center/middle, and end to right/bottom.
+     * @enum {number}
+     * @private
+     */
+    enum PositionType_ { START, MIDDLE, END } 
 }

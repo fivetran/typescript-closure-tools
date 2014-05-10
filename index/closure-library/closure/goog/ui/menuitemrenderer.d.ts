@@ -121,4 +121,11 @@ declare module goog.ui.MenuItemRenderer {
      * @type {string}
      */
     var CSS_CLASS: string;
+
+    /**
+     * Constants for referencing composite CSS classes.
+     * @enum {number}
+     * @private
+     */
+    enum CompositeCssClassIndex_ { HOVER, CHECKBOX, CONTENT } 
 }

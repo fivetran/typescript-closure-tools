@@ -51,3 +51,14 @@ declare module goog.i18n.uChar {
         isNameAvailable(character: string): boolean;
     }
 }
+
+declare module goog.i18n.uChar.RemoteNameFetcher {
+
+    /**
+     * Enum for the different request types.
+     *
+     * @enum {string}
+     * @private
+     */
+    enum RequestType_ { BASE_88, CODEPOINT } 
+}

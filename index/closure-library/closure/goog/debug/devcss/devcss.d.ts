@@ -45,4 +45,11 @@ declare module goog.debug.DevCss {
      * @enum {string}
      */
     enum UserAgent { OPERA, IE, GECKO, FIREFOX, WEBKIT, SAFARI, MOBILE } 
+
+    /**
+     * A list of strings that may be used for matching in CSS files/development.
+     * @enum {string}
+     * @private
+     */
+    enum CssToken_ { USERAGENT, SEPARATOR, LESS_THAN, GREATER_THAN, LESS_THAN_OR_EQUAL, GREATER_THAN_OR_EQUAL, IE6_SELECTOR_TEXT, IE6_COMBINED_GLUE } 
 }

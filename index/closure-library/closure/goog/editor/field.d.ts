@@ -657,6 +657,13 @@ declare module goog.editor.Field {
     enum EventType { COMMAND_VALUE_CHANGE, LOAD, UNLOAD, BEFORECHANGE, CHANGE, DELAYEDCHANGE, BEFOREFOCUS, FOCUS, BLUR, BEFORETAB, IFRAME_RESIZED, SELECTIONCHANGE } 
 
     /**
+     * The load state of the field.
+     * @enum {number}
+     * @private
+     */
+    enum LoadState_ { UNEDITABLE, LOADING, EDITABLE } 
+
+    /**
      * Sets the active field id.
      * @param {?string} fieldId The active field id.
      */
@@ -685,4 +692,11 @@ declare module goog.editor.Field {
      * @protected
      */
     var MUTATION_EVENTS_GECKO: string[];
+
+    /**
+     * Keycodes that result in a selectionchange event (e.g. the cursor moving).
+     * @enum {number}
+     * @private
+     */
+    enum SELECTION_CHANGE_KEYCODES_ { 8, 9, 13, 33, 34, 35, 36, 37, 38, 39, 40, 46 } 
 }

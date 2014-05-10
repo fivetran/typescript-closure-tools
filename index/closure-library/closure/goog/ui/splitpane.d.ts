@@ -98,6 +98,13 @@ declare module goog.ui.SplitPane {
     enum EventType { HANDLE_DRAG, HANDLE_DRAG_END, HANDLE_SNAP } 
 
     /**
+     * Z indices for iframe overlay and splitter handle.
+     * @enum {number}
+     * @private
+     */
+    enum IframeOverlayIndex_ { HIDDEN, OVERLAY, SPLITTER_HANDLE } 
+
+    /**
     * Orientation values for the splitpane.
     * @enum {string}
     */

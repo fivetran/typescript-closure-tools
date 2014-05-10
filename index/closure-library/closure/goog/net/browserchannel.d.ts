@@ -623,6 +623,13 @@ declare module goog.net.BrowserChannel {
     enum Error { OK, REQUEST_FAILED, LOGGED_OUT, NO_DATA, UNKNOWN_SESSION_ID, STOP, NETWORK, BLOCKED, BAD_DATA, BAD_RESPONSE, ACTIVE_X_BLOCKED } 
 
     /**
+     * Internal enum type for the two browser channel channel types.
+     * @enum {number}
+     * @private
+     */
+    enum ChannelType_ { FORWARD_CHANNEL, BACK_CHANNEL } 
+
+    /**
      * Events fired by BrowserChannel and associated objects
      * @type {Object}
      */

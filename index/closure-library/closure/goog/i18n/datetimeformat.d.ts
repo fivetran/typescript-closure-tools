@@ -61,6 +61,13 @@ declare module goog.i18n.DateTimeFormat {
     enum Format { FULL_DATE, LONG_DATE, MEDIUM_DATE, SHORT_DATE, FULL_TIME, LONG_TIME, MEDIUM_TIME, SHORT_TIME, FULL_DATETIME, LONG_DATETIME, MEDIUM_DATETIME, SHORT_DATETIME } 
 
     /**
+     * These are token types, corresponding to above token definitions.
+     * @enum {number}
+     * @private
+     */
+    enum PartTypes_ { QUOTED_STRING, FIELD, LITERAL } 
+
+    /**
      * Localizes a string potentially containing numbers, replacing ASCII digits
      * with native digits if specified so by the locale. Leaves other characters.
      * @param {number|string} input the string to be localized, using ASCII digits.

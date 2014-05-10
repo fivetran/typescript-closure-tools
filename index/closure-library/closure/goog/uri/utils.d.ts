@@ -3,6 +3,13 @@
 declare module goog.uri.utils {
 
     /**
+     * Character codes inlined to avoid object allocations due to charCode.
+     * @enum {number}
+     * @private
+     */
+    enum CharCode_ { AMPERSAND, EQUAL, HASH, QUESTION } 
+
+    /**
      * Builds a URI string from already-encoded parts.
      *
      * No encoding is performed.  Any component may be omitted as either null or

@@ -56,6 +56,18 @@ declare module goog.db.Error {
     }
 
     /**
+     * Synthetic error codes for database errors, for use when IndexedDB
+     * support is not available. This numbering differs in practice
+     * from the browser implementations, but it is not meant to be reliable:
+     * this object merely ensures that goog.db.Error is loadable on platforms
+     * that do not support IndexedDB.
+     *
+     * @enum {number}
+     * @private
+     */
+    enum DatabaseErrorCode_ { UNKNOWN_ERR, NON_TRANSIENT_ERR, NOT_FOUND_ERR, CONSTRAINT_ERR, DATA_ERR, NOT_ALLOWED_ERR, TRANSACTION_INACTIVE_ERR, ABORT_ERR, READ_ONLY_ERR, TRANSIENT_ERR, TIMEOUT_ERR, QUOTA_ERR, INVALID_ACCESS_ERR, INVALID_STATE_ERR } 
+
+    /**
      * Error codes for database errors.
      * @see http://www.w3.org/TR/IndexedDB/#idl-def-IDBDatabaseException
      *

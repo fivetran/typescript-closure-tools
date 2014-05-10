@@ -202,6 +202,13 @@ declare module goog.net.ChannelRequest {
     var POLLING_INTERVAL_MS: number;
 
     /**
+     * Enum for channel requests type
+     * @enum {number}
+     * @private
+     */
+    enum Type_ { XML_HTTP, IMG, TRIDENT } 
+
+    /**
      * Enum type for identifying a ChannelRequest error.
      * @enum {number}
      */

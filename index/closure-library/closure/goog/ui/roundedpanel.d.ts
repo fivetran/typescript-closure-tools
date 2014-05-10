@@ -98,4 +98,11 @@ declare module goog.ui.RoundedPanel {
      * @enum {number}
      */
     enum Corner { NONE, BOTTOM_LEFT, TOP_LEFT, LEFT, TOP_RIGHT, TOP, BOTTOM_RIGHT, BOTTOM, RIGHT, ALL } 
+
+    /**
+     * CSS class name suffixes for the elements comprising the RoundedPanel.
+     * @enum {string}
+     * @private
+     */
+    enum Classes_ { BACKGROUND, PANEL, CONTENT } 
 }

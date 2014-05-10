@@ -332,3 +332,14 @@ declare module goog.tweak {
         constructor(id: string, description: string, callback: Function);
     }
 }
+
+declare module goog.tweak.BaseSetting {
+
+    /**
+     * States of initialization. Entries are initialized lazily in order to allow
+     * their initialization to happen in multiple statements.
+     * @enum {number}
+     * @private
+     */
+    enum InitializeState_ { NOT_INITIALIZED, INITIALIZING, INITIALIZED } 
+}

@@ -94,6 +94,13 @@ declare module goog.net.WebSocket {
     enum EventType { CLOSED, ERROR, MESSAGE, OPENED } 
 
     /**
+     * The various states of the web socket.
+     * @enum {number} The states of the web socket.
+     * @private
+     */
+    enum ReadyState_ { CONNECTING, OPEN, CLOSING, CLOSED } 
+
+    /**
      * Installs exception protection for all entry points introduced by
      * goog.net.WebSocket instances which are not protected by
      * {@link goog.debug.ErrorHandler#protectWindowSetTimeout},

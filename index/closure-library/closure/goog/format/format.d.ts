@@ -106,4 +106,11 @@ declare module goog.format {
      * @type {string}
      */
     var WORD_BREAK_HTML: string;
+
+    /**
+     * Tokens used within insertWordBreaks.
+     * @private
+     * @enum {number}
+     */
+    enum WbrToken_ { LT, GT, AMP, SEMI_COLON, SPACE } 
 }
