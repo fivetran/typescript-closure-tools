@@ -1,11 +1,12 @@
 /// <reference path="../../../../globals.d.ts" />
+/// <reference path="./transport.d.ts" />
 /// <reference path="./crosspagechannel.d.ts" />
 /// <reference path="../../dom/dom.d.ts" />
 
 declare module goog.net.xpc {
 
     class DirectTransport extends __DirectTransport { }
-    class __DirectTransport extends Transport {
+    class __DirectTransport extends goog.net.xpc.__Transport {
     
         /**
          * A direct window to window method transport.
@@ -26,7 +27,7 @@ declare module goog.net.xpc {
          *     finding the correct window/document. If omitted, uses the current
          *     document.
          * @constructor
-         * @extends {Transport}
+         * @extends {goog.net.xpc.Transport}
          */
         constructor(channel: goog.net.xpc.CrossPageChannel, opt_domHelper?: goog.dom.DomHelper);
     }
