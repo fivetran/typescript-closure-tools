@@ -172,9 +172,13 @@ function remove_private(parsed: File): File {
 
     Object.keys(parsed).forEach(function (name) {
         var jsdoc = parsed[name].jsdoc;
+        var isPrivate = jsdoc.tags.some(t => t.title === 'private');
+        var isType = jsdoc.tags.some(t => t.title === 'typedef'
+            || t.title === 'interface'
+            || t.title === 'constructor'
+            || t.title === 'enum');
 
-        if (jsdoc.tags.some(t => t.title === 'private') &&
-            !jsdoc.tags.some(t => t.title === 'typedef' || t.title === 'interface' || t.title === 'constructor')) {
+        if (isPrivate && !isType) {
             privatePrefixes.push(name);
         }
     });
