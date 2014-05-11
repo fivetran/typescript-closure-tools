@@ -74,8 +74,8 @@ myFunction = function(x) { };
 becomes:
 
 ```typescript
-declare function myFunction(x: number);
-declare function myFunction(x: string);
+declare function myFunction(x: Iterable<number>);
+declare function myFunction(x: Iterable<string>);
 ```
 
 #### Inline typedef unions where possible
@@ -132,6 +132,8 @@ In Closure they are not:
 SuperClass = function() { };
 /** @type {string} */
 SuperClass.myStaticProperty;
+/** @type {string} */
+SuperClass.prototype.myInstanceProperty;
 
 /** @extends {SuperClass} */
 SubClass = function() { };
@@ -140,16 +142,28 @@ goog.inherits(SubClass, SuperClass);
 SubClass.myStaticProperty; // undefined
 ```
 
-The fix create a common superclass without the static properties:
+To fix this, we create a common superclass without the static properties:
 
 ```typescript
-declare class _SuperClass { } // fake common superclass without myStaticProperty
-declare class SuperClass extends _SuperClass { }
-declare module SuperClass { myStaticProperty: string; }
+declare class SuperClass extends SuperClass.__Class { }
+declare module SuperClass {
+    class __Class {  // fake common superclass without myStaticProperty
+        myInstanceProperty: string;
+    }
+    myStaticProperty: string; // static property that won't be inherited by 'extends SuperClass.__Class'
+}
 
-declare class SubClass extends _SuperClass { }
-declare module SubClass { myStaticProperty: number }
+declare class SubClass extends SubClass.__Class { }
+declare module SubClass {
+    class __Class extends SuperClass.__Class { }
+}
 ```
+
+These fake superclasses don't actually exist and are present solely to simulate the behavior of
+`goog.inherits(SubClass, SuperClass)` in TypeScript definition files.
+Calling `new SuperClass.__Class` or `extends SuperClass.__Class` in non-declaration TypeScript code
+will generate a runtime error.
+You should use `new SuperClass` and `extends SuperClass` in non-declaration TypeScript code.
 
 ### Private types
 
