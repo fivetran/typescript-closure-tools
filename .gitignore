@@ -7,7 +7,7 @@ dist/
 node_modules/
 out/
 lib/closure-library/closure-library.iml
-test/*.js
+test/*_spec.js
 index/*.js
 src/*.js
 scripts/*.js
