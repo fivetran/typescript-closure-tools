@@ -633,13 +633,7 @@ declare module goog.net.BrowserChannel {
      * @enum {number}
      * @private
      */
-    enum ChannelType_ { FORWARD_CHANNEL, BACK_CHANNEL } 
-
-    /**
-     * Events fired by BrowserChannel and associated objects
-     * @type {Object}
-     */
-    var Event: Object;
+    enum ChannelType_ { FORWARD_CHANNEL, BACK_CHANNEL }
 
     /**
      * Types of events which reveal information about the reachability of the
