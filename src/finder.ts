@@ -7,13 +7,15 @@ import options = require('./options');
 
 var fileByProvide: { [key: string]: string } = {};
 
-fs.readFileSync(options.provides, 'utf8').split('\n').forEach(line => {
-    var columns = line.split('\t');
-    var file = columns[0];
-    var symbol = columns[1];
+if (options.provides) {
+    fs.readFileSync(options.provides, 'utf8').split('\n').forEach(line => {
+        var columns = line.split('\t');
+        var file = columns[0];
+        var symbol = columns[1];
 
-    fileByProvide[symbol] = file;
-});
+        fileByProvide[symbol] = file;
+    });
+}
 
 interface FileCache {
     [fileName: string]: combine.Symbols;
