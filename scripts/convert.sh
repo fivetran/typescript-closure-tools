@@ -1,5 +1,5 @@
 #!/bin/bash
-FILES=$(./scripts/list.sh)
+FILES=$(./scripts/list_input_output.sh)
 node src/main.js \
   --provides symbols.tsv \
   --globals globals.d.ts \
