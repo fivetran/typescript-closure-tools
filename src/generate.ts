@@ -332,14 +332,10 @@ function generate_members(name: string, value: parser.Value): string[] {
 }
 
 function with_underscore(type: string) {
-    var dot = type.lastIndexOf('.');
-    var moduleName = type.substring(0, dot);
-    var memberName = type.substring(dot + 1);
+    var prefix = /[\w\.]+/.exec(type)[0];
+    var suffix = type.substring(prefix.length);
 
-    if (moduleName === '')
-        return type;
-    else
-        return moduleName + '.__' + memberName;
+    return prefix + '.__Class' + suffix;
 }
 
 function generate_class_extends(docs: doctrine.JSDoc) {
@@ -445,15 +441,18 @@ function get_type_name(tag) {
 
 function generate_class(name: string, prototype: combine.Symbol) {
     var constructor = prototype[''];
-    var acc = 'class ' + name + generics(constructor.jsdoc) + ' extends __' + name + generics(constructor.jsdoc) + ' { }\n';
-    acc += 'class __' + name + generics(constructor.jsdoc) + ' ' + generate_class_extends(constructor.jsdoc) + generate_implements(constructor.jsdoc) + '{\n';
+    var acc = 'class ' + name + generics(constructor.jsdoc) + ' extends ' + name + '.__Class' + generics(constructor.jsdoc) + ' { }\n';
 
-    var text = constructor.originalText.replace(/\n\s+/g, '\n     ');
+    acc += 'module ' + name + ' {\n';
+    acc += '    ' + '/** Fake class which should be extended to avoid inheriting static properties */\n';
+    acc += '    ' + 'class __Class' + generics(constructor.jsdoc) + ' ' + generate_class_extends(constructor.jsdoc) + generate_implements(constructor.jsdoc) + '{\n';
+
+    var text = constructor.originalText.replace(/\n\s+/g, '\n' + '    ' + '    ');
 
     acc += '\n';
     generate_constructors(constructor).forEach(constructor => {
-        acc += '    ' + text + '\n';
-        acc += '    ' + constructor + ';\n';
+        acc += '    ' + '    ' + text + '\n';
+        acc += '    ' + '    ' + constructor + ';\n';
     });
 
     function add_members(prototype: combine.Symbol) {
@@ -461,14 +460,14 @@ function generate_class(name: string, prototype: combine.Symbol) {
             var value = prototype[name];
             var docs = value.jsdoc;
             var tags = docs.tags || [];
-            var text = value.originalText.replace(/\n\s+/g, '\n     ');
+            var text = value.originalText.replace(/\n\s+/g, '\n' + '    ' + '    ');
 
             if (!tags.some(t => t.title === 'override')) {
                 acc += '\n';
 
                 generate_members(name, value).forEach(member => {
-                    acc += '    ' + text + '\n';
-                    acc += '    ' + member + ';\n'
+                    acc += '    ' + '    ' + text + '\n';
+                    acc += '    ' + '    ' + member + ';\n'
                 });
             }
         });
@@ -488,6 +487,7 @@ function generate_class(name: string, prototype: combine.Symbol) {
 
     add_members(prototype);
 
+    acc += '    ' + '}\n';
     acc += '}';
 
     return acc;
