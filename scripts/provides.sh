@@ -1,4 +1,5 @@
 #!/bin/bash
+# Generate symbols.tsv, a tab-separated-value file listing input-file.js exported.symbol
 rm symbols.tsv
 touch symbols.tsv
 

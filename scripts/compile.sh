@@ -1,9 +1,6 @@
 #!/bin/bash
+# Example of minifying a set of typescript modules with closure compiler
 tsc --module commonjs --outDir dist/ src/Main.ts
-
-#r.js -o name=Main out=main.js baseUrl=./dist/
-
-#java -jar compiler.jar --compilation_level ADVANCED_OPTIMIZATIONS --js main.js > main.min.js
 
 java -jar compiler.jar \
   --formatting PRETTY_PRINT \

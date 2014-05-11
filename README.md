@@ -1,4 +1,25 @@
+Converts [Closure-style JSDoc type annotations](https://developers.google.com/closure/compiler/docs/js-for-compiler)
+to [TypeScript definition files](http://www.typescriptlang.org/Handbook#writing-dts-files).
+
+The goal of this tool is to generate correct type definitions in most cases, and to provide a useful starting
+point for manually fixing the difficult cases.
+
+# Usage
+
+```
+node src/main.js \
+  [--provides symbols.tsv]
+  [--globals output/dir/global-declarations.d.ts]
+  [--input_root input/dir]
+  [--output_root output/dir]
+  input/dir/input-file.js output/dir/output-file.d.ts
+  input/dir/another-input-file.js output/dir/another-output-file.d.ts
+  ...
+```
+
 # Differences between the Closure type system and TypeScript
+
+There are several important differences between the Closure type system and TypeScript.
 
 ## Differences that are resolved automatically
 
