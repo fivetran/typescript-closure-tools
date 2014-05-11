@@ -4,17 +4,20 @@
 
 declare module goog.labs.testing {
 
-    class MatcherError extends __MatcherError { }
-    class __MatcherError extends goog.debug.__Error {
+    class MatcherError extends MatcherError.__Class { }
+    module MatcherError {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class extends goog.debug.Error.__Class {
     
-        /**
-         * Error thrown when a Matcher fails to match the input value.
-         * @param {string=} opt_message The error message.
-         * @constructor
-         * @extends {goog.debug.Error}
-         * @final
-         */
-        constructor(opt_message?: string);
+            /**
+            * Error thrown when a Matcher fails to match the input value.
+            * @param {string=} opt_message The error message.
+            * @constructor
+            * @extends {goog.debug.Error}
+            * @final
+            */
+            constructor(opt_message?: string);
+        }
     }
 
     /**

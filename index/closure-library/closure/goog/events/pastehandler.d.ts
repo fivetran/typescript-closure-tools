@@ -4,36 +4,39 @@
 
 declare module goog.events {
 
-    class PasteHandler extends __PasteHandler { }
-    class __PasteHandler extends goog.events.__EventTarget {
+    class PasteHandler extends PasteHandler.__Class { }
+    module PasteHandler {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class extends goog.events.EventTarget.__Class {
     
-        /**
-         * A paste event detector. Gets an {@code element} as parameter and fires
-         * {@code goog.events.PasteHandler.EventType.PASTE} events when text is
-         * pasted in the {@code element}. Uses heuristics to detect paste events in FF2.
-         * See more details of the heuristic on {@link #handleEvent_}.
-         *
-         * @param {Element} element The textarea element we are listening on.
-         * @constructor
-         * @extends {goog.events.EventTarget}
-         */
-        constructor(element: Element);
+            /**
+            * A paste event detector. Gets an {@code element} as parameter and fires
+            * {@code goog.events.PasteHandler.EventType.PASTE} events when text is
+            * pasted in the {@code element}. Uses heuristics to detect paste events in FF2.
+            * See more details of the heuristic on {@link #handleEvent_}.
+            *
+            * @param {Element} element The textarea element we are listening on.
+            * @constructor
+            * @extends {goog.events.EventTarget}
+            */
+            constructor(element: Element);
     
-        /**
-         * Returns the current state of the paste detection algorithm. Used mostly for
-         * testing.
-         * @return {goog.events.PasteHandler.State} The current state of the class.
-         */
-        getState(): goog.events.PasteHandler.State;
+            /**
+            * Returns the current state of the paste detection algorithm. Used mostly for
+            * testing.
+            * @return {goog.events.PasteHandler.State} The current state of the class.
+            */
+            getState(): goog.events.PasteHandler.State;
     
-        /**
-         * Returns the event handler.
-         * @return {goog.events.EventHandler.<T>} The event handler.
-         * @protected
-         * @this T
-         * @template T
-         */
-        getEventHandler<T>(): goog.events.EventHandler<T>;
+            /**
+            * Returns the event handler.
+            * @return {goog.events.EventHandler.<T>} The event handler.
+            * @protected
+            * @this T
+            * @template T
+            */
+            getEventHandler<T>(): goog.events.EventHandler<T>;
+        }
     }
 }
 

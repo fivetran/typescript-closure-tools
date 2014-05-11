@@ -3,21 +3,24 @@
 
 declare module goog.ui {
 
-    class TriStateMenuItemRenderer extends __TriStateMenuItemRenderer { }
-    class __TriStateMenuItemRenderer extends goog.ui.__MenuItemRenderer {
+    class TriStateMenuItemRenderer extends TriStateMenuItemRenderer.__Class { }
+    module TriStateMenuItemRenderer {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class extends goog.ui.MenuItemRenderer.__Class {
     
-        /**
-         * Default renderer for {@link goog.ui.TriStateMenuItemRenderer}s. Each item has
-         * the following structure:
-         *    <div class="goog-tristatemenuitem">
-         *        <div class="goog-tristatemenuitem-checkbox"></div>
-         *        <div>...(content)...</div>
-         *    </div>
-         * @constructor
-         * @extends {goog.ui.MenuItemRenderer}
-         * @final
-         */
-        constructor();
+            /**
+            * Default renderer for {@link goog.ui.TriStateMenuItemRenderer}s. Each item has
+            * the following structure:
+            *    <div class="goog-tristatemenuitem">
+            *        <div class="goog-tristatemenuitem-checkbox"></div>
+            *        <div>...(content)...</div>
+            *    </div>
+            * @constructor
+            * @extends {goog.ui.MenuItemRenderer}
+            * @final
+            */
+            constructor();
+        }
     }
 }
 

@@ -3,23 +3,26 @@
 
 declare module goog.ui {
 
-    class TabBarRenderer extends __TabBarRenderer { }
-    class __TabBarRenderer extends goog.ui.__ContainerRenderer {
+    class TabBarRenderer extends TabBarRenderer.__Class { }
+    module TabBarRenderer {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class extends goog.ui.ContainerRenderer.__Class {
     
-        /**
-         * Default renderer for {@link goog.ui.TabBar}s, based on the {@code TabPane}
-         * code.  The tab bar's DOM structure is determined by its orientation and
-         * location relative to tab contents.  For example, a horizontal tab bar
-         * located above tab contents looks like this:
-         * <pre>
-         *   <div class="goog-tab-bar goog-tab-bar-horizontal goog-tab-bar-top">
-         *     ...(tabs here)...
-         *   </div>
-         * </pre>
-         * @constructor
-         * @extends {goog.ui.ContainerRenderer}
-         */
-        constructor();
+            /**
+            * Default renderer for {@link goog.ui.TabBar}s, based on the {@code TabPane}
+            * code.  The tab bar's DOM structure is determined by its orientation and
+            * location relative to tab contents.  For example, a horizontal tab bar
+            * located above tab contents looks like this:
+            * <pre>
+            *   <div class="goog-tab-bar goog-tab-bar-horizontal goog-tab-bar-top">
+            *     ...(tabs here)...
+            *   </div>
+            * </pre>
+            * @constructor
+            * @extends {goog.ui.ContainerRenderer}
+            */
+            constructor();
+        }
     }
 }
 

@@ -3,15 +3,18 @@
 
 declare module goog.editor.plugins {
 
-    class ListTabHandler extends __ListTabHandler { }
-    class __ListTabHandler extends goog.editor.plugins.__AbstractTabHandler {
+    class ListTabHandler extends ListTabHandler.__Class { }
+    module ListTabHandler {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class extends goog.editor.plugins.AbstractTabHandler.__Class {
     
-        /**
-         * Plugin to handle tab keys in lists to indent and outdent.
-         * @constructor
-         * @extends {goog.editor.plugins.AbstractTabHandler}
-         * @final
-         */
-        constructor();
+            /**
+            * Plugin to handle tab keys in lists to indent and outdent.
+            * @constructor
+            * @extends {goog.editor.plugins.AbstractTabHandler}
+            * @final
+            */
+            constructor();
+        }
     }
 }

@@ -4,23 +4,26 @@
 
 declare module goog._string.html {
 
-    class HtmlSanitizer extends __HtmlSanitizer { }
-    class __HtmlSanitizer extends goog.string.html.__HtmlSaxHandler {
+    class HtmlSanitizer extends HtmlSanitizer.__Class { }
+    module HtmlSanitizer {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class extends goog.string.html.HtmlSaxHandler.__Class {
     
-        /**
-         * An implementation of the {@code goog.string.HtmlSaxHandler} interface that
-         * will take each of the html tags and sanitize it.
-         *
-         * @param {goog.string.StringBuffer} stringBuffer A string buffer, used to
-         *     output the html as we sanitize it.
-         * @param {?function(string):string} opt_urlPolicy An optional function to be
-         *     applied in URLs.
-         * @param {?function(string):string} opt_nmTokenPolicy An optional function to
-         *     be applied in names.
-         * @constructor
-         * @extends {goog.string.html.HtmlSaxHandler}
-         */
-        constructor(stringBuffer: goog.string.StringBuffer, opt_urlPolicy: (_0: string) => string, opt_nmTokenPolicy: (_0: string) => string);
+            /**
+            * An implementation of the {@code goog.string.HtmlSaxHandler} interface that
+            * will take each of the html tags and sanitize it.
+            *
+            * @param {goog.string.StringBuffer} stringBuffer A string buffer, used to
+            *     output the html as we sanitize it.
+            * @param {?function(string):string} opt_urlPolicy An optional function to be
+            *     applied in URLs.
+            * @param {?function(string):string} opt_nmTokenPolicy An optional function to
+            *     be applied in names.
+            * @constructor
+            * @extends {goog.string.html.HtmlSaxHandler}
+            */
+            constructor(stringBuffer: goog.string.StringBuffer, opt_urlPolicy: (_0: string) => string, opt_nmTokenPolicy: (_0: string) => string);
+        }
     }
 
     /**

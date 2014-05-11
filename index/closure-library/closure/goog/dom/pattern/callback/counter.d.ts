@@ -2,34 +2,37 @@
 
 declare module goog.dom.pattern.callback {
 
-    class Counter extends __Counter { }
-    class __Counter {
+    class Counter extends Counter.__Class { }
+    module Counter {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class {
     
-        /**
-         * Callback class for counting matches.
-         * @constructor
-         * @final
-         */
-        constructor();
+            /**
+            * Callback class for counting matches.
+            * @constructor
+            * @final
+            */
+            constructor();
     
-        /**
-         * The count of objects matched so far.
-         *
-         * @type {number}
-         */
-        count: number;
+            /**
+            * The count of objects matched so far.
+            *
+            * @type {number}
+            */
+            count: number;
     
-        /**
-         * Get a bound callback function that is suitable as a callback for
-         * {@link goog.dom.pattern.Matcher}.
-         *
-         * @return {Function} A callback function.
-         */
-        getCallback(): Function;
+            /**
+            * Get a bound callback function that is suitable as a callback for
+            * {@link goog.dom.pattern.Matcher}.
+            *
+            * @return {Function} A callback function.
+            */
+            getCallback(): Function;
     
-        /**
-         * Reset the counter.
-         */
-        reset(): void;
+            /**
+            * Reset the counter.
+            */
+            reset(): void;
+        }
     }
 }

@@ -3,52 +3,55 @@
 
 declare module goog {
 
-    class Timer extends __Timer { }
-    class __Timer extends goog.events.__EventTarget {
+    class Timer extends Timer.__Class { }
+    module Timer {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class extends goog.events.EventTarget.__Class {
     
-        /**
-         * Class for handling timing events.
-         *
-         * @param {number=} opt_interval Number of ms between ticks (Default: 1ms).
-         * @param {Object=} opt_timerObject  An object that has setTimeout, setInterval,
-         *     clearTimeout and clearInterval (eg Window).
-         * @constructor
-         * @extends {goog.events.EventTarget}
-         */
-        constructor(opt_interval?: number, opt_timerObject?: Object);
+            /**
+            * Class for handling timing events.
+            *
+            * @param {number=} opt_interval Number of ms between ticks (Default: 1ms).
+            * @param {Object=} opt_timerObject  An object that has setTimeout, setInterval,
+            *     clearTimeout and clearInterval (eg Window).
+            * @constructor
+            * @extends {goog.events.EventTarget}
+            */
+            constructor(opt_interval?: number, opt_timerObject?: Object);
     
-        /**
-         * Whether this timer is enabled
-         * @type {boolean}
-         */
-        enabled: boolean;
+            /**
+            * Whether this timer is enabled
+            * @type {boolean}
+            */
+            enabled: boolean;
     
-        /**
-         * Gets the interval of the timer.
-         * @return {number} interval Number of ms between ticks.
-         */
-        getInterval(): number;
+            /**
+            * Gets the interval of the timer.
+            * @return {number} interval Number of ms between ticks.
+            */
+            getInterval(): number;
     
-        /**
-         * Sets the interval of the timer.
-         * @param {number} interval Number of ms between ticks.
-         */
-        setInterval(interval: number): void;
+            /**
+            * Sets the interval of the timer.
+            * @param {number} interval Number of ms between ticks.
+            */
+            setInterval(interval: number): void;
     
-        /**
-         * Dispatches the TICK event. This is its own method so subclasses can override.
-         */
-        dispatchTick(): void;
+            /**
+            * Dispatches the TICK event. This is its own method so subclasses can override.
+            */
+            dispatchTick(): void;
     
-        /**
-         * Starts the timer.
-         */
-        start(): void;
+            /**
+            * Starts the timer.
+            */
+            start(): void;
     
-        /**
-         * Stops the timer.
-         */
-        stop(): void;
+            /**
+            * Stops the timer.
+            */
+            stop(): void;
+        }
     }
 }
 

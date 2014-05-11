@@ -4,20 +4,23 @@
 
 declare module goog.ui.editor {
 
-    class EquationEditorDialog extends __EquationEditorDialog { }
-    class __EquationEditorDialog extends goog.ui.editor.__AbstractDialog {
+    class EquationEditorDialog extends EquationEditorDialog.__Class { }
+    module EquationEditorDialog {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class extends goog.ui.editor.AbstractDialog.__Class {
     
-        /**
-         * Equation editor dialog (based on goog.ui.editor.AbstractDialog).
-         * @param {Object} context The context that this dialog runs in.
-         * @param {goog.dom.DomHelper} domHelper DomHelper to be used to create the
-         *     dialog's dom structure.
-         * @param {string} equation Initial equation.
-         * @param {string} helpUrl URL pointing to help documentation.
-         * @constructor
-         * @extends {goog.ui.editor.AbstractDialog}
-         * @final
-         */
-        constructor(context: Object, domHelper: goog.dom.DomHelper, equation: string, helpUrl: string);
+            /**
+            * Equation editor dialog (based on goog.ui.editor.AbstractDialog).
+            * @param {Object} context The context that this dialog runs in.
+            * @param {goog.dom.DomHelper} domHelper DomHelper to be used to create the
+            *     dialog's dom structure.
+            * @param {string} equation Initial equation.
+            * @param {string} helpUrl URL pointing to help documentation.
+            * @constructor
+            * @extends {goog.ui.editor.AbstractDialog}
+            * @final
+            */
+            constructor(context: Object, domHelper: goog.dom.DomHelper, equation: string, helpUrl: string);
+        }
     }
 }

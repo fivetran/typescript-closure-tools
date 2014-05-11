@@ -2,32 +2,35 @@
 
 declare module goog.math {
 
-    class Coordinate3 extends __Coordinate3 { }
-    class __Coordinate3 {
+    class Coordinate3 extends Coordinate3.__Class { }
+    module Coordinate3 {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class {
     
-        /**
-         * Class for representing coordinates and positions in 3 dimensions.
-         *
-         * @param {number=} opt_x X coordinate, defaults to 0.
-         * @param {number=} opt_y Y coordinate, defaults to 0.
-         * @param {number=} opt_z Z coordinate, defaults to 0.
-         * @constructor
-         */
-        constructor(opt_x?: number, opt_y?: number, opt_z?: number);
+            /**
+            * Class for representing coordinates and positions in 3 dimensions.
+            *
+            * @param {number=} opt_x X coordinate, defaults to 0.
+            * @param {number=} opt_y Y coordinate, defaults to 0.
+            * @param {number=} opt_z Z coordinate, defaults to 0.
+            * @constructor
+            */
+            constructor(opt_x?: number, opt_y?: number, opt_z?: number);
     
-        /**
-         * Returns a new copy of the coordinate.
-         *
-         * @return {!goog.math.Coordinate3} A clone of this coordinate.
-         */
-        clone(): goog.math.Coordinate3;
+            /**
+            * Returns a new copy of the coordinate.
+            *
+            * @return {!goog.math.Coordinate3} A clone of this coordinate.
+            */
+            clone(): goog.math.Coordinate3;
     
-        /**
-         * Returns the contents of this coordinate as a 3 value Array.
-         *
-         * @return {!Array.<number>} A new array.
-         */
-        toArray(): number[];
+            /**
+            * Returns the contents of this coordinate as a 3 value Array.
+            *
+            * @return {!Array.<number>} A new array.
+            */
+            toArray(): number[];
+        }
     }
 }
 

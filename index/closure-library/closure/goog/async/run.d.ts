@@ -2,29 +2,32 @@
 
 declare module goog.async.run {
 
-    class WorkItem_ extends __WorkItem_ { }
-    class __WorkItem_ {
+    class WorkItem_ extends WorkItem_.__Class { }
+    module WorkItem_ {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class {
     
-        /**
-         * @constructor
-         * @final
-         * @struct
-         * @private
-         *
-         * @param {function()} fn
-         * @param {Object|null|undefined} scope
-         */
-        constructor(fn: () => any /*missing*/, scope: Object);
-        /**
-         * @constructor
-         * @final
-         * @struct
-         * @private
-         *
-         * @param {function()} fn
-         * @param {Object|null|undefined} scope
-         */
-        constructor(fn: () => any /*missing*/, scope: any /*null*/);
+            /**
+            * @constructor
+            * @final
+            * @struct
+            * @private
+            *
+            * @param {function()} fn
+            * @param {Object|null|undefined} scope
+            */
+            constructor(fn: () => any /*missing*/, scope: Object);
+            /**
+            * @constructor
+            * @final
+            * @struct
+            * @private
+            *
+            * @param {function()} fn
+            * @param {Object|null|undefined} scope
+            */
+            constructor(fn: () => any /*missing*/, scope: any /*null*/);
+        }
     }
 
     /** @private {boolean} */

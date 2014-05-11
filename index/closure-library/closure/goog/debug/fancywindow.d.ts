@@ -3,19 +3,22 @@
 
 declare module goog.debug {
 
-    class FancyWindow extends __FancyWindow { }
-    class __FancyWindow extends goog.debug.__DebugWindow {
+    class FancyWindow extends FancyWindow.__Class { }
+    module FancyWindow {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class extends goog.debug.DebugWindow.__Class {
     
-        /**
-         * Provides a Fancy extension to the DebugWindow class.  Allows filtering based
-         * on loggers and levels.
-         *
-         * @param {string=} opt_identifier Idenitifier for this logging class.
-         * @param {string=} opt_prefix Prefix pre-pended to messages.
-         * @constructor
-         * @extends {goog.debug.DebugWindow}
-         */
-        constructor(opt_identifier?: string, opt_prefix?: string);
+            /**
+            * Provides a Fancy extension to the DebugWindow class.  Allows filtering based
+            * on loggers and levels.
+            *
+            * @param {string=} opt_identifier Idenitifier for this logging class.
+            * @param {string=} opt_prefix Prefix pre-pended to messages.
+            * @constructor
+            * @extends {goog.debug.DebugWindow}
+            */
+            constructor(opt_identifier?: string, opt_prefix?: string);
+        }
     }
 }
 

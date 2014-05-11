@@ -2,52 +2,55 @@
 
 declare module goog.testing {
 
-    class FunctionCall extends __FunctionCall { }
-    class __FunctionCall {
+    class FunctionCall extends FunctionCall.__Class { }
+    module FunctionCall {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class {
     
-        /**
-         * Struct for a single function call.
-         * @param {!Function} func The called function.
-         * @param {!Object} thisContext {@code this} context of called function.
-         * @param {!Arguments} args Arguments of the called function.
-         * @param {*} ret Return value of the function or undefined in case of error.
-         * @param {*} error The error thrown by the function or null if none.
-         * @constructor
-         */
-        constructor(func: Function, thisContext: Object, args: Arguments, ret: any, error: any);
+            /**
+            * Struct for a single function call.
+            * @param {!Function} func The called function.
+            * @param {!Object} thisContext {@code this} context of called function.
+            * @param {!Arguments} args Arguments of the called function.
+            * @param {*} ret Return value of the function or undefined in case of error.
+            * @param {*} error The error thrown by the function or null if none.
+            * @constructor
+            */
+            constructor(func: Function, thisContext: Object, args: Arguments, ret: any, error: any);
     
-        /**
-         * @return {!Function} The called function.
-         */
-        getFunction(): Function;
+            /**
+            * @return {!Function} The called function.
+            */
+            getFunction(): Function;
     
-        /**
-         * @return {!Object} {@code this} context of called function. It is the same as
-         *     the created object if the function is a constructor.
-         */
-        getThis(): Object;
+            /**
+            * @return {!Object} {@code this} context of called function. It is the same as
+            *     the created object if the function is a constructor.
+            */
+            getThis(): Object;
     
-        /**
-         * @return {!Array} Arguments of the called function.
-         */
-        getArguments(): any[];
+            /**
+            * @return {!Array} Arguments of the called function.
+            */
+            getArguments(): any[];
     
-        /**
-         * Returns the nth argument of the called function.
-         * @param {number} index 0-based index of the argument.
-         * @return {*} The argument value or undefined if there is no such argument.
-         */
-        getArgument(index: number): any;
+            /**
+            * Returns the nth argument of the called function.
+            * @param {number} index 0-based index of the argument.
+            * @return {*} The argument value or undefined if there is no such argument.
+            */
+            getArgument(index: number): any;
     
-        /**
-         * @return {*} Return value of the function or undefined in case of error.
-         */
-        getReturnValue(): any;
+            /**
+            * @return {*} Return value of the function or undefined in case of error.
+            */
+            getReturnValue(): any;
     
-        /**
-         * @return {*} The error thrown by the function or null if none.
-         */
-        getError(): any;
+            /**
+            * @return {*} The error thrown by the function or null if none.
+            */
+            getError(): any;
+        }
     }
 
     /**

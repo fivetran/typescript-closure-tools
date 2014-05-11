@@ -3,52 +3,55 @@
 
 declare module goog.async {
 
-    class DeferredList extends __DeferredList { }
-    class __DeferredList extends goog.async.__Deferred<any> {
+    class DeferredList extends DeferredList.__Class { }
+    module DeferredList {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class extends goog.async.Deferred.__Class<any> {
     
-        /**
-         * Constructs an object that waits on the results of multiple asynchronous
-         * operations and marshals the results. It is itself a <code>Deferred</code>,
-         * and may have an execution sequence of callback functions added to it. Each
-         * <code>DeferredList</code> instance is single use and may be fired only once.
-         *
-         * The default behavior of a <code>DeferredList</code> is to wait for a success
-         * or error result from every <code>Deferred</code> in its input list. Once
-         * every result is available, the <code>DeferredList</code>'s execution sequence
-         * is fired with a list of <code>[success, result]</code> array pairs, where
-         * <code>success</code> is a boolean indicating whether <code>result</code> was
-         * the product of a callback or errback. The list's completion criteria and
-         * result list may be modified by setting one or more of the boolean options
-         * documented below.
-         *
-         * <code>Deferred</code> instances passed into a <code>DeferredList</code> are
-         * independent, and may have additional callbacks and errbacks added to their
-         * execution sequences after they are passed as inputs to the list.
-         *
-         * @param {!Array.<!goog.async.Deferred>} list An array of deferred results to
-         *     wait for.
-         * @param {boolean=} opt_fireOnOneCallback Whether to stop waiting as soon as
-         *     one input completes successfully. In this case, the
-         *     <code>DeferredList</code>'s callback chain will be called with a two
-         *     element array, <code>[index, result]</code>, where <code>index</code>
-         *     identifies which input <code>Deferred</code> produced the successful
-         *     <code>result</code>.
-         * @param {boolean=} opt_fireOnOneErrback Whether to stop waiting as soon as one
-         *     input reports an error. The failing result is passed to the
-         *     <code>DeferredList</code>'s errback sequence.
-         * @param {boolean=} opt_consumeErrors When true, any errors fired by a
-         *     <code>Deferred</code> in the input list will be captured and replaced
-         *     with a succeeding null result. Any callbacks added to the
-         *     <code>Deferred</code> after its use in the <code>DeferredList</code> will
-         *     receive null instead of the error.
-         * @param {Function=} opt_canceler A function that will be called if the
-         *     <code>DeferredList</code> is canceled. @see goog.async.Deferred#cancel
-         * @param {Object=} opt_defaultScope The default scope to invoke callbacks or
-         *     errbacks in.
-         * @constructor
-         * @extends {goog.async.Deferred}
-         */
-        constructor(list: goog.async.Deferred<any>[], opt_fireOnOneCallback?: boolean, opt_fireOnOneErrback?: boolean, opt_consumeErrors?: boolean, opt_canceler?: Function, opt_defaultScope?: Object);
+            /**
+            * Constructs an object that waits on the results of multiple asynchronous
+            * operations and marshals the results. It is itself a <code>Deferred</code>,
+            * and may have an execution sequence of callback functions added to it. Each
+            * <code>DeferredList</code> instance is single use and may be fired only once.
+            *
+            * The default behavior of a <code>DeferredList</code> is to wait for a success
+            * or error result from every <code>Deferred</code> in its input list. Once
+            * every result is available, the <code>DeferredList</code>'s execution sequence
+            * is fired with a list of <code>[success, result]</code> array pairs, where
+            * <code>success</code> is a boolean indicating whether <code>result</code> was
+            * the product of a callback or errback. The list's completion criteria and
+            * result list may be modified by setting one or more of the boolean options
+            * documented below.
+            *
+            * <code>Deferred</code> instances passed into a <code>DeferredList</code> are
+            * independent, and may have additional callbacks and errbacks added to their
+            * execution sequences after they are passed as inputs to the list.
+            *
+            * @param {!Array.<!goog.async.Deferred>} list An array of deferred results to
+            *     wait for.
+            * @param {boolean=} opt_fireOnOneCallback Whether to stop waiting as soon as
+            *     one input completes successfully. In this case, the
+            *     <code>DeferredList</code>'s callback chain will be called with a two
+            *     element array, <code>[index, result]</code>, where <code>index</code>
+            *     identifies which input <code>Deferred</code> produced the successful
+            *     <code>result</code>.
+            * @param {boolean=} opt_fireOnOneErrback Whether to stop waiting as soon as one
+            *     input reports an error. The failing result is passed to the
+            *     <code>DeferredList</code>'s errback sequence.
+            * @param {boolean=} opt_consumeErrors When true, any errors fired by a
+            *     <code>Deferred</code> in the input list will be captured and replaced
+            *     with a succeeding null result. Any callbacks added to the
+            *     <code>Deferred</code> after its use in the <code>DeferredList</code> will
+            *     receive null instead of the error.
+            * @param {Function=} opt_canceler A function that will be called if the
+            *     <code>DeferredList</code> is canceled. @see goog.async.Deferred#cancel
+            * @param {Object=} opt_defaultScope The default scope to invoke callbacks or
+            *     errbacks in.
+            * @constructor
+            * @extends {goog.async.Deferred}
+            */
+            constructor(list: goog.async.Deferred<any>[], opt_fireOnOneCallback?: boolean, opt_fireOnOneErrback?: boolean, opt_consumeErrors?: boolean, opt_canceler?: Function, opt_defaultScope?: Object);
+        }
     }
 }
 

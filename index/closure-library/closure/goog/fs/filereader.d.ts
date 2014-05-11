@@ -5,63 +5,66 @@
 
 declare module goog.fs {
 
-    class FileReader extends __FileReader { }
-    class __FileReader extends goog.events.__EventTarget {
+    class FileReader extends FileReader.__Class { }
+    module FileReader {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class extends goog.events.EventTarget.__Class {
     
-        /**
-         * An object for monitoring the reading of files. This emits ProgressEvents of
-         * the types listed in {@link goog.fs.FileReader.EventType}.
-         *
-         * @constructor
-         * @extends {goog.events.EventTarget}
-         * @final
-         */
-        constructor();
+            /**
+            * An object for monitoring the reading of files. This emits ProgressEvents of
+            * the types listed in {@link goog.fs.FileReader.EventType}.
+            *
+            * @constructor
+            * @extends {goog.events.EventTarget}
+            * @final
+            */
+            constructor();
     
-        /**
-         * Abort the reading of the file.
-         */
-        abort(): void;
+            /**
+            * Abort the reading of the file.
+            */
+            abort(): void;
     
-        /**
-         * @return {goog.fs.FileReader.ReadyState} The current state of the FileReader.
-         */
-        getReadyState(): goog.fs.FileReader.ReadyState;
+            /**
+            * @return {goog.fs.FileReader.ReadyState} The current state of the FileReader.
+            */
+            getReadyState(): goog.fs.FileReader.ReadyState;
     
-        /**
-         * @return {*} The result of the file read.
-         */
-        getResult(): any;
+            /**
+            * @return {*} The result of the file read.
+            */
+            getResult(): any;
     
-        /**
-         * @return {goog.fs.Error} The error encountered while reading, if any.
-         */
-        getError(): goog.fs.Error;
+            /**
+            * @return {goog.fs.Error} The error encountered while reading, if any.
+            */
+            getError(): goog.fs.Error;
     
-        /**
-         * Starts reading a blob as a binary string.
-         * @param {!Blob} blob The blob to read.
-         */
-        readAsBinaryString(blob: Blob): void;
+            /**
+            * Starts reading a blob as a binary string.
+            * @param {!Blob} blob The blob to read.
+            */
+            readAsBinaryString(blob: Blob): void;
     
-        /**
-         * Starts reading a blob as an array buffer.
-         * @param {!Blob} blob The blob to read.
-         */
-        readAsArrayBuffer(blob: Blob): void;
+            /**
+            * Starts reading a blob as an array buffer.
+            * @param {!Blob} blob The blob to read.
+            */
+            readAsArrayBuffer(blob: Blob): void;
     
-        /**
-         * Starts reading a blob as text.
-         * @param {!Blob} blob The blob to read.
-         * @param {string=} opt_encoding The name of the encoding to use.
-         */
-        readAsText(blob: Blob, opt_encoding?: string): void;
+            /**
+            * Starts reading a blob as text.
+            * @param {!Blob} blob The blob to read.
+            * @param {string=} opt_encoding The name of the encoding to use.
+            */
+            readAsText(blob: Blob, opt_encoding?: string): void;
     
-        /**
-         * Starts reading a blob as a data URL.
-         * @param {!Blob} blob The blob to read.
-         */
-        readAsDataUrl(blob: Blob): void;
+            /**
+            * Starts reading a blob as a data URL.
+            * @param {!Blob} blob The blob to read.
+            */
+            readAsDataUrl(blob: Blob): void;
+        }
     }
 }
 

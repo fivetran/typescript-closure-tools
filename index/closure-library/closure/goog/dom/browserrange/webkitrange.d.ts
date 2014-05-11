@@ -3,17 +3,20 @@
 
 declare module goog.dom.browserrange {
 
-    class WebKitRange extends __WebKitRange { }
-    class __WebKitRange extends goog.dom.browserrange.__W3cRange {
+    class WebKitRange extends WebKitRange.__Class { }
+    module WebKitRange {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class extends goog.dom.browserrange.W3cRange.__Class {
     
-        /**
-         * The constructor for WebKit specific browser ranges.
-         * @param {Range} range The range object.
-         * @constructor
-         * @extends {goog.dom.browserrange.W3cRange}
-         * @final
-         */
-        constructor(range: Range);
+            /**
+            * The constructor for WebKit specific browser ranges.
+            * @param {Range} range The range object.
+            * @constructor
+            * @extends {goog.dom.browserrange.W3cRange}
+            * @final
+            */
+            constructor(range: Range);
+        }
     }
 }
 

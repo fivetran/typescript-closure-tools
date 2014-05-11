@@ -2,17 +2,20 @@
 
 declare module goog.testing {
 
-    class JsUnitException extends __JsUnitException { }
-    class __JsUnitException extends _Error {
+    class JsUnitException extends JsUnitException.__Class { }
+    module JsUnitException {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class extends _Error {
     
-        /**
-         * @param {string} comment A summary for the exception.
-         * @param {?string=} opt_message A description of the exception.
-         * @constructor
-         * @extends {Error}
-         * @final
-         */
-        constructor(comment: string, opt_message?: string);
+            /**
+            * @param {string} comment A summary for the exception.
+            * @param {?string=} opt_message A description of the exception.
+            * @constructor
+            * @extends {Error}
+            * @final
+            */
+            constructor(comment: string, opt_message?: string);
+        }
     }
 }
 

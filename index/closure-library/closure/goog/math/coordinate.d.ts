@@ -2,93 +2,96 @@
 
 declare module goog.math {
 
-    class Coordinate extends __Coordinate { }
-    class __Coordinate {
+    class Coordinate extends Coordinate.__Class { }
+    module Coordinate {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class {
     
-        /**
-         * Class for representing coordinates and positions.
-         * @param {number=} opt_x Left, defaults to 0.
-         * @param {number=} opt_y Top, defaults to 0.
-         * @constructor
-         */
-        constructor(opt_x?: number, opt_y?: number);
+            /**
+            * Class for representing coordinates and positions.
+            * @param {number=} opt_x Left, defaults to 0.
+            * @param {number=} opt_y Top, defaults to 0.
+            * @constructor
+            */
+            constructor(opt_x?: number, opt_y?: number);
     
-        /**
-         * Returns a new copy of the coordinate.
-         * @return {!goog.math.Coordinate} A clone of this coordinate.
-         */
-        clone(): goog.math.Coordinate;
+            /**
+            * Returns a new copy of the coordinate.
+            * @return {!goog.math.Coordinate} A clone of this coordinate.
+            */
+            clone(): goog.math.Coordinate;
     
-        /**
-         * Rounds the x and y fields to the next larger integer values.
-         * @return {!goog.math.Coordinate} This coordinate with ceil'd fields.
-         */
-        ceil(): goog.math.Coordinate;
+            /**
+            * Rounds the x and y fields to the next larger integer values.
+            * @return {!goog.math.Coordinate} This coordinate with ceil'd fields.
+            */
+            ceil(): goog.math.Coordinate;
     
-        /**
-         * Rounds the x and y fields to the next smaller integer values.
-         * @return {!goog.math.Coordinate} This coordinate with floored fields.
-         */
-        floor(): goog.math.Coordinate;
+            /**
+            * Rounds the x and y fields to the next smaller integer values.
+            * @return {!goog.math.Coordinate} This coordinate with floored fields.
+            */
+            floor(): goog.math.Coordinate;
     
-        /**
-         * Rounds the x and y fields to the nearest integer values.
-         * @return {!goog.math.Coordinate} This coordinate with rounded fields.
-         */
-        round(): goog.math.Coordinate;
+            /**
+            * Rounds the x and y fields to the nearest integer values.
+            * @return {!goog.math.Coordinate} This coordinate with rounded fields.
+            */
+            round(): goog.math.Coordinate;
     
-        /**
-         * Translates this box by the given offsets. If a {@code goog.math.Coordinate}
-         * is given, then the x and y values are translated by the coordinate's x and y.
-         * Otherwise, x and y are translated by {@code tx} and {@code opt_ty}
-         * respectively.
-         * @param {number|goog.math.Coordinate} tx The value to translate x by or the
-         *     the coordinate to translate this coordinate by.
-         * @param {number=} opt_ty The value to translate y by.
-         * @return {!goog.math.Coordinate} This coordinate after translating.
-         */
-        translate(tx: number, opt_ty?: number): goog.math.Coordinate;
-        /**
-         * Translates this box by the given offsets. If a {@code goog.math.Coordinate}
-         * is given, then the x and y values are translated by the coordinate's x and y.
-         * Otherwise, x and y are translated by {@code tx} and {@code opt_ty}
-         * respectively.
-         * @param {number|goog.math.Coordinate} tx The value to translate x by or the
-         *     the coordinate to translate this coordinate by.
-         * @param {number=} opt_ty The value to translate y by.
-         * @return {!goog.math.Coordinate} This coordinate after translating.
-         */
-        translate(tx: goog.math.Coordinate, opt_ty?: number): goog.math.Coordinate;
+            /**
+            * Translates this box by the given offsets. If a {@code goog.math.Coordinate}
+            * is given, then the x and y values are translated by the coordinate's x and y.
+            * Otherwise, x and y are translated by {@code tx} and {@code opt_ty}
+            * respectively.
+            * @param {number|goog.math.Coordinate} tx The value to translate x by or the
+            *     the coordinate to translate this coordinate by.
+            * @param {number=} opt_ty The value to translate y by.
+            * @return {!goog.math.Coordinate} This coordinate after translating.
+            */
+            translate(tx: number, opt_ty?: number): goog.math.Coordinate;
+            /**
+            * Translates this box by the given offsets. If a {@code goog.math.Coordinate}
+            * is given, then the x and y values are translated by the coordinate's x and y.
+            * Otherwise, x and y are translated by {@code tx} and {@code opt_ty}
+            * respectively.
+            * @param {number|goog.math.Coordinate} tx The value to translate x by or the
+            *     the coordinate to translate this coordinate by.
+            * @param {number=} opt_ty The value to translate y by.
+            * @return {!goog.math.Coordinate} This coordinate after translating.
+            */
+            translate(tx: goog.math.Coordinate, opt_ty?: number): goog.math.Coordinate;
     
-        /**
-         * Scales this coordinate by the given scale factors. The x and y values are
-         * scaled by {@code sx} and {@code opt_sy} respectively.  If {@code opt_sy}
-         * is not given, then {@code sx} is used for both x and y.
-         * @param {number} sx The scale factor to use for the x dimension.
-         * @param {number=} opt_sy The scale factor to use for the y dimension.
-         * @return {!goog.math.Coordinate} This coordinate after scaling.
-         */
-        scale(sx: number, opt_sy?: number): goog.math.Coordinate;
+            /**
+            * Scales this coordinate by the given scale factors. The x and y values are
+            * scaled by {@code sx} and {@code opt_sy} respectively.  If {@code opt_sy}
+            * is not given, then {@code sx} is used for both x and y.
+            * @param {number} sx The scale factor to use for the x dimension.
+            * @param {number=} opt_sy The scale factor to use for the y dimension.
+            * @return {!goog.math.Coordinate} This coordinate after scaling.
+            */
+            scale(sx: number, opt_sy?: number): goog.math.Coordinate;
     
-        /**
-         * Rotates this coordinate clockwise about the origin (or, optionally, the given
-         * center) by the given angle, in radians.
-         * @param {number} radians The angle by which to rotate this coordinate
-         *     clockwise about the given center, in radians.
-         * @param {!goog.math.Coordinate=} opt_center The center of rotation. Defaults
-         *     to (0, 0) if not given.
-         */
-        rotateRadians(radians: number, opt_center?: goog.math.Coordinate): void;
+            /**
+            * Rotates this coordinate clockwise about the origin (or, optionally, the given
+            * center) by the given angle, in radians.
+            * @param {number} radians The angle by which to rotate this coordinate
+            *     clockwise about the given center, in radians.
+            * @param {!goog.math.Coordinate=} opt_center The center of rotation. Defaults
+            *     to (0, 0) if not given.
+            */
+            rotateRadians(radians: number, opt_center?: goog.math.Coordinate): void;
     
-        /**
-         * Rotates this coordinate clockwise about the origin (or, optionally, the given
-         * center) by the given angle, in degrees.
-         * @param {number} degrees The angle by which to rotate this coordinate
-         *     clockwise about the given center, in degrees.
-         * @param {!goog.math.Coordinate=} opt_center The center of rotation. Defaults
-         *     to (0, 0) if not given.
-         */
-        rotateDegrees(degrees: number, opt_center?: goog.math.Coordinate): void;
+            /**
+            * Rotates this coordinate clockwise about the origin (or, optionally, the given
+            * center) by the given angle, in degrees.
+            * @param {number} degrees The angle by which to rotate this coordinate
+            *     clockwise about the given center, in degrees.
+            * @param {!goog.math.Coordinate=} opt_center The center of rotation. Defaults
+            *     to (0, 0) if not given.
+            */
+            rotateDegrees(degrees: number, opt_center?: goog.math.Coordinate): void;
+        }
     }
 }
 

@@ -5,25 +5,28 @@
 
 declare module goog.ui.media {
 
-    class Photo extends __Photo { }
-    class __Photo extends goog.ui.media.__MediaRenderer {
+    class Photo extends Photo.__Class { }
+    module Photo {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class extends goog.ui.media.MediaRenderer.__Class {
     
-        /**
-         * Subclasses a goog.ui.media.MediaRenderer to provide a Photo specific media
-         * renderer. Provides a base class for any other renderer that wants to display
-         * photos.
-         *
-         * This class is meant to be used as a singleton static stateless class, that
-         * takes {@code goog.ui.media.Media} instances and renders it.
-         *
-         * This design is patterned after
-         * http://go/closure_control_subclassing
-         *
-         * @constructor
-         * @extends {goog.ui.media.MediaRenderer}
-         * @final
-         */
-        constructor();
+            /**
+            * Subclasses a goog.ui.media.MediaRenderer to provide a Photo specific media
+            * renderer. Provides a base class for any other renderer that wants to display
+            * photos.
+            *
+            * This class is meant to be used as a singleton static stateless class, that
+            * takes {@code goog.ui.media.Media} instances and renders it.
+            *
+            * This design is patterned after
+            * http://go/closure_control_subclassing
+            *
+            * @constructor
+            * @extends {goog.ui.media.MediaRenderer}
+            * @final
+            */
+            constructor();
+        }
     }
 }
 

@@ -3,21 +3,24 @@
 
 declare module goog.fs {
 
-    class Error extends __Error { }
-    class __Error extends goog.debug.__Error {
+    class Error extends Error.__Class { }
+    module Error {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class extends goog.debug.Error.__Class {
     
-        /**
-         * A filesystem error. Since the filesystem API is asynchronous, stack traces
-         * are less useful for identifying where errors come from, so this includes a
-         * large amount of metadata in the message.
-         *
-         * @param {!DOMError} error
-         * @param {string} action The action being undertaken when the error was raised.
-         * @constructor
-         * @extends {goog.debug.Error}
-         * @final
-         */
-        constructor(error: DOMError, action: string);
+            /**
+            * A filesystem error. Since the filesystem API is asynchronous, stack traces
+            * are less useful for identifying where errors come from, so this includes a
+            * large amount of metadata in the message.
+            *
+            * @param {!DOMError} error
+            * @param {string} action The action being undertaken when the error was raised.
+            * @constructor
+            * @extends {goog.debug.Error}
+            * @final
+            */
+            constructor(error: DOMError, action: string);
+        }
     }
 }
 

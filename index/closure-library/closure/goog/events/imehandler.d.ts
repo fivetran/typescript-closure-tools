@@ -5,39 +5,45 @@
 
 declare module goog.events {
 
-    class ImeHandler extends __ImeHandler { }
-    class __ImeHandler extends goog.events.__EventTarget {
+    class ImeHandler extends ImeHandler.__Class { }
+    module ImeHandler {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class extends goog.events.EventTarget.__Class {
     
-        /**
-         * Dispatches high-level events for IMEs.
-         * @param {Element} el The element to listen on.
-         * @extends {goog.events.EventTarget}
-         * @constructor
-         * @final
-         */
-        constructor(el: Element);
+            /**
+            * Dispatches high-level events for IMEs.
+            * @param {Element} el The element to listen on.
+            * @extends {goog.events.EventTarget}
+            * @constructor
+            * @final
+            */
+            constructor(el: Element);
     
-        /**
-         * @return {boolean} Whether an IME is active.
-         */
-        isImeMode(): boolean;
+            /**
+            * @return {boolean} Whether an IME is active.
+            */
+            isImeMode(): boolean;
+        }
     }
 }
 
 declare module goog.events.ImeHandler {
 
-    class Event extends __Event { }
-    class __Event extends goog.events.__Event {
+    class Event extends Event.__Class { }
+    module Event {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class extends goog.events.Event.__Class {
     
-        /**
-         * An event fired by ImeHandler.
-         * @param {goog.events.ImeHandler.EventType} type The type.
-         * @param {goog.events.BrowserEvent} reason The trigger for this event.
-         * @constructor
-         * @extends {goog.events.Event}
-         * @final
-         */
-        constructor(type: goog.events.ImeHandler.EventType, reason: goog.events.BrowserEvent);
+            /**
+            * An event fired by ImeHandler.
+            * @param {goog.events.ImeHandler.EventType} type The type.
+            * @param {goog.events.BrowserEvent} reason The trigger for this event.
+            * @constructor
+            * @extends {goog.events.Event}
+            * @final
+            */
+            constructor(type: goog.events.ImeHandler.EventType, reason: goog.events.BrowserEvent);
+        }
     }
 
     /**

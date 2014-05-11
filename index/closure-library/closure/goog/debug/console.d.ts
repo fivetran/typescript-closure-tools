@@ -4,44 +4,47 @@
 
 declare module goog.debug {
 
-    class Console extends __Console { }
-    class __Console {
+    class Console extends Console.__Class { }
+    module Console {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class {
     
-        /**
-         * Create and install a log handler that logs to window.console if available
-         * @constructor
-         */
-        constructor();
+            /**
+            * Create and install a log handler that logs to window.console if available
+            * @constructor
+            */
+            constructor();
     
-        /**
-         * Returns the text formatter used by this console
-         * @return {!goog.debug.TextFormatter} The text formatter.
-         */
-        getFormatter(): goog.debug.TextFormatter;
+            /**
+            * Returns the text formatter used by this console
+            * @return {!goog.debug.TextFormatter} The text formatter.
+            */
+            getFormatter(): goog.debug.TextFormatter;
     
-        /**
-         * Sets whether we are currently capturing logger output.
-         * @param {boolean} capturing Whether to capture logger output.
-         */
-        setCapturing(capturing: boolean): void;
+            /**
+            * Sets whether we are currently capturing logger output.
+            * @param {boolean} capturing Whether to capture logger output.
+            */
+            setCapturing(capturing: boolean): void;
     
-        /**
-         * Adds a log record.
-         * @param {goog.debug.LogRecord} logRecord The log entry.
-         */
-        addLogRecord(logRecord: goog.debug.LogRecord): void;
+            /**
+            * Adds a log record.
+            * @param {goog.debug.LogRecord} logRecord The log entry.
+            */
+            addLogRecord(logRecord: goog.debug.LogRecord): void;
     
-        /**
-         * Adds a logger name to be filtered.
-         * @param {string} loggerName the logger name to add.
-         */
-        addFilter(loggerName: string): void;
+            /**
+            * Adds a logger name to be filtered.
+            * @param {string} loggerName the logger name to add.
+            */
+            addFilter(loggerName: string): void;
     
-        /**
-         * Removes a logger name to be filtered.
-         * @param {string} loggerName the logger name to remove.
-         */
-        removeFilter(loggerName: string): void;
+            /**
+            * Removes a logger name to be filtered.
+            * @param {string} loggerName the logger name to remove.
+            */
+            removeFilter(loggerName: string): void;
+        }
     }
 }
 

@@ -3,15 +3,18 @@
 
 declare module goog.editor.plugins {
 
-    class LinkShortcutPlugin extends __LinkShortcutPlugin { }
-    class __LinkShortcutPlugin extends goog.editor.__Plugin {
+    class LinkShortcutPlugin extends LinkShortcutPlugin.__Class { }
+    module LinkShortcutPlugin {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class extends goog.editor.Plugin.__Class {
     
-        /**
-         * Plugin to add a keyboard shortcut for the link command
-         * @constructor
-         * @extends {goog.editor.Plugin}
-         * @final
-         */
-        constructor();
+            /**
+            * Plugin to add a keyboard shortcut for the link command
+            * @constructor
+            * @extends {goog.editor.Plugin}
+            * @final
+            */
+            constructor();
+        }
     }
 }

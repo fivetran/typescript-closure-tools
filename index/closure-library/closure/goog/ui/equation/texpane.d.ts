@@ -4,19 +4,22 @@
 
 declare module goog.ui.equation {
 
-    class TexPane extends __TexPane { }
-    class __TexPane extends goog.ui.equation.__EditorPane {
+    class TexPane extends TexPane.__Class { }
+    module TexPane {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class extends goog.ui.equation.EditorPane.__Class {
     
-        /**
-         * User interface for TeX equation editor tab pane.
-         * @param {Object} context The context this Tex editor pane runs in.
-         * @param {string} helpUrl The help link URL.
-         * @param {goog.dom.DomHelper=} opt_domHelper Optional DOM helper.
-         * @constructor
-         * @extends {goog.ui.equation.EditorPane}
-         * @final
-         */
-        constructor(context: Object, helpUrl: string, opt_domHelper?: goog.dom.DomHelper);
+            /**
+            * User interface for TeX equation editor tab pane.
+            * @param {Object} context The context this Tex editor pane runs in.
+            * @param {string} helpUrl The help link URL.
+            * @param {goog.dom.DomHelper=} opt_domHelper Optional DOM helper.
+            * @constructor
+            * @extends {goog.ui.equation.EditorPane}
+            * @final
+            */
+            constructor(context: Object, helpUrl: string, opt_domHelper?: goog.dom.DomHelper);
+        }
     }
 }
 

@@ -5,42 +5,45 @@
 
 declare module goog.ui {
 
-    class RichTextSpellChecker extends __RichTextSpellChecker { }
-    class __RichTextSpellChecker extends goog.ui.__AbstractSpellChecker {
+    class RichTextSpellChecker extends RichTextSpellChecker.__Class { }
+    module RichTextSpellChecker {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class extends goog.ui.AbstractSpellChecker.__Class {
     
-        /**
-         * Rich text spell checker implementation.
-         *
-         * @param {goog.spell.SpellCheck} handler Instance of the SpellCheckHandler
-         *     support object to use. A single instance can be shared by multiple editor
-         *     components.
-         * @param {goog.dom.DomHelper=} opt_domHelper Optional DOM helper.
-         * @constructor
-         * @extends {goog.ui.AbstractSpellChecker}
-         * @final
-         */
-        constructor(handler: goog.spell.SpellCheck, opt_domHelper?: goog.dom.DomHelper);
+            /**
+            * Rich text spell checker implementation.
+            *
+            * @param {goog.spell.SpellCheck} handler Instance of the SpellCheckHandler
+            *     support object to use. A single instance can be shared by multiple editor
+            *     components.
+            * @param {goog.dom.DomHelper=} opt_domHelper Optional DOM helper.
+            * @constructor
+            * @extends {goog.ui.AbstractSpellChecker}
+            * @final
+            */
+            constructor(handler: goog.spell.SpellCheck, opt_domHelper?: goog.dom.DomHelper);
     
-        /**
-         * Class name for word spans.
-         * @type {string}
-         */
-        wordClassName: string;
+            /**
+            * Class name for word spans.
+            * @type {string}
+            */
+            wordClassName: string;
     
-        /**
-         * Tag name porition of the marker for the text that does not need to be checked
-         * for spelling.
-         *
-         * @type {Array.<string|undefined>}
-         */
-        excludeTags: any /*string|any (undefined)*/[];
+            /**
+            * Tag name porition of the marker for the text that does not need to be checked
+            * for spelling.
+            *
+            * @type {Array.<string|undefined>}
+            */
+            excludeTags: any /*string|any (undefined)*/[];
     
-        /**
-         * CSS Style text for invalid words. As it's set inside the rich edit iframe
-         * classes defined in the parent document are not availble, thus the style is
-         * set inline.
-         * @type {string}
-         */
-        invalidWordCssText: string;
+            /**
+            * CSS Style text for invalid words. As it's set inside the rich edit iframe
+            * classes defined in the parent document are not availble, thus the style is
+            * set inline.
+            * @type {string}
+            */
+            invalidWordCssText: string;
+        }
     }
 }

@@ -3,16 +3,19 @@
 
 declare module goog.net {
 
-    class DefaultXmlHttpFactory extends __DefaultXmlHttpFactory { }
-    class __DefaultXmlHttpFactory extends goog.net.__XmlHttpFactory {
+    class DefaultXmlHttpFactory extends DefaultXmlHttpFactory.__Class { }
+    module DefaultXmlHttpFactory {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class extends goog.net.XmlHttpFactory.__Class {
     
-        /**
-         * Default factory to use when creating xhr objects.  You probably shouldn't be
-         * instantiating this directly, but rather using it via goog.net.XmlHttp.
-         * @extends {goog.net.XmlHttpFactory}
-         * @constructor
-         */
-        constructor();
+            /**
+            * Default factory to use when creating xhr objects.  You probably shouldn't be
+            * instantiating this directly, but rather using it via goog.net.XmlHttp.
+            * @extends {goog.net.XmlHttpFactory}
+            * @constructor
+            */
+            constructor();
+        }
     }
 
     /**

@@ -4,24 +4,27 @@
 
 declare module goog.ui {
 
-    class MockActivityMonitor extends __MockActivityMonitor { }
-    class __MockActivityMonitor extends goog.ui.__ActivityMonitor {
+    class MockActivityMonitor extends MockActivityMonitor.__Class { }
+    module MockActivityMonitor {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class extends goog.ui.ActivityMonitor.__Class {
     
-        /**
-         * A mock implementation of goog.ui.ActivityMonitor for unit testing. Clients
-         * of this class should override goog.now to return a synthetic time from
-         * the unit test.
-         * @constructor
-         * @extends {goog.ui.ActivityMonitor}
-         * @final
-         */
-        constructor();
+            /**
+            * A mock implementation of goog.ui.ActivityMonitor for unit testing. Clients
+            * of this class should override goog.now to return a synthetic time from
+            * the unit test.
+            * @constructor
+            * @extends {goog.ui.ActivityMonitor}
+            * @final
+            */
+            constructor();
     
-        /**
-         * Simulates an event that updates the user to being non-idle.
-         * @param {goog.events.EventType=} opt_type The type of event that made the user
-         *     not idle. If not specified, defaults to MOUSEMOVE.
-         */
-        simulateEvent(opt_type?: goog.events.EventType): void;
+            /**
+            * Simulates an event that updates the user to being non-idle.
+            * @param {goog.events.EventType=} opt_type The type of event that made the user
+            *     not idle. If not specified, defaults to MOUSEMOVE.
+            */
+            simulateEvent(opt_type?: goog.events.EventType): void;
+        }
     }
 }

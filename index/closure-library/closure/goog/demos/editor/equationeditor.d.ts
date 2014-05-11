@@ -2,19 +2,22 @@
 
 declare module goog.demos.editor {
 
-    class EquationEditor extends __EquationEditor { }
-    class __EquationEditor {
+    class EquationEditor extends EquationEditor.__Class { }
+    module EquationEditor {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class {
     
-        /**
-         * @constructor
-         * @final
-         */
-        constructor();
+            /**
+            * @constructor
+            * @final
+            */
+            constructor();
     
-        /**
-         * Creates a new editor and opens the dialog.
-         * @param {string} initialEquation The initial equation value to use.
-         */
-        openEditor(initialEquation: string): void;
+            /**
+            * Creates a new editor and opens the dialog.
+            * @param {string} initialEquation The initial equation value to use.
+            */
+            openEditor(initialEquation: string): void;
+        }
     }
 }

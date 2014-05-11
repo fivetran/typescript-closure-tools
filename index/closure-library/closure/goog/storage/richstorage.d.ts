@@ -4,50 +4,56 @@
 
 declare module goog.storage {
 
-    class RichStorage extends __RichStorage { }
-    class __RichStorage extends goog.storage.__Storage {
+    class RichStorage extends RichStorage.__Class { }
+    module RichStorage {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class extends goog.storage.Storage.__Class {
     
-        /**
-         * Provides a storage for data with attached metadata.
-         *
-         * @param {!goog.storage.mechanism.Mechanism} mechanism The underlying
-         *     storage mechanism.
-         * @constructor
-         * @extends {goog.storage.Storage}
-         */
-        constructor(mechanism: goog.storage.mechanism.Mechanism);
+            /**
+            * Provides a storage for data with attached metadata.
+            *
+            * @param {!goog.storage.mechanism.Mechanism} mechanism The underlying
+            *     storage mechanism.
+            * @constructor
+            * @extends {goog.storage.Storage}
+            */
+            constructor(mechanism: goog.storage.mechanism.Mechanism);
     
-        /**
-         * Get an item wrapper (the item and its metadata) from the storage.
-         *
-         * WARNING: This returns an Object, which once used to be
-         * goog.storage.RichStorage.Wrapper. This is due to the fact
-         * that deserialized objects lose type information and it
-         * is hard to do proper typecasting in JavaScript. Be sure
-         * you know what you are doing when using the returned value.
-         *
-         * @param {string} key The key to get.
-         * @return {(!Object|undefined)} The wrapper, or undefined if not found.
-         */
-        getWrapper(key: string): any /*Object|any (undefined)*/;
+            /**
+            * Get an item wrapper (the item and its metadata) from the storage.
+            *
+            * WARNING: This returns an Object, which once used to be
+            * goog.storage.RichStorage.Wrapper. This is due to the fact
+            * that deserialized objects lose type information and it
+            * is hard to do proper typecasting in JavaScript. Be sure
+            * you know what you are doing when using the returned value.
+            *
+            * @param {string} key The key to get.
+            * @return {(!Object|undefined)} The wrapper, or undefined if not found.
+            */
+            getWrapper(key: string): any /*Object|any (undefined)*/;
+        }
     }
 }
 
 declare module goog.storage.RichStorage {
 
-    class Wrapper extends __Wrapper { }
-    class __Wrapper {
+    class Wrapper extends Wrapper.__Class { }
+    module Wrapper {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class {
     
-        /**
-         * Wraps a value so metadata can be associated with it. You probably want
-         * to use goog.storage.RichStorage.Wrapper.wrapIfNecessary to avoid multiple
-         * embeddings.
-         *
-         * @param {*} value The value to wrap.
-         * @constructor
-         * @final
-         */
-        constructor(value: any);
+            /**
+            * Wraps a value so metadata can be associated with it. You probably want
+            * to use goog.storage.RichStorage.Wrapper.wrapIfNecessary to avoid multiple
+            * embeddings.
+            *
+            * @param {*} value The value to wrap.
+            * @constructor
+            * @final
+            */
+            constructor(value: any);
+        }
     }
 
     /**

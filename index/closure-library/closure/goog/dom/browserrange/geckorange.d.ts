@@ -3,17 +3,20 @@
 
 declare module goog.dom.browserrange {
 
-    class GeckoRange extends __GeckoRange { }
-    class __GeckoRange extends goog.dom.browserrange.__W3cRange {
+    class GeckoRange extends GeckoRange.__Class { }
+    module GeckoRange {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class extends goog.dom.browserrange.W3cRange.__Class {
     
-        /**
-         * The constructor for Gecko specific browser ranges.
-         * @param {Range} range The range object.
-         * @constructor
-         * @extends {goog.dom.browserrange.W3cRange}
-         * @final
-         */
-        constructor(range: Range);
+            /**
+            * The constructor for Gecko specific browser ranges.
+            * @param {Range} range The range object.
+            * @constructor
+            * @extends {goog.dom.browserrange.W3cRange}
+            * @final
+            */
+            constructor(range: Range);
+        }
     }
 }
 

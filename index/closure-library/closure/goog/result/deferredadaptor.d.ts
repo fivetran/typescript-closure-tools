@@ -4,18 +4,21 @@
 
 declare module goog.result {
 
-    class DeferredAdaptor extends __DeferredAdaptor { }
-    class __DeferredAdaptor extends goog.async.__Deferred<any> {
+    class DeferredAdaptor extends DeferredAdaptor.__Class { }
+    module DeferredAdaptor {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class extends goog.async.Deferred.__Class<any> {
     
-        /**
-         * An adaptor from Result to a Deferred, for use with existing Deferred chains.
-         *
-         * @param {!goog.result.Result} result A result.
-         * @constructor
-         * @extends {goog.async.Deferred}
-         * @final
-         * @deprecated Use {@link goog.Promise} instead - http://go/promisemigration
-         */
-        constructor(result: goog.result.Result);
+            /**
+            * An adaptor from Result to a Deferred, for use with existing Deferred chains.
+            *
+            * @param {!goog.result.Result} result A result.
+            * @constructor
+            * @extends {goog.async.Deferred}
+            * @final
+            * @deprecated Use {@link goog.Promise} instead - http://go/promisemigration
+            */
+            constructor(result: goog.result.Result);
+        }
     }
 }

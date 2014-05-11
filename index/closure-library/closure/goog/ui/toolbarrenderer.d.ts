@@ -3,16 +3,19 @@
 
 declare module goog.ui {
 
-    class ToolbarRenderer extends __ToolbarRenderer { }
-    class __ToolbarRenderer extends goog.ui.__ContainerRenderer {
+    class ToolbarRenderer extends ToolbarRenderer.__Class { }
+    module ToolbarRenderer {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class extends goog.ui.ContainerRenderer.__Class {
     
-        /**
-         * Default renderer for {@link goog.ui.Toolbar}s, based on {@link
-         * goog.ui.ContainerRenderer}.
-         * @constructor
-         * @extends {goog.ui.ContainerRenderer}
-         */
-        constructor();
+            /**
+            * Default renderer for {@link goog.ui.Toolbar}s, based on {@link
+            * goog.ui.ContainerRenderer}.
+            * @constructor
+            * @extends {goog.ui.ContainerRenderer}
+            */
+            constructor();
+        }
     }
 }
 

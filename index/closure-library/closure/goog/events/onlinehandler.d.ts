@@ -4,21 +4,24 @@
 
 declare module goog.events {
 
-    class OnlineHandler extends __OnlineHandler { }
-    class __OnlineHandler extends goog.events.__EventTarget implements goog.net.NetworkStatusMonitor {
+    class OnlineHandler extends OnlineHandler.__Class { }
+    module OnlineHandler {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class extends goog.events.EventTarget.__Class implements goog.net.NetworkStatusMonitor {
     
-        /**
-         * Basic object for detecting whether the online state changes.
-         * @constructor
-         * @extends {goog.events.EventTarget}
-         * @implements {goog.net.NetworkStatusMonitor}
-         */
-        constructor();
+            /**
+            * Basic object for detecting whether the online state changes.
+            * @constructor
+            * @extends {goog.events.EventTarget}
+            * @implements {goog.net.NetworkStatusMonitor}
+            */
+            constructor();
     
-        /**
-         * @return {boolean} Whether the system is online or otherwise.
-         */
-        isOnline(): boolean;
+            /**
+            * @return {boolean} Whether the system is online or otherwise.
+            */
+            isOnline(): boolean;
+        }
     }
 }
 

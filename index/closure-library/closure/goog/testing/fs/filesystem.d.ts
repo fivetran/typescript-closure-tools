@@ -4,27 +4,30 @@
 
 declare module goog.testing.fs {
 
-    class FileSystem extends __FileSystem { }
-    class __FileSystem implements goog.fs.FileSystem {
+    class FileSystem extends FileSystem.__Class { }
+    module FileSystem {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class implements goog.fs.FileSystem {
     
-        /**
-         * A mock filesystem object.
-         *
-         * @param {string=} opt_name The name of the filesystem.
-         * @constructor
-         * @implements {goog.fs.FileSystem}
-         * @final
-         */
-        constructor(opt_name?: string);
+            /**
+            * A mock filesystem object.
+            *
+            * @param {string=} opt_name The name of the filesystem.
+            * @constructor
+            * @implements {goog.fs.FileSystem}
+            * @final
+            */
+            constructor(opt_name?: string);
     
-        /**
-         * @return {string} The name of the filesystem.
-         */
-        getName(): string;
+            /**
+            * @return {string} The name of the filesystem.
+            */
+            getName(): string;
     
-        /**
-         * @return {!goog.fs.DirectoryEntry} The root directory of the filesystem.
-         */
-        getRoot(): goog.fs.DirectoryEntry;
+            /**
+            * @return {!goog.fs.DirectoryEntry} The root directory of the filesystem.
+            */
+            getRoot(): goog.fs.DirectoryEntry;
+        }
     }
 }

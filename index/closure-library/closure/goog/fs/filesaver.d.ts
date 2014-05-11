@@ -4,37 +4,40 @@
 
 declare module goog.fs {
 
-    class FileSaver extends __FileSaver { }
-    class __FileSaver extends goog.events.__EventTarget {
+    class FileSaver extends FileSaver.__Class { }
+    module FileSaver {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class extends goog.events.EventTarget.__Class {
     
-        /**
-         * An object for monitoring the saving of files. This emits ProgressEvents of
-         * the types listed in {@link goog.fs.FileSaver.EventType}.
-         *
-         * This should not be instantiated directly. Instead, its subclass
-         * {@link goog.fs.FileWriter} should be accessed via
-         * {@link goog.fs.FileEntry#createWriter}.
-         *
-         * @param {!FileSaver} fileSaver The underlying FileSaver object.
-         * @constructor
-         * @extends {goog.events.EventTarget}
-         */
-        constructor(fileSaver: FileSaver);
+            /**
+            * An object for monitoring the saving of files. This emits ProgressEvents of
+            * the types listed in {@link goog.fs.FileSaver.EventType}.
+            *
+            * This should not be instantiated directly. Instead, its subclass
+            * {@link goog.fs.FileWriter} should be accessed via
+            * {@link goog.fs.FileEntry#createWriter}.
+            *
+            * @param {!FileSaver} fileSaver The underlying FileSaver object.
+            * @constructor
+            * @extends {goog.events.EventTarget}
+            */
+            constructor(fileSaver: FileSaver);
     
-        /**
-         * Abort the writing of the file.
-         */
-        abort(): void;
+            /**
+            * Abort the writing of the file.
+            */
+            abort(): void;
     
-        /**
-         * @return {goog.fs.FileSaver.ReadyState} The current state of the FileSaver.
-         */
-        getReadyState(): goog.fs.FileSaver.ReadyState;
+            /**
+            * @return {goog.fs.FileSaver.ReadyState} The current state of the FileSaver.
+            */
+            getReadyState(): goog.fs.FileSaver.ReadyState;
     
-        /**
-         * @return {goog.fs.Error} The error encountered while writing, if any.
-         */
-        getError(): goog.fs.Error;
+            /**
+            * @return {goog.fs.Error} The error encountered while writing, if any.
+            */
+            getError(): goog.fs.Error;
+        }
     }
 }
 

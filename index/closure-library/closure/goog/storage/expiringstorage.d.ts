@@ -4,18 +4,21 @@
 
 declare module goog.storage {
 
-    class ExpiringStorage extends __ExpiringStorage { }
-    class __ExpiringStorage extends goog.storage.__RichStorage {
+    class ExpiringStorage extends ExpiringStorage.__Class { }
+    module ExpiringStorage {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class extends goog.storage.RichStorage.__Class {
     
-        /**
-         * Provides a storage with expirning keys.
-         *
-         * @param {!goog.storage.mechanism.Mechanism} mechanism The underlying
-         *     storage mechanism.
-         * @constructor
-         * @extends {goog.storage.RichStorage}
-         */
-        constructor(mechanism: goog.storage.mechanism.Mechanism);
+            /**
+            * Provides a storage with expirning keys.
+            *
+            * @param {!goog.storage.mechanism.Mechanism} mechanism The underlying
+            *     storage mechanism.
+            * @constructor
+            * @extends {goog.storage.RichStorage}
+            */
+            constructor(mechanism: goog.storage.mechanism.Mechanism);
+        }
     }
 }
 

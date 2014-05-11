@@ -6,63 +6,69 @@
 
 declare module goog.ui.media {
 
-    class FlickrSet extends __FlickrSet { }
-    class __FlickrSet extends goog.ui.media.__MediaRenderer {
+    class FlickrSet extends FlickrSet.__Class { }
+    module FlickrSet {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class extends goog.ui.media.MediaRenderer.__Class {
     
-        /**
-         * Subclasses a goog.ui.media.MediaRenderer to provide a FlickrSet specific
-         * media renderer.
-         *
-         * This class knows how to parse FlickrSet URLs, and render the DOM structure
-         * of flickr set players. This class is meant to be used as a singleton static
-         * stateless class, that takes {@code goog.ui.media.Media} instances and renders
-         * it. It expects {@code goog.ui.media.Media.getModel} to return a well formed,
-         * previously constructed, set id {@see goog.ui.media.FlickrSet.parseUrl},
-         * which is the data model this renderer will use to construct the DOM
-         * structure. {@see goog.ui.media.FlickrSet.newControl} for a example of
-         * constructing a control with this renderer.
-         *
-         * This design is patterned after
-         * http://go/closure_control_subclassing
-         *
-         * It uses {@link goog.ui.media.FlashObject} to embed the flash object.
-         *
-         * @constructor
-         * @extends {goog.ui.media.MediaRenderer}
-         * @final
-         */
-        constructor();
+            /**
+            * Subclasses a goog.ui.media.MediaRenderer to provide a FlickrSet specific
+            * media renderer.
+            *
+            * This class knows how to parse FlickrSet URLs, and render the DOM structure
+            * of flickr set players. This class is meant to be used as a singleton static
+            * stateless class, that takes {@code goog.ui.media.Media} instances and renders
+            * it. It expects {@code goog.ui.media.Media.getModel} to return a well formed,
+            * previously constructed, set id {@see goog.ui.media.FlickrSet.parseUrl},
+            * which is the data model this renderer will use to construct the DOM
+            * structure. {@see goog.ui.media.FlickrSet.newControl} for a example of
+            * constructing a control with this renderer.
+            *
+            * This design is patterned after
+            * http://go/closure_control_subclassing
+            *
+            * It uses {@link goog.ui.media.FlashObject} to embed the flash object.
+            *
+            * @constructor
+            * @extends {goog.ui.media.MediaRenderer}
+            * @final
+            */
+            constructor();
+        }
     }
 
-    class FlickrSetModel extends __FlickrSetModel { }
-    class __FlickrSetModel extends goog.ui.media.__MediaModel {
+    class FlickrSetModel extends FlickrSetModel.__Class { }
+    module FlickrSetModel {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class extends goog.ui.media.MediaModel.__Class {
     
-        /**
-         * The {@code goog.ui.media.FlickrAlbum} media data model. It stores a required
-         * {@code userId} and {@code setId} fields, sets the flickr Set URL, and
-         * allows a few optional parameters.
-         *
-         * @param {string} userId The flickr userId associated with this set.
-         * @param {string} setId The flickr setId associated with this set.
-         * @param {string=} opt_caption An optional caption of the flickr set.
-         * @param {string=} opt_description An optional description of the flickr set.
-         * @constructor
-         * @extends {goog.ui.media.MediaModel}
-         * @final
-         */
-        constructor(userId: string, setId: string, opt_caption?: string, opt_description?: string);
+            /**
+            * The {@code goog.ui.media.FlickrAlbum} media data model. It stores a required
+            * {@code userId} and {@code setId} fields, sets the flickr Set URL, and
+            * allows a few optional parameters.
+            *
+            * @param {string} userId The flickr userId associated with this set.
+            * @param {string} setId The flickr setId associated with this set.
+            * @param {string=} opt_caption An optional caption of the flickr set.
+            * @param {string=} opt_description An optional description of the flickr set.
+            * @constructor
+            * @extends {goog.ui.media.MediaModel}
+            * @final
+            */
+            constructor(userId: string, setId: string, opt_caption?: string, opt_description?: string);
     
-        /**
-         * Gets the Flickr user id.
-         * @return {string} The Flickr user id.
-         */
-        getUserId(): string;
+            /**
+            * Gets the Flickr user id.
+            * @return {string} The Flickr user id.
+            */
+            getUserId(): string;
     
-        /**
-         * Gets the Flickr set id.
-         * @return {string} The Flickr set id.
-         */
-        getSetId(): string;
+            /**
+            * Gets the Flickr set id.
+            * @return {string} The Flickr set id.
+            */
+            getSetId(): string;
+        }
     }
 }
 

@@ -3,87 +3,90 @@
 
 declare module goog {
 
-    class Disposable extends __Disposable { }
-    class __Disposable implements goog.disposable.IDisposable {
+    class Disposable extends Disposable.__Class { }
+    module Disposable {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class implements goog.disposable.IDisposable {
     
-        /**
-         * Class that provides the basic implementation for disposable objects. If your
-         * class holds one or more references to COM objects, DOM nodes, or other
-         * disposable objects, it should extend this class or implement the disposable
-         * interface (defined in goog.disposable.IDisposable).
-         * @constructor
-         * @implements {goog.disposable.IDisposable}
-         */
-        constructor();
+            /**
+            * Class that provides the basic implementation for disposable objects. If your
+            * class holds one or more references to COM objects, DOM nodes, or other
+            * disposable objects, it should extend this class or implement the disposable
+            * interface (defined in goog.disposable.IDisposable).
+            * @constructor
+            * @implements {goog.disposable.IDisposable}
+            */
+            constructor();
     
-        /**
-         * If monitoring the goog.Disposable instances is enabled, stores the creation
-         * stack trace of the Disposable instance.
-         * @type {string}
-         */
-        creationStack: string;
+            /**
+            * If monitoring the goog.Disposable instances is enabled, stores the creation
+            * stack trace of the Disposable instance.
+            * @type {string}
+            */
+            creationStack: string;
     
-        /**
-         * @return {boolean} Whether the object has been disposed of.
-         * @deprecated Use {@link #isDisposed} instead.
-         */
-        getDisposed(): boolean;
+            /**
+            * @return {boolean} Whether the object has been disposed of.
+            * @deprecated Use {@link #isDisposed} instead.
+            */
+            getDisposed(): boolean;
     
-        /**
-         * Associates a disposable object with this object so that they will be disposed
-         * together.
-         * @param {goog.disposable.IDisposable} disposable that will be disposed when
-         *     this object is disposed.
-         */
-        registerDisposable(disposable: goog.disposable.IDisposable): void;
+            /**
+            * Associates a disposable object with this object so that they will be disposed
+            * together.
+            * @param {goog.disposable.IDisposable} disposable that will be disposed when
+            *     this object is disposed.
+            */
+            registerDisposable(disposable: goog.disposable.IDisposable): void;
     
-        /**
-         * Invokes a callback function when this object is disposed. Callbacks are
-         * invoked in the order in which they were added.
-         * @param {function(this:T):?} callback The callback function.
-         * @param {T=} opt_scope An optional scope to call the callback in.
-         * @template T
-         */
-        addOnDisposeCallback<T>(callback: () => any, opt_scope?: T): void;
+            /**
+            * Invokes a callback function when this object is disposed. Callbacks are
+            * invoked in the order in which they were added.
+            * @param {function(this:T):?} callback The callback function.
+            * @param {T=} opt_scope An optional scope to call the callback in.
+            * @template T
+            */
+            addOnDisposeCallback<T>(callback: () => any, opt_scope?: T): void;
     
-        /**
-         * Deletes or nulls out any references to COM objects, DOM nodes, or other
-         * disposable objects. Classes that extend {@code goog.Disposable} should
-         * override this method.
-         * Not reentrant. To avoid calling it twice, it must only be called from the
-         * subclass' {@code disposeInternal} method. Everywhere else the public
-         * {@code dispose} method must be used.
-         * For example:
-         * <pre>
-         *   mypackage.MyClass = function() {
-         *     goog.base(this);
-         *     // Constructor logic specific to MyClass.
-         *     ...
-         *   };
-         *   goog.inherits(mypackage.MyClass, goog.Disposable);
-         *
-         *   mypackage.MyClass.prototype.disposeInternal = function() {
-         *     // Dispose logic specific to MyClass.
-         *     ...
-         *     // Call superclass's disposeInternal at the end of the subclass's, like
-         *     // in C++, to avoid hard-to-catch issues.
-         *     goog.base(this, 'disposeInternal');
-         *   };
-         * </pre>
-         * @protected
-         */
-        disposeInternal(): void;
+            /**
+            * Deletes or nulls out any references to COM objects, DOM nodes, or other
+            * disposable objects. Classes that extend {@code goog.Disposable} should
+            * override this method.
+            * Not reentrant. To avoid calling it twice, it must only be called from the
+            * subclass' {@code disposeInternal} method. Everywhere else the public
+            * {@code dispose} method must be used.
+            * For example:
+            * <pre>
+            *   mypackage.MyClass = function() {
+            *     goog.base(this);
+            *     // Constructor logic specific to MyClass.
+            *     ...
+            *   };
+            *   goog.inherits(mypackage.MyClass, goog.Disposable);
+            *
+            *   mypackage.MyClass.prototype.disposeInternal = function() {
+            *     // Dispose logic specific to MyClass.
+            *     ...
+            *     // Call superclass's disposeInternal at the end of the subclass's, like
+            *     // in C++, to avoid hard-to-catch issues.
+            *     goog.base(this, 'disposeInternal');
+            *   };
+            * </pre>
+            * @protected
+            */
+            disposeInternal(): void;
     
-        /**
-         * Disposes of the object and its resources.
-         * @return {void} Nothing.
-         */
-        dispose(): void;
+            /**
+            * Disposes of the object and its resources.
+            * @return {void} Nothing.
+            */
+            dispose(): void;
     
-        /**
-         * @return {boolean} Whether the object has been disposed of.
-         */
-        isDisposed(): boolean;
+            /**
+            * @return {boolean} Whether the object has been disposed of.
+            */
+            isDisposed(): boolean;
+        }
     }
 
     /**

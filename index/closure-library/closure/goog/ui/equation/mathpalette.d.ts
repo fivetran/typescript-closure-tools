@@ -4,17 +4,20 @@
 
 declare module goog.ui.equation {
 
-    class MathPalette extends __MathPalette { }
-    class __MathPalette extends goog.ui.equation.__Palette {
+    class MathPalette extends MathPalette.__Class { }
+    module MathPalette {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class extends goog.ui.equation.Palette.__Class {
     
-        /**
-         * Constructs a new math palette.
-         * @param {goog.ui.equation.PaletteManager} paletteManager The
-         *     manager of the palette.
-         * @extends {goog.ui.equation.Palette}
-         * @constructor
-         * @final
-         */
-        constructor(paletteManager: goog.ui.equation.PaletteManager);
+            /**
+            * Constructs a new math palette.
+            * @param {goog.ui.equation.PaletteManager} paletteManager The
+            *     manager of the palette.
+            * @extends {goog.ui.equation.Palette}
+            * @constructor
+            * @final
+            */
+            constructor(paletteManager: goog.ui.equation.PaletteManager);
+        }
     }
 }

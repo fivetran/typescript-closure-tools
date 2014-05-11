@@ -5,38 +5,44 @@
 
 declare module goog.editor.range {
 
-    class Point extends __Point { }
-    class __Point {
+    class Point extends Point.__Class { }
+    module Point {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class {
     
-        /**
-         * One endpoint of a range, represented as a Node and and offset.
-         * @param {Node} node The node containing the point.
-         * @param {number} offset The offset of the point into the node.
-         * @constructor
-         * @final
-         */
-        constructor(node: Node, offset: number);
+            /**
+            * One endpoint of a range, represented as a Node and and offset.
+            * @param {Node} node The node containing the point.
+            * @param {number} offset The offset of the point into the node.
+            * @constructor
+            * @final
+            */
+            constructor(node: Node, offset: number);
     
-        /**
-         * Gets the point of this point's node in the DOM.
-         * @return {!goog.editor.range.Point} The node's point.
-         */
-        getParentPoint(): goog.editor.range.Point;
+            /**
+            * Gets the point of this point's node in the DOM.
+            * @return {!goog.editor.range.Point} The node's point.
+            */
+            getParentPoint(): goog.editor.range.Point;
+        }
     }
 
-    class NormalizedCaretRange_ extends __NormalizedCaretRange_ { }
-    class __NormalizedCaretRange_ extends goog.dom.__SavedCaretRange {
+    class NormalizedCaretRange_ extends NormalizedCaretRange_.__Class { }
+    module NormalizedCaretRange_ {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class extends goog.dom.SavedCaretRange.__Class {
     
-        /**
-         * Saves the range using carets, but normalizes text nodes when carets
-         * are removed.
-         * @see goog.editor.range.saveUsingNormalizedCarets
-         * @param {goog.dom.AbstractRange} range The range being saved.
-         * @constructor
-         * @extends {goog.dom.SavedCaretRange}
-         * @private
-         */
-        constructor(range: goog.dom.AbstractRange);
+            /**
+            * Saves the range using carets, but normalizes text nodes when carets
+            * are removed.
+            * @see goog.editor.range.saveUsingNormalizedCarets
+            * @param {goog.dom.AbstractRange} range The range being saved.
+            * @constructor
+            * @extends {goog.dom.SavedCaretRange}
+            * @private
+            */
+            constructor(range: goog.dom.AbstractRange);
+        }
     }
 
     /**

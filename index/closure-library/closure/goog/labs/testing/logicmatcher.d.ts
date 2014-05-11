@@ -3,108 +3,117 @@
 
 declare module goog.labs.testing {
 
-    class AllOfMatcher extends __AllOfMatcher { }
-    class __AllOfMatcher implements goog.labs.testing.Matcher {
+    class AllOfMatcher extends AllOfMatcher.__Class { }
+    module AllOfMatcher {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class implements goog.labs.testing.Matcher {
     
-        /**
-         * The AllOf matcher.
-         *
-         * @param {!Array.<!goog.labs.testing.Matcher>} matchers Input matchers.
-         *
-         * @constructor
-         * @struct
-         * @implements {goog.labs.testing.Matcher}
-         * @final
-         */
-        constructor(matchers: goog.labs.testing.Matcher[]);
+            /**
+            * The AllOf matcher.
+            *
+            * @param {!Array.<!goog.labs.testing.Matcher>} matchers Input matchers.
+            *
+            * @constructor
+            * @struct
+            * @implements {goog.labs.testing.Matcher}
+            * @final
+            */
+            constructor(matchers: goog.labs.testing.Matcher[]);
     
-        /**
-         * Determines whether a value matches the constraints of the match.
-         *
-         * @param {*} value The object to match.
-         * @return {boolean} Whether the input value matches this matcher.
-         */
-        matches(value: any): boolean;
+            /**
+            * Determines whether a value matches the constraints of the match.
+            *
+            * @param {*} value The object to match.
+            * @return {boolean} Whether the input value matches this matcher.
+            */
+            matches(value: any): boolean;
     
-        /**
-         * Describes why the matcher failed.
-         *
-         * @param {*} value The value that didn't match.
-         * @param {string=} opt_description A partial description to which the reason
-         *     will be appended.
-         *
-         * @return {string} Description of why the matcher failed.
-         */
-        describe(value: any, opt_description?: string): string;
+            /**
+            * Describes why the matcher failed.
+            *
+            * @param {*} value The value that didn't match.
+            * @param {string=} opt_description A partial description to which the reason
+            *     will be appended.
+            *
+            * @return {string} Description of why the matcher failed.
+            */
+            describe(value: any, opt_description?: string): string;
+        }
     }
 
-    class AnyOfMatcher extends __AnyOfMatcher { }
-    class __AnyOfMatcher implements goog.labs.testing.Matcher {
+    class AnyOfMatcher extends AnyOfMatcher.__Class { }
+    module AnyOfMatcher {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class implements goog.labs.testing.Matcher {
     
-        /**
-         * The AnyOf matcher.
-         *
-         * @param {!Array.<!goog.labs.testing.Matcher>} matchers Input matchers.
-         *
-         * @constructor
-         * @struct
-         * @implements {goog.labs.testing.Matcher}
-         * @final
-         */
-        constructor(matchers: goog.labs.testing.Matcher[]);
+            /**
+            * The AnyOf matcher.
+            *
+            * @param {!Array.<!goog.labs.testing.Matcher>} matchers Input matchers.
+            *
+            * @constructor
+            * @struct
+            * @implements {goog.labs.testing.Matcher}
+            * @final
+            */
+            constructor(matchers: goog.labs.testing.Matcher[]);
     
-        /**
-         * Determines whether a value matches the constraints of the match.
-         *
-         * @param {*} value The object to match.
-         * @return {boolean} Whether the input value matches this matcher.
-         */
-        matches(value: any): boolean;
+            /**
+            * Determines whether a value matches the constraints of the match.
+            *
+            * @param {*} value The object to match.
+            * @return {boolean} Whether the input value matches this matcher.
+            */
+            matches(value: any): boolean;
     
-        /**
-         * Describes why the matcher failed.
-         *
-         * @param {*} value The value that didn't match.
-         * @param {string=} opt_description A partial description to which the reason
-         *     will be appended.
-         *
-         * @return {string} Description of why the matcher failed.
-         */
-        describe(value: any, opt_description?: string): string;
+            /**
+            * Describes why the matcher failed.
+            *
+            * @param {*} value The value that didn't match.
+            * @param {string=} opt_description A partial description to which the reason
+            *     will be appended.
+            *
+            * @return {string} Description of why the matcher failed.
+            */
+            describe(value: any, opt_description?: string): string;
+        }
     }
 
-    class IsNotMatcher extends __IsNotMatcher { }
-    class __IsNotMatcher implements goog.labs.testing.Matcher {
+    class IsNotMatcher extends IsNotMatcher.__Class { }
+    module IsNotMatcher {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class implements goog.labs.testing.Matcher {
     
-        /**
-         * The IsNot matcher.
-         *
-         * @param {!goog.labs.testing.Matcher} matcher The matcher to negate.
-         *
-         * @constructor
-         * @struct
-         * @implements {goog.labs.testing.Matcher}
-         * @final
-         */
-        constructor(matcher: goog.labs.testing.Matcher);
+            /**
+            * The IsNot matcher.
+            *
+            * @param {!goog.labs.testing.Matcher} matcher The matcher to negate.
+            *
+            * @constructor
+            * @struct
+            * @implements {goog.labs.testing.Matcher}
+            * @final
+            */
+            constructor(matcher: goog.labs.testing.Matcher);
     
-        /**
-         * Determines whether a value matches the constraints of the match.
-         *
-         * @param {*} value The object to match.
-         * @return {boolean} Whether the input value matches this matcher.
-         */
-        matches(value: any): boolean;
+            /**
+            * Determines whether a value matches the constraints of the match.
+            *
+            * @param {*} value The object to match.
+            * @return {boolean} Whether the input value matches this matcher.
+            */
+            matches(value: any): boolean;
     
-        /**
-         * Describes why the matcher failed.
-         *
-         * @param {*} value The value that didn't match.
-         * @param {string=} opt_description A partial description to which the reason
-         *     will be appended.
-         *
-         * @return {string} Description of why the matcher failed.
-         */
-        describe(value: any, opt_description?: string): string;
+            /**
+            * Describes why the matcher failed.
+            *
+            * @param {*} value The value that didn't match.
+            * @param {string=} opt_description A partial description to which the reason
+            *     will be appended.
+            *
+            * @return {string} Description of why the matcher failed.
+            */
+            describe(value: any, opt_description?: string): string;
+        }
     }
 }

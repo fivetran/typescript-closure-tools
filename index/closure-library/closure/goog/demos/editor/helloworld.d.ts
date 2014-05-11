@@ -3,16 +3,19 @@
 
 declare module goog.demos.editor {
 
-    class HelloWorld extends __HelloWorld { }
-    class __HelloWorld extends goog.editor.__Plugin {
+    class HelloWorld extends HelloWorld.__Class { }
+    module HelloWorld {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class extends goog.editor.Plugin.__Class {
     
-        /**
-         * Plugin to insert 'Hello World!' into an editable field.
-         * @constructor
-         * @extends {goog.editor.Plugin}
-         * @final
-         */
-        constructor();
+            /**
+            * Plugin to insert 'Hello World!' into an editable field.
+            * @constructor
+            * @extends {goog.editor.Plugin}
+            * @final
+            */
+            constructor();
+        }
     }
 }
 

@@ -2,34 +2,37 @@
 
 declare module goog.dom.pattern.callback {
 
-    class Test extends __Test { }
-    class __Test {
+    class Test extends Test.__Class { }
+    module Test {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class {
     
-        /**
-         * Callback class for testing for at least one match.
-         * @constructor
-         * @final
-         */
-        constructor();
+            /**
+            * Callback class for testing for at least one match.
+            * @constructor
+            * @final
+            */
+            constructor();
     
-        /**
-         * Whether or not the pattern matched.
-         *
-         * @type {boolean}
-         */
-        matched: boolean;
+            /**
+            * Whether or not the pattern matched.
+            *
+            * @type {boolean}
+            */
+            matched: boolean;
     
-        /**
-         * Get a bound callback function that is suitable as a callback for
-         * {@link goog.dom.pattern.Matcher}.
-         *
-         * @return {Function} A callback function.
-         */
-        getCallback(): Function;
+            /**
+            * Get a bound callback function that is suitable as a callback for
+            * {@link goog.dom.pattern.Matcher}.
+            *
+            * @return {Function} A callback function.
+            */
+            getCallback(): Function;
     
-        /**
-         * Reset the counter.
-         */
-        reset(): void;
+            /**
+            * Reset the counter.
+            */
+            reset(): void;
+        }
     }
 }

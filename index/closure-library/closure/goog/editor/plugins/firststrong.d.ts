@@ -3,16 +3,19 @@
 
 declare module goog.editor.plugins {
 
-    class FirstStrong extends __FirstStrong { }
-    class __FirstStrong extends goog.editor.__Plugin {
+    class FirstStrong extends FirstStrong.__Class { }
+    module FirstStrong {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class extends goog.editor.Plugin.__Class {
     
-        /**
-         * First Strong plugin.
-         * @constructor
-         * @extends {goog.editor.Plugin}
-         * @final
-         */
-        constructor();
+            /**
+            * First Strong plugin.
+            * @constructor
+            * @extends {goog.editor.Plugin}
+            * @final
+            */
+            constructor();
+        }
     }
 }
 

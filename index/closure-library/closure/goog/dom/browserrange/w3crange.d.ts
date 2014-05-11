@@ -3,24 +3,27 @@
 
 declare module goog.dom.browserrange {
 
-    class W3cRange extends __W3cRange { }
-    class __W3cRange extends goog.dom.browserrange.__AbstractRange {
+    class W3cRange extends W3cRange.__Class { }
+    module W3cRange {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class extends goog.dom.browserrange.AbstractRange.__Class {
     
-        /**
-         * The constructor for W3C specific browser ranges.
-         * @param {Range} range The range object.
-         * @constructor
-         * @extends {goog.dom.browserrange.AbstractRange}
-         */
-        constructor(range: Range);
+            /**
+            * The constructor for W3C specific browser ranges.
+            * @param {Range} range The range object.
+            * @constructor
+            * @extends {goog.dom.browserrange.AbstractRange}
+            */
+            constructor(range: Range);
     
-        /**
-         * Select this range.
-         * @param {Selection} selection Browser selection object.
-         * @param {*} reverse Whether to select this range in reverse.
-         * @protected
-         */
-        selectInternal(selection: Selection, reverse: any): void;
+            /**
+            * Select this range.
+            * @param {Selection} selection Browser selection object.
+            * @param {*} reverse Whether to select this range in reverse.
+            * @protected
+            */
+            selectInternal(selection: Selection, reverse: any): void;
+        }
     }
 }
 

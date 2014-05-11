@@ -3,15 +3,18 @@
 
 declare module goog.editor.plugins {
 
-    class BasicTextFormatter extends __BasicTextFormatter { }
-    class __BasicTextFormatter extends goog.editor.__Plugin {
+    class BasicTextFormatter extends BasicTextFormatter.__Class { }
+    module BasicTextFormatter {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class extends goog.editor.Plugin.__Class {
     
-        /**
-         * Functions to style text (e.g. underline, make bold, etc.)
-         * @constructor
-         * @extends {goog.editor.Plugin}
-         */
-        constructor();
+            /**
+            * Functions to style text (e.g. underline, make bold, etc.)
+            * @constructor
+            * @extends {goog.editor.Plugin}
+            */
+            constructor();
+        }
     }
 }
 

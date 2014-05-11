@@ -3,488 +3,494 @@
 
 declare module goog {
 
-    class Uri extends __Uri { }
-    class __Uri {
+    class Uri extends Uri.__Class { }
+    module Uri {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class {
     
-        /**
-         * This class contains setters and getters for the parts of the URI.
-         * The <code>getXyz</code>/<code>setXyz</code> methods return the decoded part
-         * -- so<code>goog.Uri.parse('/foo%20bar').getPath()</code> will return the
-         * decoded path, <code>/foo bar</code>.
-         *
-         * The constructor accepts an optional unparsed, raw URI string.  The parser
-         * is relaxed, so special characters that aren't escaped but don't cause
-         * ambiguities will not cause parse failures.
-         *
-         * All setters return <code>this</code> and so may be chained, a la
-         * <code>goog.Uri.parse('/foo').setFragment('part').toString()</code>.
-         *
-         * @param {*=} opt_uri Optional string URI to parse
-         *        (use goog.Uri.create() to create a URI from parts), or if
-         *        a goog.Uri is passed, a clone is created.
-         * @param {boolean=} opt_ignoreCase If true, #getParameterValue will ignore
-         * the case of the parameter name.
-         *
-         * @constructor
-         */
-        constructor(opt_uri?: any, opt_ignoreCase?: boolean);
+            /**
+            * This class contains setters and getters for the parts of the URI.
+            * The <code>getXyz</code>/<code>setXyz</code> methods return the decoded part
+            * -- so<code>goog.Uri.parse('/foo%20bar').getPath()</code> will return the
+            * decoded path, <code>/foo bar</code>.
+            *
+            * The constructor accepts an optional unparsed, raw URI string.  The parser
+            * is relaxed, so special characters that aren't escaped but don't cause
+            * ambiguities will not cause parse failures.
+            *
+            * All setters return <code>this</code> and so may be chained, a la
+            * <code>goog.Uri.parse('/foo').setFragment('part').toString()</code>.
+            *
+            * @param {*=} opt_uri Optional string URI to parse
+            *        (use goog.Uri.create() to create a URI from parts), or if
+            *        a goog.Uri is passed, a clone is created.
+            * @param {boolean=} opt_ignoreCase If true, #getParameterValue will ignore
+            * the case of the parameter name.
+            *
+            * @constructor
+            */
+            constructor(opt_uri?: any, opt_ignoreCase?: boolean);
     
-        /**
-         * Resolves the given relative URI (a goog.Uri object), using the URI
-         * represented by this instance as the base URI.
-         *
-         * There are several kinds of relative URIs:<br>
-         * 1. foo - replaces the last part of the path, the whole query and fragment<br>
-         * 2. /foo - replaces the the path, the query and fragment<br>
-         * 3. //foo - replaces everything from the domain on.  foo is a domain name<br>
-         * 4. ?foo - replace the query and fragment<br>
-         * 5. #foo - replace the fragment only
-         *
-         * Additionally, if relative URI has a non-empty path, all ".." and "."
-         * segments will be resolved, as described in RFC 3986.
-         *
-         * @param {goog.Uri} relativeUri The relative URI to resolve.
-         * @return {!goog.Uri} The resolved URI.
-         */
-        resolve(relativeUri: goog.Uri): goog.Uri;
+            /**
+            * Resolves the given relative URI (a goog.Uri object), using the URI
+            * represented by this instance as the base URI.
+            *
+            * There are several kinds of relative URIs:<br>
+            * 1. foo - replaces the last part of the path, the whole query and fragment<br>
+            * 2. /foo - replaces the the path, the query and fragment<br>
+            * 3. //foo - replaces everything from the domain on.  foo is a domain name<br>
+            * 4. ?foo - replace the query and fragment<br>
+            * 5. #foo - replace the fragment only
+            *
+            * Additionally, if relative URI has a non-empty path, all ".." and "."
+            * segments will be resolved, as described in RFC 3986.
+            *
+            * @param {goog.Uri} relativeUri The relative URI to resolve.
+            * @return {!goog.Uri} The resolved URI.
+            */
+            resolve(relativeUri: goog.Uri): goog.Uri;
     
-        /**
-         * Clones the URI instance.
-         * @return {!goog.Uri} New instance of the URI object.
-         */
-        clone(): goog.Uri;
+            /**
+            * Clones the URI instance.
+            * @return {!goog.Uri} New instance of the URI object.
+            */
+            clone(): goog.Uri;
     
-        /**
-         * @return {string} The encoded scheme/protocol for the URI.
-         */
-        getScheme(): string;
+            /**
+            * @return {string} The encoded scheme/protocol for the URI.
+            */
+            getScheme(): string;
     
-        /**
-         * Sets the scheme/protocol.
-         * @param {string} newScheme New scheme value.
-         * @param {boolean=} opt_decode Optional param for whether to decode new value.
-         * @return {!goog.Uri} Reference to this URI object.
-         */
-        setScheme(newScheme: string, opt_decode?: boolean): goog.Uri;
+            /**
+            * Sets the scheme/protocol.
+            * @param {string} newScheme New scheme value.
+            * @param {boolean=} opt_decode Optional param for whether to decode new value.
+            * @return {!goog.Uri} Reference to this URI object.
+            */
+            setScheme(newScheme: string, opt_decode?: boolean): goog.Uri;
     
-        /**
-         * @return {boolean} Whether the scheme has been set.
-         */
-        hasScheme(): boolean;
+            /**
+            * @return {boolean} Whether the scheme has been set.
+            */
+            hasScheme(): boolean;
     
-        /**
-         * @return {string} The decoded user info.
-         */
-        getUserInfo(): string;
+            /**
+            * @return {string} The decoded user info.
+            */
+            getUserInfo(): string;
     
-        /**
-         * Sets the userInfo.
-         * @param {string} newUserInfo New userInfo value.
-         * @param {boolean=} opt_decode Optional param for whether to decode new value.
-         * @return {!goog.Uri} Reference to this URI object.
-         */
-        setUserInfo(newUserInfo: string, opt_decode?: boolean): goog.Uri;
+            /**
+            * Sets the userInfo.
+            * @param {string} newUserInfo New userInfo value.
+            * @param {boolean=} opt_decode Optional param for whether to decode new value.
+            * @return {!goog.Uri} Reference to this URI object.
+            */
+            setUserInfo(newUserInfo: string, opt_decode?: boolean): goog.Uri;
     
-        /**
-         * @return {boolean} Whether the user info has been set.
-         */
-        hasUserInfo(): boolean;
+            /**
+            * @return {boolean} Whether the user info has been set.
+            */
+            hasUserInfo(): boolean;
     
-        /**
-         * @return {string} The decoded domain.
-         */
-        getDomain(): string;
+            /**
+            * @return {string} The decoded domain.
+            */
+            getDomain(): string;
     
-        /**
-         * Sets the domain.
-         * @param {string} newDomain New domain value.
-         * @param {boolean=} opt_decode Optional param for whether to decode new value.
-         * @return {!goog.Uri} Reference to this URI object.
-         */
-        setDomain(newDomain: string, opt_decode?: boolean): goog.Uri;
+            /**
+            * Sets the domain.
+            * @param {string} newDomain New domain value.
+            * @param {boolean=} opt_decode Optional param for whether to decode new value.
+            * @return {!goog.Uri} Reference to this URI object.
+            */
+            setDomain(newDomain: string, opt_decode?: boolean): goog.Uri;
     
-        /**
-         * @return {boolean} Whether the domain has been set.
-         */
-        hasDomain(): boolean;
+            /**
+            * @return {boolean} Whether the domain has been set.
+            */
+            hasDomain(): boolean;
     
-        /**
-         * @return {?number} The port number.
-         */
-        getPort(): number;
+            /**
+            * @return {?number} The port number.
+            */
+            getPort(): number;
     
-        /**
-         * Sets the port number.
-         * @param {*} newPort Port number. Will be explicitly casted to a number.
-         * @return {!goog.Uri} Reference to this URI object.
-         */
-        setPort(newPort: any): goog.Uri;
+            /**
+            * Sets the port number.
+            * @param {*} newPort Port number. Will be explicitly casted to a number.
+            * @return {!goog.Uri} Reference to this URI object.
+            */
+            setPort(newPort: any): goog.Uri;
     
-        /**
-         * @return {boolean} Whether the port has been set.
-         */
-        hasPort(): boolean;
+            /**
+            * @return {boolean} Whether the port has been set.
+            */
+            hasPort(): boolean;
     
-        /**
-         * @return {string} The decoded path.
-         */
-        getPath(): string;
+            /**
+            * @return {string} The decoded path.
+            */
+            getPath(): string;
     
-        /**
-         * Sets the path.
-         * @param {string} newPath New path value.
-         * @param {boolean=} opt_decode Optional param for whether to decode new value.
-         * @return {!goog.Uri} Reference to this URI object.
-         */
-        setPath(newPath: string, opt_decode?: boolean): goog.Uri;
+            /**
+            * Sets the path.
+            * @param {string} newPath New path value.
+            * @param {boolean=} opt_decode Optional param for whether to decode new value.
+            * @return {!goog.Uri} Reference to this URI object.
+            */
+            setPath(newPath: string, opt_decode?: boolean): goog.Uri;
     
-        /**
-         * @return {boolean} Whether the path has been set.
-         */
-        hasPath(): boolean;
+            /**
+            * @return {boolean} Whether the path has been set.
+            */
+            hasPath(): boolean;
     
-        /**
-         * @return {boolean} Whether the query string has been set.
-         */
-        hasQuery(): boolean;
+            /**
+            * @return {boolean} Whether the query string has been set.
+            */
+            hasQuery(): boolean;
     
-        /**
-         * Sets the query data.
-         * @param {goog.Uri.QueryData|string|undefined} queryData QueryData object.
-         * @param {boolean=} opt_decode Optional param for whether to decode new value.
-         *     Applies only if queryData is a string.
-         * @return {!goog.Uri} Reference to this URI object.
-         */
-        setQueryData(queryData: goog.Uri.QueryData, opt_decode?: boolean): goog.Uri;
-        /**
-         * Sets the query data.
-         * @param {goog.Uri.QueryData|string|undefined} queryData QueryData object.
-         * @param {boolean=} opt_decode Optional param for whether to decode new value.
-         *     Applies only if queryData is a string.
-         * @return {!goog.Uri} Reference to this URI object.
-         */
-        setQueryData(queryData: string, opt_decode?: boolean): goog.Uri;
-        /**
-         * Sets the query data.
-         * @param {goog.Uri.QueryData|string|undefined} queryData QueryData object.
-         * @param {boolean=} opt_decode Optional param for whether to decode new value.
-         *     Applies only if queryData is a string.
-         * @return {!goog.Uri} Reference to this URI object.
-         */
-        setQueryData(queryData: any /*undefined*/, opt_decode?: boolean): goog.Uri;
+            /**
+            * Sets the query data.
+            * @param {goog.Uri.QueryData|string|undefined} queryData QueryData object.
+            * @param {boolean=} opt_decode Optional param for whether to decode new value.
+            *     Applies only if queryData is a string.
+            * @return {!goog.Uri} Reference to this URI object.
+            */
+            setQueryData(queryData: goog.Uri.QueryData, opt_decode?: boolean): goog.Uri;
+            /**
+            * Sets the query data.
+            * @param {goog.Uri.QueryData|string|undefined} queryData QueryData object.
+            * @param {boolean=} opt_decode Optional param for whether to decode new value.
+            *     Applies only if queryData is a string.
+            * @return {!goog.Uri} Reference to this URI object.
+            */
+            setQueryData(queryData: string, opt_decode?: boolean): goog.Uri;
+            /**
+            * Sets the query data.
+            * @param {goog.Uri.QueryData|string|undefined} queryData QueryData object.
+            * @param {boolean=} opt_decode Optional param for whether to decode new value.
+            *     Applies only if queryData is a string.
+            * @return {!goog.Uri} Reference to this URI object.
+            */
+            setQueryData(queryData: any /*undefined*/, opt_decode?: boolean): goog.Uri;
     
-        /**
-         * Sets the URI query.
-         * @param {string} newQuery New query value.
-         * @param {boolean=} opt_decode Optional param for whether to decode new value.
-         * @return {!goog.Uri} Reference to this URI object.
-         */
-        setQuery(newQuery: string, opt_decode?: boolean): goog.Uri;
+            /**
+            * Sets the URI query.
+            * @param {string} newQuery New query value.
+            * @param {boolean=} opt_decode Optional param for whether to decode new value.
+            * @return {!goog.Uri} Reference to this URI object.
+            */
+            setQuery(newQuery: string, opt_decode?: boolean): goog.Uri;
     
-        /**
-         * @return {string} The encoded URI query, not including the ?.
-         */
-        getEncodedQuery(): string;
+            /**
+            * @return {string} The encoded URI query, not including the ?.
+            */
+            getEncodedQuery(): string;
     
-        /**
-         * @return {string} The decoded URI query, not including the ?.
-         */
-        getDecodedQuery(): string;
+            /**
+            * @return {string} The decoded URI query, not including the ?.
+            */
+            getDecodedQuery(): string;
     
-        /**
-         * Returns the query data.
-         * @return {!goog.Uri.QueryData} QueryData object.
-         */
-        getQueryData(): goog.Uri.QueryData;
+            /**
+            * Returns the query data.
+            * @return {!goog.Uri.QueryData} QueryData object.
+            */
+            getQueryData(): goog.Uri.QueryData;
     
-        /**
-         * @return {string} The encoded URI query, not including the ?.
-         *
-         * Warning: This method, unlike other getter methods, returns encoded
-         * value, instead of decoded one.
-         */
-        getQuery(): string;
+            /**
+            * @return {string} The encoded URI query, not including the ?.
+            *
+            * Warning: This method, unlike other getter methods, returns encoded
+            * value, instead of decoded one.
+            */
+            getQuery(): string;
     
-        /**
-         * Sets the value of the named query parameters, clearing previous values for
-         * that key.
-         *
-         * @param {string} key The parameter to set.
-         * @param {*} value The new value.
-         * @return {!goog.Uri} Reference to this URI object.
-         */
-        setParameterValue(key: string, value: any): goog.Uri;
+            /**
+            * Sets the value of the named query parameters, clearing previous values for
+            * that key.
+            *
+            * @param {string} key The parameter to set.
+            * @param {*} value The new value.
+            * @return {!goog.Uri} Reference to this URI object.
+            */
+            setParameterValue(key: string, value: any): goog.Uri;
     
-        /**
-         * Sets the values of the named query parameters, clearing previous values for
-         * that key.  Not new values will currently be moved to the end of the query
-         * string.
-         *
-         * So, <code>goog.Uri.parse('foo?a=b&c=d&e=f').setParameterValues('c', ['new'])
-         * </code> yields <tt>foo?a=b&e=f&c=new</tt>.</p>
-         *
-         * @param {string} key The parameter to set.
-         * @param {*} values The new values. If values is a single
-         *     string then it will be treated as the sole value.
-         * @return {!goog.Uri} Reference to this URI object.
-         */
-        setParameterValues(key: string, values: any): goog.Uri;
+            /**
+            * Sets the values of the named query parameters, clearing previous values for
+            * that key.  Not new values will currently be moved to the end of the query
+            * string.
+            *
+            * So, <code>goog.Uri.parse('foo?a=b&c=d&e=f').setParameterValues('c', ['new'])
+            * </code> yields <tt>foo?a=b&e=f&c=new</tt>.</p>
+            *
+            * @param {string} key The parameter to set.
+            * @param {*} values The new values. If values is a single
+            *     string then it will be treated as the sole value.
+            * @return {!goog.Uri} Reference to this URI object.
+            */
+            setParameterValues(key: string, values: any): goog.Uri;
     
-        /**
-         * Returns the value<b>s</b> for a given cgi parameter as a list of decoded
-         * query parameter values.
-         * @param {string} name The parameter to get values for.
-         * @return {!Array} The values for a given cgi parameter as a list of
-         *     decoded query parameter values.
-         */
-        getParameterValues(name: string): any[];
+            /**
+            * Returns the value<b>s</b> for a given cgi parameter as a list of decoded
+            * query parameter values.
+            * @param {string} name The parameter to get values for.
+            * @return {!Array} The values for a given cgi parameter as a list of
+            *     decoded query parameter values.
+            */
+            getParameterValues(name: string): any[];
     
-        /**
-         * Returns the first value for a given cgi parameter or undefined if the given
-         * parameter name does not appear in the query string.
-         * @param {string} paramName Unescaped parameter name.
-         * @return {string|undefined} The first value for a given cgi parameter or
-         *     undefined if the given parameter name does not appear in the query
-         *     string.
-         */
-        getParameterValue(paramName: string): any /*string|any (undefined)*/;
+            /**
+            * Returns the first value for a given cgi parameter or undefined if the given
+            * parameter name does not appear in the query string.
+            * @param {string} paramName Unescaped parameter name.
+            * @return {string|undefined} The first value for a given cgi parameter or
+            *     undefined if the given parameter name does not appear in the query
+            *     string.
+            */
+            getParameterValue(paramName: string): any /*string|any (undefined)*/;
     
-        /**
-         * @return {string} The URI fragment, not including the #.
-         */
-        getFragment(): string;
+            /**
+            * @return {string} The URI fragment, not including the #.
+            */
+            getFragment(): string;
     
-        /**
-         * Sets the URI fragment.
-         * @param {string} newFragment New fragment value.
-         * @param {boolean=} opt_decode Optional param for whether to decode new value.
-         * @return {!goog.Uri} Reference to this URI object.
-         */
-        setFragment(newFragment: string, opt_decode?: boolean): goog.Uri;
+            /**
+            * Sets the URI fragment.
+            * @param {string} newFragment New fragment value.
+            * @param {boolean=} opt_decode Optional param for whether to decode new value.
+            * @return {!goog.Uri} Reference to this URI object.
+            */
+            setFragment(newFragment: string, opt_decode?: boolean): goog.Uri;
     
-        /**
-         * @return {boolean} Whether the URI has a fragment set.
-         */
-        hasFragment(): boolean;
+            /**
+            * @return {boolean} Whether the URI has a fragment set.
+            */
+            hasFragment(): boolean;
     
-        /**
-         * Returns true if this has the same domain as that of uri2.
-         * @param {goog.Uri} uri2 The URI object to compare to.
-         * @return {boolean} true if same domain; false otherwise.
-         */
-        hasSameDomainAs(uri2: goog.Uri): boolean;
+            /**
+            * Returns true if this has the same domain as that of uri2.
+            * @param {goog.Uri} uri2 The URI object to compare to.
+            * @return {boolean} true if same domain; false otherwise.
+            */
+            hasSameDomainAs(uri2: goog.Uri): boolean;
     
-        /**
-         * Adds a random parameter to the Uri.
-         * @return {!goog.Uri} Reference to this Uri object.
-         */
-        makeUnique(): goog.Uri;
+            /**
+            * Adds a random parameter to the Uri.
+            * @return {!goog.Uri} Reference to this Uri object.
+            */
+            makeUnique(): goog.Uri;
     
-        /**
-         * Removes the named query parameter.
-         *
-         * @param {string} key The parameter to remove.
-         * @return {!goog.Uri} Reference to this URI object.
-         */
-        removeParameter(key: string): goog.Uri;
+            /**
+            * Removes the named query parameter.
+            *
+            * @param {string} key The parameter to remove.
+            * @return {!goog.Uri} Reference to this URI object.
+            */
+            removeParameter(key: string): goog.Uri;
     
-        /**
-         * Sets whether Uri is read only. If this goog.Uri is read-only,
-         * enforceReadOnly_ will be called at the start of any function that may modify
-         * this Uri.
-         * @param {boolean} isReadOnly whether this goog.Uri should be read only.
-         * @return {!goog.Uri} Reference to this Uri object.
-         */
-        setReadOnly(isReadOnly: boolean): goog.Uri;
+            /**
+            * Sets whether Uri is read only. If this goog.Uri is read-only,
+            * enforceReadOnly_ will be called at the start of any function that may modify
+            * this Uri.
+            * @param {boolean} isReadOnly whether this goog.Uri should be read only.
+            * @return {!goog.Uri} Reference to this Uri object.
+            */
+            setReadOnly(isReadOnly: boolean): goog.Uri;
     
-        /**
-         * @return {boolean} Whether the URI is read only.
-         */
-        isReadOnly(): boolean;
+            /**
+            * @return {boolean} Whether the URI is read only.
+            */
+            isReadOnly(): boolean;
     
-        /**
-         * Checks if this Uri has been marked as read only, and if so, throws an error.
-         * This should be called whenever any modifying function is called.
-         */
-        enforceReadOnly(): void;
+            /**
+            * Checks if this Uri has been marked as read only, and if so, throws an error.
+            * This should be called whenever any modifying function is called.
+            */
+            enforceReadOnly(): void;
     
-        /**
-         * Sets whether to ignore case.
-         * NOTE: If there are already key/value pairs in the QueryData, and
-         * ignoreCase_ is set to false, the keys will all be lower-cased.
-         * @param {boolean} ignoreCase whether this goog.Uri should ignore case.
-         * @return {!goog.Uri} Reference to this Uri object.
-         */
-        setIgnoreCase(ignoreCase: boolean): goog.Uri;
+            /**
+            * Sets whether to ignore case.
+            * NOTE: If there are already key/value pairs in the QueryData, and
+            * ignoreCase_ is set to false, the keys will all be lower-cased.
+            * @param {boolean} ignoreCase whether this goog.Uri should ignore case.
+            * @return {!goog.Uri} Reference to this Uri object.
+            */
+            setIgnoreCase(ignoreCase: boolean): goog.Uri;
     
-        /**
-         * @return {boolean} Whether to ignore case.
-         */
-        getIgnoreCase(): boolean;
+            /**
+            * @return {boolean} Whether to ignore case.
+            */
+            getIgnoreCase(): boolean;
+        }
     }
 }
 
 declare module goog.Uri {
 
-    class QueryData extends __QueryData { }
-    class __QueryData {
+    class QueryData extends QueryData.__Class { }
+    module QueryData {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class {
     
-        /**
-         * Class used to represent URI query parameters.  It is essentially a hash of
-         * name-value pairs, though a name can be present more than once.
-         *
-         * Has the same interface as the collections in goog.structs.
-         *
-         * @param {?string=} opt_query Optional encoded query string to parse into
-         *     the object.
-         * @param {goog.Uri=} opt_uri Optional uri object that should have its
-         *     cache invalidated when this object updates. Deprecated -- this
-         *     is no longer required.
-         * @param {boolean=} opt_ignoreCase If true, ignore the case of the parameter
-         *     name in #get.
-         * @constructor
-         * @final
-         */
-        constructor(opt_query?: string, opt_uri?: goog.Uri, opt_ignoreCase?: boolean);
+            /**
+            * Class used to represent URI query parameters.  It is essentially a hash of
+            * name-value pairs, though a name can be present more than once.
+            *
+            * Has the same interface as the collections in goog.structs.
+            *
+            * @param {?string=} opt_query Optional encoded query string to parse into
+            *     the object.
+            * @param {goog.Uri=} opt_uri Optional uri object that should have its
+            *     cache invalidated when this object updates. Deprecated -- this
+            *     is no longer required.
+            * @param {boolean=} opt_ignoreCase If true, ignore the case of the parameter
+            *     name in #get.
+            * @constructor
+            * @final
+            */
+            constructor(opt_query?: string, opt_uri?: goog.Uri, opt_ignoreCase?: boolean);
     
-        /**
-         * @return {?number} The number of parameters.
-         */
-        getCount(): number;
+            /**
+            * @return {?number} The number of parameters.
+            */
+            getCount(): number;
     
-        /**
-         * Adds a key value pair.
-         * @param {string} key Name.
-         * @param {*} value Value.
-         * @return {!goog.Uri.QueryData} Instance of this object.
-         */
-        add(key: string, value: any): goog.Uri.QueryData;
+            /**
+            * Adds a key value pair.
+            * @param {string} key Name.
+            * @param {*} value Value.
+            * @return {!goog.Uri.QueryData} Instance of this object.
+            */
+            add(key: string, value: any): goog.Uri.QueryData;
     
-        /**
-         * Removes all the params with the given key.
-         * @param {string} key Name.
-         * @return {boolean} Whether any parameter was removed.
-         */
-        remove(key: string): boolean;
+            /**
+            * Removes all the params with the given key.
+            * @param {string} key Name.
+            * @return {boolean} Whether any parameter was removed.
+            */
+            remove(key: string): boolean;
     
-        /**
-         * Clears the parameters.
-         */
-        clear(): void;
+            /**
+            * Clears the parameters.
+            */
+            clear(): void;
     
-        /**
-         * @return {boolean} Whether we have any parameters.
-         */
-        isEmpty(): boolean;
+            /**
+            * @return {boolean} Whether we have any parameters.
+            */
+            isEmpty(): boolean;
     
-        /**
-         * Whether there is a parameter with the given name
-         * @param {string} key The parameter name to check for.
-         * @return {boolean} Whether there is a parameter with the given name.
-         */
-        containsKey(key: string): boolean;
+            /**
+            * Whether there is a parameter with the given name
+            * @param {string} key The parameter name to check for.
+            * @return {boolean} Whether there is a parameter with the given name.
+            */
+            containsKey(key: string): boolean;
     
-        /**
-         * Whether there is a parameter with the given value.
-         * @param {*} value The value to check for.
-         * @return {boolean} Whether there is a parameter with the given value.
-         */
-        containsValue(value: any): boolean;
+            /**
+            * Whether there is a parameter with the given value.
+            * @param {*} value The value to check for.
+            * @return {boolean} Whether there is a parameter with the given value.
+            */
+            containsValue(value: any): boolean;
     
-        /**
-         * Returns all the keys of the parameters. If a key is used multiple times
-         * it will be included multiple times in the returned array
-         * @return {!Array.<string>} All the keys of the parameters.
-         */
-        getKeys(): string[];
+            /**
+            * Returns all the keys of the parameters. If a key is used multiple times
+            * it will be included multiple times in the returned array
+            * @return {!Array.<string>} All the keys of the parameters.
+            */
+            getKeys(): string[];
     
-        /**
-         * Returns all the values of the parameters with the given name. If the query
-         * data has no such key this will return an empty array. If no key is given
-         * all values wil be returned.
-         * @param {string=} opt_key The name of the parameter to get the values for.
-         * @return {!Array} All the values of the parameters with the given name.
-         */
-        getValues(opt_key?: string): any[];
+            /**
+            * Returns all the values of the parameters with the given name. If the query
+            * data has no such key this will return an empty array. If no key is given
+            * all values wil be returned.
+            * @param {string=} opt_key The name of the parameter to get the values for.
+            * @return {!Array} All the values of the parameters with the given name.
+            */
+            getValues(opt_key?: string): any[];
     
-        /**
-         * Sets a key value pair and removes all other keys with the same value.
-         *
-         * @param {string} key Name.
-         * @param {*} value Value.
-         * @return {!goog.Uri.QueryData} Instance of this object.
-         */
-        set(key: string, value: any): goog.Uri.QueryData;
+            /**
+            * Sets a key value pair and removes all other keys with the same value.
+            *
+            * @param {string} key Name.
+            * @param {*} value Value.
+            * @return {!goog.Uri.QueryData} Instance of this object.
+            */
+            set(key: string, value: any): goog.Uri.QueryData;
     
-        /**
-         * Returns the first value associated with the key. If the query data has no
-         * such key this will return undefined or the optional default.
-         * @param {string} key The name of the parameter to get the value for.
-         * @param {*=} opt_default The default value to return if the query data
-         *     has no such key.
-         * @return {*} The first string value associated with the key, or opt_default
-         *     if there's no value.
-         */
-        get(key: string, opt_default?: any): any;
+            /**
+            * Returns the first value associated with the key. If the query data has no
+            * such key this will return undefined or the optional default.
+            * @param {string} key The name of the parameter to get the value for.
+            * @param {*=} opt_default The default value to return if the query data
+            *     has no such key.
+            * @return {*} The first string value associated with the key, or opt_default
+            *     if there's no value.
+            */
+            get(key: string, opt_default?: any): any;
     
-        /**
-         * Sets the values for a key. If the key already exists, this will
-         * override all of the existing values that correspond to the key.
-         * @param {string} key The key to set values for.
-         * @param {Array} values The values to set.
-         */
-        setValues(key: string, values: any[]): void;
+            /**
+            * Sets the values for a key. If the key already exists, this will
+            * override all of the existing values that correspond to the key.
+            * @param {string} key The key to set values for.
+            * @param {Array} values The values to set.
+            */
+            setValues(key: string, values: any[]): void;
     
-        /**
-         * @return {string} Decoded query string.
-         */
-        toDecodedString(): string;
+            /**
+            * @return {string} Decoded query string.
+            */
+            toDecodedString(): string;
     
-        /**
-         * Removes all keys that are not in the provided list. (Modifies this object.)
-         * @param {Array.<string>} keys The desired keys.
-         * @return {!goog.Uri.QueryData} a reference to this object.
-         */
-        filterKeys(keys: string[]): goog.Uri.QueryData;
+            /**
+            * Removes all keys that are not in the provided list. (Modifies this object.)
+            * @param {Array.<string>} keys The desired keys.
+            * @return {!goog.Uri.QueryData} a reference to this object.
+            */
+            filterKeys(keys: string[]): goog.Uri.QueryData;
     
-        /**
-         * Clone the query data instance.
-         * @return {!goog.Uri.QueryData} New instance of the QueryData object.
-         */
-        clone(): goog.Uri.QueryData;
+            /**
+            * Clone the query data instance.
+            * @return {!goog.Uri.QueryData} New instance of the QueryData object.
+            */
+            clone(): goog.Uri.QueryData;
     
-        /**
-         * Ignore case in parameter names.
-         * NOTE: If there are already key/value pairs in the QueryData, and
-         * ignoreCase_ is set to false, the keys will all be lower-cased.
-         * @param {boolean} ignoreCase whether this goog.Uri should ignore case.
-         */
-        setIgnoreCase(ignoreCase: boolean): void;
+            /**
+            * Ignore case in parameter names.
+            * NOTE: If there are already key/value pairs in the QueryData, and
+            * ignoreCase_ is set to false, the keys will all be lower-cased.
+            * @param {boolean} ignoreCase whether this goog.Uri should ignore case.
+            */
+            setIgnoreCase(ignoreCase: boolean): void;
     
-        /**
-         * Extends a query data object with another query data or map like object. This
-         * operates 'in-place', it does not create a new QueryData object.
-         *
-         * @param {...(goog.Uri.QueryData|goog.structs.Map|Object)} var_args The object
-         *     from which key value pairs will be copied.
-         */
-        extend(...var_args: goog.Uri.QueryData[]): void;
-        /**
-         * Extends a query data object with another query data or map like object. This
-         * operates 'in-place', it does not create a new QueryData object.
-         *
-         * @param {...(goog.Uri.QueryData|goog.structs.Map|Object)} var_args The object
-         *     from which key value pairs will be copied.
-         */
-        extend(...var_args: goog.structs.Map<any, any>[]): void;
-        /**
-         * Extends a query data object with another query data or map like object. This
-         * operates 'in-place', it does not create a new QueryData object.
-         *
-         * @param {...(goog.Uri.QueryData|goog.structs.Map|Object)} var_args The object
-         *     from which key value pairs will be copied.
-         */
-        extend(...var_args: Object[]): void;
+            /**
+            * Extends a query data object with another query data or map like object. This
+            * operates 'in-place', it does not create a new QueryData object.
+            *
+            * @param {...(goog.Uri.QueryData|goog.structs.Map|Object)} var_args The object
+            *     from which key value pairs will be copied.
+            */
+            extend(...var_args: goog.Uri.QueryData[]): void;
+            /**
+            * Extends a query data object with another query data or map like object. This
+            * operates 'in-place', it does not create a new QueryData object.
+            *
+            * @param {...(goog.Uri.QueryData|goog.structs.Map|Object)} var_args The object
+            *     from which key value pairs will be copied.
+            */
+            extend(...var_args: goog.structs.Map<any, any>[]): void;
+            /**
+            * Extends a query data object with another query data or map like object. This
+            * operates 'in-place', it does not create a new QueryData object.
+            *
+            * @param {...(goog.Uri.QueryData|goog.structs.Map|Object)} var_args The object
+            *     from which key value pairs will be copied.
+            */
+            extend(...var_args: Object[]): void;
+        }
     }
 
     /**

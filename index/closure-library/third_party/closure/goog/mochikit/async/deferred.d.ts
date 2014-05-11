@@ -5,350 +5,362 @@
 
 declare module goog.async {
 
-    class Deferred<VALUE> extends __Deferred<VALUE> { }
-    class __Deferred<VALUE> implements goog.Thenable<VALUE> {
+    class Deferred<VALUE> extends Deferred.__Class<VALUE> { }
+    module Deferred {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class<VALUE> implements goog.Thenable<VALUE> {
     
-        /**
-         * A Deferred represents the result of an asynchronous operation. A Deferred
-         * instance has no result when it is created, and is "fired" (given an initial
-         * result) by calling {@code callback} or {@code errback}.
-         *
-         * Once fired, the result is passed through a sequence of callback functions
-         * registered with {@code addCallback} or {@code addErrback}. The functions may
-         * mutate the result before it is passed to the next function in the sequence.
-         *
-         * Callbacks and errbacks may be added at any time, including after the Deferred
-         * has been "fired". If there are no pending actions in the execution sequence
-         * of a fired Deferred, any new callback functions will be called with the last
-         * computed result. Adding a callback function is the only way to access the
-         * result of the Deferred.
-         *
-         * If a Deferred operation is canceled, an optional user-provided cancellation
-         * function is invoked which may perform any special cleanup, followed by firing
-         * the Deferred's errback sequence with a {@code CanceledError}. If the
-         * Deferred has already fired, cancellation is ignored.
-         *
-         * Deferreds may be templated to a specific type they produce using generics
-         * with syntax such as:
-         * <code>
-         *   /** @type {goog.async.Deferred.<string>} *&#47;
-         *   var d = new goog.async.Deferred();
-         *   // Compiler can infer that foo is a string.
-         *   d.addCallback(function(foo) {...});
-         *   d.callback('string');  // Checked to be passed a string
-         * </code>
-         * Since deferreds are often used to produce different values across a chain,
-         * the type information is not propagated across chains, but rather only
-         * associated with specifically cast objects.
-         *
-         * @param {Function=} opt_onCancelFunction A function that will be called if the
-         *     Deferred is canceled. If provided, this function runs before the
-         *     Deferred is fired with a {@code CanceledError}.
-         * @param {Object=} opt_defaultScope The default object context to call
-         *     callbacks and errbacks in.
-         * @constructor
-         * @implements {goog.Thenable.<VALUE>}
-         * @template VALUE
-         */
-        constructor(opt_onCancelFunction?: Function, opt_defaultScope?: Object);
+            /**
+            * A Deferred represents the result of an asynchronous operation. A Deferred
+            * instance has no result when it is created, and is "fired" (given an initial
+            * result) by calling {@code callback} or {@code errback}.
+            *
+            * Once fired, the result is passed through a sequence of callback functions
+            * registered with {@code addCallback} or {@code addErrback}. The functions may
+            * mutate the result before it is passed to the next function in the sequence.
+            *
+            * Callbacks and errbacks may be added at any time, including after the Deferred
+            * has been "fired". If there are no pending actions in the execution sequence
+            * of a fired Deferred, any new callback functions will be called with the last
+            * computed result. Adding a callback function is the only way to access the
+            * result of the Deferred.
+            *
+            * If a Deferred operation is canceled, an optional user-provided cancellation
+            * function is invoked which may perform any special cleanup, followed by firing
+            * the Deferred's errback sequence with a {@code CanceledError}. If the
+            * Deferred has already fired, cancellation is ignored.
+            *
+            * Deferreds may be templated to a specific type they produce using generics
+            * with syntax such as:
+            * <code>
+            *   /** @type {goog.async.Deferred.<string>} *&#47;
+            *   var d = new goog.async.Deferred();
+            *   // Compiler can infer that foo is a string.
+            *   d.addCallback(function(foo) {...});
+            *   d.callback('string');  // Checked to be passed a string
+            * </code>
+            * Since deferreds are often used to produce different values across a chain,
+            * the type information is not propagated across chains, but rather only
+            * associated with specifically cast objects.
+            *
+            * @param {Function=} opt_onCancelFunction A function that will be called if the
+            *     Deferred is canceled. If provided, this function runs before the
+            *     Deferred is fired with a {@code CanceledError}.
+            * @param {Object=} opt_defaultScope The default object context to call
+            *     callbacks and errbacks in.
+            * @constructor
+            * @implements {goog.Thenable.<VALUE>}
+            * @template VALUE
+            */
+            constructor(opt_onCancelFunction?: Function, opt_defaultScope?: Object);
     
-        /**
-         * Cancels a Deferred that has not yet been fired, or is blocked on another
-         * deferred operation. If this Deferred is waiting for a blocking Deferred to
-         * fire, the blocking Deferred will also be canceled.
-         *
-         * If this Deferred was created by calling branch() on a parent Deferred with
-         * opt_propagateCancel set to true, the parent may also be canceled. If
-         * opt_deepCancel is set, cancel() will be called on the parent (as well as any
-         * other ancestors if the parent is also a branch). If one or more branches were
-         * created with opt_propagateCancel set to true, the parent will be canceled if
-         * cancel() is called on all of those branches.
-         *
-         * @param {boolean=} opt_deepCancel If true, cancels this Deferred's parent even
-         *     if cancel() hasn't been called on some of the parent's branches. Has no
-         *     effect on a branch without opt_propagateCancel set to true.
-         */
-        cancel(opt_deepCancel?: boolean): void;
+            /**
+            * Cancels a Deferred that has not yet been fired, or is blocked on another
+            * deferred operation. If this Deferred is waiting for a blocking Deferred to
+            * fire, the blocking Deferred will also be canceled.
+            *
+            * If this Deferred was created by calling branch() on a parent Deferred with
+            * opt_propagateCancel set to true, the parent may also be canceled. If
+            * opt_deepCancel is set, cancel() will be called on the parent (as well as any
+            * other ancestors if the parent is also a branch). If one or more branches were
+            * created with opt_propagateCancel set to true, the parent will be canceled if
+            * cancel() is called on all of those branches.
+            *
+            * @param {boolean=} opt_deepCancel If true, cancels this Deferred's parent even
+            *     if cancel() hasn't been called on some of the parent's branches. Has no
+            *     effect on a branch without opt_propagateCancel set to true.
+            */
+            cancel(opt_deepCancel?: boolean): void;
     
-        /**
-         * Fire the execution sequence for this Deferred by passing the starting result
-         * to the first registered callback.
-         * @param {VALUE=} opt_result The starting result.
-         */
-        callback(opt_result?: VALUE): void;
+            /**
+            * Fire the execution sequence for this Deferred by passing the starting result
+            * to the first registered callback.
+            * @param {VALUE=} opt_result The starting result.
+            */
+            callback(opt_result?: VALUE): void;
     
-        /**
-         * Fire the execution sequence for this Deferred by passing the starting error
-         * result to the first registered errback.
-         * @param {*=} opt_result The starting error.
-         */
-        errback(opt_result?: any): void;
+            /**
+            * Fire the execution sequence for this Deferred by passing the starting error
+            * result to the first registered errback.
+            * @param {*=} opt_result The starting error.
+            */
+            errback(opt_result?: any): void;
     
-        /**
-         * Register a callback function to be called with a successful result. If no
-         * value is returned by the callback function, the result value is unchanged. If
-         * a new value is returned, it becomes the Deferred result and will be passed to
-         * the next callback in the execution sequence.
-         *
-         * If the function throws an error, the error becomes the new result and will be
-         * passed to the next errback in the execution chain.
-         *
-         * If the function returns a Deferred, the execution sequence will be blocked
-         * until that Deferred fires. Its result will be passed to the next callback (or
-         * errback if it is an error result) in this Deferred's execution sequence.
-         *
-         * @param {!function(this:T,VALUE):?} cb The function to be called with a
-         *     successful result.
-         * @param {T=} opt_scope An optional scope to call the callback in.
-         * @return {!goog.async.Deferred} This Deferred.
-         * @template T
-         */
-        addCallback<T>(cb: (_0: VALUE) => any, opt_scope?: T): goog.async.Deferred<any>;
+            /**
+            * Register a callback function to be called with a successful result. If no
+            * value is returned by the callback function, the result value is unchanged. If
+            * a new value is returned, it becomes the Deferred result and will be passed to
+            * the next callback in the execution sequence.
+            *
+            * If the function throws an error, the error becomes the new result and will be
+            * passed to the next errback in the execution chain.
+            *
+            * If the function returns a Deferred, the execution sequence will be blocked
+            * until that Deferred fires. Its result will be passed to the next callback (or
+            * errback if it is an error result) in this Deferred's execution sequence.
+            *
+            * @param {!function(this:T,VALUE):?} cb The function to be called with a
+            *     successful result.
+            * @param {T=} opt_scope An optional scope to call the callback in.
+            * @return {!goog.async.Deferred} This Deferred.
+            * @template T
+            */
+            addCallback<T>(cb: (_0: VALUE) => any, opt_scope?: T): goog.async.Deferred<any>;
     
-        /**
-         * Register a callback function to be called with an error result. If no value
-         * is returned by the function, the error result is unchanged. If a new error
-         * value is returned or thrown, that error becomes the Deferred result and will
-         * be passed to the next errback in the execution sequence.
-         *
-         * If the errback function handles the error by returning a non-error value,
-         * that result will be passed to the next normal callback in the sequence.
-         *
-         * If the function returns a Deferred, the execution sequence will be blocked
-         * until that Deferred fires. Its result will be passed to the next callback (or
-         * errback if it is an error result) in this Deferred's execution sequence.
-         *
-         * @param {!function(this:T,?):?} eb The function to be called on an
-         *     unsuccessful result.
-         * @param {T=} opt_scope An optional scope to call the errback in.
-         * @return {!goog.async.Deferred.<VALUE>} This Deferred.
-         * @template T
-         */
-        addErrback<T>(eb: (_0: any) => any, opt_scope?: T): goog.async.Deferred<VALUE>;
+            /**
+            * Register a callback function to be called with an error result. If no value
+            * is returned by the function, the error result is unchanged. If a new error
+            * value is returned or thrown, that error becomes the Deferred result and will
+            * be passed to the next errback in the execution sequence.
+            *
+            * If the errback function handles the error by returning a non-error value,
+            * that result will be passed to the next normal callback in the sequence.
+            *
+            * If the function returns a Deferred, the execution sequence will be blocked
+            * until that Deferred fires. Its result will be passed to the next callback (or
+            * errback if it is an error result) in this Deferred's execution sequence.
+            *
+            * @param {!function(this:T,?):?} eb The function to be called on an
+            *     unsuccessful result.
+            * @param {T=} opt_scope An optional scope to call the errback in.
+            * @return {!goog.async.Deferred.<VALUE>} This Deferred.
+            * @template T
+            */
+            addErrback<T>(eb: (_0: any) => any, opt_scope?: T): goog.async.Deferred<VALUE>;
     
-        /**
-         * Registers one function as both a callback and errback.
-         *
-         * @param {!function(this:T,?):?} f The function to be called on any result.
-         * @param {T=} opt_scope An optional scope to call the function in.
-         * @return {!goog.async.Deferred} This Deferred.
-         * @template T
-         */
-        addBoth<T>(f: (_0: any) => any, opt_scope?: T): goog.async.Deferred<any>;
+            /**
+            * Registers one function as both a callback and errback.
+            *
+            * @param {!function(this:T,?):?} f The function to be called on any result.
+            * @param {T=} opt_scope An optional scope to call the function in.
+            * @return {!goog.async.Deferred} This Deferred.
+            * @template T
+            */
+            addBoth<T>(f: (_0: any) => any, opt_scope?: T): goog.async.Deferred<any>;
     
-        /**
-         * Registers a callback function and an errback function at the same position
-         * in the execution sequence. Only one of these functions will execute,
-         * depending on the error state during the execution sequence.
-         *
-         * NOTE: This is not equivalent to {@code def.addCallback().addErrback()}! If
-         * the callback is invoked, the errback will be skipped, and vice versa.
-         *
-         * @param {(function(this:T,VALUE):?)|null} cb The function to be called on a
-         *     successful result.
-         * @param {(function(this:T,?):?)|null} eb The function to be called on an
-         *     unsuccessful result.
-         * @param {T=} opt_scope An optional scope to call the functions in.
-         * @return {!goog.async.Deferred} This Deferred.
-         * @template T
-         */
-        addCallbacks<T>(cb: (_0: VALUE) => any, eb: (_0: any) => any, opt_scope?: T): goog.async.Deferred<any>;
+            /**
+            * Registers a callback function and an errback function at the same position
+            * in the execution sequence. Only one of these functions will execute,
+            * depending on the error state during the execution sequence.
+            *
+            * NOTE: This is not equivalent to {@code def.addCallback().addErrback()}! If
+            * the callback is invoked, the errback will be skipped, and vice versa.
+            *
+            * @param {(function(this:T,VALUE):?)|null} cb The function to be called on a
+            *     successful result.
+            * @param {(function(this:T,?):?)|null} eb The function to be called on an
+            *     unsuccessful result.
+            * @param {T=} opt_scope An optional scope to call the functions in.
+            * @return {!goog.async.Deferred} This Deferred.
+            * @template T
+            */
+            addCallbacks<T>(cb: (_0: VALUE) => any, eb: (_0: any) => any, opt_scope?: T): goog.async.Deferred<any>;
     
-        /**
-         * Links another Deferred to the end of this Deferred's execution sequence. The
-         * result of this execution sequence will be passed as the starting result for
-         * the chained Deferred, invoking either its first callback or errback.
-         *
-         * @param {!goog.async.Deferred} otherDeferred The Deferred to chain.
-         * @return {!goog.async.Deferred} This Deferred.
-         */
-        chainDeferred(otherDeferred: goog.async.Deferred<any>): goog.async.Deferred<any>;
+            /**
+            * Links another Deferred to the end of this Deferred's execution sequence. The
+            * result of this execution sequence will be passed as the starting result for
+            * the chained Deferred, invoking either its first callback or errback.
+            *
+            * @param {!goog.async.Deferred} otherDeferred The Deferred to chain.
+            * @return {!goog.async.Deferred} This Deferred.
+            */
+            chainDeferred(otherDeferred: goog.async.Deferred<any>): goog.async.Deferred<any>;
     
-        /**
-         * Makes this Deferred wait for another Deferred's execution sequence to
-         * complete before continuing.
-         *
-         * This is equivalent to adding a callback that returns {@code otherDeferred},
-         * but doesn't prevent additional callbacks from being added to
-         * {@code otherDeferred}.
-         *
-         * @param {!goog.async.Deferred} otherDeferred The Deferred to wait for.
-         * @return {!goog.async.Deferred} This Deferred.
-         */
-        awaitDeferred(otherDeferred: goog.async.Deferred<any>): goog.async.Deferred<any>;
+            /**
+            * Makes this Deferred wait for another Deferred's execution sequence to
+            * complete before continuing.
+            *
+            * This is equivalent to adding a callback that returns {@code otherDeferred},
+            * but doesn't prevent additional callbacks from being added to
+            * {@code otherDeferred}.
+            *
+            * @param {!goog.async.Deferred} otherDeferred The Deferred to wait for.
+            * @return {!goog.async.Deferred} This Deferred.
+            */
+            awaitDeferred(otherDeferred: goog.async.Deferred<any>): goog.async.Deferred<any>;
     
-        /**
-         * Creates a branch off this Deferred's execution sequence, and returns it as a
-         * new Deferred. The branched Deferred's starting result will be shared with the
-         * parent at the point of the branch, even if further callbacks are added to the
-         * parent.
-         *
-         * All branches at the same stage in the execution sequence will receive the
-         * same starting value.
-         *
-         * @param {boolean=} opt_propagateCancel If cancel() is called on every child
-         *     branch created with opt_propagateCancel, the parent will be canceled as
-         *     well.
-         * @return {!goog.async.Deferred.<VALUE>} A Deferred that will be started with
-         *     the computed result from this stage in the execution sequence.
-         */
-        branch(opt_propagateCancel?: boolean): goog.async.Deferred<VALUE>;
+            /**
+            * Creates a branch off this Deferred's execution sequence, and returns it as a
+            * new Deferred. The branched Deferred's starting result will be shared with the
+            * parent at the point of the branch, even if further callbacks are added to the
+            * parent.
+            *
+            * All branches at the same stage in the execution sequence will receive the
+            * same starting value.
+            *
+            * @param {boolean=} opt_propagateCancel If cancel() is called on every child
+            *     branch created with opt_propagateCancel, the parent will be canceled as
+            *     well.
+            * @return {!goog.async.Deferred.<VALUE>} A Deferred that will be started with
+            *     the computed result from this stage in the execution sequence.
+            */
+            branch(opt_propagateCancel?: boolean): goog.async.Deferred<VALUE>;
     
-        /**
-         * @return {boolean} Whether the execution sequence has been started on this
-         *     Deferred by invoking {@code callback} or {@code errback}.
-         */
-        hasFired(): boolean;
+            /**
+            * @return {boolean} Whether the execution sequence has been started on this
+            *     Deferred by invoking {@code callback} or {@code errback}.
+            */
+            hasFired(): boolean;
     
-        /**
-         * @param {*} res The latest result in the execution sequence.
-         * @return {boolean} Whether the current result is an error that should cause
-         *     the next errback to fire. May be overridden by subclasses to handle
-         *     special error types.
-         * @protected
-         */
-        isError(res: any): boolean;
+            /**
+            * @param {*} res The latest result in the execution sequence.
+            * @return {boolean} Whether the current result is an error that should cause
+            *     the next errback to fire. May be overridden by subclasses to handle
+            *     special error types.
+            * @protected
+            */
+            isError(res: any): boolean;
     
-        /**
-         * Adds callbacks that will operate on the result of the Thenable, returning a
-         * new child Promise.
-         *
-         * If the Thenable is fulfilled, the {@code onFulfilled} callback will be
-         * invoked with the fulfillment value as argument, and the child Promise will
-         * be fulfilled with the return value of the callback. If the callback throws
-         * an exception, the child Promise will be rejected with the thrown value
-         * instead.
-         *
-         * If the Thenable is rejected, the {@code onRejected} callback will be invoked
-         * with the rejection reason as argument, and the child Promise will be rejected
-         * with the return value of the callback or thrown value.
-         *
-         * @param {?(function(this:THIS, VALUE):
-         *             (RESULT|IThenable.<RESULT>|Thenable))=} opt_onFulfilled A
-         *     function that will be invoked with the fulfillment value if the Promise
-         *     is fullfilled.
-         * @param {?(function(*): *)=} opt_onRejected A function that will be invoked
-         *     with the rejection reason if the Promise is rejected.
-         * @param {THIS=} opt_context An optional context object that will be the
-         *     execution context for the callbacks. By default, functions are executed
-         *     with the default this.
-         * @return {!goog.Promise.<RESULT>} A new Promise that will receive the result
-         *     of the fulfillment or rejection callback.
-         * @template RESULT,THIS
-         */
-        then<RESULT,THIS>(opt_onFulfilled?: (_0: VALUE) => RESULT, opt_onRejected?: (_0: any) => any, opt_context?: THIS): goog.Promise<RESULT>;
-        /**
-         * Adds callbacks that will operate on the result of the Thenable, returning a
-         * new child Promise.
-         *
-         * If the Thenable is fulfilled, the {@code onFulfilled} callback will be
-         * invoked with the fulfillment value as argument, and the child Promise will
-         * be fulfilled with the return value of the callback. If the callback throws
-         * an exception, the child Promise will be rejected with the thrown value
-         * instead.
-         *
-         * If the Thenable is rejected, the {@code onRejected} callback will be invoked
-         * with the rejection reason as argument, and the child Promise will be rejected
-         * with the return value of the callback or thrown value.
-         *
-         * @param {?(function(this:THIS, VALUE):
-         *             (RESULT|IThenable.<RESULT>|Thenable))=} opt_onFulfilled A
-         *     function that will be invoked with the fulfillment value if the Promise
-         *     is fullfilled.
-         * @param {?(function(*): *)=} opt_onRejected A function that will be invoked
-         *     with the rejection reason if the Promise is rejected.
-         * @param {THIS=} opt_context An optional context object that will be the
-         *     execution context for the callbacks. By default, functions are executed
-         *     with the default this.
-         * @return {!goog.Promise.<RESULT>} A new Promise that will receive the result
-         *     of the fulfillment or rejection callback.
-         * @template RESULT,THIS
-         */
-        then<RESULT,THIS>(opt_onFulfilled?: (_0: VALUE) => IThenable<RESULT>, opt_onRejected?: (_0: any) => any, opt_context?: THIS): goog.Promise<RESULT>;
-        /**
-         * Adds callbacks that will operate on the result of the Thenable, returning a
-         * new child Promise.
-         *
-         * If the Thenable is fulfilled, the {@code onFulfilled} callback will be
-         * invoked with the fulfillment value as argument, and the child Promise will
-         * be fulfilled with the return value of the callback. If the callback throws
-         * an exception, the child Promise will be rejected with the thrown value
-         * instead.
-         *
-         * If the Thenable is rejected, the {@code onRejected} callback will be invoked
-         * with the rejection reason as argument, and the child Promise will be rejected
-         * with the return value of the callback or thrown value.
-         *
-         * @param {?(function(this:THIS, VALUE):
-         *             (RESULT|IThenable.<RESULT>|Thenable))=} opt_onFulfilled A
-         *     function that will be invoked with the fulfillment value if the Promise
-         *     is fullfilled.
-         * @param {?(function(*): *)=} opt_onRejected A function that will be invoked
-         *     with the rejection reason if the Promise is rejected.
-         * @param {THIS=} opt_context An optional context object that will be the
-         *     execution context for the callbacks. By default, functions are executed
-         *     with the default this.
-         * @return {!goog.Promise.<RESULT>} A new Promise that will receive the result
-         *     of the fulfillment or rejection callback.
-         * @template RESULT,THIS
-         */
-        then<RESULT,THIS>(opt_onFulfilled?: (_0: VALUE) => Thenable<RESULT>, opt_onRejected?: (_0: any) => any, opt_context?: THIS): goog.Promise<RESULT>;
+            /**
+             * Adds callbacks that will operate on the result of the Thenable, returning a
+             * new child Promise.
+             *
+             * If the Thenable is fulfilled, the {@code onFulfilled} callback will be
+             * invoked with the fulfillment value as argument, and the child Promise will
+             * be fulfilled with the return value of the callback. If the callback throws
+             * an exception, the child Promise will be rejected with the thrown value
+             * instead.
+             *
+             * If the Thenable is rejected, the {@code onRejected} callback will be invoked
+             * with the rejection reason as argument, and the child Promise will be rejected
+             * with the return value of the callback or thrown value.
+             *
+             * @param {?(function(this:THIS, VALUE):
+             *             (RESULT|IThenable.<RESULT>|Thenable))=} opt_onFulfilled A
+             *     function that will be invoked with the fulfillment value if the Promise
+             *     is fullfilled.
+             * @param {?(function(*): *)=} opt_onRejected A function that will be invoked
+             *     with the rejection reason if the Promise is rejected.
+             * @param {THIS=} opt_context An optional context object that will be the
+             *     execution context for the callbacks. By default, functions are executed
+             *     with the default this.
+             * @return {!goog.Promise.<RESULT>} A new Promise that will receive the result
+             *     of the fulfillment or rejection callback.
+             * @template RESULT,THIS
+             */
+            then<RESULT,THIS>(opt_onFulfilled?: (_0: VALUE) => RESULT, opt_onRejected?: (_0: any) => any, opt_context?: THIS): goog.Promise<RESULT>;
+            /**
+             * Adds callbacks that will operate on the result of the Thenable, returning a
+             * new child Promise.
+             *
+             * If the Thenable is fulfilled, the {@code onFulfilled} callback will be
+             * invoked with the fulfillment value as argument, and the child Promise will
+             * be fulfilled with the return value of the callback. If the callback throws
+             * an exception, the child Promise will be rejected with the thrown value
+             * instead.
+             *
+             * If the Thenable is rejected, the {@code onRejected} callback will be invoked
+             * with the rejection reason as argument, and the child Promise will be rejected
+             * with the return value of the callback or thrown value.
+             *
+             * @param {?(function(this:THIS, VALUE):
+             *             (RESULT|IThenable.<RESULT>|Thenable))=} opt_onFulfilled A
+             *     function that will be invoked with the fulfillment value if the Promise
+             *     is fullfilled.
+             * @param {?(function(*): *)=} opt_onRejected A function that will be invoked
+             *     with the rejection reason if the Promise is rejected.
+             * @param {THIS=} opt_context An optional context object that will be the
+             *     execution context for the callbacks. By default, functions are executed
+             *     with the default this.
+             * @return {!goog.Promise.<RESULT>} A new Promise that will receive the result
+             *     of the fulfillment or rejection callback.
+             * @template RESULT,THIS
+             */
+            then<RESULT,THIS>(opt_onFulfilled?: (_0: VALUE) => IThenable<RESULT>, opt_onRejected?: (_0: any) => any, opt_context?: THIS): goog.Promise<RESULT>;
+            /**
+             * Adds callbacks that will operate on the result of the Thenable, returning a
+             * new child Promise.
+             *
+             * If the Thenable is fulfilled, the {@code onFulfilled} callback will be
+             * invoked with the fulfillment value as argument, and the child Promise will
+             * be fulfilled with the return value of the callback. If the callback throws
+             * an exception, the child Promise will be rejected with the thrown value
+             * instead.
+             *
+             * If the Thenable is rejected, the {@code onRejected} callback will be invoked
+             * with the rejection reason as argument, and the child Promise will be rejected
+             * with the return value of the callback or thrown value.
+             *
+             * @param {?(function(this:THIS, VALUE):
+             *             (RESULT|IThenable.<RESULT>|Thenable))=} opt_onFulfilled A
+             *     function that will be invoked with the fulfillment value if the Promise
+             *     is fullfilled.
+             * @param {?(function(*): *)=} opt_onRejected A function that will be invoked
+             *     with the rejection reason if the Promise is rejected.
+             * @param {THIS=} opt_context An optional context object that will be the
+             *     execution context for the callbacks. By default, functions are executed
+             *     with the default this.
+             * @return {!goog.Promise.<RESULT>} A new Promise that will receive the result
+             *     of the fulfillment or rejection callback.
+             * @template RESULT,THIS
+             */
+            then<RESULT,THIS>(opt_onFulfilled?: (_0: VALUE) => Thenable<RESULT>, opt_onRejected?: (_0: any) => any, opt_context?: THIS): goog.Promise<RESULT>;
+        }
     }
 }
 
 declare module goog.async.Deferred {
 
-    class AlreadyCalledError extends __AlreadyCalledError { }
-    class __AlreadyCalledError extends goog.debug.__Error {
+    class AlreadyCalledError extends AlreadyCalledError.__Class { }
+    module AlreadyCalledError {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class extends goog.debug.Error.__Class {
     
-        /**
-         * An error sub class that is used when a Deferred has already been called.
-         * @param {!goog.async.Deferred} deferred The Deferred.
-         *
-         * @constructor
-         * @extends {goog.debug.Error}
-         */
-        constructor(deferred: goog.async.Deferred<any>);
+            /**
+            * An error sub class that is used when a Deferred has already been called.
+            * @param {!goog.async.Deferred} deferred The Deferred.
+            *
+            * @constructor
+            * @extends {goog.debug.Error}
+            */
+            constructor(deferred: goog.async.Deferred<any>);
+        }
     }
 
-    class CanceledError extends __CanceledError { }
-    class __CanceledError extends goog.debug.__Error {
+    class CanceledError extends CanceledError.__Class { }
+    module CanceledError {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class extends goog.debug.Error.__Class {
     
-        /**
-         * An error sub class that is used when a Deferred is canceled.
-         *
-         * @param {!goog.async.Deferred} deferred The Deferred object.
-         * @constructor
-         * @extends {goog.debug.Error}
-         */
-        constructor(deferred: goog.async.Deferred<any>);
+            /**
+            * An error sub class that is used when a Deferred is canceled.
+            *
+            * @param {!goog.async.Deferred} deferred The Deferred object.
+            * @constructor
+            * @extends {goog.debug.Error}
+            */
+            constructor(deferred: goog.async.Deferred<any>);
+        }
     }
 
-    class Error_ extends __Error_ { }
-    class __Error_ {
+    class Error_ extends Error_.__Class { }
+    module Error_ {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class {
     
-        /**
-         * Wrapper around errors that are scheduled to be thrown by failing deferreds
-         * after a timeout.
-         *
-         * @param {*} error Error from a failing deferred.
-         * @constructor
-         * @final
-         * @private
-         * @struct
-         */
-        constructor(error: any);
+            /**
+            * Wrapper around errors that are scheduled to be thrown by failing deferreds
+            * after a timeout.
+            *
+            * @param {*} error Error from a failing deferred.
+            * @constructor
+            * @final
+            * @private
+            * @struct
+            */
+            constructor(error: any);
     
-        /**
-         * Actually throws the error and removes it from the list of pending
-         * deferred errors.
-         */
-        throwError(): void;
+            /**
+            * Actually throws the error and removes it from the list of pending
+            * deferred errors.
+            */
+            throwError(): void;
     
-        /**
-         * Resets the error throw timer.
-         */
-        resetTimer(): void;
+            /**
+            * Resets the error throw timer.
+            */
+            resetTimer(): void;
+        }
     }
 
     /**

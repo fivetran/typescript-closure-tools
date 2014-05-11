@@ -2,30 +2,33 @@
 
 declare module goog.ui.emoji {
 
-    class Emoji extends __Emoji { }
-    class __Emoji {
+    class Emoji extends Emoji.__Class { }
+    module Emoji {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class {
     
-        /**
-         * Creates an emoji.
-         *
-         * A simple wrapper for an emoji.
-         *
-         * @param {string} url URL pointing to the source image for the emoji.
-         * @param {string} id The id of the emoji, e.g., 'std.1'.
-         * @constructor
-         * @final
-         */
-        constructor(url: string, id: string);
+            /**
+            * Creates an emoji.
+            *
+            * A simple wrapper for an emoji.
+            *
+            * @param {string} url URL pointing to the source image for the emoji.
+            * @param {string} id The id of the emoji, e.g., 'std.1'.
+            * @constructor
+            * @final
+            */
+            constructor(url: string, id: string);
     
-        /**
-         * @return {string} The URL for this emoji.
-         */
-        getUrl(): string;
+            /**
+            * @return {string} The URL for this emoji.
+            */
+            getUrl(): string;
     
-        /**
-         * @return {string} The id of this emoji.
-         */
-        getId(): string;
+            /**
+            * @return {string} The id of this emoji.
+            */
+            getId(): string;
+        }
     }
 }
 

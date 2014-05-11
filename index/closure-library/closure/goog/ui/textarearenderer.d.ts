@@ -3,19 +3,22 @@
 
 declare module goog.ui {
 
-    class TextareaRenderer extends __TextareaRenderer { }
-    class __TextareaRenderer extends goog.ui.__ControlRenderer {
+    class TextareaRenderer extends TextareaRenderer.__Class { }
+    module TextareaRenderer {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class extends goog.ui.ControlRenderer.__Class {
     
-        /**
-         * Renderer for {@link goog.ui.Textarea}s.  Renders and decorates native HTML
-         * textarea elements.  Since native HTML textareas have built-in support for
-         * many features, overrides many expensive (and redundant) superclass methods to
-         * be no-ops.
-         * @constructor
-         * @extends {goog.ui.ControlRenderer}
-         * @final
-         */
-        constructor();
+            /**
+            * Renderer for {@link goog.ui.Textarea}s.  Renders and decorates native HTML
+            * textarea elements.  Since native HTML textareas have built-in support for
+            * many features, overrides many expensive (and redundant) superclass methods to
+            * be no-ops.
+            * @constructor
+            * @extends {goog.ui.ControlRenderer}
+            * @final
+            */
+            constructor();
+        }
     }
 }
 

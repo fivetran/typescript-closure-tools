@@ -5,61 +5,64 @@
 
 declare module goog.db {
 
-    class Cursor extends __Cursor { }
-    class __Cursor extends goog.events.__EventTarget {
+    class Cursor extends Cursor.__Class { }
+    module Cursor {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class extends goog.events.EventTarget.__Class {
     
-        /**
-         * Creates a new IDBCursor wrapper object. Should not be created directly,
-         * access cursor through object store.
-         * @see goog.db.ObjectStore#openCursor
-         *
-         * @constructor
-         * @extends {goog.events.EventTarget}
-         * @final
-         */
-        constructor();
+            /**
+            * Creates a new IDBCursor wrapper object. Should not be created directly,
+            * access cursor through object store.
+            * @see goog.db.ObjectStore#openCursor
+            *
+            * @constructor
+            * @extends {goog.events.EventTarget}
+            * @final
+            */
+            constructor();
     
-        /**
-         * Advances the cursor to the next position along its direction. When new data
-         * is available, the NEW_DATA event will be fired. If the cursor has reached the
-         * end of the range it will fire the COMPLETE event. If opt_key is specified it
-         * will advance to the key it matches in its direction.
-         *
-         * This wraps the native #continue method on the underlying object.
-         *
-         * @param {IDBKeyType=} opt_key The optional key to advance to.
-         */
-        next(opt_key?: IDBKeyType): void;
+            /**
+            * Advances the cursor to the next position along its direction. When new data
+            * is available, the NEW_DATA event will be fired. If the cursor has reached the
+            * end of the range it will fire the COMPLETE event. If opt_key is specified it
+            * will advance to the key it matches in its direction.
+            *
+            * This wraps the native #continue method on the underlying object.
+            *
+            * @param {IDBKeyType=} opt_key The optional key to advance to.
+            */
+            next(opt_key?: IDBKeyType): void;
     
-        /**
-         * Updates the value at the current position of the cursor in the object store.
-         * If the cursor points to a value that has just been deleted, a new value is
-         * created.
-         *
-         * @param {*} value The value to be stored.
-         * @return {!goog.async.Deferred} The resulting deferred request.
-         */
-        update(value: any): goog.async.Deferred<any>;
+            /**
+            * Updates the value at the current position of the cursor in the object store.
+            * If the cursor points to a value that has just been deleted, a new value is
+            * created.
+            *
+            * @param {*} value The value to be stored.
+            * @return {!goog.async.Deferred} The resulting deferred request.
+            */
+            update(value: any): goog.async.Deferred<any>;
     
-        /**
-         * Deletes the value at the cursor's position, without changing the cursor's
-         * position. Once the value is deleted, the cursor's value is set to null.
-         *
-         * @return {!goog.async.Deferred} The resulting deferred request.
-         */
-        remove(): goog.async.Deferred<any>;
+            /**
+            * Deletes the value at the cursor's position, without changing the cursor's
+            * position. Once the value is deleted, the cursor's value is set to null.
+            *
+            * @return {!goog.async.Deferred} The resulting deferred request.
+            */
+            remove(): goog.async.Deferred<any>;
     
-        /**
-         * @return {*} The value for the value at the cursor's position. Undefined
-         *     if no current value, or null if value has just been deleted.
-         */
-        getValue(): any;
+            /**
+            * @return {*} The value for the value at the cursor's position. Undefined
+            *     if no current value, or null if value has just been deleted.
+            */
+            getValue(): any;
     
-        /**
-         * @return {IDBKeyType} The key for the value at the cursor's position. If
-         *     the cursor is outside its range, this is undefined.
-         */
-        getKey(): IDBKeyType;
+            /**
+            * @return {IDBKeyType} The key for the value at the cursor's position. If
+            *     the cursor is outside its range, this is undefined.
+            */
+            getKey(): IDBKeyType;
+        }
     }
 }
 

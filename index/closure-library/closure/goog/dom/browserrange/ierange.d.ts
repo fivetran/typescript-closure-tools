@@ -3,27 +3,30 @@
 
 declare module goog.dom.browserrange {
 
-    class IeRange extends __IeRange { }
-    class __IeRange extends goog.dom.browserrange.__AbstractRange {
+    class IeRange extends IeRange.__Class { }
+    module IeRange {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class extends goog.dom.browserrange.AbstractRange.__Class {
     
-        /**
-         * The constructor for IE specific browser ranges.
-         * @param {TextRange} range The range object.
-         * @param {Document} doc The document the range exists in.
-         * @constructor
-         * @extends {goog.dom.browserrange.AbstractRange}
-         * @final
-         */
-        constructor(range: TextRange, doc: Document);
+            /**
+            * The constructor for IE specific browser ranges.
+            * @param {TextRange} range The range object.
+            * @param {Document} doc The document the range exists in.
+            * @constructor
+            * @extends {goog.dom.browserrange.AbstractRange}
+            * @final
+            */
+            constructor(range: TextRange, doc: Document);
     
-        /**
-         * Tests whether this range is valid (i.e. whether its endpoints are still in
-         * the document).  A range becomes invalid when, after this object was created,
-         * either one or both of its endpoints are removed from the document.  Use of
-         * an invalid range can lead to runtime errors, particularly in IE.
-         * @return {boolean} Whether the range is valid.
-         */
-        isRangeInDocument(): boolean;
+            /**
+            * Tests whether this range is valid (i.e. whether its endpoints are still in
+            * the document).  A range becomes invalid when, after this object was created,
+            * either one or both of its endpoints are removed from the document.  Use of
+            * an invalid range can lead to runtime errors, particularly in IE.
+            * @return {boolean} Whether the range is valid.
+            */
+            isRangeInDocument(): boolean;
+        }
     }
 }
 

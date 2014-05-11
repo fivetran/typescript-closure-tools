@@ -3,15 +3,18 @@
 
 declare module goog.storage.mechanism {
 
-    class HTML5SessionStorage extends __HTML5SessionStorage { }
-    class __HTML5SessionStorage extends goog.storage.mechanism.__HTML5WebStorage {
+    class HTML5SessionStorage extends HTML5SessionStorage.__Class { }
+    module HTML5SessionStorage {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class extends goog.storage.mechanism.HTML5WebStorage.__Class {
     
-        /**
-         * Provides a storage mechanism that uses HTML5 session storage.
-         *
-         * @constructor
-         * @extends {goog.storage.mechanism.HTML5WebStorage}
-         */
-        constructor();
+            /**
+            * Provides a storage mechanism that uses HTML5 session storage.
+            *
+            * @constructor
+            * @extends {goog.storage.mechanism.HTML5WebStorage}
+            */
+            constructor();
+        }
     }
 }

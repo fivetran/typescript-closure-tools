@@ -3,19 +3,22 @@
 
 declare module goog.proto2 {
 
-    class ObjectSerializer extends __ObjectSerializer { }
-    class __ObjectSerializer extends goog.proto2.__Serializer {
+    class ObjectSerializer extends ObjectSerializer.__Class { }
+    module ObjectSerializer {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class extends goog.proto2.Serializer.__Class {
     
-        /**
-         * ObjectSerializer, a serializer which turns Messages into simplified
-         * ECMAScript objects.
-         *
-         * @param {goog.proto2.ObjectSerializer.KeyOption=} opt_keyOption If specified,
-         *     which key option to use when serializing/deserializing.
-         * @constructor
-         * @extends {goog.proto2.Serializer}
-         */
-        constructor(opt_keyOption?: goog.proto2.ObjectSerializer.KeyOption);
+            /**
+            * ObjectSerializer, a serializer which turns Messages into simplified
+            * ECMAScript objects.
+            *
+            * @param {goog.proto2.ObjectSerializer.KeyOption=} opt_keyOption If specified,
+            *     which key option to use when serializing/deserializing.
+            * @constructor
+            * @extends {goog.proto2.Serializer}
+            */
+            constructor(opt_keyOption?: goog.proto2.ObjectSerializer.KeyOption);
+        }
     }
 }
 

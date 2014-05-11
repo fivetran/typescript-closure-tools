@@ -4,19 +4,22 @@
 
 declare module goog.net.jsloader {
 
-    class Error extends __Error { }
-    class __Error extends goog.debug.__Error {
+    class Error extends Error.__Class { }
+    module Error {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class extends goog.debug.Error.__Class {
     
-        /**
-         * A jsloader error.
-         *
-         * @param {goog.net.jsloader.ErrorCode} code The error code.
-         * @param {string=} opt_message Additional message.
-         * @constructor
-         * @extends {goog.debug.Error}
-         * @final
-         */
-        constructor(code: goog.net.jsloader.ErrorCode, opt_message?: string);
+            /**
+            * A jsloader error.
+            *
+            * @param {goog.net.jsloader.ErrorCode} code The error code.
+            * @param {string=} opt_message Additional message.
+            * @constructor
+            * @extends {goog.debug.Error}
+            * @final
+            */
+            constructor(code: goog.net.jsloader.ErrorCode, opt_message?: string);
+        }
     }
 
     /**

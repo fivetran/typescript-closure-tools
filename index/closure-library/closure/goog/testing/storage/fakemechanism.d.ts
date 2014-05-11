@@ -3,16 +3,19 @@
 
 declare module goog.testing.storage {
 
-    class FakeMechanism extends __FakeMechanism { }
-    class __FakeMechanism extends goog.storage.mechanism.__IterableMechanism {
+    class FakeMechanism extends FakeMechanism.__Class { }
+    module FakeMechanism {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class extends goog.storage.mechanism.IterableMechanism.__Class {
     
-        /**
-         * Creates a fake iterable mechanism.
-         *
-         * @constructor
-         * @extends {goog.storage.mechanism.IterableMechanism}
-         * @final
-         */
-        constructor();
+            /**
+            * Creates a fake iterable mechanism.
+            *
+            * @constructor
+            * @extends {goog.storage.mechanism.IterableMechanism}
+            * @final
+            */
+            constructor();
+        }
     }
 }

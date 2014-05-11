@@ -3,15 +3,18 @@
 
 declare module goog.ui {
 
-    class MenuSeparatorRenderer extends __MenuSeparatorRenderer { }
-    class __MenuSeparatorRenderer extends goog.ui.__ControlRenderer {
+    class MenuSeparatorRenderer extends MenuSeparatorRenderer.__Class { }
+    module MenuSeparatorRenderer {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class extends goog.ui.ControlRenderer.__Class {
     
-        /**
-         * Renderer for menu separators.
-         * @constructor
-         * @extends {goog.ui.ControlRenderer}
-         */
-        constructor();
+            /**
+            * Renderer for menu separators.
+            * @constructor
+            * @extends {goog.ui.ControlRenderer}
+            */
+            constructor();
+        }
     }
 }
 

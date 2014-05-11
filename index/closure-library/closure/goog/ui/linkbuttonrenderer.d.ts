@@ -3,17 +3,20 @@
 
 declare module goog.ui {
 
-    class LinkButtonRenderer extends __LinkButtonRenderer { }
-    class __LinkButtonRenderer extends goog.ui.__FlatButtonRenderer {
+    class LinkButtonRenderer extends LinkButtonRenderer.__Class { }
+    module LinkButtonRenderer {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class extends goog.ui.FlatButtonRenderer.__Class {
     
-        /**
-         * Link renderer for {@link goog.ui.Button}s.  Link buttons can contain
-         * almost arbitrary HTML content, will flow like inline elements, but can be
-         * styled like block-level elements.
-         * @constructor
-         * @extends {goog.ui.FlatButtonRenderer}
-         */
-        constructor();
+            /**
+            * Link renderer for {@link goog.ui.Button}s.  Link buttons can contain
+            * almost arbitrary HTML content, will flow like inline elements, but can be
+            * styled like block-level elements.
+            * @constructor
+            * @extends {goog.ui.FlatButtonRenderer}
+            */
+            constructor();
+        }
     }
 }
 

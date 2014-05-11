@@ -33,42 +33,48 @@ declare module goog.net {
 
 declare module goog.net.WebChannel {
 
-    class MessageEvent extends __MessageEvent { }
-    class __MessageEvent extends goog.events.__Event {
+    class MessageEvent extends MessageEvent.__Class { }
+    module MessageEvent {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class extends goog.events.Event.__Class {
     
-        /**
-         * The event interface for the MESSAGE event.
-         *
-         * @constructor
-         * @extends {goog.events.Event}
-         */
-        constructor();
+            /**
+            * The event interface for the MESSAGE event.
+            *
+            * @constructor
+            * @extends {goog.events.Event}
+            */
+            constructor();
     
-        /**
-         * The content of the message received from the server.
-         *
-         * @type {!goog.net.WebChannel.MessageData}
-         */
-        data: goog.net.WebChannel.MessageData;
+            /**
+            * The content of the message received from the server.
+            *
+            * @type {!goog.net.WebChannel.MessageData}
+            */
+            data: goog.net.WebChannel.MessageData;
+        }
     }
 
-    class ErrorEvent extends __ErrorEvent { }
-    class __ErrorEvent extends goog.events.__Event {
+    class ErrorEvent extends ErrorEvent.__Class { }
+    module ErrorEvent {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class extends goog.events.Event.__Class {
     
-        /**
-         * The event interface for the ERROR event.
-         *
-         * @constructor
-         * @extends {goog.events.Event}
-         */
-        constructor();
+            /**
+            * The event interface for the ERROR event.
+            *
+            * @constructor
+            * @extends {goog.events.Event}
+            */
+            constructor();
     
-        /**
-         * The error status.
-         *
-         * @type {!goog.net.WebChannel.ErrorStatus}
-         */
-        status: goog.net.WebChannel.ErrorStatus;
+            /**
+            * The error status.
+            *
+            * @type {!goog.net.WebChannel.ErrorStatus}
+            */
+            status: goog.net.WebChannel.ErrorStatus;
+        }
     }
 
     interface RuntimeProperties {

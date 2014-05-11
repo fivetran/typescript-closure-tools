@@ -4,18 +4,21 @@
 
 declare module goog.ui {
 
-    class Slider extends __Slider { }
-    class __Slider extends goog.ui.__SliderBase {
+    class Slider extends Slider.__Class { }
+    module Slider {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class extends goog.ui.SliderBase.__Class {
     
-        /**
-         * This creates a slider object.
-         * @param {goog.dom.DomHelper=} opt_domHelper Optional DOM helper.
-         * @param {(function(number):string)=} opt_labelFn An optional function mapping
-         *     slider values to a description of the value.
-         * @constructor
-         * @extends {goog.ui.SliderBase}
-         */
-        constructor(opt_domHelper?: goog.dom.DomHelper, opt_labelFn?: (_0: number) => string);
+            /**
+            * This creates a slider object.
+            * @param {goog.dom.DomHelper=} opt_domHelper Optional DOM helper.
+            * @param {(function(number):string)=} opt_labelFn An optional function mapping
+            *     slider values to a description of the value.
+            * @constructor
+            * @extends {goog.ui.SliderBase}
+            */
+            constructor(opt_domHelper?: goog.dom.DomHelper, opt_labelFn?: (_0: number) => string);
+        }
     }
 }
 

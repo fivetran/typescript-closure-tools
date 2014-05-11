@@ -3,19 +3,22 @@
 
 declare module goog.testing {
 
-    class ShardingTestCase extends __ShardingTestCase { }
-    class __ShardingTestCase extends goog.testing.__TestCase {
+    class ShardingTestCase extends ShardingTestCase.__Class { }
+    module ShardingTestCase {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class extends goog.testing.TestCase.__Class {
     
-        /**
-         * A test case that runs tests in per-file shards.
-         * @param {number} shardIndex Shard index for this page,
-         *     <strong>1-indexed</strong>.
-         * @param {number} numShards Number of shards to split up test cases into.
-         * @extends {goog.testing.TestCase}
-         * @constructor
-         * @final
-         */
-        constructor(shardIndex: number, numShards: number, opt_name?: any /* jsdoc error */);
+            /**
+            * A test case that runs tests in per-file shards.
+            * @param {number} shardIndex Shard index for this page,
+            *     <strong>1-indexed</strong>.
+            * @param {number} numShards Number of shards to split up test cases into.
+            * @extends {goog.testing.TestCase}
+            * @constructor
+            * @final
+            */
+            constructor(shardIndex: number, numShards: number, opt_name?: any /* jsdoc error */);
+        }
     }
 }
 

@@ -3,19 +3,22 @@
 
 declare module goog.ui {
 
-    class Css3ButtonRenderer extends __Css3ButtonRenderer { }
-    class __Css3ButtonRenderer extends goog.ui.__ButtonRenderer {
+    class Css3ButtonRenderer extends Css3ButtonRenderer.__Class { }
+    module Css3ButtonRenderer {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class extends goog.ui.ButtonRenderer.__Class {
     
-        /**
-         * Custom renderer for {@link goog.ui.Button}s. Css3 buttons can contain
-         * almost arbitrary HTML content, will flow like inline elements, but can be
-         * styled like block-level elements.
-         *
-         * @constructor
-         * @extends {goog.ui.ButtonRenderer}
-         * @final
-         */
-        constructor();
+            /**
+            * Custom renderer for {@link goog.ui.Button}s. Css3 buttons can contain
+            * almost arbitrary HTML content, will flow like inline elements, but can be
+            * styled like block-level elements.
+            *
+            * @constructor
+            * @extends {goog.ui.ButtonRenderer}
+            * @final
+            */
+            constructor();
+        }
     }
 }
 

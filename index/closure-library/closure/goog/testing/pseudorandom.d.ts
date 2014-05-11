@@ -3,43 +3,46 @@
 
 declare module goog.testing {
 
-    class PseudoRandom extends __PseudoRandom { }
-    class __PseudoRandom extends goog.__Disposable {
+    class PseudoRandom extends PseudoRandom.__Class { }
+    module PseudoRandom {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class extends goog.Disposable.__Class {
     
-        /**
-         * Class for unit testing code that uses Math.random. Generates deterministic
-         * random numbers.
-         *
-         * @param {number=} opt_seed The seed to use.
-         * @param {boolean=} opt_install Whether to install the PseudoRandom at
-         *     construction time.
-         * @extends {goog.Disposable}
-         * @constructor
-         * @final
-         */
-        constructor(opt_seed?: number, opt_install?: boolean);
+            /**
+            * Class for unit testing code that uses Math.random. Generates deterministic
+            * random numbers.
+            *
+            * @param {number=} opt_seed The seed to use.
+            * @param {boolean=} opt_install Whether to install the PseudoRandom at
+            *     construction time.
+            * @extends {goog.Disposable}
+            * @constructor
+            * @final
+            */
+            constructor(opt_seed?: number, opt_install?: boolean);
     
-        /**
-         * Installs this PseudoRandom as the system number generator.
-         */
-        install(): void;
+            /**
+            * Installs this PseudoRandom as the system number generator.
+            */
+            install(): void;
     
-        /**
-         * Uninstalls the PseudoRandom.
-         */
-        uninstall(): void;
+            /**
+            * Uninstalls the PseudoRandom.
+            */
+            uninstall(): void;
     
-        /**
-         * Seed the generator.
-         *
-         * @param {number=} seed The seed to use.
-         */
-        seed(seed?: number): void;
+            /**
+            * Seed the generator.
+            *
+            * @param {number=} seed The seed to use.
+            */
+            seed(seed?: number): void;
     
-        /**
-         * @return {number} The next number in the sequence.
-         */
-        random(): number;
+            /**
+            * @return {number} The next number in the sequence.
+            */
+            random(): number;
+        }
     }
 }
 

@@ -3,15 +3,18 @@
 
 declare module goog.math.interpolator {
 
-    class Pchip1 extends __Pchip1 { }
-    class __Pchip1 extends goog.math.interpolator.__Spline1 {
+    class Pchip1 extends Pchip1.__Class { }
+    module Pchip1 {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class extends goog.math.interpolator.Spline1.__Class {
     
-        /**
-         * A one dimensional monotone cubic spline interpolator.
-         * @extends {goog.math.interpolator.Spline1}
-         * @constructor
-         * @final
-         */
-        constructor();
+            /**
+            * A one dimensional monotone cubic spline interpolator.
+            * @extends {goog.math.interpolator.Spline1}
+            * @constructor
+            * @final
+            */
+            constructor();
+        }
     }
 }

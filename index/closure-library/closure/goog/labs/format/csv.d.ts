@@ -3,24 +3,27 @@
 
 declare module goog.labs.format.csv {
 
-    class ParseError extends __ParseError { }
-    class __ParseError extends goog.debug.__Error {
+    class ParseError extends ParseError.__Class { }
+    module ParseError {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class extends goog.debug.Error.__Class {
     
-        /**
-         * Error thrown when parsing fails.
-         *
-         * @param {string} text The CSV source text being parsed.
-         * @param {number} index The index, in the string, of the position of the
-         *      error.
-         * @param {string=} opt_message A description of the violated parse expectation.
-         * @constructor
-         * @extends {goog.debug.Error}
-         * @final
-         */
-        constructor(text: string, index: number, opt_message?: string);
+            /**
+            * Error thrown when parsing fails.
+            *
+            * @param {string} text The CSV source text being parsed.
+            * @param {number} index The index, in the string, of the position of the
+            *      error.
+            * @param {string=} opt_message A description of the violated parse expectation.
+            * @constructor
+            * @extends {goog.debug.Error}
+            * @final
+            */
+            constructor(text: string, index: number, opt_message?: string);
     
-        /** @inheritDoc */
-        name: any /*missing*/;
+            /** @inheritDoc */
+            name: any /*missing*/;
+        }
     }
 
     /**

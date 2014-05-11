@@ -2,38 +2,41 @@
 
 declare module goog.math {
 
-    class Range extends __Range { }
-    class __Range {
+    class Range extends Range.__Class { }
+    module Range {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class {
     
-        /**
-         * A number range.
-         * @param {number} a One end of the range.
-         * @param {number} b The other end of the range.
-         * @constructor
-         */
-        constructor(a: number, b: number);
+            /**
+            * A number range.
+            * @param {number} a One end of the range.
+            * @param {number} b The other end of the range.
+            * @constructor
+            */
+            constructor(a: number, b: number);
     
-        /**
-         * @return {!goog.math.Range} A clone of this Range.
-         */
-        clone(): goog.math.Range;
+            /**
+            * @return {!goog.math.Range} A clone of this Range.
+            */
+            clone(): goog.math.Range;
     
-        /**
-         * @return {number} Length of the range.
-         */
-        getLength(): number;
+            /**
+            * @return {number} Length of the range.
+            */
+            getLength(): number;
     
-        /**
-         * Extends this range to include the given point.
-         * @param {number} point
-         */
-        includePoint(point: number): void;
+            /**
+            * Extends this range to include the given point.
+            * @param {number} point
+            */
+            includePoint(point: number): void;
     
-        /**
-         * Extends this range to include the given range.
-         * @param {!goog.math.Range} range
-         */
-        includeRange(range: goog.math.Range): void;
+            /**
+            * Extends this range to include the given range.
+            * @param {!goog.math.Range} range
+            */
+            includeRange(range: goog.math.Range): void;
+        }
     }
 }
 

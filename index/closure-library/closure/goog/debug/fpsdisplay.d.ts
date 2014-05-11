@@ -4,43 +4,49 @@
 
 declare module goog.debug {
 
-    class FpsDisplay extends __FpsDisplay { }
-    class __FpsDisplay extends goog.ui.__Component {
+    class FpsDisplay extends FpsDisplay.__Class { }
+    module FpsDisplay {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class extends goog.ui.Component.__Class {
     
-        /**
-         * Displays frames per seconds that the window this component is
-         * rendered in is animating at.
-         *
-         * @param {goog.dom.DomHelper=} opt_domHelper An optional dom helper.
-         * @constructor
-         * @extends {goog.ui.Component}
-         * @final
-         */
-        constructor(opt_domHelper?: goog.dom.DomHelper);
+            /**
+            * Displays frames per seconds that the window this component is
+            * rendered in is animating at.
+            *
+            * @param {goog.dom.DomHelper=} opt_domHelper An optional dom helper.
+            * @constructor
+            * @extends {goog.ui.Component}
+            * @final
+            */
+            constructor(opt_domHelper?: goog.dom.DomHelper);
     
-        /**
-         * @return {number} The average frames per second.
-         */
-        getFps(): number;
+            /**
+            * @return {number} The average frames per second.
+            */
+            getFps(): number;
+        }
     }
 }
 
 declare module goog.debug.FpsDisplay {
 
-    class FpsAnimation_ extends __FpsAnimation_ { }
-    class __FpsAnimation_ {
+    class FpsAnimation_ extends FpsAnimation_.__Class { }
+    module FpsAnimation_ {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class {
     
-        /**
-         * @param {Element} elem An element to hold the FPS count.
-         * @constructor
-         * @private
-         */
-        constructor(elem: Element);
+            /**
+            * @param {Element} elem An element to hold the FPS count.
+            * @constructor
+            * @private
+            */
+            constructor(elem: Element);
     
-        /**
-         * @param {number} now The current time.
-         */
-        onAnimationFrame(now: number): void;
+            /**
+            * @param {number} now The current time.
+            */
+            onAnimationFrame(now: number): void;
+        }
     }
 
     /**

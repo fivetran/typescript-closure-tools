@@ -2,34 +2,43 @@
 
 declare module goog.log {
 
-    class Logger extends __Logger { }
-    class __Logger {
+    class Logger extends Logger.__Class { }
+    module Logger {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class {
     
-        /**
-         * @constructor
-         * @final
-         */
-        constructor();
+            /**
+            * @constructor
+            * @final
+            */
+            constructor();
+        }
     }
 
-    class Level extends __Level { }
-    class __Level {
+    class Level extends Level.__Class { }
+    module Level {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class {
     
-        /**
-         * @constructor
-         * @final
-         */
-        constructor();
+            /**
+            * @constructor
+            * @final
+            */
+            constructor();
+        }
     }
 
-    class LogRecord extends __LogRecord { }
-    class __LogRecord {
+    class LogRecord extends LogRecord.__Class { }
+    module LogRecord {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class {
     
-        /**
-         * @constructor
-         * @final
-         */
-        constructor();
+            /**
+            * @constructor
+            * @final
+            */
+            constructor();
+        }
     }
 
     /**

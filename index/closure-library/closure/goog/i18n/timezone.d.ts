@@ -3,146 +3,149 @@
 
 declare module goog.i18n {
 
-    class TimeZone extends __TimeZone { }
-    class __TimeZone {
+    class TimeZone extends TimeZone.__Class { }
+    module TimeZone {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class {
     
-        /**
-         * TimeZone class implemented a time zone resolution and name information
-         * source for client applications. The time zone object is initiated from
-         * a time zone information object. Application can initiate a time zone
-         * statically, or it may choose to initiate from a data obtained from server.
-         * Each time zone information array is small, but the whole set of data
-         * is too much for client application to download. If end user is allowed to
-         * change time zone setting, dynamic retrieval should be the method to use.
-         * In case only time zone offset is known, there is a decent fallback
-         * that only use the time zone offset to create a TimeZone object.
-         * A whole set of time zone information array was available under
-         * http://go/js_locale_data. It is generated based on CLDR and
-         * Olson time zone data base (through pytz), and will be updated timely.
-         *
-         * @constructor
-         * @final
-         */
-        constructor();
+            /**
+            * TimeZone class implemented a time zone resolution and name information
+            * source for client applications. The time zone object is initiated from
+            * a time zone information object. Application can initiate a time zone
+            * statically, or it may choose to initiate from a data obtained from server.
+            * Each time zone information array is small, but the whole set of data
+            * is too much for client application to download. If end user is allowed to
+            * change time zone setting, dynamic retrieval should be the method to use.
+            * In case only time zone offset is known, there is a decent fallback
+            * that only use the time zone offset to create a TimeZone object.
+            * A whole set of time zone information array was available under
+            * http://go/js_locale_data. It is generated based on CLDR and
+            * Olson time zone data base (through pytz), and will be updated timely.
+            *
+            * @constructor
+            * @final
+            */
+            constructor();
     
-        /**
-         * Convert the contents of time zone object to a timeZoneData object, suitable
-         * for passing to goog.i18n.TimeZone.createTimeZone.
-         * @return {!Object} A timeZoneData object (see the documentation for
-         *     goog.i18n.TimeZone.createTimeZone).
-         */
-        getTimeZoneData(): Object;
+            /**
+            * Convert the contents of time zone object to a timeZoneData object, suitable
+            * for passing to goog.i18n.TimeZone.createTimeZone.
+            * @return {!Object} A timeZoneData object (see the documentation for
+            *     goog.i18n.TimeZone.createTimeZone).
+            */
+            getTimeZoneData(): Object;
     
-        /**
-         * Return the DST adjustment to the time zone offset for a given time.
-         * While Daylight Saving Time is in effect, this number is positive.
-         * Otherwise, it is zero.
-         * @param {goog.date.DateLike} date The time to check.
-         * @return {number} The DST adjustment in minutes EAST of UTC.
-         */
-        getDaylightAdjustment(date: Date): number;
-        /**
-         * Return the DST adjustment to the time zone offset for a given time.
-         * While Daylight Saving Time is in effect, this number is positive.
-         * Otherwise, it is zero.
-         * @param {goog.date.DateLike} date The time to check.
-         * @return {number} The DST adjustment in minutes EAST of UTC.
-         */
-        getDaylightAdjustment(date: goog.date.Date): number;
+            /**
+            * Return the DST adjustment to the time zone offset for a given time.
+            * While Daylight Saving Time is in effect, this number is positive.
+            * Otherwise, it is zero.
+            * @param {goog.date.DateLike} date The time to check.
+            * @return {number} The DST adjustment in minutes EAST of UTC.
+            */
+            getDaylightAdjustment(date: Date): number;
+            /**
+            * Return the DST adjustment to the time zone offset for a given time.
+            * While Daylight Saving Time is in effect, this number is positive.
+            * Otherwise, it is zero.
+            * @param {goog.date.DateLike} date The time to check.
+            * @return {number} The DST adjustment in minutes EAST of UTC.
+            */
+            getDaylightAdjustment(date: goog.date.Date): number;
     
-        /**
-         * Return the GMT representation of this time zone object.
-         * @param {goog.date.DateLike} date The date for which time to retrieve
-         *     GMT string.
-         * @return {string} GMT representation string.
-         */
-        getGMTString(date: Date): string;
-        /**
-         * Return the GMT representation of this time zone object.
-         * @param {goog.date.DateLike} date The date for which time to retrieve
-         *     GMT string.
-         * @return {string} GMT representation string.
-         */
-        getGMTString(date: goog.date.Date): string;
+            /**
+            * Return the GMT representation of this time zone object.
+            * @param {goog.date.DateLike} date The date for which time to retrieve
+            *     GMT string.
+            * @return {string} GMT representation string.
+            */
+            getGMTString(date: Date): string;
+            /**
+            * Return the GMT representation of this time zone object.
+            * @param {goog.date.DateLike} date The date for which time to retrieve
+            *     GMT string.
+            * @return {string} GMT representation string.
+            */
+            getGMTString(date: goog.date.Date): string;
     
-        /**
-         * Get the long time zone name for a given date/time.
-         * @param {goog.date.DateLike} date The time for which to retrieve
-         *     the long time zone name.
-         * @return {string} The long time zone name.
-         */
-        getLongName(date: Date): string;
-        /**
-         * Get the long time zone name for a given date/time.
-         * @param {goog.date.DateLike} date The time for which to retrieve
-         *     the long time zone name.
-         * @return {string} The long time zone name.
-         */
-        getLongName(date: goog.date.Date): string;
+            /**
+            * Get the long time zone name for a given date/time.
+            * @param {goog.date.DateLike} date The time for which to retrieve
+            *     the long time zone name.
+            * @return {string} The long time zone name.
+            */
+            getLongName(date: Date): string;
+            /**
+            * Get the long time zone name for a given date/time.
+            * @param {goog.date.DateLike} date The time for which to retrieve
+            *     the long time zone name.
+            * @return {string} The long time zone name.
+            */
+            getLongName(date: goog.date.Date): string;
     
-        /**
-         * Get the time zone offset in minutes WEST of UTC for a given date/time.
-         * @param {goog.date.DateLike} date The time for which to retrieve
-         *     the time zone offset.
-         * @return {number} The time zone offset in minutes WEST of UTC.
-         */
-        getOffset(date: Date): number;
-        /**
-         * Get the time zone offset in minutes WEST of UTC for a given date/time.
-         * @param {goog.date.DateLike} date The time for which to retrieve
-         *     the time zone offset.
-         * @return {number} The time zone offset in minutes WEST of UTC.
-         */
-        getOffset(date: goog.date.Date): number;
+            /**
+            * Get the time zone offset in minutes WEST of UTC for a given date/time.
+            * @param {goog.date.DateLike} date The time for which to retrieve
+            *     the time zone offset.
+            * @return {number} The time zone offset in minutes WEST of UTC.
+            */
+            getOffset(date: Date): number;
+            /**
+            * Get the time zone offset in minutes WEST of UTC for a given date/time.
+            * @param {goog.date.DateLike} date The time for which to retrieve
+            *     the time zone offset.
+            * @return {number} The time zone offset in minutes WEST of UTC.
+            */
+            getOffset(date: goog.date.Date): number;
     
-        /**
-         * Get the RFC representation of the time zone for a given date/time.
-         * @param {goog.date.DateLike} date The time for which to retrieve the
-         *     RFC time zone string.
-         * @return {string} The RFC time zone string.
-         */
-        getRFCTimeZoneString(date: Date): string;
-        /**
-         * Get the RFC representation of the time zone for a given date/time.
-         * @param {goog.date.DateLike} date The time for which to retrieve the
-         *     RFC time zone string.
-         * @return {string} The RFC time zone string.
-         */
-        getRFCTimeZoneString(date: goog.date.Date): string;
+            /**
+            * Get the RFC representation of the time zone for a given date/time.
+            * @param {goog.date.DateLike} date The time for which to retrieve the
+            *     RFC time zone string.
+            * @return {string} The RFC time zone string.
+            */
+            getRFCTimeZoneString(date: Date): string;
+            /**
+            * Get the RFC representation of the time zone for a given date/time.
+            * @param {goog.date.DateLike} date The time for which to retrieve the
+            *     RFC time zone string.
+            * @return {string} The RFC time zone string.
+            */
+            getRFCTimeZoneString(date: goog.date.Date): string;
     
-        /**
-         * Get the short time zone name for given date/time.
-         * @param {goog.date.DateLike} date The time for which to retrieve
-         *     the short time zone name.
-         * @return {string} The short time zone name.
-         */
-        getShortName(date: Date): string;
-        /**
-         * Get the short time zone name for given date/time.
-         * @param {goog.date.DateLike} date The time for which to retrieve
-         *     the short time zone name.
-         * @return {string} The short time zone name.
-         */
-        getShortName(date: goog.date.Date): string;
+            /**
+            * Get the short time zone name for given date/time.
+            * @param {goog.date.DateLike} date The time for which to retrieve
+            *     the short time zone name.
+            * @return {string} The short time zone name.
+            */
+            getShortName(date: Date): string;
+            /**
+            * Get the short time zone name for given date/time.
+            * @param {goog.date.DateLike} date The time for which to retrieve
+            *     the short time zone name.
+            * @return {string} The short time zone name.
+            */
+            getShortName(date: goog.date.Date): string;
     
-        /**
-         * Return the time zone ID for this time zone.
-         * @return {string} The time zone ID.
-         */
-        getTimeZoneId(): string;
+            /**
+            * Return the time zone ID for this time zone.
+            * @return {string} The time zone ID.
+            */
+            getTimeZoneId(): string;
     
-        /**
-         * Check if Daylight Saving Time is in effect at a given time in this time zone.
-         * @param {goog.date.DateLike} date The time to check.
-         * @return {boolean} True if Daylight Saving Time is in effect.
-         */
-        isDaylightTime(date: Date): boolean;
-        /**
-         * Check if Daylight Saving Time is in effect at a given time in this time zone.
-         * @param {goog.date.DateLike} date The time to check.
-         * @return {boolean} True if Daylight Saving Time is in effect.
-         */
-        isDaylightTime(date: goog.date.Date): boolean;
+            /**
+            * Check if Daylight Saving Time is in effect at a given time in this time zone.
+            * @param {goog.date.DateLike} date The time to check.
+            * @return {boolean} True if Daylight Saving Time is in effect.
+            */
+            isDaylightTime(date: Date): boolean;
+            /**
+            * Check if Daylight Saving Time is in effect at a given time in this time zone.
+            * @param {goog.date.DateLike} date The time to check.
+            * @return {boolean} True if Daylight Saving Time is in effect.
+            */
+            isDaylightTime(date: goog.date.Date): boolean;
+        }
     }
 }
 

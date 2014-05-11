@@ -6,31 +6,34 @@
 
 declare module goog.ui.media {
 
-    class Mp3 extends __Mp3 { }
-    class __Mp3 extends goog.ui.media.__MediaRenderer {
+    class Mp3 extends Mp3.__Class { }
+    module Mp3 {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class extends goog.ui.media.MediaRenderer.__Class {
     
-        /**
-         * Subclasses a goog.ui.media.MediaRenderer to provide a Mp3 specific media
-         * renderer.
-         *
-         * This class knows how to parse mp3 URLs, and render the DOM structure
-         * of mp3 flash players. This class is meant to be used as a singleton static
-         * stateless class, that takes {@code goog.ui.media.Media} instances and renders
-         * it. It expects {@code goog.ui.media.Media.getModel} to return a well formed,
-         * previously checked, mp3 URL {@see goog.ui.media.PicasaAlbum.parseUrl},
-         * which is the data model this renderer will use to construct the DOM
-         * structure. {@see goog.ui.media.PicasaAlbum.newControl} for an example of
-         * constructing a control with this renderer.
-         *
-         * This design is patterned after http://go/closure_control_subclassing
-         *
-         * It uses {@link goog.ui.media.FlashObject} to embed the flash object.
-         *
-         * @constructor
-         * @extends {goog.ui.media.MediaRenderer}
-         * @final
-         */
-        constructor();
+            /**
+            * Subclasses a goog.ui.media.MediaRenderer to provide a Mp3 specific media
+            * renderer.
+            *
+            * This class knows how to parse mp3 URLs, and render the DOM structure
+            * of mp3 flash players. This class is meant to be used as a singleton static
+            * stateless class, that takes {@code goog.ui.media.Media} instances and renders
+            * it. It expects {@code goog.ui.media.Media.getModel} to return a well formed,
+            * previously checked, mp3 URL {@see goog.ui.media.PicasaAlbum.parseUrl},
+            * which is the data model this renderer will use to construct the DOM
+            * structure. {@see goog.ui.media.PicasaAlbum.newControl} for an example of
+            * constructing a control with this renderer.
+            *
+            * This design is patterned after http://go/closure_control_subclassing
+            *
+            * It uses {@link goog.ui.media.FlashObject} to embed the flash object.
+            *
+            * @constructor
+            * @extends {goog.ui.media.MediaRenderer}
+            * @final
+            */
+            constructor();
+        }
     }
 }
 

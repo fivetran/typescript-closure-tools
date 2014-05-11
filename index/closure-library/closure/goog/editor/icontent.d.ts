@@ -2,37 +2,43 @@
 
 declare module goog.editor.icontent {
 
-    class FieldFormatInfo extends __FieldFormatInfo { }
-    class __FieldFormatInfo {
+    class FieldFormatInfo extends FieldFormatInfo.__Class { }
+    module FieldFormatInfo {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class {
     
-        /**
-         * A data structure for storing simple rendering info about a field.
-         *
-         * @param {string} fieldId The id of the field.
-         * @param {boolean} standards Whether the field should be rendered in
-         *     standards mode.
-         * @param {boolean} blended Whether the field is in blended mode.
-         * @param {boolean} fixedHeight Whether the field is in fixedHeight mode.
-         * @param {Object=} opt_extraStyles Other style attributes for the field,
-         *     represented as a map of strings.
-         * @constructor
-         * @final
-         */
-        constructor(fieldId: string, standards: boolean, blended: boolean, fixedHeight: boolean, opt_extraStyles?: Object);
+            /**
+            * A data structure for storing simple rendering info about a field.
+            *
+            * @param {string} fieldId The id of the field.
+            * @param {boolean} standards Whether the field should be rendered in
+            *     standards mode.
+            * @param {boolean} blended Whether the field is in blended mode.
+            * @param {boolean} fixedHeight Whether the field is in fixedHeight mode.
+            * @param {Object=} opt_extraStyles Other style attributes for the field,
+            *     represented as a map of strings.
+            * @constructor
+            * @final
+            */
+            constructor(fieldId: string, standards: boolean, blended: boolean, fixedHeight: boolean, opt_extraStyles?: Object);
+        }
     }
 
-    class FieldStyleInfo extends __FieldStyleInfo { }
-    class __FieldStyleInfo {
+    class FieldStyleInfo extends FieldStyleInfo.__Class { }
+    module FieldStyleInfo {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class {
     
-        /**
-         * A data structure for storing simple info about the styles of a field.
-         * Only needed in Firefox/Blended mode.
-         * @param {Element} wrapper The wrapper div around a field.
-         * @param {string} css The css for a field.
-         * @constructor
-         * @final
-         */
-        constructor(wrapper: Element, css: string);
+            /**
+            * A data structure for storing simple info about the styles of a field.
+            * Only needed in Firefox/Blended mode.
+            * @param {Element} wrapper The wrapper div around a field.
+            * @param {string} css The css for a field.
+            * @constructor
+            * @final
+            */
+            constructor(wrapper: Element, css: string);
+        }
     }
 
     /**

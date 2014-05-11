@@ -3,16 +3,19 @@
 
 declare module goog.ui {
 
-    class ToolbarButtonRenderer extends __ToolbarButtonRenderer { }
-    class __ToolbarButtonRenderer extends goog.ui.__CustomButtonRenderer {
+    class ToolbarButtonRenderer extends ToolbarButtonRenderer.__Class { }
+    module ToolbarButtonRenderer {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class extends goog.ui.CustomButtonRenderer.__Class {
     
-        /**
-         * Toolbar-specific renderer for {@link goog.ui.Button}s, based on {@link
-         * goog.ui.CustomButtonRenderer}.
-         * @constructor
-         * @extends {goog.ui.CustomButtonRenderer}
-         */
-        constructor();
+            /**
+            * Toolbar-specific renderer for {@link goog.ui.Button}s, based on {@link
+            * goog.ui.CustomButtonRenderer}.
+            * @constructor
+            * @extends {goog.ui.CustomButtonRenderer}
+            */
+            constructor();
+        }
     }
 }
 

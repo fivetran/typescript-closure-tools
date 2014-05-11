@@ -4,123 +4,129 @@
 
 declare module goog {
 
-    class History extends __History { }
-    class __History extends goog.events.__EventTarget {
+    class History extends History.__Class { }
+    module History {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class extends goog.events.EventTarget.__Class {
     
-        /**
-         * A history management object. Can be instantiated in user-visible mode (uses
-         * the address fragment to manage state) or in hidden mode. This object should
-         * be created from a script in the document body before the document has
-         * finished loading.
-         *
-         * To store the hidden states in browsers other than IE, a hidden iframe is
-         * used. It must point to a valid html page on the same domain (which can and
-         * probably should be blank.)
-         *
-         * Sample instantiation and usage:
-         *
-         * <pre>
-         * // Instantiate history to use the address bar for state.
-         * var h = new goog.History();
-         * goog.events.listen(h, goog.history.EventType.NAVIGATE, navCallback);
-         * h.setEnabled(true);
-         *
-         * // Any changes to the location hash will call the following function.
-         * function navCallback(e) {
-         *   alert('Navigated to state "' + e.token + '"');
-         * }
-         *
-         * // The history token can also be set from code directly.
-         * h.setToken('foo');
-         * </pre>
-         *
-         * @param {boolean=} opt_invisible True to use hidden history states instead of
-         *     the user-visible location hash.
-         * @param {string=} opt_blankPageUrl A URL to a blank page on the same server.
-         *     Required if opt_invisible is true.  This URL is also used as the src
-         *     for the iframe used to track history state in IE (if not specified the
-         *     iframe is not given a src attribute).  Access is Denied error may
-         *     occur in IE7 if the window's URL's scheme is https, and this URL is
-         *     not specified.
-         * @param {HTMLInputElement=} opt_input The hidden input element to be used to
-         *     store the history token.  If not provided, a hidden input element will
-         *     be created using document.write.
-         * @param {HTMLIFrameElement=} opt_iframe The hidden iframe that will be used by
-         *     IE for pushing history state changes, or by all browsers if opt_invisible
-         *     is true. If not provided, a hidden iframe element will be created using
-         *     document.write.
-         * @constructor
-         * @extends {goog.events.EventTarget}
-         */
-        constructor(opt_invisible?: boolean, opt_blankPageUrl?: string, opt_input?: HTMLInputElement, opt_iframe?: HTMLIFrameElement);
+            /**
+            * A history management object. Can be instantiated in user-visible mode (uses
+            * the address fragment to manage state) or in hidden mode. This object should
+            * be created from a script in the document body before the document has
+            * finished loading.
+            *
+            * To store the hidden states in browsers other than IE, a hidden iframe is
+            * used. It must point to a valid html page on the same domain (which can and
+            * probably should be blank.)
+            *
+            * Sample instantiation and usage:
+            *
+            * <pre>
+            * // Instantiate history to use the address bar for state.
+            * var h = new goog.History();
+            * goog.events.listen(h, goog.history.EventType.NAVIGATE, navCallback);
+            * h.setEnabled(true);
+            *
+            * // Any changes to the location hash will call the following function.
+            * function navCallback(e) {
+            *   alert('Navigated to state "' + e.token + '"');
+            * }
+            *
+            * // The history token can also be set from code directly.
+            * h.setToken('foo');
+            * </pre>
+            *
+            * @param {boolean=} opt_invisible True to use hidden history states instead of
+            *     the user-visible location hash.
+            * @param {string=} opt_blankPageUrl A URL to a blank page on the same server.
+            *     Required if opt_invisible is true.  This URL is also used as the src
+            *     for the iframe used to track history state in IE (if not specified the
+            *     iframe is not given a src attribute).  Access is Denied error may
+            *     occur in IE7 if the window's URL's scheme is https, and this URL is
+            *     not specified.
+            * @param {HTMLInputElement=} opt_input The hidden input element to be used to
+            *     store the history token.  If not provided, a hidden input element will
+            *     be created using document.write.
+            * @param {HTMLIFrameElement=} opt_iframe The hidden iframe that will be used by
+            *     IE for pushing history state changes, or by all browsers if opt_invisible
+            *     is true. If not provided, a hidden iframe element will be created using
+            *     document.write.
+            * @constructor
+            * @extends {goog.events.EventTarget}
+            */
+            constructor(opt_invisible?: boolean, opt_blankPageUrl?: string, opt_input?: HTMLInputElement, opt_iframe?: HTMLIFrameElement);
     
-        /**
-         * Starts or stops the History polling loop. When enabled, the History object
-         * will immediately fire an event for the current location. The caller can set
-         * up event listeners between the call to the constructor and the call to
-         * setEnabled.
-         *
-         * On IE, actual startup may be delayed until the iframe and hidden input
-         * element have been loaded and can be polled. This behavior is transparent to
-         * the caller.
-         *
-         * @param {boolean} enable Whether to enable the history polling loop.
-         */
-        setEnabled(enable: boolean): void;
+            /**
+            * Starts or stops the History polling loop. When enabled, the History object
+            * will immediately fire an event for the current location. The caller can set
+            * up event listeners between the call to the constructor and the call to
+            * setEnabled.
+            *
+            * On IE, actual startup may be delayed until the iframe and hidden input
+            * element have been loaded and can be polled. This behavior is transparent to
+            * the caller.
+            *
+            * @param {boolean} enable Whether to enable the history polling loop.
+            */
+            setEnabled(enable: boolean): void;
     
-        /**
-         * Callback for the window onload event in IE. This is necessary to read the
-         * value of the hidden input after restoring a history session. The value of
-         * input elements is not viewable until after window onload for some reason (the
-         * iframe state is similarly unavailable during the loading phase.)  If
-         * setEnabled is called before the iframe has completed loading, the history
-         * object will actually be enabled at this point.
-         * @protected
-         */
-        onDocumentLoaded(): void;
+            /**
+            * Callback for the window onload event in IE. This is necessary to read the
+            * value of the hidden input after restoring a history session. The value of
+            * input elements is not viewable until after window onload for some reason (the
+            * iframe state is similarly unavailable during the loading phase.)  If
+            * setEnabled is called before the iframe has completed loading, the history
+            * object will actually be enabled at this point.
+            * @protected
+            */
+            onDocumentLoaded(): void;
     
-        /**
-         * @return {string} The current token.
-         */
-        getToken(): string;
+            /**
+            * @return {string} The current token.
+            */
+            getToken(): string;
     
-        /**
-         * Sets the history state. When user visible states are used, the URL fragment
-         * will be set to the provided token.  Sometimes it is necessary to set the
-         * history token before the document title has changed, in this case IE's
-         * history drop down can be out of sync with the token.  To get around this
-         * problem, the app can pass in a title to use with the hidden iframe.
-         * @param {string} token The history state identifier.
-         * @param {string=} opt_title Optional title used when setting the hidden iframe
-         *     title in IE.
-         */
-        setToken(token: string, opt_title?: string): void;
+            /**
+            * Sets the history state. When user visible states are used, the URL fragment
+            * will be set to the provided token.  Sometimes it is necessary to set the
+            * history token before the document title has changed, in this case IE's
+            * history drop down can be out of sync with the token.  To get around this
+            * problem, the app can pass in a title to use with the hidden iframe.
+            * @param {string} token The history state identifier.
+            * @param {string=} opt_title Optional title used when setting the hidden iframe
+            *     title in IE.
+            */
+            setToken(token: string, opt_title?: string): void;
     
-        /**
-         * Replaces the current history state without affecting the rest of the history
-         * stack.
-         * @param {string} token The history state identifier.
-         * @param {string=} opt_title Optional title used when setting the hidden iframe
-         *     title in IE.
-         */
-        replaceToken(token: string, opt_title?: string): void;
+            /**
+            * Replaces the current history state without affecting the rest of the history
+            * stack.
+            * @param {string} token The history state identifier.
+            * @param {string=} opt_title Optional title used when setting the hidden iframe
+            *     title in IE.
+            */
+            replaceToken(token: string, opt_title?: string): void;
+        }
     }
 }
 
 declare module goog.History {
 
-    class Event extends __Event { }
-    class __Event extends goog.events.__Event {
+    class Event extends Event.__Class { }
+    module Event {
+        /** Fake class which should be extended to avoid inheriting static properties */
+        class __Class extends goog.events.Event.__Class {
     
-        /**
-         * Constant for the history change event type.
-         * @param {string} token The string identifying the new history state.
-         * @extends {goog.events.Event}
-         * @constructor
-         * @deprecated Use goog.history.Event.
-         * @final
-         */
-        constructor(token: string);
+            /**
+            * Constant for the history change event type.
+            * @param {string} token The string identifying the new history state.
+            * @extends {goog.events.Event}
+            * @constructor
+            * @deprecated Use goog.history.Event.
+            * @final
+            */
+            constructor(token: string);
+        }
     }
 
     /**
