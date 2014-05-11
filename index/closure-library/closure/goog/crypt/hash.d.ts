@@ -12,11 +12,11 @@ declare module goog.crypt {
          * @struct
          */
         constructor();
-    
+
         /**
          * Resets the internal accumulator.
          */
-        reset: any /*missing*/;
+        reset(): void;
     
         /**
          * Adds a byte array (array with values in [0-255] range) or a string (might
