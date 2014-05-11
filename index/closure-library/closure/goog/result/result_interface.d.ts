@@ -3,7 +3,7 @@
 
 declare module goog.result {
 
-    interface Result extends goog.__Thenable<any> {
+    interface Result extends goog.Thenable<any> {
     
         /**
          * Attaches handlers to be called when the value of this Result is available.

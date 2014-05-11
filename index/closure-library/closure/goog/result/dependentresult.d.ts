@@ -3,7 +3,7 @@
 
 declare module goog.result {
 
-    interface DependentResult extends goog.result.__Result {
+    interface DependentResult extends goog.result.Result {
     
         /**
          *
