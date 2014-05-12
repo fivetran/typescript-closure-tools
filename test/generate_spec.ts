@@ -85,6 +85,22 @@ describe('generate', () => {
         });
     });
 
+    it('typedef array', () => {
+        expect(parse('test/typedef_array.js')).toEqual({
+            "example": {
+                "ArrayType": "interface ArrayType extends Array<string> { }"
+            }
+        });
+    });
+
+    it('typedef bang', () => {
+        expect(parse('test/typedef_bang.js')).toEqual({
+            "example": {
+                "BangType": "interface BangType extends Array<string> { }"
+            }
+        });
+    });
+
     it('typedef union', () => {
         expect(parse('test/typedef_union.js')).toEqual({
             "example": {

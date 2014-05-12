@@ -538,9 +538,16 @@ function generate_enum(name: string, values) {
 }
 
 function generate_typedef(name: string, docs: doctrine.JSDoc) {
-    var typedef = find(docs.tags, t => t.title === 'typedef').type;
+    var tag = find(docs.tags, t => t.title === 'typedef');
+    var typedef = tag.type;
 
     switch (typedef.type) {
+        // Skip modifiers
+        case 'OptionalType':
+        case 'NullableType':
+        case 'NonNullableType':
+            tag.type = typedef.expression;
+            return generate_typedef(name, docs);
         // F function(...) becomes interface F { (...): ... }
         case 'FunctionType':
             var argumentString = typedef.params.map(generate_indexed_function_parameter).join(', ');
