@@ -3,13 +3,13 @@
 declare module goog.vec {
 
     /** @typedef {!Float32Array} */
-    interface Float32 { /*Float32Array*/ }
+    interface Float32 extends Float32Array { }
 
     /** @typedef {!Float64Array} */
-    interface Float64 { /*Float64Array*/ }
+    interface Float64 extends Float64Array { }
 
     /** @typedef {!Array.<number>} */
-    interface Number { /*number[]*/ }
+    interface Number extends Array<number> { }
 
     /** @typedef {!goog.vec.Float32|!goog.vec.Float64|!goog.vec.Number} */
     interface AnyType { /*any (goog.vec.Float32|goog.vec.Float64|goog.vec.Number)*/ }

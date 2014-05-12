@@ -18,7 +18,7 @@ declare module goog.vec.Mat4 {
     interface AnyType extends goog.vec.AnyType { }
 
     /** @typedef {!Float32Array} */
-    interface Type { /*Float32Array*/ }
+    interface Type extends Float32Array { }
 
     /** @typedef {goog.vec.ArrayType} */
     interface Mat4Like extends goog.vec.ArrayType { }

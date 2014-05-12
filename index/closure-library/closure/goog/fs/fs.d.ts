@@ -52,7 +52,10 @@ declare module goog.fs {
      * @typedef {!{createObjectURL: (function(!Blob): string),
      *            revokeObjectURL: function(string): void}}
      */
-    interface UrlObject_ { /*{ createObjectURL: any ((_0: Blob) => string); revokeObjectURL: (_0: string) => void }*/ }
+    interface UrlObject_ {
+        createObjectURL: any /*(_0: Blob) => string*/;
+        revokeObjectURL: (_0: string) => void
+    }
 
     /**
      * Checks whether this browser supports Object Urls. If not, calls to

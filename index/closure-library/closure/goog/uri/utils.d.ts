@@ -242,7 +242,7 @@ declare module goog.uri.utils {
      *
      * @typedef {!Array.<string|goog.uri.utils.QueryValue>}
      */
-    interface QueryArray { /*any (string|goog.uri.utils.QueryValue)[]*/ }
+    interface QueryArray extends Array<any /*string|goog.uri.utils.QueryValue*/> { }
 
     /**
      * Builds a query data string from a sequence of alternating keys and values.
