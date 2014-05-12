@@ -88,7 +88,7 @@ declare module goog.dom.iframe {
      * @param {string=} opt_styles CSS styles for the iframe itself, before adding
      *     to the parent element.
      * @param {boolean=} opt_quirks Whether to use quirks mode (false by default).
-     * @return {HTMLIFrameElement} An iframe that has the specified contents.
+     * @return {!HTMLIFrameElement} An iframe that has the specified contents.
      */
     function createWithContent(parentElement: Element, opt_headContents?: string, opt_bodyContents?: string, opt_styles?: string, opt_quirks?: boolean): HTMLIFrameElement;
 }

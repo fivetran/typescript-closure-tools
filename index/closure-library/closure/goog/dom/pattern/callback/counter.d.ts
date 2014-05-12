@@ -25,7 +25,7 @@ declare module goog.dom.pattern.callback {
             * Get a bound callback function that is suitable as a callback for
             * {@link goog.dom.pattern.Matcher}.
             *
-            * @return {Function} A callback function.
+            * @return {!Function} A callback function.
             */
             getCallback(): Function;
     

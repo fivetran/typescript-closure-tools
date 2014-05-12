@@ -91,7 +91,7 @@ declare module goog.net {
             *     opt_callbackParamValue, only the last call will work whenever the
             *     response comes back.
             *
-            * @return {Object} A request descriptor that may be used to cancel this
+            * @return {!Object} A request descriptor that may be used to cancel this
             *     transmission, or null, if the message may not be cancelled.
             */
             send(opt_payload?: Object, opt_replyCallback?: Function, opt_errorCallback?: Function, opt_callbackParamValue?: string): Object;

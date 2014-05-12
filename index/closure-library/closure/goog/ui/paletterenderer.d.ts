@@ -52,7 +52,7 @@ declare module goog.ui {
             * Returns a table element (or equivalent) that wraps the given rows.
             * @param {Array.<Element>} rows Array of row elements.
             * @param {goog.dom.DomHelper} dom DOM helper for document interaction.
-            * @return {Element} Palette table element.
+            * @return {!Element} Palette table element.
             */
             createTable(rows: Element[], dom: goog.dom.DomHelper): Element;
     
@@ -60,7 +60,7 @@ declare module goog.ui {
             * Returns a table row element (or equivalent) that wraps the given cells.
             * @param {Array.<Element>} cells Array of cell elements.
             * @param {goog.dom.DomHelper} dom DOM helper for document interaction.
-            * @return {Element} Row element.
+            * @return {!Element} Row element.
             */
             createRow(cells: Element[], dom: goog.dom.DomHelper): Element;
     
@@ -69,7 +69,7 @@ declare module goog.ui {
             * item (which must be a DOM node).
             * @param {Node|string} node Palette item.
             * @param {goog.dom.DomHelper} dom DOM helper for document interaction.
-            * @return {Element} Cell element.
+            * @return {!Element} Cell element.
             */
             createCell(node: Node, dom: goog.dom.DomHelper): Element;
             /**
@@ -77,7 +77,7 @@ declare module goog.ui {
             * item (which must be a DOM node).
             * @param {Node|string} node Palette item.
             * @param {goog.dom.DomHelper} dom DOM helper for document interaction.
-            * @return {Element} Cell element.
+            * @return {!Element} Cell element.
             */
             createCell(node: string, dom: goog.dom.DomHelper): Element;
     

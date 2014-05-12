@@ -170,6 +170,37 @@ declare module goog.html.SafeHtml {
     function htmlEscape(text: goog.i18n.bidi.DirectionalString): goog.html.SafeHtml;
 
     /**
+     * Returns HTML-escaped text as a SafeHtml object with newlines changed to <br>.
+     * @param {!goog.html.SafeHtml.StringLike_} text The string to escape.
+     * @return {!goog.html.SafeHtml} The escaped string, wrapped as a SafeHtml.
+     */
+    function htmlEscapePreservingNewlines(text: string): goog.html.SafeHtml;
+    /**
+     * Returns HTML-escaped text as a SafeHtml object with newlines changed to <br>.
+     * @param {!goog.html.SafeHtml.StringLike_} text The string to escape.
+     * @return {!goog.html.SafeHtml} The escaped string, wrapped as a SafeHtml.
+     */
+    function htmlEscapePreservingNewlines(text: number): goog.html.SafeHtml;
+    /**
+     * Returns HTML-escaped text as a SafeHtml object with newlines changed to <br>.
+     * @param {!goog.html.SafeHtml.StringLike_} text The string to escape.
+     * @return {!goog.html.SafeHtml} The escaped string, wrapped as a SafeHtml.
+     */
+    function htmlEscapePreservingNewlines(text: boolean): goog.html.SafeHtml;
+    /**
+     * Returns HTML-escaped text as a SafeHtml object with newlines changed to <br>.
+     * @param {!goog.html.SafeHtml.StringLike_} text The string to escape.
+     * @return {!goog.html.SafeHtml} The escaped string, wrapped as a SafeHtml.
+     */
+    function htmlEscapePreservingNewlines(text: goog.string.TypedString): goog.html.SafeHtml;
+    /**
+     * Returns HTML-escaped text as a SafeHtml object with newlines changed to <br>.
+     * @param {!goog.html.SafeHtml.StringLike_} text The string to escape.
+     * @return {!goog.html.SafeHtml} The escaped string, wrapped as a SafeHtml.
+     */
+    function htmlEscapePreservingNewlines(text: goog.i18n.bidi.DirectionalString): goog.html.SafeHtml;
+
+    /**
      * Coerces an arbitrary object into a SafeHtml object.
      *
      * If {@code textOrHtml} is already of type {@code goog.html.SafeHtml}, the same
@@ -423,6 +454,84 @@ declare module goog.html.SafeHtml {
     function create(tagName: string, opt_attributes?: { [key: string]: any /*string|goog.string.Const|goog.html.SafeUrl|goog.html.SafeStyle*/ }, opt_content?: any /*any (string|number|boolean|goog.string.TypedString|goog.i18n.bidi.DirectionalString)|goog.html.SafeHtml*/[]): goog.html.SafeHtml;
 
     /**
+     * Creates a SafeHtml content with known directionality consisting of a tag with
+     * optional attributes and optional content.
+     * @param {!goog.i18n.bidi.Dir} dir Directionality.
+     * @param {string} tagName
+     * @param {!Object.<string, goog.html.SafeHtml.AttributeValue_>=} opt_attributes
+     * @param {!goog.html.SafeHtml.TextOrHtml_|
+     *     !Array.<!goog.html.SafeHtml.TextOrHtml_>=} opt_content
+     * @return {!goog.html.SafeHtml} The SafeHtml content with the tag.
+     */
+    function createWithDir(dir: goog.i18n.bidi.Dir, tagName: string, opt_attributes?: { [key: string]: any /*string|goog.string.Const|goog.html.SafeUrl|goog.html.SafeStyle*/ }, opt_content?: string): goog.html.SafeHtml;
+    /**
+     * Creates a SafeHtml content with known directionality consisting of a tag with
+     * optional attributes and optional content.
+     * @param {!goog.i18n.bidi.Dir} dir Directionality.
+     * @param {string} tagName
+     * @param {!Object.<string, goog.html.SafeHtml.AttributeValue_>=} opt_attributes
+     * @param {!goog.html.SafeHtml.TextOrHtml_|
+     *     !Array.<!goog.html.SafeHtml.TextOrHtml_>=} opt_content
+     * @return {!goog.html.SafeHtml} The SafeHtml content with the tag.
+     */
+    function createWithDir(dir: goog.i18n.bidi.Dir, tagName: string, opt_attributes?: { [key: string]: any /*string|goog.string.Const|goog.html.SafeUrl|goog.html.SafeStyle*/ }, opt_content?: number): goog.html.SafeHtml;
+    /**
+     * Creates a SafeHtml content with known directionality consisting of a tag with
+     * optional attributes and optional content.
+     * @param {!goog.i18n.bidi.Dir} dir Directionality.
+     * @param {string} tagName
+     * @param {!Object.<string, goog.html.SafeHtml.AttributeValue_>=} opt_attributes
+     * @param {!goog.html.SafeHtml.TextOrHtml_|
+     *     !Array.<!goog.html.SafeHtml.TextOrHtml_>=} opt_content
+     * @return {!goog.html.SafeHtml} The SafeHtml content with the tag.
+     */
+    function createWithDir(dir: goog.i18n.bidi.Dir, tagName: string, opt_attributes?: { [key: string]: any /*string|goog.string.Const|goog.html.SafeUrl|goog.html.SafeStyle*/ }, opt_content?: boolean): goog.html.SafeHtml;
+    /**
+     * Creates a SafeHtml content with known directionality consisting of a tag with
+     * optional attributes and optional content.
+     * @param {!goog.i18n.bidi.Dir} dir Directionality.
+     * @param {string} tagName
+     * @param {!Object.<string, goog.html.SafeHtml.AttributeValue_>=} opt_attributes
+     * @param {!goog.html.SafeHtml.TextOrHtml_|
+     *     !Array.<!goog.html.SafeHtml.TextOrHtml_>=} opt_content
+     * @return {!goog.html.SafeHtml} The SafeHtml content with the tag.
+     */
+    function createWithDir(dir: goog.i18n.bidi.Dir, tagName: string, opt_attributes?: { [key: string]: any /*string|goog.string.Const|goog.html.SafeUrl|goog.html.SafeStyle*/ }, opt_content?: goog.string.TypedString): goog.html.SafeHtml;
+    /**
+     * Creates a SafeHtml content with known directionality consisting of a tag with
+     * optional attributes and optional content.
+     * @param {!goog.i18n.bidi.Dir} dir Directionality.
+     * @param {string} tagName
+     * @param {!Object.<string, goog.html.SafeHtml.AttributeValue_>=} opt_attributes
+     * @param {!goog.html.SafeHtml.TextOrHtml_|
+     *     !Array.<!goog.html.SafeHtml.TextOrHtml_>=} opt_content
+     * @return {!goog.html.SafeHtml} The SafeHtml content with the tag.
+     */
+    function createWithDir(dir: goog.i18n.bidi.Dir, tagName: string, opt_attributes?: { [key: string]: any /*string|goog.string.Const|goog.html.SafeUrl|goog.html.SafeStyle*/ }, opt_content?: goog.i18n.bidi.DirectionalString): goog.html.SafeHtml;
+    /**
+     * Creates a SafeHtml content with known directionality consisting of a tag with
+     * optional attributes and optional content.
+     * @param {!goog.i18n.bidi.Dir} dir Directionality.
+     * @param {string} tagName
+     * @param {!Object.<string, goog.html.SafeHtml.AttributeValue_>=} opt_attributes
+     * @param {!goog.html.SafeHtml.TextOrHtml_|
+     *     !Array.<!goog.html.SafeHtml.TextOrHtml_>=} opt_content
+     * @return {!goog.html.SafeHtml} The SafeHtml content with the tag.
+     */
+    function createWithDir(dir: goog.i18n.bidi.Dir, tagName: string, opt_attributes?: { [key: string]: any /*string|goog.string.Const|goog.html.SafeUrl|goog.html.SafeStyle*/ }, opt_content?: goog.html.SafeHtml): goog.html.SafeHtml;
+    /**
+     * Creates a SafeHtml content with known directionality consisting of a tag with
+     * optional attributes and optional content.
+     * @param {!goog.i18n.bidi.Dir} dir Directionality.
+     * @param {string} tagName
+     * @param {!Object.<string, goog.html.SafeHtml.AttributeValue_>=} opt_attributes
+     * @param {!goog.html.SafeHtml.TextOrHtml_|
+     *     !Array.<!goog.html.SafeHtml.TextOrHtml_>=} opt_content
+     * @return {!goog.html.SafeHtml} The SafeHtml content with the tag.
+     */
+    function createWithDir(dir: goog.i18n.bidi.Dir, tagName: string, opt_attributes?: { [key: string]: any /*string|goog.string.Const|goog.html.SafeUrl|goog.html.SafeStyle*/ }, opt_content?: any /*any (string|number|boolean|goog.string.TypedString|goog.i18n.bidi.DirectionalString)|goog.html.SafeHtml*/[]): goog.html.SafeHtml;
+
+    /**
      * Creates a new SafeHtml object by concatenating the values.
      * @param {...!goog.html.SafeHtml.TextOrHtml_|
      *     !Array.<!goog.html.SafeHtml.TextOrHtml_>} var_args Elements of array
@@ -478,6 +587,77 @@ declare module goog.html.SafeHtml {
      * @return {!goog.html.SafeHtml}
      */
     function concat(...var_args: any /*any (string|number|boolean|goog.string.TypedString|goog.i18n.bidi.DirectionalString)|goog.html.SafeHtml*/[][]): goog.html.SafeHtml;
+
+    /**
+     * Creates a new SafeHtml object with known directionality by concatenating the
+     * values.
+     * @param {!goog.i18n.bidi.Dir} dir Directionality.
+     * @param {...!goog.html.SafeHtml.TextOrHtml_|
+     *     !Array.<!goog.html.SafeHtml.TextOrHtml_>} var_args Elements of array
+     *     arguments would be processed recursively.
+     * @return {!goog.html.SafeHtml}
+     */
+    function concatWithDir(dir: goog.i18n.bidi.Dir, ...var_args: string[]): goog.html.SafeHtml;
+    /**
+     * Creates a new SafeHtml object with known directionality by concatenating the
+     * values.
+     * @param {!goog.i18n.bidi.Dir} dir Directionality.
+     * @param {...!goog.html.SafeHtml.TextOrHtml_|
+     *     !Array.<!goog.html.SafeHtml.TextOrHtml_>} var_args Elements of array
+     *     arguments would be processed recursively.
+     * @return {!goog.html.SafeHtml}
+     */
+    function concatWithDir(dir: goog.i18n.bidi.Dir, ...var_args: number[]): goog.html.SafeHtml;
+    /**
+     * Creates a new SafeHtml object with known directionality by concatenating the
+     * values.
+     * @param {!goog.i18n.bidi.Dir} dir Directionality.
+     * @param {...!goog.html.SafeHtml.TextOrHtml_|
+     *     !Array.<!goog.html.SafeHtml.TextOrHtml_>} var_args Elements of array
+     *     arguments would be processed recursively.
+     * @return {!goog.html.SafeHtml}
+     */
+    function concatWithDir(dir: goog.i18n.bidi.Dir, ...var_args: boolean[]): goog.html.SafeHtml;
+    /**
+     * Creates a new SafeHtml object with known directionality by concatenating the
+     * values.
+     * @param {!goog.i18n.bidi.Dir} dir Directionality.
+     * @param {...!goog.html.SafeHtml.TextOrHtml_|
+     *     !Array.<!goog.html.SafeHtml.TextOrHtml_>} var_args Elements of array
+     *     arguments would be processed recursively.
+     * @return {!goog.html.SafeHtml}
+     */
+    function concatWithDir(dir: goog.i18n.bidi.Dir, ...var_args: goog.string.TypedString[]): goog.html.SafeHtml;
+    /**
+     * Creates a new SafeHtml object with known directionality by concatenating the
+     * values.
+     * @param {!goog.i18n.bidi.Dir} dir Directionality.
+     * @param {...!goog.html.SafeHtml.TextOrHtml_|
+     *     !Array.<!goog.html.SafeHtml.TextOrHtml_>} var_args Elements of array
+     *     arguments would be processed recursively.
+     * @return {!goog.html.SafeHtml}
+     */
+    function concatWithDir(dir: goog.i18n.bidi.Dir, ...var_args: goog.i18n.bidi.DirectionalString[]): goog.html.SafeHtml;
+    /**
+     * Creates a new SafeHtml object with known directionality by concatenating the
+     * values.
+     * @param {!goog.i18n.bidi.Dir} dir Directionality.
+     * @param {...!goog.html.SafeHtml.TextOrHtml_|
+     *     !Array.<!goog.html.SafeHtml.TextOrHtml_>} var_args Elements of array
+     *     arguments would be processed recursively.
+     * @return {!goog.html.SafeHtml}
+     */
+    function concatWithDir(dir: goog.i18n.bidi.Dir, ...var_args: goog.html.SafeHtml[]): goog.html.SafeHtml;
+    /**
+     * Creates a new SafeHtml object with known directionality by concatenating the
+     * values.
+     * @param {!goog.i18n.bidi.Dir} dir Directionality.
+     * @param {...!goog.html.SafeHtml.TextOrHtml_|
+     *     !Array.<!goog.html.SafeHtml.TextOrHtml_>} var_args Elements of array
+     *     arguments would be processed recursively.
+     * @return {!goog.html.SafeHtml}
+     */
+    function concatWithDir(dir: goog.i18n.bidi.Dir, ...var_args: any /*any (string|number|boolean|goog.string.TypedString|goog.i18n.bidi.DirectionalString)|goog.html.SafeHtml*/[][]): goog.html.SafeHtml;
 
     /**
      * A SafeHtml instance corresponding to the empty string.

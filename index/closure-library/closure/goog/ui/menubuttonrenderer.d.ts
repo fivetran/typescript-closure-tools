@@ -100,7 +100,7 @@ declare module goog.ui.MenuButtonRenderer {
      *     to wrap in a box.
      * @param {string} cssClass The CSS class for the renderer.
      * @param {goog.dom.DomHelper} dom DOM helper, used for document interaction.
-     * @return {Element} Caption element.
+     * @return {!Element} Caption element.
      */
     function wrapCaption(content: string, cssClass: string, dom: goog.dom.DomHelper): Element;
     /**
@@ -113,7 +113,7 @@ declare module goog.ui.MenuButtonRenderer {
      *     to wrap in a box.
      * @param {string} cssClass The CSS class for the renderer.
      * @param {goog.dom.DomHelper} dom DOM helper, used for document interaction.
-     * @return {Element} Caption element.
+     * @return {!Element} Caption element.
      */
     function wrapCaption(content: Node, cssClass: string, dom: goog.dom.DomHelper): Element;
     /**
@@ -126,7 +126,7 @@ declare module goog.ui.MenuButtonRenderer {
      *     to wrap in a box.
      * @param {string} cssClass The CSS class for the renderer.
      * @param {goog.dom.DomHelper} dom DOM helper, used for document interaction.
-     * @return {Element} Caption element.
+     * @return {!Element} Caption element.
      */
     function wrapCaption(content: Node[], cssClass: string, dom: goog.dom.DomHelper): Element;
     /**
@@ -139,7 +139,7 @@ declare module goog.ui.MenuButtonRenderer {
      *     to wrap in a box.
      * @param {string} cssClass The CSS class for the renderer.
      * @param {goog.dom.DomHelper} dom DOM helper, used for document interaction.
-     * @return {Element} Caption element.
+     * @return {!Element} Caption element.
      */
     function wrapCaption(content: NodeList, cssClass: string, dom: goog.dom.DomHelper): Element;
 }

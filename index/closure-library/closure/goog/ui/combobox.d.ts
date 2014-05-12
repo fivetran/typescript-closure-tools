@@ -34,6 +34,11 @@ declare module goog.ui {
             setEnabled(enabled: boolean): void;
     
             /**
+            * @return {boolean} Whether the menu item is enabled.
+            */
+            isEnabled(): boolean;
+    
+            /**
             * Dismisses the menu and resets the value of the edit field.
             */
             dismiss(): void;

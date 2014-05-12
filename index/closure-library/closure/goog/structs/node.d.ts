@@ -31,7 +31,7 @@ declare module goog.structs {
     
             /**
             * Clones a node and returns a new node.
-            * @return {goog.structs.Node.<K, V>} A new goog.structs.Node with the same
+            * @return {!goog.structs.Node.<K, V>} A new goog.structs.Node with the same
             *     key value pair.
             */
             clone(): goog.structs.Node<K,V>;

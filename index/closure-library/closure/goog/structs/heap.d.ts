@@ -67,13 +67,13 @@ declare module goog.structs {
     
             /**
             * Gets the values of the heap.
-            * @return {Array.<V>} The values in the heap.
+            * @return {!Array.<V>} The values in the heap.
             */
             getValues(): V[];
     
             /**
             * Gets the keys of the heap.
-            * @return {Array.<K>} The keys in the heap.
+            * @return {!Array.<K>} The keys in the heap.
             */
             getKeys(): K[];
     
@@ -93,7 +93,7 @@ declare module goog.structs {
     
             /**
             * Clones a heap and returns a new heap
-            * @return {goog.structs.Heap} A new goog.structs.Heap with the same key-value
+            * @return {!goog.structs.Heap} A new goog.structs.Heap with the same key-value
             *     pairs.
             */
             clone(): goog.structs.Heap<any, any>;

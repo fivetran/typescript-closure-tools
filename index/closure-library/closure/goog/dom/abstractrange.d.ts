@@ -20,7 +20,7 @@ declare module goog.dom {
             constructor();
     
             /**
-            * @return {goog.dom.AbstractRange} A clone of this range.
+            * @return {!goog.dom.AbstractRange} A clone of this range.
             */
             clone(): goog.dom.AbstractRange;
     
@@ -69,7 +69,7 @@ declare module goog.dom {
             /**
             * Gets an array of all text ranges this range is comprised of.  For non-multi
             * ranges, returns a single element array containing this.
-            * @return {Array.<goog.dom.TextRange>} Array of text ranges.
+            * @return {!Array.<goog.dom.TextRange>} Array of text ranges.
             */
             getTextRanges(): goog.dom.TextRange[];
     
@@ -154,12 +154,12 @@ declare module goog.dom {
             isReversed(): boolean;
     
             /**
-            * @return {Document} The document this selection is a part of.
+            * @return {!Document} The document this selection is a part of.
             */
             getDocument(): Document;
     
             /**
-            * @return {Window} The window this selection is a part of.
+            * @return {!Window} The window this selection is a part of.
             */
             getWindow(): Window;
     
@@ -241,7 +241,7 @@ declare module goog.dom {
             * Returns a RangeIterator over the contents of the range.  Regardless of the
             * direction of the range, the iterator will move in document order.
             * @param {boolean=} opt_keys Unused for this iterator.
-            * @return {goog.dom.RangeIterator} An iterator over tags in the range.
+            * @return {!goog.dom.RangeIterator} An iterator over tags in the range.
             */
             __iterator__(opt_keys?: boolean): goog.dom.RangeIterator;
     
@@ -285,7 +285,7 @@ declare module goog.dom {
             /**
             * Saves the range so that if the start and end nodes are left alone, it can
             * be restored.
-            * @return {goog.dom.SavedRange} A range representation that can be restored
+            * @return {!goog.dom.SavedRange} A range representation that can be restored
             *     as long as the endpoint nodes of the selection are not modified.
             */
             saveUsingDom(): goog.dom.SavedRange;

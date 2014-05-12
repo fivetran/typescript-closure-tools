@@ -93,6 +93,11 @@ declare module goog.i18n {
     var CompactNumberFormatSymbols_ca_ES: any /*missing*/;
 
     /**
+     * Compact number formatting symbols for locale ca_ES_VALENCIA.
+     */
+    var CompactNumberFormatSymbols_ca_ES_VALENCIA: any /*missing*/;
+
+    /**
      * Compact number formatting symbols for locale ca_FR.
      */
     var CompactNumberFormatSymbols_ca_FR: any /*missing*/;
@@ -211,11 +216,6 @@ declare module goog.i18n {
      * Compact number formatting symbols for locale en_DG.
      */
     var CompactNumberFormatSymbols_en_DG: any /*missing*/;
-
-    /**
-     * Compact number formatting symbols for locale en_Dsrt_US.
-     */
-    var CompactNumberFormatSymbols_en_Dsrt_US: any /*missing*/;
 
     /**
      * Compact number formatting symbols for locale en_FM.

@@ -34,7 +34,7 @@ declare module goog._string {
             * @param {*=} opt_a2 Optional second string.
             * @param {...*} var_args Other items to append,
             *     e.g., sb.append('foo', 'bar', 'baz').
-            * @return {goog.string.StringBuffer} This same StringBuffer object.
+            * @return {!goog.string.StringBuffer} This same StringBuffer object.
             * @suppress {duplicate}
             */
             append(a1: any, opt_a2?: any, ...var_args: any[]): goog.string.StringBuffer;

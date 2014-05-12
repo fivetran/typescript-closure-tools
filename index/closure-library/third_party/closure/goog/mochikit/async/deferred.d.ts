@@ -174,10 +174,24 @@ declare module goog.async {
             * but doesn't prevent additional callbacks from being added to
             * {@code otherDeferred}.
             *
-            * @param {!goog.async.Deferred} otherDeferred The Deferred to wait for.
+            * @param {!goog.async.Deferred|!goog.Thenable} otherDeferred The Deferred
+            *     to wait for.
             * @return {!goog.async.Deferred} This Deferred.
             */
             awaitDeferred(otherDeferred: goog.async.Deferred<any>): goog.async.Deferred<any>;
+            /**
+            * Makes this Deferred wait for another Deferred's execution sequence to
+            * complete before continuing.
+            *
+            * This is equivalent to adding a callback that returns {@code otherDeferred},
+            * but doesn't prevent additional callbacks from being added to
+            * {@code otherDeferred}.
+            *
+            * @param {!goog.async.Deferred|!goog.Thenable} otherDeferred The Deferred
+            *     to wait for.
+            * @return {!goog.async.Deferred} This Deferred.
+            */
+            awaitDeferred(otherDeferred: goog.Thenable<any>): goog.async.Deferred<any>;
     
             /**
             * Creates a branch off this Deferred's execution sequence, and returns it as a

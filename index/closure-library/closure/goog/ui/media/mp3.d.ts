@@ -73,7 +73,7 @@ declare module goog.ui.media.Mp3 {
      *     an mp3 url on {@code dataModel.getUrl}.
      * @param {goog.dom.DomHelper=} opt_domHelper Optional DOM helper, used for
      *     document interaction.
-     * @return {goog.ui.media.Media} A goog.ui.Control subclass with the mp3
+     * @return {!goog.ui.media.Media} A goog.ui.Control subclass with the mp3
      *     renderer.
      */
     function newControl(dataModel: goog.ui.media.MediaModel, opt_domHelper?: goog.dom.DomHelper): goog.ui.media.Media;

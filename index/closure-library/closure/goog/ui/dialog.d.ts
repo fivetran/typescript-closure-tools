@@ -378,7 +378,7 @@ declare module goog.ui.Dialog {
     
             /**
             * Returns all the HTML Button elements in the button set container.
-            * @return {NodeList} A live NodeList of the buttons.
+            * @return {!NodeList} A live NodeList of the buttons.
             */
             getAllButtons(): NodeList;
     

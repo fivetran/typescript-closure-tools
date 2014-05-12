@@ -101,9 +101,25 @@ declare module goog.net.WebChannel {
     interface RuntimeProperties {
     
         /**
-         * @return {number} The effective request limit for the channel.
+         * @return {number} The effective limit for the number of concurrent HTTP
+         * requests that are allowed to be made for sending messages from the client
+         * to the server. When SPDY is not enabled, this limit will be one.
          */
-        getSpdyRequestLimit(): number;
+        getConcurrentRequestLimit(): number;
+    
+        /**
+         * For applications that need support multiple channels (e.g. from
+         * different tabs) to the same origin, use this method to decide if SPDY is
+         * enabled and therefore it is safe to open multiple channels.
+         *
+         * If SPDY is disabled, the application may choose to limit the number of active
+         * channels to one or use other means such as sub-domains to work around
+         * the browser connection limit.
+         *
+         * @return {boolean} Whether SPDY is enabled for the origin against which
+         * the channel is created.
+         */
+        isSpdyEnabled(): boolean;
     
         /**
          * This method may be used by the application to stop ack of received messages
@@ -137,7 +153,7 @@ declare module goog.net.WebChannel {
      * messageUrlParams: custom url query parameters to be added to every message
      * sent to the server.
      *
-     * spdyRequestLimit: the maximum number of in-flight HTTP requests allowed
+     * concurrentRequestLimit: the maximum number of in-flight HTTP requests allowed
      * when SPDY is enabled. Currently we only detect SPDY in Chrome.
      * This parameter defaults to 10. When SPDY is not enabled, this parameter
      * will have no effect.
@@ -153,7 +169,7 @@ declare module goog.net.WebChannel {
      * @typedef {{
      *   messageHeaders: (!Object.<string, string>|undefined),
      *   messageUrlParams: (!Object.<string, string>|undefined),
-     *   spdyRequestLimit: (number|undefined),
+     *   concurrentRequestLimit: (number|undefined),
      *   supportsCrossDomainXhr: (boolean|undefined),
      *   testUrl: (string|undefined)
      * }}
@@ -161,7 +177,7 @@ declare module goog.net.WebChannel {
     interface Options {
         messageHeaders: any /*{ [key: string]: string }|any (undefined)*/;
         messageUrlParams: any /*{ [key: string]: string }|any (undefined)*/;
-        spdyRequestLimit: any /*number|any (undefined)*/;
+        concurrentRequestLimit: any /*number|any (undefined)*/;
         supportsCrossDomainXhr: any /*boolean|any (undefined)*/;
         testUrl: any /*string|any (undefined)*/
     }

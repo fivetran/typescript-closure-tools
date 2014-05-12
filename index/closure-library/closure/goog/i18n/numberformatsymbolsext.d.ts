@@ -657,12 +657,6 @@ declare module goog.i18n {
     enum NumberFormatSymbols_en_DM { DECIMAL_SEP, GROUP_SEP, PERCENT, ZERO_DIGIT, PLUS_SIGN, MINUS_SIGN, EXP_SYMBOL, PERMILL, INFINITY, NAN, DECIMAL_PATTERN, SCIENTIFIC_PATTERN, PERCENT_PATTERN, CURRENCY_PATTERN, DEF_CURRENCY_CODE } 
 
     /**
-     * Number formatting symbols for locale en_Dsrt.
-     * @enum {string}
-     */
-    enum NumberFormatSymbols_en_Dsrt { DECIMAL_SEP, GROUP_SEP, PERCENT, ZERO_DIGIT, PLUS_SIGN, MINUS_SIGN, EXP_SYMBOL, PERMILL, INFINITY, NAN, DECIMAL_PATTERN, SCIENTIFIC_PATTERN, PERCENT_PATTERN, CURRENCY_PATTERN, DEF_CURRENCY_CODE } 
-
-    /**
      * Number formatting symbols for locale en_ER.
      * @enum {string}
      */
@@ -1161,6 +1155,24 @@ declare module goog.i18n {
     enum NumberFormatSymbols_ff { DECIMAL_SEP, GROUP_SEP, PERCENT, ZERO_DIGIT, PLUS_SIGN, MINUS_SIGN, EXP_SYMBOL, PERMILL, INFINITY, NAN, DECIMAL_PATTERN, SCIENTIFIC_PATTERN, PERCENT_PATTERN, CURRENCY_PATTERN, DEF_CURRENCY_CODE } 
 
     /**
+     * Number formatting symbols for locale ff_CM.
+     * @enum {string}
+     */
+    enum NumberFormatSymbols_ff_CM { DECIMAL_SEP, GROUP_SEP, PERCENT, ZERO_DIGIT, PLUS_SIGN, MINUS_SIGN, EXP_SYMBOL, PERMILL, INFINITY, NAN, DECIMAL_PATTERN, SCIENTIFIC_PATTERN, PERCENT_PATTERN, CURRENCY_PATTERN, DEF_CURRENCY_CODE } 
+
+    /**
+     * Number formatting symbols for locale ff_GN.
+     * @enum {string}
+     */
+    enum NumberFormatSymbols_ff_GN { DECIMAL_SEP, GROUP_SEP, PERCENT, ZERO_DIGIT, PLUS_SIGN, MINUS_SIGN, EXP_SYMBOL, PERMILL, INFINITY, NAN, DECIMAL_PATTERN, SCIENTIFIC_PATTERN, PERCENT_PATTERN, CURRENCY_PATTERN, DEF_CURRENCY_CODE } 
+
+    /**
+     * Number formatting symbols for locale ff_MR.
+     * @enum {string}
+     */
+    enum NumberFormatSymbols_ff_MR { DECIMAL_SEP, GROUP_SEP, PERCENT, ZERO_DIGIT, PLUS_SIGN, MINUS_SIGN, EXP_SYMBOL, PERMILL, INFINITY, NAN, DECIMAL_PATTERN, SCIENTIFIC_PATTERN, PERCENT_PATTERN, CURRENCY_PATTERN, DEF_CURRENCY_CODE } 
+
+    /**
      * Number formatting symbols for locale ff_SN.
      * @enum {string}
      */
@@ -1399,6 +1411,18 @@ declare module goog.i18n {
      * @enum {string}
      */
     enum NumberFormatSymbols_fur_IT { /* goog.i18n.NumberFormatSymbols_fur */ } 
+
+    /**
+     * Number formatting symbols for locale fy.
+     * @enum {string}
+     */
+    enum NumberFormatSymbols_fy { DECIMAL_SEP, GROUP_SEP, PERCENT, ZERO_DIGIT, PLUS_SIGN, MINUS_SIGN, EXP_SYMBOL, PERMILL, INFINITY, NAN, DECIMAL_PATTERN, SCIENTIFIC_PATTERN, PERCENT_PATTERN, CURRENCY_PATTERN, DEF_CURRENCY_CODE } 
+
+    /**
+     * Number formatting symbols for locale fy_NL.
+     * @enum {string}
+     */
+    enum NumberFormatSymbols_fy_NL { /* goog.i18n.NumberFormatSymbols_fy */ } 
 
     /**
      * Number formatting symbols for locale ga.
@@ -2526,19 +2550,19 @@ declare module goog.i18n {
      * Number formatting symbols for locale sr_Latn_ME.
      * @enum {string}
      */
-    enum NumberFormatSymbols_sr_Latn_ME { /* goog.i18n.NumberFormatSymbols_sr_Latn */ } 
+    enum NumberFormatSymbols_sr_Latn_ME { DECIMAL_SEP, GROUP_SEP, PERCENT, ZERO_DIGIT, PLUS_SIGN, MINUS_SIGN, EXP_SYMBOL, PERMILL, INFINITY, NAN, DECIMAL_PATTERN, SCIENTIFIC_PATTERN, PERCENT_PATTERN, CURRENCY_PATTERN, DEF_CURRENCY_CODE } 
 
     /**
      * Number formatting symbols for locale sr_Latn_RS.
      * @enum {string}
      */
-    enum NumberFormatSymbols_sr_Latn_RS { DECIMAL_SEP, GROUP_SEP, PERCENT, ZERO_DIGIT, PLUS_SIGN, MINUS_SIGN, EXP_SYMBOL, PERMILL, INFINITY, NAN, DECIMAL_PATTERN, SCIENTIFIC_PATTERN, PERCENT_PATTERN, CURRENCY_PATTERN, DEF_CURRENCY_CODE } 
+    enum NumberFormatSymbols_sr_Latn_RS { /* goog.i18n.NumberFormatSymbols_sr_Latn */ } 
 
     /**
      * Number formatting symbols for locale sr_Latn_XK.
      * @enum {string}
      */
-    enum NumberFormatSymbols_sr_Latn_XK { /* goog.i18n.NumberFormatSymbols_sr_Latn */ } 
+    enum NumberFormatSymbols_sr_Latn_XK { DECIMAL_SEP, GROUP_SEP, PERCENT, ZERO_DIGIT, PLUS_SIGN, MINUS_SIGN, EXP_SYMBOL, PERMILL, INFINITY, NAN, DECIMAL_PATTERN, SCIENTIFIC_PATTERN, PERCENT_PATTERN, CURRENCY_PATTERN, DEF_CURRENCY_CODE } 
 
     /**
      * Number formatting symbols for locale ss.
@@ -2785,6 +2809,24 @@ declare module goog.i18n {
      * @enum {string}
      */
     enum NumberFormatSymbols_tzm_Latn_MA { /* goog.i18n.NumberFormatSymbols_tzm */ } 
+
+    /**
+     * Number formatting symbols for locale ug.
+     * @enum {string}
+     */
+    enum NumberFormatSymbols_ug { DECIMAL_SEP, GROUP_SEP, PERCENT, ZERO_DIGIT, PLUS_SIGN, MINUS_SIGN, EXP_SYMBOL, PERMILL, INFINITY, NAN, DECIMAL_PATTERN, SCIENTIFIC_PATTERN, PERCENT_PATTERN, CURRENCY_PATTERN, DEF_CURRENCY_CODE } 
+
+    /**
+     * Number formatting symbols for locale ug_Arab.
+     * @enum {string}
+     */
+    enum NumberFormatSymbols_ug_Arab { DECIMAL_SEP, GROUP_SEP, PERCENT, ZERO_DIGIT, PLUS_SIGN, MINUS_SIGN, EXP_SYMBOL, PERMILL, INFINITY, NAN, DECIMAL_PATTERN, SCIENTIFIC_PATTERN, PERCENT_PATTERN, CURRENCY_PATTERN, DEF_CURRENCY_CODE } 
+
+    /**
+     * Number formatting symbols for locale ug_Arab_CN.
+     * @enum {string}
+     */
+    enum NumberFormatSymbols_ug_Arab_CN { /* goog.i18n.NumberFormatSymbols_ug */ } 
 
     /**
      * Number formatting symbols for locale ur_IN.

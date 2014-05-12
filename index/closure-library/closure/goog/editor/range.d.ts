@@ -65,7 +65,7 @@ declare module goog.editor.range {
      * nodes as the foo text node, return the li.
      * @param {goog.dom.AbstractRange} range The range.
      * @param {Node=} opt_stopNode Optional node to stop expanding past.
-     * @return {goog.dom.AbstractRange} The expanded range.
+     * @return {!goog.dom.AbstractRange} The expanded range.
      */
     function expand(range: goog.dom.AbstractRange, opt_stopNode?: Node): goog.dom.AbstractRange;
 
@@ -121,7 +121,7 @@ declare module goog.editor.range {
      *
      * @param {goog.dom.AbstractRange} range A range.
      * @param {boolean} atStart True for the start point, false for the end point.
-     * @return {goog.editor.range.Point} The end point, expressed as a node
+     * @return {!goog.editor.range.Point} The end point, expressed as a node
      *    and an offset.
      */
     function getDeepEndPoint(range: goog.dom.AbstractRange, atStart: boolean): goog.editor.range.Point;

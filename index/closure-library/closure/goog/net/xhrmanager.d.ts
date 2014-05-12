@@ -70,7 +70,7 @@ declare module goog.net {
             *     should be retried.
             * @param {goog.net.XhrIo.ResponseType=} opt_responseType The response type of
             *     this request; defaults to goog.net.XhrIo.ResponseType.DEFAULT.
-            * @return {goog.net.XhrManager.Request} The queued request object.
+            * @return {!goog.net.XhrManager.Request} The queued request object.
             */
             send(id: string, url: string, opt_method?: string, opt_content?: ArrayBuffer, opt_headers?: Object, opt_priority?: number, opt_callback?: Function, opt_maxRetries?: number, opt_responseType?: goog.net.XhrIo.ResponseType): goog.net.XhrManager.Request;
             /**
@@ -94,7 +94,7 @@ declare module goog.net {
             *     should be retried.
             * @param {goog.net.XhrIo.ResponseType=} opt_responseType The response type of
             *     this request; defaults to goog.net.XhrIo.ResponseType.DEFAULT.
-            * @return {goog.net.XhrManager.Request} The queued request object.
+            * @return {!goog.net.XhrManager.Request} The queued request object.
             */
             send(id: string, url: string, opt_method?: string, opt_content?: ArrayBuffer, opt_headers?: goog.structs.Map<any, any>, opt_priority?: number, opt_callback?: Function, opt_maxRetries?: number, opt_responseType?: goog.net.XhrIo.ResponseType): goog.net.XhrManager.Request;
             /**
@@ -118,7 +118,7 @@ declare module goog.net {
             *     should be retried.
             * @param {goog.net.XhrIo.ResponseType=} opt_responseType The response type of
             *     this request; defaults to goog.net.XhrIo.ResponseType.DEFAULT.
-            * @return {goog.net.XhrManager.Request} The queued request object.
+            * @return {!goog.net.XhrManager.Request} The queued request object.
             */
             send(id: string, url: string, opt_method?: string, opt_content?: ArrayBufferView, opt_headers?: Object, opt_priority?: number, opt_callback?: Function, opt_maxRetries?: number, opt_responseType?: goog.net.XhrIo.ResponseType): goog.net.XhrManager.Request;
             /**
@@ -142,7 +142,7 @@ declare module goog.net {
             *     should be retried.
             * @param {goog.net.XhrIo.ResponseType=} opt_responseType The response type of
             *     this request; defaults to goog.net.XhrIo.ResponseType.DEFAULT.
-            * @return {goog.net.XhrManager.Request} The queued request object.
+            * @return {!goog.net.XhrManager.Request} The queued request object.
             */
             send(id: string, url: string, opt_method?: string, opt_content?: ArrayBufferView, opt_headers?: goog.structs.Map<any, any>, opt_priority?: number, opt_callback?: Function, opt_maxRetries?: number, opt_responseType?: goog.net.XhrIo.ResponseType): goog.net.XhrManager.Request;
             /**
@@ -166,7 +166,7 @@ declare module goog.net {
             *     should be retried.
             * @param {goog.net.XhrIo.ResponseType=} opt_responseType The response type of
             *     this request; defaults to goog.net.XhrIo.ResponseType.DEFAULT.
-            * @return {goog.net.XhrManager.Request} The queued request object.
+            * @return {!goog.net.XhrManager.Request} The queued request object.
             */
             send(id: string, url: string, opt_method?: string, opt_content?: Blob, opt_headers?: Object, opt_priority?: number, opt_callback?: Function, opt_maxRetries?: number, opt_responseType?: goog.net.XhrIo.ResponseType): goog.net.XhrManager.Request;
             /**
@@ -190,7 +190,7 @@ declare module goog.net {
             *     should be retried.
             * @param {goog.net.XhrIo.ResponseType=} opt_responseType The response type of
             *     this request; defaults to goog.net.XhrIo.ResponseType.DEFAULT.
-            * @return {goog.net.XhrManager.Request} The queued request object.
+            * @return {!goog.net.XhrManager.Request} The queued request object.
             */
             send(id: string, url: string, opt_method?: string, opt_content?: Blob, opt_headers?: goog.structs.Map<any, any>, opt_priority?: number, opt_callback?: Function, opt_maxRetries?: number, opt_responseType?: goog.net.XhrIo.ResponseType): goog.net.XhrManager.Request;
             /**
@@ -214,7 +214,7 @@ declare module goog.net {
             *     should be retried.
             * @param {goog.net.XhrIo.ResponseType=} opt_responseType The response type of
             *     this request; defaults to goog.net.XhrIo.ResponseType.DEFAULT.
-            * @return {goog.net.XhrManager.Request} The queued request object.
+            * @return {!goog.net.XhrManager.Request} The queued request object.
             */
             send(id: string, url: string, opt_method?: string, opt_content?: Document, opt_headers?: Object, opt_priority?: number, opt_callback?: Function, opt_maxRetries?: number, opt_responseType?: goog.net.XhrIo.ResponseType): goog.net.XhrManager.Request;
             /**
@@ -238,7 +238,7 @@ declare module goog.net {
             *     should be retried.
             * @param {goog.net.XhrIo.ResponseType=} opt_responseType The response type of
             *     this request; defaults to goog.net.XhrIo.ResponseType.DEFAULT.
-            * @return {goog.net.XhrManager.Request} The queued request object.
+            * @return {!goog.net.XhrManager.Request} The queued request object.
             */
             send(id: string, url: string, opt_method?: string, opt_content?: Document, opt_headers?: goog.structs.Map<any, any>, opt_priority?: number, opt_callback?: Function, opt_maxRetries?: number, opt_responseType?: goog.net.XhrIo.ResponseType): goog.net.XhrManager.Request;
             /**
@@ -262,7 +262,7 @@ declare module goog.net {
             *     should be retried.
             * @param {goog.net.XhrIo.ResponseType=} opt_responseType The response type of
             *     this request; defaults to goog.net.XhrIo.ResponseType.DEFAULT.
-            * @return {goog.net.XhrManager.Request} The queued request object.
+            * @return {!goog.net.XhrManager.Request} The queued request object.
             */
             send(id: string, url: string, opt_method?: string, opt_content?: FormData, opt_headers?: Object, opt_priority?: number, opt_callback?: Function, opt_maxRetries?: number, opt_responseType?: goog.net.XhrIo.ResponseType): goog.net.XhrManager.Request;
             /**
@@ -286,7 +286,7 @@ declare module goog.net {
             *     should be retried.
             * @param {goog.net.XhrIo.ResponseType=} opt_responseType The response type of
             *     this request; defaults to goog.net.XhrIo.ResponseType.DEFAULT.
-            * @return {goog.net.XhrManager.Request} The queued request object.
+            * @return {!goog.net.XhrManager.Request} The queued request object.
             */
             send(id: string, url: string, opt_method?: string, opt_content?: FormData, opt_headers?: goog.structs.Map<any, any>, opt_priority?: number, opt_callback?: Function, opt_maxRetries?: number, opt_responseType?: goog.net.XhrIo.ResponseType): goog.net.XhrManager.Request;
             /**
@@ -310,7 +310,7 @@ declare module goog.net {
             *     should be retried.
             * @param {goog.net.XhrIo.ResponseType=} opt_responseType The response type of
             *     this request; defaults to goog.net.XhrIo.ResponseType.DEFAULT.
-            * @return {goog.net.XhrManager.Request} The queued request object.
+            * @return {!goog.net.XhrManager.Request} The queued request object.
             */
             send(id: string, url: string, opt_method?: string, opt_content?: string, opt_headers?: Object, opt_priority?: number, opt_callback?: Function, opt_maxRetries?: number, opt_responseType?: goog.net.XhrIo.ResponseType): goog.net.XhrManager.Request;
             /**
@@ -334,7 +334,7 @@ declare module goog.net {
             *     should be retried.
             * @param {goog.net.XhrIo.ResponseType=} opt_responseType The response type of
             *     this request; defaults to goog.net.XhrIo.ResponseType.DEFAULT.
-            * @return {goog.net.XhrManager.Request} The queued request object.
+            * @return {!goog.net.XhrManager.Request} The queued request object.
             */
             send(id: string, url: string, opt_method?: string, opt_content?: string, opt_headers?: goog.structs.Map<any, any>, opt_priority?: number, opt_callback?: Function, opt_maxRetries?: number, opt_responseType?: goog.net.XhrIo.ResponseType): goog.net.XhrManager.Request;
     

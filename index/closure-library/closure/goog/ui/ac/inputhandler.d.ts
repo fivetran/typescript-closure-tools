@@ -271,6 +271,12 @@ declare module goog.ui.ac {
             handleBlur(opt_e?: goog.events.Event): void;
     
             /**
+            * Helper function that does the logic to handle an element blurring.
+            * @protected
+            */
+            processBlur(): void;
+    
+            /**
             * For subclasses to override to handle the mouse-down event.
             * @param {goog.events.BrowserEvent} e Browser event object.
             * @protected

@@ -65,7 +65,7 @@ declare module goog.ui {
             * elements.  Returns the decorated element.
             * @param {goog.ui.Container} container Container to decorate the element.
             * @param {Element} element Element to decorate.
-            * @return {Element} Decorated element.
+            * @return {!Element} Decorated element.
             */
             decorate(container: goog.ui.Container, element: Element): Element;
     
@@ -138,7 +138,7 @@ declare module goog.ui {
             * followed by any state-specific CSS classes.
             * @param {goog.ui.Container} container Container whose CSS classes are to be
             *     returned.
-            * @return {Array.<string>} Array of CSS class names applicable to the
+            * @return {!Array.<string>} Array of CSS class names applicable to the
             *     container.
             */
             getClassNames(container: goog.ui.Container): string[];

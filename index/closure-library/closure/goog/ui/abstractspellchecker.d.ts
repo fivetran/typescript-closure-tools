@@ -247,7 +247,7 @@ declare module goog.ui {
             *
             * @param {string} word Word to create element for.
             * @param {goog.spell.SpellCheck.WordStatus} status Status of word.
-            * @return {HTMLSpanElement} The created element.
+            * @return {!HTMLSpanElement} The created element.
             * @protected
             */
             createWordElement(word: string, status: goog.spell.SpellCheck.WordStatus): HTMLSpanElement;

@@ -114,4 +114,11 @@ declare module goog.ui.FilteredMenu {
      * @enum {string}
      */
     enum EventType { FILTER_CHANGED } 
+
+    /**
+     * Filter menu element ids.
+     * @enum {string}
+     * @private
+     */
+    enum Id_ { CONTENT_ELEMENT } 
 }

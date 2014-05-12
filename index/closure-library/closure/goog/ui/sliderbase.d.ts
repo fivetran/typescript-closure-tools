@@ -16,7 +16,7 @@ declare module goog.ui {
             /**
             * This creates a SliderBase object.
             * @param {goog.dom.DomHelper=} opt_domHelper Optional DOM helper.
-            * @param {(function(number):string)=} opt_labelFn An optional function mapping
+            * @param {(function(number):?string)=} opt_labelFn An optional function mapping
             *     slider values to a description of the value.
             * @constructor
             * @extends {goog.ui.Component}
@@ -162,7 +162,7 @@ declare module goog.ui {
             /**
             * Returns the position to move the handle to for a given value
             * @param {number} val  The value to get the coordinate for.
-            * @return {goog.math.Coordinate} Coordinate with either x or y set.
+            * @return {!goog.math.Coordinate} Coordinate with either x or y set.
             */
             getThumbCoordinateForValue(val: number): goog.math.Coordinate;
     

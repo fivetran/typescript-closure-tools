@@ -255,7 +255,7 @@ declare module goog.ui.media.MediaModel {
             /**
             * Sets the thumbnail URL.
             * @param {string} url The thumbnail's image URL.
-            * @return {goog.ui.media.MediaModel.Thumbnail} The object itself, used for
+            * @return {!goog.ui.media.MediaModel.Thumbnail} The object itself, used for
             *     chaining.
             */
             setUrl(url: string): goog.ui.media.MediaModel.Thumbnail;
@@ -269,7 +269,7 @@ declare module goog.ui.media.MediaModel {
             /**
             * Sets the thumbnail size.
             * @param {goog.math.Size} size The size of the thumbnail's image.
-            * @return {goog.ui.media.MediaModel.Thumbnail} The object itself, used for
+            * @return {!goog.ui.media.MediaModel.Thumbnail} The object itself, used for
             *     chaining.
             */
             setSize(size: goog.math.Size): goog.ui.media.MediaModel.Thumbnail;
@@ -301,7 +301,7 @@ declare module goog.ui.media.MediaModel {
             /**
             * Sets the player url.
             * @param {string} url The thumbnail's image URL.
-            * @return {goog.ui.media.MediaModel.Player} The object itself, used for
+            * @return {!goog.ui.media.MediaModel.Player} The object itself, used for
             *     chaining.
             */
             setUrl(url: string): goog.ui.media.MediaModel.Player;
@@ -315,7 +315,7 @@ declare module goog.ui.media.MediaModel {
             /**
             * Sets the player arguments.
             * @param {Object} vars The media player arguments.
-            * @return {goog.ui.media.MediaModel.Player} The object itself, used for
+            * @return {!goog.ui.media.MediaModel.Player} The object itself, used for
             *     chaining.
             */
             setVars(vars: Object): goog.ui.media.MediaModel.Player;
@@ -329,7 +329,7 @@ declare module goog.ui.media.MediaModel {
             /**
             * Sets the size of the player.
             * @param {goog.math.Size} size The size of the player.
-            * @return {goog.ui.media.MediaModel.Player} The object itself, used for
+            * @return {!goog.ui.media.MediaModel.Player} The object itself, used for
             *     chaining.
             */
             setSize(size: goog.math.Size): goog.ui.media.MediaModel.Player;
@@ -362,7 +362,7 @@ declare module goog.ui.media.MediaModel {
             /**
             * Sets the category scheme.
             * @param {string} scheme The category's scheme.
-            * @return {goog.ui.media.MediaModel.Category} The object itself, used for
+            * @return {!goog.ui.media.MediaModel.Category} The object itself, used for
             *     chaining.
             */
             setScheme(scheme: string): goog.ui.media.MediaModel.Category;
@@ -376,7 +376,7 @@ declare module goog.ui.media.MediaModel {
             /**
             * Sets the category value.
             * @param {string} value The category value to be set.
-            * @return {goog.ui.media.MediaModel.Category} The object itself, used for
+            * @return {!goog.ui.media.MediaModel.Category} The object itself, used for
             *     chaining.
             */
             setValue(value: string): goog.ui.media.MediaModel.Category;
@@ -390,7 +390,7 @@ declare module goog.ui.media.MediaModel {
             /**
             * Sets the label of the category.
             * @param {string} label The label of the category.
-            * @return {goog.ui.media.MediaModel.Category} The object itself, used for
+            * @return {!goog.ui.media.MediaModel.Category} The object itself, used for
             *     chaining.
             */
             setLabel(label: string): goog.ui.media.MediaModel.Category;
@@ -424,7 +424,7 @@ declare module goog.ui.media.MediaModel {
             /**
             * Sets the value of the credit object.
             * @param {string} value The value.
-            * @return {goog.ui.media.MediaModel.Credit} The object itself.
+            * @return {!goog.ui.media.MediaModel.Credit} The object itself.
             */
             setValue(value: string): goog.ui.media.MediaModel.Credit;
     
@@ -438,7 +438,7 @@ declare module goog.ui.media.MediaModel {
             /**
             * Sets the role of the credit object.
             * @param {goog.ui.media.MediaModel.Credit.Role} role The role.
-            * @return {goog.ui.media.MediaModel.Credit} The object itself.
+            * @return {!goog.ui.media.MediaModel.Credit} The object itself.
             */
             setRole(role: goog.ui.media.MediaModel.Credit.Role): goog.ui.media.MediaModel.Credit;
     
@@ -452,7 +452,7 @@ declare module goog.ui.media.MediaModel {
             /**
             * Sets the scheme of the credit object.
             * @param {goog.ui.media.MediaModel.Credit.Scheme} scheme The scheme.
-            * @return {goog.ui.media.MediaModel.Credit} The object itself.
+            * @return {!goog.ui.media.MediaModel.Credit} The object itself.
             */
             setScheme(scheme: goog.ui.media.MediaModel.Credit.Scheme): goog.ui.media.MediaModel.Credit;
         }
@@ -479,7 +479,7 @@ declare module goog.ui.media.MediaModel {
             /**
             * Sets the href for the subtitle object.
             * @param {string} href The subtitle's URI.
-            * @return {goog.ui.media.MediaModel.SubTitle} The object itself.
+            * @return {!goog.ui.media.MediaModel.SubTitle} The object itself.
             */
             setHref(href: string): goog.ui.media.MediaModel.SubTitle;
     
@@ -492,7 +492,7 @@ declare module goog.ui.media.MediaModel {
             /**
             * Sets the language for the subtitle object.
             * @param {string} lang The RFC 3066 language.
-            * @return {goog.ui.media.MediaModel.SubTitle} The object itself.
+            * @return {!goog.ui.media.MediaModel.SubTitle} The object itself.
             */
             setLang(lang: string): goog.ui.media.MediaModel.SubTitle;
     
@@ -505,7 +505,7 @@ declare module goog.ui.media.MediaModel {
             /**
             * Sets the type for the subtitle object.
             * @param {string} type The MIME type.
-            * @return {goog.ui.media.MediaModel.SubTitle} The object itself.
+            * @return {!goog.ui.media.MediaModel.SubTitle} The object itself.
             */
             setType(type: string): goog.ui.media.MediaModel.SubTitle;
     

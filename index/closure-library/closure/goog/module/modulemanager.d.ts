@@ -182,11 +182,11 @@ declare module goog.module {
             *
             * @param {Array.<string>} moduleIds A list of module ids.
             * @param {boolean=} opt_userInitiated If the load is a result of a user action.
-            * @return {Object.<!goog.async.Deferred>} A mapping from id (String) to
-            *     deferred objects that will callback or errback when the load for that
+            * @return {!Object.<string, !goog.async.Deferred>} A mapping from id (String)
+            *     to deferred objects that will callback or errback when the load for that
             *     id is finished.
             */
-            loadMultiple(moduleIds: string[], opt_userInitiated?: boolean): { [key: string]: any /*missing*/ };
+            loadMultiple(moduleIds: string[], opt_userInitiated?: boolean): { [key: string]: goog.async.Deferred<any> };
     
             /**
             * Method called just before a module code is loaded.

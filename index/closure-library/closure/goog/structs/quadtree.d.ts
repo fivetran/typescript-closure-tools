@@ -80,19 +80,19 @@ declare module goog.structs {
     
             /**
             * Returns an array containing the coordinates of each point stored in the tree.
-            * @return {Array.<goog.math.Coordinate?>} Array of coordinates.
+            * @return {!Array.<goog.math.Coordinate?>} Array of coordinates.
             */
             getKeys(): goog.math.Coordinate[];
     
             /**
             * Returns an array containing all values stored within the tree.
-            * @return {Array.<Object>} The values stored within the tree.
+            * @return {!Array.<Object>} The values stored within the tree.
             */
             getValues(): Object[];
     
             /**
             * Clones the quad-tree and returns the new instance.
-            * @return {goog.structs.QuadTree} A clone of the tree.
+            * @return {!goog.structs.QuadTree} A clone of the tree.
             */
             clone(): goog.structs.QuadTree;
     

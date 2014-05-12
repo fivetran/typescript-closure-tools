@@ -20,12 +20,12 @@ declare module goog.dom {
             constructor();
     
             /**
-            * @return {Array.<Element>} Array of elements in the control range.
+            * @return {!Array.<Element>} Array of elements in the control range.
             */
             getElements(): Element[];
     
             /**
-            * @return {Array.<Element>} Array of elements comprising the control range,
+            * @return {!Array.<Element>} Array of elements comprising the control range,
             *     sorted by document order.
             */
             getSortedElements(): Element[];
@@ -73,7 +73,7 @@ declare module goog.dom.ControlRange {
      * Create a new range wrapper from the given browser range object.  Do not use
      * this method directly - please use goog.dom.Range.createFrom* instead.
      * @param {Object} controlRange The browser range object.
-     * @return {goog.dom.ControlRange} A range wrapper object.
+     * @return {!goog.dom.ControlRange} A range wrapper object.
      */
     function createFromBrowserRange(controlRange: Object): goog.dom.ControlRange;
 
@@ -81,7 +81,7 @@ declare module goog.dom.ControlRange {
      * Create a new range wrapper that selects the given element.  Do not use
      * this method directly - please use goog.dom.Range.createFrom* instead.
      * @param {...Element} var_args The element(s) to select.
-     * @return {goog.dom.ControlRange} A range wrapper object.
+     * @return {!goog.dom.ControlRange} A range wrapper object.
      */
     function createFromElements(...var_args: Element[]): goog.dom.ControlRange;
 }

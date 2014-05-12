@@ -3,6 +3,16 @@
 declare module goog {
 
     /**
+     * Returns true if the specified value is not undefined.
+     * WARNING: Do not use this to test if an object has a property. Use the in
+     * operator instead.
+     *
+     * @param {?} val Variable to test.
+     * @return {boolean} Whether variable is defined.
+     */
+    function isDef(val: any): boolean;
+
+    /**
      * Defines a named value. In uncompiled mode, the value is retreived from
      * CLOSURE_DEFINES or CLOSURE_UNCOMPILED_DEFINES if the object is defined and
      * has the property specified, and otherwise used the defined defaultValue.
@@ -191,16 +201,6 @@ declare module goog {
      * @return {string} The name of the type.
      */
     function typeOf(value: any): string;
-
-    /**
-     * Returns true if the specified value is not undefined.
-     * WARNING: Do not use this to test if an object has a property. Use the in
-     * operator instead.  Additionally, this function assumes that the global
-     * undefined variable has not been redefined.
-     * @param {?} val Variable to test.
-     * @return {boolean} Whether variable is defined.
-     */
-    function isDef(val: any): boolean;
 
     /**
      * Returns true if the specified value is null.

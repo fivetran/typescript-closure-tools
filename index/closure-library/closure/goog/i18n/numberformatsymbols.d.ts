@@ -111,6 +111,12 @@ declare module goog.i18n {
     enum NumberFormatSymbols_ca_ES { /* goog.i18n.NumberFormatSymbols_ca */ } 
 
     /**
+     * Number formatting symbols for locale ca_ES_VALENCIA.
+     * @enum {string}
+     */
+    enum NumberFormatSymbols_ca_ES_VALENCIA { /* goog.i18n.NumberFormatSymbols_ca */ } 
+
+    /**
      * Number formatting symbols for locale ca_FR.
      * @enum {string}
      */
@@ -253,12 +259,6 @@ declare module goog.i18n {
      * @enum {string}
      */
     enum NumberFormatSymbols_en_DG { /* goog.i18n.NumberFormatSymbols_en */ } 
-
-    /**
-     * Number formatting symbols for locale en_Dsrt_US.
-     * @enum {string}
-     */
-    enum NumberFormatSymbols_en_Dsrt_US { /* goog.i18n.NumberFormatSymbols_en */ } 
 
     /**
      * Number formatting symbols for locale en_FM.

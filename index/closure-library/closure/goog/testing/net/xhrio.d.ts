@@ -104,11 +104,11 @@ declare module goog.testing.net {
     
             /**
             * Creates a new XHR object.
-            * @return {goog.net.XhrLike.OrNative|null} The newly created XHR
+            * @return {goog.net.XhrLike.OrNative} The newly created XHR
             *     object.
             * @protected
             */
-            createXhr(): any /*goog.net.XhrLike.OrNative|any (null)*/;
+            createXhr(): goog.net.XhrLike.OrNative;
     
             /**
             * Simulates changing to the new ready state.

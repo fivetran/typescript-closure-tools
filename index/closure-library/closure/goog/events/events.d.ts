@@ -619,7 +619,7 @@ declare module goog.events {
 
     /**
      * Helper function for returning a proxy function.
-     * @return {Function} A new or reused function object.
+     * @return {!Function} A new or reused function object.
      */
     function getProxy(): Function;
 

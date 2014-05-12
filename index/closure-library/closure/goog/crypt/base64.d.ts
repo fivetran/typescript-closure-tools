@@ -75,9 +75,16 @@ declare module goog.crypt.base64 {
     /**
      * Base64-decode a string.
      *
-     * @param {string} input to decode (length not required to be a multiple of 4).
-     * @param {boolean=} opt_webSafe True if we should use the
-     *     alternative alphabet.
+     * In base-64 decoding, groups of four characters are converted into three
+     * bytes.  If the encoder did not apply padding, the input length may not
+     * be a multiple of 4.
+     *
+     * In this case, the last group will have fewer than 4 characters, and
+     * padding will be inferred.  If the group has one or two characters, it decodes
+     * to one byte.  If the group has three characters, it decodes to two bytes.
+     *
+     * @param {string} input Input to decode.
+     * @param {boolean=} opt_webSafe True if we should use the web-safe alphabet.
      * @return {!Array} bytes representing the decoded value.
      */
     function decodeStringToByteArray(input: string, opt_webSafe?: boolean): any[];

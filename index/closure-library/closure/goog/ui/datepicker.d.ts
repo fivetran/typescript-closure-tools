@@ -250,7 +250,7 @@ declare module goog.ui {
             selectNone(): void;
     
             /**
-            * @return {goog.date.Date} The active month displayed.
+            * @return {!goog.date.Date} The active month displayed.
             */
             getActiveMonth(): goog.date.Date;
     

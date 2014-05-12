@@ -283,7 +283,7 @@ declare module goog.testing {
     
             /**
             * Cycles through the tests, breaking out using a setTimeout if the execution
-            * time has execeeded {@link #MAX_RUN_TIME}.
+            * time has execeeded {@link #maxRunTime}.
             */
             cycleTests(): void;
     
@@ -416,7 +416,7 @@ declare module goog.testing.TestCase {
      * potentially hurting the Selenium test harness.
      * @type {number}
      */
-    var MAX_RUN_TIME: number;
+    var maxRunTime: number;
 
     /**
      * TODO(user) replace this with prototype.currentTest.

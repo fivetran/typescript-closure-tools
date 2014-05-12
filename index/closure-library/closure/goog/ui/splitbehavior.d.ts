@@ -71,7 +71,7 @@ declare module goog.ui {
             * @param {Element} element An element to decorate.
             * @param {boolean=} opt_activate Whether to activate the behavior
             *     (default=true).
-            * @return {goog.ui.SplitBehavior} A split behavior.
+            * @return {!goog.ui.SplitBehavior} A split behavior.
             */
             decorate(element: Element, opt_activate?: boolean): goog.ui.SplitBehavior;
     
@@ -80,7 +80,7 @@ declare module goog.ui {
             * @param {Element} element An element to decorate.
             * @param {boolean=} opt_activate Whether to activate the behavior
             *     (default=true).
-            * @return {goog.ui.SplitBehavior} A split behavior.
+            * @return {!goog.ui.SplitBehavior} A split behavior.
             */
             render(element: Element, opt_activate?: boolean): goog.ui.SplitBehavior;
     

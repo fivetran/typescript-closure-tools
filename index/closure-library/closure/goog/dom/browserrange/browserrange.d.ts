@@ -12,20 +12,20 @@ declare module goog.dom.browserrange {
     /**
      * Static method that returns the proper type of browser range.
      * @param {Range|TextRange} range A browser range object.
-     * @return {goog.dom.browserrange.AbstractRange} A wrapper object.
+     * @return {!goog.dom.browserrange.AbstractRange} A wrapper object.
      */
     function createRange(range: Range): goog.dom.browserrange.AbstractRange;
     /**
      * Static method that returns the proper type of browser range.
      * @param {Range|TextRange} range A browser range object.
-     * @return {goog.dom.browserrange.AbstractRange} A wrapper object.
+     * @return {!goog.dom.browserrange.AbstractRange} A wrapper object.
      */
     function createRange(range: TextRange): goog.dom.browserrange.AbstractRange;
 
     /**
      * Static method that returns the proper type of browser range.
      * @param {Node} node The node to select.
-     * @return {goog.dom.browserrange.AbstractRange} A wrapper object.
+     * @return {!goog.dom.browserrange.AbstractRange} A wrapper object.
      */
     function createRangeFromNodeContents(node: Node): goog.dom.browserrange.AbstractRange;
 
@@ -39,7 +39,7 @@ declare module goog.dom.browserrange {
      * @param {number} endOffset The offset within the node to end.  This is
      *     either the index into the childNodes array for element endNodes or
      *     the index into the character array for text endNodes.
-     * @return {goog.dom.browserrange.AbstractRange} A wrapper object.
+     * @return {!goog.dom.browserrange.AbstractRange} A wrapper object.
      */
     function createRangeFromNodes(startNode: Node, startOffset: number, endNode: Node, endOffset: number): goog.dom.browserrange.AbstractRange;
 

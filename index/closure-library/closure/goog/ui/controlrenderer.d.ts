@@ -305,7 +305,7 @@ declare module goog.ui {
             * method is guaranteed to return an array of at least one element.
             * @param {goog.ui.Control} control Control whose CSS classes are to be
             *     returned.
-            * @return {Array.<string>} Array of CSS class names applicable to the control.
+            * @return {!Array.<string>} Array of CSS class names applicable to the control.
             * @protected
             */
             getClassNames(control: goog.ui.Control): string[];

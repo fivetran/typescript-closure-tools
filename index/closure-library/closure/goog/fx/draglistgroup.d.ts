@@ -157,7 +157,7 @@ declare module goog.fx {
             * {@code createDragElement()} before the drag class is added.
             *
             * @param {Element} sourceEl Drag source element.
-            * @return {Element} The new drag element.
+            * @return {!Element} The new drag element.
             * @protected
             * @suppress {deprecated}
             */

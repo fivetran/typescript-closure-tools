@@ -140,7 +140,7 @@ declare module goog.ui {
             /**
             * Returns the background fill.
             *
-            * @return {Array.<Object>} An array of background fill specifications.
+            * @return {!Array.<Object>} An array of background fill specifications.
             *     If the fill specification string is in an unsupported format, the method
             *    returns an empty array.
             */
@@ -185,7 +185,7 @@ declare module goog.ui {
             /**
             * Returns the chart size.
             *
-            * @return {Array.<string>} [Width, Height].
+            * @return {!Array.<string>} [Width, Height].
             */
             getSize(): string[];
     

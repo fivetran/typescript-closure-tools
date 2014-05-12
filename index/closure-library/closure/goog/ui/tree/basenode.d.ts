@@ -49,7 +49,7 @@ declare module goog.ui.tree {
             * @param {goog.ui.tree.BaseNode=} opt_before If specified, the new child is
             *    added as a child before this one. If not specified, it's appended to the
             *    end.
-            * @return {goog.ui.tree.BaseNode} The added child.
+            * @return {!goog.ui.tree.BaseNode} The added child.
             */
             add(child: goog.ui.tree.BaseNode, opt_before?: goog.ui.tree.BaseNode): goog.ui.tree.BaseNode;
     

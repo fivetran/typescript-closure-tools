@@ -784,6 +784,12 @@ declare module goog.date.Date {
 declare module goog.date.DateTime {
 
     /**
+     * @param {number} timestamp Number of milliseconds since Epoch.
+     * @return {!goog.date.DateTime}
+     */
+    function fromTimestamp(timestamp: number): goog.date.DateTime;
+
+    /**
      * Creates a DateTime from a datetime string expressed in RFC 822 format.
      *
      * @param {string} formatted A date or datetime expressed in RFC 822 format.

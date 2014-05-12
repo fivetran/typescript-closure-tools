@@ -55,7 +55,7 @@ declare module goog.ui.editor {
             /**
             * Creates and returns the goog.ui.Dialog control that is being wrapped
             * by this object.
-            * @return {goog.ui.Dialog} Created Dialog control.
+            * @return {!goog.ui.Dialog} Created Dialog control.
             * @protected
             */
             createDialogControl(): goog.ui.Dialog;

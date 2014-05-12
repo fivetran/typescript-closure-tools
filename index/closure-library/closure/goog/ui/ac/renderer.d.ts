@@ -216,7 +216,7 @@ declare module goog.ui.ac {
             *
             * @param {Object} row Object representing row.
             * @param {string} token Token to highlight.
-            * @return {Element} An element with the rendered HTML.
+            * @return {!Element} An element with the rendered HTML.
             */
             renderRowHtml(row: Object, token: string): Element;
         }

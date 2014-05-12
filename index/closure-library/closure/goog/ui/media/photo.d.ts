@@ -48,7 +48,7 @@ declare module goog.ui.media.Photo {
      * over the configuration.
      *
      * @param {goog.ui.media.MediaModel} dataModel The photo data model.
-     * @return {goog.ui.media.Media} A goog.ui.Control subclass with the photo
+     * @return {!goog.ui.media.Media} A goog.ui.Control subclass with the photo
      *     renderer.
      */
     function newControl(dataModel: goog.ui.media.MediaModel): goog.ui.media.Media;

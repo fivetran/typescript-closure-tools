@@ -28,7 +28,7 @@ declare module goog.html {
             * without appropriate escaping.
             *
             * Note also that this type's contract does not imply any guarantees regarding
-            * the resource the URL refers to.  In particular, SafeUrls are <b>not<b/>
+            * the resource the URL refers to.  In particular, SafeUrls are <b>not</b>
             * safe to use in a context where the referred-to resource is interpreted as
             * trusted code, e.g., as the src of a script tag.
             *

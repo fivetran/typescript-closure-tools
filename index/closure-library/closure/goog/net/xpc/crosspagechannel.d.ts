@@ -74,7 +74,7 @@ declare module goog.net.xpc {
             getTransportName(): string;
     
             /**
-            * @return {Object} Configuration-object to be used by the peer to
+            * @return {!Object} Configuration-object to be used by the peer to
             *     initialize the channel.
             */
             getPeerConfiguration(): Object;

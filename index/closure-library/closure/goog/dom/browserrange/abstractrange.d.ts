@@ -148,7 +148,7 @@ declare module goog.dom.browserrange {
             * Returns a RangeIterator over the contents of the range.  Regardless of the
             * direction of the range, the iterator will move in document order.
             * @param {boolean=} opt_keys Unused for this iterator.
-            * @return {goog.dom.RangeIterator} An iterator over tags in the range.
+            * @return {!goog.dom.RangeIterator} An iterator over tags in the range.
             */
             __iterator__(opt_keys?: boolean): goog.dom.RangeIterator;
     

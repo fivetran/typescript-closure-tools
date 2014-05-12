@@ -3,6 +3,7 @@
 /// <reference path="../../dom/dom.d.ts" />
 /// <reference path="../../log/log.d.ts" />
 /// <reference path="../../events/eventhandler.d.ts" />
+/// <reference path="../../math/box.d.ts" />
 
 declare module goog.ui.editor {
 
@@ -105,11 +106,25 @@ declare module goog.ui.editor {
             isVisible(): boolean;
     
             /**
+            * Returns the margin box.
+            * @return {goog.math.Box}
+            * @protected
+            */
+            getMarginBox(): goog.math.Box;
+    
+            /**
             * Positions and displays this bubble below its targetElement. Assumes that
             * the bubbleContainer is already contained in the document object it applies
             * to.
             */
             reposition(): void;
+    
+            /**
+            * Returns the viewport box to use when positioning the bubble.
+            * @return {goog.math.Box}
+            * @protected
+            */
+            getViewportBox(): goog.math.Box;
         }
     }
 }

@@ -25,7 +25,7 @@ declare module goog.dom.selection {
      * Returns the start and end points of the selection inside a textarea or a
      * text input.
      * @param {Element} textfield A textarea or text input.
-     * @return {Array.<number>} An array with the start and end positions where the
+     * @return {!Array.<number>} An array with the start and end positions where the
      *     selection starts and ends or [0,0] if it was unable to find the
      *     positions or no selection exists. Note that we can't reliably tell the
      *     difference between an element that has no selection and one where

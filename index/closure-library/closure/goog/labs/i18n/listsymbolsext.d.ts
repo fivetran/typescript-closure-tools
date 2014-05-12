@@ -2573,6 +2573,21 @@ declare module goog.labs.i18n {
     var ListFormatSymbols_tzm_Latn_MA: any /*missing*/;
 
     /**
+     * List formatting symbols for locale ug.
+     */
+    var ListFormatSymbols_ug: any /*missing*/;
+
+    /**
+     * List formatting symbols for locale ug_Arab.
+     */
+    var ListFormatSymbols_ug_Arab: any /*missing*/;
+
+    /**
+     * List formatting symbols for locale ug_Arab_CN.
+     */
+    var ListFormatSymbols_ug_Arab_CN: any /*missing*/;
+
+    /**
      * List formatting symbols for locale uk_UA.
      */
     var ListFormatSymbols_uk_UA: any /*missing*/;

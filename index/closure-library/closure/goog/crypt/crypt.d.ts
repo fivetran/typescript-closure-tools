@@ -14,10 +14,10 @@ declare module goog.crypt {
     /**
      * Turns an array of numbers into the string given by the concatenation of the
      * characters to which the numbers correspond.
-     * @param {Array} array Array of numbers representing characters.
+     * @param {Array} bytes Array of numbers representing characters.
      * @return {string} Stringification of the array.
      */
-    function byteArrayToString(array: any[]): string;
+    function byteArrayToString(bytes: any[]): string;
 
     /**
      * Turns an array of numbers into the hex string given by the concatenation of

@@ -11,7 +11,7 @@ declare module goog.ui.menuBar {
      *     decorate the menu bar; defaults to {@link goog.ui.MenuBarRenderer}.
      * @param {goog.dom.DomHelper=} opt_domHelper DOM helper, used for document
      *     interaction.
-     * @return {goog.ui.Container} The created menu bar.
+     * @return {!goog.ui.Container} The created menu bar.
      */
     function create(opt_renderer?: goog.ui.ContainerRenderer, opt_domHelper?: goog.dom.DomHelper): goog.ui.Container;
 }

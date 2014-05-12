@@ -82,6 +82,32 @@ declare module goog.vec.vec2f {
     function subtract(vec0: goog.vec.vec2f.Type, vec1: goog.vec.vec2f.Type, resultVec: goog.vec.vec2f.Type): goog.vec.vec2f.Type;
 
     /**
+     * Multiplies each component of vec0 with the matching element of vec0
+     * storing the products into resultVec.
+     *
+     * @param {!goog.vec.vec2f.Type} vec0 The first vector.
+     * @param {!goog.vec.vec2f.Type} vec1 The second vector.
+     * @param {!goog.vec.vec2f.Type} resultVec The vector to
+     *     receive the result. May be vec0.
+     * @return {!goog.vec.vec2f.Type} Return resultVec so that operations can be
+     *     chained together.
+     */
+    function componentMultiply(vec0: goog.vec.vec2f.Type, vec1: goog.vec.vec2f.Type, resultVec: goog.vec.vec2f.Type): goog.vec.vec2f.Type;
+
+    /**
+     * Divides each component of vec0 with the matching element of vec0
+     * storing the divisor into resultVec.
+     *
+     * @param {!goog.vec.vec2f.Type} vec0 The first vector.
+     * @param {!goog.vec.vec2f.Type} vec1 The second vector.
+     * @param {!goog.vec.vec2f.Type} resultVec The vector to
+     *     receive the result. May be vec0.
+     * @return {!goog.vec.vec2f.Type} Return resultVec so that operations can be
+     *     chained together.
+     */
+    function componentDivide(vec0: goog.vec.vec2f.Type, vec1: goog.vec.vec2f.Type, resultVec: goog.vec.vec2f.Type): goog.vec.vec2f.Type;
+
+    /**
      * Negates vec0, storing the result into resultVec.
      *
      * @param {goog.vec.vec2f.Type} vec0 The vector to negate.

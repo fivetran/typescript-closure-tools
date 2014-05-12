@@ -50,7 +50,7 @@ declare module goog.proto2 {
             *     to be created.
             * @param {*} data The data of the message.
             *
-            * @return {goog.proto2.Message} The message created.
+            * @return {!goog.proto2.Message} The message created.
             */
             deserialize(descriptor: goog.proto2.Descriptor, data: any): goog.proto2.Message;
     

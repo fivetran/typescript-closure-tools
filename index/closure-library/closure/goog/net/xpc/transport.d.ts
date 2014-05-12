@@ -31,7 +31,7 @@ declare module goog.net.xpc {
     
             /**
             * Returns the window associated with this transport instance.
-            * @return {Window} The window to use.
+            * @return {!Window} The window to use.
             */
             getWindow(): Window;
     

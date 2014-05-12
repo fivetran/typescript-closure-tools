@@ -67,7 +67,7 @@ declare module goog.dom.TextRange {
      * @param {Range|TextRange} range The browser range object.
      * @param {boolean=} opt_isReversed Whether the focus node is before the anchor
      *     node.
-     * @return {goog.dom.TextRange} A range wrapper object.
+     * @return {!goog.dom.TextRange} A range wrapper object.
      */
     function createFromBrowserRange(range: Range, opt_isReversed?: boolean): goog.dom.TextRange;
     /**
@@ -76,7 +76,7 @@ declare module goog.dom.TextRange {
      * @param {Range|TextRange} range The browser range object.
      * @param {boolean=} opt_isReversed Whether the focus node is before the anchor
      *     node.
-     * @return {goog.dom.TextRange} A range wrapper object.
+     * @return {!goog.dom.TextRange} A range wrapper object.
      */
     function createFromBrowserRange(range: TextRange, opt_isReversed?: boolean): goog.dom.TextRange;
 
@@ -86,7 +86,7 @@ declare module goog.dom.TextRange {
      * @param {Node} node The node to select.
      * @param {boolean=} opt_isReversed Whether the focus node is before the anchor
      *     node.
-     * @return {goog.dom.TextRange} A range wrapper object.
+     * @return {!goog.dom.TextRange} A range wrapper object.
      */
     function createFromNodeContents(node: Node, opt_isReversed?: boolean): goog.dom.TextRange;
 
@@ -98,7 +98,7 @@ declare module goog.dom.TextRange {
      * @param {number} anchorOffset The offset within the node to start.
      * @param {Node} focusNode The node to end with.
      * @param {number} focusOffset The offset within the node to end.
-     * @return {goog.dom.TextRange} A range wrapper object.
+     * @return {!goog.dom.TextRange} A range wrapper object.
      */
     function createFromNodes(anchorNode: Node, anchorOffset: number, focusNode: Node, focusOffset: number): goog.dom.TextRange;
 

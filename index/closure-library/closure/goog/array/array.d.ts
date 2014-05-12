@@ -9,6 +9,7 @@ declare module goog.array {
 
     /**
      * Returns the last element in an array without removing it.
+     * Same as goog.array.last.
      * @param {Array.<T>|goog.array.ArrayLike} array The array.
      * @return {T} Last item in array.
      * @template T
@@ -16,6 +17,7 @@ declare module goog.array {
     function peek<T>(array: T[]): T;
     /**
      * Returns the last element in an array without removing it.
+     * Same as goog.array.last.
      * @param {Array.<T>|goog.array.ArrayLike} array The array.
      * @return {T} Last item in array.
      * @template T
@@ -23,6 +25,7 @@ declare module goog.array {
     function peek<T>(array: any[]): T;
     /**
      * Returns the last element in an array without removing it.
+     * Same as goog.array.last.
      * @param {Array.<T>|goog.array.ArrayLike} array The array.
      * @return {T} Last item in array.
      * @template T
@@ -30,6 +33,7 @@ declare module goog.array {
     function peek<T>(array: NodeList): T;
     /**
      * Returns the last element in an array without removing it.
+     * Same as goog.array.last.
      * @param {Array.<T>|goog.array.ArrayLike} array The array.
      * @return {T} Last item in array.
      * @template T
@@ -37,11 +41,53 @@ declare module goog.array {
     function peek<T>(array: Arguments): T;
     /**
      * Returns the last element in an array without removing it.
+     * Same as goog.array.last.
      * @param {Array.<T>|goog.array.ArrayLike} array The array.
      * @return {T} Last item in array.
      * @template T
      */
     function peek<T>(array: { length: number }): T;
+
+    /**
+     * Returns the last element in an array without removing it.
+     * Same as goog.array.peek.
+     * @param {Array.<T>|goog.array.ArrayLike} array The array.
+     * @return {T} Last item in array.
+     * @template T
+     */
+    function last<T>(array: T[]): T;
+    /**
+     * Returns the last element in an array without removing it.
+     * Same as goog.array.peek.
+     * @param {Array.<T>|goog.array.ArrayLike} array The array.
+     * @return {T} Last item in array.
+     * @template T
+     */
+    function last<T>(array: any[]): T;
+    /**
+     * Returns the last element in an array without removing it.
+     * Same as goog.array.peek.
+     * @param {Array.<T>|goog.array.ArrayLike} array The array.
+     * @return {T} Last item in array.
+     * @template T
+     */
+    function last<T>(array: NodeList): T;
+    /**
+     * Returns the last element in an array without removing it.
+     * Same as goog.array.peek.
+     * @param {Array.<T>|goog.array.ArrayLike} array The array.
+     * @return {T} Last item in array.
+     * @template T
+     */
+    function last<T>(array: Arguments): T;
+    /**
+     * Returns the last element in an array without removing it.
+     * Same as goog.array.peek.
+     * @param {Array.<T>|goog.array.ArrayLike} array The array.
+     * @return {T} Last item in array.
+     * @template T
+     */
+    function last<T>(array: { length: number }): T;
 
     /**
      * Returns the index of the first element of an array with a specified value, or
@@ -1033,7 +1079,7 @@ declare module goog.array {
      *     for every element. This function takes 3 arguments (the element, the
      *     index and the array) and should return a boolean.
      * @param {S=} opt_obj An optional "this" context for the function.
-     * @return {T} The first array element that passes the test, or null if no
+     * @return {?T} The first array element that passes the test, or null if no
      *     element is found.
      * @template T,S
      */
@@ -1047,7 +1093,7 @@ declare module goog.array {
      *     for every element. This function takes 3 arguments (the element, the
      *     index and the array) and should return a boolean.
      * @param {S=} opt_obj An optional "this" context for the function.
-     * @return {T} The first array element that passes the test, or null if no
+     * @return {?T} The first array element that passes the test, or null if no
      *     element is found.
      * @template T,S
      */
@@ -1061,7 +1107,7 @@ declare module goog.array {
      *     for every element. This function takes 3 arguments (the element, the
      *     index and the array) and should return a boolean.
      * @param {S=} opt_obj An optional "this" context for the function.
-     * @return {T} The first array element that passes the test, or null if no
+     * @return {?T} The first array element that passes the test, or null if no
      *     element is found.
      * @template T,S
      */
@@ -1075,7 +1121,7 @@ declare module goog.array {
      *     for every element. This function takes 3 arguments (the element, the
      *     index and the array) and should return a boolean.
      * @param {S=} opt_obj An optional "this" context for the function.
-     * @return {T} The first array element that passes the test, or null if no
+     * @return {?T} The first array element that passes the test, or null if no
      *     element is found.
      * @template T,S
      */
@@ -1089,7 +1135,7 @@ declare module goog.array {
      *     for every element. This function takes 3 arguments (the element, the
      *     index and the array) and should return a boolean.
      * @param {S=} opt_obj An optional "this" context for the function.
-     * @return {T} The first array element that passes the test, or null if no
+     * @return {?T} The first array element that passes the test, or null if no
      *     element is found.
      * @template T,S
      */
@@ -1181,7 +1227,7 @@ declare module goog.array {
      *     takes 3 arguments (the element, the index and the array) and should
      *     return a boolean.
      * @param {S=} opt_obj An optional "this" context for the function.
-     * @return {T} The last array element that passes the test, or null if no
+     * @return {?T} The last array element that passes the test, or null if no
      *     element is found.
      * @template T,S
      */
@@ -1196,7 +1242,7 @@ declare module goog.array {
      *     takes 3 arguments (the element, the index and the array) and should
      *     return a boolean.
      * @param {S=} opt_obj An optional "this" context for the function.
-     * @return {T} The last array element that passes the test, or null if no
+     * @return {?T} The last array element that passes the test, or null if no
      *     element is found.
      * @template T,S
      */
@@ -1211,7 +1257,7 @@ declare module goog.array {
      *     takes 3 arguments (the element, the index and the array) and should
      *     return a boolean.
      * @param {S=} opt_obj An optional "this" context for the function.
-     * @return {T} The last array element that passes the test, or null if no
+     * @return {?T} The last array element that passes the test, or null if no
      *     element is found.
      * @template T,S
      */
@@ -1226,7 +1272,7 @@ declare module goog.array {
      *     takes 3 arguments (the element, the index and the array) and should
      *     return a boolean.
      * @param {S=} opt_obj An optional "this" context for the function.
-     * @return {T} The last array element that passes the test, or null if no
+     * @return {?T} The last array element that passes the test, or null if no
      *     element is found.
      * @template T,S
      */
@@ -1241,7 +1287,7 @@ declare module goog.array {
      *     takes 3 arguments (the element, the index and the array) and should
      *     return a boolean.
      * @param {S=} opt_obj An optional "this" context for the function.
-     * @return {T} The last array element that passes the test, or null if no
+     * @return {?T} The last array element that passes the test, or null if no
      *     element is found.
      * @template T,S
      */

@@ -243,7 +243,7 @@ declare module goog.ui {
             * object's values are the id fragments and the new values are the generated
             * ids.  The key will remain the same.
             * @param {Object} object The object that will be used to create the ids.
-            * @return {Object} An object of id keys to generated ids.
+            * @return {!Object} An object of id keys to generated ids.
             */
             makeIds(object: Object): Object;
     
@@ -374,7 +374,7 @@ declare module goog.ui {
             /**
             * Returns an array containing the IDs of the children of this component, or an
             * empty array if the component has no children.
-            * @return {Array.<string>} Child component IDs.
+            * @return {!Array.<string>} Child component IDs.
             */
             getChildIds(): string[];
     

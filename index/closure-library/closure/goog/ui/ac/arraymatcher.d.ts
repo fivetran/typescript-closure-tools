@@ -36,7 +36,7 @@ declare module goog.ui.ac {
             * Matches the token against the start of words in the row.
             * @param {string} token Token to match.
             * @param {number} maxMatches Max number of matches to return.
-            * @return {Array} Rows that match.
+            * @return {!Array} Rows that match.
             */
             getPrefixMatches(token: string, maxMatches: number): any[];
     
@@ -45,7 +45,7 @@ declare module goog.ui.ac {
             * terms.
             * @param {string} token Token to match.
             * @param {number} maxMatches Max number of matches to return.
-            * @return {Array} The best maxMatches rows.
+            * @return {!Array} The best maxMatches rows.
             */
             getSimilarRows(token: string, maxMatches: number): any[];
         }

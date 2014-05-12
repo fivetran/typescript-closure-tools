@@ -290,7 +290,7 @@ declare module goog.fx {
             /**
             * Get the position of a drag event.
             * @param {goog.fx.DragEvent} event Drag event.
-            * @return {goog.math.Coordinate} Position of the event.
+            * @return {!goog.math.Coordinate} Position of the event.
             * @protected
             */
             getEventPosition(event: goog.fx.DragEvent): goog.math.Coordinate;

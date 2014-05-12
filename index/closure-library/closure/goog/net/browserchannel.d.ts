@@ -33,7 +33,7 @@ declare module goog.net {
             /**
             * Returns the browserchannel logger.
             *
-            * @return {goog.net.ChannelDebug} The channel debug object.
+            * @return {!goog.net.ChannelDebug} The channel debug object.
             */
             getChannelDebug(): goog.net.ChannelDebug;
     
@@ -302,7 +302,7 @@ declare module goog.net {
             /**
             * Gets the Uri used for the connection that sends data to the server.
             * @param {string} path The path on the host.
-            * @return {goog.Uri} The forward channel URI.
+            * @return {!goog.Uri} The forward channel URI.
             */
             getForwardChannelUri(path: string): goog.Uri;
     
@@ -323,7 +323,7 @@ declare module goog.net {
             * Gets the Uri used for the connection that receives data from the server.
             * @param {?string} hostPrefix The host prefix.
             * @param {string} path The path on the host.
-            * @return {goog.Uri} The back channel URI.
+            * @return {!goog.Uri} The back channel URI.
             */
             getBackChannelUri(hostPrefix: string, path: string): goog.Uri;
     
@@ -333,7 +333,7 @@ declare module goog.net {
             * @param {?string} hostPrefix The host prefix.
             * @param {string} path The path on the host (may be absolute or relative).
             * @param {number=} opt_overridePort Optional override port.
-            * @return {goog.Uri} The data URI.
+            * @return {!goog.Uri} The data URI.
             */
             createDataUri(hostPrefix: string, path: string, opt_overridePort?: number): goog.Uri;
     
@@ -709,7 +709,7 @@ declare module goog.net.BrowserChannel {
      * @param {string=} opt_sessionId  The session id for the channel.
      * @param {string|number=} opt_requestId  The request id for this request.
      * @param {number=} opt_retryId  The retry id for this request.
-     * @return {goog.net.ChannelRequest} The created channel request.
+     * @return {!goog.net.ChannelRequest} The created channel request.
      */
     function createChannelRequest(channel: goog.net.BrowserChannel, channelDebug: goog.net.ChannelDebug, opt_sessionId?: string, opt_requestId?: string, opt_retryId?: number): goog.net.ChannelRequest;
     /**
@@ -722,7 +722,7 @@ declare module goog.net.BrowserChannel {
      * @param {string=} opt_sessionId  The session id for the channel.
      * @param {string|number=} opt_requestId  The request id for this request.
      * @param {number=} opt_retryId  The retry id for this request.
-     * @return {goog.net.ChannelRequest} The created channel request.
+     * @return {!goog.net.ChannelRequest} The created channel request.
      */
     function createChannelRequest(channel: goog.net.BrowserChannel, channelDebug: goog.net.ChannelDebug, opt_sessionId?: string, opt_requestId?: number, opt_retryId?: number): goog.net.ChannelRequest;
     /**
@@ -735,7 +735,7 @@ declare module goog.net.BrowserChannel {
      * @param {string=} opt_sessionId  The session id for the channel.
      * @param {string|number=} opt_requestId  The request id for this request.
      * @param {number=} opt_retryId  The retry id for this request.
-     * @return {goog.net.ChannelRequest} The created channel request.
+     * @return {!goog.net.ChannelRequest} The created channel request.
      */
     function createChannelRequest(channel: goog.net.BrowserTestChannel, channelDebug: goog.net.ChannelDebug, opt_sessionId?: string, opt_requestId?: string, opt_retryId?: number): goog.net.ChannelRequest;
     /**
@@ -748,7 +748,7 @@ declare module goog.net.BrowserChannel {
      * @param {string=} opt_sessionId  The session id for the channel.
      * @param {string|number=} opt_requestId  The request id for this request.
      * @param {number=} opt_retryId  The retry id for this request.
-     * @return {goog.net.ChannelRequest} The created channel request.
+     * @return {!goog.net.ChannelRequest} The created channel request.
      */
     function createChannelRequest(channel: goog.net.BrowserTestChannel, channelDebug: goog.net.ChannelDebug, opt_sessionId?: string, opt_requestId?: number, opt_retryId?: number): goog.net.ChannelRequest;
 

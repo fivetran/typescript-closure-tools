@@ -47,15 +47,6 @@ declare module goog.async.run {
 declare module goog.async {
 
     /**
-     * Throw an item without interrupting the current execution context.  For
-     * example, if processing a group of items in a loop, sometimes it is useful
-     * to report an error while still allowing the rest of the batch to be
-     * processed.
-     * @param {*} exception
-     */
-    function throwException(exception: any): void;
-
-    /**
      * Fires the provided callback just before the current callstack unwinds, or as
      * soon as possible after the current JS execution context.
      * @param {function(this:THIS)} callback

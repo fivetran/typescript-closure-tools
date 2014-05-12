@@ -76,6 +76,19 @@ declare module goog.ui {
             setAutoHide(autoHide: boolean): void;
     
             /**
+            * Mouse events that occur within an autoHide partner will not hide a popup
+            * set to autoHide.
+            * @param {!Element} partner The auto hide partner element.
+            */
+            addAutoHidePartner(partner: Element): void;
+    
+            /**
+            * Removes a previously registered auto hide partner.
+            * @param {!Element} partner The auto hide partner element.
+            */
+            removeAutoHidePartner(partner: Element): void;
+    
+            /**
             * @return {boolean} Whether the Popup autohides on the escape key.
             */
             getHideOnEscape(): boolean;

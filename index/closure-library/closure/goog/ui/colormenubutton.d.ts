@@ -83,7 +83,7 @@ declare module goog.ui {
     
             /**
             * Returns the currently selected color (null if none).
-            * @return {?string} The selected color.
+            * @return {string} The selected color.
             */
             getSelectedColor(): string;
     
@@ -121,7 +121,7 @@ declare module goog.ui.ColorMenuButton {
      *     add before the color palettes.
      * @param {goog.dom.DomHelper=} opt_domHelper Optional DOM hepler, used for
      *     document interaction.
-     * @return {goog.ui.Menu} Color menu.
+     * @return {!goog.ui.Menu} Color menu.
      */
     function newColorMenu(opt_extraItems?: goog.ui.Control[], opt_domHelper?: goog.dom.DomHelper): goog.ui.Menu;
 }

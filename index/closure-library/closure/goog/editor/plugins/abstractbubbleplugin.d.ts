@@ -53,6 +53,13 @@ declare module goog.editor.plugins {
             setBubbleParent(bubbleParent: Element): void;
     
             /**
+            * Returns the bubble map.  Subclasses may override to use a separate map.
+            * @return {!Object.<goog.ui.editor.Bubble>}
+            * @protected
+            */
+            getBubbleMap(): { [key: string]: any /*missing*/ };
+    
+            /**
             * @return {goog.dom.DomHelper} The dom helper for the bubble window.
             */
             getBubbleDom(): goog.dom.DomHelper;

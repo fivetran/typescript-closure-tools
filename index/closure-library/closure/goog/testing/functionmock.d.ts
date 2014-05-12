@@ -32,7 +32,7 @@ declare module goog.testing {
      * @param {string} functionName The name of the function we're going to mock.
      * @param {number=} opt_strictness One of goog.testing.Mock.LOOSE or
      *     goog.testing.Mock.STRICT. The default is STRICT.
-     * @return {goog.testing.MockInterface} The mocked global function.
+     * @return {!goog.testing.MockInterface} The mocked global function.
      */
     function GlobalFunctionMock(functionName: string, opt_strictness?: number): goog.testing.MockInterface;
 
@@ -52,7 +52,7 @@ declare module goog.testing {
      * @param {string} functionName The name of the function we're going to mock.
      * @param {number=} opt_strictness One of goog.testing.Mock.LOOSE or
      *     goog.testing.Mock.STRICT. The default is STRICT.
-     * @return {goog.testing.MockInterface} The mocked global function.
+     * @return {!goog.testing.MockInterface} The mocked global function.
      */
     function createMethodMock(scope: Object, functionName: string, opt_strictness?: number): goog.testing.MockInterface;
 
@@ -69,7 +69,7 @@ declare module goog.testing {
      *     mock.
      * @param {number=} opt_strictness One of goog.testing.Mock.LOOSE or
      *     goog.testing.Mock.STRICT. The default is STRICT.
-     * @return {goog.testing.MockInterface} The mocked constructor.
+     * @return {!goog.testing.MockInterface} The mocked constructor.
      */
     function createConstructorMock(scope: Object, constructorName: string, opt_strictness?: number): goog.testing.MockInterface;
 

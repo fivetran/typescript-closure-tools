@@ -72,7 +72,7 @@ declare module goog.testing {
             *
             * @param {Function} testFn Test function whose performance is to
             *     be measured.
-            * @return {Object} Object containing performance stats.
+            * @return {!Object} Object containing performance stats.
             */
             run(testFn: Function): Object;
     
@@ -83,7 +83,7 @@ declare module goog.testing {
             * @see goog.testing.PerformanceTimer#run
             * @param {goog.testing.PerformanceTimer.Task} task A task describing the test
             *     function to invoke.
-            * @return {Object} Object containing performance stats.
+            * @return {!Object} Object containing performance stats.
             */
             runTask(task: goog.testing.PerformanceTimer.Task): Object;
     

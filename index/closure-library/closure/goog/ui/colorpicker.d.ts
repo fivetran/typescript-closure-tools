@@ -140,7 +140,7 @@ declare module goog.ui.ColorPicker {
      * Returns an unrendered instance of the color picker.  The colors and layout
      * are a simple color grid, the same as the old Gmail color picker.
      * @param {goog.dom.DomHelper=} opt_domHelper Optional DOM helper.
-     * @return {goog.ui.ColorPicker} The unrendered instance.
+     * @return {!goog.ui.ColorPicker} The unrendered instance.
      */
     function createSimpleColorGrid(opt_domHelper?: goog.dom.DomHelper): goog.ui.ColorPicker;
 

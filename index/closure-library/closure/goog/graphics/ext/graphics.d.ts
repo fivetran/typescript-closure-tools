@@ -122,7 +122,7 @@ declare module goog.graphics.ext {
             setCoordOrigin(left: number, top: number): void;
     
             /**
-            * @return {goog.math.Coordinate} The coordinate system position.
+            * @return {!goog.math.Coordinate} The coordinate system position.
             */
             getCoordOrigin(): goog.math.Coordinate;
     

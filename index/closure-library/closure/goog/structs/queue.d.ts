@@ -68,7 +68,7 @@ declare module goog.structs {
     
             /**
             * Returns all the values in the queue.
-            * @return {Array.<T>} An array of the values in the queue.
+            * @return {!Array.<T>} An array of the values in the queue.
             */
             getValues(): T[];
         }

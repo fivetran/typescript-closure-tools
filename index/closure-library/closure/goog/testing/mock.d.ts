@@ -228,6 +228,18 @@ declare module goog.testing {
             $atLeastOnce(): goog.testing.Mock;
     
             /**
+            * Allows the expectation to be called exactly once.
+            * @return {!goog.testing.Mock} This mock object.
+            */
+            $once(): goog.testing.Mock;
+    
+            /**
+            * Disallows the expectation from being called.
+            * @return {!goog.testing.Mock} This mock object.
+            */
+            $never(): goog.testing.Mock;
+    
+            /**
             * Allows the expectation to be called any number of times.
             * @return {!goog.testing.Mock} This mock object.
             */

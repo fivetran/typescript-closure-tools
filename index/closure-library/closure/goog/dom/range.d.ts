@@ -29,7 +29,7 @@ declare module goog.dom.Range {
      * @param {Range|TextRange} range The browser range object.
      * @param {boolean=} opt_isReversed Whether the focus node is before the anchor
      *     node.
-     * @return {goog.dom.AbstractRange} A range wrapper object.
+     * @return {!goog.dom.AbstractRange} A range wrapper object.
      */
     function createFromBrowserRange(range: Range, opt_isReversed?: boolean): goog.dom.AbstractRange;
     /**
@@ -37,7 +37,7 @@ declare module goog.dom.Range {
      * @param {Range|TextRange} range The browser range object.
      * @param {boolean=} opt_isReversed Whether the focus node is before the anchor
      *     node.
-     * @return {goog.dom.AbstractRange} A range wrapper object.
+     * @return {!goog.dom.AbstractRange} A range wrapper object.
      */
     function createFromBrowserRange(range: TextRange, opt_isReversed?: boolean): goog.dom.AbstractRange;
 
@@ -46,7 +46,7 @@ declare module goog.dom.Range {
      * @param {Node} node The node to select.
      * @param {boolean=} opt_isReversed Whether the focus node is before the anchor
      *     node.
-     * @return {goog.dom.AbstractRange} A range wrapper object.
+     * @return {!goog.dom.AbstractRange} A range wrapper object.
      */
     function createFromNodeContents(node: Node, opt_isReversed?: boolean): goog.dom.AbstractRange;
 
@@ -56,7 +56,7 @@ declare module goog.dom.Range {
      * of whether node is an image node or other control range type node.
      * @param {Node} node The node to place a caret at.
      * @param {number} offset The offset within the node to place the caret at.
-     * @return {goog.dom.AbstractRange} A range wrapper object.
+     * @return {!goog.dom.AbstractRange} A range wrapper object.
      */
     function createCaret(node: Node, offset: number): goog.dom.AbstractRange;
 
@@ -67,7 +67,7 @@ declare module goog.dom.Range {
      * @param {number} anchorOffset The offset within the node to anchor on.
      * @param {Node} focusNode The node to focus on.
      * @param {number} focusOffset The offset within the node to focus on.
-     * @return {goog.dom.AbstractRange} A range wrapper object.
+     * @return {!goog.dom.AbstractRange} A range wrapper object.
      */
     function createFromNodes(anchorNode: Node, anchorOffset: number, focusNode: Node, focusOffset: number): goog.dom.AbstractRange;
 

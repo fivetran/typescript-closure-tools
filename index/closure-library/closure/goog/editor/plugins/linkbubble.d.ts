@@ -62,6 +62,13 @@ declare module goog.editor.plugins {
             getTargetUrl(): string;
     
             /**
+            * Returns the message to display for testing a link.
+            * @return {string} The message for testing a link.
+            * @protected
+            */
+            getTestLinkMessage(): string;
+    
+            /**
             * Tests the link by opening it in a new tab/window. Should be used as the
             * click event handler for the test pseudo-link.
             * @protected

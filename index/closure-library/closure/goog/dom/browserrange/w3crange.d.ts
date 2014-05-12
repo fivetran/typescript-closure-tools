@@ -32,7 +32,7 @@ declare module goog.dom.browserrange.W3cRange {
     /**
      * Returns a browser range spanning the given node's contents.
      * @param {Node} node The node to select.
-     * @return {Range} A browser range spanning the node's contents.
+     * @return {!Range} A browser range spanning the node's contents.
      * @protected
      */
     function getBrowserRangeForNode(node: Node): Range;
@@ -43,7 +43,7 @@ declare module goog.dom.browserrange.W3cRange {
      * @param {number} startOffset The offset within the start node.
      * @param {Node} endNode The node to end with - should not be a BR.
      * @param {number} endOffset The offset within the end node.
-     * @return {Range} A browser range spanning the node's contents.
+     * @return {!Range} A browser range spanning the node's contents.
      * @protected
      */
     function getBrowserRangeForNodes(startNode: Node, startOffset: number, endNode: Node, endOffset: number): Range;
@@ -51,7 +51,7 @@ declare module goog.dom.browserrange.W3cRange {
     /**
      * Creates a range object that selects the given node's text.
      * @param {Node} node The node to select.
-     * @return {goog.dom.browserrange.W3cRange} A Gecko range wrapper object.
+     * @return {!goog.dom.browserrange.W3cRange} A Gecko range wrapper object.
      */
     function createFromNodeContents(node: Node): goog.dom.browserrange.W3cRange;
 
@@ -61,7 +61,7 @@ declare module goog.dom.browserrange.W3cRange {
      * @param {number} startOffset The offset within the start node.
      * @param {Node} endNode The node to end with.
      * @param {number} endOffset The offset within the end node.
-     * @return {goog.dom.browserrange.W3cRange} A wrapper object.
+     * @return {!goog.dom.browserrange.W3cRange} A wrapper object.
      */
     function createFromNodes(startNode: Node, startOffset: number, endNode: Node, endOffset: number): goog.dom.browserrange.W3cRange;
 }

@@ -115,7 +115,7 @@ declare module goog.dom {
             copyFrom(other: goog.dom.TagIterator): void;
     
             /**
-            * @return {goog.dom.TagIterator} A copy of this iterator.
+            * @return {!goog.dom.TagIterator} A copy of this iterator.
             */
             clone(): goog.dom.TagIterator;
     
