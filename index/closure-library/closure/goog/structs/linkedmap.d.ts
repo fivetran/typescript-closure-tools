@@ -104,12 +104,12 @@ declare module goog.structs {
             remove(key: string): boolean;
     
             /**
-             * Removes a node from the {@code LinkedMap}. It can be overridden to do
-             * further cleanup such as disposing of the node value.
-             * @param {!goog.structs.LinkedMap.Node_} node The node to remove.
-             * @protected
-             */
-            removeNode(node: goog.structs.LinkedMap.Node_<any,any>): void;
+            * Removes a node from the {@code LinkedMap}. It can be overridden to do
+            * further cleanup such as disposing of the node value.
+            * @param {!goog.structs.LinkedMap.Node_} node The node to remove.
+            * @protected
+            */
+            removeNode(node: goog.structs.LinkedMap.Node_<any, any>): void;
     
             /**
             * @return {number} The number of items currently in the LinkedMap.

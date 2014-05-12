@@ -1,6 +1,5 @@
 /// <reference path="../../../globals.d.ts" />
 /// <reference path="./abstractdragdrop.d.ts" />
-/// <reference path="./abstractdragdrop.d.ts" />
 
 declare module goog.fx {
 

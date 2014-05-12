@@ -4,7 +4,6 @@
 /// <reference path="../string/parser.d.ts" />
 /// <reference path="./browsertestchannel.d.ts" />
 /// <reference path="./channelrequest.d.ts" />
-/// <reference path="./channelrequest.d.ts" />
 /// <reference path="../uri/uri.d.ts" />
 /// <reference path="./xhrio.d.ts" />
 /// <reference path="../events/event.d.ts" />

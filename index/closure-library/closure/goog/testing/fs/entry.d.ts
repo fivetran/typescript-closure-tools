@@ -3,9 +3,6 @@
 /// <reference path="./filesystem.d.ts" />
 /// <reference path="../../../../third_party/closure/goog/mochikit/async/deferred.d.ts" />
 /// <reference path="../../fs/filesystem.d.ts" />
-/// <reference path="../../fs/entry.d.ts" />
-/// <reference path="../../fs/entry.d.ts" />
-/// <reference path="../../fs/entry.d.ts" />
 /// <reference path="./file.d.ts" />
 /// <reference path="../../fs/filewriter.d.ts" />
 

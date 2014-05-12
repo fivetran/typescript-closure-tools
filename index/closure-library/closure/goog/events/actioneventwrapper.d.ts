@@ -2,6 +2,7 @@
 /// <reference path="./eventwrapper.d.ts" />
 /// <reference path="./eventhandler.d.ts" />
 /// <reference path="./listenable.d.ts" />
+/// <reference path="./events.d.ts" />
 
 declare module goog.events {
 

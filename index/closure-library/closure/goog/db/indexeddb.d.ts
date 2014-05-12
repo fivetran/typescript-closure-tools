@@ -3,7 +3,6 @@
 /// <reference path="./objectstore.d.ts" />
 /// <reference path="../../../third_party/closure/goog/mochikit/async/deferred.d.ts" />
 /// <reference path="./transaction.d.ts" />
-/// <reference path="./transaction.d.ts" />
 /// <reference path="../events/event.d.ts" />
 
 declare module goog.db {

@@ -2,9 +2,6 @@
 /// <reference path="./entry.d.ts" />
 /// <reference path="./filesystem.d.ts" />
 /// <reference path="../../../third_party/closure/goog/mochikit/async/deferred.d.ts" />
-/// <reference path="./entry.d.ts" />
-/// <reference path="./entry.d.ts" />
-/// <reference path="./entry.d.ts" />
 /// <reference path="./filewriter.d.ts" />
 
 declare module goog.fs {

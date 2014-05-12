@@ -1,5 +1,6 @@
 /// <reference path="../../../globals.d.ts" />
 /// <reference path="./xmlhttpfactory.d.ts" />
+/// <reference path="./xhrlike.d.ts" />
 
 declare module goog.net {
 

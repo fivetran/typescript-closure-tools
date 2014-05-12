@@ -3,8 +3,6 @@
 /// <reference path="../../dom/dom.d.ts" />
 /// <reference path="../dialog.d.ts" />
 /// <reference path="../../events/event.d.ts" />
-/// <reference path="../dialog.d.ts" />
-/// <reference path="../dialog.d.ts" />
 
 declare module goog.ui.editor {
 

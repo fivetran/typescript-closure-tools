@@ -6,7 +6,6 @@
 /// <reference path="../events/event.d.ts" />
 /// <reference path="../events/browserevent.d.ts" />
 /// <reference path="./control.d.ts" />
-/// <reference path="../events/keyhandler.d.ts" />
 
 declare module goog.ui {
 

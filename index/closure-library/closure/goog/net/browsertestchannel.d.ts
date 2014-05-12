@@ -4,7 +4,6 @@
 /// <reference path="../string/parser.d.ts" />
 /// <reference path="./xhrio.d.ts" />
 /// <reference path="./channelrequest.d.ts" />
-/// <reference path="./browserchannel.d.ts" />
 
 declare module goog.net {
 

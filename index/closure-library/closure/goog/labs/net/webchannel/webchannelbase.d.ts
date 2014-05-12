@@ -1,5 +1,6 @@
 /// <reference path="../../../../../globals.d.ts" />
 /// <reference path="./channel.d.ts" />
+/// <reference path="../webchannel.d.ts" />
 
 declare module goog.labs.net.webChannel {
 

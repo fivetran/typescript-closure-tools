@@ -4,7 +4,6 @@
 /// <reference path="../tabpane.d.ts" />
 /// <reference path="./emoji.d.ts" />
 /// <reference path="./emojipalette.d.ts" />
-/// <reference path="../tabpane.d.ts" />
 
 declare module goog.ui.emoji {
 

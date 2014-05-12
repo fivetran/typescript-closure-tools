@@ -4,6 +4,7 @@
 /// <reference path="../../net/xhrio.d.ts" />
 /// <reference path="../../net/errorcode.d.ts" />
 /// <reference path="../../structs/map.d.ts" />
+/// <reference path="../../net/xhrlike.d.ts" />
 
 declare module goog.testing.net {
 

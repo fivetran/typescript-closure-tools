@@ -1,6 +1,5 @@
 /// <reference path="../../../globals.d.ts" />
 /// <reference path="./listenable.d.ts" />
-/// <reference path="./listenable.d.ts" />
 /// <reference path="./eventtarget.d.ts" />
 
 declare module goog.events {

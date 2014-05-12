@@ -1,7 +1,6 @@
 /// <reference path="../../../globals.d.ts" />
 /// <reference path="./testcase.d.ts" />
 /// <reference path="../events/eventtarget.d.ts" />
-/// <reference path="./testcase.d.ts" />
 
 declare module goog.testing {
 

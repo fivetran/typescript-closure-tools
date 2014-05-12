@@ -1,7 +1,6 @@
 /// <reference path="../../../globals.d.ts" />
 /// <reference path="./processor.d.ts" />
 /// <reference path="./json.d.ts" />
-/// <reference path="./json.d.ts" />
 
 declare module goog.json {
 

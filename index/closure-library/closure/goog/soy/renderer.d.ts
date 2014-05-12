@@ -1,7 +1,6 @@
 /// <reference path="../../../globals.d.ts" />
 /// <reference path="../dom/dom.d.ts" />
 /// <reference path="./data.d.ts" />
-/// <reference path="./data.d.ts" />
 /// <reference path="../html/safehtml.d.ts" />
 
 declare module goog.soy {

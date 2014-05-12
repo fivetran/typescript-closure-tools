@@ -21,7 +21,28 @@ declare module goog.net {
          *
          * @param {!goog.net.WebChannel.MessageData} message The message to send.
          */
-        send(message: goog.net.WebChannel.MessageData): void;
+        send(message: ArrayBuffer): void;
+        /**
+         * Sends a message to the server that maintains the other end point of
+         * the WebChannel.
+         *
+         * @param {!goog.net.WebChannel.MessageData} message The message to send.
+         */
+        send(message: Blob): void;
+        /**
+         * Sends a message to the server that maintains the other end point of
+         * the WebChannel.
+         *
+         * @param {!goog.net.WebChannel.MessageData} message The message to send.
+         */
+        send(message: { [key: string]: string }): void;
+        /**
+         * Sends a message to the server that maintains the other end point of
+         * the WebChannel.
+         *
+         * @param {!goog.net.WebChannel.MessageData} message The message to send.
+         */
+        send(message: any[]): void;
     
         /**
          * @return {!goog.net.WebChannel.RuntimeProperties} The runtime properties

@@ -3,6 +3,7 @@
 /// <reference path="./xmlhttpfactory.d.ts" />
 /// <reference path="../structs/map.d.ts" />
 /// <reference path="../uri/uri.d.ts" />
+/// <reference path="./xhrlike.d.ts" />
 /// <reference path="./errorcode.d.ts" />
 /// <reference path="./xmlhttp.d.ts" />
 /// <reference path="../debug/errorhandler.d.ts" />

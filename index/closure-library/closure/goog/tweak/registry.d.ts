@@ -1,9 +1,5 @@
 /// <reference path="../../../globals.d.ts" />
 /// <reference path="./entries.d.ts" />
-/// <reference path="./entries.d.ts" />
-/// <reference path="./entries.d.ts" />
-/// <reference path="./entries.d.ts" />
-/// <reference path="./entries.d.ts" />
 
 declare module goog.tweak {
 

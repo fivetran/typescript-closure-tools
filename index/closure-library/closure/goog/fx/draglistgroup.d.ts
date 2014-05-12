@@ -4,7 +4,6 @@
 /// <reference path="../events/event.d.ts" />
 /// <reference path="../events/browserevent.d.ts" />
 /// <reference path="./dragger.d.ts" />
-/// <reference path="./dragger.d.ts" />
 
 declare module goog.fx {
 

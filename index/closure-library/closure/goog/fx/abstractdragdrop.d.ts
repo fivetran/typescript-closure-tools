@@ -2,7 +2,6 @@
 /// <reference path="../events/eventtarget.d.ts" />
 /// <reference path="../events/browserevent.d.ts" />
 /// <reference path="./dragger.d.ts" />
-/// <reference path="./dragger.d.ts" />
 /// <reference path="../math/coordinate.d.ts" />
 /// <reference path="../math/box.d.ts" />
 /// <reference path="../events/event.d.ts" />

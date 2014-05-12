@@ -1,7 +1,6 @@
 /// <reference path="../../../globals.d.ts" />
 /// <reference path="../i18n/bidi.d.ts" />
 /// <reference path="../string/typedstring.d.ts" />
-/// <reference path="../i18n/bidi.d.ts" />
 /// <reference path="../string/const.d.ts" />
 /// <reference path="./safeurl.d.ts" />
 /// <reference path="./safestyle.d.ts" />
@@ -116,7 +115,59 @@ declare module goog.html.SafeHtml {
      * @param {!goog.html.SafeHtml.StringLike_} text The string to escape.
      * @return {!goog.html.SafeHtml} The escaped string, wrapped as a SafeHtml.
      */
-    function htmlEscape(text: goog.html.SafeHtml.StringLike_): goog.html.SafeHtml;
+    function htmlEscape(text: string): goog.html.SafeHtml;
+    /**
+     * Returns HTML-escaped text as a SafeHtml object.
+     *
+     * If text is of a type that implements
+     * {@code goog.i18n.bidi.DirectionalString}, the directionality of the new
+     * {@code SafeHtml} object is set to {@code text}'s directionality, if known.
+     * Otherwise, the directionality of the resulting SafeHtml is unknown (i.e.,
+     * {@code null}).
+     *
+     * @param {!goog.html.SafeHtml.StringLike_} text The string to escape.
+     * @return {!goog.html.SafeHtml} The escaped string, wrapped as a SafeHtml.
+     */
+    function htmlEscape(text: number): goog.html.SafeHtml;
+    /**
+     * Returns HTML-escaped text as a SafeHtml object.
+     *
+     * If text is of a type that implements
+     * {@code goog.i18n.bidi.DirectionalString}, the directionality of the new
+     * {@code SafeHtml} object is set to {@code text}'s directionality, if known.
+     * Otherwise, the directionality of the resulting SafeHtml is unknown (i.e.,
+     * {@code null}).
+     *
+     * @param {!goog.html.SafeHtml.StringLike_} text The string to escape.
+     * @return {!goog.html.SafeHtml} The escaped string, wrapped as a SafeHtml.
+     */
+    function htmlEscape(text: boolean): goog.html.SafeHtml;
+    /**
+     * Returns HTML-escaped text as a SafeHtml object.
+     *
+     * If text is of a type that implements
+     * {@code goog.i18n.bidi.DirectionalString}, the directionality of the new
+     * {@code SafeHtml} object is set to {@code text}'s directionality, if known.
+     * Otherwise, the directionality of the resulting SafeHtml is unknown (i.e.,
+     * {@code null}).
+     *
+     * @param {!goog.html.SafeHtml.StringLike_} text The string to escape.
+     * @return {!goog.html.SafeHtml} The escaped string, wrapped as a SafeHtml.
+     */
+    function htmlEscape(text: goog.string.TypedString): goog.html.SafeHtml;
+    /**
+     * Returns HTML-escaped text as a SafeHtml object.
+     *
+     * If text is of a type that implements
+     * {@code goog.i18n.bidi.DirectionalString}, the directionality of the new
+     * {@code SafeHtml} object is set to {@code text}'s directionality, if known.
+     * Otherwise, the directionality of the resulting SafeHtml is unknown (i.e.,
+     * {@code null}).
+     *
+     * @param {!goog.html.SafeHtml.StringLike_} text The string to escape.
+     * @return {!goog.html.SafeHtml} The escaped string, wrapped as a SafeHtml.
+     */
+    function htmlEscape(text: goog.i18n.bidi.DirectionalString): goog.html.SafeHtml;
 
     /**
      * Coerces an arbitrary object into a SafeHtml object.
@@ -131,7 +182,77 @@ declare module goog.html.SafeHtml {
      *     coerce.
      * @return {!goog.html.SafeHtml} The resulting SafeHtml object.
      */
-    function from(textOrHtml: goog.html.SafeHtml.TextOrHtml_): goog.html.SafeHtml;
+    function from(textOrHtml: string): goog.html.SafeHtml;
+    /**
+     * Coerces an arbitrary object into a SafeHtml object.
+     *
+     * If {@code textOrHtml} is already of type {@code goog.html.SafeHtml}, the same
+     * object is returned. Otherwise, {@code textOrHtml} is coerced to string, and
+     * HTML-escaped. If {@code textOrHtml} is of a type that implements
+     * {@code goog.i18n.bidi.DirectionalString}, its directionality, if known, is
+     * preserved.
+     *
+     * @param {!goog.html.SafeHtml.TextOrHtml_} textOrHtml The text or SafeHtml to
+     *     coerce.
+     * @return {!goog.html.SafeHtml} The resulting SafeHtml object.
+     */
+    function from(textOrHtml: number): goog.html.SafeHtml;
+    /**
+     * Coerces an arbitrary object into a SafeHtml object.
+     *
+     * If {@code textOrHtml} is already of type {@code goog.html.SafeHtml}, the same
+     * object is returned. Otherwise, {@code textOrHtml} is coerced to string, and
+     * HTML-escaped. If {@code textOrHtml} is of a type that implements
+     * {@code goog.i18n.bidi.DirectionalString}, its directionality, if known, is
+     * preserved.
+     *
+     * @param {!goog.html.SafeHtml.TextOrHtml_} textOrHtml The text or SafeHtml to
+     *     coerce.
+     * @return {!goog.html.SafeHtml} The resulting SafeHtml object.
+     */
+    function from(textOrHtml: boolean): goog.html.SafeHtml;
+    /**
+     * Coerces an arbitrary object into a SafeHtml object.
+     *
+     * If {@code textOrHtml} is already of type {@code goog.html.SafeHtml}, the same
+     * object is returned. Otherwise, {@code textOrHtml} is coerced to string, and
+     * HTML-escaped. If {@code textOrHtml} is of a type that implements
+     * {@code goog.i18n.bidi.DirectionalString}, its directionality, if known, is
+     * preserved.
+     *
+     * @param {!goog.html.SafeHtml.TextOrHtml_} textOrHtml The text or SafeHtml to
+     *     coerce.
+     * @return {!goog.html.SafeHtml} The resulting SafeHtml object.
+     */
+    function from(textOrHtml: goog.string.TypedString): goog.html.SafeHtml;
+    /**
+     * Coerces an arbitrary object into a SafeHtml object.
+     *
+     * If {@code textOrHtml} is already of type {@code goog.html.SafeHtml}, the same
+     * object is returned. Otherwise, {@code textOrHtml} is coerced to string, and
+     * HTML-escaped. If {@code textOrHtml} is of a type that implements
+     * {@code goog.i18n.bidi.DirectionalString}, its directionality, if known, is
+     * preserved.
+     *
+     * @param {!goog.html.SafeHtml.TextOrHtml_} textOrHtml The text or SafeHtml to
+     *     coerce.
+     * @return {!goog.html.SafeHtml} The resulting SafeHtml object.
+     */
+    function from(textOrHtml: goog.i18n.bidi.DirectionalString): goog.html.SafeHtml;
+    /**
+     * Coerces an arbitrary object into a SafeHtml object.
+     *
+     * If {@code textOrHtml} is already of type {@code goog.html.SafeHtml}, the same
+     * object is returned. Otherwise, {@code textOrHtml} is coerced to string, and
+     * HTML-escaped. If {@code textOrHtml} is of a type that implements
+     * {@code goog.i18n.bidi.DirectionalString}, its directionality, if known, is
+     * preserved.
+     *
+     * @param {!goog.html.SafeHtml.TextOrHtml_} textOrHtml The text or SafeHtml to
+     *     coerce.
+     * @return {!goog.html.SafeHtml} The resulting SafeHtml object.
+     */
+    function from(textOrHtml: goog.html.SafeHtml): goog.html.SafeHtml;
 
     /**
      * @private
@@ -161,7 +282,7 @@ declare module goog.html.SafeHtml {
      *     provided.
      * @throws {goog.asserts.AssertionError} If content for void tag is provided.
      */
-    function create(tagName: string, opt_attributes?: { [key: string]: goog.html.SafeHtml.AttributeValue_ }, opt_content?: goog.html.SafeHtml.TextOrHtml_): goog.html.SafeHtml;
+    function create(tagName: string, opt_attributes?: { [key: string]: string }, opt_content?: string): goog.html.SafeHtml;
     /**
      * Creates a SafeHtml content consisting of a tag with optional attributes and
      * optional content.
@@ -184,7 +305,1065 @@ declare module goog.html.SafeHtml {
      *     provided.
      * @throws {goog.asserts.AssertionError} If content for void tag is provided.
      */
-    function create(tagName: string, opt_attributes?: { [key: string]: goog.html.SafeHtml.AttributeValue_ }, opt_content?: goog.html.SafeHtml.TextOrHtml_[]): goog.html.SafeHtml;
+    function create(tagName: string, opt_attributes?: { [key: string]: string }, opt_content?: number): goog.html.SafeHtml;
+    /**
+     * Creates a SafeHtml content consisting of a tag with optional attributes and
+     * optional content.
+     * @param {string} tagName The name of the tag. Only tag names consisting of
+     *     [a-zA-Z0-9-] are allowed. <link>, <script> and <style> tags are not
+     *     supported.
+     * @param {!Object.<string, goog.html.SafeHtml.AttributeValue_>=}
+     *     opt_attributes Mapping from attribute names to their values. Only
+     *     attribute names consisting of [a-zA-Z0-9-] are allowed. Attributes with
+     *     a special meaning (e.g. on*) require goog.string.Const value, attributes
+     *     containing URL require goog.string.Const or goog.html.SafeUrl. Value of
+     *     null or undefined causes the attribute to be omitted. Values are
+     *     HTML-escaped before usage.
+     * @param {!goog.html.SafeHtml.TextOrHtml_|
+     *     !Array.<!goog.html.SafeHtml.TextOrHtml_>=} opt_content Content to put
+     *     inside the tag. This must be empty for void tags like <br>. Array
+     *     elements are concatenated.
+     * @return {!goog.html.SafeHtml} The SafeHtml content with the tag.
+     * @throws {Error} If invalid tag name, attribute name, or attribute value is
+     *     provided.
+     * @throws {goog.asserts.AssertionError} If content for void tag is provided.
+     */
+    function create(tagName: string, opt_attributes?: { [key: string]: string }, opt_content?: boolean): goog.html.SafeHtml;
+    /**
+     * Creates a SafeHtml content consisting of a tag with optional attributes and
+     * optional content.
+     * @param {string} tagName The name of the tag. Only tag names consisting of
+     *     [a-zA-Z0-9-] are allowed. <link>, <script> and <style> tags are not
+     *     supported.
+     * @param {!Object.<string, goog.html.SafeHtml.AttributeValue_>=}
+     *     opt_attributes Mapping from attribute names to their values. Only
+     *     attribute names consisting of [a-zA-Z0-9-] are allowed. Attributes with
+     *     a special meaning (e.g. on*) require goog.string.Const value, attributes
+     *     containing URL require goog.string.Const or goog.html.SafeUrl. Value of
+     *     null or undefined causes the attribute to be omitted. Values are
+     *     HTML-escaped before usage.
+     * @param {!goog.html.SafeHtml.TextOrHtml_|
+     *     !Array.<!goog.html.SafeHtml.TextOrHtml_>=} opt_content Content to put
+     *     inside the tag. This must be empty for void tags like <br>. Array
+     *     elements are concatenated.
+     * @return {!goog.html.SafeHtml} The SafeHtml content with the tag.
+     * @throws {Error} If invalid tag name, attribute name, or attribute value is
+     *     provided.
+     * @throws {goog.asserts.AssertionError} If content for void tag is provided.
+     */
+    function create(tagName: string, opt_attributes?: { [key: string]: string }, opt_content?: goog.string.TypedString): goog.html.SafeHtml;
+    /**
+     * Creates a SafeHtml content consisting of a tag with optional attributes and
+     * optional content.
+     * @param {string} tagName The name of the tag. Only tag names consisting of
+     *     [a-zA-Z0-9-] are allowed. <link>, <script> and <style> tags are not
+     *     supported.
+     * @param {!Object.<string, goog.html.SafeHtml.AttributeValue_>=}
+     *     opt_attributes Mapping from attribute names to their values. Only
+     *     attribute names consisting of [a-zA-Z0-9-] are allowed. Attributes with
+     *     a special meaning (e.g. on*) require goog.string.Const value, attributes
+     *     containing URL require goog.string.Const or goog.html.SafeUrl. Value of
+     *     null or undefined causes the attribute to be omitted. Values are
+     *     HTML-escaped before usage.
+     * @param {!goog.html.SafeHtml.TextOrHtml_|
+     *     !Array.<!goog.html.SafeHtml.TextOrHtml_>=} opt_content Content to put
+     *     inside the tag. This must be empty for void tags like <br>. Array
+     *     elements are concatenated.
+     * @return {!goog.html.SafeHtml} The SafeHtml content with the tag.
+     * @throws {Error} If invalid tag name, attribute name, or attribute value is
+     *     provided.
+     * @throws {goog.asserts.AssertionError} If content for void tag is provided.
+     */
+    function create(tagName: string, opt_attributes?: { [key: string]: string }, opt_content?: goog.i18n.bidi.DirectionalString): goog.html.SafeHtml;
+    /**
+     * Creates a SafeHtml content consisting of a tag with optional attributes and
+     * optional content.
+     * @param {string} tagName The name of the tag. Only tag names consisting of
+     *     [a-zA-Z0-9-] are allowed. <link>, <script> and <style> tags are not
+     *     supported.
+     * @param {!Object.<string, goog.html.SafeHtml.AttributeValue_>=}
+     *     opt_attributes Mapping from attribute names to their values. Only
+     *     attribute names consisting of [a-zA-Z0-9-] are allowed. Attributes with
+     *     a special meaning (e.g. on*) require goog.string.Const value, attributes
+     *     containing URL require goog.string.Const or goog.html.SafeUrl. Value of
+     *     null or undefined causes the attribute to be omitted. Values are
+     *     HTML-escaped before usage.
+     * @param {!goog.html.SafeHtml.TextOrHtml_|
+     *     !Array.<!goog.html.SafeHtml.TextOrHtml_>=} opt_content Content to put
+     *     inside the tag. This must be empty for void tags like <br>. Array
+     *     elements are concatenated.
+     * @return {!goog.html.SafeHtml} The SafeHtml content with the tag.
+     * @throws {Error} If invalid tag name, attribute name, or attribute value is
+     *     provided.
+     * @throws {goog.asserts.AssertionError} If content for void tag is provided.
+     */
+    function create(tagName: string, opt_attributes?: { [key: string]: string }, opt_content?: goog.html.SafeHtml): goog.html.SafeHtml;
+    /**
+     * Creates a SafeHtml content consisting of a tag with optional attributes and
+     * optional content.
+     * @param {string} tagName The name of the tag. Only tag names consisting of
+     *     [a-zA-Z0-9-] are allowed. <link>, <script> and <style> tags are not
+     *     supported.
+     * @param {!Object.<string, goog.html.SafeHtml.AttributeValue_>=}
+     *     opt_attributes Mapping from attribute names to their values. Only
+     *     attribute names consisting of [a-zA-Z0-9-] are allowed. Attributes with
+     *     a special meaning (e.g. on*) require goog.string.Const value, attributes
+     *     containing URL require goog.string.Const or goog.html.SafeUrl. Value of
+     *     null or undefined causes the attribute to be omitted. Values are
+     *     HTML-escaped before usage.
+     * @param {!goog.html.SafeHtml.TextOrHtml_|
+     *     !Array.<!goog.html.SafeHtml.TextOrHtml_>=} opt_content Content to put
+     *     inside the tag. This must be empty for void tags like <br>. Array
+     *     elements are concatenated.
+     * @return {!goog.html.SafeHtml} The SafeHtml content with the tag.
+     * @throws {Error} If invalid tag name, attribute name, or attribute value is
+     *     provided.
+     * @throws {goog.asserts.AssertionError} If content for void tag is provided.
+     */
+    function create(tagName: string, opt_attributes?: { [key: string]: string }, opt_content?: string[]): goog.html.SafeHtml;
+    /**
+     * Creates a SafeHtml content consisting of a tag with optional attributes and
+     * optional content.
+     * @param {string} tagName The name of the tag. Only tag names consisting of
+     *     [a-zA-Z0-9-] are allowed. <link>, <script> and <style> tags are not
+     *     supported.
+     * @param {!Object.<string, goog.html.SafeHtml.AttributeValue_>=}
+     *     opt_attributes Mapping from attribute names to their values. Only
+     *     attribute names consisting of [a-zA-Z0-9-] are allowed. Attributes with
+     *     a special meaning (e.g. on*) require goog.string.Const value, attributes
+     *     containing URL require goog.string.Const or goog.html.SafeUrl. Value of
+     *     null or undefined causes the attribute to be omitted. Values are
+     *     HTML-escaped before usage.
+     * @param {!goog.html.SafeHtml.TextOrHtml_|
+     *     !Array.<!goog.html.SafeHtml.TextOrHtml_>=} opt_content Content to put
+     *     inside the tag. This must be empty for void tags like <br>. Array
+     *     elements are concatenated.
+     * @return {!goog.html.SafeHtml} The SafeHtml content with the tag.
+     * @throws {Error} If invalid tag name, attribute name, or attribute value is
+     *     provided.
+     * @throws {goog.asserts.AssertionError} If content for void tag is provided.
+     */
+    function create(tagName: string, opt_attributes?: { [key: string]: string }, opt_content?: number[]): goog.html.SafeHtml;
+    /**
+     * Creates a SafeHtml content consisting of a tag with optional attributes and
+     * optional content.
+     * @param {string} tagName The name of the tag. Only tag names consisting of
+     *     [a-zA-Z0-9-] are allowed. <link>, <script> and <style> tags are not
+     *     supported.
+     * @param {!Object.<string, goog.html.SafeHtml.AttributeValue_>=}
+     *     opt_attributes Mapping from attribute names to their values. Only
+     *     attribute names consisting of [a-zA-Z0-9-] are allowed. Attributes with
+     *     a special meaning (e.g. on*) require goog.string.Const value, attributes
+     *     containing URL require goog.string.Const or goog.html.SafeUrl. Value of
+     *     null or undefined causes the attribute to be omitted. Values are
+     *     HTML-escaped before usage.
+     * @param {!goog.html.SafeHtml.TextOrHtml_|
+     *     !Array.<!goog.html.SafeHtml.TextOrHtml_>=} opt_content Content to put
+     *     inside the tag. This must be empty for void tags like <br>. Array
+     *     elements are concatenated.
+     * @return {!goog.html.SafeHtml} The SafeHtml content with the tag.
+     * @throws {Error} If invalid tag name, attribute name, or attribute value is
+     *     provided.
+     * @throws {goog.asserts.AssertionError} If content for void tag is provided.
+     */
+    function create(tagName: string, opt_attributes?: { [key: string]: string }, opt_content?: boolean[]): goog.html.SafeHtml;
+    /**
+     * Creates a SafeHtml content consisting of a tag with optional attributes and
+     * optional content.
+     * @param {string} tagName The name of the tag. Only tag names consisting of
+     *     [a-zA-Z0-9-] are allowed. <link>, <script> and <style> tags are not
+     *     supported.
+     * @param {!Object.<string, goog.html.SafeHtml.AttributeValue_>=}
+     *     opt_attributes Mapping from attribute names to their values. Only
+     *     attribute names consisting of [a-zA-Z0-9-] are allowed. Attributes with
+     *     a special meaning (e.g. on*) require goog.string.Const value, attributes
+     *     containing URL require goog.string.Const or goog.html.SafeUrl. Value of
+     *     null or undefined causes the attribute to be omitted. Values are
+     *     HTML-escaped before usage.
+     * @param {!goog.html.SafeHtml.TextOrHtml_|
+     *     !Array.<!goog.html.SafeHtml.TextOrHtml_>=} opt_content Content to put
+     *     inside the tag. This must be empty for void tags like <br>. Array
+     *     elements are concatenated.
+     * @return {!goog.html.SafeHtml} The SafeHtml content with the tag.
+     * @throws {Error} If invalid tag name, attribute name, or attribute value is
+     *     provided.
+     * @throws {goog.asserts.AssertionError} If content for void tag is provided.
+     */
+    function create(tagName: string, opt_attributes?: { [key: string]: string }, opt_content?: goog.string.TypedString[]): goog.html.SafeHtml;
+    /**
+     * Creates a SafeHtml content consisting of a tag with optional attributes and
+     * optional content.
+     * @param {string} tagName The name of the tag. Only tag names consisting of
+     *     [a-zA-Z0-9-] are allowed. <link>, <script> and <style> tags are not
+     *     supported.
+     * @param {!Object.<string, goog.html.SafeHtml.AttributeValue_>=}
+     *     opt_attributes Mapping from attribute names to their values. Only
+     *     attribute names consisting of [a-zA-Z0-9-] are allowed. Attributes with
+     *     a special meaning (e.g. on*) require goog.string.Const value, attributes
+     *     containing URL require goog.string.Const or goog.html.SafeUrl. Value of
+     *     null or undefined causes the attribute to be omitted. Values are
+     *     HTML-escaped before usage.
+     * @param {!goog.html.SafeHtml.TextOrHtml_|
+     *     !Array.<!goog.html.SafeHtml.TextOrHtml_>=} opt_content Content to put
+     *     inside the tag. This must be empty for void tags like <br>. Array
+     *     elements are concatenated.
+     * @return {!goog.html.SafeHtml} The SafeHtml content with the tag.
+     * @throws {Error} If invalid tag name, attribute name, or attribute value is
+     *     provided.
+     * @throws {goog.asserts.AssertionError} If content for void tag is provided.
+     */
+    function create(tagName: string, opt_attributes?: { [key: string]: string }, opt_content?: goog.i18n.bidi.DirectionalString[]): goog.html.SafeHtml;
+    /**
+     * Creates a SafeHtml content consisting of a tag with optional attributes and
+     * optional content.
+     * @param {string} tagName The name of the tag. Only tag names consisting of
+     *     [a-zA-Z0-9-] are allowed. <link>, <script> and <style> tags are not
+     *     supported.
+     * @param {!Object.<string, goog.html.SafeHtml.AttributeValue_>=}
+     *     opt_attributes Mapping from attribute names to their values. Only
+     *     attribute names consisting of [a-zA-Z0-9-] are allowed. Attributes with
+     *     a special meaning (e.g. on*) require goog.string.Const value, attributes
+     *     containing URL require goog.string.Const or goog.html.SafeUrl. Value of
+     *     null or undefined causes the attribute to be omitted. Values are
+     *     HTML-escaped before usage.
+     * @param {!goog.html.SafeHtml.TextOrHtml_|
+     *     !Array.<!goog.html.SafeHtml.TextOrHtml_>=} opt_content Content to put
+     *     inside the tag. This must be empty for void tags like <br>. Array
+     *     elements are concatenated.
+     * @return {!goog.html.SafeHtml} The SafeHtml content with the tag.
+     * @throws {Error} If invalid tag name, attribute name, or attribute value is
+     *     provided.
+     * @throws {goog.asserts.AssertionError} If content for void tag is provided.
+     */
+    function create(tagName: string, opt_attributes?: { [key: string]: string }, opt_content?: goog.html.SafeHtml[]): goog.html.SafeHtml;
+    /**
+     * Creates a SafeHtml content consisting of a tag with optional attributes and
+     * optional content.
+     * @param {string} tagName The name of the tag. Only tag names consisting of
+     *     [a-zA-Z0-9-] are allowed. <link>, <script> and <style> tags are not
+     *     supported.
+     * @param {!Object.<string, goog.html.SafeHtml.AttributeValue_>=}
+     *     opt_attributes Mapping from attribute names to their values. Only
+     *     attribute names consisting of [a-zA-Z0-9-] are allowed. Attributes with
+     *     a special meaning (e.g. on*) require goog.string.Const value, attributes
+     *     containing URL require goog.string.Const or goog.html.SafeUrl. Value of
+     *     null or undefined causes the attribute to be omitted. Values are
+     *     HTML-escaped before usage.
+     * @param {!goog.html.SafeHtml.TextOrHtml_|
+     *     !Array.<!goog.html.SafeHtml.TextOrHtml_>=} opt_content Content to put
+     *     inside the tag. This must be empty for void tags like <br>. Array
+     *     elements are concatenated.
+     * @return {!goog.html.SafeHtml} The SafeHtml content with the tag.
+     * @throws {Error} If invalid tag name, attribute name, or attribute value is
+     *     provided.
+     * @throws {goog.asserts.AssertionError} If content for void tag is provided.
+     */
+    function create(tagName: string, opt_attributes?: { [key: string]: goog.string.Const }, opt_content?: string): goog.html.SafeHtml;
+    /**
+     * Creates a SafeHtml content consisting of a tag with optional attributes and
+     * optional content.
+     * @param {string} tagName The name of the tag. Only tag names consisting of
+     *     [a-zA-Z0-9-] are allowed. <link>, <script> and <style> tags are not
+     *     supported.
+     * @param {!Object.<string, goog.html.SafeHtml.AttributeValue_>=}
+     *     opt_attributes Mapping from attribute names to their values. Only
+     *     attribute names consisting of [a-zA-Z0-9-] are allowed. Attributes with
+     *     a special meaning (e.g. on*) require goog.string.Const value, attributes
+     *     containing URL require goog.string.Const or goog.html.SafeUrl. Value of
+     *     null or undefined causes the attribute to be omitted. Values are
+     *     HTML-escaped before usage.
+     * @param {!goog.html.SafeHtml.TextOrHtml_|
+     *     !Array.<!goog.html.SafeHtml.TextOrHtml_>=} opt_content Content to put
+     *     inside the tag. This must be empty for void tags like <br>. Array
+     *     elements are concatenated.
+     * @return {!goog.html.SafeHtml} The SafeHtml content with the tag.
+     * @throws {Error} If invalid tag name, attribute name, or attribute value is
+     *     provided.
+     * @throws {goog.asserts.AssertionError} If content for void tag is provided.
+     */
+    function create(tagName: string, opt_attributes?: { [key: string]: goog.string.Const }, opt_content?: number): goog.html.SafeHtml;
+    /**
+     * Creates a SafeHtml content consisting of a tag with optional attributes and
+     * optional content.
+     * @param {string} tagName The name of the tag. Only tag names consisting of
+     *     [a-zA-Z0-9-] are allowed. <link>, <script> and <style> tags are not
+     *     supported.
+     * @param {!Object.<string, goog.html.SafeHtml.AttributeValue_>=}
+     *     opt_attributes Mapping from attribute names to their values. Only
+     *     attribute names consisting of [a-zA-Z0-9-] are allowed. Attributes with
+     *     a special meaning (e.g. on*) require goog.string.Const value, attributes
+     *     containing URL require goog.string.Const or goog.html.SafeUrl. Value of
+     *     null or undefined causes the attribute to be omitted. Values are
+     *     HTML-escaped before usage.
+     * @param {!goog.html.SafeHtml.TextOrHtml_|
+     *     !Array.<!goog.html.SafeHtml.TextOrHtml_>=} opt_content Content to put
+     *     inside the tag. This must be empty for void tags like <br>. Array
+     *     elements are concatenated.
+     * @return {!goog.html.SafeHtml} The SafeHtml content with the tag.
+     * @throws {Error} If invalid tag name, attribute name, or attribute value is
+     *     provided.
+     * @throws {goog.asserts.AssertionError} If content for void tag is provided.
+     */
+    function create(tagName: string, opt_attributes?: { [key: string]: goog.string.Const }, opt_content?: boolean): goog.html.SafeHtml;
+    /**
+     * Creates a SafeHtml content consisting of a tag with optional attributes and
+     * optional content.
+     * @param {string} tagName The name of the tag. Only tag names consisting of
+     *     [a-zA-Z0-9-] are allowed. <link>, <script> and <style> tags are not
+     *     supported.
+     * @param {!Object.<string, goog.html.SafeHtml.AttributeValue_>=}
+     *     opt_attributes Mapping from attribute names to their values. Only
+     *     attribute names consisting of [a-zA-Z0-9-] are allowed. Attributes with
+     *     a special meaning (e.g. on*) require goog.string.Const value, attributes
+     *     containing URL require goog.string.Const or goog.html.SafeUrl. Value of
+     *     null or undefined causes the attribute to be omitted. Values are
+     *     HTML-escaped before usage.
+     * @param {!goog.html.SafeHtml.TextOrHtml_|
+     *     !Array.<!goog.html.SafeHtml.TextOrHtml_>=} opt_content Content to put
+     *     inside the tag. This must be empty for void tags like <br>. Array
+     *     elements are concatenated.
+     * @return {!goog.html.SafeHtml} The SafeHtml content with the tag.
+     * @throws {Error} If invalid tag name, attribute name, or attribute value is
+     *     provided.
+     * @throws {goog.asserts.AssertionError} If content for void tag is provided.
+     */
+    function create(tagName: string, opt_attributes?: { [key: string]: goog.string.Const }, opt_content?: goog.string.TypedString): goog.html.SafeHtml;
+    /**
+     * Creates a SafeHtml content consisting of a tag with optional attributes and
+     * optional content.
+     * @param {string} tagName The name of the tag. Only tag names consisting of
+     *     [a-zA-Z0-9-] are allowed. <link>, <script> and <style> tags are not
+     *     supported.
+     * @param {!Object.<string, goog.html.SafeHtml.AttributeValue_>=}
+     *     opt_attributes Mapping from attribute names to their values. Only
+     *     attribute names consisting of [a-zA-Z0-9-] are allowed. Attributes with
+     *     a special meaning (e.g. on*) require goog.string.Const value, attributes
+     *     containing URL require goog.string.Const or goog.html.SafeUrl. Value of
+     *     null or undefined causes the attribute to be omitted. Values are
+     *     HTML-escaped before usage.
+     * @param {!goog.html.SafeHtml.TextOrHtml_|
+     *     !Array.<!goog.html.SafeHtml.TextOrHtml_>=} opt_content Content to put
+     *     inside the tag. This must be empty for void tags like <br>. Array
+     *     elements are concatenated.
+     * @return {!goog.html.SafeHtml} The SafeHtml content with the tag.
+     * @throws {Error} If invalid tag name, attribute name, or attribute value is
+     *     provided.
+     * @throws {goog.asserts.AssertionError} If content for void tag is provided.
+     */
+    function create(tagName: string, opt_attributes?: { [key: string]: goog.string.Const }, opt_content?: goog.i18n.bidi.DirectionalString): goog.html.SafeHtml;
+    /**
+     * Creates a SafeHtml content consisting of a tag with optional attributes and
+     * optional content.
+     * @param {string} tagName The name of the tag. Only tag names consisting of
+     *     [a-zA-Z0-9-] are allowed. <link>, <script> and <style> tags are not
+     *     supported.
+     * @param {!Object.<string, goog.html.SafeHtml.AttributeValue_>=}
+     *     opt_attributes Mapping from attribute names to their values. Only
+     *     attribute names consisting of [a-zA-Z0-9-] are allowed. Attributes with
+     *     a special meaning (e.g. on*) require goog.string.Const value, attributes
+     *     containing URL require goog.string.Const or goog.html.SafeUrl. Value of
+     *     null or undefined causes the attribute to be omitted. Values are
+     *     HTML-escaped before usage.
+     * @param {!goog.html.SafeHtml.TextOrHtml_|
+     *     !Array.<!goog.html.SafeHtml.TextOrHtml_>=} opt_content Content to put
+     *     inside the tag. This must be empty for void tags like <br>. Array
+     *     elements are concatenated.
+     * @return {!goog.html.SafeHtml} The SafeHtml content with the tag.
+     * @throws {Error} If invalid tag name, attribute name, or attribute value is
+     *     provided.
+     * @throws {goog.asserts.AssertionError} If content for void tag is provided.
+     */
+    function create(tagName: string, opt_attributes?: { [key: string]: goog.string.Const }, opt_content?: goog.html.SafeHtml): goog.html.SafeHtml;
+    /**
+     * Creates a SafeHtml content consisting of a tag with optional attributes and
+     * optional content.
+     * @param {string} tagName The name of the tag. Only tag names consisting of
+     *     [a-zA-Z0-9-] are allowed. <link>, <script> and <style> tags are not
+     *     supported.
+     * @param {!Object.<string, goog.html.SafeHtml.AttributeValue_>=}
+     *     opt_attributes Mapping from attribute names to their values. Only
+     *     attribute names consisting of [a-zA-Z0-9-] are allowed. Attributes with
+     *     a special meaning (e.g. on*) require goog.string.Const value, attributes
+     *     containing URL require goog.string.Const or goog.html.SafeUrl. Value of
+     *     null or undefined causes the attribute to be omitted. Values are
+     *     HTML-escaped before usage.
+     * @param {!goog.html.SafeHtml.TextOrHtml_|
+     *     !Array.<!goog.html.SafeHtml.TextOrHtml_>=} opt_content Content to put
+     *     inside the tag. This must be empty for void tags like <br>. Array
+     *     elements are concatenated.
+     * @return {!goog.html.SafeHtml} The SafeHtml content with the tag.
+     * @throws {Error} If invalid tag name, attribute name, or attribute value is
+     *     provided.
+     * @throws {goog.asserts.AssertionError} If content for void tag is provided.
+     */
+    function create(tagName: string, opt_attributes?: { [key: string]: goog.string.Const }, opt_content?: string[]): goog.html.SafeHtml;
+    /**
+     * Creates a SafeHtml content consisting of a tag with optional attributes and
+     * optional content.
+     * @param {string} tagName The name of the tag. Only tag names consisting of
+     *     [a-zA-Z0-9-] are allowed. <link>, <script> and <style> tags are not
+     *     supported.
+     * @param {!Object.<string, goog.html.SafeHtml.AttributeValue_>=}
+     *     opt_attributes Mapping from attribute names to their values. Only
+     *     attribute names consisting of [a-zA-Z0-9-] are allowed. Attributes with
+     *     a special meaning (e.g. on*) require goog.string.Const value, attributes
+     *     containing URL require goog.string.Const or goog.html.SafeUrl. Value of
+     *     null or undefined causes the attribute to be omitted. Values are
+     *     HTML-escaped before usage.
+     * @param {!goog.html.SafeHtml.TextOrHtml_|
+     *     !Array.<!goog.html.SafeHtml.TextOrHtml_>=} opt_content Content to put
+     *     inside the tag. This must be empty for void tags like <br>. Array
+     *     elements are concatenated.
+     * @return {!goog.html.SafeHtml} The SafeHtml content with the tag.
+     * @throws {Error} If invalid tag name, attribute name, or attribute value is
+     *     provided.
+     * @throws {goog.asserts.AssertionError} If content for void tag is provided.
+     */
+    function create(tagName: string, opt_attributes?: { [key: string]: goog.string.Const }, opt_content?: number[]): goog.html.SafeHtml;
+    /**
+     * Creates a SafeHtml content consisting of a tag with optional attributes and
+     * optional content.
+     * @param {string} tagName The name of the tag. Only tag names consisting of
+     *     [a-zA-Z0-9-] are allowed. <link>, <script> and <style> tags are not
+     *     supported.
+     * @param {!Object.<string, goog.html.SafeHtml.AttributeValue_>=}
+     *     opt_attributes Mapping from attribute names to their values. Only
+     *     attribute names consisting of [a-zA-Z0-9-] are allowed. Attributes with
+     *     a special meaning (e.g. on*) require goog.string.Const value, attributes
+     *     containing URL require goog.string.Const or goog.html.SafeUrl. Value of
+     *     null or undefined causes the attribute to be omitted. Values are
+     *     HTML-escaped before usage.
+     * @param {!goog.html.SafeHtml.TextOrHtml_|
+     *     !Array.<!goog.html.SafeHtml.TextOrHtml_>=} opt_content Content to put
+     *     inside the tag. This must be empty for void tags like <br>. Array
+     *     elements are concatenated.
+     * @return {!goog.html.SafeHtml} The SafeHtml content with the tag.
+     * @throws {Error} If invalid tag name, attribute name, or attribute value is
+     *     provided.
+     * @throws {goog.asserts.AssertionError} If content for void tag is provided.
+     */
+    function create(tagName: string, opt_attributes?: { [key: string]: goog.string.Const }, opt_content?: boolean[]): goog.html.SafeHtml;
+    /**
+     * Creates a SafeHtml content consisting of a tag with optional attributes and
+     * optional content.
+     * @param {string} tagName The name of the tag. Only tag names consisting of
+     *     [a-zA-Z0-9-] are allowed. <link>, <script> and <style> tags are not
+     *     supported.
+     * @param {!Object.<string, goog.html.SafeHtml.AttributeValue_>=}
+     *     opt_attributes Mapping from attribute names to their values. Only
+     *     attribute names consisting of [a-zA-Z0-9-] are allowed. Attributes with
+     *     a special meaning (e.g. on*) require goog.string.Const value, attributes
+     *     containing URL require goog.string.Const or goog.html.SafeUrl. Value of
+     *     null or undefined causes the attribute to be omitted. Values are
+     *     HTML-escaped before usage.
+     * @param {!goog.html.SafeHtml.TextOrHtml_|
+     *     !Array.<!goog.html.SafeHtml.TextOrHtml_>=} opt_content Content to put
+     *     inside the tag. This must be empty for void tags like <br>. Array
+     *     elements are concatenated.
+     * @return {!goog.html.SafeHtml} The SafeHtml content with the tag.
+     * @throws {Error} If invalid tag name, attribute name, or attribute value is
+     *     provided.
+     * @throws {goog.asserts.AssertionError} If content for void tag is provided.
+     */
+    function create(tagName: string, opt_attributes?: { [key: string]: goog.string.Const }, opt_content?: goog.string.TypedString[]): goog.html.SafeHtml;
+    /**
+     * Creates a SafeHtml content consisting of a tag with optional attributes and
+     * optional content.
+     * @param {string} tagName The name of the tag. Only tag names consisting of
+     *     [a-zA-Z0-9-] are allowed. <link>, <script> and <style> tags are not
+     *     supported.
+     * @param {!Object.<string, goog.html.SafeHtml.AttributeValue_>=}
+     *     opt_attributes Mapping from attribute names to their values. Only
+     *     attribute names consisting of [a-zA-Z0-9-] are allowed. Attributes with
+     *     a special meaning (e.g. on*) require goog.string.Const value, attributes
+     *     containing URL require goog.string.Const or goog.html.SafeUrl. Value of
+     *     null or undefined causes the attribute to be omitted. Values are
+     *     HTML-escaped before usage.
+     * @param {!goog.html.SafeHtml.TextOrHtml_|
+     *     !Array.<!goog.html.SafeHtml.TextOrHtml_>=} opt_content Content to put
+     *     inside the tag. This must be empty for void tags like <br>. Array
+     *     elements are concatenated.
+     * @return {!goog.html.SafeHtml} The SafeHtml content with the tag.
+     * @throws {Error} If invalid tag name, attribute name, or attribute value is
+     *     provided.
+     * @throws {goog.asserts.AssertionError} If content for void tag is provided.
+     */
+    function create(tagName: string, opt_attributes?: { [key: string]: goog.string.Const }, opt_content?: goog.i18n.bidi.DirectionalString[]): goog.html.SafeHtml;
+    /**
+     * Creates a SafeHtml content consisting of a tag with optional attributes and
+     * optional content.
+     * @param {string} tagName The name of the tag. Only tag names consisting of
+     *     [a-zA-Z0-9-] are allowed. <link>, <script> and <style> tags are not
+     *     supported.
+     * @param {!Object.<string, goog.html.SafeHtml.AttributeValue_>=}
+     *     opt_attributes Mapping from attribute names to their values. Only
+     *     attribute names consisting of [a-zA-Z0-9-] are allowed. Attributes with
+     *     a special meaning (e.g. on*) require goog.string.Const value, attributes
+     *     containing URL require goog.string.Const or goog.html.SafeUrl. Value of
+     *     null or undefined causes the attribute to be omitted. Values are
+     *     HTML-escaped before usage.
+     * @param {!goog.html.SafeHtml.TextOrHtml_|
+     *     !Array.<!goog.html.SafeHtml.TextOrHtml_>=} opt_content Content to put
+     *     inside the tag. This must be empty for void tags like <br>. Array
+     *     elements are concatenated.
+     * @return {!goog.html.SafeHtml} The SafeHtml content with the tag.
+     * @throws {Error} If invalid tag name, attribute name, or attribute value is
+     *     provided.
+     * @throws {goog.asserts.AssertionError} If content for void tag is provided.
+     */
+    function create(tagName: string, opt_attributes?: { [key: string]: goog.string.Const }, opt_content?: goog.html.SafeHtml[]): goog.html.SafeHtml;
+    /**
+     * Creates a SafeHtml content consisting of a tag with optional attributes and
+     * optional content.
+     * @param {string} tagName The name of the tag. Only tag names consisting of
+     *     [a-zA-Z0-9-] are allowed. <link>, <script> and <style> tags are not
+     *     supported.
+     * @param {!Object.<string, goog.html.SafeHtml.AttributeValue_>=}
+     *     opt_attributes Mapping from attribute names to their values. Only
+     *     attribute names consisting of [a-zA-Z0-9-] are allowed. Attributes with
+     *     a special meaning (e.g. on*) require goog.string.Const value, attributes
+     *     containing URL require goog.string.Const or goog.html.SafeUrl. Value of
+     *     null or undefined causes the attribute to be omitted. Values are
+     *     HTML-escaped before usage.
+     * @param {!goog.html.SafeHtml.TextOrHtml_|
+     *     !Array.<!goog.html.SafeHtml.TextOrHtml_>=} opt_content Content to put
+     *     inside the tag. This must be empty for void tags like <br>. Array
+     *     elements are concatenated.
+     * @return {!goog.html.SafeHtml} The SafeHtml content with the tag.
+     * @throws {Error} If invalid tag name, attribute name, or attribute value is
+     *     provided.
+     * @throws {goog.asserts.AssertionError} If content for void tag is provided.
+     */
+    function create(tagName: string, opt_attributes?: { [key: string]: goog.html.SafeUrl }, opt_content?: string): goog.html.SafeHtml;
+    /**
+     * Creates a SafeHtml content consisting of a tag with optional attributes and
+     * optional content.
+     * @param {string} tagName The name of the tag. Only tag names consisting of
+     *     [a-zA-Z0-9-] are allowed. <link>, <script> and <style> tags are not
+     *     supported.
+     * @param {!Object.<string, goog.html.SafeHtml.AttributeValue_>=}
+     *     opt_attributes Mapping from attribute names to their values. Only
+     *     attribute names consisting of [a-zA-Z0-9-] are allowed. Attributes with
+     *     a special meaning (e.g. on*) require goog.string.Const value, attributes
+     *     containing URL require goog.string.Const or goog.html.SafeUrl. Value of
+     *     null or undefined causes the attribute to be omitted. Values are
+     *     HTML-escaped before usage.
+     * @param {!goog.html.SafeHtml.TextOrHtml_|
+     *     !Array.<!goog.html.SafeHtml.TextOrHtml_>=} opt_content Content to put
+     *     inside the tag. This must be empty for void tags like <br>. Array
+     *     elements are concatenated.
+     * @return {!goog.html.SafeHtml} The SafeHtml content with the tag.
+     * @throws {Error} If invalid tag name, attribute name, or attribute value is
+     *     provided.
+     * @throws {goog.asserts.AssertionError} If content for void tag is provided.
+     */
+    function create(tagName: string, opt_attributes?: { [key: string]: goog.html.SafeUrl }, opt_content?: number): goog.html.SafeHtml;
+    /**
+     * Creates a SafeHtml content consisting of a tag with optional attributes and
+     * optional content.
+     * @param {string} tagName The name of the tag. Only tag names consisting of
+     *     [a-zA-Z0-9-] are allowed. <link>, <script> and <style> tags are not
+     *     supported.
+     * @param {!Object.<string, goog.html.SafeHtml.AttributeValue_>=}
+     *     opt_attributes Mapping from attribute names to their values. Only
+     *     attribute names consisting of [a-zA-Z0-9-] are allowed. Attributes with
+     *     a special meaning (e.g. on*) require goog.string.Const value, attributes
+     *     containing URL require goog.string.Const or goog.html.SafeUrl. Value of
+     *     null or undefined causes the attribute to be omitted. Values are
+     *     HTML-escaped before usage.
+     * @param {!goog.html.SafeHtml.TextOrHtml_|
+     *     !Array.<!goog.html.SafeHtml.TextOrHtml_>=} opt_content Content to put
+     *     inside the tag. This must be empty for void tags like <br>. Array
+     *     elements are concatenated.
+     * @return {!goog.html.SafeHtml} The SafeHtml content with the tag.
+     * @throws {Error} If invalid tag name, attribute name, or attribute value is
+     *     provided.
+     * @throws {goog.asserts.AssertionError} If content for void tag is provided.
+     */
+    function create(tagName: string, opt_attributes?: { [key: string]: goog.html.SafeUrl }, opt_content?: boolean): goog.html.SafeHtml;
+    /**
+     * Creates a SafeHtml content consisting of a tag with optional attributes and
+     * optional content.
+     * @param {string} tagName The name of the tag. Only tag names consisting of
+     *     [a-zA-Z0-9-] are allowed. <link>, <script> and <style> tags are not
+     *     supported.
+     * @param {!Object.<string, goog.html.SafeHtml.AttributeValue_>=}
+     *     opt_attributes Mapping from attribute names to their values. Only
+     *     attribute names consisting of [a-zA-Z0-9-] are allowed. Attributes with
+     *     a special meaning (e.g. on*) require goog.string.Const value, attributes
+     *     containing URL require goog.string.Const or goog.html.SafeUrl. Value of
+     *     null or undefined causes the attribute to be omitted. Values are
+     *     HTML-escaped before usage.
+     * @param {!goog.html.SafeHtml.TextOrHtml_|
+     *     !Array.<!goog.html.SafeHtml.TextOrHtml_>=} opt_content Content to put
+     *     inside the tag. This must be empty for void tags like <br>. Array
+     *     elements are concatenated.
+     * @return {!goog.html.SafeHtml} The SafeHtml content with the tag.
+     * @throws {Error} If invalid tag name, attribute name, or attribute value is
+     *     provided.
+     * @throws {goog.asserts.AssertionError} If content for void tag is provided.
+     */
+    function create(tagName: string, opt_attributes?: { [key: string]: goog.html.SafeUrl }, opt_content?: goog.string.TypedString): goog.html.SafeHtml;
+    /**
+     * Creates a SafeHtml content consisting of a tag with optional attributes and
+     * optional content.
+     * @param {string} tagName The name of the tag. Only tag names consisting of
+     *     [a-zA-Z0-9-] are allowed. <link>, <script> and <style> tags are not
+     *     supported.
+     * @param {!Object.<string, goog.html.SafeHtml.AttributeValue_>=}
+     *     opt_attributes Mapping from attribute names to their values. Only
+     *     attribute names consisting of [a-zA-Z0-9-] are allowed. Attributes with
+     *     a special meaning (e.g. on*) require goog.string.Const value, attributes
+     *     containing URL require goog.string.Const or goog.html.SafeUrl. Value of
+     *     null or undefined causes the attribute to be omitted. Values are
+     *     HTML-escaped before usage.
+     * @param {!goog.html.SafeHtml.TextOrHtml_|
+     *     !Array.<!goog.html.SafeHtml.TextOrHtml_>=} opt_content Content to put
+     *     inside the tag. This must be empty for void tags like <br>. Array
+     *     elements are concatenated.
+     * @return {!goog.html.SafeHtml} The SafeHtml content with the tag.
+     * @throws {Error} If invalid tag name, attribute name, or attribute value is
+     *     provided.
+     * @throws {goog.asserts.AssertionError} If content for void tag is provided.
+     */
+    function create(tagName: string, opt_attributes?: { [key: string]: goog.html.SafeUrl }, opt_content?: goog.i18n.bidi.DirectionalString): goog.html.SafeHtml;
+    /**
+     * Creates a SafeHtml content consisting of a tag with optional attributes and
+     * optional content.
+     * @param {string} tagName The name of the tag. Only tag names consisting of
+     *     [a-zA-Z0-9-] are allowed. <link>, <script> and <style> tags are not
+     *     supported.
+     * @param {!Object.<string, goog.html.SafeHtml.AttributeValue_>=}
+     *     opt_attributes Mapping from attribute names to their values. Only
+     *     attribute names consisting of [a-zA-Z0-9-] are allowed. Attributes with
+     *     a special meaning (e.g. on*) require goog.string.Const value, attributes
+     *     containing URL require goog.string.Const or goog.html.SafeUrl. Value of
+     *     null or undefined causes the attribute to be omitted. Values are
+     *     HTML-escaped before usage.
+     * @param {!goog.html.SafeHtml.TextOrHtml_|
+     *     !Array.<!goog.html.SafeHtml.TextOrHtml_>=} opt_content Content to put
+     *     inside the tag. This must be empty for void tags like <br>. Array
+     *     elements are concatenated.
+     * @return {!goog.html.SafeHtml} The SafeHtml content with the tag.
+     * @throws {Error} If invalid tag name, attribute name, or attribute value is
+     *     provided.
+     * @throws {goog.asserts.AssertionError} If content for void tag is provided.
+     */
+    function create(tagName: string, opt_attributes?: { [key: string]: goog.html.SafeUrl }, opt_content?: goog.html.SafeHtml): goog.html.SafeHtml;
+    /**
+     * Creates a SafeHtml content consisting of a tag with optional attributes and
+     * optional content.
+     * @param {string} tagName The name of the tag. Only tag names consisting of
+     *     [a-zA-Z0-9-] are allowed. <link>, <script> and <style> tags are not
+     *     supported.
+     * @param {!Object.<string, goog.html.SafeHtml.AttributeValue_>=}
+     *     opt_attributes Mapping from attribute names to their values. Only
+     *     attribute names consisting of [a-zA-Z0-9-] are allowed. Attributes with
+     *     a special meaning (e.g. on*) require goog.string.Const value, attributes
+     *     containing URL require goog.string.Const or goog.html.SafeUrl. Value of
+     *     null or undefined causes the attribute to be omitted. Values are
+     *     HTML-escaped before usage.
+     * @param {!goog.html.SafeHtml.TextOrHtml_|
+     *     !Array.<!goog.html.SafeHtml.TextOrHtml_>=} opt_content Content to put
+     *     inside the tag. This must be empty for void tags like <br>. Array
+     *     elements are concatenated.
+     * @return {!goog.html.SafeHtml} The SafeHtml content with the tag.
+     * @throws {Error} If invalid tag name, attribute name, or attribute value is
+     *     provided.
+     * @throws {goog.asserts.AssertionError} If content for void tag is provided.
+     */
+    function create(tagName: string, opt_attributes?: { [key: string]: goog.html.SafeUrl }, opt_content?: string[]): goog.html.SafeHtml;
+    /**
+     * Creates a SafeHtml content consisting of a tag with optional attributes and
+     * optional content.
+     * @param {string} tagName The name of the tag. Only tag names consisting of
+     *     [a-zA-Z0-9-] are allowed. <link>, <script> and <style> tags are not
+     *     supported.
+     * @param {!Object.<string, goog.html.SafeHtml.AttributeValue_>=}
+     *     opt_attributes Mapping from attribute names to their values. Only
+     *     attribute names consisting of [a-zA-Z0-9-] are allowed. Attributes with
+     *     a special meaning (e.g. on*) require goog.string.Const value, attributes
+     *     containing URL require goog.string.Const or goog.html.SafeUrl. Value of
+     *     null or undefined causes the attribute to be omitted. Values are
+     *     HTML-escaped before usage.
+     * @param {!goog.html.SafeHtml.TextOrHtml_|
+     *     !Array.<!goog.html.SafeHtml.TextOrHtml_>=} opt_content Content to put
+     *     inside the tag. This must be empty for void tags like <br>. Array
+     *     elements are concatenated.
+     * @return {!goog.html.SafeHtml} The SafeHtml content with the tag.
+     * @throws {Error} If invalid tag name, attribute name, or attribute value is
+     *     provided.
+     * @throws {goog.asserts.AssertionError} If content for void tag is provided.
+     */
+    function create(tagName: string, opt_attributes?: { [key: string]: goog.html.SafeUrl }, opt_content?: number[]): goog.html.SafeHtml;
+    /**
+     * Creates a SafeHtml content consisting of a tag with optional attributes and
+     * optional content.
+     * @param {string} tagName The name of the tag. Only tag names consisting of
+     *     [a-zA-Z0-9-] are allowed. <link>, <script> and <style> tags are not
+     *     supported.
+     * @param {!Object.<string, goog.html.SafeHtml.AttributeValue_>=}
+     *     opt_attributes Mapping from attribute names to their values. Only
+     *     attribute names consisting of [a-zA-Z0-9-] are allowed. Attributes with
+     *     a special meaning (e.g. on*) require goog.string.Const value, attributes
+     *     containing URL require goog.string.Const or goog.html.SafeUrl. Value of
+     *     null or undefined causes the attribute to be omitted. Values are
+     *     HTML-escaped before usage.
+     * @param {!goog.html.SafeHtml.TextOrHtml_|
+     *     !Array.<!goog.html.SafeHtml.TextOrHtml_>=} opt_content Content to put
+     *     inside the tag. This must be empty for void tags like <br>. Array
+     *     elements are concatenated.
+     * @return {!goog.html.SafeHtml} The SafeHtml content with the tag.
+     * @throws {Error} If invalid tag name, attribute name, or attribute value is
+     *     provided.
+     * @throws {goog.asserts.AssertionError} If content for void tag is provided.
+     */
+    function create(tagName: string, opt_attributes?: { [key: string]: goog.html.SafeUrl }, opt_content?: boolean[]): goog.html.SafeHtml;
+    /**
+     * Creates a SafeHtml content consisting of a tag with optional attributes and
+     * optional content.
+     * @param {string} tagName The name of the tag. Only tag names consisting of
+     *     [a-zA-Z0-9-] are allowed. <link>, <script> and <style> tags are not
+     *     supported.
+     * @param {!Object.<string, goog.html.SafeHtml.AttributeValue_>=}
+     *     opt_attributes Mapping from attribute names to their values. Only
+     *     attribute names consisting of [a-zA-Z0-9-] are allowed. Attributes with
+     *     a special meaning (e.g. on*) require goog.string.Const value, attributes
+     *     containing URL require goog.string.Const or goog.html.SafeUrl. Value of
+     *     null or undefined causes the attribute to be omitted. Values are
+     *     HTML-escaped before usage.
+     * @param {!goog.html.SafeHtml.TextOrHtml_|
+     *     !Array.<!goog.html.SafeHtml.TextOrHtml_>=} opt_content Content to put
+     *     inside the tag. This must be empty for void tags like <br>. Array
+     *     elements are concatenated.
+     * @return {!goog.html.SafeHtml} The SafeHtml content with the tag.
+     * @throws {Error} If invalid tag name, attribute name, or attribute value is
+     *     provided.
+     * @throws {goog.asserts.AssertionError} If content for void tag is provided.
+     */
+    function create(tagName: string, opt_attributes?: { [key: string]: goog.html.SafeUrl }, opt_content?: goog.string.TypedString[]): goog.html.SafeHtml;
+    /**
+     * Creates a SafeHtml content consisting of a tag with optional attributes and
+     * optional content.
+     * @param {string} tagName The name of the tag. Only tag names consisting of
+     *     [a-zA-Z0-9-] are allowed. <link>, <script> and <style> tags are not
+     *     supported.
+     * @param {!Object.<string, goog.html.SafeHtml.AttributeValue_>=}
+     *     opt_attributes Mapping from attribute names to their values. Only
+     *     attribute names consisting of [a-zA-Z0-9-] are allowed. Attributes with
+     *     a special meaning (e.g. on*) require goog.string.Const value, attributes
+     *     containing URL require goog.string.Const or goog.html.SafeUrl. Value of
+     *     null or undefined causes the attribute to be omitted. Values are
+     *     HTML-escaped before usage.
+     * @param {!goog.html.SafeHtml.TextOrHtml_|
+     *     !Array.<!goog.html.SafeHtml.TextOrHtml_>=} opt_content Content to put
+     *     inside the tag. This must be empty for void tags like <br>. Array
+     *     elements are concatenated.
+     * @return {!goog.html.SafeHtml} The SafeHtml content with the tag.
+     * @throws {Error} If invalid tag name, attribute name, or attribute value is
+     *     provided.
+     * @throws {goog.asserts.AssertionError} If content for void tag is provided.
+     */
+    function create(tagName: string, opt_attributes?: { [key: string]: goog.html.SafeUrl }, opt_content?: goog.i18n.bidi.DirectionalString[]): goog.html.SafeHtml;
+    /**
+     * Creates a SafeHtml content consisting of a tag with optional attributes and
+     * optional content.
+     * @param {string} tagName The name of the tag. Only tag names consisting of
+     *     [a-zA-Z0-9-] are allowed. <link>, <script> and <style> tags are not
+     *     supported.
+     * @param {!Object.<string, goog.html.SafeHtml.AttributeValue_>=}
+     *     opt_attributes Mapping from attribute names to their values. Only
+     *     attribute names consisting of [a-zA-Z0-9-] are allowed. Attributes with
+     *     a special meaning (e.g. on*) require goog.string.Const value, attributes
+     *     containing URL require goog.string.Const or goog.html.SafeUrl. Value of
+     *     null or undefined causes the attribute to be omitted. Values are
+     *     HTML-escaped before usage.
+     * @param {!goog.html.SafeHtml.TextOrHtml_|
+     *     !Array.<!goog.html.SafeHtml.TextOrHtml_>=} opt_content Content to put
+     *     inside the tag. This must be empty for void tags like <br>. Array
+     *     elements are concatenated.
+     * @return {!goog.html.SafeHtml} The SafeHtml content with the tag.
+     * @throws {Error} If invalid tag name, attribute name, or attribute value is
+     *     provided.
+     * @throws {goog.asserts.AssertionError} If content for void tag is provided.
+     */
+    function create(tagName: string, opt_attributes?: { [key: string]: goog.html.SafeUrl }, opt_content?: goog.html.SafeHtml[]): goog.html.SafeHtml;
+    /**
+     * Creates a SafeHtml content consisting of a tag with optional attributes and
+     * optional content.
+     * @param {string} tagName The name of the tag. Only tag names consisting of
+     *     [a-zA-Z0-9-] are allowed. <link>, <script> and <style> tags are not
+     *     supported.
+     * @param {!Object.<string, goog.html.SafeHtml.AttributeValue_>=}
+     *     opt_attributes Mapping from attribute names to their values. Only
+     *     attribute names consisting of [a-zA-Z0-9-] are allowed. Attributes with
+     *     a special meaning (e.g. on*) require goog.string.Const value, attributes
+     *     containing URL require goog.string.Const or goog.html.SafeUrl. Value of
+     *     null or undefined causes the attribute to be omitted. Values are
+     *     HTML-escaped before usage.
+     * @param {!goog.html.SafeHtml.TextOrHtml_|
+     *     !Array.<!goog.html.SafeHtml.TextOrHtml_>=} opt_content Content to put
+     *     inside the tag. This must be empty for void tags like <br>. Array
+     *     elements are concatenated.
+     * @return {!goog.html.SafeHtml} The SafeHtml content with the tag.
+     * @throws {Error} If invalid tag name, attribute name, or attribute value is
+     *     provided.
+     * @throws {goog.asserts.AssertionError} If content for void tag is provided.
+     */
+    function create(tagName: string, opt_attributes?: { [key: string]: goog.html.SafeStyle }, opt_content?: string): goog.html.SafeHtml;
+    /**
+     * Creates a SafeHtml content consisting of a tag with optional attributes and
+     * optional content.
+     * @param {string} tagName The name of the tag. Only tag names consisting of
+     *     [a-zA-Z0-9-] are allowed. <link>, <script> and <style> tags are not
+     *     supported.
+     * @param {!Object.<string, goog.html.SafeHtml.AttributeValue_>=}
+     *     opt_attributes Mapping from attribute names to their values. Only
+     *     attribute names consisting of [a-zA-Z0-9-] are allowed. Attributes with
+     *     a special meaning (e.g. on*) require goog.string.Const value, attributes
+     *     containing URL require goog.string.Const or goog.html.SafeUrl. Value of
+     *     null or undefined causes the attribute to be omitted. Values are
+     *     HTML-escaped before usage.
+     * @param {!goog.html.SafeHtml.TextOrHtml_|
+     *     !Array.<!goog.html.SafeHtml.TextOrHtml_>=} opt_content Content to put
+     *     inside the tag. This must be empty for void tags like <br>. Array
+     *     elements are concatenated.
+     * @return {!goog.html.SafeHtml} The SafeHtml content with the tag.
+     * @throws {Error} If invalid tag name, attribute name, or attribute value is
+     *     provided.
+     * @throws {goog.asserts.AssertionError} If content for void tag is provided.
+     */
+    function create(tagName: string, opt_attributes?: { [key: string]: goog.html.SafeStyle }, opt_content?: number): goog.html.SafeHtml;
+    /**
+     * Creates a SafeHtml content consisting of a tag with optional attributes and
+     * optional content.
+     * @param {string} tagName The name of the tag. Only tag names consisting of
+     *     [a-zA-Z0-9-] are allowed. <link>, <script> and <style> tags are not
+     *     supported.
+     * @param {!Object.<string, goog.html.SafeHtml.AttributeValue_>=}
+     *     opt_attributes Mapping from attribute names to their values. Only
+     *     attribute names consisting of [a-zA-Z0-9-] are allowed. Attributes with
+     *     a special meaning (e.g. on*) require goog.string.Const value, attributes
+     *     containing URL require goog.string.Const or goog.html.SafeUrl. Value of
+     *     null or undefined causes the attribute to be omitted. Values are
+     *     HTML-escaped before usage.
+     * @param {!goog.html.SafeHtml.TextOrHtml_|
+     *     !Array.<!goog.html.SafeHtml.TextOrHtml_>=} opt_content Content to put
+     *     inside the tag. This must be empty for void tags like <br>. Array
+     *     elements are concatenated.
+     * @return {!goog.html.SafeHtml} The SafeHtml content with the tag.
+     * @throws {Error} If invalid tag name, attribute name, or attribute value is
+     *     provided.
+     * @throws {goog.asserts.AssertionError} If content for void tag is provided.
+     */
+    function create(tagName: string, opt_attributes?: { [key: string]: goog.html.SafeStyle }, opt_content?: boolean): goog.html.SafeHtml;
+    /**
+     * Creates a SafeHtml content consisting of a tag with optional attributes and
+     * optional content.
+     * @param {string} tagName The name of the tag. Only tag names consisting of
+     *     [a-zA-Z0-9-] are allowed. <link>, <script> and <style> tags are not
+     *     supported.
+     * @param {!Object.<string, goog.html.SafeHtml.AttributeValue_>=}
+     *     opt_attributes Mapping from attribute names to their values. Only
+     *     attribute names consisting of [a-zA-Z0-9-] are allowed. Attributes with
+     *     a special meaning (e.g. on*) require goog.string.Const value, attributes
+     *     containing URL require goog.string.Const or goog.html.SafeUrl. Value of
+     *     null or undefined causes the attribute to be omitted. Values are
+     *     HTML-escaped before usage.
+     * @param {!goog.html.SafeHtml.TextOrHtml_|
+     *     !Array.<!goog.html.SafeHtml.TextOrHtml_>=} opt_content Content to put
+     *     inside the tag. This must be empty for void tags like <br>. Array
+     *     elements are concatenated.
+     * @return {!goog.html.SafeHtml} The SafeHtml content with the tag.
+     * @throws {Error} If invalid tag name, attribute name, or attribute value is
+     *     provided.
+     * @throws {goog.asserts.AssertionError} If content for void tag is provided.
+     */
+    function create(tagName: string, opt_attributes?: { [key: string]: goog.html.SafeStyle }, opt_content?: goog.string.TypedString): goog.html.SafeHtml;
+    /**
+     * Creates a SafeHtml content consisting of a tag with optional attributes and
+     * optional content.
+     * @param {string} tagName The name of the tag. Only tag names consisting of
+     *     [a-zA-Z0-9-] are allowed. <link>, <script> and <style> tags are not
+     *     supported.
+     * @param {!Object.<string, goog.html.SafeHtml.AttributeValue_>=}
+     *     opt_attributes Mapping from attribute names to their values. Only
+     *     attribute names consisting of [a-zA-Z0-9-] are allowed. Attributes with
+     *     a special meaning (e.g. on*) require goog.string.Const value, attributes
+     *     containing URL require goog.string.Const or goog.html.SafeUrl. Value of
+     *     null or undefined causes the attribute to be omitted. Values are
+     *     HTML-escaped before usage.
+     * @param {!goog.html.SafeHtml.TextOrHtml_|
+     *     !Array.<!goog.html.SafeHtml.TextOrHtml_>=} opt_content Content to put
+     *     inside the tag. This must be empty for void tags like <br>. Array
+     *     elements are concatenated.
+     * @return {!goog.html.SafeHtml} The SafeHtml content with the tag.
+     * @throws {Error} If invalid tag name, attribute name, or attribute value is
+     *     provided.
+     * @throws {goog.asserts.AssertionError} If content for void tag is provided.
+     */
+    function create(tagName: string, opt_attributes?: { [key: string]: goog.html.SafeStyle }, opt_content?: goog.i18n.bidi.DirectionalString): goog.html.SafeHtml;
+    /**
+     * Creates a SafeHtml content consisting of a tag with optional attributes and
+     * optional content.
+     * @param {string} tagName The name of the tag. Only tag names consisting of
+     *     [a-zA-Z0-9-] are allowed. <link>, <script> and <style> tags are not
+     *     supported.
+     * @param {!Object.<string, goog.html.SafeHtml.AttributeValue_>=}
+     *     opt_attributes Mapping from attribute names to their values. Only
+     *     attribute names consisting of [a-zA-Z0-9-] are allowed. Attributes with
+     *     a special meaning (e.g. on*) require goog.string.Const value, attributes
+     *     containing URL require goog.string.Const or goog.html.SafeUrl. Value of
+     *     null or undefined causes the attribute to be omitted. Values are
+     *     HTML-escaped before usage.
+     * @param {!goog.html.SafeHtml.TextOrHtml_|
+     *     !Array.<!goog.html.SafeHtml.TextOrHtml_>=} opt_content Content to put
+     *     inside the tag. This must be empty for void tags like <br>. Array
+     *     elements are concatenated.
+     * @return {!goog.html.SafeHtml} The SafeHtml content with the tag.
+     * @throws {Error} If invalid tag name, attribute name, or attribute value is
+     *     provided.
+     * @throws {goog.asserts.AssertionError} If content for void tag is provided.
+     */
+    function create(tagName: string, opt_attributes?: { [key: string]: goog.html.SafeStyle }, opt_content?: goog.html.SafeHtml): goog.html.SafeHtml;
+    /**
+     * Creates a SafeHtml content consisting of a tag with optional attributes and
+     * optional content.
+     * @param {string} tagName The name of the tag. Only tag names consisting of
+     *     [a-zA-Z0-9-] are allowed. <link>, <script> and <style> tags are not
+     *     supported.
+     * @param {!Object.<string, goog.html.SafeHtml.AttributeValue_>=}
+     *     opt_attributes Mapping from attribute names to their values. Only
+     *     attribute names consisting of [a-zA-Z0-9-] are allowed. Attributes with
+     *     a special meaning (e.g. on*) require goog.string.Const value, attributes
+     *     containing URL require goog.string.Const or goog.html.SafeUrl. Value of
+     *     null or undefined causes the attribute to be omitted. Values are
+     *     HTML-escaped before usage.
+     * @param {!goog.html.SafeHtml.TextOrHtml_|
+     *     !Array.<!goog.html.SafeHtml.TextOrHtml_>=} opt_content Content to put
+     *     inside the tag. This must be empty for void tags like <br>. Array
+     *     elements are concatenated.
+     * @return {!goog.html.SafeHtml} The SafeHtml content with the tag.
+     * @throws {Error} If invalid tag name, attribute name, or attribute value is
+     *     provided.
+     * @throws {goog.asserts.AssertionError} If content for void tag is provided.
+     */
+    function create(tagName: string, opt_attributes?: { [key: string]: goog.html.SafeStyle }, opt_content?: string[]): goog.html.SafeHtml;
+    /**
+     * Creates a SafeHtml content consisting of a tag with optional attributes and
+     * optional content.
+     * @param {string} tagName The name of the tag. Only tag names consisting of
+     *     [a-zA-Z0-9-] are allowed. <link>, <script> and <style> tags are not
+     *     supported.
+     * @param {!Object.<string, goog.html.SafeHtml.AttributeValue_>=}
+     *     opt_attributes Mapping from attribute names to their values. Only
+     *     attribute names consisting of [a-zA-Z0-9-] are allowed. Attributes with
+     *     a special meaning (e.g. on*) require goog.string.Const value, attributes
+     *     containing URL require goog.string.Const or goog.html.SafeUrl. Value of
+     *     null or undefined causes the attribute to be omitted. Values are
+     *     HTML-escaped before usage.
+     * @param {!goog.html.SafeHtml.TextOrHtml_|
+     *     !Array.<!goog.html.SafeHtml.TextOrHtml_>=} opt_content Content to put
+     *     inside the tag. This must be empty for void tags like <br>. Array
+     *     elements are concatenated.
+     * @return {!goog.html.SafeHtml} The SafeHtml content with the tag.
+     * @throws {Error} If invalid tag name, attribute name, or attribute value is
+     *     provided.
+     * @throws {goog.asserts.AssertionError} If content for void tag is provided.
+     */
+    function create(tagName: string, opt_attributes?: { [key: string]: goog.html.SafeStyle }, opt_content?: number[]): goog.html.SafeHtml;
+    /**
+     * Creates a SafeHtml content consisting of a tag with optional attributes and
+     * optional content.
+     * @param {string} tagName The name of the tag. Only tag names consisting of
+     *     [a-zA-Z0-9-] are allowed. <link>, <script> and <style> tags are not
+     *     supported.
+     * @param {!Object.<string, goog.html.SafeHtml.AttributeValue_>=}
+     *     opt_attributes Mapping from attribute names to their values. Only
+     *     attribute names consisting of [a-zA-Z0-9-] are allowed. Attributes with
+     *     a special meaning (e.g. on*) require goog.string.Const value, attributes
+     *     containing URL require goog.string.Const or goog.html.SafeUrl. Value of
+     *     null or undefined causes the attribute to be omitted. Values are
+     *     HTML-escaped before usage.
+     * @param {!goog.html.SafeHtml.TextOrHtml_|
+     *     !Array.<!goog.html.SafeHtml.TextOrHtml_>=} opt_content Content to put
+     *     inside the tag. This must be empty for void tags like <br>. Array
+     *     elements are concatenated.
+     * @return {!goog.html.SafeHtml} The SafeHtml content with the tag.
+     * @throws {Error} If invalid tag name, attribute name, or attribute value is
+     *     provided.
+     * @throws {goog.asserts.AssertionError} If content for void tag is provided.
+     */
+    function create(tagName: string, opt_attributes?: { [key: string]: goog.html.SafeStyle }, opt_content?: boolean[]): goog.html.SafeHtml;
+    /**
+     * Creates a SafeHtml content consisting of a tag with optional attributes and
+     * optional content.
+     * @param {string} tagName The name of the tag. Only tag names consisting of
+     *     [a-zA-Z0-9-] are allowed. <link>, <script> and <style> tags are not
+     *     supported.
+     * @param {!Object.<string, goog.html.SafeHtml.AttributeValue_>=}
+     *     opt_attributes Mapping from attribute names to their values. Only
+     *     attribute names consisting of [a-zA-Z0-9-] are allowed. Attributes with
+     *     a special meaning (e.g. on*) require goog.string.Const value, attributes
+     *     containing URL require goog.string.Const or goog.html.SafeUrl. Value of
+     *     null or undefined causes the attribute to be omitted. Values are
+     *     HTML-escaped before usage.
+     * @param {!goog.html.SafeHtml.TextOrHtml_|
+     *     !Array.<!goog.html.SafeHtml.TextOrHtml_>=} opt_content Content to put
+     *     inside the tag. This must be empty for void tags like <br>. Array
+     *     elements are concatenated.
+     * @return {!goog.html.SafeHtml} The SafeHtml content with the tag.
+     * @throws {Error} If invalid tag name, attribute name, or attribute value is
+     *     provided.
+     * @throws {goog.asserts.AssertionError} If content for void tag is provided.
+     */
+    function create(tagName: string, opt_attributes?: { [key: string]: goog.html.SafeStyle }, opt_content?: goog.string.TypedString[]): goog.html.SafeHtml;
+    /**
+     * Creates a SafeHtml content consisting of a tag with optional attributes and
+     * optional content.
+     * @param {string} tagName The name of the tag. Only tag names consisting of
+     *     [a-zA-Z0-9-] are allowed. <link>, <script> and <style> tags are not
+     *     supported.
+     * @param {!Object.<string, goog.html.SafeHtml.AttributeValue_>=}
+     *     opt_attributes Mapping from attribute names to their values. Only
+     *     attribute names consisting of [a-zA-Z0-9-] are allowed. Attributes with
+     *     a special meaning (e.g. on*) require goog.string.Const value, attributes
+     *     containing URL require goog.string.Const or goog.html.SafeUrl. Value of
+     *     null or undefined causes the attribute to be omitted. Values are
+     *     HTML-escaped before usage.
+     * @param {!goog.html.SafeHtml.TextOrHtml_|
+     *     !Array.<!goog.html.SafeHtml.TextOrHtml_>=} opt_content Content to put
+     *     inside the tag. This must be empty for void tags like <br>. Array
+     *     elements are concatenated.
+     * @return {!goog.html.SafeHtml} The SafeHtml content with the tag.
+     * @throws {Error} If invalid tag name, attribute name, or attribute value is
+     *     provided.
+     * @throws {goog.asserts.AssertionError} If content for void tag is provided.
+     */
+    function create(tagName: string, opt_attributes?: { [key: string]: goog.html.SafeStyle }, opt_content?: goog.i18n.bidi.DirectionalString[]): goog.html.SafeHtml;
+    /**
+     * Creates a SafeHtml content consisting of a tag with optional attributes and
+     * optional content.
+     * @param {string} tagName The name of the tag. Only tag names consisting of
+     *     [a-zA-Z0-9-] are allowed. <link>, <script> and <style> tags are not
+     *     supported.
+     * @param {!Object.<string, goog.html.SafeHtml.AttributeValue_>=}
+     *     opt_attributes Mapping from attribute names to their values. Only
+     *     attribute names consisting of [a-zA-Z0-9-] are allowed. Attributes with
+     *     a special meaning (e.g. on*) require goog.string.Const value, attributes
+     *     containing URL require goog.string.Const or goog.html.SafeUrl. Value of
+     *     null or undefined causes the attribute to be omitted. Values are
+     *     HTML-escaped before usage.
+     * @param {!goog.html.SafeHtml.TextOrHtml_|
+     *     !Array.<!goog.html.SafeHtml.TextOrHtml_>=} opt_content Content to put
+     *     inside the tag. This must be empty for void tags like <br>. Array
+     *     elements are concatenated.
+     * @return {!goog.html.SafeHtml} The SafeHtml content with the tag.
+     * @throws {Error} If invalid tag name, attribute name, or attribute value is
+     *     provided.
+     * @throws {goog.asserts.AssertionError} If content for void tag is provided.
+     */
+    function create(tagName: string, opt_attributes?: { [key: string]: goog.html.SafeStyle }, opt_content?: goog.html.SafeHtml[]): goog.html.SafeHtml;
 
     /**
      * Creates a new SafeHtml object by concatenating the values.
@@ -193,7 +1372,7 @@ declare module goog.html.SafeHtml {
      *     arguments would be processed recursively.
      * @return {!goog.html.SafeHtml}
      */
-    function concat(...var_args: goog.html.SafeHtml.TextOrHtml_[]): goog.html.SafeHtml;
+    function concat(...var_args: string[]): goog.html.SafeHtml;
     /**
      * Creates a new SafeHtml object by concatenating the values.
      * @param {...!goog.html.SafeHtml.TextOrHtml_|
@@ -201,7 +1380,87 @@ declare module goog.html.SafeHtml {
      *     arguments would be processed recursively.
      * @return {!goog.html.SafeHtml}
      */
-    function concat(...var_args: goog.html.SafeHtml.TextOrHtml_[][]): goog.html.SafeHtml;
+    function concat(...var_args: number[]): goog.html.SafeHtml;
+    /**
+     * Creates a new SafeHtml object by concatenating the values.
+     * @param {...!goog.html.SafeHtml.TextOrHtml_|
+     *     !Array.<!goog.html.SafeHtml.TextOrHtml_>} var_args Elements of array
+     *     arguments would be processed recursively.
+     * @return {!goog.html.SafeHtml}
+     */
+    function concat(...var_args: boolean[]): goog.html.SafeHtml;
+    /**
+     * Creates a new SafeHtml object by concatenating the values.
+     * @param {...!goog.html.SafeHtml.TextOrHtml_|
+     *     !Array.<!goog.html.SafeHtml.TextOrHtml_>} var_args Elements of array
+     *     arguments would be processed recursively.
+     * @return {!goog.html.SafeHtml}
+     */
+    function concat(...var_args: goog.string.TypedString[]): goog.html.SafeHtml;
+    /**
+     * Creates a new SafeHtml object by concatenating the values.
+     * @param {...!goog.html.SafeHtml.TextOrHtml_|
+     *     !Array.<!goog.html.SafeHtml.TextOrHtml_>} var_args Elements of array
+     *     arguments would be processed recursively.
+     * @return {!goog.html.SafeHtml}
+     */
+    function concat(...var_args: goog.i18n.bidi.DirectionalString[]): goog.html.SafeHtml;
+    /**
+     * Creates a new SafeHtml object by concatenating the values.
+     * @param {...!goog.html.SafeHtml.TextOrHtml_|
+     *     !Array.<!goog.html.SafeHtml.TextOrHtml_>} var_args Elements of array
+     *     arguments would be processed recursively.
+     * @return {!goog.html.SafeHtml}
+     */
+    function concat(...var_args: goog.html.SafeHtml[]): goog.html.SafeHtml;
+    /**
+     * Creates a new SafeHtml object by concatenating the values.
+     * @param {...!goog.html.SafeHtml.TextOrHtml_|
+     *     !Array.<!goog.html.SafeHtml.TextOrHtml_>} var_args Elements of array
+     *     arguments would be processed recursively.
+     * @return {!goog.html.SafeHtml}
+     */
+    function concat(...var_args: string[][]): goog.html.SafeHtml;
+    /**
+     * Creates a new SafeHtml object by concatenating the values.
+     * @param {...!goog.html.SafeHtml.TextOrHtml_|
+     *     !Array.<!goog.html.SafeHtml.TextOrHtml_>} var_args Elements of array
+     *     arguments would be processed recursively.
+     * @return {!goog.html.SafeHtml}
+     */
+    function concat(...var_args: number[][]): goog.html.SafeHtml;
+    /**
+     * Creates a new SafeHtml object by concatenating the values.
+     * @param {...!goog.html.SafeHtml.TextOrHtml_|
+     *     !Array.<!goog.html.SafeHtml.TextOrHtml_>} var_args Elements of array
+     *     arguments would be processed recursively.
+     * @return {!goog.html.SafeHtml}
+     */
+    function concat(...var_args: boolean[][]): goog.html.SafeHtml;
+    /**
+     * Creates a new SafeHtml object by concatenating the values.
+     * @param {...!goog.html.SafeHtml.TextOrHtml_|
+     *     !Array.<!goog.html.SafeHtml.TextOrHtml_>} var_args Elements of array
+     *     arguments would be processed recursively.
+     * @return {!goog.html.SafeHtml}
+     */
+    function concat(...var_args: goog.string.TypedString[][]): goog.html.SafeHtml;
+    /**
+     * Creates a new SafeHtml object by concatenating the values.
+     * @param {...!goog.html.SafeHtml.TextOrHtml_|
+     *     !Array.<!goog.html.SafeHtml.TextOrHtml_>} var_args Elements of array
+     *     arguments would be processed recursively.
+     * @return {!goog.html.SafeHtml}
+     */
+    function concat(...var_args: goog.i18n.bidi.DirectionalString[][]): goog.html.SafeHtml;
+    /**
+     * Creates a new SafeHtml object by concatenating the values.
+     * @param {...!goog.html.SafeHtml.TextOrHtml_|
+     *     !Array.<!goog.html.SafeHtml.TextOrHtml_>} var_args Elements of array
+     *     arguments would be processed recursively.
+     * @return {!goog.html.SafeHtml}
+     */
+    function concat(...var_args: goog.html.SafeHtml[][]): goog.html.SafeHtml;
 
     /**
      * A SafeHtml instance corresponding to the empty string.

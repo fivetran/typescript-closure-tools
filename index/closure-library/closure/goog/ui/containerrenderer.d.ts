@@ -1,7 +1,6 @@
 /// <reference path="../../../globals.d.ts" />
 /// <reference path="./container.d.ts" />
 /// <reference path="./control.d.ts" />
-/// <reference path="./container.d.ts" />
 
 declare module goog.ui {
 

@@ -5,10 +5,8 @@
 /// <reference path="../events/keyhandler.d.ts" />
 /// <reference path="../a11y/aria/roles.d.ts" />
 /// <reference path="./controlcontent.d.ts" />
-/// <reference path="./component.d.ts" />
 /// <reference path="../events/browserevent.d.ts" />
 /// <reference path="../events/event.d.ts" />
-/// <reference path="../events/keyhandler.d.ts" />
 
 declare module goog.ui {
 

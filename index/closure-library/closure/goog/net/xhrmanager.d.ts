@@ -4,7 +4,6 @@
 /// <reference path="./xhrio.d.ts" />
 /// <reference path="../events/event.d.ts" />
 /// <reference path="./eventtype.d.ts" />
-/// <reference path="./xhrio.d.ts" />
 
 declare module goog.net {
 

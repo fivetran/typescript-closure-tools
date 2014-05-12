@@ -1,7 +1,6 @@
 /// <reference path="../../../../globals.d.ts" />
 /// <reference path="./palette.d.ts" />
 /// <reference path="./palettemanager.d.ts" />
-/// <reference path="./palette.d.ts" />
 
 declare module goog.ui.equation {
 

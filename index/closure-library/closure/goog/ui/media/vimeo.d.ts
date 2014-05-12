@@ -2,7 +2,6 @@
 /// <reference path="./media.d.ts" />
 /// <reference path="./mediamodel.d.ts" />
 /// <reference path="../../dom/dom.d.ts" />
-/// <reference path="./media.d.ts" />
 
 declare module goog.ui.media {
 

@@ -1,9 +1,6 @@
 /// <reference path="../../../globals.d.ts" />
 /// <reference path="./vec.d.ts" />
-/// <reference path="./vec.d.ts" />
-/// <reference path="./vec.d.ts" />
-/// <reference path="./vec.d.ts" />
-/// <reference path="./vec.d.ts" />
+/// <reference path="./vec3.d.ts" />
 
 declare module goog.vec.Mat3 {
 

@@ -3,7 +3,6 @@
 /// <reference path="../link.d.ts" />
 /// <reference path="../../events/eventhandler.d.ts" />
 /// <reference path="../../ui/editor/linkdialog.d.ts" />
-/// <reference path="../../ui/editor/linkdialog.d.ts" />
 
 declare module goog.editor.plugins {
 

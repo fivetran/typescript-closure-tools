@@ -1,6 +1,5 @@
 /// <reference path="../../../globals.d.ts" />
 /// <reference path="./datasource.d.ts" />
-/// <reference path="./datasource.d.ts" />
 
 declare module goog.ds {
 

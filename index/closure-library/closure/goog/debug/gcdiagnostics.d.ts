@@ -1,4 +1,5 @@
 /// <reference path="../../../globals.d.ts" />
+/// <reference path="./debug.d.ts" />
 
 declare module goog.debug {
 

@@ -1,6 +1,5 @@
 /// <reference path="../../../globals.d.ts" />
 /// <reference path="./performancetimer.d.ts" />
-/// <reference path="./performancetimer.d.ts" />
 
 declare module goog.testing {
 

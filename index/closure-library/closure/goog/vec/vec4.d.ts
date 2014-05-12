@@ -1,9 +1,5 @@
 /// <reference path="../../../globals.d.ts" />
 /// <reference path="./vec.d.ts" />
-/// <reference path="./vec.d.ts" />
-/// <reference path="./vec.d.ts" />
-/// <reference path="./vec.d.ts" />
-/// <reference path="./vec.d.ts" />
 
 declare module goog.vec.Vec4 {
 

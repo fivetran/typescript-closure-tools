@@ -1,6 +1,5 @@
 /// <reference path="../../../globals.d.ts" />
 /// <reference path="./listenable.d.ts" />
-/// <reference path="./listenable.d.ts" />
 /// <reference path="./eventid.d.ts" />
 /// <reference path="./eventwrapper.d.ts" />
 /// <reference path="./listener.d.ts" />

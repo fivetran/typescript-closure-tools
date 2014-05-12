@@ -1,6 +1,5 @@
 /// <reference path="../../../globals.d.ts" />
 /// <reference path="./mock.d.ts" />
-/// <reference path="./mock.d.ts" />
 
 declare module goog.testing {
 

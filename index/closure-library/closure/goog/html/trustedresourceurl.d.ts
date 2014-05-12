@@ -1,7 +1,6 @@
 /// <reference path="../../../globals.d.ts" />
 /// <reference path="../i18n/bidi.d.ts" />
 /// <reference path="../string/typedstring.d.ts" />
-/// <reference path="../i18n/bidi.d.ts" />
 /// <reference path="../string/const.d.ts" />
 
 declare module goog.html {
