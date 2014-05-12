@@ -142,24 +142,9 @@ export function unload(t: doctrine.AnyType): doctrine.AnyType[] {
         case 'NullLiteral':
         case 'UndefinedLiteral':
         case 'VoidLiteral':
+        case 'TypeApplication': // T<A>|T<B> can be unloaded, but not T<A|B>
             return [t];
         // Compound types
-        case 'TypeApplication':
-            var expression = unload(t.expression);
-            var applications = outer(t.applications.map(unload));
-            var acc = [];
-
-            expression.forEach(e => {
-                applications.forEach(a => {
-                    acc.push({
-                        type: t.type,
-                        expression: e,
-                        applications: a
-                    });
-                });
-            });
-
-            return acc;
         case 'OptionalType':
         case 'NullableType':
         case 'NonNullableType':

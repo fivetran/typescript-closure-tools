@@ -100,5 +100,15 @@ describe('disunion', () => {
             };
             expect(disunion.unload(unionFunction)).toEqual([aFunction, bFunction]);
         });
+
+        it('should not unload a generic', () => {
+            var genericUnion = <doctrine.AnyType> {
+                type: 'TypeApplication',
+                expression: a,
+                applications: [union]
+            };
+
+            expect(disunion.unload(genericUnion)).toEqual([genericUnion]);
+        });
     });
 });
