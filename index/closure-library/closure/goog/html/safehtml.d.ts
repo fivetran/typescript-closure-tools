@@ -13,63 +13,63 @@ declare module goog.html {
         class __Class implements goog.i18n.bidi.DirectionalString, goog.string.TypedString {
     
             /**
-            * A string that is safe to use in HTML context in DOM APIs and HTML documents.
-            *
-            * A SafeHtml is a string-like object that carries the security type contract
-            * that its value as a string will not cause untrusted script execution when
-            * evaluated as HTML in a browser.
-            *
-            * Values of this type are guaranteed to be safe to use in HTML contexts,
-            * such as, assignment to the innerHTML DOM property, or interpolation into
-            * a HTML template in HTML PC_DATA context, in the sense that the use will not
-            * result in a Cross-Site-Scripting vulnerability.
-            *
-            * Instances of this type must be created via the factory methods
-            * ({@code goog.html.SafeHtml.from}, {@code goog.html.SafeHtml.htmlEscape}), etc
-            * and not by invoking its constructor.  The constructor intentionally takes no
-            * parameters and the type is immutable; hence only a default instance
-            * corresponding to the empty string can be obtained via constructor invocation.
-            *
-            * @see goog.html.SafeHtml#from
-            * @see goog.html.SafeHtml#htmlEscape
-            * @constructor
-            * @final
-            * @struct
-            * @implements {goog.i18n.bidi.DirectionalString}
-            * @implements {goog.string.TypedString}
-            */
+             * A string that is safe to use in HTML context in DOM APIs and HTML documents.
+             *
+             * A SafeHtml is a string-like object that carries the security type contract
+             * that its value as a string will not cause untrusted script execution when
+             * evaluated as HTML in a browser.
+             *
+             * Values of this type are guaranteed to be safe to use in HTML contexts,
+             * such as, assignment to the innerHTML DOM property, or interpolation into
+             * a HTML template in HTML PC_DATA context, in the sense that the use will not
+             * result in a Cross-Site-Scripting vulnerability.
+             *
+             * Instances of this type must be created via the factory methods
+             * ({@code goog.html.SafeHtml.from}, {@code goog.html.SafeHtml.htmlEscape}), etc
+             * and not by invoking its constructor.  The constructor intentionally takes no
+             * parameters and the type is immutable; hence only a default instance
+             * corresponding to the empty string can be obtained via constructor invocation.
+             *
+             * @see goog.html.SafeHtml#from
+             * @see goog.html.SafeHtml#htmlEscape
+             * @constructor
+             * @final
+             * @struct
+             * @implements {goog.i18n.bidi.DirectionalString}
+             * @implements {goog.string.TypedString}
+             */
             constructor();
     
             /**
-            * Interface marker of the DirectionalString interface.
-            *
-            * This property can be used to determine at runtime whether or not an object
-            * implements this interface.  All implementations of this interface set this
-            * property to {@code true}.
-            * @type {boolean}
-            */
+             * Interface marker of the DirectionalString interface.
+             *
+             * This property can be used to determine at runtime whether or not an object
+             * implements this interface.  All implementations of this interface set this
+             * property to {@code true}.
+             * @type {boolean}
+             */
             implementsGoogI18nBidiDirectionalString: boolean;
     
             /**
-            * Retrieves this object's known direction (if any).
-            * @return {?goog.i18n.bidi.Dir} The known direction. Null if unknown.
-            */
+             * Retrieves this object's known direction (if any).
+             * @return {?goog.i18n.bidi.Dir} The known direction. Null if unknown.
+             */
             getDirection(): goog.i18n.bidi.Dir;
     
             /**
-            * Interface marker of the TypedString interface.
-            *
-            * This property can be used to determine at runtime whether or not an object
-            * implements this interface.  All implementations of this interface set this
-            * property to {@code true}.
-            * @type {boolean}
-            */
+             * Interface marker of the TypedString interface.
+             *
+             * This property can be used to determine at runtime whether or not an object
+             * implements this interface.  All implementations of this interface set this
+             * property to {@code true}.
+             * @type {boolean}
+             */
             implementsGoogStringTypedString: boolean;
     
             /**
-            * Retrieves this wrapped string's value.
-            * @return {!string} The wrapped string's value.
-            */
+             * Retrieves this wrapped string's value.
+             * @return {!string} The wrapped string's value.
+             */
             getTypedStringValue(): string;
         }
     }

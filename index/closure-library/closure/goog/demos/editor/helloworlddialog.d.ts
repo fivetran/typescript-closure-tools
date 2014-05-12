@@ -11,13 +11,13 @@ declare module goog.demos.editor {
         class __Class extends goog.ui.editor.AbstractDialog.__Class {
     
             /**
-            * Creates a dialog to let the user enter a customized hello world message.
-            * @param {goog.dom.DomHelper} domHelper DomHelper to be used to create the
-            * dialog's dom structure.
-            * @constructor
-            * @extends {goog.ui.editor.AbstractDialog}
-            * @final
-            */
+             * Creates a dialog to let the user enter a customized hello world message.
+             * @param {goog.dom.DomHelper} domHelper DomHelper to be used to create the
+             * dialog's dom structure.
+             * @constructor
+             * @extends {goog.ui.editor.AbstractDialog}
+             * @final
+             */
             constructor(domHelper: goog.dom.DomHelper);
         }
     }
@@ -31,18 +31,18 @@ declare module goog.demos.editor.HelloWorldDialog {
         class __Class extends goog.events.Event.__Class {
     
             /**
-            * OK event object for the hello world dialog.
-            * @param {string} message Customized hello world message chosen by the user.
-            * @constructor
-            * @extends {goog.events.Event}
-            * @final
-            */
+             * OK event object for the hello world dialog.
+             * @param {string} message Customized hello world message chosen by the user.
+             * @constructor
+             * @extends {goog.events.Event}
+             * @final
+             */
             constructor(message: string);
     
             /**
-            * Customized hello world message chosen by the user.
-            * @type {string}
-            */
+             * Customized hello world message chosen by the user.
+             * @type {string}
+             */
             message: string;
         }
     }

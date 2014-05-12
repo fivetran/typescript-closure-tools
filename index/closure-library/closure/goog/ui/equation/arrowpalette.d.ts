@@ -10,13 +10,13 @@ declare module goog.ui.equation {
         class __Class extends goog.ui.equation.Palette.__Class {
     
             /**
-            * Constructs a new arrows palette.
-            * @param {goog.ui.equation.PaletteManager} paletteManager The
-            *     manager of the palette.
-            * @extends {goog.ui.equation.Palette}
-            * @constructor
-            * @final
-            */
+             * Constructs a new arrows palette.
+             * @param {goog.ui.equation.PaletteManager} paletteManager The
+             *     manager of the palette.
+             * @extends {goog.ui.equation.Palette}
+             * @constructor
+             * @final
+             */
             constructor(paletteManager: goog.ui.equation.PaletteManager);
         }
     }

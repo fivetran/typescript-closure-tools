@@ -10,12 +10,12 @@ declare module goog.labs.testing {
         class __Class extends goog.debug.Error.__Class {
     
             /**
-            * Error thrown when a Matcher fails to match the input value.
-            * @param {string=} opt_message The error message.
-            * @constructor
-            * @extends {goog.debug.Error}
-            * @final
-            */
+             * Error thrown when a Matcher fails to match the input value.
+             * @param {string=} opt_message The error message.
+             * @constructor
+             * @extends {goog.debug.Error}
+             * @final
+             */
             constructor(opt_message?: string);
         }
     }

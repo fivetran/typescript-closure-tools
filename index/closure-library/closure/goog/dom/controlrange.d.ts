@@ -11,23 +11,23 @@ declare module goog.dom {
         class __Class extends goog.dom.AbstractMultiRange.__Class {
     
             /**
-            * Create a new control selection with no properties.  Do not use this
-            * constructor: use one of the goog.dom.Range.createFrom* methods instead.
-            * @constructor
-            * @extends {goog.dom.AbstractMultiRange}
-            * @final
-            */
+             * Create a new control selection with no properties.  Do not use this
+             * constructor: use one of the goog.dom.Range.createFrom* methods instead.
+             * @constructor
+             * @extends {goog.dom.AbstractMultiRange}
+             * @final
+             */
             constructor();
     
             /**
-            * @return {!Array.<Element>} Array of elements in the control range.
-            */
+             * @return {!Array.<Element>} Array of elements in the control range.
+             */
             getElements(): Element[];
     
             /**
-            * @return {!Array.<Element>} Array of elements comprising the control range,
-            *     sorted by document order.
-            */
+             * @return {!Array.<Element>} Array of elements comprising the control range,
+             *     sorted by document order.
+             */
             getSortedElements(): Element[];
         }
     }
@@ -38,12 +38,12 @@ declare module goog.dom {
         class __Class extends goog.dom.SavedRange.__Class {
     
             /**
-            * A SavedRange implementation using DOM endpoints.
-            * @param {goog.dom.ControlRange} range The range to save.
-            * @constructor
-            * @extends {goog.dom.SavedRange}
-            * @private
-            */
+             * A SavedRange implementation using DOM endpoints.
+             * @param {goog.dom.ControlRange} range The range to save.
+             * @constructor
+             * @extends {goog.dom.SavedRange}
+             * @private
+             */
             constructor(range: goog.dom.ControlRange);
         }
     }
@@ -54,14 +54,14 @@ declare module goog.dom {
         class __Class extends goog.dom.RangeIterator.__Class {
     
             /**
-            * Subclass of goog.dom.TagIterator that iterates over a DOM range.  It
-            * adds functions to determine the portion of each text node that is selected.
-            *
-            * @param {goog.dom.ControlRange?} range The range to traverse.
-            * @constructor
-            * @extends {goog.dom.RangeIterator}
-            * @final
-            */
+             * Subclass of goog.dom.TagIterator that iterates over a DOM range.  It
+             * adds functions to determine the portion of each text node that is selected.
+             *
+             * @param {goog.dom.ControlRange?} range The range to traverse.
+             * @constructor
+             * @extends {goog.dom.RangeIterator}
+             * @final
+             */
             constructor(range: goog.dom.ControlRange);
         }
     }

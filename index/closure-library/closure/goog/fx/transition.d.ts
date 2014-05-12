@@ -5,13 +5,13 @@ declare module goog.fx {
     interface Transition {
     
         /**
-         * Plays the transition.
-         */
+          * Plays the transition.
+          */
         play: any /*missing*/;
     
         /**
-         * Stops the transition.
-         */
+          * Stops the transition.
+          */
         stop: any /*missing*/;
     }
 }

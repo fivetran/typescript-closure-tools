@@ -9,22 +9,22 @@ declare module goog.storage.mechanism {
         class __Class extends goog.storage.mechanism.IterableMechanism.__Class {
     
             /**
-            * Provides a storage mechanism using IE userData.
-            *
-            * @param {string} storageKey The key (store name) to store the data under.
-            * @param {string=} opt_storageNodeId The ID of the associated HTML element,
-            *     one will be created if not provided.
-            * @constructor
-            * @extends {goog.storage.mechanism.IterableMechanism}
-            * @final
-            */
+             * Provides a storage mechanism using IE userData.
+             *
+             * @param {string} storageKey The key (store name) to store the data under.
+             * @param {string=} opt_storageNodeId The ID of the associated HTML element,
+             *     one will be created if not provided.
+             * @constructor
+             * @extends {goog.storage.mechanism.IterableMechanism}
+             * @final
+             */
             constructor(storageKey: string, opt_storageNodeId?: string);
     
             /**
-            * Determines whether or not the mechanism is available.
-            *
-            * @return {boolean} True if the mechanism is available.
-            */
+             * Determines whether or not the mechanism is available.
+             *
+             * @return {boolean} True if the mechanism is available.
+             */
             isAvailable(): boolean;
         }
     }

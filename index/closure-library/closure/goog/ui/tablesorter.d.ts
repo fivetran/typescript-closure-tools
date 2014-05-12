@@ -10,73 +10,73 @@ declare module goog.ui {
         class __Class extends goog.ui.Component.__Class {
     
             /**
-            * A table sorter allows for sorting of a table by column.  This component can
-            * be used to decorate an already existing TABLE element with sorting
-            * features.
-            *
-            * The TABLE should use a THEAD containing TH elements for the table column
-            * headers.
-            *
-            * @param {goog.dom.DomHelper=} opt_domHelper Optional DOM helper, used for
-            *     document interaction.
-            * @constructor
-            * @extends {goog.ui.Component}
-            */
+             * A table sorter allows for sorting of a table by column.  This component can
+             * be used to decorate an already existing TABLE element with sorting
+             * features.
+             *
+             * The TABLE should use a THEAD containing TH elements for the table column
+             * headers.
+             *
+             * @param {goog.dom.DomHelper=} opt_domHelper Optional DOM helper, used for
+             *     document interaction.
+             * @constructor
+             * @extends {goog.ui.Component}
+             */
             constructor(opt_domHelper?: goog.dom.DomHelper);
     
             /**
-            * Sets the row index (in <thead>) to be used for sorting.
-            * By default, the first row (index 0) is used.
-            * Must be called before decorate() is called.
-            * @param {number} index The row index.
-            */
+             * Sets the row index (in <thead>) to be used for sorting.
+             * By default, the first row (index 0) is used.
+             * Must be called before decorate() is called.
+             * @param {number} index The row index.
+             */
             setSortableHeaderRowIndex(index: number): void;
     
             /**
-            * @return {number} The current sort column of the table, or -1 if none.
-            */
+             * @return {number} The current sort column of the table, or -1 if none.
+             */
             getSortColumn(): number;
     
             /**
-            * @return {boolean} Whether the last sort was in reverse.
-            */
+             * @return {boolean} Whether the last sort was in reverse.
+             */
             isSortReversed(): boolean;
     
             /**
-            * @return {function(*, *) : number} The default sort function to be used by
-            *     all columns.
-            */
+             * @return {function(*, *) : number} The default sort function to be used by
+             *     all columns.
+             */
             getDefaultSortFunction(): (_0: any, _1: any) => number;
     
             /**
-            * Sets the default sort function to be used by all columns.  If not set
-            * explicitly, this defaults to numeric sorting.
-            * @param {function(*, *) : number} sortFunction The new default sort function.
-            */
+             * Sets the default sort function to be used by all columns.  If not set
+             * explicitly, this defaults to numeric sorting.
+             * @param {function(*, *) : number} sortFunction The new default sort function.
+             */
             setDefaultSortFunction(sortFunction: (_0: any, _1: any) => number): void;
     
             /**
-            * Gets the sort function to be used by the given column.  Returns the default
-            * sort function if no sort function is explicitly set for this column.
-            * @param {number} column The column index.
-            * @return {function(*, *) : number} The sort function used by the column.
-            */
+             * Gets the sort function to be used by the given column.  Returns the default
+             * sort function if no sort function is explicitly set for this column.
+             * @param {number} column The column index.
+             * @return {function(*, *) : number} The sort function used by the column.
+             */
             getSortFunction(column: number): (_0: any, _1: any) => number;
     
             /**
-            * Set the sort function for the given column, overriding the default sort
-            * function.
-            * @param {number} column The column index.
-            * @param {function(*, *) : number} sortFunction The new sort function.
-            */
+             * Set the sort function for the given column, overriding the default sort
+             * function.
+             * @param {number} column The column index.
+             * @param {function(*, *) : number} sortFunction The new sort function.
+             */
             setSortFunction(column: number, sortFunction: (_0: any, _1: any) => number): void;
     
             /**
-            * Sort the table contents by the values in the given column.
-            * @param {number} column The column to sort by.
-            * @param {boolean=} opt_reverse Whether to sort in reverse.
-            * @return {boolean} Whether the sort was executed.
-            */
+             * Sort the table contents by the values in the given column.
+             * @param {number} column The column to sort by.
+             * @param {boolean=} opt_reverse Whether to sort in reverse.
+             * @return {boolean} Whether the sort was executed.
+             */
             sort(column: number, opt_reverse?: boolean): boolean;
         }
     }

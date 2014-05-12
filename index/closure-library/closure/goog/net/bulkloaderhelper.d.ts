@@ -10,44 +10,44 @@ declare module goog.net {
         class __Class extends goog.Disposable.__Class {
     
             /**
-            * Helper class used to load multiple URIs.
-            * @param {Array.<string|goog.Uri>} uris The URIs to load.
-            * @constructor
-            * @extends {goog.Disposable}
-            * @final
-            */
+             * Helper class used to load multiple URIs.
+             * @param {Array.<string|goog.Uri>} uris The URIs to load.
+             * @constructor
+             * @extends {goog.Disposable}
+             * @final
+             */
             constructor(uris: any /*string|goog.Uri*/[]);
     
             /**
-            * Gets the URI by id.
-            * @param {number} id The id.
-            * @return {string|goog.Uri} The URI specified by the id.
-            */
+             * Gets the URI by id.
+             * @param {number} id The id.
+             * @return {string|goog.Uri} The URI specified by the id.
+             */
             getUri(id: number): any /*string|goog.Uri*/;
     
             /**
-            * Gets the URIs.
-            * @return {Array.<string|goog.Uri>} The URIs.
-            */
+             * Gets the URIs.
+             * @return {Array.<string|goog.Uri>} The URIs.
+             */
             getUris(): any /*string|goog.Uri*/[];
     
             /**
-            * Gets the response texts.
-            * @return {Array.<string>} The response texts.
-            */
+             * Gets the response texts.
+             * @return {Array.<string>} The response texts.
+             */
             getResponseTexts(): string[];
     
             /**
-            * Sets the response text by id.
-            * @param {number} id The id.
-            * @param {string} responseText The response texts.
-            */
+             * Sets the response text by id.
+             * @param {number} id The id.
+             * @param {string} responseText The response texts.
+             */
             setResponseText(id: number, responseText: string): void;
     
             /**
-            * Determines if the load of the URIs is complete.
-            * @return {boolean} TRUE iff the load is complete.
-            */
+             * Determines if the load of the URIs is complete.
+             * @return {boolean} TRUE iff the load is complete.
+             */
             isLoadComplete(): boolean;
         }
     }

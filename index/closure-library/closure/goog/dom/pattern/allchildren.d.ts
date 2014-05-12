@@ -9,11 +9,11 @@ declare module goog.dom.pattern {
         class __Class extends goog.dom.pattern.AbstractPattern.__Class {
     
             /**
-            * Pattern object that matches any nodes at or below the current tree depth.
-            *
-            * @constructor
-            * @extends {goog.dom.pattern.AbstractPattern}
-            */
+             * Pattern object that matches any nodes at or below the current tree depth.
+             *
+             * @constructor
+             * @extends {goog.dom.pattern.AbstractPattern}
+             */
             constructor();
         }
     }

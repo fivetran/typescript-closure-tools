@@ -8,12 +8,12 @@ declare module goog.testing {
         class __Class extends _Error {
     
             /**
-            * @param {string} comment A summary for the exception.
-            * @param {?string=} opt_message A description of the exception.
-            * @constructor
-            * @extends {Error}
-            * @final
-            */
+             * @param {string} comment A summary for the exception.
+             * @param {?string=} opt_message A description of the exception.
+             * @constructor
+             * @extends {Error}
+             * @final
+             */
             constructor(comment: string, opt_message?: string);
         }
     }

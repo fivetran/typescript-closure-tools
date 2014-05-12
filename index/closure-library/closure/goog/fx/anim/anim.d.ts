@@ -5,10 +5,10 @@ declare module goog.fx.anim {
     interface Animated {
     
         /**
-         * Function called when a frame is requested for the animation.
-         *
-         * @param {number} now Current time in milliseconds.
-         */
+          * Function called when a frame is requested for the animation.
+          *
+          * @param {number} now Current time in milliseconds.
+          */
         onAnimationFrame(now: number): void;
     }
 

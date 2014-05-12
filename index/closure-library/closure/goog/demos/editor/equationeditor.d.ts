@@ -8,15 +8,15 @@ declare module goog.demos.editor {
         class __Class {
     
             /**
-            * @constructor
-            * @final
-            */
+             * @constructor
+             * @final
+             */
             constructor();
     
             /**
-            * Creates a new editor and opens the dialog.
-            * @param {string} initialEquation The initial equation value to use.
-            */
+             * Creates a new editor and opens the dialog.
+             * @param {string} initialEquation The initial equation value to use.
+             */
             openEditor(initialEquation: string): void;
         }
     }

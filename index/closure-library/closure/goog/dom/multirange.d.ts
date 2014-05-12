@@ -12,18 +12,18 @@ declare module goog.dom {
         class __Class extends goog.dom.AbstractMultiRange.__Class {
     
             /**
-            * Creates a new multi part range with no properties.  Do not use this
-            * constructor: use one of the goog.dom.Range.createFrom* methods instead.
-            * @constructor
-            * @extends {goog.dom.AbstractMultiRange}
-            * @final
-            */
+             * Creates a new multi part range with no properties.  Do not use this
+             * constructor: use one of the goog.dom.Range.createFrom* methods instead.
+             * @constructor
+             * @extends {goog.dom.AbstractMultiRange}
+             * @final
+             */
             constructor();
     
             /**
-            * @return {!Array.<goog.dom.TextRange>} An array of sub-ranges, sorted by start
-            *     point.
-            */
+             * @return {!Array.<goog.dom.TextRange>} An array of sub-ranges, sorted by start
+             *     point.
+             */
             getSortedRanges(): goog.dom.TextRange[];
         }
     }
@@ -34,12 +34,12 @@ declare module goog.dom {
         class __Class extends goog.dom.SavedRange.__Class {
     
             /**
-            * A SavedRange implementation using DOM endpoints.
-            * @param {goog.dom.MultiRange} range The range to save.
-            * @constructor
-            * @extends {goog.dom.SavedRange}
-            * @private
-            */
+             * A SavedRange implementation using DOM endpoints.
+             * @param {goog.dom.MultiRange} range The range to save.
+             * @constructor
+             * @extends {goog.dom.SavedRange}
+             * @private
+             */
             constructor(range: goog.dom.MultiRange);
         }
     }
@@ -50,14 +50,14 @@ declare module goog.dom {
         class __Class extends goog.dom.RangeIterator.__Class {
     
             /**
-            * Subclass of goog.dom.TagIterator that iterates over a DOM range.  It
-            * adds functions to determine the portion of each text node that is selected.
-            *
-            * @param {goog.dom.MultiRange} range The range to traverse.
-            * @constructor
-            * @extends {goog.dom.RangeIterator}
-            * @final
-            */
+             * Subclass of goog.dom.TagIterator that iterates over a DOM range.  It
+             * adds functions to determine the portion of each text node that is selected.
+             *
+             * @param {goog.dom.MultiRange} range The range to traverse.
+             * @constructor
+             * @extends {goog.dom.RangeIterator}
+             * @final
+             */
             constructor(range: goog.dom.MultiRange);
         }
     }

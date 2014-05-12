@@ -9,13 +9,13 @@ declare module goog.ui.style.app {
         class __Class extends goog.ui.style.app.ButtonRenderer.__Class {
     
             /**
-            * Custom renderer for {@link goog.ui.Button}s. This renderer supports the
-            * "primary action" style for buttons.
-            *
-            * @constructor
-            * @extends {goog.ui.style.app.ButtonRenderer}
-            * @final
-            */
+             * Custom renderer for {@link goog.ui.Button}s. This renderer supports the
+             * "primary action" style for buttons.
+             *
+             * @constructor
+             * @extends {goog.ui.style.app.ButtonRenderer}
+             * @final
+             */
             constructor();
         }
     }

@@ -9,10 +9,10 @@ declare module goog.editor.plugins {
         class __Class extends goog.editor.Plugin.__Class {
     
             /**
-            * Functions to style text (e.g. underline, make bold, etc.)
-            * @constructor
-            * @extends {goog.editor.Plugin}
-            */
+             * Functions to style text (e.g. underline, make bold, etc.)
+             * @constructor
+             * @extends {goog.editor.Plugin}
+             */
             constructor();
         }
     }

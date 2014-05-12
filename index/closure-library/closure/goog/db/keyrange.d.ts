@@ -8,22 +8,22 @@ declare module goog.db {
         class __Class {
     
             /**
-            * Creates a new IDBKeyRange wrapper object. Should not be created directly,
-            * instead use one of the static factory methods. For example:
-            * @see goog.db.KeyRange.bound
-            * @see goog.db.KeyRange.lowerBound
-            *
-            * @param {!IDBKeyRange} range Underlying IDBKeyRange object.
-            * @constructor
-            * @final
-            */
+             * Creates a new IDBKeyRange wrapper object. Should not be created directly,
+             * instead use one of the static factory methods. For example:
+             * @see goog.db.KeyRange.bound
+             * @see goog.db.KeyRange.lowerBound
+             *
+             * @param {!IDBKeyRange} range Underlying IDBKeyRange object.
+             * @constructor
+             * @final
+             */
             constructor(range: IDBKeyRange);
     
             /**
-            * Returns underlying key range object. This is used in ObjectStore's openCursor
-            * and count methods.
-            * @return {!IDBKeyRange}
-            */
+             * Returns underlying key range object. This is used in ObjectStore's openCursor
+             * and count methods.
+             * @return {!IDBKeyRange}
+             */
             range(): IDBKeyRange;
         }
     }

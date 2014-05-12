@@ -9,19 +9,19 @@ declare module goog.ui.editor {
         class __Class extends goog.events.Event.__Class {
     
             /**
-            * OK event object for the equation editor dialog.
-            * @param {string} equationHtml html containing the equation to put in the
-            *     editable field.
-            * @constructor
-            * @extends {goog.events.Event}
-            * @final
-            */
+             * OK event object for the equation editor dialog.
+             * @param {string} equationHtml html containing the equation to put in the
+             *     editable field.
+             * @constructor
+             * @extends {goog.events.Event}
+             * @final
+             */
             constructor(equationHtml: string);
     
             /**
-            * HTML containing the equation to put in the editable field.
-            * @type {string}
-            */
+             * HTML containing the equation to put in the editable field.
+             * @type {string}
+             */
             equationHtml: string;
         }
     }

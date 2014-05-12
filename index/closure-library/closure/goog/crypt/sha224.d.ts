@@ -9,13 +9,13 @@ declare module goog.crypt {
         class __Class extends goog.crypt.Sha2.__Class {
     
             /**
-            * SHA-224 cryptographic hash constructor.
-            *
-            * @constructor
-            * @extends {goog.crypt.Sha2}
-            * @final
-            * @struct
-            */
+             * SHA-224 cryptographic hash constructor.
+             *
+             * @constructor
+             * @extends {goog.crypt.Sha2}
+             * @final
+             * @struct
+             */
             constructor();
         }
     }

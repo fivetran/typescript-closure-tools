@@ -9,78 +9,78 @@ declare module goog.editor {
         class __Class {
     
             /**
-            * Wrap an editable link.
-            * @param {HTMLAnchorElement} anchor The anchor element.
-            * @param {boolean} isNew Whether this is a new link.
-            * @constructor
-            * @final
-            */
+             * Wrap an editable link.
+             * @param {HTMLAnchorElement} anchor The anchor element.
+             * @param {boolean} isNew Whether this is a new link.
+             * @constructor
+             * @final
+             */
             constructor(anchor: HTMLAnchorElement, isNew: boolean);
     
             /**
-            * @return {HTMLAnchorElement} The anchor element.
-            */
+             * @return {HTMLAnchorElement} The anchor element.
+             */
             getAnchor(): HTMLAnchorElement;
     
             /**
-            * @return {!Array.<HTMLAnchorElement>} The extra anchor elements, if any,
-            *     created by the browser from a selection.
-            */
+             * @return {!Array.<HTMLAnchorElement>} The extra anchor elements, if any,
+             *     created by the browser from a selection.
+             */
             getExtraAnchors(): HTMLAnchorElement[];
     
             /**
-            * @return {string} The inner text for the anchor.
-            */
+             * @return {string} The inner text for the anchor.
+             */
             getCurrentText(): string;
     
             /**
-            * @return {boolean} Whether the link is new.
-            */
+             * @return {boolean} Whether the link is new.
+             */
             isNew(): boolean;
     
             /**
-            * Set the url without affecting the isNew() status of the link.
-            * @param {string} url A URL.
-            */
+             * Set the url without affecting the isNew() status of the link.
+             * @param {string} url A URL.
+             */
             initializeUrl(url: string): void;
     
             /**
-            * Removes the link, leaving its contents in the document.  Note that this
-            * object will no longer be usable/useful after this call.
-            */
+             * Removes the link, leaving its contents in the document.  Note that this
+             * object will no longer be usable/useful after this call.
+             */
             removeLink(): void;
     
             /**
-            * Change the link.
-            * @param {string} newText New text for the link. If the link contains all its
-            *     text in one descendent, newText will only replace the text in that
-            *     one node. Otherwise, we'll change the innerHTML of the whole
-            *     link to newText.
-            * @param {string} newUrl A new URL.
-            */
+             * Change the link.
+             * @param {string} newText New text for the link. If the link contains all its
+             *     text in one descendent, newText will only replace the text in that
+             *     one node. Otherwise, we'll change the innerHTML of the whole
+             *     link to newText.
+             * @param {string} newUrl A new URL.
+             */
             setTextAndUrl(newText: string, newUrl: string): void;
     
             /**
-            * Places the cursor to the right of the anchor.
-            * Note that this is different from goog.editor.range's placeCursorNextTo
-            * in that it specifically handles the placement of a cursor in browsers
-            * that trap you in links, by adding a space when necessary and placing the
-            * cursor after that space.
-            */
+             * Places the cursor to the right of the anchor.
+             * Note that this is different from goog.editor.range's placeCursorNextTo
+             * in that it specifically handles the placement of a cursor in browsers
+             * that trap you in links, by adding a space when necessary and placing the
+             * cursor after that space.
+             */
             placeCursorRightOf(): void;
     
             /**
-            * @return {string?} The modified string for the link if the link
-            *     text appears to be a valid link. Returns null if this is not
-            *     a valid link address.
-            */
+             * @return {string?} The modified string for the link if the link
+             *     text appears to be a valid link. Returns null if this is not
+             *     a valid link address.
+             */
             getValidLinkFromText(): string;
     
             /**
-            * After link creation, finish creating the link depending on the type
-            * of link being created.
-            * @param {goog.editor.Field} field The field where this link is being created.
-            */
+             * After link creation, finish creating the link depending on the type
+             * of link being created.
+             * @param {goog.editor.Field} field The field where this link is being created.
+             */
             finishLinkCreation(field: goog.editor.Field): void;
         }
     }

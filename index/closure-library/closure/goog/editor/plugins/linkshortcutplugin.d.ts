@@ -9,11 +9,11 @@ declare module goog.editor.plugins {
         class __Class extends goog.editor.Plugin.__Class {
     
             /**
-            * Plugin to add a keyboard shortcut for the link command
-            * @constructor
-            * @extends {goog.editor.Plugin}
-            * @final
-            */
+             * Plugin to add a keyboard shortcut for the link command
+             * @constructor
+             * @extends {goog.editor.Plugin}
+             * @final
+             */
             constructor();
         }
     }

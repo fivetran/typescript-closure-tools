@@ -9,16 +9,16 @@ declare module goog.fs {
         class __Class extends goog.debug.Error.__Class {
     
             /**
-            * A filesystem error. Since the filesystem API is asynchronous, stack traces
-            * are less useful for identifying where errors come from, so this includes a
-            * large amount of metadata in the message.
-            *
-            * @param {!DOMError} error
-            * @param {string} action The action being undertaken when the error was raised.
-            * @constructor
-            * @extends {goog.debug.Error}
-            * @final
-            */
+             * A filesystem error. Since the filesystem API is asynchronous, stack traces
+             * are less useful for identifying where errors come from, so this includes a
+             * large amount of metadata in the message.
+             *
+             * @param {!DOMError} error
+             * @param {string} action The action being undertaken when the error was raised.
+             * @constructor
+             * @extends {goog.debug.Error}
+             * @final
+             */
             constructor(error: DOMError, action: string);
         }
     }

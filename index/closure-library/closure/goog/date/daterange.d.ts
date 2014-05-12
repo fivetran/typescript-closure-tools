@@ -10,35 +10,35 @@ declare module goog.date {
         class __Class {
     
             /**
-            * Constructs a date range.
-            * @constructor
-            * @param {goog.date.Date} startDate The first date in the range.
-            * @param {goog.date.Date} endDate The last date in the range.
-            * @final
-            */
+             * Constructs a date range.
+             * @constructor
+             * @param {goog.date.Date} startDate The first date in the range.
+             * @param {goog.date.Date} endDate The last date in the range.
+             * @final
+             */
             constructor(startDate: goog.date.Date, endDate: goog.date.Date);
     
             /**
-            * @return {goog.date.Date} The first date in the range.
-            */
+             * @return {goog.date.Date} The first date in the range.
+             */
             getStartDate(): goog.date.Date;
     
             /**
-            * @return {goog.date.Date} The last date in the range.
-            */
+             * @return {goog.date.Date} The last date in the range.
+             */
             getEndDate(): goog.date.Date;
     
             /**
-            * Tests if a date falls within this range.
-            *
-            * @param {goog.date.Date} date The date to test.
-            * @return {boolean} Whether the date is in the range.
-            */
+             * Tests if a date falls within this range.
+             *
+             * @param {goog.date.Date} date The date to test.
+             * @return {boolean} Whether the date is in the range.
+             */
             contains(date: goog.date.Date): boolean;
     
             /**
-            * @return {!goog.iter.Iterator} An iterator over the date range.
-            */
+             * @return {!goog.iter.Iterator} An iterator over the date range.
+             */
             iterator(): goog.iter.Iterator<any>;
         }
     }
@@ -52,12 +52,12 @@ declare module goog.date.DateRange {
         class __Class extends goog.iter.Iterator.__Class<any> {
     
             /**
-            * Creates an iterator over the dates in a {@link goog.date.DateRange}.
-            * @constructor
-            * @extends {goog.iter.Iterator}
-            * @param {goog.date.DateRange} dateRange The date range to iterate.
-            * @final
-            */
+             * Creates an iterator over the dates in a {@link goog.date.DateRange}.
+             * @constructor
+             * @extends {goog.iter.Iterator}
+             * @param {goog.date.DateRange} dateRange The date range to iterate.
+             * @final
+             */
             constructor(dateRange: goog.date.DateRange);
         }
     }

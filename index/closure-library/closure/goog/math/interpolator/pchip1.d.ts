@@ -9,11 +9,11 @@ declare module goog.math.interpolator {
         class __Class extends goog.math.interpolator.Spline1.__Class {
     
             /**
-            * A one dimensional monotone cubic spline interpolator.
-            * @extends {goog.math.interpolator.Spline1}
-            * @constructor
-            * @final
-            */
+             * A one dimensional monotone cubic spline interpolator.
+             * @extends {goog.math.interpolator.Spline1}
+             * @constructor
+             * @final
+             */
             constructor();
         }
     }

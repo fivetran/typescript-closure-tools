@@ -9,11 +9,11 @@ declare module goog.proto {
         class __Class extends goog.json.Serializer.__Class {
     
             /**
-            * Object that can serialize objects or values to a protocol buffer string.
-            * @constructor
-            * @extends {goog.json.Serializer}
-            * @final
-            */
+             * Object that can serialize objects or values to a protocol buffer string.
+             * @constructor
+             * @extends {goog.json.Serializer}
+             * @final
+             */
             constructor();
         }
     }

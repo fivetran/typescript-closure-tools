@@ -9,11 +9,11 @@ declare module goog.editor.plugins {
         class __Class extends goog.editor.Plugin.__Class {
     
             /**
-            * First Strong plugin.
-            * @constructor
-            * @extends {goog.editor.Plugin}
-            * @final
-            */
+             * First Strong plugin.
+             * @constructor
+             * @extends {goog.editor.Plugin}
+             * @final
+             */
             constructor();
         }
     }

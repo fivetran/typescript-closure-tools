@@ -11,74 +11,74 @@ declare module goog.html {
         class __Class implements goog.i18n.bidi.DirectionalString, goog.string.TypedString {
     
             /**
-            * A string that is safe to use in URL context in DOM APIs and HTML documents.
-            *
-            * A SafeUrl is a string-like object that carries the security type contract
-            * that its value as a string will not cause untrusted script execution
-            * when evaluated as a hyperlink URL in a browser.
-            *
-            * Values of this type are guaranteed to be safe to use in URL/hyperlink
-            * contexts, such as, assignment to URL-valued DOM properties, or
-            * interpolation into a HTML template in URL context (e.g., inside a href
-            * attribute), in the sense that the use will not result in a
-            * Cross-Site-Scripting vulnerability.
-            *
-            * Note that, as documented in {@code goog.html.SafeUrl.unwrap}, this type's
-            * contract does not guarantee that instances are safe to interpolate into HTML
-            * without appropriate escaping.
-            *
-            * Note also that this type's contract does not imply any guarantees regarding
-            * the resource the URL refers to.  In particular, SafeUrls are <b>not</b>
-            * safe to use in a context where the referred-to resource is interpreted as
-            * trusted code, e.g., as the src of a script tag.
-            *
-            * Instances of this type must be created via the factory methods
-            * ({@code goog.html.SafeUrl.from}, {@code goog.html.SafeUrl.sanitize}), etc and
-            * not by invoking its constructor.  The constructor intentionally takes no
-            * parameters and the type is immutable; hence only a default instance
-            * corresponding to the empty string can be obtained via constructor invocation.
-            *
-            * @see goog.html.SafeUrl#fromConstant
-            * @see goog.html.SafeUrl#from
-            * @see goog.html.SafeUrl#sanitize
-            * @constructor
-            * @final
-            * @struct
-            * @implements {goog.i18n.bidi.DirectionalString}
-            * @implements {goog.string.TypedString}
-            */
+             * A string that is safe to use in URL context in DOM APIs and HTML documents.
+             *
+             * A SafeUrl is a string-like object that carries the security type contract
+             * that its value as a string will not cause untrusted script execution
+             * when evaluated as a hyperlink URL in a browser.
+             *
+             * Values of this type are guaranteed to be safe to use in URL/hyperlink
+             * contexts, such as, assignment to URL-valued DOM properties, or
+             * interpolation into a HTML template in URL context (e.g., inside a href
+             * attribute), in the sense that the use will not result in a
+             * Cross-Site-Scripting vulnerability.
+             *
+             * Note that, as documented in {@code goog.html.SafeUrl.unwrap}, this type's
+             * contract does not guarantee that instances are safe to interpolate into HTML
+             * without appropriate escaping.
+             *
+             * Note also that this type's contract does not imply any guarantees regarding
+             * the resource the URL refers to.  In particular, SafeUrls are <b>not</b>
+             * safe to use in a context where the referred-to resource is interpreted as
+             * trusted code, e.g., as the src of a script tag.
+             *
+             * Instances of this type must be created via the factory methods
+             * ({@code goog.html.SafeUrl.from}, {@code goog.html.SafeUrl.sanitize}), etc and
+             * not by invoking its constructor.  The constructor intentionally takes no
+             * parameters and the type is immutable; hence only a default instance
+             * corresponding to the empty string can be obtained via constructor invocation.
+             *
+             * @see goog.html.SafeUrl#fromConstant
+             * @see goog.html.SafeUrl#from
+             * @see goog.html.SafeUrl#sanitize
+             * @constructor
+             * @final
+             * @struct
+             * @implements {goog.i18n.bidi.DirectionalString}
+             * @implements {goog.string.TypedString}
+             */
             constructor();
     
             /**
-            * Interface marker of the DirectionalString interface.
-            *
-            * This property can be used to determine at runtime whether or not an object
-            * implements this interface.  All implementations of this interface set this
-            * property to {@code true}.
-            * @type {boolean}
-            */
+             * Interface marker of the DirectionalString interface.
+             *
+             * This property can be used to determine at runtime whether or not an object
+             * implements this interface.  All implementations of this interface set this
+             * property to {@code true}.
+             * @type {boolean}
+             */
             implementsGoogI18nBidiDirectionalString: boolean;
     
             /**
-            * Retrieves this object's known direction (if any).
-            * @return {?goog.i18n.bidi.Dir} The known direction. Null if unknown.
-            */
+             * Retrieves this object's known direction (if any).
+             * @return {?goog.i18n.bidi.Dir} The known direction. Null if unknown.
+             */
             getDirection(): goog.i18n.bidi.Dir;
     
             /**
-            * Interface marker of the TypedString interface.
-            *
-            * This property can be used to determine at runtime whether or not an object
-            * implements this interface.  All implementations of this interface set this
-            * property to {@code true}.
-            * @type {boolean}
-            */
+             * Interface marker of the TypedString interface.
+             *
+             * This property can be used to determine at runtime whether or not an object
+             * implements this interface.  All implementations of this interface set this
+             * property to {@code true}.
+             * @type {boolean}
+             */
             implementsGoogStringTypedString: boolean;
     
             /**
-            * Retrieves this wrapped string's value.
-            * @return {!string} The wrapped string's value.
-            */
+             * Retrieves this wrapped string's value.
+             * @return {!string} The wrapped string's value.
+             */
             getTypedStringValue(): string;
         }
     }

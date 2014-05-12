@@ -10,13 +10,13 @@ declare module goog.ui.equation {
         class __Class extends goog.ui.equation.Palette.__Class {
     
             /**
-            * Constructs a new menu palette.
-            * @param {goog.ui.equation.PaletteManager} paletteManager The
-            *     manager of the palette.
-            * @extends {goog.ui.equation.Palette}
-            * @constructor
-            * @final
-            */
+             * Constructs a new menu palette.
+             * @param {goog.ui.equation.PaletteManager} paletteManager The
+             *     manager of the palette.
+             * @extends {goog.ui.equation.Palette}
+             * @constructor
+             * @final
+             */
             constructor(paletteManager: goog.ui.equation.PaletteManager);
         }
     }
@@ -27,11 +27,11 @@ declare module goog.ui.equation {
         class __Class extends goog.ui.equation.PaletteRenderer.__Class {
     
             /**
-            * The renderer for menu palette.
-            * @extends {goog.ui.equation.PaletteRenderer}
-            * @constructor
-            * @final
-            */
+             * The renderer for menu palette.
+             * @extends {goog.ui.equation.PaletteRenderer}
+             * @constructor
+             * @final
+             */
             constructor();
         }
     }

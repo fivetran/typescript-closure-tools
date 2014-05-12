@@ -8,33 +8,33 @@ declare module goog.math {
         class __Class {
     
             /**
-            * A number range.
-            * @param {number} a One end of the range.
-            * @param {number} b The other end of the range.
-            * @constructor
-            */
+             * A number range.
+             * @param {number} a One end of the range.
+             * @param {number} b The other end of the range.
+             * @constructor
+             */
             constructor(a: number, b: number);
     
             /**
-            * @return {!goog.math.Range} A clone of this Range.
-            */
+             * @return {!goog.math.Range} A clone of this Range.
+             */
             clone(): goog.math.Range;
     
             /**
-            * @return {number} Length of the range.
-            */
+             * @return {number} Length of the range.
+             */
             getLength(): number;
     
             /**
-            * Extends this range to include the given point.
-            * @param {number} point
-            */
+             * Extends this range to include the given point.
+             * @param {number} point
+             */
             includePoint(point: number): void;
     
             /**
-            * Extends this range to include the given range.
-            * @param {!goog.math.Range} range
-            */
+             * Extends this range to include the given range.
+             * @param {!goog.math.Range} range
+             */
             includeRange(range: goog.math.Range): void;
         }
     }

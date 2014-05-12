@@ -9,11 +9,11 @@ declare module goog.editor.plugins {
         class __Class extends goog.editor.Plugin.__Class {
     
             /**
-            * Applies header styles to text.
-            * @constructor
-            * @extends {goog.editor.Plugin}
-            * @final
-            */
+             * Applies header styles to text.
+             * @constructor
+             * @extends {goog.editor.Plugin}
+             * @final
+             */
             constructor();
         }
     }

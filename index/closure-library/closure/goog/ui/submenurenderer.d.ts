@@ -9,18 +9,18 @@ declare module goog.ui {
         class __Class extends goog.ui.MenuItemRenderer.__Class {
     
             /**
-            * Default renderer for {@link goog.ui.SubMenu}s.  Each item has the following
-            * structure:
-            *    <div class="goog-submenu">
-            *      ...(menuitem content)...
-            *      <div class="goog-menu">
-            *        ... (submenu content) ...
-            *      </div>
-            *    </div>
-            * @constructor
-            * @extends {goog.ui.MenuItemRenderer}
-            * @final
-            */
+             * Default renderer for {@link goog.ui.SubMenu}s.  Each item has the following
+             * structure:
+             *    <div class="goog-submenu">
+             *      ...(menuitem content)...
+             *      <div class="goog-menu">
+             *        ... (submenu content) ...
+             *      </div>
+             *    </div>
+             * @constructor
+             * @extends {goog.ui.MenuItemRenderer}
+             * @final
+             */
             constructor();
         }
     }

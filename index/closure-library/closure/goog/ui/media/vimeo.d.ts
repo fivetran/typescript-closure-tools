@@ -11,26 +11,26 @@ declare module goog.ui.media {
         class __Class extends goog.ui.media.MediaRenderer.__Class {
     
             /**
-            * Subclasses a goog.ui.media.MediaRenderer to provide a Vimeo specific media
-            * renderer.
-            *
-            * This class knows how to parse Vimeo URLs, and render the DOM structure
-            * of vimeo video players. This class is meant to be used as a singleton static
-            * stateless class, that takes {@code goog.ui.media.Media} instances and renders
-            * it. It expects {@code goog.ui.media.Media.getModel} to return a well formed,
-            * previously constructed, vimeoId {@see goog.ui.media.Vimeo.parseUrl}, which is
-            * the data model this renderer will use to construct the DOM structure.
-            * {@see goog.ui.media.Vimeo.newControl} for a example of constructing a control
-            * with this renderer.
-            *
-            * This design is patterned after http://go/closure_control_subclassing
-            *
-            * It uses {@link goog.ui.media.FlashObject} to embed the flash object.
-            *
-            * @constructor
-            * @extends {goog.ui.media.MediaRenderer}
-            * @final
-            */
+             * Subclasses a goog.ui.media.MediaRenderer to provide a Vimeo specific media
+             * renderer.
+             *
+             * This class knows how to parse Vimeo URLs, and render the DOM structure
+             * of vimeo video players. This class is meant to be used as a singleton static
+             * stateless class, that takes {@code goog.ui.media.Media} instances and renders
+             * it. It expects {@code goog.ui.media.Media.getModel} to return a well formed,
+             * previously constructed, vimeoId {@see goog.ui.media.Vimeo.parseUrl}, which is
+             * the data model this renderer will use to construct the DOM structure.
+             * {@see goog.ui.media.Vimeo.newControl} for a example of constructing a control
+             * with this renderer.
+             *
+             * This design is patterned after http://go/closure_control_subclassing
+             *
+             * It uses {@link goog.ui.media.FlashObject} to embed the flash object.
+             *
+             * @constructor
+             * @extends {goog.ui.media.MediaRenderer}
+             * @final
+             */
             constructor();
         }
     }
@@ -41,24 +41,24 @@ declare module goog.ui.media {
         class __Class extends goog.ui.media.MediaModel.__Class {
     
             /**
-            * The {@code goog.ui.media.Vimeo} media data model. It stores a required
-            * {@code videoId} field, sets the vimeo URL, and allows a few optional
-            * parameters.
-            *
-            * @param {string} videoId The vimeo video id.
-            * @param {string=} opt_caption An optional caption of the vimeo video.
-            * @param {string=} opt_description An optional description of the vimeo video.
-            * @param {boolean=} opt_autoplay Whether to autoplay video.
-            * @constructor
-            * @extends {goog.ui.media.MediaModel}
-            * @final
-            */
+             * The {@code goog.ui.media.Vimeo} media data model. It stores a required
+             * {@code videoId} field, sets the vimeo URL, and allows a few optional
+             * parameters.
+             *
+             * @param {string} videoId The vimeo video id.
+             * @param {string=} opt_caption An optional caption of the vimeo video.
+             * @param {string=} opt_description An optional description of the vimeo video.
+             * @param {boolean=} opt_autoplay Whether to autoplay video.
+             * @constructor
+             * @extends {goog.ui.media.MediaModel}
+             * @final
+             */
             constructor(videoId: string, opt_caption?: string, opt_description?: string, opt_autoplay?: boolean);
     
             /**
-            * Gets the Vimeo video id.
-            * @return {string} The Vimeo video id.
-            */
+             * Gets the Vimeo video id.
+             * @return {string} The Vimeo video id.
+             */
             getVideoId(): string;
         }
     }

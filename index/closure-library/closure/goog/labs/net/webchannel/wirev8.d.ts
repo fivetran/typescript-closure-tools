@@ -8,11 +8,11 @@ declare module goog.labs.net.webChannel {
         class __Class {
     
             /**
-            * The v8 codec class.
-            *
-            * @constructor
-            * @struct
-            */
+             * The v8 codec class.
+             *
+             * @constructor
+             * @struct
+             */
             constructor();
         }
     }

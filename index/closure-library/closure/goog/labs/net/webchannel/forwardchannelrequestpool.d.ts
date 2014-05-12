@@ -8,13 +8,13 @@ declare module goog.labs.net.webChannel {
         class __Class {
     
             /**
-            * This class represents the state of all forward channel requests.
-            *
-            * @param {number=} opt_maxPoolSize The maximum pool size.
-            *
-            * @constructor
-            * @final
-            */
+             * This class represents the state of all forward channel requests.
+             *
+             * @param {number=} opt_maxPoolSize The maximum pool size.
+             *
+             * @constructor
+             * @final
+             */
             constructor(opt_maxPoolSize?: number);
         }
     }

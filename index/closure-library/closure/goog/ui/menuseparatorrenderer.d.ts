@@ -9,10 +9,10 @@ declare module goog.ui {
         class __Class extends goog.ui.ControlRenderer.__Class {
     
             /**
-            * Renderer for menu separators.
-            * @constructor
-            * @extends {goog.ui.ControlRenderer}
-            */
+             * Renderer for menu separators.
+             * @constructor
+             * @extends {goog.ui.ControlRenderer}
+             */
             constructor();
         }
     }

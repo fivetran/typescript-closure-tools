@@ -13,121 +13,121 @@ declare module goog.graphics {
         class __Class extends goog.graphics.AbstractGraphics.__Class {
     
             /**
-            * A Graphics implementation for drawing using VML.
-            * @param {string|number} width The (non-zero) width in pixels.  Strings
-            *     expressing percentages of parent with (e.g. '80%') are also accepted.
-            * @param {string|number} height The (non-zero) height in pixels.  Strings
-            *     expressing percentages of parent with (e.g. '80%') are also accepted.
-            * @param {?number=} opt_coordWidth The coordinate width - if
-            *     omitted or null, defaults to same as width.
-            * @param {?number=} opt_coordHeight The coordinate height - if
-            *     omitted or null, defaults to same as height.
-            * @param {goog.dom.DomHelper=} opt_domHelper The DOM helper object for the
-            *     document we want to render in.
-            * @constructor
-            * @extends {goog.graphics.AbstractGraphics}
-            * @deprecated goog.graphics is deprecated. It existed to abstract over browser
-            *     differences before the canvas tag was widely supported.  See
-            *     http://en.wikipedia.org/wiki/Canvas_element for details.
-            * @final
-            */
+             * A Graphics implementation for drawing using VML.
+             * @param {string|number} width The (non-zero) width in pixels.  Strings
+             *     expressing percentages of parent with (e.g. '80%') are also accepted.
+             * @param {string|number} height The (non-zero) height in pixels.  Strings
+             *     expressing percentages of parent with (e.g. '80%') are also accepted.
+             * @param {?number=} opt_coordWidth The coordinate width - if
+             *     omitted or null, defaults to same as width.
+             * @param {?number=} opt_coordHeight The coordinate height - if
+             *     omitted or null, defaults to same as height.
+             * @param {goog.dom.DomHelper=} opt_domHelper The DOM helper object for the
+             *     document we want to render in.
+             * @constructor
+             * @extends {goog.graphics.AbstractGraphics}
+             * @deprecated goog.graphics is deprecated. It existed to abstract over browser
+             *     differences before the canvas tag was widely supported.  See
+             *     http://en.wikipedia.org/wiki/Canvas_element for details.
+             * @final
+             */
             constructor(width: string, height: string, opt_coordWidth?: number, opt_coordHeight?: number, opt_domHelper?: goog.dom.DomHelper);
             /**
-            * A Graphics implementation for drawing using VML.
-            * @param {string|number} width The (non-zero) width in pixels.  Strings
-            *     expressing percentages of parent with (e.g. '80%') are also accepted.
-            * @param {string|number} height The (non-zero) height in pixels.  Strings
-            *     expressing percentages of parent with (e.g. '80%') are also accepted.
-            * @param {?number=} opt_coordWidth The coordinate width - if
-            *     omitted or null, defaults to same as width.
-            * @param {?number=} opt_coordHeight The coordinate height - if
-            *     omitted or null, defaults to same as height.
-            * @param {goog.dom.DomHelper=} opt_domHelper The DOM helper object for the
-            *     document we want to render in.
-            * @constructor
-            * @extends {goog.graphics.AbstractGraphics}
-            * @deprecated goog.graphics is deprecated. It existed to abstract over browser
-            *     differences before the canvas tag was widely supported.  See
-            *     http://en.wikipedia.org/wiki/Canvas_element for details.
-            * @final
-            */
+             * A Graphics implementation for drawing using VML.
+             * @param {string|number} width The (non-zero) width in pixels.  Strings
+             *     expressing percentages of parent with (e.g. '80%') are also accepted.
+             * @param {string|number} height The (non-zero) height in pixels.  Strings
+             *     expressing percentages of parent with (e.g. '80%') are also accepted.
+             * @param {?number=} opt_coordWidth The coordinate width - if
+             *     omitted or null, defaults to same as width.
+             * @param {?number=} opt_coordHeight The coordinate height - if
+             *     omitted or null, defaults to same as height.
+             * @param {goog.dom.DomHelper=} opt_domHelper The DOM helper object for the
+             *     document we want to render in.
+             * @constructor
+             * @extends {goog.graphics.AbstractGraphics}
+             * @deprecated goog.graphics is deprecated. It existed to abstract over browser
+             *     differences before the canvas tag was widely supported.  See
+             *     http://en.wikipedia.org/wiki/Canvas_element for details.
+             * @final
+             */
             constructor(width: string, height: number, opt_coordWidth?: number, opt_coordHeight?: number, opt_domHelper?: goog.dom.DomHelper);
             /**
-            * A Graphics implementation for drawing using VML.
-            * @param {string|number} width The (non-zero) width in pixels.  Strings
-            *     expressing percentages of parent with (e.g. '80%') are also accepted.
-            * @param {string|number} height The (non-zero) height in pixels.  Strings
-            *     expressing percentages of parent with (e.g. '80%') are also accepted.
-            * @param {?number=} opt_coordWidth The coordinate width - if
-            *     omitted or null, defaults to same as width.
-            * @param {?number=} opt_coordHeight The coordinate height - if
-            *     omitted or null, defaults to same as height.
-            * @param {goog.dom.DomHelper=} opt_domHelper The DOM helper object for the
-            *     document we want to render in.
-            * @constructor
-            * @extends {goog.graphics.AbstractGraphics}
-            * @deprecated goog.graphics is deprecated. It existed to abstract over browser
-            *     differences before the canvas tag was widely supported.  See
-            *     http://en.wikipedia.org/wiki/Canvas_element for details.
-            * @final
-            */
+             * A Graphics implementation for drawing using VML.
+             * @param {string|number} width The (non-zero) width in pixels.  Strings
+             *     expressing percentages of parent with (e.g. '80%') are also accepted.
+             * @param {string|number} height The (non-zero) height in pixels.  Strings
+             *     expressing percentages of parent with (e.g. '80%') are also accepted.
+             * @param {?number=} opt_coordWidth The coordinate width - if
+             *     omitted or null, defaults to same as width.
+             * @param {?number=} opt_coordHeight The coordinate height - if
+             *     omitted or null, defaults to same as height.
+             * @param {goog.dom.DomHelper=} opt_domHelper The DOM helper object for the
+             *     document we want to render in.
+             * @constructor
+             * @extends {goog.graphics.AbstractGraphics}
+             * @deprecated goog.graphics is deprecated. It existed to abstract over browser
+             *     differences before the canvas tag was widely supported.  See
+             *     http://en.wikipedia.org/wiki/Canvas_element for details.
+             * @final
+             */
             constructor(width: number, height: string, opt_coordWidth?: number, opt_coordHeight?: number, opt_domHelper?: goog.dom.DomHelper);
             /**
-            * A Graphics implementation for drawing using VML.
-            * @param {string|number} width The (non-zero) width in pixels.  Strings
-            *     expressing percentages of parent with (e.g. '80%') are also accepted.
-            * @param {string|number} height The (non-zero) height in pixels.  Strings
-            *     expressing percentages of parent with (e.g. '80%') are also accepted.
-            * @param {?number=} opt_coordWidth The coordinate width - if
-            *     omitted or null, defaults to same as width.
-            * @param {?number=} opt_coordHeight The coordinate height - if
-            *     omitted or null, defaults to same as height.
-            * @param {goog.dom.DomHelper=} opt_domHelper The DOM helper object for the
-            *     document we want to render in.
-            * @constructor
-            * @extends {goog.graphics.AbstractGraphics}
-            * @deprecated goog.graphics is deprecated. It existed to abstract over browser
-            *     differences before the canvas tag was widely supported.  See
-            *     http://en.wikipedia.org/wiki/Canvas_element for details.
-            * @final
-            */
+             * A Graphics implementation for drawing using VML.
+             * @param {string|number} width The (non-zero) width in pixels.  Strings
+             *     expressing percentages of parent with (e.g. '80%') are also accepted.
+             * @param {string|number} height The (non-zero) height in pixels.  Strings
+             *     expressing percentages of parent with (e.g. '80%') are also accepted.
+             * @param {?number=} opt_coordWidth The coordinate width - if
+             *     omitted or null, defaults to same as width.
+             * @param {?number=} opt_coordHeight The coordinate height - if
+             *     omitted or null, defaults to same as height.
+             * @param {goog.dom.DomHelper=} opt_domHelper The DOM helper object for the
+             *     document we want to render in.
+             * @constructor
+             * @extends {goog.graphics.AbstractGraphics}
+             * @deprecated goog.graphics is deprecated. It existed to abstract over browser
+             *     differences before the canvas tag was widely supported.  See
+             *     http://en.wikipedia.org/wiki/Canvas_element for details.
+             * @final
+             */
             constructor(width: number, height: number, opt_coordWidth?: number, opt_coordHeight?: number, opt_domHelper?: goog.dom.DomHelper);
     
             /**
-            * Creates a VML element. Used internally and by different VML classes.
-            * @param {string} tagName The type of element to create.
-            * @return {!Element} The created element.
-            */
+             * Creates a VML element. Used internally and by different VML classes.
+             * @param {string} tagName The type of element to create.
+             * @return {!Element} The created element.
+             */
             createVmlElement(tagName: string): Element;
     
             /**
-            * Returns the VML element with the given id that is a child of this graphics
-            * object.
-            * Should be considered package private, and not used externally.
-            * @param {string} id The element id to find.
-            * @return {Element} The element with the given id, or null if none is found.
-            */
+             * Returns the VML element with the given id that is a child of this graphics
+             * object.
+             * Should be considered package private, and not used externally.
+             * @param {string} id The element id to find.
+             * @return {Element} The element with the given id, or null if none is found.
+             */
             getVmlElement(id: string): Element;
     
             /**
-            * Removes the fill information from a dom element.
-            * @param {Element} element DOM element.
-            */
+             * Removes the fill information from a dom element.
+             * @param {Element} element DOM element.
+             */
             removeFill(element: Element): void;
     
             /**
-            * Draw an image.
-            *
-            * @param {number} x X coordinate (left).
-            * @param {number} y Y coordinate (top).
-            * @param {number} width Width of image.
-            * @param {number} height Height of image.
-            * @param {string} src Source of the image.
-            * @param {goog.graphics.GroupElement=} opt_group The group wrapper element
-            *     to append to. If not specified, appends to the main canvas.
-            *
-            * @return {!goog.graphics.ImageElement} The newly created element.
-            */
+             * Draw an image.
+             *
+             * @param {number} x X coordinate (left).
+             * @param {number} y Y coordinate (top).
+             * @param {number} width Width of image.
+             * @param {number} height Height of image.
+             * @param {string} src Source of the image.
+             * @param {goog.graphics.GroupElement=} opt_group The group wrapper element
+             *     to append to. If not specified, appends to the main canvas.
+             *
+             * @return {!goog.graphics.ImageElement} The newly created element.
+             */
             drawImage(x: number, y: number, width: number, height: number, src: string, opt_group?: goog.graphics.GroupElement): goog.graphics.ImageElement;
         }
     }

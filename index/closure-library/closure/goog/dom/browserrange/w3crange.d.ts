@@ -9,19 +9,19 @@ declare module goog.dom.browserrange {
         class __Class extends goog.dom.browserrange.AbstractRange.__Class {
     
             /**
-            * The constructor for W3C specific browser ranges.
-            * @param {Range} range The range object.
-            * @constructor
-            * @extends {goog.dom.browserrange.AbstractRange}
-            */
+             * The constructor for W3C specific browser ranges.
+             * @param {Range} range The range object.
+             * @constructor
+             * @extends {goog.dom.browserrange.AbstractRange}
+             */
             constructor(range: Range);
     
             /**
-            * Select this range.
-            * @param {Selection} selection Browser selection object.
-            * @param {*} reverse Whether to select this range in reverse.
-            * @protected
-            */
+             * Select this range.
+             * @param {Selection} selection Browser selection object.
+             * @param {*} reverse Whether to select this range in reverse.
+             * @protected
+             */
             selectInternal(selection: Selection, reverse: any): void;
         }
     }

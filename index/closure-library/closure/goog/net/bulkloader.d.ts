@@ -10,29 +10,29 @@ declare module goog.net {
         class __Class extends goog.events.EventTarget.__Class {
     
             /**
-            * Class used to load multiple URIs.
-            * @param {Array.<string|goog.Uri>} uris The URIs to load.
-            * @constructor
-            * @extends {goog.events.EventTarget}
-            * @final
-            */
+             * Class used to load multiple URIs.
+             * @param {Array.<string|goog.Uri>} uris The URIs to load.
+             * @constructor
+             * @extends {goog.events.EventTarget}
+             * @final
+             */
             constructor(uris: any /*string|goog.Uri*/[]);
     
             /**
-            * Gets the response texts, in order.
-            * @return {Array.<string>} The response texts.
-            */
+             * Gets the response texts, in order.
+             * @return {Array.<string>} The response texts.
+             */
             getResponseTexts(): string[];
     
             /**
-            * Gets the request Uris.
-            * @return {Array.<string>} The request URIs, in order.
-            */
+             * Gets the request Uris.
+             * @return {Array.<string>} The request URIs, in order.
+             */
             getRequestUris(): string[];
     
             /**
-            * Starts the process of loading the URIs.
-            */
+             * Starts the process of loading the URIs.
+             */
             load(): void;
         }
     }

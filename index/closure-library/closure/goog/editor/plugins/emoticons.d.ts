@@ -9,12 +9,12 @@ declare module goog.editor.plugins {
         class __Class extends goog.editor.Plugin.__Class {
     
             /**
-            * Plugin for generating emoticons.
-            *
-            * @constructor
-            * @extends {goog.editor.Plugin}
-            * @final
-            */
+             * Plugin for generating emoticons.
+             *
+             * @constructor
+             * @extends {goog.editor.Plugin}
+             * @final
+             */
             constructor();
         }
     }

@@ -8,12 +8,12 @@ declare module goog.labs.net.webChannel {
         class __Class {
     
             /**
-            * Logs and keeps a buffer of debugging info for the Channel.
-            *
-            * @constructor
-            * @struct
-            * @final
-            */
+             * Logs and keeps a buffer of debugging info for the Channel.
+             *
+             * @constructor
+             * @struct
+             * @final
+             */
             constructor();
         }
     }

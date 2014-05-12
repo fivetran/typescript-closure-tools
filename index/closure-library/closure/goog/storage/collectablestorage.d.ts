@@ -10,30 +10,30 @@ declare module goog.storage {
         class __Class extends goog.storage.ExpiringStorage.__Class {
     
             /**
-            * Provides a storage with expirning keys and a collection method.
-            *
-            * @param {!goog.storage.mechanism.IterableMechanism} mechanism The underlying
-            *     storage mechanism.
-            * @constructor
-            * @extends {goog.storage.ExpiringStorage}
-            */
+             * Provides a storage with expirning keys and a collection method.
+             *
+             * @param {!goog.storage.mechanism.IterableMechanism} mechanism The underlying
+             *     storage mechanism.
+             * @constructor
+             * @extends {goog.storage.ExpiringStorage}
+             */
             constructor(mechanism: goog.storage.mechanism.IterableMechanism);
     
             /**
-            * Cleans up the storage by removing expired keys.
-            *
-            * @param {Array.<string>} keys List of all keys.
-            * @param {boolean=} opt_strict Also remove invalid keys.
-            * @return {!Array.<string>} a list of expired keys.
-            * @protected
-            */
+             * Cleans up the storage by removing expired keys.
+             *
+             * @param {Array.<string>} keys List of all keys.
+             * @param {boolean=} opt_strict Also remove invalid keys.
+             * @return {!Array.<string>} a list of expired keys.
+             * @protected
+             */
             collectInternal(keys: string[], opt_strict?: boolean): string[];
     
             /**
-            * Cleans up the storage by removing expired keys.
-            *
-            * @param {boolean=} opt_strict Also remove invalid keys.
-            */
+             * Cleans up the storage by removing expired keys.
+             *
+             * @param {boolean=} opt_strict Also remove invalid keys.
+             */
             collect(opt_strict?: boolean): void;
         }
     }

@@ -10,23 +10,23 @@ declare module goog.dom {
         class __Class extends goog.events.EventTarget.__Class {
     
             /**
-            * This class can be used to monitor changes in font size.  Instances will
-            * dispatch a {@code goog.dom.FontSizeMonitor.EventType.CHANGE} event.
-            * Example usage:
-            * <pre>
-            * var fms = new goog.dom.FontSizeMonitor();
-            * goog.events.listen(fms, goog.dom.FontSizeMonitor.EventType.CHANGE,
-            *     function(e) {
-            *       alert('Font size was changed');
-            *     });
-            * </pre>
-            * @param {goog.dom.DomHelper=} opt_domHelper DOM helper object that is used to
-            *     determine where to insert the DOM nodes used to determine when the font
-            *     size changes.
-            * @constructor
-            * @extends {goog.events.EventTarget}
-            * @final
-            */
+             * This class can be used to monitor changes in font size.  Instances will
+             * dispatch a {@code goog.dom.FontSizeMonitor.EventType.CHANGE} event.
+             * Example usage:
+             * <pre>
+             * var fms = new goog.dom.FontSizeMonitor();
+             * goog.events.listen(fms, goog.dom.FontSizeMonitor.EventType.CHANGE,
+             *     function(e) {
+             *       alert('Font size was changed');
+             *     });
+             * </pre>
+             * @param {goog.dom.DomHelper=} opt_domHelper DOM helper object that is used to
+             *     determine where to insert the DOM nodes used to determine when the font
+             *     size changes.
+             * @constructor
+             * @extends {goog.events.EventTarget}
+             * @final
+             */
             constructor(opt_domHelper?: goog.dom.DomHelper);
         }
     }

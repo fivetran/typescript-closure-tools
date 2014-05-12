@@ -6,48 +6,48 @@ declare module goog.net {
     interface WebChannel extends EventTarget {
     
         /**
-         * Open the WebChannel against the URI specified in the constructor.
-         */
+          * Open the WebChannel against the URI specified in the constructor.
+          */
         open: any /*missing*/;
     
         /**
-         * Close the WebChannel.
-         */
+          * Close the WebChannel.
+          */
         close: any /*missing*/;
     
         /**
-         * Sends a message to the server that maintains the other end point of
-         * the WebChannel.
-         *
-         * @param {!goog.net.WebChannel.MessageData} message The message to send.
-         */
+          * Sends a message to the server that maintains the other end point of
+          * the WebChannel.
+          *
+          * @param {!goog.net.WebChannel.MessageData} message The message to send.
+          */
         send(message: ArrayBuffer): void;
         /**
-         * Sends a message to the server that maintains the other end point of
-         * the WebChannel.
-         *
-         * @param {!goog.net.WebChannel.MessageData} message The message to send.
-         */
+          * Sends a message to the server that maintains the other end point of
+          * the WebChannel.
+          *
+          * @param {!goog.net.WebChannel.MessageData} message The message to send.
+          */
         send(message: Blob): void;
         /**
-         * Sends a message to the server that maintains the other end point of
-         * the WebChannel.
-         *
-         * @param {!goog.net.WebChannel.MessageData} message The message to send.
-         */
+          * Sends a message to the server that maintains the other end point of
+          * the WebChannel.
+          *
+          * @param {!goog.net.WebChannel.MessageData} message The message to send.
+          */
         send(message: { [key: string]: string }): void;
         /**
-         * Sends a message to the server that maintains the other end point of
-         * the WebChannel.
-         *
-         * @param {!goog.net.WebChannel.MessageData} message The message to send.
-         */
+          * Sends a message to the server that maintains the other end point of
+          * the WebChannel.
+          *
+          * @param {!goog.net.WebChannel.MessageData} message The message to send.
+          */
         send(message: any[]): void;
     
         /**
-         * @return {!goog.net.WebChannel.RuntimeProperties} The runtime properties
-         * of the WebChannel instance.
-         */
+          * @return {!goog.net.WebChannel.RuntimeProperties} The runtime properties
+          * of the WebChannel instance.
+          */
         getRuntimeProperties(): goog.net.WebChannel.RuntimeProperties;
     }
 }
@@ -60,18 +60,18 @@ declare module goog.net.WebChannel {
         class __Class extends goog.events.Event.__Class {
     
             /**
-            * The event interface for the MESSAGE event.
-            *
-            * @constructor
-            * @extends {goog.events.Event}
-            */
+             * The event interface for the MESSAGE event.
+             *
+             * @constructor
+             * @extends {goog.events.Event}
+             */
             constructor();
     
             /**
-            * The content of the message received from the server.
-            *
-            * @type {!goog.net.WebChannel.MessageData}
-            */
+             * The content of the message received from the server.
+             *
+             * @type {!goog.net.WebChannel.MessageData}
+             */
             data: goog.net.WebChannel.MessageData;
         }
     }
@@ -82,18 +82,18 @@ declare module goog.net.WebChannel {
         class __Class extends goog.events.Event.__Class {
     
             /**
-            * The event interface for the ERROR event.
-            *
-            * @constructor
-            * @extends {goog.events.Event}
-            */
+             * The event interface for the ERROR event.
+             *
+             * @constructor
+             * @extends {goog.events.Event}
+             */
             constructor();
     
             /**
-            * The error status.
-            *
-            * @type {!goog.net.WebChannel.ErrorStatus}
-            */
+             * The error status.
+             *
+             * @type {!goog.net.WebChannel.ErrorStatus}
+             */
             status: goog.net.WebChannel.ErrorStatus;
         }
     }
@@ -101,42 +101,42 @@ declare module goog.net.WebChannel {
     interface RuntimeProperties {
     
         /**
-         * @return {number} The effective limit for the number of concurrent HTTP
-         * requests that are allowed to be made for sending messages from the client
-         * to the server. When SPDY is not enabled, this limit will be one.
-         */
+          * @return {number} The effective limit for the number of concurrent HTTP
+          * requests that are allowed to be made for sending messages from the client
+          * to the server. When SPDY is not enabled, this limit will be one.
+          */
         getConcurrentRequestLimit(): number;
     
         /**
-         * For applications that need support multiple channels (e.g. from
-         * different tabs) to the same origin, use this method to decide if SPDY is
-         * enabled and therefore it is safe to open multiple channels.
-         *
-         * If SPDY is disabled, the application may choose to limit the number of active
-         * channels to one or use other means such as sub-domains to work around
-         * the browser connection limit.
-         *
-         * @return {boolean} Whether SPDY is enabled for the origin against which
-         * the channel is created.
-         */
+          * For applications that need support multiple channels (e.g. from
+          * different tabs) to the same origin, use this method to decide if SPDY is
+          * enabled and therefore it is safe to open multiple channels.
+          *
+          * If SPDY is disabled, the application may choose to limit the number of active
+          * channels to one or use other means such as sub-domains to work around
+          * the browser connection limit.
+          *
+          * @return {boolean} Whether SPDY is enabled for the origin against which
+          * the channel is created.
+          */
         isSpdyEnabled(): boolean;
     
         /**
-         * This method may be used by the application to stop ack of received messages
-         * as a means of enabling or disabling flow-control on the server-side.
-         *
-         * @param {boolean} enabled If true, enable flow-control behavior on the
-         * server side. Setting it to false will cancel ay previous enabling action.
-         */
+          * This method may be used by the application to stop ack of received messages
+          * as a means of enabling or disabling flow-control on the server-side.
+          *
+          * @param {boolean} enabled If true, enable flow-control behavior on the
+          * server side. Setting it to false will cancel ay previous enabling action.
+          */
         setServerFlowControl(enabled: boolean): void;
     
         /**
-         * This method may be used by the application to throttle the rate of outgoing
-         * messages, as a means of sender initiated flow-control.
-         *
-         * @return {number} The total number of messages that have not received
-         * ack from the server and therefore remain in the buffer.
-         */
+          * This method may be used by the application to throttle the rate of outgoing
+          * messages, as a means of sender initiated flow-control.
+          *
+          * @return {number} The total number of messages that have not received
+          * ack from the server and therefore remain in the buffer.
+          */
         getNonAckedMessageCount(): number;
     }
 

@@ -9,13 +9,13 @@ declare module goog.ui {
         class __Class extends goog.ui.ColorMenuButtonRenderer.__Class {
     
             /**
-            * Renderer for {@link goog.ui.ColorButton}s.
-            * Uses {@link goog.ui.ColorMenuButton}s but disables the dropdown.
-            *
-            * @constructor
-            * @extends {goog.ui.ColorMenuButtonRenderer}
-            * @final
-            */
+             * Renderer for {@link goog.ui.ColorButton}s.
+             * Uses {@link goog.ui.ColorMenuButton}s but disables the dropdown.
+             *
+             * @constructor
+             * @extends {goog.ui.ColorMenuButtonRenderer}
+             * @final
+             */
             constructor();
         }
     }

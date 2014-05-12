@@ -11,61 +11,61 @@ declare module goog.html {
         class __Class implements goog.i18n.bidi.DirectionalString, goog.string.TypedString {
     
             /**
-            * A URL which is under application control and from which script, CSS, and
-            * other resources that represent executable code, can be fetched.
-            *
-            * Given that the URL can only be constructed from strings under application
-            * control and is used to load resources, bugs resulting in a malformed URL
-            * should not have a security impact and are likely to be easily detectable
-            * during testing. Given the wide number of non-RFC compliant URLs in use,
-            * stricter validation could prevent some applications from being able to use
-            * this type.
-            *
-            * Instances of this type must be created via the factory method,
-            * ({@code goog.html.TrustedResourceUrl.fromConstant}), and not by invoking its
-            * constructor. The constructor intentionally takes no parameters and the type
-            * is immutable; hence only a default instance corresponding to the empty
-            * string can be obtained via constructor invocation.
-            *
-            * @see goog.html.TrustedResourceUrl#fromConstant
-            * @constructor
-            * @final
-            * @struct
-            * @implements {goog.i18n.bidi.DirectionalString}
-            * @implements {goog.string.TypedString}
-            */
+             * A URL which is under application control and from which script, CSS, and
+             * other resources that represent executable code, can be fetched.
+             *
+             * Given that the URL can only be constructed from strings under application
+             * control and is used to load resources, bugs resulting in a malformed URL
+             * should not have a security impact and are likely to be easily detectable
+             * during testing. Given the wide number of non-RFC compliant URLs in use,
+             * stricter validation could prevent some applications from being able to use
+             * this type.
+             *
+             * Instances of this type must be created via the factory method,
+             * ({@code goog.html.TrustedResourceUrl.fromConstant}), and not by invoking its
+             * constructor. The constructor intentionally takes no parameters and the type
+             * is immutable; hence only a default instance corresponding to the empty
+             * string can be obtained via constructor invocation.
+             *
+             * @see goog.html.TrustedResourceUrl#fromConstant
+             * @constructor
+             * @final
+             * @struct
+             * @implements {goog.i18n.bidi.DirectionalString}
+             * @implements {goog.string.TypedString}
+             */
             constructor();
     
             /**
-            * Interface marker of the DirectionalString interface.
-            *
-            * This property can be used to determine at runtime whether or not an object
-            * implements this interface.  All implementations of this interface set this
-            * property to {@code true}.
-            * @type {boolean}
-            */
+             * Interface marker of the DirectionalString interface.
+             *
+             * This property can be used to determine at runtime whether or not an object
+             * implements this interface.  All implementations of this interface set this
+             * property to {@code true}.
+             * @type {boolean}
+             */
             implementsGoogI18nBidiDirectionalString: boolean;
     
             /**
-            * Retrieves this object's known direction (if any).
-            * @return {?goog.i18n.bidi.Dir} The known direction. Null if unknown.
-            */
+             * Retrieves this object's known direction (if any).
+             * @return {?goog.i18n.bidi.Dir} The known direction. Null if unknown.
+             */
             getDirection(): goog.i18n.bidi.Dir;
     
             /**
-            * Interface marker of the TypedString interface.
-            *
-            * This property can be used to determine at runtime whether or not an object
-            * implements this interface.  All implementations of this interface set this
-            * property to {@code true}.
-            * @type {boolean}
-            */
+             * Interface marker of the TypedString interface.
+             *
+             * This property can be used to determine at runtime whether or not an object
+             * implements this interface.  All implementations of this interface set this
+             * property to {@code true}.
+             * @type {boolean}
+             */
             implementsGoogStringTypedString: boolean;
     
             /**
-            * Retrieves this wrapped string's value.
-            * @return {!string} The wrapped string's value.
-            */
+             * Retrieves this wrapped string's value.
+             * @return {!string} The wrapped string's value.
+             */
             getTypedStringValue(): string;
         }
     }

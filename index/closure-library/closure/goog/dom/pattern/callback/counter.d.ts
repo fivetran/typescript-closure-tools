@@ -8,30 +8,30 @@ declare module goog.dom.pattern.callback {
         class __Class {
     
             /**
-            * Callback class for counting matches.
-            * @constructor
-            * @final
-            */
+             * Callback class for counting matches.
+             * @constructor
+             * @final
+             */
             constructor();
     
             /**
-            * The count of objects matched so far.
-            *
-            * @type {number}
-            */
+             * The count of objects matched so far.
+             *
+             * @type {number}
+             */
             count: number;
     
             /**
-            * Get a bound callback function that is suitable as a callback for
-            * {@link goog.dom.pattern.Matcher}.
-            *
-            * @return {!Function} A callback function.
-            */
+             * Get a bound callback function that is suitable as a callback for
+             * {@link goog.dom.pattern.Matcher}.
+             *
+             * @return {!Function} A callback function.
+             */
             getCallback(): Function;
     
             /**
-            * Reset the counter.
-            */
+             * Reset the counter.
+             */
             reset(): void;
         }
     }

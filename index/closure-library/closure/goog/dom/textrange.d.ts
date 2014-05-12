@@ -10,34 +10,34 @@ declare module goog.dom {
         class __Class extends goog.dom.AbstractRange.__Class {
     
             /**
-            * Create a new text selection with no properties.  Do not use this constructor:
-            * use one of the goog.dom.Range.createFrom* methods instead.
-            * @constructor
-            * @extends {goog.dom.AbstractRange}
-            * @final
-            */
+             * Create a new text selection with no properties.  Do not use this constructor:
+             * use one of the goog.dom.Range.createFrom* methods instead.
+             * @constructor
+             * @extends {goog.dom.AbstractRange}
+             * @final
+             */
             constructor();
     
             /**
-            * Moves a TextRange to the provided nodes and offsets.
-            * @param {Node} startNode The node to start with.
-            * @param {number} startOffset The offset within the node to start.
-            * @param {Node} endNode The node to end with.
-            * @param {number} endOffset The offset within the node to end.
-            * @param {boolean} isReversed Whether the range is reversed.
-            */
+             * Moves a TextRange to the provided nodes and offsets.
+             * @param {Node} startNode The node to start with.
+             * @param {number} startOffset The offset within the node to start.
+             * @param {Node} endNode The node to end with.
+             * @param {number} endOffset The offset within the node to end.
+             * @param {boolean} isReversed Whether the range is reversed.
+             */
             moveToNodes(startNode: Node, startOffset: number, endNode: Node, endOffset: number, isReversed: boolean): void;
     
             /**
-            * Surrounds the text range with the specified element (on Mozilla) or with a
-            * clone of the specified element (on IE).  Returns a reference to the
-            * surrounding element if the operation was successful; returns null if the
-            * operation failed.
-            * @param {Element} element The element with which the selection is to be
-            *    surrounded.
-            * @return {Element} The surrounding element (same as the argument on Mozilla,
-            *    but not on IE), or null if unsuccessful.
-            */
+             * Surrounds the text range with the specified element (on Mozilla) or with a
+             * clone of the specified element (on IE).  Returns a reference to the
+             * surrounding element if the operation was successful; returns null if the
+             * operation failed.
+             * @param {Element} element The element with which the selection is to be
+             *    surrounded.
+             * @return {Element} The surrounding element (same as the argument on Mozilla,
+             *    but not on IE), or null if unsuccessful.
+             */
             surroundContents(element: Element): Element;
         }
     }
@@ -48,12 +48,12 @@ declare module goog.dom {
         class __Class extends goog.dom.SavedRange.__Class {
     
             /**
-            * A SavedRange implementation using DOM endpoints.
-            * @param {goog.dom.AbstractRange} range The range to save.
-            * @constructor
-            * @extends {goog.dom.SavedRange}
-            * @private
-            */
+             * A SavedRange implementation using DOM endpoints.
+             * @param {goog.dom.AbstractRange} range The range to save.
+             * @constructor
+             * @extends {goog.dom.SavedRange}
+             * @private
+             */
             constructor(range: goog.dom.AbstractRange);
         }
     }

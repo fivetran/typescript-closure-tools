@@ -10,11 +10,11 @@ declare module goog.net {
         class __Class extends goog.net.XmlHttpFactory.__Class {
     
             /**
-            * Default factory to use when creating xhr objects.  You probably shouldn't be
-            * instantiating this directly, but rather using it via goog.net.XmlHttp.
-            * @extends {goog.net.XmlHttpFactory}
-            * @constructor
-            */
+             * Default factory to use when creating xhr objects.  You probably shouldn't be
+             * instantiating this directly, but rather using it via goog.net.XmlHttp.
+             * @extends {goog.net.XmlHttpFactory}
+             * @constructor
+             */
             constructor();
         }
     }

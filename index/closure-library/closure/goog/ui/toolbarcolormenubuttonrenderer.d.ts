@@ -9,11 +9,11 @@ declare module goog.ui {
         class __Class extends goog.ui.ToolbarMenuButtonRenderer.__Class {
     
             /**
-            * Toolbar-style renderer for {@link goog.ui.ColorMenuButton}s.
-            * @constructor
-            * @extends {goog.ui.ToolbarMenuButtonRenderer}
-            * @final
-            */
+             * Toolbar-style renderer for {@link goog.ui.ColorMenuButton}s.
+             * @constructor
+             * @extends {goog.ui.ToolbarMenuButtonRenderer}
+             * @final
+             */
             constructor();
         }
     }

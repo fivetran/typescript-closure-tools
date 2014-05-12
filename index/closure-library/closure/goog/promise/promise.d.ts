@@ -42,9 +42,9 @@ declare module goog {
              * @see http://promisesaplus.com/
              *
              * @param {function(
-         *             this:RESOLVER_CONTEXT,
-         *             function((TYPE|IThenable.<TYPE>|Thenable)),
-         *             function(*)): void} resolver
+             *             this:RESOLVER_CONTEXT,
+             *             function((TYPE|IThenable.<TYPE>|Thenable)),
+             *             function(*)): void} resolver
              *     Initialization function that is invoked immediately with {@code resolve}
              *     and {@code reject} functions as arguments. The Promise is resolved or
              *     rejected with the first argument passed to either function.

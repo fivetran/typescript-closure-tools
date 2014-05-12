@@ -9,38 +9,38 @@ declare module goog.testing {
         class __Class extends goog.Disposable.__Class {
     
             /**
-            * Class for unit testing code that uses Math.random. Generates deterministic
-            * random numbers.
-            *
-            * @param {number=} opt_seed The seed to use.
-            * @param {boolean=} opt_install Whether to install the PseudoRandom at
-            *     construction time.
-            * @extends {goog.Disposable}
-            * @constructor
-            * @final
-            */
+             * Class for unit testing code that uses Math.random. Generates deterministic
+             * random numbers.
+             *
+             * @param {number=} opt_seed The seed to use.
+             * @param {boolean=} opt_install Whether to install the PseudoRandom at
+             *     construction time.
+             * @extends {goog.Disposable}
+             * @constructor
+             * @final
+             */
             constructor(opt_seed?: number, opt_install?: boolean);
     
             /**
-            * Installs this PseudoRandom as the system number generator.
-            */
+             * Installs this PseudoRandom as the system number generator.
+             */
             install(): void;
     
             /**
-            * Uninstalls the PseudoRandom.
-            */
+             * Uninstalls the PseudoRandom.
+             */
             uninstall(): void;
     
             /**
-            * Seed the generator.
-            *
-            * @param {number=} seed The seed to use.
-            */
+             * Seed the generator.
+             *
+             * @param {number=} seed The seed to use.
+             */
             seed(seed?: number): void;
     
             /**
-            * @return {number} The next number in the sequence.
-            */
+             * @return {number} The next number in the sequence.
+             */
             random(): number;
         }
     }

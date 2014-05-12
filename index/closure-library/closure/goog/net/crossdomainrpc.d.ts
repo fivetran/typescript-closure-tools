@@ -9,46 +9,46 @@ declare module goog.net {
         class __Class extends goog.events.EventTarget.__Class {
     
             /**
-            * Creates a new instance of cross domain RPC
-            * @extends {goog.events.EventTarget}
-            * @constructor
-            * @final
-            */
+             * Creates a new instance of cross domain RPC
+             * @extends {goog.events.EventTarget}
+             * @constructor
+             * @final
+             */
             constructor();
     
             /**
-            * Sends a request across domain.
-            * @param {string} uri Uri to make request to.
-            * @param {string=} opt_method Method of request. Default is POST.
-            * @param {Object=} opt_params Parameters. Each property is turned into a
-            *     request parameter.
-            * @param {Object=} opt_headers Map of headers of the request.
-            */
+             * Sends a request across domain.
+             * @param {string} uri Uri to make request to.
+             * @param {string=} opt_method Method of request. Default is POST.
+             * @param {Object=} opt_params Parameters. Each property is turned into a
+             *     request parameter.
+             * @param {Object=} opt_headers Map of headers of the request.
+             */
             sendRequest(uri: string, opt_method?: string, opt_params?: Object, opt_headers?: Object): void;
     
             /**
-            * If response is JSON, evaluates it to a JavaScript object and
-            * returns it; otherwise returns undefined.
-            * @return {Object|undefined} JavaScript object if response is in JSON
-            *     or undefined.
-            */
+             * If response is JSON, evaluates it to a JavaScript object and
+             * returns it; otherwise returns undefined.
+             * @return {Object|undefined} JavaScript object if response is in JSON
+             *     or undefined.
+             */
             getResponseJson(): any /*Object|any (undefined)*/;
     
             /**
-            * @return {boolean} Whether the request completed with a success.
-            */
+             * @return {boolean} Whether the request completed with a success.
+             */
             isSuccess(): boolean;
     
             /**
-            * Removes request iframe used.
-            */
+             * Removes request iframe used.
+             */
             reset(): void;
     
             /**
-            * Gets a response header.
-            * @param {string} name Name of response header.
-            * @return {string|undefined} Value of response header; undefined if not found.
-            */
+             * Gets a response header.
+             * @param {string} name Name of response header.
+             * @return {string|undefined} Value of response header; undefined if not found.
+             */
             getResponseHeader(name: string): any /*string|any (undefined)*/;
         }
     }

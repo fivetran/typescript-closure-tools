@@ -6,13 +6,13 @@ declare module goog.fs {
     interface FileSystem {
     
         /**
-         * @return {string} The name of the filesystem.
-         */
+          * @return {string} The name of the filesystem.
+          */
         getName(): string;
     
         /**
-         * @return {!goog.fs.DirectoryEntry} The root directory of the filesystem.
-         */
+          * @return {!goog.fs.DirectoryEntry} The root directory of the filesystem.
+          */
         getRoot(): goog.fs.DirectoryEntry;
     }
 }

@@ -9,12 +9,12 @@ declare module goog.crypt {
         class __Class extends goog.crypt.Hash.__Class {
     
             /**
-            * MD5 cryptographic hash constructor.
-            * @constructor
-            * @extends {goog.crypt.Hash}
-            * @final
-            * @struct
-            */
+             * MD5 cryptographic hash constructor.
+             * @constructor
+             * @extends {goog.crypt.Hash}
+             * @final
+             * @struct
+             */
             constructor();
         }
     }

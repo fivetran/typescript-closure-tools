@@ -9,10 +9,10 @@ declare module goog.dom.animationFrame {
         class __Class {
     
             /**
-            * A type to represent state. Users may add properties as desired.
-            * @constructor
-            * @final
-            */
+             * A type to represent state. Users may add properties as desired.
+             * @constructor
+             * @final
+             */
             constructor();
         }
     }

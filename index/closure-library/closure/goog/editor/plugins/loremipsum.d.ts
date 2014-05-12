@@ -9,12 +9,12 @@ declare module goog.editor.plugins {
         class __Class extends goog.editor.Plugin.__Class {
     
             /**
-            * A plugin that manages lorem ipsum state of editable fields.
-            * @param {string} message The lorem ipsum message.
-            * @constructor
-            * @extends {goog.editor.Plugin}
-            * @final
-            */
+             * A plugin that manages lorem ipsum state of editable fields.
+             * @param {string} message The lorem ipsum message.
+             * @constructor
+             * @extends {goog.editor.Plugin}
+             * @final
+             */
             constructor(message: string);
         }
     }

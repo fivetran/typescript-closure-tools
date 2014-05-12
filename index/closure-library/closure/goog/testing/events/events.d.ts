@@ -10,35 +10,35 @@ declare module goog.testing.events {
         class __Class extends _Event {
     
             /**
-            * goog.events.BrowserEvent expects an Event so we provide one for JSCompiler.
-            *
-            * This clones a lot of the functionality of goog.events.Event. This used to
-            * use a mixin, but the mixin results in confusing the two types when compiled.
-            *
-            * @param {string} type Event Type.
-            * @param {Object=} opt_target Reference to the object that is the target of
-            *     this event.
-            * @constructor
-            * @extends {Event}
-            */
+             * goog.events.BrowserEvent expects an Event so we provide one for JSCompiler.
+             *
+             * This clones a lot of the functionality of goog.events.Event. This used to
+             * use a mixin, but the mixin results in confusing the two types when compiled.
+             *
+             * @param {string} type Event Type.
+             * @param {Object=} opt_target Reference to the object that is the target of
+             *     this event.
+             * @constructor
+             * @extends {Event}
+             */
             constructor(type: string, opt_target?: Object);
     
             /**
-            * Whether to cancel the event in internal capture/bubble processing for IE.
-            * @type {boolean}
-            * @public
-            * @suppress {underscore|visibility} Technically public, but referencing this
-            *     outside this package is strongly discouraged.
-            */
+             * Whether to cancel the event in internal capture/bubble processing for IE.
+             * @type {boolean}
+             * @public
+             * @suppress {underscore|visibility} Technically public, but referencing this
+             *     outside this package is strongly discouraged.
+             */
             propagationStopped_: boolean;
     
             /**
-            * Return value for in internal capture/bubble processing for IE.
-            * @type {boolean}
-            * @public
-            * @suppress {underscore|visibility} Technically public, but referencing this
-            *     outside this package is strongly discouraged.
-            */
+             * Return value for in internal capture/bubble processing for IE.
+             * @type {boolean}
+             * @public
+             * @suppress {underscore|visibility} Technically public, but referencing this
+             *     outside this package is strongly discouraged.
+             */
             returnValue_: boolean;
         }
     }

@@ -11,31 +11,31 @@ declare module goog.ui.media {
         class __Class extends goog.ui.media.MediaRenderer.__Class {
     
             /**
-            * Subclasses a goog.ui.media.MediaRenderer to provide a Picasa specific media
-            * renderer.
-            *
-            * This class knows how to parse picasa URLs, and render the DOM structure
-            * of picasa album players and previews. This class is meant to be used as a
-            * singleton static stateless class, that takes {@code goog.ui.media.Media}
-            * instances and renders it. It expects {@code goog.ui.media.Media.getModel} to
-            * return a well formed, previously constructed, object with a user and album
-            * fields {@see goog.ui.media.PicasaAlbum.parseUrl}, which is the data model
-            * this renderer will use to construct the DOM structure.
-            * {@see goog.ui.media.PicasaAlbum.newControl} for a example of constructing a
-            * control with this renderer.
-            *
-            * goog.ui.media.PicasaAlbum currently displays a picasa-made flash slideshow
-            * with the photos, but could possibly display a handwritten js photo viewer,
-            * in case flash is not available.
-            *
-            * This design is patterned after http://go/closure_control_subclassing
-            *
-            * It uses {@link goog.ui.media.FlashObject} to embed the flash object.
-            *
-            * @constructor
-            * @extends {goog.ui.media.MediaRenderer}
-            * @final
-            */
+             * Subclasses a goog.ui.media.MediaRenderer to provide a Picasa specific media
+             * renderer.
+             *
+             * This class knows how to parse picasa URLs, and render the DOM structure
+             * of picasa album players and previews. This class is meant to be used as a
+             * singleton static stateless class, that takes {@code goog.ui.media.Media}
+             * instances and renders it. It expects {@code goog.ui.media.Media.getModel} to
+             * return a well formed, previously constructed, object with a user and album
+             * fields {@see goog.ui.media.PicasaAlbum.parseUrl}, which is the data model
+             * this renderer will use to construct the DOM structure.
+             * {@see goog.ui.media.PicasaAlbum.newControl} for a example of constructing a
+             * control with this renderer.
+             *
+             * goog.ui.media.PicasaAlbum currently displays a picasa-made flash slideshow
+             * with the photos, but could possibly display a handwritten js photo viewer,
+             * in case flash is not available.
+             *
+             * This design is patterned after http://go/closure_control_subclassing
+             *
+             * It uses {@link goog.ui.media.FlashObject} to embed the flash object.
+             *
+             * @constructor
+             * @extends {goog.ui.media.MediaRenderer}
+             * @final
+             */
             constructor();
         }
     }
@@ -46,39 +46,39 @@ declare module goog.ui.media {
         class __Class extends goog.ui.media.MediaModel.__Class {
     
             /**
-            * The {@code goog.ui.media.PicasaAlbum} media data model. It stores a required
-            * {@code userId} and {@code albumId} fields, sets the picasa album URL, and
-            * allows a few optional parameters.
-            *
-            * @param {string} userId The picasa userId associated with this album.
-            * @param {string} albumId The picasa albumId associated with this album.
-            * @param {string=} opt_authKey An optional authentication key, used on private
-            *     albums.
-            * @param {string=} opt_caption An optional caption of the picasa album.
-            * @param {string=} opt_description An optional description of the picasa album.
-            * @param {boolean=} opt_autoplay Whether to autoplay the slideshow.
-            * @constructor
-            * @extends {goog.ui.media.MediaModel}
-            * @final
-            */
+             * The {@code goog.ui.media.PicasaAlbum} media data model. It stores a required
+             * {@code userId} and {@code albumId} fields, sets the picasa album URL, and
+             * allows a few optional parameters.
+             *
+             * @param {string} userId The picasa userId associated with this album.
+             * @param {string} albumId The picasa albumId associated with this album.
+             * @param {string=} opt_authKey An optional authentication key, used on private
+             *     albums.
+             * @param {string=} opt_caption An optional caption of the picasa album.
+             * @param {string=} opt_description An optional description of the picasa album.
+             * @param {boolean=} opt_autoplay Whether to autoplay the slideshow.
+             * @constructor
+             * @extends {goog.ui.media.MediaModel}
+             * @final
+             */
             constructor(userId: string, albumId: string, opt_authKey?: string, opt_caption?: string, opt_description?: string, opt_autoplay?: boolean);
     
             /**
-            * Gets the Picasa user id.
-            * @return {string} The Picasa user id.
-            */
+             * Gets the Picasa user id.
+             * @return {string} The Picasa user id.
+             */
             getUserId(): string;
     
             /**
-            * Gets the Picasa album id.
-            * @return {string} The Picasa album id.
-            */
+             * Gets the Picasa album id.
+             * @return {string} The Picasa album id.
+             */
             getAlbumId(): string;
     
             /**
-            * Gets the Picasa album authentication key.
-            * @return {?string} The Picasa album authentication key.
-            */
+             * Gets the Picasa album authentication key.
+             * @return {?string} The Picasa album authentication key.
+             */
             getAuthKey(): string;
         }
     }

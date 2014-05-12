@@ -9,11 +9,11 @@ declare module goog.demos.editor {
         class __Class extends goog.editor.Plugin.__Class {
     
             /**
-            * Plugin to insert 'Hello World!' into an editable field.
-            * @constructor
-            * @extends {goog.editor.Plugin}
-            * @final
-            */
+             * Plugin to insert 'Hello World!' into an editable field.
+             * @constructor
+             * @extends {goog.editor.Plugin}
+             * @final
+             */
             constructor();
         }
     }

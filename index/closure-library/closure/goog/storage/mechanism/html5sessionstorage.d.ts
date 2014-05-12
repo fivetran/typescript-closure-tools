@@ -9,11 +9,11 @@ declare module goog.storage.mechanism {
         class __Class extends goog.storage.mechanism.HTML5WebStorage.__Class {
     
             /**
-            * Provides a storage mechanism that uses HTML5 session storage.
-            *
-            * @constructor
-            * @extends {goog.storage.mechanism.HTML5WebStorage}
-            */
+             * Provides a storage mechanism that uses HTML5 session storage.
+             *
+             * @constructor
+             * @extends {goog.storage.mechanism.HTML5WebStorage}
+             */
             constructor();
         }
     }

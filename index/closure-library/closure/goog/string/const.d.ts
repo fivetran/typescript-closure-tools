@@ -9,46 +9,46 @@ declare module goog._string {
         class __Class implements goog.string.TypedString {
     
             /**
-            * Wrapper for compile-time-constant strings.
-            *
-            * Const is a wrapper for strings that can only be created from program
-            * constants (i.e., string literals).  This property relies on a custom Closure
-            * compiler check that {@code goog.string.Const.from} is only invoked on
-            * compile-time-constant expressions.
-            *
-            * Const is useful in APIs whose correct and secure use requires that certain
-            * arguments are not attacker controlled: Compile-time constants are inherently
-            * under the control of the application and not under control of external
-            * attackers, and hence are safe to use in such contexts.
-            *
-            * Instances of this type must be created via its factory method
-            * {@code goog.string.Const.from} and not by invoking its constructor.  The
-            * constructor intentionally takes no parameters and the type is immutable;
-            * hence only a default instance corresponding to the empty string can be
-            * obtained via constructor invocation.
-            *
-            * @see goog.string.Const#from
-            * @constructor
-            * @final
-            * @struct
-            * @implements {goog.string.TypedString}
-            */
+             * Wrapper for compile-time-constant strings.
+             *
+             * Const is a wrapper for strings that can only be created from program
+             * constants (i.e., string literals).  This property relies on a custom Closure
+             * compiler check that {@code goog.string.Const.from} is only invoked on
+             * compile-time-constant expressions.
+             *
+             * Const is useful in APIs whose correct and secure use requires that certain
+             * arguments are not attacker controlled: Compile-time constants are inherently
+             * under the control of the application and not under control of external
+             * attackers, and hence are safe to use in such contexts.
+             *
+             * Instances of this type must be created via its factory method
+             * {@code goog.string.Const.from} and not by invoking its constructor.  The
+             * constructor intentionally takes no parameters and the type is immutable;
+             * hence only a default instance corresponding to the empty string can be
+             * obtained via constructor invocation.
+             *
+             * @see goog.string.Const#from
+             * @constructor
+             * @final
+             * @struct
+             * @implements {goog.string.TypedString}
+             */
             constructor();
     
             /**
-            * Interface marker of the TypedString interface.
-            *
-            * This property can be used to determine at runtime whether or not an object
-            * implements this interface.  All implementations of this interface set this
-            * property to {@code true}.
-            * @type {boolean}
-            */
+             * Interface marker of the TypedString interface.
+             *
+             * This property can be used to determine at runtime whether or not an object
+             * implements this interface.  All implementations of this interface set this
+             * property to {@code true}.
+             * @type {boolean}
+             */
             implementsGoogStringTypedString: boolean;
     
             /**
-            * Retrieves this wrapped string's value.
-            * @return {!string} The wrapped string's value.
-            */
+             * Retrieves this wrapped string's value.
+             * @return {!string} The wrapped string's value.
+             */
             getTypedStringValue(): string;
         }
     }

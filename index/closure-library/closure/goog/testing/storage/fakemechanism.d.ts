@@ -9,12 +9,12 @@ declare module goog.testing.storage {
         class __Class extends goog.storage.mechanism.IterableMechanism.__Class {
     
             /**
-            * Creates a fake iterable mechanism.
-            *
-            * @constructor
-            * @extends {goog.storage.mechanism.IterableMechanism}
-            * @final
-            */
+             * Creates a fake iterable mechanism.
+             *
+             * @constructor
+             * @extends {goog.storage.mechanism.IterableMechanism}
+             * @final
+             */
             constructor();
         }
     }

@@ -9,11 +9,11 @@ declare module goog.dom {
         class __Class extends goog.dom.AbstractRange.__Class {
     
             /**
-            * Creates a new multi range with no properties.  Do not use this
-            * constructor: use one of the goog.dom.Range.createFrom* methods instead.
-            * @constructor
-            * @extends {goog.dom.AbstractRange}
-            */
+             * Creates a new multi range with no properties.  Do not use this
+             * constructor: use one of the goog.dom.Range.createFrom* methods instead.
+             * @constructor
+             * @extends {goog.dom.AbstractRange}
+             */
             constructor();
         }
     }

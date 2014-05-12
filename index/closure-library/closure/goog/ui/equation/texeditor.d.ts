@@ -10,44 +10,44 @@ declare module goog.ui.equation {
         class __Class extends goog.ui.Component.__Class {
     
             /**
-            * User interface for equation editor plugin.
-            * @constructor
-            * @param {Object} context The context that this Tex editor runs in.
-            * @param {string} helpUrl URL pointing to help documentation.
-            * @param {goog.dom.DomHelper=} opt_domHelper DomHelper to use.
-            * @extends {goog.ui.Component}
-            * @final
-            */
+             * User interface for equation editor plugin.
+             * @constructor
+             * @param {Object} context The context that this Tex editor runs in.
+             * @param {string} helpUrl URL pointing to help documentation.
+             * @param {goog.dom.DomHelper=} opt_domHelper DomHelper to use.
+             * @extends {goog.ui.Component}
+             * @final
+             */
             constructor(context: Object, helpUrl: string, opt_domHelper?: goog.dom.DomHelper);
     
             /**
-            * Returns the encoded equation.
-            * @return {string} The encoded equation.
-            */
+             * Returns the encoded equation.
+             * @return {string} The encoded equation.
+             */
             getEquation(): string;
     
             /**
-            * Parse an equation and draw it.
-            * Clears any previous displayed equation.
-            * @param {string} equation The equation text to parse.
-            */
+             * Parse an equation and draw it.
+             * Clears any previous displayed equation.
+             * @param {string} equation The equation text to parse.
+             */
             setEquation(equation: string): void;
     
             /**
-            * @return {string} The html code to embed in the document.
-            */
+             * @return {string} The html code to embed in the document.
+             */
             getHtml(): string;
     
             /**
-            * Checks whether the current equation is valid and can be used in a document.
-            * @return {boolean} Whether the equation valid.
-            */
+             * Checks whether the current equation is valid and can be used in a document.
+             * @return {boolean} Whether the equation valid.
+             */
             isValid(): boolean;
     
             /**
-            * Sets the visibility of the editor.
-            * @param {boolean} visible Whether the editor should be visible.
-            */
+             * Sets the visibility of the editor.
+             * @param {boolean} visible Whether the editor should be visible.
+             */
             setVisible(visible: boolean): void;
         }
     }

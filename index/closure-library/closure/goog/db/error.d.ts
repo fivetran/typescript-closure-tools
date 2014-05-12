@@ -9,35 +9,35 @@ declare module goog.db {
         class __Class extends goog.debug.Error.__Class {
     
             /**
-            * A database error. Since the stack trace can be unhelpful in an asynchronous
-            * context, the error provides a message about where it was produced.
-            *
-            * @param {number|!DOMError} error The DOMError instance returned by the
-            *     browser for Chrome22+, or an error code for previous versions.
-            * @param {string} context A description of where the error occured.
-            * @param {string=} opt_message Additional message.
-            * @constructor
-            * @extends {goog.debug.Error}
-            * @final
-            */
+             * A database error. Since the stack trace can be unhelpful in an asynchronous
+             * context, the error provides a message about where it was produced.
+             *
+             * @param {number|!DOMError} error The DOMError instance returned by the
+             *     browser for Chrome22+, or an error code for previous versions.
+             * @param {string} context A description of where the error occured.
+             * @param {string=} opt_message Additional message.
+             * @constructor
+             * @extends {goog.debug.Error}
+             * @final
+             */
             constructor(error: number, context: string, opt_message?: string);
             /**
-            * A database error. Since the stack trace can be unhelpful in an asynchronous
-            * context, the error provides a message about where it was produced.
-            *
-            * @param {number|!DOMError} error The DOMError instance returned by the
-            *     browser for Chrome22+, or an error code for previous versions.
-            * @param {string} context A description of where the error occured.
-            * @param {string=} opt_message Additional message.
-            * @constructor
-            * @extends {goog.debug.Error}
-            * @final
-            */
+             * A database error. Since the stack trace can be unhelpful in an asynchronous
+             * context, the error provides a message about where it was produced.
+             *
+             * @param {number|!DOMError} error The DOMError instance returned by the
+             *     browser for Chrome22+, or an error code for previous versions.
+             * @param {string} context A description of where the error occured.
+             * @param {string=} opt_message Additional message.
+             * @constructor
+             * @extends {goog.debug.Error}
+             * @final
+             */
             constructor(error: DOMError, context: string, opt_message?: string);
     
             /**
-            * @return {string} The name of the error.
-            */
+             * @return {string} The name of the error.
+             */
             getName(): string;
         }
     }
@@ -51,14 +51,14 @@ declare module goog.db.Error {
         class __Class extends goog.debug.Error.__Class {
     
             /**
-            * A specific kind of database error. If a Version Change is unable to proceed
-            * due to other open database connections, it will block and this error will be
-            * thrown.
-            *
-            * @constructor
-            * @extends {goog.debug.Error}
-            * @final
-            */
+             * A specific kind of database error. If a Version Change is unable to proceed
+             * due to other open database connections, it will block and this error will be
+             * thrown.
+             *
+             * @constructor
+             * @extends {goog.debug.Error}
+             * @final
+             */
             constructor();
         }
     }

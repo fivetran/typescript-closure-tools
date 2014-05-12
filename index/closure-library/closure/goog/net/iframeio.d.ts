@@ -13,239 +13,239 @@ declare module goog.net {
         class __Class extends goog.events.EventTarget.__Class {
     
             /**
-            * Class for managing requests via iFrames.
-            * @constructor
-            * @extends {goog.events.EventTarget}
-            */
+             * Class for managing requests via iFrames.
+             * @constructor
+             * @extends {goog.events.EventTarget}
+             */
             constructor();
     
             /**
-            * Sends a request via an iframe.
-            *
-            * A HTML form is used and submitted to the iframe, this simplifies the
-            * difference between GET and POST requests. The iframe needs to be created and
-            * destroyed for each request otherwise the request will contribute to the
-            * history stack.
-            *
-            * sendFromForm does some clever trickery (thanks jlim) in non-IE browsers to
-            * stop a history entry being added for POST requests.
-            *
-            * @param {goog.Uri|string} uri Uri of the request.
-            * @param {string=} opt_method Default is GET, POST uses a form to submit the
-            *     request.
-            * @param {boolean=} opt_noCache Append a timestamp to the request to avoid
-            *     caching.
-            * @param {Object|goog.structs.Map=} opt_data Map of key-value pairs.
-            */
+             * Sends a request via an iframe.
+             *
+             * A HTML form is used and submitted to the iframe, this simplifies the
+             * difference between GET and POST requests. The iframe needs to be created and
+             * destroyed for each request otherwise the request will contribute to the
+             * history stack.
+             *
+             * sendFromForm does some clever trickery (thanks jlim) in non-IE browsers to
+             * stop a history entry being added for POST requests.
+             *
+             * @param {goog.Uri|string} uri Uri of the request.
+             * @param {string=} opt_method Default is GET, POST uses a form to submit the
+             *     request.
+             * @param {boolean=} opt_noCache Append a timestamp to the request to avoid
+             *     caching.
+             * @param {Object|goog.structs.Map=} opt_data Map of key-value pairs.
+             */
             send(uri: goog.Uri, opt_method?: string, opt_noCache?: boolean, opt_data?: Object): void;
             /**
-            * Sends a request via an iframe.
-            *
-            * A HTML form is used and submitted to the iframe, this simplifies the
-            * difference between GET and POST requests. The iframe needs to be created and
-            * destroyed for each request otherwise the request will contribute to the
-            * history stack.
-            *
-            * sendFromForm does some clever trickery (thanks jlim) in non-IE browsers to
-            * stop a history entry being added for POST requests.
-            *
-            * @param {goog.Uri|string} uri Uri of the request.
-            * @param {string=} opt_method Default is GET, POST uses a form to submit the
-            *     request.
-            * @param {boolean=} opt_noCache Append a timestamp to the request to avoid
-            *     caching.
-            * @param {Object|goog.structs.Map=} opt_data Map of key-value pairs.
-            */
+             * Sends a request via an iframe.
+             *
+             * A HTML form is used and submitted to the iframe, this simplifies the
+             * difference between GET and POST requests. The iframe needs to be created and
+             * destroyed for each request otherwise the request will contribute to the
+             * history stack.
+             *
+             * sendFromForm does some clever trickery (thanks jlim) in non-IE browsers to
+             * stop a history entry being added for POST requests.
+             *
+             * @param {goog.Uri|string} uri Uri of the request.
+             * @param {string=} opt_method Default is GET, POST uses a form to submit the
+             *     request.
+             * @param {boolean=} opt_noCache Append a timestamp to the request to avoid
+             *     caching.
+             * @param {Object|goog.structs.Map=} opt_data Map of key-value pairs.
+             */
             send(uri: goog.Uri, opt_method?: string, opt_noCache?: boolean, opt_data?: goog.structs.Map<any, any>): void;
             /**
-            * Sends a request via an iframe.
-            *
-            * A HTML form is used and submitted to the iframe, this simplifies the
-            * difference between GET and POST requests. The iframe needs to be created and
-            * destroyed for each request otherwise the request will contribute to the
-            * history stack.
-            *
-            * sendFromForm does some clever trickery (thanks jlim) in non-IE browsers to
-            * stop a history entry being added for POST requests.
-            *
-            * @param {goog.Uri|string} uri Uri of the request.
-            * @param {string=} opt_method Default is GET, POST uses a form to submit the
-            *     request.
-            * @param {boolean=} opt_noCache Append a timestamp to the request to avoid
-            *     caching.
-            * @param {Object|goog.structs.Map=} opt_data Map of key-value pairs.
-            */
+             * Sends a request via an iframe.
+             *
+             * A HTML form is used and submitted to the iframe, this simplifies the
+             * difference between GET and POST requests. The iframe needs to be created and
+             * destroyed for each request otherwise the request will contribute to the
+             * history stack.
+             *
+             * sendFromForm does some clever trickery (thanks jlim) in non-IE browsers to
+             * stop a history entry being added for POST requests.
+             *
+             * @param {goog.Uri|string} uri Uri of the request.
+             * @param {string=} opt_method Default is GET, POST uses a form to submit the
+             *     request.
+             * @param {boolean=} opt_noCache Append a timestamp to the request to avoid
+             *     caching.
+             * @param {Object|goog.structs.Map=} opt_data Map of key-value pairs.
+             */
             send(uri: string, opt_method?: string, opt_noCache?: boolean, opt_data?: Object): void;
             /**
-            * Sends a request via an iframe.
-            *
-            * A HTML form is used and submitted to the iframe, this simplifies the
-            * difference between GET and POST requests. The iframe needs to be created and
-            * destroyed for each request otherwise the request will contribute to the
-            * history stack.
-            *
-            * sendFromForm does some clever trickery (thanks jlim) in non-IE browsers to
-            * stop a history entry being added for POST requests.
-            *
-            * @param {goog.Uri|string} uri Uri of the request.
-            * @param {string=} opt_method Default is GET, POST uses a form to submit the
-            *     request.
-            * @param {boolean=} opt_noCache Append a timestamp to the request to avoid
-            *     caching.
-            * @param {Object|goog.structs.Map=} opt_data Map of key-value pairs.
-            */
+             * Sends a request via an iframe.
+             *
+             * A HTML form is used and submitted to the iframe, this simplifies the
+             * difference between GET and POST requests. The iframe needs to be created and
+             * destroyed for each request otherwise the request will contribute to the
+             * history stack.
+             *
+             * sendFromForm does some clever trickery (thanks jlim) in non-IE browsers to
+             * stop a history entry being added for POST requests.
+             *
+             * @param {goog.Uri|string} uri Uri of the request.
+             * @param {string=} opt_method Default is GET, POST uses a form to submit the
+             *     request.
+             * @param {boolean=} opt_noCache Append a timestamp to the request to avoid
+             *     caching.
+             * @param {Object|goog.structs.Map=} opt_data Map of key-value pairs.
+             */
             send(uri: string, opt_method?: string, opt_noCache?: boolean, opt_data?: goog.structs.Map<any, any>): void;
     
             /**
-            * Sends the data stored in an existing form to the server. The HTTP method
-            * should be specified on the form, the action can also be specified but can
-            * be overridden by the optional URI param.
-            *
-            * This can be used in conjunction will a file-upload input to upload a file in
-            * the background without affecting history.
-            *
-            * Example form:
-            * <pre>
-            *   &lt;form action="/server/" enctype="multipart/form-data" method="POST"&gt;
-            *     &lt;input name="userfile" type="file"&gt;
-            *   &lt;/form&gt;
-            * </pre>
-            *
-            * @param {HTMLFormElement} form Form element used to send the request to the
-            *     server.
-            * @param {string=} opt_uri Uri to set for the destination of the request, by
-            *     default the uri will come from the form.
-            * @param {boolean=} opt_noCache Append a timestamp to the request to avoid
-            *     caching.
-            */
+             * Sends the data stored in an existing form to the server. The HTTP method
+             * should be specified on the form, the action can also be specified but can
+             * be overridden by the optional URI param.
+             *
+             * This can be used in conjunction will a file-upload input to upload a file in
+             * the background without affecting history.
+             *
+             * Example form:
+             * <pre>
+             *   &lt;form action="/server/" enctype="multipart/form-data" method="POST"&gt;
+             *     &lt;input name="userfile" type="file"&gt;
+             *   &lt;/form&gt;
+             * </pre>
+             *
+             * @param {HTMLFormElement} form Form element used to send the request to the
+             *     server.
+             * @param {string=} opt_uri Uri to set for the destination of the request, by
+             *     default the uri will come from the form.
+             * @param {boolean=} opt_noCache Append a timestamp to the request to avoid
+             *     caching.
+             */
             sendFromForm(form: HTMLFormElement, opt_uri?: string, opt_noCache?: boolean): void;
     
             /**
-            * Abort the current Iframe request
-            * @param {goog.net.ErrorCode=} opt_failureCode Optional error code to use -
-            *     defaults to ABORT.
-            */
+             * Abort the current Iframe request
+             * @param {goog.net.ErrorCode=} opt_failureCode Optional error code to use -
+             *     defaults to ABORT.
+             */
             abort(opt_failureCode?: goog.net.ErrorCode): void;
     
             /**
-            * @return {boolean} True if transfer is complete.
-            */
+             * @return {boolean} True if transfer is complete.
+             */
             isComplete(): boolean;
     
             /**
-            * @return {boolean} True if transfer was successful.
-            */
+             * @return {boolean} True if transfer was successful.
+             */
             isSuccess(): boolean;
     
             /**
-            * @return {boolean} True if a transfer is in progress.
-            */
+             * @return {boolean} True if a transfer is in progress.
+             */
             isActive(): boolean;
     
             /**
-            * Returns the last response text (i.e. the text content of the iframe).
-            * Assumes plain text!
-            * @return {?string} Result from the server.
-            */
+             * Returns the last response text (i.e. the text content of the iframe).
+             * Assumes plain text!
+             * @return {?string} Result from the server.
+             */
             getResponseText(): string;
     
             /**
-            * Returns the last response html (i.e. the innerHtml of the iframe).
-            * @return {?string} Result from the server.
-            */
+             * Returns the last response html (i.e. the innerHtml of the iframe).
+             * @return {?string} Result from the server.
+             */
             getResponseHtml(): string;
     
             /**
-            * Parses the content as JSON. This is a safe parse and may throw an error
-            * if the response is malformed.
-            * Use goog.json.unsafeparse(this.getResponseText()) if you are sure of the
-            * state of the returned content.
-            * @return {Object} The parsed content.
-            */
+             * Parses the content as JSON. This is a safe parse and may throw an error
+             * if the response is malformed.
+             * Use goog.json.unsafeparse(this.getResponseText()) if you are sure of the
+             * state of the returned content.
+             * @return {Object} The parsed content.
+             */
             getResponseJson(): Object;
     
             /**
-            * Returns the document object from the last request.  Not truely XML, but
-            * used to mirror the XhrIo interface.
-            * @return {HTMLDocument} The document object from the last request.
-            */
+             * Returns the document object from the last request.  Not truely XML, but
+             * used to mirror the XhrIo interface.
+             * @return {HTMLDocument} The document object from the last request.
+             */
             getResponseXml(): HTMLDocument;
     
             /**
-            * Get the uri of the last request.
-            * @return {goog.Uri} Uri of last request.
-            */
+             * Get the uri of the last request.
+             * @return {goog.Uri} Uri of last request.
+             */
             getLastUri(): goog.Uri;
     
             /**
-            * Gets the last error code.
-            * @return {goog.net.ErrorCode} Last error code.
-            */
+             * Gets the last error code.
+             * @return {goog.net.ErrorCode} Last error code.
+             */
             getLastErrorCode(): goog.net.ErrorCode;
     
             /**
-            * Gets the last error message.
-            * @return {string} Last error message.
-            */
+             * Gets the last error message.
+             * @return {string} Last error message.
+             */
             getLastError(): string;
     
             /**
-            * Gets the last custom error.
-            * @return {Object} Last custom error.
-            */
+             * Gets the last custom error.
+             * @return {Object} Last custom error.
+             */
             getLastCustomError(): Object;
     
             /**
-            * Sets the callback function used to check if a loaded IFrame is in an error
-            * state.
-            * @param {Function} fn Callback that expects a document object as it's single
-            *     argument.
-            */
+             * Sets the callback function used to check if a loaded IFrame is in an error
+             * state.
+             * @param {Function} fn Callback that expects a document object as it's single
+             *     argument.
+             */
             setErrorChecker(fn: Function): void;
     
             /**
-            * Gets the callback function used to check if a loaded IFrame is in an error
-            * state.
-            * @return {Function} A callback that expects a document object as it's single
-            *     argument.
-            */
+             * Gets the callback function used to check if a loaded IFrame is in an error
+             * state.
+             * @return {Function} A callback that expects a document object as it's single
+             *     argument.
+             */
             getErrorChecker(): Function;
     
             /**
-            * Returns the number of milliseconds after which an incomplete request will be
-            * aborted, or 0 if no timeout is set.
-            * @return {number} Timeout interval in milliseconds.
-            */
+             * Returns the number of milliseconds after which an incomplete request will be
+             * aborted, or 0 if no timeout is set.
+             * @return {number} Timeout interval in milliseconds.
+             */
             getTimeoutInterval(): number;
     
             /**
-            * Sets the number of milliseconds after which an incomplete request will be
-            * aborted and a {@link goog.net.EventType.TIMEOUT} event raised; 0 means no
-            * timeout is set.
-            * @param {number} ms Timeout interval in milliseconds; 0 means none.
-            */
+             * Sets the number of milliseconds after which an incomplete request will be
+             * aborted and a {@link goog.net.EventType.TIMEOUT} event raised; 0 means no
+             * timeout is set.
+             * @param {number} ms Timeout interval in milliseconds; 0 means none.
+             */
             setTimeoutInterval(ms: number): void;
     
             /**
-            * @return {boolean} Whether the server response is being ignored.
-            */
+             * @return {boolean} Whether the server response is being ignored.
+             */
             isIgnoringResponse(): boolean;
     
             /**
-            * Sets whether to ignore the response from the server by not adding any event
-            * handlers to fire when the iframe loads. This is necessary when using IframeIo
-            * to submit to a server on another domain, to avoid same-origin violations when
-            * trying to access the response. If this is set to true, the IframeIo instance
-            * will be a single-use instance that is only usable for one request.  It will
-            * only clean up its resources (iframes and forms) when it is disposed.
-            * @param {boolean} ignore Whether to ignore the server response.
-            */
+             * Sets whether to ignore the response from the server by not adding any event
+             * handlers to fire when the iframe loads. This is necessary when using IframeIo
+             * to submit to a server on another domain, to avoid same-origin violations when
+             * trying to access the response. If this is set to true, the IframeIo instance
+             * will be a single-use instance that is only usable for one request.  It will
+             * only clean up its resources (iframes and forms) when it is disposed.
+             * @param {boolean} ignore Whether to ignore the server response.
+             */
             setIgnoreResponse(ignore: boolean): void;
     
             /**
-            * @return {HTMLIFrameElement} The appropriate iframe to use for requests
-            *     (created in sendForm_).
-            */
+             * @return {HTMLIFrameElement} The appropriate iframe to use for requests
+             *     (created in sendForm_).
+             */
             getRequestIframe(): HTMLIFrameElement;
         }
     }
@@ -259,12 +259,12 @@ declare module goog.net.IframeIo {
         class __Class extends goog.events.Event.__Class {
     
             /**
-            * Class for representing incremental data events.
-            * @param {Object} data The data associated with the event.
-            * @extends {goog.events.Event}
-            * @constructor
-            * @final
-            */
+             * Class for representing incremental data events.
+             * @param {Object} data The data associated with the event.
+             * @extends {goog.events.Event}
+             * @constructor
+             * @final
+             */
             constructor(data: Object);
         }
     }

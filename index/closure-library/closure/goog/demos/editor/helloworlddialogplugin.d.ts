@@ -9,11 +9,11 @@ declare module goog.demos.editor {
         class __Class extends goog.editor.plugins.AbstractDialogPlugin.__Class {
     
             /**
-            * A plugin that opens the hello world dialog.
-            * @constructor
-            * @extends {goog.editor.plugins.AbstractDialogPlugin}
-            * @final
-            */
+             * A plugin that opens the hello world dialog.
+             * @constructor
+             * @extends {goog.editor.plugins.AbstractDialogPlugin}
+             * @final
+             */
             constructor();
         }
     }

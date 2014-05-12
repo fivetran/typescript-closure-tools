@@ -8,11 +8,11 @@ declare module goog.labs.net.webChannel {
         class __Class {
     
             /**
-            * The connectivity state of the channel.
-            *
-            * @constructor
-            * @struct
-            */
+             * The connectivity state of the channel.
+             *
+             * @constructor
+             * @struct
+             */
             constructor();
         }
     }

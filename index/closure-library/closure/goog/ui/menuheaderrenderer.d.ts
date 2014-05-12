@@ -9,10 +9,10 @@ declare module goog.ui {
         class __Class extends goog.ui.ControlRenderer.__Class {
     
             /**
-            * Renderer for menu headers.
-            * @constructor
-            * @extends {goog.ui.ControlRenderer}
-            */
+             * Renderer for menu headers.
+             * @constructor
+             * @extends {goog.ui.ControlRenderer}
+             */
             constructor();
         }
     }

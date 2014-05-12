@@ -8,51 +8,51 @@ declare module goog.text {
         class __Class {
     
             /**
-            * Generates random strings of "lorem ipsum" text, based on the word
-            * distribution of a sample text, using the words in a dictionary.
-            * @constructor
-            */
+             * Generates random strings of "lorem ipsum" text, based on the word
+             * distribution of a sample text, using the words in a dictionary.
+             * @constructor
+             */
             constructor();
     
             /**
-            * Pairs of word-lengths that can appear at the beginning of sentences.
-            * @type {Array}
-            */
+             * Pairs of word-lengths that can appear at the beginning of sentences.
+             * @type {Array}
+             */
             starts_: any[];
     
             /**
-            * Sets the generator to use a given selection of words for generating
-            * sentences with.
-            * @param {string} dictionary The dictionary to use.
-            */
+             * Sets the generator to use a given selection of words for generating
+             * sentences with.
+             * @param {string} dictionary The dictionary to use.
+             */
             initializeDictionary_(dictionary: string): void;
     
             /**
-            * Generates a single sentence, of random length.
-            * @param {boolean} opt_startWithLorem Whether to start the setnence with the
-            *     standard "Lorem ipsum..." first sentence.
-            * @return {string} The generated sentence.
-            */
+             * Generates a single sentence, of random length.
+             * @param {boolean} opt_startWithLorem Whether to start the setnence with the
+             *     standard "Lorem ipsum..." first sentence.
+             * @return {string} The generated sentence.
+             */
             generateSentence(opt_startWithLorem: boolean): string;
     
             /**
-            * Generates a single lorem ipsum paragraph, of random length.
-            * @param {boolean} opt_startWithLorem Whether to start the sentence with the
-            *     standard "Lorem ipsum..." first sentence.
-            * @return {string} The generated sentence.
-            */
+             * Generates a single lorem ipsum paragraph, of random length.
+             * @param {boolean} opt_startWithLorem Whether to start the sentence with the
+             *     standard "Lorem ipsum..." first sentence.
+             * @return {string} The generated sentence.
+             */
             generateParagraph(opt_startWithLorem: boolean): string;
     
             /**
-            * Sample that the generated text is based on .
-            * @type {string}
-            */
+             * Sample that the generated text is based on .
+             * @type {string}
+             */
             sample_: string;
     
             /**
-            * Dictionary of words.
-            * @type {string}
-            */
+             * Dictionary of words.
+             * @type {string}
+             */
             dictionary_: string;
         }
     }

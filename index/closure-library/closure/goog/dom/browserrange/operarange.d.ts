@@ -9,12 +9,12 @@ declare module goog.dom.browserrange {
         class __Class extends goog.dom.browserrange.W3cRange.__Class {
     
             /**
-            * The constructor for Opera specific browser ranges.
-            * @param {Range} range The range object.
-            * @constructor
-            * @extends {goog.dom.browserrange.W3cRange}
-            * @final
-            */
+             * The constructor for Opera specific browser ranges.
+             * @param {Range} range The range object.
+             * @constructor
+             * @extends {goog.dom.browserrange.W3cRange}
+             * @final
+             */
             constructor(range: Range);
         }
     }

@@ -9,12 +9,12 @@ declare module goog.ui.equation {
         class __Class extends goog.events.Event.__Class {
     
             /**
-            * Event fired when equation changes.
-            * @constructor
-            * @param {boolean} isValid Whether the equation is valid.
-            * @extends {goog.events.Event}
-            * @final
-            */
+             * Event fired when equation changes.
+             * @constructor
+             * @param {boolean} isValid Whether the equation is valid.
+             * @extends {goog.events.Event}
+             * @final
+             */
             constructor(isValid: boolean);
         }
     }

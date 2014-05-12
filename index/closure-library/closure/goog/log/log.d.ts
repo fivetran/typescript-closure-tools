@@ -8,9 +8,9 @@ declare module goog.log {
         class __Class {
     
             /**
-            * @constructor
-            * @final
-            */
+             * @constructor
+             * @final
+             */
             constructor();
         }
     }
@@ -21,9 +21,9 @@ declare module goog.log {
         class __Class {
     
             /**
-            * @constructor
-            * @final
-            */
+             * @constructor
+             * @final
+             */
             constructor();
         }
     }
@@ -34,9 +34,9 @@ declare module goog.log {
         class __Class {
     
             /**
-            * @constructor
-            * @final
-            */
+             * @constructor
+             * @final
+             */
             constructor();
         }
     }

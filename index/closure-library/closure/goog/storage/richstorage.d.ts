@@ -10,27 +10,27 @@ declare module goog.storage {
         class __Class extends goog.storage.Storage.__Class {
     
             /**
-            * Provides a storage for data with attached metadata.
-            *
-            * @param {!goog.storage.mechanism.Mechanism} mechanism The underlying
-            *     storage mechanism.
-            * @constructor
-            * @extends {goog.storage.Storage}
-            */
+             * Provides a storage for data with attached metadata.
+             *
+             * @param {!goog.storage.mechanism.Mechanism} mechanism The underlying
+             *     storage mechanism.
+             * @constructor
+             * @extends {goog.storage.Storage}
+             */
             constructor(mechanism: goog.storage.mechanism.Mechanism);
     
             /**
-            * Get an item wrapper (the item and its metadata) from the storage.
-            *
-            * WARNING: This returns an Object, which once used to be
-            * goog.storage.RichStorage.Wrapper. This is due to the fact
-            * that deserialized objects lose type information and it
-            * is hard to do proper typecasting in JavaScript. Be sure
-            * you know what you are doing when using the returned value.
-            *
-            * @param {string} key The key to get.
-            * @return {(!Object|undefined)} The wrapper, or undefined if not found.
-            */
+             * Get an item wrapper (the item and its metadata) from the storage.
+             *
+             * WARNING: This returns an Object, which once used to be
+             * goog.storage.RichStorage.Wrapper. This is due to the fact
+             * that deserialized objects lose type information and it
+             * is hard to do proper typecasting in JavaScript. Be sure
+             * you know what you are doing when using the returned value.
+             *
+             * @param {string} key The key to get.
+             * @return {(!Object|undefined)} The wrapper, or undefined if not found.
+             */
             getWrapper(key: string): any /*Object|any (undefined)*/;
         }
     }
@@ -44,14 +44,14 @@ declare module goog.storage.RichStorage {
         class __Class {
     
             /**
-            * Wraps a value so metadata can be associated with it. You probably want
-            * to use goog.storage.RichStorage.Wrapper.wrapIfNecessary to avoid multiple
-            * embeddings.
-            *
-            * @param {*} value The value to wrap.
-            * @constructor
-            * @final
-            */
+             * Wraps a value so metadata can be associated with it. You probably want
+             * to use goog.storage.RichStorage.Wrapper.wrapIfNecessary to avoid multiple
+             * embeddings.
+             *
+             * @param {*} value The value to wrap.
+             * @constructor
+             * @final
+             */
             constructor(value: any);
         }
     }

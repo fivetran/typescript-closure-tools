@@ -9,10 +9,10 @@ declare module goog.ui {
         class __Class extends goog.ui.MenuSeparatorRenderer.__Class {
     
             /**
-            * Renderer for toolbar separators.
-            * @constructor
-            * @extends {goog.ui.MenuSeparatorRenderer}
-            */
+             * Renderer for toolbar separators.
+             * @constructor
+             * @extends {goog.ui.MenuSeparatorRenderer}
+             */
             constructor();
         }
     }

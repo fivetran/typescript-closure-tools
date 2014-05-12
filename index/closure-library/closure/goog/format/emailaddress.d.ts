@@ -8,43 +8,43 @@ declare module goog.format {
         class __Class {
     
             /**
-            * Formats an email address string for display, and allows for extraction of
-            * The individual componants of the address.
-            * @param {string=} opt_address The email address.
-            * @param {string=} opt_name The name associated with the email address.
-            * @constructor
-            * @final
-            */
+             * Formats an email address string for display, and allows for extraction of
+             * The individual componants of the address.
+             * @param {string=} opt_address The email address.
+             * @param {string=} opt_name The name associated with the email address.
+             * @constructor
+             * @final
+             */
             constructor(opt_address?: string, opt_name?: string);
     
             /**
-            * Get the name associated with the email address.
-            * @return {string} The name or personal portion of the address.
-            */
+             * Get the name associated with the email address.
+             * @return {string} The name or personal portion of the address.
+             */
             getName(): string;
     
             /**
-            * Get the email address.
-            * @return {string} The email address.
-            */
+             * Get the email address.
+             * @return {string} The email address.
+             */
             getAddress(): string;
     
             /**
-            * Set the name associated with the email address.
-            * @param {string} name The name to associate.
-            */
+             * Set the name associated with the email address.
+             * @param {string} name The name to associate.
+             */
             setName(name: string): void;
     
             /**
-            * Set the email address.
-            * @param {string} address The email address.
-            */
+             * Set the email address.
+             * @param {string} address The email address.
+             */
             setAddress(address: string): void;
     
             /**
-            * Determines is the current object is a valid email address.
-            * @return {boolean} Whether the email address is valid.
-            */
+             * Determines is the current object is a valid email address.
+             * @return {boolean} Whether the email address is valid.
+             */
             isValid(): boolean;
         }
     }

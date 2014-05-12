@@ -10,19 +10,19 @@ declare module goog.debug {
         class __Class extends goog.ui.Component.__Class {
     
             /**
-            * Displays frames per seconds that the window this component is
-            * rendered in is animating at.
-            *
-            * @param {goog.dom.DomHelper=} opt_domHelper An optional dom helper.
-            * @constructor
-            * @extends {goog.ui.Component}
-            * @final
-            */
+             * Displays frames per seconds that the window this component is
+             * rendered in is animating at.
+             *
+             * @param {goog.dom.DomHelper=} opt_domHelper An optional dom helper.
+             * @constructor
+             * @extends {goog.ui.Component}
+             * @final
+             */
             constructor(opt_domHelper?: goog.dom.DomHelper);
     
             /**
-            * @return {number} The average frames per second.
-            */
+             * @return {number} The average frames per second.
+             */
             getFps(): number;
         }
     }
@@ -36,15 +36,15 @@ declare module goog.debug.FpsDisplay {
         class __Class {
     
             /**
-            * @param {Element} elem An element to hold the FPS count.
-            * @constructor
-            * @private
-            */
+             * @param {Element} elem An element to hold the FPS count.
+             * @constructor
+             * @private
+             */
             constructor(elem: Element);
     
             /**
-            * @param {number} now The current time.
-            */
+             * @param {number} now The current time.
+             */
             onAnimationFrame(now: number): void;
         }
     }

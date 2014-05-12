@@ -8,18 +8,18 @@ declare module goog.editor.icontent {
         class __Class {
     
             /**
-            * A data structure for storing simple rendering info about a field.
-            *
-            * @param {string} fieldId The id of the field.
-            * @param {boolean} standards Whether the field should be rendered in
-            *     standards mode.
-            * @param {boolean} blended Whether the field is in blended mode.
-            * @param {boolean} fixedHeight Whether the field is in fixedHeight mode.
-            * @param {Object=} opt_extraStyles Other style attributes for the field,
-            *     represented as a map of strings.
-            * @constructor
-            * @final
-            */
+             * A data structure for storing simple rendering info about a field.
+             *
+             * @param {string} fieldId The id of the field.
+             * @param {boolean} standards Whether the field should be rendered in
+             *     standards mode.
+             * @param {boolean} blended Whether the field is in blended mode.
+             * @param {boolean} fixedHeight Whether the field is in fixedHeight mode.
+             * @param {Object=} opt_extraStyles Other style attributes for the field,
+             *     represented as a map of strings.
+             * @constructor
+             * @final
+             */
             constructor(fieldId: string, standards: boolean, blended: boolean, fixedHeight: boolean, opt_extraStyles?: Object);
         }
     }
@@ -30,13 +30,13 @@ declare module goog.editor.icontent {
         class __Class {
     
             /**
-            * A data structure for storing simple info about the styles of a field.
-            * Only needed in Firefox/Blended mode.
-            * @param {Element} wrapper The wrapper div around a field.
-            * @param {string} css The css for a field.
-            * @constructor
-            * @final
-            */
+             * A data structure for storing simple info about the styles of a field.
+             * Only needed in Firefox/Blended mode.
+             * @param {Element} wrapper The wrapper div around a field.
+             * @param {string} css The css for a field.
+             * @constructor
+             * @final
+             */
             constructor(wrapper: Element, css: string);
         }
     }

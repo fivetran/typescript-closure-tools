@@ -9,12 +9,12 @@ declare module goog.editor.plugins.equation {
         class __Class extends goog.editor.plugins.AbstractBubblePlugin.__Class {
     
             /**
-            * Property bubble plugin for equations.
-            *
-            * @constructor
-            * @extends {goog.editor.plugins.AbstractBubblePlugin}
-            * @final
-            */
+             * Property bubble plugin for equations.
+             *
+             * @constructor
+             * @extends {goog.editor.plugins.AbstractBubblePlugin}
+             * @final
+             */
             constructor();
         }
     }

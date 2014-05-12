@@ -9,11 +9,11 @@ declare module goog.ui {
         class __Class extends goog.ui.CustomButtonRenderer.__Class {
     
             /**
-            * Toolbar-specific renderer for {@link goog.ui.Button}s, based on {@link
-            * goog.ui.CustomButtonRenderer}.
-            * @constructor
-            * @extends {goog.ui.CustomButtonRenderer}
-            */
+             * Toolbar-specific renderer for {@link goog.ui.Button}s, based on {@link
+             * goog.ui.CustomButtonRenderer}.
+             * @constructor
+             * @extends {goog.ui.CustomButtonRenderer}
+             */
             constructor();
         }
     }

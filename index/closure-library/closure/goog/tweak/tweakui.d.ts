@@ -11,23 +11,23 @@ declare module goog.tweak {
         class __Class {
     
             /**
-            * A UI for editing tweak settings / clicking tweak actions.
-            * @param {!goog.tweak.Registry} registry The registry to render.
-            * @param {goog.dom.DomHelper=} opt_domHelper The DomHelper to render with.
-            * @constructor
-            * @final
-            */
+             * A UI for editing tweak settings / clicking tweak actions.
+             * @param {!goog.tweak.Registry} registry The registry to render.
+             * @param {goog.dom.DomHelper=} opt_domHelper The DomHelper to render with.
+             * @constructor
+             * @final
+             */
             constructor(registry: goog.tweak.Registry, opt_domHelper?: goog.dom.DomHelper);
     
             /**
-            * @return {!Element} The root element. Must not be called before render().
-            */
+             * @return {!Element} The root element. Must not be called before render().
+             */
             getRootElement(): Element;
     
             /**
-            * Creates the element to display when the UI is visible.
-            * @return {!Element} The root element.
-            */
+             * Creates the element to display when the UI is visible.
+             * @return {!Element} The root element.
+             */
             render(): Element;
         }
     }
@@ -38,61 +38,61 @@ declare module goog.tweak {
         class __Class {
     
             /**
-            * The body of the tweaks UI and also used for BooleanGroup.
-            * @param {!Array.<!goog.tweak.BaseEntry>} entries The entries to show in the
-            *     panel.
-            * @param {goog.dom.DomHelper=} opt_domHelper The DomHelper to render with.
-            * @constructor
-            * @final
-            */
+             * The body of the tweaks UI and also used for BooleanGroup.
+             * @param {!Array.<!goog.tweak.BaseEntry>} entries The entries to show in the
+             *     panel.
+             * @param {goog.dom.DomHelper=} opt_domHelper The DomHelper to render with.
+             * @constructor
+             * @final
+             */
             constructor(entries: goog.tweak.BaseEntry[], opt_domHelper?: goog.dom.DomHelper);
     
             /**
-            * @return {!Element} Returns the expanded element. Must not be called before
-            *     render().
-            */
+             * @return {!Element} Returns the expanded element. Must not be called before
+             *     render().
+             */
             getRootElement(): Element;
     
             /**
-            * Creates and returns the expanded element.
-            * The markup looks like:
-            * <div>
-            *   <a>Show Descriptions</a>
-            *   <div>
-            *      ...
-            *      {endElement}
-            *   </div>
-            * </div>
-            * @param {Element|DocumentFragment=} opt_endElement Element to insert after all
-            *     tweak entries.
-            * @return {!Element} The root element for the panel.
-            */
+             * Creates and returns the expanded element.
+             * The markup looks like:
+             * <div>
+             *   <a>Show Descriptions</a>
+             *   <div>
+             *      ...
+             *      {endElement}
+             *   </div>
+             * </div>
+             * @param {Element|DocumentFragment=} opt_endElement Element to insert after all
+             *     tweak entries.
+             * @return {!Element} The root element for the panel.
+             */
             render(opt_endElement?: Element): Element;
             /**
-            * Creates and returns the expanded element.
-            * The markup looks like:
-            * <div>
-            *   <a>Show Descriptions</a>
-            *   <div>
-            *      ...
-            *      {endElement}
-            *   </div>
-            * </div>
-            * @param {Element|DocumentFragment=} opt_endElement Element to insert after all
-            *     tweak entries.
-            * @return {!Element} The root element for the panel.
-            */
+             * Creates and returns the expanded element.
+             * The markup looks like:
+             * <div>
+             *   <a>Show Descriptions</a>
+             *   <div>
+             *      ...
+             *      {endElement}
+             *   </div>
+             * </div>
+             * @param {Element|DocumentFragment=} opt_endElement Element to insert after all
+             *     tweak entries.
+             * @return {!Element} The root element for the panel.
+             */
             render(opt_endElement?: DocumentFragment): Element;
     
             /**
-            * Inserts the given entry into the panel.
-            * @param {!goog.tweak.BaseEntry} entry The entry to insert.
-            */
+             * Inserts the given entry into the panel.
+             * @param {!goog.tweak.BaseEntry} entry The entry to insert.
+             */
             insertEntry(entry: goog.tweak.BaseEntry): void;
     
             /**
-            * Show all entry descriptions (has the same effect as clicking on all ?'s).
-            */
+             * Show all entry descriptions (has the same effect as clicking on all ?'s).
+             */
             toggleAllDescriptions(): void;
         }
     }
@@ -103,15 +103,15 @@ declare module goog.tweak {
         class __Class extends goog.tweak.BaseEntry.__Class {
     
             /**
-            * Entries used to represent the collapsible namespace links. These entries are
-            * never registered with the TweakRegistry, but are contained within the
-            * collection of entries within TweakPanels.
-            * @param {string} namespace The namespace for the entry.
-            * @param {!Array.<!goog.tweak.BaseEntry>} entries Entries within the namespace.
-            * @constructor
-            * @extends {goog.tweak.BaseEntry}
-            * @private
-            */
+             * Entries used to represent the collapsible namespace links. These entries are
+             * never registered with the TweakRegistry, but are contained within the
+             * collection of entries within TweakPanels.
+             * @param {string} namespace The namespace for the entry.
+             * @param {!Array.<!goog.tweak.BaseEntry>} entries Entries within the namespace.
+             * @constructor
+             * @extends {goog.tweak.BaseEntry}
+             * @private
+             */
             constructor(namespace: string, entries: goog.tweak.BaseEntry[]);
         }
     }

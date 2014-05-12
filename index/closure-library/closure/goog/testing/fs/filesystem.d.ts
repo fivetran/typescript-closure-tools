@@ -10,23 +10,23 @@ declare module goog.testing.fs {
         class __Class implements goog.fs.FileSystem {
     
             /**
-            * A mock filesystem object.
-            *
-            * @param {string=} opt_name The name of the filesystem.
-            * @constructor
-            * @implements {goog.fs.FileSystem}
-            * @final
-            */
+             * A mock filesystem object.
+             *
+             * @param {string=} opt_name The name of the filesystem.
+             * @constructor
+             * @implements {goog.fs.FileSystem}
+             * @final
+             */
             constructor(opt_name?: string);
     
             /**
-            * @return {string} The name of the filesystem.
-            */
+             * @return {string} The name of the filesystem.
+             */
             getName(): string;
     
             /**
-            * @return {!goog.fs.DirectoryEntry} The root directory of the filesystem.
-            */
+             * @return {!goog.fs.DirectoryEntry} The root directory of the filesystem.
+             */
             getRoot(): goog.fs.DirectoryEntry;
         }
     }

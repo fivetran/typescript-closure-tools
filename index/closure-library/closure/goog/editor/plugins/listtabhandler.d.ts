@@ -9,11 +9,11 @@ declare module goog.editor.plugins {
         class __Class extends goog.editor.plugins.AbstractTabHandler.__Class {
     
             /**
-            * Plugin to handle tab keys in lists to indent and outdent.
-            * @constructor
-            * @extends {goog.editor.plugins.AbstractTabHandler}
-            * @final
-            */
+             * Plugin to handle tab keys in lists to indent and outdent.
+             * @constructor
+             * @extends {goog.editor.plugins.AbstractTabHandler}
+             * @final
+             */
             constructor();
         }
     }

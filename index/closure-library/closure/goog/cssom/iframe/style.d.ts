@@ -8,51 +8,51 @@ declare module goog.cssom.iframe.style {
         class __Class {
     
             /**
-            * Class representing a CSS rule set. A rule set is something like this:
-            * h1, h2 { font-family: Arial; color: red; }
-            * @constructor
-            * @private
-            */
+             * Class representing a CSS rule set. A rule set is something like this:
+             * h1, h2 { font-family: Arial; color: red; }
+             * @constructor
+             * @private
+             */
             constructor();
     
             /**
-            * Initializes the rule set from a {@code CSSRule}.
-            *
-            * @param {CSSRule} cssRule The {@code CSSRule} to initialize from.
-            * @return {boolean} True if initialization succeeded. We only support
-            *     {@code CSSStyleRule} and {@code CSSFontFaceRule} objects.
-            */
+             * Initializes the rule set from a {@code CSSRule}.
+             *
+             * @param {CSSRule} cssRule The {@code CSSRule} to initialize from.
+             * @return {boolean} True if initialization succeeded. We only support
+             *     {@code CSSStyleRule} and {@code CSSFontFaceRule} objects.
+             */
             initializeFromCssRule(cssRule: CSSRule): boolean;
     
             /**
-            * Parses a selectors string (which may contain multiple comma-delimited
-            * selectors) and loads the results into this.selectors.
-            * @param {string} selectorsString String containing selectors.
-            */
+             * Parses a selectors string (which may contain multiple comma-delimited
+             * selectors) and loads the results into this.selectors.
+             * @param {string} selectorsString String containing selectors.
+             */
             setSelectorsFromString(selectorsString: string): void;
     
             /**
-            * Make a copy of this ruleset.
-            * @return {!goog.cssom.iframe.style.CssRuleSet_} A new CssRuleSet containing
-            *     the same data as this one.
-            */
+             * Make a copy of this ruleset.
+             * @return {!goog.cssom.iframe.style.CssRuleSet_} A new CssRuleSet containing
+             *     the same data as this one.
+             */
             clone(): goog.cssom.iframe.style.CssRuleSet_;
     
             /**
-            * Set the declaration text with properties from a given object.
-            * @param {Object} sourceObject Object whose properties and values should
-            *     be used to generate the declaration text.
-            * @param {boolean=} opt_important Whether !important should be added to each
-            *     declaration.
-            */
+             * Set the declaration text with properties from a given object.
+             * @param {Object} sourceObject Object whose properties and values should
+             *     be used to generate the declaration text.
+             * @param {boolean=} opt_important Whether !important should be added to each
+             *     declaration.
+             */
             setDeclarationTextFromObject(sourceObject: Object, opt_important?: boolean): void;
     
             /**
-            * Serializes this CssRuleSet_ into an array as a series of strings.
-            * The array can then be join()-ed to get a string representation
-            * of this ruleset.
-            * @param {Array.<string>} array The array to which to append strings.
-            */
+             * Serializes this CssRuleSet_ into an array as a series of strings.
+             * The array can then be join()-ed to get a string representation
+             * of this ruleset.
+             * @param {Array.<string>} array The array to which to append strings.
+             */
             writeToArray(array: string[]): void;
         }
     }
@@ -63,39 +63,39 @@ declare module goog.cssom.iframe.style {
         class __Class {
     
             /**
-            * Represents a single CSS selector, as described in
-            * http://www.w3.org/TR/REC-CSS2/selector.html
-            * Currently UNSUPPORTED are the following selector features:
-            * <ul>
-            *   <li>pseudo-classes (:hover)
-            *   <li>child selectors (div > h1)
-            *   <li>adjacent sibling selectors (div + h1)
-            *   <li>attribute selectors (input[type=submit])
-            * </ul>
-            * @param {string=} opt_selectorString String containing selectors to parse.
-            * @constructor
-            * @private
-            */
+             * Represents a single CSS selector, as described in
+             * http://www.w3.org/TR/REC-CSS2/selector.html
+             * Currently UNSUPPORTED are the following selector features:
+             * <ul>
+             *   <li>pseudo-classes (:hover)
+             *   <li>child selectors (div > h1)
+             *   <li>adjacent sibling selectors (div + h1)
+             *   <li>attribute selectors (input[type=submit])
+             * </ul>
+             * @param {string=} opt_selectorString String containing selectors to parse.
+             * @constructor
+             * @private
+             */
             constructor(opt_selectorString?: string);
     
             /**
-            * Tests to see what part of a DOM element hierarchy would be matched by
-            * this selector, and returns the indexes of the matching element and matching
-            * selector part.
-            * <p>
-            * For example, given this hierarchy:
-            *   document > html > body > div.content > div.sidebar > p
-            * and this CSS selector:
-            *   body div.sidebar h1
-            * This would return {elementIndex: 4, selectorPartIndex: 1},
-            * indicating that the element at index 4 matched
-            * the css selector at index 1.
-            * </p>
-            * @param {goog.cssom.iframe.style.NodeAncestry_} elementAncestry Object
-            *     representing an element and its ancestors.
-            * @return {Object} Object with the properties elementIndex and
-            *     selectorPartIndex, or null if there was no match.
-            */
+             * Tests to see what part of a DOM element hierarchy would be matched by
+             * this selector, and returns the indexes of the matching element and matching
+             * selector part.
+             * <p>
+             * For example, given this hierarchy:
+             *   document > html > body > div.content > div.sidebar > p
+             * and this CSS selector:
+             *   body div.sidebar h1
+             * This would return {elementIndex: 4, selectorPartIndex: 1},
+             * indicating that the element at index 4 matched
+             * the css selector at index 1.
+             * </p>
+             * @param {goog.cssom.iframe.style.NodeAncestry_} elementAncestry Object
+             *     representing an element and its ancestors.
+             * @return {Object} Object with the properties elementIndex and
+             *     selectorPartIndex, or null if there was no match.
+             */
             matchElementAncestry(elementAncestry: goog.cssom.iframe.style.NodeAncestry_): Object;
         }
     }
@@ -106,21 +106,21 @@ declare module goog.cssom.iframe.style {
         class __Class {
     
             /**
-            * Represents one part of a CSS Selector. For example in the selector
-            * 'body #foo .bar', body, #foo, and .bar would be considered selector parts.
-            * In the official CSS spec these are called "simple selectors".
-            * @param {string} selectorPartString A string containing the selector part
-            *     in css format.
-            * @constructor
-            * @private
-            */
+             * Represents one part of a CSS Selector. For example in the selector
+             * 'body #foo .bar', body, #foo, and .bar would be considered selector parts.
+             * In the official CSS spec these are called "simple selectors".
+             * @param {string} selectorPartString A string containing the selector part
+             *     in css format.
+             * @constructor
+             * @private
+             */
             constructor(selectorPartString: string);
     
             /**
-            * Test whether an element matches this selector part, considered in isolation.
-            * @param {Object} elementInfo Element properties to test.
-            * @return {boolean} Whether the element matched.
-            */
+             * Test whether an element matches this selector part, considered in isolation.
+             * @param {Object} elementInfo Element properties to test.
+             * @return {boolean} Whether the element matched.
+             */
             testElement(elementInfo: Object): boolean;
         }
     }
@@ -131,13 +131,13 @@ declare module goog.cssom.iframe.style {
         class __Class {
     
             /**
-            * Represents an element and all its parent/ancestor nodes.
-            * This class exists as an optimization so we run tests on an element
-            * hierarchy multiple times without walking the dom each time.
-            * @param {Element} el The DOM element whose ancestry should be stored.
-            * @constructor
-            * @private
-            */
+             * Represents an element and all its parent/ancestor nodes.
+             * This class exists as an optimization so we run tests on an element
+             * hierarchy multiple times without walking the dom each time.
+             * @param {Element} el The DOM element whose ancestry should be stored.
+             * @constructor
+             * @private
+             */
             constructor(el: Element);
         }
     }

@@ -9,16 +9,16 @@ declare module goog.storage.mechanism {
         class __Class extends goog.storage.mechanism.Mechanism.__Class {
     
             /**
-            * Wraps a storage mechanism with a custom error handler.
-            *
-            * @param {!goog.storage.mechanism.Mechanism} mechanism Underlying storage
-            *     mechanism.
-            * @param {goog.storage.mechanism.ErrorHandlingMechanism.ErrorHandler}
-            *     errorHandler An error handler.
-            * @constructor
-            * @extends {goog.storage.mechanism.Mechanism}
-            * @final
-            */
+             * Wraps a storage mechanism with a custom error handler.
+             *
+             * @param {!goog.storage.mechanism.Mechanism} mechanism Underlying storage
+             *     mechanism.
+             * @param {goog.storage.mechanism.ErrorHandlingMechanism.ErrorHandler}
+             *     errorHandler An error handler.
+             * @constructor
+             * @extends {goog.storage.mechanism.Mechanism}
+             * @final
+             */
             constructor(mechanism: goog.storage.mechanism.Mechanism, errorHandler: goog.storage.mechanism.ErrorHandlingMechanism.ErrorHandler);
         }
     }

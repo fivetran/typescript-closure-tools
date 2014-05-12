@@ -9,50 +9,50 @@ declare module goog.events {
         class __Class {
     
             /**
-            * A base class for event objects, so that they can support preventDefault and
-            * stopPropagation.
-            *
-            * @param {string|!goog.events.EventId} type Event Type.
-            * @param {Object=} opt_target Reference to the object that is the target of
-            *     this event. It has to implement the {@code EventTarget} interface
-            *     declared at {@link http://developer.mozilla.org/en/DOM/EventTarget}.
-            * @constructor
-            */
+             * A base class for event objects, so that they can support preventDefault and
+             * stopPropagation.
+             *
+             * @param {string|!goog.events.EventId} type Event Type.
+             * @param {Object=} opt_target Reference to the object that is the target of
+             *     this event. It has to implement the {@code EventTarget} interface
+             *     declared at {@link http://developer.mozilla.org/en/DOM/EventTarget}.
+             * @constructor
+             */
             constructor(type: string, opt_target?: Object);
             /**
-            * A base class for event objects, so that they can support preventDefault and
-            * stopPropagation.
-            *
-            * @param {string|!goog.events.EventId} type Event Type.
-            * @param {Object=} opt_target Reference to the object that is the target of
-            *     this event. It has to implement the {@code EventTarget} interface
-            *     declared at {@link http://developer.mozilla.org/en/DOM/EventTarget}.
-            * @constructor
-            */
+             * A base class for event objects, so that they can support preventDefault and
+             * stopPropagation.
+             *
+             * @param {string|!goog.events.EventId} type Event Type.
+             * @param {Object=} opt_target Reference to the object that is the target of
+             *     this event. It has to implement the {@code EventTarget} interface
+             *     declared at {@link http://developer.mozilla.org/en/DOM/EventTarget}.
+             * @constructor
+             */
             constructor(type: goog.events.EventId<any>, opt_target?: Object);
     
             /**
-            * For backwards compatibility (goog.events.Event used to inherit
-            * goog.Disposable).
-            * @deprecated Events don't need to be disposed.
-            */
+             * For backwards compatibility (goog.events.Event used to inherit
+             * goog.Disposable).
+             * @deprecated Events don't need to be disposed.
+             */
             disposeInternal(): void;
     
             /**
-            * For backwards compatibility (goog.events.Event used to inherit
-            * goog.Disposable).
-            * @deprecated Events don't need to be disposed.
-            */
+             * For backwards compatibility (goog.events.Event used to inherit
+             * goog.Disposable).
+             * @deprecated Events don't need to be disposed.
+             */
             dispose(): void;
     
             /**
-            * Stops event propagation.
-            */
+             * Stops event propagation.
+             */
             stopPropagation(): void;
     
             /**
-            * Prevents the default action, for example a link redirecting to a url.
-            */
+             * Prevents the default action, for example a link redirecting to a url.
+             */
             preventDefault(): void;
         }
     }

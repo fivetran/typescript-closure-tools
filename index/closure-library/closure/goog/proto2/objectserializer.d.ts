@@ -9,14 +9,14 @@ declare module goog.proto2 {
         class __Class extends goog.proto2.Serializer.__Class {
     
             /**
-            * ObjectSerializer, a serializer which turns Messages into simplified
-            * ECMAScript objects.
-            *
-            * @param {goog.proto2.ObjectSerializer.KeyOption=} opt_keyOption If specified,
-            *     which key option to use when serializing/deserializing.
-            * @constructor
-            * @extends {goog.proto2.Serializer}
-            */
+             * ObjectSerializer, a serializer which turns Messages into simplified
+             * ECMAScript objects.
+             *
+             * @param {goog.proto2.ObjectSerializer.KeyOption=} opt_keyOption If specified,
+             *     which key option to use when serializing/deserializing.
+             * @constructor
+             * @extends {goog.proto2.Serializer}
+             */
             constructor(opt_keyOption?: goog.proto2.ObjectSerializer.KeyOption);
         }
     }

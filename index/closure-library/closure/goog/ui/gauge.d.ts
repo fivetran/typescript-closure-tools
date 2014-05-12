@@ -12,14 +12,14 @@ declare module goog.ui {
         class __Class {
     
             /**
-            * Information on how to decorate a range in the gauge.
-            * This is an internal-only class.
-            * @param {number} fromValue The range start (minimal) value.
-            * @param {number} toValue The range end (maximal) value.
-            * @param {string} backgroundColor Color to fill the range background with.
-            * @constructor
-            * @final
-            */
+             * Information on how to decorate a range in the gauge.
+             * This is an internal-only class.
+             * @param {number} fromValue The range start (minimal) value.
+             * @param {number} toValue The range end (maximal) value.
+             * @param {string} backgroundColor Color to fill the range background with.
+             * @constructor
+             * @final
+             */
             constructor(fromValue: number, toValue: number, backgroundColor: string);
         }
     }
@@ -30,112 +30,112 @@ declare module goog.ui {
         class __Class extends goog.ui.Component.__Class {
     
             /**
-            * A UI component that displays a gauge.
-            * A gauge displayes a current value within a round axis that represents a
-            * given range.
-            * The gauge is built from an external border, and internal border inside it,
-            * ticks and labels inside the internal border, and a needle that points to
-            * the current value.
-            * @param {number} width The width in pixels.
-            * @param {number} height The height in pixels.
-            * @param {goog.dom.DomHelper=} opt_domHelper The DOM helper object for the
-            *     document we want to render in.
-            * @constructor
-            * @extends {goog.ui.Component}
-            * @final
-            */
+             * A UI component that displays a gauge.
+             * A gauge displayes a current value within a round axis that represents a
+             * given range.
+             * The gauge is built from an external border, and internal border inside it,
+             * ticks and labels inside the internal border, and a needle that points to
+             * the current value.
+             * @param {number} width The width in pixels.
+             * @param {number} height The height in pixels.
+             * @param {goog.dom.DomHelper=} opt_domHelper The DOM helper object for the
+             *     document we want to render in.
+             * @constructor
+             * @extends {goog.ui.Component}
+             * @final
+             */
             constructor(width: number, height: number, opt_domHelper?: goog.dom.DomHelper);
     
             /**
-            * @return {number} The minimum value of the range.
-            */
+             * @return {number} The minimum value of the range.
+             */
             getMinimum(): number;
     
             /**
-            * Sets the minimum value of the range
-            * @param {number} min The minimum value of the range.
-            */
+             * Sets the minimum value of the range
+             * @param {number} min The minimum value of the range.
+             */
             setMinimum(min: number): void;
     
             /**
-            * @return {number} The maximum value of the range.
-            */
+             * @return {number} The maximum value of the range.
+             */
             getMaximum(): number;
     
             /**
-            * Sets the maximum number of the range
-            * @param {number} max The maximum value of the range.
-            */
+             * Sets the maximum number of the range
+             * @param {number} max The maximum value of the range.
+             */
             setMaximum(max: number): void;
     
             /**
-            * Sets the current value range displayed by the gauge.
-            * @param {number} value The current value for the gauge. This value
-            *     determines the position of the needle of the gauge.
-            * @param {string=} opt_formattedValue The string value to show in the gauge.
-            *     If not specified, no string value will be displayed.
-            */
+             * Sets the current value range displayed by the gauge.
+             * @param {number} value The current value for the gauge. This value
+             *     determines the position of the needle of the gauge.
+             * @param {string=} opt_formattedValue The string value to show in the gauge.
+             *     If not specified, no string value will be displayed.
+             */
             setValue(value: number, opt_formattedValue?: string): void;
     
             /**
-            * Sets the number of major tick sections and minor tick sections.
-            * @param {number} majorUnits The number of major tick sections.
-            * @param {number} minorUnits The number of minor tick sections for each major
-            *     tick section.
-            */
+             * Sets the number of major tick sections and minor tick sections.
+             * @param {number} majorUnits The number of major tick sections.
+             * @param {number} minorUnits The number of minor tick sections for each major
+             *     tick section.
+             */
             setTicks(majorUnits: number, minorUnits: number): void;
     
             /**
-            * Sets the labels of the major ticks.
-            * @param {Array.<string>} tickLabels A text label for each major tick value.
-            */
+             * Sets the labels of the major ticks.
+             * @param {Array.<string>} tickLabels A text label for each major tick value.
+             */
             setMajorTickLabels(tickLabels: string[]): void;
     
             /**
-            * Sets the top title of the gauge.
-            * The top title is displayed above the center.
-            * @param {string} text The top title text.
-            */
+             * Sets the top title of the gauge.
+             * The top title is displayed above the center.
+             * @param {string} text The top title text.
+             */
             setTitleTop(text: string): void;
     
             /**
-            * Sets the bottom title of the gauge.
-            * The top title is displayed below the center.
-            * @param {string} text The bottom title text.
-            */
+             * Sets the bottom title of the gauge.
+             * The top title is displayed below the center.
+             * @param {string} text The bottom title text.
+             */
             setTitleBottom(text: string): void;
     
             /**
-            * Sets the font for displaying top and bottom titles.
-            * @param {goog.graphics.Font} font The font for titles.
-            */
+             * Sets the font for displaying top and bottom titles.
+             * @param {goog.graphics.Font} font The font for titles.
+             */
             setTitleFont(font: goog.graphics.Font): void;
     
             /**
-            * Sets the font for displaying the formatted value.
-            * @param {goog.graphics.Font} font The font for displaying the value.
-            */
+             * Sets the font for displaying the formatted value.
+             * @param {goog.graphics.Font} font The font for displaying the value.
+             */
             setValueFont(font: goog.graphics.Font): void;
     
             /**
-            * Sets the color theme for drawing the gauge.
-            * @param {goog.ui.GaugeTheme} theme The color theme to use.
-            */
+             * Sets the color theme for drawing the gauge.
+             * @param {goog.ui.GaugeTheme} theme The color theme to use.
+             */
             setTheme(theme: goog.ui.GaugeTheme): void;
     
             /**
-            * Set the background color for a range of values on the gauge.
-            * @param {number} fromValue The lower (start) value of the colored range.
-            * @param {number} toValue The higher (end) value of the colored range.
-            * @param {string} color The color name to paint the range with. For example
-            *     'red', '#ffcc00' or constants like goog.ui.Gauge.RED.
-            */
+             * Set the background color for a range of values on the gauge.
+             * @param {number} fromValue The lower (start) value of the colored range.
+             * @param {number} toValue The higher (end) value of the colored range.
+             * @param {string} color The color name to paint the range with. For example
+             *     'red', '#ffcc00' or constants like goog.ui.Gauge.RED.
+             */
             addBackgroundColor(fromValue: number, toValue: number, color: string): void;
     
             /**
-            * Redraws the entire gauge.
-            * Should be called after theme colors have been changed.
-            */
+             * Redraws the entire gauge.
+             * Should be called after theme colors have been changed.
+             */
             redraw(): void;
         }
     }

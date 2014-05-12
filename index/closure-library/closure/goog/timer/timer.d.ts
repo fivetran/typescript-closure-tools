@@ -9,47 +9,47 @@ declare module goog {
         class __Class extends goog.events.EventTarget.__Class {
     
             /**
-            * Class for handling timing events.
-            *
-            * @param {number=} opt_interval Number of ms between ticks (Default: 1ms).
-            * @param {Object=} opt_timerObject  An object that has setTimeout, setInterval,
-            *     clearTimeout and clearInterval (eg Window).
-            * @constructor
-            * @extends {goog.events.EventTarget}
-            */
+             * Class for handling timing events.
+             *
+             * @param {number=} opt_interval Number of ms between ticks (Default: 1ms).
+             * @param {Object=} opt_timerObject  An object that has setTimeout, setInterval,
+             *     clearTimeout and clearInterval (eg Window).
+             * @constructor
+             * @extends {goog.events.EventTarget}
+             */
             constructor(opt_interval?: number, opt_timerObject?: Object);
     
             /**
-            * Whether this timer is enabled
-            * @type {boolean}
-            */
+             * Whether this timer is enabled
+             * @type {boolean}
+             */
             enabled: boolean;
     
             /**
-            * Gets the interval of the timer.
-            * @return {number} interval Number of ms between ticks.
-            */
+             * Gets the interval of the timer.
+             * @return {number} interval Number of ms between ticks.
+             */
             getInterval(): number;
     
             /**
-            * Sets the interval of the timer.
-            * @param {number} interval Number of ms between ticks.
-            */
+             * Sets the interval of the timer.
+             * @param {number} interval Number of ms between ticks.
+             */
             setInterval(interval: number): void;
     
             /**
-            * Dispatches the TICK event. This is its own method so subclasses can override.
-            */
+             * Dispatches the TICK event. This is its own method so subclasses can override.
+             */
             dispatchTick(): void;
     
             /**
-            * Starts the timer.
-            */
+             * Starts the timer.
+             */
             start(): void;
     
             /**
-            * Stops the timer.
-            */
+             * Stops the timer.
+             */
             stop(): void;
         }
     }

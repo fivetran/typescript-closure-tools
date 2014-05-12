@@ -9,14 +9,14 @@ declare module goog.testing {
         class __Class extends goog.testing.TestCase.__Class {
     
             /**
-            * A test case that runs tests in per-file shards.
-            * @param {number} shardIndex Shard index for this page,
-            *     <strong>1-indexed</strong>.
-            * @param {number} numShards Number of shards to split up test cases into.
-            * @extends {goog.testing.TestCase}
-            * @constructor
-            * @final
-            */
+             * A test case that runs tests in per-file shards.
+             * @param {number} shardIndex Shard index for this page,
+             *     <strong>1-indexed</strong>.
+             * @param {number} numShards Number of shards to split up test cases into.
+             * @extends {goog.testing.TestCase}
+             * @constructor
+             * @final
+             */
             constructor(shardIndex: number, numShards: number, opt_name?: any /* jsdoc error */);
         }
     }

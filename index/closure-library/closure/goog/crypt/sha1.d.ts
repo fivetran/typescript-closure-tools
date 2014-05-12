@@ -9,14 +9,14 @@ declare module goog.crypt {
         class __Class extends goog.crypt.Hash.__Class {
     
             /**
-            * SHA-1 cryptographic hash constructor.
-            *
-            * The properties declared here are discussed in the above algorithm document.
-            * @constructor
-            * @extends {goog.crypt.Hash}
-            * @final
-            * @struct
-            */
+             * SHA-1 cryptographic hash constructor.
+             *
+             * The properties declared here are discussed in the above algorithm document.
+             * @constructor
+             * @extends {goog.crypt.Hash}
+             * @final
+             * @struct
+             */
             constructor();
         }
     }

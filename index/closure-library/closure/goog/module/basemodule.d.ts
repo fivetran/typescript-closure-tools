@@ -9,18 +9,18 @@ declare module goog.module {
         class __Class extends goog.Disposable.__Class {
     
             /**
-            * A basic module object that represents a module of Javascript code that can
-            * be dynamically loaded.
-            *
-            * @constructor
-            * @extends {goog.Disposable}
-            */
+             * A basic module object that represents a module of Javascript code that can
+             * be dynamically loaded.
+             *
+             * @constructor
+             * @extends {goog.Disposable}
+             */
             constructor();
     
             /**
-            * Performs any load-time initialization that the module requires.
-            * @param {Object} context The module context.
-            */
+             * Performs any load-time initialization that the module requires.
+             * @param {Object} context The module context.
+             */
             initialize(context: Object): void;
         }
     }

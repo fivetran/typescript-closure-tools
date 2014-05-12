@@ -9,53 +9,53 @@ declare module goog.editor.plugins {
         class __Class extends goog.editor.Plugin.__Class {
     
             /**
-            * Plugin to handle splitting block quotes.  This plugin does nothing on its
-            * own and should be used in conjunction with EnterHandler or one of its
-            * subclasses.
-            * @param {boolean} requiresClassNameToSplit Whether to split only blockquotes
-            *     that have the given classname.
-            * @param {string=} opt_className The classname to apply to generated
-            *     blockquotes.  Defaults to 'tr_bq'.
-            * @constructor
-            * @extends {goog.editor.Plugin}
-            * @final
-            */
+             * Plugin to handle splitting block quotes.  This plugin does nothing on its
+             * own and should be used in conjunction with EnterHandler or one of its
+             * subclasses.
+             * @param {boolean} requiresClassNameToSplit Whether to split only blockquotes
+             *     that have the given classname.
+             * @param {string=} opt_className The classname to apply to generated
+             *     blockquotes.  Defaults to 'tr_bq'.
+             * @constructor
+             * @extends {goog.editor.Plugin}
+             * @final
+             */
             constructor(requiresClassNameToSplit: boolean, opt_className?: string);
     
             /**
-            * Checks if a node is a blockquote which can be split. A splittable blockquote
-            * meets the following criteria:
-            * <ol>
-            *   <li>Node is a blockquote element</li>
-            *   <li>Node has the blockquote classname if the classname is required to
-            *       split</li>
-            * </ol>
-            *
-            * @param {Node} node DOM node in question.
-            * @return {boolean} Whether the node is a splittable blockquote.
-            */
+             * Checks if a node is a blockquote which can be split. A splittable blockquote
+             * meets the following criteria:
+             * <ol>
+             *   <li>Node is a blockquote element</li>
+             *   <li>Node has the blockquote classname if the classname is required to
+             *       split</li>
+             * </ol>
+             *
+             * @param {Node} node DOM node in question.
+             * @return {boolean} Whether the node is a splittable blockquote.
+             */
             isSplittableBlockquote(node: Node): boolean;
     
             /**
-            * Checks if a node is a blockquote element which has been setup.
-            * @param {Node} node DOM node to check.
-            * @return {boolean} Whether the node is a blockquote with the required class
-            *     name applied.
-            */
+             * Checks if a node is a blockquote element which has been setup.
+             * @param {Node} node DOM node to check.
+             * @return {boolean} Whether the node is a blockquote with the required class
+             *     name applied.
+             */
             isSetupBlockquote(node: Node): boolean;
     
             /**
-            * Checks if a node is a blockquote element which has not been setup yet.
-            * @param {Node} node DOM node to check.
-            * @return {boolean} Whether the node is a blockquote without the required
-            *     class name applied.
-            */
+             * Checks if a node is a blockquote element which has not been setup yet.
+             * @param {Node} node DOM node to check.
+             * @return {boolean} Whether the node is a blockquote without the required
+             *     class name applied.
+             */
             isUnsetupBlockquote(node: Node): boolean;
     
             /**
-            * Gets the class name required for setup blockquotes.
-            * @return {string} The blockquote class name.
-            */
+             * Gets the class name required for setup blockquotes.
+             * @return {string} The blockquote class name.
+             */
             getBlockquoteClassName(): string;
         }
     }

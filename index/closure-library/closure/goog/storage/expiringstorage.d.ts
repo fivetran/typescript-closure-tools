@@ -10,13 +10,13 @@ declare module goog.storage {
         class __Class extends goog.storage.RichStorage.__Class {
     
             /**
-            * Provides a storage with expirning keys.
-            *
-            * @param {!goog.storage.mechanism.Mechanism} mechanism The underlying
-            *     storage mechanism.
-            * @constructor
-            * @extends {goog.storage.RichStorage}
-            */
+             * Provides a storage with expirning keys.
+             *
+             * @param {!goog.storage.mechanism.Mechanism} mechanism The underlying
+             *     storage mechanism.
+             * @constructor
+             * @extends {goog.storage.RichStorage}
+             */
             constructor(mechanism: goog.storage.mechanism.Mechanism);
         }
     }

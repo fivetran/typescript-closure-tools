@@ -10,51 +10,51 @@ declare module goog.ui.style.app {
         class __Class extends goog.ui.style.app.ButtonRenderer.__Class {
     
             /**
-            * Renderer for {@link goog.ui.style.app.MenuButton}s.  This implementation
-            * overrides {@link goog.ui.style.app.ButtonRenderer#createButton} to insert a
-            * dropdown element into the content element after the specified content.
-            * @constructor
-            * @extends {goog.ui.style.app.ButtonRenderer}
-            * @final
-            */
+             * Renderer for {@link goog.ui.style.app.MenuButton}s.  This implementation
+             * overrides {@link goog.ui.style.app.ButtonRenderer#createButton} to insert a
+             * dropdown element into the content element after the specified content.
+             * @constructor
+             * @extends {goog.ui.style.app.ButtonRenderer}
+             * @final
+             */
             constructor();
     
             /**
-            * Inserts dropdown element as last child of existing content.
-            * @param {goog.ui.ControlContent} content Text caption or DOM structure.
-            * @param {goog.dom.DomHelper} dom DOM helper, used for document ineraction.
-            * @return {Array.<Node>} DOM structure to be set as the button's content.
-            */
+             * Inserts dropdown element as last child of existing content.
+             * @param {goog.ui.ControlContent} content Text caption or DOM structure.
+             * @param {goog.dom.DomHelper} dom DOM helper, used for document ineraction.
+             * @return {Array.<Node>} DOM structure to be set as the button's content.
+             */
             createContentWithDropdown(content: string, dom: goog.dom.DomHelper): Node[];
             /**
-            * Inserts dropdown element as last child of existing content.
-            * @param {goog.ui.ControlContent} content Text caption or DOM structure.
-            * @param {goog.dom.DomHelper} dom DOM helper, used for document ineraction.
-            * @return {Array.<Node>} DOM structure to be set as the button's content.
-            */
+             * Inserts dropdown element as last child of existing content.
+             * @param {goog.ui.ControlContent} content Text caption or DOM structure.
+             * @param {goog.dom.DomHelper} dom DOM helper, used for document ineraction.
+             * @return {Array.<Node>} DOM structure to be set as the button's content.
+             */
             createContentWithDropdown(content: Node, dom: goog.dom.DomHelper): Node[];
             /**
-            * Inserts dropdown element as last child of existing content.
-            * @param {goog.ui.ControlContent} content Text caption or DOM structure.
-            * @param {goog.dom.DomHelper} dom DOM helper, used for document ineraction.
-            * @return {Array.<Node>} DOM structure to be set as the button's content.
-            */
+             * Inserts dropdown element as last child of existing content.
+             * @param {goog.ui.ControlContent} content Text caption or DOM structure.
+             * @param {goog.dom.DomHelper} dom DOM helper, used for document ineraction.
+             * @return {Array.<Node>} DOM structure to be set as the button's content.
+             */
             createContentWithDropdown(content: Node[], dom: goog.dom.DomHelper): Node[];
             /**
-            * Inserts dropdown element as last child of existing content.
-            * @param {goog.ui.ControlContent} content Text caption or DOM structure.
-            * @param {goog.dom.DomHelper} dom DOM helper, used for document ineraction.
-            * @return {Array.<Node>} DOM structure to be set as the button's content.
-            */
+             * Inserts dropdown element as last child of existing content.
+             * @param {goog.ui.ControlContent} content Text caption or DOM structure.
+             * @param {goog.dom.DomHelper} dom DOM helper, used for document ineraction.
+             * @return {Array.<Node>} DOM structure to be set as the button's content.
+             */
             createContentWithDropdown(content: NodeList, dom: goog.dom.DomHelper): Node[];
     
             /**
-            * Returns an appropriately-styled DIV containing a dropdown arrow.
-            * Creates the following DOM structure:
-            *    <div class="goog-menu-button-dropdown"> </div>
-            * @param {goog.dom.DomHelper} dom DOM helper, used for document interaction.
-            * @return {Element} Dropdown element.
-            */
+             * Returns an appropriately-styled DIV containing a dropdown arrow.
+             * Creates the following DOM structure:
+             *    <div class="goog-menu-button-dropdown"> </div>
+             * @param {goog.dom.DomHelper} dom DOM helper, used for document interaction.
+             * @return {Element} Dropdown element.
+             */
             createDropdown(dom: goog.dom.DomHelper): Element;
         }
     }

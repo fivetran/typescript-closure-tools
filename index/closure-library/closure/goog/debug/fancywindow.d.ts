@@ -9,14 +9,14 @@ declare module goog.debug {
         class __Class extends goog.debug.DebugWindow.__Class {
     
             /**
-            * Provides a Fancy extension to the DebugWindow class.  Allows filtering based
-            * on loggers and levels.
-            *
-            * @param {string=} opt_identifier Idenitifier for this logging class.
-            * @param {string=} opt_prefix Prefix pre-pended to messages.
-            * @constructor
-            * @extends {goog.debug.DebugWindow}
-            */
+             * Provides a Fancy extension to the DebugWindow class.  Allows filtering based
+             * on loggers and levels.
+             *
+             * @param {string=} opt_identifier Idenitifier for this logging class.
+             * @param {string=} opt_prefix Prefix pre-pended to messages.
+             * @constructor
+             * @extends {goog.debug.DebugWindow}
+             */
             constructor(opt_identifier?: string, opt_prefix?: string);
         }
     }

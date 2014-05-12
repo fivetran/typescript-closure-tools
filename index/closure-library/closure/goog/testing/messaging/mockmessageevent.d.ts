@@ -10,20 +10,20 @@ declare module goog.testing.messaging {
         class __Class extends goog.testing.events.Event.__Class {
     
             /**
-            * Creates a new fake MessageEvent.
-            *
-            * @param {*} data The data of the message.
-            * @param {string=} opt_origin The origin of the message, for server-sent and
-            *     cross-document events.
-            * @param {string=} opt_lastEventId The last event ID, for server-sent events.
-            * @param {Window=} opt_source The proxy for the source window, for
-            *     cross-document events.
-            * @param {Array.<MessagePort>=} opt_ports The Array of ports sent with the
-            *     message, for cross-document and channel events.
-            * @extends {goog.testing.events.Event}
-            * @constructor
-            * @final
-            */
+             * Creates a new fake MessageEvent.
+             *
+             * @param {*} data The data of the message.
+             * @param {string=} opt_origin The origin of the message, for server-sent and
+             *     cross-document events.
+             * @param {string=} opt_lastEventId The last event ID, for server-sent events.
+             * @param {Window=} opt_source The proxy for the source window, for
+             *     cross-document events.
+             * @param {Array.<MessagePort>=} opt_ports The Array of ports sent with the
+             *     message, for cross-document and channel events.
+             * @extends {goog.testing.events.Event}
+             * @constructor
+             * @final
+             */
             constructor(data: any, opt_origin?: string, opt_lastEventId?: string, opt_source?: Window, opt_ports?: MessagePort[]);
         }
     }

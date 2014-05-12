@@ -10,20 +10,20 @@ declare module goog.testing.net {
         class __Class extends goog.net.XhrIoPool.__Class {
     
             /**
-            * A pool containing a single mock XhrIo object.
-            *
-            * @param {goog.testing.net.XhrIo=} opt_xhr The mock XhrIo object.
-            * @constructor
-            * @extends {goog.net.XhrIoPool}
-            * @final
-            */
+             * A pool containing a single mock XhrIo object.
+             *
+             * @param {goog.testing.net.XhrIo=} opt_xhr The mock XhrIo object.
+             * @constructor
+             * @extends {goog.net.XhrIoPool}
+             * @final
+             */
             constructor(opt_xhr?: goog.testing.net.XhrIo);
     
             /**
-            * Get the mock XhrIo used by this pool.
-            *
-            * @return {!goog.testing.net.XhrIo} The mock XhrIo.
-            */
+             * Get the mock XhrIo used by this pool.
+             *
+             * @return {!goog.testing.net.XhrIo} The mock XhrIo.
+             */
             getXhr(): goog.testing.net.XhrIo;
         }
     }

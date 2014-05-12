@@ -8,33 +8,33 @@ declare module goog.iter {
         class __Class<VALUE> {
     
             /**
-            * Class/interface for iterators.  An iterator needs to implement a {@code next}
-            * method and it needs to throw a {@code goog.iter.StopIteration} when the
-            * iteration passes beyond the end.  Iterators have no {@code hasNext} method.
-            * It is recommended to always use the helper functions to iterate over the
-            * iterator or in case you are only targeting JavaScript 1.7 for in loops.
-            * @constructor
-            * @template VALUE
-            */
+             * Class/interface for iterators.  An iterator needs to implement a {@code next}
+             * method and it needs to throw a {@code goog.iter.StopIteration} when the
+             * iteration passes beyond the end.  Iterators have no {@code hasNext} method.
+             * It is recommended to always use the helper functions to iterate over the
+             * iterator or in case you are only targeting JavaScript 1.7 for in loops.
+             * @constructor
+             * @template VALUE
+             */
             constructor();
     
             /**
-            * Returns the next value of the iteration.  This will throw the object
-            * {@see goog.iter#StopIteration} when the iteration passes the end.
-            * @return {VALUE} Any object or value.
-            */
+             * Returns the next value of the iteration.  This will throw the object
+             * {@see goog.iter#StopIteration} when the iteration passes the end.
+             * @return {VALUE} Any object or value.
+             */
             next(): VALUE;
     
             /**
-            * Returns the {@code Iterator} object itself.  This is used to implement
-            * the iterator protocol in JavaScript 1.7
-            * @param {boolean=} opt_keys  Whether to return the keys or values. Default is
-            *     to only return the values.  This is being used by the for-in loop (true)
-            *     and the for-each-in loop (false).  Even though the param gives a hint
-            *     about what the iterator will return there is no guarantee that it will
-            *     return the keys when true is passed.
-            * @return {!goog.iter.Iterator.<VALUE>} The object itself.
-            */
+             * Returns the {@code Iterator} object itself.  This is used to implement
+             * the iterator protocol in JavaScript 1.7
+             * @param {boolean=} opt_keys  Whether to return the keys or values. Default is
+             *     to only return the values.  This is being used by the for-in loop (true)
+             *     and the for-each-in loop (false).  Even though the param gives a hint
+             *     about what the iterator will return there is no guarantee that it will
+             *     return the keys when true is passed.
+             * @return {!goog.iter.Iterator.<VALUE>} The object itself.
+             */
             __iterator__(opt_keys?: boolean): goog.iter.Iterator<VALUE>;
         }
     }
@@ -45,56 +45,56 @@ declare module goog.iter {
         class __Class<KEY, VALUE> extends goog.iter.Iterator.__Class<any[]> {
     
             /**
-            * Implements the {@code goog.iter.groupBy} iterator.
-            * @param {!goog.iter.Iterator.<VALUE>|!goog.iter.Iterable} iterable The
-            *     iterable to group.
-            * @param {function(...[VALUE]): KEY=} opt_keyFunc  Optional function for
-            *     determining the key value for each group in the {@code iterable}. Default
-            *     is the identity function.
-            * @constructor
-            * @extends {goog.iter.Iterator.<!Array>}
-            * @template KEY, VALUE
-            * @private
-            */
+             * Implements the {@code goog.iter.groupBy} iterator.
+             * @param {!goog.iter.Iterator.<VALUE>|!goog.iter.Iterable} iterable The
+             *     iterable to group.
+             * @param {function(...[VALUE]): KEY=} opt_keyFunc  Optional function for
+             *     determining the key value for each group in the {@code iterable}. Default
+             *     is the identity function.
+             * @constructor
+             * @extends {goog.iter.Iterator.<!Array>}
+             * @template KEY, VALUE
+             * @private
+             */
             constructor(iterable: goog.iter.Iterator<VALUE>, opt_keyFunc?: (_0: VALUE[][]) => KEY);
             /**
-            * Implements the {@code goog.iter.groupBy} iterator.
-            * @param {!goog.iter.Iterator.<VALUE>|!goog.iter.Iterable} iterable The
-            *     iterable to group.
-            * @param {function(...[VALUE]): KEY=} opt_keyFunc  Optional function for
-            *     determining the key value for each group in the {@code iterable}. Default
-            *     is the identity function.
-            * @constructor
-            * @extends {goog.iter.Iterator.<!Array>}
-            * @template KEY, VALUE
-            * @private
-            */
+             * Implements the {@code goog.iter.groupBy} iterator.
+             * @param {!goog.iter.Iterator.<VALUE>|!goog.iter.Iterable} iterable The
+             *     iterable to group.
+             * @param {function(...[VALUE]): KEY=} opt_keyFunc  Optional function for
+             *     determining the key value for each group in the {@code iterable}. Default
+             *     is the identity function.
+             * @constructor
+             * @extends {goog.iter.Iterator.<!Array>}
+             * @template KEY, VALUE
+             * @private
+             */
             constructor(iterable: goog.iter.Iterator<any>, opt_keyFunc?: (_0: VALUE[][]) => KEY);
             /**
-            * Implements the {@code goog.iter.groupBy} iterator.
-            * @param {!goog.iter.Iterator.<VALUE>|!goog.iter.Iterable} iterable The
-            *     iterable to group.
-            * @param {function(...[VALUE]): KEY=} opt_keyFunc  Optional function for
-            *     determining the key value for each group in the {@code iterable}. Default
-            *     is the identity function.
-            * @constructor
-            * @extends {goog.iter.Iterator.<!Array>}
-            * @template KEY, VALUE
-            * @private
-            */
+             * Implements the {@code goog.iter.groupBy} iterator.
+             * @param {!goog.iter.Iterator.<VALUE>|!goog.iter.Iterable} iterable The
+             *     iterable to group.
+             * @param {function(...[VALUE]): KEY=} opt_keyFunc  Optional function for
+             *     determining the key value for each group in the {@code iterable}. Default
+             *     is the identity function.
+             * @constructor
+             * @extends {goog.iter.Iterator.<!Array>}
+             * @template KEY, VALUE
+             * @private
+             */
             constructor(iterable: { length: number }, opt_keyFunc?: (_0: VALUE[][]) => KEY);
             /**
-            * Implements the {@code goog.iter.groupBy} iterator.
-            * @param {!goog.iter.Iterator.<VALUE>|!goog.iter.Iterable} iterable The
-            *     iterable to group.
-            * @param {function(...[VALUE]): KEY=} opt_keyFunc  Optional function for
-            *     determining the key value for each group in the {@code iterable}. Default
-            *     is the identity function.
-            * @constructor
-            * @extends {goog.iter.Iterator.<!Array>}
-            * @template KEY, VALUE
-            * @private
-            */
+             * Implements the {@code goog.iter.groupBy} iterator.
+             * @param {!goog.iter.Iterator.<VALUE>|!goog.iter.Iterable} iterable The
+             *     iterable to group.
+             * @param {function(...[VALUE]): KEY=} opt_keyFunc  Optional function for
+             *     determining the key value for each group in the {@code iterable}. Default
+             *     is the identity function.
+             * @constructor
+             * @extends {goog.iter.Iterator.<!Array>}
+             * @template KEY, VALUE
+             * @private
+             */
             constructor(iterable: { __iterator__: any /*missing*/ }, opt_keyFunc?: (_0: VALUE[][]) => KEY);
         }
     }

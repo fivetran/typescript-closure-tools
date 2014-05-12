@@ -18,374 +18,375 @@ declare module goog.net {
         class __Class {
     
             /**
-            * Encapsulates the logic for a single BrowserChannel.
-            *
-            * @param {string=} opt_clientVersion An application-specific version number
-            *        that is sent to the server when connected.
-            * @param {Array.<string>=} opt_firstTestResults Previously determined results
-            *        of the first browser channel test.
-            * @param {boolean=} opt_secondTestResults Previously determined results
-            *        of the second browser channel test.
-            * @constructor
-            */
+             * Encapsulates the logic for a single BrowserChannel.
+             *
+             * @param {string=} opt_clientVersion An application-specific version number
+             *        that is sent to the server when connected.
+             * @param {Array.<string>=} opt_firstTestResults Previously determined results
+             *        of the first browser channel test.
+             * @param {boolean=} opt_secondTestResults Previously determined results
+             *        of the second browser channel test.
+             * @constructor
+             */
             constructor(opt_clientVersion?: string, opt_firstTestResults?: string[], opt_secondTestResults?: boolean);
     
             /**
-            * Returns the browserchannel logger.
-            *
-            * @return {!goog.net.ChannelDebug} The channel debug object.
-            */
+             * Returns the browserchannel logger.
+             *
+             * @return {!goog.net.ChannelDebug} The channel debug object.
+             */
             getChannelDebug(): goog.net.ChannelDebug;
     
             /**
-            * Set the browserchannel logger.
-            * TODO(user): Add interface for channel loggers or remove this function.
-            *
-            * @param {goog.net.ChannelDebug} channelDebug The channel debug object.
-            */
+             * Set the browserchannel logger.
+             * TODO(user): Add interface for channel loggers or remove this function.
+             *
+             * @param {goog.net.ChannelDebug} channelDebug The channel debug object.
+             */
             setChannelDebug(channelDebug: goog.net.ChannelDebug): void;
     
             /**
-            * Starts the channel. This initiates connections to the server.
-            *
-            * @param {string} testPath  The path for the test connection.
-            * @param {string} channelPath  The path for the channel connection.
-            * @param {Object=} opt_extraParams  Extra parameter keys and values to add to
-            *     the requests.
-            * @param {string=} opt_oldSessionId  Session ID from a previous session.
-            * @param {number=} opt_oldArrayId  The last array ID from a previous session.
-            */
+             * Starts the channel. This initiates connections to the server.
+             *
+             * @param {string} testPath  The path for the test connection.
+             * @param {string} channelPath  The path for the channel connection.
+             * @param {Object=} opt_extraParams  Extra parameter keys and values to add to
+             *     the requests.
+             * @param {string=} opt_oldSessionId  Session ID from a previous session.
+             * @param {number=} opt_oldArrayId  The last array ID from a previous session.
+             */
             connect(testPath: string, channelPath: string, opt_extraParams?: Object, opt_oldSessionId?: string, opt_oldArrayId?: number): void;
     
             /**
-            * Disconnects and closes the channel.
-            */
+             * Disconnects and closes the channel.
+             */
             disconnect(): void;
     
             /**
-            * Returns the session id of the channel. Only available after the
-            * channel has been opened.
-            * @return {string} Session ID.
-            */
+             * Returns the session id of the channel. Only available after the
+             * channel has been opened.
+             * @return {string} Session ID.
+             */
             getSessionId(): string;
     
             /**
-            * Returns the extra HTTP headers to add to all the requests sent to the server.
-            *
-            * @return {Object} The HTTP headers, or null.
-            */
+             * Returns the extra HTTP headers to add to all the requests sent to the server.
+             *
+             * @return {Object} The HTTP headers, or null.
+             */
             getExtraHeaders(): Object;
     
             /**
-            * Sets extra HTTP headers to add to all the requests sent to the server.
-            *
-            * @param {Object} extraHeaders The HTTP headers, or null.
-            */
+             * Sets extra HTTP headers to add to all the requests sent to the server.
+             *
+             * @param {Object} extraHeaders The HTTP headers, or null.
+             */
             setExtraHeaders(extraHeaders: Object): void;
     
             /**
-            * Sets the throttle for handling onreadystatechange events for the request.
-            *
-            * @param {number} throttle The throttle in ms.  A value of zero indicates
-            *     no throttle.
-            */
+             * Sets the throttle for handling onreadystatechange events for the request.
+             *
+             * @param {number} throttle The throttle in ms.  A value of zero indicates
+             *     no throttle.
+             */
             setReadyStateChangeThrottle(throttle: number): void;
     
             /**
-            * Sets whether cross origin requests are supported for the browser channel.
-            *
-            * Setting this allows the creation of requests to secondary domains and
-            * sends XHRs with the CORS withCredentials bit set to true.
-            *
-            * In order for cross-origin requests to work, the server will also need to set
-            * CORS response headers as per:
-            * https://developer.mozilla.org/en-US/docs/HTTP_access_control
-            *
-            * See {@link goog.net.XhrIo#setWithCredentials}.
-            * @param {boolean} supportCrossDomain Whether cross domain XHRs are supported.
-            */
+             * Sets whether cross origin requests are supported for the browser channel.
+             *
+             * Setting this allows the creation of requests to secondary domains and
+             * sends XHRs with the CORS withCredentials bit set to true.
+             *
+             * In order for cross-origin requests to work, the server will also need to set
+             * CORS response headers as per:
+             * https://developer.mozilla.org/en-US/docs/HTTP_access_control
+             *
+             * See {@link goog.net.XhrIo#setWithCredentials}.
+             * @param {boolean} supportCrossDomain Whether cross domain XHRs are supported.
+             */
             setSupportsCrossDomainXhrs(supportCrossDomain: boolean): void;
     
             /**
-            * Returns the handler used for channel callback events.
-            *
-            * @return {goog.net.BrowserChannel.Handler} The handler.
-            */
+             * Returns the handler used for channel callback events.
+             *
+             * @return {goog.net.BrowserChannel.Handler} The handler.
+             */
             getHandler(): goog.net.BrowserChannel.Handler;
     
             /**
-            * Sets the handler used for channel callback events.
-            * @param {goog.net.BrowserChannel.Handler} handler The handler to set.
-            */
+             * Sets the handler used for channel callback events.
+             * @param {goog.net.BrowserChannel.Handler} handler The handler to set.
+             */
             setHandler(handler: goog.net.BrowserChannel.Handler): void;
     
             /**
-            * Returns whether the channel allows the use of a subdomain. There may be
-            * cases where this isn't allowed.
-            * @return {boolean} Whether a host prefix is allowed.
-            */
+             * Returns whether the channel allows the use of a subdomain. There may be
+             * cases where this isn't allowed.
+             * @return {boolean} Whether a host prefix is allowed.
+             */
             getAllowHostPrefix(): boolean;
     
             /**
-            * Sets whether the channel allows the use of a subdomain. There may be cases
-            * where this isn't allowed, for example, logging in with troutboard where
-            * using a subdomain causes Apache to force the user to authenticate twice.
-            * @param {boolean} allowHostPrefix Whether a host prefix is allowed.
-            */
+             * Sets whether the channel allows the use of a subdomain. There may be cases
+             * where this isn't allowed, for example, logging in with troutboard where
+             * using a subdomain causes Apache to force the user to authenticate twice.
+             * @param {boolean} allowHostPrefix Whether a host prefix is allowed.
+             */
             setAllowHostPrefix(allowHostPrefix: boolean): void;
     
             /**
-            * Returns whether the channel is buffered or not. This state is valid for
-            * querying only after the test connection has completed. This may be
-            * queried in the goog.net.BrowserChannel.okToMakeRequest() callback.
-            * A channel may be buffered if the test connection determines that
-            * a chunked response could not be sent down within a suitable time.
-            * @return {boolean} Whether the channel is buffered.
-            */
+             * Returns whether the channel is buffered or not. This state is valid for
+             * querying only after the test connection has completed. This may be
+             * queried in the goog.net.BrowserChannel.okToMakeRequest() callback.
+             * A channel may be buffered if the test connection determines that
+             * a chunked response could not be sent down within a suitable time.
+             * @return {boolean} Whether the channel is buffered.
+             */
             isBuffered(): boolean;
     
             /**
-            * Returns whether chunked mode is allowed. In certain debugging situations,
-            * it's useful for the application to have a way to disable chunked mode for a
-            * user.
-            * @return {boolean} Whether chunked mode is allowed.
-            */
+             * Returns whether chunked mode is allowed. In certain debugging situations,
+             * it's useful for the application to have a way to disable chunked mode for a
+             * user.
+            
+             * @return {boolean} Whether chunked mode is allowed.
+             */
             getAllowChunkedMode(): boolean;
     
             /**
-            * Sets whether chunked mode is allowed. In certain debugging situations, it's
-            * useful for the application to have a way to disable chunked mode for a user.
-            * @param {boolean} allowChunkedMode  Whether chunked mode is allowed.
-            */
+             * Sets whether chunked mode is allowed. In certain debugging situations, it's
+             * useful for the application to have a way to disable chunked mode for a user.
+             * @param {boolean} allowChunkedMode  Whether chunked mode is allowed.
+             */
             setAllowChunkedMode(allowChunkedMode: boolean): void;
     
             /**
-            * Sends a request to the server. The format of the request is a Map data
-            * structure of key/value pairs. These maps are then encoded in a format
-            * suitable for the wire and then reconstituted as a Map data structure that
-            * the server can process.
-            * @param {Object|goog.structs.Map} map  The map to send.
-            * @param {?Object=} opt_context The context associated with the map.
-            */
+             * Sends a request to the server. The format of the request is a Map data
+             * structure of key/value pairs. These maps are then encoded in a format
+             * suitable for the wire and then reconstituted as a Map data structure that
+             * the server can process.
+             * @param {Object|goog.structs.Map} map  The map to send.
+             * @param {?Object=} opt_context The context associated with the map.
+             */
             sendMap(map: Object, opt_context?: Object): void;
             /**
-            * Sends a request to the server. The format of the request is a Map data
-            * structure of key/value pairs. These maps are then encoded in a format
-            * suitable for the wire and then reconstituted as a Map data structure that
-            * the server can process.
-            * @param {Object|goog.structs.Map} map  The map to send.
-            * @param {?Object=} opt_context The context associated with the map.
-            */
+             * Sends a request to the server. The format of the request is a Map data
+             * structure of key/value pairs. These maps are then encoded in a format
+             * suitable for the wire and then reconstituted as a Map data structure that
+             * the server can process.
+             * @param {Object|goog.structs.Map} map  The map to send.
+             * @param {?Object=} opt_context The context associated with the map.
+             */
             sendMap(map: goog.structs.Map<any, any>, opt_context?: Object): void;
     
             /**
-            * When set to true, this changes the behavior of the forward channel so it
-            * will not retry requests; it will fail after one network failure, and if
-            * there was already one network failure, the request will fail immediately.
-            * @param {boolean} failFast  Whether or not to fail fast.
-            */
+             * When set to true, this changes the behavior of the forward channel so it
+             * will not retry requests; it will fail after one network failure, and if
+             * there was already one network failure, the request will fail immediately.
+             * @param {boolean} failFast  Whether or not to fail fast.
+             */
             setFailFast(failFast: boolean): void;
     
             /**
-            * @return {number} The max number of forward-channel retries, which will be 0
-            * in fail-fast mode.
-            */
+             * @return {number} The max number of forward-channel retries, which will be 0
+             * in fail-fast mode.
+             */
             getForwardChannelMaxRetries(): number;
     
             /**
-            * Sets the maximum number of attempts to connect to the server for forward
-            * channel requests.
-            * @param {number} retries The maximum number of attempts.
-            */
+             * Sets the maximum number of attempts to connect to the server for forward
+             * channel requests.
+             * @param {number} retries The maximum number of attempts.
+             */
             setForwardChannelMaxRetries(retries: number): void;
     
             /**
-            * Sets the timeout for a forward channel request.
-            * @param {number} timeoutMs The timeout in milliseconds.
-            */
+             * Sets the timeout for a forward channel request.
+             * @param {number} timeoutMs The timeout in milliseconds.
+             */
             setForwardChannelRequestTimeout(timeoutMs: number): void;
     
             /**
-            * @return {number} The max number of back-channel retries, which is a constant.
-            */
+             * @return {number} The max number of back-channel retries, which is a constant.
+             */
             getBackChannelMaxRetries(): number;
     
             /**
-            * Returns whether the channel is closed
-            * @return {boolean} true if the channel is closed.
-            */
+             * Returns whether the channel is closed
+             * @return {boolean} true if the channel is closed.
+             */
             isClosed(): boolean;
     
             /**
-            * Returns the browser channel state.
-            * @return {goog.net.BrowserChannel.State} The current state of the browser
-            * channel.
-            */
+             * Returns the browser channel state.
+             * @return {goog.net.BrowserChannel.State} The current state of the browser
+             * channel.
+             */
             getState(): goog.net.BrowserChannel.State;
     
             /**
-            * Return the last status code received for a request.
-            * @return {number} The last status code received for a request.
-            */
+             * Return the last status code received for a request.
+             * @return {number} The last status code received for a request.
+             */
             getLastStatusCode(): number;
     
             /**
-            * @return {number} The last array id received.
-            */
+             * @return {number} The last array id received.
+             */
             getLastArrayId(): number;
     
             /**
-            * Returns whether there are outstanding requests servicing the channel.
-            * @return {boolean} true if there are outstanding requests.
-            */
+             * Returns whether there are outstanding requests servicing the channel.
+             * @return {boolean} true if there are outstanding requests.
+             */
             hasOutstandingRequests(): boolean;
     
             /**
-            * Sets a new parser for the response payload. A custom parser may be set to
-            * avoid using eval(), for example. By default, the parser uses
-            * {@code goog.json.unsafeParse}.
-            * @param {!goog.string.Parser} parser Parser.
-            */
+             * Sets a new parser for the response payload. A custom parser may be set to
+             * avoid using eval(), for example. By default, the parser uses
+             * {@code goog.json.unsafeParse}.
+             * @param {!goog.string.Parser} parser Parser.
+             */
             setParser(parser: goog.string.Parser): void;
     
             /**
-            * Callback from BrowserTestChannel for when the channel is finished.
-            * @param {goog.net.BrowserTestChannel} testChannel The BrowserTestChannel.
-            * @param {boolean} useChunked  Whether we can chunk responses.
-            */
+             * Callback from BrowserTestChannel for when the channel is finished.
+             * @param {goog.net.BrowserTestChannel} testChannel The BrowserTestChannel.
+             * @param {boolean} useChunked  Whether we can chunk responses.
+             */
             testConnectionFinished(testChannel: goog.net.BrowserTestChannel, useChunked: boolean): void;
     
             /**
-            * Callback from BrowserTestChannel for when the channel has an error.
-            * @param {goog.net.BrowserTestChannel} testChannel The BrowserTestChannel.
-            * @param {goog.net.ChannelRequest.Error} errorCode  The error code of the
-            failure.
-            */
+             * Callback from BrowserTestChannel for when the channel has an error.
+             * @param {goog.net.BrowserTestChannel} testChannel The BrowserTestChannel.
+             * @param {goog.net.ChannelRequest.Error} errorCode  The error code of the
+                   failure.
+             */
             testConnectionFailure(testChannel: goog.net.BrowserTestChannel, errorCode: goog.net.ChannelRequest.Error): void;
     
             /**
-            * Callback from BrowserTestChannel for when the channel is blocked.
-            * @param {goog.net.BrowserTestChannel} testChannel The BrowserTestChannel.
-            */
+             * Callback from BrowserTestChannel for when the channel is blocked.
+             * @param {goog.net.BrowserTestChannel} testChannel The BrowserTestChannel.
+             */
             testConnectionBlocked(testChannel: goog.net.BrowserTestChannel): void;
     
             /**
-            * Callback from ChannelRequest for when new data is received
-            * @param {goog.net.ChannelRequest} request  The request object.
-            * @param {string} responseText The text of the response.
-            */
+             * Callback from ChannelRequest for when new data is received
+             * @param {goog.net.ChannelRequest} request  The request object.
+             * @param {string} responseText The text of the response.
+             */
             onRequestData(request: goog.net.ChannelRequest, responseText: string): void;
     
             /**
-            * Decides which host prefix should be used, if any.  If there is a handler,
-            * allows the handler to validate a host prefix provided by the server, and
-            * optionally override it.
-            * @param {?string} serverHostPrefix The host prefix provided by the server.
-            * @return {?string} The host prefix to actually use, if any. Will return null
-            *     if the use of host prefixes was disabled via setAllowHostPrefix().
-            */
+             * Decides which host prefix should be used, if any.  If there is a handler,
+             * allows the handler to validate a host prefix provided by the server, and
+             * optionally override it.
+             * @param {?string} serverHostPrefix The host prefix provided by the server.
+             * @return {?string} The host prefix to actually use, if any. Will return null
+             *     if the use of host prefixes was disabled via setAllowHostPrefix().
+             */
             correctHostPrefix(serverHostPrefix: string): string;
     
             /**
-            * Callback from ChannelRequest that indicates a request has completed.
-            * @param {goog.net.ChannelRequest} request  The request object.
-            */
+             * Callback from ChannelRequest that indicates a request has completed.
+             * @param {goog.net.ChannelRequest} request  The request object.
+             */
             onRequestComplete(request: goog.net.ChannelRequest): void;
     
             /**
-            * @param {number} baseDelayMs The base part of the retry delay, in ms.
-            * @param {number} delaySeedMs A random delay between 0 and this is added to
-            *     the base part.
-            */
+             * @param {number} baseDelayMs The base part of the retry delay, in ms.
+             * @param {number} delaySeedMs A random delay between 0 and this is added to
+             *     the base part.
+             */
             setRetryDelay(baseDelayMs: number, delaySeedMs: number): void;
     
             /**
-            * Gets the Uri used for the connection that sends data to the server.
-            * @param {string} path The path on the host.
-            * @return {!goog.Uri} The forward channel URI.
-            */
+             * Gets the Uri used for the connection that sends data to the server.
+             * @param {string} path The path on the host.
+             * @return {!goog.Uri} The forward channel URI.
+             */
             getForwardChannelUri(path: string): goog.Uri;
     
             /**
-            * Gets the results for the first browser channel test
-            * @return {Array.<string>} The results.
-            */
+             * Gets the results for the first browser channel test
+             * @return {Array.<string>} The results.
+             */
             getFirstTestResults(): string[];
     
             /**
-            * Gets the results for the second browser channel test
-            * @return {?boolean} The results. True -> buffered connection,
-            *      False -> unbuffered, null -> unknown.
-            */
+             * Gets the results for the second browser channel test
+             * @return {?boolean} The results. True -> buffered connection,
+             *      False -> unbuffered, null -> unknown.
+             */
             getSecondTestResults(): boolean;
     
             /**
-            * Gets the Uri used for the connection that receives data from the server.
-            * @param {?string} hostPrefix The host prefix.
-            * @param {string} path The path on the host.
-            * @return {!goog.Uri} The back channel URI.
-            */
+             * Gets the Uri used for the connection that receives data from the server.
+             * @param {?string} hostPrefix The host prefix.
+             * @param {string} path The path on the host.
+             * @return {!goog.Uri} The back channel URI.
+             */
             getBackChannelUri(hostPrefix: string, path: string): goog.Uri;
     
             /**
-            * Creates a data Uri applying logic for secondary hostprefix, port
-            * overrides, and versioning.
-            * @param {?string} hostPrefix The host prefix.
-            * @param {string} path The path on the host (may be absolute or relative).
-            * @param {number=} opt_overridePort Optional override port.
-            * @return {!goog.Uri} The data URI.
-            */
+             * Creates a data Uri applying logic for secondary hostprefix, port
+             * overrides, and versioning.
+             * @param {?string} hostPrefix The host prefix.
+             * @param {string} path The path on the host (may be absolute or relative).
+             * @param {number=} opt_overridePort Optional override port.
+             * @return {!goog.Uri} The data URI.
+             */
             createDataUri(hostPrefix: string, path: string, opt_overridePort?: number): goog.Uri;
     
             /**
-            * Called when BC needs to create an XhrIo object.  Override in a subclass if
-            * you need to customize the behavior, for example to enable the creation of
-            * XHR's capable of calling a secondary domain. Will also allow calling
-            * a secondary domain if withCredentials (CORS) is enabled.
-            * @param {?string} hostPrefix The host prefix, if we need an XhrIo object
-            *     capable of calling a secondary domain.
-            * @return {!goog.net.XhrIo} A new XhrIo object.
-            */
+             * Called when BC needs to create an XhrIo object.  Override in a subclass if
+             * you need to customize the behavior, for example to enable the creation of
+             * XHR's capable of calling a secondary domain. Will also allow calling
+             * a secondary domain if withCredentials (CORS) is enabled.
+             * @param {?string} hostPrefix The host prefix, if we need an XhrIo object
+             *     capable of calling a secondary domain.
+             * @return {!goog.net.XhrIo} A new XhrIo object.
+             */
             createXhrIo(hostPrefix: string): goog.net.XhrIo;
     
             /**
-            * Gets whether this channel is currently active. This is used to determine the
-            * length of time to wait before retrying. This call delegates to the handler.
-            * @return {boolean} Whether the channel is currently active.
-            */
+             * Gets whether this channel is currently active. This is used to determine the
+             * length of time to wait before retrying. This call delegates to the handler.
+             * @return {boolean} Whether the channel is currently active.
+             */
             isActive(): boolean;
     
             /**
-            * Notify the channel that a particular fine grained network event has occurred.
-            * Should be considered package-private.
-            * @param {goog.net.BrowserChannel.ServerReachability} reachabilityType The
-            *     reachability event type.
-            */
+             * Notify the channel that a particular fine grained network event has occurred.
+             * Should be considered package-private.
+             * @param {goog.net.BrowserChannel.ServerReachability} reachabilityType The
+             *     reachability event type.
+             */
             notifyServerReachabilityEvent(reachabilityType: goog.net.BrowserChannel.ServerReachability): void;
     
             /**
-            * Determines whether to use a secondary domain when the server gives us
-            * a host prefix. This allows us to work around browser per-domain
-            * connection limits.
-            *
-            * Currently, we  use secondary domains when using Trident's ActiveXObject,
-            * because it supports cross-domain requests out of the box.  Note that in IE10
-            * we no longer use ActiveX since it's not supported in Metro mode and IE10
-            * supports XHR streaming.
-            *
-            * If you need to use secondary domains on other browsers and IE10,
-            * you have two choices:
-            *     1) If you only care about browsers that support CORS
-            *        (https://developer.mozilla.org/en-US/docs/HTTP_access_control), you
-            *        can use {@link #setSupportsCrossDomainXhrs} and set the appropriate
-            *        CORS response headers on the server.
-            *     2) Or, override this method in a subclass, and make sure that those
-            *        browsers use some messaging mechanism that works cross-domain (e.g
-            *        iframes and window.postMessage).
-            *
-            * @return {boolean} Whether to use secondary domains.
-            * @see http://code.google.com/p/closure-library/issues/detail?id=339
-            */
+             * Determines whether to use a secondary domain when the server gives us
+             * a host prefix. This allows us to work around browser per-domain
+             * connection limits.
+             *
+             * Currently, we  use secondary domains when using Trident's ActiveXObject,
+             * because it supports cross-domain requests out of the box.  Note that in IE10
+             * we no longer use ActiveX since it's not supported in Metro mode and IE10
+             * supports XHR streaming.
+             *
+             * If you need to use secondary domains on other browsers and IE10,
+             * you have two choices:
+             *     1) If you only care about browsers that support CORS
+             *        (https://developer.mozilla.org/en-US/docs/HTTP_access_control), you
+             *        can use {@link #setSupportsCrossDomainXhrs} and set the appropriate
+             *        CORS response headers on the server.
+             *     2) Or, override this method in a subclass, and make sure that those
+             *        browsers use some messaging mechanism that works cross-domain (e.g
+             *        iframes and window.postMessage).
+             *
+             * @return {boolean} Whether to use secondary domains.
+             * @see http://code.google.com/p/closure-library/issues/detail?id=339
+             */
             shouldUseSecondaryDomains(): boolean;
         }
     }
@@ -399,22 +400,22 @@ declare module goog.net.BrowserChannel {
         class __Class {
     
             /**
-            * Simple container class for a (mapId, map) pair.
-            * @param {number} mapId The id for this map.
-            * @param {Object|goog.structs.Map} map The map itself.
-            * @param {Object=} opt_context The context associated with the map.
-            * @constructor
-            * @final
-            */
+             * Simple container class for a (mapId, map) pair.
+             * @param {number} mapId The id for this map.
+             * @param {Object|goog.structs.Map} map The map itself.
+             * @param {Object=} opt_context The context associated with the map.
+             * @constructor
+             * @final
+             */
             constructor(mapId: number, map: Object, opt_context?: Object);
             /**
-            * Simple container class for a (mapId, map) pair.
-            * @param {number} mapId The id for this map.
-            * @param {Object|goog.structs.Map} map The map itself.
-            * @param {Object=} opt_context The context associated with the map.
-            * @constructor
-            * @final
-            */
+             * Simple container class for a (mapId, map) pair.
+             * @param {number} mapId The id for this map.
+             * @param {Object|goog.structs.Map} map The map itself.
+             * @param {Object=} opt_context The context associated with the map.
+             * @constructor
+             * @final
+             */
             constructor(mapId: number, map: goog.structs.Map<any, any>, opt_context?: Object);
         }
     }
@@ -425,15 +426,15 @@ declare module goog.net.BrowserChannel {
         class __Class extends goog.events.Event.__Class {
     
             /**
-            * Event class for goog.net.BrowserChannel.Event.STAT_EVENT
-            *
-            * @param {goog.events.EventTarget} eventTarget The stat event target for
-            the browser channel.
-            * @param {goog.net.BrowserChannel.Stat} stat The stat.
-            * @constructor
-            * @extends {goog.events.Event}
-            * @final
-            */
+             * Event class for goog.net.BrowserChannel.Event.STAT_EVENT
+             *
+             * @param {goog.events.EventTarget} eventTarget The stat event target for
+                   the browser channel.
+             * @param {goog.net.BrowserChannel.Stat} stat The stat.
+             * @constructor
+             * @extends {goog.events.Event}
+             * @final
+             */
             constructor(eventTarget: goog.events.EventTarget, stat: goog.net.BrowserChannel.Stat);
         }
     }
@@ -444,17 +445,17 @@ declare module goog.net.BrowserChannel {
         class __Class extends goog.events.Event.__Class {
     
             /**
-            * Event class for goog.net.BrowserChannel.Event.TIMING_EVENT
-            *
-            * @param {goog.events.EventTarget} target The stat event target for
-            the browser channel.
-            * @param {number} size The number of characters in the POST data.
-            * @param {number} rtt The total round trip time from POST to response in MS.
-            * @param {number} retries The number of times the POST had to be retried.
-            * @constructor
-            * @extends {goog.events.Event}
-            * @final
-            */
+             * Event class for goog.net.BrowserChannel.Event.TIMING_EVENT
+             *
+             * @param {goog.events.EventTarget} target The stat event target for
+                   the browser channel.
+             * @param {number} size The number of characters in the POST data.
+             * @param {number} rtt The total round trip time from POST to response in MS.
+             * @param {number} retries The number of times the POST had to be retried.
+             * @constructor
+             * @extends {goog.events.Event}
+             * @final
+             */
             constructor(target: goog.events.EventTarget, size: number, rtt: number, retries: number);
         }
     }
@@ -465,16 +466,16 @@ declare module goog.net.BrowserChannel {
         class __Class extends goog.events.Event.__Class {
     
             /**
-            * Event class for goog.net.BrowserChannel.Event.SERVER_REACHABILITY_EVENT.
-            *
-            * @param {goog.events.EventTarget} target The stat event target for
-            the browser channel.
-            * @param {goog.net.BrowserChannel.ServerReachability} reachabilityType The
-            *     reachability event type.
-            * @constructor
-            * @extends {goog.events.Event}
-            * @final
-            */
+             * Event class for goog.net.BrowserChannel.Event.SERVER_REACHABILITY_EVENT.
+             *
+             * @param {goog.events.EventTarget} target The stat event target for
+                   the browser channel.
+             * @param {goog.net.BrowserChannel.ServerReachability} reachabilityType The
+             *     reachability event type.
+             * @constructor
+             * @extends {goog.events.Event}
+             * @final
+             */
             constructor(target: goog.events.EventTarget, reachabilityType: goog.net.BrowserChannel.ServerReachability);
         }
     }
@@ -485,114 +486,114 @@ declare module goog.net.BrowserChannel {
         class __Class {
     
             /**
-            * Abstract base class for the browser channel handler
-            * @constructor
-            */
+             * Abstract base class for the browser channel handler
+             * @constructor
+             */
             constructor();
     
             /**
-            * Callback handler for when a batch of response arrays is received from the
-            * server.
-            * @type {?function(!goog.net.BrowserChannel, !Array.<!Array>)}
-            */
+             * Callback handler for when a batch of response arrays is received from the
+             * server.
+             * @type {?function(!goog.net.BrowserChannel, !Array.<!Array>)}
+             */
             channelHandleMultipleArrays: (_0: goog.net.BrowserChannel, _1: any[][]) => any /*missing*/;
     
             /**
-            * Whether it's okay to make a request to the server. A handler can return
-            * false if the channel should fail. For example, if the user has logged out,
-            * the handler may want all requests to fail immediately.
-            * @param {goog.net.BrowserChannel} browserChannel The browser channel.
-            * @return {goog.net.BrowserChannel.Error} An error code. The code should
-            * return goog.net.BrowserChannel.Error.OK to indicate it's okay. Any other
-            * error code will cause a failure.
-            */
+             * Whether it's okay to make a request to the server. A handler can return
+             * false if the channel should fail. For example, if the user has logged out,
+             * the handler may want all requests to fail immediately.
+             * @param {goog.net.BrowserChannel} browserChannel The browser channel.
+             * @return {goog.net.BrowserChannel.Error} An error code. The code should
+             * return goog.net.BrowserChannel.Error.OK to indicate it's okay. Any other
+             * error code will cause a failure.
+             */
             okToMakeRequest(browserChannel: goog.net.BrowserChannel): goog.net.BrowserChannel.Error;
     
             /**
-            * Indicates the BrowserChannel has successfully negotiated with the server
-            * and can now send and receive data.
-            * @param {goog.net.BrowserChannel} browserChannel The browser channel.
-            */
+             * Indicates the BrowserChannel has successfully negotiated with the server
+             * and can now send and receive data.
+             * @param {goog.net.BrowserChannel} browserChannel The browser channel.
+             */
             channelOpened(browserChannel: goog.net.BrowserChannel): void;
     
             /**
-            * New input is available for the application to process.
-            *
-            * @param {goog.net.BrowserChannel} browserChannel The browser channel.
-            * @param {Array} array The data array.
-            */
+             * New input is available for the application to process.
+             *
+             * @param {goog.net.BrowserChannel} browserChannel The browser channel.
+             * @param {Array} array The data array.
+             */
             channelHandleArray(browserChannel: goog.net.BrowserChannel, array: any[]): void;
     
             /**
-            * Indicates maps were successfully sent on the BrowserChannel.
-            *
-            * @param {goog.net.BrowserChannel} browserChannel The browser channel.
-            * @param {Array.<goog.net.BrowserChannel.QueuedMap>} deliveredMaps The
-            *     array of maps that have been delivered to the server. This is a direct
-            *     reference to the internal BrowserChannel array, so a copy should be made
-            *     if the caller desires a reference to the data.
-            */
+             * Indicates maps were successfully sent on the BrowserChannel.
+             *
+             * @param {goog.net.BrowserChannel} browserChannel The browser channel.
+             * @param {Array.<goog.net.BrowserChannel.QueuedMap>} deliveredMaps The
+             *     array of maps that have been delivered to the server. This is a direct
+             *     reference to the internal BrowserChannel array, so a copy should be made
+             *     if the caller desires a reference to the data.
+             */
             channelSuccess(browserChannel: goog.net.BrowserChannel, deliveredMaps: goog.net.BrowserChannel.QueuedMap[]): void;
     
             /**
-            * Indicates an error occurred on the BrowserChannel.
-            *
-            * @param {goog.net.BrowserChannel} browserChannel The browser channel.
-            * @param {goog.net.BrowserChannel.Error} error The error code.
-            */
+             * Indicates an error occurred on the BrowserChannel.
+             *
+             * @param {goog.net.BrowserChannel} browserChannel The browser channel.
+             * @param {goog.net.BrowserChannel.Error} error The error code.
+             */
             channelError(browserChannel: goog.net.BrowserChannel, error: goog.net.BrowserChannel.Error): void;
     
             /**
-            * Indicates the BrowserChannel is closed. Also notifies about which maps,
-            * if any, that may not have been delivered to the server.
-            * @param {goog.net.BrowserChannel} browserChannel The browser channel.
-            * @param {Array.<goog.net.BrowserChannel.QueuedMap>=} opt_pendingMaps The
-            *     array of pending maps, which may or may not have been delivered to the
-            *     server.
-            * @param {Array.<goog.net.BrowserChannel.QueuedMap>=} opt_undeliveredMaps
-            *     The array of undelivered maps, which have definitely not been delivered
-            *     to the server.
-            */
+             * Indicates the BrowserChannel is closed. Also notifies about which maps,
+             * if any, that may not have been delivered to the server.
+             * @param {goog.net.BrowserChannel} browserChannel The browser channel.
+             * @param {Array.<goog.net.BrowserChannel.QueuedMap>=} opt_pendingMaps The
+             *     array of pending maps, which may or may not have been delivered to the
+             *     server.
+             * @param {Array.<goog.net.BrowserChannel.QueuedMap>=} opt_undeliveredMaps
+             *     The array of undelivered maps, which have definitely not been delivered
+             *     to the server.
+             */
             channelClosed(browserChannel: goog.net.BrowserChannel, opt_pendingMaps?: goog.net.BrowserChannel.QueuedMap[], opt_undeliveredMaps?: goog.net.BrowserChannel.QueuedMap[]): void;
     
             /**
-            * Gets any parameters that should be added at the time another connection is
-            * made to the server.
-            * @param {goog.net.BrowserChannel} browserChannel The browser channel.
-            * @return {Object} Extra parameter keys and values to add to the
-            *                  requests.
-            */
+             * Gets any parameters that should be added at the time another connection is
+             * made to the server.
+             * @param {goog.net.BrowserChannel} browserChannel The browser channel.
+             * @return {Object} Extra parameter keys and values to add to the
+             *                  requests.
+             */
             getAdditionalParams(browserChannel: goog.net.BrowserChannel): Object;
     
             /**
-            * Gets the URI of an image that can be used to test network connectivity.
-            * @param {goog.net.BrowserChannel} browserChannel The browser channel.
-            * @return {goog.Uri?} A custom URI to load for the network test.
-            */
+             * Gets the URI of an image that can be used to test network connectivity.
+             * @param {goog.net.BrowserChannel} browserChannel The browser channel.
+             * @return {goog.Uri?} A custom URI to load for the network test.
+             */
             getNetworkTestImageUri(browserChannel: goog.net.BrowserChannel): goog.Uri;
     
             /**
-            * Gets whether this channel is currently active. This is used to determine the
-            * length of time to wait before retrying.
-            * @param {goog.net.BrowserChannel} browserChannel The browser channel.
-            * @return {boolean} Whether the channel is currently active.
-            */
+             * Gets whether this channel is currently active. This is used to determine the
+             * length of time to wait before retrying.
+             * @param {goog.net.BrowserChannel} browserChannel The browser channel.
+             * @return {boolean} Whether the channel is currently active.
+             */
             isActive(browserChannel: goog.net.BrowserChannel): boolean;
     
             /**
-            * Called by the channel if enumeration of the map throws an exception.
-            * @param {goog.net.BrowserChannel} browserChannel The browser channel.
-            * @param {Object} map The map that can't be enumerated.
-            */
+             * Called by the channel if enumeration of the map throws an exception.
+             * @param {goog.net.BrowserChannel} browserChannel The browser channel.
+             * @param {Object} map The map that can't be enumerated.
+             */
             badMapError(browserChannel: goog.net.BrowserChannel, map: Object): void;
     
             /**
-            * Allows the handler to override a host prefix provided by the server.  Will
-            * be called whenever the channel has received such a prefix and is considering
-            * its use.
-            * @param {?string} serverHostPrefix The host prefix provided by the server.
-            * @return {?string} The host prefix the client should use.
-            */
+             * Allows the handler to override a host prefix provided by the server.  Will
+             * be called whenever the channel has received such a prefix and is considering
+             * its use.
+             * @param {?string} serverHostPrefix The host prefix provided by the server.
+             * @return {?string} The host prefix the client should use.
+             */
             correctHostPrefix(serverHostPrefix: string): string;
         }
     }

@@ -9,13 +9,13 @@ declare module goog.crypt {
         class __Class extends goog.crypt.Hash.__Class {
     
             /**
-            * SHA-2 cryptographic hash constructor.
-            * This constructor should not be used directly to create the object. Rather,
-            * one should use the constructor of the sub-classes.
-            * @constructor
-            * @extends {goog.crypt.Hash}
-            * @struct
-            */
+             * SHA-2 cryptographic hash constructor.
+             * This constructor should not be used directly to create the object. Rather,
+             * one should use the constructor of the sub-classes.
+             * @constructor
+             * @extends {goog.crypt.Hash}
+             * @struct
+             */
             constructor();
         }
     }

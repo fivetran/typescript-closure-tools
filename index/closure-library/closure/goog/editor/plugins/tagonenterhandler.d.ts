@@ -10,12 +10,12 @@ declare module goog.editor.plugins {
         class __Class extends goog.editor.plugins.EnterHandler.__Class {
     
             /**
-            * Plugin to handle enter keys. This subclass normalizes all browsers to use
-            * the given block tag on enter.
-            * @param {goog.dom.TagName} tag The type of tag to add on enter.
-            * @constructor
-            * @extends {goog.editor.plugins.EnterHandler}
-            */
+             * Plugin to handle enter keys. This subclass normalizes all browsers to use
+             * the given block tag on enter.
+             * @param {goog.dom.TagName} tag The type of tag to add on enter.
+             * @constructor
+             * @extends {goog.editor.plugins.EnterHandler}
+             */
             constructor(tag: goog.dom.TagName);
         }
     }

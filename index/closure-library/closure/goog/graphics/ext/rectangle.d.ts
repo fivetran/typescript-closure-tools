@@ -10,12 +10,12 @@ declare module goog.graphics.ext {
         class __Class extends goog.graphics.ext.StrokeAndFillElement.__Class {
     
             /**
-            * Wrapper for a graphics rectangle element.
-            * @param {goog.graphics.ext.Group} group Parent for this element.
-            * @constructor
-            * @extends {goog.graphics.ext.StrokeAndFillElement}
-            * @final
-            */
+             * Wrapper for a graphics rectangle element.
+             * @param {goog.graphics.ext.Group} group Parent for this element.
+             * @constructor
+             * @extends {goog.graphics.ext.StrokeAndFillElement}
+             * @final
+             */
             constructor(group: goog.graphics.ext.Group);
         }
     }

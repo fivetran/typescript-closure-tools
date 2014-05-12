@@ -9,11 +9,11 @@ declare module goog.ui {
         class __Class extends goog.ui.ContainerRenderer.__Class {
     
             /**
-            * Default renderer for {@link goog.ui.Toolbar}s, based on {@link
-            * goog.ui.ContainerRenderer}.
-            * @constructor
-            * @extends {goog.ui.ContainerRenderer}
-            */
+             * Default renderer for {@link goog.ui.Toolbar}s, based on {@link
+             * goog.ui.ContainerRenderer}.
+             * @constructor
+             * @extends {goog.ui.ContainerRenderer}
+             */
             constructor();
         }
     }

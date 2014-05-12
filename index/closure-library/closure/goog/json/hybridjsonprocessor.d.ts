@@ -9,13 +9,13 @@ declare module goog.json {
         class __Class implements goog.json.Processor {
     
             /**
-            * Processor form of goog.json.hybrid, which attempts to parse/serialize
-            * JSON using native JSON methods, falling back to goog.json if not
-            * available.
-            * @constructor
-            * @implements {goog.json.Processor}
-            * @final
-            */
+             * Processor form of goog.json.hybrid, which attempts to parse/serialize
+             * JSON using native JSON methods, falling back to goog.json if not
+             * available.
+             * @constructor
+             * @implements {goog.json.Processor}
+             * @final
+             */
             constructor();
 
             /**

@@ -9,81 +9,81 @@ declare module goog.math {
         class __Class extends goog.math.Coordinate3.__Class {
     
             /**
-            * Class for a three-dimensional vector object and assorted functions useful for
-            * manipulation.
-            *
-            * Inherits from goog.math.Coordinate3 so that a Vec3 may be passed in to any
-            * function that requires a Coordinate.
-            *
-            * @param {number} x The x value for the vector.
-            * @param {number} y The y value for the vector.
-            * @param {number} z The z value for the vector.
-            * @constructor
-            * @extends {goog.math.Coordinate3}
-            */
+             * Class for a three-dimensional vector object and assorted functions useful for
+             * manipulation.
+             *
+             * Inherits from goog.math.Coordinate3 so that a Vec3 may be passed in to any
+             * function that requires a Coordinate.
+             *
+             * @param {number} x The x value for the vector.
+             * @param {number} y The y value for the vector.
+             * @param {number} z The z value for the vector.
+             * @constructor
+             * @extends {goog.math.Coordinate3}
+             */
             constructor(x: number, y: number, z: number);
     
             /**
-            * Returns the magnitude of the vector measured from the origin.
-            *
-            * @return {number} The length of the vector.
-            */
+             * Returns the magnitude of the vector measured from the origin.
+             *
+             * @return {number} The length of the vector.
+             */
             magnitude(): number;
     
             /**
-            * Returns the squared magnitude of the vector measured from the origin.
-            * NOTE(brenneman): Leaving out the square root is not a significant
-            * optimization in JavaScript.
-            *
-            * @return {number} The length of the vector, squared.
-            */
+             * Returns the squared magnitude of the vector measured from the origin.
+             * NOTE(brenneman): Leaving out the square root is not a significant
+             * optimization in JavaScript.
+             *
+             * @return {number} The length of the vector, squared.
+             */
             squaredMagnitude(): number;
     
             /**
-            * Scales the current vector by a constant.
-            *
-            * @param {number} s The scale factor.
-            * @return {!goog.math.Vec3} This vector, scaled.
-            */
+             * Scales the current vector by a constant.
+             *
+             * @param {number} s The scale factor.
+             * @return {!goog.math.Vec3} This vector, scaled.
+             */
             scale(s: number): goog.math.Vec3;
     
             /**
-            * Reverses the sign of the vector. Equivalent to scaling the vector by -1.
-            *
-            * @return {!goog.math.Vec3} This vector, inverted.
-            */
+             * Reverses the sign of the vector. Equivalent to scaling the vector by -1.
+             *
+             * @return {!goog.math.Vec3} This vector, inverted.
+             */
             invert(): goog.math.Vec3;
     
             /**
-            * Normalizes the current vector to have a magnitude of 1.
-            *
-            * @return {!goog.math.Vec3} This vector, normalized.
-            */
+             * Normalizes the current vector to have a magnitude of 1.
+             *
+             * @return {!goog.math.Vec3} This vector, normalized.
+             */
             normalize(): goog.math.Vec3;
     
             /**
-            * Adds another vector to this vector in-place.
-            *
-            * @param {goog.math.Vec3} b The vector to add.
-            * @return {!goog.math.Vec3} This vector with {@code b} added.
-            */
+             * Adds another vector to this vector in-place.
+             *
+             * @param {goog.math.Vec3} b The vector to add.
+             * @return {!goog.math.Vec3} This vector with {@code b} added.
+             */
             add(b: goog.math.Vec3): goog.math.Vec3;
     
             /**
-            * Subtracts another vector from this vector in-place.
-            *
-            * @param {goog.math.Vec3} b The vector to subtract.
-            * @return {!goog.math.Vec3} This vector with {@code b} subtracted.
-            */
+             * Subtracts another vector from this vector in-place.
+             *
+             * @param {goog.math.Vec3} b The vector to subtract.
+             * @return {!goog.math.Vec3} This vector with {@code b} subtracted.
+             */
             subtract(b: goog.math.Vec3): goog.math.Vec3;
     
             /**
-            * Compares this vector with another for equality.
-            *
-            * @param {goog.math.Vec3} b The other vector.
-            * @return {boolean} True if this vector's x, y and z equal the given vector's
-            *     x, y, and z, respectively.
-            */
+             * Compares this vector with another for equality.
+             *
+             * @param {goog.math.Vec3} b The other vector.
+             * @return {boolean} True if this vector's x, y and z equal the given vector's
+             *     x, y, and z, respectively.
+             */
             equals(b: goog.math.Vec3): boolean;
         }
     }
