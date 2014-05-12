@@ -610,19 +610,7 @@ declare module goog.ui {
             *     series. NOTE: If specified, all previously added data sets must also
             *     have a legend text.
             */
-            addDataSet(data: number[], color: string, opt_legendText?: string): void;
-            /**
-            * Adds a data set.
-            * NOTE: The color string should NOT have a '#' at the beginning of it.
-            *
-            * @param {Array.<number|null>} data An array of numbers (values can be
-            *     NaN or null).
-            * @param {string} color The hex value for this data set's color.
-            * @param {string=} opt_legendText The legend text, if any, for this data
-            *     series. NOTE: If specified, all previously added data sets must also
-            *     have a legend text.
-            */
-            addDataSet(data: any /*null*/[], color: string, opt_legendText?: string): void;
+            addDataSet(data: any /*number|any (null)*/[], color: string, opt_legendText?: string): void;
     
             /**
             * Clears the data sets from the graph. All data, including the colors and

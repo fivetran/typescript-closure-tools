@@ -16,15 +16,7 @@ declare module goog.net {
             * @extends {goog.Disposable}
             * @final
             */
-            constructor(uris: string[]);
-            /**
-            * Helper class used to load multiple URIs.
-            * @param {Array.<string|goog.Uri>} uris The URIs to load.
-            * @constructor
-            * @extends {goog.Disposable}
-            * @final
-            */
-            constructor(uris: goog.Uri[]);
+            constructor(uris: any /*string|goog.Uri*/[]);
     
             /**
             * Gets the URI by id.

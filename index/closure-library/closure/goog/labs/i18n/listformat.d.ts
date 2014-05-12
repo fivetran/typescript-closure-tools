@@ -28,15 +28,7 @@ declare module goog.labs.i18n {
             * @param {!Array.<string|number>} items Items to format.
             * @return {string} The items formatted into a string, as a list.
             */
-            format(items: string[]): string;
-            /**
-            * Formats an array of strings into a string.
-            * It is a user facing, locale-aware list (i.e. 'red, green, and blue').
-            *
-            * @param {!Array.<string|number>} items Items to format.
-            * @return {string} The items formatted into a string, as a list.
-            */
-            format(items: number[]): string;
+            format(items: any /*string|number*/[]): string;
         }
     }
 

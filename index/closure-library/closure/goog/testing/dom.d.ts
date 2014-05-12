@@ -23,33 +23,7 @@ declare module goog.testing.dom {
      *             after "#".
      *         other string: Match the text node's contents.
      */
-    function assertNodesMatch(it: goog.iter.Iterator<any>, array: Node[]): void;
-    /**
-     * Tests if the given iterator over nodes matches the given Array of node
-     * descriptors.  Throws an error if any match fails.
-     * @param {goog.iter.Iterator} it  An iterator over nodes.
-     * @param {Array.<Node|number|string>} array Array of node descriptors to match
-     *     against.  Node descriptors can be any of the following:
-     *         Node: Test if the two nodes are equal.
-     *         number: Test node.nodeType == number.
-     *         string starting with '#': Match the node's id with the text
-     *             after "#".
-     *         other string: Match the text node's contents.
-     */
-    function assertNodesMatch(it: goog.iter.Iterator<any>, array: number[]): void;
-    /**
-     * Tests if the given iterator over nodes matches the given Array of node
-     * descriptors.  Throws an error if any match fails.
-     * @param {goog.iter.Iterator} it  An iterator over nodes.
-     * @param {Array.<Node|number|string>} array Array of node descriptors to match
-     *     against.  Node descriptors can be any of the following:
-     *         Node: Test if the two nodes are equal.
-     *         number: Test node.nodeType == number.
-     *         string starting with '#': Match the node's id with the text
-     *             after "#".
-     *         other string: Match the text node's contents.
-     */
-    function assertNodesMatch(it: goog.iter.Iterator<any>, array: string[]): void;
+    function assertNodesMatch(it: goog.iter.Iterator<any>, array: any /*Node|number|string*/[]): void;
 
     /**
      * Exposes a node as a string.

@@ -16,15 +16,7 @@ declare module goog.net {
             * @extends {goog.events.EventTarget}
             * @final
             */
-            constructor(uris: string[]);
-            /**
-            * Class used to load multiple URIs.
-            * @param {Array.<string|goog.Uri>} uris The URIs to load.
-            * @constructor
-            * @extends {goog.events.EventTarget}
-            * @final
-            */
-            constructor(uris: goog.Uri[]);
+            constructor(uris: any /*string|goog.Uri*/[]);
     
             /**
             * Gets the response texts, in order.

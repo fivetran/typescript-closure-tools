@@ -435,7 +435,7 @@ declare module goog.Promise {
      *     first Promise (or Promise-like) input to complete.
      * @template TYPE
      */
-    function race<TYPE>(promises: goog.Thenable<TYPE>[]): goog.Promise<TYPE>;
+    function race<TYPE>(promises: any /*goog.Thenable<TYPE>|Thenable*/[]): goog.Promise<TYPE>;
 
     /**
      * @param {!Array.<!(goog.Thenable.<TYPE>|Thenable)>} promises
@@ -444,7 +444,7 @@ declare module goog.Promise {
      *     successfully fulfilled, or is rejected by the first rejection result.
      * @template TYPE
      */
-    function all<TYPE>(promises: goog.Thenable<TYPE>[]): goog.Promise<TYPE[]>;
+    function all<TYPE>(promises: any /*goog.Thenable<TYPE>|Thenable*/[]): goog.Promise<TYPE[]>;
 
     /**
      * @param {!Array.<!(goog.Thenable.<TYPE>|Thenable)>} promises
@@ -453,7 +453,7 @@ declare module goog.Promise {
      *     reason if all inputs are rejected.
      * @template TYPE
      */
-    function firstFulfilled<TYPE>(promises: goog.Thenable<TYPE>[]): goog.Promise<TYPE>;
+    function firstFulfilled<TYPE>(promises: any /*goog.Thenable<TYPE>|Thenable*/[]): goog.Promise<TYPE>;
 
     /**
      * @return {!goog.promise.Resolver.<TYPE>} Resolver wrapping the promise and its

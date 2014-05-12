@@ -176,20 +176,7 @@ declare module goog.object {
      * @return {*} The resulting value.  If, at any point, the value for a key
      *     is undefined, returns undefined.
      */
-    function getValueByKeys(obj: Object, ...var_args: number[][]): any;
-    /**
-     * Get a value from an object multiple levels deep.  This is useful for
-     * pulling values from deeply nested objects, such as JSON responses.
-     * Example usage: getValueByKeys(jsonObj, 'foo', 'entries', 3)
-     *
-     * @param {!Object} obj An object to get the value from.  Can be array-like.
-     * @param {...(string|number|!Array.<number|string>)} var_args A number of keys
-     *     (as strings, or numbers, for array-like objects).  Can also be
-     *     specified as a single array of keys.
-     * @return {*} The resulting value.  If, at any point, the value for a key
-     *     is undefined, returns undefined.
-     */
-    function getValueByKeys(obj: Object, ...var_args: string[][]): any;
+    function getValueByKeys(obj: Object, ...var_args: any /*number|string*/[][]): any;
 
     /**
      * Whether the object/map/hash contains the given key.

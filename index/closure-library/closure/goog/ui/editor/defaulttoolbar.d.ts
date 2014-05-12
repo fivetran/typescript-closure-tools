@@ -98,23 +98,7 @@ declare module goog.ui.editor.DefaultToolbar {
      * @return {!goog.ui.Toolbar} Editor toolbar, rendered into the given parent
      *     element.
      */
-    function makeToolbar(items: string[], elem: Element, opt_isRightToLeft?: boolean): goog.ui.Toolbar;
-    /**
-     * Creates a {@link goog.ui.Toolbar} containing the specified set of
-     * toolbar buttons, and renders it into the given parent element.  Each
-     * item in the {@code items} array must either be a
-     * {@link goog.editor.Command} (to create a built-in button) or a subclass
-     * of {@link goog.ui.Control} (to create a custom control).
-     * @param {!Array.<string|goog.ui.Control>} items Toolbar items; each must
-     *     be a {@link goog.editor.Command} or a {@link goog.ui.Control}.
-     * @param {!Element} elem Toolbar parent element.
-     * @param {boolean=} opt_isRightToLeft Whether the editor chrome is
-     *     right-to-left; defaults to the directionality of the toolbar parent
-     *     element.
-     * @return {!goog.ui.Toolbar} Editor toolbar, rendered into the given parent
-     *     element.
-     */
-    function makeToolbar(items: goog.ui.Control[], elem: Element, opt_isRightToLeft?: boolean): goog.ui.Toolbar;
+    function makeToolbar(items: any /*string|goog.ui.Control*/[], elem: Element, opt_isRightToLeft?: boolean): goog.ui.Toolbar;
 
     /**
      * Creates an instance of a subclass of {@link goog.ui.Button} for the given
