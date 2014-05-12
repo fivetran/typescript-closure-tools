@@ -383,7 +383,7 @@ function generate_interface(name: string, prototype: combine.Symbol) {
 
     Object.keys(prototype).filter(name => name !== '').forEach(function (name) {
         var value = prototype[name];
-        var text = value.originalText.replace(/\n\s+/g, '\n     ');
+        var text = value.originalText.replace(/\n/g, '\n     ');
 
         acc += '\n';
         generate_members(name, value).forEach(member => {
@@ -447,7 +447,7 @@ function generate_class(name: string, prototype: combine.Symbol) {
     acc += '    ' + '/** Fake class which should be extended to avoid inheriting static properties */\n';
     acc += '    ' + 'class __Class' + generics(constructor.jsdoc) + ' ' + generate_class_extends(constructor.jsdoc) + generate_implements(constructor.jsdoc) + '{\n';
 
-    var text = constructor.originalText.replace(/\n\s+/g, '\n' + '    ' + '    ');
+    var text = constructor.originalText.replace(/\n/g, '\n' + '    ' + '    ');
 
     acc += '\n';
     generate_constructors(constructor).forEach(constructor => {
@@ -460,7 +460,7 @@ function generate_class(name: string, prototype: combine.Symbol) {
             var value = prototype[name];
             var docs = value.jsdoc;
             var tags = docs.tags || [];
-            var text = value.originalText.replace(/\n\s+/g, '\n' + '    ' + '    ');
+            var text = value.originalText.replace(/\n/g, '\n' + '    ' + '    ');
 
             if (!tags.some(t => t.title === 'override')) {
                 acc += '\n';
