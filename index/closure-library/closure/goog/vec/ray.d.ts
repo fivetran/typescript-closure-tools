@@ -30,43 +30,13 @@ declare module goog.vec {
             * @param {goog.vec.AnyType} origin The new origin.
             * @param {goog.vec.AnyType} dir The new direction.
             */
-            set(origin: goog.vec.Float32, dir: goog.vec.Float64): void;
-            /**
-            * Sets the origin and direction of the ray.
-            * @param {goog.vec.AnyType} origin The new origin.
-            * @param {goog.vec.AnyType} dir The new direction.
-            */
             set(origin: goog.vec.Float32, dir: goog.vec.Number): void;
             /**
             * Sets the origin and direction of the ray.
             * @param {goog.vec.AnyType} origin The new origin.
             * @param {goog.vec.AnyType} dir The new direction.
             */
-            set(origin: goog.vec.Float64, dir: goog.vec.Float32): void;
-            /**
-            * Sets the origin and direction of the ray.
-            * @param {goog.vec.AnyType} origin The new origin.
-            * @param {goog.vec.AnyType} dir The new direction.
-            */
-            set(origin: goog.vec.Float64, dir: goog.vec.Float64): void;
-            /**
-            * Sets the origin and direction of the ray.
-            * @param {goog.vec.AnyType} origin The new origin.
-            * @param {goog.vec.AnyType} dir The new direction.
-            */
-            set(origin: goog.vec.Float64, dir: goog.vec.Number): void;
-            /**
-            * Sets the origin and direction of the ray.
-            * @param {goog.vec.AnyType} origin The new origin.
-            * @param {goog.vec.AnyType} dir The new direction.
-            */
             set(origin: goog.vec.Number, dir: goog.vec.Float32): void;
-            /**
-            * Sets the origin and direction of the ray.
-            * @param {goog.vec.AnyType} origin The new origin.
-            * @param {goog.vec.AnyType} dir The new direction.
-            */
-            set(origin: goog.vec.Number, dir: goog.vec.Float64): void;
             /**
             * Sets the origin and direction of the ray.
             * @param {goog.vec.AnyType} origin The new origin.
@@ -83,11 +53,6 @@ declare module goog.vec {
             * Sets the origin of the ray.
             * @param {goog.vec.AnyType} origin the new origin.
             */
-            setOrigin(origin: goog.vec.Float64): void;
-            /**
-            * Sets the origin of the ray.
-            * @param {goog.vec.AnyType} origin the new origin.
-            */
             setOrigin(origin: goog.vec.Number): void;
     
             /**
@@ -95,11 +60,6 @@ declare module goog.vec {
             * @param {goog.vec.AnyType} dir The new direction.
             */
             setDir(dir: goog.vec.Float32): void;
-            /**
-            * Sets the direction of the ray.
-            * @param {goog.vec.AnyType} dir The new direction.
-            */
-            setDir(dir: goog.vec.Float64): void;
             /**
             * Sets the direction of the ray.
             * @param {goog.vec.AnyType} dir The new direction.
