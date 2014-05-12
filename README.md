@@ -204,3 +204,35 @@ declare module goog {
 }
 ```
 
+### Duplicate overloads
+
+Closure unions sometimes include two types which are structurally equivalent:
+
+```javascript
+/** @typedef {{length: number}} */
+Lengthable;
+
+/** @typedef {{length: number}} */
+ArrayLike;
+
+/** @param {Lengthable|ArrayLike} x */
+f = function(x) { };
+```
+
+which becomes:
+
+```typescript
+interface Lengthable {
+  length: number;
+}
+
+interface ArrayLike {
+  length: number;
+}
+
+f(x: Lengthable);
+f(x: ArrayLike);
+```
+
+TypeScript has a structural type system, so the above example is considered a duplicate overload. One of them
+will need to be manually deleted.
