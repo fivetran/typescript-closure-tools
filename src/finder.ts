@@ -23,12 +23,21 @@ interface FileCache {
 
 var providesByFile: FileCache = {};
 
+function parent_symbol(name: string) {
+    var dot = name.lastIndexOf('.');
+
+    return name.substring(0, dot);
+}
+
 /**
  * @param symbolName
  * @returns file that goog.provide's name
  */
 export function file(symbolName: string): string {
-    return fileByProvide[symbolName];
+    if (symbolName)
+        return fileByProvide[symbolName] || file(parent_symbol(symbolName));
+    else
+        return null;
 }
 
 /**

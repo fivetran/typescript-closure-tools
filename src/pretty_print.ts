@@ -24,6 +24,14 @@ function drop_prefix(value: string, prefix: string) {
         return value;
 }
 
+function unique(values: string[]): string[] {
+    var acc = {};
+
+    values.forEach(name => acc[name] = true);
+
+    return Object.keys(acc);
+}
+
 export function pretty(out: generate.Generated): string {
     var acc = '';
 
@@ -59,9 +67,10 @@ export function pretty(out: generate.Generated): string {
     if (options.globals)
         emit_reference(options.globals);
 
-    out.references
+    var files = out.references
         .map(finder.file)
-        .filter(file => file !== main.currentInput)
+        .filter(file => file !== null);
+    unique(files).filter(file => file !== main.currentInput)
         .map(change_extension)
         .forEach(emit_reference);
 
