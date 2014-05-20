@@ -30,6 +30,7 @@ node src/main.js
 ```
 
 * `--provides symbols.tsv` A tab-separated file where each row has the form `file-name.js    providedSymbol`
+If this option isn't present, we will simply look for global symbols in the input files.
 * `--globals output/dir/global-declarations.d.ts` A TypeScript declaration that will be referenced at the top of every output file.
 * `--input_root input/dir` Root of inputs, considered when computing relative paths for `///<reference path="..." />` tags.
 * `--output_root output/dir` Root of outputs, considered when computing relative paths for `///<reference path="..." />` tags.
