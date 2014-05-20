@@ -7,16 +7,6 @@ import options = require('./options');
 
 var fileByProvide: { [key: string]: string } = {};
 
-if (options.provides) {
-    fs.readFileSync(options.provides, 'utf8').split('\n').forEach(line => {
-        var columns = line.split('\t');
-        var file = columns[0];
-        var symbol = columns[1];
-
-        fileByProvide[symbol] = file;
-    });
-}
-
 interface FileCache {
     [fileName: string]: combine.Symbols;
 }
@@ -75,4 +65,27 @@ export function member(symbolName: string): parser.Value {
         return moduleValue[memberName] || null;
     } else return null;
 
+}
+
+// If user gives a TSV file with provided symbols, use that
+if (options.provides) {
+    fs.readFileSync(options.provides, 'utf8').split('\n').forEach(line => {
+        var columns = line.split('\t');
+        var file = columns[0];
+        var symbol = columns[1];
+
+        console.log(JSON.stringify(columns));
+        fileByProvide[symbol] = file;
+    });
+}
+// Otherwise parse all inputs
+else {
+    options.todo.forEach(todo => {
+        var found = symbols(todo.input);
+        var classNames = Object.keys(found.classes);
+        var moduleNames = Object.keys(found.modules);
+        var names = classNames.concat(moduleNames);
+
+        names.forEach(name => fileByProvide[name] = todo.input);
+    });
 }
