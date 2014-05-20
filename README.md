@@ -42,6 +42,13 @@ node src/main.js
 * `lib/` Dependencies
 * `index/` Typescript definition files for the Closure library
 
+# Running the tests
+
+```bash
+tsc test/*.ts
+./node_modules/jasmine-node/bin/jasmine-node test/*.js
+```
+
 # Differences between the Closure type system and TypeScript
 
 There are several important differences between the Closure type system and TypeScript.
