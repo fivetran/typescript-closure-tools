@@ -5,8 +5,6 @@
     "esprima": "*",
     "escodegen": "*",
     "jsdoc": "*",
-    "mocha": "*",
-    "chai": "*",
     "jasmine-node": "*",
     "mkdirp": "*",
     "colors": "*"
