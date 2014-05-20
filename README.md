@@ -5,6 +5,17 @@ The purpose of this tool is to assist developers writing TypeScript definitions 
 Our goal is to generate correct type definitions in most cases, and to provide a useful starting
 point for manually fixing the difficult cases.
 
+# Setup
+
+```bash
+git clone git@github.com:fivetran/closure-definitions.git
+cd closure-definitions
+git submodule update --init
+npm install
+tsc --module commonjs src/*.ts
+node src/main.js test/example.js test/example.d.ts # Run a single example
+```
+
 # Usage
 
 ```
@@ -17,6 +28,11 @@ node src/main.js
   input/dir/another-input-file.js output/dir/another-output-file.d.ts
   ...
 ```
+
+* `--provides symbols.tsv` A tab-separated file where each row has the form `file-name.js    providedSymbol`
+* `--globals output/dir/global-declarations.d.ts` A TypeScript declaration that will be referenced at the top of every output file.
+* `--input_root input/dir` Root of inputs, considered when computing relative paths for `///<reference path="..." /> tags.
+* `--output_root output/dir` Root of outputs, considered when computing relative paths for `///<reference path="..." /> tags.
 
 # Structure
 
