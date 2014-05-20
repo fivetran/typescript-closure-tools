@@ -84,8 +84,8 @@ myFunction = function(x) { };
 becomes:
 
 ```typescript
-declare function myFunction(x: number);
-declare function myFunction(x: string);
+function myFunction(x: number);
+function myFunction(x: string);
 ```
 
 This works for nested union types as well:
@@ -100,8 +100,8 @@ myFunction = function(x) { };
 becomes:
 
 ```typescript
-declare function myFunction(x: { myProperty: number });
-declare function myFunction(x: { myProperty: string });
+function myFunction(x: { myProperty: number });
+function myFunction(x: { myProperty: string });
 ```
 
 #### Inline typedef unions where possible
@@ -117,8 +117,8 @@ myFunction = function(x) { };
 becomes:
 
 ```typescript
-declare function myFunction(x: number);
-declare function myFunction(x: string);
+function myFunction(x: number);
+function myFunction(x: string);
 ```
 
 #### Create empty interfaces when all else fails
@@ -134,7 +134,7 @@ becomes:
 
 ```typescript
 interface AnnoyingType { /* Array<T>|string */ }
-declare function myFunction(x: AnnoyingType);
+function myFunction(x: AnnoyingType);
 ```
 
 ### Static inheritance
