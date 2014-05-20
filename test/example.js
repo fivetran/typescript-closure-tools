@@ -91,25 +91,6 @@ example.C;
 example.D;
 
 /**
- * Adds an event listener with a specific event wrapper on a DOM Node or an
- * object that has implemented {@link example.B}. A listener can
- * only be added once to an object.
- *
- * @param {example.A|example.B} src The node to listen to
- *     events on.
- * @param {example.C} wrapper Event wrapper to use.
- * @param {function(this:SCOPE, ?):?|{handleEvent:function(?):?}|null} listener
- *     Callback method, or an object with a handleEvent function.
- * @param {boolean=} opt_capt Whether to fire in capture phase (defaults to
- *     false).
- * @return {example.D} This object, allowing for chaining of
- *     calls.
- */
-example.funkyOverload = function(src, wrapper, listener, opt_capt) {
-
-};
-
-/**
  * @typedef {string|number}
  */
 example.UnionType;
@@ -118,8 +99,3 @@ example.UnionType;
  * @param {example.UnionType} x
  */
 example.unionFunction = function(x) { };
-
-/**
- * @param {example.UnionType<any>} x
- */
-example.genericUnionFunction = function(x) { };
