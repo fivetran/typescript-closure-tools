@@ -99,3 +99,8 @@ example.UnionType;
  * @param {example.UnionType} x
  */
 example.unionFunction = function(x) { };
+
+/**
+ * @param {{myProperty: example.UnionType}} x
+ */
+example.deepUnionFunction = function(x) { };

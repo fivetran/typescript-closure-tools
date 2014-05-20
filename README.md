@@ -91,15 +91,17 @@ declare function myFunction(x: string);
 This works for nested union types as well:
 
 ```javascript
-/** @param {Iterable<number|string>} x */
+/** @typedef {number|string} */
+UnionType
+/** @param {{myProperty:UnionType}} x */
 myFunction = function(x) { };
 ```
 
 becomes:
 
 ```typescript
-declare function myFunction(x: Iterable<number>);
-declare function myFunction(x: Iterable<string>);
+declare function myFunction(x: { myProperty: number });
+declare function myFunction(x: { myProperty: string });
 ```
 
 #### Inline typedef unions where possible
