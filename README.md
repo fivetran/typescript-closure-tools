@@ -18,6 +18,8 @@ node src/main.js test/example.js test/example.d.ts # Run a single example
 
 # Usage
 
+[Use it online](http://fivetran.github.io/closure-definitions)
+
 ```
 node src/main.js
   [--provides symbols.tsv]
