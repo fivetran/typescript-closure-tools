@@ -52,10 +52,18 @@
             throw e;
         }
     }
+
+    function show_example() {
+        var IN = document.getElementById('input');
+
+        IN.value = 'goog.provide(\'example\');\r\ngoog.provide(\'example.Interface\');\r\ngoog.provide(\'example.A\');\r\ngoog.provide(\'example.B\');\r\ngoog.provide(\'example.C\');\r\n\r\n\/**\r\n * No param docs\r\n *\/\r\nexample.missingParams = function(x, y) {\r\n\r\n};\r\n\r\n\/**\r\n * No params at all\r\n *\/\r\nexample.noParams = function() {\r\n\r\n};\r\n\r\n\/**\r\n * @param {number|string} x\r\n *\/\r\nexample.overloadedFunction = function(x) {\r\n\r\n};\r\n\r\n\/**\r\n * @interface\r\n *\/\r\nexample.Interface;\r\n\r\n\/**\r\n * @param {number|string} x\r\n *\/\r\nexample.Interface.prototype.interfaceMethod = function(x) {\r\n\r\n};\r\n\r\n\/**\r\n * @interface\r\n * @extends {example.Interface}\r\n *\/\r\nexample.SubInterface;\r\n\r\n\/**\r\n * @constructor\r\n * @implements {example.Interface}\r\n * @param {number|string} x\r\n *\/\r\nexample.Class = function(x) {\r\n\r\n};\r\n\r\n\/**\r\n * @param {number|string} x\r\n *\/\r\nexample.Class.prototype.overloadedMethod = function(x) {\r\n\r\n};\r\n\r\n\/**\r\n * @override\r\n *\/\r\nexample.Class.prototype.interfaceMethod = function(x) { };\r\n\r\n\/**\r\n * @extends {example.Class}\r\n * @constructor\r\n *\/\r\nexample.SubClass = function() { };\r\n\r\n\/**\r\n * @interface\r\n *\/\r\nexample.A;\r\n\r\n\/**\r\n * @interface\r\n *\/\r\nexample.B;\r\n\r\n\/**\r\n * @interface\r\n *\/\r\nexample.C;\r\n\r\n\/**\r\n * @interface\r\n *\/\r\nexample.D;\r\n\r\n\/**\r\n * @typedef {string|number}\r\n *\/\r\nexample.UnionType;\r\n\r\n\/**\r\n * @param {example.UnionType} x\r\n *\/\r\nexample.unionFunction = function(x) { };\r\n\r\n\/**\r\n * @param {{myProperty: example.UnionType}} x\r\n *\/\r\nexample.deepUnionFunction = function(x) { };';
+    }
 </script>
 <body>
 
 <button onclick="do_convert()">Convert</button>
+
+<button onclick="show_example()">Example</button>
 
 <a href="https://github.com/fivetran/closure-definitions">https://github.com/fivetran/closure-definitions</a>
 
