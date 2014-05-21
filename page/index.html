@@ -49,6 +49,7 @@
             OUT.value = convert(IN.value);
         } catch (e) {
             OUT.value = e.message;
+            throw e;
         }
     }
 </script>
