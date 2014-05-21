@@ -1,6 +1,7 @@
 /// <reference path="../index/node.d.ts"/>
 /// <reference path="../index/jasmine.d.ts"/>
 
+import fs = require('fs');
 import options = require('../src/options');
 
 options.provides = 'test/symbols.tsv';
@@ -10,7 +11,7 @@ import combine = require('../src/combine');
 import generate = require('../src/generate');
 
 function parse(fileName: string): generate.Modules {
-    var file = parser.jsdoc(fileName);
+    var file = parser.jsdoc(fs.readFileSync(fileName, 'utf8'));
     var symbols = combine.members(file);
     var result = generate.defs(symbols).modules;
 

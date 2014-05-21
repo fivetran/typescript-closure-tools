@@ -1,11 +1,14 @@
 #!/bin/bash
 # Example of minifying a set of typescript modules with closure compiler
-tsc --module commonjs --outDir dist/ src/Main.ts
+#tsc --module commonjs src/*.ts
+rm -rf dist/
+mkdir -p dist/
+node node_modules/browserify/bin/cmd.js src/page.js > page/main.min.js
 
-java -jar compiler.jar \
-  --formatting PRETTY_PRINT \
-  --process_common_js_modules \
-  --common_js_entry_module dist/Main.js \
-  --common_js_module_path_prefix dist/ \
-  --compilation_level ADVANCED_OPTIMIZATIONS \
-  dist/*.js > main.min.js
+#java -jar scripts/compiler.jar \
+#  --process_common_js_modules \
+#  --common_js_entry_module src/page.js \
+#  --common_js_module_path_prefix dist/ \
+#  --compilation_level WHITESPACE_ONLY \
+#  --formatting PRETTY_PRINT \
+#  dist/*.js > page/main.min.js

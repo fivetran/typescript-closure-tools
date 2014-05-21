@@ -5,8 +5,10 @@
     "esprima": "*",
     "escodegen": "*",
     "jsdoc": "*",
+    "doctrine": "fivetran/doctrine",
     "jasmine-node": "*",
     "mkdirp": "*",
-    "colors": "*"
+    "colors": "*",
+    "browserify": "*"
   }
 }

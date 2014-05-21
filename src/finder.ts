@@ -36,7 +36,7 @@ export function file(symbolName: string): string {
  */
 export function symbols(fileName: string): combine.Symbols {
     if (!providesByFile[fileName])
-        providesByFile[fileName] = combine.members(parser.jsdoc(fileName));
+        providesByFile[fileName] = combine.members(parser.jsdoc(fs.readFileSync(fileName, 'utf8')));
 
     if (providesByFile[fileName])
         return providesByFile[fileName];

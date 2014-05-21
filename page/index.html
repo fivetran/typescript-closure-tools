@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="main.min.js"></script>
+</head>
+
+<style>
+    #input-container {
+        display: inline-block;
+        position: absolute;
+        left: 0;
+        top: 30px;
+        bottom: 0;
+        width: 50%;
+    }
+
+    #output-container {
+        display: inline-block;
+        position: absolute;
+        top: 30px;
+        bottom: 0;
+        right: 0;
+        width: 50%;
+    }
+
+    label {
+        display: block;
+    }
+
+    textarea {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+</style>
+
+<script>
+    function do_convert() {
+        var IN = document.getElementById('input');
+        var OUT = document.getElementById('output');
+
+        try {
+            OUT.value = convert(IN.value);
+        } catch (e) {
+            OUT.value = e.message;
+        }
+    }
+</script>
+<body>
+
+<button onclick="do_convert()">Convert</button>
+
+<div id="input-container">
+    <label for="input">Javascript with Closure-style JSDoc annotations</label><textarea id="input"></textarea>
+</div>
+
+<div id="output-container">
+    <label for="output">Typescript declaration</label><textarea id="output"></textarea>
+</div>
+
+
+</body>
+</html>

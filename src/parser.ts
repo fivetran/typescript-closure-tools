@@ -3,12 +3,9 @@
 /// <reference path="../index/esprima.d.ts"/>
 /// <reference path="../index/escodegen.d.ts"/>
 
-import fs =  require('fs');
 import esprima = require('esprima');
 import escodegen = require('escodegen');
-// TODO get doctrine fixes accepted into upstream and switch
-import DOCTRINE = require('doctrine');
-var doctrine = require('../lib/doctrine');
+import doctrine = require('doctrine');
 
 function values(object: Object) {
     return Object.keys(object).map(k => object[k]);
@@ -140,7 +137,7 @@ function extract_jsdoc(tree) {
 
 export interface Value {
     value: esprima.Syntax.SomeExpression;
-    jsdoc: DOCTRINE.JSDoc;
+    jsdoc: doctrine.JSDoc;
     originalText: string;
 }
 
@@ -201,11 +198,10 @@ function remove_private(parsed: File): File {
 }
 
 /**
- * @param file
+ * @param code
  * @returns Parsed file
  */
-export function jsdoc(file: string): File {
-    var code = fs.readFileSync(file, 'utf8');
+export function jsdoc(code: string): File {
     var tree = esprima.parse(code, { attachComment: true });
     var comments = extract_jsdoc(tree.body);
     var parsed = parse_comments(comments);
