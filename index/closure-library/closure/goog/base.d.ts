@@ -364,7 +364,7 @@ declare module goog {
      * @template T
      * @suppress {deprecated} See above.
      */
-    function bind<T>(fn: any /*missing*/, selfObj: T, ...var_args: any[]): Function;
+    function bind<T>(fn: (_0: any[]) => any /*missing*/, selfObj: T, ...var_args: any[]): Function;
 
     /**
      * Like bind(), except that a 'this object' is not required. Useful when the

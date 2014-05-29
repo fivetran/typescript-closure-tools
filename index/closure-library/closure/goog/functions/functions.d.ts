@@ -14,19 +14,19 @@ declare module goog.functions {
      * Always returns false.
      * @type {function(...): boolean}
      */
-    var FALSE: any /*missing*/;
+    var FALSE: (_0: any[]) => boolean;
 
     /**
      * Always returns true.
      * @type {function(...): boolean}
      */
-    var TRUE: any /*missing*/;
+    var TRUE: (_0: any[]) => boolean;
 
     /**
      * Always returns NULL.
      * @type {function(...): null}
      */
-    var NULL: any /*missing*/;
+    var NULL: (_0: any[]) => any /*null*/;
 
     /**
      * A simple function that returns the first argument of whatever is passed

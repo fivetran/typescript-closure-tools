@@ -22,13 +22,6 @@ declare module goog.structs {
             constructor(opt_comparator?: Function);
     
             /**
-             * Pointer to the root node of the tree.
-             *
-             * @private {goog.structs.AvlTree.Node.<T>}
-             */
-            root_: any /*missing*/;
-    
-            /**
              * Removes all nodes from the tree.
              */
             clear(): void;

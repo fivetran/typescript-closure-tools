@@ -445,12 +445,6 @@ declare module goog.async.Deferred {
     function when<T>(value: any, callback: (_0: any) => any, opt_scope?: T): goog.async.Deferred<any>;
 
     /**
-     * Map of unhandled errors scheduled to be rethrown in a future timestep.
-     * @private {!Object.<number|string, goog.async.Deferred.Error_>}
-     */
-    var errorMap_: any /*missing*/;
-
-    /**
      * Asserts that there are no pending deferred errors. If there are any
      * scheduled errors, one will be thrown immediately to make this function fail.
      */

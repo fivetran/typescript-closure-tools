@@ -19,26 +19,9 @@ declare module goog.events {
     interface ListenableType { /*any (EventTarget|goog.events.Listenable)*/ }
 
     /**
-     * Container for storing event listeners and their proxies
-     *
-     * TODO(user): Remove this when all external usage is
-     * purged. goog.events no longer use goog.events.listeners_ for
-     * anything meaningful.
-     *
-     * @private {!Object.<goog.events.ListenableKey>}
-     */
-    var listeners_: any /*missing*/;
-
-    /**
      * @enum {number} Different capture simulation mode for IE8-.
      */
     enum CaptureSimulationMode { OFF_AND_FAIL, OFF_AND_SILENT, ON } 
-
-    /**
-     * Estimated count of total native listeners.
-     * @private {number}
-     */
-    var listenerCountEstimate_: any /*missing*/;
 
     /**
      * Adds an event listener for a specific event on a native event
@@ -2336,12 +2319,6 @@ declare module goog.events {
      * @private
      */
     function handleBrowserEvent_(listener: goog.events.Listener, opt_evt?: Event): boolean;
-
-    /**
-     * Counter to create unique event ids.
-     * @private {number}
-     */
-    var uniqueIdCounter_: any /*missing*/;
 
     /**
      * Creates a unique event id.

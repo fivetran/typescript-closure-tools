@@ -420,13 +420,4 @@ declare module goog.ui.ControlRenderer {
      * @type {Array.<Array.<string>>}
      */
     var IE6_CLASS_COMBINATIONS: string[][];
-
-    /**
-     * Map of certain ARIA states to ARIA roles that support them. Used for checked
-     * and selected Component states because they are used on Components with ARIA
-     * roles that do not support the corresponding ARIA state.
-     * @private {!Object.<goog.a11y.aria.Role, goog.a11y.aria.State>}
-     * @const
-     */
-    var TOGGLE_ARIA_STATE_MAP_: any /*missing*/;
 }

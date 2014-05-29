@@ -61,35 +61,6 @@ declare module goog.dom.animationFrame {
     }
 
     /**
-     * Saves a set of tasks to be executed in the next requestAnimationFrame phase.
-     * This list is initialized once before any event firing occurs. It is not
-     * affected by the fired events or the requestAnimationFrame processing (unless
-     * a new event is created during the processing).
-     * @private {!Array.<!Array.<goog.dom.animationFrame.TaskSet_>>}
-     */
-    var tasks_: any /*missing*/;
-
-    /**
-     * Values are 0 or 1, for whether the first or second array should be used to
-     * lookup or add tasks.
-     * @private {number}
-     */
-    var doubleBufferIndex_: any /*missing*/;
-
-    /**
-     * Whether we have already requested an animation frame that hasn't happened
-     * yet.
-     * @private {boolean}
-     */
-    var requestedFrame_: any /*missing*/;
-
-    /**
-     * Counter to generate IDs for tasks.
-     * @private {number}
-     */
-    var taskId_: any /*missing*/;
-
-    /**
      * Returns a function that schedules the two passed-in functions to be run upon
      * the next animation frame. Calling the function again during the same
      * animation frame does nothing.

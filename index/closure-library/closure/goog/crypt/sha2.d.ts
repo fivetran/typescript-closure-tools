@@ -20,13 +20,3 @@ declare module goog.crypt {
         }
     }
 }
-
-declare module goog.crypt.Sha2 {
-
-    /**
-     * Constants used in SHA-2.
-     * @const
-     * @private {!Array.<number>}
-     */
-    var K_: any /*missing*/;
-}

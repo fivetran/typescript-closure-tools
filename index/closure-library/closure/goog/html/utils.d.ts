@@ -14,23 +14,4 @@ declare module goog.html.utils {
      *     other non-text content.
      */
     function stripHtmlTags(value: string): string;
-
-    /**
-     * Matches all tags that do not require extra space.
-     *
-     * @const
-     * @private {RegExp}
-     */
-    var INLINE_HTML_TAG_REGEX_: any /*missing*/;
-
-    /**
-     * Matches all tags, HTML comments, and DOCTYPEs in tag soup HTML.
-     * By removing these, and replacing any '<' or '>' characters with
-     * entities we guarantee that the result can be embedded into
-     * an attribute without introducing a tag boundary.
-     *
-     * @private {RegExp}
-     * @const
-     */
-    var HTML_TAG_REGEX_: any /*missing*/;
 }

@@ -25,13 +25,6 @@ declare module goog.net {
             constructor(opt_xmlHttpFactory?: goog.net.XmlHttpFactory);
     
             /**
-             * A reference to the XhrIo logger
-             * @private {goog.debug.Logger}
-             * @const
-             */
-            logger_: any /*missing*/;
-    
-            /**
              * Returns the number of milliseconds after which an incomplete request will be
              * aborted, or 0 if no timeout is set.
              * @return {number} Timeout interval in milliseconds.
@@ -523,34 +516,6 @@ declare module goog.net.XhrIo {
      * @type {string}
      */
     var FORM_CONTENT_TYPE: string;
-
-    /**
-     * The XMLHttpRequest Level two timeout delay ms property name.
-     *
-     * @see http://www.w3.org/TR/XMLHttpRequest/#the-timeout-attribute
-     *
-     * @private {string}
-     * @const
-     */
-    var XHR2_TIMEOUT_: any /*missing*/;
-
-    /**
-     * The XMLHttpRequest Level two ontimeout handler property name.
-     *
-     * @see http://www.w3.org/TR/XMLHttpRequest/#the-timeout-attribute
-     *
-     * @private {string}
-     * @const
-     */
-    var XHR2_ON_TIMEOUT_: any /*missing*/;
-
-    /**
-     * All non-disposed instances of goog.net.XhrIo created
-     * by {@link goog.net.XhrIo.send} are in this Array.
-     * @see goog.net.XhrIo.cleanup
-     * @private {!Array.<!goog.net.XhrIo>}
-     */
-    var sendInstances_: any /*missing*/;
 
     /**
      * Static send that creates a short lived instance of XhrIo to send the

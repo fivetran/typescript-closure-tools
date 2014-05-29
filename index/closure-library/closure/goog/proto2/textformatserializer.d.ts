@@ -140,15 +140,3 @@ declare module goog.proto2.TextFormatSerializer.Tokenizer_ {
      */
     enum TokenTypes { END, IDENTIFIER, NUMBER, COMMENT, OPEN_BRACE, CLOSE_BRACE, OPEN_TAG, CLOSE_TAG, OPEN_LIST, CLOSE_LIST, STRING, COLON, COMMA, SEMI, WHITESPACE } 
 }
-
-declare module goog.proto2.TextFormatSerializer.Parser {
-
-    /**
-     * Parse NaN, positive infinity, or negative infinity from a string.
-     * @param {string} identifier An identifier string to check.
-     * @return {?number} Infinity, negative infinity, NaN, or null if none
-     *     of the constants could be parsed.
-     * @private.
-     */
-    function parseNumericalConstant_(identifier: string): number;
-}

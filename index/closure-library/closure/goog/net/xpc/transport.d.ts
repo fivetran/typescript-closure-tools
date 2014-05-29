@@ -1,4 +1,5 @@
 /// <reference path="../../../../globals.d.ts" />
+/// <reference path="../../disposable/disposable.d.ts" />
 /// <reference path="../../dom/dom.d.ts" />
 
 declare module goog.net.xpc {
@@ -6,7 +7,7 @@ declare module goog.net.xpc {
     class Transport extends Transport.__Class { }
     module Transport {
         /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+        class __Class extends goog.Disposable.__Class {
     
             /**
              * The base class for transports.
