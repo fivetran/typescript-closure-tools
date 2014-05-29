@@ -34,6 +34,8 @@ declare class _Event implements Event {
 
 interface _File extends File { }
 
+interface _EventTarget extends EventTarget { }
+
 interface Image extends HTMLImageElement { }
 
 interface IThenable<R> {

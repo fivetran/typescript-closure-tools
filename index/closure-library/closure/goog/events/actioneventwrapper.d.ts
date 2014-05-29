@@ -35,7 +35,7 @@ declare module goog.events {
              * @param {goog.events.EventHandler=} opt_eventHandler Event handler to add
              *     listener to.
              */
-            listen(src: EventTarget, listener: (_0: any) => any, opt_capt?: boolean, opt_scope?: Object, opt_eventHandler?: goog.events.EventHandler<any>): void;
+            listen(src: _EventTarget, listener: (_0: any) => any, opt_capt?: boolean, opt_scope?: Object, opt_eventHandler?: goog.events.EventHandler<any>): void;
             /**
              * Adds an event listener using the wrapper on a DOM Node or an object that has
              * implemented {@link goog.events.EventTarget}. A listener can only be added
@@ -50,7 +50,7 @@ declare module goog.events {
              * @param {goog.events.EventHandler=} opt_eventHandler Event handler to add
              *     listener to.
              */
-            listen(src: EventTarget, listener: { handleEvent: (_0: any) => any }, opt_capt?: boolean, opt_scope?: Object, opt_eventHandler?: goog.events.EventHandler<any>): void;
+            listen(src: _EventTarget, listener: { handleEvent: (_0: any) => any }, opt_capt?: boolean, opt_scope?: Object, opt_eventHandler?: goog.events.EventHandler<any>): void;
             /**
              * Adds an event listener using the wrapper on a DOM Node or an object that has
              * implemented {@link goog.events.EventTarget}. A listener can only be added
@@ -65,7 +65,7 @@ declare module goog.events {
              * @param {goog.events.EventHandler=} opt_eventHandler Event handler to add
              *     listener to.
              */
-            listen(src: EventTarget, listener: any /*null*/, opt_capt?: boolean, opt_scope?: Object, opt_eventHandler?: goog.events.EventHandler<any>): void;
+            listen(src: _EventTarget, listener: any /*null*/, opt_capt?: boolean, opt_scope?: Object, opt_eventHandler?: goog.events.EventHandler<any>): void;
             /**
              * Adds an event listener using the wrapper on a DOM Node or an object that has
              * implemented {@link goog.events.EventTarget}. A listener can only be added
@@ -124,7 +124,7 @@ declare module goog.events {
              * @param {goog.events.EventHandler=} opt_eventHandler Event handler to remove
              *     listener from.
              */
-            unlisten(src: EventTarget, listener: (_0: any) => any, opt_capt?: boolean, opt_scope?: Object, opt_eventHandler?: goog.events.EventHandler<any>): void;
+            unlisten(src: _EventTarget, listener: (_0: any) => any, opt_capt?: boolean, opt_scope?: Object, opt_eventHandler?: goog.events.EventHandler<any>): void;
             /**
              * Removes an event listener added using goog.events.EventWrapper.listen.
              *
@@ -137,7 +137,7 @@ declare module goog.events {
              * @param {goog.events.EventHandler=} opt_eventHandler Event handler to remove
              *     listener from.
              */
-            unlisten(src: EventTarget, listener: { handleEvent: (_0: any) => any }, opt_capt?: boolean, opt_scope?: Object, opt_eventHandler?: goog.events.EventHandler<any>): void;
+            unlisten(src: _EventTarget, listener: { handleEvent: (_0: any) => any }, opt_capt?: boolean, opt_scope?: Object, opt_eventHandler?: goog.events.EventHandler<any>): void;
             /**
              * Removes an event listener added using goog.events.EventWrapper.listen.
              *
@@ -150,7 +150,7 @@ declare module goog.events {
              * @param {goog.events.EventHandler=} opt_eventHandler Event handler to remove
              *     listener from.
              */
-            unlisten(src: EventTarget, listener: any /*null*/, opt_capt?: boolean, opt_scope?: Object, opt_eventHandler?: goog.events.EventHandler<any>): void;
+            unlisten(src: _EventTarget, listener: any /*null*/, opt_capt?: boolean, opt_scope?: Object, opt_eventHandler?: goog.events.EventHandler<any>): void;
             /**
              * Removes an event listener added using goog.events.EventWrapper.listen.
              *

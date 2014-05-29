@@ -21,7 +21,7 @@ declare module goog.events {
              * @implements {goog.events.ListenableKey}
              * @constructor
              */
-            constructor(listener: Function, proxy: Function, src: EventTarget, type: string, capture: boolean, opt_handler?: Object);
+            constructor(listener: Function, proxy: Function, src: _EventTarget, type: string, capture: boolean, opt_handler?: Object);
             /**
              * Simple class that stores information about a listener
              * @param {!Function} listener Callback function.
