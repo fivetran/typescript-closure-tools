@@ -1,6 +1,6 @@
 #!/bin/bash
 # Example of minifying a set of typescript modules with closure compiler
-#tsc --module commonjs src/*.ts
+tsc --module commonjs src/*.ts
 rm -rf dist/
 mkdir -p dist/
 node node_modules/browserify/bin/cmd.js src/page.js > page/main.min.js
