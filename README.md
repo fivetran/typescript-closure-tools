@@ -264,3 +264,69 @@ f(x: ArrayLike);
 
 TypeScript has a structural type system, so the above example is considered a duplicate overload. One of them
 will need to be manually deleted.
+
+# RequireJS support
+
+Basic RequireJS support is present:
+
+```javascript
+define(function(require, exports, module) {
+    /** @param {number} x */
+    function functionDeclaration(x) { }
+});
+```
+
+becomes:
+
+```typescript
+module MODULE {
+    functionDeclaration(x: number): void;
+}
+```
+
+## Limitations
+
+### Declarations are always placed in a module named `MODULE`
+
+### Only symbols with JSDoc annotations are exported
+
+```javascript
+define(function(require, exports, module) {
+    /** @type {number} */
+    var documentedSymbol = 1;
+
+    var ignoredSymbol = 2;
+
+    exports.documentedSymbol = documentedSymbol;
+    exports.ignoredSymbol = 2;
+});
+```
+
+becomes:
+
+```typescript
+module MODULE {
+    var documentedSymbol: number;
+}
+```
+
+### `exports` and `module` are ignored
+
+Symbols are exported using their local name:
+
+```javascript
+define(function(require, exports, module) {
+    /** @type {number} */
+    var localName = 1;
+
+    exports.exportedName = localName;
+});
+```
+
+becomes:
+
+```typescript
+module MODULE {
+    var localName: number;
+}
+```
