@@ -17,8 +17,8 @@ function local_variables(tree: Object): string[] {
     function walk(tree) {
         if (!tree) {
         }
-        else if (tree.type === 'FunctionDeclaration') {
-        }
+        else if (tree.type === 'FunctionDeclaration')
+            acc.push(tree.id.name);
         else if (tree.type === 'VariableDeclarator')
             acc.push(tree.id.name);
         else if (tree instanceof Object) {
@@ -35,13 +35,18 @@ function local_variables(tree: Object): string[] {
  * Walk AST and extract JSDoc comments on global variables
  */
 function extract_jsdoc(tree) {
+
+    /**
+     * Keys are global variables, values are { value, jsdoc }
+     */
     var docstrings = {};
 
     /**
      * Keys are local variables, values are true or false
-     * @type {{}}
      */
     var locals = {};
+
+    var requirejs = false;
 
     function not_in_locals(name) {
         return !locals[name];
@@ -65,28 +70,56 @@ function extract_jsdoc(tree) {
     }
 
     function is_global_assignment(tree) {
-        return tree &&
-            tree.type === 'ExpressionStatement' &&
+        return tree.type === 'ExpressionStatement' &&
             tree.expression.type === 'AssignmentExpression' &&
             is_global(tree.expression.left);
     }
 
     function is_global_declaration(tree) {
-        return tree &&
-            tree.type === 'ExpressionStatement' &&
+        return tree.type === 'ExpressionStatement' &&
             is_global(tree.expression);
     }
 
+    function is_identifier(tree) {
+        if (tree.type === 'Identifier')
+            return true;
+        else if (tree.type === 'MemberExpression' && tree.property.type === 'Identifier')
+            return is_identifier(tree.object);
+        else
+            return false;
+    }
+
+    function is_assignment(tree) {
+        return tree.type === 'ExpressionStatement' &&
+            tree.expression.type === 'AssignmentExpression' &&
+            is_identifier(tree.expression.left);
+    }
+
+    function is_declaration(tree) {
+        return tree.type === 'ExpressionStatement' &&
+            is_identifier(tree.expression);
+    }
+
+    function is_function(tree) {
+        return tree.type === 'FunctionDeclaration';
+    }
+
+    function is_var(tree) {
+        return tree.type === 'VariableDeclaration';
+    }
+
+    /**
+     * Look for global variables with JSDoc annotations
+     */
     function walk(tree) {
         // If leaf, return
         if (!(tree instanceof Object))
             return;
 
         // If tree is a global assignment, add it to docstrings
-        if (is_global_assignment(tree)) {
+        if (is_global_assignment(tree) && tree.leadingComments) {
             var name = escodegen.generate(tree.expression.left);
-            var comments = tree.leadingComments || [];
-            comments.forEach(function (comment) {
+            tree.leadingComments.forEach(comment => {
                 if (comment.type === 'Block' && comment.value.charAt(0) === '*') {
                     docstrings[name] = {
                         value: tree.expression.right,
@@ -97,10 +130,9 @@ function extract_jsdoc(tree) {
         }
 
         // If tree is a global declaration, add it to docstrings
-        if (is_global_declaration(tree)) {
-            name = escodegen.generate(tree.expression);
-            comments = tree.leadingComments || [];
-            comments.forEach(function (comment) {
+        if (is_global_declaration(tree) && tree.leadingComments) {
+            var name = escodegen.generate(tree.expression);
+            tree.leadingComments.forEach(comment => {
                 if (comment.type === 'Block' && comment.value.charAt(0) === '*') {
                     docstrings[name] = {
                         value: tree.expression.right,
@@ -108,6 +140,60 @@ function extract_jsdoc(tree) {
                     };
                 }
             });
+        }
+
+        // If tree is a local assignment and requirejs is active, add it to docstrings under MODULE
+        if (requirejs && is_assignment(tree) && tree.leadingComments) {
+            var name = 'MODULE.' + escodegen.generate(tree.expression.left);
+            tree.leadingComments.forEach(comment => {
+                if (comment.type === 'Block' && comment.value.charAt(0) === '*') {
+                    docstrings[name] = {
+                        value: tree.expression.right,
+                        jsdoc: '/*' + comment.value + '*/'
+                    };
+                }
+            });
+        }
+
+        // If tree is a local declaration and requirejs is active, add it to docstrings under MODULE
+        if (requirejs && is_declaration(tree) && tree.leadingComments) {
+            var name = 'MODULE.' + escodegen.generate(tree.expression);
+            tree.leadingComments.forEach(comment => {
+                if (comment.type === 'Block' && comment.value.charAt(0) === '*') {
+                    docstrings[name] = {
+                        value: tree.expression.right,
+                        jsdoc: '/*' + comment.value + '*/'
+                    };
+                }
+            });
+        }
+
+        // If tree is a function declaration and requirejs is active, add it to docstrings under MODULE
+        if (requirejs && is_function(tree) && tree.leadingComments) {
+            var name = 'MODULE.' + tree.id.name;
+            tree.leadingComments.forEach(comment => {
+                if (comment.type === 'Block' && comment.value.charAt(0) === '*') {
+                    docstrings[name] = {
+                        value: tree,
+                        jsdoc: '/*' + comment.value + '*/'
+                    };
+                }
+            });
+        }
+
+        // If tree is var declaration and requirejs is active, add it to docstrings under MODULE
+        if (requirejs && is_var(tree) && tree.leadingComments) {
+            tree.declarations.forEach(declaration => {
+                var name = 'MODULE.' + declaration.id.name;
+                tree.leadingComments.forEach(comment => {
+                    if (comment.type === 'Block' && comment.value.charAt(0) === '*') {
+                        docstrings[name] = {
+                            value: declaration.init,
+                            jsdoc: '/*' + comment.value + '*/'
+                        };
+                    }
+                });
+            })
         }
 
         // If tree is a function expression, create a new scope
@@ -118,17 +204,144 @@ function extract_jsdoc(tree) {
 
             // Add new local variables
             introduced.forEach(add_local);
-
             // Walk children
             values(tree.body).forEach(walk);
             // Remove local variables
             introduced.forEach(remove_local);
+        }
+        // Recognize define(function(require, module, exports) { ... })
+        else if (tree.type === 'CallExpression' && tree.callee.name === 'define' && !locals['define']) {
+            requirejs = true;
+            values(tree).forEach(walk);
         }
         // If tree has children, walk them
         else {
             values(tree).forEach(walk);
         }
     }
+
+//    function is_assign_member(tree) {
+//        return tree &&
+//            tree.type === 'ExpressionStatement' &&
+//            tree.expression.type === 'AssignmentExpression' &&
+//            tree.expression.left.type === 'MemberExpression';
+//    }
+//
+//    function is_assign_module(tree) {
+//        return is_assign_member(tree) &&
+//            tree.expression.left.object.name === 'module' &&
+//            tree.expression.left.property.name === 'exports' &&
+//            tree.expression.right.type === 'Identifier';
+//    }
+//
+//    function is_assign_exports(tree) {
+//        return is_assign_member(tree) &&
+//            tree.expression.left.object.name === 'exports' &&
+//            tree.expression.right.type === 'Identifier';
+//    }
+//
+//    /**
+//     * Look for exports of the form
+//     *   exports.$name = $var
+//     *   module.exports = $var
+//     */
+//    function find_exports(tree) {
+//        var exports = {};
+//
+//        function dfs(tree) {
+//            if (!(tree instanceof Object)) { }
+//            // module.exports = ...
+//            else if (is_assign_module(tree)) {
+//                var localName = tree.expression.right.name;
+//
+//                exports['EXPORTS'] = docstrings[localName];
+//            }
+//            // exports.$var = ...
+//            else if (is_assign_exports(tree)){
+//                var exportName = tree.expression.left.property;
+//                var localName = tree.expression.right.name;
+//
+//                exports[exportName] = docstrings[localName];
+//            }
+//            else {
+//                values(tree).forEach(dfs);
+//            }
+//        }
+//
+//        dfs(tree.body[21]);
+//
+//        return {
+//            'MODULE': exports
+//        };
+//    }
+
+//    /**
+//     * Keys are local variables, values are { value, jsdoc }
+//     */
+//    var localDocstrings = {};
+//
+//    /**
+//     * Look for local variables with JSDoc annotations, that are exported with:
+//     *   exports = $var
+//     *   exports.$name = $var
+//     *   module.exports = $var
+//     *   module.exports.$name = var
+//     */
+//    function walk_requirejs(tree) {
+//        // If leaf, return
+//        if (!(tree instanceof Object))
+//            return;
+//
+//        // If tree is a global assignment, add it to docstrings
+//        if (is_assignment(tree)) {
+//            var name = escodegen.generate(tree.expression.left);
+//            var comments = tree.leadingComments || [];
+//            comments.forEach(comment => {
+//                if (comment.type === 'Block' && comment.value.charAt(0) === '*') {
+//                    localDocstrings[name] = {
+//                        value: tree.expression.right,
+//                        jsdoc: '/*' + comment.value + '*/'
+//                    };
+//                }
+//            });
+//        }
+//
+//        // If tree is a global declaration, add it to docstrings
+//        if (is_declaration(tree)) {
+//            name = escodegen.generate(tree.expression);
+//            comments = tree.leadingComments || [];
+//            comments.forEach(comment => {
+//                if (comment.type === 'Block' && comment.value.charAt(0) === '*') {
+//                    localDocstrings[name] = {
+//                        value: tree.expression.right,
+//                        jsdoc: '/*' + comment.value + '*/'
+//                    };
+//                }
+//            });
+//        }
+//
+//        // If tree is a function expression, create a new scope
+//        if (tree.type === 'FunctionExpression' || tree.type === 'FunctionDeclaration') {
+//            var params = tree.params.map(p => p.name);
+//            var vars = local_variables(tree);
+//            var introduced = vars.concat(params).filter(not_in_locals);
+//
+//            // Add new local variables
+//            introduced.forEach(add_local);
+//            // Walk children
+//            values(tree.body).forEach(walk);
+//            // Remove local variables
+//            introduced.forEach(remove_local);
+//        }
+//        // Recognize define(function(require, module, exports) { ... })
+//        else if (tree.type === 'CallExpression' && tree.callee.name === 'define' && !locals['define']) {
+//            walk_requirejs(tree);
+//        }
+//        // If tree has children, walk them
+//        else {
+//            values(tree).forEach(walk);
+//        }
+//    }
 
     walk(tree);
 

@@ -111,4 +111,39 @@ describe('generate', () => {
             }
         });
     });
+
+    describe('requirejs', () => {
+        it('function declaration', () => {
+            expect(parse('test/requirejs_function_declaration.js')).toEqual({
+                MODULE : {
+                    functionDeclaration : 'function functionDeclaration(x: number): void;'
+                }
+            });
+        });
+
+        it('function expression', () => {
+            expect(parse('test/requirejs_function_expression.js')).toEqual({
+                MODULE : {
+                    functionExpression : 'function functionExpression(x: number): void;'
+                }
+            });
+        });
+
+        it('local class', () => {
+            expect(parse('test/requirejs_local_class.js')).toEqual({
+                MODULE : {
+                    LocalClass : 'class LocalClass extends LocalClass.__Class { } module LocalClass { class __Class { constructor(x: number); memberFunction(x: number): void; } }'
+                }
+            });
+        });
+
+        it('local variable', () => {
+            expect(parse('test/requirejs_local_variable.js')).toEqual({
+                MODULE: {
+                    localVariable: 'var localVariable: number;'
+                }
+            });
+        });
+    });
+
 });

@@ -1,6 +1,6 @@
 [submodule "lib/closure-library"]
 	path = lib/closure-library
-	url = https://code.google.com/p/closure-library/
+	url = git@github.com:fivetran/closure-definitions.git
 [submodule "lib/doctrine"]
 	path = lib/doctrine
 	url = git@github.com:fivetran/doctrine.git

@@ -2,6 +2,10 @@
 /// <reference path="../index/doctrine.d.ts"/>
 /// <reference path="../index/jasmine.d.ts"/>
 
+import options = require('../src/options');
+
+options.provides = 'test/symbols.tsv';
+
 import disunion = require('../src/disunion');
 
 describe('disunion', () => {
