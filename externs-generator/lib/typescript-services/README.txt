@@ -1,0 +1,1 @@
+typescript/bin/services.js, packaged as a node module

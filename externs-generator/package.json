@@ -1,0 +1,8 @@
+{
+    "scripts": {
+        "preinstall": "npm install ./lib/typescript-services"
+    },
+    "dependencies": {
+        "typescript-services": "*"
+    }
+}

@@ -39,11 +39,14 @@ If this option isn't present, we will simply look for global symbols in the inpu
 
 # Structure
 
+* `index/` Typescript definition files for the Closure library
+
+## definitions-generator/
+
 * `src/` Typescript sources
 * `scripts/` Shell scripts used for converting the Closure library
 * `test/` Jasmine specs and example JS files used in testing
 * `lib/` Dependencies
-* `index/` Typescript definition files for the Closure library
 
 # Running the tests
 
