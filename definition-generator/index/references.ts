@@ -2,4 +2,3 @@
 /// <reference path="doctrine.d.ts"/>
 /// <reference path="esprima.d.ts"/>
 /// <reference path="escodegen.d.ts"/>
-/// <reference path="closure-library/_references.ts" />

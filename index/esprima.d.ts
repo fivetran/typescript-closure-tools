@@ -1,1 +1,0 @@
-../lib/definitely-typed/esprima/esprima.d.ts

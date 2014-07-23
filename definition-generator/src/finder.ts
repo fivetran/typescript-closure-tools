@@ -74,7 +74,6 @@ if (options.provides) {
         var file = columns[0];
         var symbol = columns[1];
 
-        console.log(JSON.stringify(columns));
         fileByProvide[symbol] = file;
     });
 }
