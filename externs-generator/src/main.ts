@@ -1,15 +1,17 @@
 /// <reference path="../index/node.d.ts" />
 /// <reference path="../index/typescript-services.d.ts" />
 
-import ts = require('typescript-services');
 import fs = require('fs');
+var ts = require('../lib/typescript-services/typescript_services.js');
 
 module Main {
 
     function find_interfaces(node: ts.Node) {
         if (node.kind === ts.SyntaxKind.InterfaceDeclaration) {
             var interfaceDeclaration = <ts.InterfaceDeclaration> node;
-            var interfaceName = interfaceDeclaration.name.text;
+            var interfaceName = '$$$' + interfaceDeclaration.name.text;
+
+            process.stdout.write('var ' + interfaceName + ';\n');
 
             interfaceDeclaration.members.forEach(member => {
                 if (member.hasOwnProperty('name')) {

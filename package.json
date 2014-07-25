@@ -1,5 +1,5 @@
 {
-  "name": "typescript-sandbox",
+  "name": "typescript-closure-tools",
   "version": "0.0.1",
   "dependencies": {
     "esprima": "*",
