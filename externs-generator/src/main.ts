@@ -13,14 +13,22 @@ module Main {
 
             process.stdout.write('var ' + interfaceName + ';\n');
 
-            interfaceDeclaration.members.forEach(member => {
-                if (member.hasOwnProperty('name')) {
-                    var declaration = <ts.Declaration> member;
-                    var declarationName = declaration.name.text;
+            function print_members(member) {
+                if (member) {
+                    if (member.name) {
+                        var declaration = <ts.Declaration> member;
+                        var declarationName = declaration.name.text;
 
-                    process.stdout.write(interfaceName + '.' + declarationName + ';\n');
+                        process.stdout.write(interfaceName + '.' + declarationName + ';\n');
+                    }
+
+                    if (member.type && member.type.members) {
+                        member.type.members.forEach(print_members);
+                    }
                 }
-            });
+            }
+
+            interfaceDeclaration.members.forEach(print_members);
 
             process.stdout.write('\n');
         }

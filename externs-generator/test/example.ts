@@ -8,4 +8,10 @@ module Module {
         g(arg: string): number;
         y: boolean;
     }
+
+    interface ParentInterface {
+        Child: {
+            childProperty: number;
+        }
+    }
 }
