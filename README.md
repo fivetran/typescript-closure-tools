@@ -1,3 +1,5 @@
+# [Use it online](http://fivetran.github.io/typescript-closure-tools)
+
 Converts [Closure-style JSDoc type annotations](https://developers.google.com/closure/compiler/docs/js-for-compiler)
 to [TypeScript definition files](http://www.typescriptlang.org/Handbook#writing-dts-files).
 
@@ -17,8 +19,6 @@ node src/main.js test/example.js test/example.d.ts # Run a single example
 ```
 
 # Usage
-
-[Use it online](http://fivetran.github.io/typescript-closure-tools)
 
 ```
 node src/main.js
