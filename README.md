@@ -18,7 +18,7 @@ node src/main.js test/example.js test/example.d.ts # Run a single example
 
 # Usage
 
-[Use it online](http://fivetran.github.io/closure-definitions)
+[Use it online](http://fivetran.github.io/typescript-closure-tools)
 
 ```
 node src/main.js
