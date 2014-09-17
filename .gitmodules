@@ -7,3 +7,6 @@
 [submodule "lib/definitely-typed"]
 	path = lib/definitely-typed
 	url = git@github.com:fivetran/DefinitelyTyped.git
+[submodule "typescript"]
+	path = typescript
+	url = git@github.com:Microsoft/TypeScript.git
