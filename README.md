@@ -10,18 +10,18 @@ point for manually fixing the difficult cases.
 # Setup
 
 ```bash
-git clone git@github.com:fivetran/closure-definitions.git
-cd closure-definitions
+git clone git@github.com:fivetran/typescript-closure-tools.git
+cd typescript-closure-tools
 git submodule update --init
 npm install
-tsc --module commonjs src/*.ts
-node src/main.js test/example.js test/example.d.ts # Run a single example
+tsc --module commonjs definition-generator/src/*.ts
+node definition-generator/src/main.js test/example.js test/example.d.ts # Run a single example
 ```
 
 # Usage
 
 ```
-node src/main.js
+node definition-generator/src/main.js
   [--provides symbols.tsv]
   [--globals output/dir/global-declarations.d.ts]
   [--input_root input/dir]
