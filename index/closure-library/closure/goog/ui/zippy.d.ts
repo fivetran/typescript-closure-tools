@@ -471,6 +471,12 @@ declare module goog.ui {
              * @final
              */
             constructor(type: string, target: goog.ui.Zippy, expanded: boolean);
+    
+            /**
+             * The expanded state.
+             * @type {boolean}
+             */
+            expanded: boolean;
         }
     }
 }

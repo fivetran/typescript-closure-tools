@@ -20,6 +20,18 @@ declare module goog.math {
              */
             constructor(x: number, y: number, w: number, h: number);
     
+            /** @type {number} */
+            left: number;
+    
+            /** @type {number} */
+            top: number;
+    
+            /** @type {number} */
+            width: number;
+    
+            /** @type {number} */
+            height: number;
+    
             /**
              * @return {!goog.math.Rect} A new copy of this Rectangle.
              */

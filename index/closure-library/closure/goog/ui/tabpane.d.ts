@@ -30,6 +30,16 @@ declare module goog.ui {
             constructor(el: Element, opt_tabLocation?: goog.ui.TabPane.TabLocation, opt_domHelper?: goog.dom.DomHelper, opt_useMouseDown?: boolean);
     
             /**
+             * DomHelper used to interact with the document, allowing components to be
+             * created in a different window.  This property is considered protected;
+             * subclasses of Component may refer to it directly.
+             * @type {goog.dom.DomHelper}
+             * @protected
+             * @suppress {underscore|visibility}
+             */
+            dom_: goog.dom.DomHelper;
+    
+            /**
              * Adds a page to the tab pane.
              *
              * @param {goog.ui.TabPane.TabPage} page Tab page to add.
@@ -114,6 +124,12 @@ declare module goog.ui {
              * @final
              */
             constructor(type: string, target: goog.ui.TabPane, page: goog.ui.TabPane.TabPage);
+    
+            /**
+             * The selected page.
+             * @type {goog.ui.TabPane.TabPage}
+             */
+            page: goog.ui.TabPane.TabPage;
         }
     }
 }
@@ -149,6 +165,16 @@ declare module goog.ui.TabPane {
              * @constructor
              */
             constructor(opt_el?: Element, opt_title?: string, opt_domHelper?: goog.dom.DomHelper);
+    
+            /**
+             * DomHelper used to interact with the document, allowing components to be
+             * created in a different window.  This property is considered protected;
+             * subclasses of Component may refer to it directly.
+             * @type {goog.dom.DomHelper}
+             * @protected
+             * @suppress {underscore|visibility}
+             */
+            dom_: goog.dom.DomHelper;
     
             /**
              * @return {string} The title for tab page.

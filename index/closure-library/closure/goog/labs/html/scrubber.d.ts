@@ -35,18 +35,6 @@ declare module goog.labs.html.scrubber {
      */
     function balance(html: string): string;
 
-    /** Character code constant for {@code '<'}.  @private */
-    var CC_LT_: any /*missing*/;
-
-    /** Character code constant for {@code '!'}.  @private */
-    var CC_BANG_: any /*missing*/;
-
-    /** Character code constant for {@code '/'}.  @private */
-    var CC_SLASH_: any /*missing*/;
-
-    /** Character code constant for {@code '?'}.  @private */
-    var CC_QMARK_: any /*missing*/;
-
     /**
      * Groups of elements used to specify containment relationships.
      * @enum {number}
@@ -64,7 +52,4 @@ declare module goog.labs.html.scrubber {
      * @private
      */
     enum Scope_ { COMMON_, BUTTON_, LIST_ITEM_, TABLE_ } 
-
-    /** @const @private */
-    var ALL_SCOPES_: any /*missing*/;
 }

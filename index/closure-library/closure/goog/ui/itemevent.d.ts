@@ -21,6 +21,15 @@ declare module goog.ui {
              * @final
              */
             constructor(type: string, target: Object, item: Object);
+    
+            /**
+             * Item for the event. The type of this object is specific to the type
+             * of event. For a menu, it would be the menu item that was clicked. For a
+             * listbox selection, it would be the listitem that was selected.
+             *
+             * @type {Object}
+             */
+            item: Object;
         }
     }
 }

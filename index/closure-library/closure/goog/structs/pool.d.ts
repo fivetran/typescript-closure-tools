@@ -19,6 +19,21 @@ declare module goog.structs {
             constructor(opt_minCount?: number, opt_maxCount?: number);
     
             /**
+             * The minimum delay between objects being made available, in milliseconds. If
+             * this is 0, no minimum delay is enforced.
+             * @protected {number}
+             */
+            delay: any /*missing*/;
+    
+            /**
+             * The time of the last object being made available, in milliseconds since the
+             * epoch (i.e., the result of Date#toTime). If this is null, no access has
+             * occurred yet.
+             * @protected {number?}
+             */
+            lastAccess: any /*missing*/;
+    
+            /**
              * Sets the minimum count of the pool.
              * If min is greater than the max count of the pool, an error is thrown.
              * @param {number} min The minimum count of the pool.

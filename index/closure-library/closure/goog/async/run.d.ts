@@ -27,6 +27,12 @@ declare module goog.async.run {
              * @param {Object|null|undefined} scope
              */
             constructor(fn: () => any /*missing*/, scope: any /*null*/);
+    
+            /** @const */
+            fn: any /*missing*/;
+    
+            /** @const */
+            scope: any /*missing*/;
         }
     }
 

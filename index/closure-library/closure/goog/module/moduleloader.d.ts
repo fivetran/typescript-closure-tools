@@ -102,6 +102,11 @@ declare module goog.module.ModuleLoader {
              * @final
              */
             constructor(type: goog.module.ModuleLoader.EventType, moduleIds: string[]);
+    
+            /**
+             * @type {Array.<string>}
+             */
+            moduleIds: string[];
         }
     }
 
@@ -117,6 +122,37 @@ declare module goog.module.ModuleLoader {
              * @final
              */
             constructor();
+    
+            /**
+             * The request uris.
+             * @type {Array.<string>}
+             */
+            requestUris: string[];
+    
+            /**
+             * The response texts.
+             * @type {Array.<string>}
+             */
+            responseTexts: string[];
+    
+            /**
+             * Whether loadModules was called for the set of modules referred by this
+             * status.
+             * @type {boolean}
+             */
+            loadRequested: boolean;
+    
+            /**
+             * Success callback.
+             * @type {?function()}
+             */
+            successFn: () => any /*missing*/;
+    
+            /**
+             * Error callback.
+             * @type {?function(?number)}
+             */
+            errorFn: (_0: number) => any /*missing*/;
         }
     }
 

@@ -369,6 +369,18 @@ declare module goog.net.XhrManager {
              * @final
              */
             constructor(type: goog.net.EventType, target: goog.net.XhrManager, id: string, xhrIo: goog.net.XhrIo);
+    
+            /**
+             * The id of the request this event is for.
+             * @type {string}
+             */
+            id: string;
+    
+            /**
+             * The XhrIo object of the request.
+             * @type {goog.net.XhrIo}
+             */
+            xhrIo: goog.net.XhrIo;
         }
     }
 
@@ -653,6 +665,12 @@ declare module goog.net.XhrManager {
              * @final
              */
             constructor(url: string, xhrEventCallback: Function, opt_method?: string, opt_content?: string, opt_headers?: goog.structs.Map<any, any>, opt_callback?: Function, opt_maxRetries?: number, opt_responseType?: goog.net.XhrIo.ResponseType);
+    
+            /**
+             * The XhrIo instance handling this request. Set in handleAvailableXhr.
+             * @type {goog.net.XhrIo}
+             */
+            xhrIo: goog.net.XhrIo;
     
             /**
              * Gets the uri.

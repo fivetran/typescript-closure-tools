@@ -1,9 +1,9 @@
 /// <reference path="../../../../globals.d.ts" />
 /// <reference path="../../events/eventtarget.d.ts" />
 /// <reference path="../testqueue.d.ts" />
+/// <reference path="../../structs/map.d.ts" />
 /// <reference path="../../net/xhrio.d.ts" />
 /// <reference path="../../net/errorcode.d.ts" />
-/// <reference path="../../structs/map.d.ts" />
 /// <reference path="../../net/xhrlike.d.ts" />
 
 declare module goog.testing.net {
@@ -22,6 +22,13 @@ declare module goog.testing.net {
              * @extends {goog.events.EventTarget}
              */
             constructor(opt_testQueue?: goog.testing.TestQueue);
+    
+            /**
+             * Map of default headers to add to every request, use:
+             * XhrIo.headers.set(name, value)
+             * @type {goog.structs.Map}
+             */
+            headers: goog.structs.Map<any, any>;
     
             /**
              * Returns the number of milliseconds after which an incomplete request will be

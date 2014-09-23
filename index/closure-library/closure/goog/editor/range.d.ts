@@ -20,6 +20,18 @@ declare module goog.editor.range {
             constructor(node: Node, offset: number);
     
             /**
+             * The node containing the point.
+             * @type {Node}
+             */
+            node: Node;
+    
+            /**
+             * The offset of the point into the node.
+             * @type {number}
+             */
+            offset: number;
+    
+            /**
              * Gets the point of this point's node in the DOM.
              * @return {!goog.editor.range.Point} The node's point.
              */

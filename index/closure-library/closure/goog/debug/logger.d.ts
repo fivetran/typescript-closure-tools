@@ -358,6 +358,18 @@ declare module goog.debug.Logger {
              * @final
              */
             constructor(name: string, value: number);
+    
+            /**
+             * The name of the level
+             * @type {string}
+             */
+            name: string;
+    
+            /**
+             * The numeric value of the level
+             * @type {number}
+             */
+            value: number;
         }
     }
 

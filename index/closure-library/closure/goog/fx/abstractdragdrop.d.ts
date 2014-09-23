@@ -32,6 +32,14 @@ declare module goog.fx {
             constructor();
     
             /**
+             * List of items that makes up the drag source or drop target.
+             * @type {Array.<goog.fx.DragDropItem>}
+             * @protected
+             * @suppress {underscore|visibility}
+             */
+            items_: goog.fx.DragDropItem[];
+    
+            /**
              * Set class to add to source elements being dragged.
              *
              * @param {string} className Class to be added.  Must be a single, valid
@@ -320,6 +328,67 @@ declare module goog.fx {
              * @constructor
              */
             constructor(type: string, source: goog.fx.AbstractDragDrop, sourceItem: goog.fx.DragDropItem, opt_target?: goog.fx.AbstractDragDrop, opt_targetItem?: goog.fx.DragDropItem, opt_targetElement?: Element, opt_clientX?: number, opt_clientY?: number, opt_x?: number, opt_y?: number, opt_subtarget?: Object);
+    
+            /**
+             * Reference to the source goog.fx.AbstractDragDrop object.
+             * @type {goog.fx.AbstractDragDrop}
+             */
+            dragSource: goog.fx.AbstractDragDrop;
+    
+            /**
+             * Reference to the source goog.fx.DragDropItem object.
+             * @type {goog.fx.DragDropItem}
+             */
+            dragSourceItem: goog.fx.DragDropItem;
+    
+            /**
+             * Reference to the target goog.fx.AbstractDragDrop object.
+             * @type {goog.fx.AbstractDragDrop|undefined}
+             */
+            dropTarget: any /*goog.fx.AbstractDragDrop|any (undefined)*/;
+    
+            /**
+             * Reference to the target goog.fx.DragDropItem object.
+             * @type {goog.fx.DragDropItem|undefined}
+             */
+            dropTargetItem: any /*goog.fx.DragDropItem|any (undefined)*/;
+    
+            /**
+             * The actual element of the drop target that is the target for this event.
+             * @type {Element|undefined}
+             */
+            dropTargetElement: any /*Element|any (undefined)*/;
+    
+            /**
+             * X-Position relative to the screen.
+             * @type {number|undefined}
+             */
+            clientX: any /*number|any (undefined)*/;
+    
+            /**
+             * Y-Position relative to the screen.
+             * @type {number|undefined}
+             */
+            clientY: any /*number|any (undefined)*/;
+    
+            /**
+             * X-Position relative to the viewport.
+             * @type {number|undefined}
+             */
+            viewportX: any /*number|any (undefined)*/;
+    
+            /**
+             * Y-Position relative to the viewport.
+             * @type {number|undefined}
+             */
+            viewportY: any /*number|any (undefined)*/;
+    
+            /**
+             * The subtarget that is currently active if a subtargeting function
+             * is supplied.
+             * @type {Object|undefined}
+             */
+            subtarget: any /*Object|any (undefined)*/;
         }
     }
 
@@ -350,6 +419,18 @@ declare module goog.fx {
              * @constructor
              */
             constructor(element: string, opt_data?: Object);
+    
+            /**
+             * Reference to drag source/target element
+             * @type {Element}
+             */
+            element: Element;
+    
+            /**
+             * Data associated with element.
+             * @type {Object|undefined}
+             */
+            data: any /*Object|any (undefined)*/;
     
             /**
              * Get the data associated with the source/target.

@@ -24,6 +24,54 @@ declare module goog.math {
             constructor(x0: number, y0: number, x1: number, y1: number, x2: number, y2: number, x3: number, y3: number);
     
             /**
+             * X coordinate of the first point.
+             * @type {number}
+             */
+            x0: number;
+    
+            /**
+             * Y coordinate of the first point.
+             * @type {number}
+             */
+            y0: number;
+    
+            /**
+             * X coordinate of the first control point.
+             * @type {number}
+             */
+            x1: number;
+    
+            /**
+             * Y coordinate of the first control point.
+             * @type {number}
+             */
+            y1: number;
+    
+            /**
+             * X coordinate of the second control point.
+             * @type {number}
+             */
+            x2: number;
+    
+            /**
+             * Y coordinate of the second control point.
+             * @type {number}
+             */
+            y2: number;
+    
+            /**
+             * X coordinate of the end point.
+             * @type {number}
+             */
+            x3: number;
+    
+            /**
+             * Y coordinate of the end point.
+             * @type {number}
+             */
+            y3: number;
+    
+            /**
              * @return {!goog.math.Bezier} A copy of this curve.
              */
             clone(): goog.math.Bezier;

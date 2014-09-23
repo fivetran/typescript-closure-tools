@@ -43,6 +43,12 @@ declare module goog.events.ImeHandler {
              * @final
              */
             constructor(type: goog.events.ImeHandler.EventType, reason: goog.events.BrowserEvent);
+    
+            /**
+             * The event that triggered this.
+             * @type {goog.events.BrowserEvent}
+             */
+            reason: goog.events.BrowserEvent;
         }
     }
 

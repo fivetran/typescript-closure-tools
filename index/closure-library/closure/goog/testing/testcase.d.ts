@@ -29,6 +29,14 @@ declare module goog.testing {
             constructor(opt_name?: string);
     
             /**
+             * Object used to encapsulate the test results.
+             * @type {goog.testing.TestCase.Result}
+             * @protected
+             * @suppress {underscore|visibility}
+             */
+            result_: goog.testing.TestCase.Result;
+    
+            /**
              * @return {string} The name of the test.
              */
             getName(): string;
@@ -355,6 +363,24 @@ declare module goog.testing.TestCase {
             constructor(name: string, ref: Function, opt_scope?: Object);
     
             /**
+             * The name of the test.
+             * @type {string}
+             */
+            name: string;
+    
+            /**
+             * Reference to the test function.
+             * @type {Function}
+             */
+            ref: Function;
+    
+            /**
+             * Scope that the test function should be called in.
+             * @type {Object}
+             */
+            scope: Object;
+    
+            /**
              * Executes the test function.
              */
             execute(): void;
@@ -373,6 +399,69 @@ declare module goog.testing.TestCase {
              * @final
              */
             constructor(testCase: goog.testing.TestCase);
+    
+            /**
+             * Total number of tests that should have been run.
+             * @type {number}
+             */
+            totalCount: number;
+    
+            /**
+             * Total number of tests that were actually run.
+             * @type {number}
+             */
+            runCount: number;
+    
+            /**
+             * Number of successful tests.
+             * @type {number}
+             */
+            successCount: number;
+    
+            /**
+             * The amount of time the tests took to run.
+             * @type {number}
+             */
+            runTime: number;
+    
+            /**
+             * The number of files loaded to run this test.
+             * @type {number}
+             */
+            numFilesLoaded: number;
+    
+            /**
+             * Whether this test case was suppressed by shouldRunTests() returning false.
+             * @type {boolean}
+             */
+            testSuppressed: boolean;
+    
+            /**
+             * Test results for each test that was run. The test name is always added
+             * as the key in the map, and the array of strings is an optional list
+             * of failure messages. If the array is empty, the test passed. Otherwise,
+             * the test failed.
+             * @type {!Object.<string, !Array.<string>>}
+             */
+            resultsByName: { [key: string]: string[] };
+    
+            /**
+             * Errors encountered while running the test.
+             * @type {!Array.<goog.testing.TestCase.Error>}
+             */
+            errors: goog.testing.TestCase.Error[];
+    
+            /**
+             * Messages to show the user after running the test.
+             * @type {!Array.<string>}
+             */
+            messages: string[];
+    
+            /**
+             * Whether the tests have completed.
+             * @type {boolean}
+             */
+            complete: boolean;
     
             /**
              * @return {boolean} Whether the test was successful.
@@ -401,6 +490,24 @@ declare module goog.testing.TestCase {
              * @final
              */
             constructor(source: string, message: string, opt_stack?: string);
+    
+            /**
+             * The name of the test which threw the error.
+             * @type {string}
+             */
+            source: string;
+    
+            /**
+             * Reference to the test function.
+             * @type {string}
+             */
+            message: string;
+    
+            /**
+             * Scope that the test function should be called in.
+             * @type {?string}
+             */
+            stack: string;
         }
     }
 

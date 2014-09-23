@@ -32,6 +32,24 @@ declare module goog.net.xpc {
              * @extends {goog.net.xpc.Transport}
              */
             constructor(channel: goog.net.xpc.CrossPageChannel, opt_domHelper?: goog.dom.DomHelper);
+    
+            /**
+             * The name of the channel.
+             * @type {string}
+             */
+            channelName: string;
+    
+            /**
+             * The service on the channel.
+             * @type {string}
+             */
+            service: string;
+    
+            /**
+             * The payload.
+             * @type {string}
+             */
+            payload: string;
         }
     }
 }

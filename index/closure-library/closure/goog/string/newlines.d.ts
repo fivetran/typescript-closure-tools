@@ -30,6 +30,34 @@ declare module goog._string.newlines {
             constructor(string: string, startLineIndex: number, endContentIndex: number, endLineIndex: number);
     
             /**
+             * The original string.
+             * @type {string}
+             */
+            string: string;
+    
+            /**
+             * Index of the start of the line.
+             * @type {number}
+             */
+            startLineIndex: number;
+    
+            /**
+             * Index of the end of the line, excluding any newline characters.
+             * Index is the first character after the line, suitable for
+             * String.substring().
+             * @type {number}
+             */
+            endContentIndex: number;
+    
+            /**
+             * Index of the end of the line, excluding any newline characters.
+             * Index is the first character after the line, suitable for
+             * String.substring().
+             * @type {number}
+             */
+            endLineIndex: number;
+    
+            /**
              * @return {string} The content of the line, excluding any newline characters.
              */
             getContent(): string;

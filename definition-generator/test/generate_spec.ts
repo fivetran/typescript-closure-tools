@@ -33,7 +33,7 @@ describe('generate', () => {
     it('class', () => {
         expect(parse('test/class.js')).toEqual({
             "example": {
-                "Class": "class Class extends Class.__Class { } module Class { class __Class implements example.Interface { constructor(x: number); constructor(x: string); overloadedMethod(x: number): void; overloadedMethod(x: string): void; interfaceMethod(x: number): void; interfaceMethod(x: string): void; } }"
+                "Class": "class Class extends Class.__Class { } module Class { class __Class implements example.Interface { constructor(x: number); constructor(x: string); thisAssignment: string; thisDeclaration: number; overloadedMethod(x: number): void; overloadedMethod(x: string): void; interfaceMethod(x: number): void; interfaceMethod(x: string): void; } }"
             }
         });
     });

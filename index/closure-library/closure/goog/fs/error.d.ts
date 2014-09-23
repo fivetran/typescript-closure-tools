@@ -20,6 +20,12 @@ declare module goog.fs {
              * @final
              */
             constructor(error: DOMError, action: string);
+    
+            /** @type {string} */
+            name: string;
+    
+            /** @suppress {deprecated} */
+            code: any /*missing*/;
         }
     }
 }

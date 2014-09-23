@@ -21,6 +21,30 @@ declare module goog.math {
             constructor(top: number, right: number, bottom: number, left: number);
     
             /**
+             * Top
+             * @type {number}
+             */
+            top: number;
+    
+            /**
+             * Right
+             * @type {number}
+             */
+            right: number;
+    
+            /**
+             * Bottom
+             * @type {number}
+             */
+            bottom: number;
+    
+            /**
+             * Left
+             * @type {number}
+             */
+            left: number;
+    
+            /**
              * Creates a copy of the box with the same dimensions.
              * @return {!goog.math.Box} A clone of this Box.
              */

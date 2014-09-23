@@ -134,6 +134,18 @@ declare module goog.debug.ErrorReporter {
              * @final
              */
             constructor(error: Error, context: { [key: string]: string });
+    
+            /**
+             * The error that was reported.
+             * @type {Error}
+             */
+            error: Error;
+    
+            /**
+             * Context values sent to the server alongside this report.
+             * @type {!Object.<string, string>}
+             */
+            context: { [key: string]: string };
         }
     }
 

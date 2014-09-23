@@ -266,6 +266,12 @@ declare module goog.net.IframeIo {
              * @final
              */
             constructor(data: Object);
+    
+            /**
+             * The data associated with the event.
+             * @type {Object}
+             */
+            data: Object;
         }
     }
 

@@ -16,6 +16,12 @@ declare module goog.ui.equation {
              * @final
              */
             constructor(isValid: boolean);
+    
+            /**
+             * Whether equation is valid.
+             * @type {boolean}
+             */
+            isValid: boolean;
         }
     }
 }

@@ -1,8 +1,8 @@
 /// <reference path="../../../globals.d.ts" />
 /// <reference path="./popup.d.ts" />
 /// <reference path="../dom/dom.d.ts" />
-/// <reference path="../html/safehtml.d.ts" />
 /// <reference path="../math/coordinate.d.ts" />
+/// <reference path="../html/safehtml.d.ts" />
 /// <reference path="../positioning/abstractposition.d.ts" />
 /// <reference path="../structs/set.d.ts" />
 /// <reference path="../events/browserevent.d.ts" />
@@ -42,6 +42,13 @@ declare module goog.ui {
              * @extends {goog.ui.Popup}
              */
             constructor(opt_el?: string, opt_str?: string, opt_domHelper?: goog.dom.DomHelper);
+    
+            /**
+             * Cursor position relative to the page.
+             * @type {!goog.math.Coordinate}
+             * @protected
+             */
+            cursorPosition: goog.math.Coordinate;
     
             /**
              * CSS class name for tooltip.

@@ -648,6 +648,12 @@ declare module goog.ui.ServerChart {
              * @final
              */
             constructor(uri: string);
+    
+            /**
+             * The overly-long URI string.
+             * @type {string}
+             */
+            uri: string;
         }
     }
 

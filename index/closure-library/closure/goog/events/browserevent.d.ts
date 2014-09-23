@@ -21,6 +21,104 @@ declare module goog.events {
             constructor(opt_e?: Event, opt_currentTarget?: _EventTarget);
     
             /**
+             * For mouseover and mouseout events, the related object for the event.
+             * @type {Node}
+             */
+            relatedTarget: Node;
+    
+            /**
+             * X-coordinate relative to target.
+             * @type {number}
+             */
+            offsetX: number;
+    
+            /**
+             * Y-coordinate relative to target.
+             * @type {number}
+             */
+            offsetY: number;
+    
+            /**
+             * X-coordinate relative to the window.
+             * @type {number}
+             */
+            clientX: number;
+    
+            /**
+             * Y-coordinate relative to the window.
+             * @type {number}
+             */
+            clientY: number;
+    
+            /**
+             * X-coordinate relative to the monitor.
+             * @type {number}
+             */
+            screenX: number;
+    
+            /**
+             * Y-coordinate relative to the monitor.
+             * @type {number}
+             */
+            screenY: number;
+    
+            /**
+             * Which mouse button was pressed.
+             * @type {number}
+             */
+            button: number;
+    
+            /**
+             * Keycode of key press.
+             * @type {number}
+             */
+            keyCode: number;
+    
+            /**
+             * Keycode of key press.
+             * @type {number}
+             */
+            charCode: number;
+    
+            /**
+             * Whether control was pressed at time of event.
+             * @type {boolean}
+             */
+            ctrlKey: boolean;
+    
+            /**
+             * Whether alt was pressed at time of event.
+             * @type {boolean}
+             */
+            altKey: boolean;
+    
+            /**
+             * Whether shift was pressed at time of event.
+             * @type {boolean}
+             */
+            shiftKey: boolean;
+    
+            /**
+             * Whether the meta key was pressed at time of event.
+             * @type {boolean}
+             */
+            metaKey: boolean;
+    
+            /**
+             * History state object, only set for PopState events where it's a copy of the
+             * state object provided to pushState or replaceState.
+             * @type {Object}
+             */
+            state: Object;
+    
+            /**
+             * Whether the default platform modifier key was pressed at time of event.
+             * (This is control for all platforms except Mac, where it's Meta.)
+             * @type {boolean}
+             */
+            platformModifierKey: boolean;
+    
+            /**
              * Accepts a browser event object and creates a patched, cross browser event
              * object.
              * @param {Event} e Browser event object.

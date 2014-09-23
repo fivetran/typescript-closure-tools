@@ -31,6 +31,15 @@ declare module goog.ui {
             constructor(opt_element?: Element, opt_position?: goog.positioning.AbstractPosition);
     
             /**
+             * Positioning helper object.
+             *
+             * @type {goog.positioning.AbstractPosition|undefined}
+             * @protected
+             * @suppress {underscore|visibility}
+             */
+            position_: any /*goog.positioning.AbstractPosition|any (undefined)*/;
+    
+            /**
              * Returns the corner of the popup to used in the positioning algorithm.
              *
              * @return {goog.positioning.Corner} The popup corner used for positioning.

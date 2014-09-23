@@ -119,6 +119,18 @@ declare module goog.spell.SpellCheck {
              * @final
              */
             constructor(target: goog.spell.SpellCheck, word: string, status: goog.spell.SpellCheck.WordStatus);
+    
+            /**
+             * Word the status has changed for.
+             * @type {string}
+             */
+            word: string;
+    
+            /**
+             * New status
+             * @type {goog.spell.SpellCheck.WordStatus}
+             */
+            status: goog.spell.SpellCheck.WordStatus;
         }
     }
 

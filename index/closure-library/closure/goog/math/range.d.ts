@@ -16,6 +16,18 @@ declare module goog.math {
             constructor(a: number, b: number);
     
             /**
+             * The lowest value in the range.
+             * @type {number}
+             */
+            start: number;
+    
+            /**
+             * The highest value in the range.
+             * @type {number}
+             */
+            end: number;
+    
+            /**
              * @return {!goog.math.Range} A clone of this Range.
              */
             clone(): goog.math.Range;

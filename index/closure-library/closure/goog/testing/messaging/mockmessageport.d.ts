@@ -22,6 +22,25 @@ declare module goog.testing.messaging {
             constructor(id: any, mockControl: goog.testing.MockControl);
     
             /**
+             * An opaque identifier, used because message ports otherwise have no
+             * distinguishing characteristics.
+             * @type {*}
+             */
+            id: any;
+    
+            /**
+             * Whether or not the port has been started.
+             * @type {boolean}
+             */
+            started: boolean;
+    
+            /**
+             * Whether or not the port has been closed.
+             * @type {boolean}
+             */
+            closed: boolean;
+    
+            /**
              * A mock postMessage funciton. Actually an instance of
              * {@link goog.testing.FunctionMock}.
              * @param {*} message The message to send.

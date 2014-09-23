@@ -25,6 +25,13 @@ declare module goog.ui {
             constructor(opt_domHelper?: goog.dom.DomHelper, opt_color?: string, opt_class?: string);
     
             /**
+             * The base class name for the component.
+             * @type {string}
+             * @protected
+             */
+            className: string;
+    
+            /**
              * DOM element representing the value background image.
              * @type {Element}
              * @protected

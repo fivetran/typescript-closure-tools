@@ -269,6 +269,56 @@ declare module goog.fx {
              * @extends {goog.events.Event}
              */
             constructor(type: string, dragobj: goog.fx.Dragger, clientX: number, clientY: number, browserEvent: goog.events.BrowserEvent, opt_actX?: number, opt_actY?: number, opt_dragCanceled?: boolean);
+    
+            /**
+             * X-coordinate relative to the viewport
+             * @type {number}
+             */
+            clientX: number;
+    
+            /**
+             * Y-coordinate relative to the viewport
+             * @type {number}
+             */
+            clientY: number;
+    
+            /**
+             * The closure object representing the browser event that caused this drag
+             * event.
+             * @type {goog.events.BrowserEvent}
+             */
+            browserEvent: goog.events.BrowserEvent;
+    
+            /**
+             * The real x-position of the drag if it has been limited
+             * @type {number}
+             */
+            left: number;
+    
+            /**
+             * The real y-position of the drag if it has been limited
+             * @type {number}
+             */
+            top: number;
+    
+            /**
+             * Reference to the drag object for this event
+             * @type {goog.fx.Dragger}
+             */
+            dragger: goog.fx.Dragger;
+    
+            /**
+             * Whether drag was canceled with this event. Used to differentiate between
+             * a legitimate drag END that can result in an action and a drag END which is
+             * a result of a drag cancelation. For now it can happen 1) with drag END
+             * event on FireFox when user drags the mouse out of the window, 2) with
+             * drag END event on IE7 which is generated on MOUSEMOVE event when user
+             * moves the mouse into the document after the mouse button has been
+             * released, 3) when TOUCHCANCEL is raised instead of TOUCHEND (on touch
+             * events).
+             * @type {boolean}
+             */
+            dragCanceled: boolean;
         }
     }
 }

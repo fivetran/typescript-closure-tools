@@ -26,6 +26,9 @@ declare module goog.events {
              * @final
              */
             constructor(eventId: string);
+    
+            /** @const */
+            id: any /*missing*/;
         }
     }
 }

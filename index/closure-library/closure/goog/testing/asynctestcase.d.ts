@@ -107,6 +107,12 @@ declare module goog.testing.AsyncTestCase {
             constructor(opt_message?: string);
     
             /**
+             * The exception message.
+             * @type {string}
+             */
+            message: string;
+    
+            /**
              * Marks this object as a ControlBreakingException
              * @type {boolean}
              */

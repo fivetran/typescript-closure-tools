@@ -133,6 +133,12 @@ declare module goog.debug.ErrorHandler {
              * @final
              */
             constructor(cause: any);
+    
+            /**
+             * The error thrown by the entry point.
+             * @type {*}
+             */
+            cause: any;
         }
     }
 }

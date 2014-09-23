@@ -43,7 +43,7 @@ declare module goog.net {
              * @type {function()|null|undefined}
              * @see http://www.w3.org/TR/XMLHttpRequest/#handler-xhr-onreadystatechange
              */
-            onreadystatechange: any /*() => any (missing)|any (null)|any (undefined)*/;
+            onreadystatechange: Function /*() => any (missing)|any (null)|any (undefined)*/;
     
             /**
              * @type {string}

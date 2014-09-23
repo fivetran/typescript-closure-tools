@@ -84,6 +84,34 @@ declare module goog.graphics {
             constructor(width: string, height: string, opt_coordWidth?: number, opt_coordHeight?: number, opt_domHelper?: goog.dom.DomHelper);
     
             /**
+             * Width of graphics in pixels or percentage points.
+             * @type {number|string}
+             * @protected
+             */
+            width: any /*number|string*/;
+    
+            /**
+             * Height of graphics in pixels or precentage points.
+             * @type {number|string}
+             * @protected
+             */
+            height: any /*number|string*/;
+    
+            /**
+             * Width of coordinate system in units.
+             * @type {?number}
+             * @protected
+             */
+            coordWidth: number;
+    
+            /**
+             * Height of coordinate system in units.
+             * @type {?number}
+             * @protected
+             */
+            coordHeight: number;
+    
+            /**
              * The root level group element.
              * @type {goog.graphics.GroupElement?}
              * @protected
