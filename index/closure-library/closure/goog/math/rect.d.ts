@@ -9,18 +9,6 @@ declare module goog.math {
     module Rect {
         /** Fake class which should be extended to avoid inheriting static properties */
         class __Class {
-
-            /** @type {number} */
-            left: number;
-
-            /** @type {number} */
-            top: number;
-
-            /** @type {number} */
-            width: number;
-
-            /** @type {number} */
-            height: number;
     
             /**
              * Class for representing rectangular regions.
@@ -31,6 +19,18 @@ declare module goog.math {
              * @constructor
              */
             constructor(x: number, y: number, w: number, h: number);
+    
+            /** @type {number} */
+            left: number;
+    
+            /** @type {number} */
+            top: number;
+    
+            /** @type {number} */
+            width: number;
+    
+            /** @type {number} */
+            height: number;
     
             /**
              * @return {!goog.math.Rect} A new copy of this Rectangle.

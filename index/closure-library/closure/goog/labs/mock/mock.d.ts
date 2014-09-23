@@ -41,6 +41,32 @@ declare module goog.labs.mock {
             constructor();
     
             /**
+             * Proxies the methods for the mocked object or class to execute the stubs.
+             * @type {!Object}
+             * @protected
+             */
+            mockedItem: Object;
+    
+            /**
+             * A reference to the object or function being mocked.
+             * @type {Object|Function}
+             * @protected
+             */
+            mockee: any /*Object|Function*/;
+    
+            /**
+             * Holds the stub bindings established so far.
+             * @protected
+             */
+            methodBindings: any /*missing*/;
+    
+            /**
+             * Holds a reference to the binder used to define stubs.
+             * @protected
+             */
+            $stubBinder: any /*missing*/;
+    
+            /**
              * Returns the mock object. This should have a stubbed method for each method
              * on the object being mocked.
              *

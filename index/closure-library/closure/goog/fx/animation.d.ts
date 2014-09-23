@@ -25,6 +25,34 @@ declare module goog.fx {
             constructor(start: number[], end: number[], duration: number, opt_acc?: Function);
     
             /**
+             * Start point.
+             * @type {Array.<number>}
+             * @protected
+             */
+            startPoint: number[];
+    
+            /**
+             * End point.
+             * @type {Array.<number>}
+             * @protected
+             */
+            endPoint: number[];
+    
+            /**
+             * Duration of animation in milliseconds.
+             * @type {number}
+             * @protected
+             */
+            duration: number;
+    
+            /**
+             * Current coordinate for animation.
+             * @type {Array.<number>}
+             * @protected
+             */
+            coords: number[];
+    
+            /**
              * Sets whether the animation should use "right" rather than "left" to position
              * elements.  This is a temporary flag to allow clients to transition
              * to the new component at their convenience.  At some point "right" will be
@@ -129,6 +157,59 @@ declare module goog.fx {
              * @extends {goog.events.Event}
              */
             constructor(type: string, anim: goog.fx.Animation);
+    
+            /**
+             * The current coordinates.
+             * @type {Array.<number>}
+             */
+            coords: number[];
+    
+            /**
+             * The x coordinate.
+             * @type {number}
+             */
+            x: number;
+    
+            /**
+             * The y coordinate.
+             * @type {number}
+             */
+            y: number;
+    
+            /**
+             * The z coordinate.
+             * @type {number}
+             */
+            z: number;
+    
+            /**
+             * The current duration.
+             * @type {number}
+             */
+            duration: number;
+    
+            /**
+             * The current progress.
+             * @type {number}
+             */
+            progress: number;
+    
+            /**
+             * Frames per second so far.
+             */
+            fps: any /*missing*/;
+    
+            /**
+             * The state of the animation.
+             * @type {number}
+             */
+            state: number;
+    
+            /**
+             * The animation object.
+             * @type {goog.fx.Animation}
+             */
+            anim: goog.fx.Animation;
     
             /**
              * Returns the coordinates as integers (rounded to nearest integer).

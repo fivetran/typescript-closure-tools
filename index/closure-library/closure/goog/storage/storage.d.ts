@@ -18,6 +18,13 @@ declare module goog.storage {
             constructor(mechanism: goog.storage.mechanism.Mechanism);
     
             /**
+             * The mechanism used to persist key-value pairs.
+             *
+             * @protected {goog.storage.mechanism.Mechanism}
+             */
+            mechanism: any /*missing*/;
+    
+            /**
              * Sets an item in the data storage.
              *
              * @param {string} key The key to set.

@@ -20,6 +20,30 @@ declare module goog.math {
             constructor(x0: number, y0: number, x1: number, y1: number);
     
             /**
+             * X coordinate of the first point.
+             * @type {number}
+             */
+            x0: number;
+    
+            /**
+             * Y coordinate of the first point.
+             * @type {number}
+             */
+            y0: number;
+    
+            /**
+             * X coordinate of the first control point.
+             * @type {number}
+             */
+            x1: number;
+    
+            /**
+             * Y coordinate of the first control point.
+             * @type {number}
+             */
+            y1: number;
+    
+            /**
              * @return {!goog.math.Line} A copy of this line.
              */
             clone(): goog.math.Line;

@@ -2,6 +2,7 @@
 *.iml
 
 *.js
+!test/*.js
 *.map
 symbols.tsv
 

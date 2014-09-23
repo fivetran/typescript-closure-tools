@@ -6,6 +6,8 @@
 /// <reference path="../debug/error.d.ts" />
 /// <reference path="../fs/error.d.ts" />
 /// <reference path="./errorcode.d.ts" />
+/// <reference path="./xhrio.d.ts" />
+/// <reference path="../fs/filewriter.d.ts" />
 
 declare module goog.net {
 
@@ -175,6 +177,12 @@ declare module goog.net.FileDownloader {
             constructor(download: goog.net.FileDownloader.Download_, opt_fsErr?: goog.fs.Error);
     
             /**
+             * The URL the event relates to.
+             * @type {string}
+             */
+            url: string;
+    
+            /**
              * The status of the XHR. Only set if the error was caused by an XHR failure.
              * @type {number|undefined}
              */
@@ -210,6 +218,59 @@ declare module goog.net.FileDownloader {
              * @private
              */
             constructor(url: string, downloader: goog.net.FileDownloader);
+    
+            /**
+             * The URL for the file being downloaded.
+             * @type {string}
+             */
+            url: string;
+    
+            /**
+             * The Deferred that will be fired when the download is complete.
+             * @type {!goog.async.Deferred}
+             */
+            deferred: goog.async.Deferred<any>;
+    
+            /**
+             * Whether this download has been cancelled by the user.
+             * @type {boolean}
+             */
+            cancelled: boolean;
+    
+            /**
+             * The XhrIo object for downloading the file. Only set once it's been
+             * retrieved from the pool.
+             * @type {goog.net.XhrIo}
+             */
+            xhr: goog.net.XhrIo;
+    
+            /**
+             * The name of the blob being downloaded. Only sey once the XHR has completed,
+             * if it completed successfully.
+             * @type {?string}
+             */
+            name: string;
+    
+            /**
+             * The downloaded blob. Only set once the XHR has completed, if it completed
+             * successfully.
+             * @type {Blob}
+             */
+            blob: Blob;
+    
+            /**
+             * The file entry where the blob is to be stored. Only set once it's been
+             * loaded from the filesystem.
+             * @type {goog.fs.FileEntry}
+             */
+            file: goog.fs.FileEntry;
+    
+            /**
+             * The file writer for writing the blob to the filesystem. Only set once it's
+             * been loaded from the filesystem.
+             * @type {goog.fs.FileWriter}
+             */
+            writer: goog.fs.FileWriter;
         }
     }
 }

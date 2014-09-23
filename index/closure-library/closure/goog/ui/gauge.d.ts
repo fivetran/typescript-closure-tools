@@ -21,6 +21,24 @@ declare module goog.ui {
              * @final
              */
             constructor(fromValue: number, toValue: number, backgroundColor: string);
+    
+            /**
+             * The range start (minimal) value.
+             * @type {number}
+             */
+            fromValue: number;
+    
+            /**
+             * The range end (maximal) value.
+             * @type {number}
+             */
+            toValue: number;
+    
+            /**
+             * Color to fill the range background with.
+             * @type {string}
+             */
+            backgroundColor: string;
         }
     }
 

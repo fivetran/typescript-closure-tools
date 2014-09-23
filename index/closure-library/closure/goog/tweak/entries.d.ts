@@ -18,6 +18,18 @@ declare module goog.tweak {
             constructor(id: string, description: string);
     
             /**
+             * A descriptive label for the entry.
+             * @type {string}
+             */
+            label: string;
+    
+            /**
+             * A description of what this entry does.
+             * @type {string}
+             */
+            description: string;
+    
+            /**
              * The logger for this class.
              * @type {goog.log.Logger}
              * @protected
@@ -77,6 +89,13 @@ declare module goog.tweak {
              * @extends {goog.tweak.BaseEntry}
              */
             constructor(id: string, description: string);
+    
+            /**
+             * The value of this setting's query parameter.
+             * @type {string|undefined}
+             * @protected
+             */
+            initialQueryParamValue: any /*string|any (undefined)*/;
     
             /**
              * Sets the value of the entry based on the value of the query parameter. Once
@@ -213,6 +232,12 @@ declare module goog.tweak {
             constructor(id: string, description: string);
     
             /**
+             * Valid values for the setting.
+             * @type {Array.<string>|undefined}
+             */
+            validValues_: any /*string[]|any (undefined)*/;
+    
+            /**
              * Sets the valid values for the setting.
              * @param {Array.<string>|undefined} values Valid values.
              */
@@ -245,6 +270,12 @@ declare module goog.tweak {
              * @final
              */
             constructor(id: string, description: string);
+    
+            /**
+             * Valid values for the setting.
+             * @type {Array.<number>|undefined}
+             */
+            validValues_: any /*number[]|any (undefined)*/;
     
             /**
              * Sets the valid values for the setting.

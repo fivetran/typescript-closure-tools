@@ -32,6 +32,52 @@ declare module goog.events {
             constructor(type: goog.events.EventId<any>, opt_target?: Object);
     
             /**
+             * Event type.
+             * @type {string}
+             */
+            type: string;
+    
+            /**
+             * Target of the event.
+             * @type {Object|undefined}
+             */
+            target: any /*Object|any (undefined)*/;
+    
+            /**
+             * Object that had the listener attached.
+             * @type {Object|undefined}
+             */
+            currentTarget: any /*Object|any (undefined)*/;
+    
+            /**
+             * Whether to cancel the event in internal capture/bubble processing for IE.
+             * @type {boolean}
+             * @public
+             * @suppress {underscore|visibility} Technically public, but referencing this
+             *     outside this package is strongly discouraged.
+             */
+            propagationStopped_: boolean;
+    
+            /**
+             * Whether the default action has been prevented.
+             * This is a property to match the W3C specification at
+             * {@link http://www.w3.org/TR/DOM-Level-3-Events/
+             * #events-event-type-defaultPrevented}.
+             * Must be treated as read-only outside the class.
+             * @type {boolean}
+             */
+            defaultPrevented: boolean;
+    
+            /**
+             * Return value for in internal capture/bubble processing for IE.
+             * @type {boolean}
+             * @public
+             * @suppress {underscore|visibility} Technically public, but referencing this
+             *     outside this package is strongly discouraged.
+             */
+            returnValue_: boolean;
+    
+            /**
              * For backwards compatibility (goog.events.Event used to inherit
              * goog.Disposable).
              * @deprecated Events don't need to be disposed.

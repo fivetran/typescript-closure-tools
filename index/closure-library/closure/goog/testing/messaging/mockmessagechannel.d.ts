@@ -20,6 +20,12 @@ declare module goog.testing.messaging {
             constructor(mockControl: goog.testing.MockControl);
     
             /**
+             * Whether the channel has been disposed.
+             * @type {boolean}
+             */
+            disposed: boolean;
+    
+            /**
              * Mocks the receipt of a message. Passes the payload the appropriate service.
              * @param {string} serviceName The service to run.
              * @param {string|!Object} payload The argument to pass to the service.

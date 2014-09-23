@@ -48,6 +48,12 @@ declare module goog.tweak {
             constructor(entries: goog.tweak.BaseEntry[], opt_domHelper?: goog.dom.DomHelper);
     
             /**
+             * Map of tweak ID -> EntriesPanel for child panels (BooleanGroups).
+             * @type {!Object.<!goog.tweak.EntriesPanel>}
+             */
+            childPanels: { [key: string]: any /*missing*/ };
+    
+            /**
              * @return {!Element} Returns the expanded element. Must not be called before
              *     render().
              */
@@ -113,6 +119,12 @@ declare module goog.tweak {
              * @private
              */
             constructor(namespace: string, entries: goog.tweak.BaseEntry[]);
+    
+            /**
+             * Entries within this namespace.
+             * @type {!Array.<!goog.tweak.BaseEntry>}
+             */
+            entries: goog.tweak.BaseEntry[];
         }
     }
 }

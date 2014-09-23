@@ -130,6 +130,36 @@ declare module goog.structs.QuadTree {
             constructor(x: number, y: number, w: number, h: number, opt_parent?: goog.structs.QuadTree.Node);
     
             /**
+             * The x-coordinate of the node.
+             * @type {number}
+             */
+            x: number;
+    
+            /**
+             * The y-coordinate of the node.
+             * @type {number}
+             */
+            y: number;
+    
+            /**
+             * The width of the node.
+             * @type {number}
+             */
+            w: number;
+    
+            /**
+             * The height of the node.
+             * @type {number}
+             */
+            h: number;
+    
+            /**
+             * The parent node.
+             * @type {goog.structs.QuadTree.Node?}
+             */
+            parent: goog.structs.QuadTree.Node;
+    
+            /**
              * The node's type.
              * @type {goog.structs.QuadTree.NodeType}
              */
@@ -181,6 +211,24 @@ declare module goog.structs.QuadTree {
              * @final
              */
             constructor(x: number, y: number, opt_value?: any);
+    
+            /**
+             * The x-coordinate for the point.
+             * @type {number}
+             */
+            x: number;
+    
+            /**
+             * The y-coordinate for the point.
+             * @type {number}
+             */
+            y: number;
+    
+            /**
+             * Optional value associated with the point.
+             * @type {*}
+             */
+            value: any;
         }
     }
 

@@ -417,6 +417,24 @@ declare module goog.net.BrowserChannel {
              * @final
              */
             constructor(mapId: number, map: goog.structs.Map<any, any>, opt_context?: Object);
+    
+            /**
+             * The id for this map.
+             * @type {number}
+             */
+            mapId: number;
+    
+            /**
+             * The map itself.
+             * @type {Object|goog.structs.Map}
+             */
+            map: any /*Object|goog.structs.Map<any, any>*/;
+    
+            /**
+             * The context for the map.
+             * @type {Object}
+             */
+            context: Object;
         }
     }
 
@@ -436,6 +454,12 @@ declare module goog.net.BrowserChannel {
              * @final
              */
             constructor(eventTarget: goog.events.EventTarget, stat: goog.net.BrowserChannel.Stat);
+    
+            /**
+             * The stat
+             * @type {goog.net.BrowserChannel.Stat}
+             */
+            stat: goog.net.BrowserChannel.Stat;
         }
     }
 
@@ -457,6 +481,21 @@ declare module goog.net.BrowserChannel {
              * @final
              */
             constructor(target: goog.events.EventTarget, size: number, rtt: number, retries: number);
+    
+            /**
+             * @type {number}
+             */
+            size: number;
+    
+            /**
+             * @type {number}
+             */
+            rtt: number;
+    
+            /**
+             * @type {number}
+             */
+            retries: number;
         }
     }
 
@@ -477,6 +516,11 @@ declare module goog.net.BrowserChannel {
              * @final
              */
             constructor(target: goog.events.EventTarget, reachabilityType: goog.net.BrowserChannel.ServerReachability);
+    
+            /**
+             * @type {goog.net.BrowserChannel.ServerReachability}
+             */
+            reachabilityType: goog.net.BrowserChannel.ServerReachability;
         }
     }
 

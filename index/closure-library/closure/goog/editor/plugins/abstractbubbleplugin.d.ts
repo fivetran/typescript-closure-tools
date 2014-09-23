@@ -1,5 +1,6 @@
 /// <reference path="../../../../globals.d.ts" />
 /// <reference path="../plugin.d.ts" />
+/// <reference path="../../events/eventhandler.d.ts" />
 /// <reference path="../../ui/editor/bubble.d.ts" />
 /// <reference path="../../dom/dom.d.ts" />
 
@@ -26,6 +27,14 @@ declare module goog.editor.plugins {
              * @extends {goog.editor.Plugin}
              */
             constructor();
+    
+            /**
+             * Place to register events the plugin listens to.
+             * @type {goog.events.EventHandler.<
+             *     !goog.editor.plugins.AbstractBubblePlugin>}
+             * @protected
+             */
+            eventRegister: goog.events.EventHandler<goog.editor.plugins.AbstractBubblePlugin>;
     
             /**
              * Sets the instance bubble factory function.  If set to a non-null value, this

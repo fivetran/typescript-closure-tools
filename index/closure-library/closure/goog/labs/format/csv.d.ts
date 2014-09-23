@@ -21,6 +21,12 @@ declare module goog.labs.format.csv {
              */
             constructor(text: string, index: number, opt_message?: string);
     
+            /**
+             * @type {?{line: number, column: number}} The line and column of the parse
+             *     error.
+             */
+            position: { line: number; column: number };
+    
             /** @inheritDoc */
             name: any /*missing*/;
         }

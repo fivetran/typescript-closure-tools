@@ -19,6 +19,20 @@ declare module goog.fx {
             constructor();
     
             /**
+             * Timestamp for when the animation was started.
+             * @type {?number}
+             * @protected
+             */
+            startTime: number;
+    
+            /**
+             * Timestamp for when the animation finished or was stopped.
+             * @type {?number}
+             * @protected
+             */
+            endTime: number;
+    
+            /**
              * Pauses the animation.
              */
             pause: any /*missing*/;

@@ -89,6 +89,12 @@ declare module goog.stats.BasicStat {
             constructor(end: number);
     
             /**
+             * End time of this slot, exclusive.
+             * @type {number}
+             */
+            end: number;
+    
+            /**
              * Aggregated count within this slot.
              * @type {number}
              */

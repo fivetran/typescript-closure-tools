@@ -96,6 +96,38 @@ declare module goog.iter {
              * @private
              */
             constructor(iterable: { __iterator__: any /*missing*/ }, opt_keyFunc?: (_0: VALUE[][]) => KEY);
+    
+            /**
+             * The iterable to group, coerced to an iterator.
+             * @type {!goog.iter.Iterator}
+             */
+            iterator: goog.iter.Iterator<any>;
+    
+            /**
+             * A function for determining the key value for each element in the iterable.
+             * If no function is provided, the identity function is used and returns the
+             * element unchanged.
+             * @type {function(...[VALUE]): KEY}
+             */
+            keyFunc: (_0: VALUE[][]) => KEY;
+    
+            /**
+             * The target key for determining the start of a group.
+             * @type {KEY}
+             */
+            targetKey: KEY;
+    
+            /**
+             * The current key visited during iteration.
+             * @type {KEY}
+             */
+            currentKey: KEY;
+    
+            /**
+             * The current value being added to the group.
+             * @type {VALUE}
+             */
+            currentValue: VALUE;
         }
     }
 

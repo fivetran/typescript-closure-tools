@@ -25,6 +25,13 @@ declare module goog.net {
             constructor(opt_xmlHttpFactory?: goog.net.XmlHttpFactory);
     
             /**
+             * Map of default headers to add to every request, use:
+             * XhrIo.headers.set(name, value)
+             * @type {!goog.structs.Map}
+             */
+            headers: goog.structs.Map<any, any>;
+    
+            /**
              * Returns the number of milliseconds after which an incomplete request will be
              * aborted, or 0 if no timeout is set.
              * @return {number} Timeout interval in milliseconds.

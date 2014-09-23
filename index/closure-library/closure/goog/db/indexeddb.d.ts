@@ -136,6 +136,18 @@ declare module goog.db.IndexedDb {
              * @final
              */
             constructor(oldVersion: number, newVersion: number);
+    
+            /**
+             * The previous version of the database.
+             * @type {number}
+             */
+            oldVersion: number;
+    
+            /**
+             * The version the database is being or has been updated to.
+             * @type {number}
+             */
+            newVersion: number;
         }
     }
 

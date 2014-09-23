@@ -80,6 +80,21 @@ function extract_jsdoc(tree) {
             is_global(tree.expression);
     }
 
+    function is_this_member(tree) {
+        return tree.type === 'MemberExpression' && tree.object.type === 'ThisExpression';
+    }
+
+    function is_this_assignment(tree) {
+        return tree.type === 'ExpressionStatement' &&
+            tree.expression.type === 'AssignmentExpression' &&
+            is_this_member(tree.expression.left);
+    }
+
+    function is_this_declaration(tree) {
+        return tree.type === 'ExpressionStatement' &&
+            is_this_member(tree.expression);
+    }
+
     function is_identifier(tree) {
         if (tree.type === 'Identifier')
             return true;
@@ -109,6 +124,11 @@ function extract_jsdoc(tree) {
     }
 
     /**
+     * If we are walking inside a constructor, the expression that currently represents this
+     */
+    var currentThis: string;
+
+    /**
      * Look for global variables with JSDoc annotations
      */
     function walk(tree) {
@@ -125,6 +145,10 @@ function extract_jsdoc(tree) {
                         value: tree.expression.right,
                         jsdoc: '/*' + comment.value + '*/'
                     };
+
+                    // If tree is a constructor, remember its name as the current this
+                    if (comment.value.indexOf('@constructor') !== -1)
+                        currentThis = escodegen.generate(tree.expression.left);
                 }
             });
         }
@@ -137,6 +161,40 @@ function extract_jsdoc(tree) {
                     docstrings[name] = {
                         value: tree.expression.right,
                         jsdoc: '/*' + comment.value + '*/'
+                    };
+                }
+            });
+        }
+
+        // If tree is this.property = ..., add it to docstrings
+        if (is_this_assignment(tree) && tree.leadingComments) {
+            var memberName = escodegen.generate(tree.expression.left.property);
+            var name = currentThis + ".prototype." + memberName;
+            tree.leadingComments.forEach(comment => {
+                if (comment.type === 'Block' && comment.value.charAt(0) === '*') {
+                    var rawComment: string = comment.value;
+                    var removeIndent = rawComment.replace(/\n +/g, '\n ');
+
+                    docstrings[name] = {
+                        value: tree.expression.right,
+                        jsdoc: '/*' + removeIndent + '*/'
+                    };
+                }
+            });
+        }
+
+        // If tree is this.property;, add it to docstrings
+        if (is_this_declaration(tree) && tree.leadingComments) {
+            var memberName = escodegen.generate(tree.expression.property);
+            var name = currentThis + ".prototype." + memberName;
+            tree.leadingComments.forEach(comment => {
+                if (comment.type === 'Block' && comment.value.charAt(0) === '*') {
+                    var rawComment: string = comment.value;
+                    var removeIndent = rawComment.replace(/\n +/g, '\n ');
+
+                    docstrings[name] = {
+                        value: tree.expression.right,
+                        jsdoc: '/*' + removeIndent + '*/'
                     };
                 }
             });
@@ -382,7 +440,8 @@ function remove_private(parsed: File): File {
 
     Object.keys(parsed).forEach(function (name) {
         var jsdoc = parsed[name].jsdoc;
-        var isPrivate = jsdoc.tags.some(t => t.title === 'private');
+        var text = parsed[name].originalText;
+        var isPrivate = text.indexOf('@private') !== -1;
         var isType = jsdoc.tags.some(t => t.title === 'typedef'
             || t.title === 'interface'
             || t.title === 'constructor'

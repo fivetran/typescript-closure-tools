@@ -17,6 +17,12 @@ declare module goog.testing.fs {
             constructor(opt_data?: string, opt_type?: string);
     
             /**
+             * @see http://www.w3.org/TR/FileAPI/#dfn-type
+             * @type {string}
+             */
+            type: string;
+    
+            /**
              * @see http://www.w3.org/TR/FileAPI/#dfn-size
              * @type {number}
              */

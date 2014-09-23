@@ -78,6 +78,12 @@ declare module goog.net.WebSocket {
              * @final
              */
             constructor(message: string);
+    
+            /**
+             * The new message from the web socket.
+             * @type {string}
+             */
+            message: string;
         }
     }
 
@@ -96,6 +102,12 @@ declare module goog.net.WebSocket {
              * @final
              */
             constructor(data: string);
+    
+            /**
+             * The error data coming from the web socket.
+             * @type {string}
+             */
+            data: string;
         }
     }
 

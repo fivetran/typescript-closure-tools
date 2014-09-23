@@ -27,6 +27,18 @@ declare module goog.positioning {
              * @extends {goog.positioning.AbstractPosition}
              */
             constructor(anchorElement: Element, corner: goog.positioning.Corner, opt_overflow?: number);
+    
+            /**
+             * Element the movable element should be anchored against.
+             * @type {Element}
+             */
+            element: Element;
+    
+            /**
+             * Corner of anchored element the movable element should be positioned at.
+             * @type {goog.positioning.Corner}
+             */
+            corner: goog.positioning.Corner;
         }
     }
 }

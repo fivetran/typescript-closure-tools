@@ -243,21 +243,3 @@ declare module goog.labs.html {
         }
     }
 }
-
-declare module goog.labs.html.Sanitizer {
-
-    /**
-     * A new object that is as blank as possible.
-     *
-     * Using {@code Object.create} to create an object with
-     * no prototype speeds up whitelist access since there's fewer prototypes
-     * to fall-back to for a common case where an element is not in the
-     * white-list, and reduces the chance of confusing a member of
-     * {@code Object.prototype} with a whitelist entry.
-     *
-     * @return {!Object.<string, ?>} a reference to a newly allocated object that
-     *    does not alias any reference that existed prior.
-     * @private
-     */
-    function createBlankObject_(): void;
-}

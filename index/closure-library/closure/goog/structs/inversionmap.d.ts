@@ -20,6 +20,14 @@ declare module goog.structs {
             constructor(rangeArray: number[], valueArray: T[], opt_delta?: boolean);
     
             /**
+             * @protected {Array}
+             */
+            rangeArray: any /*missing*/;
+    
+            /** @protected {Array.<T>} */
+            values: any /*missing*/;
+    
+            /**
              * Splices a range -> value map into this inversion map.
              * @param {Array.<number>} rangeArray An array of monotonically
              *     increasing integer values, with at least one instance.

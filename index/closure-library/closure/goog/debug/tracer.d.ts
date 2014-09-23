@@ -143,6 +143,24 @@ declare module goog.debug.Trace_ {
             constructor();
     
             /**
+             * Number of tracers
+             * @type {number}
+             */
+            count: number;
+    
+            /**
+             * Cumulative time of traces
+             * @type {number}
+             */
+            time: number;
+    
+            /**
+             * Total number of allocations for this tracer type
+             * @type {number}
+             */
+            varAlloc: number;
+    
+            /**
              * @type {string|null|undefined}
              */
             type: any /*string|any (null)|any (undefined)*/;

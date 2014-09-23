@@ -57,6 +57,13 @@ declare module goog {
             constructor(opt_invisible?: boolean, opt_blankPageUrl?: string, opt_input?: HTMLInputElement, opt_iframe?: HTMLIFrameElement);
     
             /**
+             * IE-only variable for determining if the document has loaded.
+             * @type {boolean}
+             * @protected
+             */
+            documentLoaded: boolean;
+    
+            /**
              * Starts or stops the History polling loop. When enabled, the History object
              * will immediately fire an event for the current location. The caller can set
              * up event listeners between the call to the constructor and the call to

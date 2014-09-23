@@ -25,6 +25,37 @@ declare module goog.testing.messaging {
              * @final
              */
             constructor(data: any, opt_origin?: string, opt_lastEventId?: string, opt_source?: Window, opt_ports?: MessagePort[]);
+    
+            /**
+             * The data of the message.
+             * @type {*}
+             */
+            data: any;
+    
+            /**
+             * The origin of the message, for server-sent and cross-document events.
+             * @type {?string}
+             */
+            origin: string;
+    
+            /**
+             * The last event ID, for server-sent events.
+             * @type {?string}
+             */
+            lastEventId: string;
+    
+            /**
+             * The proxy for the source window, for cross-document events.
+             * @type {Window}
+             */
+            source: Window;
+    
+            /**
+             * The Array of ports sent with the message, for cross-document and channel
+             * events.
+             * @type {Array.<!MessagePort>}
+             */
+            ports: MessagePort[];
         }
     }
 }

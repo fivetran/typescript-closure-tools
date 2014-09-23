@@ -22,6 +22,12 @@ declare module goog.crypt {
             constructor(numHashBlocks: number, initHashBlocks: number[]);
     
             /**
+             * The number of bytes that are digested in each pass of this hasher.
+             * @type {number}
+             */
+            blockSize: number;
+    
+            /**
              * Resets this hash function.
              */
             reset(): void;

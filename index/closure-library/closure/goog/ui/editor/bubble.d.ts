@@ -151,6 +151,29 @@ declare module goog.ui.editor.Bubble {
             constructor(dom: goog.dom.DomHelper, id: string, type: string, title: string, targetElement: Element, preferBottomPosition: boolean);
     
             /**
+             * The type of bubble panel.
+             * @type {string}
+             */
+            type: string;
+    
+            /**
+             * The target element of this bubble panel.
+             * @type {Element}
+             */
+            targetElement: Element;
+    
+            /**
+             * Whether the panel prefers to be placed below the target element.
+             * @type {boolean}
+             */
+            preferBottomPosition: boolean;
+    
+            /**
+             * The element containing this panel.
+             */
+            element: any /*missing*/;
+    
+            /**
              * @return {Element} The element in the panel where content should go.
              */
             getContentElement(): Element;

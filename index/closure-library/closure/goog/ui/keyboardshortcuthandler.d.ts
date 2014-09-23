@@ -436,6 +436,12 @@ declare module goog.ui {
              * @final
              */
             constructor(type: string, identifier: string, target: goog.events.EventTarget);
+    
+            /**
+             * Task identifier for the triggered shortcut
+             * @type {string}
+             */
+            identifier: string;
         }
     }
 }

@@ -295,6 +295,12 @@ declare module goog.ui {
              * @final
              */
             constructor(type: string, target: goog.ui.DatePicker, date: goog.date.Date);
+    
+            /**
+             * The selected date
+             * @type {goog.date.Date}
+             */
+            date: goog.date.Date;
         }
     }
 }

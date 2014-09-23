@@ -62,6 +62,30 @@ declare module goog.graphics {
              * @final
              */
             constructor(element: Element, graphics: goog.graphics.VmlGraphics, cx: number, cy: number, rx: number, ry: number, stroke: goog.graphics.Stroke, fill: goog.graphics.Fill);
+    
+            /**
+             * X coordinate of the ellipse center.
+             * @type {number}
+             */
+            cx: number;
+    
+            /**
+             * Y coordinate of the ellipse center.
+             * @type {number}
+             */
+            cy: number;
+    
+            /**
+             * Radius length for the x-axis.
+             * @type {number}
+             */
+            rx: number;
+    
+            /**
+             * Radius length for the y-axis.
+             * @type {number}
+             */
+            ry: number;
         }
     }
 
@@ -166,16 +190,4 @@ declare module goog.graphics {
             constructor(element: Element, graphics: goog.graphics.VmlGraphics);
         }
     }
-
-    /**
-     * Returns the VML element corresponding to this object.  This method is added
-     * to several classes below.  Note that the return value of this method may
-     * change frequently in IE8, so it should not be cached externally.
-     * @return {Element} The VML element corresponding to this object.
-     * @this {goog.graphics.VmlGroupElement|goog.graphics.VmlEllipseElement|
-     *     goog.graphics.VmlRectElement|goog.graphics.VmlPathElement|
-     *     goog.graphics.VmlTextElement|goog.graphics.VmlImageElement}
-     * @private
-     */
-    function vmlGetElement_(): Element;
 }

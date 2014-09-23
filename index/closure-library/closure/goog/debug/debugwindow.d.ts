@@ -24,6 +24,18 @@ declare module goog.debug {
             constructor(opt_identifier?: string, opt_prefix?: string);
     
             /**
+             * Identifier for this logging class
+             * @protected {string}
+             */
+            identifier: any /*missing*/;
+    
+            /**
+             * Array used to buffer log output
+             * @protected {!Array}
+             */
+            outputBuffer: any /*missing*/;
+    
+            /**
              * HTML string printed when the debug window opens
              * @type {string}
              * @protected

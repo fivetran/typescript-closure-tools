@@ -23,6 +23,14 @@ declare module goog.net.xpc {
             constructor(cfg: Object, opt_domHelper?: goog.dom.DomHelper);
     
             /**
+             * The name of the channel. Please use
+             * <code>updateChannelNameAndCatalog</code> to change this from the transports
+             * vs changing the property directly.
+             * @type {string}
+             */
+            name: string;
+    
+            /**
              * Returns the configuration object for this channel.
              * Package private. Do not call from outside goog.net.xpc.
              *

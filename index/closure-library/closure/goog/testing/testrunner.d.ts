@@ -20,6 +20,12 @@ declare module goog.testing {
             constructor();
     
             /**
+             * Errors that occurred in the window.
+             * @type {Array.<string>}
+             */
+            errors: string[];
+    
+            /**
              * Reference to the active test case.
              * @type {goog.testing.TestCase?}
              */

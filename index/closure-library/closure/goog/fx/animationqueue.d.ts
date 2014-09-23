@@ -19,6 +19,13 @@ declare module goog.fx {
             constructor();
     
             /**
+             * An array holding all animations in the queue.
+             * @type {Array.<goog.fx.TransitionBase>}
+             * @protected
+             */
+            queue: goog.fx.TransitionBase[];
+    
+            /**
              * Pushes an Animation to the end of the queue.
              * @param {goog.fx.TransitionBase} animation The animation to add to the queue.
              */

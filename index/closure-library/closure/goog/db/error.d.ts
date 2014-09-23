@@ -36,6 +36,13 @@ declare module goog.db {
             constructor(error: DOMError, context: string, opt_message?: string);
     
             /**
+             * The code for this error.
+             *
+             * @type {number}
+             */
+            code: number;
+    
+            /**
              * @return {string} The name of the error.
              */
             getName(): string;

@@ -20,6 +20,18 @@ declare module goog.math {
             constructor(x: number, y: number);
     
             /**
+             * X-value
+             * @type {number}
+             */
+            x: number;
+    
+            /**
+             * Y-value
+             * @type {number}
+             */
+            y: number;
+    
+            /**
              * Returns the magnitude of the vector measured from the origin.
              * @return {number} The length of the vector.
              */
