@@ -106,6 +106,12 @@ declare module goog.editor.plugins.UndoRedo {
             constructor(fieldHashCode: string, content: string, cursorPosition: goog.editor.plugins.UndoRedo.CursorPosition_, restore: Function);
     
             /**
+             * The hash code for the field whose content is being saved.
+             * @type {string}
+             */
+            fieldHashCode: string;
+    
+            /**
              * Updates the undo portion of this state. Should only be used to update the
              * current state of an editable field, which is not yet on the undo stack after
              * an undo or redo operation. You should never be modifying states on the stack!

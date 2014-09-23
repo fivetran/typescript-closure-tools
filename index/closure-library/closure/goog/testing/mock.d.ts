@@ -17,6 +17,18 @@ declare module goog.testing {
             constructor(name: string);
     
             /**
+             * The name of the method that is expected to be called.
+             * @type {string}
+             */
+            name: string;
+    
+            /**
+             * An array of error messages for expectations not met.
+             * @type {Array}
+             */
+            errorMessages: any[];
+    
+            /**
              * The minimum number of times this method should be called.
              * @type {number}
              */

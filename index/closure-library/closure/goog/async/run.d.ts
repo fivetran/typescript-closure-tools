@@ -27,14 +27,14 @@ declare module goog.async.run {
              * @param {Object|null|undefined} scope
              */
             constructor(fn: () => any /*missing*/, scope: any /*null*/);
+    
+            /** @const */
+            fn: any /*missing*/;
+    
+            /** @const */
+            scope: any /*missing*/;
         }
     }
-
-    /** @private {boolean} */
-    var workQueueScheduled_: any /*missing*/;
-
-    /** @private {!Array.<!goog.async.run.WorkItem_>} */
-    var workQueue_: any /*missing*/;
 
     /**
      * Run any pending goog.async.run work items. This function is not intended

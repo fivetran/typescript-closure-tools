@@ -2181,11 +2181,6 @@ declare module goog.dom {
     function getActiveElement(doc: Document): Element;
 
     /**
-     * @private {number} Cached version of the devicePixelRatio.
-     */
-    var devicePixelRatio_: any /*missing*/;
-
-    /**
      * Gives the devicePixelRatio, or attempts to determine if not present.
      *
      * By default, this is the same value given by window.devicePixelRatio. If

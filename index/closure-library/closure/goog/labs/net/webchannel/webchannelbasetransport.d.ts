@@ -22,6 +22,11 @@ declare module goog.labs.net.webChannel {
             constructor();
     
             /**
+             * Transport specific error code is not to be propagated with the event.
+             */
+            status: any /*missing*/;
+    
+            /**
              * Create a new WebChannel instance.
              *
              * The new WebChannel is to be opened against the server-side resource

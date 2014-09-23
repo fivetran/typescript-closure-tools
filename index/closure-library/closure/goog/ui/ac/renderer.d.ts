@@ -1,5 +1,6 @@
 /// <reference path="../../../../globals.d.ts" />
 /// <reference path="../../events/eventtarget.d.ts" />
+/// <reference path="../../fx/animation.d.ts" />
 /// <reference path="../../positioning/positioning.d.ts" />
 
 declare module goog.ui.ac {
@@ -45,6 +46,62 @@ declare module goog.ui.ac {
              * @extends {goog.events.EventTarget}
              */
             constructor(opt_parentNode?: Element, opt_customRenderer?: { render: any /*missing*/ }, opt_rightAlign?: boolean, opt_useStandardHighlighting?: boolean);
+    
+            /**
+             * Array of the node divs that hold each result that is being displayed.
+             * @type {Array.<Element>}
+             * @protected
+             * @suppress {underscore|visibility}
+             */
+            rowDivs_: Element[];
+    
+            /**
+             * The index of the currently highlighted row
+             * @type {number}
+             * @protected
+             * @suppress {underscore|visibility}
+             */
+            hilitedRow_: number;
+    
+            /**
+             * The time that the rendering of the menu rows started
+             * @type {number}
+             * @protected
+             * @suppress {underscore|visibility}
+             */
+            startRenderingRows_: number;
+    
+            /**
+             * Classname for the main element.  This must be a single valid class name.
+             * @type {string}
+             */
+            className: string;
+    
+            /**
+             * Classname for row divs.  This must be a single valid class name.
+             * @type {string}
+             */
+            rowClassName: string;
+    
+            /**
+             * Class name for active row div.  This must be a single valid class name.
+             * Active row will have rowClassName & activeClassName &
+             * legacyActiveClassName.
+             * @type {string}
+             */
+            activeClassName: string;
+    
+            /**
+             * Class name for the bold tag highlighting the matched part of the text.
+             * @type {string}
+             */
+            highlightedClassName: string;
+    
+            /**
+             * Animation in progress, if any.
+             * @type {goog.fx.Animation|undefined}
+             */
+            animation_: any /*goog.fx.Animation|any (undefined)*/;
     
             /**
              * Gets the renderer's element.

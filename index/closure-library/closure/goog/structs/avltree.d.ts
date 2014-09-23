@@ -22,13 +22,6 @@ declare module goog.structs {
             constructor(opt_comparator?: Function);
     
             /**
-             * Pointer to the root node of the tree.
-             *
-             * @private {goog.structs.AvlTree.Node.<T>}
-             */
-            root_: any /*missing*/;
-    
-            /**
              * Removes all nodes from the tree.
              */
             clear(): void;
@@ -141,6 +134,27 @@ declare module goog.structs.AvlTree {
              * @template T
              */
             constructor(value: T, opt_parent?: goog.structs.AvlTree.Node<T>);
+    
+            /**
+             * The value stored by the node.
+             *
+             * @type {T}
+             */
+            value: T;
+    
+            /**
+             * The node's parent. Null if the node is the root.
+             *
+             * @type {goog.structs.AvlTree.Node.<T>}
+             */
+            parent: goog.structs.AvlTree.Node<T>;
+    
+            /**
+             * The number of nodes in the subtree rooted at this node.
+             *
+             * @type {number}
+             */
+            count: number;
     
             /**
              * The node's left child. Null if the node does not have a left child.

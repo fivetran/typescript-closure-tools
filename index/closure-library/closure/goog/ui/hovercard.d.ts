@@ -157,6 +157,18 @@ declare module goog.ui.HoverCard {
              * @final
              */
             constructor(type: goog.ui.HoverCard.EventType, target: goog.ui.HoverCard, anchor: Element, opt_data?: Object);
+    
+            /**
+             * Element that triggered the hovercard event.
+             * @type {Element}
+             */
+            anchor: Element;
+    
+            /**
+             * Optional data to be passed to the listener.
+             * @type {Object|undefined}
+             */
+            data: any /*Object|any (undefined)*/;
         }
     }
 

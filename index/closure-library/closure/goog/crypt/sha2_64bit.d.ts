@@ -22,19 +22,15 @@ declare module goog.crypt {
             constructor(numHashBlocks: number, initHashBlocks: number[]);
     
             /**
+             * The number of bytes that are digested in each pass of this hasher.
+             * @type {number}
+             */
+            blockSize: number;
+    
+            /**
              * Resets this hash function.
              */
             reset(): void;
         }
     }
-}
-
-declare module goog.crypt.Sha2_64bit {
-
-    /**
-     * Constants used in SHA-512 variants
-     * @const
-     * @private {!Array.<!goog.math.Long>}
-     */
-    var K_: any /*missing*/;
 }

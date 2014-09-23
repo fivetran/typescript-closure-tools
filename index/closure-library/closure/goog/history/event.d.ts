@@ -21,6 +21,18 @@ declare module goog.history {
              * @final
              */
             constructor(token: string, isNavigation: boolean);
+    
+            /**
+             * The current history state.
+             * @type {string}
+             */
+            token: string;
+    
+            /**
+             * Whether the event was triggered by browser navigation.
+             * @type {boolean}
+             */
+            isNavigation: boolean;
         }
     }
 }

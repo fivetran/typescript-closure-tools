@@ -16,6 +16,12 @@ declare module goog.crypt {
             constructor();
     
             /**
+             * The block size for the hasher.
+             * @type {number}
+             */
+            blockSize: number;
+    
+            /**
              * Resets the internal accumulator.
              */
             reset: any /*missing*/;

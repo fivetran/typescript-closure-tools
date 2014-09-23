@@ -35,6 +35,12 @@ declare module goog.positioning {
              * @extends {goog.positioning.AbstractPosition}
              */
             constructor(arg1: goog.math.Coordinate, opt_arg2?: number);
+    
+            /**
+             * Coordinate to position popup at.
+             * @type {goog.math.Coordinate}
+             */
+            coordinate: goog.math.Coordinate;
         }
     }
 }

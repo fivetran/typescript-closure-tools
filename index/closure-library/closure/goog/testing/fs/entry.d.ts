@@ -26,6 +26,12 @@ declare module goog.testing.fs {
             constructor(fs: goog.testing.fs.FileSystem, parent: goog.testing.fs.DirectoryEntry, name: string);
     
             /**
+             * The parent of this entry.
+             * @type {!goog.testing.fs.DirectoryEntry}
+             */
+            parent: goog.testing.fs.DirectoryEntry;
+    
+            /**
              * Whether or not this entry has been deleted.
              * @type {boolean}
              */
@@ -180,6 +186,12 @@ declare module goog.testing.fs {
              * @final
              */
             constructor(fs: goog.testing.fs.FileSystem, parent: goog.testing.fs.DirectoryEntry, name: string, children: { [key: string]: any /*missing*/ });
+    
+            /**
+             * The map of child names to entry objects.
+             * @type {!Object.<!goog.testing.fs.Entry>}
+             */
+            children: { [key: string]: any /*missing*/ };
     
             /**
              * Get a file entry synchronously, without waiting for a Deferred to resolve.

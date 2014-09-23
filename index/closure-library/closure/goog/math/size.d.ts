@@ -17,6 +17,18 @@ declare module goog.math {
             constructor(width: number, height: number);
     
             /**
+             * Width
+             * @type {number}
+             */
+            width: number;
+    
+            /**
+             * Height
+             * @type {number}
+             */
+            height: number;
+    
+            /**
              * @return {!goog.math.Size} A new copy of the Size.
              */
             clone(): goog.math.Size;

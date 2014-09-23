@@ -24,6 +24,12 @@ declare module goog.fx.dom {
             constructor(element: Element, start: number[], end: number[], time: number, opt_acc?: Function);
     
             /**
+             * DOM Node that will be used in the animation
+             * @type {Element}
+             */
+            element: Element;
+    
+            /**
              * Called to update the style of the element.
              * @protected
              */

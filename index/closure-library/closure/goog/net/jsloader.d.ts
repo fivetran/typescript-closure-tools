@@ -19,6 +19,13 @@ declare module goog.net.jsloader {
              * @final
              */
             constructor(code: goog.net.jsloader.ErrorCode, opt_message?: string);
+    
+            /**
+             * The code for this error.
+             *
+             * @type {goog.net.jsloader.ErrorCode}
+             */
+            code: goog.net.jsloader.ErrorCode;
         }
     }
 
@@ -107,13 +114,6 @@ declare module goog.net.jsloader {
      *     parameter.
      */
     function loadAndVerify(uri: string, verificationObjName: string, options: goog.net.jsloader.Options): goog.async.Deferred<any>;
-
-    /**
-     * Cancels a given request.
-     * @this {{script_: Element, timeout_: number}} The request context.
-     * @private
-     */
-    function cancel_(): void;
 
     /**
      * Possible error codes for jsloader.

@@ -37,6 +37,9 @@ declare module goog.ui.tree {
              */
             constructor(html: goog.html.SafeHtml, opt_config?: Object, opt_domHelper?: goog.dom.DomHelper);
     
+            /** @protected {goog.ui.tree.TreeControl} */
+            tree: any /*missing*/;
+    
             /**
              * Adds roles and states.
              * @protected

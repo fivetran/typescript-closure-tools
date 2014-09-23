@@ -29,6 +29,13 @@ declare module goog.ui {
             constructor(spellCheck: goog.spell.SpellCheck, opt_domHelper?: goog.dom.DomHelper);
     
             /**
+             * Handler to use for caching and lookups.
+             * @type {goog.spell.SpellCheck}
+             * @protected
+             */
+            spellCheck: goog.spell.SpellCheck;
+    
+            /**
              * Class name for suggestions menu.
              *
              * @type {string}

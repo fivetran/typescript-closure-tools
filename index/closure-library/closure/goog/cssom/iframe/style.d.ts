@@ -16,6 +16,20 @@ declare module goog.cssom.iframe.style {
             constructor();
     
             /**
+             * Text of the declarations inside the rule set.
+             * For example: 'font-family: Arial; color: red;'
+             * @type {string}
+             */
+            declarationText: string;
+    
+            /**
+             * Array of CssSelector objects, one for each selector.
+             * Example: [h1, h2]
+             * @type {Array.<goog.cssom.iframe.style.CssSelector_>}
+             */
+            selectors: goog.cssom.iframe.style.CssSelector_[];
+    
+            /**
              * Initializes the rule set from a {@code CSSRule}.
              *
              * @param {CSSRule} cssRule The {@code CSSRule} to initialize from.
@@ -139,6 +153,13 @@ declare module goog.cssom.iframe.style {
              * @private
              */
             constructor(el: Element);
+    
+            /**
+             * Array of nodes in order of hierarchy from the top of the document
+             * to the node passed to the constructor
+             * @type {Array.<Node>}
+             */
+            nodes: Node[];
         }
     }
 

@@ -25,6 +25,16 @@ declare module goog.testing.editor {
              * @final
              */
             constructor(opt_window?: Window, opt_appWindow?: Window, opt_range?: goog.dom.AbstractRange);
+    
+            /**
+             * @return {boolean} Whether we're in modal interaction mode.
+             */
+            inModalMode(): boolean;
+    
+            /**
+             * @param {boolean} mode Sets whether we're in modal interaction mode.
+             */
+            setModalMode(mode: boolean): void;
         }
     }
 }

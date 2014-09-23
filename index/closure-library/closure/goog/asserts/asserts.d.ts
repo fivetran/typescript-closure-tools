@@ -17,6 +17,13 @@ declare module goog.asserts {
              * @final
              */
             constructor(messagePattern: string, messageArgs: any[]);
+    
+            /**
+             * The message pattern used to format the error message. Error handlers can
+             * use this to uniquely identify the assertion.
+             * @type {string}
+             */
+            messagePattern: string;
         }
     }
 

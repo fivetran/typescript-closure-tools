@@ -328,6 +328,12 @@ declare module goog.async.Deferred {
              * @extends {goog.debug.Error}
              */
             constructor(deferred: goog.async.Deferred<any>);
+    
+            /**
+             * The Deferred that raised this error.
+             * @type {goog.async.Deferred}
+             */
+            deferred: goog.async.Deferred<any>;
         }
     }
 
@@ -344,6 +350,12 @@ declare module goog.async.Deferred {
              * @extends {goog.debug.Error}
              */
             constructor(deferred: goog.async.Deferred<any>);
+    
+            /**
+             * The Deferred that raised this error.
+             * @type {goog.async.Deferred}
+             */
+            deferred: goog.async.Deferred<any>;
         }
     }
 
@@ -443,12 +455,6 @@ declare module goog.async.Deferred {
      * @template T
      */
     function when<T>(value: any, callback: (_0: any) => any, opt_scope?: T): goog.async.Deferred<any>;
-
-    /**
-     * Map of unhandled errors scheduled to be rethrown in a future timestep.
-     * @private {!Object.<number|string, goog.async.Deferred.Error_>}
-     */
-    var errorMap_: any /*missing*/;
 
     /**
      * Asserts that there are no pending deferred errors. If there are any

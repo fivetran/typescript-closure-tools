@@ -1,7 +1,8 @@
 /// <reference path="../../../globals.d.ts" />
 /// <reference path="../events/eventtarget.d.ts" />
-/// <reference path="../log/log.d.ts" />
 /// <reference path="../dom/dom.d.ts" />
+/// <reference path="../events/eventhandler.d.ts" />
+/// <reference path="../log/log.d.ts" />
 /// <reference path="./plugin.d.ts" />
 /// <reference path="../disposable/disposable.d.ts" />
 /// <reference path="../events/browserevent.d.ts" />
@@ -44,11 +45,38 @@ declare module goog.editor {
             constructor(id: string, opt_doc?: Document);
     
             /**
-             * The editable dom node.
-             * @type {Element}
-             * TODO(user): Make this private!
+             * The id for this editable field, which must match the id of the element
+             * associated with this field.
+             * @type {string}
              */
-            field: Element;
+            id: string;
+    
+            /**
+             * Dom helper for the editable node.
+             * @type {goog.dom.DomHelper}
+             * @protected
+             */
+            editableDomHelper: goog.dom.DomHelper;
+    
+            /**
+             * Additional styles to install for the editable field.
+             * @type {string}
+             * @protected
+             */
+            cssStyles: string;
+    
+            /**
+             * @type {goog.events.EventHandler.<!goog.editor.Field>}
+             * @protected
+             */
+            eventRegister: goog.events.EventHandler<goog.editor.Field>;
+    
+            /**
+             * The dom helper for the node to be made editable.
+             * @type {goog.dom.DomHelper}
+             * @protected
+             */
+            originalDomHelper: goog.dom.DomHelper;
     
             /**
              * The original node that is being made editable, or null if it has
@@ -59,18 +87,18 @@ declare module goog.editor {
             originalElement: Element;
     
             /**
+             * The editable dom node.
+             * @type {Element}
+             * TODO(user): Make this private!
+             */
+            field: Element;
+    
+            /**
              * Logging object.
              * @type {goog.log.Logger}
              * @protected
              */
             logger: goog.log.Logger;
-    
-            /**
-             * The dom helper for the node to be made editable.
-             * @type {goog.dom.DomHelper}
-             * @protected
-             */
-            originalDomHelper: goog.dom.DomHelper;
     
             /**
              * Sets flag to control whether to use window mouse up after seeing

@@ -16,6 +16,12 @@ declare module goog.testing {
              * @final
              */
             constructor();
+    
+            /**
+             * The number of elements in the storage.
+             * @type {number}
+             */
+            length: number;
         }
     }
 }

@@ -50,12 +50,6 @@ declare module goog.labs.events {
             constructor();
     
             /**
-             * Parent event target, used during event bubbling.
-             * @private {goog.events.Listenable}
-             */
-            parentEventTarget_: any /*missing*/;
-    
-            /**
              * Sets the parent of this event target to use for capture/bubble
              * mechanism.
              * @param {goog.events.Listenable} parent Parent listenable (null if none).

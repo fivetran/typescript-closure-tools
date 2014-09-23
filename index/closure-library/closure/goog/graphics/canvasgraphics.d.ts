@@ -2,6 +2,7 @@
 /// <reference path="./abstractgraphics.d.ts" />
 /// <reference path="../dom/dom.d.ts" />
 /// <reference path="./element.d.ts" />
+/// <reference path="./canvaselement.d.ts" />
 /// <reference path="./groupelement.d.ts" />
 /// <reference path="./imageelement.d.ts" />
 
@@ -99,6 +100,12 @@ declare module goog.graphics {
              * Pop an element transform off of the transform stack.
              */
             popElementTransform(): void;
+    
+            /**
+             * The main canvas element.
+             * @type {goog.graphics.CanvasGroupElement}
+             */
+            canvasElement: goog.graphics.CanvasGroupElement;
     
             /**
              * Returns the drawing context.

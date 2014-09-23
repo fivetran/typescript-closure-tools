@@ -90,6 +90,30 @@ declare module goog.ui.editor.LinkDialog {
              * @final
              */
             constructor(linkText: string, linkUrl: string, openInNewWindow: boolean, noFollow: boolean);
+    
+            /**
+             * The text of the link edited in the dialog.
+             * @type {string}
+             */
+            linkText: string;
+    
+            /**
+             * The url of the link edited in the dialog.
+             * @type {string}
+             */
+            linkUrl: string;
+    
+            /**
+             * Whether the link should open in a new window when clicked.
+             * @type {boolean}
+             */
+            openInNewWindow: boolean;
+    
+            /**
+             * Whether the link should have 'rel=nofollow' attribute.
+             * @type {boolean}
+             */
+            noFollow: boolean;
         }
     }
 
@@ -107,6 +131,12 @@ declare module goog.ui.editor.LinkDialog {
              * @final
              */
             constructor(url: string);
+    
+            /**
+             * The url of the link being tested.
+             * @type {string}
+             */
+            url: string;
         }
     }
 

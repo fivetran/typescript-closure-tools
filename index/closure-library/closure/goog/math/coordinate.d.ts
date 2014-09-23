@@ -16,6 +16,18 @@ declare module goog.math {
             constructor(opt_x?: number, opt_y?: number);
     
             /**
+             * X-value
+             * @type {number}
+             */
+            x: number;
+    
+            /**
+             * Y-value
+             * @type {number}
+             */
+            y: number;
+    
+            /**
              * Returns a new copy of the coordinate.
              * @return {!goog.math.Coordinate} A clone of this coordinate.
              */

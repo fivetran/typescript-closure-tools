@@ -154,6 +154,9 @@ declare module goog.date {
              */
             constructor(opt_year?: Object, opt_month?: number, opt_date?: number);
     
+            /** @protected {!Date} The wrapped date or datetime. */
+            date: any /*missing*/;
+    
             /**
              * @return {!goog.date.Date} A clone of the date object.
              */

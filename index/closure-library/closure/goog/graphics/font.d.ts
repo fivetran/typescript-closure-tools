@@ -20,6 +20,18 @@ declare module goog.graphics {
             constructor(size: number, family: string);
     
             /**
+             * Font size.
+             * @type {number}
+             */
+            size: number;
+    
+            /**
+             * The name of the font family to use, can be a comma separated string.
+             * @type {string}
+             */
+            family: string;
+    
+            /**
              * Indication if text should be bolded
              * @type {boolean}
              */

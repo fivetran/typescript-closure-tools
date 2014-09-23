@@ -20,6 +20,16 @@ declare module goog.vec {
             constructor(opt_origin?: goog.vec.Vec3.AnyType, opt_dir?: goog.vec.Vec3.AnyType);
     
             /**
+             * @type {goog.vec.Vec3.Float64}
+             */
+            origin: goog.vec.Vec3.Float64;
+    
+            /**
+             * @type {goog.vec.Vec3.Float64}
+             */
+            dir: goog.vec.Vec3.Float64;
+    
+            /**
              * Sets the origin and direction of the ray.
              * @param {goog.vec.AnyType} origin The new origin.
              * @param {goog.vec.AnyType} dir The new direction.

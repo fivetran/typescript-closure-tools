@@ -38,6 +38,82 @@ declare module goog.ui.ac {
             constructor(matcher: Object, renderer: goog.events.EventTarget, selectionHandler: Object);
     
             /**
+             * A data-source which provides autocomplete suggestions.
+             *
+             * TODO(user): Tighten the type to !goog.ui.ac.AutoComplete.Matcher.
+             *
+             * @type {Object}
+             * @protected
+             * @suppress {underscore|visibility}
+             */
+            matcher_: Object;
+    
+            /**
+             * A handler which interacts with the input DOM element (textfield, textarea,
+             * or richedit).
+             *
+             * TODO(user): Tighten the type to !Object.
+             *
+             * @type {Object}
+             * @protected
+             * @suppress {underscore|visibility}
+             */
+            selectionHandler_: Object;
+    
+            /**
+             * A renderer to render/show/highlight/hide the autocomplete menu.
+             * @type {goog.events.EventTarget}
+             * @protected
+             * @suppress {underscore|visibility}
+             */
+            renderer_: goog.events.EventTarget;
+    
+            /**
+             * Currently typed token which will be used for completion.
+             * @type {?string}
+             * @protected
+             * @suppress {underscore|visibility}
+             */
+            token_: string;
+    
+            /**
+             * Autocomplete suggestion items.
+             * @type {Array}
+             * @protected
+             * @suppress {underscore|visibility}
+             */
+            rows_: any[];
+    
+            /**
+             * Id of the currently highlighted row.
+             * @type {number}
+             * @protected
+             * @suppress {underscore|visibility}
+             */
+            hiliteId_: number;
+    
+            /**
+             * Id of the first row in autocomplete menu. Note that new ids are assigned
+             * everytime new suggestions are fetched.
+             *
+             * TODO(user): Figure out what subclass does with this value
+             * and whether we should expose a more proper API.
+             *
+             * @type {number}
+             * @protected
+             * @suppress {underscore|visibility}
+             */
+            firstRowId_: number;
+    
+            /**
+             * The target HTML node for displaying.
+             * @type {Element}
+             * @protected
+             * @suppress {underscore|visibility}
+             */
+            target_: Element;
+    
+            /**
              * @return {!Object} The data source providing the `autocomplete
              *     suggestions.
              */

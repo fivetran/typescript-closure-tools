@@ -21,6 +21,18 @@ declare module goog.testing.fs {
              * @final
              */
             constructor(name: string, opt_lastModified?: Date, opt_data?: string, opt_type?: string);
+    
+            /**
+             * @see http://www.w3.org/TR/FileAPI/#dfn-name
+             * @type {string}
+             */
+            name: string;
+    
+            /**
+             * @see http://www.w3.org/TR/FileAPI/#dfn-lastModifiedDate
+             * @type {Date}
+             */
+            lastModifiedDate: Date;
         }
     }
 }

@@ -1,5 +1,6 @@
 /// <reference path="../../../globals.d.ts" />
 /// <reference path="./listenable.d.ts" />
+/// <reference path="./listener.d.ts" />
 /// <reference path="./eventid.d.ts" />
 
 declare module goog.events {
@@ -23,6 +24,15 @@ declare module goog.events {
              * @final
              */
             constructor(src: goog.events.Listenable);
+    
+            /** @type {EventTarget|goog.events.Listenable} */
+            src: any /*EventTarget|goog.events.Listenable*/;
+    
+            /**
+             * Maps of event type to an array of listeners.
+             * @type {Object.<string, !Array.<!goog.events.Listener>>}
+             */
+            listeners: { [key: string]: goog.events.Listener[] };
     
             /**
              * @return {number} The count of event types in this map that actually

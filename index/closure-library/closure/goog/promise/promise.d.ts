@@ -362,6 +362,15 @@ declare module goog.Promise {
              */
             constructor(promise: goog.Promise<TYPE>, resolve: (_0: Thenable) => any /*missing*/, reject: (_0: any) => void);
     
+            /** @const */
+            promise: any /*missing*/;
+    
+            /** @const */
+            resolve: any /*missing*/;
+    
+            /** @const */
+            reject: any /*missing*/;
+    
             /**
              * The promise that created this resolver.
              * @const {!goog.Promise.<TYPE>}

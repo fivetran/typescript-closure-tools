@@ -255,6 +255,59 @@ declare module goog.fx {
              * @extends {goog.events.Event}
              */
             constructor(type: string, dragListGroup: goog.fx.DragListGroup, event: goog.fx.DragEvent, currDragItem: Element, draggerEl: Element, dragger: goog.fx.Dragger, opt_draggerElCenter?: goog.math.Coordinate, opt_hoverList?: Element, opt_hoverNextItem?: Element);
+    
+            /**
+             * A reference to the associated DragListGroup object.
+             * @type {goog.fx.DragListGroup}
+             */
+            dragListGroup: goog.fx.DragListGroup;
+    
+            /**
+             * The event fired by the browser or fired by the dragger.
+             * @type {goog.events.BrowserEvent|goog.fx.DragEvent}
+             */
+            event: any /*goog.events.BrowserEvent|goog.fx.DragEvent*/;
+    
+            /**
+             * The current drag item being move.
+             * @type {Element}
+             */
+            currDragItem: Element;
+    
+            /**
+             * The clone of the current drag item that's actually being dragged around.
+             * @type {Element}
+             */
+            draggerEl: Element;
+    
+            /**
+             * The dragger object.
+             * @type {goog.fx.Dragger}
+             */
+            dragger: goog.fx.Dragger;
+    
+            /**
+             * The current center position of the draggerEl.
+             * @type {goog.math.Coordinate|undefined}
+             */
+            draggerElCenter: any /*goog.math.Coordinate|any (undefined)*/;
+    
+            /**
+             * The current drag list that's being hovered over, or null if the center of
+             * draggerEl is outside of any drag lists. (I.e. If not null and the drag
+             * action ends right now, then currDragItem will end up in this list.)
+             * @type {Element|undefined}
+             */
+            hoverList: any /*Element|any (undefined)*/;
+    
+            /**
+             * The current next item in the hoverList that the draggerEl is hovering over.
+             * (I.e. If the drag action ends right now, then this item would become the
+             * next item after the new location of currDragItem.) May be null if not
+             * applicable or if currDragItem would be added to the end of hoverList.
+             * @type {Element|undefined}
+             */
+            hoverNextItem: any /*Element|any (undefined)*/;
         }
     }
 
