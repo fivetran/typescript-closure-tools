@@ -80,6 +80,21 @@ function extract_jsdoc(tree) {
             is_global(tree.expression);
     }
 
+    function is_this_member(tree) {
+        return tree.type === 'MemberExpression' && tree.object.type === 'ThisExpression';
+    }
+
+    function is_this_assignment(tree) {
+        return tree.type === 'ExpressionStatement' &&
+            tree.expression.type === 'AssignmentExpression' &&
+            is_this_member(tree.expression.left);
+    }
+
+    function is_this_declaration(tree) {
+        return tree.type === 'ExpressionStatement' &&
+            is_this_member(tree.expression);
+    }
+
     function is_identifier(tree) {
         if (tree.type === 'Identifier')
             return true;
@@ -109,6 +124,11 @@ function extract_jsdoc(tree) {
     }
 
     /**
+     * If we are walking inside a constructor, the expression that currently represents this
+     */
+    var currentThis: string;
+
+    /**
      * Look for global variables with JSDoc annotations
      */
     function walk(tree) {
@@ -125,6 +145,10 @@ function extract_jsdoc(tree) {
                         value: tree.expression.right,
                         jsdoc: '/*' + comment.value + '*/'
                     };
+
+                    // If tree is a constructor, remember its name as the current this
+                    if (comment.value.indexOf('@constructor') !== -1)
+                        currentThis = escodegen.generate(tree.expression.left);
                 }
             });
         }
@@ -132,6 +156,34 @@ function extract_jsdoc(tree) {
         // If tree is a global declaration, add it to docstrings
         if (is_global_declaration(tree) && tree.leadingComments) {
             var name = escodegen.generate(tree.expression);
+            tree.leadingComments.forEach(comment => {
+                if (comment.type === 'Block' && comment.value.charAt(0) === '*') {
+                    docstrings[name] = {
+                        value: tree.expression.right,
+                        jsdoc: '/*' + comment.value + '*/'
+                    };
+                }
+            });
+        }
+
+        // If tree is this.property = ..., add it to docstrings
+        if (is_this_assignment(tree) && tree.leadingComments) {
+            var memberName = escodegen.generate(tree.expression.left.property);
+            var name = currentThis + ".prototype." + memberName;
+            tree.leadingComments.forEach(comment => {
+                if (comment.type === 'Block' && comment.value.charAt(0) === '*') {
+                    docstrings[name] = {
+                        value: tree.expression.right,
+                        jsdoc: '/*' + comment.value + '*/'
+                    };
+                }
+            });
+        }
+
+        // If tree is this.property;, add it to docstrings
+        if (is_this_declaration(tree) && tree.leadingComments) {
+            var memberName = escodegen.generate(tree.expression.property);
+            var name = currentThis + ".prototype." + memberName;
             tree.leadingComments.forEach(comment => {
                 if (comment.type === 'Block' && comment.value.charAt(0) === '*') {
                     docstrings[name] = {
