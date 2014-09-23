@@ -2,6 +2,9 @@
 
 declare module goog.testing.watchers {
 
+    /** @private {!Array.<function()>} */
+    var resetWatchers_: any /*missing*/;
+
     /**
      * Fires clock reset watching functions.
      */

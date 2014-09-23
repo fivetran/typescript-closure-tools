@@ -16,6 +16,11 @@ declare module goog.labs.structs {
             constructor();
     
             /**
+             * @private {number}
+             */
+            count_: any /*missing*/;
+    
+            /**
              * Adds the (key, value) pair, overriding previous entry with the same
              * key, if any.
              * @param {string} key The key.

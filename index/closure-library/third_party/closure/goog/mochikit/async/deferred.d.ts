@@ -239,12 +239,12 @@ declare module goog.async {
              * with the rejection reason as argument, and the child Promise will be rejected
              * with the return value of the callback or thrown value.
              *
-             * @param {?(function(this:THIS, VALUE):
+             * @param {?(function(this:THIS, TYPE):
              *             (RESULT|IThenable.<RESULT>|Thenable))=} opt_onFulfilled A
              *     function that will be invoked with the fulfillment value if the Promise
              *     is fullfilled.
-             * @param {?(function(*): *)=} opt_onRejected A function that will be invoked
-             *     with the rejection reason if the Promise is rejected.
+             * @param {?(function(this:THIS, *): *)=} opt_onRejected A function that will
+             *     be invoked with the rejection reason if the Promise is rejected.
              * @param {THIS=} opt_context An optional context object that will be the
              *     execution context for the callbacks. By default, functions are executed
              *     with the default this.
@@ -252,7 +252,7 @@ declare module goog.async {
              *     of the fulfillment or rejection callback.
              * @template RESULT,THIS
              */
-            then<RESULT,THIS>(opt_onFulfilled?: (_0: VALUE) => RESULT, opt_onRejected?: (_0: any) => any, opt_context?: THIS): goog.Promise<RESULT>;
+            then<RESULT,THIS>(opt_onFulfilled?: (_0: TYPE) => RESULT, opt_onRejected?: (_0: any) => any, opt_context?: THIS): goog.Promise<RESULT>;
             /**
              * Adds callbacks that will operate on the result of the Thenable, returning a
              * new child Promise.
@@ -267,12 +267,12 @@ declare module goog.async {
              * with the rejection reason as argument, and the child Promise will be rejected
              * with the return value of the callback or thrown value.
              *
-             * @param {?(function(this:THIS, VALUE):
+             * @param {?(function(this:THIS, TYPE):
              *             (RESULT|IThenable.<RESULT>|Thenable))=} opt_onFulfilled A
              *     function that will be invoked with the fulfillment value if the Promise
              *     is fullfilled.
-             * @param {?(function(*): *)=} opt_onRejected A function that will be invoked
-             *     with the rejection reason if the Promise is rejected.
+             * @param {?(function(this:THIS, *): *)=} opt_onRejected A function that will
+             *     be invoked with the rejection reason if the Promise is rejected.
              * @param {THIS=} opt_context An optional context object that will be the
              *     execution context for the callbacks. By default, functions are executed
              *     with the default this.
@@ -280,7 +280,7 @@ declare module goog.async {
              *     of the fulfillment or rejection callback.
              * @template RESULT,THIS
              */
-            then<RESULT,THIS>(opt_onFulfilled?: (_0: VALUE) => IThenable<RESULT>, opt_onRejected?: (_0: any) => any, opt_context?: THIS): goog.Promise<RESULT>;
+            then<RESULT,THIS>(opt_onFulfilled?: (_0: TYPE) => IThenable<RESULT>, opt_onRejected?: (_0: any) => any, opt_context?: THIS): goog.Promise<RESULT>;
             /**
              * Adds callbacks that will operate on the result of the Thenable, returning a
              * new child Promise.
@@ -295,12 +295,12 @@ declare module goog.async {
              * with the rejection reason as argument, and the child Promise will be rejected
              * with the return value of the callback or thrown value.
              *
-             * @param {?(function(this:THIS, VALUE):
+             * @param {?(function(this:THIS, TYPE):
              *             (RESULT|IThenable.<RESULT>|Thenable))=} opt_onFulfilled A
              *     function that will be invoked with the fulfillment value if the Promise
              *     is fullfilled.
-             * @param {?(function(*): *)=} opt_onRejected A function that will be invoked
-             *     with the rejection reason if the Promise is rejected.
+             * @param {?(function(this:THIS, *): *)=} opt_onRejected A function that will
+             *     be invoked with the rejection reason if the Promise is rejected.
              * @param {THIS=} opt_context An optional context object that will be the
              *     execution context for the callbacks. By default, functions are executed
              *     with the default this.
@@ -308,7 +308,7 @@ declare module goog.async {
              *     of the fulfillment or rejection callback.
              * @template RESULT,THIS
              */
-            then<RESULT,THIS>(opt_onFulfilled?: (_0: VALUE) => Thenable<RESULT>, opt_onRejected?: (_0: any) => any, opt_context?: THIS): goog.Promise<RESULT>;
+            then<RESULT,THIS>(opt_onFulfilled?: (_0: TYPE) => Thenable, opt_onRejected?: (_0: any) => any, opt_context?: THIS): goog.Promise<RESULT>;
         }
     }
 }
@@ -443,6 +443,12 @@ declare module goog.async.Deferred {
      * @template T
      */
     function when<T>(value: any, callback: (_0: any) => any, opt_scope?: T): goog.async.Deferred<any>;
+
+    /**
+     * Map of unhandled errors scheduled to be rethrown in a future timestep.
+     * @private {!Object.<number|string, goog.async.Deferred.Error_>}
+     */
+    var errorMap_: any /*missing*/;
 
     /**
      * Asserts that there are no pending deferred errors. If there are any

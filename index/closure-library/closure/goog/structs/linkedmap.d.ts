@@ -239,13 +239,13 @@ declare module goog.structs.LinkedMap {
              * The next node in the list.
              * @type {!goog.structs.LinkedMap.Node_}
              */
-            next: goog.structs.LinkedMap.Node_<KEY, VALUE>;
-        
+            next: goog.structs.LinkedMap.Node_<any, any>;
+    
             /**
              * The previous node in the list.
              * @type {!goog.structs.LinkedMap.Node_}
              */
-            prev: goog.structs.LinkedMap.Node_<KEY, VALUE>;
+            prev: goog.structs.LinkedMap.Node_<any, any>;
     
             /**
              * Causes this node to remove itself from the list.

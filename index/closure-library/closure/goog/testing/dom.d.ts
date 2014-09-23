@@ -5,6 +5,13 @@
 declare module goog.testing.dom {
 
     /**
+     * A unique object to use as an end tag marker.
+     * @private {!Node}
+     * @const
+     */
+    var END_TAG_MARKER_: any /*missing*/;
+
+    /**
      * Tests if the given iterator over nodes matches the given Array of node
      * descriptors.  Throws an error if any match fails.
      * @param {goog.iter.Iterator} it  An iterator over nodes.

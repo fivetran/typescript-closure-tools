@@ -176,4 +176,10 @@ declare module goog.i18n.NumberFormat {
         suffix: string;
         divisorBase: number
     }
+
+    /**
+     * The empty unit, corresponding to a base of 0.
+     * @private {!goog.i18n.NumberFormat.CompactNumberUnit}
+     */
+    var NULL_UNIT_: any /*missing*/;
 }

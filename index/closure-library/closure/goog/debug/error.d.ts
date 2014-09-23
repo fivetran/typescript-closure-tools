@@ -5,7 +5,7 @@ declare module goog.debug {
     class Error extends Error.__Class { }
     module Error {
         /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends _Error {
+        class __Class extends Error.__Class {
     
             /**
              * Base class for custom error objects.

@@ -1,7 +1,6 @@
 /// <reference path="../../../../../globals.d.ts" />
 /// <reference path="./channel.d.ts" />
 /// <reference path="../webchannel.d.ts" />
-/// <reference path="./connectionstate.d.ts" />
 
 declare module goog.labs.net.webChannel {
 
@@ -25,7 +24,7 @@ declare module goog.labs.net.webChannel {
              * @struct
              * @implements {goog.labs.net.webChannel.Channel}
              */
-            constructor(opt_options?: goog.net.WebChannel.Options, opt_clientVersion?: string, opt_conn?: goog.labs.net.webChannel.ConnectionState);
+            constructor(opt_options?: goog.net.WebChannel.Options, opt_clientVersion?: string, opt_conn?: ConnectionState);
         }
     }
 }

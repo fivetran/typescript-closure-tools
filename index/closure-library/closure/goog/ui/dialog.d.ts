@@ -196,6 +196,13 @@ declare module goog.ui {
             getDraggable(): boolean;
     
             /**
+             * Enables or disables dragging.
+             * @param {boolean} enabled Whether to enable it.
+             * @private.
+             */
+            setDraggingEnabled_(enabled: boolean): void;
+    
+            /**
              * @return {boolean} Whether this dialog has a title close button.
              */
             getHasTitleCloseButton(): boolean;

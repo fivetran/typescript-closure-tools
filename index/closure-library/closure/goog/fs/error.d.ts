@@ -45,4 +45,11 @@ declare module goog.fs.Error {
      * @deprecated Use the 'name' or 'message' attribute instead.
      */
     enum ErrorCode { NOT_FOUND, SECURITY, ABORT, NOT_READABLE, ENCODING, NO_MODIFICATION_ALLOWED, INVALID_STATE, SYNTAX, INVALID_MODIFICATION, QUOTA_EXCEEDED, TYPE_MISMATCH, PATH_EXISTS } 
+
+    /**
+     * Mapping from error names to values from the ErrorCode enum.
+     * @see http://www.w3.org/TR/file-system-api/#definitions.
+     * @private {!Object.<string, goog.fs.Error.ErrorCode>}
+     */
+    var NameToCodeMap_: any /*missing*/;
 }

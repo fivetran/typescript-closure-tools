@@ -247,4 +247,36 @@ declare module goog.ui.media.FlashObject {
      * @type {string}
      */
     var FLASH_CSS_CLASS: string;
+
+    /**
+     * Template for the object tag for IE prior to version 11.
+     *
+     * @private {string}
+     * @const
+     */
+    var IE_HTML_: any /*missing*/;
+
+    /**
+     * Template for the wmode param for IE prior to version 11.
+     *
+     * @private {string}
+     * @const
+     */
+    var IE_WMODE_PARAMS_: any /*missing*/;
+
+    /**
+     * Embed tag template for most browsers.
+     *
+     * @private {string}
+     * @const
+     */
+    var EMBED_HTML_: any /*missing*/;
+
+    /**
+     * Template for the wmode param for most browsers.
+     *
+     * @private {string}
+     * @const
+     */
+    var WMODE_PARAMS_: any /*missing*/;
 }

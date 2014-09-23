@@ -18,7 +18,7 @@ declare module goog.crypt {
             /**
              * Resets the internal accumulator.
              */
-            reset(): void;
+            reset: any /*missing*/;
     
             /**
              * Adds a byte array (array with values in [0-255] range) or a string (might

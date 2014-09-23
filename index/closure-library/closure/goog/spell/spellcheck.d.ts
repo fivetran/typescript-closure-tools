@@ -77,6 +77,22 @@ declare module goog.spell {
             processPending(): void;
     
             /**
+             * Callback for lookup function.
+             *
+             * @param {Array.<Array>} data Data array. Each word is represented by an
+             *     array containing the word, the status and optionally an array of
+             *     suggestions. Passing null indicates that the operation failed.
+             * @private
+             *
+             * Example:
+             * obj.lookupCallback_([
+             *   ['word', VALID],
+             *   ['wrod', INVALID, ['word', 'wood', 'rod']]
+             * ]);
+             */
+            lookupCallback_(data: any[][]): void;
+    
+            /**
              * Sets a words spelling status.
              *
              * @param {string} word Word to set status for.

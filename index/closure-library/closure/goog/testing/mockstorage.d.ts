@@ -16,17 +16,6 @@ declare module goog.testing {
              * @final
              */
             constructor();
-
-
-            length: number;
-            getItem(key: string): any;
-        [key: string]: any;
-            setItem(key: string, data: string): void;
-            clear(): void;
-            removeItem(key: string): void;
-            key(index: number): string;
-        [index: number]: any;
-            remainingSpace: number;
         }
     }
 }

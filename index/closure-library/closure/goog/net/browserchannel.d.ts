@@ -651,7 +651,13 @@ declare module goog.net.BrowserChannel {
      * @enum {number}
      * @private
      */
-    enum ChannelType_ { FORWARD_CHANNEL, BACK_CHANNEL }
+    enum ChannelType_ { FORWARD_CHANNEL, BACK_CHANNEL } 
+
+    /**
+     * Events fired by BrowserChannel and associated objects
+     * @type {Object}
+     */
+    var Event: Object;
 
     /**
      * Types of events which reveal information about the reachability of the
@@ -792,6 +798,13 @@ declare module goog.net.BrowserChannel {
      * @param {number} retries The number of times the POST had to be retried.
      */
     function notifyTimingEvent(size: number, rtt: number, retries: number): void;
+
+    /**
+     * A LogSaver that can be used to accumulate all the debug logs for
+     * BrowserChannels so they can be sent to the server when a problem is
+     * detected.
+     */
+    var LogSaver: any /*missing*/;
 }
 
 declare module goog.net.BrowserChannel.Event {

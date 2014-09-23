@@ -1,5 +1,4 @@
 /// <reference path="../../../globals.d.ts" />
-/// <reference path="./menuitem.d.ts" />
 /// <reference path="../dom/dom.d.ts" />
 /// <reference path="./menuitemrenderer.d.ts" />
 
@@ -8,7 +7,7 @@ declare module goog.ui {
     class TriStateMenuItem extends TriStateMenuItem.__Class { }
     module TriStateMenuItem {
         /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.MenuItem.__Class {
+        class __Class {
     
             /**
              * Class representing a three state checkbox menu item.

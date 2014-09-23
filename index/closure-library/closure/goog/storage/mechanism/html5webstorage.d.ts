@@ -36,3 +36,13 @@ declare module goog.storage.mechanism {
         }
     }
 }
+
+declare module goog.storage.mechanism.HTML5WebStorage {
+
+    /**
+     * The key used to check if the storage instance is available.
+     * @private {string}
+     * @const
+     */
+    var STORAGE_AVAILABLE_KEY_: any /*missing*/;
+}
