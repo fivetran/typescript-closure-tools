@@ -68,8 +68,8 @@ declare module goog.labs {
              * @implements {goog.Thenable.<TYPE>}
              * @template TYPE,RESOLVER_CONTEXT
              */
-            constructor(resolver: (_0: (_0: Thenable) => any /*missing*/, _1: (_0: any) => any /*missing*/) => void, opt_context?: RESOLVER_CONTEXT);
-    
+            constructor(resolver: (_0: (_0: Thenable<TYPE>) => any /*missing*/, _1: (_0: any) => any /*missing*/) => void, opt_context?: RESOLVER_CONTEXT);
+        
             /**
              * Adds callbacks that will operate on the result of the Thenable, returning a
              * new child Promise.
@@ -88,8 +88,8 @@ declare module goog.labs {
              *             (RESULT|IThenable.<RESULT>|Thenable))=} opt_onFulfilled A
              *     function that will be invoked with the fulfillment value if the Promise
              *     is fullfilled.
-             * @param {?(function(this:THIS, *): *)=} opt_onRejected A function that will
-             *     be invoked with the rejection reason if the Promise is rejected.
+             * @param {?(function(*): *)=} opt_onRejected A function that will be invoked
+             *     with the rejection reason if the Promise is rejected.
              * @param {THIS=} opt_context An optional context object that will be the
              *     execution context for the callbacks. By default, functions are executed
              *     with the default this.
@@ -116,8 +116,8 @@ declare module goog.labs {
              *             (RESULT|IThenable.<RESULT>|Thenable))=} opt_onFulfilled A
              *     function that will be invoked with the fulfillment value if the Promise
              *     is fullfilled.
-             * @param {?(function(this:THIS, *): *)=} opt_onRejected A function that will
-             *     be invoked with the rejection reason if the Promise is rejected.
+             * @param {?(function(*): *)=} opt_onRejected A function that will be invoked
+             *     with the rejection reason if the Promise is rejected.
              * @param {THIS=} opt_context An optional context object that will be the
              *     execution context for the callbacks. By default, functions are executed
              *     with the default this.
@@ -144,8 +144,8 @@ declare module goog.labs {
              *             (RESULT|IThenable.<RESULT>|Thenable))=} opt_onFulfilled A
              *     function that will be invoked with the fulfillment value if the Promise
              *     is fullfilled.
-             * @param {?(function(this:THIS, *): *)=} opt_onRejected A function that will
-             *     be invoked with the rejection reason if the Promise is rejected.
+             * @param {?(function(*): *)=} opt_onRejected A function that will be invoked
+             *     with the rejection reason if the Promise is rejected.
              * @param {THIS=} opt_context An optional context object that will be the
              *     execution context for the callbacks. By default, functions are executed
              *     with the default this.
@@ -153,7 +153,7 @@ declare module goog.labs {
              *     of the fulfillment or rejection callback.
              * @template RESULT,THIS
              */
-            then<RESULT,THIS>(opt_onFulfilled?: (_0: TYPE) => Thenable, opt_onRejected?: (_0: any) => any, opt_context?: THIS): goog.Promise<RESULT>;
+            then<RESULT,THIS>(opt_onFulfilled?: (_0: TYPE) => Thenable<RESULT>, opt_onRejected?: (_0: any) => any, opt_context?: THIS): goog.Promise<RESULT>;
         }
     }
 

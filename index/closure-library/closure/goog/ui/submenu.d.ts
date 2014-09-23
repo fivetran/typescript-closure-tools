@@ -122,13 +122,7 @@ declare module goog.ui {
              *     item to add to the menu.
              */
             addItem(item: goog.ui.MenuItem): void;
-            /**
-             * Adds a new menu item at the end of the menu.
-             * @param {goog.ui.MenuHeader|goog.ui.MenuItem|goog.ui.MenuSeparator} item Menu
-             *     item to add to the menu.
-             */
-            addItem(item: goog.ui.MenuSeparator): void;
-    
+        
             /**
              * Adds a new menu item at a specific index in the menu.
              * @param {goog.ui.MenuHeader|goog.ui.MenuItem|goog.ui.MenuSeparator} item Menu
@@ -143,13 +137,6 @@ declare module goog.ui {
              * @param {number} n Index at which to insert the menu item.
              */
             addItemAt(item: goog.ui.MenuItem, n: number): void;
-            /**
-             * Adds a new menu item at a specific index in the menu.
-             * @param {goog.ui.MenuHeader|goog.ui.MenuItem|goog.ui.MenuSeparator} item Menu
-             *     item to add to the menu.
-             * @param {number} n Index at which to insert the menu item.
-             */
-            addItemAt(item: goog.ui.MenuSeparator, n: number): void;
     
             /**
              * Removes an item from the menu and disposes it.

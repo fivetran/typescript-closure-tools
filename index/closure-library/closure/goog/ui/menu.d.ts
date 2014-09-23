@@ -67,14 +67,7 @@ declare module goog.ui {
              * @deprecated Use {@link #addChild} instead, with true for the second argument.
              */
             addItem(item: goog.ui.MenuItem): void;
-            /**
-             * Adds a new menu item at the end of the menu.
-             * @param {goog.ui.MenuHeader|goog.ui.MenuItem|goog.ui.MenuSeparator} item Menu
-             *     item to add to the menu.
-             * @deprecated Use {@link #addChild} instead, with true for the second argument.
-             */
-            addItem(item: goog.ui.MenuSeparator): void;
-    
+        
             /**
              * Adds a new menu item at a specific index in the menu.
              * @param {goog.ui.MenuHeader|goog.ui.MenuItem|goog.ui.MenuSeparator} item Menu
@@ -93,16 +86,7 @@ declare module goog.ui {
              *     argument.
              */
             addItemAt(item: goog.ui.MenuItem, n: number): void;
-            /**
-             * Adds a new menu item at a specific index in the menu.
-             * @param {goog.ui.MenuHeader|goog.ui.MenuItem|goog.ui.MenuSeparator} item Menu
-             *     item to add to the menu.
-             * @param {number} n Index at which to insert the menu item.
-             * @deprecated Use {@link #addChildAt} instead, with true for the third
-             *     argument.
-             */
-            addItemAt(item: goog.ui.MenuSeparator, n: number): void;
-    
+        
             /**
              * Removes an item from the menu and disposes of it.
              * @param {goog.ui.MenuHeader|goog.ui.MenuItem|goog.ui.MenuSeparator} item The
@@ -117,13 +101,6 @@ declare module goog.ui {
              * @deprecated Use {@link #removeChild} instead.
              */
             removeItem(item: goog.ui.MenuItem): void;
-            /**
-             * Removes an item from the menu and disposes of it.
-             * @param {goog.ui.MenuHeader|goog.ui.MenuItem|goog.ui.MenuSeparator} item The
-             *     menu item to remove.
-             * @deprecated Use {@link #removeChild} instead.
-             */
-            removeItem(item: goog.ui.MenuSeparator): void;
     
             /**
              * Removes a menu item at a given index in the menu and disposes of it.

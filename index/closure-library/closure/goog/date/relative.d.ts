@@ -17,12 +17,6 @@ declare module goog.date.relative {
     }
 
     /**
-     * Handles formatting of time deltas.
-     * @private {goog.date.relative.TimeDeltaFormatter}
-     */
-    var formatTimeDelta_: any /*missing*/;
-
-    /**
      * Sets a different formatting function for time deltas ("3 days ago").
      * While its visibility is public, this function is Closure-internal and should
      * not be used in application code.

@@ -7,7 +7,7 @@ declare module goog.testing.events {
     class Event extends Event.__Class { }
     module Event {
         /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends Event.__Class {
+        class __Class extends _Event {
     
             /**
              * goog.events.BrowserEvent expects an Event so we provide one for JSCompiler.

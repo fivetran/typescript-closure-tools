@@ -30,12 +30,6 @@ declare module goog.async.run {
         }
     }
 
-    /** @private {boolean} */
-    var workQueueScheduled_: any /*missing*/;
-
-    /** @private {!Array.<!goog.async.run.WorkItem_>} */
-    var workQueue_: any /*missing*/;
-
     /**
      * Run any pending goog.async.run work items. This function is not intended
      * for general use, but for use by entry point handlers to run items ahead of

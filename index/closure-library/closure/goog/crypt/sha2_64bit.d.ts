@@ -28,13 +28,3 @@ declare module goog.crypt {
         }
     }
 }
-
-declare module goog.crypt.Sha2_64bit {
-
-    /**
-     * Constants used in SHA-512 variants
-     * @const
-     * @private {!Array.<!goog.math.Long>}
-     */
-    var K_: any /*missing*/;
-}

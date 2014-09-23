@@ -18,7 +18,7 @@ declare module goog.events {
              * @constructor
              * @extends {goog.events.Event}
              */
-            constructor(opt_e?: Event, opt_currentTarget?: EventTarget);
+            constructor(opt_e?: Event, opt_currentTarget?: _EventTarget);
     
             /**
              * Accepts a browser event object and creates a patched, cross browser event
@@ -26,7 +26,7 @@ declare module goog.events {
              * @param {Event} e Browser event object.
              * @param {EventTarget=} opt_currentTarget Current target for event.
              */
-            init(e: Event, opt_currentTarget?: EventTarget): void;
+            init(e: Event, opt_currentTarget?: _EventTarget): void;
     
             /**
              * Tests to see which button was pressed during the event. This is really only

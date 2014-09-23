@@ -3,13 +3,6 @@
 declare module goog.labs.userAgent.util {
 
     /**
-     * A possible override for applications which wish to not check
-     * navigator.userAgent but use a specified value for detection instead.
-     * @private {string}
-     */
-    var userAgent_: any /*missing*/;
-
-    /**
      * Applications may override browser detection on the built in
      * navigator.userAgent object by setting this string. Set to null to use the
      * browser object instead.

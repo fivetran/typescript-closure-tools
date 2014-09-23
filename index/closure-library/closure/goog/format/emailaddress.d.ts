@@ -53,36 +53,6 @@ declare module goog.format {
 declare module goog.format.EmailAddress {
 
     /**
-     * A string representing the RegExp for the local part of an email address.
-     * @private {string}
-     */
-    var LOCAL_PART_REGEXP_STR_: any /*missing*/;
-
-    /**
-     * A string representing the RegExp for the domain part of an email address.
-     * @private {string}
-     */
-    var DOMAIN_PART_REGEXP_STR_: any /*missing*/;
-
-    /**
-     * A RegExp to match the local part of an email address.
-     * @private {RegExp}
-     */
-    var LOCAL_PART_: any /*missing*/;
-
-    /**
-     * A RegExp to match the domain part of an email address.
-     * @private {RegExp}
-     */
-    var DOMAIN_PART_: any /*missing*/;
-
-    /**
-     * A RegExp to match an email address.
-     * @private {RegExp}
-     */
-    var EMAIL_ADDRESS_: any /*missing*/;
-
-    /**
      * Checks if the provided string is a valid email address. Supports both
      * simple email addresses (address specs) and addresses that contain display
      * names.
