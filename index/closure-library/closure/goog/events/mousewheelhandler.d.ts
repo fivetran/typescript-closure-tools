@@ -72,6 +72,26 @@ declare module goog.events {
              * @final
              */
             constructor(detail: number, browserEvent: Event, deltaX: number, deltaY: number);
+
+            /**
+             * The number of "lines" scrolled in the X direction.
+             *
+             * Note that not all browsers provide enough information to distinguish
+             * horizontal and vertical scroll events, so for these unsupported browsers,
+             * we will always have a deltaX of 0, even if the user scrolled their mouse
+             * wheel or trackpad sideways.
+             *
+             * Currently supported browsers are Webkit and Firefox 3.1 or later.
+             *
+             * @type {number}
+             */
+            deltaX: number;
+
+            /**
+             * The number of lines scrolled in the Y direction.
+             * @type {number}
+             */
+            deltaY: number;
         }
     }
 }
@@ -82,5 +102,7 @@ declare module goog.events.MouseWheelHandler {
      * Enum type for the events fired by the mouse wheel handler.
      * @enum {string}
      */
-    enum EventType { MOUSEWHEEL } 
+    var EventType: {
+        MOUSEWHEEL: string;
+    }
 }
