@@ -440,7 +440,8 @@ function remove_private(parsed: File): File {
 
     Object.keys(parsed).forEach(function (name) {
         var jsdoc = parsed[name].jsdoc;
-        var isPrivate = jsdoc.tags.some(t => t.title === 'private');
+        var text = parsed[name].originalText;
+        var isPrivate = text.indexOf('@private') !== -1;
         var isType = jsdoc.tags.some(t => t.title === 'typedef'
             || t.title === 'interface'
             || t.title === 'constructor'
