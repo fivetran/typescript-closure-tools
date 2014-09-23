@@ -172,9 +172,12 @@ function extract_jsdoc(tree) {
             var name = currentThis + ".prototype." + memberName;
             tree.leadingComments.forEach(comment => {
                 if (comment.type === 'Block' && comment.value.charAt(0) === '*') {
+                    var rawComment: string = comment.value;
+                    var removeIndent = rawComment.replace(/\n +/g, '\n ');
+
                     docstrings[name] = {
                         value: tree.expression.right,
-                        jsdoc: '/*' + comment.value + '*/'
+                        jsdoc: '/*' + removeIndent + '*/'
                     };
                 }
             });
@@ -186,9 +189,12 @@ function extract_jsdoc(tree) {
             var name = currentThis + ".prototype." + memberName;
             tree.leadingComments.forEach(comment => {
                 if (comment.type === 'Block' && comment.value.charAt(0) === '*') {
+                    var rawComment: string = comment.value;
+                    var removeIndent = rawComment.replace(/\n +/g, '\n ');
+
                     docstrings[name] = {
                         value: tree.expression.right,
-                        jsdoc: '/*' + comment.value + '*/'
+                        jsdoc: '/*' + removeIndent + '*/'
                     };
                 }
             });
