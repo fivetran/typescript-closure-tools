@@ -2,7 +2,7 @@
 /// <reference path="../index/typescript-services.d.ts" />
 
 import fs = require('fs');
-var ts = require('../lib/typescript-services/typescript_services.js');
+var ts = require('./typescript_services.js');
 
 module Main {
 

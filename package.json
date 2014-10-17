@@ -1,14 +1,31 @@
 {
-  "name": "typescript-closure-tools",
-  "version": "0.0.1",
-  "dependencies": {
-    "esprima": "*",
-    "escodegen": "*",
-    "jsdoc": "*",
-    "doctrine": "fivetran/doctrine",
-    "jasmine-node": "*",
-    "mkdirp": "*",
-    "colors": "*",
-    "browserify": "*"
-  }
+    "name": "typescript-closure-tools",
+    "version": "0.0.3",
+    "description": "Command-line tools to convert closure-style JSDoc annotations to typescript, and to convert typescript sources to closure externs files",
+    "author": "George Fraser",
+    "keywords": [
+        "TypeScript",
+        "Closure"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/fivetran/typescript-closure-tools"
+    },
+    "preferGlobal": true,
+    "dependencies": {
+        "esprima": "*",
+        "escodegen": "*",
+        "jsdoc": "*",
+        "doctrine": "fivetran/doctrine",
+        "mkdirp": "*",
+        "colors": "*"
+    },
+    "devDependencies": {
+        "jasmine-node": "*",
+        "browserify": "*"
+    },
+    "bin": {
+        "ts2externs": "./externs-generator/src/cli.js",
+        "closure2ts": "./definition-generator/src/cli.js"
+    }
 }
