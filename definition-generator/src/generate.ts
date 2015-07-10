@@ -439,7 +439,8 @@ function get_type_name(tag) {
 
 function generate_class(name: string, prototype: combine.Symbol) {
     var constructor = prototype[''];
-    var acc = '/** Fake class which should be extended to avoid inheriting static properties */\n';
+    var acc = 'class ' + name + generics(constructor.jsdoc) + ' extends ' + name + '__Class' + generics(constructor.jsdoc) + ' { }\n';
+    acc += '/** Fake class which should be extended to avoid inheriting static properties */\n';
     acc += 'class ' + name + generics(constructor.jsdoc) + '__Class' + generics(constructor.jsdoc) + ' ' + generate_class_extends(constructor.jsdoc) + generate_implements(constructor.jsdoc) + ' { \n';
 
     var text = constructor.originalText.replace(/\n/g, '\n' + '    ' + '    ');
@@ -483,7 +484,6 @@ function generate_class(name: string, prototype: combine.Symbol) {
     add_members(prototype);
 
     acc += '} \n';
-    acc += 'class ' + name + generics(constructor.jsdoc) + ' extends ' + name + '__Class' + generics(constructor.jsdoc) + ' { }\n';
     acc += 'module ' + name + ' { }\n';
 
     return acc;
