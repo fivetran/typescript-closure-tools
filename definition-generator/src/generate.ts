@@ -239,6 +239,7 @@ function generics(docs: doctrine.JSDoc) {
         return '<' + names.join(', ') + '>';
 }
 
+// TODO now that overloads are no longer needed, this should return string not string[]
 function generate_functions(name: string, value: parser.Value): string[] {
     var docs = value.jsdoc;
     var names = param_names(value);
@@ -254,6 +255,7 @@ function generate_functions(name: string, value: parser.Value): string[] {
     });
 }
 
+// TODO now that overloads are no longer needed, this should return string not string[]
 function generate_properties(name: string, value: parser.Value): string[] {
     // Function
     if (is_function(value))
@@ -274,6 +276,7 @@ function generate_param_strings(names: string[], types: TagsByName) {
     });
 }
 
+// TODO now that overloads are no longer needed, this should return string not string[]
 function generate_methods(name: string, value: parser.Value): string[] {
     var docs = value.jsdoc;
     var names = param_names(value);
@@ -319,6 +322,7 @@ function is_function(value: parser.Value) {
         || tags.some(t => t.title === 'return');
 }
 
+// TODO now that overloads are no longer needed, this should return string not string[]
 function generate_members(name: string, value: parser.Value): string[] {
     // Function
     if (is_function(value))
@@ -394,6 +398,7 @@ function generate_interface(name: string, prototype: combine.Symbol) {
     return acc;
 }
 
+// TODO now that overloads are no longer needed, this should return string not string[]
 function generate_constructors(value: parser.Value): string[] {
     var docs = value.jsdoc;
     var names = param_names(value);
