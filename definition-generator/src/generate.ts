@@ -53,7 +53,7 @@ function find<T>(values: T[], predicate: (T) => boolean): T {
         if (predicate(values[i]))
             return values[i];
     }
-    
+
     return null;
 }
 
@@ -333,7 +333,7 @@ function with_underscore(type: string) {
     var prefix = /[\w\.]+/.exec(type)[0];
     var suffix = type.substring(prefix.length);
 
-    return prefix + '.__Class' + suffix;
+    return prefix + '__Class' + suffix;
 }
 
 function generate_class_extends(docs: doctrine.JSDoc) {
@@ -439,11 +439,8 @@ function get_type_name(tag) {
 
 function generate_class(name: string, prototype: combine.Symbol) {
     var constructor = prototype[''];
-    var acc = 'class ' + name + generics(constructor.jsdoc) + ' extends ' + name + '.__Class' + generics(constructor.jsdoc) + ' { }\n';
-
-    acc += 'module ' + name + ' {\n';
-    acc += '    ' + '/** Fake class which should be extended to avoid inheriting static properties */\n';
-    acc += '    ' + 'class __Class' + generics(constructor.jsdoc) + ' ' + generate_class_extends(constructor.jsdoc) + generate_implements(constructor.jsdoc) + '{\n';
+    var acc = '/** Fake class which should be extended to avoid inheriting static properties */\n';
+    acc += 'class ' + name + generics(constructor.jsdoc) + '__Class' + generics(constructor.jsdoc) + ' ' + generate_class_extends(constructor.jsdoc) + generate_implements(constructor.jsdoc) + ' { \n';
 
     var text = constructor.originalText.replace(/\n/g, '\n' + '    ' + '    ');
 
@@ -485,8 +482,9 @@ function generate_class(name: string, prototype: combine.Symbol) {
 
     add_members(prototype);
 
-    acc += '    ' + '}\n';
-    acc += '}';
+    acc += '} \n';
+    acc += 'class ' + name + generics(constructor.jsdoc) + ' extends ' + name + '__Class' + generics(constructor.jsdoc) + ' { }\n';
+    acc += 'module ' + name + ' { }\n';
 
     return acc;
 }
@@ -604,8 +602,8 @@ export function defs(symbols: combine.Symbols): Generated {
 
         if (!modules[moduleName])
             modules[moduleName] = {};
-        
-        if (constructor.jsdoc.tags.some(t => t.title === 'interface')) 
+
+        if (constructor.jsdoc.tags.some(t => t.title === 'interface'))
             modules[moduleName][propertyName] = generate_interface(propertyName, symbol);
         else
             modules[moduleName][propertyName] = generate_class(propertyName, symbol);
