@@ -176,23 +176,23 @@ SubClass.myStaticProperty; // undefined
 To fix this, we create a common superclass without the static properties:
 
 ```typescript
-declare class SuperClass extends SuperClass.__Class { }
+declare class SuperClass extends SuperClass__Class { }
 declare module SuperClass {
     class __Class {  // fake common superclass without myStaticProperty
         myInstanceProperty: string;
     }
-    myStaticProperty: string; // static property that won't be inherited by 'extends SuperClass.__Class'
+    myStaticProperty: string; // static property that won't be inherited by 'extends SuperClass__Class'
 }
 
-declare class SubClass extends SubClass.__Class { }
+declare class SubClass extends SubClass__Class { }
 declare module SubClass {
-    class __Class extends SuperClass.__Class { }
+    class __Class extends SuperClass__Class { }
 }
 ```
 
 These fake superclasses don't actually exist and are present solely to simulate the behavior of
 `goog.inherits(SubClass, SuperClass)` in TypeScript definition files.
-Calling `new SuperClass.__Class` or `extends SuperClass.__Class` in non-declaration TypeScript code
+Calling `new SuperClass__Class` or `extends SuperClass__Class` in non-declaration TypeScript code
 will generate a runtime error.
 You should use `new SuperClass` and `extends SuperClass` in non-declaration TypeScript code.
 
