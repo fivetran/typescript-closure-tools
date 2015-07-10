@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="main.min.js"></script>
+</head>
+
+<style>
+    #input-container {
+        display: inline-block;
+        position: absolute;
+        left: 0;
+        top: 30px;
+        bottom: 0;
+        width: 50%;
+    }
+
+    #output-container {
+        display: inline-block;
+        position: absolute;
+        top: 30px;
+        bottom: 0;
+        right: 0;
+        width: 50%;
+    }
+
+    label {
+        display: block;
+    }
+
+    textarea {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+    a {
+        float: right;
+    }
+</style>
+
+<script>
+    function do_convert() {
+        var IN = document.getElementById('input');
+        var OUT = document.getElementById('output');
+
+        try {
+            OUT.value = convert(IN.value);
+        } catch (e) {
+            OUT.value = e.message;
+            throw e;
+        }
+    }
+
+    function show_example() {
+        var IN = document.getElementById('input');
+
+        IN.value = 'goog.provide(\'example\');\r\ngoog.provide(\'example.Interface\');\r\ngoog.provide(\'example.A\');\r\ngoog.provide(\'example.B\');\r\ngoog.provide(\'example.C\');\r\n\r\n\/**\r\n * No param docs\r\n *\/\r\nexample.missingParams = function(x, y) {\r\n\r\n};\r\n\r\n\/**\r\n * No params at all\r\n *\/\r\nexample.noParams = function() {\r\n\r\n};\r\n\r\n\/**\r\n * @param {number|string} x\r\n *\/\r\nexample.overloadedFunction = function(x) {\r\n\r\n};\r\n\r\n\/**\r\n * @interface\r\n *\/\r\nexample.Interface;\r\n\r\n\/**\r\n * @param {number|string} x\r\n *\/\r\nexample.Interface.prototype.interfaceMethod = function(x) {\r\n\r\n};\r\n\r\n\/**\r\n * @interface\r\n * @extends {example.Interface}\r\n *\/\r\nexample.SubInterface;\r\n\r\n\/**\r\n * @constructor\r\n * @implements {example.Interface}\r\n * @param {number|string} x\r\n *\/\r\nexample.Class = function(x) {\r\n\r\n};\r\n\r\n\/**\r\n * @param {number|string} x\r\n *\/\r\nexample.Class.prototype.overloadedMethod = function(x) {\r\n\r\n};\r\n\r\n\/**\r\n * @override\r\n *\/\r\nexample.Class.prototype.interfaceMethod = function(x) { };\r\n\r\n\/**\r\n * @extends {example.Class}\r\n * @constructor\r\n *\/\r\nexample.SubClass = function() { };\r\n\r\n\/**\r\n * @interface\r\n *\/\r\nexample.A;\r\n\r\n\/**\r\n * @interface\r\n *\/\r\nexample.B;\r\n\r\n\/**\r\n * @interface\r\n *\/\r\nexample.C;\r\n\r\n\/**\r\n * @interface\r\n *\/\r\nexample.D;\r\n\r\n\/**\r\n * @typedef {string|number}\r\n *\/\r\nexample.UnionType;\r\n\r\n\/**\r\n * @param {example.UnionType} x\r\n *\/\r\nexample.unionFunction = function(x) { };\r\n\r\n\/**\r\n * @param {{myProperty: example.UnionType}} x\r\n *\/\r\nexample.deepUnionFunction = function(x) { };';
+    }
+</script>
+<body>
+
+<button onclick="do_convert()">Convert</button>
+
+<button onclick="show_example()">Example</button>
+
+<a href="https://github.com/fivetran/closure-definitions">https://github.com/fivetran/closure-definitions</a>
+
+<div id="input-container">
+    <label for="input">Javascript with Closure-style JSDoc annotations</label><textarea id="input"></textarea>
+</div>
+
+<div id="output-container">
+    <label for="output">Typescript declaration</label><textarea id="output"></textarea>
+</div>
+
+
+</body>
+</html>
