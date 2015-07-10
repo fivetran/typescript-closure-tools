@@ -536,7 +536,7 @@ function generate_typedef(name: string, docs: doctrine.JSDoc) {
         // T NamedType becomes interface T extends NamedType { }
         case 'NameExpression':
             references[typedef.name] = true;
-            return 'interface ' + name + ' extends ' + typedef.name + ' { }';
+            return 'type ' + name + ' = ' + typedef.name;
         // T NamedType<Param> becomes interface T extends NamedType<Param> { }
         case 'TypeApplication':
             if (typedef.expression.name === 'Object')
