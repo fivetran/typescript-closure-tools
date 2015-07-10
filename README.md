@@ -52,8 +52,7 @@ If this option isn't present, we will simply look for global symbols in the inpu
 # Running the tests
 
 ```bash
-tsc definition-generator/test/*.ts
-./node_modules/jasmine-node/bin/jasmine-node definition-generator/test/*.js
+./scripts/test.sh
 ```
 
 # Differences between the Closure type system and TypeScript
