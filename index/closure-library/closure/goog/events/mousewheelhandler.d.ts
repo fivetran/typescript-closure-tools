@@ -70,15 +70,7 @@ declare module goog.events {
              * @final
              */
             constructor(detail: number, browserEvent: Event, deltaX: number, deltaY: number);
-    
-            /**
-             * The number of lines the user scrolled
-             * @type {number}
-             * NOTE: Informally deprecated. Use deltaX and deltaY instead, they provide
-             * more information.
-             */
-            detail: number;
-    
+
             /**
              * The number of "lines" scrolled in the X direction.
              *
@@ -92,7 +84,7 @@ declare module goog.events {
              * @type {number}
              */
             deltaX: number;
-    
+
             /**
              * The number of lines scrolled in the Y direction.
              * @type {number}
@@ -108,5 +100,7 @@ declare module goog.events.MouseWheelHandler {
      * Enum type for the events fired by the mouse wheel handler.
      * @enum {string}
      */
-    enum EventType { MOUSEWHEEL } 
+    var EventType: {
+        MOUSEWHEEL: string;
+    }
 }

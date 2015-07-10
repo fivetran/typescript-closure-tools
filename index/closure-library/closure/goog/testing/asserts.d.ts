@@ -4,7 +4,7 @@ declare module goog.testing {
 
     class JsUnitException extends JsUnitException__Class { }
     /** Fake class which should be extended to avoid inheriting static properties */
-    class JsUnitException__Class extends Error__Class  { 
+    class JsUnitException__Class extends _Error  { 
     
             /**
              * @param {string} comment A summary for the exception.

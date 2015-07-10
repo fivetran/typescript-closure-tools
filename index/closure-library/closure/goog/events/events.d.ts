@@ -46,7 +46,7 @@ declare module goog.events {
      * @return {goog.events.Key} Unique key for the listener.
      * @template T,EVENTOBJ
      */
-    function listen<T,EVENTOBJ>(src: EventTarget, type: string, listener: (_0: EVENTOBJ) => any, opt_capt?: boolean, opt_handler?: T): goog.events.Key;
+    function listen<T,EVENTOBJ>(src: _EventTarget, type: string, listener: (_0: EVENTOBJ) => any, opt_capt?: boolean, opt_handler?: T): goog.events.Key;
     /**
      * Adds an event listener for a specific event on a native event
      * target (such as a DOM element) or an object that has implemented
@@ -70,7 +70,7 @@ declare module goog.events {
      * @return {goog.events.Key} Unique key for the listener.
      * @template T,EVENTOBJ
      */
-    function listen<T,EVENTOBJ>(src: EventTarget, type: string, listener: { handleEvent: (_0: any) => any }, opt_capt?: boolean, opt_handler?: T): goog.events.Key;
+    function listen<T,EVENTOBJ>(src: _EventTarget, type: string, listener: { handleEvent: (_0: any) => any }, opt_capt?: boolean, opt_handler?: T): goog.events.Key;
     /**
      * Adds an event listener for a specific event on a native event
      * target (such as a DOM element) or an object that has implemented
@@ -94,7 +94,7 @@ declare module goog.events {
      * @return {goog.events.Key} Unique key for the listener.
      * @template T,EVENTOBJ
      */
-    function listen<T,EVENTOBJ>(src: EventTarget, type: string, listener: any /*null*/, opt_capt?: boolean, opt_handler?: T): goog.events.Key;
+    function listen<T,EVENTOBJ>(src: _EventTarget, type: string, listener: any /*null*/, opt_capt?: boolean, opt_handler?: T): goog.events.Key;
     /**
      * Adds an event listener for a specific event on a native event
      * target (such as a DOM element) or an object that has implemented
@@ -118,7 +118,7 @@ declare module goog.events {
      * @return {goog.events.Key} Unique key for the listener.
      * @template T,EVENTOBJ
      */
-    function listen<T,EVENTOBJ>(src: EventTarget, type: string[], listener: (_0: EVENTOBJ) => any, opt_capt?: boolean, opt_handler?: T): goog.events.Key;
+    function listen<T,EVENTOBJ>(src: _EventTarget, type: string[], listener: (_0: EVENTOBJ) => any, opt_capt?: boolean, opt_handler?: T): goog.events.Key;
     /**
      * Adds an event listener for a specific event on a native event
      * target (such as a DOM element) or an object that has implemented
@@ -142,7 +142,7 @@ declare module goog.events {
      * @return {goog.events.Key} Unique key for the listener.
      * @template T,EVENTOBJ
      */
-    function listen<T,EVENTOBJ>(src: EventTarget, type: string[], listener: { handleEvent: (_0: any) => any }, opt_capt?: boolean, opt_handler?: T): goog.events.Key;
+    function listen<T,EVENTOBJ>(src: _EventTarget, type: string[], listener: { handleEvent: (_0: any) => any }, opt_capt?: boolean, opt_handler?: T): goog.events.Key;
     /**
      * Adds an event listener for a specific event on a native event
      * target (such as a DOM element) or an object that has implemented
@@ -166,7 +166,7 @@ declare module goog.events {
      * @return {goog.events.Key} Unique key for the listener.
      * @template T,EVENTOBJ
      */
-    function listen<T,EVENTOBJ>(src: EventTarget, type: string[], listener: any /*null*/, opt_capt?: boolean, opt_handler?: T): goog.events.Key;
+    function listen<T,EVENTOBJ>(src: _EventTarget, type: string[], listener: any /*null*/, opt_capt?: boolean, opt_handler?: T): goog.events.Key;
     /**
      * Adds an event listener for a specific event on a native event
      * target (such as a DOM element) or an object that has implemented
@@ -190,7 +190,7 @@ declare module goog.events {
      * @return {goog.events.Key} Unique key for the listener.
      * @template T,EVENTOBJ
      */
-    function listen<T,EVENTOBJ>(src: EventTarget, type: goog.events.EventId<EVENTOBJ>, listener: (_0: EVENTOBJ) => any, opt_capt?: boolean, opt_handler?: T): goog.events.Key;
+    function listen<T,EVENTOBJ>(src: _EventTarget, type: goog.events.EventId<EVENTOBJ>, listener: (_0: EVENTOBJ) => any, opt_capt?: boolean, opt_handler?: T): goog.events.Key;
     /**
      * Adds an event listener for a specific event on a native event
      * target (such as a DOM element) or an object that has implemented
@@ -214,7 +214,7 @@ declare module goog.events {
      * @return {goog.events.Key} Unique key for the listener.
      * @template T,EVENTOBJ
      */
-    function listen<T,EVENTOBJ>(src: EventTarget, type: goog.events.EventId<EVENTOBJ>, listener: { handleEvent: (_0: any) => any }, opt_capt?: boolean, opt_handler?: T): goog.events.Key;
+    function listen<T,EVENTOBJ>(src: _EventTarget, type: goog.events.EventId<EVENTOBJ>, listener: { handleEvent: (_0: any) => any }, opt_capt?: boolean, opt_handler?: T): goog.events.Key;
     /**
      * Adds an event listener for a specific event on a native event
      * target (such as a DOM element) or an object that has implemented
@@ -238,7 +238,7 @@ declare module goog.events {
      * @return {goog.events.Key} Unique key for the listener.
      * @template T,EVENTOBJ
      */
-    function listen<T,EVENTOBJ>(src: EventTarget, type: goog.events.EventId<EVENTOBJ>, listener: any /*null*/, opt_capt?: boolean, opt_handler?: T): goog.events.Key;
+    function listen<T,EVENTOBJ>(src: _EventTarget, type: goog.events.EventId<EVENTOBJ>, listener: any /*null*/, opt_capt?: boolean, opt_handler?: T): goog.events.Key;
     /**
      * Adds an event listener for a specific event on a native event
      * target (such as a DOM element) or an object that has implemented
@@ -262,7 +262,7 @@ declare module goog.events {
      * @return {goog.events.Key} Unique key for the listener.
      * @template T,EVENTOBJ
      */
-    function listen<T,EVENTOBJ>(src: EventTarget, type: goog.events.EventId<EVENTOBJ>[], listener: (_0: EVENTOBJ) => any, opt_capt?: boolean, opt_handler?: T): goog.events.Key;
+    function listen<T,EVENTOBJ>(src: _EventTarget, type: goog.events.EventId<EVENTOBJ>[], listener: (_0: EVENTOBJ) => any, opt_capt?: boolean, opt_handler?: T): goog.events.Key;
     /**
      * Adds an event listener for a specific event on a native event
      * target (such as a DOM element) or an object that has implemented
@@ -286,7 +286,7 @@ declare module goog.events {
      * @return {goog.events.Key} Unique key for the listener.
      * @template T,EVENTOBJ
      */
-    function listen<T,EVENTOBJ>(src: EventTarget, type: goog.events.EventId<EVENTOBJ>[], listener: { handleEvent: (_0: any) => any }, opt_capt?: boolean, opt_handler?: T): goog.events.Key;
+    function listen<T,EVENTOBJ>(src: _EventTarget, type: goog.events.EventId<EVENTOBJ>[], listener: { handleEvent: (_0: any) => any }, opt_capt?: boolean, opt_handler?: T): goog.events.Key;
     /**
      * Adds an event listener for a specific event on a native event
      * target (such as a DOM element) or an object that has implemented
@@ -310,7 +310,7 @@ declare module goog.events {
      * @return {goog.events.Key} Unique key for the listener.
      * @template T,EVENTOBJ
      */
-    function listen<T,EVENTOBJ>(src: EventTarget, type: goog.events.EventId<EVENTOBJ>[], listener: any /*null*/, opt_capt?: boolean, opt_handler?: T): goog.events.Key;
+    function listen<T,EVENTOBJ>(src: _EventTarget, type: goog.events.EventId<EVENTOBJ>[], listener: any /*null*/, opt_capt?: boolean, opt_handler?: T): goog.events.Key;
     /**
      * Adds an event listener for a specific event on a native event
      * target (such as a DOM element) or an object that has implemented
@@ -631,7 +631,7 @@ declare module goog.events {
      * @return {goog.events.Key} Unique key for the listener.
      * @template T,EVENTOBJ
      */
-    function listenOnce<T,EVENTOBJ>(src: EventTarget, type: string, listener: (_0: EVENTOBJ) => any, opt_capt?: boolean, opt_handler?: T): goog.events.Key;
+    function listenOnce<T,EVENTOBJ>(src: _EventTarget, type: string, listener: (_0: EVENTOBJ) => any, opt_capt?: boolean, opt_handler?: T): goog.events.Key;
     /**
      * Adds an event listener for a specific event on a native event
      * target (such as a DOM element) or an object that has implemented
@@ -657,7 +657,7 @@ declare module goog.events {
      * @return {goog.events.Key} Unique key for the listener.
      * @template T,EVENTOBJ
      */
-    function listenOnce<T,EVENTOBJ>(src: EventTarget, type: string, listener: { handleEvent: (_0: any) => any }, opt_capt?: boolean, opt_handler?: T): goog.events.Key;
+    function listenOnce<T,EVENTOBJ>(src: _EventTarget, type: string, listener: { handleEvent: (_0: any) => any }, opt_capt?: boolean, opt_handler?: T): goog.events.Key;
     /**
      * Adds an event listener for a specific event on a native event
      * target (such as a DOM element) or an object that has implemented
@@ -683,7 +683,7 @@ declare module goog.events {
      * @return {goog.events.Key} Unique key for the listener.
      * @template T,EVENTOBJ
      */
-    function listenOnce<T,EVENTOBJ>(src: EventTarget, type: string, listener: any /*null*/, opt_capt?: boolean, opt_handler?: T): goog.events.Key;
+    function listenOnce<T,EVENTOBJ>(src: _EventTarget, type: string, listener: any /*null*/, opt_capt?: boolean, opt_handler?: T): goog.events.Key;
     /**
      * Adds an event listener for a specific event on a native event
      * target (such as a DOM element) or an object that has implemented
@@ -709,7 +709,7 @@ declare module goog.events {
      * @return {goog.events.Key} Unique key for the listener.
      * @template T,EVENTOBJ
      */
-    function listenOnce<T,EVENTOBJ>(src: EventTarget, type: string[], listener: (_0: EVENTOBJ) => any, opt_capt?: boolean, opt_handler?: T): goog.events.Key;
+    function listenOnce<T,EVENTOBJ>(src: _EventTarget, type: string[], listener: (_0: EVENTOBJ) => any, opt_capt?: boolean, opt_handler?: T): goog.events.Key;
     /**
      * Adds an event listener for a specific event on a native event
      * target (such as a DOM element) or an object that has implemented
@@ -735,7 +735,7 @@ declare module goog.events {
      * @return {goog.events.Key} Unique key for the listener.
      * @template T,EVENTOBJ
      */
-    function listenOnce<T,EVENTOBJ>(src: EventTarget, type: string[], listener: { handleEvent: (_0: any) => any }, opt_capt?: boolean, opt_handler?: T): goog.events.Key;
+    function listenOnce<T,EVENTOBJ>(src: _EventTarget, type: string[], listener: { handleEvent: (_0: any) => any }, opt_capt?: boolean, opt_handler?: T): goog.events.Key;
     /**
      * Adds an event listener for a specific event on a native event
      * target (such as a DOM element) or an object that has implemented
@@ -761,7 +761,7 @@ declare module goog.events {
      * @return {goog.events.Key} Unique key for the listener.
      * @template T,EVENTOBJ
      */
-    function listenOnce<T,EVENTOBJ>(src: EventTarget, type: string[], listener: any /*null*/, opt_capt?: boolean, opt_handler?: T): goog.events.Key;
+    function listenOnce<T,EVENTOBJ>(src: _EventTarget, type: string[], listener: any /*null*/, opt_capt?: boolean, opt_handler?: T): goog.events.Key;
     /**
      * Adds an event listener for a specific event on a native event
      * target (such as a DOM element) or an object that has implemented
@@ -787,7 +787,7 @@ declare module goog.events {
      * @return {goog.events.Key} Unique key for the listener.
      * @template T,EVENTOBJ
      */
-    function listenOnce<T,EVENTOBJ>(src: EventTarget, type: goog.events.EventId<EVENTOBJ>, listener: (_0: EVENTOBJ) => any, opt_capt?: boolean, opt_handler?: T): goog.events.Key;
+    function listenOnce<T,EVENTOBJ>(src: _EventTarget, type: goog.events.EventId<EVENTOBJ>, listener: (_0: EVENTOBJ) => any, opt_capt?: boolean, opt_handler?: T): goog.events.Key;
     /**
      * Adds an event listener for a specific event on a native event
      * target (such as a DOM element) or an object that has implemented
@@ -813,7 +813,7 @@ declare module goog.events {
      * @return {goog.events.Key} Unique key for the listener.
      * @template T,EVENTOBJ
      */
-    function listenOnce<T,EVENTOBJ>(src: EventTarget, type: goog.events.EventId<EVENTOBJ>, listener: { handleEvent: (_0: any) => any }, opt_capt?: boolean, opt_handler?: T): goog.events.Key;
+    function listenOnce<T,EVENTOBJ>(src: _EventTarget, type: goog.events.EventId<EVENTOBJ>, listener: { handleEvent: (_0: any) => any }, opt_capt?: boolean, opt_handler?: T): goog.events.Key;
     /**
      * Adds an event listener for a specific event on a native event
      * target (such as a DOM element) or an object that has implemented
@@ -839,7 +839,7 @@ declare module goog.events {
      * @return {goog.events.Key} Unique key for the listener.
      * @template T,EVENTOBJ
      */
-    function listenOnce<T,EVENTOBJ>(src: EventTarget, type: goog.events.EventId<EVENTOBJ>, listener: any /*null*/, opt_capt?: boolean, opt_handler?: T): goog.events.Key;
+    function listenOnce<T,EVENTOBJ>(src: _EventTarget, type: goog.events.EventId<EVENTOBJ>, listener: any /*null*/, opt_capt?: boolean, opt_handler?: T): goog.events.Key;
     /**
      * Adds an event listener for a specific event on a native event
      * target (such as a DOM element) or an object that has implemented
@@ -865,7 +865,7 @@ declare module goog.events {
      * @return {goog.events.Key} Unique key for the listener.
      * @template T,EVENTOBJ
      */
-    function listenOnce<T,EVENTOBJ>(src: EventTarget, type: goog.events.EventId<EVENTOBJ>[], listener: (_0: EVENTOBJ) => any, opt_capt?: boolean, opt_handler?: T): goog.events.Key;
+    function listenOnce<T,EVENTOBJ>(src: _EventTarget, type: goog.events.EventId<EVENTOBJ>[], listener: (_0: EVENTOBJ) => any, opt_capt?: boolean, opt_handler?: T): goog.events.Key;
     /**
      * Adds an event listener for a specific event on a native event
      * target (such as a DOM element) or an object that has implemented
@@ -891,7 +891,7 @@ declare module goog.events {
      * @return {goog.events.Key} Unique key for the listener.
      * @template T,EVENTOBJ
      */
-    function listenOnce<T,EVENTOBJ>(src: EventTarget, type: goog.events.EventId<EVENTOBJ>[], listener: { handleEvent: (_0: any) => any }, opt_capt?: boolean, opt_handler?: T): goog.events.Key;
+    function listenOnce<T,EVENTOBJ>(src: _EventTarget, type: goog.events.EventId<EVENTOBJ>[], listener: { handleEvent: (_0: any) => any }, opt_capt?: boolean, opt_handler?: T): goog.events.Key;
     /**
      * Adds an event listener for a specific event on a native event
      * target (such as a DOM element) or an object that has implemented
@@ -917,7 +917,7 @@ declare module goog.events {
      * @return {goog.events.Key} Unique key for the listener.
      * @template T,EVENTOBJ
      */
-    function listenOnce<T,EVENTOBJ>(src: EventTarget, type: goog.events.EventId<EVENTOBJ>[], listener: any /*null*/, opt_capt?: boolean, opt_handler?: T): goog.events.Key;
+    function listenOnce<T,EVENTOBJ>(src: _EventTarget, type: goog.events.EventId<EVENTOBJ>[], listener: any /*null*/, opt_capt?: boolean, opt_handler?: T): goog.events.Key;
     /**
      * Adds an event listener for a specific event on a native event
      * target (such as a DOM element) or an object that has implemented
@@ -1246,7 +1246,7 @@ declare module goog.events {
      * @param {T=} opt_handler Element in whose scope to call the listener.
      * @template T
      */
-    function listenWithWrapper<T>(src: EventTarget, wrapper: goog.events.EventWrapper, listener: (_0: any) => any, opt_capt?: boolean, opt_handler?: T): void;
+    function listenWithWrapper<T>(src: _EventTarget, wrapper: goog.events.EventWrapper, listener: (_0: any) => any, opt_capt?: boolean, opt_handler?: T): void;
     /**
      * Adds an event listener with a specific event wrapper on a DOM Node or an
      * object that has implemented {@link goog.events.Listenable}. A listener can
@@ -1262,7 +1262,7 @@ declare module goog.events {
      * @param {T=} opt_handler Element in whose scope to call the listener.
      * @template T
      */
-    function listenWithWrapper<T>(src: EventTarget, wrapper: goog.events.EventWrapper, listener: { handleEvent: (_0: any) => any }, opt_capt?: boolean, opt_handler?: T): void;
+    function listenWithWrapper<T>(src: _EventTarget, wrapper: goog.events.EventWrapper, listener: { handleEvent: (_0: any) => any }, opt_capt?: boolean, opt_handler?: T): void;
     /**
      * Adds an event listener with a specific event wrapper on a DOM Node or an
      * object that has implemented {@link goog.events.Listenable}. A listener can
@@ -1278,7 +1278,7 @@ declare module goog.events {
      * @param {T=} opt_handler Element in whose scope to call the listener.
      * @template T
      */
-    function listenWithWrapper<T>(src: EventTarget, wrapper: goog.events.EventWrapper, listener: any /*null*/, opt_capt?: boolean, opt_handler?: T): void;
+    function listenWithWrapper<T>(src: _EventTarget, wrapper: goog.events.EventWrapper, listener: any /*null*/, opt_capt?: boolean, opt_handler?: T): void;
     /**
      * Adds an event listener with a specific event wrapper on a DOM Node or an
      * object that has implemented {@link goog.events.Listenable}. A listener can
@@ -1345,7 +1345,7 @@ declare module goog.events {
      * @return {?boolean} indicating whether the listener was there to remove.
      * @template EVENTOBJ
      */
-    function unlisten<EVENTOBJ>(src: EventTarget, type: string, listener: (_0: any) => any, opt_capt?: boolean, opt_handler?: Object): boolean;
+    function unlisten<EVENTOBJ>(src: _EventTarget, type: string, listener: (_0: any) => any, opt_capt?: boolean, opt_handler?: Object): boolean;
     /**
      * Removes an event listener which was added with listen().
      *
@@ -1363,7 +1363,7 @@ declare module goog.events {
      * @return {?boolean} indicating whether the listener was there to remove.
      * @template EVENTOBJ
      */
-    function unlisten<EVENTOBJ>(src: EventTarget, type: string, listener: { handleEvent: (_0: any) => any }, opt_capt?: boolean, opt_handler?: Object): boolean;
+    function unlisten<EVENTOBJ>(src: _EventTarget, type: string, listener: { handleEvent: (_0: any) => any }, opt_capt?: boolean, opt_handler?: Object): boolean;
     /**
      * Removes an event listener which was added with listen().
      *
@@ -1381,7 +1381,7 @@ declare module goog.events {
      * @return {?boolean} indicating whether the listener was there to remove.
      * @template EVENTOBJ
      */
-    function unlisten<EVENTOBJ>(src: EventTarget, type: string, listener: any /*null*/, opt_capt?: boolean, opt_handler?: Object): boolean;
+    function unlisten<EVENTOBJ>(src: _EventTarget, type: string, listener: any /*null*/, opt_capt?: boolean, opt_handler?: Object): boolean;
     /**
      * Removes an event listener which was added with listen().
      *
@@ -1399,7 +1399,7 @@ declare module goog.events {
      * @return {?boolean} indicating whether the listener was there to remove.
      * @template EVENTOBJ
      */
-    function unlisten<EVENTOBJ>(src: EventTarget, type: string[], listener: (_0: any) => any, opt_capt?: boolean, opt_handler?: Object): boolean;
+    function unlisten<EVENTOBJ>(src: _EventTarget, type: string[], listener: (_0: any) => any, opt_capt?: boolean, opt_handler?: Object): boolean;
     /**
      * Removes an event listener which was added with listen().
      *
@@ -1417,7 +1417,7 @@ declare module goog.events {
      * @return {?boolean} indicating whether the listener was there to remove.
      * @template EVENTOBJ
      */
-    function unlisten<EVENTOBJ>(src: EventTarget, type: string[], listener: { handleEvent: (_0: any) => any }, opt_capt?: boolean, opt_handler?: Object): boolean;
+    function unlisten<EVENTOBJ>(src: _EventTarget, type: string[], listener: { handleEvent: (_0: any) => any }, opt_capt?: boolean, opt_handler?: Object): boolean;
     /**
      * Removes an event listener which was added with listen().
      *
@@ -1435,7 +1435,7 @@ declare module goog.events {
      * @return {?boolean} indicating whether the listener was there to remove.
      * @template EVENTOBJ
      */
-    function unlisten<EVENTOBJ>(src: EventTarget, type: string[], listener: any /*null*/, opt_capt?: boolean, opt_handler?: Object): boolean;
+    function unlisten<EVENTOBJ>(src: _EventTarget, type: string[], listener: any /*null*/, opt_capt?: boolean, opt_handler?: Object): boolean;
     /**
      * Removes an event listener which was added with listen().
      *
@@ -1453,7 +1453,7 @@ declare module goog.events {
      * @return {?boolean} indicating whether the listener was there to remove.
      * @template EVENTOBJ
      */
-    function unlisten<EVENTOBJ>(src: EventTarget, type: goog.events.EventId<EVENTOBJ>, listener: (_0: any) => any, opt_capt?: boolean, opt_handler?: Object): boolean;
+    function unlisten<EVENTOBJ>(src: _EventTarget, type: goog.events.EventId<EVENTOBJ>, listener: (_0: any) => any, opt_capt?: boolean, opt_handler?: Object): boolean;
     /**
      * Removes an event listener which was added with listen().
      *
@@ -1471,7 +1471,7 @@ declare module goog.events {
      * @return {?boolean} indicating whether the listener was there to remove.
      * @template EVENTOBJ
      */
-    function unlisten<EVENTOBJ>(src: EventTarget, type: goog.events.EventId<EVENTOBJ>, listener: { handleEvent: (_0: any) => any }, opt_capt?: boolean, opt_handler?: Object): boolean;
+    function unlisten<EVENTOBJ>(src: _EventTarget, type: goog.events.EventId<EVENTOBJ>, listener: { handleEvent: (_0: any) => any }, opt_capt?: boolean, opt_handler?: Object): boolean;
     /**
      * Removes an event listener which was added with listen().
      *
@@ -1489,7 +1489,7 @@ declare module goog.events {
      * @return {?boolean} indicating whether the listener was there to remove.
      * @template EVENTOBJ
      */
-    function unlisten<EVENTOBJ>(src: EventTarget, type: goog.events.EventId<EVENTOBJ>, listener: any /*null*/, opt_capt?: boolean, opt_handler?: Object): boolean;
+    function unlisten<EVENTOBJ>(src: _EventTarget, type: goog.events.EventId<EVENTOBJ>, listener: any /*null*/, opt_capt?: boolean, opt_handler?: Object): boolean;
     /**
      * Removes an event listener which was added with listen().
      *
@@ -1507,7 +1507,7 @@ declare module goog.events {
      * @return {?boolean} indicating whether the listener was there to remove.
      * @template EVENTOBJ
      */
-    function unlisten<EVENTOBJ>(src: EventTarget, type: goog.events.EventId<EVENTOBJ>[], listener: (_0: any) => any, opt_capt?: boolean, opt_handler?: Object): boolean;
+    function unlisten<EVENTOBJ>(src: _EventTarget, type: goog.events.EventId<EVENTOBJ>[], listener: (_0: any) => any, opt_capt?: boolean, opt_handler?: Object): boolean;
     /**
      * Removes an event listener which was added with listen().
      *
@@ -1525,7 +1525,7 @@ declare module goog.events {
      * @return {?boolean} indicating whether the listener was there to remove.
      * @template EVENTOBJ
      */
-    function unlisten<EVENTOBJ>(src: EventTarget, type: goog.events.EventId<EVENTOBJ>[], listener: { handleEvent: (_0: any) => any }, opt_capt?: boolean, opt_handler?: Object): boolean;
+    function unlisten<EVENTOBJ>(src: _EventTarget, type: goog.events.EventId<EVENTOBJ>[], listener: { handleEvent: (_0: any) => any }, opt_capt?: boolean, opt_handler?: Object): boolean;
     /**
      * Removes an event listener which was added with listen().
      *
@@ -1543,7 +1543,7 @@ declare module goog.events {
      * @return {?boolean} indicating whether the listener was there to remove.
      * @template EVENTOBJ
      */
-    function unlisten<EVENTOBJ>(src: EventTarget, type: goog.events.EventId<EVENTOBJ>[], listener: any /*null*/, opt_capt?: boolean, opt_handler?: Object): boolean;
+    function unlisten<EVENTOBJ>(src: _EventTarget, type: goog.events.EventId<EVENTOBJ>[], listener: any /*null*/, opt_capt?: boolean, opt_handler?: Object): boolean;
     /**
      * Removes an event listener which was added with listen().
      *
@@ -1793,7 +1793,7 @@ declare module goog.events {
      *     event.
      * @param {Object=} opt_handler Element in whose scope to call the listener.
      */
-    function unlistenWithWrapper(src: EventTarget, wrapper: goog.events.EventWrapper, listener: (_0: any) => any, opt_capt?: boolean, opt_handler?: Object): void;
+    function unlistenWithWrapper(src: _EventTarget, wrapper: goog.events.EventWrapper, listener: (_0: any) => any, opt_capt?: boolean, opt_handler?: Object): void;
     /**
      * Removes an event listener which was added with listenWithWrapper().
      *
@@ -1807,7 +1807,7 @@ declare module goog.events {
      *     event.
      * @param {Object=} opt_handler Element in whose scope to call the listener.
      */
-    function unlistenWithWrapper(src: EventTarget, wrapper: goog.events.EventWrapper, listener: { handleEvent: (_0: any) => any }, opt_capt?: boolean, opt_handler?: Object): void;
+    function unlistenWithWrapper(src: _EventTarget, wrapper: goog.events.EventWrapper, listener: { handleEvent: (_0: any) => any }, opt_capt?: boolean, opt_handler?: Object): void;
     /**
      * Removes an event listener which was added with listenWithWrapper().
      *
@@ -1821,7 +1821,7 @@ declare module goog.events {
      *     event.
      * @param {Object=} opt_handler Element in whose scope to call the listener.
      */
-    function unlistenWithWrapper(src: EventTarget, wrapper: goog.events.EventWrapper, listener: any /*null*/, opt_capt?: boolean, opt_handler?: Object): void;
+    function unlistenWithWrapper(src: _EventTarget, wrapper: goog.events.EventWrapper, listener: any /*null*/, opt_capt?: boolean, opt_handler?: Object): void;
     /**
      * Removes an event listener which was added with listenWithWrapper().
      *
@@ -1936,7 +1936,7 @@ declare module goog.events {
      * @return {goog.events.ListenableKey} the found listener or null if not found.
      * @template EVENTOBJ
      */
-    function getListener<EVENTOBJ>(src: EventTarget, type: string, listener: (_0: EVENTOBJ) => any, opt_capt?: boolean, opt_handler?: Object): goog.events.ListenableKey;
+    function getListener<EVENTOBJ>(src: _EventTarget, type: string, listener: (_0: EVENTOBJ) => any, opt_capt?: boolean, opt_handler?: Object): goog.events.ListenableKey;
     /**
      * Gets the goog.events.Listener for the event or null if no such listener is
      * in use.
@@ -1953,7 +1953,7 @@ declare module goog.events {
      * @return {goog.events.ListenableKey} the found listener or null if not found.
      * @template EVENTOBJ
      */
-    function getListener<EVENTOBJ>(src: EventTarget, type: string, listener: { handleEvent: (_0: any) => any }, opt_capt?: boolean, opt_handler?: Object): goog.events.ListenableKey;
+    function getListener<EVENTOBJ>(src: _EventTarget, type: string, listener: { handleEvent: (_0: any) => any }, opt_capt?: boolean, opt_handler?: Object): goog.events.ListenableKey;
     /**
      * Gets the goog.events.Listener for the event or null if no such listener is
      * in use.
@@ -1970,7 +1970,7 @@ declare module goog.events {
      * @return {goog.events.ListenableKey} the found listener or null if not found.
      * @template EVENTOBJ
      */
-    function getListener<EVENTOBJ>(src: EventTarget, type: string, listener: any /*null*/, opt_capt?: boolean, opt_handler?: Object): goog.events.ListenableKey;
+    function getListener<EVENTOBJ>(src: _EventTarget, type: string, listener: any /*null*/, opt_capt?: boolean, opt_handler?: Object): goog.events.ListenableKey;
     /**
      * Gets the goog.events.Listener for the event or null if no such listener is
      * in use.
@@ -1987,7 +1987,7 @@ declare module goog.events {
      * @return {goog.events.ListenableKey} the found listener or null if not found.
      * @template EVENTOBJ
      */
-    function getListener<EVENTOBJ>(src: EventTarget, type: goog.events.EventId<EVENTOBJ>, listener: (_0: EVENTOBJ) => any, opt_capt?: boolean, opt_handler?: Object): goog.events.ListenableKey;
+    function getListener<EVENTOBJ>(src: _EventTarget, type: goog.events.EventId<EVENTOBJ>, listener: (_0: EVENTOBJ) => any, opt_capt?: boolean, opt_handler?: Object): goog.events.ListenableKey;
     /**
      * Gets the goog.events.Listener for the event or null if no such listener is
      * in use.
@@ -2004,7 +2004,7 @@ declare module goog.events {
      * @return {goog.events.ListenableKey} the found listener or null if not found.
      * @template EVENTOBJ
      */
-    function getListener<EVENTOBJ>(src: EventTarget, type: goog.events.EventId<EVENTOBJ>, listener: { handleEvent: (_0: any) => any }, opt_capt?: boolean, opt_handler?: Object): goog.events.ListenableKey;
+    function getListener<EVENTOBJ>(src: _EventTarget, type: goog.events.EventId<EVENTOBJ>, listener: { handleEvent: (_0: any) => any }, opt_capt?: boolean, opt_handler?: Object): goog.events.ListenableKey;
     /**
      * Gets the goog.events.Listener for the event or null if no such listener is
      * in use.
@@ -2021,7 +2021,7 @@ declare module goog.events {
      * @return {goog.events.ListenableKey} the found listener or null if not found.
      * @template EVENTOBJ
      */
-    function getListener<EVENTOBJ>(src: EventTarget, type: goog.events.EventId<EVENTOBJ>, listener: any /*null*/, opt_capt?: boolean, opt_handler?: Object): goog.events.ListenableKey;
+    function getListener<EVENTOBJ>(src: _EventTarget, type: goog.events.EventId<EVENTOBJ>, listener: any /*null*/, opt_capt?: boolean, opt_handler?: Object): goog.events.ListenableKey;
     /**
      * Gets the goog.events.Listener for the event or null if no such listener is
      * in use.
@@ -2138,7 +2138,7 @@ declare module goog.events {
      * @return {boolean} Whether an event target has one or more listeners matching
      *     the requested type and/or capture phase.
      */
-    function hasListener(obj: EventTarget, opt_type?: string, opt_capture?: boolean): boolean;
+    function hasListener(obj: _EventTarget, opt_type?: string, opt_capture?: boolean): boolean;
     /**
      * Returns whether an event target has any active listeners matching the
      * specified signature. If either the type or capture parameters are
@@ -2152,7 +2152,7 @@ declare module goog.events {
      * @return {boolean} Whether an event target has one or more listeners matching
      *     the requested type and/or capture phase.
      */
-    function hasListener(obj: EventTarget, opt_type?: goog.events.EventId<any>, opt_capture?: boolean): boolean;
+    function hasListener(obj: _EventTarget, opt_type?: goog.events.EventId<any>, opt_capture?: boolean): boolean;
     /**
      * Returns whether an event target has any active listeners matching the
      * specified signature. If either the type or capture parameters are
@@ -2306,6 +2306,19 @@ declare module goog.events {
      *     protect the entry point.
      */
     function protectBrowserEventEntryPoint(errorHandler: goog.debug.ErrorHandler): void;
+
+    /**
+     * Handles an event and dispatches it to the correct listeners. This
+     * function is a proxy for the real listener the user specified.
+     *
+     * @param {goog.events.Listener} listener The listener object.
+     * @param {Event=} opt_evt Optional event object that gets passed in via the
+     *     native event handlers.
+     * @return {boolean} Result of the event handler.
+     * @this {EventTarget} The object or Element that fired the event.
+     * @private
+     */
+    function handleBrowserEvent_(listener: goog.events.Listener, opt_evt?: Event): boolean;
 
     /**
      * Creates a unique event id.

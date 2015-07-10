@@ -30,6 +30,7 @@ declare class _Event implements Event {
     CAPTURING_PHASE: number;
     AT_TARGET: number;
     BUBBLING_PHASE: number;
+    returnValue: any;
 }
 
 interface _File extends File { }

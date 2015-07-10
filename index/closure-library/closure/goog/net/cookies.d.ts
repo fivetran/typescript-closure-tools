@@ -148,14 +148,7 @@ declare module goog.net {
              * subpath and/or another domain these will still be there.
              */
             clear(): void;
-    } 
-    
-
-    /**
-     * A static default instance.
-     * @type {goog.net.Cookies}
-     */
-    var cookies: goog.net.Cookies;
+    }
 }
 
 declare module goog.net.Cookies {

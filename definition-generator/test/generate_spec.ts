@@ -33,7 +33,7 @@ describe('generate', () => {
     it('class', () => {
         expect(parse('test/class.js')).toEqual({
             "example": {
-                "Class": "class Class__Class implements example.Interface { constructor(x: number); constructor(x: string); thisAssignment: string; thisDeclaration: number; overloadedMethod(x: number): void; overloadedMethod(x: string): void; interfaceMethod(x: number): void; interfaceMethod(x: string): void; } class Class extends Class__Class { } module Class { }"
+                "Class": "class Class extends Class__Class { } class Class__Class implements example.Interface { constructor(x: number); constructor(x: string); thisAssignment: string; thisDeclaration: number; overloadedMethod(x: number): void; overloadedMethod(x: string): void; interfaceMethod(x: number): void; interfaceMethod(x: string): void; }"
             }
         });
     });
@@ -73,7 +73,7 @@ describe('generate', () => {
     it('subclass', () => {
         expect(parse('test/subclass.js')).toEqual({
             "example": {
-                "SubClass": "class SubClass__Class extends example.Class__Class { constructor(); } class SubClass extends SubClass__Class { } module SubClass { }"
+                "SubClass": "class SubClass extends SubClass__Class { } class SubClass__Class extends example.Class__Class { constructor(); }"
             }
         });
     });
@@ -132,7 +132,7 @@ describe('generate', () => {
         it('local class', () => {
             expect(parse('test/requirejs_local_class.js')).toEqual({
                 MODULE : {
-                    LocalClass : 'class LocalClass__Class { constructor(x: number); memberFunction(x: number): void; } class LocalClass extends LocalClass__Class { } module LocalClass { }'
+                    LocalClass : 'class LocalClass extends LocalClass__Class { } class LocalClass__Class { constructor(x: number); memberFunction(x: number): void; }'
                 }
             });
         });

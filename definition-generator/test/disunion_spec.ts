@@ -23,7 +23,7 @@ describe('disunion', () => {
         });
         
         it('should combine three arrays', () => {
-            expect(disunion.outer([
+            expect(disunion.outer(<any[][]> [
                 [1,2],
                 ['a','b'],
                 ['x','y']

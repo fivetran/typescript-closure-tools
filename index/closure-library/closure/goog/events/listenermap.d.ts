@@ -15,7 +15,7 @@ declare module goog.events {
              * @constructor
              * @final
              */
-            constructor(src: EventTarget);
+            constructor(src: _EventTarget);
             /**
              * Creates a new listener map.
              * @param {EventTarget|goog.events.Listenable} src The src object.

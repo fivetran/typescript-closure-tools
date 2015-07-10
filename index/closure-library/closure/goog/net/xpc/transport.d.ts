@@ -1,4 +1,5 @@
 /// <reference path="../../../../globals.d.ts" />
+/// <reference path="../../disposable/disposable.d.ts" />
 /// <reference path="../../dom/dom.d.ts" />
 
 declare module goog.net.xpc {

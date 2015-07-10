@@ -7,3 +7,6 @@
 [submodule "typescript"]
 	path = typescript
 	url = git@github.com:Microsoft/TypeScript.git
+[submodule "lib/closure-library"]
+	path = lib/closure-library
+	url = git@github.com:google/closure-library.git

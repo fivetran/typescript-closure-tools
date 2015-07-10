@@ -729,5 +729,6 @@ declare module goog.editor.Field {
      * @enum {number}
      * @private
      */
-    enum SELECTION_CHANGE_KEYCODES_ { 8, 9, 13, 33, 34, 35, 36, 37, 38, 39, 40, 46 } 
+    type SELECTION_CHANGE_KEYCODES_ = number;
+    //enum SELECTION_CHANGE_KEYCODES_ { 8, 9, 13, 33, 34, 35, 36, 37, 38, 39, 40, 46 }
 }
