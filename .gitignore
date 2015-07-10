@@ -3,6 +3,7 @@
 
 *.js
 !test/*.js
+!main.min.js
 *.map
 symbols.tsv
 

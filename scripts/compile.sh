@@ -3,7 +3,7 @@
 tsc --module commonjs definition-generator/src/*.ts
 rm -rf dist/
 mkdir -p dist/
-node node_modules/browserify/bin/cmd.js definition-generator/src/page.js > page/main.min.js
+node node_modules/browserify/bin/cmd.js definition-generator/src/page.js > main.min.js
 
 #java -jar scripts/compiler.jar \
 #  --process_common_js_modules \
