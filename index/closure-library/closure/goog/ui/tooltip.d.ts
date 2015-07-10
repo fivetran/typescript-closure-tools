@@ -27,20 +27,7 @@ declare module goog.ui {
              * @constructor
              * @extends {goog.ui.Popup}
              */
-            constructor(opt_el?: Element, opt_str?: string, opt_domHelper?: goog.dom.DomHelper);
-            /**
-             * Tooltip widget. Can be attached to one or more elements and is shown, with a
-             * slight delay, when the the cursor is over the element or the element gains
-             * focus.
-             *
-             * @param {Element|string=} opt_el Element to display tooltip for, either
-             *     element reference or string id.
-             * @param {?string=} opt_str Text message to display in tooltip.
-             * @param {goog.dom.DomHelper=} opt_domHelper Optional DOM helper.
-             * @constructor
-             * @extends {goog.ui.Popup}
-             */
-            constructor(opt_el?: string, opt_str?: string, opt_domHelper?: goog.dom.DomHelper);
+            constructor(opt_el?: Element|string, opt_str?: string, opt_domHelper?: goog.dom.DomHelper);
     
             /**
              * Cursor position relative to the page.
@@ -62,7 +49,7 @@ declare module goog.ui {
              * @type {number|undefined}
              * @protected
              */
-            showTimer: any /*number|any (undefined)*/;
+            showTimer: number|any /*undefined*/;
     
             /**
              * Timer for when to hide.
@@ -70,7 +57,7 @@ declare module goog.ui {
              * @type {number|undefined}
              * @protected
              */
-            hideTimer: any /*number|any (undefined)*/;
+            hideTimer: number|any /*undefined*/;
     
             /**
              * Element that triggered the tooltip.  Note that if a second element triggers
@@ -80,7 +67,7 @@ declare module goog.ui {
              * @type {Element|undefined}
              * @protected
              */
-            anchor: any /*Element|any (undefined)*/;
+            anchor: Element|any /*undefined*/;
     
             /**
              * Returns the dom helper that is being used on this component.
@@ -101,15 +88,7 @@ declare module goog.ui {
              * @param {Element|string} el Element to display tooltip for, either element
              *                            reference or string id.
              */
-            attach(el: Element): void;
-            /**
-             * Attach to element. Tooltip will be displayed when the cursor is over the
-             * element or when the element has been active for a few milliseconds.
-             *
-             * @param {Element|string} el Element to display tooltip for, either element
-             *                            reference or string id.
-             */
-            attach(el: string): void;
+            attach(el: Element|string): void;
     
             /**
              * Detach from element(s).
@@ -118,15 +97,7 @@ declare module goog.ui {
              *                                reference or string id. If no element is
              *                                specified all are detached.
              */
-            detach(opt_el?: Element): void;
-            /**
-             * Detach from element(s).
-             *
-             * @param {Element|string=} opt_el Element to detach from, either element
-             *                                reference or string id. If no element is
-             *                                specified all are detached.
-             */
-            detach(opt_el?: string): void;
+            detach(opt_el?: Element|string): void;
     
             /**
              * Sets delay in milliseconds before tooltip is displayed for an element.
@@ -380,22 +351,7 @@ declare module goog.ui.Tooltip {
              * @extends {goog.positioning.ViewportPosition}
              * @final
              */
-            constructor(arg1: number, opt_arg2?: number);
-            /**
-             * Popup position implementation that positions the popup (the tooltip in this
-             * case) based on the cursor position. It's positioned below the cursor to the
-             * right if there's enough room to fit all of it inside the Viewport. Otherwise
-             * it's displayed as far right as possible either above or below the element.
-             *
-             * Used to position tooltips triggered by the cursor.
-             *
-             * @param {number|!goog.math.Coordinate} arg1 Left position or coordinate.
-             * @param {number=} opt_arg2 Top position.
-             * @constructor
-             * @extends {goog.positioning.ViewportPosition}
-             * @final
-             */
-            constructor(arg1: goog.math.Coordinate, opt_arg2?: number);
+            constructor(arg1: number|goog.math.Coordinate, opt_arg2?: number);
     } 
     
 

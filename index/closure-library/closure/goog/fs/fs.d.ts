@@ -53,8 +53,8 @@ declare module goog.fs {
      *            revokeObjectURL: function(string): void}}
      */
     interface UrlObject_ {
-        createObjectURL: any /*(_0: Blob) => string*/;
-        revokeObjectURL: (_0: string) => void
+        createObjectURL: { (_0: Blob): string };
+        revokeObjectURL: { (_0: string): void }
     }
 
     /**
@@ -72,23 +72,7 @@ declare module goog.fs {
      *     the resulting blob.
      * @return {!Blob} The blob.
      */
-    function getBlob(...var_args: string[]): Blob;
-    /**
-     * Concatenates one or more values together and converts them to a Blob.
-     *
-     * @param {...(string|!Blob|!ArrayBuffer)} var_args The values that will make up
-     *     the resulting blob.
-     * @return {!Blob} The blob.
-     */
-    function getBlob(...var_args: Blob[]): Blob;
-    /**
-     * Concatenates one or more values together and converts them to a Blob.
-     *
-     * @param {...(string|!Blob|!ArrayBuffer)} var_args The values that will make up
-     *     the resulting blob.
-     * @return {!Blob} The blob.
-     */
-    function getBlob(...var_args: ArrayBuffer[]): Blob;
+    function getBlob(...var_args: string|Blob|ArrayBuffer[]): Blob;
 
     /**
      * Creates a blob with the given properties.
@@ -101,7 +85,7 @@ declare module goog.fs {
      *     be written out.
      * @return {!Blob} The blob.
      */
-    function getBlobWithProperties(parts: any /*string|Blob*/[], opt_type?: string, opt_endings?: string): Blob;
+    function getBlobWithProperties(parts: string|Blob[], opt_type?: string, opt_endings?: string): Blob;
 
     /**
      * Converts a Blob or a File into a string. This should only be used when the

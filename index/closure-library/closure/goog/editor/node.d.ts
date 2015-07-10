@@ -109,7 +109,7 @@ declare module goog.editor.node {
      *    node as a parameter and returns true if it meets the criteria.
      * @return {?number} The index of the node found, or null if no node is found.
      */
-    function findInChildren(parent: Node, hasProperty: (_0: Node) => boolean): number;
+    function findInChildren(parent: Node, hasProperty: { (_0: Node): boolean }): number;
 
     /**
      * Search ancestor nodes using a predicate function and returns the topmost
@@ -121,7 +121,7 @@ declare module goog.editor.node {
      * @return {Node} The topmost ancestor or null if no ancestor satisfies the
      *     predicate function.
      */
-    function findHighestMatchingAncestor(node: Node, hasProperty: (_0: Node) => boolean): Node;
+    function findHighestMatchingAncestor(node: Node, hasProperty: { (_0: Node): boolean }): Node;
 
     /**
     * Checks if node is a block-level html element. The <tt>display</tt> css
@@ -163,7 +163,7 @@ declare module goog.editor.node {
      *     the criteria or not.
      * @return {Node} The DOM node if found, or null.
      */
-    function findTopMostEditableAncestor(node: Node, criteria: (_0: Node) => boolean): Node;
+    function findTopMostEditableAncestor(node: Node, criteria: { (_0: Node): boolean }): Node;
 
     /**
      * Splits off a subtree.

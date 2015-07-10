@@ -52,15 +52,7 @@ declare module goog.testing {
              * @param {string} key The key to change the value for.
              * @param {*} value The new value to set.
              */
-            set(obj: Object, key: string, value: any): void;
-            /**
-             * Adds or changes a value in an object while saving its original state.
-             * @param {Object|Function} obj The JavaScript or native object or function to
-             *     alter. See the constraints in the class description.
-             * @param {string} key The key to change the value for.
-             * @param {*} value The new value to set.
-             */
-            set(obj: Function, key: string, value: any): void;
+            set(obj: Object|Function, key: string, value: any): void;
     
             /**
              * Changes an existing value in an object to another one of the same type while
@@ -75,21 +67,7 @@ declare module goog.testing {
              *     original value. The types are compared with {@link goog.typeOf}.
              * @throws {Error} In case of missing key or type mismatch.
              */
-            replace(obj: Object, key: string, value: any): void;
-            /**
-             * Changes an existing value in an object to another one of the same type while
-             * saving its original state. The advantage of {@code replace} over {@link #set}
-             * is that {@code replace} protects against typos and erroneously passing tests
-             * after some members have been renamed during a refactoring.
-             * @param {Object|Function} obj The JavaScript or native object or function to
-             *     alter. See the constraints in the class description.
-             * @param {string} key The key to change the value for. It has to be present
-             *     either in {@code obj} or in its prototype chain.
-             * @param {*} value The new value to set. It has to have the same type as the
-             *     original value. The types are compared with {@link goog.typeOf}.
-             * @throws {Error} In case of missing key or type mismatch.
-             */
-            replace(obj: Function, key: string, value: any): void;
+            replace(obj: Object|Function, key: string, value: any): void;
     
             /**
              * Builds an object structure for the provided namespace path.  Doesn't
@@ -105,14 +83,7 @@ declare module goog.testing {
              *     alter. See the constraints in the class description.
              * @param {string} key The key to delete.
              */
-            remove(obj: Object, key: string): void;
-            /**
-             * Deletes the key from the object while saving its original value.
-             * @param {Object|Function} obj The JavaScript or native object or function to
-             *     alter. See the constraints in the class description.
-             * @param {string} key The key to delete.
-             */
-            remove(obj: Function, key: string): void;
+            remove(obj: Object|Function, key: string): void;
     
             /**
              * Resets all changes made by goog.testing.PropertyReplacer.prototype.set.

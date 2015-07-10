@@ -39,13 +39,7 @@ declare module goog.ui.ac {
              * @param {Object|goog.structs.Map} headers Map of headers to add to the
              *     request.
              */
-            setHeaders(headers: Object): void;
-            /**
-             * Set the HTTP headers.
-             * @param {Object|goog.structs.Map} headers Map of headers to add to the
-             *     request.
-             */
-            setHeaders(headers: goog.structs.Map<any, any>): void;
+            setHeaders(headers: Object|goog.structs.Map<any, any>): void;
     
             /**
              * Set the timeout interval.

@@ -46,7 +46,7 @@ declare module goog.ui {
              * @param {goog.events.BrowserEvent} e The browser event.
              * @return {boolean|undefined} The handled value.
              */
-            handleOverlayKeyEvent(e: goog.events.BrowserEvent): any /*boolean|any (undefined)*/;
+            handleOverlayKeyEvent(e: goog.events.BrowserEvent): boolean|any /*undefined*/;
     } 
     
 }

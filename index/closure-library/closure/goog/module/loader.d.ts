@@ -44,20 +44,7 @@ declare module goog.module {
              * @param {Function} callback This function will be called with the
              *     resolved symbol as the argument once the module is loaded.
              */
-            require(module: string, symbol: number, callback: Function): void;
-            /**
-             * Requests the loading of a symbol from a module. When the module is
-             * loaded, the requested symbol will be passed as argument to the
-             * function callback.
-             *
-             * @param {string} module The name of the module. Usually, the value
-             *     is defined as a constant whose name starts with MOD_.
-             * @param {number|string} symbol The ID of the symbol. Usually, the value is
-             *     defined as a constant whose name starts with SYM_.
-             * @param {Function} callback This function will be called with the
-             *     resolved symbol as the argument once the module is loaded.
-             */
-            require(module: string, symbol: string, callback: Function): void;
+            require(module: string, symbol: number|string, callback: Function): void;
     
             /**
              * Registers a symbol in a loaded module. When called without symbol,
@@ -72,21 +59,7 @@ declare module goog.module {
              * @param {Object=} opt_object The object bound to the symbol, or nothing when
              *     all symbols of the module are defined.
              */
-            provide(module: string, opt_symbol?: number, opt_object?: Object): void;
-            /**
-             * Registers a symbol in a loaded module. When called without symbol,
-             * registers the module to be fully loaded and executes all callbacks
-             * from pending require() callbacks for this module.
-             *
-             * @param {string} module The name of the module. Cf. parameter module
-             *     of method require().
-             * @param {number|string=} opt_symbol The symbol being defined, or nothing when
-             *     all symbols of the module are defined. Cf. parameter symbol of method
-             *     require().
-             * @param {Object=} opt_object The object bound to the symbol, or nothing when
-             *     all symbols of the module are defined.
-             */
-            provide(module: string, opt_symbol?: string, opt_object?: Object): void;
+            provide(module: string, opt_symbol?: number|string, opt_object?: Object): void;
     } 
     
 }

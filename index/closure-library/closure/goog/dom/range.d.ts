@@ -31,15 +31,7 @@ declare module goog.dom.Range {
      *     node.
      * @return {!goog.dom.AbstractRange} A range wrapper object.
      */
-    function createFromBrowserRange(range: Range, opt_isReversed?: boolean): goog.dom.AbstractRange;
-    /**
-     * Create a new range wrapper from the given browser range object.
-     * @param {Range|TextRange} range The browser range object.
-     * @param {boolean=} opt_isReversed Whether the focus node is before the anchor
-     *     node.
-     * @return {!goog.dom.AbstractRange} A range wrapper object.
-     */
-    function createFromBrowserRange(range: TextRange, opt_isReversed?: boolean): goog.dom.AbstractRange;
+    function createFromBrowserRange(range: Range|TextRange, opt_isReversed?: boolean): goog.dom.AbstractRange;
 
     /**
      * Create a new range wrapper that selects the given node's text.

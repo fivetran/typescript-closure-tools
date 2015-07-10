@@ -26,23 +26,7 @@ declare module goog.crypt {
      *     representing characters.
      * @return {string} Hex string.
      */
-    function byteArrayToHex(array: Uint8Array): string;
-    /**
-     * Turns an array of numbers into the hex string given by the concatenation of
-     * the hex values to which the numbers correspond.
-     * @param {Uint8Array|Int8Array|Array.<number>} array Array of numbers
-     *     representing characters.
-     * @return {string} Hex string.
-     */
-    function byteArrayToHex(array: Int8Array): string;
-    /**
-     * Turns an array of numbers into the hex string given by the concatenation of
-     * the hex values to which the numbers correspond.
-     * @param {Uint8Array|Int8Array|Array.<number>} array Array of numbers
-     *     representing characters.
-     * @return {string} Hex string.
-     */
-    function byteArrayToHex(array: number[]): string;
+    function byteArrayToHex(array: Uint8Array|Int8Array|number[]): string;
 
     /**
      * Converts a hex string into an integer array.
@@ -64,19 +48,7 @@ declare module goog.crypt {
      * @param {Uint8Array|Int8Array|Array.<number>} bytes UTF-8 byte array.
      * @return {string} 16-bit Unicode string.
      */
-    function utf8ByteArrayToString(bytes: Uint8Array): string;
-    /**
-     * Converts a UTF-8 byte array to JavaScript's 16-bit Unicode.
-     * @param {Uint8Array|Int8Array|Array.<number>} bytes UTF-8 byte array.
-     * @return {string} 16-bit Unicode string.
-     */
-    function utf8ByteArrayToString(bytes: Int8Array): string;
-    /**
-     * Converts a UTF-8 byte array to JavaScript's 16-bit Unicode.
-     * @param {Uint8Array|Int8Array|Array.<number>} bytes UTF-8 byte array.
-     * @return {string} 16-bit Unicode string.
-     */
-    function utf8ByteArrayToString(bytes: number[]): string;
+    function utf8ByteArrayToString(bytes: Uint8Array|Int8Array|number[]): string;
 
     /**
      * XOR two byte arrays.
@@ -84,26 +56,5 @@ declare module goog.crypt {
      * @param {!ArrayBufferView|!Array.<number>} bytes2 Byte array 2.
      * @return {!Array.<number>} Resulting XOR of the two byte arrays.
      */
-    function xorByteArray(bytes1: ArrayBufferView, bytes2: ArrayBufferView): number[];
-    /**
-     * XOR two byte arrays.
-     * @param {!ArrayBufferView|!Array.<number>} bytes1 Byte array 1.
-     * @param {!ArrayBufferView|!Array.<number>} bytes2 Byte array 2.
-     * @return {!Array.<number>} Resulting XOR of the two byte arrays.
-     */
-    function xorByteArray(bytes1: ArrayBufferView, bytes2: number[]): number[];
-    /**
-     * XOR two byte arrays.
-     * @param {!ArrayBufferView|!Array.<number>} bytes1 Byte array 1.
-     * @param {!ArrayBufferView|!Array.<number>} bytes2 Byte array 2.
-     * @return {!Array.<number>} Resulting XOR of the two byte arrays.
-     */
-    function xorByteArray(bytes1: number[], bytes2: ArrayBufferView): number[];
-    /**
-     * XOR two byte arrays.
-     * @param {!ArrayBufferView|!Array.<number>} bytes1 Byte array 1.
-     * @param {!ArrayBufferView|!Array.<number>} bytes2 Byte array 2.
-     * @return {!Array.<number>} Resulting XOR of the two byte arrays.
-     */
-    function xorByteArray(bytes1: number[], bytes2: number[]): number[];
+    function xorByteArray(bytes1: ArrayBufferView|number[], bytes2: ArrayBufferView|number[]): number[];
 }

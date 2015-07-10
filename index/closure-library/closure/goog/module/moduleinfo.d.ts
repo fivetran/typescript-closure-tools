@@ -111,7 +111,7 @@ declare module goog.module {
              * @return {boolean} Whether any errors occurred while executing the onload
              *     callbacks.
              */
-            onLoad(contextProvider: () => Object): boolean;
+            onLoad(contextProvider: { (): Object }): boolean;
     
             /**
              * Calls the error callbacks for the module.

@@ -29,17 +29,7 @@ declare module goog.messaging {
              * @param {function(?Object)} callback The callback invoked with
              *     the result of the service call.
              */
-            send(serviceName: string, payload: string, callback: (_0: Object) => any /*missing*/): void;
-            /**
-             * Sends a message over the channel.
-             * @param {string} serviceName The name of the service this message should be
-             *     delivered to.
-             * @param {string|!Object} payload The value of the message. If this is an
-             *     Object, it is serialized to a string before sending if necessary.
-             * @param {function(?Object)} callback The callback invoked with
-             *     the result of the service call.
-             */
-            send(serviceName: string, payload: Object, callback: (_0: Object) => any /*missing*/): void;
+            send(serviceName: string, payload: string|Object, callback: { (_0: Object): any /*missing*/ }): void;
     
             /**
              * Registers a service to be called when a message is received.
@@ -47,7 +37,7 @@ declare module goog.messaging {
              * @param {function(!Object)} callback The callback to process the
              *     incoming messages. Passed the payload.
              */
-            registerService(serviceName: string, callback: (_0: Object) => any /*missing*/): void;
+            registerService(serviceName: string, callback: { (_0: Object): any /*missing*/ }): void;
     } 
     
 }

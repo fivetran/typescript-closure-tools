@@ -1,7 +1,7 @@
 /// <reference path="../../../globals.d.ts" />
 /// <reference path="./dialog.d.ts" />
-/// <reference path="../dom/dom.d.ts" />
 /// <reference path="../html/safehtml.d.ts" />
+/// <reference path="../dom/dom.d.ts" />
 
 declare module goog.ui {
 
@@ -32,31 +32,7 @@ declare module goog.ui {
              * @constructor
              * @extends {goog.ui.Dialog}
              */
-            constructor(promptTitle: string, promptHtml: string, callback: Function, opt_defaultValue?: string, opt_class?: string, opt_useIframeForIE?: boolean, opt_domHelper?: goog.dom.DomHelper);
-            /**
-             * Creates an object that represents a prompt (used in place of javascript's
-             * prompt). The html structure of the prompt is the same as the layout for
-             * dialog.js except for the addition of a text box which is placed inside the
-             * "Content area" and has the default class-name 'modal-dialog-userInput'
-             *
-             * @param {string} promptTitle The title of the prompt.
-             * @param {string|!goog.html.SafeHtml} promptHtml The HTML body of the prompt.
-             *     The variable is trusted and it should be already properly escaped.
-             * @param {Function} callback The function to call when the user selects Ok or
-             *     Cancel. The function should expect a single argument which represents
-             *     what the user entered into the prompt. If the user presses cancel, the
-             *     value of the argument will be null.
-             * @param {string=} opt_defaultValue Optional default value that should be in
-             *     the text box when the prompt appears.
-             * @param {string=} opt_class Optional prefix for the classes.
-             * @param {boolean=} opt_useIframeForIE For IE, workaround windowed controls
-             *     z-index issue by using a an iframe instead of a div for bg element.
-             * @param {goog.dom.DomHelper=} opt_domHelper Optional DOM helper; see {@link
-             *    goog.ui.Component} for semantics.
-             * @constructor
-             * @extends {goog.ui.Dialog}
-             */
-            constructor(promptTitle: string, promptHtml: goog.html.SafeHtml, callback: Function, opt_defaultValue?: string, opt_class?: string, opt_useIframeForIE?: boolean, opt_domHelper?: goog.dom.DomHelper);
+            constructor(promptTitle: string, promptHtml: string|goog.html.SafeHtml, callback: Function, opt_defaultValue?: string, opt_class?: string, opt_useIframeForIE?: boolean, opt_domHelper?: goog.dom.DomHelper);
     
             /**
              * Sets the validation function that takes a string and returns true if the
@@ -64,7 +40,7 @@ declare module goog.ui {
              * @param {function(string): boolean} fn The validation function to use on user
              *     input.
              */
-            setValidationFunction(fn: (_0: string) => boolean): void;
+            setValidationFunction(fn: { (_0: string): boolean }): void;
     
             /**
              * @return {HTMLInputElement} The user input element. May be null if the Prompt
@@ -80,7 +56,7 @@ declare module goog.ui {
              * @param {function(Element)} inputDecoratorFn A function to call on the input
              *     element on #enterDocument.
              */
-            setInputDecoratorFn(inputDecoratorFn: (_0: Element) => any /*missing*/): void;
+            setInputDecoratorFn(inputDecoratorFn: { (_0: Element): any /*missing*/ }): void;
     
             /**
              * Set the number of rows in the user input element.

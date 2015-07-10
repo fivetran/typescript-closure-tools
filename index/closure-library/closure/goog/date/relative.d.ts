@@ -57,7 +57,7 @@ declare module goog.date.relative {
      *     Defaults to form 'MMM dd'.
      * @return {string} The formatted date.
      */
-    function formatDay(dateMs: number, opt_formatter?: (_0: Date) => string): string;
+    function formatDay(dateMs: number, opt_formatter?: { (_0: Date): string }): string;
 
     /**
      * Formats a date, adding the relative date in parenthesis.  If the date is less
@@ -74,23 +74,7 @@ declare module goog.date.relative {
      *     provided if available, so that it's not recalculated in this function.
      * @return {string} The date string in the above form.
      */
-    function getDateString(date: Date, opt_shortTimeMsg?: string, opt_fullDateMsg?: string): string;
-    /**
-     * Formats a date, adding the relative date in parenthesis.  If the date is less
-     * than 24 hours then the time will be printed, otherwise the full-date will be
-     * used.  Examples:
-     *   2:20 PM (1 minute ago)
-     *   Monday, February 27, 2009 (4 days ago)
-     *   Tuesday, March 20, 2005    // Too long ago for a relative date.
-     *
-     * @param {Date|goog.date.DateTime} date A date object.
-     * @param {string=} opt_shortTimeMsg An optional short time message can be
-     *     provided if available, so that it's not recalculated in this function.
-     * @param {string=} opt_fullDateMsg An optional date message can be
-     *     provided if available, so that it's not recalculated in this function.
-     * @return {string} The date string in the above form.
-     */
-    function getDateString(date: goog.date.DateTime, opt_shortTimeMsg?: string, opt_fullDateMsg?: string): string;
+    function getDateString(date: Date|goog.date.DateTime, opt_shortTimeMsg?: string, opt_fullDateMsg?: string): string;
 
     /**
      * Formats a date, adding the relative date in parenthesis.   Functions the same
@@ -108,22 +92,5 @@ declare module goog.date.relative {
      *     provided if available, so that it's not recalculated in this function.
      * @return {string} The date string in the above form.
      */
-    function getPastDateString(date: Date, opt_shortTimeMsg?: string, opt_fullDateMsg?: string): string;
-    /**
-     * Formats a date, adding the relative date in parenthesis.   Functions the same
-     * as #getDateString but ensures that the date is always seen to be in the past.
-     * If the date is in the future, it will be shown as 0 minutes ago.
-     *
-     * This is provided for compatibility with users of the previous incarnation of
-     * the above {@see #getDateString} method who relied on it protecting against
-     * future dates.
-     *
-     * @param {Date|goog.date.DateTime} date A date object.
-     * @param {string=} opt_shortTimeMsg An optional short time message can be
-     *     provided if available, so that it's not recalculated in this function.
-     * @param {string=} opt_fullDateMsg An optional date message can be
-     *     provided if available, so that it's not recalculated in this function.
-     * @return {string} The date string in the above form.
-     */
-    function getPastDateString(date: goog.date.DateTime, opt_shortTimeMsg?: string, opt_fullDateMsg?: string): string;
+    function getPastDateString(date: Date|goog.date.DateTime, opt_shortTimeMsg?: string, opt_fullDateMsg?: string): string;
 }

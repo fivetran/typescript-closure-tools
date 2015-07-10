@@ -15,7 +15,7 @@ declare module goog.result {
           * @param {T=} opt_scope Optional scope for the handler.
           * @template T
           */
-        wait<T>(handler: (_0: goog.result.Result) => any /*missing*/, opt_scope?: T): void;
+        wait<T>(handler: { (_0: goog.result.Result): any /*missing*/ }, opt_scope?: T): void;
     
         /**
           * @return {!goog.result.Result.State} The state of this Result.

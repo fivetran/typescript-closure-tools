@@ -26,25 +26,7 @@ declare module goog.ui.ac {
              *     default.
              * @extends {goog.events.EventTarget}
              */
-            constructor(opt_parentNode?: Element, opt_customRenderer?: { renderRow: any /*missing*/ }, opt_rightAlign?: boolean, opt_useStandardHighlighting?: boolean);
-            /**
-             * Class for rendering the results of an auto-complete in a drop down list.
-             *
-             * @constructor
-             * @param {Element=} opt_parentNode optional reference to the parent element
-             *     that will hold the autocomplete elements. goog.dom.getDocument().body
-             *     will be used if this is null.
-             * @param {?({renderRow}|{render})=} opt_customRenderer Custom full renderer to
-             *     render each row. Should be something with a renderRow or render method.
-             * @param {boolean=} opt_rightAlign Determines if the autocomplete will always
-             *     be right aligned. False by default.
-             * @param {boolean=} opt_useStandardHighlighting Determines if standard
-             *     highlighting should be applied to each row of data. Standard highlighting
-             *     bolds every matching substring for a given token in each row. True by
-             *     default.
-             * @extends {goog.events.EventTarget}
-             */
-            constructor(opt_parentNode?: Element, opt_customRenderer?: { render: any /*missing*/ }, opt_rightAlign?: boolean, opt_useStandardHighlighting?: boolean);
+            constructor(opt_parentNode?: Element, opt_customRenderer?: { renderRow: any /*missing*/ }|{ render: any /*missing*/ }, opt_rightAlign?: boolean, opt_useStandardHighlighting?: boolean);
     
             /**
              * Array of the node divs that hold each result that is being displayed.
@@ -100,7 +82,7 @@ declare module goog.ui.ac {
              * Animation in progress, if any.
              * @type {goog.fx.Animation|undefined}
              */
-            animation_: any /*goog.fx.Animation|any (undefined)*/;
+            animation_: goog.fx.Animation|any /*undefined*/;
     
             /**
              * Gets the renderer's element.

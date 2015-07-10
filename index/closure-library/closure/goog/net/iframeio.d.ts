@@ -36,64 +36,7 @@ declare module goog.net {
              *     caching.
              * @param {Object|goog.structs.Map=} opt_data Map of key-value pairs.
              */
-            send(uri: goog.Uri, opt_method?: string, opt_noCache?: boolean, opt_data?: Object): void;
-            /**
-             * Sends a request via an iframe.
-             *
-             * A HTML form is used and submitted to the iframe, this simplifies the
-             * difference between GET and POST requests. The iframe needs to be created and
-             * destroyed for each request otherwise the request will contribute to the
-             * history stack.
-             *
-             * sendFromForm does some clever trickery (thanks jlim) in non-IE browsers to
-             * stop a history entry being added for POST requests.
-             *
-             * @param {goog.Uri|string} uri Uri of the request.
-             * @param {string=} opt_method Default is GET, POST uses a form to submit the
-             *     request.
-             * @param {boolean=} opt_noCache Append a timestamp to the request to avoid
-             *     caching.
-             * @param {Object|goog.structs.Map=} opt_data Map of key-value pairs.
-             */
-            send(uri: goog.Uri, opt_method?: string, opt_noCache?: boolean, opt_data?: goog.structs.Map<any, any>): void;
-            /**
-             * Sends a request via an iframe.
-             *
-             * A HTML form is used and submitted to the iframe, this simplifies the
-             * difference between GET and POST requests. The iframe needs to be created and
-             * destroyed for each request otherwise the request will contribute to the
-             * history stack.
-             *
-             * sendFromForm does some clever trickery (thanks jlim) in non-IE browsers to
-             * stop a history entry being added for POST requests.
-             *
-             * @param {goog.Uri|string} uri Uri of the request.
-             * @param {string=} opt_method Default is GET, POST uses a form to submit the
-             *     request.
-             * @param {boolean=} opt_noCache Append a timestamp to the request to avoid
-             *     caching.
-             * @param {Object|goog.structs.Map=} opt_data Map of key-value pairs.
-             */
-            send(uri: string, opt_method?: string, opt_noCache?: boolean, opt_data?: Object): void;
-            /**
-             * Sends a request via an iframe.
-             *
-             * A HTML form is used and submitted to the iframe, this simplifies the
-             * difference between GET and POST requests. The iframe needs to be created and
-             * destroyed for each request otherwise the request will contribute to the
-             * history stack.
-             *
-             * sendFromForm does some clever trickery (thanks jlim) in non-IE browsers to
-             * stop a history entry being added for POST requests.
-             *
-             * @param {goog.Uri|string} uri Uri of the request.
-             * @param {string=} opt_method Default is GET, POST uses a form to submit the
-             *     request.
-             * @param {boolean=} opt_noCache Append a timestamp to the request to avoid
-             *     caching.
-             * @param {Object|goog.structs.Map=} opt_data Map of key-value pairs.
-             */
-            send(uri: string, opt_method?: string, opt_noCache?: boolean, opt_data?: goog.structs.Map<any, any>): void;
+            send(uri: goog.Uri|string, opt_method?: string, opt_noCache?: boolean, opt_data?: Object|goog.structs.Map<any, any>): void;
     
             /**
              * Sends the data stored in an existing form to the server. The HTTP method
@@ -307,49 +250,7 @@ declare module goog.net.IframeIo {
      * @param {Object|goog.structs.Map=} opt_data Map of key-value pairs that
      *     will be posted to the server via the iframe's form.
      */
-    function send(uri: goog.Uri, opt_callback?: Function, opt_method?: string, opt_noCache?: boolean, opt_data?: Object): void;
-    /**
-     * Static send that creates a short lived instance of IframeIo to send the
-     * request.
-     * @param {goog.Uri|string} uri Uri of the request, it is up the caller to
-     *     manage query string params.
-     * @param {Function=} opt_callback Event handler for when request is completed.
-     * @param {string=} opt_method Default is GET, POST uses a form to submit the
-     *     request.
-     * @param {boolean=} opt_noCache Append a timestamp to the request to avoid
-     *     caching.
-     * @param {Object|goog.structs.Map=} opt_data Map of key-value pairs that
-     *     will be posted to the server via the iframe's form.
-     */
-    function send(uri: goog.Uri, opt_callback?: Function, opt_method?: string, opt_noCache?: boolean, opt_data?: goog.structs.Map<any, any>): void;
-    /**
-     * Static send that creates a short lived instance of IframeIo to send the
-     * request.
-     * @param {goog.Uri|string} uri Uri of the request, it is up the caller to
-     *     manage query string params.
-     * @param {Function=} opt_callback Event handler for when request is completed.
-     * @param {string=} opt_method Default is GET, POST uses a form to submit the
-     *     request.
-     * @param {boolean=} opt_noCache Append a timestamp to the request to avoid
-     *     caching.
-     * @param {Object|goog.structs.Map=} opt_data Map of key-value pairs that
-     *     will be posted to the server via the iframe's form.
-     */
-    function send(uri: string, opt_callback?: Function, opt_method?: string, opt_noCache?: boolean, opt_data?: Object): void;
-    /**
-     * Static send that creates a short lived instance of IframeIo to send the
-     * request.
-     * @param {goog.Uri|string} uri Uri of the request, it is up the caller to
-     *     manage query string params.
-     * @param {Function=} opt_callback Event handler for when request is completed.
-     * @param {string=} opt_method Default is GET, POST uses a form to submit the
-     *     request.
-     * @param {boolean=} opt_noCache Append a timestamp to the request to avoid
-     *     caching.
-     * @param {Object|goog.structs.Map=} opt_data Map of key-value pairs that
-     *     will be posted to the server via the iframe's form.
-     */
-    function send(uri: string, opt_callback?: Function, opt_method?: string, opt_noCache?: boolean, opt_data?: goog.structs.Map<any, any>): void;
+    function send(uri: goog.Uri|string, opt_callback?: Function, opt_method?: string, opt_noCache?: boolean, opt_data?: Object|goog.structs.Map<any, any>): void;
 
     /**
      * Find an iframe by name (assumes the context is goog.global since that is

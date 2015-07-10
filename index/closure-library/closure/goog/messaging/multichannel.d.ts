@@ -100,25 +100,7 @@ declare module goog.messaging.MultiChannel {
              *     a string automatically if necessary. It's the responsibility of
              *     implementors of this class to perform the deserialization.
              */
-            registerService(serviceName: string, callback: (_0: string) => any /*missing*/, opt_objectPayload?: boolean): void;
-            /**
-             * Registers a service to be called when a message is received.
-             *
-             * Implementers shouldn't impose any restrictions on the service names that may
-             * be registered. If some services are needed as control codes,
-             * {@link goog.messaging.MultiMessageChannel} can be used to safely split the
-             * channel into "public" and "control" virtual channels.
-             *
-             * @param {string} serviceName The name of the service.
-             * @param {function((string|!Object))} callback The callback to process the
-             *     incoming messages. Passed the payload. If opt_objectPayload is set, the
-             *     payload is decoded and passed as an object.
-             * @param {boolean=} opt_objectPayload If true, incoming messages for this
-             *     service are expected to contain an object, and will be deserialized from
-             *     a string automatically if necessary. It's the responsibility of
-             *     implementors of this class to perform the deserialization.
-             */
-            registerService(serviceName: string, callback: (_0: Object) => any /*missing*/, opt_objectPayload?: boolean): void;
+            registerService(serviceName: string, callback: { (_0: string|Object): any /*missing*/ }, opt_objectPayload?: boolean): void;
     
             /**
              * Registers a service to be called when a message is received that doesn't
@@ -129,17 +111,7 @@ declare module goog.messaging.MultiChannel {
              *     some channels can pass objects natively, the payload may be either an
              *     object or a string.
              */
-            registerDefaultService(callback: (_0: string, _1: string) => any /*missing*/): void;
-            /**
-             * Registers a service to be called when a message is received that doesn't
-             * match any other services.
-             *
-             * @param {function(string, (string|!Object))} callback The callback to process
-             *     the incoming messages. Passed the service name and the payload. Since
-             *     some channels can pass objects natively, the payload may be either an
-             *     object or a string.
-             */
-            registerDefaultService(callback: (_0: string, _1: Object) => any /*missing*/): void;
+            registerDefaultService(callback: { (_0: string, _1: string|Object): any /*missing*/ }): void;
     
             /**
              * Sends a message over the channel.
@@ -151,18 +123,7 @@ declare module goog.messaging.MultiChannel {
              *     the responsibility of implementors of this class to perform the
              *     serialization.
              */
-            send(serviceName: string, payload: string): void;
-            /**
-             * Sends a message over the channel.
-             *
-             * @param {string} serviceName The name of the service this message should be
-             *     delivered to.
-             * @param {string|!Object} payload The value of the message. If this is an
-             *     Object, it is serialized to a string before sending if necessary. It's
-             *     the responsibility of implementors of this class to perform the
-             *     serialization.
-             */
-            send(serviceName: string, payload: Object): void;
+            send(serviceName: string, payload: string|Object): void;
     } 
     
 }

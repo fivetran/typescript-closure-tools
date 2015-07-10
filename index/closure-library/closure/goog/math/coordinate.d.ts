@@ -60,18 +60,7 @@ declare module goog.math {
              * @param {number=} opt_ty The value to translate y by.
              * @return {!goog.math.Coordinate} This coordinate after translating.
              */
-            translate(tx: number, opt_ty?: number): goog.math.Coordinate;
-            /**
-             * Translates this box by the given offsets. If a {@code goog.math.Coordinate}
-             * is given, then the x and y values are translated by the coordinate's x and y.
-             * Otherwise, x and y are translated by {@code tx} and {@code opt_ty}
-             * respectively.
-             * @param {number|goog.math.Coordinate} tx The value to translate x by or the
-             *     the coordinate to translate this coordinate by.
-             * @param {number=} opt_ty The value to translate y by.
-             * @return {!goog.math.Coordinate} This coordinate after translating.
-             */
-            translate(tx: goog.math.Coordinate, opt_ty?: number): goog.math.Coordinate;
+            translate(tx: number|goog.math.Coordinate, opt_ty?: number): goog.math.Coordinate;
     
             /**
              * Scales this coordinate by the given scale factors. The x and y values are

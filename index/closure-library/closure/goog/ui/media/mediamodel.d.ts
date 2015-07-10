@@ -40,7 +40,7 @@ declare module goog.ui.media {
              * Gets the URL of this media.
              * @return {string|undefined} The URL of the media.
              */
-            getUrl(): any /*string|any (undefined)*/;
+            getUrl(): string|any /*undefined*/;
     
             /**
              * Sets the URL of this media.
@@ -53,7 +53,7 @@ declare module goog.ui.media {
              * Gets the caption of this media.
              * @return {string|undefined} The caption of the media.
              */
-            getCaption(): any /*string|any (undefined)*/;
+            getCaption(): string|any /*undefined*/;
     
             /**
              * Sets the caption of this media.
@@ -66,7 +66,7 @@ declare module goog.ui.media {
              * Gets the media mime type.
              * @return {goog.ui.media.MediaModel.MimeType|undefined} The media mime type.
              */
-            getType(): any /*goog.ui.media.MediaModel.MimeType|any (undefined)*/;
+            getType(): goog.ui.media.MediaModel.MimeType|any /*undefined*/;
     
             /**
              * Sets the media mime type.
@@ -79,7 +79,7 @@ declare module goog.ui.media {
              * Gets the media medium.
              * @return {goog.ui.media.MediaModel.Medium|undefined} The media medium.
              */
-            getMedium(): any /*goog.ui.media.MediaModel.Medium|any (undefined)*/;
+            getMedium(): goog.ui.media.MediaModel.Medium|any /*undefined*/;
     
             /**
              * Sets the media medium.
@@ -92,7 +92,7 @@ declare module goog.ui.media {
              * Gets the description of this media.
              * @return {string|undefined} The description of the media.
              */
-            getDescription(): any /*string|any (undefined)*/;
+            getDescription(): string|any /*undefined*/;
     
             /**
              * Sets the description of this media.
@@ -119,7 +119,7 @@ declare module goog.ui.media {
              * Gets the duration of the media.
              * @return {number|undefined} The duration in seconds.
              */
-            getDuration(): any /*number|any (undefined)*/;
+            getDuration(): number|any /*undefined*/;
     
             /**
              * Sets duration of the media.
@@ -132,7 +132,7 @@ declare module goog.ui.media {
              * Gets the width of the media in pixels.
              * @return {number|undefined} The width in pixels.
              */
-            getWidth(): any /*number|any (undefined)*/;
+            getWidth(): number|any /*undefined*/;
     
             /**
              * Sets the width of the media.
@@ -145,7 +145,7 @@ declare module goog.ui.media {
              * Gets the height of the media in pixels.
              * @return {number|undefined} The height in pixels.
              */
-            getHeight(): any /*number|any (undefined)*/;
+            getHeight(): number|any /*undefined*/;
     
             /**
              * Sets the height of the media.
@@ -158,7 +158,7 @@ declare module goog.ui.media {
              * Gets the player data.
              * @return {goog.ui.media.MediaModel.Player|undefined} The media player data.
              */
-            getPlayer(): any /*goog.ui.media.MediaModel.Player|any (undefined)*/;
+            getPlayer(): goog.ui.media.MediaModel.Player|any /*undefined*/;
     
             /**
              * Sets the player data.
@@ -428,7 +428,7 @@ declare module goog.ui.media.MediaModel {
              * @return {goog.ui.media.MediaModel.Credit.Role|undefined} The role of the
              *     entity.
              */
-            getRole(): any /*goog.ui.media.MediaModel.Credit.Role|any (undefined)*/;
+            getRole(): goog.ui.media.MediaModel.Credit.Role|any /*undefined*/;
     
             /**
              * Sets the role of the credit object.
@@ -442,7 +442,7 @@ declare module goog.ui.media.MediaModel {
              * @return {goog.ui.media.MediaModel.Credit.Scheme|undefined} The URI that
              *     identifies the role scheme.
              */
-            getScheme(): any /*goog.ui.media.MediaModel.Credit.Scheme|any (undefined)*/;
+            getScheme(): goog.ui.media.MediaModel.Credit.Scheme|any /*undefined*/;
     
             /**
              * Sets the scheme of the credit object.

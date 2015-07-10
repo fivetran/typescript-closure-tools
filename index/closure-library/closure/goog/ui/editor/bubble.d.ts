@@ -83,7 +83,7 @@ declare module goog.ui.editor {
              *     If any panel prefers the top position, the top position is used.
              * @return {string} The id of the panel.
              */
-            addPanel(type: string, title: string, targetElement: Element, contentFn: (_0: Element) => void, opt_preferTopPosition?: boolean): string;
+            addPanel(type: string, title: string, targetElement: Element, contentFn: { (_0: Element): void }, opt_preferTopPosition?: boolean): string;
     
             /**
              * Removes the panel with the given id.

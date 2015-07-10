@@ -49,20 +49,7 @@ declare module goog.net {
              * @param {!goog.net.ImageLoader.CorsRequestType=} opt_corsRequestType The type
              *     of CORS request to use, if any.
              */
-            addImage(id: string, image: string, opt_corsRequestType?: goog.net.ImageLoader.CorsRequestType): void;
-            /**
-             * Adds an image to the image loader, and associates it with the given ID
-             * string.  If an image with that ID already exists, it is silently replaced.
-             * When the image in question is loaded, the target of the LOAD event will be
-             * an {@code Image} object with {@code id} and {@code src} attributes based on
-             * these arguments.
-             * @param {string} id The ID of the image to load.
-             * @param {string|Image} image Either the source URL of the image or the HTML
-             *     image element itself (or any object with a {@code src} property, really).
-             * @param {!goog.net.ImageLoader.CorsRequestType=} opt_corsRequestType The type
-             *     of CORS request to use, if any.
-             */
-            addImage(id: string, image: Image, opt_corsRequestType?: goog.net.ImageLoader.CorsRequestType): void;
+            addImage(id: string, image: string|Image, opt_corsRequestType?: goog.net.ImageLoader.CorsRequestType): void;
     
             /**
              * Removes the image associated with the given ID string from the image loader.

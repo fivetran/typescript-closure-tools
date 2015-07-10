@@ -93,25 +93,7 @@ declare module goog.tweak {
              * @param {string|number|boolean} value The replacement value to be used as the
              *     default value for the setting.
              */
-            overrideDefaultValue(id: string, value: string): void;
-            /**
-             * Sets a default value to use for the given tweak instead of the one passed
-             * to the register* function. This function must be called before the tweak is
-             * registered.
-             * @param {string} id The unique string that identifies the entry.
-             * @param {string|number|boolean} value The replacement value to be used as the
-             *     default value for the setting.
-             */
-            overrideDefaultValue(id: string, value: number): void;
-            /**
-             * Sets a default value to use for the given tweak instead of the one passed
-             * to the register* function. This function must be called before the tweak is
-             * registered.
-             * @param {string} id The unique string that identifies the entry.
-             * @param {string|number|boolean} value The replacement value to be used as the
-             *     default value for the setting.
-             */
-            overrideDefaultValue(id: string, value: boolean): void;
+            overrideDefaultValue(id: string, value: string|number|boolean): void;
     } 
     
 }

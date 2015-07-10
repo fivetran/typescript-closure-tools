@@ -30,64 +30,7 @@ declare module goog.graphics {
              *     differences before the canvas tag was widely supported.  See
              *     http://en.wikipedia.org/wiki/Canvas_element for details.
              */
-            constructor(width: string, height: string, opt_coordWidth?: number, opt_coordHeight?: number, opt_domHelper?: goog.dom.DomHelper);
-            /**
-             * A Graphics implementation for drawing using canvas.
-             * @param {string|number} width The (non-zero) width in pixels.  Strings
-             *     expressing percentages of parent with (e.g. '80%') are also accepted.
-             * @param {string|number} height The (non-zero) height in pixels.  Strings
-             *     expressing percentages of parent with (e.g. '80%') are also accepted.
-             * @param {?number=} opt_coordWidth The coordinate width - if
-             *     omitted or null, defaults to same as width.
-             * @param {?number=} opt_coordHeight The coordinate height - if
-             *     omitted or null, defaults to same as height.
-             * @param {goog.dom.DomHelper=} opt_domHelper The DOM helper object for the
-             *     document we want to render in.
-             * @constructor
-             * @extends {goog.graphics.AbstractGraphics}
-             * @deprecated goog.graphics is deprecated. It existed to abstract over browser
-             *     differences before the canvas tag was widely supported.  See
-             *     http://en.wikipedia.org/wiki/Canvas_element for details.
-             */
-            constructor(width: string, height: number, opt_coordWidth?: number, opt_coordHeight?: number, opt_domHelper?: goog.dom.DomHelper);
-            /**
-             * A Graphics implementation for drawing using canvas.
-             * @param {string|number} width The (non-zero) width in pixels.  Strings
-             *     expressing percentages of parent with (e.g. '80%') are also accepted.
-             * @param {string|number} height The (non-zero) height in pixels.  Strings
-             *     expressing percentages of parent with (e.g. '80%') are also accepted.
-             * @param {?number=} opt_coordWidth The coordinate width - if
-             *     omitted or null, defaults to same as width.
-             * @param {?number=} opt_coordHeight The coordinate height - if
-             *     omitted or null, defaults to same as height.
-             * @param {goog.dom.DomHelper=} opt_domHelper The DOM helper object for the
-             *     document we want to render in.
-             * @constructor
-             * @extends {goog.graphics.AbstractGraphics}
-             * @deprecated goog.graphics is deprecated. It existed to abstract over browser
-             *     differences before the canvas tag was widely supported.  See
-             *     http://en.wikipedia.org/wiki/Canvas_element for details.
-             */
-            constructor(width: number, height: string, opt_coordWidth?: number, opt_coordHeight?: number, opt_domHelper?: goog.dom.DomHelper);
-            /**
-             * A Graphics implementation for drawing using canvas.
-             * @param {string|number} width The (non-zero) width in pixels.  Strings
-             *     expressing percentages of parent with (e.g. '80%') are also accepted.
-             * @param {string|number} height The (non-zero) height in pixels.  Strings
-             *     expressing percentages of parent with (e.g. '80%') are also accepted.
-             * @param {?number=} opt_coordWidth The coordinate width - if
-             *     omitted or null, defaults to same as width.
-             * @param {?number=} opt_coordHeight The coordinate height - if
-             *     omitted or null, defaults to same as height.
-             * @param {goog.dom.DomHelper=} opt_domHelper The DOM helper object for the
-             *     document we want to render in.
-             * @constructor
-             * @extends {goog.graphics.AbstractGraphics}
-             * @deprecated goog.graphics is deprecated. It existed to abstract over browser
-             *     differences before the canvas tag was widely supported.  See
-             *     http://en.wikipedia.org/wiki/Canvas_element for details.
-             */
-            constructor(width: number, height: number, opt_coordWidth?: number, opt_coordHeight?: number, opt_domHelper?: goog.dom.DomHelper);
+            constructor(width: string|number, height: string|number, opt_coordWidth?: number, opt_coordHeight?: number, opt_domHelper?: goog.dom.DomHelper);
     
             /**
              * Push an element transform on to the transform stack.
@@ -141,16 +84,7 @@ declare module goog.graphics {
              *     it in. If null or undefined, defaults to the root group.
              * @protected
              */
-            append(element: goog.graphics.Element, group: goog.graphics.GroupElement): void;
-            /**
-             * Append an element.
-             *
-             * @param {goog.graphics.Element} element The element to draw.
-             * @param {goog.graphics.GroupElement|undefined} group The group to draw
-             *     it in. If null or undefined, defaults to the root group.
-             * @protected
-             */
-            append(element: goog.graphics.Element, group: any /*undefined*/): void;
+            append(element: goog.graphics.Element, group: goog.graphics.GroupElement|any /*undefined*/): void;
     
             /**
              * Draw an image.

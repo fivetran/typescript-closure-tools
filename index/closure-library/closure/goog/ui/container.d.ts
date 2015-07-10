@@ -47,13 +47,7 @@ declare module goog.ui {
              * @param {Element|undefined} element The element to attach, or null/undefined
              *     to attach to the default element.
              */
-            setKeyEventTarget(element: Element): void;
-            /**
-             * Attaches an element on which to listen for key events.
-             * @param {Element|undefined} element The element to attach, or null/undefined
-             *     to attach to the default element.
-             */
-            setKeyEventTarget(element: any /*undefined*/): void;
+            setKeyEventTarget(element: Element|any /*undefined*/): void;
     
             /**
              * Returns the keyboard event handler for this container, lazily created the
@@ -328,7 +322,7 @@ declare module goog.ui {
              * @return {boolean} Whether the highlight has changed.
              * @protected
              */
-            highlightHelper(fn: (_0: number, _1: number) => number, startIndex: number): boolean;
+            highlightHelper(fn: { (_0: number, _1: number): number }, startIndex: number): boolean;
     
             /**
              * Returns whether the given item can be highlighted.

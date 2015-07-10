@@ -17,17 +17,7 @@ declare module goog.events {
              * @extends {goog.events.EventTarget}
              * @final
              */
-            constructor(opt_element?: Element, opt_capture?: boolean);
-            /**
-             * A wrapper around an element that you want to listen to keyboard events on.
-             * @param {Element|Document=} opt_element The element or document to listen on.
-             * @param {boolean=} opt_capture Whether to listen for browser events in
-             *     capture phase (defaults to false).
-             * @constructor
-             * @extends {goog.events.EventTarget}
-             * @final
-             */
-            constructor(opt_element?: Document, opt_capture?: boolean);
+            constructor(opt_element?: Element|Document, opt_capture?: boolean);
     
             /**
              * Resets the stored previous values. Needed to be called for webkit which will
@@ -48,7 +38,7 @@ declare module goog.events {
              * @return {Element|Document|null} The element listened on for the real
              *     keyboard events.
              */
-            getElement(): any /*Element|Document|any (null)*/;
+            getElement(): Element|Document|any /*null*/;
     
             /**
              * Adds the proper key event listeners to the element.
@@ -56,14 +46,7 @@ declare module goog.events {
              * @param {boolean=} opt_capture Whether to listen for browser events in
              *     capture phase (defaults to false).
              */
-            attach(element: Element, opt_capture?: boolean): void;
-            /**
-             * Adds the proper key event listeners to the element.
-             * @param {Element|Document} element The element to listen on.
-             * @param {boolean=} opt_capture Whether to listen for browser events in
-             *     capture phase (defaults to false).
-             */
-            attach(element: Document, opt_capture?: boolean): void;
+            attach(element: Element|Document, opt_capture?: boolean): void;
     
             /**
              * Removes the listeners that may exist.

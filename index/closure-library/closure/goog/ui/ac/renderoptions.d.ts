@@ -31,7 +31,7 @@ declare module goog.ui.ac {
             /**
              * @return {boolean|undefined} The value of the autoHilite_ flag.
              */
-            getAutoHilite(): any /*boolean|any (undefined)*/;
+            getAutoHilite(): boolean|any /*undefined*/;
     } 
     
 }

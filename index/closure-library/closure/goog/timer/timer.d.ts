@@ -95,37 +95,7 @@ declare module goog.Timer {
      * @return {number} A handle to the timer ID.
      * @template SCOPE
      */
-    function callOnce<SCOPE>(listener: () => any /*missing*/, opt_delay?: number, opt_handler?: SCOPE): number;
-    /**
-     * Calls the given function once, after the optional pause.
-     *
-     * The function is always called asynchronously, even if the delay is 0. This
-     * is a common trick to schedule a function to run after a batch of browser
-     * event processing.
-     *
-     * @param {function(this:SCOPE)|{handleEvent:function()}|null} listener Function
-     *     or object that has a handleEvent method.
-     * @param {number=} opt_delay Milliseconds to wait; default is 0.
-     * @param {SCOPE=} opt_handler Object in whose scope to call the listener.
-     * @return {number} A handle to the timer ID.
-     * @template SCOPE
-     */
-    function callOnce<SCOPE>(listener: { handleEvent: () => any /*missing*/ }, opt_delay?: number, opt_handler?: SCOPE): number;
-    /**
-     * Calls the given function once, after the optional pause.
-     *
-     * The function is always called asynchronously, even if the delay is 0. This
-     * is a common trick to schedule a function to run after a batch of browser
-     * event processing.
-     *
-     * @param {function(this:SCOPE)|{handleEvent:function()}|null} listener Function
-     *     or object that has a handleEvent method.
-     * @param {number=} opt_delay Milliseconds to wait; default is 0.
-     * @param {SCOPE=} opt_handler Object in whose scope to call the listener.
-     * @return {number} A handle to the timer ID.
-     * @template SCOPE
-     */
-    function callOnce<SCOPE>(listener: any /*null*/, opt_delay?: number, opt_handler?: SCOPE): number;
+    function callOnce<SCOPE>(listener: { (): any /*missing*/ }|{ handleEvent: { (): any /*missing*/ } }|any /*null*/, opt_delay?: number, opt_handler?: SCOPE): number;
 
     /**
      * Clears a timeout initiated by callOnce

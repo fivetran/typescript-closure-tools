@@ -46,7 +46,7 @@ declare module goog.debug.entryPointRegistry {
      *     is responsible for wrapping the relevant entry point with the
      *     transforming function.
      */
-    function register(callback: (_0: Function) => any /*missing*/): void;
+    function register(callback: { (_0: Function): any /*missing*/ }): void;
 
     /**
      * Configures a monitor to wrap all entry points.

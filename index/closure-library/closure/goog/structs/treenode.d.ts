@@ -133,7 +133,7 @@ declare module goog.structs {
              *     within {@code f}.
              * @template THIS
              */
-            forEachChild<THIS>(f: (_0: goog.structs.TreeNode<KEY,VALUE>, _1: number, _2: goog.structs.TreeNode<KEY,VALUE>[]) => any /*missing*/, opt_this?: THIS): void;
+            forEachChild<THIS>(f: { (_0: goog.structs.TreeNode<KEY,VALUE>, _1: number, _2: goog.structs.TreeNode<KEY,VALUE>[]): any /*missing*/ }, opt_this?: THIS): void;
     
             /**
              * Traverses all child nodes recursively in preorder.
@@ -142,7 +142,7 @@ declare module goog.structs {
              * @param {Object=} opt_this The object to be used as the value of {@code this}
              *     within {@code f}.
              */
-            forEachDescendant(f: (_0: goog.structs.TreeNode<KEY,VALUE>) => any /*missing*/, opt_this?: Object): void;
+            forEachDescendant(f: { (_0: goog.structs.TreeNode<KEY,VALUE>): any /*missing*/ }, opt_this?: Object): void;
     
             /**
              * Traverses the subtree with the possibility to skip branches. Starts with
@@ -155,19 +155,7 @@ declare module goog.structs {
              *     within {@code f}.
              * @template THIS
              */
-            traverse<THIS>(f: (_0: goog.structs.TreeNode<KEY,VALUE>) => boolean, opt_this?: THIS): void;
-            /**
-             * Traverses the subtree with the possibility to skip branches. Starts with
-             * this node, and visits the descendant nodes depth-first, in preorder.
-             * @param {function(this:THIS, !goog.structs.TreeNode.<KEY, VALUE>):
-             *     (boolean|undefined)} f Callback function. It takes the node as argument.
-             *     The children of this node will be visited if the callback returns true or
-             *     undefined, and will be skipped if the callback returns false.
-             * @param {THIS=} opt_this The object to be used as the value of {@code this}
-             *     within {@code f}.
-             * @template THIS
-             */
-            traverse<THIS>(f: (_0: goog.structs.TreeNode<KEY,VALUE>) => any /*undefined*/, opt_this?: THIS): void;
+            traverse<THIS>(f: { (_0: goog.structs.TreeNode<KEY,VALUE>): boolean|any /*undefined*/ }, opt_this?: THIS): void;
     
             /**
              * Sets the parent node of this node. The callers must ensure that the parent

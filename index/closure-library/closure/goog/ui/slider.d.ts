@@ -16,7 +16,7 @@ declare module goog.ui {
              * @constructor
              * @extends {goog.ui.SliderBase}
              */
-            constructor(opt_domHelper?: goog.dom.DomHelper, opt_labelFn?: (_0: number) => string);
+            constructor(opt_domHelper?: goog.dom.DomHelper, opt_labelFn?: { (_0: number): string });
     } 
     
 }

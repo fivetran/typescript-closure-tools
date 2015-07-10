@@ -5,6 +5,7 @@
 /// <reference path="./labelinput.d.ts" />
 /// <reference path="./menuitem.d.ts" />
 /// <reference path="../events/keyhandler.d.ts" />
+/// <reference path="./controlcontent.d.ts" />
 /// <reference path="./menuitemrenderer.d.ts" />
 
 declare module goog.ui {
@@ -194,46 +195,7 @@ declare module goog.ui {
              * @constructor
              * @extends {goog.ui.MenuItem}
              */
-            constructor(content: string, opt_data?: Object, opt_domHelper?: goog.dom.DomHelper, opt_renderer?: goog.ui.MenuItemRenderer);
-            /**
-             * Class for combo box items.
-             * @param {goog.ui.ControlContent} content Text caption or DOM structure to
-             *     display as the content of the item (use to add icons or styling to
-             *     menus).
-             * @param {Object=} opt_data Identifying data for the menu item.
-             * @param {goog.dom.DomHelper=} opt_domHelper Optional dom helper used for dom
-             *     interactions.
-             * @param {goog.ui.MenuItemRenderer=} opt_renderer Optional renderer.
-             * @constructor
-             * @extends {goog.ui.MenuItem}
-             */
-            constructor(content: Node, opt_data?: Object, opt_domHelper?: goog.dom.DomHelper, opt_renderer?: goog.ui.MenuItemRenderer);
-            /**
-             * Class for combo box items.
-             * @param {goog.ui.ControlContent} content Text caption or DOM structure to
-             *     display as the content of the item (use to add icons or styling to
-             *     menus).
-             * @param {Object=} opt_data Identifying data for the menu item.
-             * @param {goog.dom.DomHelper=} opt_domHelper Optional dom helper used for dom
-             *     interactions.
-             * @param {goog.ui.MenuItemRenderer=} opt_renderer Optional renderer.
-             * @constructor
-             * @extends {goog.ui.MenuItem}
-             */
-            constructor(content: Node[], opt_data?: Object, opt_domHelper?: goog.dom.DomHelper, opt_renderer?: goog.ui.MenuItemRenderer);
-            /**
-             * Class for combo box items.
-             * @param {goog.ui.ControlContent} content Text caption or DOM structure to
-             *     display as the content of the item (use to add icons or styling to
-             *     menus).
-             * @param {Object=} opt_data Identifying data for the menu item.
-             * @param {goog.dom.DomHelper=} opt_domHelper Optional dom helper used for dom
-             *     interactions.
-             * @param {goog.ui.MenuItemRenderer=} opt_renderer Optional renderer.
-             * @constructor
-             * @extends {goog.ui.MenuItem}
-             */
-            constructor(content: NodeList, opt_data?: Object, opt_domHelper?: goog.dom.DomHelper, opt_renderer?: goog.ui.MenuItemRenderer);
+            constructor(content: goog.ui.ControlContent, opt_data?: Object, opt_domHelper?: goog.dom.DomHelper, opt_renderer?: goog.ui.MenuItemRenderer);
     
             /**
              * Sets the menu item to be sticky or not sticky.

@@ -46,26 +46,19 @@ declare module goog.ui {
              * @param {Object|undefined} item Item to look for.
              * @return {number} Index of the given item (-1 if none).
              */
-            indexOfItem(item: Object): number;
-            /**
-             * Returns the 0-based index of the given item within the selection model, or
-             * -1 if no such item is found.
-             * @param {Object|undefined} item Item to look for.
-             * @return {number} Index of the given item (-1 if none).
-             */
-            indexOfItem(item: any /*undefined*/): number;
+            indexOfItem(item: Object|any /*undefined*/): number;
     
             /**
              * @return {Object|undefined} The first item, or undefined if there are no items
              *     in the model.
              */
-            getFirst(): any /*Object|any (undefined)*/;
+            getFirst(): Object|any /*undefined*/;
     
             /**
              * @return {Object|undefined} The last item, or undefined if there are no items
              *     in the model.
              */
-            getLast(): any /*Object|any (undefined)*/;
+            getLast(): Object|any /*undefined*/;
     
             /**
              * Returns the item at the given 0-based index.
@@ -79,13 +72,7 @@ declare module goog.ui {
              * {@link #addItem} for each new item.
              * @param {Array.<Object>|undefined} items New items to add.
              */
-            addItems(items: Object[]): void;
-            /**
-             * Bulk-adds items to the selection model.  This is more efficient than calling
-             * {@link #addItem} for each new item.
-             * @param {Array.<Object>|undefined} items New items to add.
-             */
-            addItems(items: any /*undefined*/): void;
+            addItems(items: Object[]|any /*undefined*/): void;
     
             /**
              * Adds an item at the end of the list.

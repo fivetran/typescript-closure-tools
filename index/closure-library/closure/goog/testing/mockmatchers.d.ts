@@ -127,22 +127,7 @@ declare module goog.testing.mockmatchers {
              * @extends {goog.testing.mockmatchers.ArgumentMatcher}
              * @final
              */
-            constructor(opt_matcher?: goog.testing.mockmatchers.ArgumentMatcher, opt_matchName?: string);
-            /**
-             * A matcher that saves the argument that it is verifying so that your unit test
-             * can perform extra tests with this argument later.  For example, if the
-             * argument is a callback method, the unit test can then later call this
-             * callback to test the asynchronous portion of the call.
-             * @param {goog.testing.mockmatchers.ArgumentMatcher|Function=} opt_matcher
-             *     Argument matcher or matching function that will be used to validate the
-             *     argument.  By default, argument will always be valid.
-             * @param {?string=} opt_matchName The name expressing intent as part of
-             *      an error message for when a match fails.
-             * @constructor
-             * @extends {goog.testing.mockmatchers.ArgumentMatcher}
-             * @final
-             */
-            constructor(opt_matcher?: Function, opt_matchName?: string);
+            constructor(opt_matcher?: goog.testing.mockmatchers.ArgumentMatcher|Function, opt_matchName?: string);
     
             /**
              * Saved argument that was verified.

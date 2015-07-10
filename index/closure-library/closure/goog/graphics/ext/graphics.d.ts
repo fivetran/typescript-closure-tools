@@ -31,70 +31,7 @@ declare module goog.graphics.ext {
              * @extends {goog.graphics.ext.Group}
              * @final
              */
-            constructor(width: string, height: string, opt_coordWidth?: number, opt_coordHeight?: number, opt_domHelper?: goog.dom.DomHelper, opt_isSimple?: boolean);
-            /**
-             * Wrapper for a graphics surface.
-             * @param {string|number} width The width in pixels.  Strings
-             *     expressing percentages of parent with (e.g. '80%') are also accepted.
-             * @param {string|number} height The height in pixels.  Strings
-             *     expressing percentages of parent with (e.g. '80%') are also accepted.
-             * @param {?number=} opt_coordWidth The coordinate width - if
-             *     omitted or null, defaults to same as width.
-             * @param {?number=} opt_coordHeight The coordinate height. - if
-             *     omitted or null, defaults to same as height.
-             * @param {goog.dom.DomHelper=} opt_domHelper The DOM helper object for the
-             *     document we want to render in.
-             * @param {boolean=} opt_isSimple Flag used to indicate the graphics object will
-             *     be drawn to in a single pass, and the fastest implementation for this
-             *     scenario should be favored.  NOTE: Setting to true may result in
-             *     degradation of text support.
-             * @constructor
-             * @extends {goog.graphics.ext.Group}
-             * @final
-             */
-            constructor(width: string, height: number, opt_coordWidth?: number, opt_coordHeight?: number, opt_domHelper?: goog.dom.DomHelper, opt_isSimple?: boolean);
-            /**
-             * Wrapper for a graphics surface.
-             * @param {string|number} width The width in pixels.  Strings
-             *     expressing percentages of parent with (e.g. '80%') are also accepted.
-             * @param {string|number} height The height in pixels.  Strings
-             *     expressing percentages of parent with (e.g. '80%') are also accepted.
-             * @param {?number=} opt_coordWidth The coordinate width - if
-             *     omitted or null, defaults to same as width.
-             * @param {?number=} opt_coordHeight The coordinate height. - if
-             *     omitted or null, defaults to same as height.
-             * @param {goog.dom.DomHelper=} opt_domHelper The DOM helper object for the
-             *     document we want to render in.
-             * @param {boolean=} opt_isSimple Flag used to indicate the graphics object will
-             *     be drawn to in a single pass, and the fastest implementation for this
-             *     scenario should be favored.  NOTE: Setting to true may result in
-             *     degradation of text support.
-             * @constructor
-             * @extends {goog.graphics.ext.Group}
-             * @final
-             */
-            constructor(width: number, height: string, opt_coordWidth?: number, opt_coordHeight?: number, opt_domHelper?: goog.dom.DomHelper, opt_isSimple?: boolean);
-            /**
-             * Wrapper for a graphics surface.
-             * @param {string|number} width The width in pixels.  Strings
-             *     expressing percentages of parent with (e.g. '80%') are also accepted.
-             * @param {string|number} height The height in pixels.  Strings
-             *     expressing percentages of parent with (e.g. '80%') are also accepted.
-             * @param {?number=} opt_coordWidth The coordinate width - if
-             *     omitted or null, defaults to same as width.
-             * @param {?number=} opt_coordHeight The coordinate height. - if
-             *     omitted or null, defaults to same as height.
-             * @param {goog.dom.DomHelper=} opt_domHelper The DOM helper object for the
-             *     document we want to render in.
-             * @param {boolean=} opt_isSimple Flag used to indicate the graphics object will
-             *     be drawn to in a single pass, and the fastest implementation for this
-             *     scenario should be favored.  NOTE: Setting to true may result in
-             *     degradation of text support.
-             * @constructor
-             * @extends {goog.graphics.ext.Group}
-             * @final
-             */
-            constructor(width: number, height: number, opt_coordWidth?: number, opt_coordHeight?: number, opt_domHelper?: goog.dom.DomHelper, opt_isSimple?: boolean);
+            constructor(width: string|number, height: string|number, opt_coordWidth?: number, opt_coordHeight?: number, opt_domHelper?: goog.dom.DomHelper, opt_isSimple?: boolean);
     
             /**
              * @return {goog.graphics.AbstractGraphics} The graphics implementation layer.

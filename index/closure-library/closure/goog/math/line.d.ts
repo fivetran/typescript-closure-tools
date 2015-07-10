@@ -86,20 +86,7 @@ declare module goog.math {
              * @return {!goog.math.Coordinate} The point on the line closest to the given
              *     point.
              */
-            getClosestPoint(x: number, opt_y?: number): goog.math.Coordinate;
-            /**
-             * Computes the point on the line closest to a given point.  Note that a line
-             * in this case is defined as the infinite line going through the start and end
-             * points.  To find the closest point on the line segment itself see
-             * {@see #getClosestSegmentPoint}.
-             * @param {number|goog.math.Coordinate} x The x coordinate of the point, or
-             *     a coordinate object.
-             * @param {number=} opt_y The y coordinate of the point - required if x is a
-             *     number, ignored if x is a goog.math.Coordinate.
-             * @return {!goog.math.Coordinate} The point on the line closest to the given
-             *     point.
-             */
-            getClosestPoint(x: goog.math.Coordinate, opt_y?: number): goog.math.Coordinate;
+            getClosestPoint(x: number|goog.math.Coordinate, opt_y?: number): goog.math.Coordinate;
     
             /**
              * Computes the point on the line segment closest to a given point.
@@ -110,17 +97,7 @@ declare module goog.math {
              * @return {!goog.math.Coordinate} The point on the line segment closest to the
              *     given point.
              */
-            getClosestSegmentPoint(x: number, opt_y?: number): goog.math.Coordinate;
-            /**
-             * Computes the point on the line segment closest to a given point.
-             * @param {number|goog.math.Coordinate} x The x coordinate of the point, or
-             *     a coordinate object.
-             * @param {number=} opt_y The y coordinate of the point - required if x is a
-             *     number, ignored if x is a goog.math.Coordinate.
-             * @return {!goog.math.Coordinate} The point on the line segment closest to the
-             *     given point.
-             */
-            getClosestSegmentPoint(x: goog.math.Coordinate, opt_y?: number): goog.math.Coordinate;
+            getClosestSegmentPoint(x: number|goog.math.Coordinate, opt_y?: number): goog.math.Coordinate;
     } 
     
 }

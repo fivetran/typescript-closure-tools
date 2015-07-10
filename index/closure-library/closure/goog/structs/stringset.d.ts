@@ -73,7 +73,7 @@ declare module goog.structs {
              * @param {Object=} opt_obj The object to be used as the value of 'this'
              *     within {@code f}.
              */
-            forEach(f: (_0: string, _1: any /*undefined*/, _2: goog.structs.StringSet) => any /*missing*/, opt_obj?: Object): void;
+            forEach(f: { (_0: string, _1: any /*undefined*/, _2: goog.structs.StringSet): any /*missing*/ }, opt_obj?: Object): void;
     
             /**
              * Counts the number of elements in the set in linear time.

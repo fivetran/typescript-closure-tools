@@ -23,23 +23,7 @@ declare module goog.ui {
              * @constructor
              * @extends {goog.events.EventTarget}
              */
-            constructor(keyTarget: goog.events.EventTarget);
-            /**
-             * Component for handling keyboard shortcuts. A shortcut is registered and bound
-             * to a specific identifier. Once the shortcut is triggered an event is fired
-             * with the identifier for the shortcut. This allows keyboard shortcuts to be
-             * customized without modifying the code that listens for them.
-             *
-             * Supports keyboard shortcuts triggered by a single key, a stroke stroke (key
-             * plus at least one modifier) and a sequence of keys or strokes.
-             *
-             * @param {goog.events.EventTarget|EventTarget} keyTarget Event target that the
-             *     key event listener is attached to, typically the applications root
-             *     container.
-             * @constructor
-             * @extends {goog.events.EventTarget}
-             */
-            constructor(keyTarget: EventTarget);
+            constructor(keyTarget: goog.events.EventTarget|EventTarget);
     
             /**
              * Sets whether to always prevent the default action when a shortcut event is
@@ -157,81 +141,7 @@ declare module goog.ui {
              *   Ctrl+g Shift+a  registerShortcut(str, 'ctrl+g shift+a')
              *   g a             registerShortcut(str, 'g a').
              */
-            registerShortcut(identifier: string, ...var_args: number[]): void;
-            /**
-             * Registers a keyboard shortcut.
-             * @param {string} identifier Identifier for the task performed by the keyboard
-             *                 combination. Multiple shortcuts can be provided for the same
-             *                 task by specifying the same identifier.
-             * @param {...(number|string|Array.<number>)} var_args See below.
-             *
-             * param {number} keyCode Numeric code for key
-             * param {number=} opt_modifiers Bitmap indicating required modifier keys.
-             *                goog.ui.KeyboardShortcutHandler.Modifiers.SHIFT, CONTROL,
-             *                ALT, or META.
-             *
-             * The last two parameters can be repeated any number of times to create a
-             * shortcut using a sequence of strokes. Instead of varagrs the second parameter
-             * could also be an array where each element would be ragarded as a parameter.
-             *
-             * A string representation of the shortcut can be supplied instead of the last
-             * two parameters. In that case the method only takes two arguments, the
-             * identifier and the string.
-             *
-             * Examples:
-             *   g               registerShortcut(str, G_KEYCODE)
-             *   Ctrl+g          registerShortcut(str, G_KEYCODE, CTRL)
-             *   Ctrl+Shift+g    registerShortcut(str, G_KEYCODE, CTRL | SHIFT)
-             *   Ctrl+g a        registerShortcut(str, G_KEYCODE, CTRL, A_KEYCODE)
-             *   Ctrl+g Shift+a  registerShortcut(str, G_KEYCODE, CTRL, A_KEYCODE, SHIFT)
-             *   g a             registerShortcut(str, G_KEYCODE, NONE, A_KEYCODE)
-             *
-             * Examples using string representation for shortcuts:
-             *   g               registerShortcut(str, 'g')
-             *   Ctrl+g          registerShortcut(str, 'ctrl+g')
-             *   Ctrl+Shift+g    registerShortcut(str, 'ctrl+shift+g')
-             *   Ctrl+g a        registerShortcut(str, 'ctrl+g a')
-             *   Ctrl+g Shift+a  registerShortcut(str, 'ctrl+g shift+a')
-             *   g a             registerShortcut(str, 'g a').
-             */
-            registerShortcut(identifier: string, ...var_args: string[]): void;
-            /**
-             * Registers a keyboard shortcut.
-             * @param {string} identifier Identifier for the task performed by the keyboard
-             *                 combination. Multiple shortcuts can be provided for the same
-             *                 task by specifying the same identifier.
-             * @param {...(number|string|Array.<number>)} var_args See below.
-             *
-             * param {number} keyCode Numeric code for key
-             * param {number=} opt_modifiers Bitmap indicating required modifier keys.
-             *                goog.ui.KeyboardShortcutHandler.Modifiers.SHIFT, CONTROL,
-             *                ALT, or META.
-             *
-             * The last two parameters can be repeated any number of times to create a
-             * shortcut using a sequence of strokes. Instead of varagrs the second parameter
-             * could also be an array where each element would be ragarded as a parameter.
-             *
-             * A string representation of the shortcut can be supplied instead of the last
-             * two parameters. In that case the method only takes two arguments, the
-             * identifier and the string.
-             *
-             * Examples:
-             *   g               registerShortcut(str, G_KEYCODE)
-             *   Ctrl+g          registerShortcut(str, G_KEYCODE, CTRL)
-             *   Ctrl+Shift+g    registerShortcut(str, G_KEYCODE, CTRL | SHIFT)
-             *   Ctrl+g a        registerShortcut(str, G_KEYCODE, CTRL, A_KEYCODE)
-             *   Ctrl+g Shift+a  registerShortcut(str, G_KEYCODE, CTRL, A_KEYCODE, SHIFT)
-             *   g a             registerShortcut(str, G_KEYCODE, NONE, A_KEYCODE)
-             *
-             * Examples using string representation for shortcuts:
-             *   g               registerShortcut(str, 'g')
-             *   Ctrl+g          registerShortcut(str, 'ctrl+g')
-             *   Ctrl+Shift+g    registerShortcut(str, 'ctrl+shift+g')
-             *   Ctrl+g a        registerShortcut(str, 'ctrl+g a')
-             *   Ctrl+g Shift+a  registerShortcut(str, 'ctrl+g shift+a')
-             *   g a             registerShortcut(str, 'g a').
-             */
-            registerShortcut(identifier: string, ...var_args: number[][]): void;
+            registerShortcut(identifier: string, ...var_args: number|string|number[][]): void;
     
             /**
              * Unregisters a keyboard shortcut by keyCode and modifiers or string
@@ -252,47 +162,7 @@ declare module goog.ui {
              * @param {...(number|string|Array.<number>)} var_args String representation, or
              *     array or list of alternating key codes and modifiers.
              */
-            unregisterShortcut(...var_args: number[]): void;
-            /**
-             * Unregisters a keyboard shortcut by keyCode and modifiers or string
-             * representation of sequence.
-             *
-             * param {number} keyCode Numeric code for key
-             * param {number=} opt_modifiers Bitmap indicating required modifier keys.
-             *                 goog.ui.KeyboardShortcutHandler.Modifiers.SHIFT, CONTROL,
-             *                 ALT, or META.
-             *
-             * The two parameters can be repeated any number of times to create a shortcut
-             * using a sequence of strokes.
-             *
-             * A string representation of the shortcut can be supplied instead see
-             * {@link #registerShortcut} for syntax. In that case the method only takes one
-             * argument.
-             *
-             * @param {...(number|string|Array.<number>)} var_args String representation, or
-             *     array or list of alternating key codes and modifiers.
-             */
-            unregisterShortcut(...var_args: string[]): void;
-            /**
-             * Unregisters a keyboard shortcut by keyCode and modifiers or string
-             * representation of sequence.
-             *
-             * param {number} keyCode Numeric code for key
-             * param {number=} opt_modifiers Bitmap indicating required modifier keys.
-             *                 goog.ui.KeyboardShortcutHandler.Modifiers.SHIFT, CONTROL,
-             *                 ALT, or META.
-             *
-             * The two parameters can be repeated any number of times to create a shortcut
-             * using a sequence of strokes.
-             *
-             * A string representation of the shortcut can be supplied instead see
-             * {@link #registerShortcut} for syntax. In that case the method only takes one
-             * argument.
-             *
-             * @param {...(number|string|Array.<number>)} var_args String representation, or
-             *     array or list of alternating key codes and modifiers.
-             */
-            unregisterShortcut(...var_args: number[][]): void;
+            unregisterShortcut(...var_args: number|string|number[][]): void;
     
             /**
              * Verifies if a particular keyboard shortcut is registered already. It has
@@ -314,49 +184,7 @@ declare module goog.ui {
              *     array or list of alternating key codes and modifiers.
              * @return {boolean} Whether the specified keyboard shortcut is registered.
              */
-            isShortcutRegistered(...var_args: number[]): boolean;
-            /**
-             * Verifies if a particular keyboard shortcut is registered already. It has
-             * the same interface as the unregistering of shortcuts.
-             *
-             * param {number} keyCode Numeric code for key
-             * param {number=} opt_modifiers Bitmap indicating required modifier keys.
-             *                 goog.ui.KeyboardShortcutHandler.Modifiers.SHIFT, CONTROL,
-             *                 ALT, or META.
-             *
-             * The two parameters can be repeated any number of times to create a shortcut
-             * using a sequence of strokes.
-             *
-             * A string representation of the shortcut can be supplied instead see
-             * {@link #registerShortcut} for syntax. In that case the method only takes one
-             * argument.
-             *
-             * @param {...(number|string|Array.<number>)} var_args String representation, or
-             *     array or list of alternating key codes and modifiers.
-             * @return {boolean} Whether the specified keyboard shortcut is registered.
-             */
-            isShortcutRegistered(...var_args: string[]): boolean;
-            /**
-             * Verifies if a particular keyboard shortcut is registered already. It has
-             * the same interface as the unregistering of shortcuts.
-             *
-             * param {number} keyCode Numeric code for key
-             * param {number=} opt_modifiers Bitmap indicating required modifier keys.
-             *                 goog.ui.KeyboardShortcutHandler.Modifiers.SHIFT, CONTROL,
-             *                 ALT, or META.
-             *
-             * The two parameters can be repeated any number of times to create a shortcut
-             * using a sequence of strokes.
-             *
-             * A string representation of the shortcut can be supplied instead see
-             * {@link #registerShortcut} for syntax. In that case the method only takes one
-             * argument.
-             *
-             * @param {...(number|string|Array.<number>)} var_args String representation, or
-             *     array or list of alternating key codes and modifiers.
-             * @return {boolean} Whether the specified keyboard shortcut is registered.
-             */
-            isShortcutRegistered(...var_args: number[][]): boolean;
+            isShortcutRegistered(...var_args: number|string|number[][]): boolean;
     
             /**
              * Unregisters all keyboard shortcuts.
@@ -390,15 +218,7 @@ declare module goog.ui {
              *     event listener should be attached to.
              * @protected
              */
-            initializeKeyListener(keyTarget: goog.events.EventTarget): void;
-            /**
-             * Adds a key event listener that triggers {@link #handleKeyDown_} when keys
-             * are pressed.
-             * @param {goog.events.EventTarget|EventTarget} keyTarget Event target that the
-             *     event listener should be attached to.
-             * @protected
-             */
-            initializeKeyListener(keyTarget: EventTarget): void;
+            initializeKeyListener(keyTarget: goog.events.EventTarget|EventTarget): void;
     
             /**
              * Removes the listener that was added by link {@link #initializeKeyListener}.
@@ -422,18 +242,7 @@ declare module goog.ui {
              * @constructor
              * @final
              */
-            constructor(type: string, identifier: string, target: Node);
-            /**
-             * Object representing a keyboard shortcut event.
-             * @param {string} type Event type.
-             * @param {string} identifier Task identifier for the triggered shortcut.
-             * @param {Node|goog.events.EventTarget} target Target the original key press
-             *     event originated from.
-             * @extends {goog.events.Event}
-             * @constructor
-             * @final
-             */
-            constructor(type: string, identifier: string, target: goog.events.EventTarget);
+            constructor(type: string, identifier: string, target: Node|goog.events.EventTarget);
     
             /**
              * Task identifier for the triggered shortcut

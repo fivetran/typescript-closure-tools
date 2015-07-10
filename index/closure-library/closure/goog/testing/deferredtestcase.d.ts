@@ -22,14 +22,7 @@ declare module goog.testing {
              * @protected
              * @throws Always throws a ControlBreakingException.
              */
-            onError(err: Error): void;
-            /**
-             * Handler for when the test produces an error.
-             * @param {Error|string} err The error object.
-             * @protected
-             * @throws Always throws a ControlBreakingException.
-             */
-            onError(err: string): void;
+            onError(err: Error|string): void;
     
             /**
              * Handler for when the test succeeds.
@@ -54,15 +47,7 @@ declare module goog.testing {
              *     deferred object to wait for.
              * @param {goog.async.Deferred=} opt_b The deferred object to wait for.
              */
-            waitForDeferred(a: string, opt_b?: goog.async.Deferred<any>): void;
-            /**
-             * Wires up given Deferred object to the test case, then starts the
-             * goog.async.Deferred object's callback.
-             * @param {!string|goog.async.Deferred} a The wait status message or the
-             *     deferred object to wait for.
-             * @param {goog.async.Deferred=} opt_b The deferred object to wait for.
-             */
-            waitForDeferred(a: goog.async.Deferred<any>, opt_b?: goog.async.Deferred<any>): void;
+            waitForDeferred(a: string|goog.async.Deferred<any>, opt_b?: goog.async.Deferred<any>): void;
     } 
     
 }

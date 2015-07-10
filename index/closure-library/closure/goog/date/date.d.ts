@@ -1,4 +1,5 @@
 /// <reference path="../../../globals.d.ts" />
+/// <reference path="./datelike.d.ts" />
 
 declare module goog.date {
 
@@ -24,26 +25,7 @@ declare module goog.date {
              * @constructor
              * @final
              */
-            constructor(opt_years?: number, opt_months?: number, opt_days?: number, opt_hours?: number, opt_minutes?: number, opt_seconds?: number);
-            /**
-             * Class representing a date/time interval. Used for date calculations.
-             * <pre>
-             * new goog.date.Interval(0, 1) // One month
-             * new goog.date.Interval(0, 0, 3, 1) // Three days and one hour
-             * new goog.date.Interval(goog.date.Interval.DAYS, 1) // One day
-             * </pre>
-             *
-             * @param {number|string=} opt_years Years or string representing date part.
-             * @param {number=} opt_months Months or number of whatever date part specified
-             *     by first parameter.
-             * @param {number=} opt_days Days.
-             * @param {number=} opt_hours Hours.
-             * @param {number=} opt_minutes Minutes.
-             * @param {number=} opt_seconds Seconds.
-             * @constructor
-             * @final
-             */
-            constructor(opt_years?: string, opt_months?: number, opt_days?: number, opt_hours?: number, opt_minutes?: number, opt_seconds?: number);
+            constructor(opt_years?: number|string, opt_months?: number, opt_days?: number, opt_hours?: number, opt_minutes?: number, opt_seconds?: number);
     
             /**
              * Serializes goog.date.Interval into XML Schema duration (ISO 8601 extended).
@@ -128,29 +110,7 @@ declare module goog.date {
              * @constructor
              * @see goog.date.DateTime
              */
-            constructor(opt_year?: number, opt_month?: number, opt_date?: number);
-            /**
-             * Class representing a date. Defaults to current date if none is specified.
-             *
-             * Implements most methods of the native js Date object (except the time related
-             * ones, {@see goog.date.DateTime}) and can be used interchangeably with it just
-             * as if goog.date.Date was a synonym of Date. To make this more transparent,
-             * Closure APIs should accept goog.date.DateLike instead of the real Date
-             * object.
-             *
-             * To allow goog.date.Date objects to be passed as arguments to methods
-             * expecting Date objects this class is marked as extending the built in Date
-             * object even though that's not strictly true.
-             *
-             * @param {number|Object=} opt_year Four digit year or a date-like object. If
-             *     not set, the created object will contain the date determined by
-             *     goog.now().
-             * @param {number=} opt_month Month, 0 = Jan, 11 = Dec.
-             * @param {number=} opt_date Date of month, 1 - 31.
-             * @constructor
-             * @see goog.date.DateTime
-             */
-            constructor(opt_year?: Object, opt_month?: number, opt_date?: number);
+            constructor(opt_year?: number|Object, opt_month?: number, opt_date?: number);
     
             /** @protected {!Date} The wrapped date or datetime. */
             date: any /*missing*/;
@@ -438,27 +398,7 @@ declare module goog.date {
              * @constructor
              * @extends {goog.date.Date}
              */
-            constructor(opt_year?: number, opt_month?: number, opt_date?: number, opt_hours?: number, opt_minutes?: number, opt_seconds?: number, opt_milliseconds?: number);
-            /**
-             * Class representing a date and time. Defaults to current date and time if none
-             * is specified.
-             *
-             * Implements most methods of the native js Date object and can be used
-             * interchangeably with it just as if goog.date.DateTime was a subclass of Date.
-             *
-             * @param {number|Object=} opt_year Four digit year or a date-like object. If
-             *     not set, the created object will contain the date determined by
-             *     goog.now().
-             * @param {number=} opt_month Month, 0 = Jan, 11 = Dec.
-             * @param {number=} opt_date Date of month, 1 - 31.
-             * @param {number=} opt_hours Hours, 0 - 24.
-             * @param {number=} opt_minutes Minutes, 0 - 59.
-             * @param {number=} opt_seconds Seconds, 0 - 61.
-             * @param {number=} opt_milliseconds Milliseconds, 0 - 999.
-             * @constructor
-             * @extends {goog.date.Date}
-             */
-            constructor(opt_year?: Object, opt_month?: number, opt_date?: number, opt_hours?: number, opt_minutes?: number, opt_seconds?: number, opt_milliseconds?: number);
+            constructor(opt_year?: number|Object, opt_month?: number, opt_date?: number, opt_hours?: number, opt_minutes?: number, opt_seconds?: number, opt_milliseconds?: number);
     
             /**
              * Returns the hours part of the datetime.
@@ -651,28 +591,7 @@ declare module goog.date {
      * @param {goog.date.DateLike=} opt_now The current time.
      * @return {boolean} Whether the dates are on the same day.
      */
-    function isSameDay(date: Date, opt_now?: Date): boolean;
-    /**
-     * Returns true if the 2 dates are in the same day.
-     * @param {goog.date.DateLike} date The time to check.
-     * @param {goog.date.DateLike=} opt_now The current time.
-     * @return {boolean} Whether the dates are on the same day.
-     */
-    function isSameDay(date: Date, opt_now?: goog.date.Date): boolean;
-    /**
-     * Returns true if the 2 dates are in the same day.
-     * @param {goog.date.DateLike} date The time to check.
-     * @param {goog.date.DateLike=} opt_now The current time.
-     * @return {boolean} Whether the dates are on the same day.
-     */
-    function isSameDay(date: goog.date.Date, opt_now?: Date): boolean;
-    /**
-     * Returns true if the 2 dates are in the same day.
-     * @param {goog.date.DateLike} date The time to check.
-     * @param {goog.date.DateLike=} opt_now The current time.
-     * @return {boolean} Whether the dates are on the same day.
-     */
-    function isSameDay(date: goog.date.Date, opt_now?: goog.date.Date): boolean;
+    function isSameDay(date: goog.date.DateLike, opt_now?: goog.date.DateLike): boolean;
 
     /**
      * Returns true if the 2 dates are in the same month.
@@ -680,28 +599,7 @@ declare module goog.date {
      * @param {goog.date.DateLike=} opt_now The current time.
      * @return {boolean} Whether the dates are in the same calendar month.
      */
-    function isSameMonth(date: Date, opt_now?: Date): boolean;
-    /**
-     * Returns true if the 2 dates are in the same month.
-     * @param {goog.date.DateLike} date The time to check.
-     * @param {goog.date.DateLike=} opt_now The current time.
-     * @return {boolean} Whether the dates are in the same calendar month.
-     */
-    function isSameMonth(date: Date, opt_now?: goog.date.Date): boolean;
-    /**
-     * Returns true if the 2 dates are in the same month.
-     * @param {goog.date.DateLike} date The time to check.
-     * @param {goog.date.DateLike=} opt_now The current time.
-     * @return {boolean} Whether the dates are in the same calendar month.
-     */
-    function isSameMonth(date: goog.date.Date, opt_now?: Date): boolean;
-    /**
-     * Returns true if the 2 dates are in the same month.
-     * @param {goog.date.DateLike} date The time to check.
-     * @param {goog.date.DateLike=} opt_now The current time.
-     * @return {boolean} Whether the dates are in the same calendar month.
-     */
-    function isSameMonth(date: goog.date.Date, opt_now?: goog.date.Date): boolean;
+    function isSameMonth(date: goog.date.DateLike, opt_now?: goog.date.DateLike): boolean;
 
     /**
      * Returns true if the 2 dates are in the same year.
@@ -709,28 +607,7 @@ declare module goog.date {
      * @param {goog.date.DateLike=} opt_now The current time.
      * @return {boolean} Whether the dates are in the same calendar year.
      */
-    function isSameYear(date: Date, opt_now?: Date): boolean;
-    /**
-     * Returns true if the 2 dates are in the same year.
-     * @param {goog.date.DateLike} date The time to check.
-     * @param {goog.date.DateLike=} opt_now The current time.
-     * @return {boolean} Whether the dates are in the same calendar year.
-     */
-    function isSameYear(date: Date, opt_now?: goog.date.Date): boolean;
-    /**
-     * Returns true if the 2 dates are in the same year.
-     * @param {goog.date.DateLike} date The time to check.
-     * @param {goog.date.DateLike=} opt_now The current time.
-     * @return {boolean} Whether the dates are in the same calendar year.
-     */
-    function isSameYear(date: goog.date.Date, opt_now?: Date): boolean;
-    /**
-     * Returns true if the 2 dates are in the same year.
-     * @param {goog.date.DateLike} date The time to check.
-     * @param {goog.date.DateLike=} opt_now The current time.
-     * @return {boolean} Whether the dates are in the same calendar year.
-     */
-    function isSameYear(date: goog.date.Date, opt_now?: goog.date.Date): boolean;
+    function isSameYear(date: goog.date.DateLike, opt_now?: goog.date.DateLike): boolean;
 
     /**
      * Static function for week number calculation. ISO 8601 implementation.
@@ -752,7 +629,7 @@ declare module goog.date {
      * @return {!(T|S)} The earlier of them in time.
      * @template T,S
      */
-    function min<T,S>(date1: T, date2: S): any /*T|S*/;
+    function min<T,S>(date1: T, date2: S): T|S;
 
     /**
      * @param {!T} date1 A datelike object.
@@ -760,7 +637,7 @@ declare module goog.date {
      * @return {!(T|S)} The later of them in time.
      * @template T,S
      */
-    function max<T,S>(date1: T, date2: S): any /*T|S*/;
+    function max<T,S>(date1: T, date2: S): T|S;
 
     /**
      * Creates a DateTime from a datetime string expressed in ISO 8601 format.
@@ -841,34 +718,7 @@ declare module goog.date.Date {
      * @return {number} Comparison result. 0 if dates are the same, less than 0 if
      *     date1 is earlier than date2, greater than 0 if date1 is later than date2.
      */
-    function compare(date1: Date, date2: Date): number;
-    /**
-     * Compares two dates.  May be used as a sorting function.
-     * @see goog.array.sort
-     * @param {!goog.date.DateLike} date1 Date to compare.
-     * @param {!goog.date.DateLike} date2 Date to compare.
-     * @return {number} Comparison result. 0 if dates are the same, less than 0 if
-     *     date1 is earlier than date2, greater than 0 if date1 is later than date2.
-     */
-    function compare(date1: Date, date2: goog.date.Date): number;
-    /**
-     * Compares two dates.  May be used as a sorting function.
-     * @see goog.array.sort
-     * @param {!goog.date.DateLike} date1 Date to compare.
-     * @param {!goog.date.DateLike} date2 Date to compare.
-     * @return {number} Comparison result. 0 if dates are the same, less than 0 if
-     *     date1 is earlier than date2, greater than 0 if date1 is later than date2.
-     */
-    function compare(date1: goog.date.Date, date2: Date): number;
-    /**
-     * Compares two dates.  May be used as a sorting function.
-     * @see goog.array.sort
-     * @param {!goog.date.DateLike} date1 Date to compare.
-     * @param {!goog.date.DateLike} date2 Date to compare.
-     * @return {number} Comparison result. 0 if dates are the same, less than 0 if
-     *     date1 is earlier than date2, greater than 0 if date1 is later than date2.
-     */
-    function compare(date1: goog.date.Date, date2: goog.date.Date): number;
+    function compare(date1: goog.date.DateLike, date2: goog.date.DateLike): number;
 }
 
 declare module goog.date.DateTime {

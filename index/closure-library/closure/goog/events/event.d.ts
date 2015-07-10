@@ -17,18 +17,7 @@ declare module goog.events {
              *     declared at {@link http://developer.mozilla.org/en/DOM/EventTarget}.
              * @constructor
              */
-            constructor(type: string, opt_target?: Object);
-            /**
-             * A base class for event objects, so that they can support preventDefault and
-             * stopPropagation.
-             *
-             * @param {string|!goog.events.EventId} type Event Type.
-             * @param {Object=} opt_target Reference to the object that is the target of
-             *     this event. It has to implement the {@code EventTarget} interface
-             *     declared at {@link http://developer.mozilla.org/en/DOM/EventTarget}.
-             * @constructor
-             */
-            constructor(type: goog.events.EventId<any>, opt_target?: Object);
+            constructor(type: string|goog.events.EventId<any>, opt_target?: Object);
     
             /**
              * Event type.
@@ -40,13 +29,13 @@ declare module goog.events {
              * Target of the event.
              * @type {Object|undefined}
              */
-            target: any /*Object|any (undefined)*/;
+            target: Object|any /*undefined*/;
     
             /**
              * Object that had the listener attached.
              * @type {Object|undefined}
              */
-            currentTarget: any /*Object|any (undefined)*/;
+            currentTarget: Object|any /*undefined*/;
     
             /**
              * Whether to cancel the event in internal capture/bubble processing for IE.
@@ -110,7 +99,7 @@ declare module goog.events {
      * of the Event.
      * @typedef {string|Object|goog.events.Event|goog.events.EventId}
      */
-    interface EventLike { /*any (string|Object|goog.events.Event|goog.events.EventId<any>)*/ }
+    type EventLike = string|Object|goog.events.Event|goog.events.EventId<any>;
 }
 
 declare module goog.events.Event {

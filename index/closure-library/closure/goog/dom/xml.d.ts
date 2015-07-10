@@ -34,13 +34,7 @@ declare module goog.dom.xml {
      * @param {Document|Element} xml The document or the root node of the subtree.
      * @return {string} The serialized XML.
      */
-    function serialize(xml: Document): string;
-    /**
-     * Serializes an XML document or subtree to string.
-     * @param {Document|Element} xml The document or the root node of the subtree.
-     * @return {string} The serialized XML.
-     */
-    function serialize(xml: Element): string;
+    function serialize(xml: Document|Element): string;
 
     /**
      * Selects a single node using an Xpath expression and a root node

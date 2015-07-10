@@ -26,7 +26,7 @@ declare module goog.pubsub {
              * @return {number} Subscription key.
              * @template PAYLOAD, CONTEXT
              */
-            subscribe<PAYLOAD, CONTEXT>(topic: goog.pubsub.TopicId<PAYLOAD>, fn: (_0: PAYLOAD) => any /*missing*/, opt_context?: CONTEXT): number;
+            subscribe<PAYLOAD, CONTEXT>(topic: goog.pubsub.TopicId<PAYLOAD>, fn: { (_0: PAYLOAD): any /*missing*/ }, opt_context?: CONTEXT): number;
     
             /**
              * See {@code goog.pubsub.PubSub.subscribeOnce}.
@@ -38,7 +38,7 @@ declare module goog.pubsub {
              * @return {number} Subscription key.
              * @template PAYLOAD, CONTEXT
              */
-            subscribeOnce<PAYLOAD, CONTEXT>(topic: goog.pubsub.TopicId<PAYLOAD>, fn: (_0: PAYLOAD) => any /*missing*/, opt_context?: CONTEXT): number;
+            subscribeOnce<PAYLOAD, CONTEXT>(topic: goog.pubsub.TopicId<PAYLOAD>, fn: { (_0: PAYLOAD): any /*missing*/ }, opt_context?: CONTEXT): number;
     
             /**
              * See {@code goog.pubsub.PubSub.unsubscribe}.
@@ -49,7 +49,7 @@ declare module goog.pubsub {
              * @return {boolean} Whether a matching subscription was removed.
              * @template PAYLOAD, CONTEXT
              */
-            unsubscribe<PAYLOAD, CONTEXT>(topic: goog.pubsub.TopicId<PAYLOAD>, fn: (_0: PAYLOAD) => any /*missing*/, opt_context?: CONTEXT): boolean;
+            unsubscribe<PAYLOAD, CONTEXT>(topic: goog.pubsub.TopicId<PAYLOAD>, fn: { (_0: PAYLOAD): any /*missing*/ }, opt_context?: CONTEXT): boolean;
     
             /**
              * See {@code goog.pubsub.PubSub.unsubscribeByKey}.

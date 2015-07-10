@@ -21,20 +21,7 @@ declare module goog.ui {
              * @constructor
              * @extends {goog.ui.Tooltip}
              */
-            constructor(opt_el?: Element, opt_str?: string, opt_domHelper?: goog.dom.DomHelper);
-            /**
-             * Advanced tooltip widget with cursor tracking abilities. Works like a regular
-             * tooltip but can track the cursor position and direction to determine if the
-             * tooltip should be dismissed or remain open.
-             *
-             * @param {Element|string=} opt_el Element to display tooltip for, either
-             *     element reference or string id.
-             * @param {?string=} opt_str Text message to display in tooltip.
-             * @param {goog.dom.DomHelper=} opt_domHelper Optional DOM helper.
-             * @constructor
-             * @extends {goog.ui.Tooltip}
-             */
-            constructor(opt_el?: string, opt_str?: string, opt_domHelper?: goog.dom.DomHelper);
+            constructor(opt_el?: Element|string, opt_str?: string, opt_domHelper?: goog.dom.DomHelper);
     
             /**
              * Sets margin around the tooltip where the cursor is allowed without dismissing

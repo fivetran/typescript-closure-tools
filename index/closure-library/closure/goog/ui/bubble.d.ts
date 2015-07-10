@@ -24,21 +24,7 @@ declare module goog.ui {
              * @constructor
              * @extends {goog.ui.Component}
              */
-            constructor(message: string, opt_config?: Object, opt_domHelper?: goog.dom.DomHelper);
-            /**
-             * The Bubble provides a general purpose bubble implementation that can be
-             * anchored to a particular element and displayed for a period of time.
-             *
-             * @param {string|Element} message HTML string or an element to display inside
-             *     the bubble.
-             * @param {Object=} opt_config The configuration
-             *     for the bubble. If not specified, the default configuration will be
-             *     used. {@see goog.ui.Bubble.defaultConfig}.
-             * @param {goog.dom.DomHelper=} opt_domHelper Optional DOM helper.
-             * @constructor
-             * @extends {goog.ui.Component}
-             */
-            constructor(message: Element, opt_config?: Object, opt_domHelper?: goog.dom.DomHelper);
+            constructor(message: string|Element, opt_config?: Object, opt_domHelper?: goog.dom.DomHelper);
     
             /**
              * Attaches the bubble to an anchor element. Computes the positioning and

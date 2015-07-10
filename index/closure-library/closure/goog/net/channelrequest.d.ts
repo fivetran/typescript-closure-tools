@@ -1,7 +1,7 @@
 /// <reference path="../../../globals.d.ts" />
 /// <reference path="./browserchannel.d.ts" />
-/// <reference path="./channeldebug.d.ts" />
 /// <reference path="./browsertestchannel.d.ts" />
+/// <reference path="./channeldebug.d.ts" />
 /// <reference path="../uri/uri.d.ts" />
 
 declare module goog.net {
@@ -23,49 +23,7 @@ declare module goog.net {
              * @param {number=} opt_retryId  The retry id for this request.
              * @constructor
              */
-            constructor(channel: goog.net.BrowserChannel, channelDebug: goog.net.ChannelDebug, opt_sessionId?: string, opt_requestId?: string, opt_retryId?: number);
-            /**
-             * Creates a ChannelRequest object which encapsulates a request to the server.
-             * A new ChannelRequest is created for each request to the server.
-             *
-             * @param {goog.net.BrowserChannel|goog.net.BrowserTestChannel} channel
-             *     The BrowserChannel that owns this request.
-             * @param {goog.net.ChannelDebug} channelDebug A ChannelDebug to use for
-             *     logging.
-             * @param {string=} opt_sessionId  The session id for the channel.
-             * @param {string|number=} opt_requestId  The request id for this request.
-             * @param {number=} opt_retryId  The retry id for this request.
-             * @constructor
-             */
-            constructor(channel: goog.net.BrowserChannel, channelDebug: goog.net.ChannelDebug, opt_sessionId?: string, opt_requestId?: number, opt_retryId?: number);
-            /**
-             * Creates a ChannelRequest object which encapsulates a request to the server.
-             * A new ChannelRequest is created for each request to the server.
-             *
-             * @param {goog.net.BrowserChannel|goog.net.BrowserTestChannel} channel
-             *     The BrowserChannel that owns this request.
-             * @param {goog.net.ChannelDebug} channelDebug A ChannelDebug to use for
-             *     logging.
-             * @param {string=} opt_sessionId  The session id for the channel.
-             * @param {string|number=} opt_requestId  The request id for this request.
-             * @param {number=} opt_retryId  The retry id for this request.
-             * @constructor
-             */
-            constructor(channel: goog.net.BrowserTestChannel, channelDebug: goog.net.ChannelDebug, opt_sessionId?: string, opt_requestId?: string, opt_retryId?: number);
-            /**
-             * Creates a ChannelRequest object which encapsulates a request to the server.
-             * A new ChannelRequest is created for each request to the server.
-             *
-             * @param {goog.net.BrowserChannel|goog.net.BrowserTestChannel} channel
-             *     The BrowserChannel that owns this request.
-             * @param {goog.net.ChannelDebug} channelDebug A ChannelDebug to use for
-             *     logging.
-             * @param {string=} opt_sessionId  The session id for the channel.
-             * @param {string|number=} opt_requestId  The request id for this request.
-             * @param {number=} opt_retryId  The retry id for this request.
-             * @constructor
-             */
-            constructor(channel: goog.net.BrowserTestChannel, channelDebug: goog.net.ChannelDebug, opt_sessionId?: string, opt_requestId?: number, opt_retryId?: number);
+            constructor(channel: goog.net.BrowserChannel|goog.net.BrowserTestChannel, channelDebug: goog.net.ChannelDebug, opt_sessionId?: string, opt_requestId?: string|number, opt_retryId?: number);
     
             /**
              * Sets extra HTTP headers to add to all the requests sent to the server.
@@ -161,7 +119,7 @@ declare module goog.net {
              *
              * @return {string|undefined} The session ID.
              */
-            getSessionId(): any /*string|any (undefined)*/;
+            getSessionId(): string|any /*undefined*/;
     
             /**
              * Returns the request id for this request. Each request has a unique request
@@ -169,7 +127,7 @@ declare module goog.net {
              *
              * @return {string|number|undefined} The request ID.
              */
-            getRequestId(): any /*string|number|any (undefined)*/;
+            getRequestId(): string|number|any /*undefined*/;
     
             /**
              * Returns the data for a post, if this request is a post.

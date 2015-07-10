@@ -29,13 +29,7 @@ declare module goog.testing.messaging {
              * @param {string} serviceName The service to run.
              * @param {string|!Object} payload The argument to pass to the service.
              */
-            receive(serviceName: string, payload: string): void;
-            /**
-             * Mocks the receipt of a message. Passes the payload the appropriate service.
-             * @param {string} serviceName The service to run.
-             * @param {string|!Object} payload The argument to pass to the service.
-             */
-            receive(serviceName: string, payload: Object): void;
+            receive(serviceName: string, payload: string|Object): void;
     } 
     
 }

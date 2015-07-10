@@ -156,19 +156,7 @@ declare module goog.editor {
              *    defaults to false).
              * @param {Object=} opt_handler Object in whose scope to call the listener.
              */
-            addListener(type: string, listener: Function, opt_capture?: boolean, opt_handler?: Object): void;
-            /**
-             * Registers a keyboard event listener on the field.  This is necessary for
-             * Gecko since the fields are contained in an iFrame and there is no way to
-             * auto-propagate key events up to the main window.
-             * @param {string|Array.<string>} type Event type to listen for or array of
-             *    event types, for example goog.events.EventType.KEYDOWN.
-             * @param {Function} listener Function to be used as the listener.
-             * @param {boolean=} opt_capture Whether to use capture phase (optional,
-             *    defaults to false).
-             * @param {Object=} opt_handler Object in whose scope to call the listener.
-             */
-            addListener(type: string[], listener: Function, opt_capture?: boolean, opt_handler?: Object): void;
+            addListener(type: string|string[], listener: Function, opt_capture?: boolean, opt_handler?: Object): void;
     
             /**
              * Returns the registered plugin with the given classId.
@@ -331,15 +319,7 @@ declare module goog.editor {
              *     if designMode is off or the field is otherwise uneditable, and
              *     there are no activeOnUneditable plugins for the command.
              */
-            queryCommandValue(commands: string): any;
-            /**
-             * Gets the value of command(s).
-             * @param {string|Array.<string>} commands String name(s) of the command.
-             * @return {*} Value of each command. Returns false (or array of falses)
-             *     if designMode is off or the field is otherwise uneditable, and
-             *     there are no activeOnUneditable plugins for the command.
-             */
-            queryCommandValue(commands: string[]): any;
+            queryCommandValue(commands: string|string[]): any;
     
             /**
              * Fires a change event only if the attribute change effects the editiable
@@ -451,7 +431,7 @@ declare module goog.editor {
              *      delayed change.
              * @param {Object=} opt_handler Object in whose scope to call the listener.
              */
-            manipulateDom(func: () => any /*missing*/, opt_preventDelayedChange?: boolean, opt_handler?: Object): void;
+            manipulateDom(func: { (): any /*missing*/ }, opt_preventDelayedChange?: boolean, opt_handler?: Object): void;
     
             /**
              * Dispatches a command value change event.

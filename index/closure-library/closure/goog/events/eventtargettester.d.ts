@@ -44,7 +44,7 @@ declare module goog.events.eventTargetTester {
      * @param {boolean} objectListenerSupported Whether listener of type
      *     Object is supported.
      */
-    function setUp(listenableFactoryFn: () => goog.events.Listenable, listenFn: Function, unlistenFn: Function, unlistenByKeyFn: Function, listenOnceFn: Function, dispatchEventFn: Function, removeAllFn: Function, getListenersFn: Function, getListenerFn: Function, hasListenerFn: Function, listenKeyType: goog.events.eventTargetTester.KeyType, unlistenFnReturnType: goog.events.eventTargetTester.UnlistenReturnType, objectListenerSupported: boolean): void;
+    function setUp(listenableFactoryFn: { (): goog.events.Listenable }, listenFn: Function, unlistenFn: Function, unlistenByKeyFn: Function, listenOnceFn: Function, dispatchEventFn: Function, removeAllFn: Function, getListenersFn: Function, getListenerFn: Function, hasListenerFn: Function, listenKeyType: goog.events.eventTargetTester.KeyType, unlistenFnReturnType: goog.events.eventTargetTester.UnlistenReturnType, objectListenerSupported: boolean): void;
 
     /**
      * Teardown step for the test functions. This needs to be called from

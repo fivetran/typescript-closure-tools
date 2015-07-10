@@ -143,22 +143,7 @@ declare module goog.userAgent {
      * @return {boolean} Whether the user agent version is higher or the same as
      *     the given version.
      */
-    function isVersionOrHigher(version: string): boolean;
-    /**
-     * Whether the user agent version is higher or the same as the given version.
-     * NOTE: When checking the version numbers for Firefox and Safari, be sure to
-     * use the engine's version, not the browser's version number.  For example,
-     * Firefox 3.0 corresponds to Gecko 1.9 and Safari 3.0 to Webkit 522.11.
-     * Opera and Internet Explorer versions match the product release number.<br>
-     * @see <a href="http://en.wikipedia.org/wiki/Safari_version_history">
-     *     Webkit</a>
-     * @see <a href="http://en.wikipedia.org/wiki/Gecko_engine">Gecko</a>
-     *
-     * @param {string|number} version The version to check.
-     * @return {boolean} Whether the user agent version is higher or the same as
-     *     the given version.
-     */
-    function isVersionOrHigher(version: number): boolean;
+    function isVersionOrHigher(version: string|number): boolean;
 
     /**
      * Deprecated alias to {@code goog.userAgent.isVersionOrHigher}.
@@ -167,15 +152,7 @@ declare module goog.userAgent {
      *     the given version.
      * @deprecated Use goog.userAgent.isVersionOrHigher().
      */
-    function isVersion(version: string): boolean;
-    /**
-     * Deprecated alias to {@code goog.userAgent.isVersionOrHigher}.
-     * @param {string|number} version The version to check.
-     * @return {boolean} Whether the user agent version is higher or the same as
-     *     the given version.
-     * @deprecated Use goog.userAgent.isVersionOrHigher().
-     */
-    function isVersion(version: number): boolean;
+    function isVersion(version: string|number): boolean;
 
     /**
      * Whether the IE effective document mode is higher or the same as the given
@@ -205,5 +182,5 @@ declare module goog.userAgent {
      * @type {number|undefined}
      * @const
      */
-    var DOCUMENT_MODE: any /*number|any (undefined)*/;
+    var DOCUMENT_MODE: number|any /*undefined*/;
 }

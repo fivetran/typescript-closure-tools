@@ -24,5 +24,5 @@ declare module goog.crypt.hashTester {
      * @param {function():!goog.crypt.Hash} hashFactory A hash factory.
      * @param {string} hashName Name of the hashing function.
      */
-    function runPerfTests(hashFactory: () => goog.crypt.Hash, hashName: string): void;
+    function runPerfTests(hashFactory: { (): goog.crypt.Hash }, hashName: string): void;
 }

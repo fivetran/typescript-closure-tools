@@ -24,24 +24,7 @@ declare module goog.ui {
              * @constructor
              * @extends {goog.events.EventTarget}
              */
-            constructor(opt_domHelper?: goog.dom.DomHelper, opt_useBubble?: boolean);
-            /**
-             * Once initialized with a document, the activity monitor can be queried for
-             * the current idle time.
-             *
-             * @param {goog.dom.DomHelper|Array.<goog.dom.DomHelper>=} opt_domHelper
-             *     DomHelper which contains the document(s) to listen to.  If null, the
-             *     default document is usedinstead.
-             * @param {boolean=} opt_useBubble Whether to use the bubble phase to listen for
-             *     events. By default listens on the capture phase so that it won't miss
-             *     events that get stopPropagation/cancelBubble'd. However, this can cause
-             *     problems in IE8 if the page loads multiple scripts that include the
-             *     closure event handling code.
-             *
-             * @constructor
-             * @extends {goog.events.EventTarget}
-             */
-            constructor(opt_domHelper?: goog.dom.DomHelper[], opt_useBubble?: boolean);
+            constructor(opt_domHelper?: goog.dom.DomHelper|goog.dom.DomHelper[], opt_useBubble?: boolean);
     
             /**
              * Adds a document to those being monitored by this class.

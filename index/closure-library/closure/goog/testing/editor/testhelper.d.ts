@@ -54,14 +54,7 @@ declare module goog.testing.editor {
              *     expression to find a match of.
              * @return {Node} The first text node that matches, or null if none is found.
              */
-            findTextNode(textOrRegexp: string): Node;
-            /**
-             * Finds the first text node descendant of root with the given content.
-             * @param {string|RegExp} textOrRegexp The text to find, or a regular
-             *     expression to find a match of.
-             * @return {Node} The first text node that matches, or null if none is found.
-             */
-            findTextNode(textOrRegexp: RegExp): Node;
+            findTextNode(textOrRegexp: string|RegExp): Node;
     
             /**
              * Select from the given from offset in the given from node to the given
@@ -76,49 +69,7 @@ declare module goog.testing.editor {
              * @param {number=} opt_toOffset Offset within the above node to end the
              *     selection at.
              */
-            select(from: Node, fromOffset: number, opt_to?: Node, opt_toOffset?: number): void;
-            /**
-             * Select from the given from offset in the given from node to the given
-             * to offset in the optionally given to node. If nodes are passed in, uses them,
-             * otherwise uses findTextNode to find the nodes to select. Selects a caret
-             * if opt_to and opt_toOffset are not given.
-             * @param {Node|string} from Node or text of the node to start the selection at.
-             * @param {number} fromOffset Offset within the above node to start the
-             *     selection at.
-             * @param {Node|string=} opt_to Node or text of the node to end the selection
-             *     at.
-             * @param {number=} opt_toOffset Offset within the above node to end the
-             *     selection at.
-             */
-            select(from: Node, fromOffset: number, opt_to?: string, opt_toOffset?: number): void;
-            /**
-             * Select from the given from offset in the given from node to the given
-             * to offset in the optionally given to node. If nodes are passed in, uses them,
-             * otherwise uses findTextNode to find the nodes to select. Selects a caret
-             * if opt_to and opt_toOffset are not given.
-             * @param {Node|string} from Node or text of the node to start the selection at.
-             * @param {number} fromOffset Offset within the above node to start the
-             *     selection at.
-             * @param {Node|string=} opt_to Node or text of the node to end the selection
-             *     at.
-             * @param {number=} opt_toOffset Offset within the above node to end the
-             *     selection at.
-             */
-            select(from: string, fromOffset: number, opt_to?: Node, opt_toOffset?: number): void;
-            /**
-             * Select from the given from offset in the given from node to the given
-             * to offset in the optionally given to node. If nodes are passed in, uses them,
-             * otherwise uses findTextNode to find the nodes to select. Selects a caret
-             * if opt_to and opt_toOffset are not given.
-             * @param {Node|string} from Node or text of the node to start the selection at.
-             * @param {number} fromOffset Offset within the above node to start the
-             *     selection at.
-             * @param {Node|string=} opt_to Node or text of the node to end the selection
-             *     at.
-             * @param {number=} opt_toOffset Offset within the above node to end the
-             *     selection at.
-             */
-            select(from: string, fromOffset: number, opt_to?: string, opt_toOffset?: number): void;
+            select(from: Node|string, fromOffset: number, opt_to?: Node|string, opt_toOffset?: number): void;
     } 
     
 }

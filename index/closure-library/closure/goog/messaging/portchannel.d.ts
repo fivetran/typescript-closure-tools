@@ -28,26 +28,7 @@ declare module goog.messaging {
              * @extends {goog.messaging.AbstractChannel}
              * @final
              */
-            constructor(underlyingPort: MessagePort);
-            /**
-             * A wrapper for several types of HTML5 message-passing entities
-             * ({@link MessagePort}s and {@link WebWorker}s). This class implements the
-             * {@link goog.messaging.MessageChannel} interface.
-             *
-             * This class can be used in conjunction with other communication on the port.
-             * It sets {@link goog.messaging.PortChannel.FLAG} to true on all messages it
-             * sends.
-             *
-             * @param {!MessagePort|!WebWorker} underlyingPort The message-passing
-             *     entity to wrap. If this is a {@link MessagePort}, it should be started.
-             *     The remote end should also be wrapped in a PortChannel. This will be
-             *     disposed along with the PortChannel; this means terminating it if it's a
-             *     worker or removing it from the DOM if it's an iframe.
-             * @constructor
-             * @extends {goog.messaging.AbstractChannel}
-             * @final
-             */
-            constructor(underlyingPort: WebWorker);
+            constructor(underlyingPort: MessagePort|WebWorker);
     } 
     
 }

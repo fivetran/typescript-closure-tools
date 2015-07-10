@@ -26,7 +26,7 @@ declare module goog.ui {
              * @constructor
              * @extends {goog.Disposable}
              */
-            constructor(first: goog.ui.Control, second: goog.ui.Control, opt_behaviorHandler?: (_0: goog.ui.Control, _1: Event) => any /*missing*/, opt_eventType?: string, opt_domHelper?: goog.dom.DomHelper);
+            constructor(first: goog.ui.Control, second: goog.ui.Control, opt_behaviorHandler?: { (_0: goog.ui.Control, _1: Event): any /*missing*/ }, opt_eventType?: string, opt_domHelper?: goog.dom.DomHelper);
     
             /**
              * @return {Element} The element containing the controls.
@@ -36,7 +36,7 @@ declare module goog.ui {
             /**
              * @return {function(goog.ui.Control,Event)} The behavior handler.
              */
-            getBehaviorHandler(): (_0: goog.ui.Control, _1: Event) => any /*missing*/;
+            getBehaviorHandler(): { (_0: goog.ui.Control, _1: Event): any /*missing*/ };
     
             /**
              * @return {string} The behavior event type.
@@ -57,7 +57,7 @@ declare module goog.ui {
              * @param {function(goog.ui.Control,Event)} behaviorHandler The behavior
              *     handler.
              */
-            setHandler(behaviorHandler: (_0: goog.ui.Control, _1: Event) => any /*missing*/): void;
+            setHandler(behaviorHandler: { (_0: goog.ui.Control, _1: Event): any /*missing*/ }): void;
     
             /**
              * Sets the behavior event type.

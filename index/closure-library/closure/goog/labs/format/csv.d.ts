@@ -42,7 +42,7 @@ declare module goog.labs.format.csv {
      * A token -- a single-character string or a sentinel.
      * @typedef {string|!goog.labs.format.csv.Sentinels_}
      */
-    interface Token { /*any (string|goog.labs.format.csv.Sentinels_)*/ }
+    type Token = string|goog.labs.format.csv.Sentinels_;
 
     /**
      * Parses a CSV string to create a two-dimensional array.

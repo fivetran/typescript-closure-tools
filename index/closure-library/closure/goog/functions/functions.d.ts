@@ -8,7 +8,7 @@ declare module goog.functions {
      * @return {function():T} The new function.
      * @template T
      */
-    function constant<T>(retValue: T): () => T;
+    function constant<T>(retValue: T): { (): T };
 
     /**
      * Always returns false.
@@ -77,7 +77,7 @@ declare module goog.functions {
      * @return {function(...[?]):T} A new function.
      * @template T
      */
-    function withReturnValue<T>(f: Function, retValue: T): (_0: any[][]) => T;
+    function withReturnValue<T>(f: Function, retValue: T): { (_0: any[][]): T };
 
     /**
      * Creates the composition of the functions passed in.
@@ -87,7 +87,7 @@ declare module goog.functions {
      * @return {function(...[?]):T} The composition of all inputs.
      * @template T
      */
-    function compose<T>(fn: (_0: any[][]) => T, ...var_args: Function[]): (_0: any[][]) => T;
+    function compose<T>(fn: { (_0: any[][]): T }, ...var_args: Function[]): { (_0: any[][]): T };
 
     /**
      * Creates a function that calls the functions passed in in sequence, and
@@ -107,7 +107,7 @@ declare module goog.functions {
      * @return {function(...[?]):boolean} A function that ANDs its component
      *      functions.
      */
-    function and(...var_args: Function[]): (_0: any[][]) => boolean;
+    function and(...var_args: Function[]): { (_0: any[][]): boolean };
 
     /**
      * Creates a function that returns true if any of its components evaluates
@@ -118,7 +118,7 @@ declare module goog.functions {
      * @return {function(...[?]):boolean} A function that ORs its component
      *    functions.
      */
-    function or(...var_args: Function[]): (_0: any[][]) => boolean;
+    function or(...var_args: Function[]): { (_0: any[][]): boolean };
 
     /**
      * Creates a function that returns the Boolean opposite of a provided function.
@@ -127,7 +127,7 @@ declare module goog.functions {
      * @return {function(...[?]):boolean} A function that delegates to f and returns
      * opposite.
      */
-    function not(f: Function): (_0: any[][]) => boolean;
+    function not(f: Function): { (_0: any[][]): boolean };
 
     /**
      * Generic factory function to construct an object given the constructor
@@ -156,5 +156,5 @@ declare module goog.functions {
      * @return {!function():T} A wrapped version the function.
      * @template T
      */
-    function cacheReturnValue<T>(fn: () => T): () => T;
+    function cacheReturnValue<T>(fn: { (): T }): { (): T };
 }

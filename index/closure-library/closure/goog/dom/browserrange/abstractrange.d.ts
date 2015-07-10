@@ -26,7 +26,7 @@ declare module goog.dom.browserrange {
              * the functionality you need rather than just using the native range.
              * @return {Range|TextRange} The browser native range object.
              */
-            getBrowserRange(): any /*Range|TextRange*/;
+            getBrowserRange(): Range|TextRange;
     
             /**
              * Returns the deepest node in the tree that contains the entire range.
@@ -85,19 +85,7 @@ declare module goog.dom.browserrange {
              * @return {number} 0 if the endpoints are equal, negative if this range
              *     endpoint comes before the other range endpoint, and positive otherwise.
              */
-            compareBrowserRangeEndpoints(range: Range, thisEndpoint: goog.dom.RangeEndpoint, otherEndpoint: goog.dom.RangeEndpoint): number;
-            /**
-             * Compares one endpoint of this range with the endpoint of another browser
-             * native range object.
-             * @param {Range|TextRange} range The browser native range to compare against.
-             * @param {goog.dom.RangeEndpoint} thisEndpoint The endpoint of this range
-             *     to compare with.
-             * @param {goog.dom.RangeEndpoint} otherEndpoint The endpoint of the other
-             *     range to compare with.
-             * @return {number} 0 if the endpoints are equal, negative if this range
-             *     endpoint comes before the other range endpoint, and positive otherwise.
-             */
-            compareBrowserRangeEndpoints(range: TextRange, thisEndpoint: goog.dom.RangeEndpoint, otherEndpoint: goog.dom.RangeEndpoint): number;
+            compareBrowserRangeEndpoints(range: Range|TextRange, thisEndpoint: goog.dom.RangeEndpoint, otherEndpoint: goog.dom.RangeEndpoint): number;
     
             /**
              * Tests if this range contains the given range.

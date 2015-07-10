@@ -1,7 +1,7 @@
 /// <reference path="../../../../globals.d.ts" />
 /// <reference path="../component.d.ts" />
-/// <reference path="../../dom/dom.d.ts" />
 /// <reference path="../../html/safehtml.d.ts" />
+/// <reference path="../../dom/dom.d.ts" />
 /// <reference path="../../events/browserevent.d.ts" />
 /// <reference path="./treecontrol.d.ts" />
 
@@ -22,19 +22,7 @@ declare module goog.ui.tree {
              * @constructor
              * @extends {goog.ui.Component}
              */
-            constructor(html: string, opt_config?: Object, opt_domHelper?: goog.dom.DomHelper);
-            /**
-             * An abstract base class for a node in the tree.
-             *
-             * @param {string|!goog.html.SafeHtml} html The html content of the node label.
-             * @param {Object=} opt_config The configuration for the tree. See
-             *    {@link goog.ui.tree.TreeControl.defaultConfig}. If not specified the
-             *    default config will be used.
-             * @param {goog.dom.DomHelper=} opt_domHelper Optional DOM helper.
-             * @constructor
-             * @extends {goog.ui.Component}
-             */
-            constructor(html: goog.html.SafeHtml, opt_config?: Object, opt_domHelper?: goog.dom.DomHelper);
+            constructor(html: string|goog.html.SafeHtml, opt_config?: Object, opt_domHelper?: goog.dom.DomHelper);
     
             /** @protected {goog.ui.tree.TreeControl} */
             tree: any /*missing*/;

@@ -43,7 +43,7 @@ declare module goog.editor.plugins {
              *     Function that creates a bubble for the given bubble parent element and z
              *     index.  Null to reset the factory function.
              */
-            setBubbleFactory(bubbleFactory: (_0: Element, _1: number) => goog.ui.editor.Bubble): void;
+            setBubbleFactory(bubbleFactory: { (_0: Element, _1: number): goog.ui.editor.Bubble }): void;
     
             /**
              * Sets whether the bubble should support tabbing through the link elements.
@@ -245,5 +245,5 @@ declare module goog.editor.plugins.AbstractBubblePlugin {
      *     bubbleFactory Function that creates a bubble for the given bubble parent
      *     element and z index.
      */
-    function setBubbleFactory(bubbleFactory: (_0: Element, _1: number) => goog.ui.editor.Bubble): void;
+    function setBubbleFactory(bubbleFactory: { (_0: Element, _1: number): goog.ui.editor.Bubble }): void;
 }

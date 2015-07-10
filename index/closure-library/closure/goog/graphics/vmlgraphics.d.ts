@@ -30,67 +30,7 @@ declare module goog.graphics {
              *     http://en.wikipedia.org/wiki/Canvas_element for details.
              * @final
              */
-            constructor(width: string, height: string, opt_coordWidth?: number, opt_coordHeight?: number, opt_domHelper?: goog.dom.DomHelper);
-            /**
-             * A Graphics implementation for drawing using VML.
-             * @param {string|number} width The (non-zero) width in pixels.  Strings
-             *     expressing percentages of parent with (e.g. '80%') are also accepted.
-             * @param {string|number} height The (non-zero) height in pixels.  Strings
-             *     expressing percentages of parent with (e.g. '80%') are also accepted.
-             * @param {?number=} opt_coordWidth The coordinate width - if
-             *     omitted or null, defaults to same as width.
-             * @param {?number=} opt_coordHeight The coordinate height - if
-             *     omitted or null, defaults to same as height.
-             * @param {goog.dom.DomHelper=} opt_domHelper The DOM helper object for the
-             *     document we want to render in.
-             * @constructor
-             * @extends {goog.graphics.AbstractGraphics}
-             * @deprecated goog.graphics is deprecated. It existed to abstract over browser
-             *     differences before the canvas tag was widely supported.  See
-             *     http://en.wikipedia.org/wiki/Canvas_element for details.
-             * @final
-             */
-            constructor(width: string, height: number, opt_coordWidth?: number, opt_coordHeight?: number, opt_domHelper?: goog.dom.DomHelper);
-            /**
-             * A Graphics implementation for drawing using VML.
-             * @param {string|number} width The (non-zero) width in pixels.  Strings
-             *     expressing percentages of parent with (e.g. '80%') are also accepted.
-             * @param {string|number} height The (non-zero) height in pixels.  Strings
-             *     expressing percentages of parent with (e.g. '80%') are also accepted.
-             * @param {?number=} opt_coordWidth The coordinate width - if
-             *     omitted or null, defaults to same as width.
-             * @param {?number=} opt_coordHeight The coordinate height - if
-             *     omitted or null, defaults to same as height.
-             * @param {goog.dom.DomHelper=} opt_domHelper The DOM helper object for the
-             *     document we want to render in.
-             * @constructor
-             * @extends {goog.graphics.AbstractGraphics}
-             * @deprecated goog.graphics is deprecated. It existed to abstract over browser
-             *     differences before the canvas tag was widely supported.  See
-             *     http://en.wikipedia.org/wiki/Canvas_element for details.
-             * @final
-             */
-            constructor(width: number, height: string, opt_coordWidth?: number, opt_coordHeight?: number, opt_domHelper?: goog.dom.DomHelper);
-            /**
-             * A Graphics implementation for drawing using VML.
-             * @param {string|number} width The (non-zero) width in pixels.  Strings
-             *     expressing percentages of parent with (e.g. '80%') are also accepted.
-             * @param {string|number} height The (non-zero) height in pixels.  Strings
-             *     expressing percentages of parent with (e.g. '80%') are also accepted.
-             * @param {?number=} opt_coordWidth The coordinate width - if
-             *     omitted or null, defaults to same as width.
-             * @param {?number=} opt_coordHeight The coordinate height - if
-             *     omitted or null, defaults to same as height.
-             * @param {goog.dom.DomHelper=} opt_domHelper The DOM helper object for the
-             *     document we want to render in.
-             * @constructor
-             * @extends {goog.graphics.AbstractGraphics}
-             * @deprecated goog.graphics is deprecated. It existed to abstract over browser
-             *     differences before the canvas tag was widely supported.  See
-             *     http://en.wikipedia.org/wiki/Canvas_element for details.
-             * @final
-             */
-            constructor(width: number, height: number, opt_coordWidth?: number, opt_coordHeight?: number, opt_domHelper?: goog.dom.DomHelper);
+            constructor(width: string|number, height: string|number, opt_coordWidth?: number, opt_coordHeight?: number, opt_domHelper?: goog.dom.DomHelper);
     
             /**
              * Creates a VML element. Used internally and by different VML classes.
@@ -147,15 +87,7 @@ declare module goog.graphics.VmlGraphics {
      * @param {number|string} size The size to use.
      * @return {string} The position adjusted for COORD_MULTIPLIER.
      */
-    function toCssSize(size: number): string;
-    /**
-     * Converts the given size to a css size.  If it is a percentage, leaves it
-     * alone.  Otherwise assumes px.
-     *
-     * @param {number|string} size The size to use.
-     * @return {string} The position adjusted for COORD_MULTIPLIER.
-     */
-    function toCssSize(size: string): string;
+    function toCssSize(size: number|string): string;
 
     /**
      * Multiplies positioning coordinates by COORD_MULTIPLIER to allow sub-pixel
@@ -167,18 +99,7 @@ declare module goog.graphics.VmlGraphics {
      * @param {number|string} number A position in pixels.
      * @return {number} The position adjusted for COORD_MULTIPLIER.
      */
-    function toPosCoord(number: number): number;
-    /**
-     * Multiplies positioning coordinates by COORD_MULTIPLIER to allow sub-pixel
-     * coordinates.  Also adds a half pixel offset to match SVG.
-     *
-     * This function is internal for the VML supporting classes, and
-     * should not be used externally.
-     *
-     * @param {number|string} number A position in pixels.
-     * @return {number} The position adjusted for COORD_MULTIPLIER.
-     */
-    function toPosCoord(number: string): number;
+    function toPosCoord(number: number|string): number;
 
     /**
      * Add a "px" suffix to a number of pixels, and multiplies all coordinates by
@@ -190,18 +111,7 @@ declare module goog.graphics.VmlGraphics {
      * @param {number|string} number A position in pixels.
      * @return {string} The position with suffix 'px'.
      */
-    function toPosPx(number: number): string;
-    /**
-     * Add a "px" suffix to a number of pixels, and multiplies all coordinates by
-     * COORD_MULTIPLIER to allow sub-pixel coordinates.
-     *
-     * This function is internal for the VML supporting classes, and
-     * should not be used externally.
-     *
-     * @param {number|string} number A position in pixels.
-     * @return {string} The position with suffix 'px'.
-     */
-    function toPosPx(number: string): string;
+    function toPosPx(number: number|string): string;
 
     /**
      * Multiplies the width or height coordinate by COORD_MULTIPLIER to allow
@@ -213,18 +123,7 @@ declare module goog.graphics.VmlGraphics {
      * @param {string|number} number A size in units.
      * @return {number} The size multiplied by the correct factor.
      */
-    function toSizeCoord(number: string): number;
-    /**
-     * Multiplies the width or height coordinate by COORD_MULTIPLIER to allow
-     * sub-pixel coordinates.
-     *
-     * This function is internal for the VML supporting classes, and
-     * should not be used externally.
-     *
-     * @param {string|number} number A size in units.
-     * @return {number} The size multiplied by the correct factor.
-     */
-    function toSizeCoord(number: number): number;
+    function toSizeCoord(number: string|number): number;
 
     /**
      * Add a "px" suffix to a number of pixels, and multiplies all coordinates by
@@ -236,18 +135,7 @@ declare module goog.graphics.VmlGraphics {
      * @param {number|string} number A size in pixels.
      * @return {string} The size with suffix 'px'.
      */
-    function toSizePx(number: number): string;
-    /**
-     * Add a "px" suffix to a number of pixels, and multiplies all coordinates by
-     * COORD_MULTIPLIER to allow sub-pixel coordinates.
-     *
-     * This function is internal for the VML supporting classes, and
-     * should not be used externally.
-     *
-     * @param {number|string} number A size in pixels.
-     * @return {string} The size with suffix 'px'.
-     */
-    function toSizePx(number: string): string;
+    function toSizePx(number: number|string): string;
 
     /**
      * Sets an attribute on the given VML element, in the way best suited to the

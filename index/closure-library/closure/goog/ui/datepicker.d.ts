@@ -26,22 +26,7 @@ declare module goog.ui {
              * @constructor
              * @extends {goog.ui.Component}
              */
-            constructor(opt_date?: goog.date.Date, opt_dateTimeSymbols?: Object, opt_domHelper?: goog.dom.DomHelper, opt_renderer?: goog.ui.DatePickerRenderer);
-            /**
-             * DatePicker widget. Allows a single date to be selected from a calendar like
-             * view.
-             *
-             * @param {goog.date.Date|Date=} opt_date Date to initialize the date picker
-             *     with, defaults to the current date.
-             * @param {Object=} opt_dateTimeSymbols Date and time symbols to use.
-             *     Defaults to goog.i18n.DateTimeSymbols if not set.
-             * @param {goog.dom.DomHelper=} opt_domHelper Optional DOM helper.
-             * @param {goog.ui.DatePickerRenderer=} opt_renderer Optional Date picker
-             *     renderer.
-             * @constructor
-             * @extends {goog.ui.Component}
-             */
-            constructor(opt_date?: Date, opt_dateTimeSymbols?: Object, opt_domHelper?: goog.dom.DomHelper, opt_renderer?: goog.ui.DatePickerRenderer);
+            constructor(opt_date?: goog.date.Date|Date, opt_dateTimeSymbols?: Object, opt_domHelper?: goog.dom.DomHelper, opt_renderer?: goog.ui.DatePickerRenderer);
     
             /**
              * @deprecated Use isInDocument.
@@ -263,13 +248,7 @@ declare module goog.ui {
              *
              * @param {goog.date.Date|Date} date Date to select or null to select nothing.
              */
-            setDate(date: goog.date.Date): void;
-            /**
-             * Sets the selected date.
-             *
-             * @param {goog.date.Date|Date} date Date to select or null to select nothing.
-             */
-            setDate(date: Date): void;
+            setDate(date: goog.date.Date|Date): void;
     
             /**
              * @deprecated Use decorate instead.

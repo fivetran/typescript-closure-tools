@@ -20,7 +20,7 @@ declare module goog.net {
              * @constructor
              * @final
              */
-            constructor(iframes: HTMLIFrameElement[], callback: () => void, opt_hasContent?: boolean);
+            constructor(iframes: HTMLIFrameElement[], callback: { (): void }, opt_hasContent?: boolean);
     
             /**
              * Handles a pending iframe load monitor load event.

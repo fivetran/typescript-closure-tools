@@ -36,25 +36,7 @@ declare module goog.net {
              * @param {number} attempt Which attempt # the request was.
              * @param {?string} postData The data posted in the request.
              */
-            xmlHttpChannelRequest(verb: string, uri: goog.Uri, id: string, attempt: number, postData: string): void;
-            /**
-             * Logs an XmlHttp request..
-             * @param {string} verb The request type (GET/POST).
-             * @param {goog.Uri} uri The request destination.
-             * @param {string|number|undefined} id The request id.
-             * @param {number} attempt Which attempt # the request was.
-             * @param {?string} postData The data posted in the request.
-             */
-            xmlHttpChannelRequest(verb: string, uri: goog.Uri, id: number, attempt: number, postData: string): void;
-            /**
-             * Logs an XmlHttp request..
-             * @param {string} verb The request type (GET/POST).
-             * @param {goog.Uri} uri The request destination.
-             * @param {string|number|undefined} id The request id.
-             * @param {number} attempt Which attempt # the request was.
-             * @param {?string} postData The data posted in the request.
-             */
-            xmlHttpChannelRequest(verb: string, uri: goog.Uri, id: any /*undefined*/, attempt: number, postData: string): void;
+            xmlHttpChannelRequest(verb: string, uri: goog.Uri, id: string|number|any /*undefined*/, attempt: number, postData: string): void;
     
             /**
              * Logs the meta data received from an XmlHttp request.
@@ -65,27 +47,7 @@ declare module goog.net {
              * @param {goog.net.XmlHttp.ReadyState} readyState The ready state.
              * @param {number} statusCode The HTTP status code.
              */
-            xmlHttpChannelResponseMetaData(verb: string, uri: goog.Uri, id: string, attempt: number, readyState: goog.net.XmlHttp.ReadyState, statusCode: number): void;
-            /**
-             * Logs the meta data received from an XmlHttp request.
-             * @param {string} verb The request type (GET/POST).
-             * @param {goog.Uri} uri The request destination.
-             * @param {string|number|undefined} id The request id.
-             * @param {number} attempt Which attempt # the request was.
-             * @param {goog.net.XmlHttp.ReadyState} readyState The ready state.
-             * @param {number} statusCode The HTTP status code.
-             */
-            xmlHttpChannelResponseMetaData(verb: string, uri: goog.Uri, id: number, attempt: number, readyState: goog.net.XmlHttp.ReadyState, statusCode: number): void;
-            /**
-             * Logs the meta data received from an XmlHttp request.
-             * @param {string} verb The request type (GET/POST).
-             * @param {goog.Uri} uri The request destination.
-             * @param {string|number|undefined} id The request id.
-             * @param {number} attempt Which attempt # the request was.
-             * @param {goog.net.XmlHttp.ReadyState} readyState The ready state.
-             * @param {number} statusCode The HTTP status code.
-             */
-            xmlHttpChannelResponseMetaData(verb: string, uri: goog.Uri, id: any /*undefined*/, attempt: number, readyState: goog.net.XmlHttp.ReadyState, statusCode: number): void;
+            xmlHttpChannelResponseMetaData(verb: string, uri: goog.Uri, id: string|number|any /*undefined*/, attempt: number, readyState: goog.net.XmlHttp.ReadyState, statusCode: number): void;
     
             /**
              * Logs the response data received from an XmlHttp request.
@@ -93,21 +55,7 @@ declare module goog.net {
              * @param {?string} responseText The response text.
              * @param {?string=} opt_desc Optional request description.
              */
-            xmlHttpChannelResponseText(id: string, responseText: string, opt_desc?: string): void;
-            /**
-             * Logs the response data received from an XmlHttp request.
-             * @param {string|number|undefined} id The request id.
-             * @param {?string} responseText The response text.
-             * @param {?string=} opt_desc Optional request description.
-             */
-            xmlHttpChannelResponseText(id: number, responseText: string, opt_desc?: string): void;
-            /**
-             * Logs the response data received from an XmlHttp request.
-             * @param {string|number|undefined} id The request id.
-             * @param {?string} responseText The response text.
-             * @param {?string=} opt_desc Optional request description.
-             */
-            xmlHttpChannelResponseText(id: any /*undefined*/, responseText: string, opt_desc?: string): void;
+            xmlHttpChannelResponseText(id: string|number|any /*undefined*/, responseText: string, opt_desc?: string): void;
     
             /**
              * Logs a Trident ActiveX request.
@@ -116,61 +64,21 @@ declare module goog.net {
              * @param {string|number|undefined} id The request id.
              * @param {number} attempt Which attempt # the request was.
              */
-            tridentChannelRequest(verb: string, uri: goog.Uri, id: string, attempt: number): void;
-            /**
-             * Logs a Trident ActiveX request.
-             * @param {string} verb The request type (GET/POST).
-             * @param {goog.Uri} uri The request destination.
-             * @param {string|number|undefined} id The request id.
-             * @param {number} attempt Which attempt # the request was.
-             */
-            tridentChannelRequest(verb: string, uri: goog.Uri, id: number, attempt: number): void;
-            /**
-             * Logs a Trident ActiveX request.
-             * @param {string} verb The request type (GET/POST).
-             * @param {goog.Uri} uri The request destination.
-             * @param {string|number|undefined} id The request id.
-             * @param {number} attempt Which attempt # the request was.
-             */
-            tridentChannelRequest(verb: string, uri: goog.Uri, id: any /*undefined*/, attempt: number): void;
+            tridentChannelRequest(verb: string, uri: goog.Uri, id: string|number|any /*undefined*/, attempt: number): void;
     
             /**
              * Logs the response text received from a Trident ActiveX request.
              * @param {string|number|undefined} id The request id.
              * @param {string} responseText The response text.
              */
-            tridentChannelResponseText(id: string, responseText: string): void;
-            /**
-             * Logs the response text received from a Trident ActiveX request.
-             * @param {string|number|undefined} id The request id.
-             * @param {string} responseText The response text.
-             */
-            tridentChannelResponseText(id: number, responseText: string): void;
-            /**
-             * Logs the response text received from a Trident ActiveX request.
-             * @param {string|number|undefined} id The request id.
-             * @param {string} responseText The response text.
-             */
-            tridentChannelResponseText(id: any /*undefined*/, responseText: string): void;
+            tridentChannelResponseText(id: string|number|any /*undefined*/, responseText: string): void;
     
             /**
              * Logs the done response received from a Trident ActiveX request.
              * @param {string|number|undefined} id The request id.
              * @param {boolean} successful Whether the request was successful.
              */
-            tridentChannelResponseDone(id: string, successful: boolean): void;
-            /**
-             * Logs the done response received from a Trident ActiveX request.
-             * @param {string|number|undefined} id The request id.
-             * @param {boolean} successful Whether the request was successful.
-             */
-            tridentChannelResponseDone(id: number, successful: boolean): void;
-            /**
-             * Logs the done response received from a Trident ActiveX request.
-             * @param {string|number|undefined} id The request id.
-             * @param {boolean} successful Whether the request was successful.
-             */
-            tridentChannelResponseDone(id: any /*undefined*/, successful: boolean): void;
+            tridentChannelResponseDone(id: string|number|any /*undefined*/, successful: boolean): void;
     
             /**
              * Logs a request timeout.

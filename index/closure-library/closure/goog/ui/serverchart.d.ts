@@ -79,7 +79,7 @@ declare module goog.ui {
              *
              * @return {string|undefined} The 'chg' parameter of the chart Uri.
              */
-            getGridParameter(): any /*string|any (undefined)*/;
+            getGridParameter(): string|any /*undefined*/;
     
             /**
              * Sets the 'chm' parameter of the chart Uri.
@@ -95,7 +95,7 @@ declare module goog.ui {
              *
              * @return {string|undefined} The 'chm' parameter of the chart Uri.
              */
-            getMarkerParameter(): any /*string|any (undefined)*/;
+            getMarkerParameter(): string|any /*undefined*/;
     
             /**
              * Sets the 'chp' parameter of the chart Uri.
@@ -104,15 +104,7 @@ declare module goog.ui {
              *
              * @param {string|number} value Value for the 'chp' parameter in the chart Uri.
              */
-            setMiscParameter(value: string): void;
-            /**
-             * Sets the 'chp' parameter of the chart Uri.
-             * This is used by various types of charts to specify certain options.
-             * e.g., finance charts use this to designate which line is the 0 axis.
-             *
-             * @param {string|number} value Value for the 'chp' parameter in the chart Uri.
-             */
-            setMiscParameter(value: number): void;
+            setMiscParameter(value: string|number): void;
     
             /**
              * Returns the 'chp' parameter of the chart Uri.
@@ -121,7 +113,7 @@ declare module goog.ui {
              *
              * @return {string|undefined} The 'chp' parameter of the chart Uri.
              */
-            getMiscParameter(): any /*string|any (undefined)*/;
+            getMiscParameter(): string|any /*undefined*/;
     
             /**
              * Sets the background fill.
@@ -502,7 +494,7 @@ declare module goog.ui {
              *     The axis type for the given axis, or all of them in an array if the
              *     axis number is not given.
              */
-            getMultiAxisType(opt_axisNumber?: number): any /*goog.ui.ServerChart.MultiAxisType|goog.ui.ServerChart.MultiAxisType[]*/;
+            getMultiAxisType(opt_axisNumber?: number): goog.ui.ServerChart.MultiAxisType|goog.ui.ServerChart.MultiAxisType[];
     
             /**
              * Sets the label text (usually multiple values) for a given axis, overwriting
@@ -521,7 +513,7 @@ declare module goog.ui {
              * @return {Object|Array.<string>} The label text, or all of them in a
              *     two-dimensional array if the axis number is not given.
              */
-            getMultiAxisLabelText(opt_axisNumber?: number): any /*Object|string[]*/;
+            getMultiAxisLabelText(opt_axisNumber?: number): Object|string[];
     
             /**
              * Sets the label positions for a given axis, overwriting any existing values.
@@ -542,7 +534,7 @@ declare module goog.ui {
              *     or all of them in a two-dimensional array if the axis number is not
              *     given.
              */
-            getMultiAxisLabelPosition(opt_axisNumber?: number): any /*Object|number[]*/;
+            getMultiAxisLabelPosition(opt_axisNumber?: number): Object|number[];
     
             /**
              * Sets the label range for a given axis, overwriting any existing range.
@@ -567,7 +559,7 @@ declare module goog.ui {
              *     two-element array of (range start, range end), or all of them in a
              *     two-dimensional array if the axis number is not given.
              */
-            getMultiAxisRange(opt_axisNumber?: number): any /*Object|number[]*/;
+            getMultiAxisRange(opt_axisNumber?: number): Object|number[];
     
             /**
              * Sets the label style for a given axis, overwriting any existing style.
@@ -597,7 +589,7 @@ declare module goog.ui {
              *     one- to three-element array, or all of them in a two-dimensional array if
              *     the axis number is not given.
              */
-            getMultiAxisLabelStyle(opt_axisNumber?: number): any /*Object|number[]*/;
+            getMultiAxisLabelStyle(opt_axisNumber?: number): Object|number[];
     
             /**
              * Adds a data set.
@@ -610,7 +602,7 @@ declare module goog.ui {
              *     series. NOTE: If specified, all previously added data sets must also
              *     have a legend text.
              */
-            addDataSet(data: any /*number|any (null)*/[], color: string, opt_legendText?: string): void;
+            addDataSet(data: number|any /*null*/[], color: string, opt_legendText?: string): void;
     
             /**
              * Clears the data sets from the graph. All data, including the colors and

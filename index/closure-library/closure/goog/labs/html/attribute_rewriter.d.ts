@@ -14,7 +14,7 @@ declare module goog.labs.html {
      * @typedef {(string |
      *            goog.html.SafeHtml | goog.html.SafeStyle | goog.html.SafeUrl)}
      */
-    interface AttributeValue { /*any (string|goog.html.SafeHtml|goog.html.SafeStyle|goog.html.SafeUrl)*/ }
+    type AttributeValue = string|goog.html.SafeHtml|goog.html.SafeStyle|goog.html.SafeUrl;
 
     /**
      * A function that takes an attribute value, and returns a safe value.

@@ -1,6 +1,7 @@
 /// <reference path="../../../globals.d.ts" />
 /// <reference path="./tabrenderer.d.ts" />
 /// <reference path="../dom/dom.d.ts" />
+/// <reference path="./controlcontent.d.ts" />
 /// <reference path="./tabbar.d.ts" />
 
 declare module goog.ui {
@@ -27,40 +28,7 @@ declare module goog.ui {
              * @return {!Element} Table implementing a rounded corner tab.
              * @protected
              */
-            createTab(dom: goog.dom.DomHelper, caption: string, location: goog.ui.TabBar.Location): Element;
-            /**
-             * Creates a table implementing a rounded corner tab.
-             * @param {goog.dom.DomHelper} dom DOM helper to use for element construction.
-             * @param {goog.ui.ControlContent} caption Text caption or DOM structure
-             *     to display as the tab's caption.
-             * @param {goog.ui.TabBar.Location} location Tab bar location relative to the
-             *     tab contents.
-             * @return {!Element} Table implementing a rounded corner tab.
-             * @protected
-             */
-            createTab(dom: goog.dom.DomHelper, caption: Node, location: goog.ui.TabBar.Location): Element;
-            /**
-             * Creates a table implementing a rounded corner tab.
-             * @param {goog.dom.DomHelper} dom DOM helper to use for element construction.
-             * @param {goog.ui.ControlContent} caption Text caption or DOM structure
-             *     to display as the tab's caption.
-             * @param {goog.ui.TabBar.Location} location Tab bar location relative to the
-             *     tab contents.
-             * @return {!Element} Table implementing a rounded corner tab.
-             * @protected
-             */
-            createTab(dom: goog.dom.DomHelper, caption: Node[], location: goog.ui.TabBar.Location): Element;
-            /**
-             * Creates a table implementing a rounded corner tab.
-             * @param {goog.dom.DomHelper} dom DOM helper to use for element construction.
-             * @param {goog.ui.ControlContent} caption Text caption or DOM structure
-             *     to display as the tab's caption.
-             * @param {goog.ui.TabBar.Location} location Tab bar location relative to the
-             *     tab contents.
-             * @return {!Element} Table implementing a rounded corner tab.
-             * @protected
-             */
-            createTab(dom: goog.dom.DomHelper, caption: NodeList, location: goog.ui.TabBar.Location): Element;
+            createTab(dom: goog.dom.DomHelper, caption: goog.ui.ControlContent, location: goog.ui.TabBar.Location): Element;
     
             /**
              * Creates a table row implementing the tab caption.
@@ -70,34 +38,7 @@ declare module goog.ui {
              * @return {!Element} Tab caption table row.
              * @protected
              */
-            createCaption(dom: goog.dom.DomHelper, caption: string): Element;
-            /**
-             * Creates a table row implementing the tab caption.
-             * @param {goog.dom.DomHelper} dom DOM helper to use for element construction.
-             * @param {goog.ui.ControlContent} caption Text caption or DOM structure
-             *     to display as the tab's caption.
-             * @return {!Element} Tab caption table row.
-             * @protected
-             */
-            createCaption(dom: goog.dom.DomHelper, caption: Node): Element;
-            /**
-             * Creates a table row implementing the tab caption.
-             * @param {goog.dom.DomHelper} dom DOM helper to use for element construction.
-             * @param {goog.ui.ControlContent} caption Text caption or DOM structure
-             *     to display as the tab's caption.
-             * @return {!Element} Tab caption table row.
-             * @protected
-             */
-            createCaption(dom: goog.dom.DomHelper, caption: Node[]): Element;
-            /**
-             * Creates a table row implementing the tab caption.
-             * @param {goog.dom.DomHelper} dom DOM helper to use for element construction.
-             * @param {goog.ui.ControlContent} caption Text caption or DOM structure
-             *     to display as the tab's caption.
-             * @return {!Element} Tab caption table row.
-             * @protected
-             */
-            createCaption(dom: goog.dom.DomHelper, caption: NodeList): Element;
+            createCaption(dom: goog.dom.DomHelper, caption: goog.ui.ControlContent): Element;
     
             /**
              * Creates a table row implementing a rounded tab edge.

@@ -97,16 +97,7 @@ declare module goog.testing.net {
              * @param {Object|goog.structs.Map=} opt_headers Map of headers to add to the
              *     request.
              */
-            send(url: string, opt_method?: string, opt_content?: string, opt_headers?: Object): void;
-            /**
-             * Simulates the XhrIo send.
-             * @param {string} url Uri to make request too.
-             * @param {string=} opt_method Send method, default: GET.
-             * @param {string=} opt_content Post data.
-             * @param {Object|goog.structs.Map=} opt_headers Map of headers to add to the
-             *     request.
-             */
-            send(url: string, opt_method?: string, opt_content?: string, opt_headers?: goog.structs.Map<any, any>): void;
+            send(url: string, opt_method?: string, opt_content?: string, opt_headers?: Object|goog.structs.Map<any, any>): void;
     
             /**
              * Creates a new XHR object.
@@ -136,21 +127,7 @@ declare module goog.testing.net {
              * @param {string|Document|null} response Simulated response.
              * @param {Object=} opt_headers Simulated response headers.
              */
-            simulateResponse(statusCode: number, response: string, opt_headers?: Object): void;
-            /**
-             * Simulates receiving a response.
-             * @param {number} statusCode Simulated status code.
-             * @param {string|Document|null} response Simulated response.
-             * @param {Object=} opt_headers Simulated response headers.
-             */
-            simulateResponse(statusCode: number, response: Document, opt_headers?: Object): void;
-            /**
-             * Simulates receiving a response.
-             * @param {number} statusCode Simulated status code.
-             * @param {string|Document|null} response Simulated response.
-             * @param {Object=} opt_headers Simulated response headers.
-             */
-            simulateResponse(statusCode: number, response: any /*null*/, opt_headers?: Object): void;
+            simulateResponse(statusCode: number, response: string|Document|any /*null*/, opt_headers?: Object): void;
     
             /**
              * Simulates the Xhr is ready for the next request.
@@ -216,21 +193,21 @@ declare module goog.testing.net {
              * Gets the last HTTP method that was requested.
              * @return {string|undefined} Last HTTP method used by send.
              */
-            getLastMethod(): any /*string|any (undefined)*/;
+            getLastMethod(): string|any /*undefined*/;
     
             /**
              * Gets the last POST content that was requested.
              * @return {string|undefined} Last POST content or undefined if last request was
              *      a GET.
              */
-            getLastContent(): any /*string|any (undefined)*/;
+            getLastContent(): string|any /*undefined*/;
     
             /**
              * Gets the headers of the last request.
              * @return {Object|goog.structs.Map|undefined} Last headers manually set in send
              *      call or undefined if no additional headers were specified.
              */
-            getLastRequestHeaders(): any /*Object|goog.structs.Map<any, any>|any (undefined)*/;
+            getLastRequestHeaders(): Object|goog.structs.Map<any, any>|any /*undefined*/;
     
             /**
              * Gets the response text from the Xhr object.  Will only return correct result
@@ -279,7 +256,7 @@ declare module goog.testing.net {
              * @param {string} key The name of the response-header to retrieve.
              * @return {string|undefined} The value of the response-header named key.
              */
-            getResponseHeader(key: string): any /*string|any (undefined)*/;
+            getResponseHeader(key: string): string|any /*undefined*/;
     
             /**
              * Gets the text of all the headers in the response.
@@ -340,18 +317,5 @@ declare module goog.testing.net.XhrIo {
      * @param {number=} opt_timeoutInterval Number of milliseconds after which an
      *     incomplete request will be aborted; 0 means no timeout is set.
      */
-    function send(url: string, opt_callback?: Function, opt_method?: string, opt_content?: string, opt_headers?: Object, opt_timeoutInterval?: number): void;
-    /**
-     * Simulates the static XhrIo send method.
-     * @param {string} url Uri to make request to.
-     * @param {Function=} opt_callback Callback function for when request is
-     *     complete.
-     * @param {string=} opt_method Send method, default: GET.
-     * @param {string=} opt_content Post data.
-     * @param {Object|goog.structs.Map=} opt_headers Map of headers to add to the
-     *     request.
-     * @param {number=} opt_timeoutInterval Number of milliseconds after which an
-     *     incomplete request will be aborted; 0 means no timeout is set.
-     */
-    function send(url: string, opt_callback?: Function, opt_method?: string, opt_content?: string, opt_headers?: goog.structs.Map<any, any>, opt_timeoutInterval?: number): void;
+    function send(url: string, opt_callback?: Function, opt_method?: string, opt_content?: string, opt_headers?: Object|goog.structs.Map<any, any>, opt_timeoutInterval?: number): void;
 }

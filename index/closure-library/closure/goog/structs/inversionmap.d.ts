@@ -42,7 +42,7 @@ declare module goog.structs {
              *     from inversion map.
              * @return {T|null} Value retrieved from inversion map; null if not found.
              */
-            at(intKey: number): any /*T|any (null)*/;
+            at(intKey: number): T|any /*null*/;
     
             /**
              * Gets the largest index such that rangeArray[index] <= intKey from the

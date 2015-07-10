@@ -45,14 +45,14 @@ declare module goog.ui {
              * @return {function(*, *) : number} The default sort function to be used by
              *     all columns.
              */
-            getDefaultSortFunction(): (_0: any, _1: any) => number;
+            getDefaultSortFunction(): { (_0: any, _1: any): number };
     
             /**
              * Sets the default sort function to be used by all columns.  If not set
              * explicitly, this defaults to numeric sorting.
              * @param {function(*, *) : number} sortFunction The new default sort function.
              */
-            setDefaultSortFunction(sortFunction: (_0: any, _1: any) => number): void;
+            setDefaultSortFunction(sortFunction: { (_0: any, _1: any): number }): void;
     
             /**
              * Gets the sort function to be used by the given column.  Returns the default
@@ -60,7 +60,7 @@ declare module goog.ui {
              * @param {number} column The column index.
              * @return {function(*, *) : number} The sort function used by the column.
              */
-            getSortFunction(column: number): (_0: any, _1: any) => number;
+            getSortFunction(column: number): { (_0: any, _1: any): number };
     
             /**
              * Set the sort function for the given column, overriding the default sort
@@ -68,7 +68,7 @@ declare module goog.ui {
              * @param {number} column The column index.
              * @param {function(*, *) : number} sortFunction The new sort function.
              */
-            setSortFunction(column: number, sortFunction: (_0: any, _1: any) => number): void;
+            setSortFunction(column: number, sortFunction: { (_0: any, _1: any): number }): void;
     
             /**
              * Sort the table contents by the values in the given column.
@@ -119,5 +119,5 @@ declare module goog.ui.TableSorter {
      * @return {function(*, *) : number} A new sort function that reverses the
      *     given sort function.
      */
-    function createReverseSort(sortFunction: (_0: any, _1: any) => number): (_0: any, _1: any) => number;
+    function createReverseSort(sortFunction: { (_0: any, _1: any): number }): { (_0: any, _1: any): number };
 }

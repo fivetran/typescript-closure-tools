@@ -15,15 +15,7 @@ declare module goog.events {
              * @extends {goog.events.EventTarget}
              * @final
              */
-            constructor(element: Element);
-            /**
-             * A wrapper around an element that you want to listen to ACTION events on.
-             * @param {Element|Document} element The element or document to listen on.
-             * @constructor
-             * @extends {goog.events.EventTarget}
-             * @final
-             */
-            constructor(element: Document);
+            constructor(element: Element|Document);
     } 
     
 

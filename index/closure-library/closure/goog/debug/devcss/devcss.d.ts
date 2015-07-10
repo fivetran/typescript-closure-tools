@@ -16,18 +16,7 @@ declare module goog.debug {
              * @constructor
              * @final
              */
-            constructor(opt_userAgent?: goog.debug.DevCss.UserAgent, opt_userAgentVersion?: number);
-            /**
-             * A class for solving development CSS issues/emulating the CSS Compiler.
-             * @param {goog.debug.DevCss.UserAgent=} opt_userAgent The user agent, if not
-             *     passed in, will be determined using goog.userAgent.
-             * @param {number|string=} opt_userAgentVersion The user agent's version.
-             *     If not passed in, will be determined using goog.userAgent.
-             * @throws {Error} When userAgent detection fails.
-             * @constructor
-             * @final
-             */
-            constructor(opt_userAgent?: goog.debug.DevCss.UserAgent, opt_userAgentVersion?: string);
+            constructor(opt_userAgent?: goog.debug.DevCss.UserAgent, opt_userAgentVersion?: number|string);
     
             /**
              * Rewrites the CSSOM as needed to activate any useragent-specific selectors.

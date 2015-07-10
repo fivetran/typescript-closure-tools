@@ -45,7 +45,7 @@ declare module goog.dom {
              * @return {goog.dom.AbstractRange|undefined} The adjusted range, if opt_range
              *     was provided.
              */
-            removeCarets(opt_range?: goog.dom.AbstractRange): any /*goog.dom.AbstractRange|any (undefined)*/;
+            removeCarets(opt_range?: goog.dom.AbstractRange): goog.dom.AbstractRange|any /*undefined*/;
     
             /**
              * Sets the document where the range will be restored.

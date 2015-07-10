@@ -21,28 +21,7 @@ declare module goog.net {
           *
           * @param {!goog.net.WebChannel.MessageData} message The message to send.
           */
-        send(message: ArrayBuffer): void;
-        /**
-          * Sends a message to the server that maintains the other end point of
-          * the WebChannel.
-          *
-          * @param {!goog.net.WebChannel.MessageData} message The message to send.
-          */
-        send(message: Blob): void;
-        /**
-          * Sends a message to the server that maintains the other end point of
-          * the WebChannel.
-          *
-          * @param {!goog.net.WebChannel.MessageData} message The message to send.
-          */
-        send(message: { [key: string]: string }): void;
-        /**
-          * Sends a message to the server that maintains the other end point of
-          * the WebChannel.
-          *
-          * @param {!goog.net.WebChannel.MessageData} message The message to send.
-          */
-        send(message: any[]): void;
+        send(message: goog.net.WebChannel.MessageData): void;
     
         /**
           * @return {!goog.net.WebChannel.RuntimeProperties} The runtime properties
@@ -173,11 +152,11 @@ declare module goog.net.WebChannel {
      * }}
      */
     interface Options {
-        messageHeaders: any /*{ [key: string]: string }|any (undefined)*/;
-        messageUrlParams: any /*{ [key: string]: string }|any (undefined)*/;
-        concurrentRequestLimit: any /*number|any (undefined)*/;
-        supportsCrossDomainXhr: any /*boolean|any (undefined)*/;
-        testUrl: any /*string|any (undefined)*/
+        messageHeaders: { [key: string]: string }|any /*undefined*/;
+        messageUrlParams: { [key: string]: string }|any /*undefined*/;
+        concurrentRequestLimit: number|any /*undefined*/;
+        supportsCrossDomainXhr: boolean|any /*undefined*/;
+        testUrl: string|any /*undefined*/
     }
 
     /**
@@ -185,7 +164,7 @@ declare module goog.net.WebChannel {
      *
      * @typedef {(ArrayBuffer|Blob|Object.<string, string>|Array)}
      */
-    interface MessageData { /*any (ArrayBuffer|Blob|{ [key: string]: string }|any[])*/ }
+    type MessageData = ArrayBuffer|Blob|{ [key: string]: string }|any[];
 
     /**
      * Common events fired by WebChannels.

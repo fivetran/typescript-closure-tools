@@ -71,22 +71,7 @@ declare module goog.tweak {
              *     tweak entries.
              * @return {!Element} The root element for the panel.
              */
-            render(opt_endElement?: Element): Element;
-            /**
-             * Creates and returns the expanded element.
-             * The markup looks like:
-             * <div>
-             *   <a>Show Descriptions</a>
-             *   <div>
-             *      ...
-             *      {endElement}
-             *   </div>
-             * </div>
-             * @param {Element|DocumentFragment=} opt_endElement Element to insert after all
-             *     tweak entries.
-             * @return {!Element} The root element for the panel.
-             */
-            render(opt_endElement?: DocumentFragment): Element;
+            render(opt_endElement?: Element|DocumentFragment): Element;
     
             /**
              * Inserts the given entry into the panel.
@@ -134,7 +119,7 @@ declare module goog.tweak.TweakUi {
      * @return {!Element|undefined} The root UI element or undefined if tweaks are
      *     not enabled.
      */
-    function create(opt_domHelper?: goog.dom.DomHelper): any /*Element|any (undefined)*/;
+    function create(opt_domHelper?: goog.dom.DomHelper): Element|any /*undefined*/;
 
     /**
      * Creates a TweakUi inside of a show/hide link.
@@ -142,7 +127,7 @@ declare module goog.tweak.TweakUi {
      * @return {!Element|undefined} The root UI element or undefined if tweaks are
      *     not enabled.
      */
-    function createCollapsible(opt_domHelper?: goog.dom.DomHelper): any /*Element|any (undefined)*/;
+    function createCollapsible(opt_domHelper?: goog.dom.DomHelper): Element|any /*undefined*/;
 }
 
 declare module goog.tweak.NamespaceEntry_ {

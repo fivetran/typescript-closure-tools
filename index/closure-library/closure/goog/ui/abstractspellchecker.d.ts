@@ -63,7 +63,7 @@ declare module goog.ui {
              * @type {Array.<string>|string|RegExp|undefined}
              * @protected
              */
-            excludeMarker: any /*string[]|string|RegExp|any (undefined)*/;
+            excludeMarker: string[]|string|RegExp|any /*undefined*/;
     
             /**
              * @return {goog.spell.SpellCheck} The handler used for caching and lookups.
@@ -89,13 +89,13 @@ declare module goog.ui {
              * @return {goog.ui.PopupMenu|undefined} The suggestions menu.
              * @protected
              */
-            getMenu(): any /*goog.ui.PopupMenu|any (undefined)*/;
+            getMenu(): goog.ui.PopupMenu|any /*undefined*/;
     
             /**
              * @return {goog.ui.MenuItem|undefined} The menu item for edit word option.
              * @protected
              */
-            getMenuEdit(): any /*goog.ui.MenuItem|any (undefined)*/;
+            getMenuEdit(): goog.ui.MenuItem|any /*undefined*/;
     
             /**
              * Sets the marker for the excluded text.
@@ -106,37 +106,7 @@ declare module goog.ui {
              *        or class names for the rich text spell checker for the elements to
              *        exclude from checking.
              */
-            setExcludeMarker(marker: string[]): void;
-            /**
-             * Sets the marker for the excluded text.
-             *
-             * {@see goog.ui.AbstractSpellChecker.prototype.excludeMarker}
-             *
-             * @param {Array.<string>|string|RegExp|null} marker A RegExp for plain text
-             *        or class names for the rich text spell checker for the elements to
-             *        exclude from checking.
-             */
-            setExcludeMarker(marker: string): void;
-            /**
-             * Sets the marker for the excluded text.
-             *
-             * {@see goog.ui.AbstractSpellChecker.prototype.excludeMarker}
-             *
-             * @param {Array.<string>|string|RegExp|null} marker A RegExp for plain text
-             *        or class names for the rich text spell checker for the elements to
-             *        exclude from checking.
-             */
-            setExcludeMarker(marker: RegExp): void;
-            /**
-             * Sets the marker for the excluded text.
-             *
-             * {@see goog.ui.AbstractSpellChecker.prototype.excludeMarker}
-             *
-             * @param {Array.<string>|string|RegExp|null} marker A RegExp for plain text
-             *        or class names for the rich text spell checker for the elements to
-             *        exclude from checking.
-             */
-            setExcludeMarker(marker: any /*null*/): void;
+            setExcludeMarker(marker: string[]|string|RegExp|any /*null*/): void;
     
             /**
              * Checks spelling for all text.
@@ -185,16 +155,7 @@ declare module goog.ui {
              *     display menu at relative to the viewport (in client coordinates), or a
              *     mouse event.
              */
-            showSuggestionsMenu(el: Element, opt_pos?: goog.events.BrowserEvent): void;
-            /**
-             * Displays suggestions menu.
-             *
-             * @param {Element} el Element to display menu for.
-             * @param {goog.events.BrowserEvent|goog.math.Coordinate=} opt_pos Position to
-             *     display menu at relative to the viewport (in client coordinates), or a
-             *     mouse event.
-             */
-            showSuggestionsMenu(el: Element, opt_pos?: goog.math.Coordinate): void;
+            showSuggestionsMenu(el: Element, opt_pos?: goog.events.BrowserEvent|goog.math.Coordinate): void;
     
             /**
              * Initializes suggestions menu. Populates menu with separator and ignore option

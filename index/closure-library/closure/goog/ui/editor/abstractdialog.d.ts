@@ -168,7 +168,7 @@ declare module goog.ui.editor.AbstractDialog {
              *     calling AbstractDialog.getButtonElement().
              * @return {!goog.ui.editor.AbstractDialog.Builder} This.
              */
-            addButton(label: string, handler: (_0: goog.ui.Dialog.EventType) => any, opt_buttonId?: string): goog.ui.editor.AbstractDialog.Builder;
+            addButton(label: string, handler: { (_0: goog.ui.Dialog.EventType): any }, opt_buttonId?: string): goog.ui.editor.AbstractDialog.Builder;
     
             /**
              * Puts a CSS class on the dialog's main element.

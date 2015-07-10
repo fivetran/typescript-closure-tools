@@ -52,9 +52,9 @@ declare module goog.net.jsloader {
      * }}
      */
     interface Options {
-        timeout: any /*number|any (undefined)*/;
-        document: any /*HTMLDocument|any (undefined)*/;
-        cleanupWhenDone: any /*boolean|any (undefined)*/
+        timeout: number|any /*undefined*/;
+        document: HTMLDocument|any /*undefined*/;
+        cleanupWhenDone: boolean|any /*undefined*/
     }
 
     /**

@@ -25,7 +25,7 @@ declare module goog.debug {
              * @constructor
              * @extends {goog.events.EventTarget}
              */
-            constructor(handlerUrl: string, opt_contextProvider?: (_0: Error, _1: { [key: string]: string }) => any /*missing*/, opt_noAutoProtect?: boolean);
+            constructor(handlerUrl: string, opt_contextProvider?: { (_0: Error, _1: { [key: string]: string }): any /*missing*/ }, opt_noAutoProtect?: boolean);
     
             /**
              * Installs exception protection for an entry point function in addition
@@ -45,13 +45,7 @@ declare module goog.debug {
              * @param {Object|goog.structs.Map} loggingHeaders Extra headers to send
              *     to the logging URL.
              */
-            setLoggingHeaders(loggingHeaders: Object): void;
-            /**
-             * Add headers to the logging url.
-             * @param {Object|goog.structs.Map} loggingHeaders Extra headers to send
-             *     to the logging URL.
-             */
-            setLoggingHeaders(loggingHeaders: goog.structs.Map<any, any>): void;
+            setLoggingHeaders(loggingHeaders: Object|goog.structs.Map<any, any>): void;
     
             /**
              * Set the function used to send error reports to the server.
@@ -61,16 +55,7 @@ declare module goog.debug {
              *     HTTP method request content, and (optionally) request headers to be
              *     added.
              */
-            setXhrSender(xhrSender: (_0: string, _1: string, _2: string, _3: Object) => any /*missing*/): void;
-            /**
-             * Set the function used to send error reports to the server.
-             * @param {function(string, string, string, (Object|goog.structs.Map)=)}
-             *     xhrSender If provided, this will be used to send a report to the
-             *     server instead of the default method. The function will be given the URI,
-             *     HTTP method request content, and (optionally) request headers to be
-             *     added.
-             */
-            setXhrSender(xhrSender: (_0: string, _1: string, _2: string, _3: goog.structs.Map<any, any>) => any /*missing*/): void;
+            setXhrSender(xhrSender: { (_0: string, _1: string, _2: string, _3: Object|goog.structs.Map<any, any>): any /*missing*/ }): void;
     
             /**
              * Handler for caught exceptions. Sends report to the LoggingServlet and
@@ -162,7 +147,7 @@ declare module goog.debug.ErrorReporter {
      *     the ErrorReporter just for transmission of reports.
      * @return {!goog.debug.ErrorReporter} The error reporter.
      */
-    function install(loggingUrl: string, opt_contextProvider?: (_0: Error, _1: { [key: string]: string }) => any /*missing*/, opt_noAutoProtect?: boolean): goog.debug.ErrorReporter;
+    function install(loggingUrl: string, opt_contextProvider?: { (_0: Error, _1: { [key: string]: string }): any /*missing*/ }, opt_noAutoProtect?: boolean): goog.debug.ErrorReporter;
 
     /**
      * Default implementation of XHR sender interface.
@@ -173,17 +158,7 @@ declare module goog.debug.ErrorReporter {
      * @param {Object|goog.structs.Map=} opt_headers Map of headers to add to the
      *     request.
      */
-    function defaultXhrSender(uri: string, method: string, content: string, opt_headers?: Object): void;
-    /**
-     * Default implementation of XHR sender interface.
-     *
-     * @param {string} uri URI to make request to.
-     * @param {string} method Send method.
-     * @param {string} content Post data.
-     * @param {Object|goog.structs.Map=} opt_headers Map of headers to add to the
-     *     request.
-     */
-    function defaultXhrSender(uri: string, method: string, content: string, opt_headers?: goog.structs.Map<any, any>): void;
+    function defaultXhrSender(uri: string, method: string, content: string, opt_headers?: Object|goog.structs.Map<any, any>): void;
 }
 
 declare module goog.debug.ErrorReporter.ExceptionEvent {

@@ -20,19 +20,7 @@ declare module goog.testing.fs {
              * @extends {goog.events.Event}
              * @final
              */
-            constructor(type: goog.fs.FileSaver.EventType, loaded: number, total: number);
-            /**
-             * A mock progress event.
-             *
-             * @param {!goog.fs.FileSaver.EventType|!goog.fs.FileReader.EventType} type
-             *     Event type.
-             * @param {number} loaded The number of bytes processed.
-             * @param {number} total The total data that was to be processed, in bytes.
-             * @constructor
-             * @extends {goog.events.Event}
-             * @final
-             */
-            constructor(type: goog.fs.FileReader.EventType, loaded: number, total: number);
+            constructor(type: goog.fs.FileSaver.EventType|goog.fs.FileReader.EventType, loaded: number, total: number);
     
             /**
              * @see {goog.fs.ProgressEvent#isLengthComputable}

@@ -11,5 +11,5 @@ declare module goog.testing.watchers {
      * Enqueues a function to be called when the clock used for setTimeout is reset.
      * @param {function()} fn
      */
-    function watchClockReset(fn: () => any /*missing*/): void;
+    function watchClockReset(fn: { (): any /*missing*/ }): void;
 }

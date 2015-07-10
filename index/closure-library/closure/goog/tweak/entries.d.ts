@@ -93,7 +93,7 @@ declare module goog.tweak {
              * @type {string|undefined}
              * @protected
              */
-            initialQueryParamValue: any /*string|any (undefined)*/;
+            initialQueryParamValue: string|any /*undefined*/;
     
             /**
              * Sets the value of the entry based on the value of the query parameter. Once
@@ -231,24 +231,19 @@ declare module goog.tweak {
              * Valid values for the setting.
              * @type {Array.<string>|undefined}
              */
-            validValues_: any /*string[]|any (undefined)*/;
+            validValues_: string[]|any /*undefined*/;
     
             /**
              * Sets the valid values for the setting.
              * @param {Array.<string>|undefined} values Valid values.
              */
-            setValidValues(values: string[]): void;
-            /**
-             * Sets the valid values for the setting.
-             * @param {Array.<string>|undefined} values Valid values.
-             */
-            setValidValues(values: any /*undefined*/): void;
+            setValidValues(values: string[]|any /*undefined*/): void;
     
             /**
              * Returns the valid values for the setting.
              * @return {Array.<string>|undefined} Valid values.
              */
-            getValidValues(): any /*string[]|any (undefined)*/;
+            getValidValues(): string[]|any /*undefined*/;
     } 
     
 
@@ -270,24 +265,19 @@ declare module goog.tweak {
              * Valid values for the setting.
              * @type {Array.<number>|undefined}
              */
-            validValues_: any /*number[]|any (undefined)*/;
+            validValues_: number[]|any /*undefined*/;
     
             /**
              * Sets the valid values for the setting.
              * @param {Array.<number>|undefined} values Valid values.
              */
-            setValidValues(values: number[]): void;
-            /**
-             * Sets the valid values for the setting.
-             * @param {Array.<number>|undefined} values Valid values.
-             */
-            setValidValues(values: any /*undefined*/): void;
+            setValidValues(values: number[]|any /*undefined*/): void;
     
             /**
              * Returns the valid values for the setting.
              * @return {Array.<number>|undefined} Valid values.
              */
-            getValidValues(): any /*number[]|any (undefined)*/;
+            getValidValues(): number[]|any /*undefined*/;
     } 
     
 

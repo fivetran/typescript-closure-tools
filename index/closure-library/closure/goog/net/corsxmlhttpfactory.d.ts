@@ -65,7 +65,7 @@ declare module goog.net {
              * @type {function()|null|undefined}
              * @see http://www.w3.org/TR/XMLHttpRequest/#handler-xhr-onreadystatechange
              */
-            onreadystatechange: any /*() => any (missing)|any (null)|any (undefined)*/;
+            onreadystatechange: { (): any /*missing*/ }|any /*null*/|any /*undefined*/;
     
             /**
              * @type {string}
@@ -111,32 +111,7 @@ declare module goog.net {
              * @param {ArrayBuffer|ArrayBufferView|Blob|Document|FormData|string=} opt_data
              * @see http://www.w3.org/TR/XMLHttpRequest/#the-send()-method
              */
-            send(opt_data?: ArrayBuffer): void;
-            /**
-             * @param {ArrayBuffer|ArrayBufferView|Blob|Document|FormData|string=} opt_data
-             * @see http://www.w3.org/TR/XMLHttpRequest/#the-send()-method
-             */
-            send(opt_data?: ArrayBufferView): void;
-            /**
-             * @param {ArrayBuffer|ArrayBufferView|Blob|Document|FormData|string=} opt_data
-             * @see http://www.w3.org/TR/XMLHttpRequest/#the-send()-method
-             */
-            send(opt_data?: Blob): void;
-            /**
-             * @param {ArrayBuffer|ArrayBufferView|Blob|Document|FormData|string=} opt_data
-             * @see http://www.w3.org/TR/XMLHttpRequest/#the-send()-method
-             */
-            send(opt_data?: Document): void;
-            /**
-             * @param {ArrayBuffer|ArrayBufferView|Blob|Document|FormData|string=} opt_data
-             * @see http://www.w3.org/TR/XMLHttpRequest/#the-send()-method
-             */
-            send(opt_data?: FormData): void;
-            /**
-             * @param {ArrayBuffer|ArrayBufferView|Blob|Document|FormData|string=} opt_data
-             * @see http://www.w3.org/TR/XMLHttpRequest/#the-send()-method
-             */
-            send(opt_data?: string): void;
+            send(opt_data?: ArrayBuffer|ArrayBufferView|Blob|Document|FormData|string): void;
     
             /**
              * @see http://www.w3.org/TR/XMLHttpRequest/#the-abort()-method

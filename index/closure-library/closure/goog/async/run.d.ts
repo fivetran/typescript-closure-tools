@@ -15,17 +15,7 @@ declare module goog.async.run {
              * @param {function()} fn
              * @param {Object|null|undefined} scope
              */
-            constructor(fn: () => any /*missing*/, scope: Object);
-            /**
-             * @constructor
-             * @final
-             * @struct
-             * @private
-             *
-             * @param {function()} fn
-             * @param {Object|null|undefined} scope
-             */
-            constructor(fn: () => any /*missing*/, scope: any /*null*/);
+            constructor(fn: { (): any /*missing*/ }, scope: Object|any /*null*/|any /*undefined*/);
     
             /** @const */
             fn: any /*missing*/;
@@ -53,5 +43,5 @@ declare module goog.async {
      *     the provided function.
      * @template THIS
      */
-    function run<THIS>(callback: () => any /*missing*/, opt_context?: THIS): void;
+    function run<THIS>(callback: { (): any /*missing*/ }, opt_context?: THIS): void;
 }

@@ -27,29 +27,7 @@ declare module goog {
      * @param {string} name The distinguished name to provide.
      * @param {string|number|boolean} defaultValue
      */
-    function define(name: string, defaultValue: string): void;
-    /**
-     * Defines a named value. In uncompiled mode, the value is retreived from
-     * CLOSURE_DEFINES or CLOSURE_UNCOMPILED_DEFINES if the object is defined and
-     * has the property specified, and otherwise used the defined defaultValue.
-     * When compiled, the default can be overridden using compiler command-line
-     * options.
-     *
-     * @param {string} name The distinguished name to provide.
-     * @param {string|number|boolean} defaultValue
-     */
-    function define(name: string, defaultValue: number): void;
-    /**
-     * Defines a named value. In uncompiled mode, the value is retreived from
-     * CLOSURE_DEFINES or CLOSURE_UNCOMPILED_DEFINES if the object is defined and
-     * has the property specified, and otherwise used the defined defaultValue.
-     * When compiled, the default can be overridden using compiler command-line
-     * options.
-     *
-     * @param {string} name The distinguished name to provide.
-     * @param {string|number|boolean} defaultValue
-     */
-    function define(name: string, defaultValue: boolean): void;
+    function define(name: string, defaultValue: string|number|boolean): void;
 
     /**
      * @define {boolean} DEBUG is provided as a convenience so that debugging code
@@ -604,7 +582,7 @@ declare module goog {
      *     to namespaces (e.g. "var dom = goog.dom") or classes
      *     (e.g. "var Timer = goog.Timer").
      */
-    function scope(fn: () => any /*missing*/): void;
+    function scope(fn: { (): any /*missing*/ }): void;
 }
 
 declare module goog.global {
@@ -625,7 +603,7 @@ declare module goog.global {
      *
      * @type {Object.<string, (string|number|boolean)>|undefined}
      */
-    var CLOSURE_UNCOMPILED_DEFINES: any /*{ [key: string]: any (string|number|boolean) }|any (undefined)*/;
+    var CLOSURE_UNCOMPILED_DEFINES: { [key: string]: string|number|boolean }|any /*undefined*/;
 
     /**
      * A hook for overriding the define values in uncompiled or compiled mode,
@@ -645,19 +623,19 @@ declare module goog.global {
      *
      * @type {Object.<string, (string|number|boolean)>|undefined}
      */
-    var CLOSURE_DEFINES: any /*{ [key: string]: any (string|number|boolean) }|any (undefined)*/;
+    var CLOSURE_DEFINES: { [key: string]: string|number|boolean }|any /*undefined*/;
 
     /**
      * A hook for overriding the base path.
      * @type {string|undefined}
      */
-    var CLOSURE_BASE_PATH: any /*string|any (undefined)*/;
+    var CLOSURE_BASE_PATH: string|any /*undefined*/;
 
     /**
      * Whether to write out Closure's deps file. By default, the deps are written.
      * @type {boolean|undefined}
      */
-    var CLOSURE_NO_DEPS: any /*boolean|any (undefined)*/;
+    var CLOSURE_NO_DEPS: boolean|any /*undefined*/;
 
     /**
      * A function to import a single script. This is meant to be overridden when
@@ -669,7 +647,7 @@ declare module goog.global {
      * return true if the script was imported, false otherwise.
      * @type {(function(string): boolean)|undefined}
      */
-    var CLOSURE_IMPORT_SCRIPT: any /*any ((_0: string) => boolean)|any (undefined)*/;
+    var CLOSURE_IMPORT_SCRIPT: { (_0: string): boolean }|any /*undefined*/;
 
     /**
      * To use CSS renaming in compiled mode, one of the input files should have a
@@ -683,5 +661,5 @@ declare module goog.global {
      * A hook for overriding the CSS name mapping.
      * @type {Object|undefined}
      */
-    var CLOSURE_CSS_NAME_MAPPING: any /*Object|any (undefined)*/;
+    var CLOSURE_CSS_NAME_MAPPING: Object|any /*undefined*/;
 }

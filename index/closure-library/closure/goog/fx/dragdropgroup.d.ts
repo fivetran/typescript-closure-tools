@@ -33,14 +33,7 @@ declare module goog.fx {
              * @param {Element|string} element Dom Node, or string representation of node
              *     id, that was previously added with addItem().
              */
-            removeItem(element: Element): void;
-            /**
-             * Remove item from drag object.
-             *
-             * @param {Element|string} element Dom Node, or string representation of node
-             *     id, that was previously added with addItem().
-             */
-            removeItem(element: string): void;
+            removeItem(element: Element|string): void;
     
             /**
              * Marks the supplied list of items as selected. A drag operation for any of the

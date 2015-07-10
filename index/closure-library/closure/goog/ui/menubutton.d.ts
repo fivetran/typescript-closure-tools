@@ -1,5 +1,6 @@
 /// <reference path="../../../globals.d.ts" />
 /// <reference path="./button.d.ts" />
+/// <reference path="./controlcontent.d.ts" />
 /// <reference path="./menu.d.ts" />
 /// <reference path="./buttonrenderer.d.ts" />
 /// <reference path="../dom/dom.d.ts" />
@@ -34,58 +35,7 @@ declare module goog.ui {
              * @constructor
              * @extends {goog.ui.Button}
              */
-            constructor(opt_content?: string, opt_menu?: goog.ui.Menu, opt_renderer?: goog.ui.ButtonRenderer, opt_domHelper?: goog.dom.DomHelper, opt_menuRenderer?: goog.ui.MenuRenderer);
-            /**
-             * A menu button control.  Extends {@link goog.ui.Button} by composing a button
-             * with a dropdown arrow and a popup menu.
-             *
-             * @param {goog.ui.ControlContent=} opt_content Text caption or existing DOM
-             *     structure to display as the button's caption (if any).
-             * @param {goog.ui.Menu=} opt_menu Menu to render under the button when clicked.
-             * @param {goog.ui.ButtonRenderer=} opt_renderer Renderer used to render or
-             *     decorate the menu button; defaults to {@link goog.ui.MenuButtonRenderer}.
-             * @param {goog.dom.DomHelper=} opt_domHelper Optional DOM hepler, used for
-             *     document interaction.
-             * @param {!goog.ui.MenuRenderer=} opt_menuRenderer Renderer used to render or
-             *     decorate the menu; defaults to {@link goog.ui.MenuRenderer}.
-             * @constructor
-             * @extends {goog.ui.Button}
-             */
-            constructor(opt_content?: Node, opt_menu?: goog.ui.Menu, opt_renderer?: goog.ui.ButtonRenderer, opt_domHelper?: goog.dom.DomHelper, opt_menuRenderer?: goog.ui.MenuRenderer);
-            /**
-             * A menu button control.  Extends {@link goog.ui.Button} by composing a button
-             * with a dropdown arrow and a popup menu.
-             *
-             * @param {goog.ui.ControlContent=} opt_content Text caption or existing DOM
-             *     structure to display as the button's caption (if any).
-             * @param {goog.ui.Menu=} opt_menu Menu to render under the button when clicked.
-             * @param {goog.ui.ButtonRenderer=} opt_renderer Renderer used to render or
-             *     decorate the menu button; defaults to {@link goog.ui.MenuButtonRenderer}.
-             * @param {goog.dom.DomHelper=} opt_domHelper Optional DOM hepler, used for
-             *     document interaction.
-             * @param {!goog.ui.MenuRenderer=} opt_menuRenderer Renderer used to render or
-             *     decorate the menu; defaults to {@link goog.ui.MenuRenderer}.
-             * @constructor
-             * @extends {goog.ui.Button}
-             */
-            constructor(opt_content?: Node[], opt_menu?: goog.ui.Menu, opt_renderer?: goog.ui.ButtonRenderer, opt_domHelper?: goog.dom.DomHelper, opt_menuRenderer?: goog.ui.MenuRenderer);
-            /**
-             * A menu button control.  Extends {@link goog.ui.Button} by composing a button
-             * with a dropdown arrow and a popup menu.
-             *
-             * @param {goog.ui.ControlContent=} opt_content Text caption or existing DOM
-             *     structure to display as the button's caption (if any).
-             * @param {goog.ui.Menu=} opt_menu Menu to render under the button when clicked.
-             * @param {goog.ui.ButtonRenderer=} opt_renderer Renderer used to render or
-             *     decorate the menu button; defaults to {@link goog.ui.MenuButtonRenderer}.
-             * @param {goog.dom.DomHelper=} opt_domHelper Optional DOM hepler, used for
-             *     document interaction.
-             * @param {!goog.ui.MenuRenderer=} opt_menuRenderer Renderer used to render or
-             *     decorate the menu; defaults to {@link goog.ui.MenuRenderer}.
-             * @constructor
-             * @extends {goog.ui.Button}
-             */
-            constructor(opt_content?: NodeList, opt_menu?: goog.ui.Menu, opt_renderer?: goog.ui.ButtonRenderer, opt_domHelper?: goog.dom.DomHelper, opt_menuRenderer?: goog.ui.MenuRenderer);
+            constructor(opt_content?: goog.ui.ControlContent, opt_menu?: goog.ui.Menu, opt_renderer?: goog.ui.ButtonRenderer, opt_domHelper?: goog.dom.DomHelper, opt_menuRenderer?: goog.ui.MenuRenderer);
     
             /**
              * Handles mousedown events over the document.  If the mousedown happens over
@@ -133,7 +83,7 @@ declare module goog.ui {
              *     to remove the menu).
              * @return {goog.ui.Menu|undefined} Previous menu (undefined if none).
              */
-            setMenu(menu: goog.ui.Menu): any /*goog.ui.Menu|any (undefined)*/;
+            setMenu(menu: goog.ui.Menu): goog.ui.Menu|any /*undefined*/;
     
             /**
              * Specify which positioning algorithm to use.
@@ -168,19 +118,7 @@ declare module goog.ui {
              * @param {goog.ui.MenuItem|goog.ui.MenuSeparator|goog.ui.Control} item Menu
              *     item to add to the menu.
              */
-            addItem(item: goog.ui.MenuItem): void;
-            /**
-             * Adds a new menu item at the end of the menu.
-             * @param {goog.ui.MenuItem|goog.ui.MenuSeparator|goog.ui.Control} item Menu
-             *     item to add to the menu.
-             */
-            addItem(item: goog.ui.MenuSeparator): void;
-            /**
-             * Adds a new menu item at the end of the menu.
-             * @param {goog.ui.MenuItem|goog.ui.MenuSeparator|goog.ui.Control} item Menu
-             *     item to add to the menu.
-             */
-            addItem(item: goog.ui.Control): void;
+            addItem(item: goog.ui.MenuItem|goog.ui.MenuSeparator|goog.ui.Control): void;
     
             /**
              * Adds a new menu item at the specific index in the menu.
@@ -188,25 +126,13 @@ declare module goog.ui {
              *     menu.
              * @param {number} index Index at which to insert the menu item.
              */
-            addItemAt(item: goog.ui.MenuItem, index: number): void;
-            /**
-             * Adds a new menu item at the specific index in the menu.
-             * @param {goog.ui.MenuItem|goog.ui.MenuSeparator} item Menu item to add to the
-             *     menu.
-             * @param {number} index Index at which to insert the menu item.
-             */
-            addItemAt(item: goog.ui.MenuSeparator, index: number): void;
+            addItemAt(item: goog.ui.MenuItem|goog.ui.MenuSeparator, index: number): void;
     
             /**
              * Removes the item from the menu and disposes of it.
              * @param {goog.ui.MenuItem|goog.ui.MenuSeparator} item The menu item to remove.
              */
-            removeItem(item: goog.ui.MenuItem): void;
-            /**
-             * Removes the item from the menu and disposes of it.
-             * @param {goog.ui.MenuItem|goog.ui.MenuSeparator} item The menu item to remove.
-             */
-            removeItem(item: goog.ui.MenuSeparator): void;
+            removeItem(item: goog.ui.MenuItem|goog.ui.MenuSeparator): void;
     
             /**
              * Removes the menu item at a given index in the menu and disposes of it.

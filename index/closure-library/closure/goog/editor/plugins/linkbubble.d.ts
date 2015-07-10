@@ -51,7 +51,7 @@ declare module goog.editor.plugins {
              * Set the optional function for getting the "test" link of a url.
              * @param {function(string) : string} func The function to use.
              */
-            setTestLinkUrlFn(func: (_0: string) => string): void;
+            setTestLinkUrlFn(func: { (_0: string): string }): void;
     
             /**
              * Returns the target element url for the bubble.
@@ -112,7 +112,7 @@ declare module goog.editor.plugins.LinkBubble {
              * @constructor
              * @final
              */
-            constructor(spanId: string, linkId: string, message: string, toShowFn: (_0: string) => boolean, actionFn: (_0: string) => void);
+            constructor(spanId: string, linkId: string, message: string, toShowFn: { (_0: string): boolean }, actionFn: { (_0: string): void });
     } 
     
 }

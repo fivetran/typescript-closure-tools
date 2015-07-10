@@ -7,7 +7,7 @@ declare module goog.debug.reflect {
      * @param {!Function} classConstructor A object constructor to get the name of.
      * @return {string|undefined} The string name of the class.
      */
-    function className(classConstructor: Function): any /*string|any (undefined)*/;
+    function className(classConstructor: Function): string|any /*undefined*/;
 
     /**
      * Guesses the real type of the object, even if its {@code toString} method is

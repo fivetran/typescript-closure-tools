@@ -35,66 +35,21 @@ declare module goog.graphics {
              * @constructor
              * @extends {goog.ui.Component}
              */
-            constructor(width: number, height: number, opt_coordWidth?: number, opt_coordHeight?: number, opt_domHelper?: goog.dom.DomHelper);
-            /**
-             * Base class for the different graphics. You should never construct objects
-             * of this class. Instead us goog.graphics.createGraphics
-             * @param {number|string} width The width in pixels or percent.
-             * @param {number|string} height The height in pixels or percent.
-             * @param {?number=} opt_coordWidth Optional coordinate system width - if
-             *     omitted or null, defaults to same as width.
-             * @param {?number=} opt_coordHeight Optional coordinate system height - if
-             *     omitted or null, defaults to same as height.
-             * @param {goog.dom.DomHelper=} opt_domHelper The DOM helper object for the
-             *     document we want to render in.
-             * @constructor
-             * @extends {goog.ui.Component}
-             */
-            constructor(width: number, height: string, opt_coordWidth?: number, opt_coordHeight?: number, opt_domHelper?: goog.dom.DomHelper);
-            /**
-             * Base class for the different graphics. You should never construct objects
-             * of this class. Instead us goog.graphics.createGraphics
-             * @param {number|string} width The width in pixels or percent.
-             * @param {number|string} height The height in pixels or percent.
-             * @param {?number=} opt_coordWidth Optional coordinate system width - if
-             *     omitted or null, defaults to same as width.
-             * @param {?number=} opt_coordHeight Optional coordinate system height - if
-             *     omitted or null, defaults to same as height.
-             * @param {goog.dom.DomHelper=} opt_domHelper The DOM helper object for the
-             *     document we want to render in.
-             * @constructor
-             * @extends {goog.ui.Component}
-             */
-            constructor(width: string, height: number, opt_coordWidth?: number, opt_coordHeight?: number, opt_domHelper?: goog.dom.DomHelper);
-            /**
-             * Base class for the different graphics. You should never construct objects
-             * of this class. Instead us goog.graphics.createGraphics
-             * @param {number|string} width The width in pixels or percent.
-             * @param {number|string} height The height in pixels or percent.
-             * @param {?number=} opt_coordWidth Optional coordinate system width - if
-             *     omitted or null, defaults to same as width.
-             * @param {?number=} opt_coordHeight Optional coordinate system height - if
-             *     omitted or null, defaults to same as height.
-             * @param {goog.dom.DomHelper=} opt_domHelper The DOM helper object for the
-             *     document we want to render in.
-             * @constructor
-             * @extends {goog.ui.Component}
-             */
-            constructor(width: string, height: string, opt_coordWidth?: number, opt_coordHeight?: number, opt_domHelper?: goog.dom.DomHelper);
+            constructor(width: number|string, height: number|string, opt_coordWidth?: number, opt_coordHeight?: number, opt_domHelper?: goog.dom.DomHelper);
     
             /**
              * Width of graphics in pixels or percentage points.
              * @type {number|string}
              * @protected
              */
-            width: any /*number|string*/;
+            width: number|string;
     
             /**
              * Height of graphics in pixels or precentage points.
              * @type {number|string}
              * @protected
              */
-            height: any /*number|string*/;
+            height: number|string;
     
             /**
              * Width of coordinate system in units.

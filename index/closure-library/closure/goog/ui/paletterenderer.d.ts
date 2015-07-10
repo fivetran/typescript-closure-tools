@@ -70,15 +70,7 @@ declare module goog.ui {
              * @param {goog.dom.DomHelper} dom DOM helper for document interaction.
              * @return {!Element} Cell element.
              */
-            createCell(node: Node, dom: goog.dom.DomHelper): Element;
-            /**
-             * Returns a table cell element (or equivalent) that wraps the given palette
-             * item (which must be a DOM node).
-             * @param {Node|string} node Palette item.
-             * @param {goog.dom.DomHelper} dom DOM helper for document interaction.
-             * @return {!Element} Cell element.
-             */
-            createCell(node: string, dom: goog.dom.DomHelper): Element;
+            createCell(node: Node|string, dom: goog.dom.DomHelper): Element;
     
             /**
              * Returns the item corresponding to the given node, or null if the node is

@@ -401,7 +401,7 @@ declare module goog.ui {
              * @param {T=} opt_obj Used as the 'this' object in f when called.
              * @template T
              */
-            forEachChild<T>(f: (_0: any, _1: number) => any, opt_obj?: T): void;
+            forEachChild<T>(f: { (_0: any, _1: number): any }, opt_obj?: T): void;
     
             /**
              * Returns the 0-based index of the given child component, or -1 if no such
@@ -429,45 +429,7 @@ declare module goog.ui {
              *    removed child component, and detaches its DOM from the document.
              * @return {goog.ui.Component} The removed component, if any.
              */
-            removeChild(child: string, opt_unrender?: boolean): goog.ui.Component;
-            /**
-             * Removes the given child from this component, and returns it.  Throws an error
-             * if the argument is invalid or if the specified child isn't found in the
-             * parent component.  The argument can either be a string (interpreted as the
-             * ID of the child component to remove) or the child component itself.
-             *
-             * If {@code opt_unrender} is true, calls {@link goog.ui.component#exitDocument}
-             * on the removed child, and subsequently detaches the child's DOM from the
-             * document.  Otherwise it is the caller's responsibility to clean up the child
-             * component's DOM.
-             *
-             * @see goog.ui.Component#removeChildAt
-             * @param {string|goog.ui.Component|null} child The ID of the child to remove,
-             *    or the child component itself.
-             * @param {boolean=} opt_unrender If true, calls {@code exitDocument} on the
-             *    removed child component, and detaches its DOM from the document.
-             * @return {goog.ui.Component} The removed component, if any.
-             */
-            removeChild(child: goog.ui.Component, opt_unrender?: boolean): goog.ui.Component;
-            /**
-             * Removes the given child from this component, and returns it.  Throws an error
-             * if the argument is invalid or if the specified child isn't found in the
-             * parent component.  The argument can either be a string (interpreted as the
-             * ID of the child component to remove) or the child component itself.
-             *
-             * If {@code opt_unrender} is true, calls {@link goog.ui.component#exitDocument}
-             * on the removed child, and subsequently detaches the child's DOM from the
-             * document.  Otherwise it is the caller's responsibility to clean up the child
-             * component's DOM.
-             *
-             * @see goog.ui.Component#removeChildAt
-             * @param {string|goog.ui.Component|null} child The ID of the child to remove,
-             *    or the child component itself.
-             * @param {boolean=} opt_unrender If true, calls {@code exitDocument} on the
-             *    removed child component, and detaches its DOM from the document.
-             * @return {goog.ui.Component} The removed component, if any.
-             */
-            removeChild(child: any /*null*/, opt_unrender?: boolean): goog.ui.Component;
+            removeChild(child: string|goog.ui.Component|any /*null*/, opt_unrender?: boolean): goog.ui.Component;
     
             /**
              * Removes the child at the given index from this component, and returns it.

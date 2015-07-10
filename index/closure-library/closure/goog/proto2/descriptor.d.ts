@@ -21,7 +21,7 @@ declare module goog.proto2 {
              * @constructor
              * @final
              */
-            constructor(messageType: () => any /*missing*/, metadata: goog.proto2.Metadata, fields: goog.proto2.FieldDescriptor[]);
+            constructor(messageType: { (): any /*missing*/ }, metadata: goog.proto2.Metadata, fields: goog.proto2.FieldDescriptor[]);
     
             /**
              * Returns the name of the message, if any.
@@ -81,15 +81,7 @@ declare module goog.proto2 {
              *
              * @return {goog.proto2.FieldDescriptor} The field found, if any.
              */
-            findFieldByTag(tag: number): goog.proto2.FieldDescriptor;
-            /**
-             * Returns the field matching the given tag number, if any.
-             *
-             * @param {number|string} tag The field tag number for which to search.
-             *
-             * @return {goog.proto2.FieldDescriptor} The field found, if any.
-             */
-            findFieldByTag(tag: string): goog.proto2.FieldDescriptor;
+            findFieldByTag(tag: number|string): goog.proto2.FieldDescriptor;
     
             /**
              * Creates an instance of the message type that this descriptor
@@ -107,8 +99,8 @@ declare module goog.proto2 {
      *            containingType: (goog.proto2.Message|undefined)}}
      */
     interface Metadata {
-        name: any /*string|any (undefined)*/;
-        fullName: any /*string|any (undefined)*/;
-        containingType: any /*goog.proto2.Message|any (undefined)*/
+        name: string|any /*undefined*/;
+        fullName: string|any /*undefined*/;
+        containingType: goog.proto2.Message|any /*undefined*/
     }
 }

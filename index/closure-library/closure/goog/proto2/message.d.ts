@@ -44,7 +44,7 @@ declare module goog.proto2 {
              * @param {Object=} opt_scope The scope under which to execute the callback.
              *     If not given, the current message will be used.
              */
-            forEachUnknown(callback: (_0: number, _1: any) => any /*missing*/, opt_scope?: Object): void;
+            forEachUnknown(callback: { (_0: number, _1: any): any /*missing*/ }, opt_scope?: Object): void;
     
             /**
              * Returns the descriptor which describes the current message.

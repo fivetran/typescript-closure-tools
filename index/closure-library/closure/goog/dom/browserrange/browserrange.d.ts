@@ -14,13 +14,7 @@ declare module goog.dom.browserrange {
      * @param {Range|TextRange} range A browser range object.
      * @return {!goog.dom.browserrange.AbstractRange} A wrapper object.
      */
-    function createRange(range: Range): goog.dom.browserrange.AbstractRange;
-    /**
-     * Static method that returns the proper type of browser range.
-     * @param {Range|TextRange} range A browser range object.
-     * @return {!goog.dom.browserrange.AbstractRange} A wrapper object.
-     */
-    function createRange(range: TextRange): goog.dom.browserrange.AbstractRange;
+    function createRange(range: Range|TextRange): goog.dom.browserrange.AbstractRange;
 
     /**
      * Static method that returns the proper type of browser range.

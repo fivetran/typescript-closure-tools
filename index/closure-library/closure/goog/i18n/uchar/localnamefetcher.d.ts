@@ -38,7 +38,7 @@ declare module goog.i18n.uChar {
              *     codepoint name, this parameter will be null if the character name is not
              *     defined.
              */
-            getName(character: string, callback: (_0: string) => any /*missing*/): void;
+            getName(character: string, callback: { (_0: string): any /*missing*/ }): void;
     
             /**
              * Tests whether the name of a given character is available to be retrieved by

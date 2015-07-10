@@ -101,7 +101,7 @@ declare module goog.testing {
              * Sets a function to use as a filter for errors.
              * @param {function(string)} fn Filter function.
              */
-            setErrorFilter(fn: (_0: string) => any /*missing*/): void;
+            setErrorFilter(fn: { (_0: string): any /*missing*/ }): void;
     
             /**
              * Returns a report of the test case that ran.

@@ -56,7 +56,7 @@ declare module goog.structs {
              *     the values contained in each map are identical objects.
              * @return {boolean} Whether the maps are equal.
              */
-            equals(otherMap: goog.structs.Map<any, any>, opt_equalityFn?: (_0: V, _1: V) => boolean): boolean;
+            equals(otherMap: goog.structs.Map<any, any>, opt_equalityFn?: { (_0: V, _1: V): boolean }): boolean;
     
             /**
              * @return {boolean} Whether the map is empty.
@@ -86,7 +86,7 @@ declare module goog.structs {
              * @return {V|DEFAULT} The value for the given key.
              * @template DEFAULT
              */
-            get<DEFAULT>(key: any, opt_val?: DEFAULT): any /*V|DEFAULT*/;
+            get<DEFAULT>(key: any, opt_val?: DEFAULT): V|DEFAULT;
     
             /**
              * Adds a key-value pair to the map.
@@ -108,7 +108,7 @@ declare module goog.structs {
              * @param {T=} opt_obj The value of "this" inside f.
              * @template T
              */
-            forEach<T>(f: (_0: V, _1: K, _2: goog.structs.Map<K,V>) => any /*missing*/, opt_obj?: T): void;
+            forEach<T>(f: { (_0: V, _1: K, _2: goog.structs.Map<K,V>): any /*missing*/ }, opt_obj?: T): void;
     
             /**
              * Clones a map and returns a new map.

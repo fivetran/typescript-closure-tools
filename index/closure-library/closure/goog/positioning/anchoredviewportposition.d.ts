@@ -37,18 +37,13 @@ declare module goog.positioning {
              * @return {goog.math.Box|undefined} The box object describing the
              *     dimensions in which the movable element will be shown.
              */
-            getOverflowConstraint(): any /*goog.math.Box|any (undefined)*/;
+            getOverflowConstraint(): goog.math.Box|any /*undefined*/;
     
             /**
              * @param {goog.math.Box|undefined} overflowConstraint Box object describing the
              *     dimensions in which the movable element could be shown.
              */
-            setOverflowConstraint(overflowConstraint: goog.math.Box): void;
-            /**
-             * @param {goog.math.Box|undefined} overflowConstraint Box object describing the
-             *     dimensions in which the movable element could be shown.
-             */
-            setOverflowConstraint(overflowConstraint: any /*undefined*/): void;
+            setOverflowConstraint(overflowConstraint: goog.math.Box|any /*undefined*/): void;
     
             /**
              * @return {number} A bitmask for the "last resort" overflow.

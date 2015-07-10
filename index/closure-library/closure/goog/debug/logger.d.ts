@@ -106,37 +106,7 @@ declare module goog.debug {
              * @param {Error|Object=} opt_exception An exception associated with the
              *     message.
              */
-            log(level: goog.debug.Logger.Level, msg: string, opt_exception?: Error): void;
-            /**
-             * Logs a message. If the logger is currently enabled for the
-             * given message level then the given message is forwarded to all the
-             * registered output Handler objects.
-             * @param {goog.debug.Logger.Level} level One of the level identifiers.
-             * @param {goog.debug.Loggable} msg The message to log.
-             * @param {Error|Object=} opt_exception An exception associated with the
-             *     message.
-             */
-            log(level: goog.debug.Logger.Level, msg: string, opt_exception?: Object): void;
-            /**
-             * Logs a message. If the logger is currently enabled for the
-             * given message level then the given message is forwarded to all the
-             * registered output Handler objects.
-             * @param {goog.debug.Logger.Level} level One of the level identifiers.
-             * @param {goog.debug.Loggable} msg The message to log.
-             * @param {Error|Object=} opt_exception An exception associated with the
-             *     message.
-             */
-            log(level: goog.debug.Logger.Level, msg: () => string, opt_exception?: Error): void;
-            /**
-             * Logs a message. If the logger is currently enabled for the
-             * given message level then the given message is forwarded to all the
-             * registered output Handler objects.
-             * @param {goog.debug.Logger.Level} level One of the level identifiers.
-             * @param {goog.debug.Loggable} msg The message to log.
-             * @param {Error|Object=} opt_exception An exception associated with the
-             *     message.
-             */
-            log(level: goog.debug.Logger.Level, msg: () => string, opt_exception?: Object): void;
+            log(level: goog.debug.Logger.Level, msg: goog.debug.Loggable, opt_exception?: Error|Object): void;
     
             /**
              * Creates a new log record and adds the exception (if present) to it.
@@ -149,19 +119,7 @@ declare module goog.debug {
              * @return {!goog.debug.LogRecord} A log record.
              * @suppress {es5Strict}
              */
-            getLogRecord(level: goog.debug.Logger.Level, msg: string, opt_exception?: Error, opt_fnStackContext?: Function): goog.debug.LogRecord;
-            /**
-             * Creates a new log record and adds the exception (if present) to it.
-             * @param {goog.debug.Logger.Level} level One of the level identifiers.
-             * @param {string} msg The string message.
-             * @param {Error|Object=} opt_exception An exception associated with the
-             *     message.
-             * @param {Function=} opt_fnStackContext A function to use as the base
-             *     of the stack trace used in the log record.
-             * @return {!goog.debug.LogRecord} A log record.
-             * @suppress {es5Strict}
-             */
-            getLogRecord(level: goog.debug.Logger.Level, msg: string, opt_exception?: Object, opt_fnStackContext?: Function): goog.debug.LogRecord;
+            getLogRecord(level: goog.debug.Logger.Level, msg: string, opt_exception?: Error|Object, opt_fnStackContext?: Function): goog.debug.LogRecord;
     
             /**
              * Logs a message at the Logger.Level.SHOUT level.
@@ -170,15 +128,7 @@ declare module goog.debug {
              * @param {goog.debug.Loggable} msg The message to log.
              * @param {Error=} opt_exception An exception associated with the message.
              */
-            shout(msg: string, opt_exception?: Error): void;
-            /**
-             * Logs a message at the Logger.Level.SHOUT level.
-             * If the logger is currently enabled for the given message level then the
-             * given message is forwarded to all the registered output Handler objects.
-             * @param {goog.debug.Loggable} msg The message to log.
-             * @param {Error=} opt_exception An exception associated with the message.
-             */
-            shout(msg: () => string, opt_exception?: Error): void;
+            shout(msg: goog.debug.Loggable, opt_exception?: Error): void;
     
             /**
              * Logs a message at the Logger.Level.SEVERE level.
@@ -187,15 +137,7 @@ declare module goog.debug {
              * @param {goog.debug.Loggable} msg The message to log.
              * @param {Error=} opt_exception An exception associated with the message.
              */
-            severe(msg: string, opt_exception?: Error): void;
-            /**
-             * Logs a message at the Logger.Level.SEVERE level.
-             * If the logger is currently enabled for the given message level then the
-             * given message is forwarded to all the registered output Handler objects.
-             * @param {goog.debug.Loggable} msg The message to log.
-             * @param {Error=} opt_exception An exception associated with the message.
-             */
-            severe(msg: () => string, opt_exception?: Error): void;
+            severe(msg: goog.debug.Loggable, opt_exception?: Error): void;
     
             /**
              * Logs a message at the Logger.Level.WARNING level.
@@ -204,15 +146,7 @@ declare module goog.debug {
              * @param {goog.debug.Loggable} msg The message to log.
              * @param {Error=} opt_exception An exception associated with the message.
              */
-            warning(msg: string, opt_exception?: Error): void;
-            /**
-             * Logs a message at the Logger.Level.WARNING level.
-             * If the logger is currently enabled for the given message level then the
-             * given message is forwarded to all the registered output Handler objects.
-             * @param {goog.debug.Loggable} msg The message to log.
-             * @param {Error=} opt_exception An exception associated with the message.
-             */
-            warning(msg: () => string, opt_exception?: Error): void;
+            warning(msg: goog.debug.Loggable, opt_exception?: Error): void;
     
             /**
              * Logs a message at the Logger.Level.INFO level.
@@ -221,15 +155,7 @@ declare module goog.debug {
              * @param {goog.debug.Loggable} msg The message to log.
              * @param {Error=} opt_exception An exception associated with the message.
              */
-            info(msg: string, opt_exception?: Error): void;
-            /**
-             * Logs a message at the Logger.Level.INFO level.
-             * If the logger is currently enabled for the given message level then the
-             * given message is forwarded to all the registered output Handler objects.
-             * @param {goog.debug.Loggable} msg The message to log.
-             * @param {Error=} opt_exception An exception associated with the message.
-             */
-            info(msg: () => string, opt_exception?: Error): void;
+            info(msg: goog.debug.Loggable, opt_exception?: Error): void;
     
             /**
              * Logs a message at the Logger.Level.CONFIG level.
@@ -238,15 +164,7 @@ declare module goog.debug {
              * @param {goog.debug.Loggable} msg The message to log.
              * @param {Error=} opt_exception An exception associated with the message.
              */
-            config(msg: string, opt_exception?: Error): void;
-            /**
-             * Logs a message at the Logger.Level.CONFIG level.
-             * If the logger is currently enabled for the given message level then the
-             * given message is forwarded to all the registered output Handler objects.
-             * @param {goog.debug.Loggable} msg The message to log.
-             * @param {Error=} opt_exception An exception associated with the message.
-             */
-            config(msg: () => string, opt_exception?: Error): void;
+            config(msg: goog.debug.Loggable, opt_exception?: Error): void;
     
             /**
              * Logs a message at the Logger.Level.FINE level.
@@ -255,15 +173,7 @@ declare module goog.debug {
              * @param {goog.debug.Loggable} msg The message to log.
              * @param {Error=} opt_exception An exception associated with the message.
              */
-            fine(msg: string, opt_exception?: Error): void;
-            /**
-             * Logs a message at the Logger.Level.FINE level.
-             * If the logger is currently enabled for the given message level then the
-             * given message is forwarded to all the registered output Handler objects.
-             * @param {goog.debug.Loggable} msg The message to log.
-             * @param {Error=} opt_exception An exception associated with the message.
-             */
-            fine(msg: () => string, opt_exception?: Error): void;
+            fine(msg: goog.debug.Loggable, opt_exception?: Error): void;
     
             /**
              * Logs a message at the Logger.Level.FINER level.
@@ -272,15 +182,7 @@ declare module goog.debug {
              * @param {goog.debug.Loggable} msg The message to log.
              * @param {Error=} opt_exception An exception associated with the message.
              */
-            finer(msg: string, opt_exception?: Error): void;
-            /**
-             * Logs a message at the Logger.Level.FINER level.
-             * If the logger is currently enabled for the given message level then the
-             * given message is forwarded to all the registered output Handler objects.
-             * @param {goog.debug.Loggable} msg The message to log.
-             * @param {Error=} opt_exception An exception associated with the message.
-             */
-            finer(msg: () => string, opt_exception?: Error): void;
+            finer(msg: goog.debug.Loggable, opt_exception?: Error): void;
     
             /**
              * Logs a message at the Logger.Level.FINEST level.
@@ -289,15 +191,7 @@ declare module goog.debug {
              * @param {goog.debug.Loggable} msg The message to log.
              * @param {Error=} opt_exception An exception associated with the message.
              */
-            finest(msg: string, opt_exception?: Error): void;
-            /**
-             * Logs a message at the Logger.Level.FINEST level.
-             * If the logger is currently enabled for the given message level then the
-             * given message is forwarded to all the registered output Handler objects.
-             * @param {goog.debug.Loggable} msg The message to log.
-             * @param {Error=} opt_exception An exception associated with the message.
-             */
-            finest(msg: () => string, opt_exception?: Error): void;
+            finest(msg: goog.debug.Loggable, opt_exception?: Error): void;
     
             /**
              * Logs a LogRecord. If the logger is currently enabled for the
@@ -318,7 +212,7 @@ declare module goog.debug {
      *
      * @typedef {string|function(): string}
      */
-    interface Loggable { /*any (string|() => string)*/ }
+    type Loggable = string|{ (): string };
 
     /**
      * There is a single global LogManager object that is used to maintain a set of
@@ -536,5 +430,5 @@ declare module goog.debug.LogManager {
      *     Defaults to the root logger.
      * @return {function(Object)} The created function.
      */
-    function createFunctionForCatchErrors(opt_logger?: goog.debug.Logger): (_0: Object) => any /*missing*/;
+    function createFunctionForCatchErrors(opt_logger?: goog.debug.Logger): { (_0: Object): any /*missing*/ };
 }

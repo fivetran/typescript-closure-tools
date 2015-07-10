@@ -9,5 +9,5 @@ declare module goog.testing.graphics {
      *     parameters.
      * @param {goog.graphics.Path} path The path to test against.
      */
-    function assertPathEquals(expected: any /*string|number*/[], path: goog.graphics.Path): void;
+    function assertPathEquals(expected: string|number[], path: goog.graphics.Path): void;
 }

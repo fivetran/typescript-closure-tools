@@ -98,7 +98,7 @@ declare module goog.ui.editor.DefaultToolbar {
      * @return {!goog.ui.Toolbar} Editor toolbar, rendered into the given parent
      *     element.
      */
-    function makeToolbar(items: any /*string|goog.ui.Control*/[], elem: Element, opt_isRightToLeft?: boolean): goog.ui.Toolbar;
+    function makeToolbar(items: string|goog.ui.Control[], elem: Element, opt_isRightToLeft?: boolean): goog.ui.Toolbar;
 
     /**
      * Creates an instance of a subclass of {@link goog.ui.Button} for the given
@@ -231,7 +231,7 @@ declare module goog.ui.editor {
         tooltip: string;
         caption: goog.ui.ControlContent;
         classes: string;
-        factory: (_0: string, _1: string, _2: goog.ui.ControlContent, _3: string, _4: goog.ui.ButtonRenderer, _5: goog.dom.DomHelper) => goog.ui.Button;
+        factory: { (_0: string, _1: string, _2: goog.ui.ControlContent, _3: string, _4: goog.ui.ButtonRenderer, _5: goog.dom.DomHelper): goog.ui.Button };
         queryable: boolean
     }
 }

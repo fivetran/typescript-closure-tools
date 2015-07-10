@@ -20,5 +20,5 @@ declare module goog.async {
      * @param {SCOPE=} opt_context Object in whose scope to call the listener.
      * @template SCOPE
      */
-    function nextTick<SCOPE>(callback: () => any /*missing*/, opt_context?: SCOPE): void;
+    function nextTick<SCOPE>(callback: { (): any /*missing*/ }, opt_context?: SCOPE): void;
 }

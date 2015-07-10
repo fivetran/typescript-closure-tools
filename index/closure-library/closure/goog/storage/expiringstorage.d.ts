@@ -45,7 +45,7 @@ declare module goog.storage.ExpiringStorage {
      * @param {!Object} wrapper The wrapper.
      * @return {number|undefined} Wrapper creation time.
      */
-    function getCreationTime(wrapper: Object): any /*number|any (undefined)*/;
+    function getCreationTime(wrapper: Object): number|any /*undefined*/;
 
     /**
      * Returns the wrapper expiration time.
@@ -53,7 +53,7 @@ declare module goog.storage.ExpiringStorage {
      * @param {!Object} wrapper The wrapper.
      * @return {number|undefined} Wrapper expiration time.
      */
-    function getExpirationTime(wrapper: Object): any /*number|any (undefined)*/;
+    function getExpirationTime(wrapper: Object): number|any /*undefined*/;
 
     /**
      * Checks if the data item has expired.

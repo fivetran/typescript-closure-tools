@@ -15,7 +15,7 @@ declare module goog.net {
              * @extends {goog.events.EventTarget}
              * @final
              */
-            constructor(uris: any /*string|goog.Uri*/[]);
+            constructor(uris: string|goog.Uri[]);
     
             /**
              * Gets the response texts, in order.

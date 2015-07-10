@@ -25,7 +25,7 @@ declare module goog.async {
              * @constructor
              * @extends {goog.Disposable}
              */
-            constructor(listener: () => boolean, opt_handler?: Object);
+            constructor(listener: { (): boolean }, opt_handler?: Object);
     
             /**
              * Starts the delay timer. The provided listener function will be called

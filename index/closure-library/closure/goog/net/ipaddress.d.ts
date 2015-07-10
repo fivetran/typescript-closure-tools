@@ -56,18 +56,7 @@ declare module goog.net {
              * @constructor
              * @final
              */
-            constructor(address: string);
-            /**
-             * Takes a string or a number and returns a IPv4 Address.
-             *
-             * This constructor accepts strings and instance of goog.math.Integer.
-             * If you pass a goog.math.Integer, make sure that its sign is set to positive.
-             * @param {(string|!goog.math.Integer)} address The address to store.
-             * @extends {goog.net.IpAddress}
-             * @constructor
-             * @final
-             */
-            constructor(address: goog.math.Integer);
+            constructor(address: string|goog.math.Integer);
     } 
     
 
@@ -85,18 +74,7 @@ declare module goog.net {
              * @extends {goog.net.IpAddress}
              * @final
              */
-            constructor(address: string);
-            /**
-             * Takes a string or a number and returns an IPv6 Address.
-             *
-             * This constructor accepts strings and instance of goog.math.Integer.
-             * If you pass a goog.math.Integer, make sure that its sign is set to positive.
-             * @param {(string|!goog.math.Integer)} address The address to store.
-             * @constructor
-             * @extends {goog.net.IpAddress}
-             * @final
-             */
-            constructor(address: goog.math.Integer);
+            constructor(address: string|goog.math.Integer);
     
             /**
              * @return {boolean} true if the IPv6 contains a mapped IPv4.

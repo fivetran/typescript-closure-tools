@@ -19,20 +19,7 @@ declare module goog.proto2 {
              * @constructor
              * @final
              */
-            constructor(messageType: Function, tag: number, metadata: Object);
-            /**
-             * A class which describes a field in a Protocol Buffer 2 Message.
-             *
-             * @param {Function} messageType Constructor for the message
-             *     class to which the field described by this class belongs.
-             * @param {number|string} tag The field's tag index.
-             * @param {Object} metadata The metadata about this field that will be used
-             *     to construct this descriptor.
-             *
-             * @constructor
-             * @final
-             */
-            constructor(messageType: Function, tag: string, metadata: Object);
+            constructor(messageType: Function, tag: number|string, metadata: Object);
     
             /**
              * Returns the tag of the field that this descriptor represents.

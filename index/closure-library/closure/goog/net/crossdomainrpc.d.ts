@@ -31,7 +31,7 @@ declare module goog.net {
              * @return {Object|undefined} JavaScript object if response is in JSON
              *     or undefined.
              */
-            getResponseJson(): any /*Object|any (undefined)*/;
+            getResponseJson(): Object|any /*undefined*/;
     
             /**
              * @return {boolean} Whether the request completed with a success.
@@ -48,7 +48,7 @@ declare module goog.net {
              * @param {string} name Name of response header.
              * @return {string|undefined} Value of response header; undefined if not found.
              */
-            getResponseHeader(name: string): any /*string|any (undefined)*/;
+            getResponseHeader(name: string): string|any /*undefined*/;
     } 
     
 }

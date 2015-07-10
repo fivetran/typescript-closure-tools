@@ -15,14 +15,7 @@ declare module goog.cssom {
      * @param {(CSSStyleSheet|StyleSheetList)=} opt_styleSheet The CSSStyleSheet.
      * @return {string} css text.
      */
-    function getAllCssText(opt_styleSheet?: CSSStyleSheet): string;
-    /**
-     * Recursively gets all CSS as text, optionally starting from a given
-     * CSSStyleSheet.
-     * @param {(CSSStyleSheet|StyleSheetList)=} opt_styleSheet The CSSStyleSheet.
-     * @return {string} css text.
-     */
-    function getAllCssText(opt_styleSheet?: StyleSheetList): string;
+    function getAllCssText(opt_styleSheet?: CSSStyleSheet|StyleSheetList): string;
 
     /**
      * Recursively gets all CSSStyleRules, optionally starting from a given
@@ -31,15 +24,7 @@ declare module goog.cssom {
      * @param {(CSSStyleSheet|StyleSheetList)=} opt_styleSheet The CSSStyleSheet.
      * @return {Array.<CSSStyleRule>} A list of CSSStyleRules.
      */
-    function getAllCssStyleRules(opt_styleSheet?: CSSStyleSheet): CSSStyleRule[];
-    /**
-     * Recursively gets all CSSStyleRules, optionally starting from a given
-     * CSSStyleSheet.
-     * Note that this excludes any CSSImportRules, CSSMediaRules, etc..
-     * @param {(CSSStyleSheet|StyleSheetList)=} opt_styleSheet The CSSStyleSheet.
-     * @return {Array.<CSSStyleRule>} A list of CSSStyleRules.
-     */
-    function getAllCssStyleRules(opt_styleSheet?: StyleSheetList): CSSStyleRule[];
+    function getAllCssStyleRules(opt_styleSheet?: CSSStyleSheet|StyleSheetList): CSSStyleRule[];
 
     /**
      * Returns the CSSRules from a styleSheet.
@@ -65,18 +50,7 @@ declare module goog.cssom {
      *    defaults to false.
      * @return {!Array.<CSSStyleSheet>} A list of CSSStyleSheet objects.
      */
-    function getAllCssStyleSheets(opt_styleSheet?: CSSStyleSheet, opt_includeDisabled?: boolean): CSSStyleSheet[];
-    /**
-     * Gets all CSSStyleSheet objects starting from some CSSStyleSheet. Note that we
-     * want to return the sheets in the order of the cascade, therefore if we
-     * encounter an import, we will splice that CSSStyleSheet object in front of
-     * the CSSStyleSheet that contains it in the returned array of CSSStyleSheets.
-     * @param {(CSSStyleSheet|StyleSheetList)=} opt_styleSheet A CSSStyleSheet.
-     * @param {boolean=} opt_includeDisabled If true, includes disabled stylesheets,
-     *    defaults to false.
-     * @return {!Array.<CSSStyleSheet>} A list of CSSStyleSheet objects.
-     */
-    function getAllCssStyleSheets(opt_styleSheet?: StyleSheetList, opt_includeDisabled?: boolean): CSSStyleSheet[];
+    function getAllCssStyleSheets(opt_styleSheet?: CSSStyleSheet|StyleSheetList, opt_includeDisabled?: boolean): CSSStyleSheet[];
 
     /**
      * Gets the cssText from a CSSRule object cross-browserly.

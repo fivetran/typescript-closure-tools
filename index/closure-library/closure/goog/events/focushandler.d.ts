@@ -16,16 +16,7 @@ declare module goog.events {
              * @extends {goog.events.EventTarget}
              * @final
              */
-            constructor(element: Element);
-            /**
-             * This event handler allows you to catch focus events when descendants gain or
-             * loses focus.
-             * @param {Element|Document} element  The node to listen on.
-             * @constructor
-             * @extends {goog.events.EventTarget}
-             * @final
-             */
-            constructor(element: Document);
+            constructor(element: Element|Document);
     
             /**
              * This handles the underlying events and dispatches a new event.

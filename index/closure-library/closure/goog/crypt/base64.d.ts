@@ -40,17 +40,7 @@ declare module goog.crypt.base64 {
      *     alternative alphabet.
      * @return {string} The base64 encoded string.
      */
-    function encodeByteArray(input: number[], opt_webSafe?: boolean): string;
-    /**
-     * Base64-encode an array of bytes.
-     *
-     * @param {Array.<number>|Uint8Array} input An array of bytes (numbers with
-     *     value in [0, 255]) to encode.
-     * @param {boolean=} opt_webSafe Boolean indicating we should use the
-     *     alternative alphabet.
-     * @return {string} The base64 encoded string.
-     */
-    function encodeByteArray(input: Uint8Array, opt_webSafe?: boolean): string;
+    function encodeByteArray(input: number[]|Uint8Array, opt_webSafe?: boolean): string;
 
     /**
      * Base64-encode a string.

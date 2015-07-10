@@ -156,23 +156,7 @@ declare module goog {
              *     Applies only if queryData is a string.
              * @return {!goog.Uri} Reference to this URI object.
              */
-            setQueryData(queryData: goog.Uri.QueryData, opt_decode?: boolean): goog.Uri;
-            /**
-             * Sets the query data.
-             * @param {goog.Uri.QueryData|string|undefined} queryData QueryData object.
-             * @param {boolean=} opt_decode Optional param for whether to decode new value.
-             *     Applies only if queryData is a string.
-             * @return {!goog.Uri} Reference to this URI object.
-             */
-            setQueryData(queryData: string, opt_decode?: boolean): goog.Uri;
-            /**
-             * Sets the query data.
-             * @param {goog.Uri.QueryData|string|undefined} queryData QueryData object.
-             * @param {boolean=} opt_decode Optional param for whether to decode new value.
-             *     Applies only if queryData is a string.
-             * @return {!goog.Uri} Reference to this URI object.
-             */
-            setQueryData(queryData: any /*undefined*/, opt_decode?: boolean): goog.Uri;
+            setQueryData(queryData: goog.Uri.QueryData|string|any /*undefined*/, opt_decode?: boolean): goog.Uri;
     
             /**
              * Sets the URI query.
@@ -248,7 +232,7 @@ declare module goog {
              *     undefined if the given parameter name does not appear in the query
              *     string.
              */
-            getParameterValue(paramName: string): any /*string|any (undefined)*/;
+            getParameterValue(paramName: string): string|any /*undefined*/;
     
             /**
              * @return {string} The URI fragment, not including the #.
@@ -471,23 +455,7 @@ declare module goog.Uri {
              * @param {...(goog.Uri.QueryData|goog.structs.Map|Object)} var_args The object
              *     from which key value pairs will be copied.
              */
-            extend(...var_args: goog.Uri.QueryData[]): void;
-            /**
-             * Extends a query data object with another query data or map like object. This
-             * operates 'in-place', it does not create a new QueryData object.
-             *
-             * @param {...(goog.Uri.QueryData|goog.structs.Map|Object)} var_args The object
-             *     from which key value pairs will be copied.
-             */
-            extend(...var_args: goog.structs.Map<any, any>[]): void;
-            /**
-             * Extends a query data object with another query data or map like object. This
-             * operates 'in-place', it does not create a new QueryData object.
-             *
-             * @param {...(goog.Uri.QueryData|goog.structs.Map|Object)} var_args The object
-             *     from which key value pairs will be copied.
-             */
-            extend(...var_args: Object[]): void;
+            extend(...var_args: goog.Uri.QueryData|goog.structs.Map<any, any>|Object[]): void;
     } 
     
 
@@ -539,23 +507,7 @@ declare module goog.Uri {
      *
      * @return {!goog.Uri} The new URI object.
      */
-    function create(opt_scheme?: string, opt_userInfo?: string, opt_domain?: string, opt_port?: number, opt_path?: string, opt_query?: string, opt_fragment?: string, opt_ignoreCase?: boolean): goog.Uri;
-    /**
-     * Creates a new goog.Uri object from unencoded parts.
-     *
-     * @param {?string=} opt_scheme Scheme/protocol or full URI to parse.
-     * @param {?string=} opt_userInfo username:password.
-     * @param {?string=} opt_domain www.google.com.
-     * @param {?number=} opt_port 9830.
-     * @param {?string=} opt_path /some/path/to/a/file.html.
-     * @param {string|goog.Uri.QueryData=} opt_query a=1&b=2.
-     * @param {?string=} opt_fragment The fragment without the #.
-     * @param {boolean=} opt_ignoreCase Whether to ignore parameter name case in
-     *     #getParameterValue.
-     *
-     * @return {!goog.Uri} The new URI object.
-     */
-    function create(opt_scheme?: string, opt_userInfo?: string, opt_domain?: string, opt_port?: number, opt_path?: string, opt_query?: goog.Uri.QueryData, opt_fragment?: string, opt_ignoreCase?: boolean): goog.Uri;
+    function create(opt_scheme?: string, opt_userInfo?: string, opt_domain?: string, opt_port?: number, opt_path?: string, opt_query?: string|goog.Uri.QueryData, opt_fragment?: string, opt_ignoreCase?: boolean): goog.Uri;
 
     /**
      * Resolves a relative Uri against a base Uri, accepting both strings and
@@ -600,21 +552,7 @@ declare module goog.Uri.QueryData {
      *     name in #get.
      * @return {!goog.Uri.QueryData} The populated query data instance.
      */
-    function createFromMap(map: goog.structs.Map<any, any>, opt_uri?: goog.Uri, opt_ignoreCase?: boolean): goog.Uri.QueryData;
-    /**
-     * Creates a new query data instance from a map of names and values.
-     *
-     * @param {!goog.structs.Map|!Object} map Map of string parameter
-     *     names to parameter value. If parameter value is an array, it is
-     *     treated as if the key maps to each individual value in the
-     *     array.
-     * @param {goog.Uri=} opt_uri URI object that should have its cache
-     *     invalidated when this object updates.
-     * @param {boolean=} opt_ignoreCase If true, ignore the case of the parameter
-     *     name in #get.
-     * @return {!goog.Uri.QueryData} The populated query data instance.
-     */
-    function createFromMap(map: Object, opt_uri?: goog.Uri, opt_ignoreCase?: boolean): goog.Uri.QueryData;
+    function createFromMap(map: goog.structs.Map<any, any>|Object, opt_uri?: goog.Uri, opt_ignoreCase?: boolean): goog.Uri.QueryData;
 
     /**
      * Creates a new query data instance from parallel arrays of parameter names

@@ -41,12 +41,7 @@ declare module goog.testing {
              * Injects new numbers into the beginning of the sequence.
              * @param {Array.<number>|number} values Number or array of numbers to inject.
              */
-            inject(values: number[]): void;
-            /**
-             * Injects new numbers into the beginning of the sequence.
-             * @param {Array.<number>|number} values Number or array of numbers to inject.
-             */
-            inject(values: number): void;
+            inject(values: number[]|number): void;
     
             /**
              * Uninstalls the MockRandom.

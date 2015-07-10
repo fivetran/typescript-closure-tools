@@ -23,7 +23,7 @@ declare module goog.net {
              * @constructor
              * @extends {goog.events.EventTarget}
              */
-            constructor(opt_autoReconnect?: boolean, opt_getNextReconnect?: (_0: number) => number);
+            constructor(opt_autoReconnect?: boolean, opt_getNextReconnect?: { (_0: number): number });
     
             /**
              * Creates and opens the actual WebSocket.  Only call this after attaching the

@@ -76,15 +76,7 @@ declare module goog.fx {
              *     id, to be used as drag source/drop target.
              * @throws Error Thrown if called on instance of abstract class
              */
-            addItem(element: Element): void;
-            /**
-             * Add item to drag object.
-             *
-             * @param {Element|string} element Dom Node, or string representation of node
-             *     id, to be used as drag source/drop target.
-             * @throws Error Thrown if called on instance of abstract class
-             */
-            addItem(element: string): void;
+            addItem(element: Element|string): void;
     
             /**
              * Associate drop target with drag element.
@@ -343,50 +335,50 @@ declare module goog.fx {
              * Reference to the target goog.fx.AbstractDragDrop object.
              * @type {goog.fx.AbstractDragDrop|undefined}
              */
-            dropTarget: any /*goog.fx.AbstractDragDrop|any (undefined)*/;
+            dropTarget: goog.fx.AbstractDragDrop|any /*undefined*/;
     
             /**
              * Reference to the target goog.fx.DragDropItem object.
              * @type {goog.fx.DragDropItem|undefined}
              */
-            dropTargetItem: any /*goog.fx.DragDropItem|any (undefined)*/;
+            dropTargetItem: goog.fx.DragDropItem|any /*undefined*/;
     
             /**
              * The actual element of the drop target that is the target for this event.
              * @type {Element|undefined}
              */
-            dropTargetElement: any /*Element|any (undefined)*/;
+            dropTargetElement: Element|any /*undefined*/;
     
             /**
              * X-Position relative to the screen.
              * @type {number|undefined}
              */
-            clientX: any /*number|any (undefined)*/;
+            clientX: number|any /*undefined*/;
     
             /**
              * Y-Position relative to the screen.
              * @type {number|undefined}
              */
-            clientY: any /*number|any (undefined)*/;
+            clientY: number|any /*undefined*/;
     
             /**
              * X-Position relative to the viewport.
              * @type {number|undefined}
              */
-            viewportX: any /*number|any (undefined)*/;
+            viewportX: number|any /*undefined*/;
     
             /**
              * Y-Position relative to the viewport.
              * @type {number|undefined}
              */
-            viewportY: any /*number|any (undefined)*/;
+            viewportY: number|any /*undefined*/;
     
             /**
              * The subtarget that is currently active if a subtargeting function
              * is supplied.
              * @type {Object|undefined}
              */
-            subtarget: any /*Object|any (undefined)*/;
+            subtarget: Object|any /*undefined*/;
     } 
     
 
@@ -404,18 +396,7 @@ declare module goog.fx {
              * @extends {goog.events.EventTarget}
              * @constructor
              */
-            constructor(element: Element, opt_data?: Object);
-            /**
-             * Class representing a source or target element for drag and drop operations.
-             *
-             * @param {Element|string} element Dom Node, or string representation of node
-             *     id, to be used as drag source/drop target.
-             * @param {Object=} opt_data Data associated with the source/target.
-             * @throws Error If no element argument is provided or if the type is invalid
-             * @extends {goog.events.EventTarget}
-             * @constructor
-             */
-            constructor(element: string, opt_data?: Object);
+            constructor(element: Element|string, opt_data?: Object);
     
             /**
              * Reference to drag source/target element
@@ -427,13 +408,13 @@ declare module goog.fx {
              * Data associated with element.
              * @type {Object|undefined}
              */
-            data: any /*Object|any (undefined)*/;
+            data: Object|any /*undefined*/;
     
             /**
              * Get the data associated with the source/target.
              * @return {Object|null|undefined} Data associated with the source/target.
              */
-            getData(): any /*Object|any (null)|any (undefined)*/;
+            getData(): Object|any /*null*/|any /*undefined*/;
     
             /**
              * Gets the element that is actually draggable given that the given target was

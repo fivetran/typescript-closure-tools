@@ -23,14 +23,14 @@ declare module goog.testing.asserts {
     /**
      * @typedef {Array|NodeList|Arguments|{length: number}}
      */
-    interface ArrayLike { /*any (any[]|NodeList|Arguments|{ length: number })*/ }
+    type ArrayLike = any[]|NodeList|Arguments|{ length: number };
 
     /**
      * Runs a function in an environment where test failures are not logged. This is
      * useful for testing test code, where failures can be a normal part of a test.
      * @param {function() : void} fn Function to run without logging failures.
      */
-    function callWithoutLogging(fn: () => void): void;
+    function callWithoutLogging(fn: { (): void }): void;
 
     /**
      * The return value of the equality predicate passed to findDifferences below,
@@ -62,7 +62,7 @@ declare module goog.testing.asserts {
      *     the types of var1 and var2 are identical.
      * @return {?string} Null on success, error message on failure.
      */
-    function findDifferences(expected: any, actual: any, opt_equalityPredicate?: (_0: string, _1: any, _2: any) => string): string;
+    function findDifferences(expected: any, actual: any, opt_equalityPredicate?: { (_0: string, _1: any, _2: any): string }): string;
 
     /**
      * Raises a JsUnit exception with the given comment.

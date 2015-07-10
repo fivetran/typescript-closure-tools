@@ -1,5 +1,6 @@
 /// <reference path="../../../../../globals.d.ts" />
 /// <reference path="./buttonrenderer.d.ts" />
+/// <reference path="../../controlcontent.d.ts" />
 /// <reference path="../../../dom/dom.d.ts" />
 
 declare module goog.ui.style.app {
@@ -24,28 +25,7 @@ declare module goog.ui.style.app {
              * @param {goog.dom.DomHelper} dom DOM helper, used for document ineraction.
              * @return {Array.<Node>} DOM structure to be set as the button's content.
              */
-            createContentWithDropdown(content: string, dom: goog.dom.DomHelper): Node[];
-            /**
-             * Inserts dropdown element as last child of existing content.
-             * @param {goog.ui.ControlContent} content Text caption or DOM structure.
-             * @param {goog.dom.DomHelper} dom DOM helper, used for document ineraction.
-             * @return {Array.<Node>} DOM structure to be set as the button's content.
-             */
-            createContentWithDropdown(content: Node, dom: goog.dom.DomHelper): Node[];
-            /**
-             * Inserts dropdown element as last child of existing content.
-             * @param {goog.ui.ControlContent} content Text caption or DOM structure.
-             * @param {goog.dom.DomHelper} dom DOM helper, used for document ineraction.
-             * @return {Array.<Node>} DOM structure to be set as the button's content.
-             */
-            createContentWithDropdown(content: Node[], dom: goog.dom.DomHelper): Node[];
-            /**
-             * Inserts dropdown element as last child of existing content.
-             * @param {goog.ui.ControlContent} content Text caption or DOM structure.
-             * @param {goog.dom.DomHelper} dom DOM helper, used for document ineraction.
-             * @return {Array.<Node>} DOM structure to be set as the button's content.
-             */
-            createContentWithDropdown(content: NodeList, dom: goog.dom.DomHelper): Node[];
+            createContentWithDropdown(content: goog.ui.ControlContent, dom: goog.dom.DomHelper): Node[];
     
             /**
              * Returns an appropriately-styled DIV containing a dropdown arrow.

@@ -51,5 +51,5 @@ declare module goog.html.legacyconversions {
      *
      * @param {function(): undefined} callback Error callback as defined above.
      */
-    function setReportCallback(callback: () => any /*undefined*/): void;
+    function setReportCallback(callback: { (): any /*undefined*/ }): void;
 }

@@ -356,15 +356,7 @@ declare module goog.ui.ac {
              *     keeps the currently hilited (by index) element hilited. If false not.
              *     Otherwise a RenderOptions object.
              */
-            renderRows(rows: any[], opt_options?: boolean): void;
-            /**
-             * Renders the rows and adds highlighting.
-             * @param {!Array} rows Set of data that match the given token.
-             * @param {(boolean|goog.ui.ac.RenderOptions)=} opt_options If true,
-             *     keeps the currently hilited (by index) element hilited. If false not.
-             *     Otherwise a RenderOptions object.
-             */
-            renderRows(rows: any[], opt_options?: goog.ui.ac.RenderOptions): void;
+            renderRows(rows: any[], opt_options?: boolean|goog.ui.ac.RenderOptions): void;
     
             /**
              * Gets the index corresponding to a particular id.
@@ -425,7 +417,7 @@ declare module goog.ui.ac.AutoComplete {
      * }}
      */
     interface Matcher {
-        requestMatchingRows: any /*Function|any (undefined)*/;
-        isRowDisabled: any /*Function|any (undefined)*/
+        requestMatchingRows: Function|any /*undefined*/;
+        isRowDisabled: Function|any /*undefined*/
     }
 }

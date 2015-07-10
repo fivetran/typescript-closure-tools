@@ -22,7 +22,7 @@ declare module goog.async {
              * @final
              * @template T
              */
-            constructor(listener: () => any /*missing*/, interval: number, opt_handler?: T);
+            constructor(listener: { (): any /*missing*/ }, interval: number, opt_handler?: T);
     
             /**
              * Notifies the throttle that the action has happened. It will throttle the call

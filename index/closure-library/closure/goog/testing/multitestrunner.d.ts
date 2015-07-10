@@ -123,7 +123,7 @@ declare module goog.testing {
              * @param {function(string): boolean} filterFn Filters test paths.
              * @return {!goog.testing.MultiTestRunner} Instance for chaining.
              */
-            setFilterFunction(filterFn: (_0: string) => boolean): goog.testing.MultiTestRunner;
+            setFilterFunction(filterFn: { (_0: string): boolean }): goog.testing.MultiTestRunner;
     
             /**
              * Returns a filter function. Only test paths that match the filter function
@@ -132,7 +132,7 @@ declare module goog.testing {
              *     match the filter function will be executed.
             
              */
-            getFilterFunction(): (_0: string) => boolean;
+            getFilterFunction(): { (_0: string): boolean };
     
             /**
              * Adds an array of tests to the tests that the test runner should execute.

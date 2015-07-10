@@ -74,16 +74,7 @@ declare module goog.debug {
              * @return {?number} The elapsed time for the tracer or null if the tracer
              *    identitifer was not recognized.
              */
-            stopTracer(id: number, opt_silenceThreshold?: number): number;
-            /**
-             * Stops a tracer
-             * @param {number|undefined|null} id The id of the tracer that is ending.
-             * @param {number=} opt_silenceThreshold Threshold below which the tracer is
-             *    silenced.
-             * @return {?number} The elapsed time for the tracer or null if the tracer
-             *    identitifer was not recognized.
-             */
-            stopTracer(id: any /*undefined*/, opt_silenceThreshold?: number): number;
+            stopTracer(id: number|any /*undefined*/|any /*null*/, opt_silenceThreshold?: number): number;
     
             /**
              * Sets the ActiveX object that can be used to get GC tracing in IE6.
@@ -161,7 +152,7 @@ declare module goog.debug.Trace_ {
             /**
              * @type {string|null|undefined}
              */
-            type: any /*string|any (null)|any (undefined)*/;
+            type: string|any /*null*/|any /*undefined*/;
     } 
     
 
@@ -180,7 +171,7 @@ declare module goog.debug.Trace_ {
             /**
              * @type {string|null|undefined}
              */
-            type: any /*string|any (null)|any (undefined)*/;
+            type: string|any /*null*/|any /*undefined*/;
     
             /**
              * Returns a formatted string for the event.

@@ -85,7 +85,7 @@ declare module goog.fx {
              *     given any drag item, returns a reference to its "handle" element
              *     (which may be the drag item element itself).
              */
-            setFunctionToGetHandleForDragItem(getHandleForDragItemFn: (_0: Element) => Element): void;
+            setFunctionToGetHandleForDragItem(getHandleForDragItemFn: { (_0: Element): Element }): void;
     
             /**
              * Sets a user-supplied CSS class to add to a drag item on hover (not during a
@@ -223,36 +223,7 @@ declare module goog.fx {
              * @constructor
              * @extends {goog.events.Event}
              */
-            constructor(type: string, dragListGroup: goog.fx.DragListGroup, event: goog.events.BrowserEvent, currDragItem: Element, draggerEl: Element, dragger: goog.fx.Dragger, opt_draggerElCenter?: goog.math.Coordinate, opt_hoverList?: Element, opt_hoverNextItem?: Element);
-            /**
-             * The event object dispatched by DragListGroup.
-             * The fields draggerElCenter, hoverList, and hoverNextItem are only available
-             * for the BEFOREDRAGMOVE and DRAGMOVE events.
-             *
-             * @param {string} type The event type string.
-             * @param {goog.fx.DragListGroup} dragListGroup A reference to the associated
-             *     DragListGroup object.
-             * @param {goog.events.BrowserEvent|goog.fx.DragEvent} event The event fired
-             *     by the browser or fired by the dragger.
-             * @param {Element} currDragItem The current drag item being moved.
-             * @param {Element} draggerEl The clone of the current drag item that's actually
-             *     being dragged around.
-             * @param {goog.fx.Dragger} dragger The dragger object.
-             * @param {goog.math.Coordinate=} opt_draggerElCenter The current center
-             *     position of the draggerEl.
-             * @param {Element=} opt_hoverList The current drag list that's being hovered
-             *     over, or null if the center of draggerEl is outside of any drag lists.
-             *     If not null and the drag action ends right now, then currDragItem will
-             *     end up in this list.
-             * @param {Element=} opt_hoverNextItem The current next item in the hoverList
-             *     that the draggerEl is hovering over. (I.e. If the drag action ends
-             *     right now, then this item would become the next item after the new
-             *     location of currDragItem.) May be null if not applicable or if
-             *     currDragItem would be added to the end of hoverList.
-             * @constructor
-             * @extends {goog.events.Event}
-             */
-            constructor(type: string, dragListGroup: goog.fx.DragListGroup, event: goog.fx.DragEvent, currDragItem: Element, draggerEl: Element, dragger: goog.fx.Dragger, opt_draggerElCenter?: goog.math.Coordinate, opt_hoverList?: Element, opt_hoverNextItem?: Element);
+            constructor(type: string, dragListGroup: goog.fx.DragListGroup, event: goog.events.BrowserEvent|goog.fx.DragEvent, currDragItem: Element, draggerEl: Element, dragger: goog.fx.Dragger, opt_draggerElCenter?: goog.math.Coordinate, opt_hoverList?: Element, opt_hoverNextItem?: Element);
     
             /**
              * A reference to the associated DragListGroup object.
@@ -264,7 +235,7 @@ declare module goog.fx {
              * The event fired by the browser or fired by the dragger.
              * @type {goog.events.BrowserEvent|goog.fx.DragEvent}
              */
-            event: any /*goog.events.BrowserEvent|goog.fx.DragEvent*/;
+            event: goog.events.BrowserEvent|goog.fx.DragEvent;
     
             /**
              * The current drag item being move.
@@ -288,7 +259,7 @@ declare module goog.fx {
              * The current center position of the draggerEl.
              * @type {goog.math.Coordinate|undefined}
              */
-            draggerElCenter: any /*goog.math.Coordinate|any (undefined)*/;
+            draggerElCenter: goog.math.Coordinate|any /*undefined*/;
     
             /**
              * The current drag list that's being hovered over, or null if the center of
@@ -296,7 +267,7 @@ declare module goog.fx {
              * action ends right now, then currDragItem will end up in this list.)
              * @type {Element|undefined}
              */
-            hoverList: any /*Element|any (undefined)*/;
+            hoverList: Element|any /*undefined*/;
     
             /**
              * The current next item in the hoverList that the draggerEl is hovering over.
@@ -305,7 +276,7 @@ declare module goog.fx {
              * applicable or if currDragItem would be added to the end of hoverList.
              * @type {Element|undefined}
              */
-            hoverNextItem: any /*Element|any (undefined)*/;
+            hoverNextItem: Element|any /*undefined*/;
     } 
     
 

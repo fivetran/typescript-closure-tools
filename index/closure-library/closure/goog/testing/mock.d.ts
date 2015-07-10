@@ -112,19 +112,7 @@ declare module goog.testing {
              * @constructor
              * @implements {goog.testing.MockInterface}
              */
-            constructor(objectToMock: Object, opt_mockStaticMethods?: boolean, opt_createProxy?: boolean);
-            /**
-             * The base class for a mock object.
-             * @param {Object|Function} objectToMock The object that should be mocked, or
-             *    the constructor of an object to mock.
-             * @param {boolean=} opt_mockStaticMethods An optional argument denoting that
-             *     a mock should be constructed from the static functions of a class.
-             * @param {boolean=} opt_createProxy An optional argument denoting that
-             *     a proxy for the target mock should be created.
-             * @constructor
-             * @implements {goog.testing.MockInterface}
-             */
-            constructor(objectToMock: Function, opt_mockStaticMethods?: boolean, opt_createProxy?: boolean);
+            constructor(objectToMock: Object|Function, opt_mockStaticMethods?: boolean, opt_createProxy?: boolean);
     
             /**
              * A proxy for the mock.  This can be used for dependency injection in lieu of

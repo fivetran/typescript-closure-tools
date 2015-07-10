@@ -67,27 +67,7 @@ declare module goog.ds {
              * @constructor
              * @final
              */
-            constructor(value: number, dataName: string, opt_parent?: goog.ds.DataNode);
-            /**
-             * Creates a new data node wrapping a primitive value.
-             * @param {number|boolean|string} value Value the value to wrap.
-             * @param {string} dataName name Name of this data node.
-             * @param {goog.ds.DataNode=} opt_parent Parent of this data node.
-             * @extends {goog.ds.AbstractFastDataNode}
-             * @constructor
-             * @final
-             */
-            constructor(value: boolean, dataName: string, opt_parent?: goog.ds.DataNode);
-            /**
-             * Creates a new data node wrapping a primitive value.
-             * @param {number|boolean|string} value Value the value to wrap.
-             * @param {string} dataName name Name of this data node.
-             * @param {goog.ds.DataNode=} opt_parent Parent of this data node.
-             * @extends {goog.ds.AbstractFastDataNode}
-             * @constructor
-             * @final
-             */
-            constructor(value: string, dataName: string, opt_parent?: goog.ds.DataNode);
+            constructor(value: number|boolean|string, dataName: string, opt_parent?: goog.ds.DataNode);
     
             /**
              * Returns a javascript object representation of this data node. You should
@@ -148,50 +128,5 @@ declare module goog.ds.FastDataNode {
      * @param {goog.ds.DataNode=} opt_parent Parent of data node.
      * @return {!goog.ds.AbstractFastDataNode} Data node representing object.
      */
-    function fromJs(object: Object, dataName: string, opt_parent?: goog.ds.DataNode): goog.ds.AbstractFastDataNode;
-    /**
-     * Creates a new FastDataNode structure initialized from object. This will
-     * return an instance of the most suitable sub-class of FastDataNode.
-     *
-     * You should not modify object after creating a fast data node from it
-     * or assume that changing object changes the data node. Doing so results
-     * in undefined behaviour.
-     *
-     * @param {Object|number|boolean|string} object Object to initialize data
-     *     node from.
-     * @param {string} dataName Name of data node.
-     * @param {goog.ds.DataNode=} opt_parent Parent of data node.
-     * @return {!goog.ds.AbstractFastDataNode} Data node representing object.
-     */
-    function fromJs(object: number, dataName: string, opt_parent?: goog.ds.DataNode): goog.ds.AbstractFastDataNode;
-    /**
-     * Creates a new FastDataNode structure initialized from object. This will
-     * return an instance of the most suitable sub-class of FastDataNode.
-     *
-     * You should not modify object after creating a fast data node from it
-     * or assume that changing object changes the data node. Doing so results
-     * in undefined behaviour.
-     *
-     * @param {Object|number|boolean|string} object Object to initialize data
-     *     node from.
-     * @param {string} dataName Name of data node.
-     * @param {goog.ds.DataNode=} opt_parent Parent of data node.
-     * @return {!goog.ds.AbstractFastDataNode} Data node representing object.
-     */
-    function fromJs(object: boolean, dataName: string, opt_parent?: goog.ds.DataNode): goog.ds.AbstractFastDataNode;
-    /**
-     * Creates a new FastDataNode structure initialized from object. This will
-     * return an instance of the most suitable sub-class of FastDataNode.
-     *
-     * You should not modify object after creating a fast data node from it
-     * or assume that changing object changes the data node. Doing so results
-     * in undefined behaviour.
-     *
-     * @param {Object|number|boolean|string} object Object to initialize data
-     *     node from.
-     * @param {string} dataName Name of data node.
-     * @param {goog.ds.DataNode=} opt_parent Parent of data node.
-     * @return {!goog.ds.AbstractFastDataNode} Data node representing object.
-     */
-    function fromJs(object: string, dataName: string, opt_parent?: goog.ds.DataNode): goog.ds.AbstractFastDataNode;
+    function fromJs(object: Object|number|boolean|string, dataName: string, opt_parent?: goog.ds.DataNode): goog.ds.AbstractFastDataNode;
 }

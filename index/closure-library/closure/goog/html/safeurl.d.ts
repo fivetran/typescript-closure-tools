@@ -169,33 +169,5 @@ declare module goog.html.SafeUrl {
      * @param {string|!goog.string.TypedString} url The URL to validate.
      * @return {!goog.html.SafeUrl} The validated URL, wrapped as a SafeUrl.
      */
-    function sanitize(url: string): goog.html.SafeUrl;
-    /**
-     * Creates a SafeUrl object from {@code url}. If {@code url} is a
-     * goog.html.SafeUrl then it is simply returned. Otherwise the input string is
-     * validated to match a pattern of commonly used safe URLs. The string is
-     * converted to UTF-8 and non-whitelisted characters are percent-encoded. The
-     * string wrapped by the created SafeUrl will thus contain only ASCII printable
-     * characters.
-     *
-     * {@code url} may be a URL with the http, https, or mailto scheme,
-     * or a relative URL (i.e., a URL without a scheme; specifically, a
-     * scheme-relative, absolute-path-relative, or path-relative URL).
-     *
-     * {@code url} is converted to UTF-8 and non-whitelisted characters are
-     * percent-encoded. Whitelisted characters are '%' and, from RFC 3986,
-     * unreserved characters and reserved characters, with the exception of '\'',
-     * '(' and ')'. This ensures the the SafeUrl contains only ASCII-printable
-     * characters and reduces the chance of security bugs were it to be
-     * interpolated into a specific context without the necessary escaping.
-     *
-     * If {@code url} fails validation or does not UTF-16 decode correctly
-     * (JavaScript strings are UTF-16 encoded), this function returns a SafeUrl
-     * object containing an innocuous string, goog.html.SafeUrl.INNOCUOUS_STRING.
-     *
-     * @see http://url.spec.whatwg.org/#concept-relative-url
-     * @param {string|!goog.string.TypedString} url The URL to validate.
-     * @return {!goog.html.SafeUrl} The validated URL, wrapped as a SafeUrl.
-     */
-    function sanitize(url: goog.string.TypedString): goog.html.SafeUrl;
+    function sanitize(url: string|goog.string.TypedString): goog.html.SafeUrl;
 }

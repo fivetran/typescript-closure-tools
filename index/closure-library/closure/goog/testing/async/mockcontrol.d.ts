@@ -30,7 +30,7 @@ declare module goog.testing.async {
              * @return {!Function} The mock callback.
              * @suppress {missingProperties} Mocks do not fit in the type system well.
              */
-            createCallbackMock(name: string, callback: (_0: any[][]) => any, opt_selfObj?: Object): Function;
+            createCallbackMock(name: string, callback: { (_0: any[][]): any }, opt_selfObj?: Object): Function;
     
             /**
              * Returns a function that will assert that its arguments are equal to the
@@ -41,7 +41,7 @@ declare module goog.testing.async {
              * @param {...*} var_args The arguments to assert.
              * @return {function(...[*]) : void} The mock callback.
              */
-            asyncAssertEquals(message: string, ...var_args: any[]): (_0: any[][]) => void;
+            asyncAssertEquals(message: string, ...var_args: any[]): { (_0: any[][]): void };
     
             /**
              * Asserts that a deferred object will have an error and call its errback
@@ -50,7 +50,7 @@ declare module goog.testing.async {
              * @param {function() : void} fn A function wrapping the code in which the error
              *     will occur.
              */
-            assertDeferredError(deferred: goog.async.Deferred<any>, fn: () => void): void;
+            assertDeferredError(deferred: goog.async.Deferred<any>, fn: { (): void }): void;
     
             /**
              * Asserts that a deferred object will call its callback with the given value.
@@ -62,40 +62,7 @@ declare module goog.testing.async {
              *     object, then the actual value is the deferred value. Either this or
              *     'expected' must be deferred.
              */
-            assertDeferredEquals(message: string, expected: goog.async.Deferred<any>, actual: goog.async.Deferred<any>): void;
-            /**
-             * Asserts that a deferred object will call its callback with the given value.
-             *
-             * @param {string} message A message to print if the arguments are wrong.
-             * @param {goog.async.Deferred|*} expected The expected value. If this is a
-             *     deferred object, then the expected value is the deferred value.
-             * @param {goog.async.Deferred|*} actual The actual value. If this is a deferred
-             *     object, then the actual value is the deferred value. Either this or
-             *     'expected' must be deferred.
-             */
-            assertDeferredEquals(message: string, expected: goog.async.Deferred<any>, actual: any): void;
-            /**
-             * Asserts that a deferred object will call its callback with the given value.
-             *
-             * @param {string} message A message to print if the arguments are wrong.
-             * @param {goog.async.Deferred|*} expected The expected value. If this is a
-             *     deferred object, then the expected value is the deferred value.
-             * @param {goog.async.Deferred|*} actual The actual value. If this is a deferred
-             *     object, then the actual value is the deferred value. Either this or
-             *     'expected' must be deferred.
-             */
-            assertDeferredEquals(message: string, expected: any, actual: goog.async.Deferred<any>): void;
-            /**
-             * Asserts that a deferred object will call its callback with the given value.
-             *
-             * @param {string} message A message to print if the arguments are wrong.
-             * @param {goog.async.Deferred|*} expected The expected value. If this is a
-             *     deferred object, then the expected value is the deferred value.
-             * @param {goog.async.Deferred|*} actual The actual value. If this is a deferred
-             *     object, then the actual value is the deferred value. Either this or
-             *     'expected' must be deferred.
-             */
-            assertDeferredEquals(message: string, expected: any, actual: any): void;
+            assertDeferredEquals(message: string, expected: goog.async.Deferred<any>|any, actual: goog.async.Deferred<any>|any): void;
     } 
     
 }

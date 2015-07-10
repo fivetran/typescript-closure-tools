@@ -24,25 +24,7 @@ declare module goog.ui {
              * @constructor
              * @final
              */
-            constructor(elInput: HTMLInputElement, elCount: Element, maxLength: number, opt_displayMode?: goog.ui.CharCounter.Display);
-            /**
-             * CharCounter widget. Counts the number of characters in a input field or a
-             * text box and displays the number of additional characters that may be
-             * entered before the maximum length is reached.
-             *
-             * @extends {goog.events.EventTarget}
-             * @param {HTMLInputElement|HTMLTextAreaElement} elInput Input or text area
-             *     element to count the number of characters in.
-             * @param {Element} elCount HTML element to display the remaining number of
-             *     characters in. You can pass in null for this if you don't want to expose
-             *     the number of chars remaining.
-             * @param {number} maxLength The maximum length.
-             * @param {goog.ui.CharCounter.Display=} opt_displayMode Display mode for this
-             *     char counter. Defaults to {@link goog.ui.CharCounter.Display.REMAINING}.
-             * @constructor
-             * @final
-             */
-            constructor(elInput: HTMLTextAreaElement, elCount: Element, maxLength: number, opt_displayMode?: goog.ui.CharCounter.Display);
+            constructor(elInput: HTMLInputElement|HTMLTextAreaElement, elCount: Element, maxLength: number, opt_displayMode?: goog.ui.CharCounter.Display);
     
             /**
              * Sets the maximum length.

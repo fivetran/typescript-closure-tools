@@ -88,7 +88,7 @@ declare module goog.structs {
              * @param {Object=} opt_startValue If specified, traversal will begin on the
              *    node with the largest value <= opt_startValue.
              */
-            reverseOrderTraverse(func: (_0: T) => any, opt_startValue?: Object): void;
+            reverseOrderTraverse(func: { (_0: T): any }, opt_startValue?: Object): void;
     
             /**
              * @param {T} value Value to add to the collection.

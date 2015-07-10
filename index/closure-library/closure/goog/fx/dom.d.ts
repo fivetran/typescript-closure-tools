@@ -206,52 +206,7 @@ declare module goog.fx.dom {
              * @extends {goog.fx.dom.PredefinedEffect}
              * @constructor
              */
-            constructor(element: Element, start: number[], end: number[], time: number, opt_acc?: Function);
-            /**
-             * Creates an animation object that fades the opacity of an element between two
-             * limits.
-             *
-             * Start and End should be floats between 0 and 1
-             *
-             * @param {Element} element Dom Node to be used in the animation.
-             * @param {Array.<number>|number} start 1D Array or Number with start opacity.
-             * @param {Array.<number>|number} end 1D Array or Number for end opacity.
-             * @param {number} time Length of animation in milliseconds.
-             * @param {Function=} opt_acc Acceleration function, returns 0-1 for inputs 0-1.
-             * @extends {goog.fx.dom.PredefinedEffect}
-             * @constructor
-             */
-            constructor(element: Element, start: number[], end: number, time: number, opt_acc?: Function);
-            /**
-             * Creates an animation object that fades the opacity of an element between two
-             * limits.
-             *
-             * Start and End should be floats between 0 and 1
-             *
-             * @param {Element} element Dom Node to be used in the animation.
-             * @param {Array.<number>|number} start 1D Array or Number with start opacity.
-             * @param {Array.<number>|number} end 1D Array or Number for end opacity.
-             * @param {number} time Length of animation in milliseconds.
-             * @param {Function=} opt_acc Acceleration function, returns 0-1 for inputs 0-1.
-             * @extends {goog.fx.dom.PredefinedEffect}
-             * @constructor
-             */
-            constructor(element: Element, start: number, end: number[], time: number, opt_acc?: Function);
-            /**
-             * Creates an animation object that fades the opacity of an element between two
-             * limits.
-             *
-             * Start and End should be floats between 0 and 1
-             *
-             * @param {Element} element Dom Node to be used in the animation.
-             * @param {Array.<number>|number} start 1D Array or Number with start opacity.
-             * @param {Array.<number>|number} end 1D Array or Number for end opacity.
-             * @param {number} time Length of animation in milliseconds.
-             * @param {Function=} opt_acc Acceleration function, returns 0-1 for inputs 0-1.
-             * @extends {goog.fx.dom.PredefinedEffect}
-             * @constructor
-             */
-            constructor(element: Element, start: number, end: number, time: number, opt_acc?: Function);
+            constructor(element: Element, start: number[]|number, end: number[]|number, time: number, opt_acc?: Function);
     
             /**
              * Animation event handler that will show the element.

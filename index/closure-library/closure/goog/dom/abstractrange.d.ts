@@ -31,7 +31,7 @@ declare module goog.dom {
             /**
              * @return {Range|TextRange} The native browser range object.
              */
-            getBrowserRangeObject(): any /*Range|TextRange*/;
+            getBrowserRangeObject(): Range|TextRange;
     
             /**
              * Sets the native browser range object, overwriting any state this range was
@@ -41,16 +41,7 @@ declare module goog.dom {
              *     will need to call goog.dom.Range.createFromBrowserRange to create a new
              *     range object.
              */
-            setBrowserRangeObject(nativeRange: Range): boolean;
-            /**
-             * Sets the native browser range object, overwriting any state this range was
-             * storing.
-             * @param {Range|TextRange} nativeRange The native browser range object.
-             * @return {boolean} Whether the given range was accepted.  If not, the caller
-             *     will need to call goog.dom.Range.createFromBrowserRange to create a new
-             *     range object.
-             */
-            setBrowserRangeObject(nativeRange: TextRange): boolean;
+            setBrowserRangeObject(nativeRange: Range|TextRange): boolean;
     
             /**
              * @return {number} The number of text ranges in this range.

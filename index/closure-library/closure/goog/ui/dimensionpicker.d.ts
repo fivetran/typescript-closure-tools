@@ -90,17 +90,7 @@ declare module goog.ui {
              * @param {number=} opt_rows The number of rows to highlight.  Can be
              *     omitted when columns is a good.math.Size object.
              */
-            setValue(columns: number, opt_rows?: number): void;
-            /**
-             * Sets the currently highlighted dimensions. If the dimensions are not valid
-             * (not between 1 and the maximum number of columns/rows to show), they will
-             * be changed to the closest valid value.
-             * @param {(number|!goog.math.Size)} columns The number of columns to highlight,
-             *     or a goog.math.Size object containing both.
-             * @param {number=} opt_rows The number of rows to highlight.  Can be
-             *     omitted when columns is a good.math.Size object.
-             */
-            setValue(columns: goog.math.Size, opt_rows?: number): void;
+            setValue(columns: number|goog.math.Size, opt_rows?: number): void;
     } 
     
 }

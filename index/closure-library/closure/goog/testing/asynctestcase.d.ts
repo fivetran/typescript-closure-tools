@@ -35,7 +35,7 @@ declare module goog.testing {
              * @type {goog.testing.TestCase.Test|undefined}
              * @protected
              */
-            activeTest: any /*goog.testing.TestCase.Test|any (undefined)*/;
+            activeTest: goog.testing.TestCase.Test|any /*undefined*/;
     
             /**
              * The current step name.

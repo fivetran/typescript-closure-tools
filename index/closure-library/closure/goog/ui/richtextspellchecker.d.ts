@@ -34,7 +34,7 @@ declare module goog.ui {
              *
              * @type {Array.<string|undefined>}
              */
-            excludeTags: any /*string|any (undefined)*/[];
+            excludeTags: string|any /*undefined*/[];
     
             /**
              * CSS Style text for invalid words. As it's set inside the rich edit iframe

@@ -267,7 +267,7 @@ declare module goog.testing {
              * @return {!goog.testing.TestCase.Test} The newly created test.
              * @protected
              */
-            createTestFromAutoDiscoveredFunction(name: string, ref: () => void): goog.testing.TestCase.Test;
+            createTestFromAutoDiscoveredFunction(name: string, ref: { (): void }): goog.testing.TestCase.Test;
     
             /**
              * Adds any functions defined in the global scope that are prefixed with "test"

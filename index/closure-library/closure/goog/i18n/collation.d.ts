@@ -11,7 +11,7 @@ declare module goog.i18n.collation {
      * @param {string=} opt_locale the locale that the comparator is used for.
      * @return {function(string, string): number} The locale-specific comparator.
      */
-    function createComparator(opt_locale?: string): (_0: string, _1: string) => number;
+    function createComparator(opt_locale?: string): { (_0: string, _1: string): number };
 
     /**
      * Returns true if a locale-sensitive comparator is available for a locale. If

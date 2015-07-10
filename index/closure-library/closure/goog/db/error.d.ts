@@ -19,20 +19,7 @@ declare module goog.db {
              * @extends {goog.debug.Error}
              * @final
              */
-            constructor(error: number, context: string, opt_message?: string);
-            /**
-             * A database error. Since the stack trace can be unhelpful in an asynchronous
-             * context, the error provides a message about where it was produced.
-             *
-             * @param {number|!DOMError} error The DOMError instance returned by the
-             *     browser for Chrome22+, or an error code for previous versions.
-             * @param {string} context A description of where the error occured.
-             * @param {string=} opt_message Additional message.
-             * @constructor
-             * @extends {goog.debug.Error}
-             * @final
-             */
-            constructor(error: DOMError, context: string, opt_message?: string);
+            constructor(error: number|DOMError, context: string, opt_message?: string);
     
             /**
              * The code for this error.
@@ -120,16 +107,7 @@ declare module goog.db.Error {
      * @param {!goog.db.Error.ErrorCode|number} code The error code to convert.
      * @return {!goog.db.Error.ErrorName} The corresponding name of the error.
      */
-    function getName(code: goog.db.Error.ErrorCode): goog.db.Error.ErrorName;
-    /**
-     * Converts an error code used by the old spec, to an error name used by the
-     * latest spec.
-     * @see http://www.w3.org/TR/IndexedDB/#exceptions
-     *
-     * @param {!goog.db.Error.ErrorCode|number} code The error code to convert.
-     * @return {!goog.db.Error.ErrorName} The corresponding name of the error.
-     */
-    function getName(code: number): goog.db.Error.ErrorName;
+    function getName(code: goog.db.Error.ErrorCode|number): goog.db.Error.ErrorName;
 
     /**
      * Constructs an goog.db.Error instance from an IDBRequest. This abstraction is

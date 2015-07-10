@@ -22,7 +22,7 @@ declare module goog.structs {
      * @param {Object} col The collection-like object.
      * @return {!Array|undefined} The keys in the collection.
      */
-    function getKeys(col: Object): any /*any[]|any (undefined)*/;
+    function getKeys(col: Object): any[]|any /*undefined*/;
 
     /**
      * Whether the collection contains the given value. This is O(n) and uses
@@ -62,7 +62,7 @@ declare module goog.structs {
      *     within {@code f}.
      * @template T,S
      */
-    function forEach<T,S>(col: S, f: (_0: any, _1: any, _2: S) => any, opt_obj?: T): void;
+    function forEach<T,S>(col: S, f: { (_0: any, _1: any, _2: S): any }, opt_obj?: T): void;
 
     /**
      * Calls a function for every value in the collection. When a call returns true,
@@ -82,7 +82,7 @@ declare module goog.structs {
      *     has keys and values a plain old JS object is returned.
      * @template T,S
      */
-    function filter<T,S>(col: S, f: (_0: any, _1: any, _2: S) => boolean, opt_obj?: T): any /*Object|any[]*/;
+    function filter<T,S>(col: S, f: { (_0: any, _1: any, _2: S): boolean }, opt_obj?: T): Object|any[];
 
     /**
      * Calls a function for every value in the collection and adds the result into a
@@ -100,7 +100,7 @@ declare module goog.structs {
      *     values a plain old JS object is returned.
      * @template T,S,V
      */
-    function map<T,S,V>(col: S, f: (_0: any, _1: any, _2: S) => V, opt_obj?: T): any /*{ [key: string]: any (missing) }|V[]*/;
+    function map<T,S,V>(col: S, f: { (_0: any, _1: any, _2: S): V }, opt_obj?: T): { [key: string]: any /*missing*/ }|V[];
 
     /**
      * Calls f for each value in a collection. If any call returns true this returns
@@ -116,7 +116,7 @@ declare module goog.structs {
      * @return {boolean} True if any value passes the test.
      * @template T,S
      */
-    function some<T,S>(col: S, f: (_0: any, _1: any, _2: S) => boolean, opt_obj?: T): boolean;
+    function some<T,S>(col: S, f: { (_0: any, _1: any, _2: S): boolean }, opt_obj?: T): boolean;
 
     /**
      * Calls f for each value in a collection. If all calls return true this return
@@ -133,5 +133,5 @@ declare module goog.structs {
      * @return {boolean} True if all key-value pairs pass the test.
      * @template T,S
      */
-    function every<T,S>(col: S, f: (_0: any, _1: any, _2: S) => boolean, opt_obj?: T): boolean;
+    function every<T,S>(col: S, f: { (_0: any, _1: any, _2: S): boolean }, opt_obj?: T): boolean;
 }

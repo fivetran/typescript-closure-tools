@@ -78,19 +78,7 @@ declare module goog.db.Cursor {
      * @return {!goog.db.Cursor} The cursor.
      * @throws {goog.db.Error} If there was a problem opening the cursor.
      */
-    function openCursor(source: IDBObjectStore, opt_range?: goog.db.KeyRange, opt_direction?: goog.db.Cursor.Direction): goog.db.Cursor;
-    /**
-     * Opens a value cursor from IDBObjectStore or IDBIndex over the specified key
-     * range. Returns a cursor object which is able to iterate over the given range.
-     * @param {!(IDBObjectStore|IDBIndex)} source Data source to open cursor.
-     * @param {!goog.db.KeyRange=} opt_range The key range. If undefined iterates
-     *     over the whole data source.
-     * @param {!goog.db.Cursor.Direction=} opt_direction The direction. If undefined
-     *     moves in a forward direction with duplicates.
-     * @return {!goog.db.Cursor} The cursor.
-     * @throws {goog.db.Error} If there was a problem opening the cursor.
-     */
-    function openCursor(source: IDBIndex, opt_range?: goog.db.KeyRange, opt_direction?: goog.db.Cursor.Direction): goog.db.Cursor;
+    function openCursor(source: IDBObjectStore|IDBIndex, opt_range?: goog.db.KeyRange, opt_direction?: goog.db.Cursor.Direction): goog.db.Cursor;
 
     /**
      * Possible cursor directions.

@@ -47,13 +47,7 @@ declare module goog.ui {
              * rendered.
              * @param {goog.math.Size|number} size The size of the grid.
              */
-            setSize(size: goog.math.Size): void;
-            /**
-             * Sets the size of the palette.  Will throw an error after the picker has been
-             * rendered.
-             * @param {goog.math.Size|number} size The size of the grid.
-             */
-            setSize(size: number): void;
+            setSize(size: goog.math.Size|number): void;
     
             /**
              * Gets the number of columns displayed.

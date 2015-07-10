@@ -32,7 +32,7 @@ declare module goog.fx {
              * @extends {goog.fx.Animation}
              * @final
              */
-            constructor(element: Element, size: goog.math.Size, box: goog.math.Box, time: number, opt_acc?: (_0: number) => number);
+            constructor(element: Element, size: goog.math.Size, box: goog.math.Box, time: number, opt_acc?: { (_0: number): number });
     
             /**
              * Clears the background position style set directly on the element

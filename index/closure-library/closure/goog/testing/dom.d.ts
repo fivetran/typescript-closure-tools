@@ -16,7 +16,7 @@ declare module goog.testing.dom {
      *             after "#".
      *         other string: Match the text node's contents.
      */
-    function assertNodesMatch(it: goog.iter.Iterator<any>, array: any /*Node|number|string*/[]): void;
+    function assertNodesMatch(it: goog.iter.Iterator<any>, array: Node|number|string[]): void;
 
     /**
      * Exposes a node as a string.
@@ -71,17 +71,7 @@ declare module goog.testing.dom {
      * @param {Element} root The element to search in.
      * @return {Node} The first text node that matches, or null if none is found.
      */
-    function findTextNode(textOrRegexp: string, root: Element): Node;
-    /**
-     * Finds the first text node descendant of root with the given content.  Note
-     * that this operates on a text node level, so if text nodes get split this
-     * may not match the user visible text.  Using normalize() may help here.
-     * @param {string|RegExp} textOrRegexp The text to find, or a regular
-     *     expression to find a match of.
-     * @param {Element} root The element to search in.
-     * @return {Node} The first text node that matches, or null if none is found.
-     */
-    function findTextNode(textOrRegexp: RegExp, root: Element): Node;
+    function findTextNode(textOrRegexp: string|RegExp, root: Element): Node;
 
     /**
      * Assert the end points of a range.

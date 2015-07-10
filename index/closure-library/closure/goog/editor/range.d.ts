@@ -160,7 +160,7 @@ declare module goog.editor.range {
      * @return {function(): goog.dom.AbstractRange} A factory for a normalized
      *    range. Should be called after body.normalize() is called.
      */
-    function normalize(range: goog.dom.AbstractRange): () => goog.dom.AbstractRange;
+    function normalize(range: goog.dom.AbstractRange): { (): goog.dom.AbstractRange };
 
     /**
      * Checks if a range is completely inside an editable region.

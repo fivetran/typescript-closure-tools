@@ -66,13 +66,13 @@ declare module goog.editor.plugins {
              * @return {goog.editor.plugins.UndoRedoState|undefined} The state at the top of
              *     the undo stack without removing it from the stack.
              */
-            undoPeek(): any /*goog.editor.plugins.UndoRedoState|any (undefined)*/;
+            undoPeek(): goog.editor.plugins.UndoRedoState|any /*undefined*/;
     
             /**
              * @return {goog.editor.plugins.UndoRedoState|undefined} The state at the top of
              *     the redo stack without removing it from the stack.
              */
-            redoPeek(): any /*goog.editor.plugins.UndoRedoState|any (undefined)*/;
+            redoPeek(): goog.editor.plugins.UndoRedoState|any /*undefined*/;
     } 
     
 }

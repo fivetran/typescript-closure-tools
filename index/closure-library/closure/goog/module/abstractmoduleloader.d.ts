@@ -18,7 +18,7 @@ declare module goog.module {
           * @param {boolean=} opt_forceReload Whether to bypass cache while loading the
           *     module.
           */
-        loadModules(ids: string[], moduleInfoMap: Object, opt_successFn?: () => any /*missing*/, opt_errorFn?: (_0: number) => any /*missing*/, opt_timeoutFn?: () => any /*missing*/, opt_forceReload?: boolean): void;
+        loadModules(ids: string[], moduleInfoMap: Object, opt_successFn?: { (): any /*missing*/ }, opt_errorFn?: { (_0: number): any /*missing*/ }, opt_timeoutFn?: { (): any /*missing*/ }, opt_forceReload?: boolean): void;
     
         /**
           * Pre-fetches a JavaScript module.

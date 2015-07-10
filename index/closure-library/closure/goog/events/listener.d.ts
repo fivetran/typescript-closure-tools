@@ -20,20 +20,7 @@ declare module goog.events {
              * @implements {goog.events.ListenableKey}
              * @constructor
              */
-            constructor(listener: Function, proxy: Function, src: EventTarget, type: string, capture: boolean, opt_handler?: Object);
-            /**
-             * Simple class that stores information about a listener
-             * @param {!Function} listener Callback function.
-             * @param {Function} proxy Wrapper for the listener that patches the event.
-             * @param {EventTarget|goog.events.Listenable} src Source object for
-             *     the event.
-             * @param {string} type Event type.
-             * @param {boolean} capture Whether in capture or bubble phase.
-             * @param {Object=} opt_handler Object in whose context to execute the callback.
-             * @implements {goog.events.ListenableKey}
-             * @constructor
-             */
-            constructor(listener: Function, proxy: Function, src: goog.events.Listenable, type: string, capture: boolean, opt_handler?: Object);
+            constructor(listener: Function, proxy: Function, src: EventTarget|goog.events.Listenable, type: string, capture: boolean, opt_handler?: Object);
     
             /**
              * Callback function.
@@ -53,7 +40,7 @@ declare module goog.events {
              * Object or node that callback is listening to
              * @type {EventTarget|goog.events.Listenable}
              */
-            src: any /*EventTarget|goog.events.Listenable*/;
+            src: EventTarget|goog.events.Listenable;
     
             /**
              * The event type.
@@ -71,7 +58,7 @@ declare module goog.events {
              * Optional object whose context to execute the listener in
              * @type {Object|undefined}
              */
-            handler: any /*Object|any (undefined)*/;
+            handler: Object|any /*undefined*/;
     
             /**
              * Whether to remove the listener after it has been called.
@@ -102,7 +89,7 @@ declare module goog.events {
              * The source event target.
              * @type {!(Object|goog.events.Listenable|goog.events.EventTarget)}
              */
-            src: any /*Object|goog.events.Listenable|goog.events.EventTarget*/;
+            src: Object|goog.events.Listenable|goog.events.EventTarget;
     
             /**
              * The event type the listener is listening to.
@@ -114,7 +101,7 @@ declare module goog.events {
              * The listener function.
              * @type {function(?):?|{handleEvent:function(?):?}|null}
              */
-            listener: any /*(_0: any) => any|{ handleEvent: (_0: any) => any }|any (null)*/;
+            listener: { (_0: any): any }|{ handleEvent: { (_0: any): any } }|any /*null*/;
     
             /**
              * Whether the listener works on capture phase.

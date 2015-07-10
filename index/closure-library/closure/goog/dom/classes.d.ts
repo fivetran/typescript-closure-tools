@@ -60,58 +60,7 @@ declare module goog.dom.classes {
      * @param {?(string|Array.<string>)} classesToAdd Class or classes to add, if
      *     null no classes are added.
      */
-    function addRemove(element: Node, classesToRemove: string, classesToAdd: string): void;
-    /**
-     * Adds zero or more classes to an element and removes zero or more as a single
-     * operation. Unlike calling {@link goog.dom.classes.add} and
-     * {@link goog.dom.classes.remove} separately, this is more efficient as it only
-     * parses the class property once.
-     *
-     * If a class is in both the remove and add lists, it will be added. Thus,
-     * you can use this instead of {@link goog.dom.classes.swap} when you have
-     * more than two class names that you want to swap.
-     *
-     * @param {Node} element DOM node to swap classes on.
-     * @param {?(string|Array.<string>)} classesToRemove Class or classes to
-     *     remove, if null no classes are removed.
-     * @param {?(string|Array.<string>)} classesToAdd Class or classes to add, if
-     *     null no classes are added.
-     */
-    function addRemove(element: Node, classesToRemove: string, classesToAdd: string[]): void;
-    /**
-     * Adds zero or more classes to an element and removes zero or more as a single
-     * operation. Unlike calling {@link goog.dom.classes.add} and
-     * {@link goog.dom.classes.remove} separately, this is more efficient as it only
-     * parses the class property once.
-     *
-     * If a class is in both the remove and add lists, it will be added. Thus,
-     * you can use this instead of {@link goog.dom.classes.swap} when you have
-     * more than two class names that you want to swap.
-     *
-     * @param {Node} element DOM node to swap classes on.
-     * @param {?(string|Array.<string>)} classesToRemove Class or classes to
-     *     remove, if null no classes are removed.
-     * @param {?(string|Array.<string>)} classesToAdd Class or classes to add, if
-     *     null no classes are added.
-     */
-    function addRemove(element: Node, classesToRemove: string[], classesToAdd: string): void;
-    /**
-     * Adds zero or more classes to an element and removes zero or more as a single
-     * operation. Unlike calling {@link goog.dom.classes.add} and
-     * {@link goog.dom.classes.remove} separately, this is more efficient as it only
-     * parses the class property once.
-     *
-     * If a class is in both the remove and add lists, it will be added. Thus,
-     * you can use this instead of {@link goog.dom.classes.swap} when you have
-     * more than two class names that you want to swap.
-     *
-     * @param {Node} element DOM node to swap classes on.
-     * @param {?(string|Array.<string>)} classesToRemove Class or classes to
-     *     remove, if null no classes are removed.
-     * @param {?(string|Array.<string>)} classesToAdd Class or classes to add, if
-     *     null no classes are added.
-     */
-    function addRemove(element: Node, classesToRemove: string[], classesToAdd: string[]): void;
+    function addRemove(element: Node, classesToRemove: string|string[], classesToAdd: string|string[]): void;
 
     /**
      * Returns true if an element has a class.

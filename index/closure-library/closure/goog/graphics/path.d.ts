@@ -139,7 +139,7 @@ declare module goog.graphics {
              * @param {function(number, Array)} callback The function to call with each
              *     path segment.
              */
-            forEachSegment(callback: (_0: number, _1: any[]) => any /*missing*/): void;
+            forEachSegment(callback: { (_0: number, _1: any[]): any /*missing*/ }): void;
     
             /**
              * Returns the coordinates most recently added to the end of the path.

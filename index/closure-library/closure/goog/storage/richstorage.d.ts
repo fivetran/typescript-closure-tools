@@ -30,7 +30,7 @@ declare module goog.storage {
              * @param {string} key The key to get.
              * @return {(!Object|undefined)} The wrapper, or undefined if not found.
              */
-            getWrapper(key: string): any /*Object|any (undefined)*/;
+            getWrapper(key: string): Object|any /*undefined*/;
     } 
     
 }
@@ -72,7 +72,7 @@ declare module goog.storage.RichStorage.Wrapper {
      * @param {*} value The value to wrap.
      * @return {(!goog.storage.RichStorage.Wrapper|undefined)} The wrapper.
      */
-    function wrapIfNecessary(value: any): any /*goog.storage.RichStorage.Wrapper|any (undefined)*/;
+    function wrapIfNecessary(value: any): goog.storage.RichStorage.Wrapper|any /*undefined*/;
 
     /**
      * Unwraps a value, any metadata is discarded (not returned). You might want to
@@ -91,13 +91,5 @@ declare module goog.storage.RichStorage.Wrapper {
      * @param {(!Object|undefined)} wrapper The wrapper.
      * @return {*} The wrapped value or undefined.
      */
-    function unwrapIfPossible(wrapper: Object): any;
-    /**
-     * Convenience method for unwrapping a value. Returns undefined if the
-     * wrapper is missing.
-     *
-     * @param {(!Object|undefined)} wrapper The wrapper.
-     * @return {*} The wrapped value or undefined.
-     */
-    function unwrapIfPossible(wrapper: any /*undefined*/): any;
+    function unwrapIfPossible(wrapper: Object|any /*undefined*/): any;
 }

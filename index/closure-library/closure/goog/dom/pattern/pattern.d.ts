@@ -17,17 +17,7 @@ declare module goog.dom.pattern {
      * @return {boolean} Whether the strings are equal, or if the string matches
      *     the regular expression.
      */
-    function matchStringOrRegex(obj: string, str: string): boolean;
-    /**
-     * Utility function to match a string against either a string or a regular
-     * expression.
-     *
-     * @param {string|RegExp} obj Either a string or a regular expression.
-     * @param {string} str The string to match.
-     * @return {boolean} Whether the strings are equal, or if the string matches
-     *     the regular expression.
-     */
-    function matchStringOrRegex(obj: RegExp, str: string): boolean;
+    function matchStringOrRegex(obj: string|RegExp, str: string): boolean;
 
     /**
      * Utility function to match a DOM attribute against either a string or a
@@ -41,20 +31,7 @@ declare module goog.dom.pattern {
      *     the regular expression.
      * @this {Element} Called using goog.object every on an Element.
      */
-    function matchStringOrRegexMap(elem: string, index: string, orig: Object): boolean;
-    /**
-     * Utility function to match a DOM attribute against either a string or a
-     * regular expression.  Conforms to the interface spec for
-     * {@link goog.object#every}.
-     *
-     * @param {string|RegExp} elem Either a string or a regular expression.
-     * @param {string} index The attribute name to match.
-     * @param {Object} orig The original map of matches to test.
-     * @return {boolean} Whether the strings are equal, or if the attribute matches
-     *     the regular expression.
-     * @this {Element} Called using goog.object every on an Element.
-     */
-    function matchStringOrRegexMap(elem: RegExp, index: string, orig: Object): boolean;
+    function matchStringOrRegexMap(elem: string|RegExp, index: string, orig: Object): boolean;
 
     /**
      * When matched to a token, a pattern may return any of the following statuses:

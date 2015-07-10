@@ -12,13 +12,13 @@ declare module goog.vec {
     interface Number extends Array<number> { }
 
     /** @typedef {!goog.vec.Float32|!goog.vec.Float64|!goog.vec.Number} */
-    interface AnyType { /*any (goog.vec.Float32|goog.vec.Float64|goog.vec.Number)*/ }
+    type AnyType = goog.vec.Float32|goog.vec.Float64|goog.vec.Number;
 
     /**
      * @deprecated Use AnyType.
      * @typedef {!Float32Array|!Array.<number>}
      */
-    interface ArrayType { /*any (Float32Array|number[])*/ }
+    type ArrayType = Float32Array|number[];
 
     /**
      * For graphics work, 6 decimal places of accuracy are typically all that is

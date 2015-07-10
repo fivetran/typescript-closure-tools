@@ -259,15 +259,7 @@ declare module goog.ui.Dialog {
              * @constructor
              * @extends {goog.events.Event}
              */
-            constructor(key: string, caption: string);
-            /**
-             * Dialog event class.
-             * @param {string} key Key identifier for the button.
-             * @param {string|Element} caption Caption on the button (might be i18nlized).
-             * @constructor
-             * @extends {goog.events.Event}
-             */
-            constructor(key: string, caption: Element);
+            constructor(key: string, caption: string|Element);
     } 
     
 

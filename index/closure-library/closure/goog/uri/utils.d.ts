@@ -26,43 +26,7 @@ declare module goog.uri.utils {
      * @param {?string=} opt_fragment The URI-encoded fragment identifier.
      * @return {string} The fully combined URI.
      */
-    function buildFromEncodedParts(opt_scheme?: string, opt_userInfo?: string, opt_domain?: string, opt_port?: string, opt_path?: string, opt_queryData?: string, opt_fragment?: string): string;
-    /**
-     * Builds a URI string from already-encoded parts.
-     *
-     * No encoding is performed.  Any component may be omitted as either null or
-     * undefined.
-     *
-     * @param {?string=} opt_scheme The scheme such as 'http'.
-     * @param {?string=} opt_userInfo The user name before the '@'.
-     * @param {?string=} opt_domain The domain such as 'www.google.com', already
-     *     URI-encoded.
-     * @param {(string|number|null)=} opt_port The port number.
-     * @param {?string=} opt_path The path, already URI-encoded.  If it is not
-     *     empty, it must begin with a slash.
-     * @param {?string=} opt_queryData The URI-encoded query data.
-     * @param {?string=} opt_fragment The URI-encoded fragment identifier.
-     * @return {string} The fully combined URI.
-     */
-    function buildFromEncodedParts(opt_scheme?: string, opt_userInfo?: string, opt_domain?: string, opt_port?: number, opt_path?: string, opt_queryData?: string, opt_fragment?: string): string;
-    /**
-     * Builds a URI string from already-encoded parts.
-     *
-     * No encoding is performed.  Any component may be omitted as either null or
-     * undefined.
-     *
-     * @param {?string=} opt_scheme The scheme such as 'http'.
-     * @param {?string=} opt_userInfo The user name before the '@'.
-     * @param {?string=} opt_domain The domain such as 'www.google.com', already
-     *     URI-encoded.
-     * @param {(string|number|null)=} opt_port The port number.
-     * @param {?string=} opt_path The path, already URI-encoded.  If it is not
-     *     empty, it must begin with a slash.
-     * @param {?string=} opt_queryData The URI-encoded query data.
-     * @param {?string=} opt_fragment The URI-encoded fragment identifier.
-     * @return {string} The fully combined URI.
-     */
-    function buildFromEncodedParts(opt_scheme?: string, opt_userInfo?: string, opt_domain?: string, opt_port?: any /*null*/, opt_path?: string, opt_queryData?: string, opt_fragment?: string): string;
+    function buildFromEncodedParts(opt_scheme?: string, opt_userInfo?: string, opt_domain?: string, opt_port?: string|number|any /*null*/, opt_path?: string, opt_queryData?: string, opt_fragment?: string): string;
 
     /**
      * The index of each URI component in the return value of goog.uri.utils.split.
@@ -85,7 +49,7 @@ declare module goog.uri.utils {
      *     on the browser's regular expression implementation.  Never null, since
      *     arbitrary strings may still look like path names.
      */
-    function split(uri: string): any /*string|any (undefined)*/[];
+    function split(uri: string): string|any /*undefined*/[];
 
     /**
      * @param {string} uri The URI to examine.
@@ -242,7 +206,7 @@ declare module goog.uri.utils {
      *
      * @typedef {!Array.<string|goog.uri.utils.QueryValue>}
      */
-    interface QueryArray extends Array<any /*string|goog.uri.utils.QueryValue*/> { }
+    interface QueryArray extends Array<string|goog.uri.utils.QueryValue> { }
 
     /**
      * Builds a query data string from a sequence of alternating keys and values.
@@ -293,63 +257,7 @@ declare module goog.uri.utils {
      *     An array or argument list conforming to goog.uri.utils.QueryArray.
      * @return {string} The URI with all query parameters added.
      */
-    function appendParams(uri: string, ...var_args: goog.uri.utils.QueryArray[]): string;
-    /**
-     * Appends URI parameters to an existing URI.
-     *
-     * The variable arguments may contain alternating keys and values.  Keys are
-     * assumed to be already URI encoded.  The values should not be URI-encoded,
-     * and will instead be encoded by this function.
-     * <pre>
-     * appendParams('http://www.foo.com?existing=true',
-     *     'key1', 'value1',
-     *     'key2', 'value?willBeEncoded',
-     *     'key3', ['valueA', 'valueB', 'valueC'],
-     *     'key4', null);
-     * result: 'http://www.foo.com?existing=true&' +
-     *     'key1=value1&' +
-     *     'key2=value%3FwillBeEncoded&' +
-     *     'key3=valueA&key3=valueB&key3=valueC'
-     * </pre>
-     *
-     * A single call to this function will not exhibit quadratic behavior in IE,
-     * whereas multiple repeated calls may, although the effect is limited by
-     * fact that URL's generally can't exceed 2kb.
-     *
-     * @param {string} uri The original URI, which may already have query data.
-     * @param {...(goog.uri.utils.QueryArray|string|goog.uri.utils.QueryValue)} var_args
-     *     An array or argument list conforming to goog.uri.utils.QueryArray.
-     * @return {string} The URI with all query parameters added.
-     */
-    function appendParams(uri: string, ...var_args: string[]): string;
-    /**
-     * Appends URI parameters to an existing URI.
-     *
-     * The variable arguments may contain alternating keys and values.  Keys are
-     * assumed to be already URI encoded.  The values should not be URI-encoded,
-     * and will instead be encoded by this function.
-     * <pre>
-     * appendParams('http://www.foo.com?existing=true',
-     *     'key1', 'value1',
-     *     'key2', 'value?willBeEncoded',
-     *     'key3', ['valueA', 'valueB', 'valueC'],
-     *     'key4', null);
-     * result: 'http://www.foo.com?existing=true&' +
-     *     'key1=value1&' +
-     *     'key2=value%3FwillBeEncoded&' +
-     *     'key3=valueA&key3=valueB&key3=valueC'
-     * </pre>
-     *
-     * A single call to this function will not exhibit quadratic behavior in IE,
-     * whereas multiple repeated calls may, although the effect is limited by
-     * fact that URL's generally can't exceed 2kb.
-     *
-     * @param {string} uri The original URI, which may already have query data.
-     * @param {...(goog.uri.utils.QueryArray|string|goog.uri.utils.QueryValue)} var_args
-     *     An array or argument list conforming to goog.uri.utils.QueryArray.
-     * @return {string} The URI with all query parameters added.
-     */
-    function appendParams(uri: string, ...var_args: goog.uri.utils.QueryValue[]): string;
+    function appendParams(uri: string, ...var_args: goog.uri.utils.QueryArray|string|goog.uri.utils.QueryValue[]): string;
 
     /**
      * Appends query parameters from a map.

@@ -50,20 +50,14 @@ declare module goog.testing {
              * @return {goog.testing.StrictMock|goog.testing.LooseMock|null} The static
              *     mock associated with this record.
              */
-            getStaticMock(): any /*goog.testing.StrictMock|goog.testing.LooseMock|any (null)*/;
+            getStaticMock(): goog.testing.StrictMock|goog.testing.LooseMock|any /*null*/;
     
             /**
              * A setter for the static mock.
              * @param {goog.testing.StrictMock|goog.testing.LooseMock} staticMock A mock to
              *     associate with the static functions for the referenced class.
              */
-            setStaticMock(staticMock: goog.testing.StrictMock): void;
-            /**
-             * A setter for the static mock.
-             * @param {goog.testing.StrictMock|goog.testing.LooseMock} staticMock A mock to
-             *     associate with the static functions for the referenced class.
-             */
-            setStaticMock(staticMock: goog.testing.LooseMock): void;
+            setStaticMock(staticMock: goog.testing.StrictMock|goog.testing.LooseMock): void;
     
             /**
              * Adds a new mock instance mapping.  The mapping connects a set of function
@@ -72,15 +66,7 @@ declare module goog.testing {
              * @param {goog.testing.StrictMock|goog.testing.LooseMock} mock A mock
              *     associated with the supplied arguments.
              */
-            addMockInstance(args: any[], mock: goog.testing.StrictMock): void;
-            /**
-             * Adds a new mock instance mapping.  The mapping connects a set of function
-             * arguments to a specific mock instance.
-             * @param {Array} args An array of function arguments.
-             * @param {goog.testing.StrictMock|goog.testing.LooseMock} mock A mock
-             *     associated with the supplied arguments.
-             */
-            addMockInstance(args: any[], mock: goog.testing.LooseMock): void;
+            addMockInstance(args: any[], mock: goog.testing.StrictMock|goog.testing.LooseMock): void;
     
             /**
              * Finds the mock corresponding to a given argument set.  Throws an error if
@@ -89,7 +75,7 @@ declare module goog.testing {
              * @return {goog.testing.StrictMock|goog.testing.LooseMock|null} The mock
              *     corresponding to a given argument set.
              */
-            findMockInstance(args: any[]): any /*goog.testing.StrictMock|goog.testing.LooseMock|any (null)*/;
+            findMockInstance(args: any[]): goog.testing.StrictMock|goog.testing.LooseMock|any /*null*/;
     
             /**
              * Resets this record by reverting all the mocked classes back to the original

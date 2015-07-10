@@ -50,7 +50,7 @@ declare module goog.labs.mock {
              * @type {Object|Function}
              * @protected
              */
-            mockee: any /*Object|Function*/;
+            mockee: Object|Function;
     
             /**
              * Holds the stub bindings established so far.
@@ -70,7 +70,7 @@ declare module goog.labs.mock {
              *
              * @return {!Object|!Function} The mock object.
              */
-            getMockedItem(): any /*Object|Function*/;
+            getMockedItem(): Object|Function;
     
             /**
              * Adds a binding for the method name and arguments to be stubbed.
@@ -142,21 +142,7 @@ declare module goog.labs.mock {
              * @extends {goog.labs.mock.MockManager_}
              * @private
              */
-            constructor(objOrClass: Object);
-            /**
-             * Sets up mock for the given object (or class), stubbing out all the defined
-             * methods. By default, all stubs return {@code undefined}, though stubs can be
-             * later defined using {@code goog.labs.mock.when}.
-             *
-             * @param {!Object|!Function} objOrClass The object or class to set up the mock
-             *     for. A class is a constructor function.
-             *
-             * @constructor
-             * @struct
-             * @extends {goog.labs.mock.MockManager_}
-             * @private
-             */
-            constructor(objOrClass: Function);
+            constructor(objOrClass: Object|Function);
     } 
     
 

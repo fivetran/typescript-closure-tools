@@ -177,6 +177,6 @@ declare module goog.testing.PerformanceTimer {
      * @typedef {function():(goog.async.Deferred|undefined)}
      */
     interface TestFunction {
-        (): any /*goog.async.Deferred<any>|any (undefined)*/
+        (): goog.async.Deferred<any>|any /*undefined*/
     }
 }

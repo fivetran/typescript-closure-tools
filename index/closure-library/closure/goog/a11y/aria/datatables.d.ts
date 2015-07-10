@@ -9,7 +9,7 @@ declare module goog.a11y.aria {
      *
      * @type {Object.<!(goog.a11y.aria.State|string), (string|boolean|number)>}
      */
-    var DefaultStateValueMap_: { [key: string]: any /*string|boolean|number*/ };
+    var DefaultStateValueMap_: { [key: string]: string|boolean|number };
 }
 
 declare module goog.a11y.aria.datatables {
@@ -21,5 +21,5 @@ declare module goog.a11y.aria.datatables {
      * @return {!Object.<!(goog.a11y.aria.State|string), (string|boolean|number)>}
      *      The names for each of the notification methods.
      */
-    function getDefaultValuesMap(): { [key: string]: any /*string|boolean|number*/ };
+    function getDefaultValuesMap(): { [key: string]: string|boolean|number };
 }

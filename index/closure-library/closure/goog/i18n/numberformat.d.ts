@@ -17,19 +17,7 @@ declare module goog.i18n {
              *        goog.i18n.NumberFormat.CurrencyStyle.
              * @constructor
              */
-            constructor(pattern: number, opt_currency?: string, opt_currencyStyle?: number);
-            /**
-             * Constructor of NumberFormat.
-             * @param {number|string} pattern The number that indicates a predefined
-             *     number format pattern.
-             * @param {string=} opt_currency Optional international currency
-             *     code. This determines the currency code/symbol used in format/parse. If
-             *     not given, the currency code for current locale will be used.
-             * @param {number=} opt_currencyStyle currency style, value defined in
-             *        goog.i18n.NumberFormat.CurrencyStyle.
-             * @constructor
-             */
-            constructor(pattern: string, opt_currency?: string, opt_currencyStyle?: number);
+            constructor(pattern: number|string, opt_currency?: string, opt_currencyStyle?: number);
     
             /**
              * Sets minimum number of fraction digits.

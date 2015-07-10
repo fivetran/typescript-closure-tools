@@ -1,10 +1,10 @@
 /// <reference path="../../../globals.d.ts" />
 /// <reference path="./component.d.ts" />
+/// <reference path="./controlcontent.d.ts" />
 /// <reference path="./controlrenderer.d.ts" />
 /// <reference path="../dom/dom.d.ts" />
 /// <reference path="../events/keyhandler.d.ts" />
 /// <reference path="../a11y/aria/roles.d.ts" />
-/// <reference path="./controlcontent.d.ts" />
 /// <reference path="../events/browserevent.d.ts" />
 /// <reference path="../events/event.d.ts" />
 
@@ -44,100 +44,7 @@ declare module goog.ui {
              * @constructor
              * @extends {goog.ui.Component}
              */
-            constructor(opt_content?: string, opt_renderer?: goog.ui.ControlRenderer, opt_domHelper?: goog.dom.DomHelper);
-            /**
-             * Base class for UI controls.  Extends {@link goog.ui.Component} by adding
-             * the following:
-             *  <ul>
-             *    <li>a {@link goog.events.KeyHandler}, to simplify keyboard handling,
-             *    <li>a pluggable <em>renderer</em> framework, to simplify the creation of
-             *        simple controls without the need to subclass this class,
-             *    <li>the notion of component <em>content</em>, like a text caption or DOM
-             *        structure displayed in the component (e.g. a button label),
-             *    <li>getter and setter for component content, as well as a getter and
-             *        setter specifically for caption text (for convenience),
-             *    <li>support for hiding/showing the component,
-                  <li>fine-grained control over supported states and state transition
-                      events, and
-             *    <li>default mouse and keyboard event handling.
-             *  </ul>
-             * This class has sufficient built-in functionality for most simple UI controls.
-             * All controls dispatch SHOW, HIDE, ENTER, LEAVE, and ACTION events on show,
-             * hide, mouseover, mouseout, and user action, respectively.  Additional states
-             * are also supported.  See closure/demos/control.html
-             * for example usage.
-             * @param {goog.ui.ControlContent=} opt_content Text caption or DOM structure
-             *     to display as the content of the control (if any).
-             * @param {goog.ui.ControlRenderer=} opt_renderer Renderer used to render or
-             *     decorate the component; defaults to {@link goog.ui.ControlRenderer}.
-             * @param {goog.dom.DomHelper=} opt_domHelper Optional DOM helper, used for
-             *     document interaction.
-             * @constructor
-             * @extends {goog.ui.Component}
-             */
-            constructor(opt_content?: Node, opt_renderer?: goog.ui.ControlRenderer, opt_domHelper?: goog.dom.DomHelper);
-            /**
-             * Base class for UI controls.  Extends {@link goog.ui.Component} by adding
-             * the following:
-             *  <ul>
-             *    <li>a {@link goog.events.KeyHandler}, to simplify keyboard handling,
-             *    <li>a pluggable <em>renderer</em> framework, to simplify the creation of
-             *        simple controls without the need to subclass this class,
-             *    <li>the notion of component <em>content</em>, like a text caption or DOM
-             *        structure displayed in the component (e.g. a button label),
-             *    <li>getter and setter for component content, as well as a getter and
-             *        setter specifically for caption text (for convenience),
-             *    <li>support for hiding/showing the component,
-                  <li>fine-grained control over supported states and state transition
-                      events, and
-             *    <li>default mouse and keyboard event handling.
-             *  </ul>
-             * This class has sufficient built-in functionality for most simple UI controls.
-             * All controls dispatch SHOW, HIDE, ENTER, LEAVE, and ACTION events on show,
-             * hide, mouseover, mouseout, and user action, respectively.  Additional states
-             * are also supported.  See closure/demos/control.html
-             * for example usage.
-             * @param {goog.ui.ControlContent=} opt_content Text caption or DOM structure
-             *     to display as the content of the control (if any).
-             * @param {goog.ui.ControlRenderer=} opt_renderer Renderer used to render or
-             *     decorate the component; defaults to {@link goog.ui.ControlRenderer}.
-             * @param {goog.dom.DomHelper=} opt_domHelper Optional DOM helper, used for
-             *     document interaction.
-             * @constructor
-             * @extends {goog.ui.Component}
-             */
-            constructor(opt_content?: Node[], opt_renderer?: goog.ui.ControlRenderer, opt_domHelper?: goog.dom.DomHelper);
-            /**
-             * Base class for UI controls.  Extends {@link goog.ui.Component} by adding
-             * the following:
-             *  <ul>
-             *    <li>a {@link goog.events.KeyHandler}, to simplify keyboard handling,
-             *    <li>a pluggable <em>renderer</em> framework, to simplify the creation of
-             *        simple controls without the need to subclass this class,
-             *    <li>the notion of component <em>content</em>, like a text caption or DOM
-             *        structure displayed in the component (e.g. a button label),
-             *    <li>getter and setter for component content, as well as a getter and
-             *        setter specifically for caption text (for convenience),
-             *    <li>support for hiding/showing the component,
-                  <li>fine-grained control over supported states and state transition
-                      events, and
-             *    <li>default mouse and keyboard event handling.
-             *  </ul>
-             * This class has sufficient built-in functionality for most simple UI controls.
-             * All controls dispatch SHOW, HIDE, ENTER, LEAVE, and ACTION events on show,
-             * hide, mouseover, mouseout, and user action, respectively.  Additional states
-             * are also supported.  See closure/demos/control.html
-             * for example usage.
-             * @param {goog.ui.ControlContent=} opt_content Text caption or DOM structure
-             *     to display as the content of the control (if any).
-             * @param {goog.ui.ControlRenderer=} opt_renderer Renderer used to render or
-             *     decorate the component; defaults to {@link goog.ui.ControlRenderer}.
-             * @param {goog.dom.DomHelper=} opt_domHelper Optional DOM helper, used for
-             *     document interaction.
-             * @constructor
-             * @extends {goog.ui.Component}
-             */
-            constructor(opt_content?: NodeList, opt_renderer?: goog.ui.ControlRenderer, opt_domHelper?: goog.dom.DomHelper);
+            constructor(opt_content?: goog.ui.ControlContent, opt_renderer?: goog.ui.ControlRenderer, opt_domHelper?: goog.dom.DomHelper);
     
             /**
              * Returns true if the control is configured to handle its own mouse events,
@@ -181,7 +88,7 @@ declare module goog.ui {
              * @return {goog.ui.ControlRenderer|undefined} Renderer used by the component
              *     (undefined if none).
              */
-            getRenderer(): any /*goog.ui.ControlRenderer|any (undefined)*/;
+            getRenderer(): goog.ui.ControlRenderer|any /*undefined*/;
     
             /**
              * Registers the given renderer with the component.  Changing renderers after
@@ -258,31 +165,7 @@ declare module goog.ui {
              * @param {goog.ui.ControlContent} content Text caption or DOM
              *     structure to set as the component's contents.
              */
-            setContent(content: string): void;
-            /**
-             * Sets the component's content to the given text caption, element, or array of
-             * nodes.  (If the argument is an array of nodes, it must be an actual array,
-             * not an array-like object.)
-             * @param {goog.ui.ControlContent} content Text caption or DOM
-             *     structure to set as the component's contents.
-             */
-            setContent(content: Node): void;
-            /**
-             * Sets the component's content to the given text caption, element, or array of
-             * nodes.  (If the argument is an array of nodes, it must be an actual array,
-             * not an array-like object.)
-             * @param {goog.ui.ControlContent} content Text caption or DOM
-             *     structure to set as the component's contents.
-             */
-            setContent(content: Node[]): void;
-            /**
-             * Sets the component's content to the given text caption, element, or array of
-             * nodes.  (If the argument is an array of nodes, it must be an actual array,
-             * not an array-like object.)
-             * @param {goog.ui.ControlContent} content Text caption or DOM
-             *     structure to set as the component's contents.
-             */
-            setContent(content: NodeList): void;
+            setContent(content: goog.ui.ControlContent): void;
     
             /**
              * Sets the component's content to the given text caption, element, or array
@@ -294,40 +177,7 @@ declare module goog.ui {
              * @param {goog.ui.ControlContent} content Text caption or DOM structure
              *     to set as the component's contents.
              */
-            setContentInternal(content: string): void;
-            /**
-             * Sets the component's content to the given text caption, element, or array
-             * of nodes.  Unlike {@link #setContent}, doesn't modify the component's DOM.
-             * Called by renderers during element decoration.
-             *
-             * This should only be used by subclasses and its associated renderers.
-             *
-             * @param {goog.ui.ControlContent} content Text caption or DOM structure
-             *     to set as the component's contents.
-             */
-            setContentInternal(content: Node): void;
-            /**
-             * Sets the component's content to the given text caption, element, or array
-             * of nodes.  Unlike {@link #setContent}, doesn't modify the component's DOM.
-             * Called by renderers during element decoration.
-             *
-             * This should only be used by subclasses and its associated renderers.
-             *
-             * @param {goog.ui.ControlContent} content Text caption or DOM structure
-             *     to set as the component's contents.
-             */
-            setContentInternal(content: Node[]): void;
-            /**
-             * Sets the component's content to the given text caption, element, or array
-             * of nodes.  Unlike {@link #setContent}, doesn't modify the component's DOM.
-             * Called by renderers during element decoration.
-             *
-             * This should only be used by subclasses and its associated renderers.
-             *
-             * @param {goog.ui.ControlContent} content Text caption or DOM structure
-             *     to set as the component's contents.
-             */
-            setContentInternal(content: NodeList): void;
+            setContentInternal(content: goog.ui.ControlContent): void;
     
             /**
              * @return {string} Text caption of the control or empty string if none.

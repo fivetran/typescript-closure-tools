@@ -36,7 +36,7 @@ declare module goog.ui {
              * @protected
              * @suppress {underscore|visibility}
              */
-            position_: any /*goog.positioning.AbstractPosition|any (undefined)*/;
+            position_: goog.positioning.AbstractPosition|any /*undefined*/;
     
             /**
              * Returns the corner of the popup to used in the positioning algorithm.
@@ -81,25 +81,7 @@ declare module goog.ui {
              * @param {number=} opt_arg3 Bottom value.
              * @param {number=} opt_arg4 Left value.
              */
-            setMargin(arg1: goog.math.Box, opt_arg2?: number, opt_arg3?: number, opt_arg4?: number): void;
-            /**
-             * Sets the margin to place around the popup.
-             *
-             * @param {goog.math.Box|number|null} arg1 Top value or Box.
-             * @param {number=} opt_arg2 Right value.
-             * @param {number=} opt_arg3 Bottom value.
-             * @param {number=} opt_arg4 Left value.
-             */
-            setMargin(arg1: number, opt_arg2?: number, opt_arg3?: number, opt_arg4?: number): void;
-            /**
-             * Sets the margin to place around the popup.
-             *
-             * @param {goog.math.Box|number|null} arg1 Top value or Box.
-             * @param {number=} opt_arg2 Right value.
-             * @param {number=} opt_arg3 Bottom value.
-             * @param {number=} opt_arg4 Left value.
-             */
-            setMargin(arg1: any /*null*/, opt_arg2?: number, opt_arg3?: number, opt_arg4?: number): void;
+            setMargin(arg1: goog.math.Box|number|any /*null*/, opt_arg2?: number, opt_arg3?: number, opt_arg4?: number): void;
     } 
     
 }
@@ -183,24 +165,7 @@ declare module goog.ui.Popup {
              *     will be removed at the end of Q1 2009.
              * @final
              */
-            constructor(arg1: number, opt_arg2?: number);
-            /**
-             * Encapsulates a popup position where the popup absolutely positioned by
-             * setting the left/top style elements directly to the specified values.
-             * The position is generally relative to the element's offsetParent. Normally,
-             * this is the document body, but can be another element if the popup element
-             * is scoped by an element with relative position.
-             *
-             * @param {number|!goog.math.Coordinate} arg1 Left position or coordinate.
-             * @param {number=} opt_arg2 Top position.
-             * @constructor
-             * @extends {goog.positioning.AbstractPosition}
-             *
-             * @deprecated Use {@link goog.positioning.AbsolutePosition} instead, this alias
-             *     will be removed at the end of Q1 2009.
-             * @final
-             */
-            constructor(arg1: goog.math.Coordinate, opt_arg2?: number);
+            constructor(arg1: number|goog.math.Coordinate, opt_arg2?: number);
     } 
     
 
@@ -222,22 +187,7 @@ declare module goog.ui.Popup {
              * @deprecated Use {@link goog.positioning.ViewPortPosition} instead, this alias
              *     will be removed at the end of Q1 2009.
              */
-            constructor(arg1: number, opt_arg2?: number);
-            /**
-             * Encapsulates a popup position where the popup is positioned according to
-             * coordinates relative to the  element's view port (page). This calculates the
-             * correct position to use even if the element is relatively positioned to some
-             * other element.
-             *
-             * @param {number|!goog.math.Coordinate} arg1 Left position or coordinate.
-             * @param {number=} opt_arg2 Top position.
-             * @constructor
-             * @extends {goog.ui.Popup.AbsolutePosition}
-             *
-             * @deprecated Use {@link goog.positioning.ViewPortPosition} instead, this alias
-             *     will be removed at the end of Q1 2009.
-             */
-            constructor(arg1: goog.math.Coordinate, opt_arg2?: number);
+            constructor(arg1: number|goog.math.Coordinate, opt_arg2?: number);
     } 
     
 
@@ -262,25 +212,7 @@ declare module goog.ui.Popup {
              *     will be removed at the end of Q1 2009.
              * @final
              */
-            constructor(arg1: number, opt_arg2?: number);
-            /**
-             * Encapsulates a popup position where the popup is positioned relative to the
-             * window (client) coordinates. This calculates the correct position to
-             * use even if the element is relatively positioned to some other element. This
-             * is for trying to position an element at the spot of the mouse cursor in
-             * a MOUSEMOVE event. Just use the event.clientX and event.clientY as the
-             * parameters.
-             *
-             * @param {number|!goog.math.Coordinate} arg1 Left position or coordinate.
-             * @param {number=} opt_arg2 Top position.
-             * @constructor
-             * @extends {goog.ui.Popup.AbsolutePosition}
-             *
-             * @deprecated Use {@link goog.positioning.ClientPosition} instead, this alias
-             *     will be removed at the end of Q1 2009.
-             * @final
-             */
-            constructor(arg1: goog.math.Coordinate, opt_arg2?: number);
+            constructor(arg1: number|goog.math.Coordinate, opt_arg2?: number);
     } 
     
 
@@ -301,21 +233,7 @@ declare module goog.ui.Popup {
              * @deprecated Use {@link goog.positioning.ViewPortClientPosition} instead, this
              *     alias will be removed at the end of Q1 2009.
              */
-            constructor(arg1: number, opt_arg2?: number);
-            /**
-             * Encapsulates a popup position where the popup is positioned relative to the
-             * window (client) coordinates, and made to stay within the viewport.
-             *
-             * @param {number|!goog.math.Coordinate} arg1 Left position or coordinate.
-             * @param {number=} opt_arg2 Top position if arg1 is a number representing the
-             *     left position, ignored otherwise.
-             * @constructor
-             * @extends {goog.ui.Popup.ClientPosition}
-             *
-             * @deprecated Use {@link goog.positioning.ViewPortClientPosition} instead, this
-             *     alias will be removed at the end of Q1 2009.
-             */
-            constructor(arg1: goog.math.Coordinate, opt_arg2?: number);
+            constructor(arg1: number|goog.math.Coordinate, opt_arg2?: number);
     } 
     
 

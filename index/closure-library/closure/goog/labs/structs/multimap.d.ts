@@ -48,13 +48,7 @@ declare module goog.labs.structs {
              * @param {!(goog.labs.structs.Map|goog.labs.structs.Multimap)} map The
              *     map to add.
              */
-            addAllFromMultimap(map: goog.labs.structs.Map): void;
-            /**
-             * Adds the contents of the given map/multimap to this multimap.
-             * @param {!(goog.labs.structs.Map|goog.labs.structs.Multimap)} map The
-             *     map to add.
-             */
-            addAllFromMultimap(map: goog.labs.structs.Multimap): void;
+            addAllFromMultimap(map: goog.labs.structs.Map|goog.labs.structs.Multimap): void;
     
             /**
              * Replaces all the values for the given key with the given values.

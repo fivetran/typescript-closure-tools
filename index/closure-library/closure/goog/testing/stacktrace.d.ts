@@ -45,7 +45,7 @@ declare module goog.testing.stacktrace {
      * Sets function to deobfuscate function names.
      * @param {function(string): string} fn function to deobfuscate function names.
      */
-    function setDeobfuscateFunctionName(fn: (_0: string) => string): void;
+    function setDeobfuscateFunctionName(fn: { (_0: string): string }): void;
 
     /**
      * Brings the stack trace into a common format across browsers.

@@ -15,20 +15,20 @@ declare module goog.net {
              * @extends {goog.Disposable}
              * @final
              */
-            constructor(uris: any /*string|goog.Uri*/[]);
+            constructor(uris: string|goog.Uri[]);
     
             /**
              * Gets the URI by id.
              * @param {number} id The id.
              * @return {string|goog.Uri} The URI specified by the id.
              */
-            getUri(id: number): any /*string|goog.Uri*/;
+            getUri(id: number): string|goog.Uri;
     
             /**
              * Gets the URIs.
              * @return {Array.<string|goog.Uri>} The URIs.
              */
-            getUris(): any /*string|goog.Uri*/[];
+            getUris(): string|goog.Uri[];
     
             /**
              * Gets the response texts.

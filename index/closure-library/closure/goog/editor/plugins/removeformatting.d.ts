@@ -33,7 +33,7 @@ declare module goog.editor.plugins {
              *     formatting changes desired.  Use this only if trogedit's behavior doesn't
              *     meet your needs.
              */
-            setRemoveFormattingFunc(removeFormattingFunc: (_0: string) => string): void;
+            setRemoveFormattingFunc(removeFormattingFunc: { (_0: string): string }): void;
     } 
     
 }

@@ -55,19 +55,7 @@ declare module goog.testing {
              *     a proxy for the target mock should be created.
              * @return {!goog.testing.StrictMock} The mock object.
              */
-            createStrictMock(objectToMock: Object, opt_mockStaticMethods?: boolean, opt_createProxy?: boolean): goog.testing.StrictMock;
-            /**
-             * Creates a controlled StrictMock.  Passes its arguments through to the
-             * StrictMock constructor.
-             * @param {Object|Function} objectToMock The object that should be mocked, or
-             *    the constructor of an object to mock.
-             * @param {boolean=} opt_mockStaticMethods An optional argument denoting that
-             *     a mock should be constructed from the static functions of a class.
-             * @param {boolean=} opt_createProxy An optional argument denoting that
-             *     a proxy for the target mock should be created.
-             * @return {!goog.testing.StrictMock} The mock object.
-             */
-            createStrictMock(objectToMock: Function, opt_mockStaticMethods?: boolean, opt_createProxy?: boolean): goog.testing.StrictMock;
+            createStrictMock(objectToMock: Object|Function, opt_mockStaticMethods?: boolean, opt_createProxy?: boolean): goog.testing.StrictMock;
     
             /**
              * Creates a controlled LooseMock.  Passes its arguments through to the
@@ -82,21 +70,7 @@ declare module goog.testing {
              *     a proxy for the target mock should be created.
              * @return {!goog.testing.LooseMock} The mock object.
              */
-            createLooseMock(objectToMock: Object, opt_ignoreUnexpectedCalls?: boolean, opt_mockStaticMethods?: boolean, opt_createProxy?: boolean): goog.testing.LooseMock;
-            /**
-             * Creates a controlled LooseMock.  Passes its arguments through to the
-             * LooseMock constructor.
-             * @param {Object|Function} objectToMock The object that should be mocked, or
-             *    the constructor of an object to mock.
-             * @param {boolean=} opt_ignoreUnexpectedCalls Whether to ignore unexpected
-             *     calls.
-             * @param {boolean=} opt_mockStaticMethods An optional argument denoting that
-             *     a mock should be constructed from the static functions of a class.
-             * @param {boolean=} opt_createProxy An optional argument denoting that
-             *     a proxy for the target mock should be created.
-             * @return {!goog.testing.LooseMock} The mock object.
-             */
-            createLooseMock(objectToMock: Function, opt_ignoreUnexpectedCalls?: boolean, opt_mockStaticMethods?: boolean, opt_createProxy?: boolean): goog.testing.LooseMock;
+            createLooseMock(objectToMock: Object|Function, opt_ignoreUnexpectedCalls?: boolean, opt_mockStaticMethods?: boolean, opt_createProxy?: boolean): goog.testing.LooseMock;
     
             /**
              * Creates a controlled FunctionMock.  Passes its arguments through to the

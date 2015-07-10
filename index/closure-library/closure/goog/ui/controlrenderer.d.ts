@@ -2,6 +2,7 @@
 /// <reference path="../a11y/aria/roles.d.ts" />
 /// <reference path="./control.d.ts" />
 /// <reference path="./component.d.ts" />
+/// <reference path="./controlcontent.d.ts" />
 
 declare module goog.ui {
 
@@ -35,7 +36,7 @@ declare module goog.ui {
              * See http://wiki/Main/ARIA for more info.
              * @return {goog.a11y.aria.Role|undefined} ARIA role.
              */
-            getAriaRole(): any /*goog.a11y.aria.Role|any (undefined)*/;
+            getAriaRole(): goog.a11y.aria.Role|any /*undefined*/;
     
             /**
              * Returns the control's contents wrapped in a DIV, with the renderer's own
@@ -66,18 +67,7 @@ declare module goog.ui {
              * @param {string} className CSS class name to add or remove.
              * @param {boolean} enable Whether to add or remove the class name.
              */
-            enableClassName(control: goog.ui.Control, className: string, enable: boolean): void;
-            /**
-             * Updates the control's DOM by adding or removing the specified class name
-             * to/from its root element. May add additional combined classes as needed in
-             * IE6 and lower. Because of this, subclasses should use this method when
-             * modifying class names on the control's root element.
-             * @param {goog.ui.Control|Element} control Control instance (or root element)
-             *     to be updated.
-             * @param {string} className CSS class name to add or remove.
-             * @param {boolean} enable Whether to add or remove the class name.
-             */
-            enableClassName(control: Element, className: string, enable: boolean): void;
+            enableClassName(control: goog.ui.Control|Element, className: string, enable: boolean): void;
     
             /**
              * Updates the control's DOM by adding or removing the specified extra class
@@ -206,40 +196,7 @@ declare module goog.ui {
              *     set as the control's content. The DOM nodes will not be cloned, they
              *     will only moved under the content element of the control.
              */
-            setContent(element: Element, content: string): void;
-            /**
-             * Takes a control's root element, and sets its content to the given text
-             * caption or DOM structure.  The default implementation replaces the children
-             * of the given element.  Renderers that create more complex DOM structures
-             * must override this method accordingly.
-             * @param {Element} element The control's root element.
-             * @param {goog.ui.ControlContent} content Text caption or DOM structure to be
-             *     set as the control's content. The DOM nodes will not be cloned, they
-             *     will only moved under the content element of the control.
-             */
-            setContent(element: Element, content: Node): void;
-            /**
-             * Takes a control's root element, and sets its content to the given text
-             * caption or DOM structure.  The default implementation replaces the children
-             * of the given element.  Renderers that create more complex DOM structures
-             * must override this method accordingly.
-             * @param {Element} element The control's root element.
-             * @param {goog.ui.ControlContent} content Text caption or DOM structure to be
-             *     set as the control's content. The DOM nodes will not be cloned, they
-             *     will only moved under the content element of the control.
-             */
-            setContent(element: Element, content: Node[]): void;
-            /**
-             * Takes a control's root element, and sets its content to the given text
-             * caption or DOM structure.  The default implementation replaces the children
-             * of the given element.  Renderers that create more complex DOM structures
-             * must override this method accordingly.
-             * @param {Element} element The control's root element.
-             * @param {goog.ui.ControlContent} content Text caption or DOM structure to be
-             *     set as the control's content. The DOM nodes will not be cloned, they
-             *     will only moved under the content element of the control.
-             */
-            setContent(element: Element, content: NodeList): void;
+            setContent(element: Element, content: goog.ui.ControlContent): void;
     
             /**
              * Returns the element within the component's DOM that should receive keyboard
@@ -331,7 +288,7 @@ declare module goog.ui {
              *     if none).
              * @protected
              */
-            getClassForState(state: goog.ui.Component.State): any /*string|any (undefined)*/;
+            getClassForState(state: goog.ui.Component.State): string|any /*undefined*/;
     
             /**
              * Takes a single CSS class name which may represent a component state, and

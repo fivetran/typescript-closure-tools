@@ -20,7 +20,7 @@ declare module goog.ui {
              * @constructor
              * @extends {goog.ui.Component}
              */
-            constructor(opt_domHelper?: goog.dom.DomHelper, opt_labelFn?: (_0: number) => string);
+            constructor(opt_domHelper?: goog.dom.DomHelper, opt_labelFn?: { (_0: number): string });
     
             /**
              * The underlying range model
@@ -76,7 +76,7 @@ declare module goog.ui {
              * @type {function() : void}
              * @protected
              */
-            createThumbs: () => void;
+            createThumbs: { (): void };
     
             /**
              * Returns the value to use for the current mouse position

@@ -259,7 +259,7 @@ declare module goog.ds {
              * @param {string} name The name of the node to get the index of.
              * @return {number|undefined} The index.
              */
-            indexOf(name: string): any /*number|any (undefined)*/;
+            indexOf(name: string): number|any /*undefined*/;
     } 
     
 

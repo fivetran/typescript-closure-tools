@@ -22,7 +22,7 @@ declare module goog.editor.plugins {
              * @param {function(Element):boolean} func A function to decide whether the
              *   table element could be editable by the user or not.
              */
-            addIsTableEditableFunction(func: (_0: Element) => boolean): void;
+            addIsTableEditableFunction(func: { (_0: Element): boolean }): void;
     } 
     
 }
@@ -42,7 +42,7 @@ declare module goog.editor.plugins.TableEditor {
              * @constructor
              * @private
              */
-            constructor(range: goog.dom.AbstractRange, getParentTableFunction: (_0: Element) => Element);
+            constructor(range: goog.dom.AbstractRange, getParentTableFunction: { (_0: Element): Element });
     
             /**
              * Returns the EditableTable object of which this selection's cells are a

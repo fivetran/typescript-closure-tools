@@ -120,7 +120,7 @@ declare module goog.result {
      * @param {!T=} opt_scope Optional scope for the handler.
      * @template T
      */
-    function wait<T>(result: goog.result.Result, handler: (_0: goog.result.Result) => any /*missing*/, opt_scope?: T): void;
+    function wait<T>(result: goog.result.Result, handler: { (_0: goog.result.Result): any /*missing*/ }, opt_scope?: T): void;
 
     /**
      * Calls the handler if the result succeeds. The result object is the only
@@ -146,7 +146,7 @@ declare module goog.result {
      * @param {!T=} opt_scope Optional scope for the handler.
      * @template T
      */
-    function waitOnSuccess<T>(result: goog.result.Result, handler: (_0: any, _1: goog.result.Result) => any /*missing*/, opt_scope?: T): void;
+    function waitOnSuccess<T>(result: goog.result.Result, handler: { (_0: any, _1: goog.result.Result): any /*missing*/ }, opt_scope?: T): void;
 
     /**
      * Calls the handler if the result action errors. The result object is passed as
@@ -172,7 +172,7 @@ declare module goog.result {
      * @param {!T=} opt_scope Optional scope for the handler.
      * @template T
      */
-    function waitOnError<T>(result: goog.result.Result, handler: (_0: any, _1: goog.result.Result) => any /*missing*/, opt_scope?: T): void;
+    function waitOnError<T>(result: goog.result.Result, handler: { (_0: any, _1: goog.result.Result): any /*missing*/ }, opt_scope?: T): void;
 
     /**
      * Given a result and a transform function, returns a new result whose value,
@@ -211,7 +211,7 @@ declare module goog.result {
      * @return {!goog.result.DependentResult} A new Result whose eventual value will
      *     be the returned value of the transformer function.
      */
-    function transform(result: goog.result.Result, transformer: (_0: any) => any): goog.result.DependentResult;
+    function transform(result: goog.result.Result, transformer: { (_0: any): any }): goog.result.DependentResult;
 
     /**
      * The chain function aids in chaining of asynchronous Results. This provides a
@@ -282,7 +282,7 @@ declare module goog.result {
      *     resolved.
      * @template T
      */
-    function chain<T>(result: goog.result.Result, actionCallback: (_0: goog.result.Result) => goog.result.Result, opt_scope?: T): goog.result.DependentResult;
+    function chain<T>(result: goog.result.Result, actionCallback: { (_0: goog.result.Result): goog.result.Result }, opt_scope?: T): goog.result.DependentResult;
 
     /**
      * Returns a result that waits on all given results to resolve. Once all have

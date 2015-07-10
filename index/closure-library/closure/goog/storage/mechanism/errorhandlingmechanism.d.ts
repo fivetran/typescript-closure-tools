@@ -50,6 +50,6 @@ declare module goog.storage.mechanism.ErrorHandlingMechanism {
      *   *=)}
      */
     interface ErrorHandler {
-        (_0: any /*Error|string*/, _1: goog.storage.mechanism.ErrorHandlingMechanism.Operation, _2: string, _3: any): any /*missing*/
+        (_0: Error|string, _1: goog.storage.mechanism.ErrorHandlingMechanism.Operation, _2: string, _3: any): any /*missing*/
     }
 }

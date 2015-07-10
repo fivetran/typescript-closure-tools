@@ -29,15 +29,7 @@ declare module goog.ui {
              * @param {Element} element The tab's root element.
              * @param {string|null|undefined} tooltip New tooltip text (if any).
              */
-            setTooltip(element: Element, tooltip: string): void;
-            /**
-             * Takes a tab's root element and a tooltip string, and updates the element
-             * with the new tooltip.  If the new tooltip is null or undefined, sets the
-             * element's title to the empty string.
-             * @param {Element} element The tab's root element.
-             * @param {string|null|undefined} tooltip New tooltip text (if any).
-             */
-            setTooltip(element: Element, tooltip: any /*null*/): void;
+            setTooltip(element: Element, tooltip: string|any /*null*/|any /*undefined*/): void;
     } 
     
 }

@@ -83,17 +83,7 @@ declare module goog.math {
              * @return {boolean} Whether this rectangle contains given rectangle or
              *     coordinate.
              */
-            contains(another: goog.math.Rect): boolean;
-            /**
-             * Tests whether this rectangle entirely contains another rectangle or
-             * coordinate.
-             *
-             * @param {goog.math.Rect|goog.math.Coordinate} another The rectangle or
-             *     coordinate to test for containment.
-             * @return {boolean} Whether this rectangle contains given rectangle or
-             *     coordinate.
-             */
-            contains(another: goog.math.Coordinate): boolean;
+            contains(another: goog.math.Rect|goog.math.Coordinate): boolean;
     
             /**
              * @param {!goog.math.Coordinate} point A coordinate.
@@ -161,18 +151,7 @@ declare module goog.math {
              * @param {number=} opt_ty The value to translate top by.
              * @return {!goog.math.Rect} This rectangle after translating.
              */
-            translate(tx: number, opt_ty?: number): goog.math.Rect;
-            /**
-             * Translates this rectangle by the given offsets. If a
-             * {@code goog.math.Coordinate} is given, then the left and top values are
-             * translated by the coordinate's x and y values. Otherwise, top and left are
-             * translated by {@code tx} and {@code opt_ty} respectively.
-             * @param {number|goog.math.Coordinate} tx The value to translate left by or the
-             *     the coordinate to translate this rect by.
-             * @param {number=} opt_ty The value to translate top by.
-             * @return {!goog.math.Rect} This rectangle after translating.
-             */
-            translate(tx: goog.math.Coordinate, opt_ty?: number): goog.math.Rect;
+            translate(tx: number|goog.math.Coordinate, opt_ty?: number): goog.math.Rect;
     
             /**
              * Scales this rectangle by the given scale factors. The left and width values

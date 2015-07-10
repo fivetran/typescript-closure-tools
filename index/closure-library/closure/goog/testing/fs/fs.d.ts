@@ -56,15 +56,7 @@ declare module goog.testing.fs {
      *     up the resulting blob.
      * @return {!goog.testing.fs.Blob} The blob.
      */
-    function getBlob(...var_args: string[]): goog.testing.fs.Blob;
-    /**
-     * Concatenates one or more values together and converts them to a fake blob.
-     *
-     * @param {...(string|!goog.testing.fs.Blob)} var_args The values that will make
-     *     up the resulting blob.
-     * @return {!goog.testing.fs.Blob} The blob.
-     */
-    function getBlob(...var_args: goog.testing.fs.Blob[]): goog.testing.fs.Blob;
+    function getBlob(...var_args: string|goog.testing.fs.Blob[]): goog.testing.fs.Blob;
 
     /**
      * Returns the string value of a fake blob.

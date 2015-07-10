@@ -12,7 +12,7 @@ declare module goog.object {
      * @param {T=} opt_obj This is used as the 'this' object within f.
      * @template T,K,V
      */
-    function forEach<T,K,V>(obj: { [key: string]: V }, f: (_0: V, _1: any, _2: { [key: string]: V }) => any, opt_obj?: T): void;
+    function forEach<T,K,V>(obj: { [key: string]: V }, f: { (_0: V, _1: any, _2: { [key: string]: V }): any }, opt_obj?: T): void;
 
     /**
      * Calls a function for each element in an object/map/hash. If that call returns
@@ -30,7 +30,7 @@ declare module goog.object {
      *     test are present.
      * @template T,K,V
      */
-    function filter<T,K,V>(obj: { [key: string]: V }, f: (_0: V, _1: any, _2: { [key: string]: V }) => boolean, opt_obj?: T): { [key: string]: V };
+    function filter<T,K,V>(obj: { [key: string]: V }, f: { (_0: V, _1: any, _2: { [key: string]: V }): boolean }, opt_obj?: T): { [key: string]: V };
 
     /**
      * For every element in an object/map/hash calls a function and inserts the
@@ -46,7 +46,7 @@ declare module goog.object {
      * @return {!Object.<K,R>} a new object with the results from f.
      * @template T,K,V,R
      */
-    function map<T,K,V,R>(obj: { [key: string]: V }, f: (_0: V, _1: any, _2: { [key: string]: V }) => R, opt_obj?: T): { [key: string]: R };
+    function map<T,K,V,R>(obj: { [key: string]: V }, f: { (_0: V, _1: any, _2: { [key: string]: V }): R }, opt_obj?: T): { [key: string]: R };
 
     /**
      * Calls a function for each element in an object/map/hash. If any
@@ -62,7 +62,7 @@ declare module goog.object {
      * @return {boolean} true if any element passes the test.
      * @template T,K,V
      */
-    function some<T,K,V>(obj: { [key: string]: V }, f: (_0: V, _1: any, _2: { [key: string]: V }) => boolean, opt_obj?: T): boolean;
+    function some<T,K,V>(obj: { [key: string]: V }, f: { (_0: V, _1: any, _2: { [key: string]: V }): boolean }, opt_obj?: T): boolean;
 
     /**
      * Calls a function for each element in an object/map/hash. If
@@ -78,7 +78,7 @@ declare module goog.object {
      * @return {boolean} false if any element fails the test.
      * @template T,K,V
      */
-    function every<T,K,V>(obj: { [key: string]: V }, f: (_0: V, _1: any, _2: { [key: string]: V }) => boolean, opt_obj?: T): boolean;
+    function every<T,K,V>(obj: { [key: string]: V }, f: { (_0: V, _1: any, _2: { [key: string]: V }): boolean }, opt_obj?: T): boolean;
 
     /**
      * Returns the number of key-value pairs in the object map.
@@ -97,7 +97,7 @@ declare module goog.object {
      * @param {Object} obj The object to pick a key from.
      * @return {string|undefined} The key or undefined if the object is empty.
      */
-    function getAnyKey(obj: Object): any /*string|any (undefined)*/;
+    function getAnyKey(obj: Object): string|any /*undefined*/;
 
     /**
      * Returns one value from the object map, if any exists.
@@ -108,7 +108,7 @@ declare module goog.object {
      * @return {V|undefined} The value or undefined if the object is empty.
      * @template K,V
      */
-    function getAnyValue<K,V>(obj: { [key: string]: V }): any /*V|any (undefined)*/;
+    function getAnyValue<K,V>(obj: { [key: string]: V }): V|any /*undefined*/;
 
     /**
      * Whether the object/hash/map contains the given object as a value.
@@ -150,33 +150,7 @@ declare module goog.object {
      * @return {*} The resulting value.  If, at any point, the value for a key
      *     is undefined, returns undefined.
      */
-    function getValueByKeys(obj: Object, ...var_args: string[]): any;
-    /**
-     * Get a value from an object multiple levels deep.  This is useful for
-     * pulling values from deeply nested objects, such as JSON responses.
-     * Example usage: getValueByKeys(jsonObj, 'foo', 'entries', 3)
-     *
-     * @param {!Object} obj An object to get the value from.  Can be array-like.
-     * @param {...(string|number|!Array.<number|string>)} var_args A number of keys
-     *     (as strings, or numbers, for array-like objects).  Can also be
-     *     specified as a single array of keys.
-     * @return {*} The resulting value.  If, at any point, the value for a key
-     *     is undefined, returns undefined.
-     */
-    function getValueByKeys(obj: Object, ...var_args: number[]): any;
-    /**
-     * Get a value from an object multiple levels deep.  This is useful for
-     * pulling values from deeply nested objects, such as JSON responses.
-     * Example usage: getValueByKeys(jsonObj, 'foo', 'entries', 3)
-     *
-     * @param {!Object} obj An object to get the value from.  Can be array-like.
-     * @param {...(string|number|!Array.<number|string>)} var_args A number of keys
-     *     (as strings, or numbers, for array-like objects).  Can also be
-     *     specified as a single array of keys.
-     * @return {*} The resulting value.  If, at any point, the value for a key
-     *     is undefined, returns undefined.
-     */
-    function getValueByKeys(obj: Object, ...var_args: any /*number|string*/[][]): any;
+    function getValueByKeys(obj: Object, ...var_args: string|number|number|string[][]): any;
 
     /**
      * Whether the object/map/hash contains the given key.
@@ -209,7 +183,7 @@ declare module goog.object {
      *     returns true or undefined if no such element is found.
      * @template T,K,V
      */
-    function findKey<T,K,V>(obj: { [key: string]: V }, f: (_0: V, _1: string, _2: { [key: string]: V }) => boolean, opt_this?: T): any /*string|any (undefined)*/;
+    function findKey<T,K,V>(obj: { [key: string]: V }, f: { (_0: V, _1: string, _2: { [key: string]: V }): boolean }, opt_this?: T): string|any /*undefined*/;
 
     /**
      * Searches an object for an element that satisfies the given condition and
@@ -223,7 +197,7 @@ declare module goog.object {
      *     undefined if no such element is found.
      * @template T,K,V
      */
-    function findValue<T,K,V>(obj: { [key: string]: V }, f: (_0: V, _1: string, _2: { [key: string]: V }) => boolean, opt_this?: T): V;
+    function findValue<T,K,V>(obj: { [key: string]: V }, f: { (_0: V, _1: string, _2: { [key: string]: V }): boolean }, opt_this?: T): V;
 
     /**
      * Whether the object/map/hash is empty.
@@ -270,7 +244,7 @@ declare module goog.object {
      * @return {V|R|undefined} The value for the given key.
      * @template K,V,R
      */
-    function get<K,V,R>(obj: { [key: string]: V }, key: string, opt_val?: R): any /*V|R|any (undefined)*/;
+    function get<K,V,R>(obj: { [key: string]: V }, key: string, opt_val?: R): V|R|any /*undefined*/;
 
     /**
      * Adds a key-value pair to the object/map/hash.

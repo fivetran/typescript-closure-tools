@@ -33,11 +33,5 @@ declare module goog.labs.userAgent.engine {
      * @return {boolean} Whether the rendering engine version is higher or the same
      *     as the given version.
      */
-    function isVersionOrHigher(version: string): boolean;
-    /**
-     * @param {string|number} version The version to check.
-     * @return {boolean} Whether the rendering engine version is higher or the same
-     *     as the given version.
-     */
-    function isVersionOrHigher(version: number): boolean;
+    function isVersionOrHigher(version: string|number): boolean;
 }

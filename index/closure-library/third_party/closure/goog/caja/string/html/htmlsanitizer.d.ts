@@ -21,7 +21,7 @@ declare module goog._string.html {
              * @constructor
              * @extends {goog.string.html.HtmlSaxHandler}
              */
-            constructor(stringBuffer: goog.string.StringBuffer, opt_urlPolicy: (_0: string) => string, opt_nmTokenPolicy: (_0: string) => string);
+            constructor(stringBuffer: goog.string.StringBuffer, opt_urlPolicy: { (_0: string): string }, opt_nmTokenPolicy: { (_0: string): string });
     } 
     
 
@@ -35,7 +35,7 @@ declare module goog._string.html {
      *     names, IDs, and classes.
      * @return {string} A sanitized HTML, safe to be embedded on the page.
      */
-    function htmlSanitize(htmlText: string, opt_urlPolicy?: (_0: string) => string, opt_nmTokenPolicy?: (_0: string) => string): string;
+    function htmlSanitize(htmlText: string, opt_urlPolicy?: { (_0: string): string }, opt_nmTokenPolicy?: { (_0: string): string }): string;
 }
 
 declare module goog._string.html.HtmlSanitizer {

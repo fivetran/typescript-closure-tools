@@ -32,40 +32,7 @@ declare module goog.net {
              *     caching.
              * @param {Object|goog.structs.Map=} opt_data Map of key-value pairs.
              */
-            send(uri: goog.Uri, opt_method?: string, opt_noCache?: boolean, opt_data?: Object): void;
-            /**
-             * Simulates the iframe send.
-             *
-             * @param {goog.Uri|string} uri Uri of the request.
-             * @param {string=} opt_method Default is GET, POST uses a form to submit the
-             *     request.
-             * @param {boolean=} opt_noCache Append a timestamp to the request to avoid
-             *     caching.
-             * @param {Object|goog.structs.Map=} opt_data Map of key-value pairs.
-             */
-            send(uri: goog.Uri, opt_method?: string, opt_noCache?: boolean, opt_data?: goog.structs.Map<any, any>): void;
-            /**
-             * Simulates the iframe send.
-             *
-             * @param {goog.Uri|string} uri Uri of the request.
-             * @param {string=} opt_method Default is GET, POST uses a form to submit the
-             *     request.
-             * @param {boolean=} opt_noCache Append a timestamp to the request to avoid
-             *     caching.
-             * @param {Object|goog.structs.Map=} opt_data Map of key-value pairs.
-             */
-            send(uri: string, opt_method?: string, opt_noCache?: boolean, opt_data?: Object): void;
-            /**
-             * Simulates the iframe send.
-             *
-             * @param {goog.Uri|string} uri Uri of the request.
-             * @param {string=} opt_method Default is GET, POST uses a form to submit the
-             *     request.
-             * @param {boolean=} opt_noCache Append a timestamp to the request to avoid
-             *     caching.
-             * @param {Object|goog.structs.Map=} opt_data Map of key-value pairs.
-             */
-            send(uri: string, opt_method?: string, opt_noCache?: boolean, opt_data?: goog.structs.Map<any, any>): void;
+            send(uri: goog.Uri|string, opt_method?: string, opt_noCache?: boolean, opt_data?: Object|goog.structs.Map<any, any>): void;
     
             /**
              * Simulates the iframe send from a form.

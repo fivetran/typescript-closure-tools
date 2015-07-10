@@ -167,16 +167,7 @@ declare module goog.net {
              * @param {Object|goog.structs.Map} map  The map to send.
              * @param {?Object=} opt_context The context associated with the map.
              */
-            sendMap(map: Object, opt_context?: Object): void;
-            /**
-             * Sends a request to the server. The format of the request is a Map data
-             * structure of key/value pairs. These maps are then encoded in a format
-             * suitable for the wire and then reconstituted as a Map data structure that
-             * the server can process.
-             * @param {Object|goog.structs.Map} map  The map to send.
-             * @param {?Object=} opt_context The context associated with the map.
-             */
-            sendMap(map: goog.structs.Map<any, any>, opt_context?: Object): void;
+            sendMap(map: Object|goog.structs.Map<any, any>, opt_context?: Object): void;
     
             /**
              * When set to true, this changes the behavior of the forward channel so it
@@ -405,16 +396,7 @@ declare module goog.net.BrowserChannel {
              * @constructor
              * @final
              */
-            constructor(mapId: number, map: Object, opt_context?: Object);
-            /**
-             * Simple container class for a (mapId, map) pair.
-             * @param {number} mapId The id for this map.
-             * @param {Object|goog.structs.Map} map The map itself.
-             * @param {Object=} opt_context The context associated with the map.
-             * @constructor
-             * @final
-             */
-            constructor(mapId: number, map: goog.structs.Map<any, any>, opt_context?: Object);
+            constructor(mapId: number, map: Object|goog.structs.Map<any, any>, opt_context?: Object);
     
             /**
              * The id for this map.
@@ -426,7 +408,7 @@ declare module goog.net.BrowserChannel {
              * The map itself.
              * @type {Object|goog.structs.Map}
              */
-            map: any /*Object|goog.structs.Map<any, any>*/;
+            map: Object|goog.structs.Map<any, any>;
     
             /**
              * The context for the map.
@@ -534,7 +516,7 @@ declare module goog.net.BrowserChannel {
              * server.
              * @type {?function(!goog.net.BrowserChannel, !Array.<!Array>)}
              */
-            channelHandleMultipleArrays: (_0: goog.net.BrowserChannel, _1: any[][]) => any /*missing*/;
+            channelHandleMultipleArrays: { (_0: goog.net.BrowserChannel, _1: any[][]): any /*missing*/ };
     
             /**
              * Whether it's okay to make a request to the server. A handler can return
@@ -756,46 +738,7 @@ declare module goog.net.BrowserChannel {
      * @param {number=} opt_retryId  The retry id for this request.
      * @return {!goog.net.ChannelRequest} The created channel request.
      */
-    function createChannelRequest(channel: goog.net.BrowserChannel, channelDebug: goog.net.ChannelDebug, opt_sessionId?: string, opt_requestId?: string, opt_retryId?: number): goog.net.ChannelRequest;
-    /**
-     * Instantiates a ChannelRequest with the given parameters. Overidden in tests.
-     *
-     * @param {goog.net.BrowserChannel|goog.net.BrowserTestChannel} channel
-     *     The BrowserChannel that owns this request.
-     * @param {goog.net.ChannelDebug} channelDebug A ChannelDebug to use for
-     *     logging.
-     * @param {string=} opt_sessionId  The session id for the channel.
-     * @param {string|number=} opt_requestId  The request id for this request.
-     * @param {number=} opt_retryId  The retry id for this request.
-     * @return {!goog.net.ChannelRequest} The created channel request.
-     */
-    function createChannelRequest(channel: goog.net.BrowserChannel, channelDebug: goog.net.ChannelDebug, opt_sessionId?: string, opt_requestId?: number, opt_retryId?: number): goog.net.ChannelRequest;
-    /**
-     * Instantiates a ChannelRequest with the given parameters. Overidden in tests.
-     *
-     * @param {goog.net.BrowserChannel|goog.net.BrowserTestChannel} channel
-     *     The BrowserChannel that owns this request.
-     * @param {goog.net.ChannelDebug} channelDebug A ChannelDebug to use for
-     *     logging.
-     * @param {string=} opt_sessionId  The session id for the channel.
-     * @param {string|number=} opt_requestId  The request id for this request.
-     * @param {number=} opt_retryId  The retry id for this request.
-     * @return {!goog.net.ChannelRequest} The created channel request.
-     */
-    function createChannelRequest(channel: goog.net.BrowserTestChannel, channelDebug: goog.net.ChannelDebug, opt_sessionId?: string, opt_requestId?: string, opt_retryId?: number): goog.net.ChannelRequest;
-    /**
-     * Instantiates a ChannelRequest with the given parameters. Overidden in tests.
-     *
-     * @param {goog.net.BrowserChannel|goog.net.BrowserTestChannel} channel
-     *     The BrowserChannel that owns this request.
-     * @param {goog.net.ChannelDebug} channelDebug A ChannelDebug to use for
-     *     logging.
-     * @param {string=} opt_sessionId  The session id for the channel.
-     * @param {string|number=} opt_requestId  The request id for this request.
-     * @param {number=} opt_retryId  The retry id for this request.
-     * @return {!goog.net.ChannelRequest} The created channel request.
-     */
-    function createChannelRequest(channel: goog.net.BrowserTestChannel, channelDebug: goog.net.ChannelDebug, opt_sessionId?: string, opt_requestId?: number, opt_retryId?: number): goog.net.ChannelRequest;
+    function createChannelRequest(channel: goog.net.BrowserChannel|goog.net.BrowserTestChannel, channelDebug: goog.net.ChannelDebug, opt_sessionId?: string, opt_requestId?: string|number, opt_retryId?: number): goog.net.ChannelRequest;
 
     /**
      * Wrapper around SafeTimeout which calls the start and end execution hooks

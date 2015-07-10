@@ -16,7 +16,7 @@ declare module goog {
      * @this {Object} The object whose function is being wrapped.
      * @return {!Function} The wrapped function.
      */
-    function memoize(f: Function, opt_serializer?: (_0: number, _1: Object) => string): void;
+    function memoize(f: Function, opt_serializer?: { (_0: number, _1: Object): string }): void;
 }
 
 declare module goog.memoize {

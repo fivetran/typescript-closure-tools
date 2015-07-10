@@ -42,14 +42,7 @@ declare module goog.dom {
              * @param {string|Element} element Element ID or a DOM node.
              * @return {Element} The element with the given ID, or the node passed in.
              */
-            getElement(element: string): Element;
-            /**
-             * Alias for {@code getElementById}. If a DOM node is passed in then we just
-             * return that.
-             * @param {string|Element} element Element ID or a DOM node.
-             * @return {Element} The element with the given ID, or the node passed in.
-             */
-            getElement(element: Element): Element;
+            getElement(element: string|Element): Element;
     
             /**
              * Gets an element by id, asserting that the element is found.
@@ -68,14 +61,7 @@ declare module goog.dom {
              * @return {Element} The element with the given ID, or the node passed in.
              * @deprecated Use {@link goog.dom.DomHelper.prototype.getElement} instead.
              */
-            $(element: string): Element;
-            /**
-             * Alias for {@code getElement}.
-             * @param {string|Element} element Element ID or a DOM node.
-             * @return {Element} The element with the given ID, or the node passed in.
-             * @deprecated Use {@link goog.dom.DomHelper.prototype.getElement} instead.
-             */
-            $(element: Element): Element;
+            $(element: string|Element): Element;
     
             /**
              * Looks up elements by both tag and class name, using browser native functions
@@ -91,22 +77,7 @@ declare module goog.dom {
              * @return { {length: number} } Array-like list of elements (only a length
              *     property and numerical indices are guaranteed to exist).
              */
-            getElementsByTagNameAndClass(opt_tag?: string, opt_class?: string, opt_el?: Document): { length: number };
-            /**
-             * Looks up elements by both tag and class name, using browser native functions
-             * ({@code querySelectorAll}, {@code getElementsByTagName} or
-             * {@code getElementsByClassName}) where possible. The returned array is a live
-             * NodeList or a static list depending on the code path taken.
-             *
-             * @see goog.dom.query
-             *
-             * @param {?string=} opt_tag Element tag name or * for all tags.
-             * @param {?string=} opt_class Optional class name.
-             * @param {(Document|Element)=} opt_el Optional element to look in.
-             * @return { {length: number} } Array-like list of elements (only a length
-             *     property and numerical indices are guaranteed to exist).
-             */
-            getElementsByTagNameAndClass(opt_tag?: string, opt_class?: string, opt_el?: Element): { length: number };
+            getElementsByTagNameAndClass(opt_tag?: string, opt_class?: string, opt_el?: Document|Element): { length: number };
     
             /**
              * Returns an array of all the elements with the provided className.
@@ -115,15 +86,7 @@ declare module goog.dom {
              * @param {Element|Document=} opt_el Optional element to look in.
              * @return { {length: number} } The items found with the class name provided.
              */
-            getElementsByClass(className: string, opt_el?: Element): { length: number };
-            /**
-             * Returns an array of all the elements with the provided className.
-             * @see {goog.dom.query}
-             * @param {string} className the name of the class to look for.
-             * @param {Element|Document=} opt_el Optional element to look in.
-             * @return { {length: number} } The items found with the class name provided.
-             */
-            getElementsByClass(className: string, opt_el?: Document): { length: number };
+            getElementsByClass(className: string, opt_el?: Element|Document): { length: number };
     
             /**
              * Returns the first element we find matching the provided class name.
@@ -132,15 +95,7 @@ declare module goog.dom {
              * @param {(Element|Document)=} opt_el Optional element to look in.
              * @return {Element} The first item found with the class name provided.
              */
-            getElementByClass(className: string, opt_el?: Element): Element;
-            /**
-             * Returns the first element we find matching the provided class name.
-             * @see {goog.dom.query}
-             * @param {string} className the name of the class to look for.
-             * @param {(Element|Document)=} opt_el Optional element to look in.
-             * @return {Element} The first item found with the class name provided.
-             */
-            getElementByClass(className: string, opt_el?: Document): Element;
+            getElementByClass(className: string, opt_el?: Element|Document): Element;
     
             /**
              * Ensures an element with the given className exists, and then returns the
@@ -152,18 +107,7 @@ declare module goog.dom {
              * @return {!Element} The first item found with the class name provided.
              * @throws {goog.asserts.AssertionError} Thrown if no element is found.
              */
-            getRequiredElementByClass(className: string, opt_root?: Element): Element;
-            /**
-             * Ensures an element with the given className exists, and then returns the
-             * first element with the provided className.
-             * @see {goog.dom.query}
-             * @param {string} className the name of the class to look for.
-             * @param {(!Element|!Document)=} opt_root Optional element or document to look
-             *     in.
-             * @return {!Element} The first item found with the class name provided.
-             * @throws {goog.asserts.AssertionError} Thrown if no element is found.
-             */
-            getRequiredElementByClass(className: string, opt_root?: Document): Element;
+            getRequiredElementByClass(className: string, opt_root?: Element|Document): Element;
     
             /**
              * Alias for {@code getElementsByTagNameAndClass}.
@@ -224,182 +168,7 @@ declare module goog.dom {
              *     NodeList, its elements will be added as childNodes instead.
              * @return {!Element} Reference to a DOM node.
              */
-            createDom(tagName: string, opt_attributes?: Object, ...var_args: Object[]): Element;
-            /**
-             * Returns a dom node with a set of attributes.  This function accepts varargs
-             * for subsequent nodes to be added.  Subsequent nodes will be added to the
-             * first node as childNodes.
-             *
-             * So:
-             * <code>createDom('div', null, createDom('p'), createDom('p'));</code>
-             * would return a div with two child paragraphs
-             *
-             * An easy way to move all child nodes of an existing element to a new parent
-             * element is:
-             * <code>createDom('div', null, oldElement.childNodes);</code>
-             * which will remove all child nodes from the old element and add them as
-             * child nodes of the new DIV.
-             *
-             * @param {string} tagName Tag to create.
-             * @param {Object|string=} opt_attributes If object, then a map of name-value
-             *     pairs for attributes. If a string, then this is the className of the new
-             *     element.
-             * @param {...goog.dom.Appendable} var_args Further DOM nodes or
-             *     strings for text nodes. If one of the var_args is an array or
-             *     NodeList, its elements will be added as childNodes instead.
-             * @return {!Element} Reference to a DOM node.
-             */
-            createDom(tagName: string, opt_attributes?: Object, ...var_args: string[]): Element;
-            /**
-             * Returns a dom node with a set of attributes.  This function accepts varargs
-             * for subsequent nodes to be added.  Subsequent nodes will be added to the
-             * first node as childNodes.
-             *
-             * So:
-             * <code>createDom('div', null, createDom('p'), createDom('p'));</code>
-             * would return a div with two child paragraphs
-             *
-             * An easy way to move all child nodes of an existing element to a new parent
-             * element is:
-             * <code>createDom('div', null, oldElement.childNodes);</code>
-             * which will remove all child nodes from the old element and add them as
-             * child nodes of the new DIV.
-             *
-             * @param {string} tagName Tag to create.
-             * @param {Object|string=} opt_attributes If object, then a map of name-value
-             *     pairs for attributes. If a string, then this is the className of the new
-             *     element.
-             * @param {...goog.dom.Appendable} var_args Further DOM nodes or
-             *     strings for text nodes. If one of the var_args is an array or
-             *     NodeList, its elements will be added as childNodes instead.
-             * @return {!Element} Reference to a DOM node.
-             */
-            createDom(tagName: string, opt_attributes?: Object, ...var_args: any[][]): Element;
-            /**
-             * Returns a dom node with a set of attributes.  This function accepts varargs
-             * for subsequent nodes to be added.  Subsequent nodes will be added to the
-             * first node as childNodes.
-             *
-             * So:
-             * <code>createDom('div', null, createDom('p'), createDom('p'));</code>
-             * would return a div with two child paragraphs
-             *
-             * An easy way to move all child nodes of an existing element to a new parent
-             * element is:
-             * <code>createDom('div', null, oldElement.childNodes);</code>
-             * which will remove all child nodes from the old element and add them as
-             * child nodes of the new DIV.
-             *
-             * @param {string} tagName Tag to create.
-             * @param {Object|string=} opt_attributes If object, then a map of name-value
-             *     pairs for attributes. If a string, then this is the className of the new
-             *     element.
-             * @param {...goog.dom.Appendable} var_args Further DOM nodes or
-             *     strings for text nodes. If one of the var_args is an array or
-             *     NodeList, its elements will be added as childNodes instead.
-             * @return {!Element} Reference to a DOM node.
-             */
-            createDom(tagName: string, opt_attributes?: Object, ...var_args: NodeList[]): Element;
-            /**
-             * Returns a dom node with a set of attributes.  This function accepts varargs
-             * for subsequent nodes to be added.  Subsequent nodes will be added to the
-             * first node as childNodes.
-             *
-             * So:
-             * <code>createDom('div', null, createDom('p'), createDom('p'));</code>
-             * would return a div with two child paragraphs
-             *
-             * An easy way to move all child nodes of an existing element to a new parent
-             * element is:
-             * <code>createDom('div', null, oldElement.childNodes);</code>
-             * which will remove all child nodes from the old element and add them as
-             * child nodes of the new DIV.
-             *
-             * @param {string} tagName Tag to create.
-             * @param {Object|string=} opt_attributes If object, then a map of name-value
-             *     pairs for attributes. If a string, then this is the className of the new
-             *     element.
-             * @param {...goog.dom.Appendable} var_args Further DOM nodes or
-             *     strings for text nodes. If one of the var_args is an array or
-             *     NodeList, its elements will be added as childNodes instead.
-             * @return {!Element} Reference to a DOM node.
-             */
-            createDom(tagName: string, opt_attributes?: string, ...var_args: Object[]): Element;
-            /**
-             * Returns a dom node with a set of attributes.  This function accepts varargs
-             * for subsequent nodes to be added.  Subsequent nodes will be added to the
-             * first node as childNodes.
-             *
-             * So:
-             * <code>createDom('div', null, createDom('p'), createDom('p'));</code>
-             * would return a div with two child paragraphs
-             *
-             * An easy way to move all child nodes of an existing element to a new parent
-             * element is:
-             * <code>createDom('div', null, oldElement.childNodes);</code>
-             * which will remove all child nodes from the old element and add them as
-             * child nodes of the new DIV.
-             *
-             * @param {string} tagName Tag to create.
-             * @param {Object|string=} opt_attributes If object, then a map of name-value
-             *     pairs for attributes. If a string, then this is the className of the new
-             *     element.
-             * @param {...goog.dom.Appendable} var_args Further DOM nodes or
-             *     strings for text nodes. If one of the var_args is an array or
-             *     NodeList, its elements will be added as childNodes instead.
-             * @return {!Element} Reference to a DOM node.
-             */
-            createDom(tagName: string, opt_attributes?: string, ...var_args: string[]): Element;
-            /**
-             * Returns a dom node with a set of attributes.  This function accepts varargs
-             * for subsequent nodes to be added.  Subsequent nodes will be added to the
-             * first node as childNodes.
-             *
-             * So:
-             * <code>createDom('div', null, createDom('p'), createDom('p'));</code>
-             * would return a div with two child paragraphs
-             *
-             * An easy way to move all child nodes of an existing element to a new parent
-             * element is:
-             * <code>createDom('div', null, oldElement.childNodes);</code>
-             * which will remove all child nodes from the old element and add them as
-             * child nodes of the new DIV.
-             *
-             * @param {string} tagName Tag to create.
-             * @param {Object|string=} opt_attributes If object, then a map of name-value
-             *     pairs for attributes. If a string, then this is the className of the new
-             *     element.
-             * @param {...goog.dom.Appendable} var_args Further DOM nodes or
-             *     strings for text nodes. If one of the var_args is an array or
-             *     NodeList, its elements will be added as childNodes instead.
-             * @return {!Element} Reference to a DOM node.
-             */
-            createDom(tagName: string, opt_attributes?: string, ...var_args: any[][]): Element;
-            /**
-             * Returns a dom node with a set of attributes.  This function accepts varargs
-             * for subsequent nodes to be added.  Subsequent nodes will be added to the
-             * first node as childNodes.
-             *
-             * So:
-             * <code>createDom('div', null, createDom('p'), createDom('p'));</code>
-             * would return a div with two child paragraphs
-             *
-             * An easy way to move all child nodes of an existing element to a new parent
-             * element is:
-             * <code>createDom('div', null, oldElement.childNodes);</code>
-             * which will remove all child nodes from the old element and add them as
-             * child nodes of the new DIV.
-             *
-             * @param {string} tagName Tag to create.
-             * @param {Object|string=} opt_attributes If object, then a map of name-value
-             *     pairs for attributes. If a string, then this is the className of the new
-             *     element.
-             * @param {...goog.dom.Appendable} var_args Further DOM nodes or
-             *     strings for text nodes. If one of the var_args is an array or
-             *     NodeList, its elements will be added as childNodes instead.
-             * @return {!Element} Reference to a DOM node.
-             */
-            createDom(tagName: string, opt_attributes?: string, ...var_args: NodeList[]): Element;
+            createDom(tagName: string, opt_attributes?: Object|string, ...var_args: goog.dom.Appendable[]): Element;
     
             /**
              * Alias for {@code createDom}.
@@ -413,98 +182,7 @@ declare module goog.dom {
              * @return {!Element} Reference to a DOM node.
              * @deprecated Use {@link goog.dom.DomHelper.prototype.createDom} instead.
              */
-            $dom(tagName: string, opt_attributes?: Object, ...var_args: Object[]): Element;
-            /**
-             * Alias for {@code createDom}.
-             * @param {string} tagName Tag to create.
-             * @param {(Object|string)=} opt_attributes If object, then a map of name-value
-             *     pairs for attributes. If a string, then this is the className of the new
-             *     element.
-             * @param {...goog.dom.Appendable} var_args Further DOM nodes or strings for
-             *     text nodes.  If one of the var_args is an array, its children will be
-             *     added as childNodes instead.
-             * @return {!Element} Reference to a DOM node.
-             * @deprecated Use {@link goog.dom.DomHelper.prototype.createDom} instead.
-             */
-            $dom(tagName: string, opt_attributes?: Object, ...var_args: string[]): Element;
-            /**
-             * Alias for {@code createDom}.
-             * @param {string} tagName Tag to create.
-             * @param {(Object|string)=} opt_attributes If object, then a map of name-value
-             *     pairs for attributes. If a string, then this is the className of the new
-             *     element.
-             * @param {...goog.dom.Appendable} var_args Further DOM nodes or strings for
-             *     text nodes.  If one of the var_args is an array, its children will be
-             *     added as childNodes instead.
-             * @return {!Element} Reference to a DOM node.
-             * @deprecated Use {@link goog.dom.DomHelper.prototype.createDom} instead.
-             */
-            $dom(tagName: string, opt_attributes?: Object, ...var_args: any[][]): Element;
-            /**
-             * Alias for {@code createDom}.
-             * @param {string} tagName Tag to create.
-             * @param {(Object|string)=} opt_attributes If object, then a map of name-value
-             *     pairs for attributes. If a string, then this is the className of the new
-             *     element.
-             * @param {...goog.dom.Appendable} var_args Further DOM nodes or strings for
-             *     text nodes.  If one of the var_args is an array, its children will be
-             *     added as childNodes instead.
-             * @return {!Element} Reference to a DOM node.
-             * @deprecated Use {@link goog.dom.DomHelper.prototype.createDom} instead.
-             */
-            $dom(tagName: string, opt_attributes?: Object, ...var_args: NodeList[]): Element;
-            /**
-             * Alias for {@code createDom}.
-             * @param {string} tagName Tag to create.
-             * @param {(Object|string)=} opt_attributes If object, then a map of name-value
-             *     pairs for attributes. If a string, then this is the className of the new
-             *     element.
-             * @param {...goog.dom.Appendable} var_args Further DOM nodes or strings for
-             *     text nodes.  If one of the var_args is an array, its children will be
-             *     added as childNodes instead.
-             * @return {!Element} Reference to a DOM node.
-             * @deprecated Use {@link goog.dom.DomHelper.prototype.createDom} instead.
-             */
-            $dom(tagName: string, opt_attributes?: string, ...var_args: Object[]): Element;
-            /**
-             * Alias for {@code createDom}.
-             * @param {string} tagName Tag to create.
-             * @param {(Object|string)=} opt_attributes If object, then a map of name-value
-             *     pairs for attributes. If a string, then this is the className of the new
-             *     element.
-             * @param {...goog.dom.Appendable} var_args Further DOM nodes or strings for
-             *     text nodes.  If one of the var_args is an array, its children will be
-             *     added as childNodes instead.
-             * @return {!Element} Reference to a DOM node.
-             * @deprecated Use {@link goog.dom.DomHelper.prototype.createDom} instead.
-             */
-            $dom(tagName: string, opt_attributes?: string, ...var_args: string[]): Element;
-            /**
-             * Alias for {@code createDom}.
-             * @param {string} tagName Tag to create.
-             * @param {(Object|string)=} opt_attributes If object, then a map of name-value
-             *     pairs for attributes. If a string, then this is the className of the new
-             *     element.
-             * @param {...goog.dom.Appendable} var_args Further DOM nodes or strings for
-             *     text nodes.  If one of the var_args is an array, its children will be
-             *     added as childNodes instead.
-             * @return {!Element} Reference to a DOM node.
-             * @deprecated Use {@link goog.dom.DomHelper.prototype.createDom} instead.
-             */
-            $dom(tagName: string, opt_attributes?: string, ...var_args: any[][]): Element;
-            /**
-             * Alias for {@code createDom}.
-             * @param {string} tagName Tag to create.
-             * @param {(Object|string)=} opt_attributes If object, then a map of name-value
-             *     pairs for attributes. If a string, then this is the className of the new
-             *     element.
-             * @param {...goog.dom.Appendable} var_args Further DOM nodes or strings for
-             *     text nodes.  If one of the var_args is an array, its children will be
-             *     added as childNodes instead.
-             * @return {!Element} Reference to a DOM node.
-             * @deprecated Use {@link goog.dom.DomHelper.prototype.createDom} instead.
-             */
-            $dom(tagName: string, opt_attributes?: string, ...var_args: NodeList[]): Element;
+            $dom(tagName: string, opt_attributes?: Object|string, ...var_args: goog.dom.Appendable[]): Element;
     
             /**
              * Creates a new element.
@@ -518,13 +196,7 @@ declare module goog.dom {
              * @param {number|string} content Content.
              * @return {!Text} The new text node.
              */
-            createTextNode(content: number): Text;
-            /**
-             * Creates a new text node.
-             * @param {number|string} content Content.
-             * @return {!Text} The new text node.
-             */
-            createTextNode(content: string): Text;
+            createTextNode(content: number|string): Text;
     
             /**
              * Create a table.
@@ -593,34 +265,7 @@ declare module goog.dom {
              *     If this is a string then a text node is appended.
              *     If this is an array like object then fields 0 to length - 1 are appended.
              */
-            append(parent: Node, ...var_args: Object[]): void;
-            /**
-             * Appends a node with text or other nodes.
-             * @param {!Node} parent The node to append nodes to.
-             * @param {...goog.dom.Appendable} var_args The things to append to the node.
-             *     If this is a Node it is appended as is.
-             *     If this is a string then a text node is appended.
-             *     If this is an array like object then fields 0 to length - 1 are appended.
-             */
-            append(parent: Node, ...var_args: string[]): void;
-            /**
-             * Appends a node with text or other nodes.
-             * @param {!Node} parent The node to append nodes to.
-             * @param {...goog.dom.Appendable} var_args The things to append to the node.
-             *     If this is a Node it is appended as is.
-             *     If this is a string then a text node is appended.
-             *     If this is an array like object then fields 0 to length - 1 are appended.
-             */
-            append(parent: Node, ...var_args: any[][]): void;
-            /**
-             * Appends a node with text or other nodes.
-             * @param {!Node} parent The node to append nodes to.
-             * @param {...goog.dom.Appendable} var_args The things to append to the node.
-             *     If this is a Node it is appended as is.
-             *     If this is a string then a text node is appended.
-             *     If this is an array like object then fields 0 to length - 1 are appended.
-             */
-            append(parent: Node, ...var_args: NodeList[]): void;
+            append(parent: Node, ...var_args: goog.dom.Appendable[]): void;
     
             /**
              * Determines if the given node can contain children, intended to be used for
@@ -686,7 +331,7 @@ declare module goog.dom {
              *     tree, sans children, or undefined if the element was already not in the
              *     document.
              */
-            flattenElement(element: Element): any /*Element|any (undefined)*/;
+            flattenElement(element: Element): Element|any /*undefined*/;
     
             /**
              * Returns an array containing just the element children of the given element.
@@ -694,7 +339,7 @@ declare module goog.dom {
              * @return {!(Array|NodeList)} An array or array-like list of just the element
              *     children of the given element.
              */
-            getChildren(element: Element): any /*any[]|NodeList*/;
+            getChildren(element: Element): any[]|NodeList;
     
             /**
              * Returns the first child node that is an element.
@@ -827,13 +472,7 @@ declare module goog.dom {
              * @param {Node} node The node to change the text content of.
              * @param {string|number} text The value that should replace the node's content.
              */
-            setTextContent(node: Node, text: string): void;
-            /**
-             * Sets the text content of a node, with cross-browser support.
-             * @param {Node} node The node to change the text content of.
-             * @param {string|number} text The value that should replace the node's content.
-             */
-            setTextContent(node: Node, text: number): void;
+            setTextContent(node: Node, text: string|number): void;
     
             /**
              * Gets the outerHTML of a node, which islike innerHTML, except that it
@@ -850,7 +489,7 @@ declare module goog.dom {
              * @param {function(Node) : boolean} p The filter function.
              * @return {Node|undefined} The found node or undefined if none is found.
              */
-            findNode(root: Node, p: (_0: Node) => boolean): any /*Node|any (undefined)*/;
+            findNode(root: Node, p: { (_0: Node): boolean }): Node|any /*undefined*/;
     
             /**
              * Finds all the descendant nodes that matches the filter function. This does a
@@ -859,7 +498,7 @@ declare module goog.dom {
              * @param {function(Node) : boolean} p The filter function.
              * @return {Array.<Node>} The found nodes or an empty array if none are found.
              */
-            findNodes(root: Node, p: (_0: Node) => boolean): Node[];
+            findNodes(root: Node, p: { (_0: Node): boolean }): Node[];
     
             /**
              * Returns true if the element has a tab index that allows it to receive
@@ -960,20 +599,7 @@ declare module goog.dom {
              * @return {Element} The first ancestor that matches the passed criteria, or
              *     null if no match is found.
              */
-            getAncestorByTagNameAndClass(element: Node, opt_tag?: goog.dom.TagName, opt_class?: string): Element;
-            /**
-             * Walks up the DOM hierarchy returning the first ancestor that has the passed
-             * tag name and/or class name. If the passed element matches the specified
-             * criteria, the element itself is returned.
-             * @param {Node} element The DOM node to start with.
-             * @param {?(goog.dom.TagName|string)=} opt_tag The tag name to match (or
-             *     null/undefined to match only based on class name).
-             * @param {?string=} opt_class The class name to match (or null/undefined to
-             *     match only based on tag name).
-             * @return {Element} The first ancestor that matches the passed criteria, or
-             *     null if no match is found.
-             */
-            getAncestorByTagNameAndClass(element: Node, opt_tag?: string, opt_class?: string): Element;
+            getAncestorByTagNameAndClass(element: Node, opt_tag?: goog.dom.TagName|string, opt_class?: string): Element;
     
             /**
              * Walks up the DOM hierarchy returning the first ancestor that has the passed
@@ -1000,7 +626,7 @@ declare module goog.dom {
              * @return {Node} DOM node that matched the matcher, or null if there was
              *     no match.
              */
-            getAncestor(element: Node, matcher: (_0: Node) => boolean, opt_includeNode?: boolean, opt_maxSearchSteps?: number): Node;
+            getAncestor(element: Node, matcher: { (_0: Node): boolean }, opt_includeNode?: boolean, opt_maxSearchSteps?: number): Node;
     } 
     
 
@@ -1010,14 +636,7 @@ declare module goog.dom {
      *     element.
      * @return {!goog.dom.DomHelper} The DomHelper.
      */
-    function getDomHelper(opt_element?: Node): goog.dom.DomHelper;
-    /**
-     * Gets the DomHelper object for the document where the element resides.
-     * @param {(Node|Window)=} opt_element If present, gets the DomHelper for this
-     *     element.
-     * @return {!goog.dom.DomHelper} The DomHelper.
-     */
-    function getDomHelper(opt_element?: Window): goog.dom.DomHelper;
+    function getDomHelper(opt_element?: Node|Window): goog.dom.DomHelper;
 
     /**
      * Gets the document object being used by the dom library.
@@ -1033,16 +652,7 @@ declare module goog.dom {
      * @param {string|Element} element Element ID or a DOM node.
      * @return {Element} The element with the given ID, or the node passed in.
      */
-    function getElement(element: string): Element;
-    /**
-     * Gets an element from the current document by element id.
-     *
-     * If an Element is passed in, it is returned.
-     *
-     * @param {string|Element} element Element ID or a DOM node.
-     * @return {Element} The element with the given ID, or the node passed in.
-     */
-    function getElement(element: Element): Element;
+    function getElement(element: string|Element): Element;
 
     /**
      * Gets an element by id, asserting that the element is found.
@@ -1061,14 +671,7 @@ declare module goog.dom {
      * @return {Element} The element with the given ID, or the node passed in.
      * @deprecated Use {@link goog.dom.getElement} instead.
      */
-    function $(element: string): Element;
-    /**
-     * Alias for getElement.
-     * @param {string|Element} element Element ID or a DOM node.
-     * @return {Element} The element with the given ID, or the node passed in.
-     * @deprecated Use {@link goog.dom.getElement} instead.
-     */
-    function $(element: Element): Element;
+    function $(element: string|Element): Element;
 
     /**
      * Looks up elements by both tag and class name, using browser native functions
@@ -1095,33 +698,7 @@ declare module goog.dom {
      * @return { {length: number} } Array-like list of elements (only a length
      *     property and numerical indices are guaranteed to exist).
      */
-    function getElementsByTagNameAndClass(opt_tag?: string, opt_class?: string, opt_el?: Document): { length: number };
-    /**
-     * Looks up elements by both tag and class name, using browser native functions
-     * ({@code querySelectorAll}, {@code getElementsByTagName} or
-     * {@code getElementsByClassName}) where possible. This function
-     * is a useful, if limited, way of collecting a list of DOM elements
-     * with certain characteristics.  {@code goog.dom.query} offers a
-     * more powerful and general solution which allows matching on CSS3
-     * selector expressions, but at increased cost in code size. If all you
-     * need is particular tags belonging to a single class, this function
-     * is fast and sleek.
-     *
-     * Note that tag names are case sensitive in the SVG namespace, and this
-     * function converts opt_tag to uppercase for comparisons. For queries in the
-     * SVG namespace you should use querySelector or querySelectorAll instead.
-     * https://bugzilla.mozilla.org/show_bug.cgi?id=963870
-     * https://bugs.webkit.org/show_bug.cgi?id=83438
-     *
-     * @see {goog.dom.query}
-     *
-     * @param {?string=} opt_tag Element tag name.
-     * @param {?string=} opt_class Optional class name.
-     * @param {(Document|Element)=} opt_el Optional element to look in.
-     * @return { {length: number} } Array-like list of elements (only a length
-     *     property and numerical indices are guaranteed to exist).
-     */
-    function getElementsByTagNameAndClass(opt_tag?: string, opt_class?: string, opt_el?: Element): { length: number };
+    function getElementsByTagNameAndClass(opt_tag?: string, opt_class?: string, opt_el?: Document|Element): { length: number };
 
     /**
      * Returns a static, array-like list of the elements with the provided
@@ -1131,16 +708,7 @@ declare module goog.dom {
      * @param {(Document|Element)=} opt_el Optional element to look in.
      * @return { {length: number} } The items found with the class name provided.
      */
-    function getElementsByClass(className: string, opt_el?: Document): { length: number };
-    /**
-     * Returns a static, array-like list of the elements with the provided
-     * className.
-     * @see {goog.dom.query}
-     * @param {string} className the name of the class to look for.
-     * @param {(Document|Element)=} opt_el Optional element to look in.
-     * @return { {length: number} } The items found with the class name provided.
-     */
-    function getElementsByClass(className: string, opt_el?: Element): { length: number };
+    function getElementsByClass(className: string, opt_el?: Document|Element): { length: number };
 
     /**
      * Returns the first element with the provided className.
@@ -1149,15 +717,7 @@ declare module goog.dom {
      * @param {Element|Document=} opt_el Optional element to look in.
      * @return {Element} The first item with the class name provided.
      */
-    function getElementByClass(className: string, opt_el?: Element): Element;
-    /**
-     * Returns the first element with the provided className.
-     * @see {goog.dom.query}
-     * @param {string} className the name of the class to look for.
-     * @param {Element|Document=} opt_el Optional element to look in.
-     * @return {Element} The first item with the class name provided.
-     */
-    function getElementByClass(className: string, opt_el?: Document): Element;
+    function getElementByClass(className: string, opt_el?: Element|Document): Element;
 
     /**
      * Ensures an element with the given className exists, and then returns the
@@ -1169,18 +729,7 @@ declare module goog.dom {
      * @return {!Element} The first item with the class name provided.
      * @throws {goog.asserts.AssertionError} Thrown if no element is found.
      */
-    function getRequiredElementByClass(className: string, opt_root?: Element): Element;
-    /**
-     * Ensures an element with the given className exists, and then returns the
-     * first element with the provided className.
-     * @see {goog.dom.query}
-     * @param {string} className the name of the class to look for.
-     * @param {!Element|!Document=} opt_root Optional element or document to look
-     *     in.
-     * @return {!Element} The first item with the class name provided.
-     * @throws {goog.asserts.AssertionError} Thrown if no element is found.
-     */
-    function getRequiredElementByClass(className: string, opt_root?: Document): Element;
+    function getRequiredElementByClass(className: string, opt_root?: Element|Document): Element;
 
     /**
      * Alias for {@code getElementsByTagNameAndClass}.
@@ -1323,227 +872,7 @@ declare module goog.dom {
      *     its elements will be added as childNodes instead.
      * @return {!Element} Reference to a DOM node.
      */
-    function createDom(tagName: string, opt_attributes?: Object, ...var_args: Object[]): Element;
-    /**
-     * Returns a dom node with a set of attributes.  This function accepts varargs
-     * for subsequent nodes to be added.  Subsequent nodes will be added to the
-     * first node as childNodes.
-     *
-     * So:
-     * <code>createDom('div', null, createDom('p'), createDom('p'));</code>
-     * would return a div with two child paragraphs
-     *
-     * @param {string} tagName Tag to create.
-     * @param {(Object|Array.<string>|string)=} opt_attributes If object, then a map
-     *     of name-value pairs for attributes. If a string, then this is the
-     *     className of the new element. If an array, the elements will be joined
-     *     together as the className of the new element.
-     * @param {...(Object|string|Array|NodeList)} var_args Further DOM nodes or
-     *     strings for text nodes. If one of the var_args is an array or NodeList,i
-     *     its elements will be added as childNodes instead.
-     * @return {!Element} Reference to a DOM node.
-     */
-    function createDom(tagName: string, opt_attributes?: Object, ...var_args: string[]): Element;
-    /**
-     * Returns a dom node with a set of attributes.  This function accepts varargs
-     * for subsequent nodes to be added.  Subsequent nodes will be added to the
-     * first node as childNodes.
-     *
-     * So:
-     * <code>createDom('div', null, createDom('p'), createDom('p'));</code>
-     * would return a div with two child paragraphs
-     *
-     * @param {string} tagName Tag to create.
-     * @param {(Object|Array.<string>|string)=} opt_attributes If object, then a map
-     *     of name-value pairs for attributes. If a string, then this is the
-     *     className of the new element. If an array, the elements will be joined
-     *     together as the className of the new element.
-     * @param {...(Object|string|Array|NodeList)} var_args Further DOM nodes or
-     *     strings for text nodes. If one of the var_args is an array or NodeList,i
-     *     its elements will be added as childNodes instead.
-     * @return {!Element} Reference to a DOM node.
-     */
-    function createDom(tagName: string, opt_attributes?: Object, ...var_args: any[][]): Element;
-    /**
-     * Returns a dom node with a set of attributes.  This function accepts varargs
-     * for subsequent nodes to be added.  Subsequent nodes will be added to the
-     * first node as childNodes.
-     *
-     * So:
-     * <code>createDom('div', null, createDom('p'), createDom('p'));</code>
-     * would return a div with two child paragraphs
-     *
-     * @param {string} tagName Tag to create.
-     * @param {(Object|Array.<string>|string)=} opt_attributes If object, then a map
-     *     of name-value pairs for attributes. If a string, then this is the
-     *     className of the new element. If an array, the elements will be joined
-     *     together as the className of the new element.
-     * @param {...(Object|string|Array|NodeList)} var_args Further DOM nodes or
-     *     strings for text nodes. If one of the var_args is an array or NodeList,i
-     *     its elements will be added as childNodes instead.
-     * @return {!Element} Reference to a DOM node.
-     */
-    function createDom(tagName: string, opt_attributes?: Object, ...var_args: NodeList[]): Element;
-    /**
-     * Returns a dom node with a set of attributes.  This function accepts varargs
-     * for subsequent nodes to be added.  Subsequent nodes will be added to the
-     * first node as childNodes.
-     *
-     * So:
-     * <code>createDom('div', null, createDom('p'), createDom('p'));</code>
-     * would return a div with two child paragraphs
-     *
-     * @param {string} tagName Tag to create.
-     * @param {(Object|Array.<string>|string)=} opt_attributes If object, then a map
-     *     of name-value pairs for attributes. If a string, then this is the
-     *     className of the new element. If an array, the elements will be joined
-     *     together as the className of the new element.
-     * @param {...(Object|string|Array|NodeList)} var_args Further DOM nodes or
-     *     strings for text nodes. If one of the var_args is an array or NodeList,i
-     *     its elements will be added as childNodes instead.
-     * @return {!Element} Reference to a DOM node.
-     */
-    function createDom(tagName: string, opt_attributes?: string[], ...var_args: Object[]): Element;
-    /**
-     * Returns a dom node with a set of attributes.  This function accepts varargs
-     * for subsequent nodes to be added.  Subsequent nodes will be added to the
-     * first node as childNodes.
-     *
-     * So:
-     * <code>createDom('div', null, createDom('p'), createDom('p'));</code>
-     * would return a div with two child paragraphs
-     *
-     * @param {string} tagName Tag to create.
-     * @param {(Object|Array.<string>|string)=} opt_attributes If object, then a map
-     *     of name-value pairs for attributes. If a string, then this is the
-     *     className of the new element. If an array, the elements will be joined
-     *     together as the className of the new element.
-     * @param {...(Object|string|Array|NodeList)} var_args Further DOM nodes or
-     *     strings for text nodes. If one of the var_args is an array or NodeList,i
-     *     its elements will be added as childNodes instead.
-     * @return {!Element} Reference to a DOM node.
-     */
-    function createDom(tagName: string, opt_attributes?: string[], ...var_args: string[]): Element;
-    /**
-     * Returns a dom node with a set of attributes.  This function accepts varargs
-     * for subsequent nodes to be added.  Subsequent nodes will be added to the
-     * first node as childNodes.
-     *
-     * So:
-     * <code>createDom('div', null, createDom('p'), createDom('p'));</code>
-     * would return a div with two child paragraphs
-     *
-     * @param {string} tagName Tag to create.
-     * @param {(Object|Array.<string>|string)=} opt_attributes If object, then a map
-     *     of name-value pairs for attributes. If a string, then this is the
-     *     className of the new element. If an array, the elements will be joined
-     *     together as the className of the new element.
-     * @param {...(Object|string|Array|NodeList)} var_args Further DOM nodes or
-     *     strings for text nodes. If one of the var_args is an array or NodeList,i
-     *     its elements will be added as childNodes instead.
-     * @return {!Element} Reference to a DOM node.
-     */
-    function createDom(tagName: string, opt_attributes?: string[], ...var_args: any[][]): Element;
-    /**
-     * Returns a dom node with a set of attributes.  This function accepts varargs
-     * for subsequent nodes to be added.  Subsequent nodes will be added to the
-     * first node as childNodes.
-     *
-     * So:
-     * <code>createDom('div', null, createDom('p'), createDom('p'));</code>
-     * would return a div with two child paragraphs
-     *
-     * @param {string} tagName Tag to create.
-     * @param {(Object|Array.<string>|string)=} opt_attributes If object, then a map
-     *     of name-value pairs for attributes. If a string, then this is the
-     *     className of the new element. If an array, the elements will be joined
-     *     together as the className of the new element.
-     * @param {...(Object|string|Array|NodeList)} var_args Further DOM nodes or
-     *     strings for text nodes. If one of the var_args is an array or NodeList,i
-     *     its elements will be added as childNodes instead.
-     * @return {!Element} Reference to a DOM node.
-     */
-    function createDom(tagName: string, opt_attributes?: string[], ...var_args: NodeList[]): Element;
-    /**
-     * Returns a dom node with a set of attributes.  This function accepts varargs
-     * for subsequent nodes to be added.  Subsequent nodes will be added to the
-     * first node as childNodes.
-     *
-     * So:
-     * <code>createDom('div', null, createDom('p'), createDom('p'));</code>
-     * would return a div with two child paragraphs
-     *
-     * @param {string} tagName Tag to create.
-     * @param {(Object|Array.<string>|string)=} opt_attributes If object, then a map
-     *     of name-value pairs for attributes. If a string, then this is the
-     *     className of the new element. If an array, the elements will be joined
-     *     together as the className of the new element.
-     * @param {...(Object|string|Array|NodeList)} var_args Further DOM nodes or
-     *     strings for text nodes. If one of the var_args is an array or NodeList,i
-     *     its elements will be added as childNodes instead.
-     * @return {!Element} Reference to a DOM node.
-     */
-    function createDom(tagName: string, opt_attributes?: string, ...var_args: Object[]): Element;
-    /**
-     * Returns a dom node with a set of attributes.  This function accepts varargs
-     * for subsequent nodes to be added.  Subsequent nodes will be added to the
-     * first node as childNodes.
-     *
-     * So:
-     * <code>createDom('div', null, createDom('p'), createDom('p'));</code>
-     * would return a div with two child paragraphs
-     *
-     * @param {string} tagName Tag to create.
-     * @param {(Object|Array.<string>|string)=} opt_attributes If object, then a map
-     *     of name-value pairs for attributes. If a string, then this is the
-     *     className of the new element. If an array, the elements will be joined
-     *     together as the className of the new element.
-     * @param {...(Object|string|Array|NodeList)} var_args Further DOM nodes or
-     *     strings for text nodes. If one of the var_args is an array or NodeList,i
-     *     its elements will be added as childNodes instead.
-     * @return {!Element} Reference to a DOM node.
-     */
-    function createDom(tagName: string, opt_attributes?: string, ...var_args: string[]): Element;
-    /**
-     * Returns a dom node with a set of attributes.  This function accepts varargs
-     * for subsequent nodes to be added.  Subsequent nodes will be added to the
-     * first node as childNodes.
-     *
-     * So:
-     * <code>createDom('div', null, createDom('p'), createDom('p'));</code>
-     * would return a div with two child paragraphs
-     *
-     * @param {string} tagName Tag to create.
-     * @param {(Object|Array.<string>|string)=} opt_attributes If object, then a map
-     *     of name-value pairs for attributes. If a string, then this is the
-     *     className of the new element. If an array, the elements will be joined
-     *     together as the className of the new element.
-     * @param {...(Object|string|Array|NodeList)} var_args Further DOM nodes or
-     *     strings for text nodes. If one of the var_args is an array or NodeList,i
-     *     its elements will be added as childNodes instead.
-     * @return {!Element} Reference to a DOM node.
-     */
-    function createDom(tagName: string, opt_attributes?: string, ...var_args: any[][]): Element;
-    /**
-     * Returns a dom node with a set of attributes.  This function accepts varargs
-     * for subsequent nodes to be added.  Subsequent nodes will be added to the
-     * first node as childNodes.
-     *
-     * So:
-     * <code>createDom('div', null, createDom('p'), createDom('p'));</code>
-     * would return a div with two child paragraphs
-     *
-     * @param {string} tagName Tag to create.
-     * @param {(Object|Array.<string>|string)=} opt_attributes If object, then a map
-     *     of name-value pairs for attributes. If a string, then this is the
-     *     className of the new element. If an array, the elements will be joined
-     *     together as the className of the new element.
-     * @param {...(Object|string|Array|NodeList)} var_args Further DOM nodes or
-     *     strings for text nodes. If one of the var_args is an array or NodeList,i
-     *     its elements will be added as childNodes instead.
-     * @return {!Element} Reference to a DOM node.
-     */
-    function createDom(tagName: string, opt_attributes?: string, ...var_args: NodeList[]): Element;
+    function createDom(tagName: string, opt_attributes?: Object|string[]|string, ...var_args: Object|string|any[]|NodeList[]): Element;
 
     /**
      * Alias for {@code createDom}.
@@ -1557,98 +886,7 @@ declare module goog.dom {
      * @return {!Element} Reference to a DOM node.
      * @deprecated Use {@link goog.dom.createDom} instead.
      */
-    function $dom(tagName: string, opt_attributes?: string, ...var_args: Object[]): Element;
-    /**
-     * Alias for {@code createDom}.
-     * @param {string} tagName Tag to create.
-     * @param {(string|Object)=} opt_attributes If object, then a map of name-value
-     *     pairs for attributes. If a string, then this is the className of the new
-     *     element.
-     * @param {...(Object|string|Array|NodeList)} var_args Further DOM nodes or
-     *     strings for text nodes. If one of the var_args is an array, its
-     *     children will be added as childNodes instead.
-     * @return {!Element} Reference to a DOM node.
-     * @deprecated Use {@link goog.dom.createDom} instead.
-     */
-    function $dom(tagName: string, opt_attributes?: string, ...var_args: string[]): Element;
-    /**
-     * Alias for {@code createDom}.
-     * @param {string} tagName Tag to create.
-     * @param {(string|Object)=} opt_attributes If object, then a map of name-value
-     *     pairs for attributes. If a string, then this is the className of the new
-     *     element.
-     * @param {...(Object|string|Array|NodeList)} var_args Further DOM nodes or
-     *     strings for text nodes. If one of the var_args is an array, its
-     *     children will be added as childNodes instead.
-     * @return {!Element} Reference to a DOM node.
-     * @deprecated Use {@link goog.dom.createDom} instead.
-     */
-    function $dom(tagName: string, opt_attributes?: string, ...var_args: any[][]): Element;
-    /**
-     * Alias for {@code createDom}.
-     * @param {string} tagName Tag to create.
-     * @param {(string|Object)=} opt_attributes If object, then a map of name-value
-     *     pairs for attributes. If a string, then this is the className of the new
-     *     element.
-     * @param {...(Object|string|Array|NodeList)} var_args Further DOM nodes or
-     *     strings for text nodes. If one of the var_args is an array, its
-     *     children will be added as childNodes instead.
-     * @return {!Element} Reference to a DOM node.
-     * @deprecated Use {@link goog.dom.createDom} instead.
-     */
-    function $dom(tagName: string, opt_attributes?: string, ...var_args: NodeList[]): Element;
-    /**
-     * Alias for {@code createDom}.
-     * @param {string} tagName Tag to create.
-     * @param {(string|Object)=} opt_attributes If object, then a map of name-value
-     *     pairs for attributes. If a string, then this is the className of the new
-     *     element.
-     * @param {...(Object|string|Array|NodeList)} var_args Further DOM nodes or
-     *     strings for text nodes. If one of the var_args is an array, its
-     *     children will be added as childNodes instead.
-     * @return {!Element} Reference to a DOM node.
-     * @deprecated Use {@link goog.dom.createDom} instead.
-     */
-    function $dom(tagName: string, opt_attributes?: Object, ...var_args: Object[]): Element;
-    /**
-     * Alias for {@code createDom}.
-     * @param {string} tagName Tag to create.
-     * @param {(string|Object)=} opt_attributes If object, then a map of name-value
-     *     pairs for attributes. If a string, then this is the className of the new
-     *     element.
-     * @param {...(Object|string|Array|NodeList)} var_args Further DOM nodes or
-     *     strings for text nodes. If one of the var_args is an array, its
-     *     children will be added as childNodes instead.
-     * @return {!Element} Reference to a DOM node.
-     * @deprecated Use {@link goog.dom.createDom} instead.
-     */
-    function $dom(tagName: string, opt_attributes?: Object, ...var_args: string[]): Element;
-    /**
-     * Alias for {@code createDom}.
-     * @param {string} tagName Tag to create.
-     * @param {(string|Object)=} opt_attributes If object, then a map of name-value
-     *     pairs for attributes. If a string, then this is the className of the new
-     *     element.
-     * @param {...(Object|string|Array|NodeList)} var_args Further DOM nodes or
-     *     strings for text nodes. If one of the var_args is an array, its
-     *     children will be added as childNodes instead.
-     * @return {!Element} Reference to a DOM node.
-     * @deprecated Use {@link goog.dom.createDom} instead.
-     */
-    function $dom(tagName: string, opt_attributes?: Object, ...var_args: any[][]): Element;
-    /**
-     * Alias for {@code createDom}.
-     * @param {string} tagName Tag to create.
-     * @param {(string|Object)=} opt_attributes If object, then a map of name-value
-     *     pairs for attributes. If a string, then this is the className of the new
-     *     element.
-     * @param {...(Object|string|Array|NodeList)} var_args Further DOM nodes or
-     *     strings for text nodes. If one of the var_args is an array, its
-     *     children will be added as childNodes instead.
-     * @return {!Element} Reference to a DOM node.
-     * @deprecated Use {@link goog.dom.createDom} instead.
-     */
-    function $dom(tagName: string, opt_attributes?: Object, ...var_args: NodeList[]): Element;
+    function $dom(tagName: string, opt_attributes?: string|Object, ...var_args: Object|string|any[]|NodeList[]): Element;
 
     /**
      * Creates a new element.
@@ -1662,13 +900,7 @@ declare module goog.dom {
      * @param {number|string} content Content.
      * @return {!Text} The new text node.
      */
-    function createTextNode(content: number): Text;
-    /**
-     * Creates a new text node.
-     * @param {number|string} content Content.
-     * @return {!Text} The new text node.
-     */
-    function createTextNode(content: string): Text;
+    function createTextNode(content: number|string): Text;
 
     /**
      * Create a table.
@@ -1742,34 +974,7 @@ declare module goog.dom {
      *     If this is a string then a text node is appended.
      *     If this is an array like object then fields 0 to length - 1 are appended.
      */
-    function append(parent: Node, ...var_args: Object[]): void;
-    /**
-     * Appends a node with text or other nodes.
-     * @param {!Node} parent The node to append nodes to.
-     * @param {...goog.dom.Appendable} var_args The things to append to the node.
-     *     If this is a Node it is appended as is.
-     *     If this is a string then a text node is appended.
-     *     If this is an array like object then fields 0 to length - 1 are appended.
-     */
-    function append(parent: Node, ...var_args: string[]): void;
-    /**
-     * Appends a node with text or other nodes.
-     * @param {!Node} parent The node to append nodes to.
-     * @param {...goog.dom.Appendable} var_args The things to append to the node.
-     *     If this is a Node it is appended as is.
-     *     If this is a string then a text node is appended.
-     *     If this is an array like object then fields 0 to length - 1 are appended.
-     */
-    function append(parent: Node, ...var_args: any[][]): void;
-    /**
-     * Appends a node with text or other nodes.
-     * @param {!Node} parent The node to append nodes to.
-     * @param {...goog.dom.Appendable} var_args The things to append to the node.
-     *     If this is a Node it is appended as is.
-     *     If this is a string then a text node is appended.
-     *     If this is an array like object then fields 0 to length - 1 are appended.
-     */
-    function append(parent: Node, ...var_args: NodeList[]): void;
+    function append(parent: Node, ...var_args: goog.dom.Appendable[]): void;
 
     /**
      * Removes all the child nodes on a DOM node.
@@ -1827,7 +1032,7 @@ declare module goog.dom {
      *     tree, sans children; or undefined, if the element was not in the document
      *     to begin with.
      */
-    function flattenElement(element: Element): any /*Element|any (undefined)*/;
+    function flattenElement(element: Element): Element|any /*undefined*/;
 
     /**
      * Returns an array containing just the element children of the given element.
@@ -1835,7 +1040,7 @@ declare module goog.dom {
      * @return {!(Array|NodeList)} An array or array-like list of just the element
      *     children of the given element.
      */
-    function getChildren(element: Element): any /*any[]|NodeList*/;
+    function getChildren(element: Element): any[]|NodeList;
 
     /**
      * Returns the first child node that is an element.
@@ -1947,13 +1152,7 @@ declare module goog.dom {
      * @param {Node|Window} node The node to get the document for.
      * @return {!Document} The document owning the node.
      */
-    function getOwnerDocument(node: Node): Document;
-    /**
-     * Returns the owner document for a node.
-     * @param {Node|Window} node The node to get the document for.
-     * @return {!Document} The document owning the node.
-     */
-    function getOwnerDocument(node: Window): Document;
+    function getOwnerDocument(node: Node|Window): Document;
 
     /**
      * Cross-browser function for getting the document element of a frame or iframe.
@@ -1974,13 +1173,7 @@ declare module goog.dom {
      * @param {Node} node The node to change the text content of.
      * @param {string|number} text The value that should replace the node's content.
      */
-    function setTextContent(node: Node, text: string): void;
-    /**
-     * Sets the text content of a node, with cross-browser support.
-     * @param {Node} node The node to change the text content of.
-     * @param {string|number} text The value that should replace the node's content.
-     */
-    function setTextContent(node: Node, text: number): void;
+    function setTextContent(node: Node, text: string|number): void;
 
     /**
      * Gets the outerHTML of a node, which islike innerHTML, except that it
@@ -2003,7 +1196,7 @@ declare module goog.dom {
      * @param {function(Node) : boolean} p The filter function.
      * @return {Node|undefined} The found node or undefined if none is found.
      */
-    function findNode(root: Node, p: (_0: Node) => boolean): any /*Node|any (undefined)*/;
+    function findNode(root: Node, p: { (_0: Node): boolean }): Node|any /*undefined*/;
 
     /**
      * Finds all the descendant nodes that match the filter function, using a
@@ -2017,7 +1210,7 @@ declare module goog.dom {
      * @param {function(Node) : boolean} p The filter function.
      * @return {!Array.<!Node>} The found nodes or an empty array if none are found.
      */
-    function findNodes(root: Node, p: (_0: Node) => boolean): Node[];
+    function findNodes(root: Node, p: { (_0: Node): boolean }): Node[];
 
     /**
      * Returns true if the element has a tab index that allows it to receive
@@ -2130,20 +1323,7 @@ declare module goog.dom {
      * @return {Element} The first ancestor that matches the passed criteria, or
      *     null if no match is found.
      */
-    function getAncestorByTagNameAndClass(element: Node, opt_tag?: goog.dom.TagName, opt_class?: string): Element;
-    /**
-     * Walks up the DOM hierarchy returning the first ancestor that has the passed
-     * tag name and/or class name. If the passed element matches the specified
-     * criteria, the element itself is returned.
-     * @param {Node} element The DOM node to start with.
-     * @param {?(goog.dom.TagName|string)=} opt_tag The tag name to match (or
-     *     null/undefined to match only based on class name).
-     * @param {?string=} opt_class The class name to match (or null/undefined to
-     *     match only based on tag name).
-     * @return {Element} The first ancestor that matches the passed criteria, or
-     *     null if no match is found.
-     */
-    function getAncestorByTagNameAndClass(element: Node, opt_tag?: string, opt_class?: string): Element;
+    function getAncestorByTagNameAndClass(element: Node, opt_tag?: goog.dom.TagName|string, opt_class?: string): Element;
 
     /**
      * Walks up the DOM hierarchy returning the first ancestor that has the passed
@@ -2170,7 +1350,7 @@ declare module goog.dom {
      * @return {Node} DOM node that matched the matcher, or null if there was
      *     no match.
      */
-    function getAncestor(element: Node, matcher: (_0: Node) => boolean, opt_includeNode?: boolean, opt_maxSearchSteps?: number): Node;
+    function getAncestor(element: Node, matcher: { (_0: Node): boolean }, opt_includeNode?: boolean, opt_maxSearchSteps?: number): Node;
 
     /**
      * Determines the active element in the given document.
@@ -2197,5 +1377,5 @@ declare module goog.dom {
      * Typedef for use with goog.dom.createDom and goog.dom.append.
      * @typedef {Object|string|Array|NodeList}
      */
-    interface Appendable { /*any (Object|string|any[]|NodeList)*/ }
+    type Appendable = Object|string|any[]|NodeList;
 }

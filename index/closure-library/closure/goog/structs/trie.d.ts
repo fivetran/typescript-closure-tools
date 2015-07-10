@@ -15,17 +15,7 @@ declare module goog.structs {
              * @constructor
              * @template VALUE
              */
-            constructor(opt_trie?: goog.structs.Trie<VALUE>);
-            /**
-             * Class for a Trie datastructure.  Trie data structures are made out of trees
-             * of Trie classes.
-             *
-             * @param {goog.structs.Trie.<VALUE>|Object.<string, VALUE>=} opt_trie Optional
-             *     goog.structs.Trie or Object to initialize trie with.
-             * @constructor
-             * @template VALUE
-             */
-            constructor(opt_trie?: { [key: string]: VALUE });
+            constructor(opt_trie?: goog.structs.Trie<VALUE>|{ [key: string]: VALUE });
     
             /**
              * Sets the given key/value pair in the trie.  O(L), where L is the length
@@ -49,14 +39,7 @@ declare module goog.structs {
              * @param {!Object.<string, VALUE>|!goog.structs.Trie.<VALUE>} trie Object
              *     containing the data to add.
              */
-            setAll(trie: { [key: string]: VALUE }): void;
-            /**
-             * Adds multiple key/value pairs from another goog.structs.Trie or Object.
-             * O(N) where N is the number of nodes in the trie.
-             * @param {!Object.<string, VALUE>|!goog.structs.Trie.<VALUE>} trie Object
-             *     containing the data to add.
-             */
-            setAll(trie: goog.structs.Trie<VALUE>): void;
+            setAll(trie: { [key: string]: VALUE }|goog.structs.Trie<VALUE>): void;
     
             /**
              * Retrieves a value from the trie given a key.  O(L), where L is the length of
@@ -65,7 +48,7 @@ declare module goog.structs {
              * @return {VALUE|undefined} The value of the key in the trie, or undefined if
              *     the trie does not contain this key.
              */
-            get(key: string): any /*VALUE|any (undefined)*/;
+            get(key: string): VALUE|any /*undefined*/;
     
             /**
              * Retrieves all values from the trie that correspond to prefixes of the given

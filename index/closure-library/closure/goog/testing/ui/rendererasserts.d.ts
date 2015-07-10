@@ -8,5 +8,5 @@ declare module goog.testing.ui.rendererasserts {
      * @param {?function(new:goog.ui.ControlRenderer)} rendererClassUnderTest The
      *     renderer constructor to test.
      */
-    function assertNoGetCssClassCallsInConstructor(rendererClassUnderTest: () => any /*missing*/): void;
+    function assertNoGetCssClassCallsInConstructor(rendererClassUnderTest: { (): any /*missing*/ }): void;
 }

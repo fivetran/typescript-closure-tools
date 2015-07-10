@@ -69,7 +69,7 @@ declare module goog.ui.ac {
              * @param {function(string, number, !Array.<!Object>): !Array.<!Object>}
              *     localMatcher
              */
-            setLocalMatcher(localMatcher: (_0: string, _1: number, _2: Object[]) => Object[]): void;
+            setLocalMatcher(localMatcher: { (_0: string, _1: number, _2: Object[]): Object[] }): void;
     
             /**
              * Function used to pass matches to the autocomplete.

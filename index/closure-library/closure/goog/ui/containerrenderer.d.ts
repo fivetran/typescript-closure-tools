@@ -22,7 +22,7 @@ declare module goog.ui {
              * See http://wiki/Main/ARIA for more info.
              * @return {undefined|string} ARIA role.
              */
-            getAriaRole(): any /*any (undefined)|string*/;
+            getAriaRole(): any /*undefined*/|string;
     
             /**
              * Enables or disables the tab index of the element.  Only elements with a

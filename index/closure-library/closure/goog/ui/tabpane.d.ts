@@ -53,14 +53,7 @@ declare module goog.ui {
              * @param {goog.ui.TabPane.TabPage|number} page Reference to tab page or zero
              *     based index.
              */
-            removePage(page: goog.ui.TabPane.TabPage): void;
-            /**
-             * Removes the specified page from the tab pane.
-             *
-             * @param {goog.ui.TabPane.TabPage|number} page Reference to tab page or zero
-             *     based index.
-             */
-            removePage(page: number): void;
+            removePage(page: goog.ui.TabPane.TabPage|number): void;
     
             /**
              * Gets the tab page by zero based index.
@@ -149,19 +142,7 @@ declare module goog.ui.TabPane {
              * The first parameter can be omitted.
              * @constructor
              */
-            constructor(opt_el?: Element, opt_title?: Element, opt_domHelper?: goog.dom.DomHelper);
-            /**
-             * Object representing an individual tab pane.
-             *
-             * @param {Element=} opt_el Container element to create the pane out of.
-             * @param {(Element|string)=} opt_title Pane title or element to use as the
-             *     title. If not specified the first element in the container is used as
-             *     the title.
-             * @param {goog.dom.DomHelper=} opt_domHelper Optional DOM helper
-             * The first parameter can be omitted.
-             * @constructor
-             */
-            constructor(opt_el?: Element, opt_title?: string, opt_domHelper?: goog.dom.DomHelper);
+            constructor(opt_el?: Element, opt_title?: Element|string, opt_domHelper?: goog.dom.DomHelper);
     
             /**
              * DomHelper used to interact with the document, allowing components to be

@@ -72,19 +72,13 @@ declare module goog.ui {
              * index of the field will be updated along with the ratings widget.
              * @param {HTMLSelectElement|HTMLInputElement} field The field to attach to.
              */
-            setAttachedFormField(field: HTMLSelectElement): void;
-            /**
-             * Attaches an input or select element to the ratings widget. The value or
-             * index of the field will be updated along with the ratings widget.
-             * @param {HTMLSelectElement|HTMLInputElement} field The field to attach to.
-             */
-            setAttachedFormField(field: HTMLInputElement): void;
+            setAttachedFormField(field: HTMLSelectElement|HTMLInputElement): void;
     
             /**
              * Returns the attached input or select element to the ratings widget.
              * @return {HTMLSelectElement|HTMLInputElement|null} The attached form field.
              */
-            getAttachedFormField(): any /*HTMLSelectElement|HTMLInputElement|any (null)*/;
+            getAttachedFormField(): HTMLSelectElement|HTMLInputElement|any /*null*/;
     
             /**
              * Enables or disables the ratings control.

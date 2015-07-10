@@ -34,91 +34,7 @@ declare module goog.math {
              * @constructor
              * @final
              */
-            constructor(m: goog.math.Matrix, opt_n?: number);
-            /**
-             * Class for representing and manipulating matrices.
-             *
-             * The entry that lies in the i-th row and the j-th column of a matrix is
-             * typically referred to as the i,j entry of the matrix.
-             *
-             * The m-by-n matrix A would have its entries referred to as:
-             *   [ a0,0   a0,1   a0,2   ...   a0,j  ...  a0,n ]
-             *   [ a1,0   a1,1   a1,2   ...   a1,j  ...  a1,n ]
-             *   [ a2,0   a2,1   a2,2   ...   a2,j  ...  a2,n ]
-             *   [  .      .      .            .          .   ]
-             *   [  .      .      .            .          .   ]
-             *   [  .      .      .            .          .   ]
-             *   [ ai,0   ai,1   ai,2   ...   ai,j  ...  ai,n ]
-             *   [  .      .      .            .          .   ]
-             *   [  .      .      .            .          .   ]
-             *   [  .      .      .            .          .   ]
-             *   [ am,0   am,1   am,2   ...   am,j  ...  am,n ]
-             *
-             * @param {goog.math.Matrix|Array.<Array.<number>>|goog.math.Size|number} m
-             *     A matrix to copy, a 2D-array to take as a template, a size object for
-             *     dimensions, or the number of rows.
-             * @param {number=} opt_n Number of columns of the matrix (only applicable if
-             *     the first argument is also numeric).
-             * @constructor
-             * @final
-             */
-            constructor(m: number[][], opt_n?: number);
-            /**
-             * Class for representing and manipulating matrices.
-             *
-             * The entry that lies in the i-th row and the j-th column of a matrix is
-             * typically referred to as the i,j entry of the matrix.
-             *
-             * The m-by-n matrix A would have its entries referred to as:
-             *   [ a0,0   a0,1   a0,2   ...   a0,j  ...  a0,n ]
-             *   [ a1,0   a1,1   a1,2   ...   a1,j  ...  a1,n ]
-             *   [ a2,0   a2,1   a2,2   ...   a2,j  ...  a2,n ]
-             *   [  .      .      .            .          .   ]
-             *   [  .      .      .            .          .   ]
-             *   [  .      .      .            .          .   ]
-             *   [ ai,0   ai,1   ai,2   ...   ai,j  ...  ai,n ]
-             *   [  .      .      .            .          .   ]
-             *   [  .      .      .            .          .   ]
-             *   [  .      .      .            .          .   ]
-             *   [ am,0   am,1   am,2   ...   am,j  ...  am,n ]
-             *
-             * @param {goog.math.Matrix|Array.<Array.<number>>|goog.math.Size|number} m
-             *     A matrix to copy, a 2D-array to take as a template, a size object for
-             *     dimensions, or the number of rows.
-             * @param {number=} opt_n Number of columns of the matrix (only applicable if
-             *     the first argument is also numeric).
-             * @constructor
-             * @final
-             */
-            constructor(m: goog.math.Size, opt_n?: number);
-            /**
-             * Class for representing and manipulating matrices.
-             *
-             * The entry that lies in the i-th row and the j-th column of a matrix is
-             * typically referred to as the i,j entry of the matrix.
-             *
-             * The m-by-n matrix A would have its entries referred to as:
-             *   [ a0,0   a0,1   a0,2   ...   a0,j  ...  a0,n ]
-             *   [ a1,0   a1,1   a1,2   ...   a1,j  ...  a1,n ]
-             *   [ a2,0   a2,1   a2,2   ...   a2,j  ...  a2,n ]
-             *   [  .      .      .            .          .   ]
-             *   [  .      .      .            .          .   ]
-             *   [  .      .      .            .          .   ]
-             *   [ ai,0   ai,1   ai,2   ...   ai,j  ...  ai,n ]
-             *   [  .      .      .            .          .   ]
-             *   [  .      .      .            .          .   ]
-             *   [  .      .      .            .          .   ]
-             *   [ am,0   am,1   am,2   ...   am,j  ...  am,n ]
-             *
-             * @param {goog.math.Matrix|Array.<Array.<number>>|goog.math.Size|number} m
-             *     A matrix to copy, a 2D-array to take as a template, a size object for
-             *     dimensions, or the number of rows.
-             * @param {number=} opt_n Number of columns of the matrix (only applicable if
-             *     the first argument is also numeric).
-             * @constructor
-             * @final
-             */
-            constructor(m: number, opt_n?: number);
+            constructor(m: goog.math.Matrix|number[][]|goog.math.Size|number, opt_n?: number);
     
             /**
              * Returns a new matrix that is the sum of this and the provided matrix.
@@ -222,23 +138,7 @@ declare module goog.math {
              * @param {goog.math.Matrix|number} m Matrix/number to multiply the matrix by.
              * @return {!goog.math.Matrix} Resultant product.
              */
-            multiply(m: goog.math.Matrix): goog.math.Matrix;
-            /**
-             * Performs matrix or scalar multiplication on a matrix and returns the
-             * resultant matrix.
-             *
-             * Matrix multiplication is defined between two matrices only if the number of
-             * columns of the first matrix is the same as the number of rows of the second
-             * matrix. If A is an m-by-n matrix and B is an n-by-p matrix, then their
-             * product AB is an m-by-p matrix
-             *
-             * Scalar multiplication returns a matrix of the same size as the original,
-             * each value multiplied by the given value.
-             *
-             * @param {goog.math.Matrix|number} m Matrix/number to multiply the matrix by.
-             * @return {!goog.math.Matrix} Resultant product.
-             */
-            multiply(m: number): goog.math.Matrix;
+            multiply(m: goog.math.Matrix|number): goog.math.Matrix;
     
             /**
              * Returns a new matrix that is the difference of this and the provided matrix.

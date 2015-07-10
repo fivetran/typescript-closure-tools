@@ -21,5 +21,5 @@ declare module goog.testing.proto2 {
      * @return {!MessageType} The deserialized protocol buffer.
      * @template MessageType
      */
-    function fromObject<MessageType>(messageCtor: () => any /*missing*/, json: Object): MessageType;
+    function fromObject<MessageType>(messageCtor: { (): any /*missing*/ }, json: Object): MessageType;
 }

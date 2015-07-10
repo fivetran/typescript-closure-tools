@@ -61,7 +61,7 @@ declare module goog.dom.forms {
      * @return {string|Array.<string>|null} The current value of the element
      *     (or null).
      */
-    function getValue(el: Element): any /*string|string[]|any (null)*/;
+    function getValue(el: Element): string|string[]|any /*null*/;
 
     /**
      * Returns the value of the named form field. In the case of radio buttons,
@@ -73,7 +73,7 @@ declare module goog.dom.forms {
      * @return {Array.<string>|string|null} The value of the form element, or
      *     null if the form element does not exist or has no value.
      */
-    function getValueByName(form: HTMLFormElement, name: string): any /*string[]|string|any (null)*/;
+    function getValueByName(form: HTMLFormElement, name: string): string[]|string|any /*null*/;
 
     /**
      * Sets the current value of any element with a type.

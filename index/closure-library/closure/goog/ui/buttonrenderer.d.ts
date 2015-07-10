@@ -32,7 +32,7 @@ declare module goog.ui {
              * @param {Element} element The button's root element.
              * @return {string|undefined} The button's value (undefined if none).
              */
-            getValue(element: Element): any /*string|any (undefined)*/;
+            getValue(element: Element): string|any /*undefined*/;
     
             /**
              * Takes a button's root element and a value, and updates the element to reflect
@@ -47,7 +47,7 @@ declare module goog.ui {
              * @param {Element} element The button's root element.
              * @return {string|undefined} The tooltip text.
              */
-            getTooltip(element: Element): any /*string|any (undefined)*/;
+            getTooltip(element: Element): string|any /*undefined*/;
     
             /**
              * Takes a button's root element and a tooltip string, and updates the element

@@ -42,17 +42,7 @@ declare module goog.testing {
              * @param {Function} continuation The test function to invoke after the event
              *     fires.
              */
-            waitForEvent(eventTarget: goog.events.EventTarget, eventType: string, continuation: Function): void;
-            /**
-             * Creates a new test step that will run after an event has fired. If the event
-             * does not fire within a reasonable timeout, the test will fail.
-             * @param {goog.events.EventTarget|EventTarget} eventTarget The target that will
-             *     fire the event.
-             * @param {string} eventType The type of event to listen for.
-             * @param {Function} continuation The test function to invoke after the event
-             *     fires.
-             */
-            waitForEvent(eventTarget: EventTarget, eventType: string, continuation: Function): void;
+            waitForEvent(eventTarget: goog.events.EventTarget|EventTarget, eventType: string, continuation: Function): void;
     
             /**
              * Creates a new test step which will run once a condition becomes true. The

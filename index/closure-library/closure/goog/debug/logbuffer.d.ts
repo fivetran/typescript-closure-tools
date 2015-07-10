@@ -34,7 +34,7 @@ declare module goog.debug {
              * oldest one.
              * @param {function(!goog.debug.LogRecord)} func The function to call.
              */
-            forEachRecord(func: (_0: goog.debug.LogRecord) => any /*missing*/): void;
+            forEachRecord(func: { (_0: goog.debug.LogRecord): any /*missing*/ }): void;
     } 
     
 }

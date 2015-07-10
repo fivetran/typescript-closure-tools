@@ -223,19 +223,7 @@ declare module goog.vec.vec3d {
      * @return {!goog.vec.vec3d.Type} Return resultVec so that operations can be
      *     chained together.
      */
-    function max(vec0: goog.vec.vec3d.Type, limit: goog.vec.vec3d.Type, resultVec: goog.vec.vec3d.Type): goog.vec.vec3d.Type;
-    /**
-     * Compares the components of vec0 with the components of another vector or
-     * scalar, storing the larger values in resultVec.
-     *
-     * @param {goog.vec.vec3d.Type} vec0 The source vector.
-     * @param {goog.vec.vec3d.Type|number} limit The limit vector or scalar.
-     * @param {goog.vec.vec3d.Type} resultVec The vector to receive the
-     *     results (may be vec0 or limit).
-     * @return {!goog.vec.vec3d.Type} Return resultVec so that operations can be
-     *     chained together.
-     */
-    function max(vec0: goog.vec.vec3d.Type, limit: number, resultVec: goog.vec.vec3d.Type): goog.vec.vec3d.Type;
+    function max(vec0: goog.vec.vec3d.Type, limit: goog.vec.vec3d.Type|number, resultVec: goog.vec.vec3d.Type): goog.vec.vec3d.Type;
 
     /**
      * Compares the components of vec0 with the components of another vector or
@@ -248,19 +236,7 @@ declare module goog.vec.vec3d {
      * @return {!goog.vec.vec3d.Type} Return resultVec so that operations can be
      *     chained together.
      */
-    function min(vec0: goog.vec.vec3d.Type, limit: goog.vec.vec3d.Type, resultVec: goog.vec.vec3d.Type): goog.vec.vec3d.Type;
-    /**
-     * Compares the components of vec0 with the components of another vector or
-     * scalar, storing the smaller values in resultVec.
-     *
-     * @param {goog.vec.vec3d.Type} vec0 The source vector.
-     * @param {goog.vec.vec3d.Type|number} limit The limit vector or scalar.
-     * @param {goog.vec.vec3d.Type} resultVec The vector to receive the
-     *     results (may be vec0 or limit).
-     * @return {!goog.vec.vec3d.Type} Return resultVec so that operations can be
-     *     chained together.
-     */
-    function min(vec0: goog.vec.vec3d.Type, limit: number, resultVec: goog.vec.vec3d.Type): goog.vec.vec3d.Type;
+    function min(vec0: goog.vec.vec3d.Type, limit: goog.vec.vec3d.Type|number, resultVec: goog.vec.vec3d.Type): goog.vec.vec3d.Type;
 
     /**
      * Returns true if the components of v0 are equal to the components of v1.

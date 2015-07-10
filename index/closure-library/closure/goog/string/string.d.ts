@@ -531,40 +531,7 @@ declare module goog._string {
      *                   0 if arguments are equal.
      *                  -1 if {@code version2} is higher.
      */
-    function compareVersions(version1: string, version2: string): number;
-    /**
-     * Compares two version numbers.
-     *
-     * @param {string|number} version1 Version of first item.
-     * @param {string|number} version2 Version of second item.
-     *
-     * @return {number}  1 if {@code version1} is higher.
-     *                   0 if arguments are equal.
-     *                  -1 if {@code version2} is higher.
-     */
-    function compareVersions(version1: string, version2: number): number;
-    /**
-     * Compares two version numbers.
-     *
-     * @param {string|number} version1 Version of first item.
-     * @param {string|number} version2 Version of second item.
-     *
-     * @return {number}  1 if {@code version1} is higher.
-     *                   0 if arguments are equal.
-     *                  -1 if {@code version2} is higher.
-     */
-    function compareVersions(version1: number, version2: string): number;
-    /**
-     * Compares two version numbers.
-     *
-     * @param {string|number} version1 Version of first item.
-     * @param {string|number} version2 Version of second item.
-     *
-     * @return {number}  1 if {@code version1} is higher.
-     *                   0 if arguments are equal.
-     *                  -1 if {@code version2} is higher.
-     */
-    function compareVersions(version1: number, version2: number): number;
+    function compareVersions(version1: string|number, version2: string|number): number;
 
     /**
      * String hash function similar to java.lang.String.hashCode().
@@ -689,43 +656,7 @@ declare module goog._string {
      * @return {number} The number, parsed. If the string failed to parse, this
      *     will be NaN.
      */
-    function parseInt(value: string): number;
-    /**
-     * Parse a string in decimal or hexidecimal ('0xFFFF') form.
-     *
-     * To parse a particular radix, please use parseInt(string, radix) directly. See
-     * https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/parseInt
-     *
-     * This is a wrapper for the built-in parseInt function that will only parse
-     * numbers as base 10 or base 16.  Some JS implementations assume strings
-     * starting with "0" are intended to be octal. ES3 allowed but discouraged
-     * this behavior. ES5 forbids it.  This function emulates the ES5 behavior.
-     *
-     * For more information, see Mozilla JS Reference: http://goo.gl/8RiFj
-     *
-     * @param {string|number|null|undefined} value The value to be parsed.
-     * @return {number} The number, parsed. If the string failed to parse, this
-     *     will be NaN.
-     */
-    function parseInt(value: number): number;
-    /**
-     * Parse a string in decimal or hexidecimal ('0xFFFF') form.
-     *
-     * To parse a particular radix, please use parseInt(string, radix) directly. See
-     * https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/parseInt
-     *
-     * This is a wrapper for the built-in parseInt function that will only parse
-     * numbers as base 10 or base 16.  Some JS implementations assume strings
-     * starting with "0" are intended to be octal. ES3 allowed but discouraged
-     * this behavior. ES5 forbids it.  This function emulates the ES5 behavior.
-     *
-     * For more information, see Mozilla JS Reference: http://goo.gl/8RiFj
-     *
-     * @param {string|number|null|undefined} value The value to be parsed.
-     * @return {number} The number, parsed. If the string failed to parse, this
-     *     will be NaN.
-     */
-    function parseInt(value: any /*null*/): number;
+    function parseInt(value: string|number|any /*null*/|any /*undefined*/): number;
 
     /**
      * Splits a string on a separator a limited number of times.

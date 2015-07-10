@@ -104,7 +104,7 @@ declare module goog.structs {
              * @param {Object=} opt_obj The object to be used as the value of 'this'
              *     within {@ code fn}.
              */
-            forEach(fn: (_0: any, _1: goog.math.Coordinate, _2: goog.structs.QuadTree) => any /*missing*/, opt_obj?: Object): void;
+            forEach(fn: { (_0: any, _1: goog.math.Coordinate, _2: goog.structs.QuadTree): any /*missing*/ }, opt_obj?: Object): void;
     } 
     
 }

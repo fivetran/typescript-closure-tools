@@ -41,14 +41,7 @@ declare module goog.ui.media {
              * @param {goog.structs.Map|Object} map A key-value map of variables.
              * @return {!goog.ui.media.FlashObject} The flash object instance for chaining.
              */
-            addFlashVars(map: goog.structs.Map<any, any>): goog.ui.media.FlashObject;
-            /**
-             * Adds flash variables.
-             *
-             * @param {goog.structs.Map|Object} map A key-value map of variables.
-             * @return {!goog.ui.media.FlashObject} The flash object instance for chaining.
-             */
-            addFlashVars(map: Object): goog.ui.media.FlashObject;
+            addFlashVars(map: goog.structs.Map<any, any>|Object): goog.ui.media.FlashObject;
     
             /**
              * Sets a flash variable.
@@ -72,35 +65,7 @@ declare module goog.ui.media {
              * @param {string=} opt_value The optional value for the flashVar key.
              * @return {!goog.ui.media.FlashObject} The flash object instance for chaining.
              */
-            setFlashVars(flashVar: goog.structs.Map<any, any>, opt_value?: string): goog.ui.media.FlashObject;
-            /**
-             * Sets flash variables. You can either pass a Map of key->value pairs or you
-             * can pass a key, value pair to set a specific variable.
-             *
-             * TODO(user, martino): Get rid of this method.
-             *
-             * @deprecated Use {@link #addFlashVars} or {@link #setFlashVar} instead.
-             * @param {goog.structs.Map|Object|string} flashVar A map of variables (given
-             *    as a goog.structs.Map or an Object literal) or a key to the optional
-             *    {@code opt_value}.
-             * @param {string=} opt_value The optional value for the flashVar key.
-             * @return {!goog.ui.media.FlashObject} The flash object instance for chaining.
-             */
-            setFlashVars(flashVar: Object, opt_value?: string): goog.ui.media.FlashObject;
-            /**
-             * Sets flash variables. You can either pass a Map of key->value pairs or you
-             * can pass a key, value pair to set a specific variable.
-             *
-             * TODO(user, martino): Get rid of this method.
-             *
-             * @deprecated Use {@link #addFlashVars} or {@link #setFlashVar} instead.
-             * @param {goog.structs.Map|Object|string} flashVar A map of variables (given
-             *    as a goog.structs.Map or an Object literal) or a key to the optional
-             *    {@code opt_value}.
-             * @param {string=} opt_value The optional value for the flashVar key.
-             * @return {!goog.ui.media.FlashObject} The flash object instance for chaining.
-             */
-            setFlashVars(flashVar: string, opt_value?: string): goog.ui.media.FlashObject;
+            setFlashVars(flashVar: goog.structs.Map<any, any>|Object|string, opt_value?: string): goog.ui.media.FlashObject;
     
             /**
              * @return {goog.structs.Map} The current flash variables.
@@ -140,31 +105,7 @@ declare module goog.ui.media {
              * @param {number|string} height The height of the movie.
              * @return {!goog.ui.media.FlashObject} The flash object instance for chaining.
              */
-            setSize(width: number, height: number): goog.ui.media.FlashObject;
-            /**
-             * Sets the width and height of the movie.
-             *
-             * @param {number|string} width The width of the movie.
-             * @param {number|string} height The height of the movie.
-             * @return {!goog.ui.media.FlashObject} The flash object instance for chaining.
-             */
-            setSize(width: number, height: string): goog.ui.media.FlashObject;
-            /**
-             * Sets the width and height of the movie.
-             *
-             * @param {number|string} width The width of the movie.
-             * @param {number|string} height The height of the movie.
-             * @return {!goog.ui.media.FlashObject} The flash object instance for chaining.
-             */
-            setSize(width: string, height: number): goog.ui.media.FlashObject;
-            /**
-             * Sets the width and height of the movie.
-             *
-             * @param {number|string} width The width of the movie.
-             * @param {number|string} height The height of the movie.
-             * @return {!goog.ui.media.FlashObject} The flash object instance for chaining.
-             */
-            setSize(width: string, height: string): goog.ui.media.FlashObject;
+            setSize(width: number|string, height: number|string): goog.ui.media.FlashObject;
     
             /**
              * @return {?string} The flash required version.

@@ -55,19 +55,7 @@ declare module goog.ui {
              *     columns.
              * @param {number=} opt_rows The number of rows (optional).
              */
-            setSize(size: goog.math.Size, opt_rows?: number): void;
-            /**
-             * Sets the size of the palette grid to the given size.  Callers can either
-             * pass a single {@link goog.math.Size} or a pair of numbers (first the number
-             * of columns, then the number of rows) to this method.  In both cases, the
-             * number of rows is optional and will be calculated automatically if needed.
-             * It is an error to attempt to change the size of the palette after it has
-             * been rendered.
-             * @param {goog.math.Size|number} size Either a size object or the number of
-             *     columns.
-             * @param {number=} opt_rows The number of rows (optional).
-             */
-            setSize(size: number, opt_rows?: number): void;
+            setSize(size: goog.math.Size|number, opt_rows?: number): void;
     
             /**
              * Returns the 0-based index of the currently highlighted palette item, or -1
@@ -96,13 +84,7 @@ declare module goog.ui {
              * or invalid.  Any previously-highlighted item will be un-highlighted.
              * @param {Node|undefined} item Item to highlight.
              */
-            setHighlightedItem(item: Node): void;
-            /**
-             * Highlights the given item, or removes the highlight if the argument is null
-             * or invalid.  Any previously-highlighted item will be un-highlighted.
-             * @param {Node|undefined} item Item to highlight.
-             */
-            setHighlightedItem(item: any /*undefined*/): void;
+            setHighlightedItem(item: Node|any /*undefined*/): void;
     
             /**
              * Returns the 0-based index of the currently selected palette item, or -1

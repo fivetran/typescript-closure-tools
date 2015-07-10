@@ -45,7 +45,7 @@ declare module goog {
              * @param {T=} opt_scope An optional scope to call the callback in.
              * @template T
              */
-            addOnDisposeCallback<T>(callback: () => any, opt_scope?: T): void;
+            addOnDisposeCallback<T>(callback: { (): any }, opt_scope?: T): void;
     
             /**
              * Deletes or nulls out any references to COM objects, DOM nodes, or other

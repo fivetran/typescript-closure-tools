@@ -22,23 +22,7 @@ declare module goog.net {
              * @constructor
              * @final
              */
-            constructor(uri: goog.Uri, opt_callbackParamName?: string);
-            /**
-             * Creates a new cross domain channel that sends data to the specified
-             * host URL. By default, if no reply arrives within 5s, the channel
-             * assumes the call failed to complete successfully.
-             *
-             * @param {goog.Uri|string} uri The Uri of the server side code that receives
-             *     data posted through this channel (e.g.,
-             *     "http://maps.google.com/maps/geo").
-             *
-             * @param {string=} opt_callbackParamName The parameter name that is used to
-             *     specify the callback. Defaults to "callback".
-             *
-             * @constructor
-             * @final
-             */
-            constructor(uri: string, opt_callbackParamName?: string);
+            constructor(uri: goog.Uri|string, opt_callbackParamName?: string);
     
             /**
              * Sets the length of time, in milliseconds, this channel is prepared
