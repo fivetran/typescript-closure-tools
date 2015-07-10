@@ -1,9 +1,9 @@
 #!/bin/bash
 # Example of minifying a set of typescript modules with closure compiler
-tsc --module commonjs src/*.ts
+tsc --module commonjs definition-generator/src/*.ts
 rm -rf dist/
 mkdir -p dist/
-node node_modules/browserify/bin/cmd.js src/page.js > page/main.min.js
+node node_modules/browserify/bin/cmd.js definition-generator/src/page.js > page/main.min.js
 
 #java -jar scripts/compiler.jar \
 #  --process_common_js_modules \
