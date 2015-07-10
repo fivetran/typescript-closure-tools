@@ -3,10 +3,9 @@
 
 declare module goog.ui {
 
-    class ImagelessMenuButtonRenderer extends ImagelessMenuButtonRenderer.__Class { }
-    module ImagelessMenuButtonRenderer {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.MenuButtonRenderer.__Class {
+    class ImagelessMenuButtonRenderer extends ImagelessMenuButtonRenderer__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ImagelessMenuButtonRenderer__Class extends goog.ui.MenuButtonRenderer__Class  { 
     
             /**
              * Custom renderer for {@link goog.ui.MenuButton}s. Imageless buttons can
@@ -20,8 +19,8 @@ declare module goog.ui {
              * @final
              */
             constructor();
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.ImagelessMenuButtonRenderer {

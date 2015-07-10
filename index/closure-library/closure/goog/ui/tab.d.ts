@@ -5,10 +5,9 @@
 
 declare module goog.ui {
 
-    class Tab extends Tab.__Class { }
-    module Tab {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.Control.__Class {
+    class Tab extends Tab__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Tab__Class extends goog.ui.Control__Class  { 
     
             /**
              * Tab control, designed to be hosted in a {@link goog.ui.TabBar}.  The tab's
@@ -86,6 +85,6 @@ declare module goog.ui {
              * @protected
              */
             setTooltipInternal(tooltip: string): void;
-        }
-    }
+    } 
+    
 }

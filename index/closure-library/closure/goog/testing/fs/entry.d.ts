@@ -8,10 +8,9 @@
 
 declare module goog.testing.fs {
 
-    class Entry extends Entry.__Class { }
-    module Entry {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class implements goog.fs.Entry {
+    class Entry extends Entry__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Entry__Class implements goog.fs.Entry  { 
     
             /**
              * A mock filesystem entry object.
@@ -162,13 +161,12 @@ declare module goog.testing.fs {
              *     If an error occurs, the errback is called with a {@link goog.fs.Error}.
              */
             getParent(): goog.async.Deferred<any>;
-        }
-    }
+    } 
+    
 
-    class DirectoryEntry extends DirectoryEntry.__Class { }
-    module DirectoryEntry {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.testing.fs.Entry.__Class implements goog.fs.DirectoryEntry {
+    class DirectoryEntry extends DirectoryEntry__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class DirectoryEntry__Class extends goog.testing.fs.Entry__Class implements goog.fs.DirectoryEntry  { 
     
             /**
              * A mock directory entry object.
@@ -293,13 +291,12 @@ declare module goog.testing.fs {
              *     called a {@link goog.fs.Error}.
              */
             removeRecursively(): goog.async.Deferred<any>;
-        }
-    }
+    } 
+    
 
-    class FileEntry extends FileEntry.__Class { }
-    module FileEntry {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.testing.fs.Entry.__Class implements goog.fs.FileEntry {
+    class FileEntry extends FileEntry__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class FileEntry__Class extends goog.testing.fs.Entry__Class implements goog.fs.FileEntry  { 
     
             /**
              * A mock file entry object.
@@ -341,6 +338,6 @@ declare module goog.testing.fs {
              *     called with a {@link goog.fs.Error}.
              */
             file(): goog.async.Deferred<File>;
-        }
-    }
+    } 
+    
 }

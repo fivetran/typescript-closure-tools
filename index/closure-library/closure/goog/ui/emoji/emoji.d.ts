@@ -2,10 +2,9 @@
 
 declare module goog.ui.emoji {
 
-    class Emoji extends Emoji.__Class { }
-    module Emoji {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Emoji extends Emoji__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Emoji__Class  { 
     
             /**
              * Creates an emoji.
@@ -28,8 +27,8 @@ declare module goog.ui.emoji {
              * @return {string} The id of this emoji.
              */
             getId(): string;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.emoji.Emoji {

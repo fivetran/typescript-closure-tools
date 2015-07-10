@@ -4,10 +4,9 @@
 
 declare module goog.ui.tree {
 
-    class TypeAhead extends TypeAhead.__Class { }
-    module TypeAhead {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class TypeAhead extends TypeAhead__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class TypeAhead__Class  { 
     
             /**
              * Constructs a TypeAhead object.
@@ -50,8 +49,8 @@ declare module goog.ui.tree {
              * Clears the typeahead buffer.
              */
             clear(): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.tree.TypeAhead {

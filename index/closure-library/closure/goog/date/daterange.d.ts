@@ -4,10 +4,9 @@
 
 declare module goog.date {
 
-    class DateRange extends DateRange.__Class { }
-    module DateRange {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class DateRange extends DateRange__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class DateRange__Class  { 
     
             /**
              * Constructs a date range.
@@ -40,16 +39,15 @@ declare module goog.date {
              * @return {!goog.iter.Iterator} An iterator over the date range.
              */
             iterator(): goog.iter.Iterator<any>;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.date.DateRange {
 
-    class Iterator extends Iterator.__Class { }
-    module Iterator {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.iter.Iterator.__Class<any> {
+    class Iterator extends Iterator__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Iterator__Class extends goog.iter.Iterator__Class<any>  { 
     
             /**
              * Creates an iterator over the dates in a {@link goog.date.DateRange}.
@@ -59,8 +57,8 @@ declare module goog.date.DateRange {
              * @final
              */
             constructor(dateRange: goog.date.DateRange);
-        }
-    }
+    } 
+    
 
     /**
      * The first possible day, as far as this class is concerned.

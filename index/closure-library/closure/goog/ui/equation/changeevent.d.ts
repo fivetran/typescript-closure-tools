@@ -3,10 +3,9 @@
 
 declare module goog.ui.equation {
 
-    class ChangeEvent extends ChangeEvent.__Class { }
-    module ChangeEvent {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.Event.__Class {
+    class ChangeEvent extends ChangeEvent__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ChangeEvent__Class extends goog.events.Event__Class  { 
     
             /**
              * Event fired when equation changes.
@@ -22,6 +21,6 @@ declare module goog.ui.equation {
              * @type {boolean}
              */
             isValid: boolean;
-        }
-    }
+    } 
+    
 }

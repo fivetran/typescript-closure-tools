@@ -4,10 +4,9 @@
 
 declare module goog.ui {
 
-    class FlatMenuButtonRenderer extends FlatMenuButtonRenderer.__Class { }
-    module FlatMenuButtonRenderer {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.FlatButtonRenderer.__Class {
+    class FlatMenuButtonRenderer extends FlatMenuButtonRenderer__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class FlatMenuButtonRenderer__Class extends goog.ui.FlatButtonRenderer__Class  { 
     
             /**
              * Flat Menu Button renderer. Creates a simpler version of
@@ -78,8 +77,8 @@ declare module goog.ui {
              * @return {!Element} Dropdown element.
              */
             createDropdown(dom: goog.dom.DomHelper): Element;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.FlatMenuButtonRenderer {

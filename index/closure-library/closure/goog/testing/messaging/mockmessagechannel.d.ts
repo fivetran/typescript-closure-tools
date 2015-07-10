@@ -4,10 +4,9 @@
 
 declare module goog.testing.messaging {
 
-    class MockMessageChannel extends MockMessageChannel.__Class { }
-    module MockMessageChannel {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.messaging.AbstractChannel.__Class {
+    class MockMessageChannel extends MockMessageChannel__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class MockMessageChannel__Class extends goog.messaging.AbstractChannel__Class  { 
     
             /**
              * Class for unit-testing code that communicates over a MessageChannel.
@@ -37,6 +36,6 @@ declare module goog.testing.messaging {
              * @param {string|!Object} payload The argument to pass to the service.
              */
             receive(serviceName: string, payload: Object): void;
-        }
-    }
+    } 
+    
 }

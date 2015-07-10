@@ -4,10 +4,9 @@
 
 declare module goog._string.html {
 
-    class HtmlSanitizer extends HtmlSanitizer.__Class { }
-    module HtmlSanitizer {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.string.html.HtmlSaxHandler.__Class {
+    class HtmlSanitizer extends HtmlSanitizer__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class HtmlSanitizer__Class extends goog.string.html.HtmlSaxHandler__Class  { 
     
             /**
              * An implementation of the {@code goog.string.HtmlSaxHandler} interface that
@@ -23,8 +22,8 @@ declare module goog._string.html {
              * @extends {goog.string.html.HtmlSaxHandler}
              */
             constructor(stringBuffer: goog.string.StringBuffer, opt_urlPolicy: (_0: string) => string, opt_nmTokenPolicy: (_0: string) => string);
-        }
-    }
+    } 
+    
 
     /**
      * Strips unsafe tags and attributes from HTML.

@@ -3,10 +3,9 @@
 
 declare module goog.graphics {
 
-    class LinearGradient extends LinearGradient.__Class { }
-    module LinearGradient {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.graphics.Fill.__Class {
+    class LinearGradient extends LinearGradient__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class LinearGradient__Class extends goog.graphics.Fill__Class  { 
     
             /**
              * Creates an immutable linear gradient fill object.
@@ -58,6 +57,6 @@ declare module goog.graphics {
              * @return {?number} The end opacity of the gradient.
              */
             getOpacity2(): number;
-        }
-    }
+    } 
+    
 }

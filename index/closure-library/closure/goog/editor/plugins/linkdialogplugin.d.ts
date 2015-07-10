@@ -6,10 +6,9 @@
 
 declare module goog.editor.plugins {
 
-    class LinkDialogPlugin extends LinkDialogPlugin.__Class { }
-    module LinkDialogPlugin {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.editor.plugins.AbstractDialogPlugin.__Class {
+    class LinkDialogPlugin extends LinkDialogPlugin__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class LinkDialogPlugin__Class extends goog.editor.plugins.AbstractDialogPlugin__Class  { 
     
             /**
              * A plugin that opens the link dialog.
@@ -125,6 +124,6 @@ declare module goog.editor.plugins {
              * @protected
              */
             shouldOpenUrl(url: string): boolean;
-        }
-    }
+    } 
+    
 }

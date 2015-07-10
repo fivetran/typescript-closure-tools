@@ -4,10 +4,9 @@
 
 declare module goog.ui {
 
-    class IdleTimer extends IdleTimer.__Class { }
-    module IdleTimer {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.EventTarget.__Class {
+    class IdleTimer extends IdleTimer__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class IdleTimer__Class extends goog.events.EventTarget__Class  { 
     
             /**
              * Event target that will give notification of state changes between active and
@@ -44,8 +43,8 @@ declare module goog.ui {
              * @return {boolean} true if the user is idle, false otherwise.
              */
             isIdle(): boolean;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.IdleTimer {

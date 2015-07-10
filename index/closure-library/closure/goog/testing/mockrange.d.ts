@@ -4,10 +4,9 @@
 
 declare module goog.testing {
 
-    class MockRange extends MockRange.__Class { }
-    module MockRange {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.testing.LooseMock.__Class {
+    class MockRange extends MockRange__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class MockRange__Class extends goog.testing.LooseMock__Class  { 
     
             /**
              * LooseMock of goog.dom.AbstractRange. Useful because the mock framework cannot
@@ -19,16 +18,15 @@ declare module goog.testing {
              * @final
              */
             constructor();
-        }
-    }
+    } 
+    
 }
 
 declare module goog.testing.MockRange {
 
-    class ConcreteRange_ extends ConcreteRange_.__Class { }
-    module ConcreteRange_ {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.dom.AbstractRange.__Class {
+    class ConcreteRange_ extends ConcreteRange___Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ConcreteRange___Class extends goog.dom.AbstractRange__Class  { 
     
             /**
              * Concrete subclass of goog.dom.AbstractRange that simply sets the abstract
@@ -39,6 +37,6 @@ declare module goog.testing.MockRange {
              * @private
              */
             constructor();
-        }
-    }
+    } 
+    
 }

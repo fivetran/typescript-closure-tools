@@ -2,10 +2,9 @@
 
 declare module goog.format {
 
-    class JsonPrettyPrinter extends JsonPrettyPrinter.__Class { }
-    module JsonPrettyPrinter {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class JsonPrettyPrinter extends JsonPrettyPrinter__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class JsonPrettyPrinter__Class  { 
     
             /**
              * Formats a JSON object as a string, properly indented for display.  Supports
@@ -42,16 +41,15 @@ declare module goog.format {
              *     display.
              */
             format(json: any): string;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.format.JsonPrettyPrinter {
 
-    class TextDelimiters extends TextDelimiters.__Class { }
-    module TextDelimiters {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class TextDelimiters extends TextDelimiters__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class TextDelimiters__Class  { 
     
             /**
              * A container for the delimiting characters used to display the JSON string
@@ -145,13 +143,12 @@ declare module goog.format.JsonPrettyPrinter {
              * @type {number}
              */
             indent: number;
-        }
-    }
+    } 
+    
 
-    class HtmlDelimiters extends HtmlDelimiters.__Class { }
-    module HtmlDelimiters {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.format.JsonPrettyPrinter.TextDelimiters.__Class {
+    class HtmlDelimiters extends HtmlDelimiters__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class HtmlDelimiters__Class extends goog.format.JsonPrettyPrinter.TextDelimiters__Class  { 
     
             /**
              * A container for the delimiting characters used to display the JSON string
@@ -161,6 +158,6 @@ declare module goog.format.JsonPrettyPrinter {
              * @final
              */
             constructor();
-        }
-    }
+    } 
+    
 }

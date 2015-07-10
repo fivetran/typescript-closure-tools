@@ -5,10 +5,9 @@
 
 declare module goog.net.xpc {
 
-    class FrameElementMethodTransport extends FrameElementMethodTransport.__Class { }
-    module FrameElementMethodTransport {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.net.xpc.Transport.__Class {
+    class FrameElementMethodTransport extends FrameElementMethodTransport__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class FrameElementMethodTransport__Class extends goog.net.xpc.Transport__Class  { 
     
             /**
              * Frame-element method transport.
@@ -26,6 +25,6 @@ declare module goog.net.xpc {
              * @final
              */
             constructor(channel: goog.net.xpc.CrossPageChannel, opt_domHelper?: goog.dom.DomHelper);
-        }
-    }
+    } 
+    
 }

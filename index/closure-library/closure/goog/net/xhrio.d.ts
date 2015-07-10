@@ -10,10 +10,9 @@
 
 declare module goog.net {
 
-    class XhrIo extends XhrIo.__Class { }
-    module XhrIo {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.EventTarget.__Class {
+    class XhrIo extends XhrIo__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class XhrIo__Class extends goog.events.EventTarget__Class  { 
     
             /**
              * Basic class for handling XMLHttpRequests.
@@ -487,8 +486,8 @@ declare module goog.net {
              * @return {string} Last error message.
              */
             getLastError(): string;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.net.XhrIo {

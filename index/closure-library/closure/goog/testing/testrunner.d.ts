@@ -3,10 +3,9 @@
 
 declare module goog.testing {
 
-    class TestRunner extends TestRunner.__Class { }
-    module TestRunner {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class TestRunner extends TestRunner__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class TestRunner__Class  { 
     
             /**
              * Construct a test runner.
@@ -148,6 +147,6 @@ declare module goog.testing {
              * test failures (if any) to provide formatted data for the test runner.
              */
             getTestResults(): { [key: string]: string[] };
-        }
-    }
+    } 
+    
 }

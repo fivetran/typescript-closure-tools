@@ -2,10 +2,9 @@
 
 declare module goog.testing.stacktrace {
 
-    class Frame extends Frame.__Class { }
-    module Frame {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Frame extends Frame__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Frame__Class  { 
     
             /**
              * Class representing one stack frame.
@@ -39,8 +38,8 @@ declare module goog.testing.stacktrace {
              * @return {string} Pretty printed stack frame.
              */
             toCanonicalString(): string;
-        }
-    }
+    } 
+    
 
     /**
      * Sets function to deobfuscate function names.

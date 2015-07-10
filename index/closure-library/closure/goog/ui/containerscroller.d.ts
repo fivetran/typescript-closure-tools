@@ -4,10 +4,9 @@
 
 declare module goog.ui {
 
-    class ContainerScroller extends ContainerScroller.__Class { }
-    module ContainerScroller {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.Disposable.__Class {
+    class ContainerScroller extends ContainerScroller__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ContainerScroller__Class extends goog.Disposable__Class  { 
     
             /**
              * Plug-on scrolling behavior for a container.
@@ -29,6 +28,6 @@ declare module goog.ui {
              * @final
              */
             constructor(container: goog.ui.Container);
-        }
-    }
+    } 
+    
 }

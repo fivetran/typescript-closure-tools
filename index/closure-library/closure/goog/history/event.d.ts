@@ -3,10 +3,9 @@
 
 declare module goog.history {
 
-    class Event extends Event.__Class { }
-    module Event {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.Event.__Class {
+    class Event extends Event__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Event__Class extends goog.events.Event__Class  { 
     
             /**
              * Event object dispatched after the history state has changed.
@@ -33,6 +32,6 @@ declare module goog.history {
              * @type {boolean}
              */
             isNavigation: boolean;
-        }
-    }
+    } 
+    
 }

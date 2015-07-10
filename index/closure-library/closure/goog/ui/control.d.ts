@@ -10,10 +10,9 @@
 
 declare module goog.ui {
 
-    class Control extends Control.__Class { }
-    module Control {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.Component.__Class {
+    class Control extends Control__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Control__Class extends goog.ui.Component__Class  { 
     
             /**
              * Base class for UI controls.  Extends {@link goog.ui.Component} by adding
@@ -711,8 +710,8 @@ declare module goog.ui {
              * @protected
              */
             handleKeyEventInternal(e: goog.events.KeyEvent): boolean;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.Control {

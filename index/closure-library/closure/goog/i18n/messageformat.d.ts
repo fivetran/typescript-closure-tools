@@ -2,10 +2,9 @@
 
 declare module goog.i18n {
 
-    class MessageFormat extends MessageFormat.__Class { }
-    module MessageFormat {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class MessageFormat extends MessageFormat__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class MessageFormat__Class  { 
     
             /**
              * Constructor of MessageFormat.
@@ -40,8 +39,8 @@ declare module goog.i18n {
              * @return {string} Formatted message.
              */
             formatIgnoringPound(namedParameters: Object): string;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.i18n.MessageFormat {

@@ -2,10 +2,9 @@
 
 declare module goog.iter {
 
-    class Iterator<VALUE> extends Iterator.__Class<VALUE> { }
-    module Iterator {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class<VALUE> {
+    class Iterator<VALUE> extends Iterator__Class<VALUE> { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Iterator__Class<VALUE>  { 
     
             /**
              * Class/interface for iterators.  An iterator needs to implement a {@code next}
@@ -36,13 +35,12 @@ declare module goog.iter {
              * @return {!goog.iter.Iterator.<VALUE>} The object itself.
              */
             __iterator__(opt_keys?: boolean): goog.iter.Iterator<VALUE>;
-        }
-    }
+    } 
+    
 
-    class GroupByIterator_<KEY, VALUE> extends GroupByIterator_.__Class<KEY, VALUE> { }
-    module GroupByIterator_ {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class<KEY, VALUE> extends goog.iter.Iterator.__Class<any[]> {
+    class GroupByIterator_<KEY, VALUE> extends GroupByIterator___Class<KEY, VALUE> { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class GroupByIterator___Class<KEY, VALUE> extends goog.iter.Iterator__Class<any[]>  { 
     
             /**
              * Implements the {@code goog.iter.groupBy} iterator.
@@ -128,8 +126,8 @@ declare module goog.iter {
              * @type {VALUE}
              */
             currentValue: VALUE;
-        }
-    }
+    } 
+    
 
     /**
      * @typedef {goog.iter.Iterator|{length:number}|{__iterator__}}

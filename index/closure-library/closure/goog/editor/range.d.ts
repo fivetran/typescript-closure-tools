@@ -5,10 +5,9 @@
 
 declare module goog.editor.range {
 
-    class Point extends Point.__Class { }
-    module Point {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Point extends Point__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Point__Class  { 
     
             /**
              * One endpoint of a range, represented as a Node and and offset.
@@ -36,13 +35,12 @@ declare module goog.editor.range {
              * @return {!goog.editor.range.Point} The node's point.
              */
             getParentPoint(): goog.editor.range.Point;
-        }
-    }
+    } 
+    
 
-    class NormalizedCaretRange_ extends NormalizedCaretRange_.__Class { }
-    module NormalizedCaretRange_ {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.dom.SavedCaretRange.__Class {
+    class NormalizedCaretRange_ extends NormalizedCaretRange___Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class NormalizedCaretRange___Class extends goog.dom.SavedCaretRange__Class  { 
     
             /**
              * Saves the range using carets, but normalizes text nodes when carets
@@ -54,8 +52,8 @@ declare module goog.editor.range {
              * @private
              */
             constructor(range: goog.dom.AbstractRange);
-        }
-    }
+    } 
+    
 
     /**
      * Given a range and an element, create a narrower range that is limited to the

@@ -3,10 +3,9 @@
 
 declare module goog.crypt {
 
-    class Md5 extends Md5.__Class { }
-    module Md5 {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.crypt.Hash.__Class {
+    class Md5 extends Md5__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Md5__Class extends goog.crypt.Hash__Class  { 
     
             /**
              * MD5 cryptographic hash constructor.
@@ -16,6 +15,6 @@ declare module goog.crypt {
              * @struct
              */
             constructor();
-        }
-    }
+    } 
+    
 }

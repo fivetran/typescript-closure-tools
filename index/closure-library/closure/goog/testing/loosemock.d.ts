@@ -3,10 +3,9 @@
 
 declare module goog.testing {
 
-    class LooseExpectationCollection extends LooseExpectationCollection.__Class { }
-    module LooseExpectationCollection {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class LooseExpectationCollection extends LooseExpectationCollection__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class LooseExpectationCollection__Class  { 
     
             /**
              * This class is an ordered collection of expectations for one method. Since
@@ -29,13 +28,12 @@ declare module goog.testing {
              * @return {Array.<goog.testing.MockExpectation>} The array of expectations.
              */
             getExpectations(): goog.testing.MockExpectation[];
-        }
-    }
+    } 
+    
 
-    class LooseMock extends LooseMock.__Class { }
-    module LooseMock {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.testing.Mock.__Class {
+    class LooseMock extends LooseMock__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class LooseMock__Class extends goog.testing.Mock__Class  { 
     
             /**
              * This is a mock that does not care about the order of method calls. As a
@@ -78,6 +76,6 @@ declare module goog.testing {
              * @return {!goog.testing.LooseMock} This mock object.
              */
             $setIgnoreUnexpectedCalls(ignoreUnexpectedCalls: boolean): goog.testing.LooseMock;
-        }
-    }
+    } 
+    
 }

@@ -2,10 +2,9 @@
 
 declare module goog.ui.emoji {
 
-    class SpriteInfo extends SpriteInfo.__Class { }
-    module SpriteInfo {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class SpriteInfo extends SpriteInfo__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class SpriteInfo__Class  { 
     
             /**
              * Creates a SpriteInfo object with the specified properties. If the image is
@@ -70,6 +69,6 @@ declare module goog.ui.emoji {
              * @return {string} The y offset of the image being sprited within the sprite.
              */
             getYOffsetCssValue(): string;
-        }
-    }
+    } 
+    
 }

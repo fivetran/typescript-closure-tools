@@ -5,10 +5,9 @@
 
 declare module goog.ui {
 
-    class ToolbarSeparator extends ToolbarSeparator.__Class { }
-    module ToolbarSeparator {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.Separator.__Class {
+    class ToolbarSeparator extends ToolbarSeparator__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ToolbarSeparator__Class extends goog.ui.Separator__Class  { 
     
             /**
              * A separator control for a toolbar.
@@ -23,6 +22,6 @@ declare module goog.ui {
              * @final
              */
             constructor(opt_renderer?: goog.ui.ToolbarSeparatorRenderer, opt_domHelper?: goog.dom.DomHelper);
-        }
-    }
+    } 
+    
 }

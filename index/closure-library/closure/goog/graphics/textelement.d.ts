@@ -6,10 +6,9 @@
 
 declare module goog.graphics {
 
-    class TextElement extends TextElement.__Class { }
-    module TextElement {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.graphics.StrokeAndFillElement.__Class {
+    class TextElement extends TextElement__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class TextElement__Class extends goog.graphics.StrokeAndFillElement__Class  { 
     
             /**
              * Interface for a graphics text element.
@@ -34,6 +33,6 @@ declare module goog.graphics {
              * @param {string} text The text to draw.
              */
             setText(text: string): void;
-        }
-    }
+    } 
+    
 }

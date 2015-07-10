@@ -5,10 +5,9 @@
 
 declare module goog.ui {
 
-    class SplitPane extends SplitPane.__Class { }
-    module SplitPane {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.Component.__Class {
+    class SplitPane extends SplitPane__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class SplitPane__Class extends goog.ui.Component__Class  { 
     
             /**
              * A left/right up/down Container SplitPane.
@@ -89,8 +88,8 @@ declare module goog.ui {
               * @param {goog.math.Size} size The size to set the splitpane.
               */
             setSize(size: goog.math.Size): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.SplitPane {

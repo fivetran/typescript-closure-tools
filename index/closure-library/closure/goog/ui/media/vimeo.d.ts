@@ -5,10 +5,9 @@
 
 declare module goog.ui.media {
 
-    class Vimeo extends Vimeo.__Class { }
-    module Vimeo {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.media.MediaRenderer.__Class {
+    class Vimeo extends Vimeo__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Vimeo__Class extends goog.ui.media.MediaRenderer__Class  { 
     
             /**
              * Subclasses a goog.ui.media.MediaRenderer to provide a Vimeo specific media
@@ -32,13 +31,12 @@ declare module goog.ui.media {
              * @final
              */
             constructor();
-        }
-    }
+    } 
+    
 
-    class VimeoModel extends VimeoModel.__Class { }
-    module VimeoModel {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.media.MediaModel.__Class {
+    class VimeoModel extends VimeoModel__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class VimeoModel__Class extends goog.ui.media.MediaModel__Class  { 
     
             /**
              * The {@code goog.ui.media.Vimeo} media data model. It stores a required
@@ -60,8 +58,8 @@ declare module goog.ui.media {
              * @return {string} The Vimeo video id.
              */
             getVideoId(): string;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.media.Vimeo {

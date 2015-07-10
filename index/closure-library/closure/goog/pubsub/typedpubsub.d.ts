@@ -4,10 +4,9 @@
 
 declare module goog.pubsub {
 
-    class TypedPubSub extends TypedPubSub.__Class { }
-    module TypedPubSub {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.Disposable.__Class {
+    class TypedPubSub extends TypedPubSub__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class TypedPubSub__Class extends goog.Disposable__Class  { 
     
             /**
              * This object is a temporary shim that provides goog.pubsub.TopicId support
@@ -84,6 +83,6 @@ declare module goog.pubsub {
              * @template PAYLOAD
              */
             getCount<PAYLOAD>(opt_topic?: goog.pubsub.TopicId<PAYLOAD>): number;
-        }
-    }
+    } 
+    
 }

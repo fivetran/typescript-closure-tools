@@ -3,10 +3,9 @@
 
 declare module goog.labs.structs {
 
-    class Multimap extends Multimap.__Class { }
-    module Multimap {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Multimap extends Multimap__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Multimap__Class  { 
     
             /**
              * Creates a new multimap.
@@ -135,6 +134,6 @@ declare module goog.labs.structs {
              *     form [key, value].
              */
             getEntries(): any[][];
-        }
-    }
+    } 
+    
 }

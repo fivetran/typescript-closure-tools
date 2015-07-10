@@ -2,10 +2,9 @@
 
 declare module goog.editor {
 
-    class Table extends Table.__Class { }
-    module Table {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Table extends Table__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Table__Class  { 
     
             /**
              * Class providing high level table editing functions.
@@ -98,13 +97,12 @@ declare module goog.editor {
              * @return {!Element} a new TD element.
              */
             createEmptyTd(): Element;
-        }
-    }
+    } 
+    
 
-    class TableRow extends TableRow.__Class { }
-    module TableRow {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class TableRow extends TableRow__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class TableRow__Class  { 
     
             /**
              * Class representing a logical table row: a tr element and any cells
@@ -115,13 +113,12 @@ declare module goog.editor {
              * @final
              */
             constructor(trElement: Element, rowIndex: number);
-        }
-    }
+    } 
+    
 
-    class TableCell extends TableCell.__Class { }
-    module TableCell {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class TableCell extends TableCell__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class TableCell__Class  { 
     
             /**
              * Class representing a table cell, which may span across multiple
@@ -147,8 +144,8 @@ declare module goog.editor {
              * @param {number} rowSpan The new rowSpan.
              */
             setRowSpan(rowSpan: number): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.editor.Table {

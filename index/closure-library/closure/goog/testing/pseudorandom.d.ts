@@ -3,10 +3,9 @@
 
 declare module goog.testing {
 
-    class PseudoRandom extends PseudoRandom.__Class { }
-    module PseudoRandom {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.Disposable.__Class {
+    class PseudoRandom extends PseudoRandom__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class PseudoRandom__Class extends goog.Disposable__Class  { 
     
             /**
              * Class for unit testing code that uses Math.random. Generates deterministic
@@ -42,8 +41,8 @@ declare module goog.testing {
              * @return {number} The next number in the sequence.
              */
             random(): number;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.testing.PseudoRandom {

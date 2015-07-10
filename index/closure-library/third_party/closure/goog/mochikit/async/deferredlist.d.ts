@@ -3,10 +3,9 @@
 
 declare module goog.async {
 
-    class DeferredList extends DeferredList.__Class { }
-    module DeferredList {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.async.Deferred.__Class<any> {
+    class DeferredList extends DeferredList__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class DeferredList__Class extends goog.async.Deferred__Class<any>  { 
     
             /**
              * Constructs an object that waits on the results of multiple asynchronous
@@ -51,8 +50,8 @@ declare module goog.async {
              * @extends {goog.async.Deferred}
              */
             constructor(list: goog.async.Deferred<any>[], opt_fireOnOneCallback?: boolean, opt_fireOnOneErrback?: boolean, opt_consumeErrors?: boolean, opt_canceler?: Function, opt_defaultScope?: Object);
-        }
-    }
+    } 
+    
 }
 
 declare module goog.async.DeferredList {

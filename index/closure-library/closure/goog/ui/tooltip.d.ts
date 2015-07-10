@@ -11,10 +11,9 @@
 
 declare module goog.ui {
 
-    class Tooltip extends Tooltip.__Class { }
-    module Tooltip {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.Popup.__Class {
+    class Tooltip extends Tooltip__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Tooltip__Class extends goog.ui.Popup__Class  { 
     
             /**
              * Tooltip widget. Can be attached to one or more elements and is shown, with a
@@ -357,16 +356,15 @@ declare module goog.ui {
              * @protected
              */
             clearHideTimer(): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.Tooltip {
 
-    class CursorTooltipPosition extends CursorTooltipPosition.__Class { }
-    module CursorTooltipPosition {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.positioning.ViewportPosition.__Class {
+    class CursorTooltipPosition extends CursorTooltipPosition__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class CursorTooltipPosition__Class extends goog.positioning.ViewportPosition__Class  { 
     
             /**
              * Popup position implementation that positions the popup (the tooltip in this
@@ -398,13 +396,12 @@ declare module goog.ui.Tooltip {
              * @final
              */
             constructor(arg1: goog.math.Coordinate, opt_arg2?: number);
-        }
-    }
+    } 
+    
 
-    class ElementTooltipPosition extends ElementTooltipPosition.__Class { }
-    module ElementTooltipPosition {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.positioning.AnchoredPosition.__Class {
+    class ElementTooltipPosition extends ElementTooltipPosition__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ElementTooltipPosition__Class extends goog.positioning.AnchoredPosition__Class  { 
     
             /**
              * Popup position implementation that positions the popup (the tooltip in this
@@ -419,8 +416,8 @@ declare module goog.ui.Tooltip {
              * @extends {goog.positioning.AnchoredPosition}
              */
             constructor(element: Element);
-        }
-    }
+    } 
+    
 
     /**
      * Possible states for the tooltip to be in.

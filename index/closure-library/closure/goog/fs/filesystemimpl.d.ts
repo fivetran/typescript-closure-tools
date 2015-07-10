@@ -4,10 +4,9 @@
 
 declare module goog.fs {
 
-    class FileSystemImpl extends FileSystemImpl.__Class { }
-    module FileSystemImpl {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class implements goog.fs.FileSystem {
+    class FileSystemImpl extends FileSystemImpl__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class FileSystemImpl__Class implements goog.fs.FileSystem  { 
     
             /**
              * A local filesystem.
@@ -36,6 +35,6 @@ declare module goog.fs {
              * @return {!goog.fs.DirectoryEntry} The root directory of the filesystem.
              */
             getRoot(): goog.fs.DirectoryEntry;
-        }
-    }
+    } 
+    
 }

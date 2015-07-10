@@ -5,10 +5,9 @@
 
 declare module goog.ui {
 
-    class Checkbox extends Checkbox.__Class { }
-    module Checkbox {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.Control.__Class {
+    class Checkbox extends Checkbox__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Checkbox__Class extends goog.ui.Control__Class  { 
     
             /**
              * 3-state checkbox widget. Fires CHECK or UNCHECK events before toggled and
@@ -68,8 +67,8 @@ declare module goog.ui {
              * </ul>
              */
             toggle(): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.Checkbox {

@@ -4,10 +4,9 @@
 
 declare module goog.testing.async {
 
-    class MockControl extends MockControl.__Class { }
-    module MockControl {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class MockControl extends MockControl__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class MockControl__Class  { 
     
             /**
              * Provides asynchronous mocks and assertions controlled by a parent
@@ -97,6 +96,6 @@ declare module goog.testing.async {
              *     'expected' must be deferred.
              */
             assertDeferredEquals(message: string, expected: any, actual: any): void;
-        }
-    }
+    } 
+    
 }

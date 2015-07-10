@@ -3,10 +3,9 @@
 
 declare module goog.dom.browserrange {
 
-    class IeRange extends IeRange.__Class { }
-    module IeRange {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.dom.browserrange.AbstractRange.__Class {
+    class IeRange extends IeRange__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class IeRange__Class extends goog.dom.browserrange.AbstractRange__Class  { 
     
             /**
              * The constructor for IE specific browser ranges.
@@ -26,8 +25,8 @@ declare module goog.dom.browserrange {
              * @return {boolean} Whether the range is valid.
              */
             isRangeInDocument(): boolean;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.dom.browserrange.IeRange {

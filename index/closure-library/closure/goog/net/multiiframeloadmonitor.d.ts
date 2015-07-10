@@ -3,10 +3,9 @@
 
 declare module goog.net {
 
-    class MultiIframeLoadMonitor extends MultiIframeLoadMonitor.__Class { }
-    module MultiIframeLoadMonitor {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class MultiIframeLoadMonitor extends MultiIframeLoadMonitor__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class MultiIframeLoadMonitor__Class  { 
     
             /**
              * Provides a wrapper around IframeLoadMonitor, to allow the caller to wait for
@@ -37,6 +36,6 @@ declare module goog.net {
              * implementing a timeout).
              */
             stopMonitoring(): void;
-        }
-    }
+    } 
+    
 }

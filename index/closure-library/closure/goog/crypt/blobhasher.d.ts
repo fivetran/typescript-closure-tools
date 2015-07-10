@@ -4,10 +4,9 @@
 
 declare module goog.crypt {
 
-    class BlobHasher extends BlobHasher.__Class { }
-    module BlobHasher {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.EventTarget.__Class {
+    class BlobHasher extends BlobHasher__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class BlobHasher__Class extends goog.events.EventTarget__Class  { 
     
             /**
              * Construct the hash computer.
@@ -53,8 +52,8 @@ declare module goog.crypt {
              * @return {Array.<number>} The computed hash value or null if not ready.
              */
             getHash(): number[];
-        }
-    }
+    } 
+    
 }
 
 declare module goog.crypt.BlobHasher {

@@ -5,10 +5,9 @@
 
 declare module goog.dom {
 
-    class DomHelper extends DomHelper.__Class { }
-    module DomHelper {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class DomHelper extends DomHelper__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class DomHelper__Class  { 
     
             /**
              * Create an instance of a DOM helper with a new document object.
@@ -1002,8 +1001,8 @@ declare module goog.dom {
              *     no match.
              */
             getAncestor(element: Node, matcher: (_0: Node) => boolean, opt_includeNode?: boolean, opt_maxSearchSteps?: number): Node;
-        }
-    }
+    } 
+    
 
     /**
      * Gets the DomHelper object for the document where the element resides.

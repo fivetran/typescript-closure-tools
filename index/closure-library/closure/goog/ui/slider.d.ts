@@ -4,10 +4,9 @@
 
 declare module goog.ui {
 
-    class Slider extends Slider.__Class { }
-    module Slider {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.SliderBase.__Class {
+    class Slider extends Slider__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Slider__Class extends goog.ui.SliderBase__Class  { 
     
             /**
              * This creates a slider object.
@@ -18,8 +17,8 @@ declare module goog.ui {
              * @extends {goog.ui.SliderBase}
              */
             constructor(opt_domHelper?: goog.dom.DomHelper, opt_labelFn?: (_0: number) => string);
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.Slider {

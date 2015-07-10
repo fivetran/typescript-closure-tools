@@ -5,10 +5,9 @@
 
 declare module goog.testing.messaging {
 
-    class MockPortNetwork extends MockPortNetwork.__Class { }
-    module MockPortNetwork {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class implements goog.messaging.PortNetwork {
+    class MockPortNetwork extends MockPortNetwork__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class MockPortNetwork__Class implements goog.messaging.PortNetwork  { 
     
             /**
              * The fake PortNetwork.
@@ -37,6 +36,6 @@ declare module goog.testing.messaging {
              *     across it. This will be disposed along with the PortNetwork.
              */
             dial(name: string): goog.messaging.MessageChannel;
-        }
-    }
+    } 
+    
 }

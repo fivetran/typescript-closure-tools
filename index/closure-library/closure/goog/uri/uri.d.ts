@@ -3,10 +3,9 @@
 
 declare module goog {
 
-    class Uri extends Uri.__Class { }
-    module Uri {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Uri extends Uri__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Uri__Class  { 
     
             /**
              * This class contains setters and getters for the parts of the URI.
@@ -323,16 +322,15 @@ declare module goog {
              * @return {boolean} Whether to ignore case.
              */
             getIgnoreCase(): boolean;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.Uri {
 
-    class QueryData extends QueryData.__Class { }
-    module QueryData {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class QueryData extends QueryData__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class QueryData__Class  { 
     
             /**
              * Class used to represent URI query parameters.  It is essentially a hash of
@@ -490,8 +488,8 @@ declare module goog.Uri {
              *     from which key value pairs will be copied.
              */
             extend(...var_args: Object[]): void;
-        }
-    }
+    } 
+    
 
     /**
      * If true, we preserve the type of query parameters set programmatically.

@@ -4,10 +4,9 @@
 
 declare module goog.vec {
 
-    class Ray extends Ray.__Class { }
-    module Ray {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Ray extends Ray__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Ray__Class  { 
     
             /**
              * Constructs a new ray with an optional origin and direction. If not specified,
@@ -122,6 +121,6 @@ declare module goog.vec {
              * @return {boolean} True if this ray is equal to the other ray.
              */
             equals(other: goog.vec.Ray): boolean;
-        }
-    }
+    } 
+    
 }

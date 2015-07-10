@@ -5,10 +5,9 @@
 
 declare module goog.ui.ac {
 
-    class Renderer extends Renderer.__Class { }
-    module Renderer {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.EventTarget.__Class {
+    class Renderer extends Renderer__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Renderer__Class extends goog.events.EventTarget__Class  { 
     
             /**
              * Class for rendering the results of an auto-complete in a drop down list.
@@ -276,16 +275,15 @@ declare module goog.ui.ac {
              * @return {!Element} An element with the rendered HTML.
              */
             renderRowHtml(row: Object, token: string): Element;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.ac.Renderer {
 
-    class CustomRenderer extends CustomRenderer.__Class { }
-    module CustomRenderer {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class CustomRenderer extends CustomRenderer__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class CustomRenderer__Class  { 
     
             /**
              * Class allowing different implementations to custom render the autocomplete.
@@ -318,8 +316,8 @@ declare module goog.ui.ac.Renderer {
              * @param {Node} node The node to render into.
              */
             renderRow(row: Object, token: string, node: Node): void;
-        }
-    }
+    } 
+    
 
     /**
      * The delay before mouseover events are registered, in milliseconds

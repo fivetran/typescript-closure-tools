@@ -2,44 +2,41 @@
 
 declare module goog.log {
 
-    class Logger extends Logger.__Class { }
-    module Logger {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Logger extends Logger__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Logger__Class  { 
     
             /**
              * @constructor
              * @final
              */
             constructor();
-        }
-    }
+    } 
+    
 
-    class Level extends Level.__Class { }
-    module Level {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Level extends Level__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Level__Class  { 
     
             /**
              * @constructor
              * @final
              */
             constructor();
-        }
-    }
+    } 
+    
 
-    class LogRecord extends LogRecord.__Class { }
-    module LogRecord {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class LogRecord extends LogRecord__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class LogRecord__Class  { 
     
             /**
              * @constructor
              * @final
              */
             constructor();
-        }
-    }
+    } 
+    
 
     /**
      * Finds or creates a logger for a named subsystem. If a logger has already been

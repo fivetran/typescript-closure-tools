@@ -3,10 +3,9 @@
 
 declare module goog.math {
 
-    class Matrix extends Matrix.__Class { }
-    module Matrix {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Matrix extends Matrix__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Matrix__Class  { 
     
             /**
              * Class for representing and manipulating matrices.
@@ -253,8 +252,8 @@ declare module goog.math {
              *     matrix.  Not a clone.
              */
             toArray(): number[][];
-        }
-    }
+    } 
+    
 }
 
 declare module goog.math.Matrix {

@@ -7,10 +7,9 @@
 
 declare module goog.net {
 
-    class BrowserTestChannel extends BrowserTestChannel.__Class { }
-    module BrowserTestChannel {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class BrowserTestChannel extends BrowserTestChannel__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class BrowserTestChannel__Class  { 
     
             /**
              * Encapsulates the logic for a single BrowserTestChannel.
@@ -109,8 +108,8 @@ declare module goog.net {
              *     reachability event type.
              */
             notifyServerReachabilityEvent(reachabilityType: goog.net.BrowserChannel.ServerReachability): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.net.BrowserTestChannel {

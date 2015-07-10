@@ -4,10 +4,9 @@
 
 declare module goog.messaging {
 
-    class BufferedChannel extends BufferedChannel.__Class { }
-    module BufferedChannel {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.Disposable.__Class implements goog.messaging.MessageChannel {
+    class BufferedChannel extends BufferedChannel__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class BufferedChannel__Class extends goog.Disposable__Class implements goog.messaging.MessageChannel  { 
     
             /**
              * Creates a new BufferedChannel, which operates like its underlying channel
@@ -136,6 +135,6 @@ declare module goog.messaging {
              *     serialization.
              */
             send(serviceName: string, payload: Object): void;
-        }
-    }
+    } 
+    
 }

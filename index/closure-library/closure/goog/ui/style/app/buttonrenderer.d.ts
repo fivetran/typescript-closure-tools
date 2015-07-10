@@ -3,10 +3,9 @@
 
 declare module goog.ui.style.app {
 
-    class ButtonRenderer extends ButtonRenderer.__Class { }
-    module ButtonRenderer {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.CustomButtonRenderer.__Class {
+    class ButtonRenderer extends ButtonRenderer__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ButtonRenderer__Class extends goog.ui.CustomButtonRenderer__Class  { 
     
             /**
              * Custom renderer for {@link goog.ui.Button}s. Imageless buttons can contain
@@ -17,8 +16,8 @@ declare module goog.ui.style.app {
              * @extends {goog.ui.CustomButtonRenderer}
              */
             constructor();
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.style.app.ButtonRenderer {

@@ -11,10 +11,9 @@
 
 declare module goog.graphics {
 
-    class SvgGroupElement extends SvgGroupElement.__Class { }
-    module SvgGroupElement {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.graphics.GroupElement.__Class {
+    class SvgGroupElement extends SvgGroupElement__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class SvgGroupElement__Class extends goog.graphics.GroupElement__Class  { 
     
             /**
              * Thin wrapper for SVG group elements.
@@ -31,13 +30,12 @@ declare module goog.graphics {
              * @final
              */
             constructor(element: Element, graphics: goog.graphics.SvgGraphics);
-        }
-    }
+    } 
+    
 
-    class SvgEllipseElement extends SvgEllipseElement.__Class { }
-    module SvgEllipseElement {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.graphics.EllipseElement.__Class {
+    class SvgEllipseElement extends SvgEllipseElement__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class SvgEllipseElement__Class extends goog.graphics.EllipseElement__Class  { 
     
             /**
              * Thin wrapper for SVG ellipse elements.
@@ -54,13 +52,12 @@ declare module goog.graphics {
              * @final
              */
             constructor(element: Element, graphics: goog.graphics.SvgGraphics, stroke: goog.graphics.Stroke, fill: goog.graphics.Fill);
-        }
-    }
+    } 
+    
 
-    class SvgRectElement extends SvgRectElement.__Class { }
-    module SvgRectElement {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.graphics.RectElement.__Class {
+    class SvgRectElement extends SvgRectElement__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class SvgRectElement__Class extends goog.graphics.RectElement__Class  { 
     
             /**
              * Thin wrapper for SVG rectangle elements.
@@ -77,13 +74,12 @@ declare module goog.graphics {
              * @final
              */
             constructor(element: Element, graphics: goog.graphics.SvgGraphics, stroke: goog.graphics.Stroke, fill: goog.graphics.Fill);
-        }
-    }
+    } 
+    
 
-    class SvgPathElement extends SvgPathElement.__Class { }
-    module SvgPathElement {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.graphics.PathElement.__Class {
+    class SvgPathElement extends SvgPathElement__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class SvgPathElement__Class extends goog.graphics.PathElement__Class  { 
     
             /**
              * Thin wrapper for SVG path elements.
@@ -100,13 +96,12 @@ declare module goog.graphics {
              * @final
              */
             constructor(element: Element, graphics: goog.graphics.SvgGraphics, stroke: goog.graphics.Stroke, fill: goog.graphics.Fill);
-        }
-    }
+    } 
+    
 
-    class SvgTextElement extends SvgTextElement.__Class { }
-    module SvgTextElement {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.graphics.TextElement.__Class {
+    class SvgTextElement extends SvgTextElement__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class SvgTextElement__Class extends goog.graphics.TextElement__Class  { 
     
             /**
              * Thin wrapper for SVG text elements.
@@ -123,13 +118,12 @@ declare module goog.graphics {
              * @final
              */
             constructor(element: Element, graphics: goog.graphics.SvgGraphics, stroke: goog.graphics.Stroke, fill: goog.graphics.Fill);
-        }
-    }
+    } 
+    
 
-    class SvgImageElement extends SvgImageElement.__Class { }
-    module SvgImageElement {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.graphics.ImageElement.__Class {
+    class SvgImageElement extends SvgImageElement__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class SvgImageElement__Class extends goog.graphics.ImageElement__Class  { 
     
             /**
              * Thin wrapper for SVG image elements.
@@ -144,6 +138,6 @@ declare module goog.graphics {
              * @final
              */
             constructor(element: Element, graphics: goog.graphics.SvgGraphics);
-        }
-    }
+    } 
+    
 }

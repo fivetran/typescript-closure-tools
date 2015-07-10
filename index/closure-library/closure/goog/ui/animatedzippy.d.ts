@@ -4,10 +4,9 @@
 
 declare module goog.ui {
 
-    class AnimatedZippy extends AnimatedZippy.__Class { }
-    module AnimatedZippy {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.Zippy.__Class {
+    class AnimatedZippy extends AnimatedZippy__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class AnimatedZippy__Class extends goog.ui.Zippy__Class  { 
     
             /**
              * Zippy widget. Expandable/collapsible container, clicking the header toggles
@@ -117,6 +116,6 @@ declare module goog.ui {
              *     collapsed.
              */
             isBusy(): boolean;
-        }
-    }
+    } 
+    
 }

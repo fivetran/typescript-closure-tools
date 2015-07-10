@@ -3,10 +3,9 @@
 
 declare module goog.dom.pattern {
 
-    class AllChildren extends AllChildren.__Class { }
-    module AllChildren {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.dom.pattern.AbstractPattern.__Class {
+    class AllChildren extends AllChildren__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class AllChildren__Class extends goog.dom.pattern.AbstractPattern__Class  { 
     
             /**
              * Pattern object that matches any nodes at or below the current tree depth.
@@ -15,6 +14,6 @@ declare module goog.dom.pattern {
              * @extends {goog.dom.pattern.AbstractPattern}
              */
             constructor();
-        }
-    }
+    } 
+    
 }

@@ -3,10 +3,9 @@
 
 declare module goog.testing.mockmatchers {
 
-    class ArgumentMatcher extends ArgumentMatcher.__Class { }
-    module ArgumentMatcher {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class ArgumentMatcher extends ArgumentMatcher__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ArgumentMatcher__Class  { 
     
             /**
              * A simple interface for executing argument matching.  A match in this case is
@@ -30,13 +29,12 @@ declare module goog.testing.mockmatchers {
              * @return {boolean} Whether or not a given argument passes verification.
              */
             matches(toVerify: any, opt_expectation?: goog.testing.MockExpectation): boolean;
-        }
-    }
+    } 
+    
 
-    class InstanceOf extends InstanceOf.__Class { }
-    module InstanceOf {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.testing.mockmatchers.ArgumentMatcher.__Class {
+    class InstanceOf extends InstanceOf__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class InstanceOf__Class extends goog.testing.mockmatchers.ArgumentMatcher__Class  { 
     
             /**
              * A matcher that verifies that an argument is an instance of a given class.
@@ -46,13 +44,12 @@ declare module goog.testing.mockmatchers {
              * @final
              */
             constructor(ctor: Function);
-        }
-    }
+    } 
+    
 
-    class TypeOf extends TypeOf.__Class { }
-    module TypeOf {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.testing.mockmatchers.ArgumentMatcher.__Class {
+    class TypeOf extends TypeOf__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class TypeOf__Class extends goog.testing.mockmatchers.ArgumentMatcher__Class  { 
     
             /**
              * A matcher that verifies that an argument is of a given type (e.g. "object").
@@ -62,13 +59,12 @@ declare module goog.testing.mockmatchers {
              * @final
              */
             constructor(type: string);
-        }
-    }
+    } 
+    
 
-    class RegexpMatch extends RegexpMatch.__Class { }
-    module RegexpMatch {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.testing.mockmatchers.ArgumentMatcher.__Class {
+    class RegexpMatch extends RegexpMatch__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class RegexpMatch__Class extends goog.testing.mockmatchers.ArgumentMatcher__Class  { 
     
             /**
              * A matcher that verifies that an argument matches a given RegExp.
@@ -78,13 +74,12 @@ declare module goog.testing.mockmatchers {
              * @final
              */
             constructor(regexp: RegExp);
-        }
-    }
+    } 
+    
 
-    class IgnoreArgument extends IgnoreArgument.__Class { }
-    module IgnoreArgument {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.testing.mockmatchers.ArgumentMatcher.__Class {
+    class IgnoreArgument extends IgnoreArgument__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class IgnoreArgument__Class extends goog.testing.mockmatchers.ArgumentMatcher__Class  { 
     
             /**
              * A matcher that always returns true. It is useful when the user does not care
@@ -95,13 +90,12 @@ declare module goog.testing.mockmatchers {
              * @final
              */
             constructor();
-        }
-    }
+    } 
+    
 
-    class ObjectEquals extends ObjectEquals.__Class { }
-    module ObjectEquals {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.testing.mockmatchers.ArgumentMatcher.__Class {
+    class ObjectEquals extends ObjectEquals__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ObjectEquals__Class extends goog.testing.mockmatchers.ArgumentMatcher__Class  { 
     
             /**
              * A matcher that verifies that the argument is an object that equals the given
@@ -112,13 +106,12 @@ declare module goog.testing.mockmatchers {
              * @extends {goog.testing.mockmatchers.ArgumentMatcher}
              */
             constructor(expectedObject: Object);
-        }
-    }
+    } 
+    
 
-    class SaveArgument extends SaveArgument.__Class { }
-    module SaveArgument {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.testing.mockmatchers.ArgumentMatcher.__Class {
+    class SaveArgument extends SaveArgument__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class SaveArgument__Class extends goog.testing.mockmatchers.ArgumentMatcher__Class  { 
     
             /**
              * A matcher that saves the argument that it is verifying so that your unit test
@@ -156,8 +149,8 @@ declare module goog.testing.mockmatchers {
              * @type {*}
              */
             arg: any;
-        }
-    }
+    } 
+    
 
     /**
      * An instance of the IgnoreArgument matcher. Returns true for all matches.

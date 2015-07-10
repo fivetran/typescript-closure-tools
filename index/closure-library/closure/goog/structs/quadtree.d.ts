@@ -3,10 +3,9 @@
 
 declare module goog.structs {
 
-    class QuadTree extends QuadTree.__Class { }
-    module QuadTree {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class QuadTree extends QuadTree__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class QuadTree__Class  { 
     
             /**
              * Constructs a new quad tree.
@@ -106,16 +105,15 @@ declare module goog.structs {
              *     within {@ code fn}.
              */
             forEach(fn: (_0: any, _1: goog.math.Coordinate, _2: goog.structs.QuadTree) => any /*missing*/, opt_obj?: Object): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.structs.QuadTree {
 
-    class Node extends Node.__Class { }
-    module Node {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Node extends Node__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Node__Class  { 
     
             /**
              * Constructs a new quad tree node.
@@ -194,13 +192,12 @@ declare module goog.structs.QuadTree {
              * @type {goog.structs.QuadTree.Point?}
              */
             point: goog.structs.QuadTree.Point;
-        }
-    }
+    } 
+    
 
-    class Point extends Point.__Class { }
-    module Point {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Point extends Point__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Point__Class  { 
     
             /**
              * Creates a new point object.
@@ -229,8 +226,8 @@ declare module goog.structs.QuadTree {
              * @type {*}
              */
             value: any;
-        }
-    }
+    } 
+    
 
     /**
      * Enumeration of node types.

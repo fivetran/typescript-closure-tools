@@ -6,10 +6,9 @@
 
 declare module goog.editor.plugins {
 
-    class AbstractDialogPlugin extends AbstractDialogPlugin.__Class { }
-    module AbstractDialogPlugin {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.editor.Plugin.__Class {
+    class AbstractDialogPlugin extends AbstractDialogPlugin__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class AbstractDialogPlugin__Class extends goog.editor.Plugin__Class  { 
     
             /**
              * An abstract superclass for a Trogedit plugin that creates exactly one
@@ -80,8 +79,8 @@ declare module goog.editor.plugins {
              * @protected
              */
             disposeOriginalSelection(): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.editor.plugins.AbstractDialogPlugin {

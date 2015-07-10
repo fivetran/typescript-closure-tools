@@ -3,10 +3,9 @@
 
 declare module goog.ui {
 
-    class SelectionModel extends SelectionModel.__Class { }
-    module SelectionModel {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.EventTarget.__Class {
+    class SelectionModel extends SelectionModel__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class SelectionModel__Class extends goog.events.EventTarget__Class  { 
     
             /**
              * Single-selection model.  Dispatches a {@link goog.events.EventType.SELECT}
@@ -148,6 +147,6 @@ declare module goog.ui {
              * Clears the selection model by removing all items from the selection.
              */
             clear(): void;
-        }
-    }
+    } 
+    
 }

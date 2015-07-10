@@ -4,10 +4,9 @@
 
 declare module goog.math {
 
-    class RangeSet extends RangeSet.__Class { }
-    module RangeSet {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class RangeSet extends RangeSet__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class RangeSet__Class  { 
     
             /**
              * Constructs a new RangeSet, which can store numeric ranges.
@@ -135,8 +134,8 @@ declare module goog.math {
              * @return {!goog.iter.Iterator} An iterator over the values in the set.
              */
             __iterator__(opt_keys?: boolean): goog.iter.Iterator<any>;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.math.RangeSet {

@@ -7,10 +7,9 @@
 
 declare module goog.ui.editor {
 
-    class Bubble extends Bubble.__Class { }
-    module Bubble {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.EventTarget.__Class {
+    class Bubble extends Bubble__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Bubble__Class extends goog.events.EventTarget__Class  { 
     
             /**
              * Property bubble UI element.
@@ -125,16 +124,15 @@ declare module goog.ui.editor {
              * @protected
              */
             getViewportBox(): goog.math.Box;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.editor.Bubble {
 
-    class Panel_ extends Panel_.__Class { }
-    module Panel_ {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Panel_ extends Panel___Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Panel___Class  { 
     
             /**
              * Private class used to describe a bubble panel.
@@ -177,8 +175,8 @@ declare module goog.ui.editor.Bubble {
              * @return {Element} The element in the panel where content should go.
              */
             getContentElement(): Element;
-        }
-    }
+    } 
+    
 
     /**
      * The css class name of the bubble container element.

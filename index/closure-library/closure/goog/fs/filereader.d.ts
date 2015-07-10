@@ -5,10 +5,9 @@
 
 declare module goog.fs {
 
-    class FileReader extends FileReader.__Class { }
-    module FileReader {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.EventTarget.__Class {
+    class FileReader extends FileReader__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class FileReader__Class extends goog.events.EventTarget__Class  { 
     
             /**
              * An object for monitoring the reading of files. This emits ProgressEvents of
@@ -64,8 +63,8 @@ declare module goog.fs {
              * @param {!Blob} blob The blob to read.
              */
             readAsDataUrl(blob: Blob): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.fs.FileReader {

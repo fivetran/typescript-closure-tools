@@ -3,10 +3,9 @@
 
 declare module goog.crypt {
 
-    class Hmac extends Hmac.__Class { }
-    module Hmac {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.crypt.Hash.__Class {
+    class Hmac extends Hmac__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Hmac__Class extends goog.crypt.Hash__Class  { 
     
             /**
              * @constructor
@@ -30,6 +29,6 @@ declare module goog.crypt {
              * @return {!Array.<number>} the digest of the given message.
              */
             getHmac(message: number[]): number[];
-        }
-    }
+    } 
+    
 }

@@ -6,10 +6,9 @@
 
 declare module goog.db {
 
-    class ObjectStore extends ObjectStore.__Class { }
-    module ObjectStore {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class ObjectStore extends ObjectStore__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ObjectStore__Class  { 
     
             /**
              * Creates an IDBObjectStore wrapper object. Object stores have methods for
@@ -168,6 +167,6 @@ declare module goog.db {
              * @return {!goog.async.Deferred} The deferred number of records.
              */
             count(opt_range?: goog.db.KeyRange): goog.async.Deferred<any>;
-        }
-    }
+    } 
+    
 }

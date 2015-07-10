@@ -7,10 +7,9 @@
 
 declare module goog.ui {
 
-    class HsvPalette extends HsvPalette.__Class { }
-    module HsvPalette {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.Component.__Class {
+    class HsvPalette extends HsvPalette__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class HsvPalette__Class extends goog.ui.Component__Class  { 
     
             /**
              * Creates an HSV palette. Allows a user to select the hue, saturation and
@@ -135,6 +134,6 @@ declare module goog.ui {
              * @protected
              */
             handleInput(e: goog.events.Event): void;
-        }
-    }
+    } 
+    
 }

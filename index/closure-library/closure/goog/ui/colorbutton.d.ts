@@ -5,10 +5,9 @@
 
 declare module goog.ui {
 
-    class ColorButton extends ColorButton.__Class { }
-    module ColorButton {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.Button.__Class {
+    class ColorButton extends ColorButton__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ColorButton__Class extends goog.ui.Button__Class  { 
     
             /**
              * A color button control.  Identical to {@link goog.ui.Button}, except it
@@ -86,6 +85,6 @@ declare module goog.ui {
              * @final
              */
             constructor(content: NodeList, opt_renderer?: goog.ui.ButtonRenderer, opt_domHelper?: goog.dom.DomHelper);
-        }
-    }
+    } 
+    
 }

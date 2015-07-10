@@ -5,10 +5,9 @@
 
 declare module goog.positioning {
 
-    class AbstractPosition extends AbstractPosition.__Class { }
-    module AbstractPosition {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class AbstractPosition extends AbstractPosition__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class AbstractPosition__Class  { 
     
             /**
              * Abstract position object. Encapsulates position and overflow handling.
@@ -28,6 +27,6 @@ declare module goog.positioning {
              *     movableElement.
              */
             reposition(movableElement: Element, corner: goog.positioning.Corner, opt_margin?: goog.math.Box, opt_preferredSize?: goog.math.Size): void;
-        }
-    }
+    } 
+    
 }

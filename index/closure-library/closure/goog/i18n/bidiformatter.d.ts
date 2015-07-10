@@ -3,10 +3,9 @@
 
 declare module goog.i18n {
 
-    class BidiFormatter extends BidiFormatter.__Class { }
-    module BidiFormatter {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class BidiFormatter extends BidiFormatter__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class BidiFormatter__Class  { 
     
             /**
              * Utility class for formatting text for display in a potentially
@@ -520,6 +519,6 @@ declare module goog.i18n {
              *     context directionality.
              */
             endEdge(): string;
-        }
-    }
+    } 
+    
 }

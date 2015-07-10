@@ -3,10 +3,9 @@
 
 declare module goog.graphics {
 
-    class SolidFill extends SolidFill.__Class { }
-    module SolidFill {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.graphics.Fill.__Class {
+    class SolidFill extends SolidFill__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class SolidFill__Class extends goog.graphics.Fill__Class  { 
     
             /**
              * Creates an immutable solid color fill object.
@@ -32,6 +31,6 @@ declare module goog.graphics {
              * @return {number} The opacity of this fill.
              */
             getOpacity(): number;
-        }
-    }
+    } 
+    
 }

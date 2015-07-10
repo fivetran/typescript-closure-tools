@@ -4,10 +4,9 @@
 
 declare module goog.positioning {
 
-    class ViewportClientPosition extends ViewportClientPosition.__Class { }
-    module ViewportClientPosition {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.positioning.ClientPosition.__Class {
+    class ViewportClientPosition extends ViewportClientPosition__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ViewportClientPosition__Class extends goog.positioning.ClientPosition__Class  { 
     
             /**
              * Encapsulates a popup position where the popup is positioned relative to the
@@ -37,6 +36,6 @@ declare module goog.positioning {
              * @param {number} overflow A bitmask of goog.positioning.Overflow strategies.
              */
             setLastResortOverflow(overflow: number): void;
-        }
-    }
+    } 
+    
 }

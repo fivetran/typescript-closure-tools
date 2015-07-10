@@ -4,10 +4,9 @@
 
 declare module goog {
 
-    class History extends History.__Class { }
-    module History {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.EventTarget.__Class {
+    class History extends History__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class History__Class extends goog.events.EventTarget__Class  { 
     
             /**
              * A history management object. Can be instantiated in user-visible mode (uses
@@ -113,16 +112,15 @@ declare module goog {
              *     title in IE.
              */
             replaceToken(token: string, opt_title?: string): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.History {
 
-    class Event extends Event.__Class { }
-    module Event {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.Event.__Class {
+    class Event extends Event__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Event__Class extends goog.events.Event__Class  { 
     
             /**
              * Constant for the history change event type.
@@ -133,8 +131,8 @@ declare module goog.History {
              * @final
              */
             constructor(token: string);
-        }
-    }
+    } 
+    
 
     /**
      * Whether the browser supports HTML5 history management's onhashchange event.

@@ -5,10 +5,9 @@
 
 declare module goog.ui {
 
-    class CustomColorPalette extends CustomColorPalette.__Class { }
-    module CustomColorPalette {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.ColorPalette.__Class {
+    class CustomColorPalette extends CustomColorPalette__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class CustomColorPalette__Class extends goog.ui.ColorPalette__Class  { 
     
             /**
              * A custom color palette is a grid of color swatches and a button that allows
@@ -31,6 +30,6 @@ declare module goog.ui {
              * but could be updated to use a dialog box with a WheelColorPalette.
              */
             promptForCustomColor(): void;
-        }
-    }
+    } 
+    
 }

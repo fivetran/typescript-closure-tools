@@ -3,10 +3,9 @@
 
 declare module goog.editor.plugins {
 
-    class EquationEditorPlugin extends EquationEditorPlugin.__Class { }
-    module EquationEditorPlugin {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.editor.plugins.AbstractDialogPlugin.__Class {
+    class EquationEditorPlugin extends EquationEditorPlugin__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class EquationEditorPlugin__Class extends goog.editor.plugins.AbstractDialogPlugin__Class  { 
     
             /**
              * A plugin that opens the equation editor in a dialog window.
@@ -16,6 +15,6 @@ declare module goog.editor.plugins {
              * @final
              */
             constructor(opt_helpUrl?: string);
-        }
-    }
+    } 
+    
 }

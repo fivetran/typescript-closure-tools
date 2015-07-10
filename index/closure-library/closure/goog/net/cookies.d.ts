@@ -2,10 +2,9 @@
 
 declare module goog.net {
 
-    class Cookies extends Cookies.__Class { }
-    module Cookies {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Cookies extends Cookies__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Cookies__Class  { 
     
             /**
              * A class for handling browser cookies.
@@ -149,8 +148,8 @@ declare module goog.net {
              * subpath and/or another domain these will still be there.
              */
             clear(): void;
-        }
-    }
+    } 
+    
 
     /**
      * A static default instance.

@@ -4,10 +4,9 @@
 
 declare module goog.soy.data {
 
-    class SanitizedContent extends SanitizedContent.__Class { }
-    module SanitizedContent {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class SanitizedContent extends SanitizedContent__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class SanitizedContent__Class  { 
     
             /**
              * A string-like object that carries a content-type and a content direction.
@@ -48,8 +47,8 @@ declare module goog.soy.data {
              * @throws {Error} when the content kind is not TEXT or HTML.
              */
             toSafeHtml(): goog.html.SafeHtml;
-        }
-    }
+    } 
+    
 
     /**
      * A type of textual content.

@@ -3,10 +3,9 @@
 
 declare module goog.math.interpolator {
 
-    class Pchip1 extends Pchip1.__Class { }
-    module Pchip1 {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.math.interpolator.Spline1.__Class {
+    class Pchip1 extends Pchip1__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Pchip1__Class extends goog.math.interpolator.Spline1__Class  { 
     
             /**
              * A one dimensional monotone cubic spline interpolator.
@@ -15,6 +14,6 @@ declare module goog.math.interpolator {
              * @final
              */
             constructor();
-        }
-    }
+    } 
+    
 }

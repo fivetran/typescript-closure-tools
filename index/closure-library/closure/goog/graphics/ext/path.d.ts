@@ -4,10 +4,9 @@
 
 declare module goog.graphics.ext {
 
-    class Path extends Path.__Class { }
-    module Path {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.graphics.Path.__Class {
+    class Path extends Path__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Path__Class extends goog.graphics.Path__Class  { 
     
             /**
              * Creates a path object
@@ -42,6 +41,6 @@ declare module goog.graphics.ext {
              *     path is empty.
              */
             getBoundingBox(): goog.math.Rect;
-        }
-    }
+    } 
+    
 }

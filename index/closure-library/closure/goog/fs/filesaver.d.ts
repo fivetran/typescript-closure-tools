@@ -4,10 +4,9 @@
 
 declare module goog.fs {
 
-    class FileSaver extends FileSaver.__Class { }
-    module FileSaver {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.EventTarget.__Class {
+    class FileSaver extends FileSaver__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class FileSaver__Class extends goog.events.EventTarget__Class  { 
     
             /**
              * An object for monitoring the saving of files. This emits ProgressEvents of
@@ -37,8 +36,8 @@ declare module goog.fs {
              * @return {goog.fs.Error} The error encountered while writing, if any.
              */
             getError(): goog.fs.Error;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.fs.FileSaver {

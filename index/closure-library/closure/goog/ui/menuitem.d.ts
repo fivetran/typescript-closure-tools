@@ -6,10 +6,9 @@
 
 declare module goog.ui {
 
-    class MenuItem extends MenuItem.__Class { }
-    module MenuItem {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.Control.__Class {
+    class MenuItem extends MenuItem__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class MenuItem__Class extends goog.ui.Control__Class  { 
     
             /**
              * Class representing an item in a menu.
@@ -109,6 +108,6 @@ declare module goog.ui {
              * @return {goog.events.KeyCodes} The key code of the mnemonic key.
              */
             getMnemonic(): goog.events.KeyCodes;
-        }
-    }
+    } 
+    
 }

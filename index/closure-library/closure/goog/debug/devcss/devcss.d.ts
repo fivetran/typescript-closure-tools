@@ -2,10 +2,9 @@
 
 declare module goog.debug {
 
-    class DevCss extends DevCss.__Class { }
-    module DevCss {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class DevCss extends DevCss__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class DevCss__Class  { 
     
             /**
              * A class for solving development CSS issues/emulating the CSS Compiler.
@@ -38,8 +37,8 @@ declare module goog.debug {
              *     aids unit testing.
              */
             activateBrowserSpecificCssRules(opt_enableIe6ReadyHandler?: boolean): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.debug.DevCss {

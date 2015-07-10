@@ -2,10 +2,9 @@
 
 declare module goog.format {
 
-    class HtmlPrettyPrinter extends HtmlPrettyPrinter.__Class { }
-    module HtmlPrettyPrinter {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class HtmlPrettyPrinter extends HtmlPrettyPrinter__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class HtmlPrettyPrinter__Class  { 
     
             /**
              * This class formats HTML to be more human-readable.
@@ -25,16 +24,15 @@ declare module goog.format {
              * @throws {Error} Regex error, data loss, or endless loop detected.
              */
             format(html: string): string;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.format.HtmlPrettyPrinter {
 
-    class Buffer extends Buffer.__Class { }
-    module Buffer {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Buffer extends Buffer__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Buffer__Class  { 
     
             /**
              * This class is a buffer to which we push our output. It tracks line breaks to
@@ -64,8 +62,8 @@ declare module goog.format.HtmlPrettyPrinter {
              * Append line break if we need one.
              */
             lineBreak(): void;
-        }
-    }
+    } 
+    
 
     /**
      * Static utility function. See prototype #format.

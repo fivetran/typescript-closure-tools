@@ -5,10 +5,9 @@
 
 declare module goog.ui.ac {
 
-    class RemoteArrayMatcher extends RemoteArrayMatcher.__Class { }
-    module RemoteArrayMatcher {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.Disposable.__Class {
+    class RemoteArrayMatcher extends RemoteArrayMatcher__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class RemoteArrayMatcher__Class extends goog.Disposable__Class  { 
     
             /**
              * An array matcher that requests matches via ajax.
@@ -112,6 +111,6 @@ declare module goog.ui.ac {
              * @param {string=} opt_fullString The full string from the input box.
              */
             requestMatchingRows(token: string, maxMatches: number, matchHandler: Function, opt_fullString?: string): void;
-        }
-    }
+    } 
+    
 }

@@ -2,10 +2,9 @@
 
 declare module goog.graphics {
 
-    class Fill extends Fill.__Class { }
-    module Fill {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Fill extends Fill__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Fill__Class  { 
     
             /**
              * Creates a fill object
@@ -25,6 +24,6 @@ declare module goog.graphics {
              * @return {string} The end color of a gradient fill.
              */
             getColor2(): string;
-        }
-    }
+    } 
+    
 }

@@ -3,10 +3,9 @@
 
 declare module goog.testing.events {
 
-    class EventMatcher extends EventMatcher.__Class { }
-    module EventMatcher {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.testing.mockmatchers.ArgumentMatcher.__Class {
+    class EventMatcher extends EventMatcher__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class EventMatcher__Class extends goog.testing.mockmatchers.ArgumentMatcher__Class  { 
     
             /**
              * A matcher that verifies that an argument is a {@code goog.events.Event} of a
@@ -17,6 +16,6 @@ declare module goog.testing.events {
              * @final
              */
             constructor(type: string);
-        }
-    }
+    } 
+    
 }

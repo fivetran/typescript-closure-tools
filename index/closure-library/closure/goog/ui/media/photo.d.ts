@@ -4,10 +4,9 @@
 
 declare module goog.ui.media {
 
-    class Photo extends Photo.__Class { }
-    module Photo {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.media.MediaRenderer.__Class {
+    class Photo extends Photo__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Photo__Class extends goog.ui.media.MediaRenderer__Class  { 
     
             /**
              * Subclasses a goog.ui.media.MediaRenderer to provide a Photo specific media
@@ -25,8 +24,8 @@ declare module goog.ui.media {
              * @final
              */
             constructor();
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.media.Photo {

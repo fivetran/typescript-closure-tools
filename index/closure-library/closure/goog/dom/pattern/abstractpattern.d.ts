@@ -4,10 +4,9 @@
 
 declare module goog.dom.pattern {
 
-    class AbstractPattern extends AbstractPattern.__Class { }
-    module AbstractPattern {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class AbstractPattern extends AbstractPattern__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class AbstractPattern__Class  { 
     
             /**
              * Base pattern class for DOM matching.
@@ -35,6 +34,6 @@ declare module goog.dom.pattern {
              * @return {goog.dom.pattern.MatchType} {@code MATCH} if the pattern matches.
              */
             matchToken(token: Node, type: goog.dom.TagWalkType): goog.dom.pattern.MatchType;
-        }
-    }
+    } 
+    
 }

@@ -4,10 +4,9 @@
 
 declare module goog.net {
 
-    class BulkLoaderHelper extends BulkLoaderHelper.__Class { }
-    module BulkLoaderHelper {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.Disposable.__Class {
+    class BulkLoaderHelper extends BulkLoaderHelper__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class BulkLoaderHelper__Class extends goog.Disposable__Class  { 
     
             /**
              * Helper class used to load multiple URIs.
@@ -49,6 +48,6 @@ declare module goog.net {
              * @return {boolean} TRUE iff the load is complete.
              */
             isLoadComplete(): boolean;
-        }
-    }
+    } 
+    
 }

@@ -3,10 +3,9 @@
 
 declare module goog.json {
 
-    class HybridJsonProcessor extends HybridJsonProcessor.__Class { }
-    module HybridJsonProcessor {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class implements goog.json.Processor {
+    class HybridJsonProcessor extends HybridJsonProcessor__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class HybridJsonProcessor__Class implements goog.json.Processor  { 
     
             /**
              * Processor form of goog.json.hybrid, which attempts to parse/serialize
@@ -17,6 +16,6 @@ declare module goog.json {
              * @final
              */
             constructor();
-        }
-    }
+    } 
+    
 }

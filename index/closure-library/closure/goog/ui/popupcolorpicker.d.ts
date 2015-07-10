@@ -7,10 +7,9 @@
 
 declare module goog.ui {
 
-    class PopupColorPicker extends PopupColorPicker.__Class { }
-    module PopupColorPicker {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.Component.__Class {
+    class PopupColorPicker extends PopupColorPicker__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class PopupColorPicker__Class extends goog.ui.Component__Class  { 
     
             /**
              * Popup color picker widget.
@@ -172,6 +171,6 @@ declare module goog.ui {
              * @param {boolean} showOnHover True if popup should appear on hover.
              */
             setShowOnHover(showOnHover: boolean): void;
-        }
-    }
+    } 
+    
 }

@@ -3,10 +3,9 @@
 
 declare module goog.labs.testing {
 
-    class ContainsStringMatcher extends ContainsStringMatcher.__Class { }
-    module ContainsStringMatcher {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class implements goog.labs.testing.Matcher {
+    class ContainsStringMatcher extends ContainsStringMatcher__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ContainsStringMatcher__Class implements goog.labs.testing.Matcher  { 
     
             /**
              * The ContainsString matcher.
@@ -38,13 +37,12 @@ declare module goog.labs.testing {
              * @return {string} Description of why the matcher failed.
              */
             describe(value: any, opt_description?: string): string;
-        }
-    }
+    } 
+    
 
-    class EndsWithMatcher extends EndsWithMatcher.__Class { }
-    module EndsWithMatcher {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class implements goog.labs.testing.Matcher {
+    class EndsWithMatcher extends EndsWithMatcher__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class EndsWithMatcher__Class implements goog.labs.testing.Matcher  { 
     
             /**
              * The EndsWith matcher.
@@ -76,13 +74,12 @@ declare module goog.labs.testing {
              * @return {string} Description of why the matcher failed.
              */
             describe(value: any, opt_description?: string): string;
-        }
-    }
+    } 
+    
 
-    class EqualToIgnoringWhitespaceMatcher extends EqualToIgnoringWhitespaceMatcher.__Class { }
-    module EqualToIgnoringWhitespaceMatcher {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class implements goog.labs.testing.Matcher {
+    class EqualToIgnoringWhitespaceMatcher extends EqualToIgnoringWhitespaceMatcher__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class EqualToIgnoringWhitespaceMatcher__Class implements goog.labs.testing.Matcher  { 
     
             /**
              * The EqualToIgnoringWhitespace matcher.
@@ -114,13 +111,12 @@ declare module goog.labs.testing {
              * @return {string} Description of why the matcher failed.
              */
             describe(value: any, opt_description?: string): string;
-        }
-    }
+    } 
+    
 
-    class EqualsMatcher extends EqualsMatcher.__Class { }
-    module EqualsMatcher {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class implements goog.labs.testing.Matcher {
+    class EqualsMatcher extends EqualsMatcher__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class EqualsMatcher__Class implements goog.labs.testing.Matcher  { 
     
             /**
              * The Equals matcher.
@@ -152,13 +148,12 @@ declare module goog.labs.testing {
              * @return {string} Description of why the matcher failed.
              */
             describe(value: any, opt_description?: string): string;
-        }
-    }
+    } 
+    
 
-    class RegexMatcher extends RegexMatcher.__Class { }
-    module RegexMatcher {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class implements goog.labs.testing.Matcher {
+    class RegexMatcher extends RegexMatcher__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class RegexMatcher__Class implements goog.labs.testing.Matcher  { 
     
             /**
              * The MatchesRegex matcher.
@@ -190,13 +185,12 @@ declare module goog.labs.testing {
              * @return {string} Description of why the matcher failed.
              */
             describe(value: any, opt_description?: string): string;
-        }
-    }
+    } 
+    
 
-    class StartsWithMatcher extends StartsWithMatcher.__Class { }
-    module StartsWithMatcher {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class implements goog.labs.testing.Matcher {
+    class StartsWithMatcher extends StartsWithMatcher__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class StartsWithMatcher__Class implements goog.labs.testing.Matcher  { 
     
             /**
              * The StartsWith matcher.
@@ -228,13 +222,12 @@ declare module goog.labs.testing {
              * @return {string} Description of why the matcher failed.
              */
             describe(value: any, opt_description?: string): string;
-        }
-    }
+    } 
+    
 
-    class StringContainsInOrderMatcher extends StringContainsInOrderMatcher.__Class { }
-    module StringContainsInOrderMatcher {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class implements goog.labs.testing.Matcher {
+    class StringContainsInOrderMatcher extends StringContainsInOrderMatcher__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class StringContainsInOrderMatcher__Class implements goog.labs.testing.Matcher  { 
     
             /**
              * The StringContainsInOrdermatcher.
@@ -266,6 +259,6 @@ declare module goog.labs.testing {
              * @return {string} Description of why the matcher failed.
              */
             describe(value: any, opt_description?: string): string;
-        }
-    }
+    } 
+    
 }

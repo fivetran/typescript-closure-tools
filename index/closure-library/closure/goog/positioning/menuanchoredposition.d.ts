@@ -4,10 +4,9 @@
 
 declare module goog.positioning {
 
-    class MenuAnchoredPosition extends MenuAnchoredPosition.__Class { }
-    module MenuAnchoredPosition {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.positioning.AnchoredViewportPosition.__Class {
+    class MenuAnchoredPosition extends MenuAnchoredPosition__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class MenuAnchoredPosition__Class extends goog.positioning.AnchoredViewportPosition__Class  { 
     
             /**
              * Encapsulates a popup position where the popup is anchored at a corner of
@@ -31,6 +30,6 @@ declare module goog.positioning {
              * @extends {goog.positioning.AnchoredViewportPosition}
              */
             constructor(anchorElement: Element, corner: goog.positioning.Corner, opt_adjust?: boolean, opt_resize?: boolean);
-        }
-    }
+    } 
+    
 }

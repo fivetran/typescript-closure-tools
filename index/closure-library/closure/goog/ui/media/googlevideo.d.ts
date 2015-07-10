@@ -5,10 +5,9 @@
 
 declare module goog.ui.media {
 
-    class GoogleVideo extends GoogleVideo.__Class { }
-    module GoogleVideo {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.media.MediaRenderer.__Class {
+    class GoogleVideo extends GoogleVideo__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class GoogleVideo__Class extends goog.ui.media.MediaRenderer__Class  { 
     
             /**
              * Subclasses a goog.ui.media.MediaRenderer to provide a GoogleVideo specific
@@ -32,13 +31,12 @@ declare module goog.ui.media {
              * @final
              */
             constructor();
-        }
-    }
+    } 
+    
 
-    class GoogleVideoModel extends GoogleVideoModel.__Class { }
-    module GoogleVideoModel {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.media.MediaModel.__Class {
+    class GoogleVideoModel extends GoogleVideoModel__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class GoogleVideoModel__Class extends goog.ui.media.MediaModel__Class  { 
     
             /**
              * The {@code goog.ui.media.GoogleVideo} media data model. It stores a required
@@ -61,8 +59,8 @@ declare module goog.ui.media {
              * @return {string} The GoogleVideo video id.
              */
             getVideoId(): string;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.media.GoogleVideo {

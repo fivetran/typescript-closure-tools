@@ -4,10 +4,9 @@
 
 declare module goog.net {
 
-    class WrapperXmlHttpFactory extends WrapperXmlHttpFactory.__Class { }
-    module WrapperXmlHttpFactory {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.net.XmlHttpFactory.__Class {
+    class WrapperXmlHttpFactory extends WrapperXmlHttpFactory__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class WrapperXmlHttpFactory__Class extends goog.net.XmlHttpFactory__Class  { 
     
             /**
              * An xhr factory subclass which can be constructed using two factory methods.
@@ -35,6 +34,6 @@ declare module goog.net {
              * @final
              */
             constructor(xhrFactory: () => XMLHttpRequest, optionsFactory: () => Object);
-        }
-    }
+    } 
+    
 }

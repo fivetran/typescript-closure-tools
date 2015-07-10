@@ -5,10 +5,9 @@
 
 declare module goog.net.xpc {
 
-    class CrossPageChannel extends CrossPageChannel.__Class { }
-    module CrossPageChannel {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.messaging.AbstractChannel.__Class {
+    class CrossPageChannel extends CrossPageChannel__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class CrossPageChannel__Class extends goog.messaging.AbstractChannel__Class  { 
     
             /**
              * A communication channel between two documents from different domains.
@@ -161,6 +160,6 @@ declare module goog.net.xpc {
              * @param {string} name The new channel name.
              */
             updateChannelNameAndCatalog(name: string): void;
-        }
-    }
+    } 
+    
 }

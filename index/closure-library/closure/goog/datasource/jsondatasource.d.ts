@@ -4,10 +4,9 @@
 
 declare module goog.ds {
 
-    class JsonDataSource extends JsonDataSource.__Class { }
-    module JsonDataSource {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ds.JsDataSource.__Class {
+    class JsonDataSource extends JsonDataSource__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class JsonDataSource__Class extends goog.ds.JsDataSource__Class  { 
     
             /**
              * Data source whose backing is a JSON-like service, in which
@@ -71,6 +70,6 @@ declare module goog.ds {
              * @param {Object} obj The JSON data.
              */
             receiveData(obj: Object): void;
-        }
-    }
+    } 
+    
 }

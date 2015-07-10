@@ -4,10 +4,9 @@
 
 declare module goog.messaging {
 
-    class RespondingChannel extends RespondingChannel.__Class { }
-    module RespondingChannel {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.Disposable.__Class {
+    class RespondingChannel extends RespondingChannel__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class RespondingChannel__Class extends goog.Disposable__Class  { 
     
             /**
              * Creates a new RespondingChannel wrapping a single MessageChannel.
@@ -49,6 +48,6 @@ declare module goog.messaging {
              *     incoming messages. Passed the payload.
              */
             registerService(serviceName: string, callback: (_0: Object) => any /*missing*/): void;
-        }
-    }
+    } 
+    
 }

@@ -5,10 +5,9 @@
 
 declare module goog.ui {
 
-    class Button extends Button.__Class { }
-    module Button {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.Control.__Class {
+    class Button extends Button__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Button__Class extends goog.ui.Control__Class  { 
     
             /**
              * A button control, rendered as a native browser button by default.
@@ -113,8 +112,8 @@ declare module goog.ui {
              *     which borders should be collapsed.
              */
             setCollapsed(sides: number): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.Button {

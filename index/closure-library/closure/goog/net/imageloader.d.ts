@@ -3,10 +3,9 @@
 
 declare module goog.net {
 
-    class ImageLoader extends ImageLoader.__Class { }
-    module ImageLoader {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.EventTarget.__Class {
+    class ImageLoader extends ImageLoader__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ImageLoader__Class extends goog.events.EventTarget__Class  { 
     
             /**
              * Image loader utility class.  Raises a {@link goog.events.EventType.LOAD}
@@ -79,8 +78,8 @@ declare module goog.net {
              * images have finished loading.
              */
             start(): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.net.ImageLoader {

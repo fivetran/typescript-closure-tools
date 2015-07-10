@@ -3,10 +3,9 @@
 
 declare module goog.editor.plugins {
 
-    class UndoRedoState extends UndoRedoState.__Class { }
-    module UndoRedoState {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.EventTarget.__Class {
+    class UndoRedoState extends UndoRedoState__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class UndoRedoState__Class extends goog.events.EventTarget__Class  { 
     
             /**
              * Represents an undo and redo action for a particular state transition.
@@ -42,8 +41,8 @@ declare module goog.editor.plugins {
              * @return {boolean} Wether the two states are equal.
              */
             equals(state: goog.editor.plugins.UndoRedoState): boolean;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.editor.plugins.UndoRedoState {

@@ -3,10 +3,9 @@
 
 declare module goog.ui.media {
 
-    class MediaModel extends MediaModel.__Class { }
-    module MediaModel {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class MediaModel extends MediaModel__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class MediaModel__Class  { 
     
             /**
              * An base data value class for all media data models.
@@ -225,16 +224,15 @@ declare module goog.ui.media {
              * @return {!goog.ui.media.MediaModel} The object itself.
              */
             setSubTitles(subtitles: goog.ui.media.MediaModel.SubTitle[]): goog.ui.media.MediaModel;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.media.MediaModel {
 
-    class Thumbnail extends Thumbnail.__Class { }
-    module Thumbnail {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Thumbnail extends Thumbnail__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Thumbnail__Class  { 
     
             /**
              * Constructs a thumbnail containing details of the thumbnail's image URL and
@@ -273,13 +271,12 @@ declare module goog.ui.media.MediaModel {
              *     chaining.
              */
             setSize(size: goog.math.Size): goog.ui.media.MediaModel.Thumbnail;
-        }
-    }
+    } 
+    
 
-    class Player extends Player.__Class { }
-    module Player {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Player extends Player__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Player__Class  { 
     
             /**
              * Constructs a player containing details of the player's URL and
@@ -333,13 +330,12 @@ declare module goog.ui.media.MediaModel {
              *     chaining.
              */
             setSize(size: goog.math.Size): goog.ui.media.MediaModel.Player;
-        }
-    }
+    } 
+    
 
-    class Category extends Category.__Class { }
-    module Category {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Category extends Category__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Category__Class  { 
     
             /**
              * A taxonomy to be set that gives an indication of the type of media content,
@@ -394,13 +390,12 @@ declare module goog.ui.media.MediaModel {
              *     chaining.
              */
             setLabel(label: string): goog.ui.media.MediaModel.Category;
-        }
-    }
+    } 
+    
 
-    class Credit extends Credit.__Class { }
-    module Credit {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Credit extends Credit__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Credit__Class  { 
     
             /**
              * Indicates an entity that has contributed to a media object. Based on
@@ -455,13 +450,12 @@ declare module goog.ui.media.MediaModel {
              * @return {!goog.ui.media.MediaModel.Credit} The object itself.
              */
             setScheme(scheme: goog.ui.media.MediaModel.Credit.Scheme): goog.ui.media.MediaModel.Credit;
-        }
-    }
+    } 
+    
 
-    class SubTitle extends SubTitle.__Class { }
-    module SubTitle {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class SubTitle extends SubTitle__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class SubTitle__Class  { 
     
             /**
              * A reference to the subtitle URI for a media object.
@@ -514,8 +508,8 @@ declare module goog.ui.media.MediaModel {
              * @return {string} type The MIME type.
              */
             getType(): string;
-        }
-    }
+    } 
+    
 
     /**
      * The supported media mime types, a subset of the media types found here:

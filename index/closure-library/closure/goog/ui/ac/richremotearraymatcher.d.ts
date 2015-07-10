@@ -3,10 +3,9 @@
 
 declare module goog.ui.ac {
 
-    class RichRemoteArrayMatcher extends RichRemoteArrayMatcher.__Class { }
-    module RichRemoteArrayMatcher {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.ac.RemoteArrayMatcher.__Class {
+    class RichRemoteArrayMatcher extends RichRemoteArrayMatcher__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class RichRemoteArrayMatcher__Class extends goog.ui.ac.RemoteArrayMatcher__Class  { 
     
             /**
              * An array matcher that requests rich matches via ajax and converts them into
@@ -28,6 +27,6 @@ declare module goog.ui.ac {
              *     a subset of the rows input array.
              */
             setRowFilter(rowFilter: Function): void;
-        }
-    }
+    } 
+    
 }

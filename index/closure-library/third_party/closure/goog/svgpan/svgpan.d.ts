@@ -3,10 +3,9 @@
 
 declare module svgpan {
 
-    class SvgPan extends SvgPan.__Class { }
-    module SvgPan {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.Disposable.__Class {
+    class SvgPan extends SvgPan__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class SvgPan__Class extends goog.Disposable__Class  { 
     
             /**
              * Instantiates an SvgPan object.
@@ -59,8 +58,8 @@ declare module svgpan {
              * @return {!svgpan.SvgPan.State}
              */
             getState(): svgpan.SvgPan.State;
-        }
-    }
+    } 
+    
 }
 
 declare module svgpan.SvgPan {

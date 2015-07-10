@@ -3,10 +3,9 @@
 
 declare module goog.debug {
 
-    class Logger extends Logger.__Class { }
-    module Logger {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Logger extends Logger__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Logger__Class  { 
     
             /**
              * The Logger is an object used for logging debug messages. Loggers are
@@ -307,8 +306,8 @@ declare module goog.debug {
              * @param {goog.debug.LogRecord} logRecord A log record to log.
              */
             logRecord(logRecord: goog.debug.LogRecord): void;
-        }
-    }
+    } 
+    
 
     /**
      * A message value that can be handled by a Logger.
@@ -331,10 +330,9 @@ declare module goog.debug {
 
 declare module goog.debug.Logger {
 
-    class Level extends Level.__Class { }
-    module Level {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Level extends Level__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Level__Class  { 
     
             /**
              * The Level class defines a set of standard logging levels that
@@ -377,8 +375,8 @@ declare module goog.debug.Logger {
              * @type {number}
              */
             value: number;
-        }
-    }
+    } 
+    
 
     /**
      * Finds or creates a logger for a named subsystem. If a logger has already been

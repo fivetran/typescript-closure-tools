@@ -4,10 +4,9 @@
 
 declare module goog.ui {
 
-    class MenuSeparator extends MenuSeparator.__Class { }
-    module MenuSeparator {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.Separator.__Class {
+    class MenuSeparator extends MenuSeparator__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class MenuSeparator__Class extends goog.ui.Separator__Class  { 
     
             /**
              * Class representing a menu separator.  A menu separator extends {@link
@@ -19,6 +18,6 @@ declare module goog.ui {
              * @extends {goog.ui.Separator}
              */
             constructor(opt_domHelper?: goog.dom.DomHelper);
-        }
-    }
+    } 
+    
 }

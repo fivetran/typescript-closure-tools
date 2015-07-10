@@ -7,10 +7,9 @@
 
 declare module goog.graphics {
 
-    class VmlGraphics extends VmlGraphics.__Class { }
-    module VmlGraphics {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.graphics.AbstractGraphics.__Class {
+    class VmlGraphics extends VmlGraphics__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class VmlGraphics__Class extends goog.graphics.AbstractGraphics__Class  { 
     
             /**
              * A Graphics implementation for drawing using VML.
@@ -129,8 +128,8 @@ declare module goog.graphics {
              * @return {!goog.graphics.ImageElement} The newly created element.
              */
             drawImage(x: number, y: number, width: number, height: number, src: string, opt_group?: goog.graphics.GroupElement): goog.graphics.ImageElement;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.graphics.VmlGraphics {

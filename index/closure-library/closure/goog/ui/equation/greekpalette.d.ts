@@ -4,10 +4,9 @@
 
 declare module goog.ui.equation {
 
-    class GreekPalette extends GreekPalette.__Class { }
-    module GreekPalette {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.equation.Palette.__Class {
+    class GreekPalette extends GreekPalette__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class GreekPalette__Class extends goog.ui.equation.Palette__Class  { 
     
             /**
              * Constructs a new Greek symbols palette.
@@ -18,6 +17,6 @@ declare module goog.ui.equation {
              * @final
              */
             constructor(paletteManager: goog.ui.equation.PaletteManager);
-        }
-    }
+    } 
+    
 }

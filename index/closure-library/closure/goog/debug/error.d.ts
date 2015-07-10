@@ -2,10 +2,9 @@
 
 declare module goog.debug {
 
-    class Error extends Error.__Class { }
-    module Error {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends Error.__Class {
+    class Error extends Error__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Error__Class extends Error__Class  { 
     
             /**
              * Base class for custom error objects.
@@ -14,6 +13,6 @@ declare module goog.debug {
              * @extends {Error}
              */
             constructor(opt_msg?: any);
-        }
-    }
+    } 
+    
 }

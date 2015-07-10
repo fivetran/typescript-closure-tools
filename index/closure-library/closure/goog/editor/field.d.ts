@@ -12,10 +12,9 @@
 
 declare module goog.editor {
 
-    class Field extends Field.__Class { }
-    module Field {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.EventTarget.__Class {
+    class Field extends Field__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Field__Class extends goog.events.EventTarget__Class  { 
     
             /**
              * This class encapsulates an editable field.
@@ -676,8 +675,8 @@ declare module goog.editor {
              * @protected
              */
             getIframeAttributes(): Object;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.editor.Field {

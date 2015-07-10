@@ -7,10 +7,9 @@
 
 declare module goog.ui.tree {
 
-    class TreeControl extends TreeControl.__Class { }
-    module TreeControl {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.tree.BaseNode.__Class {
+    class TreeControl extends TreeControl__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class TreeControl__Class extends goog.ui.tree.BaseNode__Class  { 
     
             /**
              * This creates a TreeControl object. A tree control provides a way to
@@ -131,8 +130,8 @@ declare module goog.ui.tree {
              * Clear the typeahead buffer.
              */
             clearTypeAhead(): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.tree.TreeControl {

@@ -4,10 +4,9 @@
 
 declare module goog.dom {
 
-    class TextRange extends TextRange.__Class { }
-    module TextRange {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.dom.AbstractRange.__Class {
+    class TextRange extends TextRange__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class TextRange__Class extends goog.dom.AbstractRange__Class  { 
     
             /**
              * Create a new text selection with no properties.  Do not use this constructor:
@@ -39,13 +38,12 @@ declare module goog.dom {
              *    but not on IE), or null if unsuccessful.
              */
             surroundContents(element: Element): Element;
-        }
-    }
+    } 
+    
 
-    class DomSavedTextRange_ extends DomSavedTextRange_.__Class { }
-    module DomSavedTextRange_ {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.dom.SavedRange.__Class {
+    class DomSavedTextRange_ extends DomSavedTextRange___Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class DomSavedTextRange___Class extends goog.dom.SavedRange__Class  { 
     
             /**
              * A SavedRange implementation using DOM endpoints.
@@ -55,8 +53,8 @@ declare module goog.dom {
              * @private
              */
             constructor(range: goog.dom.AbstractRange);
-        }
-    }
+    } 
+    
 }
 
 declare module goog.dom.TextRange {

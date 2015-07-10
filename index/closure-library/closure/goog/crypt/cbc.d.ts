@@ -3,10 +3,9 @@
 
 declare module goog.crypt {
 
-    class Cbc extends Cbc.__Class { }
-    module Cbc {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Cbc extends Cbc__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Cbc__Class  { 
     
             /**
              * Implements the CBC mode for block ciphers. See
@@ -43,6 +42,6 @@ declare module goog.crypt {
              * @return {!Array.<number>} Decrypted message.
              */
             decrypt(cipherText: number[], initialVector: number[]): number[];
-        }
-    }
+    } 
+    
 }

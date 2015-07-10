@@ -6,10 +6,9 @@
 
 declare module goog.ui {
 
-    class ToolbarSelect extends ToolbarSelect.__Class { }
-    module ToolbarSelect {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.Select.__Class {
+    class ToolbarSelect extends ToolbarSelect__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ToolbarSelect__Class extends goog.ui.Select__Class  { 
     
             /**
              * A select control for a toolbar.
@@ -71,6 +70,6 @@ declare module goog.ui {
              * @extends {goog.ui.Select}
              */
             constructor(caption: NodeList, opt_menu?: goog.ui.Menu, opt_renderer?: goog.ui.MenuButtonRenderer, opt_domHelper?: goog.dom.DomHelper);
-        }
-    }
+    } 
+    
 }

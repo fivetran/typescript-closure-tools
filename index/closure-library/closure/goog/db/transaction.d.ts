@@ -6,10 +6,9 @@
 
 declare module goog.db {
 
-    class Transaction extends Transaction.__Class { }
-    module Transaction {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.EventTarget.__Class {
+    class Transaction extends Transaction__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Transaction__Class extends goog.events.EventTarget__Class  { 
     
             /**
              * Creates a new transaction. Transactions contain methods for accessing object
@@ -58,8 +57,8 @@ declare module goog.db {
              * database. Dispatches an ABORT event.
              */
             abort(): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.db.Transaction {

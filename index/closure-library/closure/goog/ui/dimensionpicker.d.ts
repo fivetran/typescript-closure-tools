@@ -8,10 +8,9 @@
 
 declare module goog.ui {
 
-    class DimensionPicker extends DimensionPicker.__Class { }
-    module DimensionPicker {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.Control.__Class {
+    class DimensionPicker extends DimensionPicker__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class DimensionPicker__Class extends goog.ui.Control__Class  { 
     
             /**
              * A dimension picker allows the user to visually select a row and column
@@ -102,6 +101,6 @@ declare module goog.ui {
              *     omitted when columns is a good.math.Size object.
              */
             setValue(columns: goog.math.Size, opt_rows?: number): void;
-        }
-    }
+    } 
+    
 }

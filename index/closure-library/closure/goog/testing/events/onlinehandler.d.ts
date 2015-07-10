@@ -4,10 +4,9 @@
 
 declare module goog.testing.events {
 
-    class OnlineHandler extends OnlineHandler.__Class { }
-    module OnlineHandler {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.EventTarget.__Class implements goog.net.NetworkStatusMonitor {
+    class OnlineHandler extends OnlineHandler__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class OnlineHandler__Class extends goog.events.EventTarget__Class implements goog.net.NetworkStatusMonitor  { 
     
             /**
              * NetworkStatusMonitor test double.
@@ -29,6 +28,6 @@ declare module goog.testing.events {
              * @return {boolean} Whether the system is online or otherwise.
              */
             isOnline(): boolean;
-        }
-    }
+    } 
+    
 }

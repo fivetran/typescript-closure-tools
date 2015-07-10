@@ -4,10 +4,9 @@
 
 declare module goog.graphics {
 
-    class ImageElement extends ImageElement.__Class { }
-    module ImageElement {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.graphics.Element.__Class {
+    class ImageElement extends ImageElement__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ImageElement__Class extends goog.graphics.Element__Class  { 
     
             /**
              * Interface for a graphics image element.
@@ -47,6 +46,6 @@ declare module goog.graphics {
              * @param {string} src Source of the image.
              */
             setSource(src: string): void;
-        }
-    }
+    } 
+    
 }

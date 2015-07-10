@@ -3,10 +3,9 @@
 
 declare module goog.async {
 
-    class AnimationDelay extends AnimationDelay.__Class { }
-    module AnimationDelay {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.Disposable.__Class {
+    class AnimationDelay extends AnimationDelay__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class AnimationDelay__Class extends goog.Disposable__Class  { 
     
             /**
              * A delayed callback that pegs to the next animation frame
@@ -59,8 +58,8 @@ declare module goog.async {
              * @return {boolean} True if the delay is currently active, false otherwise.
              */
             isActive(): boolean;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.async.AnimationDelay {

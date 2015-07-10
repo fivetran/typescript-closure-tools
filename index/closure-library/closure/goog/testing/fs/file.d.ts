@@ -3,10 +3,9 @@
 
 declare module goog.testing.fs {
 
-    class File extends File.__Class { }
-    module File {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.testing.fs.Blob.__Class {
+    class File extends File__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class File__Class extends goog.testing.fs.Blob__Class  { 
     
             /**
              * A mock file object.
@@ -33,6 +32,6 @@ declare module goog.testing.fs {
              * @type {Date}
              */
             lastModifiedDate: Date;
-        }
-    }
+    } 
+    
 }

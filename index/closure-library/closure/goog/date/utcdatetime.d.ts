@@ -3,10 +3,9 @@
 
 declare module goog.date {
 
-    class UtcDateTime extends UtcDateTime.__Class { }
-    module UtcDateTime {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.date.DateTime.__Class {
+    class UtcDateTime extends UtcDateTime__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class UtcDateTime__Class extends goog.date.DateTime__Class  { 
     
             /**
              * Class representing a date/time in GMT+0 time zone, without daylight saving.
@@ -44,8 +43,8 @@ declare module goog.date {
              * @extends {goog.date.DateTime}
              */
             constructor(opt_year?: Object, opt_month?: number, opt_date?: number, opt_hours?: number, opt_minutes?: number, opt_seconds?: number, opt_milliseconds?: number);
-        }
-    }
+    } 
+    
 }
 
 declare module goog.date.UtcDateTime {

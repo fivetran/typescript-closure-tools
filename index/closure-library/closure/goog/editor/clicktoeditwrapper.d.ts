@@ -5,10 +5,9 @@
 
 declare module goog.editor {
 
-    class ClickToEditWrapper extends ClickToEditWrapper.__Class { }
-    module ClickToEditWrapper {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.Disposable.__Class {
+    class ClickToEditWrapper extends ClickToEditWrapper__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ClickToEditWrapper__Class extends goog.Disposable__Class  { 
     
             /**
              * Initialize the wrapper, and begin listening to mouse events immediately.
@@ -57,6 +56,6 @@ declare module goog.editor {
              * @protected
              */
             makeFieldEditable(field: goog.editor.Field): void;
-        }
-    }
+    } 
+    
 }

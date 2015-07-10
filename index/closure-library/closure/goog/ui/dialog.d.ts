@@ -9,10 +9,9 @@
 
 declare module goog.ui {
 
-    class Dialog extends Dialog.__Class { }
-    module Dialog {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.ModalPopup.__Class {
+    class Dialog extends Dialog__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Dialog__Class extends goog.ui.ModalPopup__Class  { 
     
             /**
              * Class for showing simple dialog boxes.
@@ -243,16 +242,15 @@ declare module goog.ui {
              * @return {goog.ui.Dialog.ButtonSet?} The button set being used.
              */
             getButtonSet(): goog.ui.Dialog.ButtonSet;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.Dialog {
 
-    class Event extends Event.__Class { }
-    module Event {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.Event.__Class {
+    class Event extends Event__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Event__Class extends goog.events.Event__Class  { 
     
             /**
              * Dialog event class.
@@ -270,13 +268,12 @@ declare module goog.ui.Dialog {
              * @extends {goog.events.Event}
              */
             constructor(key: string, caption: Element);
-        }
-    }
+    } 
+    
 
-    class ButtonSet extends ButtonSet.__Class { }
-    module ButtonSet {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.structs.Map.__Class<any, any> {
+    class ButtonSet extends ButtonSet__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ButtonSet__Class extends goog.structs.Map__Class<any, any>  { 
     
             /**
              * A button set defines the behaviour of a set of buttons that the dialog can
@@ -388,8 +385,8 @@ declare module goog.ui.Dialog {
              * @param {boolean} enabled True to enable; false to disable.
              */
             setAllButtonsEnabled(enabled: boolean): void;
-        }
-    }
+    } 
+    
 
     /**
      * Event type constant for dialog events.

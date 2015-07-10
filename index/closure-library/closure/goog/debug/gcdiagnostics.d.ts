@@ -3,10 +3,9 @@
 
 declare module goog.debug {
 
-    class GcDiagnostics_ extends GcDiagnostics_.__Class { }
-    module GcDiagnostics_ {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class GcDiagnostics_ extends GcDiagnostics___Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class GcDiagnostics___Class  { 
     
             /**
              * Class used for singleton goog.debug.GcDiagnostics.  Used to hook into
@@ -39,8 +38,8 @@ declare module goog.debug {
              * adds comments where each GC occurs.
              */
             stop(): void;
-        }
-    }
+    } 
+    
 
     /**
      * Singleton GcDiagnostics object

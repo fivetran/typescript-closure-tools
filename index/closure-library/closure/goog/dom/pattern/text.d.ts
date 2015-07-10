@@ -3,10 +3,9 @@
 
 declare module goog.dom.pattern {
 
-    class Text extends Text.__Class { }
-    module Text {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.dom.pattern.AbstractPattern.__Class {
+    class Text extends Text__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Text__Class extends goog.dom.pattern.AbstractPattern__Class  { 
     
             /**
              * Pattern object that matches text by exact matching or regular expressions.
@@ -26,6 +25,6 @@ declare module goog.dom.pattern {
              * @final
              */
             constructor(match: RegExp);
-        }
-    }
+    } 
+    
 }

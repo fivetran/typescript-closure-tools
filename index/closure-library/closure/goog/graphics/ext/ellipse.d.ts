@@ -4,10 +4,9 @@
 
 declare module goog.graphics.ext {
 
-    class Ellipse extends Ellipse.__Class { }
-    module Ellipse {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.graphics.ext.StrokeAndFillElement.__Class {
+    class Ellipse extends Ellipse__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Ellipse__Class extends goog.graphics.ext.StrokeAndFillElement__Class  { 
     
             /**
              * Wrapper for a graphics ellipse element.
@@ -17,6 +16,6 @@ declare module goog.graphics.ext {
              * @final
              */
             constructor(group: goog.graphics.ext.Group);
-        }
-    }
+    } 
+    
 }

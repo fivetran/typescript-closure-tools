@@ -3,10 +3,9 @@
 
 declare module goog.i18n {
 
-    class DateTimeParse extends DateTimeParse.__Class { }
-    module DateTimeParse {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class DateTimeParse extends DateTimeParse__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class DateTimeParse__Class  { 
     
             /**
              * Construct a DateTimeParse based on current locale.
@@ -60,16 +59,15 @@ declare module goog.i18n {
              * @return {number} How many characters parser advanced.
              */
             strictParse(text: string, date: goog.date.Date, opt_start?: number): number;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.i18n.DateTimeParse {
 
-    class MyDate_ extends MyDate_.__Class { }
-    module MyDate_ {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class MyDate_ extends MyDate___Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class MyDate___Class  { 
     
             /**
              * This class hold the intermediate parsing result. After all fields are
@@ -144,8 +142,8 @@ declare module goog.i18n.DateTimeParse {
              * @type {?number}
              */
             dayOfWeek: number;
-        }
-    }
+    } 
+    
 
     /**
      * Number of years prior to now that the century used to

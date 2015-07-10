@@ -5,10 +5,9 @@
 
 declare module goog.dom {
 
-    class BufferedViewportSizeMonitor extends BufferedViewportSizeMonitor.__Class { }
-    module BufferedViewportSizeMonitor {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.EventTarget.__Class {
+    class BufferedViewportSizeMonitor extends BufferedViewportSizeMonitor__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class BufferedViewportSizeMonitor__Class extends goog.events.EventTarget__Class  { 
     
             /**
              * Creates a new BufferedViewportSizeMonitor.
@@ -27,8 +26,8 @@ declare module goog.dom {
              * @return {goog.math.Size?} The current viewport size.
              */
             getSize(): goog.math.Size;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.dom.BufferedViewportSizeMonitor {

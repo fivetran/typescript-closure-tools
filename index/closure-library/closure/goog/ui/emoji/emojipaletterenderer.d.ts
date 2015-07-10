@@ -5,10 +5,9 @@
 
 declare module goog.ui.emoji {
 
-    class EmojiPaletteRenderer extends EmojiPaletteRenderer.__Class { }
-    module EmojiPaletteRenderer {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.PaletteRenderer.__Class {
+    class EmojiPaletteRenderer extends EmojiPaletteRenderer__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class EmojiPaletteRenderer__Class extends goog.ui.PaletteRenderer__Class  { 
     
             /**
              * Renders an emoji palette.
@@ -52,8 +51,8 @@ declare module goog.ui.emoji {
              * @return {HTMLDivElement} The inner element for a palette item.
              */
             buildElementFromSpriteMetadata(dom: goog.dom.DomHelper, spriteInfo: goog.ui.emoji.SpriteInfo, displayUrl: string): HTMLDivElement;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.emoji.EmojiPaletteRenderer {

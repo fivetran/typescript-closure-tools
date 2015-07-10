@@ -4,10 +4,9 @@
 
 declare module goog.events {
 
-    class PasteHandler extends PasteHandler.__Class { }
-    module PasteHandler {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.EventTarget.__Class {
+    class PasteHandler extends PasteHandler__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class PasteHandler__Class extends goog.events.EventTarget__Class  { 
     
             /**
              * A paste event detector. Gets an {@code element} as parameter and fires
@@ -36,8 +35,8 @@ declare module goog.events {
              * @template T
              */
             getEventHandler<T>(): goog.events.EventHandler<T>;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.events.PasteHandler {

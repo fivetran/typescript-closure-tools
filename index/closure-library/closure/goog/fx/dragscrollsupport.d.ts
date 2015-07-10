@@ -4,10 +4,9 @@
 
 declare module goog.fx {
 
-    class DragScrollSupport extends DragScrollSupport.__Class { }
-    module DragScrollSupport {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.Disposable.__Class {
+    class DragScrollSupport extends DragScrollSupport__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class DragScrollSupport__Class extends goog.Disposable__Class  { 
     
             /**
              * A scroll support class. Currently this class will automatically scroll
@@ -62,8 +61,8 @@ declare module goog.fx {
              * @protected
              */
             calculateScrollDelta(coordinate: number, min: number, rangeLength: number): number;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.fx.DragScrollSupport {

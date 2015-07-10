@@ -3,10 +3,9 @@
 
 declare module goog.db {
 
-    class Error extends Error.__Class { }
-    module Error {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.debug.Error.__Class {
+    class Error extends Error__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Error__Class extends goog.debug.Error__Class  { 
     
             /**
              * A database error. Since the stack trace can be unhelpful in an asynchronous
@@ -46,16 +45,15 @@ declare module goog.db {
              * @return {string} The name of the error.
              */
             getName(): string;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.db.Error {
 
-    class VersionChangeBlockedError extends VersionChangeBlockedError.__Class { }
-    module VersionChangeBlockedError {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.debug.Error.__Class {
+    class VersionChangeBlockedError extends VersionChangeBlockedError__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class VersionChangeBlockedError__Class extends goog.debug.Error__Class  { 
     
             /**
              * A specific kind of database error. If a Version Change is unable to proceed
@@ -67,8 +65,8 @@ declare module goog.db.Error {
              * @final
              */
             constructor();
-        }
-    }
+    } 
+    
 
     /**
      * Synthetic error codes for database errors, for use when IndexedDB

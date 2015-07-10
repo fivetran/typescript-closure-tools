@@ -6,10 +6,9 @@
 
 declare module goog.ui {
 
-    class ModalPopup extends ModalPopup.__Class { }
-    module ModalPopup {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.Component.__Class {
+    class ModalPopup extends ModalPopup__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ModalPopup__Class extends goog.ui.Component__Class  { 
     
             /**
              * Base class for modal popup UI components. This can also be used as
@@ -139,6 +138,6 @@ declare module goog.ui {
              * @protected
              */
             getTabCatcherElement(): Element;
-        }
-    }
+    } 
+    
 }

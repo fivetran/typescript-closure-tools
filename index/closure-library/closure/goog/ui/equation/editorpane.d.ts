@@ -4,10 +4,9 @@
 
 declare module goog.ui.equation {
 
-    class EditorPane extends EditorPane.__Class { }
-    module EditorPane {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.Component.__Class {
+    class EditorPane extends EditorPane__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class EditorPane__Class extends goog.ui.Component__Class  { 
     
             /**
              * An abstract equation editor tab pane.
@@ -52,6 +51,6 @@ declare module goog.ui.equation {
              * @protected
              */
             isModified(): boolean;
-        }
-    }
+    } 
+    
 }

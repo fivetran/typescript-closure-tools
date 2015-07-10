@@ -5,10 +5,9 @@
 
 declare module goog.ui {
 
-    class MenuBase extends MenuBase.__Class { }
-    module MenuBase {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.Popup.__Class {
+    class MenuBase extends MenuBase__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class MenuBase__Class extends goog.ui.Popup__Class  { 
     
             /**
              * The MenuBase class provides an abstract base class for different
@@ -75,8 +74,8 @@ declare module goog.ui {
              * @protected
              */
             onKeyDown(e: goog.events.KeyEvent): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.MenuBase {

@@ -3,10 +3,9 @@
 
 declare module goog.dom.pattern {
 
-    class Sequence extends Sequence.__Class { }
-    module Sequence {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.dom.pattern.AbstractPattern.__Class {
+    class Sequence extends Sequence__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Sequence__Class extends goog.dom.pattern.AbstractPattern__Class  { 
     
             /**
              * Pattern object that matches a sequence of other patterns.
@@ -27,6 +26,6 @@ declare module goog.dom.pattern {
              * @type {Array.<goog.dom.pattern.AbstractPattern>}
              */
             patterns: goog.dom.pattern.AbstractPattern[];
-        }
-    }
+    } 
+    
 }

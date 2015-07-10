@@ -3,10 +3,9 @@
 
 declare module proto2 {
 
-    class TestAllTypes extends TestAllTypes.__Class { }
-    module TestAllTypes {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.proto2.Message.__Class {
+    class TestAllTypes extends TestAllTypes__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class TestAllTypes__Class extends goog.proto2.Message__Class  { 
     
             /**
              * Message TestAllTypes.
@@ -1495,13 +1494,12 @@ declare module proto2 {
              * Clears the values in the repeated_int64_string field.
              */
             clearRepeatedInt64String(): void;
-        }
-    }
+    } 
+    
 
-    class TestDefaultParent extends TestDefaultParent.__Class { }
-    module TestDefaultParent {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.proto2.Message.__Class {
+    class TestDefaultParent extends TestDefaultParent__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class TestDefaultParent__Class extends goog.proto2.Message__Class  { 
     
             /**
              * Message TestDefaultParent.
@@ -1543,13 +1541,12 @@ declare module proto2 {
              * Clears the values in the child field.
              */
             clearChild(): void;
-        }
-    }
+    } 
+    
 
-    class TestDefaultChild extends TestDefaultChild.__Class { }
-    module TestDefaultChild {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.proto2.Message.__Class {
+    class TestDefaultChild extends TestDefaultChild__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class TestDefaultChild__Class extends goog.proto2.Message__Class  { 
     
             /**
              * Message TestDefaultChild.
@@ -1591,16 +1588,15 @@ declare module proto2 {
              * Clears the values in the foo field.
              */
             clearFoo(): void;
-        }
-    }
+    } 
+    
 }
 
 declare module proto2.TestAllTypes {
 
-    class NestedMessage extends NestedMessage.__Class { }
-    module NestedMessage {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.proto2.Message.__Class {
+    class NestedMessage extends NestedMessage__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class NestedMessage__Class extends goog.proto2.Message__Class  { 
     
             /**
              * Message NestedMessage.
@@ -1675,13 +1671,12 @@ declare module proto2.TestAllTypes {
              * Clears the values in the c field.
              */
             clearC(): void;
-        }
-    }
+    } 
+    
 
-    class OptionalGroup extends OptionalGroup.__Class { }
-    module OptionalGroup {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.proto2.Message.__Class {
+    class OptionalGroup extends OptionalGroup__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class OptionalGroup__Class extends goog.proto2.Message__Class  { 
     
             /**
              * Message OptionalGroup.
@@ -1723,13 +1718,12 @@ declare module proto2.TestAllTypes {
              * Clears the values in the a field.
              */
             clearA(): void;
-        }
-    }
+    } 
+    
 
-    class RepeatedGroup extends RepeatedGroup.__Class { }
-    module RepeatedGroup {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.proto2.Message.__Class {
+    class RepeatedGroup extends RepeatedGroup__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class RepeatedGroup__Class extends goog.proto2.Message__Class  { 
     
             /**
              * Message RepeatedGroup.
@@ -1779,8 +1773,8 @@ declare module proto2.TestAllTypes {
              * Clears the values in the a field.
              */
             clearA(): void;
-        }
-    }
+    } 
+    
 
     /**
      * Enumeration NestedEnum.

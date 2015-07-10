@@ -3,10 +3,9 @@
 
 declare module goog.ui {
 
-    class RangeModel extends RangeModel.__Class { }
-    module RangeModel {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.EventTarget.__Class {
+    class RangeModel extends RangeModel__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class RangeModel__Class extends goog.events.EventTarget__Class  { 
     
             /**
              * Creates a range model
@@ -92,6 +91,6 @@ declare module goog.ui {
              * @return {number} The number rounded to the closest step.
              */
             roundToStep(value: number): number;
-        }
-    }
+    } 
+    
 }

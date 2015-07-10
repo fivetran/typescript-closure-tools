@@ -3,10 +3,9 @@
 
 declare module goog.debug {
 
-    class Trace_ extends Trace_.__Class { }
-    module Trace_ {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Trace_ extends Trace___Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Trace___Class  { 
     
             /**
              * Class used for singleton goog.debug.Trace.  Used for timing slow points in
@@ -117,8 +116,8 @@ declare module goog.debug {
              *     trace.
              */
             getFormattedTrace(): string;
-        }
-    }
+    } 
+    
 
     /**
      * Singleton trace object
@@ -129,10 +128,9 @@ declare module goog.debug {
 
 declare module goog.debug.Trace_ {
 
-    class Stat_ extends Stat_.__Class { }
-    module Stat_ {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Stat_ extends Stat___Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Stat___Class  { 
     
             /**
              * Class to keep track of a stat of a single tracer type. Stores the count
@@ -164,13 +162,12 @@ declare module goog.debug.Trace_ {
              * @type {string|null|undefined}
              */
             type: any /*string|any (null)|any (undefined)*/;
-        }
-    }
+    } 
+    
 
-    class Event_ extends Event_.__Class { }
-    module Event_ {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Event_ extends Event___Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Event___Class  { 
     
             /**
              * Private class used to encapsulate a single event, either the start or stop
@@ -195,8 +192,8 @@ declare module goog.debug.Trace_ {
              * @return {string} The formatted tracer string.
              */
             toTraceString(startTime: number, prevTime: number, indent: string): string;
-        }
-    }
+    } 
+    
 
     /**
      * Event type supported by tracer

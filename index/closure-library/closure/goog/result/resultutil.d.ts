@@ -5,10 +5,9 @@
 
 declare module goog.result {
 
-    class DependentResultImpl_ extends DependentResultImpl_.__Class { }
-    module DependentResultImpl_ {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.result.SimpleResult.__Class implements goog.result.DependentResult {
+    class DependentResultImpl_ extends DependentResultImpl___Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class DependentResultImpl___Class extends goog.result.SimpleResult__Class implements goog.result.DependentResult  { 
     
             /**
              * A DependentResult represents a Result whose eventual value depends on the
@@ -40,8 +39,8 @@ declare module goog.result {
              *     grandparents (and any other ancestors) are not included in this list.
              */
             getParentResults(): goog.result.Result[];
-        }
-    }
+    } 
+    
 
     /**
      * Returns a successful result containing the provided value.

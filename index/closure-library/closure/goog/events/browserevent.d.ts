@@ -3,10 +3,9 @@
 
 declare module goog.events {
 
-    class BrowserEvent extends BrowserEvent.__Class { }
-    module BrowserEvent {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.Event.__Class {
+    class BrowserEvent extends BrowserEvent__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class BrowserEvent__Class extends goog.events.Event__Class  { 
     
             /**
              * Accepts a browser event object and creates a patched, cross browser event
@@ -158,8 +157,8 @@ declare module goog.events {
              * @return {Event} The underlying browser event object.
              */
             getBrowserEvent(): Event;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.events.BrowserEvent {

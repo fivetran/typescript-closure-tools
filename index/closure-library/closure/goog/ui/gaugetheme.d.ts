@@ -4,10 +4,9 @@
 
 declare module goog.ui {
 
-    class GaugeTheme extends GaugeTheme.__Class { }
-    module GaugeTheme {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class GaugeTheme extends GaugeTheme__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class GaugeTheme__Class  { 
     
             /**
              * A class for the default color theme for a Gauge.
@@ -107,6 +106,6 @@ declare module goog.ui {
              * @return {string} The color to use.
              */
             getTickLabelColor(): string;
-        }
-    }
+    } 
+    
 }

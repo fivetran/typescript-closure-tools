@@ -2,10 +2,9 @@
 
 declare module goog.stats {
 
-    class BasicStat extends BasicStat.__Class { }
-    module BasicStat {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class BasicStat extends BasicStat__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class BasicStat__Class  { 
     
             /**
              * Tracks basic statistics over a specified time interval.
@@ -69,16 +68,15 @@ declare module goog.stats {
              * @return {number} The minimum count of this statistic.
              */
             getMin(opt_now?: number): number;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.stats.BasicStat {
 
-    class Slot_ extends Slot_.__Class { }
-    module Slot_ {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Slot_ extends Slot___Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Slot___Class  { 
     
             /**
              * A struct containing information for each sub-interval.
@@ -111,6 +109,6 @@ declare module goog.stats.BasicStat {
              * @type {number}
              */
             max: number;
-        }
-    }
+    } 
+    
 }

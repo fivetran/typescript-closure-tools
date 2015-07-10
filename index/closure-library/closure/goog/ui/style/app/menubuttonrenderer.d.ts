@@ -4,10 +4,9 @@
 
 declare module goog.ui.style.app {
 
-    class MenuButtonRenderer extends MenuButtonRenderer.__Class { }
-    module MenuButtonRenderer {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.style.app.ButtonRenderer.__Class {
+    class MenuButtonRenderer extends MenuButtonRenderer__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class MenuButtonRenderer__Class extends goog.ui.style.app.ButtonRenderer__Class  { 
     
             /**
              * Renderer for {@link goog.ui.style.app.MenuButton}s.  This implementation
@@ -56,8 +55,8 @@ declare module goog.ui.style.app {
              * @return {Element} Dropdown element.
              */
             createDropdown(dom: goog.dom.DomHelper): Element;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.style.app.MenuButtonRenderer {

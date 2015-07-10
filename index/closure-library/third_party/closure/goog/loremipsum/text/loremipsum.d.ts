@@ -2,10 +2,9 @@
 
 declare module goog.text {
 
-    class LoremIpsum extends LoremIpsum.__Class { }
-    module LoremIpsum {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class LoremIpsum extends LoremIpsum__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class LoremIpsum__Class  { 
     
             /**
              * Generates random strings of "lorem ipsum" text, based on the word
@@ -54,8 +53,8 @@ declare module goog.text {
              * @type {string}
              */
             dictionary_: string;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.text.LoremIpsum {

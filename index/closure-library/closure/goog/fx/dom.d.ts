@@ -4,10 +4,9 @@
 
 declare module goog.fx.dom {
 
-    class PredefinedEffect extends PredefinedEffect.__Class { }
-    module PredefinedEffect {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.fx.Animation.__Class {
+    class PredefinedEffect extends PredefinedEffect__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class PredefinedEffect__Class extends goog.fx.Animation__Class  { 
     
             /**
              * Abstract class that provides reusable functionality for predefined animations
@@ -41,13 +40,12 @@ declare module goog.fx.dom {
              *     otherwise.
              */
             isRightToLeft(): boolean;
-        }
-    }
+    } 
+    
 
-    class Slide extends Slide.__Class { }
-    module Slide {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.fx.dom.PredefinedEffect.__Class {
+    class Slide extends Slide__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Slide__Class extends goog.fx.dom.PredefinedEffect__Class  { 
     
             /**
              * Creates an animation object that will slide an element from A to B.  (This
@@ -64,13 +62,12 @@ declare module goog.fx.dom {
              * @constructor
              */
             constructor(element: Element, start: number[], end: number[], time: number, opt_acc?: Function);
-        }
-    }
+    } 
+    
 
-    class SlideFrom extends SlideFrom.__Class { }
-    module SlideFrom {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.fx.dom.Slide.__Class {
+    class SlideFrom extends SlideFrom__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class SlideFrom__Class extends goog.fx.dom.Slide__Class  { 
     
             /**
              * Slides an element from its current position.
@@ -83,13 +80,12 @@ declare module goog.fx.dom {
              * @constructor
              */
             constructor(element: Element, end: number[], time: number, opt_acc?: Function);
-        }
-    }
+    } 
+    
 
-    class Swipe extends Swipe.__Class { }
-    module Swipe {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.fx.dom.PredefinedEffect.__Class {
+    class Swipe extends Swipe__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Swipe__Class extends goog.fx.dom.PredefinedEffect__Class  { 
     
             /**
              * Creates an animation object that will slide an element into its final size.
@@ -104,13 +100,12 @@ declare module goog.fx.dom {
              * @constructor
              */
             constructor(element: Element, start: number[], end: number[], time: number, opt_acc?: Function);
-        }
-    }
+    } 
+    
 
-    class Scroll extends Scroll.__Class { }
-    module Scroll {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.fx.dom.PredefinedEffect.__Class {
+    class Scroll extends Scroll__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Scroll__Class extends goog.fx.dom.PredefinedEffect__Class  { 
     
             /**
              * Creates an animation object that will scroll an element from A to B.
@@ -126,13 +121,12 @@ declare module goog.fx.dom {
              * @constructor
              */
             constructor(element: Element, start: number[], end: number[], time: number, opt_acc?: Function);
-        }
-    }
+    } 
+    
 
-    class Resize extends Resize.__Class { }
-    module Resize {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.fx.dom.PredefinedEffect.__Class {
+    class Resize extends Resize__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Resize__Class extends goog.fx.dom.PredefinedEffect__Class  { 
     
             /**
              * Creates an animation object that will resize an element between two widths
@@ -149,13 +143,12 @@ declare module goog.fx.dom {
              * @constructor
              */
             constructor(element: Element, start: number[], end: number[], time: number, opt_acc?: Function);
-        }
-    }
+    } 
+    
 
-    class ResizeWidth extends ResizeWidth.__Class { }
-    module ResizeWidth {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.fx.dom.PredefinedEffect.__Class {
+    class ResizeWidth extends ResizeWidth__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ResizeWidth__Class extends goog.fx.dom.PredefinedEffect__Class  { 
     
             /**
              * Creates an animation object that will resize an element between two widths
@@ -171,13 +164,12 @@ declare module goog.fx.dom {
              * @constructor
              */
             constructor(element: Element, start: number, end: number, time: number, opt_acc?: Function);
-        }
-    }
+    } 
+    
 
-    class ResizeHeight extends ResizeHeight.__Class { }
-    module ResizeHeight {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.fx.dom.PredefinedEffect.__Class {
+    class ResizeHeight extends ResizeHeight__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ResizeHeight__Class extends goog.fx.dom.PredefinedEffect__Class  { 
     
             /**
              * Creates an animation object that will resize an element between two heights
@@ -193,13 +185,12 @@ declare module goog.fx.dom {
              * @constructor
              */
             constructor(element: Element, start: number, end: number, time: number, opt_acc?: Function);
-        }
-    }
+    } 
+    
 
-    class Fade extends Fade.__Class { }
-    module Fade {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.fx.dom.PredefinedEffect.__Class {
+    class Fade extends Fade__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Fade__Class extends goog.fx.dom.PredefinedEffect__Class  { 
     
             /**
              * Creates an animation object that fades the opacity of an element between two
@@ -271,13 +262,12 @@ declare module goog.fx.dom {
              * Animation event handler that will hide the element
              */
             hide(): void;
-        }
-    }
+    } 
+    
 
-    class FadeOut extends FadeOut.__Class { }
-    module FadeOut {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.fx.dom.Fade.__Class {
+    class FadeOut extends FadeOut__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class FadeOut__Class extends goog.fx.dom.Fade__Class  { 
     
             /**
              * Fades an element out from full opacity to completely transparent.
@@ -289,13 +279,12 @@ declare module goog.fx.dom {
              * @constructor
              */
             constructor(element: Element, time: number, opt_acc?: Function);
-        }
-    }
+    } 
+    
 
-    class FadeIn extends FadeIn.__Class { }
-    module FadeIn {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.fx.dom.Fade.__Class {
+    class FadeIn extends FadeIn__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class FadeIn__Class extends goog.fx.dom.Fade__Class  { 
     
             /**
              * Fades an element in from completely transparent to fully opacity.
@@ -307,13 +296,12 @@ declare module goog.fx.dom {
              * @constructor
              */
             constructor(element: Element, time: number, opt_acc?: Function);
-        }
-    }
+    } 
+    
 
-    class FadeOutAndHide extends FadeOutAndHide.__Class { }
-    module FadeOutAndHide {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.fx.dom.Fade.__Class {
+    class FadeOutAndHide extends FadeOutAndHide__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class FadeOutAndHide__Class extends goog.fx.dom.Fade__Class  { 
     
             /**
              * Fades an element out from full opacity to completely transparent and then
@@ -326,13 +314,12 @@ declare module goog.fx.dom {
              * @constructor
              */
             constructor(element: Element, time: number, opt_acc?: Function);
-        }
-    }
+    } 
+    
 
-    class FadeInAndShow extends FadeInAndShow.__Class { }
-    module FadeInAndShow {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.fx.dom.Fade.__Class {
+    class FadeInAndShow extends FadeInAndShow__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class FadeInAndShow__Class extends goog.fx.dom.Fade__Class  { 
     
             /**
              * Sets an element's display to be visible and then fades an element in from
@@ -345,13 +332,12 @@ declare module goog.fx.dom {
              * @constructor
              */
             constructor(element: Element, time: number, opt_acc?: Function);
-        }
-    }
+    } 
+    
 
-    class BgColorTransform extends BgColorTransform.__Class { }
-    module BgColorTransform {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.fx.dom.PredefinedEffect.__Class {
+    class BgColorTransform extends BgColorTransform__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class BgColorTransform__Class extends goog.fx.dom.PredefinedEffect__Class  { 
     
             /**
              * Provides a transformation of an elements background-color.
@@ -372,13 +358,12 @@ declare module goog.fx.dom {
              * Animation event handler that will set the background-color of an element
              */
             setColor(): void;
-        }
-    }
+    } 
+    
 
-    class ColorTransform extends ColorTransform.__Class { }
-    module ColorTransform {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.fx.dom.PredefinedEffect.__Class {
+    class ColorTransform extends ColorTransform__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ColorTransform__Class extends goog.fx.dom.PredefinedEffect__Class  { 
     
             /**
              * Provides a transformation of an elements color.
@@ -392,8 +377,8 @@ declare module goog.fx.dom {
              * @extends {goog.fx.dom.PredefinedEffect}
              */
             constructor(element: Element, start: number[], end: number[], time: number, opt_acc?: Function);
-        }
-    }
+    } 
+    
 
     /**
      * Fade elements background color from start color to the element's current

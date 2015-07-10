@@ -5,10 +5,9 @@
 
 declare module goog.dom {
 
-    class ControlRange extends ControlRange.__Class { }
-    module ControlRange {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.dom.AbstractMultiRange.__Class {
+    class ControlRange extends ControlRange__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ControlRange__Class extends goog.dom.AbstractMultiRange__Class  { 
     
             /**
              * Create a new control selection with no properties.  Do not use this
@@ -29,13 +28,12 @@ declare module goog.dom {
              *     sorted by document order.
              */
             getSortedElements(): Element[];
-        }
-    }
+    } 
+    
 
-    class DomSavedControlRange_ extends DomSavedControlRange_.__Class { }
-    module DomSavedControlRange_ {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.dom.SavedRange.__Class {
+    class DomSavedControlRange_ extends DomSavedControlRange___Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class DomSavedControlRange___Class extends goog.dom.SavedRange__Class  { 
     
             /**
              * A SavedRange implementation using DOM endpoints.
@@ -45,13 +43,12 @@ declare module goog.dom {
              * @private
              */
             constructor(range: goog.dom.ControlRange);
-        }
-    }
+    } 
+    
 
-    class ControlRangeIterator extends ControlRangeIterator.__Class { }
-    module ControlRangeIterator {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.dom.RangeIterator.__Class {
+    class ControlRangeIterator extends ControlRangeIterator__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ControlRangeIterator__Class extends goog.dom.RangeIterator__Class  { 
     
             /**
              * Subclass of goog.dom.TagIterator that iterates over a DOM range.  It
@@ -63,8 +60,8 @@ declare module goog.dom {
              * @final
              */
             constructor(range: goog.dom.ControlRange);
-        }
-    }
+    } 
+    
 }
 
 declare module goog.dom.ControlRange {

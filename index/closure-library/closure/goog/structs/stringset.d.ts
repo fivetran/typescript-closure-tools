@@ -3,10 +3,9 @@
 
 declare module goog.structs {
 
-    class StringSet extends StringSet.__Class { }
-    module StringSet {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class StringSet extends StringSet__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class StringSet__Class  { 
     
             /**
              * Creates a set of strings.
@@ -176,6 +175,6 @@ declare module goog.structs {
              * @return {!goog.iter.Iterator} An iterator over the elements in the set.
              */
             __iterator__(opt_keys?: boolean): goog.iter.Iterator<any>;
-        }
-    }
+    } 
+    
 }

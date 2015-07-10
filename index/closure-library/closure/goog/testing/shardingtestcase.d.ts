@@ -3,10 +3,9 @@
 
 declare module goog.testing {
 
-    class ShardingTestCase extends ShardingTestCase.__Class { }
-    module ShardingTestCase {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.testing.TestCase.__Class {
+    class ShardingTestCase extends ShardingTestCase__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ShardingTestCase__Class extends goog.testing.TestCase__Class  { 
     
             /**
              * A test case that runs tests in per-file shards.
@@ -18,8 +17,8 @@ declare module goog.testing {
              * @final
              */
             constructor(shardIndex: number, numShards: number, opt_name?: any /* jsdoc error */);
-        }
-    }
+    } 
+    
 }
 
 declare module goog.testing.ShardingTestCase {

@@ -3,10 +3,9 @@
 
 declare module goog.dom {
 
-    class TagIterator extends TagIterator.__Class { }
-    module TagIterator {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.iter.Iterator.__Class<Node> {
+    class TagIterator extends TagIterator__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class TagIterator__Class extends goog.iter.Iterator__Class<Node>  { 
     
             /**
              * A DOM tree traversal iterator.
@@ -167,8 +166,8 @@ declare module goog.dom {
              *     arguments are assumed to be nodes.
              */
             splice(...var_args: Object[]): void;
-        }
-    }
+    } 
+    
 
     /**
      * There are three types of token:

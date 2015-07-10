@@ -7,10 +7,9 @@
 
 declare module goog.graphics {
 
-    class SvgGraphics extends SvgGraphics.__Class { }
-    module SvgGraphics {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.graphics.AbstractGraphics.__Class {
+    class SvgGraphics extends SvgGraphics__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class SvgGraphics__Class extends goog.graphics.AbstractGraphics__Class  { 
     
             /**
              * A Graphics implementation for drawing using SVG.
@@ -142,8 +141,8 @@ declare module goog.graphics {
              *     if two definitions are equal they should have the same key.
              */
             removeDef(defKey: string): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.graphics.SvgGraphics {

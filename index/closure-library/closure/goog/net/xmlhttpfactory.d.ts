@@ -3,10 +3,9 @@
 
 declare module goog.net {
 
-    class XmlHttpFactory extends XmlHttpFactory.__Class { }
-    module XmlHttpFactory {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class XmlHttpFactory extends XmlHttpFactory__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class XmlHttpFactory__Class  { 
     
             /**
              * Abstract base class for an XmlHttpRequest factory.
@@ -33,6 +32,6 @@ declare module goog.net {
              * @protected
              */
             internalGetOptions(): Object;
-        }
-    }
+    } 
+    
 }

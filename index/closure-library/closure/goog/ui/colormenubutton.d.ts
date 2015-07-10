@@ -7,10 +7,9 @@
 
 declare module goog.ui {
 
-    class ColorMenuButton extends ColorMenuButton.__Class { }
-    module ColorMenuButton {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.MenuButton.__Class {
+    class ColorMenuButton extends ColorMenuButton__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ColorMenuButton__Class extends goog.ui.MenuButton__Class  { 
     
             /**
              * A color menu button control.  Extends {@link goog.ui.MenuButton} by adding
@@ -93,8 +92,8 @@ declare module goog.ui {
              * @param {?string} color New color.
              */
             setSelectedColor(color: string): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.ColorMenuButton {

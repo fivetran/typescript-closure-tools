@@ -2,10 +2,9 @@
 
 declare module goog.structs {
 
-    class InversionMap<T> extends InversionMap.__Class<T> { }
-    module InversionMap {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class<T> {
+    class InversionMap<T> extends InversionMap__Class<T> { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class InversionMap__Class<T>  { 
     
             /**
              * Maps ranges to values.
@@ -53,6 +52,6 @@ declare module goog.structs {
              * @protected
              */
             getLeast(intKey: number): number;
-        }
-    }
+    } 
+    
 }

@@ -4,10 +4,9 @@
 
 declare module goog.events {
 
-    class MouseWheelHandler extends MouseWheelHandler.__Class { }
-    module MouseWheelHandler {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.EventTarget.__Class {
+    class MouseWheelHandler extends MouseWheelHandler__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class MouseWheelHandler__Class extends goog.events.EventTarget__Class  { 
     
             /**
              * This event handler allows you to catch mouse wheel events in a consistent
@@ -49,13 +48,12 @@ declare module goog.events {
              * @param {goog.events.BrowserEvent} e The underlying browser event.
              */
             handleEvent(e: goog.events.BrowserEvent): void;
-        }
-    }
+    } 
+    
 
-    class MouseWheelEvent extends MouseWheelEvent.__Class { }
-    module MouseWheelEvent {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.BrowserEvent.__Class {
+    class MouseWheelEvent extends MouseWheelEvent__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class MouseWheelEvent__Class extends goog.events.BrowserEvent__Class  { 
     
             /**
              * A base class for mouse wheel events. This is used with the
@@ -100,8 +98,8 @@ declare module goog.events {
              * @type {number}
              */
             deltaY: number;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.events.MouseWheelHandler {

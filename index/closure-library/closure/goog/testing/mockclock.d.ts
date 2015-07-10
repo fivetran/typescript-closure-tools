@@ -3,10 +3,9 @@
 
 declare module goog.testing {
 
-    class MockClock extends MockClock.__Class { }
-    module MockClock {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.Disposable.__Class {
+    class MockClock extends MockClock__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class MockClock__Class extends goog.Disposable__Class  { 
     
             /**
              * Class for unit testing code that uses setTimeout and clearTimeout.
@@ -101,8 +100,8 @@ declare module goog.testing {
              *     cleared.
              */
             isTimeoutSet(timeoutKey: number): boolean;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.testing.MockClock {

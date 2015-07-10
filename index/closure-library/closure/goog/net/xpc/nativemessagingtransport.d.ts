@@ -5,10 +5,9 @@
 
 declare module goog.net.xpc {
 
-    class NativeMessagingTransport extends NativeMessagingTransport.__Class { }
-    module NativeMessagingTransport {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.net.xpc.Transport.__Class {
+    class NativeMessagingTransport extends NativeMessagingTransport__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class NativeMessagingTransport__Class extends goog.net.xpc.Transport__Class  { 
     
             /**
              * The native messaging transport
@@ -32,6 +31,6 @@ declare module goog.net.xpc {
              * @final
              */
             constructor(channel: goog.net.xpc.CrossPageChannel, peerHostname: string, opt_domHelper?: goog.dom.DomHelper, opt_oneSidedHandshake?: boolean, opt_protocolVersion?: number);
-        }
-    }
+    } 
+    
 }

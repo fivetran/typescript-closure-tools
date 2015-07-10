@@ -2,10 +2,9 @@
 
 declare module goog.i18n {
 
-    class NumberFormat extends NumberFormat.__Class { }
-    module NumberFormat {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class NumberFormat extends NumberFormat__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class NumberFormat__Class  { 
     
             /**
              * Constructor of NumberFormat.
@@ -126,8 +125,8 @@ declare module goog.i18n {
              * @return {boolean} true if currency is before value.
              */
             isCurrencyCodeBeforeValue(): boolean;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.i18n.NumberFormat {

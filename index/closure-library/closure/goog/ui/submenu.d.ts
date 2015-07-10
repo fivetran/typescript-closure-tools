@@ -9,10 +9,9 @@
 
 declare module goog.ui {
 
-    class SubMenu extends SubMenu.__Class { }
-    module SubMenu {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.MenuItem.__Class {
+    class SubMenu extends SubMenu__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class SubMenu__Class extends goog.ui.MenuItem__Class  { 
     
             /**
              * Class representing a submenu that can be added as an item to other menus.
@@ -215,8 +214,8 @@ declare module goog.ui {
              * @return {boolean} Whether this submenu is adjustable.
              */
             isPositionAdjustable(): boolean;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.SubMenu {

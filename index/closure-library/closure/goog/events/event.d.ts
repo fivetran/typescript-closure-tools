@@ -3,10 +3,9 @@
 
 declare module goog.events {
 
-    class Event extends Event.__Class { }
-    module Event {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Event extends Event__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Event__Class  { 
     
             /**
              * A base class for event objects, so that they can support preventDefault and
@@ -100,8 +99,8 @@ declare module goog.events {
              * Prevents the default action, for example a link redirecting to a url.
              */
             preventDefault(): void;
-        }
-    }
+    } 
+    
 
     /**
      * A typedef for event like objects that are dispatchable via the

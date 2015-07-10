@@ -3,10 +3,9 @@
 
 declare module goog.dom.pattern {
 
-    class EndTag extends EndTag.__Class { }
-    module EndTag {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.dom.pattern.Tag.__Class {
+    class EndTag extends EndTag__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class EndTag__Class extends goog.dom.pattern.Tag__Class  { 
     
             /**
              * Pattern object that matches a closing tag.
@@ -44,6 +43,6 @@ declare module goog.dom.pattern {
              * @final
              */
             constructor(tag: RegExp, opt_attrs?: Object, opt_styles?: Object, opt_test?: Function);
-        }
-    }
+    } 
+    
 }

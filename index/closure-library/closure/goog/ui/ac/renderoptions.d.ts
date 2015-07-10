@@ -2,10 +2,9 @@
 
 declare module goog.ui.ac {
 
-    class RenderOptions extends RenderOptions.__Class { }
-    module RenderOptions {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class RenderOptions extends RenderOptions__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class RenderOptions__Class  { 
     
             /**
              * A simple class that contains options for rendering a set of autocomplete
@@ -33,6 +32,6 @@ declare module goog.ui.ac {
              * @return {boolean|undefined} The value of the autoHilite_ flag.
              */
             getAutoHilite(): any /*boolean|any (undefined)*/;
-        }
-    }
+    } 
+    
 }

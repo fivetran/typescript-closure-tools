@@ -5,10 +5,9 @@
 
 declare module goog.ui {
 
-    class Prompt extends Prompt.__Class { }
-    module Prompt {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.Dialog.__Class {
+    class Prompt extends Prompt__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Prompt__Class extends goog.ui.Dialog__Class  { 
     
             /**
              * Creates an object that represents a prompt (used in place of javascript's
@@ -115,6 +114,6 @@ declare module goog.ui {
              * @param {string} defaultValue The default value to display.
              */
             setDefaultValue(defaultValue: string): void;
-        }
-    }
+    } 
+    
 }

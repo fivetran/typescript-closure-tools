@@ -2,10 +2,9 @@
 
 declare module goog.crypt {
 
-    class Arc4 extends Arc4.__Class { }
-    module Arc4 {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Arc4 extends Arc4__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Arc4__Class  { 
     
             /**
              * ARC4 streamcipher implementation.
@@ -54,6 +53,6 @@ declare module goog.crypt {
              * @param {number=} opt_length The number of bytes to crypt.
              */
             crypt(data: Uint8Array, opt_length?: number): void;
-        }
-    }
+    } 
+    
 }

@@ -5,10 +5,9 @@
 
 declare module goog.html {
 
-    class SafeUrl extends SafeUrl.__Class { }
-    module SafeUrl {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class implements goog.i18n.bidi.DirectionalString, goog.string.TypedString {
+    class SafeUrl extends SafeUrl__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class SafeUrl__Class implements goog.i18n.bidi.DirectionalString, goog.string.TypedString  { 
     
             /**
              * A string that is safe to use in URL context in DOM APIs and HTML documents.
@@ -80,8 +79,8 @@ declare module goog.html {
              * @return {!string} The wrapped string's value.
              */
             getTypedStringValue(): string;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.html.SafeUrl {

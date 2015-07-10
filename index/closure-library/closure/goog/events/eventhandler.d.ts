@@ -8,10 +8,9 @@
 
 declare module goog.events {
 
-    class EventHandler<SCOPE> extends EventHandler.__Class<SCOPE> { }
-    module EventHandler {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class<SCOPE> extends goog.Disposable.__Class {
+    class EventHandler<SCOPE> extends EventHandler__Class<SCOPE> { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class EventHandler__Class<SCOPE> extends goog.Disposable__Class  { 
     
             /**
              * Super class for objects that want to easily manage a number of event
@@ -3383,6 +3382,6 @@ declare module goog.events {
              * @param {goog.events.Event} e Event object.
              */
             handleEvent(e: goog.events.Event): void;
-        }
-    }
+    } 
+    
 }

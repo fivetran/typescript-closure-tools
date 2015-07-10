@@ -6,10 +6,9 @@
 
 declare module goog.editor.plugins {
 
-    class UndoRedo extends UndoRedo.__Class { }
-    module UndoRedo {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.editor.Plugin.__Class {
+    class UndoRedo extends UndoRedo__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class UndoRedo__Class extends goog.editor.Plugin__Class  { 
     
             /**
              * Encapsulates undo/redo logic using a custom undo stack (i.e. not browser
@@ -79,16 +78,15 @@ declare module goog.editor.plugins {
              * @param {goog.editor.Field} fieldObject The editable field.
              */
             refreshCurrentState(fieldObject: goog.editor.Field): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.editor.plugins.UndoRedo {
 
-    class UndoState_ extends UndoState_.__Class { }
-    module UndoState_ {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.editor.plugins.UndoRedoState.__Class {
+    class UndoState_ extends UndoState___Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class UndoState___Class extends goog.editor.plugins.UndoRedoState__Class  { 
     
             /**
              * This object encapsulates the state of an editable field.
@@ -130,13 +128,12 @@ declare module goog.editor.plugins.UndoRedo {
              *     The cursor position to restore on a redo.
              */
             setRedoState(content: string, cursorPosition: goog.editor.plugins.UndoRedo.CursorPosition_): void;
-        }
-    }
+    } 
+    
 
-    class CursorPosition_ extends CursorPosition_.__Class { }
-    module CursorPosition_ {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class CursorPosition_ extends CursorPosition___Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class CursorPosition___Class  { 
     
             /**
              * Stores the state of the selection in a way the survives DOM modifications
@@ -160,8 +157,8 @@ declare module goog.editor.plugins.UndoRedo {
              * Makes the browser's selection match the cursor position.
              */
             select(): void;
-        }
-    }
+    } 
+    
 
     /**
      * Commands implemented by this plugin.

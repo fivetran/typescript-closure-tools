@@ -4,10 +4,9 @@
 
 declare module goog.testing {
 
-    class ContinuationTestCase extends ContinuationTestCase.__Class { }
-    module ContinuationTestCase {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.testing.TestCase.__Class {
+    class ContinuationTestCase extends ContinuationTestCase__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ContinuationTestCase__Class extends goog.testing.TestCase__Class  { 
     
             /**
              * Constructs a test case that supports tests with continuations. Test functions
@@ -67,16 +66,15 @@ declare module goog.testing {
              *     condition in milliseconds (defaults to 1000).
              */
             waitForCondition(condition: Function, continuation: Function, opt_interval?: number, opt_maxTimeout?: number): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.testing.ContinuationTestCase {
 
-    class Test extends Test.__Class { }
-    module Test {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.testing.TestCase.Test.__Class {
+    class Test extends Test__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Test__Class extends goog.testing.TestCase.Test__Class  { 
     
             /**
              * Creates a continuation test case, which consists of multiple test steps that
@@ -140,13 +138,12 @@ declare module goog.testing.ContinuationTestCase {
              * clean up.
              */
             cancelTestPhase(): void;
-        }
-    }
+    } 
+    
 
-    class Step extends Step.__Class { }
-    module Step {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.testing.TestCase.Test.__Class {
+    class Step extends Step__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Step__Class extends goog.testing.TestCase.Test__Class  { 
     
             /**
              * Constructs a single step in a larger continuation test. Each step is similar
@@ -182,8 +179,8 @@ declare module goog.testing.ContinuationTestCase {
              * Clears the current timeout if it is active.
              */
             clearTimeout(): void;
-        }
-    }
+    } 
+    
 
     /**
      * The default maximum time to wait for a single test step in milliseconds.

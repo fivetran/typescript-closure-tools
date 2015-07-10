@@ -8,10 +8,9 @@
 
 declare module goog.ui.emoji {
 
-    class PopupEmojiPicker extends PopupEmojiPicker.__Class { }
-    module PopupEmojiPicker {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.Component.__Class {
+    class PopupEmojiPicker extends PopupEmojiPicker__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class PopupEmojiPicker__Class extends goog.ui.Component__Class  { 
     
             /**
              * Constructs a popup emoji picker widget.
@@ -195,6 +194,6 @@ declare module goog.ui.emoji {
              * @return {goog.ui.emoji.Emoji} The currently selected emoji.
              */
             getSelectedEmoji(): goog.ui.emoji.Emoji;
-        }
-    }
+    } 
+    
 }

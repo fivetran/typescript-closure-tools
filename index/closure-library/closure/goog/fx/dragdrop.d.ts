@@ -3,10 +3,9 @@
 
 declare module goog.fx {
 
-    class DragDrop extends DragDrop.__Class { }
-    module DragDrop {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.fx.AbstractDragDrop.__Class {
+    class DragDrop extends DragDrop__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class DragDrop__Class extends goog.fx.AbstractDragDrop__Class  { 
     
             /**
              * Drag/drop implementation for creating drag sources/drop targets consisting of
@@ -32,6 +31,6 @@ declare module goog.fx {
              * @constructor
              */
             constructor(element: string, opt_data?: Object);
-        }
-    }
+    } 
+    
 }

@@ -3,10 +3,9 @@
 
 declare module goog.storage.mechanism {
 
-    class PrefixedMechanism extends PrefixedMechanism.__Class { }
-    module PrefixedMechanism {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.storage.mechanism.IterableMechanism.__Class {
+    class PrefixedMechanism extends PrefixedMechanism__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class PrefixedMechanism__Class extends goog.storage.mechanism.IterableMechanism__Class  { 
     
             /**
              * Wraps an iterable storage mechanism and creates artificial namespaces.
@@ -19,6 +18,6 @@ declare module goog.storage.mechanism {
              * @final
              */
             constructor(mechanism: goog.storage.mechanism.IterableMechanism, prefix: string);
-        }
-    }
+    } 
+    
 }

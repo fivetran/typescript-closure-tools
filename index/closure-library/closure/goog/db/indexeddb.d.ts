@@ -7,10 +7,9 @@
 
 declare module goog.db {
 
-    class IndexedDb extends IndexedDb.__Class { }
-    module IndexedDb {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.EventTarget.__Class {
+    class IndexedDb extends IndexedDb__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class IndexedDb__Class extends goog.events.EventTarget__Class  { 
     
             /**
              * Creates an IDBDatabase wrapper object. The database object has methods for
@@ -111,16 +110,15 @@ declare module goog.db {
              * @throws {goog.db.Error} If there's a problem creating the transaction.
              */
             createTransaction(storeNames: string[], opt_mode?: goog.db.Transaction.TransactionMode): goog.db.Transaction;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.db.IndexedDb {
 
-    class VersionChangeEvent extends VersionChangeEvent.__Class { }
-    module VersionChangeEvent {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.Event.__Class {
+    class VersionChangeEvent extends VersionChangeEvent__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class VersionChangeEvent__Class extends goog.events.Event__Class  { 
     
             /**
              * Event representing a (possibly attempted) change in the database structure.
@@ -148,8 +146,8 @@ declare module goog.db.IndexedDb {
              * @type {number}
              */
             newVersion: number;
-        }
-    }
+    } 
+    
 
     /**
      * Event types fired by a database.

@@ -2,10 +2,9 @@
 
 declare module goog.labs.net.webChannel {
 
-    class ForwardChannelRequestPool extends ForwardChannelRequestPool.__Class { }
-    module ForwardChannelRequestPool {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class ForwardChannelRequestPool extends ForwardChannelRequestPool__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ForwardChannelRequestPool__Class  { 
     
             /**
              * This class represents the state of all forward channel requests.
@@ -16,6 +15,6 @@ declare module goog.labs.net.webChannel {
              * @final
              */
             constructor(opt_maxPoolSize?: number);
-        }
-    }
+    } 
+    
 }

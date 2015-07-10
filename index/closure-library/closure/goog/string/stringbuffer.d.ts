@@ -2,10 +2,9 @@
 
 declare module goog._string {
 
-    class StringBuffer extends StringBuffer.__Class { }
-    module StringBuffer {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class StringBuffer extends StringBuffer__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class StringBuffer__Class  { 
     
             /**
              * Utility class to facilitate string concatenation.
@@ -48,6 +47,6 @@ declare module goog._string {
              * @return {number} the length of the current contents of the buffer.
              */
             getLength(): number;
-        }
-    }
+    } 
+    
 }

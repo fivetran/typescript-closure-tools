@@ -2,10 +2,9 @@
 
 declare module goog.module {
 
-    class Loader extends Loader.__Class { }
-    module Loader {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Loader extends Loader__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Loader__Class  { 
     
             /**
              * The dynamic loading functionality is defined as a class. The class
@@ -88,8 +87,8 @@ declare module goog.module {
              *     all symbols of the module are defined.
              */
             provide(module: string, opt_symbol?: string, opt_object?: Object): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.module.Loader {

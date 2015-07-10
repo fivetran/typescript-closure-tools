@@ -4,10 +4,9 @@
 
 declare module goog.ui {
 
-    class LabelInput extends LabelInput.__Class { }
-    module LabelInput {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.Component.__Class {
+    class LabelInput extends LabelInput__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class LabelInput__Class extends goog.ui.Component__Class  { 
     
             /**
              * This creates the label input object.
@@ -94,6 +93,6 @@ declare module goog.ui {
              * @return {boolean} True if the label input is enabled, false otherwise.
              */
             isEnabled(): boolean;
-        }
-    }
+    } 
+    
 }

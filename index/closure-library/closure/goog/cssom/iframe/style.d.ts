@@ -2,10 +2,9 @@
 
 declare module goog.cssom.iframe.style {
 
-    class CssRuleSet_ extends CssRuleSet_.__Class { }
-    module CssRuleSet_ {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class CssRuleSet_ extends CssRuleSet___Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class CssRuleSet___Class  { 
     
             /**
              * Class representing a CSS rule set. A rule set is something like this:
@@ -68,13 +67,12 @@ declare module goog.cssom.iframe.style {
              * @param {Array.<string>} array The array to which to append strings.
              */
             writeToArray(array: string[]): void;
-        }
-    }
+    } 
+    
 
-    class CssSelector_ extends CssSelector_.__Class { }
-    module CssSelector_ {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class CssSelector_ extends CssSelector___Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class CssSelector___Class  { 
     
             /**
              * Represents a single CSS selector, as described in
@@ -111,13 +109,12 @@ declare module goog.cssom.iframe.style {
              *     selectorPartIndex, or null if there was no match.
              */
             matchElementAncestry(elementAncestry: goog.cssom.iframe.style.NodeAncestry_): Object;
-        }
-    }
+    } 
+    
 
-    class CssSelectorPart_ extends CssSelectorPart_.__Class { }
-    module CssSelectorPart_ {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class CssSelectorPart_ extends CssSelectorPart___Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class CssSelectorPart___Class  { 
     
             /**
              * Represents one part of a CSS Selector. For example in the selector
@@ -136,13 +133,12 @@ declare module goog.cssom.iframe.style {
              * @return {boolean} Whether the element matched.
              */
             testElement(elementInfo: Object): boolean;
-        }
-    }
+    } 
+    
 
-    class NodeAncestry_ extends NodeAncestry_.__Class { }
-    module NodeAncestry_ {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class NodeAncestry_ extends NodeAncestry___Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class NodeAncestry___Class  { 
     
             /**
              * Represents an element and all its parent/ancestor nodes.
@@ -160,8 +156,8 @@ declare module goog.cssom.iframe.style {
              * @type {Array.<Node>}
              */
             nodes: Node[];
-        }
-    }
+    } 
+    
 
     /**
      * Throw away all cached dom information. Call this if you've modified

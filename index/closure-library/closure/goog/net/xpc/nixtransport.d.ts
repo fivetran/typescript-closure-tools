@@ -5,10 +5,9 @@
 
 declare module goog.net.xpc {
 
-    class NixTransport extends NixTransport.__Class { }
-    module NixTransport {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.net.xpc.Transport.__Class {
+    class NixTransport extends NixTransport__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class NixTransport__Class extends goog.net.xpc.Transport__Class  { 
     
             /**
              * NIX method transport.
@@ -24,8 +23,8 @@ declare module goog.net.xpc {
              * @final
              */
             constructor(channel: goog.net.xpc.CrossPageChannel, opt_domHelper?: goog.dom.DomHelper);
-        }
-    }
+    } 
+    
 }
 
 declare module goog.net.xpc.NixTransport {

@@ -3,10 +3,9 @@
 
 declare module goog.editor.plugins {
 
-    class RemoveFormatting extends RemoveFormatting.__Class { }
-    module RemoveFormatting {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.editor.Plugin.__Class {
+    class RemoveFormatting extends RemoveFormatting__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class RemoveFormatting__Class extends goog.editor.Plugin__Class  { 
     
             /**
              * A plugin to handle removing formatting from selected text.
@@ -35,8 +34,8 @@ declare module goog.editor.plugins {
              *     meet your needs.
              */
             setRemoveFormattingFunc(removeFormattingFunc: (_0: string) => string): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.editor.plugins.RemoveFormatting {

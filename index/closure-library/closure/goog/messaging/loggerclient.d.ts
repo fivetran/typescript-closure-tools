@@ -4,10 +4,9 @@
 
 declare module goog.messaging {
 
-    class LoggerClient extends LoggerClient.__Class { }
-    module LoggerClient {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.Disposable.__Class {
+    class LoggerClient extends LoggerClient__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class LoggerClient__Class extends goog.Disposable__Class  { 
     
             /**
              * Creates a logger client that sends messages along a message channel for the
@@ -22,6 +21,6 @@ declare module goog.messaging {
              * @final
              */
             constructor(channel: goog.messaging.MessageChannel, serviceName: string);
-        }
-    }
+    } 
+    
 }

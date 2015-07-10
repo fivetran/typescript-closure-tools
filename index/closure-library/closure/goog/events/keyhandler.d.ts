@@ -4,10 +4,9 @@
 
 declare module goog.events {
 
-    class KeyHandler extends KeyHandler.__Class { }
-    module KeyHandler {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.EventTarget.__Class {
+    class KeyHandler extends KeyHandler__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class KeyHandler__Class extends goog.events.EventTarget__Class  { 
     
             /**
              * A wrapper around an element that you want to listen to keyboard events on.
@@ -70,13 +69,12 @@ declare module goog.events {
              * Removes the listeners that may exist.
              */
             detach(): void;
-        }
-    }
+    } 
+    
 
-    class KeyEvent extends KeyEvent.__Class { }
-    module KeyEvent {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.BrowserEvent.__Class {
+    class KeyEvent extends KeyEvent__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class KeyEvent__Class extends goog.events.BrowserEvent__Class  { 
     
             /**
              * This class is used for the goog.events.KeyHandler.EventType.KEY event and
@@ -109,8 +107,8 @@ declare module goog.events {
              * @type {boolean}
              */
             repeat: boolean;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.events.KeyHandler {

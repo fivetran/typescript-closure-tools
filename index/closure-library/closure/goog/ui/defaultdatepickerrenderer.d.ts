@@ -4,10 +4,9 @@
 
 declare module goog.ui {
 
-    class DefaultDatePickerRenderer extends DefaultDatePickerRenderer.__Class { }
-    module DefaultDatePickerRenderer {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class implements goog.ui.DatePickerRenderer {
+    class DefaultDatePickerRenderer extends DefaultDatePickerRenderer__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class DefaultDatePickerRenderer__Class implements goog.ui.DatePickerRenderer  { 
     
             /**
              * Default renderer for {@link goog.ui.DatePicker}. Renders the date picker's
@@ -56,6 +55,6 @@ declare module goog.ui {
              * @param {boolean} showWeekNum Whether week numbers should be shown.
              */
             renderFooterRow(row: Element, showWeekNum: boolean): void;
-        }
-    }
+    } 
+    
 }

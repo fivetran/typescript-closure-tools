@@ -3,10 +3,9 @@
 
 declare module goog.labs.testing {
 
-    class ObjectEqualsMatcher extends ObjectEqualsMatcher.__Class { }
-    module ObjectEqualsMatcher {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class implements goog.labs.testing.Matcher {
+    class ObjectEqualsMatcher extends ObjectEqualsMatcher__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ObjectEqualsMatcher__Class implements goog.labs.testing.Matcher  { 
     
             /**
              * The Equals matcher.
@@ -38,13 +37,12 @@ declare module goog.labs.testing {
              * @return {string} Description of why the matcher failed.
              */
             describe(value: any, opt_description?: string): string;
-        }
-    }
+    } 
+    
 
-    class HasPropertyMatcher extends HasPropertyMatcher.__Class { }
-    module HasPropertyMatcher {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class implements goog.labs.testing.Matcher {
+    class HasPropertyMatcher extends HasPropertyMatcher__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class HasPropertyMatcher__Class implements goog.labs.testing.Matcher  { 
     
             /**
              * The HasProperty matcher.
@@ -76,13 +74,12 @@ declare module goog.labs.testing {
              * @return {string} Description of why the matcher failed.
              */
             describe(value: any, opt_description?: string): string;
-        }
-    }
+    } 
+    
 
-    class InstanceOfMatcher extends InstanceOfMatcher.__Class { }
-    module InstanceOfMatcher {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class implements goog.labs.testing.Matcher {
+    class InstanceOfMatcher extends InstanceOfMatcher__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class InstanceOfMatcher__Class implements goog.labs.testing.Matcher  { 
     
             /**
              * The InstanceOf matcher.
@@ -114,13 +111,12 @@ declare module goog.labs.testing {
              * @return {string} Description of why the matcher failed.
              */
             describe(value: any, opt_description?: string): string;
-        }
-    }
+    } 
+    
 
-    class IsNullOrUndefinedMatcher extends IsNullOrUndefinedMatcher.__Class { }
-    module IsNullOrUndefinedMatcher {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class implements goog.labs.testing.Matcher {
+    class IsNullOrUndefinedMatcher extends IsNullOrUndefinedMatcher__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class IsNullOrUndefinedMatcher__Class implements goog.labs.testing.Matcher  { 
     
             /**
              * The IsNullOrUndefined matcher.
@@ -150,13 +146,12 @@ declare module goog.labs.testing {
              * @return {string} Description of why the matcher failed.
              */
             describe(value: any, opt_description?: string): string;
-        }
-    }
+    } 
+    
 
-    class IsNullMatcher extends IsNullMatcher.__Class { }
-    module IsNullMatcher {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class implements goog.labs.testing.Matcher {
+    class IsNullMatcher extends IsNullMatcher__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class IsNullMatcher__Class implements goog.labs.testing.Matcher  { 
     
             /**
              * The IsNull matcher.
@@ -186,13 +181,12 @@ declare module goog.labs.testing {
              * @return {string} Description of why the matcher failed.
              */
             describe(value: any, opt_description?: string): string;
-        }
-    }
+    } 
+    
 
-    class IsUndefinedMatcher extends IsUndefinedMatcher.__Class { }
-    module IsUndefinedMatcher {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class implements goog.labs.testing.Matcher {
+    class IsUndefinedMatcher extends IsUndefinedMatcher__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class IsUndefinedMatcher__Class implements goog.labs.testing.Matcher  { 
     
             /**
              * The IsUndefined matcher.
@@ -222,6 +216,6 @@ declare module goog.labs.testing {
              * @return {string} Description of why the matcher failed.
              */
             describe(value: any, opt_description?: string): string;
-        }
-    }
+    } 
+    
 }

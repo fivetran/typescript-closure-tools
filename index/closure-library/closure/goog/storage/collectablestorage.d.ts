@@ -4,10 +4,9 @@
 
 declare module goog.storage {
 
-    class CollectableStorage extends CollectableStorage.__Class { }
-    module CollectableStorage {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.storage.ExpiringStorage.__Class {
+    class CollectableStorage extends CollectableStorage__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class CollectableStorage__Class extends goog.storage.ExpiringStorage__Class  { 
     
             /**
              * Provides a storage with expirning keys and a collection method.
@@ -35,6 +34,6 @@ declare module goog.storage {
              * @param {boolean=} opt_strict Also remove invalid keys.
              */
             collect(opt_strict?: boolean): void;
-        }
-    }
+    } 
+    
 }

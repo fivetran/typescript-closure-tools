@@ -3,10 +3,9 @@
 
 declare module goog.dom {
 
-    class AbstractMultiRange extends AbstractMultiRange.__Class { }
-    module AbstractMultiRange {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.dom.AbstractRange.__Class {
+    class AbstractMultiRange extends AbstractMultiRange__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class AbstractMultiRange__Class extends goog.dom.AbstractRange__Class  { 
     
             /**
              * Creates a new multi range with no properties.  Do not use this
@@ -15,6 +14,6 @@ declare module goog.dom {
              * @extends {goog.dom.AbstractRange}
              */
             constructor();
-        }
-    }
+    } 
+    
 }

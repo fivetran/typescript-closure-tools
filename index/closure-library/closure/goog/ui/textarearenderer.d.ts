@@ -3,10 +3,9 @@
 
 declare module goog.ui {
 
-    class TextareaRenderer extends TextareaRenderer.__Class { }
-    module TextareaRenderer {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.ControlRenderer.__Class {
+    class TextareaRenderer extends TextareaRenderer__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class TextareaRenderer__Class extends goog.ui.ControlRenderer__Class  { 
     
             /**
              * Renderer for {@link goog.ui.Textarea}s.  Renders and decorates native HTML
@@ -18,8 +17,8 @@ declare module goog.ui {
              * @final
              */
             constructor();
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.TextareaRenderer {

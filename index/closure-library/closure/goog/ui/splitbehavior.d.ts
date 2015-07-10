@@ -5,10 +5,9 @@
 
 declare module goog.ui {
 
-    class SplitBehavior extends SplitBehavior.__Class { }
-    module SplitBehavior {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.Disposable.__Class {
+    class SplitBehavior extends SplitBehavior__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class SplitBehavior__Class extends goog.Disposable__Class  { 
     
             /**
              * Creates a behavior for combining two controls. The behavior is triggered
@@ -89,8 +88,8 @@ declare module goog.ui {
              * @param {boolean} activate Whether to activate or deactivate the behavior.
              */
             setActive(activate: boolean): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.SplitBehavior {

@@ -2,10 +2,9 @@
 
 declare module goog.dom.pattern.callback {
 
-    class Counter extends Counter.__Class { }
-    module Counter {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Counter extends Counter__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Counter__Class  { 
     
             /**
              * Callback class for counting matches.
@@ -33,6 +32,6 @@ declare module goog.dom.pattern.callback {
              * Reset the counter.
              */
             reset(): void;
-        }
-    }
+    } 
+    
 }

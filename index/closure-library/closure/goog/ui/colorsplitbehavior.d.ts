@@ -5,10 +5,9 @@
 
 declare module goog.ui {
 
-    class ColorSplitBehavior extends ColorSplitBehavior.__Class { }
-    module ColorSplitBehavior {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.SplitBehavior.__Class {
+    class ColorSplitBehavior extends ColorSplitBehavior__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ColorSplitBehavior__Class extends goog.ui.SplitBehavior__Class  { 
     
             /**
              * Constructs a ColorSplitBehavior for combining a color button and a menu.
@@ -28,6 +27,6 @@ declare module goog.ui {
              * @final
              */
             constructor(colorButton: goog.ui.Button, opt_domHelper?: goog.dom.DomHelper);
-        }
-    }
+    } 
+    
 }

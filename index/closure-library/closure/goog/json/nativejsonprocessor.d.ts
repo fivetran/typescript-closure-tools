@@ -4,10 +4,9 @@
 
 declare module goog.json {
 
-    class NativeJsonProcessor extends NativeJsonProcessor.__Class { }
-    module NativeJsonProcessor {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class implements goog.json.Processor {
+    class NativeJsonProcessor extends NativeJsonProcessor__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class NativeJsonProcessor__Class implements goog.json.Processor  { 
     
             /**
              * A class that parses and stringifies JSON using the browser's built-in JSON
@@ -29,6 +28,6 @@ declare module goog.json {
              * @final
              */
             constructor(opt_replacer?: goog.json.Replacer, opt_reviver?: goog.json.Reviver);
-        }
-    }
+    } 
+    
 }

@@ -3,10 +3,9 @@
 
 declare module goog.proto2 {
 
-    class ObjectSerializer extends ObjectSerializer.__Class { }
-    module ObjectSerializer {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.proto2.Serializer.__Class {
+    class ObjectSerializer extends ObjectSerializer__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ObjectSerializer__Class extends goog.proto2.Serializer__Class  { 
     
             /**
              * ObjectSerializer, a serializer which turns Messages into simplified
@@ -18,8 +17,8 @@ declare module goog.proto2 {
              * @extends {goog.proto2.Serializer}
              */
             constructor(opt_keyOption?: goog.proto2.ObjectSerializer.KeyOption);
-        }
-    }
+    } 
+    
 }
 
 declare module goog.proto2.ObjectSerializer {

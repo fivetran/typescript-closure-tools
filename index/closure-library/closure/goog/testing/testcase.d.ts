@@ -2,10 +2,9 @@
 
 declare module goog.testing {
 
-    class TestCase extends TestCase.__Class { }
-    module TestCase {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class TestCase extends TestCase__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class TestCase__Class  { 
     
             /**
              * A class representing a JsUnit test case.  A TestCase is made up of a number
@@ -341,16 +340,15 @@ declare module goog.testing {
              * @return {!goog.testing.TestCase.Error} Error object.
              */
             logError(name: string, opt_e?: any): goog.testing.TestCase.Error;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.testing.TestCase {
 
-    class Test extends Test.__Class { }
-    module Test {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Test extends Test__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Test__Class  { 
     
             /**
              * A class representing a single test function.
@@ -384,13 +382,12 @@ declare module goog.testing.TestCase {
              * Executes the test function.
              */
             execute(): void;
-        }
-    }
+    } 
+    
 
-    class Result extends Result.__Class { }
-    module Result {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Result extends Result__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Result__Class  { 
     
             /**
              * A class for representing test results.  A bag of public properties.
@@ -473,13 +470,12 @@ declare module goog.testing.TestCase {
              *     passed, failed, and the time taken.
              */
             getSummary(): string;
-        }
-    }
+    } 
+    
 
-    class Error extends Error.__Class { }
-    module Error {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Error extends Error__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Error__Class  { 
     
             /**
              * A class representing an error thrown by the test
@@ -508,8 +504,8 @@ declare module goog.testing.TestCase {
              * @type {?string}
              */
             stack: string;
-        }
-    }
+    } 
+    
 
     /**
      * The order to run the auto-discovered tests.

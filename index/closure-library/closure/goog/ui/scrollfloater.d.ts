@@ -4,10 +4,9 @@
 
 declare module goog.ui {
 
-    class ScrollFloater extends ScrollFloater.__Class { }
-    module ScrollFloater {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.Component.__Class {
+    class ScrollFloater extends ScrollFloater__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ScrollFloater__Class extends goog.ui.Component__Class  { 
     
             /**
              * Creates a ScrollFloater; see file overview for details.
@@ -70,8 +69,8 @@ declare module goog.ui {
              *     the container.
              */
             setContainerElement(container: Element): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.ScrollFloater {

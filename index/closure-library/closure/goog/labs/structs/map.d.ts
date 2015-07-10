@@ -2,10 +2,9 @@
 
 declare module goog.labs.structs {
 
-    class Map extends Map.__Class { }
-    module Map {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Map extends Map__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Map__Class  { 
     
             /**
              * Creates a new map.
@@ -99,8 +98,8 @@ declare module goog.labs.structs {
              * @return {!goog.labs.structs.Map} The clone of this map.
              */
             clone(): goog.labs.structs.Map;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.labs.structs.Map {

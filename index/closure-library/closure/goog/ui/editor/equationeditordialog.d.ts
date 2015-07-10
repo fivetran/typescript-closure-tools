@@ -4,10 +4,9 @@
 
 declare module goog.ui.editor {
 
-    class EquationEditorDialog extends EquationEditorDialog.__Class { }
-    module EquationEditorDialog {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.editor.AbstractDialog.__Class {
+    class EquationEditorDialog extends EquationEditorDialog__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class EquationEditorDialog__Class extends goog.ui.editor.AbstractDialog__Class  { 
     
             /**
              * Equation editor dialog (based on goog.ui.editor.AbstractDialog).
@@ -21,6 +20,6 @@ declare module goog.ui.editor {
              * @final
              */
             constructor(context: Object, domHelper: goog.dom.DomHelper, equation: string, helpUrl: string);
-        }
-    }
+    } 
+    
 }

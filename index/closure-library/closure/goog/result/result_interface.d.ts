@@ -51,10 +51,9 @@ declare module goog.result {
 
 declare module goog.result.Result {
 
-    class CancelError extends CancelError.__Class { }
-    module CancelError {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends Error.__Class {
+    class CancelError extends CancelError__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class CancelError__Class extends Error__Class  { 
     
             /**
              * The value to be passed to the error handlers invoked upon cancellation.
@@ -64,8 +63,8 @@ declare module goog.result.Result {
              * @deprecated Use {@link goog.Promise} instead - http://go/promisemigration
              */
             constructor();
-        }
-    }
+    } 
+    
 
     /**
      * The States this object can be in.

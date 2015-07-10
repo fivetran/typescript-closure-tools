@@ -4,10 +4,9 @@
 
 declare module goog.dom {
 
-    class FontSizeMonitor extends FontSizeMonitor.__Class { }
-    module FontSizeMonitor {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.EventTarget.__Class {
+    class FontSizeMonitor extends FontSizeMonitor__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class FontSizeMonitor__Class extends goog.events.EventTarget__Class  { 
     
             /**
              * This class can be used to monitor changes in font size.  Instances will
@@ -28,8 +27,8 @@ declare module goog.dom {
              * @final
              */
             constructor(opt_domHelper?: goog.dom.DomHelper);
-        }
-    }
+    } 
+    
 }
 
 declare module goog.dom.FontSizeMonitor {

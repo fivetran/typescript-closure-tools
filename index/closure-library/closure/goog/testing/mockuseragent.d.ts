@@ -3,10 +3,9 @@
 
 declare module goog.testing {
 
-    class MockUserAgent extends MockUserAgent.__Class { }
-    module MockUserAgent {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.Disposable.__Class {
+    class MockUserAgent extends MockUserAgent__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class MockUserAgent__Class extends goog.Disposable__Class  { 
     
             /**
              * Class for unit testing code that uses goog.userAgent.
@@ -46,6 +45,6 @@ declare module goog.testing {
              * Uninstalls the MockUserAgent.
              */
             uninstall(): void;
-        }
-    }
+    } 
+    
 }

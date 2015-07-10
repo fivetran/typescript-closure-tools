@@ -4,10 +4,9 @@
 
 declare module goog.ui.equation {
 
-    class TexEditor extends TexEditor.__Class { }
-    module TexEditor {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.Component.__Class {
+    class TexEditor extends TexEditor__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class TexEditor__Class extends goog.ui.Component__Class  { 
     
             /**
              * User interface for equation editor plugin.
@@ -49,6 +48,6 @@ declare module goog.ui.equation {
              * @param {boolean} visible Whether the editor should be visible.
              */
             setVisible(visible: boolean): void;
-        }
-    }
+    } 
+    
 }

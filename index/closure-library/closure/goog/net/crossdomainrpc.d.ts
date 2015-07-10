@@ -3,10 +3,9 @@
 
 declare module goog.net {
 
-    class CrossDomainRpc extends CrossDomainRpc.__Class { }
-    module CrossDomainRpc {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.EventTarget.__Class {
+    class CrossDomainRpc extends CrossDomainRpc__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class CrossDomainRpc__Class extends goog.events.EventTarget__Class  { 
     
             /**
              * Creates a new instance of cross domain RPC
@@ -50,8 +49,8 @@ declare module goog.net {
              * @return {string|undefined} Value of response header; undefined if not found.
              */
             getResponseHeader(name: string): any /*string|any (undefined)*/;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.net.CrossDomainRpc {

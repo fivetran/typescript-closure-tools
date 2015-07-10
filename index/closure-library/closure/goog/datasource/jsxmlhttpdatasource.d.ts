@@ -3,10 +3,9 @@
 
 declare module goog.ds {
 
-    class JsXmlHttpDataSource extends JsXmlHttpDataSource.__Class { }
-    module JsXmlHttpDataSource {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ds.FastDataNode.__Class {
+    class JsXmlHttpDataSource extends JsXmlHttpDataSource__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class JsXmlHttpDataSource__Class extends goog.ds.FastDataNode__Class  { 
     
             /**
              * Similar to JsonDataSource, with using XMLHttpRequest for transport
@@ -32,6 +31,6 @@ declare module goog.ds {
              * @param {string} data The data to send in the request body.
              */
             setQueryData(data: string): void;
-        }
-    }
+    } 
+    
 }

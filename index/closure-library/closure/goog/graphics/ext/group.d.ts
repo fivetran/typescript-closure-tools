@@ -4,10 +4,9 @@
 
 declare module goog.graphics.ext {
 
-    class Group extends Group.__Class { }
-    module Group {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.graphics.ext.Element.__Class {
+    class Group extends Group__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Group__Class extends goog.graphics.ext.Element__Class  { 
     
             /**
              * Wrapper for a graphics group.
@@ -72,6 +71,6 @@ declare module goog.graphics.ext {
              * Remove all drawing elements from the group.
              */
             clear(): void;
-        }
-    }
+    } 
+    
 }

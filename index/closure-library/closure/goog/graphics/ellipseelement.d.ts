@@ -6,10 +6,9 @@
 
 declare module goog.graphics {
 
-    class EllipseElement extends EllipseElement.__Class { }
-    module EllipseElement {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.graphics.StrokeAndFillElement.__Class {
+    class EllipseElement extends EllipseElement__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class EllipseElement__Class extends goog.graphics.StrokeAndFillElement__Class  { 
     
             /**
              * Interface for a graphics ellipse element.
@@ -41,6 +40,6 @@ declare module goog.graphics {
              * @param {number} ry  Radius length for the y-axis.
              */
             setRadius(rx: number, ry: number): void;
-        }
-    }
+    } 
+    
 }

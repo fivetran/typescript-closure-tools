@@ -3,10 +3,9 @@
 
 declare module goog.math.interpolator {
 
-    class Linear1 extends Linear1.__Class { }
-    module Linear1 {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class implements goog.math.interpolator.Interpolator1 {
+    class Linear1 extends Linear1__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Linear1__Class implements goog.math.interpolator.Interpolator1  { 
     
             /**
              * A one dimensional linear interpolator.
@@ -47,6 +46,6 @@ declare module goog.math.interpolator {
              * @return {!goog.math.interpolator.Interpolator1} The inverse interpolator.
              */
             getInverse(): goog.math.interpolator.Interpolator1;
-        }
-    }
+    } 
+    
 }

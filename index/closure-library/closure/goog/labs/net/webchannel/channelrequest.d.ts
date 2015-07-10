@@ -4,10 +4,9 @@
 
 declare module goog.labs.net.webChannel {
 
-    class ChannelRequest extends ChannelRequest.__Class { }
-    module ChannelRequest {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class ChannelRequest extends ChannelRequest__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ChannelRequest__Class  { 
     
             /**
              * A new ChannelRequest is created for each request to the server.
@@ -39,6 +38,6 @@ declare module goog.labs.net.webChannel {
              * @final
              */
             constructor(channel: goog.labs.net.webChannel.Channel, channelDebug: goog.labs.net.webChannel.WebChannelDebug, opt_sessionId?: string, opt_requestId?: number, opt_retryId?: number);
-        }
-    }
+    } 
+    
 }

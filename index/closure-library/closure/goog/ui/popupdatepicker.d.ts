@@ -6,10 +6,9 @@
 
 declare module goog.ui {
 
-    class PopupDatePicker extends PopupDatePicker.__Class { }
-    module PopupDatePicker {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.Component.__Class {
+    class PopupDatePicker extends PopupDatePicker__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class PopupDatePicker__Class extends goog.ui.Component__Class  { 
     
             /**
              * Popup date picker widget. Fires goog.ui.PopupBase.EventType.SHOW or HIDE
@@ -86,6 +85,6 @@ declare module goog.ui {
              * Hides this popup.
              */
             hidePopup(): void;
-        }
-    }
+    } 
+    
 }

@@ -7,10 +7,9 @@
 
 declare module goog.net {
 
-    class MockIFrameIo extends MockIFrameIo.__Class { }
-    module MockIFrameIo {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.EventTarget.__Class {
+    class MockIFrameIo extends MockIFrameIo__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class MockIFrameIo__Class extends goog.events.EventTarget__Class  { 
     
             /**
              * Mock implenetation of goog.net.IframeIo. This doesn't provide a mock
@@ -186,6 +185,6 @@ declare module goog.net {
              * @param {number} ms Timeout interval in milliseconds; 0 means none.
              */
             setTimeoutInterval(ms: number): void;
-        }
-    }
+    } 
+    
 }

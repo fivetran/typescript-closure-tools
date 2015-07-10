@@ -4,10 +4,9 @@
 
 declare module goog.testing {
 
-    class DeferredTestCase extends DeferredTestCase.__Class { }
-    module DeferredTestCase {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.testing.AsyncTestCase.__Class {
+    class DeferredTestCase extends DeferredTestCase__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class DeferredTestCase__Class extends goog.testing.AsyncTestCase__Class  { 
     
             /**
              * A test case that can asynchronously wait on a Deferred object.
@@ -64,8 +63,8 @@ declare module goog.testing {
              * @param {goog.async.Deferred=} opt_b The deferred object to wait for.
              */
             waitForDeferred(a: goog.async.Deferred<any>, opt_b?: goog.async.Deferred<any>): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.testing.DeferredTestCase {

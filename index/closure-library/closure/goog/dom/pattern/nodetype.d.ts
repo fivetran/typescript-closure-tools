@@ -4,10 +4,9 @@
 
 declare module goog.dom.pattern {
 
-    class NodeType extends NodeType.__Class { }
-    module NodeType {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.dom.pattern.AbstractPattern.__Class {
+    class NodeType extends NodeType__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class NodeType__Class extends goog.dom.pattern.AbstractPattern__Class  { 
     
             /**
              * Pattern object that matches any node of the given type.
@@ -17,6 +16,6 @@ declare module goog.dom.pattern {
              * @final
              */
             constructor(nodeType: goog.dom.NodeType);
-        }
-    }
+    } 
+    
 }

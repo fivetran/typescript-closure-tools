@@ -4,10 +4,9 @@
 
 declare module goog.debug {
 
-    class LogBuffer extends LogBuffer.__Class { }
-    module LogBuffer {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class LogBuffer extends LogBuffer__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class LogBuffer__Class  { 
     
             /**
              * Creates the log buffer.
@@ -36,8 +35,8 @@ declare module goog.debug {
              * @param {function(!goog.debug.LogRecord)} func The function to call.
              */
             forEachRecord(func: (_0: goog.debug.LogRecord) => any /*missing*/): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.debug.LogBuffer {

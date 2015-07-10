@@ -2,10 +2,9 @@
 
 declare module goog.json {
 
-    class Serializer extends Serializer.__Class { }
-    module Serializer {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Serializer extends Serializer__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Serializer__Class  { 
     
             /**
              * Class that is used to serialize JSON objects to a string.
@@ -39,8 +38,8 @@ declare module goog.json {
              * @protected
              */
             serializeArray(arr: any[], sb: any[]): void;
-        }
-    }
+    } 
+    
 
     /**
      * Parses a JSON string and returns the result. This throws an exception if

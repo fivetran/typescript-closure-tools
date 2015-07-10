@@ -11,10 +11,9 @@
 
 declare module goog.net {
 
-    class FileDownloader extends FileDownloader.__Class { }
-    module FileDownloader {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.Disposable.__Class {
+    class FileDownloader extends FileDownloader__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class FileDownloader__Class extends goog.Disposable__Class  { 
     
             /**
              * A class for downloading remote files and storing them locally using the
@@ -151,16 +150,15 @@ declare module goog.net {
              *     {@link goog.net.FileDownloader.Error}s.
              */
             setBlob(url: string, blob: Blob, opt_name?: string): goog.async.Deferred<any>;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.net.FileDownloader {
 
-    class Error extends Error.__Class { }
-    module Error {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.debug.Error.__Class {
+    class Error extends Error__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Error__Class extends goog.debug.Error__Class  { 
     
             /**
              * The error object for FileDownloader download errors.
@@ -200,13 +198,12 @@ declare module goog.net.FileDownloader {
              * @type {goog.fs.Error|undefined}
              */
             fileError: any /*goog.fs.Error|any (undefined)*/;
-        }
-    }
+    } 
+    
 
-    class Download_ extends Download_.__Class { }
-    module Download_ {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.Disposable.__Class {
+    class Download_ extends Download___Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Download___Class extends goog.Disposable__Class  { 
     
             /**
              * A struct containing the data for a single download.
@@ -271,6 +268,6 @@ declare module goog.net.FileDownloader {
              * @type {goog.fs.FileWriter}
              */
             writer: goog.fs.FileWriter;
-        }
-    }
+    } 
+    
 }

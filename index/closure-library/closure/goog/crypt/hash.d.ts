@@ -2,10 +2,9 @@
 
 declare module goog.crypt {
 
-    class Hash extends Hash.__Class { }
-    module Hash {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Hash extends Hash__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Hash__Class  { 
     
             /**
              * Create a cryptographic hash instance.
@@ -80,6 +79,6 @@ declare module goog.crypt {
              *     from the internal accumulator.
              */
             digest(): number[];
-        }
-    }
+    } 
+    
 }

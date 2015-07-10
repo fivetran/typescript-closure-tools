@@ -3,10 +3,9 @@
 
 declare module goog.math {
 
-    class Line extends Line.__Class { }
-    module Line {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Line extends Line__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Line__Class  { 
     
             /**
              * Object representing a line.
@@ -122,6 +121,6 @@ declare module goog.math {
              *     given point.
              */
             getClosestSegmentPoint(x: goog.math.Coordinate, opt_y?: number): goog.math.Coordinate;
-        }
-    }
+    } 
+    
 }

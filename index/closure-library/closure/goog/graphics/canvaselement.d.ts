@@ -14,10 +14,9 @@
 
 declare module goog.graphics {
 
-    class CanvasGroupElement extends CanvasGroupElement.__Class { }
-    module CanvasGroupElement {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.graphics.GroupElement.__Class {
+    class CanvasGroupElement extends CanvasGroupElement__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class CanvasGroupElement__Class extends goog.graphics.GroupElement__Class  { 
     
             /**
              * Object representing a group of objects in a canvas.
@@ -46,13 +45,12 @@ declare module goog.graphics {
              * @param {CanvasRenderingContext2D} ctx The context to draw the element in.
              */
             draw(ctx: CanvasRenderingContext2D): void;
-        }
-    }
+    } 
+    
 
-    class CanvasEllipseElement extends CanvasEllipseElement.__Class { }
-    module CanvasEllipseElement {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.graphics.EllipseElement.__Class {
+    class CanvasEllipseElement extends CanvasEllipseElement__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class CanvasEllipseElement__Class extends goog.graphics.EllipseElement__Class  { 
     
             /**
              * Thin wrapper for canvas ellipse elements.
@@ -79,13 +77,12 @@ declare module goog.graphics {
              * @param {CanvasRenderingContext2D} ctx The context to draw the element in.
              */
             draw(ctx: CanvasRenderingContext2D): void;
-        }
-    }
+    } 
+    
 
-    class CanvasRectElement extends CanvasRectElement.__Class { }
-    module CanvasRectElement {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.graphics.RectElement.__Class {
+    class CanvasRectElement extends CanvasRectElement__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class CanvasRectElement__Class extends goog.graphics.RectElement__Class  { 
     
             /**
              * Thin wrapper for canvas rectangle elements.
@@ -112,13 +109,12 @@ declare module goog.graphics {
              * @param {CanvasRenderingContext2D} ctx The context to draw the element in.
              */
             draw(ctx: CanvasRenderingContext2D): void;
-        }
-    }
+    } 
+    
 
-    class CanvasPathElement extends CanvasPathElement.__Class { }
-    module CanvasPathElement {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.graphics.PathElement.__Class {
+    class CanvasPathElement extends CanvasPathElement__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class CanvasPathElement__Class extends goog.graphics.PathElement__Class  { 
     
             /**
              * Thin wrapper for canvas path elements.
@@ -143,13 +139,12 @@ declare module goog.graphics {
              * @suppress {deprecated} goog.graphics is deprecated.
              */
             draw(ctx: CanvasRenderingContext2D): void;
-        }
-    }
+    } 
+    
 
-    class CanvasTextElement extends CanvasTextElement.__Class { }
-    module CanvasTextElement {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.graphics.TextElement.__Class {
+    class CanvasTextElement extends CanvasTextElement__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class CanvasTextElement__Class extends goog.graphics.TextElement__Class  { 
     
             /**
              * Thin wrapper for canvas text elements.
@@ -178,13 +173,12 @@ declare module goog.graphics {
              * @param {CanvasRenderingContext2D} ctx The context to draw the element in.
              */
             draw(ctx: CanvasRenderingContext2D): void;
-        }
-    }
+    } 
+    
 
-    class CanvasImageElement extends CanvasImageElement.__Class { }
-    module CanvasImageElement {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.graphics.ImageElement.__Class {
+    class CanvasImageElement extends CanvasImageElement__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class CanvasImageElement__Class extends goog.graphics.ImageElement__Class  { 
     
             /**
              * Thin wrapper for canvas image elements.
@@ -210,6 +204,6 @@ declare module goog.graphics {
              * @param {CanvasRenderingContext2D} ctx The context to draw the element in.
              */
             draw(ctx: CanvasRenderingContext2D): void;
-        }
-    }
+    } 
+    
 }

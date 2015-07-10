@@ -5,10 +5,9 @@
 
 declare module goog.ui.media {
 
-    class Mp3 extends Mp3.__Class { }
-    module Mp3 {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.media.MediaRenderer.__Class {
+    class Mp3 extends Mp3__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Mp3__Class extends goog.ui.media.MediaRenderer__Class  { 
     
             /**
              * Subclasses a goog.ui.media.MediaRenderer to provide a Mp3 specific media
@@ -32,8 +31,8 @@ declare module goog.ui.media {
              * @final
              */
             constructor();
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.media.Mp3 {

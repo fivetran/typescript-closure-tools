@@ -4,10 +4,9 @@
 
 declare module goog.ui.editor {
 
-    class TabPane extends TabPane.__Class { }
-    module TabPane {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.Component.__Class {
+    class TabPane extends TabPane__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class TabPane__Class extends goog.ui.Component__Class  { 
     
             /**
              * Creates a new Editor-style tab pane.
@@ -41,6 +40,6 @@ declare module goog.ui.editor {
              *     selected.
              */
             addTab(id: string, caption: string, tooltip: string, groupName: string, content: Element): void;
-        }
-    }
+    } 
+    
 }

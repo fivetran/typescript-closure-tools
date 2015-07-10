@@ -3,10 +3,9 @@
 
 declare module goog.ds {
 
-    class DataNode extends DataNode.__Class { }
-    module DataNode {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class DataNode extends DataNode__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class DataNode__Class  { 
     
             /**
              * Interface for node in rich data tree.
@@ -103,13 +102,12 @@ declare module goog.ds {
              * @return {boolean} True if a list.
              */
             isList(): boolean;
-        }
-    }
+    } 
+    
 
-    class BaseDataNode extends BaseDataNode.__Class { }
-    module BaseDataNode {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class BaseDataNode extends BaseDataNode__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class BaseDataNode__Class  { 
     
             /**
              * Base class for data node functionality, has default implementations for
@@ -181,13 +179,12 @@ declare module goog.ds {
              * @protected
              */
             getParent: Function;
-        }
-    }
+    } 
+    
 
-    class DataNodeList extends DataNodeList.__Class { }
-    module DataNodeList {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ds.DataNode.__Class {
+    class DataNodeList extends DataNodeList__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class DataNodeList__Class extends goog.ds.DataNode__Class  { 
     
             /**
              * Interface for node list in rich data tree.
@@ -236,13 +233,12 @@ declare module goog.ds {
              * @return {boolean} True if node existed and was deleted.
              */
             removeNode(name: string): boolean;
-        }
-    }
+    } 
+    
 
-    class BasicNodeList extends BasicNodeList.__Class { }
-    module BasicNodeList {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ds.DataNodeList.__Class {
+    class BasicNodeList extends BasicNodeList__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class BasicNodeList__Class extends goog.ds.DataNodeList__Class  { 
     
             /**
              * Simple node list implementation with underlying array and map
@@ -264,13 +260,12 @@ declare module goog.ds {
              * @return {number|undefined} The index.
              */
             indexOf(name: string): any /*number|any (undefined)*/;
-        }
-    }
+    } 
+    
 
-    class EmptyNodeList extends EmptyNodeList.__Class { }
-    module EmptyNodeList {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ds.BasicNodeList.__Class {
+    class EmptyNodeList extends EmptyNodeList__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class EmptyNodeList__Class extends goog.ds.BasicNodeList__Class  { 
     
             /**
              * Immulatable empty node list
@@ -279,13 +274,12 @@ declare module goog.ds {
              * @final
              */
             constructor();
-        }
-    }
+    } 
+    
 
-    class SortedNodeList extends SortedNodeList.__Class { }
-    module SortedNodeList {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ds.BasicNodeList.__Class {
+    class SortedNodeList extends SortedNodeList__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class SortedNodeList__Class extends goog.ds.BasicNodeList__Class  { 
     
             /**
              * Node list implementation which maintains sort order during insertion and
@@ -318,8 +312,8 @@ declare module goog.ds {
              * @param {goog.ds.DataNode} node The node to append.
              */
             append(node: goog.ds.DataNode): void;
-        }
-    }
+    } 
+    
 
     /**
      * Enum for load state of a DataNode.

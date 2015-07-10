@@ -5,10 +5,9 @@
 
 declare module goog.ui {
 
-    class TabPane extends TabPane.__Class { }
-    module TabPane {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.EventTarget.__Class {
+    class TabPane extends TabPane__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class TabPane__Class extends goog.events.EventTarget__Class  { 
     
             /**
              * TabPane widget. All children already inside the tab pane container element
@@ -105,13 +104,12 @@ declare module goog.ui {
              * @return {Element} The main element for the tabpane.
              */
             getElement(): Element;
-        }
-    }
+    } 
+    
 
-    class TabPaneEvent extends TabPaneEvent.__Class { }
-    module TabPaneEvent {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.Event.__Class {
+    class TabPaneEvent extends TabPaneEvent__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class TabPaneEvent__Class extends goog.events.Event__Class  { 
     
             /**
              * Object representing a tab pane page changed event.
@@ -130,16 +128,15 @@ declare module goog.ui {
              * @type {goog.ui.TabPane.TabPage}
              */
             page: goog.ui.TabPane.TabPage;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.TabPane {
 
-    class TabPage extends TabPage.__Class { }
-    module TabPage {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class TabPage extends TabPage__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class TabPage__Class  { 
     
             /**
              * Object representing an individual tab pane.
@@ -225,8 +222,8 @@ declare module goog.ui.TabPane {
              * @return {boolean} Whether the page is enabled or not.
              */
             isEnabled(): boolean;
-        }
-    }
+    } 
+    
 
     /**
      * Constants for event names

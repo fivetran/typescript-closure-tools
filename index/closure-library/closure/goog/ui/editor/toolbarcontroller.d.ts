@@ -7,10 +7,9 @@
 
 declare module goog.ui.editor {
 
-    class ToolbarController extends ToolbarController.__Class { }
-    module ToolbarController {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.EventTarget.__Class {
+    class ToolbarController extends ToolbarController__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ToolbarController__Class extends goog.events.EventTarget__Class  { 
     
             /**
              * A class for managing the editor toolbar.  Acts as a bridge between
@@ -131,6 +130,6 @@ declare module goog.ui.editor {
              * @protected
              */
             handleAction(e: goog.events.Event): void;
-        }
-    }
+    } 
+    
 }

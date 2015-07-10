@@ -6,10 +6,9 @@
 
 declare module goog.ui {
 
-    class PlainTextSpellChecker extends PlainTextSpellChecker.__Class { }
-    module PlainTextSpellChecker {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.AbstractSpellChecker.__Class {
+    class PlainTextSpellChecker extends PlainTextSpellChecker__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class PlainTextSpellChecker__Class extends goog.ui.AbstractSpellChecker__Class  { 
     
             /**
              * Plain text spell checker implementation.
@@ -48,6 +47,6 @@ declare module goog.ui {
              * @return {boolean|undefined} The handled value.
              */
             handleOverlayKeyEvent(e: goog.events.BrowserEvent): any /*boolean|any (undefined)*/;
-        }
-    }
+    } 
+    
 }

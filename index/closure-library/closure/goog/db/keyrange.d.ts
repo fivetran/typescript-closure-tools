@@ -2,10 +2,9 @@
 
 declare module goog.db {
 
-    class KeyRange extends KeyRange.__Class { }
-    module KeyRange {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class KeyRange extends KeyRange__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class KeyRange__Class  { 
     
             /**
              * Creates a new IDBKeyRange wrapper object. Should not be created directly,
@@ -25,8 +24,8 @@ declare module goog.db {
              * @return {!IDBKeyRange}
              */
             range(): IDBKeyRange;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.db.KeyRange {

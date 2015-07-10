@@ -2,10 +2,9 @@
 
 declare module goog.testing {
 
-    class FunctionCall extends FunctionCall.__Class { }
-    module FunctionCall {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class FunctionCall extends FunctionCall__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class FunctionCall__Class  { 
     
             /**
              * Struct for a single function call.
@@ -50,8 +49,8 @@ declare module goog.testing {
              * @return {*} The error thrown by the function or null if none.
              */
             getError(): any;
-        }
-    }
+    } 
+    
 
     /**
      * Wraps the function into another one which calls the inner function and

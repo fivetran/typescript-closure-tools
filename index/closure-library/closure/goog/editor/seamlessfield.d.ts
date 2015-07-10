@@ -3,10 +3,9 @@
 
 declare module goog.editor {
 
-    class SeamlessField extends SeamlessField.__Class { }
-    module SeamlessField {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.editor.Field.__Class {
+    class SeamlessField extends SeamlessField__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class SeamlessField__Class extends goog.editor.Field__Class  { 
     
             /**
              * This class encapsulates an editable field that blends in with the
@@ -65,6 +64,6 @@ declare module goog.editor {
              * Applies CSS from the wrapper-div to the field iframe.
              */
             inheritBlendedCSS(): void;
-        }
-    }
+    } 
+    
 }

@@ -2,10 +2,9 @@
 
 declare module goog.ui.ac {
 
-    class ArrayMatcher extends ArrayMatcher.__Class { }
-    module ArrayMatcher {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class ArrayMatcher extends ArrayMatcher__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ArrayMatcher__Class  { 
     
             /**
              * Basic class for matching words in an array
@@ -48,8 +47,8 @@ declare module goog.ui.ac {
              * @return {!Array} The best maxMatches rows.
              */
             getSimilarRows(token: string, maxMatches: number): any[];
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.ac.ArrayMatcher {

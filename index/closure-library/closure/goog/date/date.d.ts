@@ -2,10 +2,9 @@
 
 declare module goog.date {
 
-    class Interval extends Interval.__Class { }
-    module Interval {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Interval extends Interval__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Interval__Class  { 
     
             /**
              * Class representing a date/time interval. Used for date calculations.
@@ -101,13 +100,12 @@ declare module goog.date {
              * @param {goog.date.Interval} interval The Interval to add.
              */
             add(interval: goog.date.Interval): void;
-        }
-    }
+    } 
+    
 
-    class Date extends Date.__Class { }
-    module Date {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Date extends Date__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Date__Class  { 
     
             /**
              * Class representing a date. Defaults to current date if none is specified.
@@ -414,13 +412,12 @@ declare module goog.date {
              * @return {boolean} Whether the given date is equal to this one.
              */
             equals(other: goog.date.Date): boolean;
-        }
-    }
+    } 
+    
 
-    class DateTime extends DateTime.__Class { }
-    module DateTime {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.date.Date.__Class {
+    class DateTime extends DateTime__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class DateTime__Class extends goog.date.Date__Class  { 
     
             /**
              * Class representing a date and time. Defaults to current date and time if none
@@ -597,8 +594,8 @@ declare module goog.date {
              * @return {string} The time label.
              */
             toIsoTimeString(opt_showSeconds?: boolean): string;
-        }
-    }
+    } 
+    
 
     /**
      * Constants for weekdays.

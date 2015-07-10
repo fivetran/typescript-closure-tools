@@ -2,10 +2,9 @@
 
 declare module goog.labs.net.webChannel {
 
-    class WireV8 extends WireV8.__Class { }
-    module WireV8 {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class WireV8 extends WireV8__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class WireV8__Class  { 
     
             /**
              * The v8 codec class.
@@ -14,6 +13,6 @@ declare module goog.labs.net.webChannel {
              * @struct
              */
             constructor();
-        }
-    }
+    } 
+    
 }

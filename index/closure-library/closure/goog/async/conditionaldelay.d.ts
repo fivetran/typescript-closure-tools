@@ -3,10 +3,9 @@
 
 declare module goog.async {
 
-    class ConditionalDelay extends ConditionalDelay.__Class { }
-    module ConditionalDelay {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.Disposable.__Class {
+    class ConditionalDelay extends ConditionalDelay__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ConditionalDelay__Class extends goog.Disposable__Class  { 
     
             /**
              * A ConditionalDelay object invokes the associated function after a specified
@@ -74,6 +73,6 @@ declare module goog.async {
              * instances if they care.
              */
             onFailure(): void;
-        }
-    }
+    } 
+    
 }

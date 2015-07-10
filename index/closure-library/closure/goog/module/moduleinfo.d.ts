@@ -6,10 +6,9 @@
 
 declare module goog.module {
 
-    class ModuleInfo extends ModuleInfo.__Class { }
-    module ModuleInfo {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.Disposable.__Class {
+    class ModuleInfo extends ModuleInfo__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ModuleInfo__Class extends goog.Disposable__Class  { 
     
             /**
              * A ModuleInfo object is used by the ModuleManager to hold information about a
@@ -119,6 +118,6 @@ declare module goog.module {
              * @param {goog.module.ModuleManager.FailureType} cause What caused the error.
              */
             onError(cause: goog.module.ModuleManager.FailureType): void;
-        }
-    }
+    } 
+    
 }

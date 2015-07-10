@@ -2,10 +2,9 @@
 
 declare module goog.testing {
 
-    class ObjectPropertyString extends ObjectPropertyString.__Class { }
-    module ObjectPropertyString {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class ObjectPropertyString extends ObjectPropertyString__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ObjectPropertyString__Class  { 
     
             /**
              * Object to pass a property name as a string literal and its containing object
@@ -39,6 +38,6 @@ declare module goog.testing {
              * @return {string} The property string.
              */
             getPropertyString(): string;
-        }
-    }
+    } 
+    
 }

@@ -5,10 +5,9 @@
 
 declare module goog.ui {
 
-    class RichTextSpellChecker extends RichTextSpellChecker.__Class { }
-    module RichTextSpellChecker {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.AbstractSpellChecker.__Class {
+    class RichTextSpellChecker extends RichTextSpellChecker__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class RichTextSpellChecker__Class extends goog.ui.AbstractSpellChecker__Class  { 
     
             /**
              * Rich text spell checker implementation.
@@ -44,6 +43,6 @@ declare module goog.ui {
              * @type {string}
              */
             invalidWordCssText: string;
-        }
-    }
+    } 
+    
 }

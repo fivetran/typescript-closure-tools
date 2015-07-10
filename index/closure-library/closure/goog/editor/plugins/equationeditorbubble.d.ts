@@ -3,10 +3,9 @@
 
 declare module goog.editor.plugins.equation {
 
-    class EquationBubble extends EquationBubble.__Class { }
-    module EquationBubble {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.editor.plugins.AbstractBubblePlugin.__Class {
+    class EquationBubble extends EquationBubble__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class EquationBubble__Class extends goog.editor.plugins.AbstractBubblePlugin__Class  { 
     
             /**
              * Property bubble plugin for equations.
@@ -16,6 +15,6 @@ declare module goog.editor.plugins.equation {
              * @final
              */
             constructor();
-        }
-    }
+    } 
+    
 }

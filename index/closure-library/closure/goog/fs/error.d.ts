@@ -3,10 +3,9 @@
 
 declare module goog.fs {
 
-    class Error extends Error.__Class { }
-    module Error {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.debug.Error.__Class {
+    class Error extends Error__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Error__Class extends goog.debug.Error__Class  { 
     
             /**
              * A filesystem error. Since the filesystem API is asynchronous, stack traces
@@ -26,8 +25,8 @@ declare module goog.fs {
     
             /** @suppress {deprecated} */
             code: any /*missing*/;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.fs.Error {

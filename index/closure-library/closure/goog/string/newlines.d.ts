@@ -2,10 +2,9 @@
 
 declare module goog._string.newlines {
 
-    class Line extends Line.__Class { }
-    module Line {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Line extends Line__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Line__Class  { 
     
             /**
              * Line metadata class that records the start/end indicies of lines
@@ -71,8 +70,8 @@ declare module goog._string.newlines {
              * @return {string} The newline characters, if any ('\n', \r', '\r\n', '', etc).
              */
             getNewline(): string;
-        }
-    }
+    } 
+    
 
     /**
      * Splits a string into lines, properly handling universal newlines.

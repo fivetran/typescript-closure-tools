@@ -2,10 +2,9 @@
 
 declare module goog.crypt {
 
-    class JpegEncoder extends JpegEncoder.__Class { }
-    module JpegEncoder {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class JpegEncoder extends JpegEncoder__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class JpegEncoder__Class  { 
     
             /**
              * Initializes the JpegEncoder.
@@ -23,6 +22,6 @@ declare module goog.crypt {
              * @return {string} base64-encoded JPEG data.
              */
             encode(image: ImageData, opt_quality?: number): string;
-        }
-    }
+    } 
+    
 }

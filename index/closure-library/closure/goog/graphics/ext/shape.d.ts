@@ -6,10 +6,9 @@
 
 declare module goog.graphics.ext {
 
-    class Shape extends Shape.__Class { }
-    module Shape {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.graphics.ext.StrokeAndFillElement.__Class {
+    class Shape extends Shape__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Shape__Class extends goog.graphics.ext.StrokeAndFillElement__Class  { 
     
             /**
              * Wrapper for a graphics shape element.
@@ -34,6 +33,6 @@ declare module goog.graphics.ext {
              * @param {goog.graphics.ext.Path} path The path to draw.
              */
             setPath(path: goog.graphics.ext.Path): void;
-        }
-    }
+    } 
+    
 }

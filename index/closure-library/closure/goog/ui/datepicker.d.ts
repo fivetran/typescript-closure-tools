@@ -8,10 +8,9 @@
 
 declare module goog.ui {
 
-    class DatePicker extends DatePicker.__Class { }
-    module DatePicker {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.Component.__Class {
+    class DatePicker extends DatePicker__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class DatePicker__Class extends goog.ui.Component__Class  { 
     
             /**
              * DatePicker widget. Allows a single date to be selected from a calendar like
@@ -276,13 +275,12 @@ declare module goog.ui {
              * @deprecated Use decorate instead.
              */
             create: any /*missing*/;
-        }
-    }
+    } 
+    
 
-    class DatePickerEvent extends DatePickerEvent.__Class { }
-    module DatePickerEvent {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.Event.__Class {
+    class DatePickerEvent extends DatePickerEvent__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class DatePickerEvent__Class extends goog.events.Event__Class  { 
     
             /**
              * Object representing a date picker event.
@@ -301,8 +299,8 @@ declare module goog.ui {
              * @type {goog.date.Date}
              */
             date: goog.date.Date;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.DatePicker {

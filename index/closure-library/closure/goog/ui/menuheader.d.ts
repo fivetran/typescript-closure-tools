@@ -5,10 +5,9 @@
 
 declare module goog.ui {
 
-    class MenuHeader extends MenuHeader.__Class { }
-    module MenuHeader {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.Control.__Class {
+    class MenuHeader extends MenuHeader__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class MenuHeader__Class extends goog.ui.Control__Class  { 
     
             /**
              * Class representing a menu header.
@@ -58,6 +57,6 @@ declare module goog.ui {
              * @extends {goog.ui.Control}
              */
             constructor(content: NodeList, opt_domHelper?: goog.dom.DomHelper, opt_renderer?: goog.ui.MenuHeaderRenderer);
-        }
-    }
+    } 
+    
 }

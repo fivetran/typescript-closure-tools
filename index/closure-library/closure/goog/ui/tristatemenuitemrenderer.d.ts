@@ -3,10 +3,9 @@
 
 declare module goog.ui {
 
-    class TriStateMenuItemRenderer extends TriStateMenuItemRenderer.__Class { }
-    module TriStateMenuItemRenderer {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.MenuItemRenderer.__Class {
+    class TriStateMenuItemRenderer extends TriStateMenuItemRenderer__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class TriStateMenuItemRenderer__Class extends goog.ui.MenuItemRenderer__Class  { 
     
             /**
              * Default renderer for {@link goog.ui.TriStateMenuItemRenderer}s. Each item has
@@ -20,8 +19,8 @@ declare module goog.ui {
              * @final
              */
             constructor();
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.TriStateMenuItemRenderer {

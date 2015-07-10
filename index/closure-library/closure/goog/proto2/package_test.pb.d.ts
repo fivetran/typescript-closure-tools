@@ -4,10 +4,9 @@
 
 declare module someprotopackage {
 
-    class TestPackageTypes extends TestPackageTypes.__Class { }
-    module TestPackageTypes {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.proto2.Message.__Class {
+    class TestPackageTypes extends TestPackageTypes__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class TestPackageTypes__Class extends goog.proto2.Message__Class  { 
     
             /**
              * Message TestPackageTypes.
@@ -82,6 +81,6 @@ declare module someprotopackage {
              * Clears the values in the other_all field.
              */
             clearOtherAll(): void;
-        }
-    }
+    } 
+    
 }

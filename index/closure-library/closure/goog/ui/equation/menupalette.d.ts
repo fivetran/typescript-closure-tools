@@ -4,10 +4,9 @@
 
 declare module goog.ui.equation {
 
-    class MenuPalette extends MenuPalette.__Class { }
-    module MenuPalette {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.equation.Palette.__Class {
+    class MenuPalette extends MenuPalette__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class MenuPalette__Class extends goog.ui.equation.Palette__Class  { 
     
             /**
              * Constructs a new menu palette.
@@ -18,13 +17,12 @@ declare module goog.ui.equation {
              * @final
              */
             constructor(paletteManager: goog.ui.equation.PaletteManager);
-        }
-    }
+    } 
+    
 
-    class MenuPaletteRenderer extends MenuPaletteRenderer.__Class { }
-    module MenuPaletteRenderer {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.equation.PaletteRenderer.__Class {
+    class MenuPaletteRenderer extends MenuPaletteRenderer__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class MenuPaletteRenderer__Class extends goog.ui.equation.PaletteRenderer__Class  { 
     
             /**
              * The renderer for menu palette.
@@ -33,8 +31,8 @@ declare module goog.ui.equation {
              * @final
              */
             constructor();
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.equation.MenuPalette {

@@ -5,10 +5,9 @@
 
 declare module goog.events {
 
-    class ListenerMap extends ListenerMap.__Class { }
-    module ListenerMap {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class ListenerMap extends ListenerMap__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ListenerMap__Class  { 
     
             /**
              * Creates a new listener map.
@@ -197,6 +196,6 @@ declare module goog.events {
              *     the requested type and/or capture phase.
              */
             hasListener(opt_type?: goog.events.EventId<any>, opt_capture?: boolean): boolean;
-        }
-    }
+    } 
+    
 }

@@ -4,10 +4,9 @@
 
 declare module goog.fx {
 
-    class TransitionBase extends TransitionBase.__Class { }
-    module TransitionBase {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.EventTarget.__Class implements goog.fx.Transition {
+    class TransitionBase extends TransitionBase__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class TransitionBase__Class extends goog.events.EventTarget__Class implements goog.fx.Transition  { 
     
             /**
              * Constructor for a transition object.
@@ -141,8 +140,8 @@ declare module goog.fx {
              * Stops the transition.
              */
             stop: any /*missing*/;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.fx.TransitionBase {

@@ -3,10 +3,9 @@
 
 declare module goog.labs.format.csv {
 
-    class ParseError extends ParseError.__Class { }
-    module ParseError {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.debug.Error.__Class {
+    class ParseError extends ParseError__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ParseError__Class extends goog.debug.Error__Class  { 
     
             /**
              * Error thrown when parsing fails.
@@ -29,8 +28,8 @@ declare module goog.labs.format.csv {
     
             /** @inheritDoc */
             name: any /*missing*/;
-        }
-    }
+    } 
+    
 
     /**
      * @define {boolean} Enable verbose debugging. This is a flag so it can be

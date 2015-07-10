@@ -2,10 +2,9 @@
 
 declare module goog.math {
 
-    class Size extends Size.__Class { }
-    module Size {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Size extends Size__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Size__Class  { 
     
             /**
              * Class for representing sizes consisting of a width and height. Undefined
@@ -108,8 +107,8 @@ declare module goog.math {
              * @return {!goog.math.Size} This Size object, after optional scaling.
              */
             scaleToFit(target: goog.math.Size): goog.math.Size;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.math.Size {

@@ -8,10 +8,9 @@
 
 declare module goog.fx {
 
-    class AbstractDragDrop extends AbstractDragDrop.__Class { }
-    module AbstractDragDrop {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.EventTarget.__Class {
+    class AbstractDragDrop extends AbstractDragDrop__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class AbstractDragDrop__Class extends goog.events.EventTarget__Class  { 
     
             /**
              * Abstract class that provides reusable functionality for implementing drag
@@ -302,13 +301,12 @@ declare module goog.fx {
              * @protected
              */
             getEventPosition(event: goog.fx.DragEvent): goog.math.Coordinate;
-        }
-    }
+    } 
+    
 
-    class DragDropEvent extends DragDropEvent.__Class { }
-    module DragDropEvent {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.Event.__Class {
+    class DragDropEvent extends DragDropEvent__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class DragDropEvent__Class extends goog.events.Event__Class  { 
     
             /**
              * Object representing a drag and drop event.
@@ -389,13 +387,12 @@ declare module goog.fx {
              * @type {Object|undefined}
              */
             subtarget: any /*Object|any (undefined)*/;
-        }
-    }
+    } 
+    
 
-    class DragDropItem extends DragDropItem.__Class { }
-    module DragDropItem {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.EventTarget.__Class {
+    class DragDropItem extends DragDropItem__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class DragDropItem__Class extends goog.events.EventTarget__Class  { 
     
             /**
              * Class representing a source or target element for drag and drop operations.
@@ -469,13 +466,12 @@ declare module goog.fx {
              * @param {goog.fx.AbstractDragDrop} parent The parent dragdrop.
              */
             setParent(parent: goog.fx.AbstractDragDrop): void;
-        }
-    }
+    } 
+    
 
-    class ActiveDropTarget_ extends ActiveDropTarget_.__Class { }
-    module ActiveDropTarget_ {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class ActiveDropTarget_ extends ActiveDropTarget___Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ActiveDropTarget___Class  { 
     
             /**
              * Class representing an active drop target
@@ -490,13 +486,12 @@ declare module goog.fx {
              * @private
              */
             constructor(box: goog.math.Box, opt_target?: goog.fx.AbstractDragDrop, opt_item?: goog.fx.DragDropItem, opt_element?: Element);
-        }
-    }
+    } 
+    
 
-    class ScrollableContainer_ extends ScrollableContainer_.__Class { }
-    module ScrollableContainer_ {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class ScrollableContainer_ extends ScrollableContainer___Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ScrollableContainer___Class  { 
     
             /**
              * Class for representing a scrollable container
@@ -505,8 +500,8 @@ declare module goog.fx {
              * @private
              */
             constructor(element: Element);
-        }
-    }
+    } 
+    
 }
 
 declare module goog.fx.AbstractDragDrop {

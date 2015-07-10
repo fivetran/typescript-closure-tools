@@ -4,10 +4,9 @@
 
 declare module goog.ui {
 
-    class TableSorter extends TableSorter.__Class { }
-    module TableSorter {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.Component.__Class {
+    class TableSorter extends TableSorter__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class TableSorter__Class extends goog.ui.Component__Class  { 
     
             /**
              * A table sorter allows for sorting of a table by column.  This component can
@@ -78,8 +77,8 @@ declare module goog.ui {
              * @return {boolean} Whether the sort was executed.
              */
             sort(column: number, opt_reverse?: boolean): boolean;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.TableSorter {

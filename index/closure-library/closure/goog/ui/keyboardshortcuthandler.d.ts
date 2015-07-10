@@ -4,10 +4,9 @@
 
 declare module goog.ui {
 
-    class KeyboardShortcutHandler extends KeyboardShortcutHandler.__Class { }
-    module KeyboardShortcutHandler {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.EventTarget.__Class {
+    class KeyboardShortcutHandler extends KeyboardShortcutHandler__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class KeyboardShortcutHandler__Class extends goog.events.EventTarget__Class  { 
     
             /**
              * Component for handling keyboard shortcuts. A shortcut is registered and bound
@@ -406,13 +405,12 @@ declare module goog.ui {
              * @protected
              */
             clearKeyListener(): void;
-        }
-    }
+    } 
+    
 
-    class KeyboardShortcutEvent extends KeyboardShortcutEvent.__Class { }
-    module KeyboardShortcutEvent {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.Event.__Class {
+    class KeyboardShortcutEvent extends KeyboardShortcutEvent__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class KeyboardShortcutEvent__Class extends goog.events.Event__Class  { 
     
             /**
              * Object representing a keyboard shortcut event.
@@ -442,8 +440,8 @@ declare module goog.ui {
              * @type {string}
              */
             identifier: string;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.KeyboardShortcutHandler {

@@ -4,10 +4,9 @@
 
 declare module goog.dom {
 
-    class SavedRange extends SavedRange.__Class { }
-    module SavedRange {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.Disposable.__Class {
+    class SavedRange extends SavedRange__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class SavedRange__Class extends goog.Disposable__Class  { 
     
             /**
              * Abstract interface for a saved range.
@@ -30,6 +29,6 @@ declare module goog.dom {
              * @return {goog.dom.AbstractRange} The restored range.
              */
             restoreInternal(): goog.dom.AbstractRange;
-        }
-    }
+    } 
+    
 }

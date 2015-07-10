@@ -5,10 +5,9 @@
 
 declare module goog.testing {
 
-    class MockControl extends MockControl.__Class { }
-    module MockControl {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class MockControl extends MockControl__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class MockControl__Class  { 
     
             /**
              * Controls a set of mocks.  Controlled mocks are replayed, verified, and
@@ -142,6 +141,6 @@ declare module goog.testing {
              * @return {goog.testing.MockInterface} The mocked function.
              */
             createGlobalFunctionMock(functionName: string, opt_strictness?: number): goog.testing.MockInterface;
-        }
-    }
+    } 
+    
 }

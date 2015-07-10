@@ -3,10 +3,9 @@
 
 declare module goog {
 
-    class Timer extends Timer.__Class { }
-    module Timer {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.EventTarget.__Class {
+    class Timer extends Timer__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Timer__Class extends goog.events.EventTarget__Class  { 
     
             /**
              * Class for handling timing events.
@@ -51,8 +50,8 @@ declare module goog {
              * Stops the timer.
              */
             stop(): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.Timer {

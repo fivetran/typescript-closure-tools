@@ -3,10 +3,9 @@
 
 declare module goog.dom {
 
-    class TextRangeIterator extends TextRangeIterator.__Class { }
-    module TextRangeIterator {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.dom.RangeIterator.__Class {
+    class TextRangeIterator extends TextRangeIterator__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class TextRangeIterator__Class extends goog.dom.RangeIterator__Class  { 
     
             /**
              * Subclass of goog.dom.TagIterator that iterates over a DOM range.  It
@@ -38,6 +37,6 @@ declare module goog.dom {
              * @param {Node} node The new end node.
              */
             setEndNode(node: Node): void;
-        }
-    }
+    } 
+    
 }

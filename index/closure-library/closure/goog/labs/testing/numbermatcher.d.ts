@@ -3,10 +3,9 @@
 
 declare module goog.labs.testing {
 
-    class GreaterThanMatcher extends GreaterThanMatcher.__Class { }
-    module GreaterThanMatcher {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class implements goog.labs.testing.Matcher {
+    class GreaterThanMatcher extends GreaterThanMatcher__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class GreaterThanMatcher__Class implements goog.labs.testing.Matcher  { 
     
             /**
              * The GreaterThan matcher.
@@ -38,13 +37,12 @@ declare module goog.labs.testing {
              * @return {string} Description of why the matcher failed.
              */
             describe(value: any, opt_description?: string): string;
-        }
-    }
+    } 
+    
 
-    class LessThanMatcher extends LessThanMatcher.__Class { }
-    module LessThanMatcher {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class implements goog.labs.testing.Matcher {
+    class LessThanMatcher extends LessThanMatcher__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class LessThanMatcher__Class implements goog.labs.testing.Matcher  { 
     
             /**
              * The lessThan matcher.
@@ -76,13 +74,12 @@ declare module goog.labs.testing {
              * @return {string} Description of why the matcher failed.
              */
             describe(value: any, opt_description?: string): string;
-        }
-    }
+    } 
+    
 
-    class GreaterThanEqualToMatcher extends GreaterThanEqualToMatcher.__Class { }
-    module GreaterThanEqualToMatcher {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class implements goog.labs.testing.Matcher {
+    class GreaterThanEqualToMatcher extends GreaterThanEqualToMatcher__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class GreaterThanEqualToMatcher__Class implements goog.labs.testing.Matcher  { 
     
             /**
              * The GreaterThanEqualTo matcher.
@@ -114,13 +111,12 @@ declare module goog.labs.testing {
              * @return {string} Description of why the matcher failed.
              */
             describe(value: any, opt_description?: string): string;
-        }
-    }
+    } 
+    
 
-    class LessThanEqualToMatcher extends LessThanEqualToMatcher.__Class { }
-    module LessThanEqualToMatcher {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class implements goog.labs.testing.Matcher {
+    class LessThanEqualToMatcher extends LessThanEqualToMatcher__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class LessThanEqualToMatcher__Class implements goog.labs.testing.Matcher  { 
     
             /**
              * The LessThanEqualTo matcher.
@@ -152,13 +148,12 @@ declare module goog.labs.testing {
              * @return {string} Description of why the matcher failed.
              */
             describe(value: any, opt_description?: string): string;
-        }
-    }
+    } 
+    
 
-    class EqualToMatcher extends EqualToMatcher.__Class { }
-    module EqualToMatcher {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class implements goog.labs.testing.Matcher {
+    class EqualToMatcher extends EqualToMatcher__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class EqualToMatcher__Class implements goog.labs.testing.Matcher  { 
     
             /**
              * The EqualTo matcher.
@@ -190,13 +185,12 @@ declare module goog.labs.testing {
              * @return {string} Description of why the matcher failed.
              */
             describe(value: any, opt_description?: string): string;
-        }
-    }
+    } 
+    
 
-    class CloseToMatcher extends CloseToMatcher.__Class { }
-    module CloseToMatcher {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class implements goog.labs.testing.Matcher {
+    class CloseToMatcher extends CloseToMatcher__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class CloseToMatcher__Class implements goog.labs.testing.Matcher  { 
     
             /**
              * The CloseTo matcher.
@@ -229,6 +223,6 @@ declare module goog.labs.testing {
              * @return {string} Description of why the matcher failed.
              */
             describe(value: any, opt_description?: string): string;
-        }
-    }
+    } 
+    
 }

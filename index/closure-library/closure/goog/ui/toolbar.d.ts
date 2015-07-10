@@ -5,10 +5,9 @@
 
 declare module goog.ui {
 
-    class Toolbar extends Toolbar.__Class { }
-    module Toolbar {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.Container.__Class {
+    class Toolbar extends Toolbar__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Toolbar__Class extends goog.ui.Container__Class  { 
     
             /**
              * A toolbar class, implemented as a {@link goog.ui.Container} that defaults to
@@ -23,6 +22,6 @@ declare module goog.ui {
              * @extends {goog.ui.Container}
              */
             constructor(opt_renderer?: goog.ui.ToolbarRenderer, opt_orientation?: goog.ui.Container.Orientation, opt_domHelper?: goog.dom.DomHelper);
-        }
-    }
+    } 
+    
 }

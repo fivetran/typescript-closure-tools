@@ -3,10 +3,9 @@
 
 declare module goog.structs {
 
-    class TreeNode<KEY, VALUE> extends TreeNode.__Class<KEY, VALUE> { }
-    module TreeNode {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class<KEY, VALUE> extends goog.structs.Node.__Class<KEY,VALUE> {
+    class TreeNode<KEY, VALUE> extends TreeNode__Class<KEY, VALUE> { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class TreeNode__Class<KEY, VALUE> extends goog.structs.Node__Class<KEY,VALUE>  { 
     
             /**
              * Generic tree node data structure with arbitrary number of child nodes.
@@ -231,8 +230,8 @@ declare module goog.structs {
              * Removes all child nodes of this node.
              */
             removeChildren(): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.structs.TreeNode {

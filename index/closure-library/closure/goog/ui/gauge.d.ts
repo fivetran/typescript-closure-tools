@@ -6,10 +6,9 @@
 
 declare module goog.ui {
 
-    class GaugeColoredRange extends GaugeColoredRange.__Class { }
-    module GaugeColoredRange {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class GaugeColoredRange extends GaugeColoredRange__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class GaugeColoredRange__Class  { 
     
             /**
              * Information on how to decorate a range in the gauge.
@@ -39,13 +38,12 @@ declare module goog.ui {
              * @type {string}
              */
             backgroundColor: string;
-        }
-    }
+    } 
+    
 
-    class Gauge extends Gauge.__Class { }
-    module Gauge {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.Component.__Class {
+    class Gauge extends Gauge__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Gauge__Class extends goog.ui.Component__Class  { 
     
             /**
              * A UI component that displays a gauge.
@@ -155,8 +153,8 @@ declare module goog.ui {
              * Should be called after theme colors have been changed.
              */
             redraw(): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.Gauge {

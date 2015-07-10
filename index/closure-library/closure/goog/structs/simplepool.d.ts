@@ -3,10 +3,9 @@
 
 declare module goog.structs {
 
-    class SimplePool<T> extends SimplePool.__Class<T> { }
-    module SimplePool {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class<T> extends goog.Disposable.__Class {
+    class SimplePool<T> extends SimplePool__Class<T> { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class SimplePool__Class<T> extends goog.Disposable__Class  { 
     
             /**
              * A generic pool class. Simpler and more efficient than goog.structs.Pool
@@ -75,6 +74,6 @@ declare module goog.structs {
              * @param {T} obj The object to dispose.
              */
             disposeObject(obj: T): void;
-        }
-    }
+    } 
+    
 }

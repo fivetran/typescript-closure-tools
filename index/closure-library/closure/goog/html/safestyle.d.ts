@@ -4,10 +4,9 @@
 
 declare module goog.html {
 
-    class SafeStyle extends SafeStyle.__Class { }
-    module SafeStyle {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class implements goog.string.TypedString {
+    class SafeStyle extends SafeStyle__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class SafeStyle__Class implements goog.string.TypedString  { 
     
             /**
              * A string-like object which represents a sequence of CSS declarations
@@ -109,8 +108,8 @@ declare module goog.html {
              * @return {!string} The wrapped string's value.
              */
             getTypedStringValue(): string;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.html.SafeStyle {

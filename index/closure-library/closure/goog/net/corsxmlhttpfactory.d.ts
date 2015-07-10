@@ -4,10 +4,9 @@
 
 declare module goog.net {
 
-    class CorsXmlHttpFactory extends CorsXmlHttpFactory.__Class { }
-    module CorsXmlHttpFactory {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.net.XmlHttpFactory.__Class {
+    class CorsXmlHttpFactory extends CorsXmlHttpFactory__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class CorsXmlHttpFactory__Class extends goog.net.XmlHttpFactory__Class  { 
     
             /**
              * A factory of XML http request objects that supports cross domain requests.
@@ -19,13 +18,12 @@ declare module goog.net {
              * @final
              */
             constructor();
-        }
-    }
+    } 
+    
 
-    class IeCorsXhrAdapter extends IeCorsXhrAdapter.__Class { }
-    module IeCorsXhrAdapter {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class implements goog.net.XhrLike {
+    class IeCorsXhrAdapter extends IeCorsXhrAdapter__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class IeCorsXhrAdapter__Class implements goog.net.XhrLike  { 
     
             /**
              * An adapter around Internet Explorer's XDomainRequest object that makes it
@@ -164,6 +162,6 @@ declare module goog.net {
              * @see http://www.w3.org/TR/XMLHttpRequest/#the-getallresponseheaders()-method
              */
             getAllResponseHeaders(): string;
-        }
-    }
+    } 
+    
 }

@@ -4,10 +4,9 @@
 
 declare module goog.ui {
 
-    class ColorMenuButtonRenderer extends ColorMenuButtonRenderer.__Class { }
-    module ColorMenuButtonRenderer {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.MenuButtonRenderer.__Class {
+    class ColorMenuButtonRenderer extends ColorMenuButtonRenderer__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ColorMenuButtonRenderer__Class extends goog.ui.MenuButtonRenderer__Class  { 
     
             /**
              * Renderer for {@link goog.ui.ColorMenuButton}s.
@@ -15,8 +14,8 @@ declare module goog.ui {
              * @extends {goog.ui.MenuButtonRenderer}
              */
             constructor();
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.ColorMenuButtonRenderer {

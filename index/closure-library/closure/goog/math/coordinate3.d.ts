@@ -2,10 +2,9 @@
 
 declare module goog.math {
 
-    class Coordinate3 extends Coordinate3.__Class { }
-    module Coordinate3 {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Coordinate3 extends Coordinate3__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Coordinate3__Class  { 
     
             /**
              * Class for representing coordinates and positions in 3 dimensions.
@@ -48,8 +47,8 @@ declare module goog.math {
              * @return {!Array.<number>} A new array.
              */
             toArray(): number[];
-        }
-    }
+    } 
+    
 }
 
 declare module goog.math.Coordinate3 {

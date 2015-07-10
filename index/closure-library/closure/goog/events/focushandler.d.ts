@@ -4,10 +4,9 @@
 
 declare module goog.events {
 
-    class FocusHandler extends FocusHandler.__Class { }
-    module FocusHandler {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.EventTarget.__Class {
+    class FocusHandler extends FocusHandler__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class FocusHandler__Class extends goog.events.EventTarget__Class  { 
     
             /**
              * This event handler allows you to catch focus events when descendants gain or
@@ -33,8 +32,8 @@ declare module goog.events {
              * @param {goog.events.BrowserEvent} e  The underlying browser event.
              */
             handleEvent(e: goog.events.BrowserEvent): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.events.FocusHandler {

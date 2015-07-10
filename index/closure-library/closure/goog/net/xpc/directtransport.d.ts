@@ -5,10 +5,9 @@
 
 declare module goog.net.xpc {
 
-    class DirectTransport extends DirectTransport.__Class { }
-    module DirectTransport {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.net.xpc.Transport.__Class {
+    class DirectTransport extends DirectTransport__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class DirectTransport__Class extends goog.net.xpc.Transport__Class  { 
     
             /**
              * A direct window to window method transport.
@@ -50,6 +49,6 @@ declare module goog.net.xpc {
              * @type {string}
              */
             payload: string;
-        }
-    }
+    } 
+    
 }

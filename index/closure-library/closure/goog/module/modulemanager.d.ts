@@ -7,10 +7,9 @@
 
 declare module goog.module {
 
-    class ModuleManager extends ModuleManager.__Class { }
-    module ModuleManager {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.Disposable.__Class {
+    class ModuleManager extends ModuleManager__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ModuleManager__Class extends goog.Disposable__Class  { 
     
             /**
              * The ModuleManager keeps track of all modules in the environment.
@@ -254,8 +253,8 @@ declare module goog.module {
              * @param {Function} fn The function to register as a callback.
              */
             registerCallback(types: goog.module.ModuleManager.CallbackType[], fn: Function): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.module.ModuleManager {

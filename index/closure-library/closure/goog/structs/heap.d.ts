@@ -2,10 +2,9 @@
 
 declare module goog.structs {
 
-    class Heap<K, V> extends Heap.__Class<K, V> { }
-    module Heap {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class<K, V> {
+    class Heap<K, V> extends Heap__Class<K, V> { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Heap__Class<K, V>  { 
     
             /**
              * Class for a Heap datastructure.
@@ -114,6 +113,6 @@ declare module goog.structs {
              * Removes all elements from the heap.
              */
             clear(): void;
-        }
-    }
+    } 
+    
 }

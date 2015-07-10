@@ -4,10 +4,9 @@
 
 declare module goog.proto2 {
 
-    class Descriptor extends Descriptor.__Class { }
-    module Descriptor {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Descriptor extends Descriptor__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Descriptor__Class  { 
     
             /**
              * A class which describes a Protocol Buffer 2 Message.
@@ -99,8 +98,8 @@ declare module goog.proto2 {
              * @return {!goog.proto2.Message} The instance of the message.
              */
             createMessageInstance(): goog.proto2.Message;
-        }
-    }
+    } 
+    
 
     /**
      * @typedef {{name: (string|undefined),

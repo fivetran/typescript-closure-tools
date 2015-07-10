@@ -4,10 +4,9 @@
 
 declare module goog.storage {
 
-    class EncryptedStorage extends EncryptedStorage.__Class { }
-    module EncryptedStorage {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.storage.CollectableStorage.__Class {
+    class EncryptedStorage extends EncryptedStorage__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class EncryptedStorage__Class extends goog.storage.CollectableStorage__Class  { 
     
             /**
              * Provides an encrypted storage. The keys are hashed with a secret, so
@@ -23,8 +22,8 @@ declare module goog.storage {
              * @final
              */
             constructor(mechanism: goog.storage.mechanism.IterableMechanism, secret: string);
-        }
-    }
+    } 
+    
 }
 
 declare module goog.storage.EncryptedStorage {

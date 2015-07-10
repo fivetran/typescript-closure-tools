@@ -4,10 +4,9 @@
 
 declare module goog.positioning {
 
-    class ViewportPosition extends ViewportPosition.__Class { }
-    module ViewportPosition {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.positioning.AbstractPosition.__Class {
+    class ViewportPosition extends ViewportPosition__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ViewportPosition__Class extends goog.positioning.AbstractPosition__Class  { 
     
             /**
              * Encapsulates a popup position where the popup is positioned according to
@@ -33,6 +32,6 @@ declare module goog.positioning {
              * @extends {goog.positioning.AbstractPosition}
              */
             constructor(arg1: goog.math.Coordinate, opt_arg2?: number);
-        }
-    }
+    } 
+    
 }

@@ -3,10 +3,9 @@
 
 declare module goog.editor {
 
-    class ContentEditableField extends ContentEditableField.__Class { }
-    module ContentEditableField {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.editor.Field.__Class {
+    class ContentEditableField extends ContentEditableField__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ContentEditableField__Class extends goog.editor.Field__Class  { 
     
             /**
              * This class encapsulates an editable field that is just a contentEditable
@@ -22,6 +21,6 @@ declare module goog.editor {
              * @extends {goog.editor.Field}
              */
             constructor(id: string, opt_doc?: Document);
-        }
-    }
+    } 
+    
 }

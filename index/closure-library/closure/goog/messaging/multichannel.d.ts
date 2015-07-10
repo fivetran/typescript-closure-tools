@@ -4,10 +4,9 @@
 
 declare module goog.messaging {
 
-    class MultiChannel extends MultiChannel.__Class { }
-    module MultiChannel {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.Disposable.__Class {
+    class MultiChannel extends MultiChannel__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class MultiChannel__Class extends goog.Disposable__Class  { 
     
             /**
              * Creates a new MultiChannel wrapping a single MessageChannel. The
@@ -34,16 +33,15 @@ declare module goog.messaging {
              *     channel.
              */
             createVirtualChannel(name: string): goog.messaging.MultiChannel.VirtualChannel;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.messaging.MultiChannel {
 
-    class VirtualChannel extends VirtualChannel.__Class { }
-    module VirtualChannel {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.Disposable.__Class implements goog.messaging.MessageChannel {
+    class VirtualChannel extends VirtualChannel__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class VirtualChannel__Class extends goog.Disposable__Class implements goog.messaging.MessageChannel  { 
     
             /**
              * A message channel that proxies its messages over another underlying channel.
@@ -165,6 +163,6 @@ declare module goog.messaging.MultiChannel {
              *     serialization.
              */
             send(serviceName: string, payload: Object): void;
-        }
-    }
+    } 
+    
 }

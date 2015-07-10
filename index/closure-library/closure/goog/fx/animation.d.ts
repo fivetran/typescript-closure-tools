@@ -6,10 +6,9 @@
 
 declare module goog.fx {
 
-    class Animation extends Animation.__Class { }
-    module Animation {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.fx.TransitionBase.__Class implements goog.fx.anim.Animated, goog.fx.Transition {
+    class Animation extends Animation__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Animation__Class extends goog.fx.TransitionBase__Class implements goog.fx.anim.Animated, goog.fx.Transition  { 
     
             /**
              * Constructor for an animation object.
@@ -141,13 +140,12 @@ declare module goog.fx {
              * Stops the transition.
              */
             stop: any /*missing*/;
-        }
-    }
+    } 
+    
 
-    class AnimationEvent extends AnimationEvent.__Class { }
-    module AnimationEvent {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.Event.__Class {
+    class AnimationEvent extends AnimationEvent__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class AnimationEvent__Class extends goog.events.Event__Class  { 
     
             /**
              * Class for an animation event object.
@@ -217,8 +215,8 @@ declare module goog.fx {
              *     the nearest integer.
              */
             coordsAsInts(): number[];
-        }
-    }
+    } 
+    
 }
 
 declare module goog.fx.Animation {

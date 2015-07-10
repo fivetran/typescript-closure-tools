@@ -5,10 +5,9 @@
 
 declare module goog.ui {
 
-    class ToolbarToggleButton extends ToolbarToggleButton.__Class { }
-    module ToolbarToggleButton {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.ToggleButton.__Class {
+    class ToolbarToggleButton extends ToolbarToggleButton__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ToolbarToggleButton__Class extends goog.ui.ToggleButton__Class  { 
     
             /**
              * A toggle button control for a toolbar.
@@ -66,6 +65,6 @@ declare module goog.ui {
              * @extends {goog.ui.ToggleButton}
              */
             constructor(content: NodeList, opt_renderer?: goog.ui.ToolbarButtonRenderer, opt_domHelper?: goog.dom.DomHelper);
-        }
-    }
+    } 
+    
 }

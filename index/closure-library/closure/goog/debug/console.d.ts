@@ -4,10 +4,9 @@
 
 declare module goog.debug {
 
-    class Console extends Console.__Class { }
-    module Console {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Console extends Console__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Console__Class  { 
     
             /**
              * Create and install a log handler that logs to window.console if available
@@ -44,8 +43,8 @@ declare module goog.debug {
              * @param {string} loggerName the logger name to remove.
              */
             removeFilter(loggerName: string): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.debug.Console {

@@ -7,10 +7,9 @@
 
 declare module goog.ui {
 
-    class Palette extends Palette.__Class { }
-    module Palette {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.Control.__Class {
+    class Palette extends Palette__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Palette__Class extends goog.ui.Control__Class  { 
     
             /**
              * A palette is a grid of DOM nodes that the user can highlight or select via
@@ -132,16 +131,15 @@ declare module goog.ui {
              * @param {Node} item Item to select.
              */
             setSelectedItem(item: Node): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.Palette {
 
-    class CurrentCell_ extends CurrentCell_.__Class { }
-    module CurrentCell_ {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.Control.__Class {
+    class CurrentCell_ extends CurrentCell___Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class CurrentCell___Class extends goog.ui.Control__Class  { 
     
             /**
              * A component to represent the currently highlighted cell.
@@ -156,8 +154,8 @@ declare module goog.ui.Palette {
              * @return {boolean} Whether it was successful.
              */
             tryHighlight(highlight: boolean): boolean;
-        }
-    }
+    } 
+    
 
     /**
      * Events fired by the palette object

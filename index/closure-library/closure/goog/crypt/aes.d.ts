@@ -3,10 +3,9 @@
 
 declare module goog.crypt {
 
-    class Aes extends Aes.__Class { }
-    module Aes {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class implements goog.crypt.BlockCipher {
+    class Aes extends Aes__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Aes__Class implements goog.crypt.BlockCipher  { 
     
             /**
              * Implementation of AES in JavaScript.
@@ -47,6 +46,6 @@ declare module goog.crypt {
              *     same length as input.
              */
             decrypt(input: number[]): number[];
-        }
-    }
+    } 
+    
 }

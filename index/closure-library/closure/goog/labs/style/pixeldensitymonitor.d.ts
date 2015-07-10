@@ -4,10 +4,9 @@
 
 declare module goog.labs.style {
 
-    class PixelDensityMonitor extends PixelDensityMonitor.__Class { }
-    module PixelDensityMonitor {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.EventTarget.__Class {
+    class PixelDensityMonitor extends PixelDensityMonitor__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class PixelDensityMonitor__Class extends goog.events.EventTarget__Class  { 
     
             /**
              * Monitors the window for changes to the ratio between device and screen
@@ -40,8 +39,8 @@ declare module goog.labs.style {
              *     window.
              */
             getDensity(): goog.labs.style.PixelDensityMonitor.Density;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.labs.style.PixelDensityMonitor {

@@ -2,10 +2,9 @@
 
 declare module goog.labs.net.webChannel {
 
-    class ConnectionState extends ConnectionState.__Class { }
-    module ConnectionState {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class ConnectionState extends ConnectionState__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ConnectionState__Class  { 
     
             /**
              * The connectivity state of the channel.
@@ -28,6 +27,6 @@ declare module goog.labs.net.webChannel {
              * @type {?boolean}
              */
             bufferingProxyResult: boolean;
-        }
-    }
+    } 
+    
 }

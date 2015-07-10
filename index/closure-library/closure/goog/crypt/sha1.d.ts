@@ -3,10 +3,9 @@
 
 declare module goog.crypt {
 
-    class Sha1 extends Sha1.__Class { }
-    module Sha1 {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.crypt.Hash.__Class {
+    class Sha1 extends Sha1__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Sha1__Class extends goog.crypt.Hash__Class  { 
     
             /**
              * SHA-1 cryptographic hash constructor.
@@ -18,6 +17,6 @@ declare module goog.crypt {
              * @struct
              */
             constructor();
-        }
-    }
+    } 
+    
 }

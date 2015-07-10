@@ -5,10 +5,9 @@
 
 declare module goog.ui.ac {
 
-    class AutoComplete extends AutoComplete.__Class { }
-    module AutoComplete {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.EventTarget.__Class {
+    class AutoComplete extends AutoComplete__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class AutoComplete__Class extends goog.events.EventTarget__Class  { 
     
             /**
              * This is the central manager class for an AutoComplete instance. The matcher
@@ -407,8 +406,8 @@ declare module goog.ui.ac {
              * @param {boolean=} opt_force Whether to force an update.
              */
             update(opt_force?: boolean): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.ac.AutoComplete {

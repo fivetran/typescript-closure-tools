@@ -4,10 +4,9 @@
 
 declare module goog.ui {
 
-    class Option extends Option.__Class { }
-    module Option {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.MenuItem.__Class {
+    class Option extends Option__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Option__Class extends goog.ui.MenuItem__Class  { 
     
             /**
              * Class representing a menu option.  This is just a convenience class that
@@ -65,6 +64,6 @@ declare module goog.ui {
              * @extends {goog.ui.MenuItem}
              */
             constructor(content: NodeList, opt_model?: any, opt_domHelper?: goog.dom.DomHelper);
-        }
-    }
+    } 
+    
 }

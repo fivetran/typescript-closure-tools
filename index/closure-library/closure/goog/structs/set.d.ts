@@ -4,10 +4,9 @@
 
 declare module goog.structs {
 
-    class Set<T> extends Set.__Class<T> { }
-    module Set {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class<T> implements goog.structs.Collection<T> {
+    class Set<T> extends Set__Class<T> { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Set__Class<T> implements goog.structs.Collection<T>  { 
     
             /**
              * A set that can contain both primitives and objects.  Adding and removing
@@ -237,6 +236,6 @@ declare module goog.structs {
              * @return {number} The number of values stored in the collection.
              */
             getCount(): number;
-        }
-    }
+    } 
+    
 }

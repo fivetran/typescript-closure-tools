@@ -5,10 +5,9 @@
 
 declare module goog.ui.media {
 
-    class PicasaAlbum extends PicasaAlbum.__Class { }
-    module PicasaAlbum {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.media.MediaRenderer.__Class {
+    class PicasaAlbum extends PicasaAlbum__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class PicasaAlbum__Class extends goog.ui.media.MediaRenderer__Class  { 
     
             /**
              * Subclasses a goog.ui.media.MediaRenderer to provide a Picasa specific media
@@ -37,13 +36,12 @@ declare module goog.ui.media {
              * @final
              */
             constructor();
-        }
-    }
+    } 
+    
 
-    class PicasaAlbumModel extends PicasaAlbumModel.__Class { }
-    module PicasaAlbumModel {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.media.MediaModel.__Class {
+    class PicasaAlbumModel extends PicasaAlbumModel__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class PicasaAlbumModel__Class extends goog.ui.media.MediaModel__Class  { 
     
             /**
              * The {@code goog.ui.media.PicasaAlbum} media data model. It stores a required
@@ -80,8 +78,8 @@ declare module goog.ui.media {
              * @return {?string} The Picasa album authentication key.
              */
             getAuthKey(): string;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.media.PicasaAlbum {

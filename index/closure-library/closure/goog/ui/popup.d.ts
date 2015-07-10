@@ -7,10 +7,9 @@
 
 declare module goog.ui {
 
-    class Popup extends Popup.__Class { }
-    module Popup {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.PopupBase.__Class {
+    class Popup extends Popup__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Popup__Class extends goog.ui.PopupBase__Class  { 
     
             /**
              * The Popup class provides functionality for displaying an absolutely
@@ -101,16 +100,15 @@ declare module goog.ui {
              * @param {number=} opt_arg4 Left value.
              */
             setMargin(arg1: any /*null*/, opt_arg2?: number, opt_arg3?: number, opt_arg4?: number): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.Popup {
 
-    class AnchoredPosition extends AnchoredPosition.__Class { }
-    module AnchoredPosition {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.positioning.AbstractPosition.__Class {
+    class AnchoredPosition extends AnchoredPosition__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class AnchoredPosition__Class extends goog.positioning.AbstractPosition__Class  { 
     
             /**
              * Encapsulates a popup position where the popup is anchored at a corner of
@@ -131,13 +129,12 @@ declare module goog.ui.Popup {
              * @final
              */
             constructor(element: Element, corner: goog.positioning.Corner);
-        }
-    }
+    } 
+    
 
-    class AnchoredViewPortPosition extends AnchoredViewPortPosition.__Class { }
-    module AnchoredViewPortPosition {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.Popup.AnchoredPosition.__Class {
+    class AnchoredViewPortPosition extends AnchoredViewPortPosition__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class AnchoredViewPortPosition__Class extends goog.ui.Popup.AnchoredPosition__Class  { 
     
             /**
              * Encapsulates a popup position where the popup is anchored at a corner of
@@ -163,13 +160,12 @@ declare module goog.ui.Popup {
              *     this alias will be removed at the end of Q1 2009.
              */
             constructor(element: Element, corner: goog.positioning.Corner, opt_adjust?: boolean);
-        }
-    }
+    } 
+    
 
-    class AbsolutePosition extends AbsolutePosition.__Class { }
-    module AbsolutePosition {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.positioning.AbstractPosition.__Class {
+    class AbsolutePosition extends AbsolutePosition__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class AbsolutePosition__Class extends goog.positioning.AbstractPosition__Class  { 
     
             /**
              * Encapsulates a popup position where the popup absolutely positioned by
@@ -205,13 +201,12 @@ declare module goog.ui.Popup {
              * @final
              */
             constructor(arg1: goog.math.Coordinate, opt_arg2?: number);
-        }
-    }
+    } 
+    
 
-    class ViewPortPosition extends ViewPortPosition.__Class { }
-    module ViewPortPosition {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.Popup.AbsolutePosition.__Class {
+    class ViewPortPosition extends ViewPortPosition__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ViewPortPosition__Class extends goog.ui.Popup.AbsolutePosition__Class  { 
     
             /**
              * Encapsulates a popup position where the popup is positioned according to
@@ -243,13 +238,12 @@ declare module goog.ui.Popup {
              *     will be removed at the end of Q1 2009.
              */
             constructor(arg1: goog.math.Coordinate, opt_arg2?: number);
-        }
-    }
+    } 
+    
 
-    class ClientPosition extends ClientPosition.__Class { }
-    module ClientPosition {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.Popup.AbsolutePosition.__Class {
+    class ClientPosition extends ClientPosition__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ClientPosition__Class extends goog.ui.Popup.AbsolutePosition__Class  { 
     
             /**
              * Encapsulates a popup position where the popup is positioned relative to the
@@ -287,13 +281,12 @@ declare module goog.ui.Popup {
              * @final
              */
             constructor(arg1: goog.math.Coordinate, opt_arg2?: number);
-        }
-    }
+    } 
+    
 
-    class ViewPortClientPosition extends ViewPortClientPosition.__Class { }
-    module ViewPortClientPosition {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.Popup.ClientPosition.__Class {
+    class ViewPortClientPosition extends ViewPortClientPosition__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ViewPortClientPosition__Class extends goog.ui.Popup.ClientPosition__Class  { 
     
             /**
              * Encapsulates a popup position where the popup is positioned relative to the
@@ -323,8 +316,8 @@ declare module goog.ui.Popup {
              *     alias will be removed at the end of Q1 2009.
              */
             constructor(arg1: goog.math.Coordinate, opt_arg2?: number);
-        }
-    }
+    } 
+    
 
     /**
      * Enum for representing an element corner for positioning the popup.

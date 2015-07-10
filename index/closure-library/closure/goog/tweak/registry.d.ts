@@ -3,10 +3,9 @@
 
 declare module goog.tweak {
 
-    class Registry extends Registry.__Class { }
-    module Registry {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Registry extends Registry__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Registry__Class  { 
     
             /**
              * Singleton that manages all tweaks. This should be instantiated only from
@@ -113,8 +112,8 @@ declare module goog.tweak {
              *     default value for the setting.
              */
             overrideDefaultValue(id: string, value: boolean): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.tweak.Registry {

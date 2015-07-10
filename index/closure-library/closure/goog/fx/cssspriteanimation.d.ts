@@ -5,10 +5,9 @@
 
 declare module goog.fx {
 
-    class CssSpriteAnimation extends CssSpriteAnimation.__Class { }
-    module CssSpriteAnimation {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.fx.Animation.__Class {
+    class CssSpriteAnimation extends CssSpriteAnimation__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class CssSpriteAnimation__Class extends goog.fx.Animation__Class  { 
     
             /**
              * This animation class is used to animate a CSS sprite (moving a background
@@ -41,6 +40,6 @@ declare module goog.fx {
              * same element when the sprite animation is not runniing.
              */
             clearSpritePosition(): void;
-        }
-    }
+    } 
+    
 }

@@ -7,10 +7,9 @@
 
 declare module goog.editor.plugins {
 
-    class EnterHandler extends EnterHandler.__Class { }
-    module EnterHandler {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.editor.Plugin.__Class {
+    class EnterHandler extends EnterHandler__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class EnterHandler__Class extends goog.editor.Plugin__Class  { 
     
             /**
              * Plugin to handle enter keys. This does all the crazy to normalize (as much as
@@ -126,8 +125,8 @@ declare module goog.editor.plugins {
              * @protected
              */
             ensureBlockIeOpera(tag: goog.dom.TagName, opt_keyUp?: boolean): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.editor.plugins.EnterHandler {

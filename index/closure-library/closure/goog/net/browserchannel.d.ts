@@ -12,10 +12,9 @@
 
 declare module goog.net {
 
-    class BrowserChannel extends BrowserChannel.__Class { }
-    module BrowserChannel {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class BrowserChannel extends BrowserChannel__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class BrowserChannel__Class  { 
     
             /**
              * Encapsulates the logic for a single BrowserChannel.
@@ -388,16 +387,15 @@ declare module goog.net {
              * @see http://code.google.com/p/closure-library/issues/detail?id=339
              */
             shouldUseSecondaryDomains(): boolean;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.net.BrowserChannel {
 
-    class QueuedMap extends QueuedMap.__Class { }
-    module QueuedMap {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class QueuedMap extends QueuedMap__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class QueuedMap__Class  { 
     
             /**
              * Simple container class for a (mapId, map) pair.
@@ -435,13 +433,12 @@ declare module goog.net.BrowserChannel {
              * @type {Object}
              */
             context: Object;
-        }
-    }
+    } 
+    
 
-    class StatEvent extends StatEvent.__Class { }
-    module StatEvent {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.Event.__Class {
+    class StatEvent extends StatEvent__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class StatEvent__Class extends goog.events.Event__Class  { 
     
             /**
              * Event class for goog.net.BrowserChannel.Event.STAT_EVENT
@@ -460,13 +457,12 @@ declare module goog.net.BrowserChannel {
              * @type {goog.net.BrowserChannel.Stat}
              */
             stat: goog.net.BrowserChannel.Stat;
-        }
-    }
+    } 
+    
 
-    class TimingEvent extends TimingEvent.__Class { }
-    module TimingEvent {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.Event.__Class {
+    class TimingEvent extends TimingEvent__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class TimingEvent__Class extends goog.events.Event__Class  { 
     
             /**
              * Event class for goog.net.BrowserChannel.Event.TIMING_EVENT
@@ -496,13 +492,12 @@ declare module goog.net.BrowserChannel {
              * @type {number}
              */
             retries: number;
-        }
-    }
+    } 
+    
 
-    class ServerReachabilityEvent extends ServerReachabilityEvent.__Class { }
-    module ServerReachabilityEvent {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.Event.__Class {
+    class ServerReachabilityEvent extends ServerReachabilityEvent__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ServerReachabilityEvent__Class extends goog.events.Event__Class  { 
     
             /**
              * Event class for goog.net.BrowserChannel.Event.SERVER_REACHABILITY_EVENT.
@@ -521,13 +516,12 @@ declare module goog.net.BrowserChannel {
              * @type {goog.net.BrowserChannel.ServerReachability}
              */
             reachabilityType: goog.net.BrowserChannel.ServerReachability;
-        }
-    }
+    } 
+    
 
-    class Handler extends Handler.__Class { }
-    module Handler {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Handler extends Handler__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Handler__Class  { 
     
             /**
              * Abstract base class for the browser channel handler
@@ -639,8 +633,8 @@ declare module goog.net.BrowserChannel {
              * @return {?string} The host prefix the client should use.
              */
             correctHostPrefix(serverHostPrefix: string): string;
-        }
-    }
+    } 
+    
 
     /**
      * The latest protocol version that this class supports. We request this version

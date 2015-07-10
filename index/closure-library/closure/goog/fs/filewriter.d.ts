@@ -3,10 +3,9 @@
 
 declare module goog.fs {
 
-    class FileWriter extends FileWriter.__Class { }
-    module FileWriter {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.fs.FileSaver.__Class {
+    class FileWriter extends FileWriter__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class FileWriter__Class extends goog.fs.FileSaver__Class  { 
     
             /**
              * An object for monitoring the saving of files, as well as other fine-grained
@@ -52,6 +51,6 @@ declare module goog.fs {
              * @param {number} size The new size of the file, in bytes.
              */
             truncate(size: number): void;
-        }
-    }
+    } 
+    
 }

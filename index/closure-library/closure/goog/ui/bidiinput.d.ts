@@ -4,10 +4,9 @@
 
 declare module goog.ui {
 
-    class BidiInput extends BidiInput.__Class { }
-    module BidiInput {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.Component.__Class {
+    class BidiInput extends BidiInput__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class BidiInput__Class extends goog.ui.Component__Class  { 
     
             /**
              * Default implementation of BidiInput.
@@ -40,6 +39,6 @@ declare module goog.ui {
              * @return {string} Value of the underlying input field.
              */
             getValue(): string;
-        }
-    }
+    } 
+    
 }

@@ -2,10 +2,9 @@
 
 declare module goog.format {
 
-    class EmailAddress extends EmailAddress.__Class { }
-    module EmailAddress {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class EmailAddress extends EmailAddress__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class EmailAddress__Class  { 
     
             /**
              * Formats an email address string for display, and allows for extraction of
@@ -46,8 +45,8 @@ declare module goog.format {
              * @return {boolean} Whether the email address is valid.
              */
             isValid(): boolean;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.format.EmailAddress {

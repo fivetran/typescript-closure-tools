@@ -3,10 +3,9 @@
 
 declare module goog.editor {
 
-    class Link extends Link.__Class { }
-    module Link {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Link extends Link__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Link__Class  { 
     
             /**
              * Wrap an editable link.
@@ -82,8 +81,8 @@ declare module goog.editor {
              * @param {goog.editor.Field} field The field where this link is being created.
              */
             finishLinkCreation(field: goog.editor.Field): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.editor.Link {

@@ -3,10 +3,9 @@
 
 declare module goog.ui {
 
-    class AttachableMenu extends AttachableMenu.__Class { }
-    module AttachableMenu {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.MenuBase.__Class {
+    class AttachableMenu extends AttachableMenu__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class AttachableMenu__Class extends goog.ui.MenuBase__Class  { 
     
             /**
              * An implementation of a menu that can attach itself to DOM element that
@@ -65,6 +64,6 @@ declare module goog.ui {
              * @protected
              */
             getNextPrevItem(prev: boolean): Element;
-        }
-    }
+    } 
+    
 }

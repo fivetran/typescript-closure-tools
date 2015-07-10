@@ -3,10 +3,9 @@
 
 declare module goog.dom.pattern {
 
-    class Repeat extends Repeat.__Class { }
-    module Repeat {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.dom.pattern.AbstractPattern.__Class {
+    class Repeat extends Repeat__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Repeat__Class extends goog.dom.pattern.AbstractPattern__Class  { 
     
             /**
              * Pattern object that matches a repetition of another pattern.
@@ -35,6 +34,6 @@ declare module goog.dom.pattern {
              * @type {Array.<Node>}
              */
             matches: Node[];
-        }
-    }
+    } 
+    
 }

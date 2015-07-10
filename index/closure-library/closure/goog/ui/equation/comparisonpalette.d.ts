@@ -4,10 +4,9 @@
 
 declare module goog.ui.equation {
 
-    class ComparisonPalette extends ComparisonPalette.__Class { }
-    module ComparisonPalette {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.equation.Palette.__Class {
+    class ComparisonPalette extends ComparisonPalette__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ComparisonPalette__Class extends goog.ui.equation.Palette__Class  { 
     
             /**
              * Constructs a new comparison palette.
@@ -18,6 +17,6 @@ declare module goog.ui.equation {
              * @final
              */
             constructor(paletteManager: goog.ui.equation.PaletteManager);
-        }
-    }
+    } 
+    
 }

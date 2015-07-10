@@ -2,10 +2,9 @@
 
 declare module goog.i18n {
 
-    class CharPickerData extends CharPickerData.__Class { }
-    module CharPickerData {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class CharPickerData extends CharPickerData__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class CharPickerData__Class  { 
     
             /**
              * Object holding two level character organization and character listing.
@@ -35,8 +34,8 @@ declare module goog.i18n {
              * @type {Array.<Array.<string>>}
              */
             charList: string[][];
-        }
-    }
+    } 
+    
 }
 
 declare module goog.i18n.CharPickerData {

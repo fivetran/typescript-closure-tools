@@ -3,10 +3,9 @@
 
 declare module goog.fx {
 
-    class DragDropGroup extends DragDropGroup.__Class { }
-    module DragDropGroup {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.fx.AbstractDragDrop.__Class {
+    class DragDropGroup extends DragDropGroup__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class DragDropGroup__Class extends goog.fx.AbstractDragDrop__Class  { 
     
             /**
              * Drag/drop implementation for creating drag sources/drop targets consisting of
@@ -53,6 +52,6 @@ declare module goog.fx {
              * TODO(eae): Not yet implemented.
              */
             setSelection(list: goog.fx.DragDropItem[]): void;
-        }
-    }
+    } 
+    
 }

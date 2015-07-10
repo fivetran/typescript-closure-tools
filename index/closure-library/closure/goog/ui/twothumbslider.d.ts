@@ -4,10 +4,9 @@
 
 declare module goog.ui {
 
-    class TwoThumbSlider extends TwoThumbSlider.__Class { }
-    module TwoThumbSlider {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.SliderBase.__Class {
+    class TwoThumbSlider extends TwoThumbSlider__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class TwoThumbSlider__Class extends goog.ui.SliderBase__Class  { 
     
             /**
              * This creates a TwoThumbSlider object.
@@ -16,8 +15,8 @@ declare module goog.ui {
              * @extends {goog.ui.SliderBase}
              */
             constructor(opt_domHelper?: goog.dom.DomHelper);
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.TwoThumbSlider {

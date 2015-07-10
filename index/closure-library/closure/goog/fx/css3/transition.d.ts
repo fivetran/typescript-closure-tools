@@ -3,10 +3,9 @@
 
 declare module goog.fx.css3 {
 
-    class Transition extends Transition.__Class { }
-    module Transition {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.fx.TransitionBase.__Class {
+    class Transition extends Transition__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Transition__Class extends goog.fx.TransitionBase__Class  { 
     
             /**
              * A class to handle targeted CSS3 transition. This class
@@ -125,6 +124,6 @@ declare module goog.fx.css3 {
              * @constructor
              */
             constructor(element: Element, duration: number, initialStyle: Object, finalStyle: Object, transitions: string);
-        }
-    }
+    } 
+    
 }

@@ -7,10 +7,9 @@
 
 declare module goog.dom {
 
-    class AbstractRange extends AbstractRange.__Class { }
-    module AbstractRange {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class AbstractRange extends AbstractRange__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class AbstractRange__Class  { 
     
             /**
              * Creates a new selection with no properties.  Do not use this constructor -
@@ -305,13 +304,12 @@ declare module goog.dom {
              * @param {boolean} toAnchor Whether to collapse to the anchor of the range.
              */
             collapse(toAnchor: boolean): void;
-        }
-    }
+    } 
+    
 
-    class RangeIterator extends RangeIterator.__Class { }
-    module RangeIterator {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.dom.TagIterator.__Class {
+    class RangeIterator extends RangeIterator__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class RangeIterator__Class extends goog.dom.TagIterator__Class  { 
     
             /**
              * Subclass of goog.dom.TagIterator that iterates over a DOM range.  It
@@ -350,8 +348,8 @@ declare module goog.dom {
              * @return {boolean} Whether a call to next will fail.
              */
             isLast(): boolean;
-        }
-    }
+    } 
+    
 
     /**
      * Types of ranges.

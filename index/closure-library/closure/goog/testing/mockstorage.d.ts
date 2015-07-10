@@ -2,10 +2,9 @@
 
 declare module goog.testing {
 
-    class MockStorage extends MockStorage.__Class { }
-    module MockStorage {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class implements Storage {
+    class MockStorage extends MockStorage__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class MockStorage__Class implements Storage  { 
     
             /**
              * A JS storage instance, implementing the HMTL5 Storage interface.
@@ -22,6 +21,6 @@ declare module goog.testing {
              * @type {number}
              */
             length: number;
-        }
-    }
+    } 
+    
 }

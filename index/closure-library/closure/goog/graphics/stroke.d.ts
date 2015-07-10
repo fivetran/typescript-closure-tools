@@ -2,10 +2,9 @@
 
 declare module goog.graphics {
 
-    class Stroke extends Stroke.__Class { }
-    module Stroke {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Stroke extends Stroke__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Stroke__Class  { 
     
             /**
              * Creates an immutable stroke object.
@@ -39,6 +38,6 @@ declare module goog.graphics {
              * @return {string} The color of this stroke.
              */
             getColor(): string;
-        }
-    }
+    } 
+    
 }

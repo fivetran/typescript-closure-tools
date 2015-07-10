@@ -4,10 +4,9 @@
 
 declare module goog.storage {
 
-    class RichStorage extends RichStorage.__Class { }
-    module RichStorage {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.storage.Storage.__Class {
+    class RichStorage extends RichStorage__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class RichStorage__Class extends goog.storage.Storage__Class  { 
     
             /**
              * Provides a storage for data with attached metadata.
@@ -32,16 +31,15 @@ declare module goog.storage {
              * @return {(!Object|undefined)} The wrapper, or undefined if not found.
              */
             getWrapper(key: string): any /*Object|any (undefined)*/;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.storage.RichStorage {
 
-    class Wrapper extends Wrapper.__Class { }
-    module Wrapper {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Wrapper extends Wrapper__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Wrapper__Class  { 
     
             /**
              * Wraps a value so metadata can be associated with it. You probably want
@@ -53,8 +51,8 @@ declare module goog.storage.RichStorage {
              * @final
              */
             constructor(value: any);
-        }
-    }
+    } 
+    
 
     /**
      * Metadata key under which the actual data is stored.

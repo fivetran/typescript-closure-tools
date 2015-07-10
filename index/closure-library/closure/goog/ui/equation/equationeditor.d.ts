@@ -4,10 +4,9 @@
 
 declare module goog.ui.equation {
 
-    class EquationEditor extends EquationEditor.__Class { }
-    module EquationEditor {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.Component.__Class {
+    class EquationEditor extends EquationEditor__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class EquationEditor__Class extends goog.ui.Component__Class  { 
     
             /**
              * User interface for equation editor plugin.
@@ -50,8 +49,8 @@ declare module goog.ui.equation {
              * @param {string} equation The equation text to parse.
              */
             setEquation(equation: string): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.equation.EquationEditor {

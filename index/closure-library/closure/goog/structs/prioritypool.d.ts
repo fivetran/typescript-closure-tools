@@ -3,10 +3,9 @@
 
 declare module goog.structs {
 
-    class PriorityPool<VALUE> extends PriorityPool.__Class<VALUE> { }
-    module PriorityPool {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class<VALUE> extends goog.structs.Pool.__Class<VALUE> {
+    class PriorityPool<VALUE> extends PriorityPool__Class<VALUE> { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class PriorityPool__Class<VALUE> extends goog.structs.Pool__Class<VALUE>  { 
     
             /**
              * A generic pool class. If max is greater than min, an error is thrown.
@@ -17,6 +16,6 @@ declare module goog.structs {
              * @template VALUE
              */
             constructor(opt_minCount?: number, opt_maxCount?: number);
-        }
-    }
+    } 
+    
 }

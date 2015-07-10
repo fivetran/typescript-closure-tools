@@ -2,10 +2,9 @@
 
 declare module goog.structs {
 
-    class LinkedMap<KEY, VALUE> extends LinkedMap.__Class<KEY, VALUE> { }
-    module LinkedMap {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class<KEY, VALUE> {
+    class LinkedMap<KEY, VALUE> extends LinkedMap__Class<KEY, VALUE> { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class LinkedMap__Class<KEY, VALUE>  { 
     
             /**
              * Class for a LinkedMap datastructure, which combines O(1) map access for
@@ -214,16 +213,15 @@ declare module goog.structs {
              * @return {boolean} Whether f evaluates to true for every item in the Cache.
              */
             every(f: Function, opt_obj?: Object): boolean;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.structs.LinkedMap {
 
-    class Node_<KEY, VALUE> extends Node_.__Class<KEY, VALUE> { }
-    module Node_ {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class<KEY, VALUE> {
+    class Node_<KEY, VALUE> extends Node___Class<KEY, VALUE> { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Node___Class<KEY, VALUE>  { 
     
             /**
              * Internal class for a doubly-linked list node containing a key/value pair.
@@ -251,6 +249,6 @@ declare module goog.structs.LinkedMap {
              * Causes this node to remove itself from the list.
              */
             remove(): void;
-        }
-    }
+    } 
+    
 }

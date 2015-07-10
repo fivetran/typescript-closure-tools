@@ -5,10 +5,9 @@
 
 declare module goog.html {
 
-    class TrustedResourceUrl extends TrustedResourceUrl.__Class { }
-    module TrustedResourceUrl {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class implements goog.i18n.bidi.DirectionalString, goog.string.TypedString {
+    class TrustedResourceUrl extends TrustedResourceUrl__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class TrustedResourceUrl__Class implements goog.i18n.bidi.DirectionalString, goog.string.TypedString  { 
     
             /**
              * A URL which is under application control and from which script, CSS, and
@@ -67,8 +66,8 @@ declare module goog.html {
              * @return {!string} The wrapped string's value.
              */
             getTypedStringValue(): string;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.html.TrustedResourceUrl {

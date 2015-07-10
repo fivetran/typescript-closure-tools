@@ -5,10 +5,9 @@
 
 declare module goog.ui {
 
-    class ColorPalette extends ColorPalette.__Class { }
-    module ColorPalette {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.Palette.__Class {
+    class ColorPalette extends ColorPalette__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ColorPalette__Class extends goog.ui.Palette__Class  { 
     
             /**
              * A color palette is a grid of color swatches that the user can highlight or
@@ -60,6 +59,6 @@ declare module goog.ui {
              * @protected
              */
             createColorNodes(): Node[];
-        }
-    }
+    } 
+    
 }

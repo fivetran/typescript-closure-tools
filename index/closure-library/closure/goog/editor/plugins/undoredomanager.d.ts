@@ -4,10 +4,9 @@
 
 declare module goog.editor.plugins {
 
-    class UndoRedoManager extends UndoRedoManager.__Class { }
-    module UndoRedoManager {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.EventTarget.__Class {
+    class UndoRedoManager extends UndoRedoManager__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class UndoRedoManager__Class extends goog.events.EventTarget__Class  { 
     
             /**
              * Manages undo and redo operations through a series of {@code UndoRedoState}s
@@ -74,8 +73,8 @@ declare module goog.editor.plugins {
              *     the redo stack without removing it from the stack.
              */
             redoPeek(): any /*goog.editor.plugins.UndoRedoState|any (undefined)*/;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.editor.plugins.UndoRedoManager {

@@ -4,10 +4,9 @@
 
 declare module goog.testing.editor {
 
-    class FieldMock extends FieldMock.__Class { }
-    module FieldMock {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.testing.LooseMock.__Class {
+    class FieldMock extends FieldMock__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class FieldMock__Class extends goog.testing.LooseMock__Class  { 
     
             /**
              * Mock of goog.editor.Field.
@@ -35,6 +34,6 @@ declare module goog.testing.editor {
              * @param {boolean} mode Sets whether we're in modal interaction mode.
              */
             setModalMode(mode: boolean): void;
-        }
-    }
+    } 
+    
 }

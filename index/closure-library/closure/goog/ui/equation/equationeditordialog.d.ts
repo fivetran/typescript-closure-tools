@@ -3,10 +3,9 @@
 
 declare module goog.ui.equation {
 
-    class EquationEditorDialog extends EquationEditorDialog.__Class { }
-    module EquationEditorDialog {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.Dialog.__Class {
+    class EquationEditorDialog extends EquationEditorDialog__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class EquationEditorDialog__Class extends goog.ui.Dialog__Class  { 
     
             /**
              * User interface for equation editor plugin standalone tests.
@@ -34,6 +33,6 @@ declare module goog.ui.equation {
              * @return {string} The html code to embed in the document.
              */
             getHtml(): string;
-        }
-    }
+    } 
+    
 }

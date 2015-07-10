@@ -3,10 +3,9 @@
 
 declare module goog.dom.pattern {
 
-    class Matcher extends Matcher.__Class { }
-    module Matcher {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Matcher extends Matcher__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Matcher__Class  { 
     
             /**
              * Given a set of patterns and a root node, this class tests the patterns in
@@ -43,6 +42,6 @@ declare module goog.dom.pattern {
              * @param {Node} node The root node of the tree to match.
              */
             match(node: Node): void;
-        }
-    }
+    } 
+    
 }

@@ -14,10 +14,9 @@
 
 declare module goog.ui {
 
-    class MenuButton extends MenuButton.__Class { }
-    module MenuButton {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.Button.__Class {
+    class MenuButton extends MenuButton__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class MenuButton__Class extends goog.ui.Button__Class  { 
     
             /**
              * A menu button control.  Extends {@link goog.ui.Button} by composing a button
@@ -323,6 +322,6 @@ declare module goog.ui {
              * @param {goog.events.Event} e Unhighlight event to handle.
              */
             handleUnHighlightItem(e: goog.events.Event): void;
-        }
-    }
+    } 
+    
 }

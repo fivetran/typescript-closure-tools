@@ -4,10 +4,9 @@
 
 declare module goog.testing.events {
 
-    class Event extends Event.__Class { }
-    module Event {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends Event.__Class {
+    class Event extends Event__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Event__Class extends Event__Class  { 
     
             /**
              * goog.events.BrowserEvent expects an Event so we provide one for JSCompiler.
@@ -40,8 +39,8 @@ declare module goog.testing.events {
              *     outside this package is strongly discouraged.
              */
             returnValue_: boolean;
-        }
-    }
+    } 
+    
 
     /**
      * Simulates a mousedown, mouseup, and then click on the given event target,

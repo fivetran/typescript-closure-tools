@@ -5,10 +5,9 @@
 
 declare module goog.ui.tree {
 
-    class TreeNode extends TreeNode.__Class { }
-    module TreeNode {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.tree.BaseNode.__Class {
+    class TreeNode extends TreeNode__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class TreeNode__Class extends goog.ui.tree.BaseNode__Class  { 
     
             /**
              * A single node in the tree.
@@ -32,6 +31,6 @@ declare module goog.ui.tree {
              * @extends {goog.ui.tree.BaseNode}
              */
             constructor(html: goog.html.SafeHtml, opt_config?: Object, opt_domHelper?: goog.dom.DomHelper);
-        }
-    }
+    } 
+    
 }

@@ -6,10 +6,9 @@
 
 declare module goog.ui.media {
 
-    class Media extends Media.__Class { }
-    module Media {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.Control.__Class {
+    class Media extends Media__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Media__Class extends goog.ui.Control__Class  { 
     
             /**
              * Provides the control mechanism of media types.
@@ -38,13 +37,12 @@ declare module goog.ui.media {
              * @return {goog.ui.media.MediaModel} The media model being used.
              */
             getDataModel(): goog.ui.media.MediaModel;
-        }
-    }
+    } 
+    
 
-    class MediaRenderer extends MediaRenderer.__Class { }
-    module MediaRenderer {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.ControlRenderer.__Class {
+    class MediaRenderer extends MediaRenderer__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class MediaRenderer__Class extends goog.ui.ControlRenderer__Class  { 
     
             /**
              * Base class of all media renderers. Provides the common renderer functionality
@@ -81,6 +79,6 @@ declare module goog.ui.media {
              * @protected
              */
             getThumbnailCssName(index: number): string;
-        }
-    }
+    } 
+    
 }

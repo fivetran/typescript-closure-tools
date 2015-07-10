@@ -4,10 +4,9 @@
 
 declare module goog.ui {
 
-    class CheckBoxMenuItem extends CheckBoxMenuItem.__Class { }
-    module CheckBoxMenuItem {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.MenuItem.__Class {
+    class CheckBoxMenuItem extends CheckBoxMenuItem__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class CheckBoxMenuItem__Class extends goog.ui.MenuItem__Class  { 
     
             /**
              * Class representing a checkbox menu item.  This is just a convenience class
@@ -65,6 +64,6 @@ declare module goog.ui {
              * @extends {goog.ui.MenuItem}
              */
             constructor(content: NodeList, opt_model?: any, opt_domHelper?: goog.dom.DomHelper);
-        }
-    }
+    } 
+    
 }

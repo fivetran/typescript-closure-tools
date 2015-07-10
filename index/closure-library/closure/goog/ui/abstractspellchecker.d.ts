@@ -10,10 +10,9 @@
 
 declare module goog.ui {
 
-    class AbstractSpellChecker extends AbstractSpellChecker.__Class { }
-    module AbstractSpellChecker {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.Component.__Class {
+    class AbstractSpellChecker extends AbstractSpellChecker__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class AbstractSpellChecker__Class extends goog.ui.Component__Class  { 
     
             /**
              * Abstract base class for spell checker editor implementations. Provides basic
@@ -363,8 +362,8 @@ declare module goog.ui {
              * @protected
              */
             continueAsyncProcessing(): goog.ui.AbstractSpellChecker.AsyncResult;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.AbstractSpellChecker {

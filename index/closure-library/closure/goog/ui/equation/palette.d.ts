@@ -6,10 +6,9 @@
 
 declare module goog.ui.equation {
 
-    class Palette extends Palette.__Class { }
-    module Palette {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.Palette.__Class {
+    class Palette extends Palette__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Palette__Class extends goog.ui.Palette__Class  { 
     
             /**
              * Constructs a new palette.
@@ -57,13 +56,12 @@ declare module goog.ui.equation {
              *     not found.
              */
             getAction(index: number): string;
-        }
-    }
+    } 
+    
 
-    class PaletteEvent extends PaletteEvent.__Class { }
-    module PaletteEvent {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.Event.__Class {
+    class PaletteEvent extends PaletteEvent__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class PaletteEvent__Class extends goog.events.Event__Class  { 
     
             /**
              * The event that palettes dispatches.
@@ -83,13 +81,12 @@ declare module goog.ui.equation {
              *     fired from.
              */
             getPalette(): goog.ui.equation.Palette;
-        }
-    }
+    } 
+    
 
-    class PaletteRenderer extends PaletteRenderer.__Class { }
-    module PaletteRenderer {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.PaletteRenderer.__Class {
+    class PaletteRenderer extends PaletteRenderer__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class PaletteRenderer__Class extends goog.ui.PaletteRenderer__Class  { 
     
             /**
              * The renderer for palette.
@@ -103,8 +100,8 @@ declare module goog.ui.equation {
              * @return {string} The CSS class name of the palette item.
              */
             getItemCssClass(): string;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.equation.Palette {

@@ -3,10 +3,9 @@
 
 declare module goog.ds {
 
-    class JsDataSource extends JsDataSource.__Class { }
-    module JsDataSource {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ds.DataNode.__Class {
+    class JsDataSource extends JsDataSource__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class JsDataSource__Class extends goog.ds.DataNode__Class  { 
     
             /**
              * Data source whose backing is JavaScript data
@@ -40,13 +39,12 @@ declare module goog.ds {
              * @protected
              */
             setRoot(root: Object): void;
-        }
-    }
+    } 
+    
 
-    class JsPropertyDataSource extends JsPropertyDataSource.__Class { }
-    module JsPropertyDataSource {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ds.BaseDataNode.__Class {
+    class JsPropertyDataSource extends JsPropertyDataSource__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class JsPropertyDataSource__Class extends goog.ds.BaseDataNode__Class  { 
     
             /**
              * Data source for JavaScript properties that arent objects. Contains reference
@@ -68,6 +66,6 @@ declare module goog.ds {
              * @return {Object} The value of the node, or null if no value.
              */
             get(): Object;
-        }
-    }
+    } 
+    
 }

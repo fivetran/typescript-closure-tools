@@ -3,10 +3,9 @@
 
 declare module goog.testing {
 
-    class PerformanceTable extends PerformanceTable.__Class { }
-    module PerformanceTable {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class PerformanceTable extends PerformanceTable__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class PerformanceTable__Class  { 
     
             /**
              * A UI widget that runs performance tests and displays the results.
@@ -54,6 +53,6 @@ declare module goog.testing {
              * @param {*} reason The reason for the error.
              */
             reportError(reason: any): void;
-        }
-    }
+    } 
+    
 }

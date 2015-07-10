@@ -3,10 +3,9 @@
 
 declare module goog.events {
 
-    class FileDropHandler extends FileDropHandler.__Class { }
-    module FileDropHandler {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.EventTarget.__Class {
+    class FileDropHandler extends FileDropHandler__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class FileDropHandler__Class extends goog.events.EventTarget__Class  { 
     
             /**
              * A files drag and drop event detector. Gets an {@code element} as parameter
@@ -34,8 +33,8 @@ declare module goog.events {
              * @final
              */
             constructor(element: Document, opt_preventDropOutside?: boolean);
-        }
-    }
+    } 
+    
 }
 
 declare module goog.events.FileDropHandler {

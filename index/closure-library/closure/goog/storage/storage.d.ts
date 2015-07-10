@@ -3,10 +3,9 @@
 
 declare module goog.storage {
 
-    class Storage extends Storage.__Class { }
-    module Storage {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Storage extends Storage__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Storage__Class  { 
     
             /**
              * The base implementation for all storage APIs.
@@ -46,6 +45,6 @@ declare module goog.storage {
              * @param {string} key The key to remove.
              */
             remove(key: string): void;
-        }
-    }
+    } 
+    
 }

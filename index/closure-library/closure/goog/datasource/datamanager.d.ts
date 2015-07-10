@@ -3,10 +3,9 @@
 
 declare module goog.ds {
 
-    class DataManager extends DataManager.__Class { }
-    module DataManager {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ds.DataNode.__Class {
+    class DataManager extends DataManager__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class DataManager__Class extends goog.ds.DataNode__Class  { 
     
             /**
              * Create a DataManger
@@ -148,8 +147,8 @@ declare module goog.ds {
              * @param {string} dataPath Fully qualified data path.
              */
             fireDataChange(dataPath: string): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ds.DataManager {

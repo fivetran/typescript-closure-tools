@@ -2,10 +2,9 @@
 
 declare module goog.storage.mechanism {
 
-    class Mechanism extends Mechanism.__Class { }
-    module Mechanism {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Mechanism extends Mechanism__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Mechanism__Class  { 
     
             /**
              * Basic interface for all storage mechanisms.
@@ -36,6 +35,6 @@ declare module goog.storage.mechanism {
              * @param {string} key The key to remove.
              */
             remove(key: string): void;
-        }
-    }
+    } 
+    
 }

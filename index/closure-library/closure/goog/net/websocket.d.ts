@@ -5,10 +5,9 @@
 
 declare module goog.net {
 
-    class WebSocket extends WebSocket.__Class { }
-    module WebSocket {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.EventTarget.__Class {
+    class WebSocket extends WebSocket__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class WebSocket__Class extends goog.events.EventTarget__Class  { 
     
             /**
              * Class encapsulating the logic for using a WebSocket.
@@ -58,16 +57,15 @@ declare module goog.net {
              * @return {boolean} True if the web socket is open, false otherwise.
              */
             isOpen(): boolean;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.net.WebSocket {
 
-    class MessageEvent extends MessageEvent.__Class { }
-    module MessageEvent {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.Event.__Class {
+    class MessageEvent extends MessageEvent__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class MessageEvent__Class extends goog.events.Event__Class  { 
     
             /**
              * Object representing a new incoming message event.
@@ -84,13 +82,12 @@ declare module goog.net.WebSocket {
              * @type {string}
              */
             message: string;
-        }
-    }
+    } 
+    
 
-    class ErrorEvent extends ErrorEvent.__Class { }
-    module ErrorEvent {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.Event.__Class {
+    class ErrorEvent extends ErrorEvent__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ErrorEvent__Class extends goog.events.Event__Class  { 
     
             /**
              * Object representing an error event. This is fired whenever an error occurs
@@ -108,8 +105,8 @@ declare module goog.net.WebSocket {
              * @type {string}
              */
             data: string;
-        }
-    }
+    } 
+    
 
     /**
      * The events fired by the web socket.

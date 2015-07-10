@@ -2,10 +2,9 @@
 
 declare module goog.vec {
 
-    class Float32Array extends Float32Array.__Class { }
-    module Float32Array {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Float32Array extends Float32Array__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Float32Array__Class  { 
     
             /**
              * Constructs a new Float32Array. The new array is initialized to all zeros.
@@ -68,8 +67,8 @@ declare module goog.vec {
              * @param {number=} opt_offset The offset in this array to start.
              */
             set(values: Float32Array, opt_offset?: number): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.vec.Float32Array {

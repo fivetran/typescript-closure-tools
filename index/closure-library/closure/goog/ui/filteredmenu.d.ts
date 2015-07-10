@@ -7,10 +7,9 @@
 
 declare module goog.ui {
 
-    class FilteredMenu extends FilteredMenu.__Class { }
-    module FilteredMenu {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.Menu.__Class {
+    class FilteredMenu extends FilteredMenu__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class FilteredMenu__Class extends goog.ui.Menu__Class  { 
     
             /**
              * Filtered menu class.
@@ -103,8 +102,8 @@ declare module goog.ui {
              * @return {Element} Input element.
              */
             getFilterInputElement(): Element;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.FilteredMenu {

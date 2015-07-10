@@ -3,10 +3,9 @@
 
 declare module goog.ui {
 
-    class MenuBarRenderer extends MenuBarRenderer.__Class { }
-    module MenuBarRenderer {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.ContainerRenderer.__Class {
+    class MenuBarRenderer extends MenuBarRenderer__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class MenuBarRenderer__Class extends goog.ui.ContainerRenderer__Class  { 
     
             /**
              * Default renderer for {@link goog.ui.menuBar}s, based on {@link
@@ -16,8 +15,8 @@ declare module goog.ui {
              * @final
              */
             constructor();
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.MenuBarRenderer {

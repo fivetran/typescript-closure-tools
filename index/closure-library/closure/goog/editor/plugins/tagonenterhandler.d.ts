@@ -4,10 +4,9 @@
 
 declare module goog.editor.plugins {
 
-    class TagOnEnterHandler extends TagOnEnterHandler.__Class { }
-    module TagOnEnterHandler {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.editor.plugins.EnterHandler.__Class {
+    class TagOnEnterHandler extends TagOnEnterHandler__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class TagOnEnterHandler__Class extends goog.editor.plugins.EnterHandler__Class  { 
     
             /**
              * Plugin to handle enter keys. This subclass normalizes all browsers to use
@@ -17,6 +16,6 @@ declare module goog.editor.plugins {
              * @extends {goog.editor.plugins.EnterHandler}
              */
             constructor(tag: goog.dom.TagName);
-        }
-    }
+    } 
+    
 }

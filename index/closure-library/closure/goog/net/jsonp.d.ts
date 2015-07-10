@@ -3,10 +3,9 @@
 
 declare module goog.net {
 
-    class Jsonp extends Jsonp.__Class { }
-    module Jsonp {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Jsonp extends Jsonp__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Jsonp__Class  { 
     
             /**
              * Creates a new cross domain channel that sends data to the specified
@@ -103,8 +102,8 @@ declare module goog.net {
              * @param {Object} request The request object returned by the send method.
              */
             cancel(request: Object): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.net.Jsonp {

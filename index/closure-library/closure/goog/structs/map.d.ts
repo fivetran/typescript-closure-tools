@@ -3,10 +3,9 @@
 
 declare module goog.structs {
 
-    class Map<K, V> extends Map.__Class<K, V> { }
-    module Map {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class<K, V> {
+    class Map<K, V> extends Map__Class<K, V> { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Map__Class<K, V>  { 
     
             /**
              * Class for Hash Map datastructure.
@@ -156,8 +155,8 @@ declare module goog.structs {
              * @return {!goog.iter.Iterator} An iterator over the values or keys in the map.
              */
             __iterator__(opt_keys?: boolean): goog.iter.Iterator<any>;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.structs.Map {

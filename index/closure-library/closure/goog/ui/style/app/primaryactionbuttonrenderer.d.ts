@@ -3,10 +3,9 @@
 
 declare module goog.ui.style.app {
 
-    class PrimaryActionButtonRenderer extends PrimaryActionButtonRenderer.__Class { }
-    module PrimaryActionButtonRenderer {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.style.app.ButtonRenderer.__Class {
+    class PrimaryActionButtonRenderer extends PrimaryActionButtonRenderer__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class PrimaryActionButtonRenderer__Class extends goog.ui.style.app.ButtonRenderer__Class  { 
     
             /**
              * Custom renderer for {@link goog.ui.Button}s. This renderer supports the
@@ -17,8 +16,8 @@ declare module goog.ui.style.app {
              * @final
              */
             constructor();
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.style.app.PrimaryActionButtonRenderer {

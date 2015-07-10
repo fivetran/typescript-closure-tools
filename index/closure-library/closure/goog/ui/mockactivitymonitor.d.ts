@@ -4,10 +4,9 @@
 
 declare module goog.ui {
 
-    class MockActivityMonitor extends MockActivityMonitor.__Class { }
-    module MockActivityMonitor {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.ActivityMonitor.__Class {
+    class MockActivityMonitor extends MockActivityMonitor__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class MockActivityMonitor__Class extends goog.ui.ActivityMonitor__Class  { 
     
             /**
              * A mock implementation of goog.ui.ActivityMonitor for unit testing. Clients
@@ -25,6 +24,6 @@ declare module goog.ui {
              *     not idle. If not specified, defaults to MOUSEMOVE.
              */
             simulateEvent(opt_type?: goog.events.EventType): void;
-        }
-    }
+    } 
+    
 }

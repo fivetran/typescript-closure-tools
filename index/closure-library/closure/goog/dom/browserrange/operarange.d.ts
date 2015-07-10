@@ -3,10 +3,9 @@
 
 declare module goog.dom.browserrange {
 
-    class OperaRange extends OperaRange.__Class { }
-    module OperaRange {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.dom.browserrange.W3cRange.__Class {
+    class OperaRange extends OperaRange__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class OperaRange__Class extends goog.dom.browserrange.W3cRange__Class  { 
     
             /**
              * The constructor for Opera specific browser ranges.
@@ -16,8 +15,8 @@ declare module goog.dom.browserrange {
              * @final
              */
             constructor(range: Range);
-        }
-    }
+    } 
+    
 }
 
 declare module goog.dom.browserrange.OperaRange {

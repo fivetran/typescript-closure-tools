@@ -3,10 +3,9 @@
 
 declare module goog.editor.plugins {
 
-    class LinkBubble extends LinkBubble.__Class { }
-    module LinkBubble {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.editor.plugins.AbstractBubblePlugin.__Class {
+    class LinkBubble extends LinkBubble__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class LinkBubble__Class extends goog.editor.plugins.AbstractBubblePlugin__Class  { 
     
             /**
              * Property bubble plugin for links.
@@ -91,16 +90,15 @@ declare module goog.editor.plugins {
              * @protected
              */
             shouldOpenUrl(url: string): boolean;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.editor.plugins.LinkBubble {
 
-    class Action extends Action.__Class { }
-    module Action {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Action extends Action__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Action__Class  { 
     
             /**
              * Constructor for extra actions that can be added to the link bubble.
@@ -115,6 +113,6 @@ declare module goog.editor.plugins.LinkBubble {
              * @final
              */
             constructor(spanId: string, linkId: string, message: string, toShowFn: (_0: string) => boolean, actionFn: (_0: string) => void);
-        }
-    }
+    } 
+    
 }

@@ -4,10 +4,9 @@
 
 declare module goog.events {
 
-    class Listener extends Listener.__Class { }
-    module Listener {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class implements goog.events.ListenableKey {
+    class Listener extends Listener__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Listener__Class implements goog.events.ListenableKey  { 
     
             /**
              * Simple class that stores information about a listener
@@ -134,6 +133,6 @@ declare module goog.events {
              * @type {number}
              */
             key: number;
-        }
-    }
+    } 
+    
 }

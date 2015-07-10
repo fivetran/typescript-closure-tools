@@ -3,10 +3,9 @@
 
 declare module goog.ui.editor {
 
-    class EquationEditorOkEvent extends EquationEditorOkEvent.__Class { }
-    module EquationEditorOkEvent {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.Event.__Class {
+    class EquationEditorOkEvent extends EquationEditorOkEvent__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class EquationEditorOkEvent__Class extends goog.events.Event__Class  { 
     
             /**
              * OK event object for the equation editor dialog.
@@ -23,6 +22,6 @@ declare module goog.ui.editor {
              * @type {string}
              */
             equationHtml: string;
-        }
-    }
+    } 
+    
 }

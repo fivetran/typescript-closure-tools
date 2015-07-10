@@ -3,10 +3,9 @@
 
 declare module goog.editor.plugins {
 
-    class LoremIpsum extends LoremIpsum.__Class { }
-    module LoremIpsum {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.editor.Plugin.__Class {
+    class LoremIpsum extends LoremIpsum__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class LoremIpsum__Class extends goog.editor.Plugin__Class  { 
     
             /**
              * A plugin that manages lorem ipsum state of editable fields.
@@ -16,6 +15,6 @@ declare module goog.editor.plugins {
              * @final
              */
             constructor(message: string);
-        }
-    }
+    } 
+    
 }

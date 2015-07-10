@@ -2,10 +2,9 @@
 
 declare module goog.structs {
 
-    class Queue<T> extends Queue.__Class<T> { }
-    module Queue {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class<T> {
+    class Queue<T> extends Queue__Class<T> { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Queue__Class<T>  { 
     
             /**
              * Class for FIFO Queue data structure.
@@ -71,6 +70,6 @@ declare module goog.structs {
              * @return {!Array.<T>} An array of the values in the queue.
              */
             getValues(): T[];
-        }
-    }
+    } 
+    
 }

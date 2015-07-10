@@ -5,10 +5,9 @@
 
 declare module goog.tweak {
 
-    class TweakUi extends TweakUi.__Class { }
-    module TweakUi {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class TweakUi extends TweakUi__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class TweakUi__Class  { 
     
             /**
              * A UI for editing tweak settings / clicking tweak actions.
@@ -29,13 +28,12 @@ declare module goog.tweak {
              * @return {!Element} The root element.
              */
             render(): Element;
-        }
-    }
+    } 
+    
 
-    class EntriesPanel extends EntriesPanel.__Class { }
-    module EntriesPanel {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class EntriesPanel extends EntriesPanel__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class EntriesPanel__Class  { 
     
             /**
              * The body of the tweaks UI and also used for BooleanGroup.
@@ -100,13 +98,12 @@ declare module goog.tweak {
              * Show all entry descriptions (has the same effect as clicking on all ?'s).
              */
             toggleAllDescriptions(): void;
-        }
-    }
+    } 
+    
 
-    class NamespaceEntry_ extends NamespaceEntry_.__Class { }
-    module NamespaceEntry_ {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.tweak.BaseEntry.__Class {
+    class NamespaceEntry_ extends NamespaceEntry___Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class NamespaceEntry___Class extends goog.tweak.BaseEntry__Class  { 
     
             /**
              * Entries used to represent the collapsible namespace links. These entries are
@@ -125,8 +122,8 @@ declare module goog.tweak {
              * @type {!Array.<!goog.tweak.BaseEntry>}
              */
             entries: goog.tweak.BaseEntry[];
-        }
-    }
+    } 
+    
 }
 
 declare module goog.tweak.TweakUi {

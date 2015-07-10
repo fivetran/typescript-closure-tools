@@ -3,10 +3,9 @@
 
 declare module goog.async {
 
-    class Throttle<T> extends Throttle.__Class<T> { }
-    module Throttle {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class<T> extends goog.Disposable.__Class {
+    class Throttle<T> extends Throttle__Class<T> { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Throttle__Class<T> extends goog.Disposable__Class  { 
     
             /**
              * Throttle will perform an action that is passed in no more than once
@@ -51,16 +50,15 @@ declare module goog.async {
              * will be executed as normal.
              */
             resume(): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog {
 
-    class Throttle extends Throttle.__Class { }
-    module Throttle {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Throttle extends Throttle__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Throttle__Class  { 
     
             /**
              * A deprecated alias.
@@ -69,6 +67,6 @@ declare module goog {
              * @final
              */
             constructor();
-        }
-    }
+    } 
+    
 }

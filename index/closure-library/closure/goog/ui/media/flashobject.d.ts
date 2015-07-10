@@ -5,10 +5,9 @@
 
 declare module goog.ui.media {
 
-    class FlashObject extends FlashObject.__Class { }
-    module FlashObject {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.Component.__Class {
+    class FlashObject extends FlashObject__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class FlashObject__Class extends goog.ui.Component__Class  { 
     
             /**
              * A very simple flash wrapper, that allows you to create flash object
@@ -198,8 +197,8 @@ declare module goog.ui.media {
              * @return {boolean} whether the SWF has finished loading or not.
              */
             isLoaded(): boolean;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.media.FlashObject {

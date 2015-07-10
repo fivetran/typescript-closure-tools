@@ -3,10 +3,9 @@
 
 declare module goog.dom {
 
-    class NodeOffset extends NodeOffset.__Class { }
-    module NodeOffset {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.Disposable.__Class {
+    class NodeOffset extends NodeOffset__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class NodeOffset__Class extends goog.Disposable__Class  { 
     
             /**
              * Object to store the offset from one node to another in a way that works on
@@ -28,6 +27,6 @@ declare module goog.dom {
              * @return {Node} The node relative to baseNode, or null on failure.
              */
             findTargetNode(baseNode: Node): Node;
-        }
-    }
+    } 
+    
 }

@@ -4,10 +4,9 @@
 
 declare module goog.labs.net.webChannel {
 
-    class WebChannelBase extends WebChannelBase.__Class { }
-    module WebChannelBase {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class implements goog.labs.net.webChannel.Channel {
+    class WebChannelBase extends WebChannelBase__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class WebChannelBase__Class implements goog.labs.net.webChannel.Channel  { 
     
             /**
              * This WebChannel implementation is branched off goog.net.BrowserChannel
@@ -25,6 +24,6 @@ declare module goog.labs.net.webChannel {
              * @implements {goog.labs.net.webChannel.Channel}
              */
             constructor(opt_options?: goog.net.WebChannel.Options, opt_clientVersion?: string, opt_conn?: ConnectionState);
-        }
-    }
+    } 
+    
 }

@@ -4,10 +4,9 @@
 
 declare module goog.ui {
 
-    class Ratings extends Ratings.__Class { }
-    module Ratings {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.Component.__Class {
+    class Ratings extends Ratings__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Ratings__Class extends goog.ui.Component__Class  { 
     
             /**
              * A UI Control used for rating things, i.e. videos on Google Video.
@@ -97,8 +96,8 @@ declare module goog.ui {
              * @return {boolean} Whether the ratings control is enabled.
              */
             isEnabled(): boolean;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.Ratings {

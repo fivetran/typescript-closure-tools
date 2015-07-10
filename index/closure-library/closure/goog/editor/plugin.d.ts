@@ -7,10 +7,9 @@
 
 declare module goog.editor {
 
-    class Plugin extends Plugin.__Class { }
-    module Plugin {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.EventTarget.__Class {
+    class Plugin extends Plugin__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Plugin__Class extends goog.events.EventTarget__Class  { 
     
             /**
              * Abstract API for trogedit plugins.
@@ -267,8 +266,8 @@ declare module goog.editor {
              * @return {boolean} Whether the plugin handles this type of command.
              */
             isSupportedCommand(command: string): boolean;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.editor.Plugin {

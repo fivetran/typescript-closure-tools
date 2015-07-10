@@ -2,10 +2,9 @@
 
 declare module goog.math {
 
-    class Coordinate extends Coordinate.__Class { }
-    module Coordinate {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Coordinate extends Coordinate__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Coordinate__Class  { 
     
             /**
              * Class for representing coordinates and positions.
@@ -103,8 +102,8 @@ declare module goog.math {
              *     to (0, 0) if not given.
              */
             rotateDegrees(degrees: number, opt_center?: goog.math.Coordinate): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.math.Coordinate {

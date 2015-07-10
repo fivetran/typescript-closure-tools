@@ -3,10 +3,9 @@
 
 declare module goog.ui {
 
-    class TabRenderer extends TabRenderer.__Class { }
-    module TabRenderer {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.ControlRenderer.__Class {
+    class TabRenderer extends TabRenderer__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class TabRenderer__Class extends goog.ui.ControlRenderer__Class  { 
     
             /**
              * Default renderer for {@link goog.ui.Tab}s, based on the {@code TabPane} code.
@@ -39,8 +38,8 @@ declare module goog.ui {
              * @param {string|null|undefined} tooltip New tooltip text (if any).
              */
             setTooltip(element: Element, tooltip: any /*null*/): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.TabRenderer {

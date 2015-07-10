@@ -3,10 +3,9 @@
 
 declare module goog.ui {
 
-    class FilterObservingMenuItemRenderer extends FilterObservingMenuItemRenderer.__Class { }
-    module FilterObservingMenuItemRenderer {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.MenuItemRenderer.__Class {
+    class FilterObservingMenuItemRenderer extends FilterObservingMenuItemRenderer__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class FilterObservingMenuItemRenderer__Class extends goog.ui.MenuItemRenderer__Class  { 
     
             /**
              * Default renderer for {@link goog.ui.FilterObservingMenuItem}s. Each item has
@@ -18,8 +17,8 @@ declare module goog.ui {
              * @final
              */
             constructor();
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.FilterObservingMenuItemRenderer {

@@ -9,10 +9,9 @@
 
 declare module goog.ui {
 
-    class Menu extends Menu.__Class { }
-    module Menu {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.Container.__Class {
+    class Menu extends Menu__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Menu__Class extends goog.ui.Container__Class  { 
     
             /**
              * A basic menu class.
@@ -218,8 +217,8 @@ declare module goog.ui {
              * @protected
              */
             decorateContent(element: Element): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.Menu {

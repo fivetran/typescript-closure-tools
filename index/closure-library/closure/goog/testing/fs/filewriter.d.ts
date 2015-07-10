@@ -7,10 +7,9 @@
 
 declare module goog.testing.fs {
 
-    class FileWriter extends FileWriter.__Class { }
-    module FileWriter {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.EventTarget.__Class {
+    class FileWriter extends FileWriter__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class FileWriter__Class extends goog.events.EventTarget__Class  { 
     
             /**
              * A mock FileWriter object. This emits the same events as
@@ -69,6 +68,6 @@ declare module goog.testing.fs {
              * @param {number} offset The offset to seek to.
              */
             seek(offset: number): void;
-        }
-    }
+    } 
+    
 }

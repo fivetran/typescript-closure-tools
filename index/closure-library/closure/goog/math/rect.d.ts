@@ -5,10 +5,9 @@
 
 declare module goog.math {
 
-    class Rect extends Rect.__Class { }
-    module Rect {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Rect extends Rect__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Rect__Class  { 
     
             /**
              * Class for representing rectangular regions.
@@ -185,8 +184,8 @@ declare module goog.math {
              * @return {!goog.math.Rect} This rectangle after scaling.
              */
             scale(sx: number, opt_sy?: number): goog.math.Rect;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.math.Rect {

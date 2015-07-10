@@ -3,10 +3,9 @@
 
 declare module goog.dom.pattern {
 
-    class FullTag extends FullTag.__Class { }
-    module FullTag {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.dom.pattern.StartTag.__Class {
+    class FullTag extends FullTag__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class FullTag__Class extends goog.dom.pattern.StartTag__Class  { 
     
             /**
              * Pattern object that matches a full tag including all its children.
@@ -44,6 +43,6 @@ declare module goog.dom.pattern {
              * @final
              */
             constructor(tag: RegExp, opt_attrs?: Object, opt_styles?: Object, opt_test?: Function);
-        }
-    }
+    } 
+    
 }

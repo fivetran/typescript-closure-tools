@@ -4,10 +4,9 @@
 
 declare module goog.net {
 
-    class BulkLoader extends BulkLoader.__Class { }
-    module BulkLoader {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.EventTarget.__Class {
+    class BulkLoader extends BulkLoader__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class BulkLoader__Class extends goog.events.EventTarget__Class  { 
     
             /**
              * Class used to load multiple URIs.
@@ -34,6 +33,6 @@ declare module goog.net {
              * Starts the process of loading the URIs.
              */
             load(): void;
-        }
-    }
+    } 
+    
 }

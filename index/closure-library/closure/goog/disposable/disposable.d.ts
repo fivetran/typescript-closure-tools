@@ -3,10 +3,9 @@
 
 declare module goog {
 
-    class Disposable extends Disposable.__Class { }
-    module Disposable {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class implements goog.disposable.IDisposable {
+    class Disposable extends Disposable__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Disposable__Class implements goog.disposable.IDisposable  { 
     
             /**
              * Class that provides the basic implementation for disposable objects. If your
@@ -86,8 +85,8 @@ declare module goog {
              * @return {boolean} Whether the object has been disposed of.
              */
             isDisposed(): boolean;
-        }
-    }
+    } 
+    
 
     /**
      * Calls {@code dispose} on the argument if it supports it. If obj is not an

@@ -4,10 +4,9 @@
 
 declare module goog.proto2 {
 
-    class TextFormatSerializer extends TextFormatSerializer.__Class { }
-    module TextFormatSerializer {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.proto2.Serializer.__Class {
+    class TextFormatSerializer extends TextFormatSerializer__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class TextFormatSerializer__Class extends goog.proto2.Serializer__Class  { 
     
             /**
              * TextFormatSerializer, a serializer which turns Messages into the human
@@ -21,16 +20,15 @@ declare module goog.proto2 {
              * @final
              */
             constructor(opt_ignoreMissingFields?: boolean, opt_useEnumValues?: boolean);
-        }
-    }
+    } 
+    
 }
 
 declare module goog.proto2.TextFormatSerializer {
 
-    class Printer_ extends Printer_.__Class { }
-    module Printer_ {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Printer_ extends Printer___Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Printer___Class  { 
     
             /**
              * Helper class used by the text format serializer for pretty-printing text.
@@ -59,13 +57,12 @@ declare module goog.proto2.TextFormatSerializer {
              * Appends a newline to the printer.
              */
             appendLine(): void;
-        }
-    }
+    } 
+    
 
-    class Tokenizer_ extends Tokenizer_.__Class { }
-    module Tokenizer_ {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Tokenizer_ extends Tokenizer___Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Tokenizer___Class  { 
     
             /**
              * Helper class for tokenizing the text format.
@@ -89,13 +86,12 @@ declare module goog.proto2.TextFormatSerializer {
              *    reached or no valid token was found.
              */
             next(): boolean;
-        }
-    }
+    } 
+    
 
-    class Parser extends Parser.__Class { }
-    module Parser {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Parser extends Parser__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Parser__Class  { 
     
             /**
              * Helper class for parsing the text format.
@@ -119,8 +115,8 @@ declare module goog.proto2.TextFormatSerializer {
              * @return {?string} The parse error, if any.
              */
             getError(): string;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.proto2.TextFormatSerializer.Tokenizer_ {

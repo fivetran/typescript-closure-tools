@@ -5,10 +5,9 @@
 
 declare module goog.ui {
 
-    class ControlRenderer extends ControlRenderer.__Class { }
-    module ControlRenderer {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class ControlRenderer extends ControlRenderer__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ControlRenderer__Class  { 
     
             /**
              * Default renderer for {@link goog.ui.Control}s.  Can be used as-is, but
@@ -344,8 +343,8 @@ declare module goog.ui {
              * @protected
              */
             getStateFromClass(className: string): goog.ui.Component.State;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.ControlRenderer {

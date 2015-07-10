@@ -6,10 +6,9 @@
 
 declare module goog.ui {
 
-    class ColorPicker extends ColorPicker.__Class { }
-    module ColorPicker {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.Component.__Class {
+    class ColorPicker extends ColorPicker__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ColorPicker__Class extends goog.ui.Component__Class  { 
     
             /**
              * Create a new, empty color picker.
@@ -116,8 +115,8 @@ declare module goog.ui {
              * Sets the focus to the color picker's palette.
              */
             focus(): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.ColorPicker {

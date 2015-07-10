@@ -3,10 +3,9 @@
 
 declare module goog.i18n {
 
-    class TimeZone extends TimeZone.__Class { }
-    module TimeZone {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class TimeZone extends TimeZone__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class TimeZone__Class  { 
     
             /**
              * TimeZone class implemented a time zone resolution and name information
@@ -145,8 +144,8 @@ declare module goog.i18n {
              * @return {boolean} True if Daylight Saving Time is in effect.
              */
             isDaylightTime(date: goog.date.Date): boolean;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.i18n.TimeZone {

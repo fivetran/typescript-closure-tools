@@ -3,10 +3,9 @@
 
 declare module goog.ui {
 
-    class LinkButtonRenderer extends LinkButtonRenderer.__Class { }
-    module LinkButtonRenderer {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.FlatButtonRenderer.__Class {
+    class LinkButtonRenderer extends LinkButtonRenderer__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class LinkButtonRenderer__Class extends goog.ui.FlatButtonRenderer__Class  { 
     
             /**
              * Link renderer for {@link goog.ui.Button}s.  Link buttons can contain
@@ -16,8 +15,8 @@ declare module goog.ui {
              * @extends {goog.ui.FlatButtonRenderer}
              */
             constructor();
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.LinkButtonRenderer {

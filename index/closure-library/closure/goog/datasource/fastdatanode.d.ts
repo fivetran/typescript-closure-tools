@@ -3,10 +3,9 @@
 
 declare module goog.ds {
 
-    class AbstractFastDataNode extends AbstractFastDataNode.__Class { }
-    module AbstractFastDataNode {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ds.DataNodeList.__Class {
+    class AbstractFastDataNode extends AbstractFastDataNode__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class AbstractFastDataNode__Class extends goog.ds.DataNodeList__Class  { 
     
             /**
              * Creates a new abstract data node.
@@ -16,13 +15,12 @@ declare module goog.ds {
              * @extends {goog.ds.DataNodeList}
              */
             constructor(dataName: string, opt_parent?: goog.ds.DataNode);
-        }
-    }
+    } 
+    
 
-    class FastDataNode extends FastDataNode.__Class { }
-    module FastDataNode {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ds.AbstractFastDataNode.__Class {
+    class FastDataNode extends FastDataNode__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class FastDataNode__Class extends goog.ds.AbstractFastDataNode__Class  { 
     
             /**
              * Creates a new fast data node, using the properties of root.
@@ -53,13 +51,12 @@ declare module goog.ds {
              * @return {goog.ds.FastDataNode} Clone of this data node.
              */
             clone(): goog.ds.FastDataNode;
-        }
-    }
+    } 
+    
 
-    class PrimitiveFastDataNode extends PrimitiveFastDataNode.__Class { }
-    module PrimitiveFastDataNode {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ds.AbstractFastDataNode.__Class {
+    class PrimitiveFastDataNode extends PrimitiveFastDataNode__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class PrimitiveFastDataNode__Class extends goog.ds.AbstractFastDataNode__Class  { 
     
             /**
              * Creates a new data node wrapping a primitive value.
@@ -98,13 +95,12 @@ declare module goog.ds {
              * @return {*} Javascript object representation of this data node.
              */
             getJsObject(): any;
-        }
-    }
+    } 
+    
 
-    class FastListNode extends FastListNode.__Class { }
-    module FastListNode {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ds.AbstractFastDataNode.__Class {
+    class FastListNode extends FastListNode__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class FastListNode__Class extends goog.ds.AbstractFastDataNode__Class  { 
     
             /**
              * Creates a new list node from an array.
@@ -132,8 +128,8 @@ declare module goog.ds {
              * @return {number} Index of child node named name.
              */
             indexOf(name: string): number;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ds.FastDataNode {

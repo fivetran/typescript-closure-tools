@@ -4,10 +4,9 @@
 
 declare module goog.testing {
 
-    class MockClassRecord extends MockClassRecord.__Class { }
-    module MockClassRecord {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class MockClassRecord extends MockClassRecord__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class MockClassRecord__Class  { 
     
             /**
              * A record that represents all the data associated with a mock replacement of
@@ -97,13 +96,12 @@ declare module goog.testing {
              * implementation and clearing out the mock instance list.
              */
             reset(): void;
-        }
-    }
+    } 
+    
 
-    class MockClassFactory extends MockClassFactory.__Class { }
-    module MockClassFactory {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class MockClassFactory extends MockClassFactory__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class MockClassFactory__Class  { 
     
             /**
              * A factory used to create new mock class instances.  It is able to generate
@@ -159,6 +157,6 @@ declare module goog.testing {
              * implementations and removing all MockClassRecords.
              */
             reset(): void;
-        }
-    }
+    } 
+    
 }

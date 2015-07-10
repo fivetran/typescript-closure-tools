@@ -4,10 +4,9 @@
 
 declare module goog.result {
 
-    class SimpleResult extends SimpleResult.__Class { }
-    module SimpleResult {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class implements goog.result.Result {
+    class SimpleResult extends SimpleResult__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class SimpleResult__Class implements goog.result.Result  { 
     
             /**
              * A SimpleResult object is a basic implementation of the
@@ -77,16 +76,15 @@ declare module goog.result {
              * @return {boolean} Whether this Result was canceled.
              */
             isCanceled(): boolean;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.result.SimpleResult {
 
-    class StateError extends StateError.__Class { }
-    module StateError {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.debug.Error.__Class {
+    class StateError extends StateError__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class StateError__Class extends goog.debug.Error__Class  { 
     
             /**
              * Error thrown if there is an attempt to set the value or error for this result
@@ -98,8 +96,8 @@ declare module goog.result.SimpleResult {
              * @deprecated Use {@link goog.Promise} instead - http://go/promisemigration
              */
             constructor();
-        }
-    }
+    } 
+    
 
     /**
      * A waiting handler entry.

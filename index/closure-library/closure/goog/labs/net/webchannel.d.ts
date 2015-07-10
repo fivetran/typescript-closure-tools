@@ -54,10 +54,9 @@ declare module goog.net {
 
 declare module goog.net.WebChannel {
 
-    class MessageEvent extends MessageEvent.__Class { }
-    module MessageEvent {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.Event.__Class {
+    class MessageEvent extends MessageEvent__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class MessageEvent__Class extends goog.events.Event__Class  { 
     
             /**
              * The event interface for the MESSAGE event.
@@ -73,13 +72,12 @@ declare module goog.net.WebChannel {
              * @type {!goog.net.WebChannel.MessageData}
              */
             data: goog.net.WebChannel.MessageData;
-        }
-    }
+    } 
+    
 
-    class ErrorEvent extends ErrorEvent.__Class { }
-    module ErrorEvent {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.Event.__Class {
+    class ErrorEvent extends ErrorEvent__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ErrorEvent__Class extends goog.events.Event__Class  { 
     
             /**
              * The event interface for the ERROR event.
@@ -95,8 +93,8 @@ declare module goog.net.WebChannel {
              * @type {!goog.net.WebChannel.ErrorStatus}
              */
             status: goog.net.WebChannel.ErrorStatus;
-        }
-    }
+    } 
+    
 
     interface RuntimeProperties {
     

@@ -2,10 +2,9 @@
 
 declare module goog.testing {
 
-    class PropertyReplacer extends PropertyReplacer.__Class { }
-    module PropertyReplacer {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class PropertyReplacer extends PropertyReplacer__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class PropertyReplacer__Class  { 
     
             /**
              * Helper class for stubbing out variables and object properties for unit tests.
@@ -119,6 +118,6 @@ declare module goog.testing {
              * Resets all changes made by goog.testing.PropertyReplacer.prototype.set.
              */
             reset(): void;
-        }
-    }
+    } 
+    
 }

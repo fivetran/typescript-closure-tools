@@ -4,10 +4,9 @@
 
 declare module goog.debug {
 
-    class Formatter extends Formatter.__Class { }
-    module Formatter {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Formatter extends Formatter__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Formatter__Class  { 
     
             /**
              * Base class for Formatters. A Formatter is used to format a LogRecord into
@@ -79,13 +78,12 @@ declare module goog.debug {
              * Resets the start relative time.
              */
             resetRelativeTimeStart(): void;
-        }
-    }
+    } 
+    
 
-    class HtmlFormatter extends HtmlFormatter.__Class { }
-    module HtmlFormatter {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.debug.Formatter.__Class {
+    class HtmlFormatter extends HtmlFormatter__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class HtmlFormatter__Class extends goog.debug.Formatter__Class  { 
     
             /**
              * Formatter that returns formatted html. See formatRecord for the classes
@@ -96,13 +94,12 @@ declare module goog.debug {
              * @extends {goog.debug.Formatter}
              */
             constructor(opt_prefix?: string);
-        }
-    }
+    } 
+    
 
-    class TextFormatter extends TextFormatter.__Class { }
-    module TextFormatter {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.debug.Formatter.__Class {
+    class TextFormatter extends TextFormatter__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class TextFormatter__Class extends goog.debug.Formatter__Class  { 
     
             /**
              * Formatter that returns formatted plain text
@@ -113,6 +110,6 @@ declare module goog.debug {
              * @final
              */
             constructor(opt_prefix?: string);
-        }
-    }
+    } 
+    
 }

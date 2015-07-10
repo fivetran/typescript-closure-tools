@@ -9,10 +9,9 @@
 
 declare module goog.ui {
 
-    class PopupMenu extends PopupMenu.__Class { }
-    module PopupMenu {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.Menu.__Class {
+    class PopupMenu extends PopupMenu__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class PopupMenu__Class extends goog.ui.Menu__Class  { 
     
             /**
              * A basic menu class.
@@ -188,6 +187,6 @@ declare module goog.ui {
              * @protected
              */
             onDocClick(e: goog.events.BrowserEvent): void;
-        }
-    }
+    } 
+    
 }

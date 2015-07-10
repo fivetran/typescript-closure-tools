@@ -2,10 +2,9 @@
 
 declare module goog.async.run {
 
-    class WorkItem_ extends WorkItem_.__Class { }
-    module WorkItem_ {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class WorkItem_ extends WorkItem___Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class WorkItem___Class  { 
     
             /**
              * @constructor
@@ -33,8 +32,8 @@ declare module goog.async.run {
     
             /** @const */
             scope: any /*missing*/;
-        }
-    }
+    } 
+    
 
     /**
      * Run any pending goog.async.run work items. This function is not intended

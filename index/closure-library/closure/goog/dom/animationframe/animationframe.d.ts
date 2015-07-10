@@ -2,10 +2,9 @@
 
 declare module goog.dom.animationFrame {
 
-    class State extends State.__Class { }
-    module State {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class State extends State__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class State__Class  { 
     
             /**
              * A type to represent state. Users may add properties as desired.
@@ -13,8 +12,8 @@ declare module goog.dom.animationFrame {
              * @final
              */
             constructor();
-        }
-    }
+    } 
+    
 
     /**
      * @typedef {{

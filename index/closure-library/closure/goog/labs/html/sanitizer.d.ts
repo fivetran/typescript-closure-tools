@@ -3,10 +3,9 @@
 
 declare module goog.labs.html {
 
-    class Sanitizer extends Sanitizer.__Class { }
-    module Sanitizer {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Sanitizer extends Sanitizer__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Sanitizer__Class  { 
     
             /**
              * A sanitizer that converts untrusted, messy HTML into more regular HTML
@@ -240,6 +239,6 @@ declare module goog.labs.html {
              * @return {!goog.labs.html.Sanitizer} {@code this}.
              */
             allowAttributes(elementNames: string, attrNames: string, opt_rewriteValue?: goog.labs.html.AttributeRewriter): goog.labs.html.Sanitizer;
-        }
-    }
+    } 
+    
 }

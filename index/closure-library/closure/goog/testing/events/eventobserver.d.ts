@@ -3,10 +3,9 @@
 
 declare module goog.testing.events {
 
-    class EventObserver extends EventObserver.__Class { }
-    module EventObserver {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class EventObserver extends EventObserver__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class EventObserver__Class  { 
     
             /**
              * Event observer.  Implements a handleEvent interface so it may be used as
@@ -32,6 +31,6 @@ declare module goog.testing.events {
              * @return {!Array.<!goog.events.Event>} The events handled, oldest to newest.
              */
             getEvents(opt_type?: string): goog.events.Event[];
-        }
-    }
+    } 
+    
 }

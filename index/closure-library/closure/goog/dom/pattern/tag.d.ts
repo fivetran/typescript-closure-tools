@@ -4,10 +4,9 @@
 
 declare module goog.dom.pattern {
 
-    class Tag extends Tag.__Class { }
-    module Tag {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.dom.pattern.AbstractPattern.__Class {
+    class Tag extends Tag__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Tag__Class extends goog.dom.pattern.AbstractPattern__Class  { 
     
             /**
              * Pattern object that matches an tag.
@@ -45,6 +44,6 @@ declare module goog.dom.pattern {
              * @extends {goog.dom.pattern.AbstractPattern}
              */
             constructor(tag: RegExp, type: goog.dom.TagWalkType, opt_attrs?: Object, opt_styles?: Object, opt_test?: Function);
-        }
-    }
+    } 
+    
 }

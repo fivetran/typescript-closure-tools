@@ -3,10 +3,9 @@
 
 declare module goog.ui {
 
-    class CharCounter extends CharCounter.__Class { }
-    module CharCounter {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.EventTarget.__Class {
+    class CharCounter extends CharCounter__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class CharCounter__Class extends goog.events.EventTarget__Class  { 
     
             /**
              * CharCounter widget. Counts the number of characters in a input field or a
@@ -78,8 +77,8 @@ declare module goog.ui {
              * if the maximum lengths is exceeded.
              */
             checkLength(): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.CharCounter {

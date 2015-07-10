@@ -3,10 +3,9 @@
 
 declare module goog.tweak {
 
-    class BaseEntry extends BaseEntry.__Class { }
-    module BaseEntry {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class BaseEntry extends BaseEntry__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class BaseEntry__Class  { 
     
             /**
              * Base class for all Registry entries.
@@ -72,13 +71,12 @@ declare module goog.tweak {
              * Calls all registered callbacks.
              */
             fireCallbacks(): void;
-        }
-    }
+    } 
+    
 
-    class BaseSetting extends BaseSetting.__Class { }
-    module BaseSetting {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.tweak.BaseEntry.__Class {
+    class BaseSetting extends BaseSetting__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class BaseSetting__Class extends goog.tweak.BaseEntry__Class  { 
     
             /**
              * Base class for all tweak entries that are settings. Settings are entries
@@ -155,13 +153,12 @@ declare module goog.tweak {
              * @protected
              */
             ensureInitialized(): void;
-        }
-    }
+    } 
+    
 
-    class BasePrimitiveSetting extends BasePrimitiveSetting.__Class { }
-    module BasePrimitiveSetting {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.tweak.BaseSetting.__Class {
+    class BasePrimitiveSetting extends BasePrimitiveSetting__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class BasePrimitiveSetting__Class extends goog.tweak.BaseSetting__Class  { 
     
             /**
              * Base class for all settings that wrap primitive values.
@@ -213,13 +210,12 @@ declare module goog.tweak {
              * @param {*} value The new value.
              */
             setDefaultValue(value: any): void;
-        }
-    }
+    } 
+    
 
-    class StringSetting extends StringSetting.__Class { }
-    module StringSetting {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.tweak.BasePrimitiveSetting.__Class {
+    class StringSetting extends StringSetting__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class StringSetting__Class extends goog.tweak.BasePrimitiveSetting__Class  { 
     
             /**
              * A registry setting for string values.
@@ -253,13 +249,12 @@ declare module goog.tweak {
              * @return {Array.<string>|undefined} Valid values.
              */
             getValidValues(): any /*string[]|any (undefined)*/;
-        }
-    }
+    } 
+    
 
-    class NumericSetting extends NumericSetting.__Class { }
-    module NumericSetting {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.tweak.BasePrimitiveSetting.__Class {
+    class NumericSetting extends NumericSetting__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class NumericSetting__Class extends goog.tweak.BasePrimitiveSetting__Class  { 
     
             /**
              * A registry setting for numeric values.
@@ -293,13 +288,12 @@ declare module goog.tweak {
              * @return {Array.<number>|undefined} Valid values.
              */
             getValidValues(): any /*number[]|any (undefined)*/;
-        }
-    }
+    } 
+    
 
-    class BooleanSetting extends BooleanSetting.__Class { }
-    module BooleanSetting {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.tweak.BasePrimitiveSetting.__Class {
+    class BooleanSetting extends BooleanSetting__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class BooleanSetting__Class extends goog.tweak.BasePrimitiveSetting__Class  { 
     
             /**
              * A registry setting that can be either true of false.
@@ -309,13 +303,12 @@ declare module goog.tweak {
              * @extends {goog.tweak.BasePrimitiveSetting}
              */
             constructor(id: string, description: string);
-        }
-    }
+    } 
+    
 
-    class BooleanInGroupSetting extends BooleanInGroupSetting.__Class { }
-    module BooleanInGroupSetting {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.tweak.BooleanSetting.__Class {
+    class BooleanInGroupSetting extends BooleanInGroupSetting__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class BooleanInGroupSetting__Class extends goog.tweak.BooleanSetting__Class  { 
     
             /**
              * An entry in a BooleanGroup.
@@ -347,13 +340,12 @@ declare module goog.tweak {
              *     belongs to.
              */
             getGroup(): goog.tweak.BooleanGroup;
-        }
-    }
+    } 
+    
 
-    class BooleanGroup extends BooleanGroup.__Class { }
-    module BooleanGroup {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.tweak.BaseSetting.__Class {
+    class BooleanGroup extends BooleanGroup__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class BooleanGroup__Class extends goog.tweak.BaseSetting__Class  { 
     
             /**
              * A registry setting that contains a group of boolean subfield, where all
@@ -378,13 +370,12 @@ declare module goog.tweak {
              * @param {goog.tweak.BooleanInGroupSetting} boolEntry The entry.
              */
             addChild(boolEntry: goog.tweak.BooleanInGroupSetting): void;
-        }
-    }
+    } 
+    
 
-    class ButtonAction extends ButtonAction.__Class { }
-    module ButtonAction {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.tweak.BaseEntry.__Class {
+    class ButtonAction extends ButtonAction__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ButtonAction__Class extends goog.tweak.BaseEntry__Class  { 
     
             /**
              * A registry action (a button).
@@ -396,8 +387,8 @@ declare module goog.tweak {
              * @final
              */
             constructor(id: string, description: string, callback: Function);
-        }
-    }
+    } 
+    
 }
 
 declare module goog.tweak.BaseSetting {

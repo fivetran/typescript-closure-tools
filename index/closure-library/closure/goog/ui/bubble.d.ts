@@ -7,10 +7,9 @@
 
 declare module goog.ui {
 
-    class Bubble extends Bubble.__Class { }
-    module Bubble {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.Component.__Class {
+    class Bubble extends Bubble__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Bubble__Class extends goog.ui.Component__Class  { 
     
             /**
              * The Bubble provides a general purpose bubble implementation that can be
@@ -102,8 +101,8 @@ declare module goog.ui {
              *     {@link #setPosition}.
              */
             getComputedAnchoredPosition(anchorElement: Element): goog.ui.Popup.AnchoredPosition;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.Bubble {

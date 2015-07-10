@@ -3,10 +3,9 @@
 
 declare module goog.net {
 
-    class IpAddress extends IpAddress.__Class { }
-    module IpAddress {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class IpAddress extends IpAddress__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class IpAddress__Class  { 
     
             /**
              * Abstract class defining an IP Address.
@@ -40,13 +39,12 @@ declare module goog.net {
              * @return {string} The IP Address, as an URI string following RFC 3986.
              */
             toUriString(): string;
-        }
-    }
+    } 
+    
 
-    class Ipv4Address extends Ipv4Address.__Class { }
-    module Ipv4Address {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.net.IpAddress.__Class {
+    class Ipv4Address extends Ipv4Address__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Ipv4Address__Class extends goog.net.IpAddress__Class  { 
     
             /**
              * Takes a string or a number and returns a IPv4 Address.
@@ -70,13 +68,12 @@ declare module goog.net {
              * @final
              */
             constructor(address: goog.math.Integer);
-        }
-    }
+    } 
+    
 
-    class Ipv6Address extends Ipv6Address.__Class { }
-    module Ipv6Address {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.net.IpAddress.__Class {
+    class Ipv6Address extends Ipv6Address__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Ipv6Address__Class extends goog.net.IpAddress__Class  { 
     
             /**
              * Takes a string or a number and returns an IPv6 Address.
@@ -111,8 +108,8 @@ declare module goog.net {
              * @return {goog.net.Ipv4Address} an IPv4 or null.
              */
             getMappedIpv4Address(): goog.net.Ipv4Address;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.net.IpAddress {

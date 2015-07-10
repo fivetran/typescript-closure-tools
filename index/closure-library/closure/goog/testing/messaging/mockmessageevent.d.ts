@@ -4,10 +4,9 @@
 
 declare module goog.testing.messaging {
 
-    class MockMessageEvent extends MockMessageEvent.__Class { }
-    module MockMessageEvent {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.testing.events.Event.__Class {
+    class MockMessageEvent extends MockMessageEvent__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class MockMessageEvent__Class extends goog.testing.events.Event__Class  { 
     
             /**
              * Creates a new fake MessageEvent.
@@ -56,8 +55,8 @@ declare module goog.testing.messaging {
              * @type {Array.<!MessagePort>}
              */
             ports: MessagePort[];
-        }
-    }
+    } 
+    
 }
 
 declare module goog.testing.messaging.MockMessageEvent {

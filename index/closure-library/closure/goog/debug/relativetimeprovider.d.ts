@@ -2,10 +2,9 @@
 
 declare module goog.debug {
 
-    class RelativeTimeProvider extends RelativeTimeProvider.__Class { }
-    module RelativeTimeProvider {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class RelativeTimeProvider extends RelativeTimeProvider__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class RelativeTimeProvider__Class  { 
     
             /**
              * A simple object to keep track of a timestamp considered the start of
@@ -35,8 +34,8 @@ declare module goog.debug {
              * @return {number} The start time.
              */
             get(): number;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.debug.RelativeTimeProvider {

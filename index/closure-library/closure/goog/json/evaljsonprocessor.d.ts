@@ -4,10 +4,9 @@
 
 declare module goog.json {
 
-    class EvalJsonProcessor extends EvalJsonProcessor.__Class { }
-    module EvalJsonProcessor {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class implements goog.json.Processor {
+    class EvalJsonProcessor extends EvalJsonProcessor__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class EvalJsonProcessor__Class implements goog.json.Processor  { 
     
             /**
              * A class that parses and stringifies JSON using eval (as implemented in
@@ -25,6 +24,6 @@ declare module goog.json {
              * @final
              */
             constructor(opt_replacer?: goog.json.Replacer, opt_useUnsafeParsing?: boolean);
-        }
-    }
+    } 
+    
 }

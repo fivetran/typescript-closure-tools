@@ -4,10 +4,9 @@
 
 declare module goog.ui {
 
-    class BaseRoundedPanel extends BaseRoundedPanel.__Class { }
-    module BaseRoundedPanel {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.Component.__Class {
+    class BaseRoundedPanel extends BaseRoundedPanel__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class BaseRoundedPanel__Class extends goog.ui.Component__Class  { 
     
             /**
              * Base class for the hierarchy of RoundedPanel classes. Do not
@@ -32,13 +31,12 @@ declare module goog.ui {
              * @constructor
              */
             constructor(radius: number, borderWidth: number, borderColor: string, opt_backgroundColor?: string, opt_corners?: number, opt_domHelper?: goog.dom.DomHelper);
-        }
-    }
+    } 
+    
 
-    class CssRoundedPanel extends CssRoundedPanel.__Class { }
-    module CssRoundedPanel {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.BaseRoundedPanel.__Class {
+    class CssRoundedPanel extends CssRoundedPanel__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class CssRoundedPanel__Class extends goog.ui.BaseRoundedPanel__Class  { 
     
             /**
              * RoundedPanel class specifically for browsers that support CSS attributes
@@ -58,13 +56,12 @@ declare module goog.ui {
              * @final
              */
             constructor(radius: number, borderWidth: number, borderColor: string, opt_backgroundColor?: string, opt_corners?: number, opt_domHelper?: goog.dom.DomHelper);
-        }
-    }
+    } 
+    
 
-    class GraphicsRoundedPanel extends GraphicsRoundedPanel.__Class { }
-    module GraphicsRoundedPanel {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.BaseRoundedPanel.__Class {
+    class GraphicsRoundedPanel extends GraphicsRoundedPanel__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class GraphicsRoundedPanel__Class extends goog.ui.BaseRoundedPanel__Class  { 
     
             /**
              * RoundedPanel class that uses goog.graphics to create the rounded corners.
@@ -83,8 +80,8 @@ declare module goog.ui {
              * @final
              */
             constructor(radius: number, borderWidth: number, borderColor: string, opt_backgroundColor?: string, opt_corners?: number, opt_domHelper?: goog.dom.DomHelper);
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.RoundedPanel {

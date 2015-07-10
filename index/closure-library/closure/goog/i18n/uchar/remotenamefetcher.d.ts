@@ -4,10 +4,9 @@
 
 declare module goog.i18n.uChar {
 
-    class RemoteNameFetcher extends RemoteNameFetcher.__Class { }
-    module RemoteNameFetcher {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.Disposable.__Class implements goog.i18n.uChar.NameFetcher {
+    class RemoteNameFetcher extends RemoteNameFetcher__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class RemoteNameFetcher__Class extends goog.Disposable__Class implements goog.i18n.uChar.NameFetcher  { 
     
             /**
              * Builds the RemoteNameFetcher object. This object retrieves codepoint names
@@ -52,8 +51,8 @@ declare module goog.i18n.uChar {
              *     for the given character.
              */
             isNameAvailable(character: string): boolean;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.i18n.uChar.RemoteNameFetcher {

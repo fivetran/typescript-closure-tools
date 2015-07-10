@@ -4,10 +4,9 @@
 
 declare module goog.dom.pattern {
 
-    class ChildMatches extends ChildMatches.__Class { }
-    module ChildMatches {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.dom.pattern.AllChildren.__Class {
+    class ChildMatches extends ChildMatches__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ChildMatches__Class extends goog.dom.pattern.AllChildren__Class  { 
     
             /**
              * Pattern object that matches any nodes at or below the current tree depth.
@@ -28,6 +27,6 @@ declare module goog.dom.pattern {
              * @type {Array.<Node>}
              */
             matches: Node[];
-        }
-    }
+    } 
+    
 }

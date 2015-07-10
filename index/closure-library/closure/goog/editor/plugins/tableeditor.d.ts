@@ -5,10 +5,9 @@
 
 declare module goog.editor.plugins {
 
-    class TableEditor extends TableEditor.__Class { }
-    module TableEditor {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.editor.Plugin.__Class {
+    class TableEditor extends TableEditor__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class TableEditor__Class extends goog.editor.Plugin__Class  { 
     
             /**
              * Plugin that adds support for table creation and editing commands.
@@ -24,16 +23,15 @@ declare module goog.editor.plugins {
              *   table element could be editable by the user or not.
              */
             addIsTableEditableFunction(func: (_0: Element) => boolean): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.editor.plugins.TableEditor {
 
-    class CellSelection_ extends CellSelection_.__Class { }
-    module CellSelection_ {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class CellSelection_ extends CellSelection___Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class CellSelection___Class  { 
     
             /**
              * Class representing the selected cell objects within a single  table.
@@ -98,8 +96,8 @@ declare module goog.editor.plugins.TableEditor {
              * @return {boolean} Whether there is exatly one cell in this selection.
              */
             containsSingleCell(): boolean;
-        }
-    }
+    } 
+    
 
     /**
      * Commands supported by goog.editor.plugins.TableEditor.

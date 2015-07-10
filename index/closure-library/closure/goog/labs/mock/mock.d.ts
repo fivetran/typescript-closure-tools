@@ -3,10 +3,9 @@
 
 declare module goog.labs.mock {
 
-    class VerificationError extends VerificationError.__Class { }
-    module VerificationError {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.debug.Error.__Class {
+    class VerificationError extends VerificationError__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class VerificationError__Class extends goog.debug.Error__Class  { 
     
             /**
              * Error thrown when verification failed.
@@ -20,13 +19,12 @@ declare module goog.labs.mock {
              * @final
              */
             constructor(recordedCalls: any[], methodName: string, args: any[]);
-        }
-    }
+    } 
+    
 
-    class MockManager_ extends MockManager_.__Class { }
-    module MockManager_ {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class MockManager_ extends MockManager___Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class MockManager___Class  { 
     
             /**
              * Base class that provides basic functionality for creating, adding and
@@ -124,13 +122,12 @@ declare module goog.labs.mock {
              * @protected
              */
             verifyInvocation(methodName: string, var_args: any /*missing*/): void;
-        }
-    }
+    } 
+    
 
-    class MockObjectManager_ extends MockObjectManager_.__Class { }
-    module MockObjectManager_ {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.labs.mock.MockManager_.__Class {
+    class MockObjectManager_ extends MockObjectManager___Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class MockObjectManager___Class extends goog.labs.mock.MockManager___Class  { 
     
             /**
              * Sets up mock for the given object (or class), stubbing out all the defined
@@ -160,13 +157,12 @@ declare module goog.labs.mock {
              * @private
              */
             constructor(objOrClass: Function);
-        }
-    }
+    } 
+    
 
-    class MockSpyManager_ extends MockSpyManager_.__Class { }
-    module MockSpyManager_ {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.labs.mock.MockObjectManager_.__Class {
+    class MockSpyManager_ extends MockSpyManager___Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class MockSpyManager___Class extends goog.labs.mock.MockObjectManager___Class  { 
     
             /**
              * Sets up the spying behavior for the given object.
@@ -179,13 +175,12 @@ declare module goog.labs.mock {
              * @private
              */
             constructor(obj: Object);
-        }
-    }
+    } 
+    
 
-    class MockFunctionManager_ extends MockFunctionManager_.__Class { }
-    module MockFunctionManager_ {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.labs.mock.MockManager_.__Class {
+    class MockFunctionManager_ extends MockFunctionManager___Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class MockFunctionManager___Class extends goog.labs.mock.MockManager___Class  { 
     
             /**
              * Sets up mock for the given function, stubbing out. By default, all stubs
@@ -200,13 +195,12 @@ declare module goog.labs.mock {
              * @private
              */
             constructor(func: Function);
-        }
-    }
+    } 
+    
 
-    class StubBinder_ extends StubBinder_.__Class { }
-    module StubBinder_ {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class StubBinder_ extends StubBinder___Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class StubBinder___Class  { 
     
             /**
              * The stub binder is the object that helps define the stubs by binding
@@ -238,13 +232,12 @@ declare module goog.labs.mock {
              * @param {*} value The value to return.
              */
             thenReturn(value: any): void;
-        }
-    }
+    } 
+    
 
-    class MethodBinding_ extends MethodBinding_.__Class { }
-    module MethodBinding_ {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class MethodBinding_ extends MethodBinding___Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class MethodBinding___Class  { 
     
             /**
              * Represents a binding between a method name, args and a stub.
@@ -279,8 +272,8 @@ declare module goog.labs.mock {
              * @return {boolean} If it matches the stored arguments.
              */
             matches(methodName: string, args: any[], isVerification: boolean): boolean;
-        }
-    }
+    } 
+    
 
     /**
      * Mocks a given object or class.

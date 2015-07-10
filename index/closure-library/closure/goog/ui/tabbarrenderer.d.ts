@@ -3,10 +3,9 @@
 
 declare module goog.ui {
 
-    class TabBarRenderer extends TabBarRenderer.__Class { }
-    module TabBarRenderer {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.ContainerRenderer.__Class {
+    class TabBarRenderer extends TabBarRenderer__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class TabBarRenderer__Class extends goog.ui.ContainerRenderer__Class  { 
     
             /**
              * Default renderer for {@link goog.ui.TabBar}s, based on the {@code TabPane}
@@ -22,8 +21,8 @@ declare module goog.ui {
              * @extends {goog.ui.ContainerRenderer}
              */
             constructor();
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.TabBarRenderer {

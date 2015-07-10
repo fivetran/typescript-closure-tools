@@ -4,10 +4,9 @@
 
 declare module goog.ui {
 
-    class FormPost extends FormPost.__Class { }
-    module FormPost {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.Component.__Class {
+    class FormPost extends FormPost__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class FormPost__Class extends goog.ui.Component__Class  { 
     
             /**
              * Creates a formpost object.
@@ -30,6 +29,6 @@ declare module goog.ui {
              *     constructor.
              */
             post(parameters: Object, opt_url?: string, opt_target?: string): void;
-        }
-    }
+    } 
+    
 }

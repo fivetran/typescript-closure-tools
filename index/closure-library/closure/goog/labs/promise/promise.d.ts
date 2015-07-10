@@ -4,10 +4,9 @@
 
 declare module goog.labs {
 
-    class Promise<TYPE,RESOLVER_CONTEXT> extends Promise.__Class<TYPE,RESOLVER_CONTEXT> { }
-    module Promise {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class<TYPE,RESOLVER_CONTEXT> implements goog.Thenable<TYPE> {
+    class Promise<TYPE,RESOLVER_CONTEXT> extends Promise__Class<TYPE,RESOLVER_CONTEXT> { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Promise__Class<TYPE,RESOLVER_CONTEXT> implements goog.Thenable<TYPE>  { 
     
             /**
              * Alias for the {@code goog.Promise} class. Closure Promises were developed
@@ -154,8 +153,8 @@ declare module goog.labs {
              * @template RESULT,THIS
              */
             then<RESULT,THIS>(opt_onFulfilled?: (_0: TYPE) => Thenable, opt_onRejected?: (_0: any) => any, opt_context?: THIS): goog.Promise<RESULT>;
-        }
-    }
+    } 
+    
 
     interface Resolver<TYPE> {
     }

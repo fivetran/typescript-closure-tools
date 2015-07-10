@@ -2,10 +2,9 @@
 
 declare module goog.editor.icontent {
 
-    class FieldFormatInfo extends FieldFormatInfo.__Class { }
-    module FieldFormatInfo {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class FieldFormatInfo extends FieldFormatInfo__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class FieldFormatInfo__Class  { 
     
             /**
              * A data structure for storing simple rendering info about a field.
@@ -21,13 +20,12 @@ declare module goog.editor.icontent {
              * @final
              */
             constructor(fieldId: string, standards: boolean, blended: boolean, fixedHeight: boolean, opt_extraStyles?: Object);
-        }
-    }
+    } 
+    
 
-    class FieldStyleInfo extends FieldStyleInfo.__Class { }
-    module FieldStyleInfo {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class FieldStyleInfo extends FieldStyleInfo__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class FieldStyleInfo__Class  { 
     
             /**
              * A data structure for storing simple info about the styles of a field.
@@ -38,8 +36,8 @@ declare module goog.editor.icontent {
              * @final
              */
             constructor(wrapper: Element, css: string);
-        }
-    }
+    } 
+    
 
     /**
      * Sets up goog.editor.icontent to always use standards-mode iframes.

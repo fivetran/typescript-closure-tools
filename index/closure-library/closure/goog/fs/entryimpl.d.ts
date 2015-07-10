@@ -6,10 +6,9 @@
 
 declare module goog.fs {
 
-    class EntryImpl extends EntryImpl.__Class { }
-    module EntryImpl {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class implements goog.fs.Entry {
+    class EntryImpl extends EntryImpl__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class EntryImpl__Class implements goog.fs.Entry  { 
     
             /**
              * Base class for concrete implementations of goog.fs.Entry.
@@ -127,13 +126,12 @@ declare module goog.fs {
              *     If an error occurs, the errback is called with a {@link goog.fs.Error}.
              */
             getParent(): goog.async.Deferred<any>;
-        }
-    }
+    } 
+    
 
-    class DirectoryEntryImpl extends DirectoryEntryImpl.__Class { }
-    module DirectoryEntryImpl {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.fs.EntryImpl.__Class implements goog.fs.DirectoryEntry {
+    class DirectoryEntryImpl extends DirectoryEntryImpl__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class DirectoryEntryImpl__Class extends goog.fs.EntryImpl__Class implements goog.fs.DirectoryEntry  { 
     
             /**
              * A directory in a local FileSystem.
@@ -203,13 +201,12 @@ declare module goog.fs {
              *     called a {@link goog.fs.Error}.
              */
             removeRecursively(): goog.async.Deferred<any>;
-        }
-    }
+    } 
+    
 
-    class FileEntryImpl extends FileEntryImpl.__Class { }
-    module FileEntryImpl {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.fs.EntryImpl.__Class implements goog.fs.FileEntry {
+    class FileEntryImpl extends FileEntryImpl__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class FileEntryImpl__Class extends goog.fs.EntryImpl__Class implements goog.fs.FileEntry  { 
     
             /**
              * A file in a local filesystem.
@@ -241,6 +238,6 @@ declare module goog.fs {
              *     called with a {@link goog.fs.Error}.
              */
             file(): goog.async.Deferred<File>;
-        }
-    }
+    } 
+    
 }

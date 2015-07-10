@@ -2,10 +2,9 @@
 
 declare module goog.pubsub {
 
-    class TopicId<PAYLOAD> extends TopicId.__Class<PAYLOAD> { }
-    module TopicId {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class<PAYLOAD> {
+    class TopicId<PAYLOAD> extends TopicId__Class<PAYLOAD> { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class TopicId__Class<PAYLOAD>  { 
     
             /**
              * A templated class that is used to register {@code goog.pubsub.PubSub}
@@ -38,6 +37,6 @@ declare module goog.pubsub {
              * @struct
              */
             constructor(topicId: string);
-        }
-    }
+    } 
+    
 }

@@ -7,10 +7,9 @@
 
 declare module goog.ui.tree {
 
-    class BaseNode extends BaseNode.__Class { }
-    module BaseNode {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.Component.__Class {
+    class BaseNode extends BaseNode__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class BaseNode__Class extends goog.ui.Component__Class  { 
     
             /**
              * An abstract base class for a node in the tree.
@@ -484,8 +483,8 @@ declare module goog.ui.tree {
              * @param {goog.ui.tree.TreeControl} tree The tree control.
              */
             setTreeInternal(tree: goog.ui.tree.TreeControl): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.tree.BaseNode {

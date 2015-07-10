@@ -5,10 +5,9 @@
 
 declare module goog.async {
 
-    class Deferred<VALUE> extends Deferred.__Class<VALUE> { }
-    module Deferred {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class<VALUE> implements goog.Thenable<VALUE> {
+    class Deferred<VALUE> extends Deferred__Class<VALUE> { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Deferred__Class<VALUE> implements goog.Thenable<VALUE>  { 
     
             /**
              * A Deferred represents the result of an asynchronous operation. A Deferred
@@ -309,16 +308,15 @@ declare module goog.async {
              * @template RESULT,THIS
              */
             then<RESULT,THIS>(opt_onFulfilled?: (_0: TYPE) => Thenable, opt_onRejected?: (_0: any) => any, opt_context?: THIS): goog.Promise<RESULT>;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.async.Deferred {
 
-    class AlreadyCalledError extends AlreadyCalledError.__Class { }
-    module AlreadyCalledError {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.debug.Error.__Class {
+    class AlreadyCalledError extends AlreadyCalledError__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class AlreadyCalledError__Class extends goog.debug.Error__Class  { 
     
             /**
              * An error sub class that is used when a Deferred has already been called.
@@ -334,13 +332,12 @@ declare module goog.async.Deferred {
              * @type {goog.async.Deferred}
              */
             deferred: goog.async.Deferred<any>;
-        }
-    }
+    } 
+    
 
-    class CanceledError extends CanceledError.__Class { }
-    module CanceledError {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.debug.Error.__Class {
+    class CanceledError extends CanceledError__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class CanceledError__Class extends goog.debug.Error__Class  { 
     
             /**
              * An error sub class that is used when a Deferred is canceled.
@@ -356,13 +353,12 @@ declare module goog.async.Deferred {
              * @type {goog.async.Deferred}
              */
             deferred: goog.async.Deferred<any>;
-        }
-    }
+    } 
+    
 
-    class Error_ extends Error_.__Class { }
-    module Error_ {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Error_ extends Error___Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Error___Class  { 
     
             /**
              * Wrapper around errors that are scheduled to be thrown by failing deferreds
@@ -386,8 +382,8 @@ declare module goog.async.Deferred {
              * Resets the error throw timer.
              */
             resetTimer(): void;
-        }
-    }
+    } 
+    
 
     /**
      * Creates a Deferred that has an initial result.

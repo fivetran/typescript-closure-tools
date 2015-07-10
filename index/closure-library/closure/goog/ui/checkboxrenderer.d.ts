@@ -4,10 +4,9 @@
 
 declare module goog.ui {
 
-    class CheckboxRenderer extends CheckboxRenderer.__Class { }
-    module CheckboxRenderer {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.ControlRenderer.__Class {
+    class CheckboxRenderer extends CheckboxRenderer__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class CheckboxRenderer__Class extends goog.ui.ControlRenderer__Class  { 
     
             /**
              * Default renderer for {@link goog.ui.Checkbox}s.  Extends the superclass
@@ -33,8 +32,8 @@ declare module goog.ui {
              * @protected
              */
             getClassForCheckboxState(state: goog.ui.Checkbox.State): string;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.CheckboxRenderer {

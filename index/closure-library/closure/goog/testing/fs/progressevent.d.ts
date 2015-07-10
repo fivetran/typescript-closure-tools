@@ -5,10 +5,9 @@
 
 declare module goog.testing.fs {
 
-    class ProgressEvent extends ProgressEvent.__Class { }
-    module ProgressEvent {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.Event.__Class {
+    class ProgressEvent extends ProgressEvent__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ProgressEvent__Class extends goog.events.Event__Class  { 
     
             /**
              * A mock progress event.
@@ -52,6 +51,6 @@ declare module goog.testing.fs {
              * @return {number} The total bytes to load or write.
              */
             getTotal(): number;
-        }
-    }
+    } 
+    
 }

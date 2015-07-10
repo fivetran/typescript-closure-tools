@@ -4,10 +4,9 @@
 
 declare module goog.labs.net.webChannel {
 
-    class WebChannelBaseTransport extends WebChannelBaseTransport.__Class { }
-    module WebChannelBaseTransport {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class implements goog.net.WebChannelTransport {
+    class WebChannelBaseTransport extends WebChannelBaseTransport__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class WebChannelBaseTransport__Class implements goog.net.WebChannelTransport  { 
     
             /**
              * Implementation of {@link goog.net.WebChannelTransport} with
@@ -40,6 +39,6 @@ declare module goog.labs.net.webChannel {
              * @return {!goog.net.WebChannel} the newly created WebChannel instance.
              */
             createWebChannel(url: string, opt_options?: goog.net.WebChannel.Options): goog.net.WebChannel;
-        }
-    }
+    } 
+    
 }

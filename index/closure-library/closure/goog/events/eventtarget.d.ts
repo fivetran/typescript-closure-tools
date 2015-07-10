@@ -6,10 +6,9 @@
 
 declare module goog.events {
 
-    class EventTarget extends EventTarget.__Class { }
-    module EventTarget {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.Disposable.__Class implements goog.events.Listenable {
+    class EventTarget extends EventTarget__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class EventTarget__Class extends goog.Disposable__Class implements goog.events.Listenable  { 
     
             /**
              * An implementation of {@code goog.events.Listenable} with full W3C
@@ -634,6 +633,6 @@ declare module goog.events {
              * @template EVENTOBJ
              */
             hasListener<EVENTOBJ>(opt_type?: goog.events.EventId<EVENTOBJ>, opt_capture?: boolean): boolean;
-        }
-    }
+    } 
+    
 }

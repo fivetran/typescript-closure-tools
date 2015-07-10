@@ -2,10 +2,9 @@
 
 declare module goog.math {
 
-    class Long extends Long.__Class { }
-    module Long {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Long extends Long__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Long__Class  { 
     
             /**
              * Constructs a 64-bit two's-complement integer, given its low and high 32-bit
@@ -191,8 +190,8 @@ declare module goog.math {
              *     zeros placed into the new leading bits.
              */
             shiftRightUnsigned(numBits: number): goog.math.Long;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.math.Long {

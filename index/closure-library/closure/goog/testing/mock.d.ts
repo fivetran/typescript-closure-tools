@@ -3,10 +3,9 @@
 
 declare module goog.testing {
 
-    class MockExpectation extends MockExpectation.__Class { }
-    module MockExpectation {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class MockExpectation extends MockExpectation__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class MockExpectation__Class  { 
     
             /**
              * This is a class that represents an expectation.
@@ -95,13 +94,12 @@ declare module goog.testing {
              * @return {number} Count of error messages.
              */
             getErrorMessageCount(): number;
-        }
-    }
+    } 
+    
 
-    class Mock extends Mock.__Class { }
-    module Mock {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class implements goog.testing.MockInterface {
+    class Mock extends Mock__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Mock__Class implements goog.testing.MockInterface  { 
     
             /**
              * The base class for a mock object.
@@ -323,8 +321,8 @@ declare module goog.testing {
              * Assert that the expected function calls match the actual calls.
              */
             $verify(): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.testing.Mock {

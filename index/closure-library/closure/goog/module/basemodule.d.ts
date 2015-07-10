@@ -3,10 +3,9 @@
 
 declare module goog.module {
 
-    class BaseModule extends BaseModule.__Class { }
-    module BaseModule {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.Disposable.__Class {
+    class BaseModule extends BaseModule__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class BaseModule__Class extends goog.Disposable__Class  { 
     
             /**
              * A basic module object that represents a module of Javascript code that can
@@ -22,6 +21,6 @@ declare module goog.module {
              * @param {Object} context The module context.
              */
             initialize(context: Object): void;
-        }
-    }
+    } 
+    
 }

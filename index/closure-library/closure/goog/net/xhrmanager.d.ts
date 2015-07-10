@@ -7,10 +7,9 @@
 
 declare module goog.net {
 
-    class XhrManager extends XhrManager.__Class { }
-    module XhrManager {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.EventTarget.__Class {
+    class XhrManager extends XhrManager__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class XhrManager__Class extends goog.events.EventTarget__Class  { 
     
             /**
              * A manager of an XhrIoPool.
@@ -345,16 +344,15 @@ declare module goog.net {
              *     No events are fired and the callback is not called when forced.
              */
             abort(id: string, opt_force?: boolean): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.net.XhrManager {
 
-    class Event extends Event.__Class { }
-    module Event {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.Event.__Class {
+    class Event extends Event__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Event__Class extends goog.events.Event__Class  { 
     
             /**
              * An event dispatched by XhrManager.
@@ -381,13 +379,12 @@ declare module goog.net.XhrManager {
              * @type {goog.net.XhrIo}
              */
             xhrIo: goog.net.XhrIo;
-        }
-    }
+    } 
+    
 
-    class Request extends Request.__Class { }
-    module Request {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Request extends Request__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Request__Class  { 
     
             /**
              * An encapsulation of everything needed to make a Xhr request.
@@ -765,6 +762,6 @@ declare module goog.net.XhrManager {
              *     when an XhrIo becomes available to this request.
              */
             getResponseType(): goog.net.XhrIo.ResponseType;
-        }
-    }
+    } 
+    
 }

@@ -4,10 +4,9 @@
 
 declare module goog.events {
 
-    class InputHandler extends InputHandler.__Class { }
-    module InputHandler {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.EventTarget.__Class {
+    class InputHandler extends InputHandler__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class InputHandler__Class extends goog.events.EventTarget__Class  { 
     
             /**
              * This event handler will dispatch events when the user types into a text
@@ -24,8 +23,8 @@ declare module goog.events {
              * @param {goog.events.BrowserEvent} e The underlying browser event.
              */
             handleEvent(e: goog.events.BrowserEvent): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.events.InputHandler {

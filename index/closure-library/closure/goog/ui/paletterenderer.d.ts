@@ -6,10 +6,9 @@
 
 declare module goog.ui {
 
-    class PaletteRenderer extends PaletteRenderer.__Class { }
-    module PaletteRenderer {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.ControlRenderer.__Class {
+    class PaletteRenderer extends PaletteRenderer__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class PaletteRenderer__Class extends goog.ui.ControlRenderer__Class  { 
     
             /**
              * Default renderer for {@link goog.ui.Palette}s.  Renders the palette as an
@@ -115,8 +114,8 @@ declare module goog.ui {
              *     deselected.
              */
             selectCell(palette: goog.ui.Palette, node: Node, select: boolean): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.PaletteRenderer {

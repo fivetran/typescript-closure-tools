@@ -3,10 +3,9 @@
 
 declare module goog.dom {
 
-    class NodeIterator extends NodeIterator.__Class { }
-    module NodeIterator {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.dom.TagIterator.__Class {
+    class NodeIterator extends NodeIterator__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class NodeIterator__Class extends goog.dom.TagIterator__Class  { 
     
             /**
              * A DOM tree traversal iterator.
@@ -49,6 +48,6 @@ declare module goog.dom {
              * @final
              */
             constructor(opt_node?: Node, opt_reversed?: boolean, opt_unconstrained?: boolean, opt_depth?: number);
-        }
-    }
+    } 
+    
 }

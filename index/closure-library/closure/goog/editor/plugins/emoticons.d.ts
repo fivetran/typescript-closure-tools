@@ -3,10 +3,9 @@
 
 declare module goog.editor.plugins {
 
-    class Emoticons extends Emoticons.__Class { }
-    module Emoticons {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.editor.Plugin.__Class {
+    class Emoticons extends Emoticons__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Emoticons__Class extends goog.editor.Plugin__Class  { 
     
             /**
              * Plugin for generating emoticons.
@@ -16,8 +15,8 @@ declare module goog.editor.plugins {
              * @final
              */
             constructor();
-        }
-    }
+    } 
+    
 }
 
 declare module goog.editor.plugins.Emoticons {

@@ -9,10 +9,9 @@
 
 declare module goog.ui {
 
-    class Container extends Container.__Class { }
-    module Container {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.Component.__Class {
+    class Container extends Container__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Container__Class extends goog.ui.Component__Class  { 
     
             /**
              * Base class for containers.  Extends {@link goog.ui.Component} by adding
@@ -367,8 +366,8 @@ declare module goog.ui {
              * @param {boolean} pressed Whether the mouse button is presed.
              */
             setMouseButtonPressed(pressed: boolean): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.Container {

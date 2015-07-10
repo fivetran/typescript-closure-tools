@@ -3,10 +3,9 @@
 
 declare module goog.pubsub {
 
-    class PubSub extends PubSub.__Class { }
-    module PubSub {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.Disposable.__Class {
+    class PubSub extends PubSub__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class PubSub__Class extends goog.Disposable__Class  { 
     
             /**
              * Topic-based publish/subscribe channel.  Maintains a map of topics to
@@ -103,6 +102,6 @@ declare module goog.pubsub {
              * @return {number} Number of subscriptions to the topic.
              */
             getCount(opt_topic?: string): number;
-        }
-    }
+    } 
+    
 }

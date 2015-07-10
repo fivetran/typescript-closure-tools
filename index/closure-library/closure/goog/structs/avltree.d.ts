@@ -3,10 +3,9 @@
 
 declare module goog.structs {
 
-    class AvlTree<T> extends AvlTree.__Class<T> { }
-    module AvlTree {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class<T> implements goog.structs.Collection<T> {
+    class AvlTree<T> extends AvlTree__Class<T> { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class AvlTree__Class<T> implements goog.structs.Collection<T>  { 
     
             /**
              * Constructs an AVL-Tree, which uses the specified comparator to order its
@@ -111,16 +110,15 @@ declare module goog.structs {
              * @return {number} The number of values stored in the collection.
              */
             getCount(): number;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.structs.AvlTree {
 
-    class Node<T> extends Node.__Class<T> { }
-    module Node {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class<T> {
+    class Node<T> extends Node__Class<T> { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Node__Class<T>  { 
     
             /**
              * Constructs an AVL-Tree node with the specified value. If no parent is
@@ -194,6 +192,6 @@ declare module goog.structs.AvlTree {
              *    child of its parent.
              */
             isLeftChild(): boolean;
-        }
-    }
+    } 
+    
 }

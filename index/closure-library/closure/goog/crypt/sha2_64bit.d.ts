@@ -3,10 +3,9 @@
 
 declare module goog.crypt {
 
-    class Sha2_64bit extends Sha2_64bit.__Class { }
-    module Sha2_64bit {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.crypt.Hash.__Class {
+    class Sha2_64bit extends Sha2_64bit__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Sha2_64bit__Class extends goog.crypt.Hash__Class  { 
     
             /**
              * Constructs a SHA-2 64-bit cryptographic hash.
@@ -31,6 +30,6 @@ declare module goog.crypt {
              * Resets this hash function.
              */
             reset(): void;
-        }
-    }
+    } 
+    
 }

@@ -2,10 +2,9 @@
 
 declare module goog.dom.pattern.callback {
 
-    class Test extends Test.__Class { }
-    module Test {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Test extends Test__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Test__Class  { 
     
             /**
              * Callback class for testing for at least one match.
@@ -33,6 +32,6 @@ declare module goog.dom.pattern.callback {
              * Reset the counter.
              */
             reset(): void;
-        }
-    }
+    } 
+    
 }

@@ -5,10 +5,9 @@
 
 declare module goog.ui {
 
-    class DragDropDetector extends DragDropDetector.__Class { }
-    module DragDropDetector {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.EventTarget.__Class {
+    class DragDropDetector extends DragDropDetector__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class DragDropDetector__Class extends goog.events.EventTarget__Class  { 
     
             /**
              * Creates a new drag and drop detector.
@@ -20,16 +19,15 @@ declare module goog.ui {
              * @final
              */
             constructor(opt_filePath?: string);
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.DragDropDetector {
 
-    class ImageDropEvent extends ImageDropEvent.__Class { }
-    module ImageDropEvent {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.Event.__Class {
+    class ImageDropEvent extends ImageDropEvent__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ImageDropEvent__Class extends goog.events.Event__Class  { 
     
             /**
              * Creates a new image drop event object.
@@ -53,13 +51,12 @@ declare module goog.ui.DragDropDetector {
              *     indicating the drop position is unknown.
              */
             getPosition(): goog.math.Coordinate;
-        }
-    }
+    } 
+    
 
-    class LinkDropEvent extends LinkDropEvent.__Class { }
-    module LinkDropEvent {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.Event.__Class {
+    class LinkDropEvent extends LinkDropEvent__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class LinkDropEvent__Class extends goog.events.Event__Class  { 
     
             /**
              * Creates a new link drop event object.
@@ -74,8 +71,8 @@ declare module goog.ui.DragDropDetector {
              * @return {string} The url of the link that was dropped.
              */
             getUrl(): string;
-        }
-    }
+    } 
+    
 
     /**
      * Drag and drop event types.

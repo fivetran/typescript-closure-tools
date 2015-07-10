@@ -3,10 +3,9 @@
 
 declare module goog.math {
 
-    class Bezier extends Bezier.__Class { }
-    module Bezier {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Bezier extends Bezier__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Bezier__Class  { 
     
             /**
              * Object representing a cubic bezier curve.
@@ -144,8 +143,8 @@ declare module goog.math {
              * @return {number} The y coordinate of the point on the curve.
              */
             solveYValueFromXValue(xVal: number): number;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.math.Bezier {

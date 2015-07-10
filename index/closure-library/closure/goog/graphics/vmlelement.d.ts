@@ -11,10 +11,9 @@
 
 declare module goog.graphics {
 
-    class VmlGroupElement extends VmlGroupElement.__Class { }
-    module VmlGroupElement {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.graphics.GroupElement.__Class {
+    class VmlGroupElement extends VmlGroupElement__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class VmlGroupElement__Class extends goog.graphics.GroupElement__Class  { 
     
             /**
              * Thin wrapper for VML group elements.
@@ -32,13 +31,12 @@ declare module goog.graphics {
              * @final
              */
             constructor(element: Element, graphics: goog.graphics.VmlGraphics);
-        }
-    }
+    } 
+    
 
-    class VmlEllipseElement extends VmlEllipseElement.__Class { }
-    module VmlEllipseElement {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.graphics.EllipseElement.__Class {
+    class VmlEllipseElement extends VmlEllipseElement__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class VmlEllipseElement__Class extends goog.graphics.EllipseElement__Class  { 
     
             /**
              * Thin wrapper for VML ellipse elements.
@@ -86,13 +84,12 @@ declare module goog.graphics {
              * @type {number}
              */
             ry: number;
-        }
-    }
+    } 
+    
 
-    class VmlRectElement extends VmlRectElement.__Class { }
-    module VmlRectElement {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.graphics.RectElement.__Class {
+    class VmlRectElement extends VmlRectElement__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class VmlRectElement__Class extends goog.graphics.RectElement__Class  { 
     
             /**
              * Thin wrapper for VML rectangle elements.
@@ -112,13 +109,12 @@ declare module goog.graphics {
              * @final
              */
             constructor(element: Element, graphics: goog.graphics.VmlGraphics, stroke: goog.graphics.Stroke, fill: goog.graphics.Fill);
-        }
-    }
+    } 
+    
 
-    class VmlPathElement extends VmlPathElement.__Class { }
-    module VmlPathElement {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.graphics.PathElement.__Class {
+    class VmlPathElement extends VmlPathElement__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class VmlPathElement__Class extends goog.graphics.PathElement__Class  { 
     
             /**
              * Thin wrapper for VML path elements.
@@ -138,13 +134,12 @@ declare module goog.graphics {
              * @final
              */
             constructor(element: Element, graphics: goog.graphics.VmlGraphics, stroke: goog.graphics.Stroke, fill: goog.graphics.Fill);
-        }
-    }
+    } 
+    
 
-    class VmlTextElement extends VmlTextElement.__Class { }
-    module VmlTextElement {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.graphics.TextElement.__Class {
+    class VmlTextElement extends VmlTextElement__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class VmlTextElement__Class extends goog.graphics.TextElement__Class  { 
     
             /**
              * Thin wrapper for VML text elements.
@@ -164,13 +159,12 @@ declare module goog.graphics {
              * @final
              */
             constructor(element: Element, graphics: goog.graphics.VmlGraphics, stroke: goog.graphics.Stroke, fill: goog.graphics.Fill);
-        }
-    }
+    } 
+    
 
-    class VmlImageElement extends VmlImageElement.__Class { }
-    module VmlImageElement {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.graphics.ImageElement.__Class {
+    class VmlImageElement extends VmlImageElement__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class VmlImageElement__Class extends goog.graphics.ImageElement__Class  { 
     
             /**
              * Thin wrapper for VML image elements.
@@ -188,6 +182,6 @@ declare module goog.graphics {
              * @final
              */
             constructor(element: Element, graphics: goog.graphics.VmlGraphics);
-        }
-    }
+    } 
+    
 }

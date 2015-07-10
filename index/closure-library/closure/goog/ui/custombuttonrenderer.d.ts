@@ -5,10 +5,9 @@
 
 declare module goog.ui {
 
-    class CustomButtonRenderer extends CustomButtonRenderer.__Class { }
-    module CustomButtonRenderer {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.ButtonRenderer.__Class {
+    class CustomButtonRenderer extends CustomButtonRenderer__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class CustomButtonRenderer__Class extends goog.ui.ButtonRenderer__Class  { 
     
             /**
              * Custom renderer for {@link goog.ui.Button}s.  Custom buttons can contain
@@ -94,8 +93,8 @@ declare module goog.ui {
              * @protected
              */
             hasBoxStructure(button: goog.ui.Button, element: Element): boolean;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.CustomButtonRenderer {

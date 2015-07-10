@@ -5,10 +5,9 @@
 
 declare module goog.graphics {
 
-    class Element extends Element.__Class { }
-    module Element {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.EventTarget.__Class {
+    class Element extends Element__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Element__Class extends goog.events.EventTarget__Class  { 
     
             /**
              * Base class for a thin wrapper around the DOM element returned from
@@ -54,6 +53,6 @@ declare module goog.graphics {
              *     this element.
              */
             getTransform(): goog.graphics.AffineTransform;
-        }
-    }
+    } 
+    
 }

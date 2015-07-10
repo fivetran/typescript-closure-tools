@@ -5,10 +5,9 @@
 
 declare module goog.proto2 {
 
-    class LazyDeserializer extends LazyDeserializer.__Class { }
-    module LazyDeserializer {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.proto2.Serializer.__Class {
+    class LazyDeserializer extends LazyDeserializer__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class LazyDeserializer__Class extends goog.proto2.Serializer__Class  { 
     
             /**
              * Base class for all lazy deserializers.
@@ -31,6 +30,6 @@ declare module goog.proto2 {
              * @return {*} The deserialized data or null for no value found.
              */
             deserializeField(message: goog.proto2.Message, field: goog.proto2.FieldDescriptor, data: any): any;
-        }
-    }
+    } 
+    
 }

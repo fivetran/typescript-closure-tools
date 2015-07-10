@@ -3,10 +3,9 @@
 
 declare module goog.testing {
 
-    class PerformanceTimer extends PerformanceTimer.__Class { }
-    module PerformanceTimer {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class PerformanceTimer extends PerformanceTimer__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class PerformanceTimer__Class  { 
     
             /**
              * Creates a performance timer that runs test functions a number of times to
@@ -101,16 +100,15 @@ declare module goog.testing {
              *     containing performance stats.
              */
             runAsyncTask(task: goog.testing.PerformanceTimer.Task): goog.async.Deferred<any>;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.testing.PerformanceTimer {
 
-    class Task extends Task.__Class { }
-    module Task {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Task extends Task__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Task__Class  { 
     
             /**
              * A task for the performance timer to measure. Callers can specify optional
@@ -158,8 +156,8 @@ declare module goog.testing.PerformanceTimer {
              *     or the default no-op function if none was specified.
              */
             getTearDown(): goog.testing.PerformanceTimer.TestFunction;
-        }
-    }
+    } 
+    
 
     /**
      * Creates a performance timer results object by analyzing a given array of

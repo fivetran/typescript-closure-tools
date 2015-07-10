@@ -5,10 +5,9 @@
 
 declare module goog.ui {
 
-    class FilterObservingMenuItem extends FilterObservingMenuItem.__Class { }
-    module FilterObservingMenuItem {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.MenuItem.__Class {
+    class FilterObservingMenuItem extends FilterObservingMenuItem__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class FilterObservingMenuItem__Class extends goog.ui.MenuItem__Class  { 
     
             /**
              * Class representing a filter observing menu item.
@@ -78,6 +77,6 @@ declare module goog.ui {
              * @param {?string=} opt_str Filter string.
              */
             callObserver(opt_str?: string): void;
-        }
-    }
+    } 
+    
 }

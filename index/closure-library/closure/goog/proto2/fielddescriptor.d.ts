@@ -3,10 +3,9 @@
 
 declare module goog.proto2 {
 
-    class FieldDescriptor extends FieldDescriptor.__Class { }
-    module FieldDescriptor {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class FieldDescriptor extends FieldDescriptor__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class FieldDescriptor__Class  { 
     
             /**
              * A class which describes a field in a Protocol Buffer 2 Message.
@@ -113,8 +112,8 @@ declare module goog.proto2 {
              * @return {boolean} Whether the field is optional.
              */
             isOptional(): boolean;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.proto2.FieldDescriptor {

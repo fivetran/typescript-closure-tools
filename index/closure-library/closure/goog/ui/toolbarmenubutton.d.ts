@@ -6,10 +6,9 @@
 
 declare module goog.ui {
 
-    class ToolbarMenuButton extends ToolbarMenuButton.__Class { }
-    module ToolbarMenuButton {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.MenuButton.__Class {
+    class ToolbarMenuButton extends ToolbarMenuButton__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ToolbarMenuButton__Class extends goog.ui.MenuButton__Class  { 
     
             /**
              * A menu button control for a toolbar.
@@ -71,6 +70,6 @@ declare module goog.ui {
              * @extends {goog.ui.MenuButton}
              */
             constructor(content: NodeList, opt_menu?: goog.ui.Menu, opt_renderer?: goog.ui.ButtonRenderer, opt_domHelper?: goog.dom.DomHelper);
-        }
-    }
+    } 
+    
 }

@@ -4,10 +4,9 @@
 
 declare module goog.ui {
 
-    class DrilldownRow extends DrilldownRow.__Class { }
-    module DrilldownRow {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.Component.__Class {
+    class DrilldownRow extends DrilldownRow__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class DrilldownRow__Class extends goog.ui.Component__Class  { 
     
             /**
              * Builds a DrilldownRow component, which can overlay a tree
@@ -59,8 +58,8 @@ declare module goog.ui {
              * @return {number} depth of this DrilldownRow in its tree of drilldowns.
              */
             getDepth(): number;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.DrilldownRow {

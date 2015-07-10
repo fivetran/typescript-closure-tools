@@ -2,10 +2,9 @@
 
 declare module goog.testing {
 
-    class ExpectedFailures extends ExpectedFailures.__Class { }
-    module ExpectedFailures {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class ExpectedFailures extends ExpectedFailures__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ExpectedFailures__Class  { 
     
             /**
              * Helper class for allowing some unit tests to fail, particularly designed to
@@ -71,6 +70,6 @@ declare module goog.testing {
              * was not suppressed.
              */
             handleTearDown(): void;
-        }
-    }
+    } 
+    
 }

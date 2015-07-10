@@ -6,10 +6,9 @@
 
 declare module goog.dom {
 
-    class MultiRange extends MultiRange.__Class { }
-    module MultiRange {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.dom.AbstractMultiRange.__Class {
+    class MultiRange extends MultiRange__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class MultiRange__Class extends goog.dom.AbstractMultiRange__Class  { 
     
             /**
              * Creates a new multi part range with no properties.  Do not use this
@@ -25,13 +24,12 @@ declare module goog.dom {
              *     point.
              */
             getSortedRanges(): goog.dom.TextRange[];
-        }
-    }
+    } 
+    
 
-    class DomSavedMultiRange_ extends DomSavedMultiRange_.__Class { }
-    module DomSavedMultiRange_ {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.dom.SavedRange.__Class {
+    class DomSavedMultiRange_ extends DomSavedMultiRange___Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class DomSavedMultiRange___Class extends goog.dom.SavedRange__Class  { 
     
             /**
              * A SavedRange implementation using DOM endpoints.
@@ -41,13 +39,12 @@ declare module goog.dom {
              * @private
              */
             constructor(range: goog.dom.MultiRange);
-        }
-    }
+    } 
+    
 
-    class MultiRangeIterator extends MultiRangeIterator.__Class { }
-    module MultiRangeIterator {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.dom.RangeIterator.__Class {
+    class MultiRangeIterator extends MultiRangeIterator__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class MultiRangeIterator__Class extends goog.dom.RangeIterator__Class  { 
     
             /**
              * Subclass of goog.dom.TagIterator that iterates over a DOM range.  It
@@ -59,8 +56,8 @@ declare module goog.dom {
              * @final
              */
             constructor(range: goog.dom.MultiRange);
-        }
-    }
+    } 
+    
 }
 
 declare module goog.dom.MultiRange {

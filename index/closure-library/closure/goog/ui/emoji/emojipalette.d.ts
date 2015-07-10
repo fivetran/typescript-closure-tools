@@ -7,10 +7,9 @@
 
 declare module goog.ui.emoji {
 
-    class EmojiPalette extends EmojiPalette.__Class { }
-    module EmojiPalette {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.Palette.__Class {
+    class EmojiPalette extends EmojiPalette__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class EmojiPalette__Class extends goog.ui.Palette__Class  { 
     
             /**
              * A page of emoji to be displayed in an EmojiPicker.
@@ -56,6 +55,6 @@ declare module goog.ui.emoji {
              * @return {number} The index of the specified emoji within this palette.
              */
             getEmojiIndex(id: string): number;
-        }
-    }
+    } 
+    
 }

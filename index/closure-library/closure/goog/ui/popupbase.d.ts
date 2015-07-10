@@ -5,10 +5,9 @@
 
 declare module goog.ui {
 
-    class PopupBase extends PopupBase.__Class { }
-    module PopupBase {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.EventTarget.__Class {
+    class PopupBase extends PopupBase__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class PopupBase__Class extends goog.events.EventTarget__Class  { 
     
             /**
              * The PopupBase class provides functionality for showing and hiding a generic
@@ -256,8 +255,8 @@ declare module goog.ui {
              * @suppress {underscore|visibility}
              */
             onHide_(opt_target?: Object): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.PopupBase {

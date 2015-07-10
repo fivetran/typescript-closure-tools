@@ -4,10 +4,9 @@
 
 declare module goog.ui {
 
-    class DimensionPickerRenderer extends DimensionPickerRenderer.__Class { }
-    module DimensionPickerRenderer {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.ControlRenderer.__Class {
+    class DimensionPickerRenderer extends DimensionPickerRenderer__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class DimensionPickerRenderer__Class extends goog.ui.ControlRenderer__Class  { 
     
             /**
              * Default renderer for {@link goog.ui.DimensionPicker}s.  Renders the
@@ -64,8 +63,8 @@ declare module goog.ui {
              * @param {goog.ui.DimensionPicker} palette The table size palette.
              */
             positionMouseCatcher(palette: goog.ui.DimensionPicker): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.DimensionPickerRenderer {

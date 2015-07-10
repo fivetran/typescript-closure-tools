@@ -3,10 +3,9 @@
 
 declare module goog.storage.mechanism {
 
-    class ErrorHandlingMechanism extends ErrorHandlingMechanism.__Class { }
-    module ErrorHandlingMechanism {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.storage.mechanism.Mechanism.__Class {
+    class ErrorHandlingMechanism extends ErrorHandlingMechanism__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ErrorHandlingMechanism__Class extends goog.storage.mechanism.Mechanism__Class  { 
     
             /**
              * Wraps a storage mechanism with a custom error handler.
@@ -20,8 +19,8 @@ declare module goog.storage.mechanism {
              * @final
              */
             constructor(mechanism: goog.storage.mechanism.Mechanism, errorHandler: goog.storage.mechanism.ErrorHandlingMechanism.ErrorHandler);
-        }
-    }
+    } 
+    
 }
 
 declare module goog.storage.mechanism.ErrorHandlingMechanism {

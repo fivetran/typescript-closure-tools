@@ -7,10 +7,9 @@
 
 declare module goog.graphics.ext {
 
-    class Element extends Element.__Class { }
-    module Element {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.EventTarget.__Class {
+    class Element extends Element__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Element__Class extends goog.events.EventTarget__Class  { 
     
             /**
              * Base class for a wrapper around the goog.graphics wrapper that enables
@@ -603,16 +602,15 @@ declare module goog.graphics.ext {
              * @return {number} Returns the number of pixels per unit in the y direction.
              */
             getPixelScaleY(): number;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.graphics.ext.Element {
 
-    class Position_ extends Position_.__Class { }
-    module Position_ {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Position_ extends Position___Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Position___Class  { 
     
             /**
              * Manages a position and size, either horizontal or vertical.
@@ -710,8 +708,8 @@ declare module goog.graphics.ext.Element {
              *     the size of the parent element.
              */
             isParentDependent(): boolean;
-        }
-    }
+    } 
+    
 
     /**
      * Position specification types.  Start corresponds to left/top, middle to

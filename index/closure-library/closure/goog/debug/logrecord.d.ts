@@ -3,10 +3,9 @@
 
 declare module goog.debug {
 
-    class LogRecord extends LogRecord.__Class { }
-    module LogRecord {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class LogRecord extends LogRecord__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class LogRecord__Class  { 
     
             /**
              * LogRecord objects are used to pass logging requests between
@@ -125,6 +124,6 @@ declare module goog.debug {
              * @return {number} the sequence number.
              */
             getSequenceNumber(): number;
-        }
-    }
+    } 
+    
 }

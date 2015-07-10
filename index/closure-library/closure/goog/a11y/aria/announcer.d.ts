@@ -5,10 +5,9 @@
 
 declare module goog.a11y.aria {
 
-    class Announcer extends Announcer.__Class { }
-    module Announcer {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.Disposable.__Class {
+    class Announcer extends Announcer__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Announcer__Class extends goog.Disposable__Class  { 
     
             /**
              * Class that allows messages to be spoken by assistive technologies that the
@@ -29,6 +28,6 @@ declare module goog.a11y.aria {
              *     message. Defaults to POLITE.
              */
             say(message: string, opt_priority?: goog.a11y.aria.LivePriority): void;
-        }
-    }
+    } 
+    
 }

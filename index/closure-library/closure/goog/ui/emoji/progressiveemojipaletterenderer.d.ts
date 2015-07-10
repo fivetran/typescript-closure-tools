@@ -3,10 +3,9 @@
 
 declare module goog.ui.emoji {
 
-    class ProgressiveEmojiPaletteRenderer extends ProgressiveEmojiPaletteRenderer.__Class { }
-    module ProgressiveEmojiPaletteRenderer {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.emoji.EmojiPaletteRenderer.__Class {
+    class ProgressiveEmojiPaletteRenderer extends ProgressiveEmojiPaletteRenderer__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ProgressiveEmojiPaletteRenderer__Class extends goog.ui.emoji.EmojiPaletteRenderer__Class  { 
     
             /**
              * Progressively renders an emoji palette. The progressive renderer tries to
@@ -22,6 +21,6 @@ declare module goog.ui.emoji {
              * @final
              */
             constructor(defaultImgUrl: string);
-        }
-    }
+    } 
+    
 }

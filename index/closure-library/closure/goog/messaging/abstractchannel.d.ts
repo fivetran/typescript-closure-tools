@@ -5,10 +5,9 @@
 
 declare module goog.messaging {
 
-    class AbstractChannel extends AbstractChannel.__Class { }
-    module AbstractChannel {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.Disposable.__Class implements goog.messaging.MessageChannel {
+    class AbstractChannel extends AbstractChannel__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class AbstractChannel__Class extends goog.Disposable__Class implements goog.messaging.MessageChannel  { 
     
             /**
              * Creates an abstract message channel.
@@ -214,6 +213,6 @@ declare module goog.messaging {
              *     serialization.
              */
             send(serviceName: string, payload: Object): void;
-        }
-    }
+    } 
+    
 }

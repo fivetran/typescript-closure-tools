@@ -4,10 +4,9 @@
 
 declare module goog.demos {
 
-    class SampleComponent extends SampleComponent.__Class { }
-    module SampleComponent {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.Component.__Class {
+    class SampleComponent extends SampleComponent__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class SampleComponent__Class extends goog.ui.Component__Class  { 
     
             /**
              * A simple box that changes colour when clicked. This class demonstrates the
@@ -38,6 +37,6 @@ declare module goog.demos {
              * @param {string} text The text to set as the label.
              */
             setLabelText(text: string): void;
-        }
-    }
+    } 
+    
 }

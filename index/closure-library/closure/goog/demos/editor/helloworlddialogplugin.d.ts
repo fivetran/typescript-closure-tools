@@ -3,10 +3,9 @@
 
 declare module goog.demos.editor {
 
-    class HelloWorldDialogPlugin extends HelloWorldDialogPlugin.__Class { }
-    module HelloWorldDialogPlugin {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.editor.plugins.AbstractDialogPlugin.__Class {
+    class HelloWorldDialogPlugin extends HelloWorldDialogPlugin__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class HelloWorldDialogPlugin__Class extends goog.editor.plugins.AbstractDialogPlugin__Class  { 
     
             /**
              * A plugin that opens the hello world dialog.
@@ -15,8 +14,8 @@ declare module goog.demos.editor {
              * @final
              */
             constructor();
-        }
-    }
+    } 
+    
 }
 
 declare module goog.demos.editor.HelloWorldDialogPlugin {

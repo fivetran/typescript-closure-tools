@@ -8,10 +8,9 @@
 
 declare module goog.fx {
 
-    class Dragger extends Dragger.__Class { }
-    module Dragger {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.EventTarget.__Class {
+    class Dragger extends Dragger__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Dragger__Class extends goog.events.EventTarget__Class  { 
     
             /**
              * A class that allows mouse or touch-based dragging (moving) of an element
@@ -246,13 +245,12 @@ declare module goog.fx {
              * @return {boolean} Whether the dragger is currently in the midst of a drag.
              */
             isDragging(): boolean;
-        }
-    }
+    } 
+    
 
-    class DragEvent extends DragEvent.__Class { }
-    module DragEvent {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.Event.__Class {
+    class DragEvent extends DragEvent__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class DragEvent__Class extends goog.events.Event__Class  { 
     
             /**
              * Object representing a drag event
@@ -319,8 +317,8 @@ declare module goog.fx {
              * @type {boolean}
              */
             dragCanceled: boolean;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.fx.Dragger {

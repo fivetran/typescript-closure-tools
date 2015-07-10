@@ -8,10 +8,9 @@
 
 declare module goog.testing.net {
 
-    class XhrIo extends XhrIo.__Class { }
-    module XhrIo {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.EventTarget.__Class {
+    class XhrIo extends XhrIo__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class XhrIo__Class extends goog.events.EventTarget__Class  { 
     
             /**
              * Mock implementation of goog.net.XhrIo. This doesn't provide a mock
@@ -303,8 +302,8 @@ declare module goog.testing.net {
              *     and header values as values.
              */
             getResponseHeaders(): { [key: string]: string };
-        }
-    }
+    } 
+    
 }
 
 declare module goog.testing.net.XhrIo {

@@ -3,10 +3,9 @@
 
 declare module goog._string {
 
-    class Const extends Const.__Class { }
-    module Const {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class implements goog.string.TypedString {
+    class Const extends Const__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Const__Class implements goog.string.TypedString  { 
     
             /**
              * Wrapper for compile-time-constant strings.
@@ -50,8 +49,8 @@ declare module goog._string {
              * @return {!string} The wrapped string's value.
              */
             getTypedStringValue(): string;
-        }
-    }
+    } 
+    
 }
 
 declare module goog._string.Const {

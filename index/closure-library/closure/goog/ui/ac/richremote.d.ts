@@ -3,10 +3,9 @@
 
 declare module goog.ui.ac {
 
-    class RichRemote extends RichRemote.__Class { }
-    module RichRemote {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.ac.Remote.__Class {
+    class RichRemote extends RichRemote__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class RichRemote__Class extends goog.ui.ac.Remote__Class  { 
     
             /**
              * Factory class to create a rich autocomplete widget that autocompletes an
@@ -30,6 +29,6 @@ declare module goog.ui.ac {
              *     a subset of the rows input array.
              */
             setRowFilter(rowFilter: Function): void;
-        }
-    }
+    } 
+    
 }

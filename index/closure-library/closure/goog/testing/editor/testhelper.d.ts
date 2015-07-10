@@ -3,10 +3,9 @@
 
 declare module goog.testing.editor {
 
-    class TestHelper extends TestHelper.__Class { }
-    module TestHelper {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.Disposable.__Class {
+    class TestHelper extends TestHelper__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class TestHelper__Class extends goog.Disposable__Class  { 
     
             /**
              * Create a new test controller.
@@ -120,6 +119,6 @@ declare module goog.testing.editor {
              *     selection at.
              */
             select(from: string, fromOffset: number, opt_to?: string, opt_toOffset?: number): void;
-        }
-    }
+    } 
+    
 }

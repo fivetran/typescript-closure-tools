@@ -4,10 +4,9 @@
 
 declare module goog.graphics {
 
-    class GroupElement extends GroupElement.__Class { }
-    module GroupElement {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.graphics.Element.__Class {
+    class GroupElement extends GroupElement__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class GroupElement__Class extends goog.graphics.Element__Class  { 
     
             /**
              * Interface for a graphics group element.
@@ -53,6 +52,6 @@ declare module goog.graphics {
              * @param {number|string} height The height of the group element.
              */
             setSize(width: string, height: string): void;
-        }
-    }
+    } 
+    
 }

@@ -4,10 +4,9 @@
 
 declare module goog.net {
 
-    class XhrIoPool extends XhrIoPool.__Class { }
-    module XhrIoPool {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.structs.PriorityPool.__Class<any> {
+    class XhrIoPool extends XhrIoPool__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class XhrIoPool__Class extends goog.structs.PriorityPool__Class<any>  { 
     
             /**
              * A pool of XhrIo objects.
@@ -19,6 +18,6 @@ declare module goog.net {
              * @extends {goog.structs.PriorityPool}
              */
             constructor(opt_headers?: goog.structs.Map<any, any>, opt_minCount?: number, opt_maxCount?: number);
-        }
-    }
+    } 
+    
 }

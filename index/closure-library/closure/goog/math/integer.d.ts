@@ -2,10 +2,9 @@
 
 declare module goog.math {
 
-    class Integer extends Integer.__Class { }
-    module Integer {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Integer extends Integer__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Integer__Class  { 
     
             /**
              * Constructs a two's-complement integer an array containing bits of the
@@ -193,8 +192,8 @@ declare module goog.math {
              * @return {!goog.math.Integer} This shifted to the right by the given amount.
              */
             shiftRight(numBits: number): goog.math.Integer;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.math.Integer {

@@ -6,10 +6,9 @@
 
 declare module goog.messaging {
 
-    class PortChannel extends PortChannel.__Class { }
-    module PortChannel {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.messaging.AbstractChannel.__Class {
+    class PortChannel extends PortChannel__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class PortChannel__Class extends goog.messaging.AbstractChannel__Class  { 
     
             /**
              * A wrapper for several types of HTML5 message-passing entities
@@ -49,8 +48,8 @@ declare module goog.messaging {
              * @final
              */
             constructor(underlyingPort: WebWorker);
-        }
-    }
+    } 
+    
 }
 
 declare module goog.messaging.PortChannel {

@@ -4,10 +4,9 @@
 
 declare module goog.testing.messaging {
 
-    class MockMessagePort extends MockMessagePort.__Class { }
-    module MockMessagePort {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.EventTarget.__Class {
+    class MockMessagePort extends MockMessagePort__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class MockMessagePort__Class extends goog.events.EventTarget__Class  { 
     
             /**
              * Class for unit-testing code that uses MessagePorts.
@@ -57,6 +56,6 @@ declare module goog.testing.messaging {
              * Closes the port.
              */
             close(): void;
-        }
-    }
+    } 
+    
 }

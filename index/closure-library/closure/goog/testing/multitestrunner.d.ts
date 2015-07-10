@@ -4,10 +4,9 @@
 
 declare module goog.testing {
 
-    class MultiTestRunner extends MultiTestRunner.__Class { }
-    module MultiTestRunner {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.Component.__Class {
+    class MultiTestRunner extends MultiTestRunner__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class MultiTestRunner__Class extends goog.ui.Component__Class  { 
     
             /**
              * A component for running multiple tests within the browser.
@@ -181,16 +180,15 @@ declare module goog.testing {
              *     finished.
              */
             processResult(frame: goog.testing.MultiTestRunner.TestFrame): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.testing.MultiTestRunner {
 
-    class TestFrame extends TestFrame.__Class { }
-    module TestFrame {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.Component.__Class {
+    class TestFrame extends TestFrame__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class TestFrame__Class extends goog.ui.Component__Class  { 
     
             /**
              * Class used to manage the interaction with a single iframe.
@@ -229,8 +227,8 @@ declare module goog.testing.MultiTestRunner {
              * @return {?boolean} Whether the test frame had a success.
              */
             isSuccess(): boolean;
-        }
-    }
+    } 
+    
 
     /**
      * Default maximimum amount of time to spend at each stage of the test.

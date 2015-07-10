@@ -3,10 +3,9 @@
 
 declare module goog.labs.testing {
 
-    class HasEntriesMatcher extends HasEntriesMatcher.__Class { }
-    module HasEntriesMatcher {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class implements goog.labs.testing.Matcher {
+    class HasEntriesMatcher extends HasEntriesMatcher__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class HasEntriesMatcher__Class implements goog.labs.testing.Matcher  { 
     
             /**
              * The HasEntries matcher.
@@ -38,13 +37,12 @@ declare module goog.labs.testing {
              * @return {string} Description of why the matcher failed.
              */
             describe(value: any, opt_description?: string): string;
-        }
-    }
+    } 
+    
 
-    class HasEntryMatcher extends HasEntryMatcher.__Class { }
-    module HasEntryMatcher {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class implements goog.labs.testing.Matcher {
+    class HasEntryMatcher extends HasEntryMatcher__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class HasEntryMatcher__Class implements goog.labs.testing.Matcher  { 
     
             /**
              * The HasEntry matcher.
@@ -77,13 +75,12 @@ declare module goog.labs.testing {
              * @return {string} Description of why the matcher failed.
              */
             describe(value: any, opt_description?: string): string;
-        }
-    }
+    } 
+    
 
-    class HasKeyMatcher extends HasKeyMatcher.__Class { }
-    module HasKeyMatcher {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class implements goog.labs.testing.Matcher {
+    class HasKeyMatcher extends HasKeyMatcher__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class HasKeyMatcher__Class implements goog.labs.testing.Matcher  { 
     
             /**
              * The HasKey matcher.
@@ -115,13 +112,12 @@ declare module goog.labs.testing {
              * @return {string} Description of why the matcher failed.
              */
             describe(value: any, opt_description?: string): string;
-        }
-    }
+    } 
+    
 
-    class HasValueMatcher extends HasValueMatcher.__Class { }
-    module HasValueMatcher {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class implements goog.labs.testing.Matcher {
+    class HasValueMatcher extends HasValueMatcher__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class HasValueMatcher__Class implements goog.labs.testing.Matcher  { 
     
             /**
              * The HasValue matcher.
@@ -153,6 +149,6 @@ declare module goog.labs.testing {
              * @return {string} Description of why the matcher failed.
              */
             describe(value: any, opt_description?: string): string;
-        }
-    }
+    } 
+    
 }

@@ -6,10 +6,9 @@
 
 declare module goog.graphics {
 
-    class StrokeAndFillElement extends StrokeAndFillElement.__Class { }
-    module StrokeAndFillElement {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.graphics.Element.__Class {
+    class StrokeAndFillElement extends StrokeAndFillElement__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class StrokeAndFillElement__Class extends goog.graphics.Element__Class  { 
     
             /**
              * Interface for a graphics element with a stroke and fill.
@@ -64,6 +63,6 @@ declare module goog.graphics {
              * Re-strokes the element to react to coordinate size changes.
              */
             reapplyStroke(): void;
-        }
-    }
+    } 
+    
 }

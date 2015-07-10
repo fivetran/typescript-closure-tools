@@ -2,10 +2,9 @@
 
 declare module goog.testing {
 
-    class TestQueue extends TestQueue.__Class { }
-    module TestQueue {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class TestQueue extends TestQueue__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class TestQueue__Class  { 
     
             /**
              * Generic queue for writing unit tests
@@ -32,6 +31,6 @@ declare module goog.testing {
              * @return {Object} The next event from the queue.
              */
             dequeue(opt_comment?: string): Object;
-        }
-    }
+    } 
+    
 }

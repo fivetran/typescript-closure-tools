@@ -2,10 +2,9 @@
 
 declare module goog._string.html {
 
-    class HtmlParser extends HtmlParser.__Class { }
-    module HtmlParser {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class HtmlParser extends HtmlParser__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class HtmlParser__Class  { 
     
             /**
              * An Html parser: {@code parse} takes a string and calls methods on
@@ -25,13 +24,12 @@ declare module goog._string.html {
              * @param {string} htmlText The html text.
              */
             parse(handler: goog.string.html.HtmlSaxHandler, htmlText: string): void;
-        }
-    }
+    } 
+    
 
-    class HtmlSaxHandler extends HtmlSaxHandler.__Class { }
-    module HtmlSaxHandler {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class HtmlSaxHandler extends HtmlSaxHandler__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class HtmlSaxHandler__Class  { 
     
             /**
              * An interface to the {@code goog.string.html.HtmlParser} visitor, that gets
@@ -81,8 +79,8 @@ declare module goog._string.html {
              * Handler called when the parsing is done.
              */
             endDoc: any /*missing*/;
-        }
-    }
+    } 
+    
 
     /**
      * TODO(goto): why isn't this in the string package ? does this solves any

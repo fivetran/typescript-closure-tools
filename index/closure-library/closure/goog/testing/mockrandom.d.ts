@@ -3,10 +3,9 @@
 
 declare module goog.testing {
 
-    class MockRandom extends MockRandom.__Class { }
-    module MockRandom {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.Disposable.__Class {
+    class MockRandom extends MockRandom__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class MockRandom__Class extends goog.Disposable__Class  { 
     
             /**
              * Class for unit testing code that uses Math.random.
@@ -59,6 +58,6 @@ declare module goog.testing {
              *     Math.random() is called when there is nothing left in the sequence.
              */
             setStrictlyFromSequence(strictlyFromSequence: boolean): void;
-        }
-    }
+    } 
+    
 }

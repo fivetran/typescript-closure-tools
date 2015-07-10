@@ -5,10 +5,9 @@
 
 declare module goog.messaging {
 
-    class PortCaller extends PortCaller.__Class { }
-    module PortCaller {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.Disposable.__Class implements goog.messaging.PortNetwork {
+    class PortCaller extends PortCaller__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class PortCaller__Class extends goog.Disposable__Class implements goog.messaging.PortNetwork  { 
     
             /**
              * The leaf node of a network.
@@ -41,6 +40,6 @@ declare module goog.messaging {
              *     across it. This will be disposed along with the PortNetwork.
              */
             dial(name: string): goog.messaging.MessageChannel;
-        }
-    }
+    } 
+    
 }

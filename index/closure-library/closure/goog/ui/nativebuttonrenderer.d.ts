@@ -3,10 +3,9 @@
 
 declare module goog.ui {
 
-    class NativeButtonRenderer extends NativeButtonRenderer.__Class { }
-    module NativeButtonRenderer {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.ButtonRenderer.__Class {
+    class NativeButtonRenderer extends NativeButtonRenderer__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class NativeButtonRenderer__Class extends goog.ui.ButtonRenderer__Class  { 
     
             /**
              * Renderer for {@link goog.ui.Button}s.  Renders and decorates native HTML
@@ -17,6 +16,6 @@ declare module goog.ui {
              * @extends {goog.ui.ButtonRenderer}
              */
             constructor();
-        }
-    }
+    } 
+    
 }

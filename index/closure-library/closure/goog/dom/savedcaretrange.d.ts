@@ -4,10 +4,9 @@
 
 declare module goog.dom {
 
-    class SavedCaretRange extends SavedCaretRange.__Class { }
-    module SavedCaretRange {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.dom.SavedRange.__Class {
+    class SavedCaretRange extends SavedCaretRange__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class SavedCaretRange__Class extends goog.dom.SavedRange__Class  { 
     
             /**
              * A struct for holding context about saved selections.
@@ -53,8 +52,8 @@ declare module goog.dom {
              * @param {!Document} doc An HTML document.
              */
             setRestorationDocument(doc: Document): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.dom.SavedCaretRange {

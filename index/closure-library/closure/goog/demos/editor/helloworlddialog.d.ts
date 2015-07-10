@@ -5,10 +5,9 @@
 
 declare module goog.demos.editor {
 
-    class HelloWorldDialog extends HelloWorldDialog.__Class { }
-    module HelloWorldDialog {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.editor.AbstractDialog.__Class {
+    class HelloWorldDialog extends HelloWorldDialog__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class HelloWorldDialog__Class extends goog.ui.editor.AbstractDialog__Class  { 
     
             /**
              * Creates a dialog to let the user enter a customized hello world message.
@@ -19,16 +18,15 @@ declare module goog.demos.editor {
              * @final
              */
             constructor(domHelper: goog.dom.DomHelper);
-        }
-    }
+    } 
+    
 }
 
 declare module goog.demos.editor.HelloWorldDialog {
 
-    class OkEvent extends OkEvent.__Class { }
-    module OkEvent {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.Event.__Class {
+    class OkEvent extends OkEvent__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class OkEvent__Class extends goog.events.Event__Class  { 
     
             /**
              * OK event object for the hello world dialog.
@@ -44,6 +42,6 @@ declare module goog.demos.editor.HelloWorldDialog {
              * @type {string}
              */
             message: string;
-        }
-    }
+    } 
+    
 }

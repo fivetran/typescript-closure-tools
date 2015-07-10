@@ -4,10 +4,9 @@
 
 declare module goog.ui {
 
-    class ContainerRenderer extends ContainerRenderer.__Class { }
-    module ContainerRenderer {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class ContainerRenderer extends ContainerRenderer__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ContainerRenderer__Class  { 
     
             /**
              * Default renderer for {@link goog.ui.Container}.  Can be used as-is, but
@@ -150,8 +149,8 @@ declare module goog.ui {
              *     created or decorated by this renderer.
              */
             getDefaultOrientation(): goog.ui.Container.Orientation;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.ContainerRenderer {

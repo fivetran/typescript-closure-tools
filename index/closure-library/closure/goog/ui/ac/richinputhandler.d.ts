@@ -3,10 +3,9 @@
 
 declare module goog.ui.ac {
 
-    class RichInputHandler extends RichInputHandler.__Class { }
-    module RichInputHandler {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.ac.InputHandler.__Class {
+    class RichInputHandler extends RichInputHandler__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class RichInputHandler__Class extends goog.ui.ac.InputHandler__Class  { 
     
             /**
              * Class for managing the interaction between an autocomplete object and a
@@ -21,6 +20,6 @@ declare module goog.ui.ac {
              * @extends {goog.ui.ac.InputHandler}
              */
             constructor(opt_separators?: string, opt_literals?: string, opt_multi?: boolean, opt_throttleTime?: number);
-        }
-    }
+    } 
+    
 }

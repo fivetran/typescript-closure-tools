@@ -3,10 +3,9 @@
 
 declare module goog.ui {
 
-    class ItemEvent extends ItemEvent.__Class { }
-    module ItemEvent {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.Event.__Class {
+    class ItemEvent extends ItemEvent__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ItemEvent__Class extends goog.events.Event__Class  { 
     
             /**
              * Generic ui event class for events that take a single item like a menu click
@@ -30,6 +29,6 @@ declare module goog.ui {
              * @type {Object}
              */
             item: Object;
-        }
-    }
+    } 
+    
 }

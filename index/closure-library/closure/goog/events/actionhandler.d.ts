@@ -4,10 +4,9 @@
 
 declare module goog.events {
 
-    class ActionHandler extends ActionHandler.__Class { }
-    module ActionHandler {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.EventTarget.__Class {
+    class ActionHandler extends ActionHandler__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ActionHandler__Class extends goog.events.EventTarget__Class  { 
     
             /**
              * A wrapper around an element that you want to listen to ACTION events on.
@@ -25,13 +24,12 @@ declare module goog.events {
              * @final
              */
             constructor(element: Document);
-        }
-    }
+    } 
+    
 
-    class ActionEvent extends ActionEvent.__Class { }
-    module ActionEvent {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.BrowserEvent.__Class {
+    class ActionEvent extends ActionEvent__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ActionEvent__Class extends goog.events.BrowserEvent__Class  { 
     
             /**
              * This class is used for the goog.events.ActionHandler.EventType.ACTION event.
@@ -41,13 +39,12 @@ declare module goog.events {
              * @final
              */
             constructor(browserEvent: goog.events.BrowserEvent);
-        }
-    }
+    } 
+    
 
-    class BeforeActionEvent extends BeforeActionEvent.__Class { }
-    module BeforeActionEvent {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.BrowserEvent.__Class {
+    class BeforeActionEvent extends BeforeActionEvent__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class BeforeActionEvent__Class extends goog.events.BrowserEvent__Class  { 
     
             /**
              * This class is used for the goog.events.ActionHandler.EventType.BEFOREACTION
@@ -59,8 +56,8 @@ declare module goog.events {
              * @final
              */
             constructor(browserEvent: goog.events.BrowserEvent);
-        }
-    }
+    } 
+    
 }
 
 declare module goog.events.ActionHandler {

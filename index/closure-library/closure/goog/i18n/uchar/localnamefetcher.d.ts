@@ -3,10 +3,9 @@
 
 declare module goog.i18n.uChar {
 
-    class LocalNameFetcher extends LocalNameFetcher.__Class { }
-    module LocalNameFetcher {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class implements goog.i18n.uChar.NameFetcher {
+    class LocalNameFetcher extends LocalNameFetcher__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class LocalNameFetcher__Class implements goog.i18n.uChar.NameFetcher  { 
     
             /**
              * Builds the NameFetcherLocal object. This is a simple object which retrieves
@@ -50,6 +49,6 @@ declare module goog.i18n.uChar {
              *     for the given character.
              */
             isNameAvailable(character: string): boolean;
-        }
-    }
+    } 
+    
 }

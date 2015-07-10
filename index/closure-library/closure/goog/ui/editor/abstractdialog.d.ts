@@ -6,10 +6,9 @@
 
 declare module goog.ui.editor {
 
-    class AbstractDialog extends AbstractDialog.__Class { }
-    module AbstractDialog {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.EventTarget.__Class {
+    class AbstractDialog extends AbstractDialog__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class AbstractDialog__Class extends goog.events.EventTarget__Class  { 
     
             /**
              * Creates an object that represents a dialog box.
@@ -117,16 +116,15 @@ declare module goog.ui.editor {
              * @protected
              */
             handleCancel(): boolean;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.editor.AbstractDialog {
 
-    class Builder extends Builder.__Class { }
-    module Builder {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Builder extends Builder__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Builder__Class  { 
     
             /**
              * A builder class for the dialog control. All methods except build return this.
@@ -192,8 +190,8 @@ declare module goog.ui.editor.AbstractDialog {
              * @return {!goog.ui.Dialog} The wrapped dialog control.
              */
             build(): goog.ui.Dialog;
-        }
-    }
+    } 
+    
 
     /**
      * Event type constants for events the dialog fires.

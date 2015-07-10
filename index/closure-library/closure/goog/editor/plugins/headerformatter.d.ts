@@ -3,10 +3,9 @@
 
 declare module goog.editor.plugins {
 
-    class HeaderFormatter extends HeaderFormatter.__Class { }
-    module HeaderFormatter {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.editor.Plugin.__Class {
+    class HeaderFormatter extends HeaderFormatter__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class HeaderFormatter__Class extends goog.editor.Plugin__Class  { 
     
             /**
              * Applies header styles to text.
@@ -15,8 +14,8 @@ declare module goog.editor.plugins {
              * @final
              */
             constructor();
-        }
-    }
+    } 
+    
 }
 
 declare module goog.editor.plugins.HeaderFormatter {

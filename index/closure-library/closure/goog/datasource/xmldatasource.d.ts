@@ -3,10 +3,9 @@
 
 declare module goog.ds {
 
-    class XmlDataSource extends XmlDataSource.__Class { }
-    module XmlDataSource {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ds.DataNode.__Class {
+    class XmlDataSource extends XmlDataSource__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class XmlDataSource__Class extends goog.ds.DataNode__Class  { 
     
             /**
              * Data source whose backing is an xml node
@@ -19,13 +18,12 @@ declare module goog.ds {
              * @constructor
              */
             constructor(node: Node, parent: goog.ds.XmlDataSource, opt_name?: string);
-        }
-    }
+    } 
+    
 
-    class XmlHttpDataSource extends XmlHttpDataSource.__Class { }
-    module XmlHttpDataSource {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ds.XmlDataSource.__Class {
+    class XmlHttpDataSource extends XmlHttpDataSource__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class XmlHttpDataSource__Class extends goog.ds.XmlDataSource__Class  { 
     
             /**
              * Data source whose backing is an XMLHttpRequest,
@@ -42,6 +40,6 @@ declare module goog.ds {
              * @final
              */
             constructor(uri: any /*missing*/, name: string);
-        }
-    }
+    } 
+    
 }

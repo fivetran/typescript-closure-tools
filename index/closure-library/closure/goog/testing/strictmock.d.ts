@@ -3,10 +3,9 @@
 
 declare module goog.testing {
 
-    class StrictMock extends StrictMock.__Class { }
-    module StrictMock {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.testing.Mock.__Class {
+    class StrictMock extends StrictMock__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class StrictMock__Class extends goog.testing.Mock__Class  { 
     
             /**
              * This is a mock that verifies that methods are called in the order that they
@@ -42,6 +41,6 @@ declare module goog.testing {
              * @final
              */
             constructor(objectToMock: Function, opt_mockStaticMethods?: boolean, opt_createProxy?: boolean);
-        }
-    }
+    } 
+    
 }

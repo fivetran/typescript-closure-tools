@@ -2,10 +2,9 @@
 
 declare module goog.vec {
 
-    class Float64Array extends Float64Array.__Class { }
-    module Float64Array {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Float64Array extends Float64Array__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Float64Array__Class  { 
     
             /**
              * Constructs a new Float64Array. The new array is initialized to all zeros.
@@ -68,8 +67,8 @@ declare module goog.vec {
              * @param {number=} opt_offset The offset in this array to start.
              */
             set(values: Float64Array, opt_offset?: number): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.vec.Float64Array {

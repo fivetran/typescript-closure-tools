@@ -4,10 +4,9 @@
 
 declare module goog.dom {
 
-    class ViewportSizeMonitor extends ViewportSizeMonitor.__Class { }
-    module ViewportSizeMonitor {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.EventTarget.__Class {
+    class ViewportSizeMonitor extends ViewportSizeMonitor__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ViewportSizeMonitor__Class extends goog.events.EventTarget__Class  { 
     
             /**
              * This class can be used to monitor changes in the viewport size.  Instances
@@ -45,8 +44,8 @@ declare module goog.dom {
              * @return {goog.math.Size} The viewport dimensions, in pixels.
              */
             getSize(): goog.math.Size;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.dom.ViewportSizeMonitor {

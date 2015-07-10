@@ -5,10 +5,9 @@
 
 declare module goog.testing.ui {
 
-    class RendererHarness extends RendererHarness.__Class { }
-    module RendererHarness {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.Disposable.__Class {
+    class RendererHarness extends RendererHarness__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class RendererHarness__Class extends goog.Disposable__Class  { 
     
             /**
              * A driver for testing renderers.
@@ -42,6 +41,6 @@ declare module goog.testing.ui {
              * Assert that the rendered element and the decorated element match.
              */
             assertDomMatches(): void;
-        }
-    }
+    } 
+    
 }

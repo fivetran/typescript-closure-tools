@@ -2,10 +2,9 @@
 
 declare module goog.graphics {
 
-    class AffineTransform extends AffineTransform.__Class { }
-    module AffineTransform {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class AffineTransform extends AffineTransform__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class AffineTransform__Class  { 
     
             /**
              * Creates a 2D affine transform. An affine transform performs a linear
@@ -290,8 +289,8 @@ declare module goog.graphics {
              * @return {boolean} whether the two transforms are equal.
              */
             equals(tx: goog.graphics.AffineTransform): boolean;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.graphics.AffineTransform {

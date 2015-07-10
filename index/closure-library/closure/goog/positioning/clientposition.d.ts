@@ -4,10 +4,9 @@
 
 declare module goog.positioning {
 
-    class ClientPosition extends ClientPosition.__Class { }
-    module ClientPosition {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.positioning.AbstractPosition.__Class {
+    class ClientPosition extends ClientPosition__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ClientPosition__Class extends goog.positioning.AbstractPosition__Class  { 
     
             /**
              * Encapsulates a popup position where the popup is positioned relative to the
@@ -43,6 +42,6 @@ declare module goog.positioning {
              * @type {goog.math.Coordinate}
              */
             coordinate: goog.math.Coordinate;
-        }
-    }
+    } 
+    
 }

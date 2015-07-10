@@ -3,10 +3,9 @@
 
 declare module goog.storage.mechanism {
 
-    class HTML5WebStorage extends HTML5WebStorage.__Class { }
-    module HTML5WebStorage {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.storage.mechanism.IterableMechanism.__Class {
+    class HTML5WebStorage extends HTML5WebStorage__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class HTML5WebStorage__Class extends goog.storage.mechanism.IterableMechanism__Class  { 
     
             /**
              * Provides a storage mechanism that uses HTML5 Web storage.
@@ -33,6 +32,6 @@ declare module goog.storage.mechanism {
              *     range.
              */
             key(index: number): string;
-        }
-    }
+    } 
+    
 }

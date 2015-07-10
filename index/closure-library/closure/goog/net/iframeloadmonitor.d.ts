@@ -3,10 +3,9 @@
 
 declare module goog.net {
 
-    class IframeLoadMonitor extends IframeLoadMonitor.__Class { }
-    module IframeLoadMonitor {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.EventTarget.__Class {
+    class IframeLoadMonitor extends IframeLoadMonitor__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class IframeLoadMonitor__Class extends goog.events.EventTarget__Class  { 
     
             /**
              * The correct way to determine whether a same-domain iframe has completed
@@ -37,8 +36,8 @@ declare module goog.net {
              *     monitors.
              */
             getIframe(): HTMLIFrameElement;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.net.IframeLoadMonitor {

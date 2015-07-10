@@ -5,10 +5,9 @@
 
 declare module goog.ui {
 
-    class Textarea extends Textarea.__Class { }
-    module Textarea {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.Control.__Class {
+    class Textarea extends Textarea__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Textarea__Class extends goog.ui.Control__Class  { 
     
             /**
              * A textarea control to handle growing/shrinking with textarea.value.
@@ -68,8 +67,8 @@ declare module goog.ui {
              * Resizes the textarea vertically.
              */
             resize(): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.Textarea {

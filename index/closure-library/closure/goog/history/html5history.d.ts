@@ -3,10 +3,9 @@
 
 declare module goog.history {
 
-    class Html5History extends Html5History.__Class { }
-    module Html5History {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.EventTarget.__Class {
+    class Html5History extends Html5History__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Html5History__Class extends goog.events.EventTarget__Class  { 
     
             /**
              * An implementation compatible with goog.History that uses the HTML5
@@ -71,8 +70,8 @@ declare module goog.history {
              * @return {string} The path prefix.
              */
             getPathPrefix(): string;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.history.Html5History {

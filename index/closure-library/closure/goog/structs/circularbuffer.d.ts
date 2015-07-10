@@ -2,10 +2,9 @@
 
 declare module goog.structs {
 
-    class CircularBuffer<T> extends CircularBuffer.__Class<T> { }
-    module CircularBuffer {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class<T> {
+    class CircularBuffer<T> extends CircularBuffer__Class<T> { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class CircularBuffer__Class<T>  { 
     
             /**
              * Class for CircularBuffer.
@@ -90,6 +89,6 @@ declare module goog.structs {
              *     or null if the buffer is empty.
              */
             getLast(): any /*T|any (null)*/;
-        }
-    }
+    } 
+    
 }

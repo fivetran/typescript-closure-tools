@@ -7,10 +7,9 @@
 
 declare module goog.net {
 
-    class IframeIo extends IframeIo.__Class { }
-    module IframeIo {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.EventTarget.__Class {
+    class IframeIo extends IframeIo__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class IframeIo__Class extends goog.events.EventTarget__Class  { 
     
             /**
              * Class for managing requests via iFrames.
@@ -247,16 +246,15 @@ declare module goog.net {
              *     (created in sendForm_).
              */
             getRequestIframe(): HTMLIFrameElement;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.net.IframeIo {
 
-    class IncrementalDataEvent extends IncrementalDataEvent.__Class { }
-    module IncrementalDataEvent {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.Event.__Class {
+    class IncrementalDataEvent extends IncrementalDataEvent__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class IncrementalDataEvent__Class extends goog.events.Event__Class  { 
     
             /**
              * Class for representing incremental data events.
@@ -272,8 +270,8 @@ declare module goog.net.IframeIo {
              * @type {Object}
              */
             data: Object;
-        }
-    }
+    } 
+    
 
     /**
      * Prefix for frame names

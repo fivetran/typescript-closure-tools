@@ -5,10 +5,9 @@
 
 declare module goog.ui.equation {
 
-    class PaletteManager extends PaletteManager.__Class { }
-    module PaletteManager {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.EventTarget.__Class {
+    class PaletteManager extends PaletteManager__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class PaletteManager__Class extends goog.events.EventTarget__Class  { 
     
             /**
              * Constructs the palette manager that manages all the palettes in Equation
@@ -70,6 +69,6 @@ declare module goog.ui.equation {
              * @return {!goog.dom.DomHelper} This object's DOM helper.
              */
             getDomHelper(): goog.dom.DomHelper;
-        }
-    }
+    } 
+    
 }

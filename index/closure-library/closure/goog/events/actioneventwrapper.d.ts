@@ -6,10 +6,9 @@
 
 declare module goog.events {
 
-    class ActionEventWrapper_ extends ActionEventWrapper_.__Class { }
-    module ActionEventWrapper_ {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class implements goog.events.EventWrapper {
+    class ActionEventWrapper_ extends ActionEventWrapper___Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ActionEventWrapper___Class implements goog.events.EventWrapper  { 
     
             /**
              * Event wrapper for action handling. Fires when an element is activated either
@@ -190,8 +189,8 @@ declare module goog.events {
              *     listener from.
              */
             unlisten(src: goog.events.Listenable, listener: any /*null*/, opt_capt?: boolean, opt_scope?: Object, opt_eventHandler?: goog.events.EventHandler<any>): void;
-        }
-    }
+    } 
+    
 
     /**
      * Singleton instance of ActionEventWrapper_.

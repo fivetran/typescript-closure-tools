@@ -17,10 +17,9 @@
 
 declare module goog.graphics {
 
-    class AbstractGraphics extends AbstractGraphics.__Class { }
-    module AbstractGraphics {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.Component.__Class {
+    class AbstractGraphics extends AbstractGraphics__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class AbstractGraphics__Class extends goog.ui.Component__Class  { 
     
             /**
              * Base class for the different graphics. You should never construct objects
@@ -384,6 +383,6 @@ declare module goog.graphics {
              * be done now.
              */
             resume(): void;
-        }
-    }
+    } 
+    
 }

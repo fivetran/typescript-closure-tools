@@ -7,10 +7,9 @@
 
 declare module goog.graphics.ext {
 
-    class Graphics extends Graphics.__Class { }
-    module Graphics {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.graphics.ext.Group.__Class {
+    class Graphics extends Graphics__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Graphics__Class extends goog.graphics.ext.Group__Class  { 
     
             /**
              * Wrapper for a graphics surface.
@@ -152,6 +151,6 @@ declare module goog.graphics.ext {
              * @param {Element} parentElement Parent element to render the component into.
              */
             render(parentElement: Element): void;
-        }
-    }
+    } 
+    
 }

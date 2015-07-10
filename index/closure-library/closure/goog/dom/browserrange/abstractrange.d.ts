@@ -5,10 +5,9 @@
 
 declare module goog.dom.browserrange {
 
-    class AbstractRange extends AbstractRange.__Class { }
-    module AbstractRange {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class AbstractRange extends AbstractRange__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class AbstractRange__Class  { 
     
             /**
              * The constructor for abstract ranges.  Don't call this from subclasses.
@@ -202,6 +201,6 @@ declare module goog.dom.browserrange {
              * @param {boolean} toStart Whether to collapse to the start of the range.
              */
             collapse(toStart: boolean): void;
-        }
-    }
+    } 
+    
 }

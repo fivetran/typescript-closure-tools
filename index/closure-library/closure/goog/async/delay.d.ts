@@ -3,10 +3,9 @@
 
 declare module goog.async {
 
-    class Delay extends Delay.__Class { }
-    module Delay {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.Disposable.__Class {
+    class Delay extends Delay__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Delay__Class extends goog.Disposable__Class  { 
     
             /**
              * A Delay object invokes the associated function after a specified delay. The
@@ -55,16 +54,15 @@ declare module goog.async {
              * @return {boolean} True if the delay is currently active, false otherwise.
              */
             isActive(): boolean;
-        }
-    }
+    } 
+    
 }
 
 declare module goog {
 
-    class Delay extends Delay.__Class { }
-    module Delay {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Delay extends Delay__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Delay__Class  { 
     
             /**
              * A deprecated alias.
@@ -73,6 +71,6 @@ declare module goog {
              * @final
              */
             constructor();
-        }
-    }
+    } 
+    
 }

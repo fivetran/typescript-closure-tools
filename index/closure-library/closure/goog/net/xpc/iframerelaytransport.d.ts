@@ -5,10 +5,9 @@
 
 declare module goog.net.xpc {
 
-    class IframeRelayTransport extends IframeRelayTransport.__Class { }
-    module IframeRelayTransport {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.net.xpc.Transport.__Class {
+    class IframeRelayTransport extends IframeRelayTransport__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class IframeRelayTransport__Class extends goog.net.xpc.Transport__Class  { 
     
             /**
              * Iframe relay transport. Creates hidden iframes containing a document
@@ -25,8 +24,8 @@ declare module goog.net.xpc {
              * @final
              */
             constructor(channel: goog.net.xpc.CrossPageChannel, opt_domHelper?: goog.dom.DomHelper);
-        }
-    }
+    } 
+    
 }
 
 declare module goog.net.xpc.IframeRelayTransport {

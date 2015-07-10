@@ -5,10 +5,9 @@
 
 declare module goog.soy {
 
-    class Renderer extends Renderer.__Class { }
-    module Renderer {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Renderer extends Renderer__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Renderer__Class  { 
     
             /**
              * Creates a new soy renderer. Note that the renderer will only be
@@ -224,8 +223,8 @@ declare module goog.soy {
              * @protected
              */
             handleRender(opt_node?: Node): void;
-        }
-    }
+    } 
+    
 
     interface InjectedDataSupplier {
     

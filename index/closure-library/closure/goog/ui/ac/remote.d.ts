@@ -5,10 +5,9 @@
 
 declare module goog.ui.ac {
 
-    class Remote extends Remote.__Class { }
-    module Remote {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.ac.AutoComplete.__Class {
+    class Remote extends Remote__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Remote__Class extends goog.ui.ac.AutoComplete__Class  { 
     
             /**
              * Factory class for building a remote autocomplete widget that autocompletes
@@ -67,6 +66,6 @@ declare module goog.ui.ac {
              *     incomplete request will be aborted; 0 means no timeout is set.
              */
             setTimeoutInterval(interval: number): void;
-        }
-    }
+    } 
+    
 }

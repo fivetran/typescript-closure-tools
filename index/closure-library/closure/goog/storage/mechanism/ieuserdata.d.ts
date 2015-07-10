@@ -3,10 +3,9 @@
 
 declare module goog.storage.mechanism {
 
-    class IEUserData extends IEUserData.__Class { }
-    module IEUserData {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.storage.mechanism.IterableMechanism.__Class {
+    class IEUserData extends IEUserData__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class IEUserData__Class extends goog.storage.mechanism.IterableMechanism__Class  { 
     
             /**
              * Provides a storage mechanism using IE userData.
@@ -26,8 +25,8 @@ declare module goog.storage.mechanism {
              * @return {boolean} True if the mechanism is available.
              */
             isAvailable(): boolean;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.storage.mechanism.IEUserData {

@@ -4,10 +4,9 @@
 
 declare module goog.ui {
 
-    class ButtonRenderer extends ButtonRenderer.__Class { }
-    module ButtonRenderer {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.ControlRenderer.__Class {
+    class ButtonRenderer extends ButtonRenderer__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ButtonRenderer__Class extends goog.ui.ControlRenderer__Class  { 
     
             /**
              * Default renderer for {@link goog.ui.Button}s.  Extends the superclass with
@@ -69,8 +68,8 @@ declare module goog.ui {
              * @protected
              */
             setCollapsed(button: goog.ui.Button, sides: number): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.ButtonRenderer {

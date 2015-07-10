@@ -3,10 +3,9 @@
 
 declare module goog.math.interpolator {
 
-    class Spline1 extends Spline1.__Class { }
-    module Spline1 {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class implements goog.math.interpolator.Interpolator1 {
+    class Spline1 extends Spline1__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Spline1__Class implements goog.math.interpolator.Interpolator1  { 
     
             /**
              * A one dimensional cubic spline interpolator with natural boundary conditions.
@@ -56,6 +55,6 @@ declare module goog.math.interpolator {
              * @return {!goog.math.interpolator.Interpolator1} The inverse interpolator.
              */
             getInverse(): goog.math.interpolator.Interpolator1;
-        }
-    }
+    } 
+    
 }

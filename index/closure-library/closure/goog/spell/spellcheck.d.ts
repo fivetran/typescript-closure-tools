@@ -4,10 +4,9 @@
 
 declare module goog.spell {
 
-    class SpellCheck extends SpellCheck.__Class { }
-    module SpellCheck {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.EventTarget.__Class {
+    class SpellCheck extends SpellCheck__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class SpellCheck__Class extends goog.events.EventTarget__Class  { 
     
             /**
              * Support class for spell checker components. Provides basic functionality
@@ -96,16 +95,15 @@ declare module goog.spell {
              * @return {Array.<string>} An array of suggestions for the given word.
              */
             getSuggestions(word: string): string[];
-        }
-    }
+    } 
+    
 }
 
 declare module goog.spell.SpellCheck {
 
-    class WordChangedEvent extends WordChangedEvent.__Class { }
-    module WordChangedEvent {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.Event.__Class {
+    class WordChangedEvent extends WordChangedEvent__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class WordChangedEvent__Class extends goog.events.Event__Class  { 
     
             /**
              * Object representing a word changed event. Fired when the status of a word
@@ -131,8 +129,8 @@ declare module goog.spell.SpellCheck {
              * @type {goog.spell.SpellCheck.WordStatus}
              */
             status: goog.spell.SpellCheck.WordStatus;
-        }
-    }
+    } 
+    
 
     /**
      * Constants for event names

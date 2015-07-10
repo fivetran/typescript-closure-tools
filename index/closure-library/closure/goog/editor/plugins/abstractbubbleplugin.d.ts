@@ -6,10 +6,9 @@
 
 declare module goog.editor.plugins {
 
-    class AbstractBubblePlugin extends AbstractBubblePlugin.__Class { }
-    module AbstractBubblePlugin {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.editor.Plugin.__Class {
+    class AbstractBubblePlugin extends AbstractBubblePlugin__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class AbstractBubblePlugin__Class extends goog.editor.Plugin__Class  { 
     
             /**
              * Base class for bubble plugins. This is used for to connect user behavior
@@ -227,8 +226,8 @@ declare module goog.editor.plugins {
              * @protected
              */
             setupLink(link: Element, linkId: string, opt_container?: Element): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.editor.plugins.AbstractBubblePlugin {

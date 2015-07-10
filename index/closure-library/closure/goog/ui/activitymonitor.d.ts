@@ -4,10 +4,9 @@
 
 declare module goog.ui {
 
-    class ActivityMonitor extends ActivityMonitor.__Class { }
-    module ActivityMonitor {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.EventTarget.__Class {
+    class ActivityMonitor extends ActivityMonitor__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ActivityMonitor__Class extends goog.events.EventTarget__Class  { 
     
             /**
              * Once initialized with a document, the activity monitor can be queried for
@@ -93,8 +92,8 @@ declare module goog.ui {
              * @return {number} last event time.
              */
             getLastEventTime(): number;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.ActivityMonitor {

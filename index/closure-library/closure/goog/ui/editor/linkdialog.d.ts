@@ -6,10 +6,9 @@
 
 declare module goog.ui.editor {
 
-    class LinkDialog extends LinkDialog.__Class { }
-    module LinkDialog {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.editor.AbstractDialog.__Class {
+    class LinkDialog extends LinkDialog__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class LinkDialog__Class extends goog.ui.editor.AbstractDialog__Class  { 
     
             /**
              * A type of goog.ui.editor.AbstractDialog for editing/creating a link.
@@ -66,16 +65,15 @@ declare module goog.ui.editor {
              * @param {boolean} enable Whether to enable the feature.
              */
             setAutogenFeatureEnabled(enable: boolean): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.editor.LinkDialog {
 
-    class OkEvent extends OkEvent.__Class { }
-    module OkEvent {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.Event.__Class {
+    class OkEvent extends OkEvent__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class OkEvent__Class extends goog.events.Event__Class  { 
     
             /**
              * OK event object for the link dialog.
@@ -114,13 +112,12 @@ declare module goog.ui.editor.LinkDialog {
              * @type {boolean}
              */
             noFollow: boolean;
-        }
-    }
+    } 
+    
 
-    class BeforeTestLinkEvent extends BeforeTestLinkEvent.__Class { }
-    module BeforeTestLinkEvent {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.Event.__Class {
+    class BeforeTestLinkEvent extends BeforeTestLinkEvent__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class BeforeTestLinkEvent__Class extends goog.events.Event__Class  { 
     
             /**
              * Event fired before testing a link by opening it in another window.
@@ -137,8 +134,8 @@ declare module goog.ui.editor.LinkDialog {
              * @type {string}
              */
             url: string;
-        }
-    }
+    } 
+    
 
     /**
      * Events specific to the link dialog.

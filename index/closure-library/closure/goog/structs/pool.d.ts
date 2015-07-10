@@ -3,10 +3,9 @@
 
 declare module goog.structs {
 
-    class Pool<T> extends Pool.__Class<T> { }
-    module Pool {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class<T> extends goog.Disposable.__Class {
+    class Pool<T> extends Pool__Class<T> { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Pool__Class<T> extends goog.Disposable__Class  { 
     
             /**
              * A generic pool class. If min is greater than max, an error is thrown.
@@ -141,6 +140,6 @@ declare module goog.structs {
              * @return {boolean} Whether the pool contains no objects.
              */
             isEmpty(): boolean;
-        }
-    }
+    } 
+    
 }

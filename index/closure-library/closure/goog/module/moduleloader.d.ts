@@ -7,10 +7,9 @@
 
 declare module goog.module {
 
-    class ModuleLoader extends ModuleLoader.__Class { }
-    module ModuleLoader {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.EventTarget.__Class implements goog.module.AbstractModuleLoader {
+    class ModuleLoader extends ModuleLoader__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ModuleLoader__Class extends goog.events.EventTarget__Class implements goog.module.AbstractModuleLoader  { 
     
             /**
              * A class that loads Javascript modules.
@@ -83,16 +82,15 @@ declare module goog.module {
              * @param {!goog.module.ModuleInfo} moduleInfo The module info.
              */
             prefetchModule(id: string, moduleInfo: goog.module.ModuleInfo): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.module.ModuleLoader {
 
-    class Event extends Event.__Class { }
-    module Event {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.Event.__Class {
+    class Event extends Event__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Event__Class extends goog.events.Event__Class  { 
     
             /**
              * @param {goog.module.ModuleLoader.EventType} type The type.
@@ -107,13 +105,12 @@ declare module goog.module.ModuleLoader {
              * @type {Array.<string>}
              */
             moduleIds: string[];
-        }
-    }
+    } 
+    
 
-    class LoadStatus extends LoadStatus.__Class { }
-    module LoadStatus {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class LoadStatus extends LoadStatus__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class LoadStatus__Class  { 
     
             /**
              * A class that keeps the state of the module during the loading process. It is
@@ -153,8 +150,8 @@ declare module goog.module.ModuleLoader {
              * @type {?function(?number)}
              */
             errorFn: (_0: number) => any /*missing*/;
-        }
-    }
+    } 
+    
 
     /**
      * @return {boolean} Whether sourceURL affects stack traces.

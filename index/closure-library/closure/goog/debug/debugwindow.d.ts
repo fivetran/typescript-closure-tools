@@ -4,10 +4,9 @@
 
 declare module goog.debug {
 
-    class DebugWindow extends DebugWindow.__Class { }
-    module DebugWindow {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class DebugWindow extends DebugWindow__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class DebugWindow__Class  { 
     
             /**
              * Provides a debug DebugWindow that is bound to the goog.debug.Logger.
@@ -181,8 +180,8 @@ declare module goog.debug {
              * @param {number} size New size of the circular buffer.
              */
             resetBufferWithNewSize(size: number): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.debug.DebugWindow {

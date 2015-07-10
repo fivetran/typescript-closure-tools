@@ -4,10 +4,9 @@
 
 declare module goog.debug {
 
-    class DivConsole extends DivConsole.__Class { }
-    module DivConsole {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class DivConsole extends DivConsole__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class DivConsole__Class  { 
     
             /**
              * A class for visualising logger calls in a div element.
@@ -55,6 +54,6 @@ declare module goog.debug {
              * Clears the console.
              */
             clear(): void;
-        }
-    }
+    } 
+    
 }

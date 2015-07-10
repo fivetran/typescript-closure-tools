@@ -4,10 +4,9 @@
 
 declare module goog.ui {
 
-    class ProgressBar extends ProgressBar.__Class { }
-    module ProgressBar {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.Component.__Class {
+    class ProgressBar extends ProgressBar__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ProgressBar__Class extends goog.ui.Component__Class  { 
     
             /**
              * This creates a progress bar object.
@@ -73,8 +72,8 @@ declare module goog.ui {
              * @param {?number} step  The step size.
              */
             setStep(step: number): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.ProgressBar {

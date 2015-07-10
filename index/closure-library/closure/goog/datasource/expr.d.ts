@@ -3,10 +3,9 @@
 
 declare module goog.ds {
 
-    class Expr extends Expr.__Class { }
-    module Expr {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Expr extends Expr__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Expr__Class  { 
     
             /**
              * Create a new expression. An expression uses a string expression language, and
@@ -75,8 +74,8 @@ declare module goog.ds {
              * @return {goog.ds.DataNode} Matching nodes, or null if doesn't exist.
              */
             getNode(opt_ds?: goog.ds.DataNode, opt_canCreate?: boolean): goog.ds.DataNode;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ds.Expr {

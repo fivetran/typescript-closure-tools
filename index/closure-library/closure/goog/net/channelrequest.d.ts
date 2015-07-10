@@ -6,10 +6,9 @@
 
 declare module goog.net {
 
-    class ChannelRequest extends ChannelRequest.__Class { }
-    module ChannelRequest {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class ChannelRequest extends ChannelRequest__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ChannelRequest__Class  { 
     
             /**
              * Creates a ChannelRequest object which encapsulates a request to the server.
@@ -185,8 +184,8 @@ declare module goog.net {
              * @return {?number} The time the request started, as returned by goog.now().
              */
             getRequestStartTime(): number;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.net.ChannelRequest {

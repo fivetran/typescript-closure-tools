@@ -5,10 +5,9 @@
 
 declare module goog.debug {
 
-    class ErrorHandler extends ErrorHandler.__Class { }
-    module ErrorHandler {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.Disposable.__Class implements goog.debug.EntryPointMonitor {
+    class ErrorHandler extends ErrorHandler__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ErrorHandler__Class extends goog.Disposable__Class implements goog.debug.EntryPointMonitor  { 
     
             /**
              * The ErrorHandler can be used to to wrap functions with a try/catch
@@ -113,16 +112,15 @@ declare module goog.debug {
              *     a wrapped function created by this monitor.
              */
             unwrap(fn: Function): Function;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.debug.ErrorHandler {
 
-    class ProtectedFunctionError extends ProtectedFunctionError.__Class { }
-    module ProtectedFunctionError {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.debug.Error.__Class {
+    class ProtectedFunctionError extends ProtectedFunctionError__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ProtectedFunctionError__Class extends goog.debug.Error__Class  { 
     
             /**
              * Error thrown to the caller of a protected entry point if the entry point
@@ -139,8 +137,8 @@ declare module goog.debug.ErrorHandler {
              * @type {*}
              */
             cause: any;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.debug.ErrorHandler.ProtectedFunctionError {

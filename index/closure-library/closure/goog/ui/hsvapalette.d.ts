@@ -4,10 +4,9 @@
 
 declare module goog.ui {
 
-    class HsvaPalette extends HsvaPalette.__Class { }
-    module HsvaPalette {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.HsvPalette.__Class {
+    class HsvaPalette extends HsvaPalette__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class HsvaPalette__Class extends goog.ui.HsvPalette__Class  { 
     
             /**
              * Creates an HSVA palette. Allows a user to select the hue, saturation,
@@ -44,6 +43,6 @@ declare module goog.ui {
              * @param {string} color The selected color with alpha.
              */
             setColorRgbaHex(color: string): void;
-        }
-    }
+    } 
+    
 }

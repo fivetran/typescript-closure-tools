@@ -4,10 +4,9 @@
 
 declare module goog.ui {
 
-    class CookieEditor extends CookieEditor.__Class { }
-    module CookieEditor {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.Component.__Class {
+    class CookieEditor extends CookieEditor__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class CookieEditor__Class extends goog.ui.Component__Class  { 
     
             /**
              * Displays and edits the value of a cookie.
@@ -23,6 +22,6 @@ declare module goog.ui {
              * @param {string} cookieKey Cookie key.
              */
             selectCookie(cookieKey: string): void;
-        }
-    }
+    } 
+    
 }

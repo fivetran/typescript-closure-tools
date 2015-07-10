@@ -7,10 +7,9 @@
 
 declare module goog.graphics.ext {
 
-    class StrokeAndFillElement extends StrokeAndFillElement.__Class { }
-    module StrokeAndFillElement {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.graphics.ext.Element.__Class {
+    class StrokeAndFillElement extends StrokeAndFillElement__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class StrokeAndFillElement__Class extends goog.graphics.ext.Element__Class  { 
     
             /**
              * Interface for a graphics element that has a stroke and fill.
@@ -35,6 +34,6 @@ declare module goog.graphics.ext {
              * @param {goog.graphics.Stroke?} stroke The stroke object.
              */
             setStroke(stroke: goog.graphics.Stroke): void;
-        }
-    }
+    } 
+    
 }

@@ -3,10 +3,9 @@
 
 declare module goog.ui {
 
-    class SubMenuRenderer extends SubMenuRenderer.__Class { }
-    module SubMenuRenderer {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.MenuItemRenderer.__Class {
+    class SubMenuRenderer extends SubMenuRenderer__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class SubMenuRenderer__Class extends goog.ui.MenuItemRenderer__Class  { 
     
             /**
              * Default renderer for {@link goog.ui.SubMenu}s.  Each item has the following
@@ -22,8 +21,8 @@ declare module goog.ui {
              * @final
              */
             constructor();
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.SubMenuRenderer {

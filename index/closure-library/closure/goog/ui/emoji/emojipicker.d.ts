@@ -7,10 +7,9 @@
 
 declare module goog.ui.emoji {
 
-    class EmojiPicker extends EmojiPicker.__Class { }
-    module EmojiPicker {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.Component.__Class {
+    class EmojiPicker extends EmojiPicker__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class EmojiPicker__Class extends goog.ui.Component__Class  { 
     
             /**
              * Creates a new, empty emoji picker. An emoji picker is a grid of emoji, each
@@ -214,8 +213,8 @@ declare module goog.ui.emoji {
              *     or null if it does not exist or is a single page picker.
              */
             getTabPane(): goog.ui.TabPane;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.emoji.EmojiPicker {

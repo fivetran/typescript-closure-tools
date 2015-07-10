@@ -3,10 +3,9 @@
 
 declare module goog.debug {
 
-    class FancyWindow extends FancyWindow.__Class { }
-    module FancyWindow {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.debug.DebugWindow.__Class {
+    class FancyWindow extends FancyWindow__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class FancyWindow__Class extends goog.debug.DebugWindow__Class  { 
     
             /**
              * Provides a Fancy extension to the DebugWindow class.  Allows filtering based
@@ -18,8 +17,8 @@ declare module goog.debug {
              * @extends {goog.debug.DebugWindow}
              */
             constructor(opt_identifier?: string, opt_prefix?: string);
-        }
-    }
+    } 
+    
 }
 
 declare module goog.debug.FancyWindow {

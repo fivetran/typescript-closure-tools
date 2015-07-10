@@ -2,10 +2,9 @@
 
 declare module goog.math {
 
-    class Range extends Range.__Class { }
-    module Range {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Range extends Range__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Range__Class  { 
     
             /**
              * A number range.
@@ -48,8 +47,8 @@ declare module goog.math {
              * @param {!goog.math.Range} range
              */
             includeRange(range: goog.math.Range): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.math.Range {

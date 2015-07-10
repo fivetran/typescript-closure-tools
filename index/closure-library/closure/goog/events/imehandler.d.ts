@@ -5,10 +5,9 @@
 
 declare module goog.events {
 
-    class ImeHandler extends ImeHandler.__Class { }
-    module ImeHandler {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.EventTarget.__Class {
+    class ImeHandler extends ImeHandler__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ImeHandler__Class extends goog.events.EventTarget__Class  { 
     
             /**
              * Dispatches high-level events for IMEs.
@@ -23,16 +22,15 @@ declare module goog.events {
              * @return {boolean} Whether an IME is active.
              */
             isImeMode(): boolean;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.events.ImeHandler {
 
-    class Event extends Event.__Class { }
-    module Event {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.Event.__Class {
+    class Event extends Event__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Event__Class extends goog.events.Event__Class  { 
     
             /**
              * An event fired by ImeHandler.
@@ -49,8 +47,8 @@ declare module goog.events.ImeHandler {
              * @type {goog.events.BrowserEvent}
              */
             reason: goog.events.BrowserEvent;
-        }
-    }
+    } 
+    
 
     /**
      * Event types fired by ImeHandler. These events do not make any guarantees

@@ -11,10 +11,9 @@
 
 declare module goog.ui {
 
-    class Select extends Select.__Class { }
-    module Select {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.MenuButton.__Class {
+    class Select extends Select__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Select__Class extends goog.ui.MenuButton__Class  { 
     
             /**
              * A selection control.  Extends {@link goog.ui.MenuButton} by composing a
@@ -185,6 +184,6 @@ declare module goog.ui {
              * @protected
              */
             updateCaption(): void;
-        }
-    }
+    } 
+    
 }

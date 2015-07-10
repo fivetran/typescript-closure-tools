@@ -4,10 +4,9 @@
 
 declare module goog.testing.net {
 
-    class XhrIoPool extends XhrIoPool.__Class { }
-    module XhrIoPool {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.net.XhrIoPool.__Class {
+    class XhrIoPool extends XhrIoPool__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class XhrIoPool__Class extends goog.net.XhrIoPool__Class  { 
     
             /**
              * A pool containing a single mock XhrIo object.
@@ -25,6 +24,6 @@ declare module goog.testing.net {
              * @return {!goog.testing.net.XhrIo} The mock XhrIo.
              */
             getXhr(): goog.testing.net.XhrIo;
-        }
-    }
+    } 
+    
 }

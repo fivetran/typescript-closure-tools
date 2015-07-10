@@ -2,10 +2,9 @@
 
 declare module goog.math {
 
-    class ExponentialBackoff extends ExponentialBackoff.__Class { }
-    module ExponentialBackoff {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class ExponentialBackoff extends ExponentialBackoff__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ExponentialBackoff__Class  { 
     
             /**
              * @constructor
@@ -34,6 +33,6 @@ declare module goog.math {
              * Initiates a backoff.
              */
             backoff(): void;
-        }
-    }
+    } 
+    
 }

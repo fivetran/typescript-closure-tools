@@ -3,10 +3,9 @@
 
 declare module goog.graphics {
 
-    class Path extends Path.__Class { }
-    module Path {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Path extends Path__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Path__Class  { 
     
             /**
              * Creates a path object. A path is a sequence of segments and may be open or
@@ -185,8 +184,8 @@ declare module goog.graphics {
              * @return {boolean} Whether the path is empty.
              */
             isEmpty(): boolean;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.graphics.Path {

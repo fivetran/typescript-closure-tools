@@ -6,10 +6,9 @@
 
 declare module goog.ui {
 
-    class Component extends Component.__Class { }
-    module Component {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.EventTarget.__Class {
+    class Component extends Component__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Component__Class extends goog.events.EventTarget__Class  { 
     
             /**
              * Default implementation of UI component.
@@ -493,8 +492,8 @@ declare module goog.ui {
              * @return {!Array.<goog.ui.Component>} The removed components if any.
              */
             removeChildren(opt_unrender?: boolean): goog.ui.Component[];
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.Component {

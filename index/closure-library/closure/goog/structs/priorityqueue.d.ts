@@ -3,10 +3,9 @@
 
 declare module goog.structs {
 
-    class PriorityQueue<VALUE> extends PriorityQueue.__Class<VALUE> { }
-    module PriorityQueue {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class<VALUE> extends goog.structs.Heap.__Class<number,VALUE> {
+    class PriorityQueue<VALUE> extends PriorityQueue__Class<VALUE> { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class PriorityQueue__Class<VALUE> extends goog.structs.Heap__Class<number,VALUE>  { 
     
             /**
              * Class for Priority Queue datastructure.
@@ -32,6 +31,6 @@ declare module goog.structs {
              *     the queue is empty.
              */
             dequeue(): VALUE;
-        }
-    }
+    } 
+    
 }

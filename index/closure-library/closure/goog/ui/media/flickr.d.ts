@@ -5,10 +5,9 @@
 
 declare module goog.ui.media {
 
-    class FlickrSet extends FlickrSet.__Class { }
-    module FlickrSet {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.media.MediaRenderer.__Class {
+    class FlickrSet extends FlickrSet__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class FlickrSet__Class extends goog.ui.media.MediaRenderer__Class  { 
     
             /**
              * Subclasses a goog.ui.media.MediaRenderer to provide a FlickrSet specific
@@ -33,13 +32,12 @@ declare module goog.ui.media {
              * @final
              */
             constructor();
-        }
-    }
+    } 
+    
 
-    class FlickrSetModel extends FlickrSetModel.__Class { }
-    module FlickrSetModel {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.media.MediaModel.__Class {
+    class FlickrSetModel extends FlickrSetModel__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class FlickrSetModel__Class extends goog.ui.media.MediaModel__Class  { 
     
             /**
              * The {@code goog.ui.media.FlickrAlbum} media data model. It stores a required
@@ -67,8 +65,8 @@ declare module goog.ui.media {
              * @return {string} The Flickr set id.
              */
             getSetId(): string;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.media.FlickrSet {

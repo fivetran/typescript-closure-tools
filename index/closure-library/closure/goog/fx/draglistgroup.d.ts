@@ -7,10 +7,9 @@
 
 declare module goog.fx {
 
-    class DragListGroup extends DragListGroup.__Class { }
-    module DragListGroup {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.EventTarget.__Class {
+    class DragListGroup extends DragListGroup__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class DragListGroup__Class extends goog.events.EventTarget__Class  { 
     
             /**
              * A class representing a group of one or more "drag lists" with items that can
@@ -189,13 +188,12 @@ declare module goog.fx {
              * @protected
              */
             insertCurrHoverItem(): void;
-        }
-    }
+    } 
+    
 
-    class DragListGroupEvent extends DragListGroupEvent.__Class { }
-    module DragListGroupEvent {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.Event.__Class {
+    class DragListGroupEvent extends DragListGroupEvent__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class DragListGroupEvent__Class extends goog.events.Event__Class  { 
     
             /**
              * The event object dispatched by DragListGroup.
@@ -308,8 +306,8 @@ declare module goog.fx {
              * @type {Element|undefined}
              */
             hoverNextItem: any /*Element|any (undefined)*/;
-        }
-    }
+    } 
+    
 
     /**
      * Enum to indicate the direction that a drag list grows.

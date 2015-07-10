@@ -5,10 +5,9 @@
 
 declare module goog.db {
 
-    class Cursor extends Cursor.__Class { }
-    module Cursor {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.EventTarget.__Class {
+    class Cursor extends Cursor__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Cursor__Class extends goog.events.EventTarget__Class  { 
     
             /**
              * Creates a new IDBCursor wrapper object. Should not be created directly,
@@ -62,8 +61,8 @@ declare module goog.db {
              *     the cursor is outside its range, this is undefined.
              */
             getKey(): IDBKeyType;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.db.Cursor {

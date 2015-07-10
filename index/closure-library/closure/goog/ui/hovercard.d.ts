@@ -6,10 +6,9 @@
 
 declare module goog.ui {
 
-    class HoverCard extends HoverCard.__Class { }
-    module HoverCard {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.AdvancedTooltip.__Class {
+    class HoverCard extends HoverCard__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class HoverCard__Class extends goog.ui.AdvancedTooltip__Class  { 
     
             /**
              * Create a hover card object.  Hover cards extend tooltips in that they don't
@@ -135,16 +134,15 @@ declare module goog.ui {
              *     dom if checking descendants.
              */
             setMaxSearchSteps(maxSearchSteps: number): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.HoverCard {
 
-    class TriggerEvent extends TriggerEvent.__Class { }
-    module TriggerEvent {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.Event.__Class {
+    class TriggerEvent extends TriggerEvent__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class TriggerEvent__Class extends goog.events.Event__Class  { 
     
             /**
              * Create a trigger event for specified anchor and optional data.
@@ -169,8 +167,8 @@ declare module goog.ui.HoverCard {
              * @type {Object|undefined}
              */
             data: any /*Object|any (undefined)*/;
-        }
-    }
+    } 
+    
 
     /**
      * Enum for event type fired by HoverCard.

@@ -4,10 +4,9 @@
 
 declare module goog.net.jsloader {
 
-    class Error extends Error.__Class { }
-    module Error {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.debug.Error.__Class {
+    class Error extends Error__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Error__Class extends goog.debug.Error__Class  { 
     
             /**
              * A jsloader error.
@@ -26,8 +25,8 @@ declare module goog.net.jsloader {
              * @type {goog.net.jsloader.ErrorCode}
              */
             code: goog.net.jsloader.ErrorCode;
-        }
-    }
+    } 
+    
 
     /**
      * The default length of time, in milliseconds, we are prepared to wait for a

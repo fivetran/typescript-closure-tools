@@ -6,10 +6,9 @@
 
 declare module goog.graphics {
 
-    class RectElement extends RectElement.__Class { }
-    module RectElement {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.graphics.StrokeAndFillElement.__Class {
+    class RectElement extends RectElement__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class RectElement__Class extends goog.graphics.StrokeAndFillElement__Class  { 
     
             /**
              * Interface for a graphics rectangle element.
@@ -41,6 +40,6 @@ declare module goog.graphics {
              * @param {number} height Height of rectangle.
              */
             setSize(width: number, height: number): void;
-        }
-    }
+    } 
+    
 }

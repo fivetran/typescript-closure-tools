@@ -3,10 +3,9 @@
 
 declare module goog.net {
 
-    class NetworkTester extends NetworkTester.__Class { }
-    module NetworkTester {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class NetworkTester extends NetworkTester__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class NetworkTester__Class  { 
     
             /**
              * Creates an instance of goog.net.NetworkTester which can be used to test
@@ -91,8 +90,8 @@ declare module goog.net {
              * @param {boolean} succeeded Whether the image load succeeded.
              */
             onResult(succeeded: boolean): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.net.NetworkTester {

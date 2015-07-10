@@ -4,10 +4,9 @@
 
 declare module goog.i18n {
 
-    class DateTimeFormat extends DateTimeFormat.__Class { }
-    module DateTimeFormat {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class DateTimeFormat extends DateTimeFormat__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class DateTimeFormat__Class  { 
     
             /**
              * Construct a DateTimeFormat object based on current locale.
@@ -52,8 +51,8 @@ declare module goog.i18n {
              *    object (for instance goog.date.Date) using a pattern with time fields.
              */
             format(date: goog.date.Date, opt_timeZone?: goog.i18n.TimeZone): string;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.i18n.DateTimeFormat {

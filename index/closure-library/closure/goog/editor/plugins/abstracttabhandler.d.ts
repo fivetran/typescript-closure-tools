@@ -4,10 +4,9 @@
 
 declare module goog.editor.plugins {
 
-    class AbstractTabHandler extends AbstractTabHandler.__Class { }
-    module AbstractTabHandler {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.editor.Plugin.__Class {
+    class AbstractTabHandler extends AbstractTabHandler__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class AbstractTabHandler__Class extends goog.editor.Plugin__Class  { 
     
             /**
              * Plugin to handle tab keys. Specific tab behavior defined by subclasses.
@@ -24,6 +23,6 @@ declare module goog.editor.plugins {
              * @protected
              */
             handleTabKey(e: goog.events.Event): boolean;
-        }
-    }
+    } 
+    
 }

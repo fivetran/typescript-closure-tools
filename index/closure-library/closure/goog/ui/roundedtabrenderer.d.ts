@@ -5,10 +5,9 @@
 
 declare module goog.ui {
 
-    class RoundedTabRenderer extends RoundedTabRenderer.__Class { }
-    module RoundedTabRenderer {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.TabRenderer.__Class {
+    class RoundedTabRenderer extends RoundedTabRenderer__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class RoundedTabRenderer__Class extends goog.ui.TabRenderer__Class  { 
     
             /**
              * Rounded corner tab renderer for {@link goog.ui.Tab}s.
@@ -108,8 +107,8 @@ declare module goog.ui {
              * @protected
              */
             createEdge(dom: goog.dom.DomHelper, isTopEdge: boolean): Element;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.RoundedTabRenderer {

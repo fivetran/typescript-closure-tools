@@ -4,10 +4,9 @@
 
 declare module goog.positioning {
 
-    class AbsolutePosition extends AbsolutePosition.__Class { }
-    module AbsolutePosition {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.positioning.AbstractPosition.__Class {
+    class AbsolutePosition extends AbsolutePosition__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class AbsolutePosition__Class extends goog.positioning.AbstractPosition__Class  { 
     
             /**
              * Encapsulates a popup position where the popup absolutely positioned by
@@ -41,6 +40,6 @@ declare module goog.positioning {
              * @type {goog.math.Coordinate}
              */
             coordinate: goog.math.Coordinate;
-        }
-    }
+    } 
+    
 }

@@ -2,10 +2,9 @@
 
 declare module goog.graphics {
 
-    class Font extends Font.__Class { }
-    module Font {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Font extends Font__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Font__Class  { 
     
             /**
              * This class represents a font to be used with a renderer.
@@ -42,6 +41,6 @@ declare module goog.graphics {
              * @type {boolean}
              */
             italic: boolean;
-        }
-    }
+    } 
+    
 }

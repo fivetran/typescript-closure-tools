@@ -2,10 +2,9 @@
 
 declare module goog.ui.ac {
 
-    class CachingMatcher extends CachingMatcher.__Class { }
-    module CachingMatcher {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class CachingMatcher extends CachingMatcher__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class CachingMatcher__Class  { 
     
             /**
              * A matcher which wraps another (typically slow) matcher and
@@ -79,6 +78,6 @@ declare module goog.ui.ac {
              * @param {Function} matchHandler callback to execute after matching.
              */
             requestMatchingRows(token: string, maxMatches: number, matchHandler: Function): void;
-        }
-    }
+    } 
+    
 }

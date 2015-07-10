@@ -6,10 +6,9 @@
 
 declare module goog.ui {
 
-    class ServerChart extends ServerChart.__Class { }
-    module ServerChart {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.Component.__Class {
+    class ServerChart extends ServerChart__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ServerChart__Class extends goog.ui.Component__Class  { 
     
             /**
              * Will construct a chart using Google's chartserver.
@@ -628,16 +627,15 @@ declare module goog.ui {
              *     if the set number is not given.
              */
             getData(opt_setNumber?: number): any[];
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.ServerChart {
 
-    class UriTooLongEvent extends UriTooLongEvent.__Class { }
-    module UriTooLongEvent {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.Event.__Class {
+    class UriTooLongEvent extends UriTooLongEvent__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class UriTooLongEvent__Class extends goog.events.Event__Class  { 
     
             /**
              * Class for the event dispatched on the ServerChart when the resulting URI
@@ -654,8 +652,8 @@ declare module goog.ui.ServerChart {
              * @type {string}
              */
             uri: string;
-        }
-    }
+    } 
+    
 
     /**
      * Base scheme-independent URI for the chart renderer.

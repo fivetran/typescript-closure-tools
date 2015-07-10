@@ -4,10 +4,9 @@
 
 declare module goog.ui {
 
-    class TriStateMenuItem extends TriStateMenuItem.__Class { }
-    module TriStateMenuItem {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class TriStateMenuItem extends TriStateMenuItem__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class TriStateMenuItem__Class  { 
     
             /**
              * Class representing a three state checkbox menu item.
@@ -96,8 +95,8 @@ declare module goog.ui {
              * @param {goog.ui.TriStateMenuItem.State} state The checked state.
              */
             setCheckedState(state: goog.ui.TriStateMenuItem.State): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.TriStateMenuItem {

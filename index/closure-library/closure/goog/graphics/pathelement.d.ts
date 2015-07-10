@@ -7,10 +7,9 @@
 
 declare module goog.graphics {
 
-    class PathElement extends PathElement.__Class { }
-    module PathElement {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.graphics.StrokeAndFillElement.__Class {
+    class PathElement extends PathElement__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class PathElement__Class extends goog.graphics.StrokeAndFillElement__Class  { 
     
             /**
              * Interface for a graphics path element.
@@ -34,6 +33,6 @@ declare module goog.graphics {
              * @param {!goog.graphics.Path} path The path object to draw.
              */
             setPath(path: goog.graphics.Path): void;
-        }
-    }
+    } 
+    
 }

@@ -3,10 +3,9 @@
 
 declare module goog.math {
 
-    class Vec3 extends Vec3.__Class { }
-    module Vec3 {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.math.Coordinate3.__Class {
+    class Vec3 extends Vec3__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Vec3__Class extends goog.math.Coordinate3__Class  { 
     
             /**
              * Class for a three-dimensional vector object and assorted functions useful for
@@ -103,8 +102,8 @@ declare module goog.math {
              *     x, y, and z, respectively.
              */
             equals(b: goog.math.Vec3): boolean;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.math.Vec3 {

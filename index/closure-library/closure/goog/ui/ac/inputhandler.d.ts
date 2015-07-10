@@ -7,10 +7,9 @@
 
 declare module goog.ui.ac {
 
-    class InputHandler extends InputHandler.__Class { }
-    module InputHandler {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.Disposable.__Class {
+    class InputHandler extends InputHandler__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class InputHandler__Class extends goog.Disposable__Class  { 
     
             /**
              * Class for managing the interaction between an auto-complete object and a
@@ -296,8 +295,8 @@ declare module goog.ui.ac {
              * @protected
              */
             parseToken(): string;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.ac.InputHandler {

@@ -3,10 +3,9 @@
 
 declare module goog.asserts {
 
-    class AssertionError extends AssertionError.__Class { }
-    module AssertionError {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.debug.Error.__Class {
+    class AssertionError extends AssertionError__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class AssertionError__Class extends goog.debug.Error__Class  { 
     
             /**
              * Error object for failed assertions.
@@ -24,8 +23,8 @@ declare module goog.asserts {
              * @type {string}
              */
             messagePattern: string;
-        }
-    }
+    } 
+    
 
     /**
      * Checks if the condition evaluates to true if goog.asserts.ENABLE_ASSERTS is

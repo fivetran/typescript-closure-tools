@@ -7,10 +7,9 @@
 
 declare module goog.ui {
 
-    class TabBar extends TabBar.__Class { }
-    module TabBar {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.Container.__Class {
+    class TabBar extends TabBar__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class TabBar__Class extends goog.ui.Container__Class  { 
     
             /**
              * Tab bar UI component.  A tab bar contains tabs, rendered above, below,
@@ -136,8 +135,8 @@ declare module goog.ui {
              * @protected
              */
             handleTabHide(e: goog.events.Event): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.TabBar {

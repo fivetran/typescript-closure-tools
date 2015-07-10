@@ -3,10 +3,9 @@
 
 declare module goog.proto2 {
 
-    class PbLiteSerializer extends PbLiteSerializer.__Class { }
-    module PbLiteSerializer {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.proto2.LazyDeserializer.__Class {
+    class PbLiteSerializer extends PbLiteSerializer__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class PbLiteSerializer__Class extends goog.proto2.LazyDeserializer__Class  { 
     
             /**
              * PB-Lite serializer.
@@ -27,6 +26,6 @@ declare module goog.proto2 {
              *     0-indexed protos.
              */
             setZeroIndexed(zeroIndexing: boolean): void;
-        }
-    }
+    } 
+    
 }

@@ -9,10 +9,9 @@
 
 declare module goog.ui {
 
-    class InputDatePicker extends InputDatePicker.__Class { }
-    module InputDatePicker {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.Component.__Class {
+    class InputDatePicker extends InputDatePicker__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class InputDatePicker__Class extends goog.ui.Component__Class  { 
     
             /**
              * Input date picker widget.
@@ -92,6 +91,6 @@ declare module goog.ui {
              * See goog.ui.PopupDatePicker.hidePopup().
              */
             hidePopup(): void;
-        }
-    }
+    } 
+    
 }

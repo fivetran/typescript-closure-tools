@@ -3,10 +3,9 @@
 
 declare module goog.editor.plugins {
 
-    class Blockquote extends Blockquote.__Class { }
-    module Blockquote {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.editor.Plugin.__Class {
+    class Blockquote extends Blockquote__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Blockquote__Class extends goog.editor.Plugin__Class  { 
     
             /**
              * Plugin to handle splitting block quotes.  This plugin does nothing on its
@@ -57,8 +56,8 @@ declare module goog.editor.plugins {
              * @return {string} The blockquote class name.
              */
             getBlockquoteClassName(): string;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.editor.plugins.Blockquote {

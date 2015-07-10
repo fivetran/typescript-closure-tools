@@ -5,10 +5,9 @@
 
 declare module goog.db {
 
-    class Index extends Index.__Class { }
-    module Index {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Index extends Index__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Index__Class  { 
     
             /**
              * Creates an IDBIndex wrapper object. Indexes are associated with object
@@ -111,6 +110,6 @@ declare module goog.db {
              * @throws {goog.db.Error} If there was a problem opening the cursor.
              */
             openCursor(opt_range?: goog.db.KeyRange, opt_direction?: goog.db.Cursor.Direction): goog.db.Cursor;
-        }
-    }
+    } 
+    
 }

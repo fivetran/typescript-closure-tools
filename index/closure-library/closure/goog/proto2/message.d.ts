@@ -5,10 +5,9 @@
 
 declare module goog.proto2 {
 
-    class Message extends Message.__Class { }
-    module Message {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Message extends Message__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Message__Class  { 
     
             /**
              * Abstract base class for all Protocol Buffer 2 messages. It will be
@@ -274,8 +273,8 @@ declare module goog.proto2 {
              * @protected
              */
             clear$Field(tag: number): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.proto2.Message {

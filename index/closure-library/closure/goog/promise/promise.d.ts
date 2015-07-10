@@ -5,10 +5,9 @@
 
 declare module goog {
 
-    class Promise<TYPE,RESOLVER_CONTEXT> extends Promise.__Class<TYPE,RESOLVER_CONTEXT> { }
-    module Promise {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class<TYPE,RESOLVER_CONTEXT> implements goog.Thenable<TYPE> {
+    class Promise<TYPE,RESOLVER_CONTEXT> extends Promise__Class<TYPE,RESOLVER_CONTEXT> { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Promise__Class<TYPE,RESOLVER_CONTEXT> implements goog.Thenable<TYPE>  { 
     
             /**
              * Promises provide a result that may be resolved asynchronously. A Promise may
@@ -294,16 +293,15 @@ declare module goog {
              * @template RESULT,THIS
              */
             then<RESULT,THIS>(opt_onFulfilled?: (_0: TYPE) => Thenable, opt_onRejected?: (_0: any) => any, opt_context?: THIS): goog.Promise<RESULT>;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.Promise {
 
-    class CancellationError extends CancellationError.__Class { }
-    module CancellationError {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.debug.Error.__Class {
+    class CancellationError extends CancellationError__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class CancellationError__Class extends goog.debug.Error__Class  { 
     
             /**
              * Error used as a rejection reason for canceled Promises.
@@ -314,13 +312,12 @@ declare module goog.Promise {
              * @final
              */
             constructor(opt_message?: string);
-        }
-    }
+    } 
+    
 
-    class Resolver_<TYPE> extends Resolver_.__Class<TYPE> { }
-    module Resolver_ {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class<TYPE> implements goog.promise.Resolver<TYPE> {
+    class Resolver_<TYPE> extends Resolver___Class<TYPE> { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Resolver___Class<TYPE> implements goog.promise.Resolver<TYPE>  { 
     
             /**
              * Internal implementation of the resolver interface.
@@ -388,8 +385,8 @@ declare module goog.Promise {
              * @const {function(*): void}
              */
             reject: any /*missing*/;
-        }
-    }
+    } 
+    
 
     /**
      * The possible internal states for a Promise. These states are not directly

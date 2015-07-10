@@ -3,10 +3,9 @@
 
 declare module goog.ui {
 
-    class Css3ButtonRenderer extends Css3ButtonRenderer.__Class { }
-    module Css3ButtonRenderer {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.ButtonRenderer.__Class {
+    class Css3ButtonRenderer extends Css3ButtonRenderer__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Css3ButtonRenderer__Class extends goog.ui.ButtonRenderer__Class  { 
     
             /**
              * Custom renderer for {@link goog.ui.Button}s. Css3 buttons can contain
@@ -18,8 +17,8 @@ declare module goog.ui {
              * @final
              */
             constructor();
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.Css3ButtonRenderer {

@@ -6,10 +6,9 @@
 
 declare module goog.ui {
 
-    class Zippy extends Zippy.__Class { }
-    module Zippy {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.EventTarget.__Class {
+    class Zippy extends Zippy__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Zippy__Class extends goog.events.EventTarget__Class  { 
     
             /**
              * Zippy widget. Expandable/collapsible container, clicking the header toggles
@@ -452,13 +451,12 @@ declare module goog.ui {
              * @param {boolean} enable Whether the Zippy handles mouse events.
              */
             setHandleMouseEvents(enable: boolean): void;
-        }
-    }
+    } 
+    
 
-    class ZippyEvent extends ZippyEvent.__Class { }
-    module ZippyEvent {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.Event.__Class {
+    class ZippyEvent extends ZippyEvent__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ZippyEvent__Class extends goog.events.Event__Class  { 
     
             /**
              * Object representing a zippy toggle event.
@@ -477,8 +475,8 @@ declare module goog.ui {
              * @type {boolean}
              */
             expanded: boolean;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.Zippy {

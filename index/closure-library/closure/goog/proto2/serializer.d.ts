@@ -5,10 +5,9 @@
 
 declare module goog.proto2 {
 
-    class Serializer extends Serializer.__Class { }
-    module Serializer {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Serializer extends Serializer__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Serializer__Class  { 
     
             /**
              * Abstract base class for PB2 serializers. A serializer is a class which
@@ -78,6 +77,6 @@ declare module goog.proto2 {
              * @protected
              */
             getDeserializedValue(field: goog.proto2.FieldDescriptor, value: any): any;
-        }
-    }
+    } 
+    
 }

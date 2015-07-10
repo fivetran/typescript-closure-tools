@@ -2,10 +2,9 @@
 
 declare module goog.module {
 
-    class ModuleLoadCallback extends ModuleLoadCallback.__Class { }
-    module ModuleLoadCallback {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class ModuleLoadCallback extends ModuleLoadCallback__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ModuleLoadCallback__Class  { 
     
             /**
              * Class used to encapsulate the callbacks to be called when a module loads.
@@ -27,6 +26,6 @@ declare module goog.module {
              * Abort the callback, but not the actual module load.
              */
             abort(): void;
-        }
-    }
+    } 
+    
 }

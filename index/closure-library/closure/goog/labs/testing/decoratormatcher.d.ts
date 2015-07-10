@@ -3,10 +3,9 @@
 
 declare module goog.labs.testing {
 
-    class AnythingMatcher extends AnythingMatcher.__Class { }
-    module AnythingMatcher {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class implements goog.labs.testing.Matcher {
+    class AnythingMatcher extends AnythingMatcher__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class AnythingMatcher__Class implements goog.labs.testing.Matcher  { 
     
             /**
              * The Anything matcher. Matches all possible inputs.
@@ -35,6 +34,6 @@ declare module goog.labs.testing {
              * @return {string} Description of why the matcher failed.
              */
             describe(value: any, opt_description?: string): string;
-        }
-    }
+    } 
+    
 }

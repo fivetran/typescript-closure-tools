@@ -4,10 +4,9 @@
 
 declare module goog.ui.equation {
 
-    class MathPalette extends MathPalette.__Class { }
-    module MathPalette {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.equation.Palette.__Class {
+    class MathPalette extends MathPalette__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class MathPalette__Class extends goog.ui.equation.Palette__Class  { 
     
             /**
              * Constructs a new math palette.
@@ -18,6 +17,6 @@ declare module goog.ui.equation {
              * @final
              */
             constructor(paletteManager: goog.ui.equation.PaletteManager);
-        }
-    }
+    } 
+    
 }

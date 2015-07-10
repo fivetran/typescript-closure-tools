@@ -3,10 +3,9 @@
 
 declare module goog.testing {
 
-    class AsyncTestCase extends AsyncTestCase.__Class { }
-    module AsyncTestCase {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.testing.TestCase.__Class {
+    class AsyncTestCase extends AsyncTestCase__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class AsyncTestCase__Class extends goog.testing.TestCase__Class  { 
     
             /**
              * A test case that is capable of running tests the contain asynchronous logic.
@@ -87,16 +86,15 @@ declare module goog.testing {
              * Enables verbose logging of what is happening inside of the AsyncTestCase.
              */
             enableDebugLogging(): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.testing.AsyncTestCase {
 
-    class ControlBreakingException extends ControlBreakingException.__Class { }
-    module ControlBreakingException {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class ControlBreakingException extends ControlBreakingException__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ControlBreakingException__Class  { 
     
             /**
              * An exception class used solely for control flow.
@@ -117,8 +115,8 @@ declare module goog.testing.AsyncTestCase {
              * @type {boolean}
              */
             isControlBreakingException: boolean;
-        }
-    }
+    } 
+    
 
     /**
      * Represents result of top stack function call.

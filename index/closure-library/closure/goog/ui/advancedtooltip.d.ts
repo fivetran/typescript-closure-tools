@@ -5,10 +5,9 @@
 
 declare module goog.ui {
 
-    class AdvancedTooltip extends AdvancedTooltip.__Class { }
-    module AdvancedTooltip {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.Tooltip.__Class {
+    class AdvancedTooltip extends AdvancedTooltip__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class AdvancedTooltip__Class extends goog.ui.Tooltip__Class  { 
     
             /**
              * Advanced tooltip widget with cursor tracking abilities. Works like a regular
@@ -93,6 +92,6 @@ declare module goog.ui {
              *     as neccessary.
              */
             resetHotSpot: any /*missing*/;
-        }
-    }
+    } 
+    
 }

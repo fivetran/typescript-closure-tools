@@ -8,10 +8,9 @@
 
 declare module goog.ui {
 
-    class SliderBase extends SliderBase.__Class { }
-    module SliderBase {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.Component.__Class {
+    class SliderBase extends SliderBase__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class SliderBase__Class extends goog.ui.Component__Class  { 
     
             /**
              * This creates a SliderBase object.
@@ -339,8 +338,8 @@ declare module goog.ui {
              *     unavailable.
              */
             getTextValue(): string;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.SliderBase {

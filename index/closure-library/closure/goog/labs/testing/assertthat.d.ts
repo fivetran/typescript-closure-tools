@@ -4,10 +4,9 @@
 
 declare module goog.labs.testing {
 
-    class MatcherError extends MatcherError.__Class { }
-    module MatcherError {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.debug.Error.__Class {
+    class MatcherError extends MatcherError__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class MatcherError__Class extends goog.debug.Error__Class  { 
     
             /**
              * Error thrown when a Matcher fails to match the input value.
@@ -17,8 +16,8 @@ declare module goog.labs.testing {
              * @final
              */
             constructor(opt_message?: string);
-        }
-    }
+    } 
+    
 
     /**
      * Asserts that the actual value evaluated by the matcher is true.

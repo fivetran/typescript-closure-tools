@@ -2,10 +2,9 @@
 
 declare module goog.events {
 
-    class EventId<T> extends EventId.__Class<T> { }
-    module EventId {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class<T> {
+    class EventId<T> extends EventId__Class<T> { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class EventId__Class<T>  { 
     
             /**
              * A templated class that is used when registering for events. Typical usage:
@@ -29,6 +28,6 @@ declare module goog.events {
     
             /** @const */
             id: any /*missing*/;
-        }
-    }
+    } 
+    
 }

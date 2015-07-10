@@ -2,10 +2,9 @@
 
 declare module goog.ui {
 
-    class IdGenerator extends IdGenerator.__Class { }
-    module IdGenerator {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class IdGenerator extends IdGenerator__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class IdGenerator__Class  { 
     
             /**
              * Creates a new id generator.
@@ -19,6 +18,6 @@ declare module goog.ui {
              * @return {string} The next unique identifier.
              */
             getNextUniqueId(): string;
-        }
-    }
+    } 
+    
 }

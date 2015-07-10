@@ -3,10 +3,9 @@
 
 declare module goog.math {
 
-    class Box extends Box.__Class { }
-    module Box {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Box extends Box__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Box__Class  { 
     
             /**
              * Class for representing a box. A box is specified as a top, right, bottom,
@@ -153,8 +152,8 @@ declare module goog.math {
              * @return {!goog.math.Box} This box after scaling.
              */
             scale(sx: number, opt_sy?: number): goog.math.Box;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.math.Box {

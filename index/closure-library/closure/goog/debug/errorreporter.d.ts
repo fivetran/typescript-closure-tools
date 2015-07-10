@@ -5,10 +5,9 @@
 
 declare module goog.debug {
 
-    class ErrorReporter extends ErrorReporter.__Class { }
-    module ErrorReporter {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.EventTarget.__Class {
+    class ErrorReporter extends ErrorReporter__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ErrorReporter__Class extends goog.events.EventTarget__Class  { 
     
             /**
              * Constructs an error reporter. Internal Use Only. To install an error
@@ -113,16 +112,15 @@ declare module goog.debug {
              *     to handlerUrl_ before sending XHR.
              */
             setAdditionalArguments(urlArgs: { [key: string]: string }): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.debug.ErrorReporter {
 
-    class ExceptionEvent extends ExceptionEvent.__Class { }
-    module ExceptionEvent {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.Event.__Class {
+    class ExceptionEvent extends ExceptionEvent__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ExceptionEvent__Class extends goog.events.Event__Class  { 
     
             /**
              * Event broadcast when an exception is logged.
@@ -146,8 +144,8 @@ declare module goog.debug.ErrorReporter {
              * @type {!Object.<string, string>}
              */
             context: { [key: string]: string };
-        }
-    }
+    } 
+    
 
     /**
      * Installs an error reporter to catch all JavaScript errors raised.

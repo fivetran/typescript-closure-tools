@@ -7,10 +7,9 @@
 
 declare module goog.ui {
 
-    class SelectionMenuButton extends SelectionMenuButton.__Class { }
-    module SelectionMenuButton {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.MenuButton.__Class {
+    class SelectionMenuButton extends SelectionMenuButton__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class SelectionMenuButton__Class extends goog.ui.MenuButton__Class  { 
     
             /**
              * A selection menu button control.  Extends {@link goog.ui.MenuButton}.
@@ -83,8 +82,8 @@ declare module goog.ui {
             * @return {goog.ui.SelectionMenuButton.SelectionState} Selection state.
             */
             getSelectionState(): goog.ui.SelectionMenuButton.SelectionState;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.SelectionMenuButton {

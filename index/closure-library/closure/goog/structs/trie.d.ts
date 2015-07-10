@@ -2,10 +2,9 @@
 
 declare module goog.structs {
 
-    class Trie<VALUE> extends Trie.__Class<VALUE> { }
-    module Trie {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class<VALUE> {
+    class Trie<VALUE> extends Trie__Class<VALUE> { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Trie__Class<VALUE>  { 
     
             /**
              * Class for a Trie datastructure.  Trie data structures are made out of trees
@@ -155,6 +154,6 @@ declare module goog.structs {
              * @return {boolean} True iff this trie contains no elements.
              */
             isEmpty(): boolean;
-        }
-    }
+    } 
+    
 }

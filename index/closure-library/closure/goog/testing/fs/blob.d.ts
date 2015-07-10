@@ -2,10 +2,9 @@
 
 declare module goog.testing.fs {
 
-    class Blob extends Blob.__Class { }
-    module Blob {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Blob extends Blob__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Blob__Class  { 
     
             /**
              * A mock Blob object. The data is stored as a string.
@@ -58,6 +57,6 @@ declare module goog.testing.fs {
              * @param {string} data The data for this Blob.
              */
             setDataInternal(data: string): void;
-        }
-    }
+    } 
+    
 }

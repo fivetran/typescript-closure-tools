@@ -6,10 +6,9 @@
 
 declare module goog.testing.fs {
 
-    class FileReader extends FileReader.__Class { }
-    module FileReader {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.events.EventTarget.__Class {
+    class FileReader extends FileReader__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class FileReader__Class extends goog.events.EventTarget__Class  { 
     
             /**
              * A mock FileReader object. This emits the same events as
@@ -67,8 +66,8 @@ declare module goog.testing.fs {
              * @param {!goog.testing.fs.Blob} blob The blob to read.
              */
             readAsDataUrl(blob: goog.testing.fs.Blob): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.testing.fs.FileReader {

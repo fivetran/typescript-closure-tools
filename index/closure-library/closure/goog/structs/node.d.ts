@@ -2,10 +2,9 @@
 
 declare module goog.structs {
 
-    class Node<K, V> extends Node.__Class<K, V> { }
-    module Node {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class<K, V> {
+    class Node<K, V> extends Node__Class<K, V> { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Node__Class<K, V>  { 
     
             /**
              * A generic immutable node. This can be used in various collections that
@@ -35,6 +34,6 @@ declare module goog.structs {
              *     key value pair.
              */
             clone(): goog.structs.Node<K,V>;
-        }
-    }
+    } 
+    
 }

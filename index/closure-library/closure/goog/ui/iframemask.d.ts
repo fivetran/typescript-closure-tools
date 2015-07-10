@@ -6,10 +6,9 @@
 
 declare module goog.ui {
 
-    class IframeMask extends IframeMask.__Class { }
-    module IframeMask {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.Disposable.__Class {
+    class IframeMask extends IframeMask__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class IframeMask__Class extends goog.Disposable__Class  { 
     
             /**
              * Controller for an iframe mask. The mask is only valid in the current
@@ -73,6 +72,6 @@ declare module goog.ui {
              * Removes all handlers attached by listenOnTarget.
              */
             removeHandlers(): void;
-        }
-    }
+    } 
+    
 }

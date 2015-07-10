@@ -5,10 +5,9 @@
 
 declare module goog.net.xpc {
 
-    class IframePollingTransport extends IframePollingTransport.__Class { }
-    module IframePollingTransport {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.net.xpc.Transport.__Class {
+    class IframePollingTransport extends IframePollingTransport__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class IframePollingTransport__Class extends goog.net.xpc.Transport__Class  { 
     
             /**
              * Iframe polling transport. Uses hidden iframes to transfer data
@@ -47,16 +46,15 @@ declare module goog.net.xpc {
              * @param {string} msgStr The incoming ack string to process.
              */
             processIncomingAck(msgStr: string): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.net.xpc.IframePollingTransport {
 
-    class Sender extends Sender.__Class { }
-    module Sender {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Sender extends Sender__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Sender__Class  { 
     
             /**
              * goog.net.xpc.IframePollingTransport.Sender
@@ -77,13 +75,12 @@ declare module goog.net.xpc.IframePollingTransport {
              * @param {string} payload The message to send.
              */
             send(payload: string): void;
-        }
-    }
+    } 
+    
 
-    class Receiver extends Receiver.__Class { }
-    module Receiver {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Receiver extends Receiver__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Receiver__Class  { 
     
             /**
              * goog.net.xpc.IframePollingTransport.Receiver
@@ -103,8 +100,8 @@ declare module goog.net.xpc.IframePollingTransport {
              * @return {boolean} Whether a change has been detected.
              */
             receive(): boolean;
-        }
-    }
+    } 
+    
 
     /**
      * The string used to prefix all iframe names and IDs.

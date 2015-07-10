@@ -5,10 +5,9 @@
 
 declare module goog.fx {
 
-    class AnimationQueue extends AnimationQueue.__Class { }
-    module AnimationQueue {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.fx.TransitionBase.__Class {
+    class AnimationQueue extends AnimationQueue__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class AnimationQueue__Class extends goog.fx.TransitionBase__Class  { 
     
             /**
              * Constructor for AnimationQueue object.
@@ -43,13 +42,12 @@ declare module goog.fx {
              * @protected
              */
             onAnimationFinish(e: goog.events.Event): void;
-        }
-    }
+    } 
+    
 
-    class AnimationParallelQueue extends AnimationParallelQueue.__Class { }
-    module AnimationParallelQueue {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.fx.AnimationQueue.__Class {
+    class AnimationParallelQueue extends AnimationParallelQueue__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class AnimationParallelQueue__Class extends goog.fx.AnimationQueue__Class  { 
     
             /**
              * Constructor for AnimationParallelQueue object.
@@ -57,13 +55,12 @@ declare module goog.fx {
              * @extends {goog.fx.AnimationQueue}
              */
             constructor();
-        }
-    }
+    } 
+    
 
-    class AnimationSerialQueue extends AnimationSerialQueue.__Class { }
-    module AnimationSerialQueue {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.fx.AnimationQueue.__Class {
+    class AnimationSerialQueue extends AnimationSerialQueue__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class AnimationSerialQueue__Class extends goog.fx.AnimationQueue__Class  { 
     
             /**
              * Constructor for AnimationSerialQueue object.
@@ -71,6 +68,6 @@ declare module goog.fx {
              * @extends {goog.fx.AnimationQueue}
              */
             constructor();
-        }
-    }
+    } 
+    
 }

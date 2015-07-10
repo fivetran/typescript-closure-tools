@@ -4,10 +4,9 @@
 
 declare module goog.debug {
 
-    class FpsDisplay extends FpsDisplay.__Class { }
-    module FpsDisplay {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.Component.__Class {
+    class FpsDisplay extends FpsDisplay__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class FpsDisplay__Class extends goog.ui.Component__Class  { 
     
             /**
              * Displays frames per seconds that the window this component is
@@ -24,16 +23,15 @@ declare module goog.debug {
              * @return {number} The average frames per second.
              */
             getFps(): number;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.debug.FpsDisplay {
 
-    class FpsAnimation_ extends FpsAnimation_.__Class { }
-    module FpsAnimation_ {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class FpsAnimation_ extends FpsAnimation___Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class FpsAnimation___Class  { 
     
             /**
              * @param {Element} elem An element to hold the FPS count.
@@ -46,8 +44,8 @@ declare module goog.debug.FpsDisplay {
              * @param {number} now The current time.
              */
             onAnimationFrame(now: number): void;
-        }
-    }
+    } 
+    
 
     /**
      * CSS class for the FPS display.

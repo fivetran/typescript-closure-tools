@@ -2,10 +2,9 @@
 
 declare module goog.labs.i18n {
 
-    class ListFormat extends ListFormat.__Class { }
-    module ListFormat {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class ListFormat extends ListFormat__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ListFormat__Class  { 
     
             /**
              * ListFormat provides a method to format a list/array of objects to a string,
@@ -29,13 +28,12 @@ declare module goog.labs.i18n {
              * @return {string} The items formatted into a string, as a list.
              */
             format(items: any /*string|number*/[]): string;
-        }
-    }
+    } 
+    
 
-    class GenderInfo extends GenderInfo.__Class { }
-    module GenderInfo {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class GenderInfo extends GenderInfo__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class GenderInfo__Class  { 
     
             /**
              * GenderInfo provides a method to determine the gender of a list/array
@@ -59,8 +57,8 @@ declare module goog.labs.i18n {
              * @return {goog.labs.i18n.GenderInfo.Gender} Get the gender of the list.
             */
             getListGender(genders: goog.labs.i18n.GenderInfo.Gender[]): goog.labs.i18n.GenderInfo.Gender;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.labs.i18n.GenderInfo {

@@ -3,10 +3,9 @@
 
 declare module goog.net.xpc {
 
-    class Transport extends Transport.__Class { }
-    module Transport {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class Transport extends Transport__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class Transport__Class  { 
     
             /**
              * The base class for transports.
@@ -62,6 +61,6 @@ declare module goog.net.xpc {
              * @param {string} payload The message content.
              */
             send(service: string, payload: string): void;
-        }
-    }
+    } 
+    
 }

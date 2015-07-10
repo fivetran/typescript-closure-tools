@@ -8,10 +8,9 @@
 
 declare module goog.graphics {
 
-    class CanvasGraphics extends CanvasGraphics.__Class { }
-    module CanvasGraphics {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.graphics.AbstractGraphics.__Class {
+    class CanvasGraphics extends CanvasGraphics__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class CanvasGraphics__Class extends goog.graphics.AbstractGraphics__Class  { 
     
             /**
              * A Graphics implementation for drawing using canvas.
@@ -181,6 +180,6 @@ declare module goog.graphics {
              * @return {boolean} Whether drawing to this group should force a redraw.
              */
             isRedrawRequired(group: goog.graphics.GroupElement): boolean;
-        }
-    }
+    } 
+    
 }

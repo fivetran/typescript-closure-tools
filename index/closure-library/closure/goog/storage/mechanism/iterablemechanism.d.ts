@@ -4,10 +4,9 @@
 
 declare module goog.storage.mechanism {
 
-    class IterableMechanism extends IterableMechanism.__Class { }
-    module IterableMechanism {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.storage.mechanism.Mechanism.__Class {
+    class IterableMechanism extends IterableMechanism__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class IterableMechanism__Class extends goog.storage.mechanism.Mechanism__Class  { 
     
             /**
              * Interface for all iterable storage mechanisms.
@@ -44,6 +43,6 @@ declare module goog.storage.mechanism {
              * efficient - it iterates over all keys.
              */
             clear(): void;
-        }
-    }
+    } 
+    
 }

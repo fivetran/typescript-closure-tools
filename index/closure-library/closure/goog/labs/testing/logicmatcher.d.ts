@@ -3,10 +3,9 @@
 
 declare module goog.labs.testing {
 
-    class AllOfMatcher extends AllOfMatcher.__Class { }
-    module AllOfMatcher {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class implements goog.labs.testing.Matcher {
+    class AllOfMatcher extends AllOfMatcher__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class AllOfMatcher__Class implements goog.labs.testing.Matcher  { 
     
             /**
              * The AllOf matcher.
@@ -38,13 +37,12 @@ declare module goog.labs.testing {
              * @return {string} Description of why the matcher failed.
              */
             describe(value: any, opt_description?: string): string;
-        }
-    }
+    } 
+    
 
-    class AnyOfMatcher extends AnyOfMatcher.__Class { }
-    module AnyOfMatcher {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class implements goog.labs.testing.Matcher {
+    class AnyOfMatcher extends AnyOfMatcher__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class AnyOfMatcher__Class implements goog.labs.testing.Matcher  { 
     
             /**
              * The AnyOf matcher.
@@ -76,13 +74,12 @@ declare module goog.labs.testing {
              * @return {string} Description of why the matcher failed.
              */
             describe(value: any, opt_description?: string): string;
-        }
-    }
+    } 
+    
 
-    class IsNotMatcher extends IsNotMatcher.__Class { }
-    module IsNotMatcher {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class implements goog.labs.testing.Matcher {
+    class IsNotMatcher extends IsNotMatcher__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class IsNotMatcher__Class implements goog.labs.testing.Matcher  { 
     
             /**
              * The IsNot matcher.
@@ -114,6 +111,6 @@ declare module goog.labs.testing {
              * @return {string} Description of why the matcher failed.
              */
             describe(value: any, opt_description?: string): string;
-        }
-    }
+    } 
+    
 }

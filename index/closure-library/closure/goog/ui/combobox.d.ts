@@ -9,10 +9,9 @@
 
 declare module goog.ui {
 
-    class ComboBox extends ComboBox.__Class { }
-    module ComboBox {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.Component.__Class {
+    class ComboBox extends ComboBox__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ComboBox__Class extends goog.ui.Component__Class  { 
     
             /**
              * A ComboBox control.
@@ -176,13 +175,12 @@ declare module goog.ui {
              * @suppress {visibility} performActionInternal
              */
             handleKeyEvent(e: goog.events.KeyEvent): boolean;
-        }
-    }
+    } 
+    
 
-    class ComboBoxItem extends ComboBoxItem.__Class { }
-    module ComboBoxItem {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.MenuItem.__Class {
+    class ComboBoxItem extends ComboBoxItem__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ComboBoxItem__Class extends goog.ui.MenuItem__Class  { 
     
             /**
              * Class for combo box items.
@@ -253,8 +251,8 @@ declare module goog.ui {
              * @param {string} token The token.
              */
             setFormatFromToken(token: string): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.ComboBox {

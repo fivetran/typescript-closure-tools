@@ -3,10 +3,9 @@
 
 declare module goog.dom.browserrange {
 
-    class W3cRange extends W3cRange.__Class { }
-    module W3cRange {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.dom.browserrange.AbstractRange.__Class {
+    class W3cRange extends W3cRange__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class W3cRange__Class extends goog.dom.browserrange.AbstractRange__Class  { 
     
             /**
              * The constructor for W3C specific browser ranges.
@@ -23,8 +22,8 @@ declare module goog.dom.browserrange {
              * @protected
              */
             selectInternal(selection: Selection, reverse: any): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.dom.browserrange.W3cRange {

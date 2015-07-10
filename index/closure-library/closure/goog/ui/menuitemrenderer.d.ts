@@ -5,10 +5,9 @@
 
 declare module goog.ui {
 
-    class MenuItemRenderer extends MenuItemRenderer.__Class { }
-    module MenuItemRenderer {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.ControlRenderer.__Class {
+    class MenuItemRenderer extends MenuItemRenderer__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class MenuItemRenderer__Class extends goog.ui.ControlRenderer__Class  { 
     
             /**
              * Default renderer for {@link goog.ui.MenuItem}s.  Each item has the following
@@ -114,8 +113,8 @@ declare module goog.ui {
              * @param {Element} element The element.
              */
             correctAriaRole(item: goog.ui.Control, element: Element): void;
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.MenuItemRenderer {

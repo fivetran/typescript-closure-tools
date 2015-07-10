@@ -5,10 +5,9 @@
 
 declare module goog.net {
 
-    class ChannelDebug extends ChannelDebug.__Class { }
-    module ChannelDebug {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class {
+    class ChannelDebug extends ChannelDebug__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class ChannelDebug__Class  { 
     
             /**
              * Logs and keeps a buffer of debugging info for the Channel.
@@ -209,6 +208,6 @@ declare module goog.net {
              * @param {string} text The message.
              */
             severe(text: string): void;
-        }
-    }
+    } 
+    
 }

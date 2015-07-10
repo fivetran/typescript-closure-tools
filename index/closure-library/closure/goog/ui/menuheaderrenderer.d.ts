@@ -3,10 +3,9 @@
 
 declare module goog.ui {
 
-    class MenuHeaderRenderer extends MenuHeaderRenderer.__Class { }
-    module MenuHeaderRenderer {
-        /** Fake class which should be extended to avoid inheriting static properties */
-        class __Class extends goog.ui.ControlRenderer.__Class {
+    class MenuHeaderRenderer extends MenuHeaderRenderer__Class { }
+    /** Fake class which should be extended to avoid inheriting static properties */
+    class MenuHeaderRenderer__Class extends goog.ui.ControlRenderer__Class  { 
     
             /**
              * Renderer for menu headers.
@@ -14,8 +13,8 @@ declare module goog.ui {
              * @extends {goog.ui.ControlRenderer}
              */
             constructor();
-        }
-    }
+    } 
+    
 }
 
 declare module goog.ui.MenuHeaderRenderer {
