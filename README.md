@@ -61,87 +61,6 @@ There are several important differences between the Closure type system and Type
 
 ## Differences that are resolved automatically
 
-### Closure has unions, TypeScript has overloads
-
-Closure has unions such as:
-
-```javascript
-/** @typedef {number|string} */
-MyType;
-```
-
-and:
-
-```javascript
-/** @param {number|string} x */
-myFunction = function(x) { };
-```
-
-Closure unions are converted using the following rules:
-
-#### Expand unions into overloads
-
-```javascript
-/** @param {number|string} x */
-myFunction = function(x) { };
-```
-
-becomes:
-
-```typescript
-function myFunction(x: number);
-function myFunction(x: string);
-```
-
-This works for nested union types as well:
-
-```javascript
-/** @typedef {number|string} */
-UnionType
-/** @param {{myProperty:UnionType}} x */
-myFunction = function(x) { };
-```
-
-becomes:
-
-```typescript
-function myFunction(x: { myProperty: number });
-function myFunction(x: { myProperty: string });
-```
-
-#### Inline typedef unions where possible
-
-```javascript
-/** @typedef {number|string} */
-MyTypeDef;
-
-/** @param {MyTypeDef} x */
-myFunction = function(x) { };
-```
-
-becomes:
-
-```typescript
-function myFunction(x: number);
-function myFunction(x: string);
-```
-
-#### Create empty interfaces when all else fails
-
-```javascript
-/** @typedef {Array<T>|string} */
-AnnoyingType;
-/** @param {AnnoyingType<number>} x */
-myFunction = function(x) { };
-```
-
-becomes:
-
-```typescript
-interface AnnoyingType { /* Array<T>|string */ }
-function myFunction(x: AnnoyingType);
-```
-
 ### Static inheritance
 
 In typescript, static properties of classes are inherited:
@@ -234,39 +153,6 @@ declare module goog {
     function f(e: Error) { }
 }
 ```
-
-### Duplicate overloads
-
-Closure unions sometimes include two types which are structurally equivalent:
-
-```javascript
-/** @typedef {{length: number}} */
-Lengthable;
-
-/** @typedef {{length: number}} */
-ArrayLike;
-
-/** @param {Lengthable|ArrayLike} x */
-f = function(x) { };
-```
-
-which becomes:
-
-```typescript
-interface Lengthable {
-  length: number;
-}
-
-interface ArrayLike {
-  length: number;
-}
-
-f(x: Lengthable);
-f(x: ArrayLike);
-```
-
-TypeScript has a structural type system, so the above example is considered a duplicate overload. One of them
-will need to be manually deleted.
 
 # RequireJS support
 

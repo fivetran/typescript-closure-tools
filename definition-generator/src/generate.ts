@@ -6,7 +6,6 @@
 import combine = require('./combine');
 import parser = require('./parser');
 import finder = require('./finder');
-import disunion = require('./disunion');
 import escodegen = require('escodegen');
 
 var reserved =  [
@@ -104,7 +103,7 @@ function generate_indexed_function_parameter(type, index) {
 function generate_function_type(params, result) {
     var paramString = '(' + params.map(generate_indexed_function_parameter).join(', ') + ')';
 
-    return paramString + ' => ' + generate_type(result);
+    return '{ ' + paramString + ': ' + generate_type(result) + ' }';
 }
 
 function comment(text) {
@@ -133,7 +132,7 @@ function generate_applied_type(t) {
         case 'RestType':
             return generate_type(t.expression) + '[]';
         case 'UnionType':
-            return 'any ' + comment(t.elements.map(generate_type).join('|'));
+            return t.elements.map(generate_type).join('|');
         case 'AllLiteral':
         case 'NullableLiteral':
             return 'any';
@@ -245,7 +244,7 @@ function generate_functions(name: string, value: parser.Value): string[] {
     var names = param_names(value);
     var tags = docs.tags || [];
     var paramTags = tags.filter(t => t.title === 'param');
-    var overloads = find_overloads(paramTags);
+    var overloads = [tags_by_name(paramTags)];
 
     return overloads.map(tagsByName => {
         var paramStrings = generate_param_strings(names, tagsByName);
@@ -280,7 +279,7 @@ function generate_methods(name: string, value: parser.Value): string[] {
     var names = param_names(value);
     var tags = docs.tags || [];
     var paramTags = tags.filter(t => t.title === 'param');
-    var overloads = find_overloads(paramTags);
+    var overloads = [tags_by_name(paramTags)];
 
     return overloads.map(tagsByName => {
         var paramStrings = generate_param_strings(names, tagsByName);
@@ -395,31 +394,11 @@ function generate_interface(name: string, prototype: combine.Symbol) {
     return acc;
 }
 
-function find_overloads(params: doctrine.Tag[]): TagsByName[] {
-    var unions: doctrine.Tag[][] = params.map(tag => {
-        function with_type(type: doctrine.AnyType) {
-            return {
-                title: tag.title,
-                name: tag.name,
-                description: tag.description,
-                type: type
-            }
-        }
-        var inlined = disunion.inline(tag.type);
-        var unloaded = disunion.unload(inlined);
-
-        return unloaded.map(with_type);
-    });
-    var overloads: doctrine.Tag[][] = disunion.outer(unions);
-
-    return overloads.map(tags_by_name);
-}
-
 function generate_constructors(value: parser.Value): string[] {
     var docs = value.jsdoc;
     var names = param_names(value);
     var paramTags = docs.tags.filter(t => t.title === 'param');
-    var overloads = find_overloads(paramTags);
+    var overloads = [tags_by_name(paramTags)];
 
     return overloads.map(tagsByName => {
         return 'constructor(' + generate_param_strings(names, tagsByName).join(', ') + ')';
@@ -568,6 +547,10 @@ function generate_typedef(name: string, docs: doctrine.JSDoc) {
 
                 return 'interface ' + name + ' extends ' + base + generics + ' { }';
             }
+        case 'UnionType':
+            var union = generate_type(typedef);
+
+            return 'type ' + name + ' = ' + union + ';';
         // Anything else becomes interface Name { /* explanation */ }
         default:
             return 'interface ' + name + ' { ' + comment(generate_type(typedef)) + ' }';
