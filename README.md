@@ -52,7 +52,7 @@ If this option isn't present, we will simply look for global symbols in the inpu
 # Running the tests
 
 ```bash
-tsc test/*.ts
+tsc definition-generator/test/*.ts
 ./node_modules/jasmine-node/bin/jasmine-node definition-generator/test/*.js
 ```
 
