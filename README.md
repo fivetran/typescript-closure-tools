@@ -16,12 +16,13 @@ git submodule update --init
 npm install
 tsc --module commonjs definition-generator/src/*.ts
 node definition-generator/src/main.js test/example.js test/example.d.ts # Run a single example
+sudo npm install -g 
 ```
 
 # Usage
 
 ```
-node definition-generator/src/main.js
+closure2ts
   [--provides symbols.tsv]
   [--globals output/dir/global-declarations.d.ts]
   [--input_root input/dir]
