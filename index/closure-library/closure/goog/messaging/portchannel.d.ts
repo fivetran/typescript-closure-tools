@@ -28,7 +28,7 @@ declare module goog.messaging {
              * @extends {goog.messaging.AbstractChannel}
              * @final
              */
-            constructor(underlyingPort: MessagePort|WebWorker);
+            constructor(underlyingPort: MessagePort);
     } 
     
 }

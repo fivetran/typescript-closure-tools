@@ -39,7 +39,7 @@ declare module goog.structs {
              * @param {*} key The key to check for.
              * @return {boolean} Whether the map contains the key.
              */
-            containsKey(key: any): boolean;
+            containsKey(key: K): boolean;
     
             /**
              * Whether the map contains the given value. This is O(n).
@@ -94,7 +94,7 @@ declare module goog.structs {
              * @param {V} value The value to add.
              * @return {*} Some subclasses return a value.
              */
-            set(key: any, value: V): any;
+            set(key: K, value: V): any;
     
             /**
              * Adds multiple key-value pairs from another goog.structs.Map or Object.
@@ -114,7 +114,7 @@ declare module goog.structs {
              * Clones a map and returns a new map.
              * @return {!goog.structs.Map} A new map with the same key-value pairs.
              */
-            clone(): goog.structs.Map<any, any>;
+            clone(): goog.structs.Map<K, V>;
     
             /**
              * Returns a new map in which all the keys and values are interchanged
@@ -125,7 +125,7 @@ declare module goog.structs {
              *
              * @return {!goog.structs.Map} The transposed map.
              */
-            transpose(): goog.structs.Map<any, any>;
+            transpose(): goog.structs.Map<V, K>;
     
             /**
              * @return {!Object} Object representation of the map.
@@ -137,14 +137,14 @@ declare module goog.structs {
              * while iterating might have undesired side effects.
              * @return {!goog.iter.Iterator} An iterator over the keys in the map.
              */
-            getKeyIterator(): goog.iter.Iterator<any>;
+            getKeyIterator(): goog.iter.Iterator<K>;
     
             /**
              * Returns an iterator that iterates over the values in the map.  Removal of
              * keys while iterating might have undesired side effects.
              * @return {!goog.iter.Iterator} An iterator over the values in the map.
              */
-            getValueIterator(): goog.iter.Iterator<any>;
+            getValueIterator(): goog.iter.Iterator<V>;
     
             /**
              * Returns an iterator that iterates over the values or the keys in the map.

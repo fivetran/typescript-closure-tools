@@ -2,9 +2,37 @@
 /// <reference path="../index/typescript-services.d.ts" />
 
 import fs = require('fs');
-var ts = require('../lib/typescript-services/typescript_services.js');
+var ts = require('./typescript_services.js');
 
 module Main {
+
+    var fileNames = process.argv.slice(2);
+
+    // If user gave command line arguments, they are file names to process
+    if (fileNames.length > 0) {
+        fileNames.forEach(fileName => {
+            var sourceText = fs.readFileSync(fileName, 'utf8');
+
+            process_source(fileName, sourceText);
+        })
+    }
+    // Otherwise use standard input
+    else {
+        var sourceText = '';
+        process.stdin.setEncoding('utf8');
+        process.stdin.on('readable', () => {
+            sourceText += process.stdin.read();
+        });
+        process.stdin.on('end', () => {
+            process_source('stdin', sourceText);
+        });
+    }
+
+    function process_source(fileName: string, sourceText: string) {
+        var parsed = ts.createSourceFile(fileName, sourceText, ts.ScriptTarget.ES5);
+
+        find_interfaces(parsed);
+    }
 
     function find_interfaces(node: ts.Node) {
         if (node.kind === ts.SyntaxKind.InterfaceDeclaration) {
@@ -35,15 +63,4 @@ module Main {
 
         ts.forEachChild(node, find_interfaces);
     }
-
-    var sourceText = '';
-    process.stdin.setEncoding('utf8');
-    process.stdin.on('readable', () => {
-        sourceText += process.stdin.read();
-    });
-    process.stdin.on('end', () => {
-        var parsed = ts.createSourceFile("stdin", sourceText, ts.ScriptTarget.ES5);
-
-        find_interfaces(parsed);
-    });
 }

@@ -61,13 +61,13 @@ declare module goog.array {
      *
      * @param {Array.<T>|goog.array.ArrayLike} arr Array or array like object over
      *     which to iterate.
-     * @param {?function(this: S, T, number, ?): ?} f The function to call for every
+     * @param {?function(this: any, T, number, ?): ?} f The function to call for every
      *     element. This function takes 3 arguments (the element, the index and the
      *     array). The return value is ignored.
      * @param {S=} opt_obj The object to be used as the value of 'this' within f.
-     * @template T,S
+     * @template T
      */
-    function forEach<T,S>(arr: T[]|goog.array.ArrayLike, f: { (_0: T, _1: number, _2: any): any }, opt_obj?: S): void;
+    function forEach<T>(arr: T[]|goog.array.ArrayLike, f: { (_0: T, _1: number, _2: any): any }, opt_obj?: any): void;
 
     /**
      * Calls a function for each element in an array, starting from the last
@@ -75,15 +75,15 @@ declare module goog.array {
      *
      * @param {Array.<T>|goog.array.ArrayLike} arr Array or array
      *     like object over which to iterate.
-     * @param {?function(this: S, T, number, ?): ?} f The function to call for every
+     * @param {?function(this: any, T, number, ?): ?} f The function to call for every
      *     element. This function
      *     takes 3 arguments (the element, the index and the array). The return
      *     value is ignored.
      * @param {S=} opt_obj The object to be used as the value of 'this'
      *     within f.
-     * @template T,S
+     * @template T
      */
-    function forEachRight<T,S>(arr: T[]|goog.array.ArrayLike, f: { (_0: T, _1: number, _2: any): any }, opt_obj?: S): void;
+    function forEachRight<T>(arr: T[]|goog.array.ArrayLike, f: { (_0: T, _1: number, _2: any): any }, opt_obj?: any): void;
 
     /**
      * Calls a function for each element in an array, and if the function returns
@@ -102,9 +102,9 @@ declare module goog.array {
      *     within f.
      * @return {!Array.<T>} a new array in which only elements that passed the test
      *     are present.
-     * @template T,S
+     * @template T
      */
-    function filter<T,S>(arr: T[]|goog.array.ArrayLike, f: { (_0: T, _1: number, _2: any): boolean }, opt_obj?: S): T[];
+    function filter<T>(arr: T[]|goog.array.ArrayLike, f: { (_0: T, _1: number, _2: any): boolean }, opt_obj?: any): T[];
 
     /**
      * Calls a function for each element in an array and inserts the result into a
@@ -146,9 +146,9 @@ declare module goog.array {
      * @param {S=} opt_obj  The object to be used as the value of 'this'
      *     within f.
      * @return {R} Result of evaluating f repeatedly across the values of the array.
-     * @template T,S,R
+     * @template T,R
      */
-    function reduce<T,S,R>(arr: T[]|goog.array.ArrayLike, f: { (_0: R, _1: T, _2: number, _3: any): R }, val: any, opt_obj?: S): R;
+    function reduce<T,R>(arr: T[]|goog.array.ArrayLike, f: { (_0: R, _1: T, _2: number, _3: any): R }, val: any, opt_obj?: any): R;
 
     /**
      * Passes every element of an array into a function and accumulates the result,
@@ -174,9 +174,9 @@ declare module goog.array {
      *     within f.
      * @return {R} Object returned as a result of evaluating f repeatedly across the
      *     values of the array.
-     * @template T,S,R
+     * @template T,R
      */
-    function reduceRight<T,S,R>(arr: T[]|goog.array.ArrayLike, f: { (_0: R, _1: T, _2: number, _3: any): R }, val: any, opt_obj?: S): R;
+    function reduceRight<T,R>(arr: T[]|goog.array.ArrayLike, f: { (_0: R, _1: T, _2: number, _3: any): R }, val: any, opt_obj?: any): R;
 
     /**
      * Calls f for each element of an array. If any call returns true, some()
@@ -193,9 +193,9 @@ declare module goog.array {
      * @param {S=} opt_obj  The object to be used as the value of 'this'
      *     within f.
      * @return {boolean} true if any element passes the test.
-     * @template T,S
+     * @template T
      */
-    function some<T,S>(arr: T[]|goog.array.ArrayLike, f: { (_0: T, _1: number, _2: any): boolean }, opt_obj?: S): boolean;
+    function some<T>(arr: T[]|goog.array.ArrayLike, f: { (_0: T, _1: number, _2: any): boolean }, opt_obj?: any): boolean;
 
     /**
      * Call f for each element of an array. If all calls return true, every()
@@ -212,9 +212,9 @@ declare module goog.array {
      * @param {S=} opt_obj The object to be used as the value of 'this'
      *     within f.
      * @return {boolean} false if any element fails the test.
-     * @template T,S
+     * @template T
      */
-    function every<T,S>(arr: T[]|goog.array.ArrayLike, f: { (_0: T, _1: number, _2: any): boolean }, opt_obj?: S): boolean;
+    function every<T>(arr: T[]|goog.array.ArrayLike, f: { (_0: T, _1: number, _2: any): boolean }, opt_obj?: any): boolean;
 
     /**
      * Counts the array elements that fulfill the predicate, i.e. for which the
@@ -222,13 +222,13 @@ declare module goog.array {
      *
      * @param {!(Array.<T>|goog.array.ArrayLike)} arr Array or array like object
      *     over which to iterate.
-     * @param {function(this: S, T, number, ?): boolean} f The function to call for
+     * @param {function(this: any, T, number, ?): boolean} f The function to call for
      *     every element. Takes 3 arguments (the element, the index and the array).
      * @param {S=} opt_obj The object to be used as the value of 'this' within f.
      * @return {number} The number of the matching elements.
-     * @template T,S
+     * @template T
      */
-    function count<T,S>(arr: T[]|goog.array.ArrayLike, f: { (_0: T, _1: number, _2: any): boolean }, opt_obj?: S): number;
+    function count<T>(arr: T[]|goog.array.ArrayLike, f: { (_0: T, _1: number, _2: any): boolean }, opt_obj?: any): number;
 
     /**
      * Search an array for the first element that satisfies a given condition and
@@ -241,9 +241,9 @@ declare module goog.array {
      * @param {S=} opt_obj An optional "this" context for the function.
      * @return {?T} The first array element that passes the test, or null if no
      *     element is found.
-     * @template T,S
+     * @template T
      */
-    function find<T,S>(arr: T[]|goog.array.ArrayLike, f: { (_0: T, _1: number, _2: any): boolean }, opt_obj?: S): T;
+    function find<T>(arr: T[]|goog.array.ArrayLike, f: { (_0: T, _1: number, _2: any): boolean }, opt_obj?: any): T;
 
     /**
      * Search an array for the first element that satisfies a given condition and
@@ -257,9 +257,9 @@ declare module goog.array {
      * @param {S=} opt_obj An optional "this" context for the function.
      * @return {number} The index of the first array element that passes the test,
      *     or -1 if no element is found.
-     * @template T,S
+     * @template T
      */
-    function findIndex<T,S>(arr: T[]|goog.array.ArrayLike, f: { (_0: T, _1: number, _2: any): boolean }, opt_obj?: S): number;
+    function findIndex<T>(arr: T[]|goog.array.ArrayLike, f: { (_0: T, _1: number, _2: any): boolean }, opt_obj?: any): number;
 
     /**
      * Search an array (in reverse order) for the last element that satisfies a
@@ -273,9 +273,9 @@ declare module goog.array {
      * @param {S=} opt_obj An optional "this" context for the function.
      * @return {?T} The last array element that passes the test, or null if no
      *     element is found.
-     * @template T,S
+     * @template T
      */
-    function findRight<T,S>(arr: T[]|goog.array.ArrayLike, f: { (_0: T, _1: number, _2: any): boolean }, opt_obj?: S): T;
+    function findRight<T>(arr: T[]|goog.array.ArrayLike, f: { (_0: T, _1: number, _2: any): boolean }, opt_obj?: any): T;
 
     /**
      * Search an array (in reverse order) for the last element that satisfies a
@@ -289,9 +289,9 @@ declare module goog.array {
      * @param {Object=} opt_obj An optional "this" context for the function.
      * @return {number} The index of the last array element that passes the test,
      *     or -1 if no element is found.
-     * @template T,S
+     * @template T
      */
-    function findIndexRight<T,S>(arr: T[]|goog.array.ArrayLike, f: { (_0: T, _1: number, _2: any): boolean }, opt_obj?: Object): number;
+    function findIndexRight<T>(arr: T[]|goog.array.ArrayLike, f: { (_0: T, _1: number, _2: any): boolean }, opt_obj?: Object): number;
 
     /**
      * Whether the array contains the given object.
@@ -380,9 +380,9 @@ declare module goog.array {
      *     return a boolean.
      * @param {S=} opt_obj An optional "this" context for the function.
      * @return {boolean} True if an element was removed.
-     * @template T,S
+     * @template T
      */
-    function removeIf<T,S>(arr: T[]|goog.array.ArrayLike, f: { (_0: T, _1: number, _2: any): boolean }, opt_obj?: S): boolean;
+    function removeIf<T>(arr: T[]|goog.array.ArrayLike, f: { (_0: T, _1: number, _2: any): boolean }, opt_obj?: any): boolean;
 
     /**
      * Returns a new array that is the result of joining the arguments.  If arrays
@@ -458,7 +458,7 @@ declare module goog.array {
      *     to add to arr1.
      * @template VALUE
      */
-    function extend<VALUE>(arr1: VALUE[], ...var_args: VALUE[]|VALUE[]): void;
+    function extend<VALUE>(arr1: VALUE[], ...var_args: VALUE[]): void;
 
     /**
      * Adds or removes elements from an array. This is a generic version of Array
@@ -736,9 +736,9 @@ declare module goog.array {
      * @return {!Object} An object, with keys being all of the unique return values
      *     of sorter, and values being arrays containing the items for
      *     which the splitter returned that key.
-     * @template T,S
+     * @template T
      */
-    function bucket<T,S>(array: T[], sorter: { (_0: T, _1: number, _2: T[]): any }, opt_obj?: S): Object;
+    function bucket<T>(array: T[], sorter: { (_0: T, _1: number, _2: T[]): any }, opt_obj?: any): Object;
 
     /**
      * Creates a new object built from the provided array and the key-generation
@@ -754,9 +754,9 @@ declare module goog.array {
      * @param {S=} opt_obj The object to be used as the value of 'this'
      *     within keyFunc.
      * @return {!Object.<T>} The new object.
-     * @template T,S
+     * @template T
      */
-    function toObject<T,S>(arr: T[]|goog.array.ArrayLike, keyFunc: { (_0: T, _1: number, _2: any): string }, opt_obj?: S): { [key: string]: any /*missing*/ };
+    function toObject<T>(arr: T[]|goog.array.ArrayLike, keyFunc: { (_0: T, _1: number, _2: any): string }, opt_obj?: any): { [key: string]: any /*missing*/ };
 
     /**
      * Creates a range of numbers in an arithmetic progression.

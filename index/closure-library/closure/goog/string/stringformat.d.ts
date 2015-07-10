@@ -11,5 +11,5 @@ declare module goog._string {
      * @param {...string|number} var_args Values formatString is to be filled with.
      * @return {string} Formatted string.
      */
-    function format(formatString: string, ...var_args: string|number[]): string;
+    function format(formatString: string, ...var_args: (string|number)[]): string;
 }

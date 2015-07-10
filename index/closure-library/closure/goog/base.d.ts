@@ -3,11 +3,6 @@
 declare module goog {
 
     /**
-     * Reference to the global context.  In most cases this will be 'window'.
-     */
-    var global: any /*missing*/;
-
-    /**
      * Returns true if the specified value is not undefined.
      * WARNING: Do not use this to test if an object has a property. Use the in
      * operator instead.
@@ -347,7 +342,7 @@ declare module goog {
      * @template T
      * @suppress {deprecated} See above.
      */
-    function bind<T>(fn: any /*missing*/, selfObj: T, ...var_args: any[]): Function;
+    function bind<T>(fn: (_0: any[]) => any /*missing*/, selfObj: T, ...var_args: any[]): Function;
 
     /**
      * Like bind(), except that a 'this object' is not required. Useful when the

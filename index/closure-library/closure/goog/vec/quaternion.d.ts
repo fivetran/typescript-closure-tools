@@ -5,16 +5,16 @@
 declare module goog.vec.Quaternion {
 
     /** @typedef {goog.vec.Float32} */
-    interface Float32 extends goog.vec.Float32 { }
+    type Float32 = goog.vec.Float32;
 
     /** @typedef {goog.vec.Float64} */
-    interface Float64 extends goog.vec.Float64 { }
+    type Float64 = goog.vec.Float64;
 
     /** @typedef {goog.vec.Number} */
-    interface Number extends goog.vec.Number { }
+    type Number = goog.vec.Number;
 
     /** @typedef {goog.vec.AnyType} */
-    interface AnyType extends goog.vec.AnyType { }
+    type AnyType = goog.vec.AnyType;
 
     /**
      * Creates a Float32 quaternion, initialized to zero.

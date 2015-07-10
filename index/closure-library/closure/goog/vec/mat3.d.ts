@@ -5,22 +5,22 @@
 declare module goog.vec.Mat3 {
 
     /** @typedef {goog.vec.Float32} */
-    interface Float32 extends goog.vec.Float32 { }
+    type Float32 = goog.vec.Float32;
 
     /** @typedef {goog.vec.Float64} */
-    interface Float64 extends goog.vec.Float64 { }
+    type Float64 = goog.vec.Float64;
 
     /** @typedef {goog.vec.Number} */
-    interface Number extends goog.vec.Number { }
+    type Number = goog.vec.Number;
 
     /** @typedef {goog.vec.AnyType} */
-    interface AnyType extends goog.vec.AnyType { }
+    type AnyType = goog.vec.AnyType;
 
     /** @typedef {Float32Array} */
-    interface Type extends Float32Array { }
+    type Type = Float32Array;
 
     /** @typedef {goog.vec.ArrayType} */
-    interface Mat3Like extends goog.vec.ArrayType { }
+    type Mat3Like = goog.vec.ArrayType;
 
     /**
      * Creates the array representation of a 3x3 matrix of Float32.

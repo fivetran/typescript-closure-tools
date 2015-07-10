@@ -127,7 +127,7 @@ declare module goog.events {
              *     listener or an object with handleEvent function.
              * @param {boolean|undefined} capture Optional whether to use capture phase.
              * @param {T} scope Object in whose scope to call the listener.
-             * @return {!goog.events.EventHandler} This object, allowing for chaining of
+             * @return {goog.events.EventHandler} This object, allowing for chaining of
              *     calls.
              * @template T
              */
@@ -167,7 +167,7 @@ declare module goog.events {
              *     whether the listener is fired during the capture or bubble phase of the
              *     event.
              * @param {Object=} opt_scope Element in whose scope to call the listener.
-             * @return {!goog.events.EventHandler} This object, allowing for chaining of
+             * @return {goog.events.EventHandler} This object, allowing for chaining of
              *     calls.
              */
             unlistenWithWrapper(src: EventTarget|goog.events.EventTarget, wrapper: goog.events.EventWrapper, listener: { (_0: any): any }|{ handleEvent: { (_0: any): any } }|any /*null*/, opt_capt?: boolean, opt_scope?: Object): goog.events.EventHandler<any>;

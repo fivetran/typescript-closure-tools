@@ -455,7 +455,7 @@ declare module goog.Uri {
              * @param {...(goog.Uri.QueryData|goog.structs.Map|Object)} var_args The object
              *     from which key value pairs will be copied.
              */
-            extend(...var_args: goog.Uri.QueryData|goog.structs.Map<any, any>|Object[]): void;
+            extend(...var_args: (goog.Uri.QueryData|goog.structs.Map<any, any>|Object)[]): void;
     } 
     
 

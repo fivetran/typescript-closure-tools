@@ -16,6 +16,23 @@ declare module goog.json {
              * @final
              */
             constructor();
-    } 
+
+            /**
+             * Parses a string into an object and returns the result.
+             * Agnostic to the format of string and object.
+             *
+             * @param {string} s The string to parse.
+             * @return {*} The object generated from the string.
+             */
+            parse(s: string): any;
     
+            /**
+             * Serializes an object or a value to a string.
+             * Agnostic to the particular format of object and string.
+             *
+             * @param {*} object The object to stringify.
+             * @return {string} A string representation of the input.
+             */
+            stringify(object: any): string;
+    }
 }

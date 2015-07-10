@@ -27,7 +27,7 @@ declare module goog.labs {
              * @implements {goog.Thenable.<TYPE>}
              * @template TYPE,RESOLVER_CONTEXT
              */
-            constructor(resolver: { (_0: { (_0: TYPE|IThenable<TYPE>|Thenable): any /*missing*/ }, _1: { (_0: any): any /*missing*/ }): void }, opt_context?: RESOLVER_CONTEXT);
+            constructor(resolver: { (_0: { (_0: TYPE|IThenable<TYPE>|Thenable<any>): any /*missing*/ }, _1: { (_0: any): any /*missing*/ }): void }, opt_context?: RESOLVER_CONTEXT);
     
             /**
              * Adds callbacks that will operate on the result of the Thenable, returning a
@@ -56,7 +56,7 @@ declare module goog.labs {
              *     of the fulfillment or rejection callback.
              * @template RESULT,THIS
              */
-            then<RESULT,THIS>(opt_onFulfilled?: { (_0: TYPE): RESULT|IThenable<RESULT>|Thenable }, opt_onRejected?: { (_0: any): any }, opt_context?: THIS): goog.Promise<RESULT>;
+            then<RESULT,THIS>(opt_onFulfilled?: { (_0: TYPE): RESULT|IThenable<RESULT>|Thenable<any> }, opt_onRejected?: { (_0: any): any }, opt_context?: THIS): goog.Promise<RESULT>;
     } 
     
 

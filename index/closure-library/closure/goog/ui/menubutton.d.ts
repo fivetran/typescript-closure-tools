@@ -112,7 +112,7 @@ declare module goog.ui {
              * @param {goog.math.Box} margin Margin to apply.
              */
             setMenuMargin(margin: goog.math.Box): void;
-    
+        
             /**
              * Adds a new menu item at the end of the menu.
              * @param {goog.ui.MenuItem|goog.ui.MenuSeparator|goog.ui.Control} item Menu

@@ -6,8 +6,8 @@ declare module goog.vec {
 
     class Ray extends Ray__Class { }
     /** Fake class which should be extended to avoid inheriting static properties */
-    class Ray__Class  { 
-    
+    class Ray__Class  {
+
             /**
              * Constructs a new ray with an optional origin and direction. If not specified,
              * the default is [0, 0, 0].
@@ -17,7 +17,7 @@ declare module goog.vec {
              * @final
              */
             constructor(opt_origin?: goog.vec.Vec3.AnyType, opt_dir?: goog.vec.Vec3.AnyType);
-    
+
             /**
              * @type {goog.vec.Vec3.Float64}
              */

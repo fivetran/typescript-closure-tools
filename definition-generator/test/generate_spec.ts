@@ -33,7 +33,7 @@ describe('generate', () => {
     it('class', () => {
         expect(parse('test/class.js')).toEqual({
             "example": {
-                "Class": "class Class__Class implements example.Interface { constructor(x: number); constructor(x: string); thisAssignment: string; thisDeclaration: number; overloadedMethod(x: number): void; overloadedMethod(x: string): void; interfaceMethod(x: number): void; interfaceMethod(x: string): void; } class Class extends Class__Class { } module Class { }"
+                "Class": "class Class extends Class__Class { } class Class__Class implements example.Interface { constructor(x: number|string); thisAssignment: string; thisDeclaration: number; overloadedMethod(x: number|string): void; interfaceMethod(x: number|string): void; }"
             }
         });
     });
@@ -41,7 +41,7 @@ describe('generate', () => {
     it('interface', () => {
         expect(parse('test/interface.js')).toEqual({
             "example": {
-                "Interface": "interface Interface { interfaceMethod(x: number): void; interfaceMethod(x: string): void; }"
+                "Interface": "interface Interface { interfaceMethod(x: number|string): void; }"
             }
         });
     });
@@ -65,7 +65,7 @@ describe('generate', () => {
     it('overloaded function', () => {
         expect(parse('test/overloaded_function.js')).toEqual({
             "example": {
-                "overloadedFunction": "function overloadedFunction(x: number): void; function overloadedFunction(x: string): void;"
+                "overloadedFunction": "function overloadedFunction(x: number|string): void;"
             }
         });
     });
@@ -73,7 +73,7 @@ describe('generate', () => {
     it('subclass', () => {
         expect(parse('test/subclass.js')).toEqual({
             "example": {
-                "SubClass": "class SubClass__Class extends example.Class__Class { constructor(); } class SubClass extends SubClass__Class { } module SubClass { }"
+                "SubClass": "class SubClass extends SubClass__Class { } class SubClass__Class extends example.Class__Class { constructor(); }"
             }
         });
     });
@@ -105,8 +105,8 @@ describe('generate', () => {
     it('typedef union', () => {
         expect(parse('test/typedef_union.js')).toEqual({
             "example": {
-                "UnionType": 'interface UnionType { /*any (string|number)*/ }',
-                "unionFunction" : 'function unionFunction(x: string): void; function unionFunction(x: number): void;',
+                "UnionType": 'type UnionType = string|number;',
+                "unionFunction" : 'function unionFunction(x: example.UnionType): void;',
                 "genericUnionFunction" : 'function genericUnionFunction(x: example.UnionType<any>): void;'
             }
         });
@@ -132,7 +132,7 @@ describe('generate', () => {
         it('local class', () => {
             expect(parse('test/requirejs_local_class.js')).toEqual({
                 MODULE : {
-                    LocalClass : 'class LocalClass__Class { constructor(x: number); memberFunction(x: number): void; } class LocalClass extends LocalClass__Class { } module LocalClass { }'
+                    LocalClass : 'class LocalClass extends LocalClass__Class { } class LocalClass__Class { constructor(x: number); memberFunction(x: number): void; }'
                 }
             });
         });

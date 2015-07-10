@@ -6,7 +6,7 @@ declare module goog.vec.Matrix3 {
     /**
      * @typedef {goog.vec.ArrayType}
      */
-    interface Type extends goog.vec.ArrayType { }
+    type Type = goog.vec.ArrayType;
 
     /**
      * Creates the array representation of a 3x3 matrix. The use of the array

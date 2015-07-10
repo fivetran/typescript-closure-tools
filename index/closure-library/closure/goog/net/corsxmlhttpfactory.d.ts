@@ -38,30 +38,6 @@ declare module goog.net {
             constructor();
     
             /**
-             * The simulated ready state.
-             * @type {number}
-             */
-            readyState: number;
-    
-            /**
-             * The simulated ready state change callback function.
-             * @type {Function}
-             */
-            onreadystatechange: Function;
-    
-            /**
-             * The simulated response text parameter.
-             * @type {?string}
-             */
-            responseText: string;
-    
-            /**
-             * The simulated status code
-             * @type {number}
-             */
-            status: number;
-    
-            /**
              * @type {function()|null|undefined}
              * @see http://www.w3.org/TR/XMLHttpRequest/#handler-xhr-onreadystatechange
              */

@@ -141,7 +141,7 @@ declare module goog.ui {
              *   Ctrl+g Shift+a  registerShortcut(str, 'ctrl+g shift+a')
              *   g a             registerShortcut(str, 'g a').
              */
-            registerShortcut(identifier: string, ...var_args: number|string|number[][]): void;
+            registerShortcut(identifier: string, ...var_args: (number|string|number[])[]): void;
     
             /**
              * Unregisters a keyboard shortcut by keyCode and modifiers or string
@@ -162,7 +162,7 @@ declare module goog.ui {
              * @param {...(number|string|Array.<number>)} var_args String representation, or
              *     array or list of alternating key codes and modifiers.
              */
-            unregisterShortcut(...var_args: number|string|number[][]): void;
+            unregisterShortcut(...var_args: (number|string|number[])[]): void;
     
             /**
              * Verifies if a particular keyboard shortcut is registered already. It has
@@ -184,7 +184,7 @@ declare module goog.ui {
              *     array or list of alternating key codes and modifiers.
              * @return {boolean} Whether the specified keyboard shortcut is registered.
              */
-            isShortcutRegistered(...var_args: number|string|number[][]): boolean;
+            isShortcutRegistered(...var_args: (number|string|number[])[]): boolean;
     
             /**
              * Unregisters all keyboard shortcuts.

@@ -187,7 +187,7 @@ declare module goog.html.SafeHtml {
      *     arguments would be processed recursively.
      * @return {!goog.html.SafeHtml}
      */
-    function concat(...var_args: goog.html.SafeHtml.TextOrHtml_|goog.html.SafeHtml.TextOrHtml_[][]): goog.html.SafeHtml;
+    function concat(...var_args: (goog.html.SafeHtml.TextOrHtml_|goog.html.SafeHtml.TextOrHtml_[])[]): goog.html.SafeHtml;
 
     /**
      * Creates a new SafeHtml object with known directionality by concatenating the
@@ -198,7 +198,7 @@ declare module goog.html.SafeHtml {
      *     arguments would be processed recursively.
      * @return {!goog.html.SafeHtml}
      */
-    function concatWithDir(dir: goog.i18n.bidi.Dir, ...var_args: goog.html.SafeHtml.TextOrHtml_|goog.html.SafeHtml.TextOrHtml_[][]): goog.html.SafeHtml;
+    function concatWithDir(dir: goog.i18n.bidi.Dir, ...var_args: (goog.html.SafeHtml.TextOrHtml_|goog.html.SafeHtml.TextOrHtml_[])[]): goog.html.SafeHtml;
 
     /**
      * A SafeHtml instance corresponding to the empty string.

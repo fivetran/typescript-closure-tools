@@ -78,14 +78,6 @@ declare module goog.ui {
     
 }
 
-declare module goog.ui.MenuBase {
-
-    /**
-     * Events fired by the Menu
-     */
-    var Events: any /*missing*/;
-}
-
 declare module goog.ui.MenuBase.Events {
 
     /**

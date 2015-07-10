@@ -72,7 +72,7 @@ declare module goog.fs {
      *     the resulting blob.
      * @return {!Blob} The blob.
      */
-    function getBlob(...var_args: string|Blob|ArrayBuffer[]): Blob;
+    function getBlob(...var_args: (string|Blob|ArrayBuffer)[]): Blob;
 
     /**
      * Creates a blob with the given properties.

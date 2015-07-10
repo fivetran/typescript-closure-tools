@@ -1,4 +1,5 @@
 /// <reference path="../../../../globals.d.ts" />
+/// <reference path="../dom.d.ts" />
 
 declare module goog.dom.animationFrame {
 

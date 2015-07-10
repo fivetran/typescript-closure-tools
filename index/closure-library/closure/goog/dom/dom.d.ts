@@ -872,7 +872,7 @@ declare module goog.dom {
      *     its elements will be added as childNodes instead.
      * @return {!Element} Reference to a DOM node.
      */
-    function createDom(tagName: string, opt_attributes?: Object|string[]|string, ...var_args: Object|string|any[]|NodeList[]): Element;
+    function createDom(tagName: string, opt_attributes?: Object|string[]|string, ...var_args: any[]): Element;
 
     /**
      * Alias for {@code createDom}.
@@ -886,7 +886,7 @@ declare module goog.dom {
      * @return {!Element} Reference to a DOM node.
      * @deprecated Use {@link goog.dom.createDom} instead.
      */
-    function $dom(tagName: string, opt_attributes?: string|Object, ...var_args: Object|string|any[]|NodeList[]): Element;
+    function $dom(tagName: string, opt_attributes?: string|Object, ...var_args: any[]): Element;
 
     /**
      * Creates a new element.

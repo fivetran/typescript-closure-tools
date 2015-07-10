@@ -7,7 +7,7 @@ declare module goog.ui {
 
     class TriStateMenuItem extends TriStateMenuItem__Class { }
     /** Fake class which should be extended to avoid inheriting static properties */
-    class TriStateMenuItem__Class  { 
+    class TriStateMenuItem__Class extends goog.ui.MenuItem__Class {
     
             /**
              * Class representing a three state checkbox menu item.

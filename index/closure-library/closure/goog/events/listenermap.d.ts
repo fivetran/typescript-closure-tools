@@ -15,7 +15,7 @@ declare module goog.events {
              * @constructor
              * @final
              */
-            constructor(src: EventTarget|goog.events.Listenable);
+            constructor(src: _EventTarget|goog.events.Listenable);
     
             /** @type {EventTarget|goog.events.Listenable} */
             src: EventTarget|goog.events.Listenable;

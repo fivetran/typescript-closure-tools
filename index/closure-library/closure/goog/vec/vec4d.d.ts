@@ -4,7 +4,7 @@
 declare module goog.vec.vec4d {
 
     /** @typedef {goog.vec.Float64} */
-    interface Type extends goog.vec.Float64 { }
+    type Type = goog.vec.Float64;
 
     /**
      * Creates a vec4d with all elements initialized to zero.

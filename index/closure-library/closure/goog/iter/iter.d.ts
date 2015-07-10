@@ -290,7 +290,7 @@ declare module goog.iter {
      *     iterate over all the given iterables' contents.
      * @template VALUE
      */
-    function chain<VALUE>(...var_args: goog.iter.Iterator<VALUE>|goog.iter.Iterable[]): goog.iter.Iterator<VALUE>;
+    function chain<VALUE>(...var_args: (goog.iter.Iterator<VALUE>|goog.iter.Iterable)[]): goog.iter.Iterator<VALUE>;
 
     /**
      * Takes a single iterable containing zero or more iterables and returns one
@@ -441,7 +441,7 @@ declare module goog.iter {
      *     arrays of elements from the provided iterables.
      * @template VALUE
      */
-    function zip<VALUE>(...var_args: goog.iter.Iterator<VALUE>|goog.iter.Iterable[]): goog.iter.Iterator<VALUE[]>;
+    function zip<VALUE>(...var_args: (goog.iter.Iterator<VALUE>|goog.iter.Iterable)[]): goog.iter.Iterator<VALUE[]>;
 
     /**
      * Creates an iterator that returns arrays containing the ith elements from the
@@ -457,7 +457,7 @@ declare module goog.iter {
      *     arrays of elements from the provided iterables.
      * @template VALUE
      */
-    function zipLongest<VALUE>(fillValue: VALUE, ...var_args: goog.iter.Iterator<VALUE>|goog.iter.Iterable[]): goog.iter.Iterator<VALUE[]>;
+    function zipLongest<VALUE>(fillValue: VALUE, ...var_args: (goog.iter.Iterator<VALUE>|goog.iter.Iterable)[]): goog.iter.Iterator<VALUE[]>;
 
     /**
      * Creates an iterator that filters {@code iterable} based on a series of

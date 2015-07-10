@@ -53,7 +53,7 @@ declare module goog.result.Result {
 
     class CancelError extends CancelError__Class { }
     /** Fake class which should be extended to avoid inheriting static properties */
-    class CancelError__Class extends Error__Class  { 
+    class CancelError__Class extends _Error  { 
     
             /**
              * The value to be passed to the error handlers invoked upon cancellation.

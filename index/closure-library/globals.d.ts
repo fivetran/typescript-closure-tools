@@ -1,4 +1,4 @@
-interface Arguments extends IArguments { }
+declare type Arguments = IArguments;
 
 declare module goog {
     module _string { }
@@ -30,13 +30,14 @@ declare class _Event implements Event {
     CAPTURING_PHASE: number;
     AT_TARGET: number;
     BUBBLING_PHASE: number;
+    returnValue: any;
 }
 
-interface _File extends File { }
+declare type _File = File;
 
-interface _EventTarget extends EventTarget { }
+declare type _EventTarget = EventTarget;
 
-interface Image extends HTMLImageElement { }
+declare type Image = HTMLImageElement;
 
 interface IThenable<R> {
     then<U>(onFulfilled: (value: R) => IThenable<U>,  onRejected: (error: any) => IThenable<U>): IThenable<U>;

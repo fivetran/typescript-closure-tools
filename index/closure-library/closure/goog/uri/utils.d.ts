@@ -257,7 +257,7 @@ declare module goog.uri.utils {
      *     An array or argument list conforming to goog.uri.utils.QueryArray.
      * @return {string} The URI with all query parameters added.
      */
-    function appendParams(uri: string, ...var_args: goog.uri.utils.QueryArray|string|goog.uri.utils.QueryValue[]): string;
+    function appendParams(uri: string, ...var_args: (goog.uri.utils.QueryArray|string|goog.uri.utils.QueryValue)[]): string;
 
     /**
      * Appends query parameters from a map.

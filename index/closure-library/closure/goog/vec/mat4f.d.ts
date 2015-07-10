@@ -6,7 +6,7 @@
 declare module goog.vec.mat4f {
 
     /** @typedef {goog.vec.Float32} */
-    interface Type extends goog.vec.Float32 { }
+    type Type = goog.vec.Float32;
 
     /**
      * Creates a mat4f with all elements initialized to zero.

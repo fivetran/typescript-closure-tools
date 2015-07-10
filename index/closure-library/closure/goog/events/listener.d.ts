@@ -21,13 +21,7 @@ declare module goog.events {
              * @constructor
              */
             constructor(listener: Function, proxy: Function, src: EventTarget|goog.events.Listenable, type: string, capture: boolean, opt_handler?: Object);
-    
-            /**
-             * Callback function.
-             * @type {Function}
-             */
-            listener: Function;
-    
+
             /**
              * A wrapper over the original listener. This is used solely to
              * handle native browser events (it is used to simulate the capture
@@ -35,43 +29,7 @@ declare module goog.events {
              * @type {Function}
              */
             proxy: Function;
-    
-            /**
-             * Object or node that callback is listening to
-             * @type {EventTarget|goog.events.Listenable}
-             */
-            src: EventTarget|goog.events.Listenable;
-    
-            /**
-             * The event type.
-             * @const {string}
-             */
-            type: any /*missing*/;
-    
-            /**
-             * Whether the listener is being called in the capture or bubble phase
-             * @const {boolean}
-             */
-            capture: any /*missing*/;
-    
-            /**
-             * Optional object whose context to execute the listener in
-             * @type {Object|undefined}
-             */
-            handler: Object|any /*undefined*/;
-    
-            /**
-             * Whether to remove the listener after it has been called.
-             * @type {boolean}
-             */
-            callOnce: boolean;
-    
-            /**
-             * Whether the listener has been removed.
-             * @type {boolean}
-             */
-            removed: boolean;
-    
+
             /**
              * If monitoring the goog.events.Listener instances is enabled, stores the
              * creation stack trace of the Disposable instance.
@@ -101,7 +59,7 @@ declare module goog.events {
              * The listener function.
              * @type {function(?):?|{handleEvent:function(?):?}|null}
              */
-            listener: { (_0: any): any }|{ handleEvent: { (_0: any): any } }|any /*null*/;
+            listener: { (_0: any): any }|{ handleEvent: { (_0: any): any } } /*null*/;
     
             /**
              * Whether the listener works on capture phase.
