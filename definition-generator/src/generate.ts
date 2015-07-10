@@ -484,7 +484,6 @@ function generate_class(name: string, prototype: combine.Symbol) {
     add_members(prototype);
 
     acc += '} \n';
-    acc += 'module ' + name + ' { }\n';
 
     return acc;
 }
