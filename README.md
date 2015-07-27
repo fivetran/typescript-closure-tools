@@ -27,6 +27,7 @@ closure2ts
   [--globals output/dir/global-declarations.d.ts]
   [--input_root input/dir]
   [--output_root output/dir]
+  [--include_private boolean]
   input/dir/input-file.js output/dir/output-file.d.ts
   input/dir/another-input-file.js output/dir/another-output-file.d.ts
   ...
@@ -37,6 +38,7 @@ If this option isn't present, we will simply look for global symbols in the inpu
 * `--globals output/dir/global-declarations.d.ts` A TypeScript declaration that will be referenced at the top of every output file.
 * `--input_root input/dir` Root of inputs, considered when computing relative paths for `///<reference path="..." />` tags.
 * `--output_root output/dir` Root of outputs, considered when computing relative paths for `///<reference path="..." />` tags.
+* `--include_private boolean` Whether to include items marked as private (@private), defaults to false.
 
 # Structure
 

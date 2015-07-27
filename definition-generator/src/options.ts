@@ -23,6 +23,7 @@ export var provides = get_option('provides');
 export var globals = get_option('globals');
 export var inputRoot = get_option('input_root') || '';
 export var outputRoot = get_option('output_root') || '';
+export var includePrivate = get_option('include_private') || false;
 export var todo: InputOutput[] = [];
 
 for (var i = 0; i < options.length; i += 2) {
