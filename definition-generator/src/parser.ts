@@ -6,6 +6,7 @@
 import esprima = require('esprima');
 import escodegen = require('escodegen');
 import doctrine = require('doctrine');
+import options = require('./options');
 
 function values(object: Object) {
     return Object.keys(object).map(k => object[k]);
@@ -478,5 +479,5 @@ export function jsdoc(code: string): File {
     var comments = extract_jsdoc(tree.body);
     var parsed = parse_comments(comments);
 
-    return remove_private(parsed);
+    return options.includePrivate ? parsed : remove_private(parsed);
 }
