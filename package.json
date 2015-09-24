@@ -3,6 +3,9 @@
     "version": "0.0.4",
     "description": "Command-line tools to convert closure-style JSDoc annotations to typescript, and to convert typescript sources to closure externs files",
     "author": "George Fraser",
+    "contributors": [
+      "Benjamin P. Jung <headcr4sh@gmail.com>"
+    ],
     "keywords": [
         "TypeScript",
         "Closure"
@@ -23,6 +26,9 @@
     "devDependencies": {
         "jasmine-node": "*",
         "browserify": "*"
+    },
+    "scripts": {
+      "prepublish": "tsc --module commonjs definition-generator/src/*.ts && tsc --module commonjs externs-generator/src/*.ts"
     },
     "bin": {
         "ts2externs": "./externs-generator/src/cli.js",
