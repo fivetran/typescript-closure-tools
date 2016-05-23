@@ -1,6 +1,6 @@
 {
     "name": "typescript-closure-tools",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "description": "Command-line tools to convert closure-style JSDoc annotations to typescript, and to convert typescript sources to closure externs files",
     "author": "George Fraser",
     "keywords": [
