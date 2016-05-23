@@ -5,7 +5,6 @@
 !test/*.js
 !main.min.js
 *.map
-symbols.tsv
 
 *.jar
 node_modules/
