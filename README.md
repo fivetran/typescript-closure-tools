@@ -15,7 +15,7 @@ cd typescript-closure-tools
 git submodule update --init
 npm install
 tsc --module commonjs definition-generator/src/*.ts
-node definition-generator/src/main.js test/example.js test/example.d.ts # Run a single example
+node definition-generator/src/main.js test/class.js class.d.ts # Run a single example
 sudo npm install -g 
 ```
 
