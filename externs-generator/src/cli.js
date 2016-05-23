@@ -1,2 +1,3 @@
 #!/usr/bin/env node
-require('./main.js');
+var path = require('path');
+require(path.resolve(__dirname, 'main.js'));
