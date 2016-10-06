@@ -1,37 +1,76 @@
 {
-    "name": "typescript-closure-tools",
-    "version": "0.0.5",
-    "description": "Command-line tools to convert closure-style JSDoc annotations to typescript, and to convert typescript sources to closure externs files",
-    "author": "George Fraser",
-    "contributors": [
-      "Benjamin P. Jung <headcr4sh@gmail.com>"
-    ],
-    "keywords": [
-        "TypeScript",
-        "Closure"
-    ],
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/fivetran/typescript-closure-tools"
+  "name": "typescript-closure-tools",
+  "version": "0.0.6",
+  "description": "Command-line tools to convert closure-style JSDoc annotations to typescript, and to convert typescript sources to closure externs files",
+  "author": {
+    "name": "George Fraser"
+  },
+  "contributors": [
+    {
+      "name": "Benjamin P. Jung",
+      "email": "headcr4sh@gmail.com"
     },
-    "preferGlobal": true,
-    "dependencies": {
-        "esprima": "*",
-        "escodegen": "*",
-        "jsdoc": "*",
-        "doctrine": "fivetran/doctrine",
-        "mkdirp": "*",
-        "colors": "*"
-    },
-    "devDependencies": {
-        "jasmine-node": "*",
-        "browserify": "*"
-    },
-    "scripts": {
-      "prepublish": "tsc --module commonjs definition-generator/src/*.ts && tsc --module commonjs externs-generator/src/*.ts"
-    },
-    "bin": {
-        "ts2externs": "./externs-generator/src/cli.js",
-        "closure2ts": "./definition-generator/src/cli.js"
+    {
+        "name": "Christopher Bock",
+        "email": "bockchristopher@live.de"
     }
+  ],
+  "keywords": [
+    "TypeScript",
+    "Closure"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fivetran/typescript-closure-tools.git"
+  },
+  "preferGlobal": true,
+  "dependencies": {
+    "esprima": "*",
+    "escodegen": "*",
+    "jsdoc": "*",
+    "doctrine": "github:fivetran/doctrine",
+    "mkdirp": "*",
+    "colors": "*"
+  },
+  "devDependencies": {
+    "jasmine-node": "*",
+    "browserify": "*"
+  },
+  "scripts": {
+    "prepublish": "tsc --module commonjs definition-generator/src/*.ts && tsc --module commonjs externs-generator/src/*.ts"
+  },
+  "bin": {
+    "ts2externs": "./externs-generator/src/cli.js",
+    "closure2ts": "./definition-generator/src/cli.js"
+  },
+  "gitHead": "ee2c7f42b349581ab662390c58ed3359efb893c3",
+  "bugs": {
+    "url": "https://github.com/fivetran/typescript-closure-tools/issues"
+  },
+  "homepage": "https://github.com/fivetran/typescript-closure-tools#readme",
+  "_id": "typescript-closure-tools@0.0.6",
+  "_shasum": "4f2f173cbb7a5184b88d88561ea784c0a2a1ce7c",
+  "_from": "typescript-closure-tools@latest",
+  "_npmVersion": "3.3.12",
+  "_nodeVersion": "5.1.0",
+  "_npmUser": {
+    "name": "georgewfraser",
+    "email": "fraser.george.w@gmail.com"
+  },
+  "dist": {
+    "shasum": "4f2f173cbb7a5184b88d88561ea784c0a2a1ce7c",
+    "tarball": "https://registry.npmjs.org/typescript-closure-tools/-/typescript-closure-tools-0.0.6.tgz"
+  },
+  "maintainers": [
+    {
+      "name": "georgewfraser",
+      "email": "fraser.george.w@gmail.com"
+    }
+  ],
+  "_npmOperationalInternal": {
+    "host": "packages-16-east.internal.npmjs.com",
+    "tmp": "tmp/typescript-closure-tools-0.0.6.tgz_1463966790519_0.8338755199220031"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/typescript-closure-tools/-/typescript-closure-tools-0.0.6.tgz"
 }
