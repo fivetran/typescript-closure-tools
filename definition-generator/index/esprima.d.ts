@@ -1,1 +1,1 @@
-../../lib/definitely-typed/esprima/esprima.d.ts
+/// <reference path="../../lib/definitely-typed/esprima/esprima.d.ts" />

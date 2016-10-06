@@ -1,1 +1,1 @@
-../../lib/definitely-typed/colors/colors.d.ts
+/// <reference path="../../lib/definitely-typed/colors/colors.d.ts" />
