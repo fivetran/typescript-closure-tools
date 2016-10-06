@@ -273,6 +273,9 @@ function extract_jsdoc(tree) {
             requirejs = true;
             values(tree).forEach(walk);
         }
+        else if (tree.type === 'CallExpression' && tree.callee.type === 'FunctionExpression'){
+            values(tree.callee.body.body).forEach(walk);
+        }
         // If tree has children, walk them
         else {
             values(tree).forEach(walk);

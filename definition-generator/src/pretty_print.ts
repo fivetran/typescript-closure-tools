@@ -79,19 +79,38 @@ export function pretty(out: generate.Generated): string {
 
     Object.keys(out.modules).forEach(moduleName => {
         // TODO eliminate when https://typescript.codeplex.com/workitem/2490 is resolved
-        var safeName = moduleName.replace(/\bstring\b/, '_string');
-        var moduleValue = out.modules[moduleName];
 
-        acc += '\ndeclare module ' + safeName + ' {\n';
+        function prettifyModule(moduleValue, modName: string, nesting: number, topLevel: boolean) {
+            var safeName = modName.replace(/\bstring\b/, '_string');
+            var smallNest = '';
+            for (var i = 0; i < nesting - 1; i++)
+                smallNest += '    ';
 
-        Object.keys(moduleValue).forEach(function (propertyName) {
-            var member = moduleValue[propertyName];
+            if (moduleValue._comment)
+                acc += smallNest + moduleValue._comment + '\n';
 
-            member = member.replace(/\n/g, '\n    ');
-            acc += '\n    ' + member + '\n';
-        });
+            if (topLevel)
+                acc += '\ndeclare '
 
-        acc += '}\n';
+            acc += smallNest + 'module ' + safeName + ' {\n';
+            var nest = smallNest + '    ';
+            Object.keys(moduleValue).forEach(function (propertyName) {
+                if (propertyName === '_comment')
+                    return;
+
+                var member = moduleValue[propertyName];
+                if (member instanceof String || typeof member === 'string') {
+                    member = member.replace(/\n/g, '\n' + nest);
+                    acc += '\n' + nest + member + '\n';
+                }
+                else {
+                    prettifyModule(member, propertyName, nesting + 1, false);
+                }
+            });
+            acc += smallNest + '}\n';
+        }
+
+        prettifyModule(out.modules[moduleName], moduleName, 1, true);
     });
 
     return acc;

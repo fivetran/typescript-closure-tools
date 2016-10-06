@@ -597,26 +597,38 @@ export function defs(symbols: combine.Symbols): Generated {
     });
 
     // Generate statics
-    Object.keys(symbols.modules).forEach(moduleName => {
-        var symbol: combine.Symbol = symbols.modules[moduleName];
+    // extract information of module sym
+    function extrModInf(sym) {
+        var mod : any = {};
+        Object.keys(sym).forEach(propertyName => {
+            var value = sym[propertyName];
 
-        if (!modules[moduleName])
-            modules[moduleName] = {};
+            if(!value.jsdoc)
+                return;
 
-        Object.keys(symbol).forEach(propertyName => {
-            var value: parser.Value = symbol[propertyName];
             var comment = value.originalText + '\n';
-
-            if (value.jsdoc.tags.some(t => t.title === 'enum'))
-                modules[moduleName][propertyName] = comment + generate_enum(propertyName, value.value);
-            else if (value.jsdoc.tags.some(t => t.title === 'typedef'))
-                modules[moduleName][propertyName] = comment + generate_typedef(propertyName, value.jsdoc);
+            if (value.jsdoc.tags.some(t => { return t.title === 'module'; })){
+                mod[propertyName] = extrModInf(value);
+                mod[propertyName]['_comment'] = comment;
+            }
+            else if (value.jsdoc.tags.some(t => { return t.title === 'enum'; }))
+                mod[propertyName] = comment + generate_enum(propertyName, value.value);
+            else if (value.jsdoc.tags.some(t => { return t.title === 'typedef'; }))
+                mod[propertyName] = comment + generate_typedef(propertyName, value.jsdoc);
             else {
-                modules[moduleName][propertyName] = generate_properties(propertyName, value)
-                    .map(property => comment + property)
+                mod[propertyName] = generate_properties(propertyName, value)
+                    .map(property => { return comment + property; })
                     .join('\n');
             }
         });
+
+
+        return mod;
+    }
+
+    Object.keys(symbols.modules).forEach(moduleName => {
+        var symbol = symbols.modules[moduleName];
+        modules[moduleName] = extrModInf(symbol);
     });
 
     return {
