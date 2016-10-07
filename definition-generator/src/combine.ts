@@ -29,7 +29,7 @@ export function members(file: parser.File): Symbols {
     };
 
     Object.keys(file).forEach(name => {
-        var symbol: parser.Value = file[name];
+        var symbol : any = file[name];
 
         // Class and constructor
         if (symbol.jsdoc.tags.some(t => t.title === 'interface') ||
@@ -46,6 +46,9 @@ export function members(file: parser.File): Symbols {
                 acc.classes[className][memberName] = symbol;
         }
         // Static member of module
+        else if (name.lastIndexOf('.') <= 0){
+            acc.modules[name] = symbol;
+        }
         else {
             var dot = name.lastIndexOf('.');
             var moduleName = name.substring(0, dot);

@@ -627,8 +627,12 @@ export function defs(symbols: combine.Symbols): Generated {
     }
 
     Object.keys(symbols.modules).forEach(moduleName => {
-        var symbol = symbols.modules[moduleName];
+        var symbol : any = symbols.modules[moduleName];
+        var comment = '';
+        if(symbol.originalText)
+         comment = symbol.originalText + '\n';
         modules[moduleName] = extrModInf(symbol);
+        modules[moduleName]['_comment'] = comment;
     });
 
     return {

@@ -274,7 +274,25 @@ function extract_jsdoc(tree) {
             values(tree).forEach(walk);
         }
         else if (tree.type === 'CallExpression' && tree.callee.type === 'FunctionExpression'){
+            if(tree.callee.params){
+                if(tree.callee.params.length > 0){
+                    name = tree.callee.params[0].name;
+                    tree.leadingComments.forEach(function (comment) {
+                        if (comment.type === 'Block' && comment.value.charAt(0) === '*') {
+                            docstrings[name] = {
+                                value: tree.callee,
+                                jsdoc: '/*' + comment.value + '*/'
+                            };
+                        }
+                    });
+                }
+            }
+
             values(tree.callee.body.body).forEach(walk);
+        }
+        else if (tree.type === 'ExpressionStatement' && tree.expression.type === 'CallExpression') {
+             tree.expression.leadingComments = tree.leadingComments;
+             values(tree).forEach(walk);
         }
         // If tree has children, walk them
         else {
