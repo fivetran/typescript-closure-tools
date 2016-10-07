@@ -28,16 +28,17 @@
     "esprima": "*",
     "escodegen": "*",
     "jsdoc": "*",
-    "doctrine": "github:fivetran/doctrine",
+    "doctrine": "*",
     "mkdirp": "*",
-    "colors": "*"
+    "colors": "*",
+    "typescript": "*"
   },
   "devDependencies": {
     "jasmine-node": "*",
     "browserify": "*"
   },
   "scripts": {
-    "prepublish": "tsc --module commonjs definition-generator/src/*.ts && tsc --module commonjs externs-generator/src/*.ts"
+    "prepublish": "tsc -p ."
   },
   "bin": {
     "ts2externs": "./externs-generator/src/cli.js",
