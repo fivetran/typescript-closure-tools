@@ -1,6 +1,6 @@
 {
   "name": "typescript-closure-tools",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Command-line tools to convert closure-style JSDoc annotations to typescript, and to convert typescript sources to closure externs files",
   "author": {
     "name": "George Fraser"
@@ -49,29 +49,10 @@
     "url": "https://github.com/fivetran/typescript-closure-tools/issues"
   },
   "homepage": "https://github.com/fivetran/typescript-closure-tools#readme",
-  "_id": "typescript-closure-tools@0.0.6",
-  "_shasum": "4f2f173cbb7a5184b88d88561ea784c0a2a1ce7c",
-  "_from": "typescript-closure-tools@latest",
-  "_npmVersion": "3.3.12",
-  "_nodeVersion": "5.1.0",
-  "_npmUser": {
-    "name": "georgewfraser",
-    "email": "fraser.george.w@gmail.com"
-  },
-  "dist": {
-    "shasum": "4f2f173cbb7a5184b88d88561ea784c0a2a1ce7c",
-    "tarball": "https://registry.npmjs.org/typescript-closure-tools/-/typescript-closure-tools-0.0.6.tgz"
-  },
   "maintainers": [
     {
       "name": "georgewfraser",
       "email": "fraser.george.w@gmail.com"
     }
-  ],
-  "_npmOperationalInternal": {
-    "host": "packages-16-east.internal.npmjs.com",
-    "tmp": "tmp/typescript-closure-tools-0.0.6.tgz_1463966790519_0.8338755199220031"
-  },
-  "directories": {},
-  "_resolved": "https://registry.npmjs.org/typescript-closure-tools/-/typescript-closure-tools-0.0.6.tgz"
+  ]
 }
