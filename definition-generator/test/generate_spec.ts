@@ -16,13 +16,25 @@ function parse(fileName: string): generate.Modules {
     var result = generate.defs(symbols).modules;
 
     Object.keys(result).forEach(moduleName => {
-        Object.keys(result[moduleName]).forEach(memberName => {
-            var text = result[moduleName][memberName];
-            var noComments = text.replace(/\/\*\*[^]*?\*\//g, '');
-            var simpleSpace = noComments.replace(/\s+/g, ' ');
+        function get_text(mod : any) :any{
+            var parsed = {};
+            Object.keys(mod).forEach(memberName => {
+                var text = mod[memberName];
+                if(text instanceof String || typeof text === 'string'){
+                    var noComments = text.replace(/\/\*\*[^]*?\*\//g, '');
+                    var simpleSpace = noComments.replace(/\s+/g, ' ').trim();
 
-            result[moduleName][memberName] = simpleSpace.trim();
-        });
+                    parsed[memberName] = simpleSpace;
+                }
+                else{
+                    parsed[memberName] = get_text(text);
+                }
+            });         
+
+            return parsed;   
+        }
+
+        result[moduleName] = get_text(result[moduleName]);
     });
 
     return result;
@@ -59,6 +71,15 @@ describe('generate', () => {
         expect(parse('test/no_params.js')).toEqual({
             "example": {
                 "noParams": "function noParams(): void;",
+                '_comment': ''
+            }
+        });
+    });
+
+    it('nested modules', () => {
+        expect(parse('test/nested_modules.js')).toEqual({
+            "nested": {
+                "submodule": {"_comment": ''},
                 '_comment': ''
             }
         });
