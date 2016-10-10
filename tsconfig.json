@@ -14,6 +14,7 @@
         "definition-generator/src/page.ts",
         "definition-generator/src/parser.ts",
         "definition-generator/src/pretty_print.ts",
-        "externs-generator/src/main.ts"
+        "externs-generator/src/main.ts",
+        "definition-generator/test/generate_spec.ts"
     ]
 }
