@@ -16,13 +16,25 @@ function parse(fileName: string): generate.Modules {
     var result = generate.defs(symbols).modules;
 
     Object.keys(result).forEach(moduleName => {
-        Object.keys(result[moduleName]).forEach(memberName => {
-            var text = result[moduleName][memberName];
-            var noComments = text.replace(/\/\*\*[^]*?\*\//g, '');
-            var simpleSpace = noComments.replace(/\s+/g, ' ');
+        function get_text(mod : any) :any{
+            var parsed = {};
+            Object.keys(mod).forEach(memberName => {
+                var text = mod[memberName];
+                if(text instanceof String || typeof text === 'string'){
+                    var noComments = text.replace(/\/\*\*[^]*?\*\//g, '');
+                    var simpleSpace = noComments.replace(/\s+/g, ' ').trim();
 
-            result[moduleName][memberName] = simpleSpace.trim();
-        });
+                    parsed[memberName] = simpleSpace;
+                }
+                else{
+                    parsed[memberName] = get_text(text);
+                }
+            });         
+
+            return parsed;   
+        }
+
+        result[moduleName] = get_text(result[moduleName]);
     });
 
     return result;
@@ -49,7 +61,8 @@ describe('generate', () => {
     it('function with missing @param', () => {
         expect(parse('test/missing_params.js')).toEqual({
             "example": {
-                "missingParams": "function missingParams(x: any /* jsdoc error */, y: any /* jsdoc error */): void;"
+                "missingParams": "function missingParams(x: any /* jsdoc error */, y: any /* jsdoc error */): void;",
+                '_comment': ''
             }
         });
     });
@@ -57,7 +70,17 @@ describe('generate', () => {
     it('function with no arguments', () => {
         expect(parse('test/no_params.js')).toEqual({
             "example": {
-                "noParams": "function noParams(): void;"
+                "noParams": "function noParams(): void;",
+                '_comment': ''
+            }
+        });
+    });
+
+    it('nested modules', () => {
+        expect(parse('test/nested_modules.js')).toEqual({
+            "nested": {
+                "submodule": {"_comment": ''},
+                '_comment': ''
             }
         });
     });
@@ -65,7 +88,8 @@ describe('generate', () => {
     it('overloaded function', () => {
         expect(parse('test/overloaded_function.js')).toEqual({
             "example": {
-                "overloadedFunction": "function overloadedFunction(x: number|string): void;"
+                "overloadedFunction": "function overloadedFunction(x: number|string): void;",
+                '_comment': ''
             }
         });
     });
@@ -89,7 +113,8 @@ describe('generate', () => {
     it('typedef array', () => {
         expect(parse('test/typedef_array.js')).toEqual({
             "example": {
-                "ArrayType": "interface ArrayType extends Array<string> { }"
+                "ArrayType": "interface ArrayType extends Array<string> { }",
+                '_comment': ''
             }
         });
     });
@@ -97,7 +122,8 @@ describe('generate', () => {
     it('typedef bang', () => {
         expect(parse('test/typedef_bang.js')).toEqual({
             "example": {
-                "BangType": "interface BangType extends Array<string> { }"
+                "BangType": "interface BangType extends Array<string> { }",
+                '_comment': ''
             }
         });
     });
@@ -107,7 +133,8 @@ describe('generate', () => {
             "example": {
                 "UnionType": 'type UnionType = string|number;',
                 "unionFunction" : 'function unionFunction(x: example.UnionType): void;',
-                "genericUnionFunction" : 'function genericUnionFunction(x: example.UnionType<any>): void;'
+                "genericUnionFunction" : 'function genericUnionFunction(x: example.UnionType<any>): void;',
+                '_comment': ''
             }
         });
     });
@@ -116,7 +143,8 @@ describe('generate', () => {
         it('function declaration', () => {
             expect(parse('test/requirejs_function_declaration.js')).toEqual({
                 MODULE : {
-                    functionDeclaration : 'function functionDeclaration(x: number): void;'
+                    functionDeclaration : 'function functionDeclaration(x: number): void;',
+                    '_comment': ''
                 }
             });
         });
@@ -124,7 +152,8 @@ describe('generate', () => {
         it('function expression', () => {
             expect(parse('test/requirejs_function_expression.js')).toEqual({
                 MODULE : {
-                    functionExpression : 'function functionExpression(x: number): void;'
+                    functionExpression : 'function functionExpression(x: number): void;',
+                    '_comment': ''
                 }
             });
         });
@@ -140,7 +169,8 @@ describe('generate', () => {
         it('local variable', () => {
             expect(parse('test/requirejs_local_variable.js')).toEqual({
                 MODULE: {
-                    localVariable: 'var localVariable: number;'
+                    localVariable: 'var localVariable: number;',
+                    '_comment': ''
                 }
             });
         });

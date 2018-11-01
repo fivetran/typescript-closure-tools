@@ -29,7 +29,7 @@ export function members(file: parser.File): Symbols {
     };
 
     Object.keys(file).forEach(name => {
-        var symbol: parser.Value = file[name];
+        var symbol : any = file[name];
 
         // Class and constructor
         if (symbol.jsdoc.tags.some(t => t.title === 'interface') ||
@@ -46,6 +46,9 @@ export function members(file: parser.File): Symbols {
                 acc.classes[className][memberName] = symbol;
         }
         // Static member of module
+        else if (name.lastIndexOf('.') <= 0){
+            acc.modules[name] = symbol;
+        }
         else {
             var dot = name.lastIndexOf('.');
             var moduleName = name.substring(0, dot);
@@ -58,5 +61,40 @@ export function members(file: parser.File): Symbols {
         }
     });
 
-    return acc;
+    // resolve nested modules
+    var sanitizedAcc: Symbols = {
+        classes: {},
+        modules: {}
+    };
+
+    sanitizedAcc.classes = acc.classes;
+
+    Object.keys(acc.modules).forEach(name => {
+        var parts = name.split(".");
+        if(parts.length == 1)
+            sanitizedAcc.modules[name] = acc.modules[name];
+    });
+
+    Object.keys(acc.modules).forEach(name => {
+        var parts = name.split(".");
+        if(parts.length == 1)
+            return;
+
+        function submodule(pts: string[], i: number) {
+            if(i == 0)
+                return sanitizedAcc.modules[pts[0]];
+
+            var submod = submodule(pts, i - 1);
+            return submod[pts[i]];
+        }
+
+        var jsdoctmp = submodule(parts, parts.length - 2)[parts[parts.length - 1]].jsdoc;
+        var originalText = submodule(parts, parts.length - 2)[parts[parts.length - 1]].originalText;
+        submodule(parts, parts.length - 2)[parts[parts.length - 1]] = acc.modules[name];
+        submodule(parts, parts.length - 2)[parts[parts.length - 1]].jsdoc = jsdoctmp;
+        submodule(parts, parts.length - 2)[parts[parts.length - 1]].originalText = originalText;
+    });
+
+    return sanitizedAcc;
+
 }

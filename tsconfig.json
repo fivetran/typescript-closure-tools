@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es6",
+        "noImplicitAny": false,
+        "sourceMap": false
+    },
+    "files": [
+        "definition-generator/src/combine.ts",
+        "definition-generator/src/finder.ts",
+        "definition-generator/src/generate.ts",
+        "definition-generator/src/main.ts",
+        "definition-generator/src/options.ts",
+        "definition-generator/src/page.ts",
+        "definition-generator/src/parser.ts",
+        "definition-generator/src/pretty_print.ts",
+        "externs-generator/src/main.ts",
+        "definition-generator/test/generate_spec.ts"
+    ]
+}
