@@ -29,7 +29,7 @@ options.todo.forEach(todo => {
         if (fs.existsSync(todo.output) && fs.readFileSync(todo.output, 'utf8') === pretty) {
             console.error('No changes\t'.green + todo.output);
         } else {
-            fs.writeFile(todo.output, pretty);
+            fs.writeFileSync(todo.output, pretty);
             console.error('Wrote\t'.red + todo.output);
         }
     } catch (e) {
