@@ -1,6 +1,4 @@
-/// <reference path="../index/node.d.ts"/>
 /// <reference path="../index/mkdirp.d.ts"/>
-/// <reference path="../index/colors.d.ts"/>
 
 import fs = require('fs');
 import finder = require('./finder');
@@ -12,6 +10,21 @@ require('colors');
 
 export var currentInput: string;
 export var currentOutput: string;
+
+function bold(s: string): string {
+    let a = <any>s
+    return a.bold
+}
+
+function red(s: string): string {
+    let a = <any>s
+    return a.red
+}
+
+function green(s: string): string {
+    let a = <any>s
+    return a.green
+}
 
 options.todo.forEach(todo => {
     currentInput = todo.input;
@@ -27,13 +40,13 @@ options.todo.forEach(todo => {
         mkdirp.sync(parentDir);
 
         if (fs.existsSync(todo.output) && fs.readFileSync(todo.output, 'utf8') === pretty) {
-            console.error('No changes\t'.green + todo.output);
+            console.error(green('No changes\t') + todo.output);
         } else {
             fs.writeFileSync(todo.output, pretty);
-            console.error('Wrote\t'.red + todo.output);
+            console.error(red('Wrote\t') + todo.output);
         }
     } catch (e) {
-        console.error('ERROR\t'.bold.red + todo.input + ' ' + todo.output);
+        console.error(bold(red('ERROR\t')) + todo.input + ' ' + todo.output);
         throw e;
     }
 });

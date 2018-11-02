@@ -1,4 +1,3 @@
-/// <reference path="../index/node.d.ts" />
 /// <reference path="../index/typescript-services.d.ts" />
 
 import fs = require('fs');

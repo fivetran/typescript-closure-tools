@@ -1,6 +1,7 @@
 #!/bin/bash
 # Example of minifying a set of typescript modules with closure compiler
-tsc --module commonjs definition-generator/src/*.ts
+tsc --target ES6 --module commonjs definition-generator/src/*.ts
+tsc --target ES6 --module commonjs externs-generator/src/*.ts
 rm -rf dist/
 mkdir -p dist/
 node node_modules/browserify/bin/cmd.js definition-generator/src/page.js > main.min.js

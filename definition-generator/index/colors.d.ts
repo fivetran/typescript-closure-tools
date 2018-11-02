@@ -1,1 +1,0 @@
-../../lib/definitely-typed/colors/colors.d.ts

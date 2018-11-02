@@ -1,5 +1,3 @@
-/// <reference path="../index/node.d.ts"/>
-
 import fs = require('fs');
 import parser = require('./parser');
 import combine = require('./combine');

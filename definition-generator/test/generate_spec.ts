@@ -1,4 +1,3 @@
-/// <reference path="../index/node.d.ts"/>
 /// <reference path="../index/jasmine.d.ts"/>
 
 import fs = require('fs');

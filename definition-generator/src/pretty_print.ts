@@ -1,5 +1,3 @@
-/// <reference path="../index/node.d.ts"/>
-
 import generate = require('./generate');
 import main = require('./main');
 import finder = require('./finder');

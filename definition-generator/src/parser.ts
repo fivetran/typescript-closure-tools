@@ -1,4 +1,3 @@
-/// <reference path="../index/node.d.ts"/>
 /// <reference path="../index/doctrine.d.ts"/>
 /// <reference path="../index/esprima.d.ts"/>
 /// <reference path="../index/escodegen.d.ts"/>

@@ -1,5 +1,3 @@
-/// <reference path="../index/node.d.ts"/>
-
 export interface InputOutput {
     input: string;
     output: string;
